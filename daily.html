@@ -1,0 +1,932 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VedaPath Daily Calm Loop</title>
+    <style>
+      :root {
+        --bhagwa: #d65a1f;
+        --deep-ochre: #a83e12;
+        --sacred-gold: #e0a83b;
+        --warm-ivory: #fff7ea;
+        --ink: #1f1a17;
+        --muted-brown: #5b4638;
+        --peacock-green: #145c4a;
+        --deep-indigo: #29335c;
+        --line: rgba(91, 70, 56, 0.16);
+        --panel: rgba(255, 255, 255, 0.66);
+        --panel-strong: rgba(255, 255, 255, 0.88);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--warm-ivory);
+        color: var(--ink);
+        font-family: Inter, "IBM Plex Sans", system-ui, sans-serif;
+        line-height: 1.5;
+      }
+
+      button,
+      textarea {
+        font: inherit;
+      }
+
+      button {
+        cursor: pointer;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .page {
+        width: min(1240px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 22px 0 48px;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding-bottom: 18px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        min-width: 0;
+      }
+
+      .brand img {
+        width: 50px;
+        height: 50px;
+        border-radius: 8px;
+        object-fit: cover;
+      }
+
+      .brand strong {
+        display: block;
+        font-size: 18px;
+      }
+
+      .brand span,
+      .muted,
+      .small,
+      .state-button span,
+      .source-card span,
+      .stat span,
+      .entry-card p,
+      .future-card p,
+      .boundary p {
+        color: var(--muted-brown);
+      }
+
+      .brand span,
+      .small,
+      .source-card span,
+      .stat span {
+        font-size: 13px;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .link,
+      .version {
+        display: inline-flex;
+        align-items: center;
+        min-height: 34px;
+        border-radius: 999px;
+        padding: 6px 11px;
+        font-size: 13px;
+        font-weight: 800;
+      }
+
+      .link {
+        border: 1px solid transparent;
+        color: var(--muted-brown);
+      }
+
+      .link:hover,
+      .link:focus-visible,
+      .link.active {
+        border-color: rgba(168, 62, 18, 0.22);
+        color: var(--deep-ochre);
+        outline: none;
+      }
+
+      .version {
+        border: 1px solid rgba(168, 62, 18, 0.28);
+        background: rgba(255, 255, 255, 0.42);
+        color: var(--deep-ochre);
+      }
+
+      .workspace {
+        display: grid;
+        grid-template-columns: minmax(290px, 0.82fr) minmax(0, 1.12fr) minmax(300px, 0.92fr);
+        gap: 16px;
+        align-items: start;
+        padding-top: 18px;
+      }
+
+      .panel,
+      .source-card,
+      .state-button,
+      .stat,
+      .entry-card,
+      .future-card,
+      .boundary,
+      .day-cell {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+      }
+
+      .panel {
+        padding: 18px;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        min-height: 28px;
+        margin-bottom: 14px;
+        border-radius: 999px;
+        padding: 4px 10px;
+        background: rgba(214, 90, 31, 0.12);
+        color: var(--deep-ochre);
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        margin-bottom: 12px;
+        font-size: clamp(38px, 4vw, 58px);
+        line-height: 0.98;
+        letter-spacing: 0;
+      }
+
+      h2 {
+        margin-bottom: 12px;
+        font-size: 24px;
+      }
+
+      h3 {
+        margin-bottom: 8px;
+        font-size: 18px;
+      }
+
+      .state-list,
+      .entry-list,
+      .future-grid {
+        display: grid;
+        gap: 10px;
+      }
+
+      .state-button {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr);
+        gap: 10px;
+        align-items: center;
+        width: 100%;
+        min-height: 64px;
+        padding: 11px;
+        text-align: left;
+        color: inherit;
+      }
+
+      .state-button:hover,
+      .state-button:focus-visible,
+      .state-button.active,
+      .button:hover,
+      .button:focus-visible {
+        border-color: rgba(214, 90, 31, 0.48);
+        outline: 3px solid rgba(214, 90, 31, 0.12);
+      }
+
+      .state-button.active {
+        background: rgba(214, 90, 31, 0.1);
+      }
+
+      .state-icon {
+        display: grid;
+        place-items: center;
+        width: 34px;
+        height: 34px;
+        border-radius: 999px;
+        background: rgba(20, 92, 74, 0.12);
+        color: var(--peacock-green);
+        font-size: 13px;
+        font-weight: 900;
+      }
+
+      .state-button.active .state-icon {
+        background: var(--bhagwa);
+        color: white;
+      }
+
+      .state-button strong {
+        display: block;
+        font-size: 15px;
+      }
+
+      .state-button span {
+        display: block;
+        margin-top: 2px;
+        font-size: 13px;
+      }
+
+      textarea {
+        width: 100%;
+        min-height: 118px;
+        resize: vertical;
+        border: 1px solid rgba(168, 62, 18, 0.28);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.72);
+        color: var(--ink);
+        padding: 12px;
+      }
+
+      textarea:focus {
+        border-color: var(--bhagwa);
+        outline: 3px solid rgba(214, 90, 31, 0.12);
+      }
+
+      .summary-output {
+        min-height: 136px;
+        margin-top: 10px;
+      }
+
+      .button-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 10px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        min-height: 38px;
+        border: 1px solid rgba(168, 62, 18, 0.24);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.48);
+        color: var(--deep-ochre);
+        padding: 8px 11px;
+        font-weight: 850;
+      }
+
+      .button.primary {
+        border-color: var(--bhagwa);
+        background: var(--bhagwa);
+        color: white;
+      }
+
+      .button.secondary {
+        border-color: rgba(20, 92, 74, 0.24);
+        color: var(--peacock-green);
+      }
+
+      .daily-stage {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 18px;
+        align-items: center;
+        margin-bottom: 16px;
+      }
+
+      .mark {
+        display: grid;
+        place-items: center;
+        width: 152px;
+        height: 152px;
+        border: 1px solid rgba(168, 62, 18, 0.18);
+        border-radius: 8px;
+        background: linear-gradient(180deg, #fff9ef 0%, #f6e4ca 100%);
+        overflow: hidden;
+      }
+
+      .mark img {
+        width: 124px;
+        height: auto;
+        animation: calmPulse 6s ease-in-out infinite;
+      }
+
+      @keyframes calmPulse {
+        0%, 100% {
+          transform: scale(0.96);
+        }
+
+        50% {
+          transform: scale(1.04);
+        }
+      }
+
+      .source-card {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        padding: 12px;
+        border-left: 4px solid var(--bhagwa);
+        background: var(--panel-strong);
+      }
+
+      .source-card strong {
+        display: block;
+        margin-top: 4px;
+      }
+
+      .insight-grid,
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        margin-top: 14px;
+      }
+
+      .stat,
+      .boundary {
+        padding: 13px;
+      }
+
+      .stat strong {
+        display: block;
+        margin-top: 4px;
+        font-size: 26px;
+        line-height: 1;
+      }
+
+      .memory-strip {
+        display: grid;
+        grid-template-columns: repeat(7, minmax(0, 1fr));
+        gap: 7px;
+        margin: 12px 0 14px;
+      }
+
+      .day-cell {
+        min-height: 58px;
+        padding: 8px 6px;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.48);
+      }
+
+      .day-cell.has-entry {
+        border-color: rgba(214, 90, 31, 0.38);
+        background: rgba(214, 90, 31, 0.1);
+      }
+
+      .day-cell strong {
+        display: block;
+        font-size: 12px;
+      }
+
+      .day-cell span {
+        display: block;
+        margin-top: 4px;
+        color: var(--muted-brown);
+        font-size: 11px;
+      }
+
+      .entry-card,
+      .future-card {
+        padding: 13px;
+        background: rgba(255, 255, 255, 0.46);
+      }
+
+      .entry-card strong,
+      .future-card strong {
+        display: block;
+        margin-bottom: 4px;
+      }
+
+      .entry-card p,
+      .future-card p,
+      .boundary p {
+        margin-bottom: 0;
+      }
+
+      .boundary {
+        margin-top: 14px;
+        border-style: dashed;
+        background: rgba(255, 255, 255, 0.34);
+      }
+
+      .section {
+        margin-top: 16px;
+        padding-top: 16px;
+        border-top: 1px solid var(--line);
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        .mark img {
+          animation: none;
+        }
+      }
+
+      @media (max-width: 1120px) {
+        .workspace {
+          grid-template-columns: minmax(290px, 0.9fr) minmax(0, 1.1fr);
+        }
+
+        .memory-panel {
+          grid-column: 1 / -1;
+        }
+      }
+
+      @media (max-width: 780px) {
+        .page {
+          width: min(100% - 24px, 1240px);
+        }
+
+        .topbar {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .nav {
+          justify-content: flex-start;
+        }
+
+        .workspace,
+        .daily-stage,
+        .source-card,
+        .insight-grid,
+        .stats-grid,
+        .future-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .mark {
+          width: 100%;
+          min-height: 164px;
+        }
+
+        .memory-strip {
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+
+        h1 {
+          font-size: clamp(34px, 10vw, 48px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top" aria-label="VedaPath AI home">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
+          <div>
+            <strong>VedaPath AI</strong>
+            <span>Daily calm loop</span>
+          </div>
+        </a>
+        <nav class="nav" aria-label="Project links">
+          <a class="link" href="build-status.html">Build</a>
+          <a class="link" href="brand/brand-board.html">Brand</a>
+          <a class="link" href="blueprint.html">Blueprint</a>
+          <a class="link" href="calm.html">Calm</a>
+          <a class="link active" href="daily.html">Daily</a>
+          <span class="version">v0.2.2 daily loop</span>
+        </nav>
+      </header>
+
+      <section class="workspace" aria-label="Daily Calm Loop workspace">
+        <aside class="panel">
+          <span class="eyebrow">Today</span>
+          <h1>A calm loop that remembers only on your device.</h1>
+          <p class="muted">Pick your state, write one honest line, and save a source-backed carry action. This preview uses browser storage until the real account system exists.</p>
+
+          <div class="state-list" aria-label="Daily state options">
+            <button class="state-button active" type="button" data-state="restless">
+              <span class="state-icon">1</span>
+              <span><strong>Restless</strong><span>Steady action without chasing results.</span></span>
+            </button>
+            <button class="state-button" type="button" data-state="overwhelmed">
+              <span class="state-icon">2</span>
+              <span><strong>Overwhelmed</strong><span>Gather attention before deciding.</span></span>
+            </button>
+            <button class="state-button" type="button" data-state="clarity">
+              <span class="state-icon">3</span>
+              <span><strong>Seeking clarity</strong><span>Separate facts, meaning, and priority.</span></span>
+            </button>
+            <button class="state-button" type="button" data-state="courage">
+              <span class="state-icon">4</span>
+              <span><strong>Need courage</strong><span>Return to the work you can touch.</span></span>
+            </button>
+          </div>
+
+          <div class="section">
+            <label class="small" for="dailyNote">Today's honest line</label>
+            <textarea id="dailyNote">I will do one useful thing calmly before asking for the result.</textarea>
+            <div class="button-row">
+              <button class="button primary" id="saveDaily" type="button">Save Today</button>
+              <button class="button secondary" id="copySummary" type="button">Copy Summary</button>
+              <button class="button" id="clearDraft" type="button">Clear Draft</button>
+            </div>
+            <textarea class="summary-output" id="summaryOutput" readonly hidden aria-label="Prepared daily summary"></textarea>
+          </div>
+        </aside>
+
+        <section class="panel" aria-live="polite">
+          <div class="daily-stage">
+            <div>
+              <span class="eyebrow">Daily source lens</span>
+              <h1 id="dailyTitle">Steady action before inner noise.</h1>
+              <p class="muted" id="dailySummary">The day becomes simpler when the next action is clear and the result is not turned into identity.</p>
+            </div>
+            <div class="mark" aria-label="Daily calm logo animation">
+              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI daily logo mark">
+            </div>
+          </div>
+
+          <div class="source-card" aria-label="Daily source card">
+            <div>
+              <span>Source candidate</span>
+              <strong id="dailySource">Bhagavad Gita 2.48</strong>
+            </div>
+            <div>
+              <span>Text family</span>
+              <strong id="dailyFamily">Bhagavad Gita | Smriti</strong>
+            </div>
+            <div>
+              <span>Today asks</span>
+              <strong id="dailyQuestion">What is mine to do calmly?</strong>
+            </div>
+            <div>
+              <span>Carry action</span>
+              <strong id="dailyCarry">Do one small duty slowly and cleanly.</strong>
+            </div>
+          </div>
+
+          <div class="insight-grid">
+            <article class="stat">
+              <span>What this supports</span>
+              <strong id="supportLabel">Steady action</strong>
+              <p class="muted" id="supportText">A careful reading about balance in action, not a promise of instant peace.</p>
+            </article>
+            <article class="stat">
+              <span>What not to overclaim</span>
+              <strong>Boundary</strong>
+              <p class="muted" id="boundaryText">This is reflection, not therapy, medical advice, or ritual instruction.</p>
+            </article>
+          </div>
+
+          <section class="section">
+            <h2>Next Source Suggestion</h2>
+            <p class="muted" id="suggestionText">Save a few daily entries and VedaPath will suggest which source family to explore next. For now, this learning stays private in this browser.</p>
+          </section>
+        </section>
+
+        <aside class="panel memory-panel">
+          <span class="eyebrow">Local memory</span>
+          <h2>Your 7-Day Calm Pattern</h2>
+          <p class="muted">This is a private prototype memory in this browser only. It proves the loop before accounts, sync, or reviewed storage.</p>
+
+          <div class="stats-grid">
+            <article class="stat">
+              <span>Saved reflections</span>
+              <strong id="entryCount">0</strong>
+            </article>
+            <article class="stat">
+              <span>Current streak</span>
+              <strong id="streakCount">0</strong>
+            </article>
+            <article class="stat">
+              <span>Most common state</span>
+              <strong id="dominantState">None</strong>
+            </article>
+            <article class="stat">
+              <span>Source rhythm</span>
+              <strong id="sourceRhythm">None yet</strong>
+            </article>
+          </div>
+
+          <div class="memory-strip" id="memoryStrip" aria-label="Seven day memory strip"></div>
+
+          <div class="entry-list" id="entryList"></div>
+
+          <div class="button-row">
+            <button class="button" id="clearMemory" type="button">Clear Local Preview</button>
+          </div>
+
+          <section class="boundary">
+            <h2>Privacy Boundary</h2>
+            <p>Saved entries stay in this browser as a prototype. A production version should use explicit accounts, consent, export controls, and reviewed source data.</p>
+          </section>
+        </aside>
+      </section>
+
+      <section class="section" aria-label="Daily loop future">
+        <h2>What This Teaches the Product</h2>
+        <div class="future-grid">
+          <article class="future-card">
+            <strong>Personal path without spying</strong>
+            <p>VedaPath can adapt from deliberate user entries instead of hidden tracking.</p>
+          </article>
+          <article class="future-card">
+            <strong>Source rhythm</strong>
+            <p>The app can notice whether a user needs Gita action, Upanishadic clarity, or a broader learning path.</p>
+          </article>
+          <article class="future-card">
+            <strong>Review-ready memory</strong>
+            <p>Future teacher or scholar handoff can share source cards and patterns, not private emotional details.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const dailyStates = {
+        restless: {
+          title: "Steady action before inner noise.",
+          summary: "The day becomes simpler when the next action is clear and the result is not turned into identity.",
+          source: "Bhagavad Gita 2.48",
+          family: "Bhagavad Gita | Smriti",
+          question: "What is mine to do calmly?",
+          carry: "Do one small duty slowly and cleanly.",
+          support: "Steady action",
+          supportText: "A careful reading about balance in action, not a promise of instant peace.",
+          boundary: "This is reflection, not therapy, medical advice, or ritual instruction.",
+          note: "I will do one useful thing calmly before asking for the result."
+        },
+        overwhelmed: {
+          title: "Gather attention before the day gathers you.",
+          summary: "The chariot image helps separate senses, mind, judgment, and direction before the next decision.",
+          source: "Katha Upanishad 1.3.3-9",
+          family: "Upanishad | Shruti",
+          question: "What is pulling my attention hardest?",
+          carry: "Remove one input and choose the next useful step.",
+          support: "Attention and direction",
+          supportText: "A symbolic source image for gathering attention and choosing direction.",
+          boundary: "This metaphor is not clinical guidance or a complete mental-health method.",
+          note: "I will reduce one input before I decide what matters."
+        },
+        clarity: {
+          title: "Ask what kind of knowing this needs.",
+          summary: "Clarity begins by sorting information, interpretation, and inner priority.",
+          source: "Mundaka Upanishad 1.1.4-5",
+          family: "Upanishad | Shruti",
+          question: "Is this about facts, meaning, or priority?",
+          carry: "Write the decision in one sentence and name the missing source.",
+          support: "Knowledge sorting",
+          supportText: "A reflective distinction between knowledge types and deeper understanding.",
+          boundary: "Do not use this to dismiss practical skill, evidence, or expert help.",
+          note: "I will name the real question before chasing more information."
+        },
+        courage: {
+          title: "Return to the work you can touch.",
+          summary: "Courage grows when attention moves from imagined outcomes to rightful effort.",
+          source: "Bhagavad Gita 2.47",
+          family: "Bhagavad Gita | Smriti",
+          question: "What action is mine today?",
+          carry: "Begin for five focused minutes without negotiating with the whole future.",
+          support: "Rightful effort",
+          supportText: "A source-grounded reflection on action, responsibility, and outcome attachment.",
+          boundary: "Do not use this to pressure unsafe action or ignore real constraints.",
+          note: "I will start the work for five minutes and let the future stay future."
+        }
+      };
+
+      const storageKey = "vedapath.dailyCalm.v1";
+      const stateButtons = [...document.querySelectorAll(".state-button")];
+      const dailyNote = document.querySelector("#dailyNote");
+      const saveDaily = document.querySelector("#saveDaily");
+      const copySummary = document.querySelector("#copySummary");
+      const clearDraft = document.querySelector("#clearDraft");
+      const clearMemory = document.querySelector("#clearMemory");
+      const summaryOutput = document.querySelector("#summaryOutput");
+      let activeState = "restless";
+
+      function readEntries() {
+        try {
+          const parsed = JSON.parse(localStorage.getItem(storageKey) || "[]");
+          return Array.isArray(parsed) ? parsed : [];
+        } catch {
+          return [];
+        }
+      }
+
+      function writeEntries(entries) {
+        localStorage.setItem(storageKey, JSON.stringify(entries.slice(0, 30)));
+      }
+
+      function renderState(stateKey) {
+        const state = dailyStates[stateKey];
+        activeState = stateKey;
+        document.querySelector("#dailyTitle").textContent = state.title;
+        document.querySelector("#dailySummary").textContent = state.summary;
+        document.querySelector("#dailySource").textContent = state.source;
+        document.querySelector("#dailyFamily").textContent = state.family;
+        document.querySelector("#dailyQuestion").textContent = state.question;
+        document.querySelector("#dailyCarry").textContent = state.carry;
+        document.querySelector("#supportLabel").textContent = state.support;
+        document.querySelector("#supportText").textContent = state.supportText;
+        document.querySelector("#boundaryText").textContent = state.boundary;
+        dailyNote.value = state.note;
+        saveDaily.textContent = "Save Today";
+        stateButtons.forEach((button) => {
+          button.classList.toggle("active", button.dataset.state === stateKey);
+        });
+      }
+
+      function dateKey(date) {
+        return date.toISOString().slice(0, 10);
+      }
+
+      function getStreak(entries) {
+        const dates = new Set(entries.map((entry) => entry.dateKey));
+        let streak = 0;
+        const cursor = new Date();
+        for (let index = 0; index < 30; index += 1) {
+          const key = dateKey(cursor);
+          if (!dates.has(key)) break;
+          streak += 1;
+          cursor.setDate(cursor.getDate() - 1);
+        }
+        return streak;
+      }
+
+      function dominant(entries, field) {
+        const counts = entries.reduce((memo, entry) => {
+          const key = entry[field] || "Unknown";
+          memo[key] = (memo[key] || 0) + 1;
+          return memo;
+        }, {});
+        const sorted = Object.entries(counts).sort((a, b) => b[1] - a[1]);
+        return sorted[0]?.[0] || "None";
+      }
+
+      function stateLabel(stateKey) {
+        return stateKey ? stateKey.charAt(0).toUpperCase() + stateKey.slice(1) : "None";
+      }
+
+      function renderMemory() {
+        const entries = readEntries();
+        document.querySelector("#entryCount").textContent = entries.length;
+        document.querySelector("#streakCount").textContent = getStreak(entries);
+        document.querySelector("#dominantState").textContent = stateLabel(dominant(entries, "state"));
+        document.querySelector("#sourceRhythm").textContent = dominant(entries, "family");
+
+        const strip = document.querySelector("#memoryStrip");
+        const today = new Date();
+        const days = Array.from({ length: 7 }, (_, index) => {
+          const day = new Date(today);
+          day.setDate(today.getDate() - (6 - index));
+          return day;
+        });
+        strip.innerHTML = days.map((day) => {
+          const key = dateKey(day);
+          const entry = entries.find((item) => item.dateKey === key);
+          const label = day.toLocaleDateString(undefined, { weekday: "short" });
+          return `
+            <div class="day-cell ${entry ? "has-entry" : ""}">
+              <strong>${label}</strong>
+              <span>${entry ? stateLabel(entry.state) : "Open"}</span>
+            </div>
+          `;
+        }).join("");
+
+        const latest = entries.slice(0, 4);
+        document.querySelector("#entryList").innerHTML = latest.length ? latest.map((entry) => `
+          <article class="entry-card">
+            <strong>${entry.displayDate} | ${stateLabel(entry.state)}</strong>
+            <p>${entry.note}</p>
+          </article>
+        `).join("") : `
+          <article class="entry-card">
+            <strong>No saved reflections yet</strong>
+            <p>Save today's line and the loop will begin showing a calm pattern.</p>
+          </article>
+        `;
+
+        const suggestion = document.querySelector("#suggestionText");
+        if (!entries.length) {
+          suggestion.textContent = "Save a few daily entries and VedaPath will suggest which source family to explore next. For now, this learning stays private in this browser.";
+          return;
+        }
+
+        const commonState = dominant(entries, "state");
+        const suggestions = {
+          restless: "Your pattern leans restless. Stay with Gita passages on action and steadiness before expanding into commentary.",
+          overwhelmed: "Your pattern leans overwhelmed. A gentle Upanishadic path around attention, senses, and direction may help the next reading set.",
+          clarity: "Your pattern leans toward clarity questions. Build a source set around knowledge, discernment, and interpretation boundaries.",
+          courage: "Your pattern leans toward courage. Keep the next loop around rightful effort, duty, and outcome attachment."
+        };
+        suggestion.textContent = suggestions[commonState] || "Your saved entries are varied. VedaPath should keep the path broad and source-labeled.";
+      }
+
+      function saveToday() {
+        const state = dailyStates[activeState];
+        const now = new Date();
+        const entry = {
+          id: `${now.getTime()}`,
+          dateKey: dateKey(now),
+          displayDate: now.toLocaleDateString(undefined, { month: "short", day: "numeric" }),
+          state: activeState,
+          source: state.source,
+          family: state.family,
+          note: dailyNote.value.trim() || state.note
+        };
+        const entries = readEntries().filter((item) => item.dateKey !== entry.dateKey);
+        writeEntries([entry, ...entries]);
+        saveDaily.textContent = "Saved for Today";
+        renderMemory();
+      }
+
+      function copyDailySummary() {
+        const state = dailyStates[activeState];
+        const text = [
+          "VedaPath Daily Calm",
+          `State: ${stateLabel(activeState)}`,
+          `Source candidate: ${state.source}`,
+          `Question: ${state.question}`,
+          `Carry: ${state.carry}`,
+          `Note: ${dailyNote.value.trim() || state.note}`
+        ].join("\n");
+        summaryOutput.value = text;
+        summaryOutput.hidden = false;
+
+        const markReady = () => {
+          copySummary.textContent = "Summary Ready";
+        };
+
+        const fallbackCopy = () => {
+          const helper = document.createElement("textarea");
+          helper.value = text;
+          helper.setAttribute("readonly", "");
+          helper.style.position = "fixed";
+          helper.style.left = "-9999px";
+          document.body.appendChild(helper);
+          helper.select();
+          const copied = document.execCommand("copy");
+          helper.remove();
+          copySummary.textContent = copied ? "Copied" : "Summary Ready";
+        };
+
+        if (navigator.clipboard?.writeText) {
+          navigator.clipboard.writeText(text).then(() => {
+            copySummary.textContent = "Copied";
+          }).catch(fallbackCopy).catch(markReady);
+          return;
+        }
+
+        try {
+          fallbackCopy();
+        } catch {
+          markReady();
+        }
+      }
+
+      stateButtons.forEach((button) => {
+        button.addEventListener("click", () => renderState(button.dataset.state));
+      });
+
+      saveDaily.addEventListener("click", saveToday);
+      copySummary.addEventListener("click", copyDailySummary);
+      clearDraft.addEventListener("click", () => {
+        dailyNote.value = "";
+        saveDaily.textContent = "Save Today";
+      });
+      clearMemory.addEventListener("click", () => {
+        if (!readEntries().length) return;
+        const shouldClear = window.confirm("Clear this browser's local Daily Calm preview entries?");
+        if (!shouldClear) return;
+        localStorage.removeItem(storageKey);
+        renderMemory();
+      });
+
+      renderMemory();
+    </script>
+  </body>
+</html>

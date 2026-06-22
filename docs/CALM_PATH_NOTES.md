@@ -33,3 +33,9 @@ These are prototype candidates. Before the real MVP, each entry needs verified S
 ## Guardrail
 
 Calm Path can create steadiness, but it should never pretend to be an authority over a user's life. The product voice should invite, label, and ground. It should not command.
+
+## v0.2.2 Daily Loop
+
+Daily Calm Loop adds browser-only prototype memory. It lets a user save one source-backed reflection for the day, see a seven-day pattern, and receive a next source suggestion based on deliberate entries.
+
+This is not production memory. It is device-local proof of the learning loop until real accounts, consent, export controls, and reviewed storage exist.
