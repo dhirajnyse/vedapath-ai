@@ -1,6 +1,6 @@
-# v0.2.6 Prototype Notes
+# v0.2.7 Prototype Notes
 
-The v0.2.6 release turns the VedaPath AI homepage into a clickable product prototype with calm, practice, source-library, source-path, and calm-compass surfaces.
+The v0.2.7 release turns the VedaPath AI homepage into a clickable product prototype with calm, practice, source-library, source-path, calm-compass, and calm-card surfaces.
 
 ## Included
 
@@ -17,6 +17,7 @@ The v0.2.6 release turns the VedaPath AI homepage into a clickable product proto
 - Source Library with search, filters, shelf, and practice handoff
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
+- Calm Card Studio with visual preview, local saved cards, copy text, and PNG export
 - Correction Loop placeholder
 - MVP progress update
 
@@ -34,6 +35,7 @@ This release proves the product direction:
 - deeper layers stay hidden until requested
 - source candidates can become a small personal route
 - one current-life state can route to the next useful product room
+- one source-backed action can become a shareable visual artifact
 - the UI remains calm and Bhagwa-led without becoming visually loud
 
 ## Next Release

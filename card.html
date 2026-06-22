@@ -1,0 +1,989 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VedaPath Calm Card Studio</title>
+    <style>
+      :root {
+        --bhagwa: #d65a1f;
+        --deep-ochre: #a83e12;
+        --sacred-gold: #e0a83b;
+        --warm-ivory: #fff7ea;
+        --ink: #1f1a17;
+        --muted-brown: #5b4638;
+        --peacock-green: #145c4a;
+        --deep-indigo: #29335c;
+        --line: rgba(91, 70, 56, 0.16);
+        --panel: rgba(255, 255, 255, 0.66);
+        --panel-strong: rgba(255, 255, 255, 0.9);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--warm-ivory);
+        color: var(--ink);
+        font-family: Inter, "IBM Plex Sans", system-ui, sans-serif;
+        line-height: 1.5;
+      }
+
+      button,
+      input,
+      textarea {
+        font: inherit;
+      }
+
+      button {
+        cursor: pointer;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .page {
+        width: min(1240px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 22px 0 48px;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding-bottom: 18px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        min-width: 0;
+      }
+
+      .brand img {
+        width: 50px;
+        height: 50px;
+        border-radius: 8px;
+        object-fit: cover;
+      }
+
+      .brand strong {
+        display: block;
+        font-size: 18px;
+      }
+
+      .brand span,
+      .muted,
+      .small,
+      .state-button span,
+      .source-card span,
+      .stat span,
+      .boundary p,
+      .memory-card p,
+      .future-card p,
+      .card-meta,
+      .card-boundary {
+        color: var(--muted-brown);
+      }
+
+      .brand span,
+      .small,
+      .source-card span,
+      .stat span,
+      .card-meta,
+      .card-boundary {
+        font-size: 13px;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .link,
+      .version {
+        display: inline-flex;
+        align-items: center;
+        min-height: 34px;
+        border-radius: 999px;
+        padding: 6px 11px;
+        font-size: 13px;
+        font-weight: 800;
+      }
+
+      .link {
+        border: 1px solid transparent;
+        color: var(--muted-brown);
+      }
+
+      .link:hover,
+      .link:focus-visible,
+      .link.active {
+        border-color: rgba(168, 62, 18, 0.22);
+        color: var(--deep-ochre);
+        outline: none;
+      }
+
+      .version {
+        border: 1px solid rgba(168, 62, 18, 0.28);
+        background: rgba(255, 255, 255, 0.42);
+        color: var(--deep-ochre);
+      }
+
+      .workspace {
+        display: grid;
+        grid-template-columns: minmax(292px, 0.86fr) minmax(0, 1.12fr) minmax(292px, 0.9fr);
+        gap: 16px;
+        align-items: start;
+        padding-top: 18px;
+      }
+
+      .panel,
+      .state-button,
+      .source-card,
+      .stat,
+      .boundary,
+      .memory-card,
+      .future-card,
+      .card-preview {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+      }
+
+      .panel {
+        padding: 18px;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        min-height: 28px;
+        margin-bottom: 14px;
+        border-radius: 999px;
+        padding: 4px 10px;
+        background: rgba(214, 90, 31, 0.12);
+        color: var(--deep-ochre);
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        margin-bottom: 12px;
+        font-size: 54px;
+        line-height: 0.98;
+        letter-spacing: 0;
+      }
+
+      h2 {
+        margin-bottom: 12px;
+        font-size: 24px;
+      }
+
+      h3 {
+        margin-bottom: 8px;
+        font-size: 18px;
+      }
+
+      .state-list,
+      .memory-list,
+      .future-grid {
+        display: grid;
+        gap: 10px;
+      }
+
+      .future-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .state-button {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr);
+        gap: 10px;
+        align-items: center;
+        width: 100%;
+        min-height: 66px;
+        padding: 11px;
+        text-align: left;
+        color: inherit;
+      }
+
+      .state-button:hover,
+      .state-button:focus-visible,
+      .state-button.active,
+      .button:hover,
+      .button:focus-visible {
+        border-color: rgba(214, 90, 31, 0.48);
+        outline: 3px solid rgba(214, 90, 31, 0.12);
+      }
+
+      .state-button.active {
+        background: rgba(214, 90, 31, 0.1);
+      }
+
+      .state-icon {
+        display: grid;
+        place-items: center;
+        width: 34px;
+        height: 34px;
+        border-radius: 999px;
+        background: rgba(20, 92, 74, 0.12);
+        color: var(--peacock-green);
+        font-size: 13px;
+        font-weight: 900;
+      }
+
+      .state-button.active .state-icon {
+        background: var(--bhagwa);
+        color: white;
+      }
+
+      .state-button strong {
+        display: block;
+        font-size: 15px;
+      }
+
+      .state-button span {
+        display: block;
+        margin-top: 2px;
+        font-size: 13px;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        border: 1px solid rgba(168, 62, 18, 0.28);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.72);
+        color: var(--ink);
+        padding: 12px;
+      }
+
+      textarea {
+        min-height: 104px;
+        resize: vertical;
+      }
+
+      input:focus,
+      textarea:focus {
+        border-color: var(--bhagwa);
+        outline: 3px solid rgba(214, 90, 31, 0.12);
+      }
+
+      .button-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 10px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 38px;
+        border: 1px solid rgba(168, 62, 18, 0.24);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.48);
+        color: var(--deep-ochre);
+        padding: 8px 11px;
+        font-weight: 850;
+      }
+
+      .button.primary {
+        border-color: var(--bhagwa);
+        background: var(--bhagwa);
+        color: white;
+      }
+
+      .button.secondary {
+        border-color: rgba(20, 92, 74, 0.24);
+        color: var(--peacock-green);
+      }
+
+      .card-preview {
+        position: relative;
+        overflow: hidden;
+        padding: 26px;
+        min-height: 560px;
+        background:
+          radial-gradient(circle at top right, rgba(224, 168, 59, 0.24), transparent 32%),
+          linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(246, 228, 202, 0.74));
+      }
+
+      .card-preview::before {
+        content: "";
+        position: absolute;
+        inset: 14px;
+        border: 1px solid rgba(168, 62, 18, 0.16);
+        border-radius: 8px;
+        pointer-events: none;
+      }
+
+      .card-inner {
+        position: relative;
+        display: grid;
+        gap: 18px;
+        min-height: 504px;
+        align-content: space-between;
+      }
+
+      .card-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      .card-logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        min-width: 0;
+      }
+
+      .card-logo img {
+        width: 58px;
+        height: 58px;
+        border-radius: 8px;
+        object-fit: cover;
+      }
+
+      .card-logo strong {
+        display: block;
+      }
+
+      .card-source-pill {
+        display: inline-flex;
+        align-items: center;
+        min-height: 30px;
+        border-radius: 999px;
+        padding: 5px 10px;
+        background: rgba(20, 92, 74, 0.12);
+        color: var(--peacock-green);
+        font-size: 12px;
+        font-weight: 900;
+        white-space: nowrap;
+      }
+
+      .card-headline {
+        margin: 34px 0 0;
+        font-size: 44px;
+        line-height: 1;
+      }
+
+      .card-action {
+        margin: 0;
+        border-left: 4px solid var(--bhagwa);
+        padding-left: 14px;
+        color: var(--deep-ochre);
+        font-size: 24px;
+        font-weight: 900;
+        line-height: 1.25;
+      }
+
+      .card-foot {
+        display: grid;
+        gap: 8px;
+        padding-top: 16px;
+        border-top: 1px solid rgba(91, 70, 56, 0.16);
+      }
+
+      .source-card {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        margin-top: 14px;
+        padding: 12px;
+        border-left: 4px solid var(--bhagwa);
+        background: var(--panel-strong);
+      }
+
+      .source-card strong {
+        display: block;
+        margin-top: 4px;
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .stat,
+      .boundary,
+      .memory-card,
+      .future-card {
+        padding: 13px;
+      }
+
+      .stat strong {
+        display: block;
+        margin-top: 4px;
+        font-size: 26px;
+        line-height: 1;
+        overflow-wrap: anywhere;
+      }
+
+      .memory-card,
+      .future-card {
+        background: rgba(255, 255, 255, 0.46);
+      }
+
+      .memory-card strong,
+      .future-card strong {
+        display: block;
+        margin-bottom: 4px;
+      }
+
+      .memory-card p,
+      .future-card p,
+      .boundary p {
+        margin-bottom: 0;
+      }
+
+      .boundary {
+        margin-top: 14px;
+        border-style: dashed;
+        background: rgba(255, 255, 255, 0.34);
+      }
+
+      .section {
+        margin-top: 16px;
+        padding-top: 16px;
+        border-top: 1px solid var(--line);
+      }
+
+      .summary-output {
+        min-height: 132px;
+        margin-top: 10px;
+      }
+
+      [hidden] {
+        display: none !important;
+      }
+
+      @media (max-width: 1120px) {
+        .workspace {
+          grid-template-columns: minmax(292px, 0.92fr) minmax(0, 1.08fr);
+        }
+
+        .memory-panel {
+          grid-column: 1 / -1;
+        }
+      }
+
+      @media (max-width: 780px) {
+        .page {
+          width: min(100% - 24px, 1240px);
+        }
+
+        .topbar {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .nav {
+          justify-content: flex-start;
+        }
+
+        .workspace,
+        .source-card,
+        .stats-grid,
+        .future-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .card-preview {
+          min-height: 520px;
+          padding: 20px;
+        }
+
+        .card-inner {
+          min-height: 478px;
+        }
+
+        .card-top {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        h1 {
+          font-size: 42px;
+        }
+
+        .card-headline {
+          font-size: 36px;
+        }
+
+        .card-action {
+          font-size: 21px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top" aria-label="VedaPath AI home">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
+          <div>
+            <strong>VedaPath AI</strong>
+            <span>Calm card studio</span>
+          </div>
+        </a>
+        <nav class="nav" aria-label="Project links">
+          <a class="link" href="build-status.html">Build</a>
+          <a class="link" href="brand/brand-board.html">Brand</a>
+          <a class="link" href="blueprint.html">Blueprint</a>
+          <a class="link" href="calm.html">Calm</a>
+          <a class="link" href="daily.html">Daily</a>
+          <a class="link" href="practice.html">Practice</a>
+          <a class="link" href="library.html">Library</a>
+          <a class="link" href="path.html">Path</a>
+          <a class="link" href="compass.html">Compass</a>
+          <a class="link active" href="card.html">Card</a>
+          <span class="version">v0.2.7 card</span>
+        </nav>
+      </header>
+
+      <section class="workspace" aria-label="Calm Card Studio workspace">
+        <aside class="panel">
+          <span class="eyebrow">Make it shareable</span>
+          <h1>A calm card people can carry.</h1>
+          <p class="muted">Turn one source-backed reflection into a beautiful card for personal use, copying, or launch sharing.</p>
+
+          <div class="state-list" aria-label="Card state options">
+            <button class="state-button active" type="button" data-state="restless">
+              <span class="state-icon">1</span>
+              <span><strong>Restless</strong><span>Use action to settle attention.</span></span>
+            </button>
+            <button class="state-button" type="button" data-state="overwhelmed">
+              <span class="state-icon">2</span>
+              <span><strong>Overwhelmed</strong><span>Reduce the field before choosing.</span></span>
+            </button>
+            <button class="state-button" type="button" data-state="clarity">
+              <span class="state-icon">3</span>
+              <span><strong>Seeking clarity</strong><span>Name the question before more noise.</span></span>
+            </button>
+            <button class="state-button" type="button" data-state="courage">
+              <span class="state-icon">4</span>
+              <span><strong>Need courage</strong><span>Return to the work you can touch.</span></span>
+            </button>
+          </div>
+
+          <div class="section">
+            <label class="small" for="cardLine">Personal card line</label>
+            <textarea id="cardLine">Today I will do one small duty slowly and cleanly.</textarea>
+          </div>
+
+          <div class="section">
+            <label class="small" for="cardName">Optional name</label>
+            <input id="cardName" type="text" value="For today" maxlength="36">
+            <div class="button-row">
+              <button class="button primary" id="saveCard" type="button">Save Card</button>
+              <button class="button secondary" id="copyCard" type="button">Copy Text</button>
+              <button class="button" id="downloadCard" type="button">Download PNG</button>
+            </div>
+            <textarea class="summary-output" id="cardSummary" readonly hidden aria-label="Prepared calm card text"></textarea>
+          </div>
+        </aside>
+
+        <section class="panel" aria-live="polite">
+          <span class="eyebrow">Card preview</span>
+          <div class="card-preview" id="cardPreview" aria-label="Calm card preview">
+            <div class="card-inner">
+              <div class="card-top">
+                <div class="card-logo">
+                  <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI calm card logo">
+                  <div>
+                    <strong>VedaPath AI</strong>
+                    <span class="card-meta" id="previewName">For today</span>
+                  </div>
+                </div>
+                <span class="card-source-pill" id="previewFamily">Bhagavad Gita | Smriti</span>
+              </div>
+
+              <div>
+                <h1 class="card-headline" id="previewTitle">Steady action before inner noise.</h1>
+                <p class="card-action" id="previewAction">Today I will do one small duty slowly and cleanly.</p>
+              </div>
+
+              <div class="card-foot">
+                <strong id="previewSource">Bhagavad Gita 2.48</strong>
+                <span class="card-meta" id="previewQuestion">Question: What can I do calmly today?</span>
+                <span class="card-boundary">Reflection support, not a command. Let us look at the source first.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="source-card" aria-label="Calm card source card">
+            <div>
+              <span>Source candidate</span>
+              <strong id="sourceCitation">Bhagavad Gita 2.48</strong>
+            </div>
+            <div>
+              <span>Text family</span>
+              <strong id="sourceFamily">Bhagavad Gita | Smriti</strong>
+            </div>
+            <div>
+              <span>Question</span>
+              <strong id="sourceQuestion">What can I do calmly today?</strong>
+            </div>
+            <div>
+              <span>Boundary</span>
+              <strong>Reflection, not prescription.</strong>
+            </div>
+          </div>
+        </section>
+
+        <aside class="panel memory-panel">
+          <span class="eyebrow">Local card memory</span>
+          <h2>Your Calm Cards</h2>
+          <p class="muted">Saved cards stay only in this browser. This tests a launch habit before accounts, sync, or publishing tools exist.</p>
+
+          <div class="stats-grid">
+            <article class="stat">
+              <span>Saved cards</span>
+              <strong id="cardCount">0</strong>
+            </article>
+            <article class="stat">
+              <span>Last family</span>
+              <strong id="lastFamily">None</strong>
+            </article>
+          </div>
+
+          <div class="section memory-list" id="cardList"></div>
+
+          <div class="button-row">
+            <button class="button" id="clearCards" type="button">Clear Cards</button>
+            <a class="button secondary" href="compass.html">Open Compass</a>
+          </div>
+
+          <section class="boundary">
+            <h2>Sharing Boundary</h2>
+            <p>Cards are personal reflections. They should not be treated as therapy, ritual instruction, diagnosis, or a universal command for someone else.</p>
+          </section>
+        </aside>
+      </section>
+
+      <section class="section" aria-label="Calm card future">
+        <h2>What This Unlocks</h2>
+        <div class="future-grid">
+          <article class="future-card">
+            <strong>Launch artifact</strong>
+            <p>People can feel the brand in one shareable object instead of reading a product description.</p>
+          </article>
+          <article class="future-card">
+            <strong>Source-first sharing</strong>
+            <p>The source, family, and boundary travel with the calm action.</p>
+          </article>
+          <article class="future-card">
+            <strong>Personal habit</strong>
+            <p>The same card can become a daily reminder, practice handoff, or future account artifact.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <canvas id="exportCanvas" width="1080" height="1350" hidden></canvas>
+
+    <script>
+      const cardStates = {
+        restless: {
+          label: "Restless",
+          title: "Steady action before inner noise.",
+          source: "Bhagavad Gita 2.48",
+          family: "Bhagavad Gita | Smriti",
+          question: "What can I do calmly today?",
+          action: "Today I will do one small duty slowly and cleanly."
+        },
+        overwhelmed: {
+          label: "Overwhelmed",
+          title: "Gather attention before the day gathers you.",
+          source: "Katha Upanishad 1.3.3-9",
+          family: "Upanishad | Shruti",
+          question: "What is pulling my attention hardest?",
+          action: "Today I will remove one input before I choose the next step."
+        },
+        clarity: {
+          label: "Seeking clarity",
+          title: "Ask what kind of knowing this needs.",
+          source: "Mundaka Upanishad 1.1.4-5",
+          family: "Upanishad | Shruti",
+          question: "Is this about facts, meaning, or priority?",
+          action: "Today I will name the real question before collecting more noise."
+        },
+        courage: {
+          label: "Need courage",
+          title: "Return to the work you can touch.",
+          source: "Bhagavad Gita 2.47",
+          family: "Bhagavad Gita | Smriti",
+          question: "What action is mine today?",
+          action: "Today I will begin for five focused minutes and let the future stay future."
+        }
+      };
+
+      const storageKey = "vedapath.calmCards.v1";
+      const stateButtons = [...document.querySelectorAll(".state-button")];
+      const cardLine = document.querySelector("#cardLine");
+      const cardName = document.querySelector("#cardName");
+      const saveCard = document.querySelector("#saveCard");
+      const copyCard = document.querySelector("#copyCard");
+      const downloadCard = document.querySelector("#downloadCard");
+      const clearCards = document.querySelector("#clearCards");
+      const cardSummary = document.querySelector("#cardSummary");
+      let activeState = "restless";
+
+      function readCards() {
+        try {
+          const parsed = JSON.parse(localStorage.getItem(storageKey) || "[]");
+          return Array.isArray(parsed) ? parsed : [];
+        } catch {
+          return [];
+        }
+      }
+
+      function writeCards(cards) {
+        localStorage.setItem(storageKey, JSON.stringify(cards.slice(0, 24)));
+      }
+
+      function currentCard() {
+        const state = cardStates[activeState];
+        return {
+          ...state,
+          name: cardName.value.trim() || "For today",
+          action: cardLine.value.trim() || state.action
+        };
+      }
+
+      function renderCard() {
+        const card = currentCard();
+        document.querySelector("#previewName").textContent = card.name;
+        document.querySelector("#previewFamily").textContent = card.family;
+        document.querySelector("#previewTitle").textContent = card.title;
+        document.querySelector("#previewAction").textContent = card.action;
+        document.querySelector("#previewSource").textContent = card.source;
+        document.querySelector("#previewQuestion").textContent = `Question: ${card.question}`;
+        document.querySelector("#sourceCitation").textContent = card.source;
+        document.querySelector("#sourceFamily").textContent = card.family;
+        document.querySelector("#sourceQuestion").textContent = card.question;
+      }
+
+      function renderState(key) {
+        activeState = key;
+        const state = cardStates[key];
+        cardLine.value = state.action;
+        stateButtons.forEach((button) => {
+          button.classList.toggle("active", button.dataset.state === key);
+        });
+        saveCard.textContent = "Save Card";
+        copyCard.textContent = "Copy Text";
+        downloadCard.textContent = "Download PNG";
+        renderCard();
+      }
+
+      function saveCurrentCard() {
+        const card = currentCard();
+        const now = new Date();
+        writeCards([{
+          id: `${now.getTime()}`,
+          displayDate: now.toLocaleDateString(undefined, { month: "short", day: "numeric" }),
+          state: activeState,
+          title: card.title,
+          source: card.source,
+          family: card.family,
+          action: card.action,
+          name: card.name
+        }, ...readCards()]);
+        saveCard.textContent = "Card Saved";
+        renderMemory();
+      }
+
+      function cardText() {
+        const card = currentCard();
+        return [
+          "VedaPath Calm Card",
+          card.title,
+          `Source: ${card.source}`,
+          `Family: ${card.family}`,
+          `Question: ${card.question}`,
+          `Action: ${card.action}`,
+          "Boundary: Reflection support, not a command."
+        ].join("\n");
+      }
+
+      function copyCurrentCard() {
+        const text = cardText();
+        cardSummary.value = text;
+        cardSummary.hidden = false;
+
+        const fallbackCopy = () => {
+          const helper = document.createElement("textarea");
+          helper.value = text;
+          helper.setAttribute("readonly", "");
+          helper.style.position = "fixed";
+          helper.style.left = "-9999px";
+          document.body.appendChild(helper);
+          helper.select();
+          const copied = document.execCommand("copy");
+          helper.remove();
+          copyCard.textContent = copied ? "Copied" : "Card Ready";
+        };
+
+        if (navigator.clipboard?.writeText) {
+          navigator.clipboard.writeText(text).then(() => {
+            copyCard.textContent = "Copied";
+          }).catch(fallbackCopy);
+          return;
+        }
+
+        try {
+          fallbackCopy();
+        } catch {
+          copyCard.textContent = "Card Ready";
+        }
+      }
+
+      function drawWrappedText(context, text, x, y, maxWidth, lineHeight, maxLines) {
+        const words = text.split(" ");
+        let line = "";
+        let lines = 0;
+        for (let index = 0; index < words.length; index += 1) {
+          const test = `${line}${words[index]} `;
+          if (context.measureText(test).width > maxWidth && line) {
+            context.fillText(line.trim(), x, y);
+            line = `${words[index]} `;
+            y += lineHeight;
+            lines += 1;
+            if (lines >= maxLines - 1) break;
+          } else {
+            line = test;
+          }
+        }
+        context.fillText(line.trim(), x, y);
+        return y + lineHeight;
+      }
+
+      function downloadCurrentCard() {
+        const card = currentCard();
+        const canvas = document.querySelector("#exportCanvas");
+        const context = canvas.getContext("2d");
+        const logo = new Image();
+        logo.onload = () => drawAndDownload(context, canvas, logo, card);
+        logo.onerror = () => drawAndDownload(context, canvas, null, card);
+        logo.src = "assets/vedapath-3d-logo-concept.png";
+      }
+
+      function drawAndDownload(context, canvas, logo, card) {
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        const gradient = context.createLinearGradient(0, 0, 0, canvas.height);
+        gradient.addColorStop(0, "#fff7ea");
+        gradient.addColorStop(1, "#f3dcc0");
+        context.fillStyle = gradient;
+        context.fillRect(0, 0, canvas.width, canvas.height);
+
+        context.strokeStyle = "rgba(168, 62, 18, 0.24)";
+        context.lineWidth = 4;
+        context.strokeRect(72, 72, 936, 1206);
+
+        if (logo) {
+          context.drawImage(logo, 94, 94, 130, 130);
+        }
+        context.fillStyle = "#1f1a17";
+        context.font = "800 34px Inter, system-ui, sans-serif";
+        context.fillText("VedaPath AI", 246, 140);
+        context.fillStyle = "#5b4638";
+        context.font = "26px Inter, system-ui, sans-serif";
+        context.fillText(card.name, 246, 178);
+
+        context.fillStyle = "#145c4a";
+        context.font = "800 24px Inter, system-ui, sans-serif";
+        context.fillText(card.family, 94, 300);
+
+        context.fillStyle = "#1f1a17";
+        context.font = "900 78px Inter, system-ui, sans-serif";
+        drawWrappedText(context, card.title, 94, 430, 860, 86, 4);
+
+        context.fillStyle = "#d65a1f";
+        context.fillRect(94, 770, 10, 220);
+        context.fillStyle = "#a83e12";
+        context.font = "900 44px Inter, system-ui, sans-serif";
+        drawWrappedText(context, card.action, 126, 824, 820, 58, 4);
+
+        context.fillStyle = "#1f1a17";
+        context.font = "800 30px Inter, system-ui, sans-serif";
+        context.fillText(card.source, 94, 1138);
+        context.fillStyle = "#5b4638";
+        context.font = "24px Inter, system-ui, sans-serif";
+        drawWrappedText(context, `Question: ${card.question}`, 94, 1186, 860, 34, 2);
+        context.fillText("Reflection support, not a command. Let us look at the source first.", 94, 1250);
+
+        const link = document.createElement("a");
+        link.href = canvas.toDataURL("image/png");
+        link.download = "vedapath-calm-card.png";
+        link.click();
+        downloadCard.textContent = "PNG Ready";
+      }
+
+      function renderMemory() {
+        const cards = readCards();
+        document.querySelector("#cardCount").textContent = cards.length;
+        document.querySelector("#lastFamily").textContent = cards[0]?.family || "None";
+        document.querySelector("#cardList").innerHTML = cards.length ? cards.slice(0, 4).map((card) => `
+          <article class="memory-card">
+            <strong>${card.displayDate} | ${card.source}</strong>
+            <p>${card.action}</p>
+          </article>
+        `).join("") : `
+          <article class="memory-card">
+            <strong>No saved cards yet</strong>
+            <p>Save one card and this local preview memory will begin.</p>
+          </article>
+        `;
+      }
+
+      stateButtons.forEach((button) => {
+        button.addEventListener("click", () => renderState(button.dataset.state));
+      });
+
+      cardLine.addEventListener("input", renderCard);
+      cardName.addEventListener("input", renderCard);
+      saveCard.addEventListener("click", saveCurrentCard);
+      copyCard.addEventListener("click", copyCurrentCard);
+      downloadCard.addEventListener("click", downloadCurrentCard);
+      clearCards.addEventListener("click", () => {
+        if (!readCards().length) return;
+        const shouldClear = window.confirm("Clear this browser's local calm cards?");
+        if (!shouldClear) return;
+        localStorage.removeItem(storageKey);
+        renderMemory();
+      });
+
+      renderCard();
+      renderMemory();
+    </script>
+  </body>
+</html>

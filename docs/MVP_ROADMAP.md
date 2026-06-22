@@ -23,7 +23,7 @@ Show the product experience without a live LLM backend.
 
 Status:
 
-Completed in v0.2.6.
+Completed in v0.2.7.
 
 Core screens:
 
@@ -39,6 +39,7 @@ Core screens:
 - Source Library
 - Source Path Builder
 - Calm Compass
+- Calm Card Studio
 
 Success criteria:
 
@@ -143,6 +144,7 @@ Must have:
 - prototype source library and shelf
 - prototype source path builder and local progress
 - calm compass routing from explicit present-state choice
+- calm card studio for shareable source-backed reflections
 
 Should have:
 
@@ -154,6 +156,7 @@ Should have:
 - Source Library
 - Source Path Builder
 - Calm Compass
+- Calm Card Studio
 
 Later:
 

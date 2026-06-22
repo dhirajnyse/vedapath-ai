@@ -61,3 +61,9 @@ The path must remain a learning scaffold. It should not become hidden profiling,
 Calm Compass gives users one front door when life feels loud. A user chooses a present state, receives one source candidate, one reflection question, one carry action, and a route to the best next VedaPath room.
 
 The compass reads only deliberate browser-local prototype signals from Calm, Daily, Practice, Library, and Path. It must not become hidden profiling, therapy, emergency support, ritual instruction, or a guru voice.
+
+## v0.2.7 Calm Card Studio
+
+Calm Card Studio turns one source-backed action into a visual card for personal carrying, copying, or launch sharing.
+
+The card must keep source, family, and boundary visible. It should make the product memorable without becoming advice, therapy, ritual instruction, diagnosis, or a universal command.

@@ -26,6 +26,7 @@ It lets the user:
 - copy a plain-text path handoff
 - send the current source into Source Practice through `vedapath.library.launch.v1`
 - receive a calm-compass route-in when the user wants one source-backed next step
+- send the next step toward Calm Card Studio as a personal visual reminder
 
 ## Future Production Fields
 

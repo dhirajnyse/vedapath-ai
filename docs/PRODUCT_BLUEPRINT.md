@@ -15,6 +15,7 @@ It helps users move from curiosity to understanding through:
 - searchable source library
 - source path builder with explicit user intention
 - calm compass for one source-backed next action
+- calm card studio for shareable source-backed reflections
 - user and scholar correction loops
 
 ## What It Is
@@ -211,6 +212,20 @@ It should:
 - send the selected source into guided practice when helpful
 
 The compass must never pretend to diagnose, command, prescribe, or profile the user. It should slow the moment down and offer the next source-backed action.
+
+### 12. Calm Card Studio
+
+Calm Card Studio turns one source-backed reflection into a visual card.
+
+It should:
+
+- preserve source citation, text family, and boundary on the card
+- let users write one personal action without turning it into advice for others
+- support copy text and image export for launch sharing
+- save prototype cards only in browser-local storage
+- keep the brand calm, Bhagwa-led, and source-first
+
+The card studio must not let shareability erase accuracy. Every card should make clear that it is reflection support, not a command, diagnosis, therapy, ritual instruction, or universal teaching.
 
 ## Product Personality
 
