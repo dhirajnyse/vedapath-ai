@@ -45,3 +45,7 @@ This is not production memory. It is device-local proof of the learning loop unt
 Source Practice turns Calm Path into a timed guided workflow. The user chooses a state, starts a one, three, or five minute practice, moves through Arrive, Read, Reflect, and Carry, then can save a completion in device-local memory.
 
 The source card must remain visible. The source candidate, text family, reflection question, and carry action should stay separate from therapy, ritual instruction, or personal authority claims.
+
+## v0.2.4 Source Library
+
+Source Library gives Calm Path and Source Practice a searchable source layer. A user can find a source candidate, save it to a device-local shelf, and send it into Practice while preserving citation, text family, and boundary.

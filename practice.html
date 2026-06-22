@@ -584,7 +584,8 @@
           <a class="link" href="calm.html">Calm</a>
           <a class="link" href="daily.html">Daily</a>
           <a class="link active" href="practice.html">Practice</a>
-          <span class="version">v0.2.3 practice</span>
+          <a class="link" href="library.html">Library</a>
+          <span class="version">v0.2.4 library</span>
         </nav>
       </header>
 
@@ -831,6 +832,7 @@
         carry: "Carry"
       };
       const storageKey = "vedapath.practice.v1";
+      const launchKey = "vedapath.library.launch.v1";
       const stateButtons = [...document.querySelectorAll(".state-button")];
       const paceButtons = [...document.querySelectorAll(".pace-button")];
       const stepCards = [...document.querySelectorAll(".step-card")];
@@ -851,6 +853,42 @@
       let elapsed = 0;
       let timerId = null;
       let running = false;
+
+      function applyLibraryLaunch() {
+        let launch = null;
+        try {
+          launch = JSON.parse(localStorage.getItem(launchKey) || "null");
+        } catch {
+          launch = null;
+        }
+        if (!launch?.citation) return;
+
+        practiceStates.library = {
+          title: launch.title || "Source-guided practice.",
+          source: launch.citation,
+          family: launch.family || "Source candidate",
+          question: launch.question || "What does this source ask me to notice?",
+          carry: launch.carry || "Choose one grounded action and keep the boundary visible.",
+          note: `I will practice with ${launch.citation} and keep the source boundary clear.`,
+          instructions: {
+            arrive: "Arrive with the source already chosen. Name the state without making it your whole identity.",
+            read: `Read ${launch.citation} as ${launch.family || "a source candidate"}. Keep category and boundary visible.`,
+            reflect: launch.question || "Ask one source-shaped question without overreaching.",
+            carry: launch.carry || "Leave with one grounded action that can survive real life."
+          }
+        };
+
+        activeState = "library";
+        const state = practiceStates.library;
+        document.querySelector("#practiceTitle").textContent = state.title;
+        document.querySelector("#practiceSource").textContent = state.source;
+        document.querySelector("#practiceFamily").textContent = state.family;
+        document.querySelector("#practiceQuestion").textContent = state.question;
+        document.querySelector("#practiceCarry").textContent = state.carry;
+        practiceNote.value = state.note;
+        stateButtons.forEach((button) => button.classList.remove("active"));
+        resetSession(false);
+      }
 
       function readSessions() {
         try {
@@ -1096,6 +1134,7 @@
         renderMemory();
       });
 
+      applyLibraryLaunch();
       renderTimer();
       renderMemory();
     </script>

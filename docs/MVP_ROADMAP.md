@@ -23,7 +23,7 @@ Show the product experience without a live LLM backend.
 
 Status:
 
-Completed in v0.2.3.
+Completed in v0.2.4.
 
 Core screens:
 
@@ -36,6 +36,7 @@ Core screens:
 - Calm Path
 - Daily Calm Loop
 - Source Practice
+- Source Library
 
 Success criteria:
 
@@ -137,6 +138,7 @@ Must have:
 - Claim Checker
 - simple learning path
 - calm and practice boundary model
+- prototype source library and shelf
 
 Should have:
 
@@ -145,6 +147,7 @@ Should have:
 - correction pipeline
 - Daily Calm Loop
 - Source Practice
+- Source Library
 
 Later:
 

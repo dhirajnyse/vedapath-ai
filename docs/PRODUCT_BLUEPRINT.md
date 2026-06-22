@@ -12,6 +12,7 @@ It helps users move from curiosity to understanding through:
 - multiple interpretation views
 - guided learning paths
 - source-backed calm and practice flows
+- searchable source library
 - user and scholar correction loops
 
 ## What It Is
@@ -164,6 +165,22 @@ A bounded reflection mode for everyday steadiness:
 - save only deliberate practice history with consent
 
 This feature must never become therapy, medical advice, emergency support, ritual instruction, or a guru voice.
+
+### 9. Source Library
+
+A curated source-card library can power Q&A, calm reflection, mantra study, claim checking, practice, and retrieval.
+
+Every record should include:
+
+- citation
+- text family
+- source status
+- use tags
+- confidence or pramana level
+- boundary and overclaim warning
+- reviewer metadata before production
+
+The library should make it easy to find a source before asking the AI for an answer.
 
 ## Product Personality
 

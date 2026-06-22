@@ -1,0 +1,954 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VedaPath Source Library</title>
+    <style>
+      :root {
+        --bhagwa: #d65a1f;
+        --deep-ochre: #a83e12;
+        --sacred-gold: #e0a83b;
+        --warm-ivory: #fff7ea;
+        --ink: #1f1a17;
+        --muted-brown: #5b4638;
+        --peacock-green: #145c4a;
+        --deep-indigo: #29335c;
+        --line: rgba(91, 70, 56, 0.16);
+        --panel: rgba(255, 255, 255, 0.66);
+        --panel-strong: rgba(255, 255, 255, 0.88);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--warm-ivory);
+        color: var(--ink);
+        font-family: Inter, "IBM Plex Sans", system-ui, sans-serif;
+        line-height: 1.5;
+      }
+
+      button,
+      input,
+      textarea {
+        font: inherit;
+      }
+
+      button {
+        cursor: pointer;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .page {
+        width: min(1240px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 22px 0 48px;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding-bottom: 18px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        min-width: 0;
+      }
+
+      .brand img {
+        width: 50px;
+        height: 50px;
+        border-radius: 8px;
+        object-fit: cover;
+      }
+
+      .brand strong {
+        display: block;
+        font-size: 18px;
+      }
+
+      .brand span,
+      .muted,
+      .small,
+      .source-card p,
+      .detail-card p,
+      .shelf-card p,
+      .stat span,
+      .boundary p,
+      .future-card p {
+        color: var(--muted-brown);
+      }
+
+      .brand span,
+      .small,
+      .stat span {
+        font-size: 13px;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .link,
+      .version {
+        display: inline-flex;
+        align-items: center;
+        min-height: 34px;
+        border-radius: 999px;
+        padding: 6px 11px;
+        font-size: 13px;
+        font-weight: 800;
+      }
+
+      .link {
+        border: 1px solid transparent;
+        color: var(--muted-brown);
+      }
+
+      .link:hover,
+      .link:focus-visible,
+      .link.active {
+        border-color: rgba(168, 62, 18, 0.22);
+        color: var(--deep-ochre);
+        outline: none;
+      }
+
+      .version {
+        border: 1px solid rgba(168, 62, 18, 0.28);
+        background: rgba(255, 255, 255, 0.42);
+        color: var(--deep-ochre);
+      }
+
+      .workspace {
+        display: grid;
+        grid-template-columns: minmax(280px, 0.78fr) minmax(0, 1.28fr) minmax(300px, 0.86fr);
+        gap: 16px;
+        align-items: start;
+        padding-top: 18px;
+      }
+
+      .panel,
+      .source-card,
+      .detail-card,
+      .shelf-card,
+      .stat,
+      .boundary,
+      .future-card {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+      }
+
+      .panel {
+        padding: 18px;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        min-height: 28px;
+        margin-bottom: 14px;
+        border-radius: 999px;
+        padding: 4px 10px;
+        background: rgba(214, 90, 31, 0.12);
+        color: var(--deep-ochre);
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        margin-bottom: 12px;
+        font-size: clamp(38px, 4vw, 58px);
+        line-height: 0.98;
+        letter-spacing: 0;
+      }
+
+      h2 {
+        margin-bottom: 12px;
+        font-size: 24px;
+      }
+
+      h3 {
+        margin-bottom: 8px;
+        font-size: 18px;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        border: 1px solid rgba(168, 62, 18, 0.28);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.72);
+        color: var(--ink);
+        padding: 12px;
+      }
+
+      input:focus,
+      textarea:focus {
+        border-color: var(--bhagwa);
+        outline: 3px solid rgba(214, 90, 31, 0.12);
+      }
+
+      textarea {
+        min-height: 132px;
+        resize: vertical;
+      }
+
+      .button-row,
+      .filter-grid,
+      .tag-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .filter-grid {
+        margin-top: 12px;
+      }
+
+      .button,
+      .filter-button,
+      .tag {
+        display: inline-flex;
+        align-items: center;
+        min-height: 34px;
+        border: 1px solid rgba(168, 62, 18, 0.24);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.48);
+        color: var(--deep-ochre);
+        padding: 7px 10px;
+        font-size: 13px;
+        font-weight: 850;
+      }
+
+      .button {
+        min-height: 38px;
+        font-size: 15px;
+      }
+
+      .button.primary,
+      .filter-button.active {
+        border-color: var(--bhagwa);
+        background: var(--bhagwa);
+        color: white;
+      }
+
+      .button.secondary {
+        border-color: rgba(20, 92, 74, 0.24);
+        color: var(--peacock-green);
+      }
+
+      .button:hover,
+      .button:focus-visible,
+      .filter-button:hover,
+      .filter-button:focus-visible {
+        border-color: rgba(214, 90, 31, 0.48);
+        outline: 3px solid rgba(214, 90, 31, 0.12);
+      }
+
+      .source-list,
+      .shelf-list,
+      .future-grid {
+        display: grid;
+        gap: 10px;
+      }
+
+      .source-card {
+        width: 100%;
+        padding: 14px;
+        text-align: left;
+        color: inherit;
+      }
+
+      .source-card.active {
+        border-color: rgba(214, 90, 31, 0.48);
+        background: rgba(214, 90, 31, 0.08);
+      }
+
+      .source-card h3 {
+        margin-bottom: 4px;
+      }
+
+      .source-card p {
+        margin-bottom: 10px;
+      }
+
+      .tag {
+        min-height: 28px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.52);
+      }
+
+      .tag.green {
+        border-color: rgba(20, 92, 74, 0.2);
+        color: var(--peacock-green);
+      }
+
+      .detail-stage {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 18px;
+        align-items: center;
+        margin-bottom: 16px;
+      }
+
+      .mark {
+        display: grid;
+        place-items: center;
+        width: 132px;
+        height: 132px;
+        border: 1px solid rgba(168, 62, 18, 0.18);
+        border-radius: 8px;
+        background: linear-gradient(180deg, #fff9ef 0%, #f6e4ca 100%);
+        overflow: hidden;
+      }
+
+      .mark img {
+        width: 104px;
+        height: auto;
+      }
+
+      .detail-grid,
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .detail-card {
+        padding: 14px;
+        background: rgba(255, 255, 255, 0.5);
+      }
+
+      .detail-card.strong {
+        border-left: 4px solid var(--bhagwa);
+        background: var(--panel-strong);
+      }
+
+      .detail-card strong,
+      .shelf-card strong {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      .detail-card p,
+      .shelf-card p {
+        margin-bottom: 0;
+      }
+
+      .stats-grid {
+        margin-top: 14px;
+      }
+
+      .stat {
+        padding: 13px;
+      }
+
+      .stat strong {
+        display: block;
+        margin-top: 4px;
+        font-size: 26px;
+        line-height: 1;
+      }
+
+      .shelf-card {
+        padding: 13px;
+        background: rgba(255, 255, 255, 0.48);
+      }
+
+      .boundary {
+        margin-top: 14px;
+        padding: 13px;
+        border-style: dashed;
+        background: rgba(255, 255, 255, 0.34);
+      }
+
+      .section {
+        margin-top: 16px;
+        padding-top: 16px;
+        border-top: 1px solid var(--line);
+      }
+
+      .summary-output {
+        margin-top: 10px;
+      }
+
+      [hidden] {
+        display: none !important;
+      }
+
+      @media (max-width: 1120px) {
+        .workspace {
+          grid-template-columns: minmax(280px, 0.84fr) minmax(0, 1.16fr);
+        }
+
+        .shelf-panel {
+          grid-column: 1 / -1;
+        }
+      }
+
+      @media (max-width: 780px) {
+        .page {
+          width: min(100% - 24px, 1240px);
+        }
+
+        .topbar {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .nav {
+          justify-content: flex-start;
+        }
+
+        .workspace,
+        .detail-stage,
+        .detail-grid,
+        .stats-grid,
+        .future-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .mark {
+          width: 100%;
+          min-height: 148px;
+        }
+
+        h1 {
+          font-size: clamp(34px, 10vw, 48px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top" aria-label="VedaPath AI home">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
+          <div>
+            <strong>VedaPath AI</strong>
+            <span>Source library</span>
+          </div>
+        </a>
+        <nav class="nav" aria-label="Project links">
+          <a class="link" href="build-status.html">Build</a>
+          <a class="link" href="brand/brand-board.html">Brand</a>
+          <a class="link" href="blueprint.html">Blueprint</a>
+          <a class="link" href="calm.html">Calm</a>
+          <a class="link" href="daily.html">Daily</a>
+          <a class="link" href="practice.html">Practice</a>
+          <a class="link active" href="library.html">Library</a>
+          <span class="version">v0.2.4 library</span>
+        </nav>
+      </header>
+
+      <section class="workspace" aria-label="Source library workspace">
+        <aside class="panel">
+          <span class="eyebrow">Find first</span>
+          <h1>Find the source before the answer.</h1>
+          <p class="muted">A calm prototype library of source candidates for learning, claim checking, and source-backed practice.</p>
+
+          <div class="section">
+            <label class="small" for="sourceSearch">Search sources</label>
+            <input id="sourceSearch" type="search" value="" placeholder="Try Gita, calm, Gayatri, Oppenheimer">
+          </div>
+
+          <div class="section">
+            <h2>Filters</h2>
+            <div class="filter-grid" aria-label="Source filters">
+              <button class="filter-button active" type="button" data-filter="All">All</button>
+              <button class="filter-button" type="button" data-filter="Veda">Veda</button>
+              <button class="filter-button" type="button" data-filter="Upanishad">Upanishad</button>
+              <button class="filter-button" type="button" data-filter="Gita">Gita</button>
+              <button class="filter-button" type="button" data-filter="Calm">Calm</button>
+              <button class="filter-button" type="button" data-filter="Claim">Claim</button>
+              <button class="filter-button" type="button" data-filter="Practice">Practice</button>
+              <button class="filter-button" type="button" data-filter="Mantra">Mantra</button>
+            </div>
+          </div>
+
+          <div class="section">
+            <h2>Library Boundary</h2>
+            <p class="muted">These are prototype records. Before production, each needs verified Sanskrit, translation policy, reviewer notes, and source licensing.</p>
+          </div>
+        </aside>
+
+        <section class="panel">
+          <div class="detail-stage">
+            <div>
+              <span class="eyebrow">Selected source</span>
+              <h1 id="detailTitle">Steadiness in action.</h1>
+              <p class="muted" id="detailSummary">A source candidate for reflecting on balance in action, responsibility, and outcome attachment without turning the AI into an authority.</p>
+            </div>
+            <div class="mark" aria-label="VedaPath source library mark">
+              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI source library logo mark">
+            </div>
+          </div>
+
+          <div class="detail-grid">
+            <article class="detail-card strong">
+              <strong>Source candidate</strong>
+              <p id="detailCitation">Bhagavad Gita 2.48</p>
+            </article>
+            <article class="detail-card">
+              <strong>Text family</strong>
+              <p id="detailFamily">Bhagavad Gita | Smriti</p>
+            </article>
+            <article class="detail-card">
+              <strong>Useful for</strong>
+              <p id="detailUses">Calm, Practice</p>
+            </article>
+            <article class="detail-card">
+              <strong>Status</strong>
+              <p id="detailStatus">Prototype candidate</p>
+            </article>
+            <article class="detail-card">
+              <strong>Practice question</strong>
+              <p id="detailQuestion">What can I do with steadiness today?</p>
+            </article>
+            <article class="detail-card">
+              <strong>Carry action</strong>
+              <p id="detailCarry">Do one small duty slowly and cleanly.</p>
+            </article>
+          </div>
+
+          <section class="section">
+            <h2>Boundary</h2>
+            <p class="muted" id="detailBoundary">Do not turn this into therapy, ritual instruction, or a promise that one passage removes suffering.</p>
+            <div class="button-row" style="margin-top: 12px;">
+              <button class="button primary" id="addShelf" type="button">Add to Shelf</button>
+              <button class="button secondary" id="sendPractice" type="button">Send to Practice</button>
+              <a class="button" href="practice.html">Open Practice</a>
+            </div>
+          </section>
+
+          <section class="section">
+            <h2 id="resultCount">9 source candidates</h2>
+            <div class="source-list" id="sourceList"></div>
+          </section>
+        </section>
+
+        <aside class="panel shelf-panel">
+          <span class="eyebrow">Device-local shelf</span>
+          <h2>Your Source Shelf</h2>
+          <p class="muted">Save sources for this browser only. A future version should use explicit accounts, export controls, and reviewed records.</p>
+
+          <div class="stats-grid">
+            <article class="stat">
+              <span>Saved sources</span>
+              <strong id="shelfCount">0</strong>
+            </article>
+            <article class="stat">
+              <span>Selected family</span>
+              <strong id="selectedFamily">Gita</strong>
+            </article>
+          </div>
+
+          <div class="shelf-list section" id="shelfList"></div>
+
+          <div class="button-row">
+            <button class="button secondary" id="copyShelf" type="button">Copy Shelf</button>
+            <button class="button" id="clearShelf" type="button">Clear Shelf</button>
+          </div>
+          <textarea class="summary-output" id="shelfSummary" readonly hidden aria-label="Prepared source shelf"></textarea>
+
+          <section class="boundary">
+            <h2>Trust Boundary</h2>
+            <p>This library is a product prototype, not a canonical scripture database. It organizes source candidates for future review.</p>
+          </section>
+        </aside>
+      </section>
+
+      <section class="section" aria-label="Library future">
+        <h2>What This Unlocks</h2>
+        <div class="future-grid">
+          <article class="future-card">
+            <strong>Retrieval-ready records</strong>
+            <p>The next phase can turn these cards into a structured source schema and search corpus.</p>
+          </article>
+          <article class="future-card">
+            <strong>Practice handoff</strong>
+            <p>A user can move from source discovery into a short guided practice without losing citation context.</p>
+          </article>
+          <article class="future-card">
+            <strong>Review discipline</strong>
+            <p>Prototype records stay clearly marked until Sanskrit, translation, and reviewer fields are complete.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const sourceRecords = [
+        {
+          id: "gita-2-48",
+          title: "Steadiness in action",
+          citation: "Bhagavad Gita 2.48",
+          family: "Bhagavad Gita | Smriti",
+          familyShort: "Gita",
+          uses: ["Calm", "Practice"],
+          status: "Prototype candidate",
+          summary: "A source candidate for reflecting on balance in action, responsibility, and outcome attachment without turning the AI into an authority.",
+          question: "What can I do with steadiness today?",
+          carry: "Do one small duty slowly and cleanly.",
+          boundary: "Do not turn this into therapy, ritual instruction, or a promise that one passage removes suffering.",
+          stateKey: "restless"
+        },
+        {
+          id: "gita-2-47",
+          title: "Action and outcome",
+          citation: "Bhagavad Gita 2.47",
+          family: "Bhagavad Gita | Smriti",
+          familyShort: "Gita",
+          uses: ["Practice", "Learning"],
+          status: "Prototype candidate",
+          summary: "A source candidate for separating effort, duty, and attachment to outcomes.",
+          question: "What action is mine today?",
+          carry: "Start for five focused minutes without negotiating with the whole future.",
+          boundary: "Do not use this to pressure unsafe action or ignore real constraints.",
+          stateKey: "courage"
+        },
+        {
+          id: "gita-11-32",
+          title: "Oppenheimer quote source",
+          citation: "Bhagavad Gita 11.32",
+          family: "Bhagavad Gita | Smriti",
+          familyShort: "Gita",
+          uses: ["Claim", "Learning"],
+          status: "Prototype candidate",
+          summary: "A source candidate for correcting the common claim that Oppenheimer quoted the four Vedas directly.",
+          question: "What category is the source actually in?",
+          carry: "Name the Gita and the category before explaining the cultural connection.",
+          boundary: "Do not call this a direct quote from the four Vedas.",
+          stateKey: "clarity"
+        },
+        {
+          id: "katha-1-3-3",
+          title: "Chariot of attention",
+          citation: "Katha Upanishad 1.3.3-9",
+          family: "Upanishad | Shruti",
+          familyShort: "Upanishad",
+          uses: ["Calm", "Practice"],
+          status: "Prototype candidate",
+          summary: "A symbolic source candidate for attention, senses, mind, judgment, and direction.",
+          question: "What is pulling my attention hardest?",
+          carry: "Remove one input and choose the next useful step.",
+          boundary: "Use this as a metaphor, not diagnosis or clinical guidance.",
+          stateKey: "overwhelmed"
+        },
+        {
+          id: "mundaka-1-1-4",
+          title: "Two kinds of knowing",
+          citation: "Mundaka Upanishad 1.1.4-5",
+          family: "Upanishad | Shruti",
+          familyShort: "Upanishad",
+          uses: ["Calm", "Learning", "Practice"],
+          status: "Prototype candidate",
+          summary: "A source candidate for sorting practical information, interpretation, and deeper purpose.",
+          question: "Is this about facts, meaning, or priority?",
+          carry: "Write the decision in one sentence and name the missing source.",
+          boundary: "Do not use this to dismiss practical skill, evidence, or expert help.",
+          stateKey: "clarity"
+        },
+        {
+          id: "chandogya-6-8-7",
+          title: "Self and ultimate reality",
+          citation: "Chandogya Upanishad 6.8.7",
+          family: "Upanishad | Shruti",
+          familyShort: "Upanishad",
+          uses: ["Learning", "Claim"],
+          status: "Prototype candidate",
+          summary: "A source candidate for discussing Atman and Brahman with tradition-specific interpretation notes.",
+          question: "Which interpretation layer is being used?",
+          carry: "Label the school or tradition before summarizing the idea.",
+          boundary: "Do not flatten Vedanta differences into one slogan.",
+          stateKey: "clarity"
+        },
+        {
+          id: "rigveda-3-62-10",
+          title: "Gayatri mantra source",
+          citation: "Rigveda 3.62.10",
+          family: "Veda | Shruti",
+          familyShort: "Veda",
+          uses: ["Mantra", "Learning"],
+          status: "Prototype candidate",
+          summary: "A source candidate for future Mantra Lens work with Sanskrit, meter, recitation notes, and tradition boundaries.",
+          question: "What context should accompany the mantra?",
+          carry: "Explain reverently and avoid prescribing practice.",
+          boundary: "Do not flatten pronunciation, ritual, or lineage context.",
+          stateKey: "clarity"
+        },
+        {
+          id: "isha-1",
+          title: "Renunciation and participation",
+          citation: "Isha Upanishad 1",
+          family: "Upanishad | Shruti",
+          familyShort: "Upanishad",
+          uses: ["Learning", "Calm"],
+          status: "Prototype candidate",
+          summary: "A source candidate for holding simplicity, responsibility, and participation without overclaiming.",
+          question: "What can be held lightly today?",
+          carry: "Choose one responsibility without clutching at possession or praise.",
+          boundary: "Do not turn a compact verse into a complete life prescription.",
+          stateKey: "restless"
+        },
+        {
+          id: "taittiriya-2-1-1",
+          title: "Layers of personhood",
+          citation: "Taittiriya Upanishad 2.1.1",
+          family: "Upanishad | Shruti",
+          familyShort: "Upanishad",
+          uses: ["Learning", "Practice"],
+          status: "Prototype candidate",
+          summary: "A source candidate for future guided study around body, breath, mind, understanding, and depth.",
+          question: "Which layer needs attention right now?",
+          carry: "Name one layer and choose one gentle next action.",
+          boundary: "Do not present this as a medical or psychological model.",
+          stateKey: "overwhelmed"
+        }
+      ];
+
+      const shelfKey = "vedapath.sourceShelf.v1";
+      const launchKey = "vedapath.library.launch.v1";
+      const searchInput = document.querySelector("#sourceSearch");
+      const filterButtons = [...document.querySelectorAll(".filter-button")];
+      const sourceList = document.querySelector("#sourceList");
+      const shelfList = document.querySelector("#shelfList");
+      const addShelf = document.querySelector("#addShelf");
+      const sendPractice = document.querySelector("#sendPractice");
+      const copyShelf = document.querySelector("#copyShelf");
+      const clearShelf = document.querySelector("#clearShelf");
+      const shelfSummary = document.querySelector("#shelfSummary");
+      let activeFilter = "All";
+      let selectedId = "gita-2-48";
+
+      function readShelf() {
+        try {
+          const parsed = JSON.parse(localStorage.getItem(shelfKey) || "[]");
+          return Array.isArray(parsed) ? parsed : [];
+        } catch {
+          return [];
+        }
+      }
+
+      function writeShelf(ids) {
+        localStorage.setItem(shelfKey, JSON.stringify([...new Set(ids)].slice(0, 12)));
+      }
+
+      function selectedRecord() {
+        return sourceRecords.find((record) => record.id === selectedId) || sourceRecords[0];
+      }
+
+      function matchesFilter(record) {
+        if (activeFilter === "All") return true;
+        return record.familyShort === activeFilter || record.uses.includes(activeFilter);
+      }
+
+      function matchesSearch(record) {
+        const query = searchInput.value.trim().toLowerCase();
+        if (!query) return true;
+        return [
+          record.title,
+          record.citation,
+          record.family,
+          record.uses.join(" "),
+          record.summary,
+          record.boundary
+        ].join(" ").toLowerCase().includes(query);
+      }
+
+      function renderDetail() {
+        const record = selectedRecord();
+        document.querySelector("#detailTitle").textContent = record.title;
+        document.querySelector("#detailSummary").textContent = record.summary;
+        document.querySelector("#detailCitation").textContent = record.citation;
+        document.querySelector("#detailFamily").textContent = record.family;
+        document.querySelector("#detailUses").textContent = record.uses.join(", ");
+        document.querySelector("#detailStatus").textContent = record.status;
+        document.querySelector("#detailQuestion").textContent = record.question;
+        document.querySelector("#detailCarry").textContent = record.carry;
+        document.querySelector("#detailBoundary").textContent = record.boundary;
+        document.querySelector("#selectedFamily").textContent = record.familyShort;
+        addShelf.textContent = readShelf().includes(record.id) ? "Saved to Shelf" : "Add to Shelf";
+        sendPractice.textContent = "Send to Practice";
+      }
+
+      function renderSources() {
+        const filtered = sourceRecords.filter((record) => matchesFilter(record) && matchesSearch(record));
+        if (!filtered.some((record) => record.id === selectedId) && filtered[0]) {
+          selectedId = filtered[0].id;
+        }
+        document.querySelector("#resultCount").textContent = `${filtered.length} source candidate${filtered.length === 1 ? "" : "s"}`;
+        sourceList.innerHTML = filtered.length ? filtered.map((record) => `
+          <button class="source-card ${record.id === selectedId ? "active" : ""}" type="button" data-source-id="${record.id}">
+            <h3>${record.title}</h3>
+            <p>${record.citation} | ${record.family}</p>
+            <div class="tag-row">
+              ${record.uses.map((use) => `<span class="tag green">${use}</span>`).join("")}
+              <span class="tag">${record.status}</span>
+            </div>
+          </button>
+        `).join("") : `
+          <article class="source-card">
+            <h3>No source candidates found</h3>
+            <p>Try a broader term or clear the filters.</p>
+          </article>
+        `;
+
+        [...sourceList.querySelectorAll("[data-source-id]")].forEach((button) => {
+          button.addEventListener("click", () => {
+            selectedId = button.dataset.sourceId;
+            renderAll();
+          });
+        });
+      }
+
+      function renderShelf() {
+        const ids = readShelf();
+        const records = ids.map((id) => sourceRecords.find((record) => record.id === id)).filter(Boolean);
+        document.querySelector("#shelfCount").textContent = records.length;
+        shelfList.innerHTML = records.length ? records.map((record) => `
+          <article class="shelf-card">
+            <strong>${record.citation}</strong>
+            <p>${record.title} | ${record.familyShort}</p>
+            <div class="button-row" style="margin-top: 8px;">
+              <button class="button" type="button" data-open-id="${record.id}">Open</button>
+              <button class="button" type="button" data-remove-id="${record.id}">Remove</button>
+            </div>
+          </article>
+        `).join("") : `
+          <article class="shelf-card">
+            <strong>No saved sources yet</strong>
+            <p>Add a source to begin a personal study shelf on this device.</p>
+          </article>
+        `;
+
+        [...shelfList.querySelectorAll("[data-open-id]")].forEach((button) => {
+          button.addEventListener("click", () => {
+            selectedId = button.dataset.openId;
+            renderAll();
+          });
+        });
+        [...shelfList.querySelectorAll("[data-remove-id]")].forEach((button) => {
+          button.addEventListener("click", () => {
+            writeShelf(readShelf().filter((id) => id !== button.dataset.removeId));
+            renderAll();
+          });
+        });
+      }
+
+      function renderAll() {
+        renderSources();
+        renderDetail();
+        renderShelf();
+      }
+
+      function addSelectedToShelf() {
+        const ids = readShelf();
+        if (!ids.includes(selectedId)) {
+          writeShelf([selectedId, ...ids]);
+        }
+        renderAll();
+      }
+
+      function sendSelectedToPractice() {
+        const record = selectedRecord();
+        localStorage.setItem(launchKey, JSON.stringify({
+          id: record.id,
+          title: record.title,
+          citation: record.citation,
+          family: record.family,
+          question: record.question,
+          carry: record.carry,
+          boundary: record.boundary,
+          stateKey: record.stateKey
+        }));
+        sendPractice.textContent = "Ready in Practice";
+      }
+
+      function copyShelfSummary() {
+        const records = readShelf().map((id) => sourceRecords.find((record) => record.id === id)).filter(Boolean);
+        const lines = records.length ? records.map((record, index) => `${index + 1}. ${record.citation} | ${record.title} | ${record.family}`) : ["No saved sources yet."];
+        const text = ["VedaPath Source Shelf", ...lines].join("\n");
+        shelfSummary.value = text;
+        shelfSummary.hidden = false;
+
+        const fallbackCopy = () => {
+          const helper = document.createElement("textarea");
+          helper.value = text;
+          helper.setAttribute("readonly", "");
+          helper.style.position = "fixed";
+          helper.style.left = "-9999px";
+          document.body.appendChild(helper);
+          helper.select();
+          const copied = document.execCommand("copy");
+          helper.remove();
+          copyShelf.textContent = copied ? "Copied" : "Shelf Ready";
+        };
+
+        if (navigator.clipboard?.writeText) {
+          navigator.clipboard.writeText(text).then(() => {
+            copyShelf.textContent = "Copied";
+          }).catch(fallbackCopy);
+          return;
+        }
+
+        try {
+          fallbackCopy();
+        } catch {
+          copyShelf.textContent = "Shelf Ready";
+        }
+      }
+
+      filterButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          activeFilter = button.dataset.filter;
+          filterButtons.forEach((item) => item.classList.toggle("active", item === button));
+          renderAll();
+        });
+      });
+
+      searchInput.addEventListener("input", renderAll);
+      addShelf.addEventListener("click", addSelectedToShelf);
+      sendPractice.addEventListener("click", sendSelectedToPractice);
+      copyShelf.addEventListener("click", copyShelfSummary);
+      clearShelf.addEventListener("click", () => {
+        if (!readShelf().length) return;
+        const shouldClear = window.confirm("Clear this browser's local source shelf?");
+        if (!shouldClear) return;
+        localStorage.removeItem(shelfKey);
+        renderAll();
+      });
+
+      renderAll();
+    </script>
+  </body>
+</html>
