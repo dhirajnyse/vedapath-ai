@@ -27,6 +27,7 @@ Let us look at the source first.
 - [MVP Roadmap](docs/MVP_ROADMAP.md)
 - [Sample Questions](docs/SAMPLE_QUESTIONS.md)
 - [GitHub Repo Setup](docs/REPO_SETUP.md)
+- [GitHub Pages Setup](docs/PAGES_SETUP.md)
 - [Source Policy](docs/SOURCE_POLICY.md)
 - [Preview Hub](index.html)
 - [Brand Board](brand/brand-board.html)
