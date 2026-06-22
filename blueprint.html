@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VedaPath AI Blueprint</title>
+    <style>
+      :root {
+        --bhagwa: #d65a1f;
+        --deep-ochre: #a83e12;
+        --sacred-gold: #e0a83b;
+        --warm-ivory: #fff7ea;
+        --ink: #1f1a17;
+        --muted-brown: #5b4638;
+        --peacock-green: #145c4a;
+        --deep-indigo: #29335c;
+        --line: rgba(91, 70, 56, 0.16);
+        --panel: rgba(255, 255, 255, 0.64);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--warm-ivory);
+        color: var(--ink);
+        font-family: Inter, "IBM Plex Sans", system-ui, sans-serif;
+        line-height: 1.5;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .page {
+        width: min(1160px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 22px 0 52px;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding-bottom: 18px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        min-width: 0;
+      }
+
+      .brand img {
+        width: 50px;
+        height: 50px;
+        border-radius: 8px;
+        object-fit: cover;
+      }
+
+      .brand strong {
+        display: block;
+        font-size: 18px;
+      }
+
+      .brand span,
+      .lead,
+      .card p,
+      .mini,
+      .list li,
+      .feature p {
+        color: var(--muted-brown);
+      }
+
+      .brand span,
+      .mini {
+        font-size: 13px;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .link,
+      .version {
+        display: inline-flex;
+        align-items: center;
+        min-height: 34px;
+        border-radius: 999px;
+        padding: 6px 11px;
+        font-size: 13px;
+        font-weight: 800;
+      }
+
+      .link {
+        border: 1px solid transparent;
+        color: var(--muted-brown);
+      }
+
+      .link:hover,
+      .link:focus-visible,
+      .link.active {
+        border-color: rgba(168, 62, 18, 0.22);
+        color: var(--deep-ochre);
+        outline: none;
+      }
+
+      .version {
+        border: 1px solid rgba(168, 62, 18, 0.28);
+        color: var(--deep-ochre);
+        background: rgba(255, 255, 255, 0.42);
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1.05fr) minmax(300px, 0.95fr);
+        gap: 26px;
+        align-items: center;
+        padding: 36px 0 30px;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        margin-bottom: 16px;
+        font-size: clamp(44px, 7vw, 86px);
+        line-height: 0.96;
+        letter-spacing: 0;
+      }
+
+      h2 {
+        margin-bottom: 16px;
+        font-size: 26px;
+      }
+
+      h3 {
+        margin-bottom: 8px;
+        font-size: 18px;
+      }
+
+      .lead {
+        max-width: 720px;
+        margin-bottom: 0;
+        font-size: 21px;
+      }
+
+      .mark-stage {
+        display: grid;
+        place-items: center;
+        min-height: 360px;
+        border: 1px solid rgba(168, 62, 18, 0.16);
+        border-radius: 8px;
+        background: linear-gradient(180deg, #fff9ef 0%, #f6e4ca 100%);
+        overflow: hidden;
+      }
+
+      .mark-stage img {
+        width: min(92%, 460px);
+        display: block;
+      }
+
+      .section {
+        padding: 28px 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .split {
+        display: grid;
+        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+        gap: 16px;
+        align-items: start;
+      }
+
+      .card,
+      .feature,
+      .source-map {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+      }
+
+      .card,
+      .feature {
+        padding: 18px;
+      }
+
+      .card p,
+      .feature p {
+        margin-bottom: 0;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        min-height: 28px;
+        margin-bottom: 12px;
+        border-radius: 999px;
+        padding: 4px 10px;
+        background: rgba(214, 90, 31, 0.12);
+        color: var(--deep-ochre);
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      .list {
+        display: grid;
+        gap: 9px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .list li {
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+      }
+
+      .dot {
+        flex: 0 0 auto;
+        width: 10px;
+        height: 10px;
+        margin-top: 7px;
+        border-radius: 999px;
+        background: var(--bhagwa);
+      }
+
+      .source-map {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 10px;
+        padding: 14px;
+      }
+
+      .source-map span {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 34px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.52);
+        color: var(--deep-ochre);
+        padding: 6px 10px;
+        text-align: center;
+        font-size: 13px;
+        font-weight: 850;
+      }
+
+      .answer-flow {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 8px;
+      }
+
+      .answer-flow .feature {
+        min-height: 142px;
+      }
+
+      .cta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 20px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 40px;
+        border: 1px solid rgba(168, 62, 18, 0.24);
+        border-radius: 8px;
+        color: var(--deep-ochre);
+        padding: 8px 12px;
+        font-weight: 850;
+      }
+
+      .button.primary {
+        border-color: var(--bhagwa);
+        background: var(--bhagwa);
+        color: white;
+      }
+
+      @media (max-width: 900px) {
+        .hero,
+        .split {
+          grid-template-columns: 1fr;
+        }
+
+        .grid,
+        .source-map,
+        .answer-flow {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      @media (max-width: 560px) {
+        .page {
+          width: min(100% - 24px, 1160px);
+          padding-top: 18px;
+        }
+
+        .topbar {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .nav {
+          justify-content: flex-start;
+        }
+
+        .grid,
+        .source-map,
+        .answer-flow {
+          grid-template-columns: 1fr;
+        }
+
+        h1 {
+          font-size: clamp(40px, 13vw, 62px);
+        }
+
+        .lead {
+          font-size: 18px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top" aria-label="VedaPath AI home">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
+          <div>
+            <strong>VedaPath AI</strong>
+            <span>Product blueprint</span>
+          </div>
+        </a>
+        <nav class="nav" aria-label="Project links">
+          <a class="link" href="build-status.html">Build</a>
+          <a class="link" href="brand/brand-board.html">Brand</a>
+          <a class="link active" href="blueprint.html">Blueprint</a>
+          <span class="version">v0.2.0 prototype</span>
+        </nav>
+      </header>
+
+      <section class="hero">
+        <div>
+          <span class="eyebrow">Source-first product plan</span>
+          <h1>Blueprint for a trusted Vedic learning companion.</h1>
+          <p class="lead">VedaPath AI should help users move from curiosity to understanding through source-cited answers, careful categories, progressive depth, and reviewed correction loops.</p>
+          <div class="cta-row">
+            <a class="button primary" href="index.html#top">Open Prototype</a>
+            <a class="button" href="docs/PRODUCT_BLUEPRINT.md">Raw Markdown</a>
+          </div>
+        </div>
+        <div class="mark-stage">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI 3D logo mark">
+        </div>
+      </section>
+
+      <section class="section split">
+        <div class="card">
+          <span class="eyebrow">Positioning</span>
+          <h2>What It Is</h2>
+          <ul class="list">
+            <li><span class="dot"></span><span>A study assistant for Vedic and Hindu philosophical texts.</span></li>
+            <li><span class="dot"></span><span>A citation-first scripture explorer.</span></li>
+            <li><span class="dot"></span><span>A Sanskrit and concept explainer.</span></li>
+            <li><span class="dot"></span><span>A bridge between modern questions and traditional sources.</span></li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="eyebrow">Guardrails</span>
+          <h2>What It Is Not</h2>
+          <ul class="list">
+            <li><span class="dot"></span><span>Not a digital guru, oracle, fortune teller, or ritual authority.</span></li>
+            <li><span class="dot"></span><span>Not a replacement for teachers, priests, scholars, or tradition.</span></li>
+            <li><span class="dot"></span><span>Not a tool for inflated claims like “the Vedas prove all modern science.”</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Source Labels</h2>
+        <p class="lead">VedaPath can cover a broad Hindu wisdom landscape, but every answer must label where it is standing.</p>
+        <div class="source-map" style="margin-top: 18px;">
+          <span>Veda</span>
+          <span>Upanishad</span>
+          <span>Bhagavad Gita</span>
+          <span>Itihasa</span>
+          <span>Purana</span>
+          <span>Commentary</span>
+          <span>Modern interpretation</span>
+          <span>Uncertain</span>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Answer Anatomy</h2>
+        <div class="answer-flow">
+          <div class="feature">
+            <h3>Direct answer</h3>
+            <p>Start with the clearest useful response.</p>
+          </div>
+          <div class="feature">
+            <h3>Source card</h3>
+            <p>Show text family, citation, and confidence.</p>
+          </div>
+          <div class="feature">
+            <h3>Plain meaning</h3>
+            <p>Explain without overwhelming the beginner.</p>
+          </div>
+          <div class="feature">
+            <h3>Deeper layers</h3>
+            <p>Sanskrit, commentary, and debate on demand.</p>
+          </div>
+          <div class="feature">
+            <h3>Boundary</h3>
+            <p>Say what not to overclaim.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Signature Features</h2>
+        <div class="grid">
+          <div class="feature">
+            <h3>Pramana Meter</h3>
+            <p>Labels whether an answer is direct source, commentary, scholarly view, analogy, or speculation.</p>
+          </div>
+          <div class="feature">
+            <h3>Mantra Lens</h3>
+            <p>Future verse-level view with Sanskrit, transliteration, word meanings, meter, and recitation context.</p>
+          </div>
+          <div class="feature">
+            <h3>Claim Checker</h3>
+            <p>Separates what the source says from tradition, modern claims, and overextended interpretations.</p>
+          </div>
+          <div class="feature">
+            <h3>Samvada Mode</h3>
+            <p>Compares interpretations respectfully without pretending every school says the same thing.</p>
+          </div>
+          <div class="feature">
+            <h3>Learning Path</h3>
+            <p>Adapts to beginners, Sanskrit learners, philosophy readers, and teachers.</p>
+          </div>
+          <div class="feature">
+            <h3>Correction Loop</h3>
+            <p>User suggestions become reviewed annotations, not silent knowledge-base rewrites.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

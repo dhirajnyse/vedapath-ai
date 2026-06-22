@@ -21,7 +21,8 @@ Let us look at the source first.
 
 ## Foundation Docs
 
-- [Product Blueprint](docs/PRODUCT_BLUEPRINT.md)
+- [Product Blueprint](blueprint.html)
+- [Raw Blueprint Markdown](docs/PRODUCT_BLUEPRINT.md)
 - [UX Principles](docs/UX_PRINCIPLES.md)
 - [Brand System](docs/BRAND_SYSTEM.md)
 - [MVP Roadmap](docs/MVP_ROADMAP.md)
