@@ -1,0 +1,817 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VedaPath Calm</title>
+    <style>
+      :root {
+        --bhagwa: #d65a1f;
+        --deep-ochre: #a83e12;
+        --sacred-gold: #e0a83b;
+        --warm-ivory: #fff7ea;
+        --ink: #1f1a17;
+        --muted-brown: #5b4638;
+        --peacock-green: #145c4a;
+        --deep-indigo: #29335c;
+        --line: rgba(91, 70, 56, 0.16);
+        --panel: rgba(255, 255, 255, 0.66);
+        --panel-strong: rgba(255, 255, 255, 0.88);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--warm-ivory);
+        color: var(--ink);
+        font-family: Inter, "IBM Plex Sans", system-ui, sans-serif;
+        line-height: 1.5;
+      }
+
+      button,
+      textarea {
+        font: inherit;
+      }
+
+      button {
+        cursor: pointer;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .page {
+        width: min(1240px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 22px 0 48px;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding-bottom: 18px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        min-width: 0;
+      }
+
+      .brand img {
+        width: 50px;
+        height: 50px;
+        border-radius: 8px;
+        object-fit: cover;
+      }
+
+      .brand strong {
+        display: block;
+        font-size: 18px;
+      }
+
+      .brand span,
+      .muted,
+      .small,
+      .state-button span,
+      .source-card span,
+      .practice-step p,
+      .boundary p,
+      .integrity p,
+      .route-card p {
+        color: var(--muted-brown);
+      }
+
+      .brand span,
+      .small,
+      .source-card span {
+        font-size: 13px;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .link,
+      .version {
+        display: inline-flex;
+        align-items: center;
+        min-height: 34px;
+        border-radius: 999px;
+        padding: 6px 11px;
+        font-size: 13px;
+        font-weight: 800;
+      }
+
+      .link {
+        border: 1px solid transparent;
+        color: var(--muted-brown);
+      }
+
+      .link:hover,
+      .link:focus-visible,
+      .link.active {
+        border-color: rgba(168, 62, 18, 0.22);
+        color: var(--deep-ochre);
+        outline: none;
+      }
+
+      .version {
+        border: 1px solid rgba(168, 62, 18, 0.28);
+        background: rgba(255, 255, 255, 0.42);
+        color: var(--deep-ochre);
+      }
+
+      .calm-workspace {
+        display: grid;
+        grid-template-columns: minmax(280px, 0.78fr) minmax(0, 1.25fr) minmax(280px, 0.82fr);
+        gap: 16px;
+        align-items: start;
+        padding-top: 18px;
+      }
+
+      .panel,
+      .source-card,
+      .practice-step,
+      .boundary,
+      .integrity,
+      .state-button,
+      .route-card {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+      }
+
+      .panel {
+        padding: 18px;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        min-height: 28px;
+        margin-bottom: 14px;
+        border-radius: 999px;
+        padding: 4px 10px;
+        background: rgba(214, 90, 31, 0.12);
+        color: var(--deep-ochre);
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        margin-bottom: 12px;
+        font-size: clamp(38px, 4vw, 58px);
+        line-height: 0.98;
+        letter-spacing: 0;
+      }
+
+      h2 {
+        margin-bottom: 12px;
+        font-size: 24px;
+      }
+
+      h3 {
+        margin-bottom: 8px;
+        font-size: 18px;
+      }
+
+      .state-list,
+      .practice-list,
+      .route-grid {
+        display: grid;
+        gap: 10px;
+      }
+
+      .state-button {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr);
+        gap: 10px;
+        align-items: center;
+        width: 100%;
+        min-height: 66px;
+        padding: 11px;
+        text-align: left;
+        color: inherit;
+      }
+
+      .state-button:hover,
+      .state-button:focus-visible,
+      .state-button.active,
+      .button:hover,
+      .button:focus-visible {
+        border-color: rgba(214, 90, 31, 0.48);
+        outline: 3px solid rgba(214, 90, 31, 0.12);
+      }
+
+      .state-button.active {
+        background: rgba(214, 90, 31, 0.1);
+      }
+
+      .state-icon,
+      .step-index {
+        display: grid;
+        place-items: center;
+        width: 34px;
+        height: 34px;
+        border-radius: 999px;
+        background: rgba(20, 92, 74, 0.12);
+        color: var(--peacock-green);
+        font-size: 13px;
+        font-weight: 900;
+      }
+
+      .state-button.active .state-icon,
+      .practice-step.active .step-index {
+        background: var(--bhagwa);
+        color: white;
+      }
+
+      .state-button strong {
+        display: block;
+        font-size: 15px;
+      }
+
+      .state-button span {
+        display: block;
+        margin-top: 2px;
+        font-size: 13px;
+      }
+
+      textarea {
+        width: 100%;
+        min-height: 112px;
+        resize: vertical;
+        border: 1px solid rgba(168, 62, 18, 0.28);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.72);
+        color: var(--ink);
+        padding: 12px;
+      }
+
+      textarea:focus {
+        border-color: var(--bhagwa);
+        outline: 3px solid rgba(214, 90, 31, 0.12);
+      }
+
+      .button-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 10px;
+      }
+
+      .button {
+        min-height: 38px;
+        border: 1px solid rgba(168, 62, 18, 0.24);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.48);
+        color: var(--deep-ochre);
+        padding: 8px 11px;
+        font-weight: 850;
+      }
+
+      .button.primary {
+        border-color: var(--bhagwa);
+        background: var(--bhagwa);
+        color: white;
+      }
+
+      .button.secondary {
+        border-color: rgba(20, 92, 74, 0.24);
+        color: var(--peacock-green);
+      }
+
+      .calm-stage {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 18px;
+        align-items: center;
+        margin-bottom: 16px;
+      }
+
+      .mark-breath {
+        display: grid;
+        place-items: center;
+        width: 150px;
+        height: 150px;
+        border: 1px solid rgba(168, 62, 18, 0.18);
+        border-radius: 8px;
+        background: linear-gradient(180deg, #fff9ef 0%, #f6e4ca 100%);
+        overflow: hidden;
+      }
+
+      .mark-breath img {
+        width: 124px;
+        height: auto;
+        animation: calmPulse 5.8s ease-in-out infinite;
+        transform-origin: center;
+      }
+
+      @keyframes calmPulse {
+        0%, 100% {
+          transform: scale(0.96);
+        }
+
+        50% {
+          transform: scale(1.04);
+        }
+      }
+
+      .source-card {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        padding: 12px;
+        border-left: 4px solid var(--bhagwa);
+        background: var(--panel-strong);
+      }
+
+      .source-card strong {
+        display: block;
+        margin-top: 4px;
+        font-size: 15px;
+      }
+
+      .reflection {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 16px;
+      }
+
+      .integrity {
+        padding: 14px;
+        border-left: 3px solid rgba(214, 90, 31, 0.52);
+        background: rgba(255, 255, 255, 0.5);
+      }
+
+      .integrity p {
+        margin-bottom: 0;
+      }
+
+      .practice-step {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr);
+        gap: 10px;
+        padding: 12px;
+        background: rgba(255, 255, 255, 0.46);
+      }
+
+      .practice-step.active {
+        border-color: rgba(214, 90, 31, 0.46);
+        background: rgba(214, 90, 31, 0.09);
+      }
+
+      .practice-step strong {
+        display: block;
+      }
+
+      .practice-step p {
+        margin-bottom: 0;
+        font-size: 14px;
+      }
+
+      .progress {
+        height: 10px;
+        margin: 12px 0 14px;
+        overflow: hidden;
+        border-radius: 999px;
+        background: rgba(168, 62, 18, 0.14);
+      }
+
+      .progress div {
+        width: 25%;
+        height: 100%;
+        border-radius: inherit;
+        background: linear-gradient(90deg, var(--bhagwa), var(--sacred-gold));
+        transition: width 260ms ease;
+      }
+
+      .boundary {
+        margin-top: 14px;
+        padding: 13px;
+        border-style: dashed;
+        background: rgba(255, 255, 255, 0.34);
+      }
+
+      .boundary p {
+        margin-bottom: 0;
+      }
+
+      .route-section {
+        margin-top: 16px;
+        padding-top: 16px;
+        border-top: 1px solid var(--line);
+      }
+
+      .route-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .route-card {
+        padding: 14px;
+        background: rgba(255, 255, 255, 0.44);
+      }
+
+      .route-card strong {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      .route-card p {
+        margin-bottom: 0;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        .mark-breath img {
+          animation: none;
+        }
+      }
+
+      @media (max-width: 1120px) {
+        .calm-workspace {
+          grid-template-columns: minmax(280px, 0.86fr) minmax(0, 1.14fr);
+        }
+
+        .right-rail {
+          grid-column: 1 / -1;
+          display: grid;
+          grid-template-columns: minmax(0, 1fr) minmax(280px, 0.8fr);
+          gap: 16px;
+        }
+      }
+
+      @media (max-width: 780px) {
+        .page {
+          width: min(100% - 24px, 1240px);
+        }
+
+        .topbar {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .nav {
+          justify-content: flex-start;
+        }
+
+        .calm-workspace,
+        .right-rail,
+        .calm-stage,
+        .source-card,
+        .reflection,
+        .route-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .mark-breath {
+          width: 100%;
+          min-height: 164px;
+        }
+
+        h1 {
+          font-size: clamp(34px, 10vw, 48px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top" aria-label="VedaPath AI home">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
+          <div>
+            <strong>VedaPath AI</strong>
+            <span>Calm path preview</span>
+          </div>
+        </a>
+        <nav class="nav" aria-label="Project links">
+          <a class="link" href="build-status.html">Build</a>
+          <a class="link" href="brand/brand-board.html">Brand</a>
+          <a class="link" href="blueprint.html">Blueprint</a>
+          <a class="link active" href="calm.html">Calm</a>
+          <span class="version">v0.2.1 calm path</span>
+        </nav>
+      </header>
+
+      <section class="calm-workspace" aria-label="VedaPath Calm workspace">
+        <aside class="panel">
+          <span class="eyebrow">Arrive honestly</span>
+          <h1>Calm that begins with a source.</h1>
+          <p class="muted">Choose how you are arriving. VedaPath responds with a careful source candidate, a short reflection, and one grounded action.</p>
+
+          <div class="state-list" aria-label="Calm states">
+            <button class="state-button active" type="button" data-state="restless">
+              <span class="state-icon">1</span>
+              <span><strong>Restless</strong><span>Too many thoughts, not enough stillness.</span></span>
+            </button>
+            <button class="state-button" type="button" data-state="overwhelmed">
+              <span class="state-icon">2</span>
+              <span><strong>Overwhelmed</strong><span>Everything feels like it needs attention.</span></span>
+            </button>
+            <button class="state-button" type="button" data-state="clarity">
+              <span class="state-icon">3</span>
+              <span><strong>Seeking clarity</strong><span>You need a clean next step.</span></span>
+            </button>
+            <button class="state-button" type="button" data-state="courage">
+              <span class="state-icon">4</span>
+              <span><strong>Need courage</strong><span>You know the work, but feel hesitant.</span></span>
+            </button>
+          </div>
+
+          <div style="margin-top: 14px;">
+            <label class="small" for="calmNote">One line from your day</label>
+            <textarea id="calmNote">I want to act calmly without forcing the result.</textarea>
+            <div class="button-row">
+              <button class="button primary" id="saveReflection" type="button">Save Reflection</button>
+              <button class="button secondary" id="resetNote" type="button">Clear</button>
+            </div>
+          </div>
+        </aside>
+
+        <section class="panel" aria-live="polite">
+          <div class="calm-stage">
+            <div>
+              <span class="eyebrow">Source-guided calm</span>
+              <h1 id="calmTitle">Steady action before inner noise.</h1>
+              <p class="muted" id="calmSummary">When the mind is restless, begin with balance rather than pressure. The source candidate points toward steadiness in action, not escape from responsibility.</p>
+            </div>
+            <div class="mark-breath" aria-label="Calm breathing logo animation">
+              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI calm logo mark">
+            </div>
+          </div>
+
+          <div class="source-card" aria-label="Calm source card">
+            <div>
+              <span>Source candidate</span>
+              <strong id="sourceName">Bhagavad Gita 2.48</strong>
+            </div>
+            <div>
+              <span>Text family</span>
+              <strong id="sourceFamily">Bhagavad Gita | Smriti</strong>
+            </div>
+            <div>
+              <span>Pramana level</span>
+              <strong id="sourceLevel">Direct passage candidate</strong>
+            </div>
+            <div>
+              <span>Boundary</span>
+              <strong id="sourceBoundary">Reflection, not prescription.</strong>
+            </div>
+          </div>
+
+          <div class="reflection">
+            <article class="integrity">
+              <h3>What to reflect on</h3>
+              <p id="reflectionText">What can I do with steadiness today, without turning the outcome into my identity?</p>
+            </article>
+            <article class="integrity">
+              <h3>Carry into life</h3>
+              <p id="carryText">Choose one small duty. Do it slowly, cleanly, and without checking for praise.</p>
+            </article>
+          </div>
+
+          <div class="route-section">
+            <h2>Calm Integrity Check</h2>
+            <div class="reflection">
+              <article class="integrity">
+                <h3>What the source supports</h3>
+                <p id="supportText">A disciplined reading about steadiness, action, and balance.</p>
+              </article>
+              <article class="integrity">
+                <h3>What not to overclaim</h3>
+                <p id="overclaimText">Do not turn it into therapy, medical advice, or a promise that one verse removes suffering.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <aside class="right-rail">
+          <section class="panel">
+            <h2>3-Minute Path Preview</h2>
+            <p class="muted">A product preview of how VedaPath can slow the moment down without pretending to be a guru.</p>
+            <div class="progress" aria-label="Calm path progress">
+              <div id="pathProgress"></div>
+            </div>
+            <div class="practice-list">
+              <div class="practice-step active" data-step="1">
+                <span class="step-index">1</span>
+                <div>
+                  <strong>Arrive</strong>
+                  <p>Name the state without judging it.</p>
+                </div>
+              </div>
+              <div class="practice-step" data-step="2">
+                <span class="step-index">2</span>
+                <div>
+                  <strong>Read</strong>
+                  <p>Open the source candidate and category.</p>
+                </div>
+              </div>
+              <div class="practice-step" data-step="3">
+                <span class="step-index">3</span>
+                <div>
+                  <strong>Reflect</strong>
+                  <p>Answer one clean question.</p>
+                </div>
+              </div>
+              <div class="practice-step" data-step="4">
+                <span class="step-index">4</span>
+                <div>
+                  <strong>Carry</strong>
+                  <p>Leave with one small action.</p>
+                </div>
+              </div>
+            </div>
+            <div class="button-row">
+              <button class="button primary" id="startPath" type="button">Preview Path</button>
+              <button class="button" id="nextStep" type="button">Next Step</button>
+            </div>
+          </section>
+
+          <section class="boundary">
+            <h2>Calm Boundary</h2>
+            <p>This is a source-backed reflection prototype. It is not therapy, medical advice, emergency support, ritual instruction, or a replacement for teachers, family, clinicians, or tradition.</p>
+          </section>
+        </aside>
+      </section>
+
+      <section class="route-section" aria-label="Future calm roadmap">
+        <h2>What This Unlocks Next</h2>
+        <div class="route-grid">
+          <article class="route-card">
+            <strong>Daily Source Path</strong>
+            <p>A gentle daily entry that remembers source families and user intent after real accounts exist.</p>
+          </article>
+          <article class="route-card">
+            <strong>Calm Correction Queue</strong>
+            <p>Users can flag when a reflection overreaches, creating review tickets for source stewardship.</p>
+          </article>
+          <article class="route-card">
+            <strong>Teacher Handoff</strong>
+            <p>Future sharing can give teachers or reviewers the source card, not private emotional notes.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const calmStates = {
+        restless: {
+          title: "Steady action before inner noise.",
+          summary: "When the mind is restless, begin with balance rather than pressure. The source candidate points toward steadiness in action, not escape from responsibility.",
+          source: "Bhagavad Gita 2.48",
+          family: "Bhagavad Gita | Smriti",
+          level: "Direct passage candidate",
+          boundary: "Reflection, not prescription.",
+          reflection: "What can I do with steadiness today, without turning the outcome into my identity?",
+          carry: "Choose one small duty. Do it slowly, cleanly, and without checking for praise.",
+          support: "A disciplined reading about steadiness, action, and balance.",
+          overclaim: "Do not turn it into therapy, medical advice, or a promise that one verse removes suffering.",
+          note: "I want to act calmly without forcing the result."
+        },
+        overwhelmed: {
+          title: "Gather the senses before the world gathers you.",
+          summary: "When everything feels loud, the Katha Upanishad's chariot image can become a gentle map for attention, direction, and self-command.",
+          source: "Katha Upanishad 1.3.3-9",
+          family: "Upanishad | Shruti",
+          level: "Source image candidate",
+          boundary: "Metaphor, not diagnosis.",
+          reflection: "Which part of the chariot is pulling hardest right now: senses, mind, judgment, or destination?",
+          carry: "Remove one input for ten minutes. Let attention return before deciding what matters.",
+          support: "A symbolic source image about the self, senses, mind, intellect, and direction.",
+          overclaim: "Do not present an ancient metaphor as clinical guidance or a full mental-health method.",
+          note: "Everything is asking for me at once; I need to gather myself."
+        },
+        clarity: {
+          title: "Separate useful knowledge from deeper knowing.",
+          summary: "When you need clarity, the Mundaka Upanishad's distinction between kinds of knowledge can help sort tools, facts, and deeper purpose.",
+          source: "Mundaka Upanishad 1.1.4-5",
+          family: "Upanishad | Shruti",
+          level: "Concept passage candidate",
+          boundary: "Sorting lens, not final answer.",
+          reflection: "Is this a problem of information, interpretation, or inner priority?",
+          carry: "Write the decision in one sentence. Then list the one source or person needed to improve it.",
+          support: "A reflective distinction between knowledge categories and the pursuit of deeper understanding.",
+          overclaim: "Do not use it to dismiss practical learning, skill, evidence, or professional expertise.",
+          note: "I need to know what kind of question I am actually asking."
+        },
+        courage: {
+          title: "Do the work you can touch.",
+          summary: "When courage is low, the Gita's teaching on action and fruits can shift attention from imagined outcomes to the next rightful effort.",
+          source: "Bhagavad Gita 2.47",
+          family: "Bhagavad Gita | Smriti",
+          level: "Direct passage candidate",
+          boundary: "Encouragement, not command.",
+          reflection: "What action is mine today, even if the result is not mine to control?",
+          carry: "Begin the task for five focused minutes. Stop negotiating with the whole future.",
+          support: "A source-grounded reflection on action, responsibility, and attachment to outcomes.",
+          overclaim: "Do not use it to pressure someone into unsafe action or ignore real constraints.",
+          note: "I know the next step, but I am hesitating."
+        }
+      };
+
+      const stateButtons = [...document.querySelectorAll(".state-button")];
+      const practiceSteps = [...document.querySelectorAll(".practice-step")];
+      const calmNote = document.querySelector("#calmNote");
+      const pathProgress = document.querySelector("#pathProgress");
+      const startPath = document.querySelector("#startPath");
+      const nextStep = document.querySelector("#nextStep");
+      const saveReflection = document.querySelector("#saveReflection");
+      const resetNote = document.querySelector("#resetNote");
+
+      let activeStep = 1;
+
+      function renderState(stateKey) {
+        const state = calmStates[stateKey];
+        document.querySelector("#calmTitle").textContent = state.title;
+        document.querySelector("#calmSummary").textContent = state.summary;
+        document.querySelector("#sourceName").textContent = state.source;
+        document.querySelector("#sourceFamily").textContent = state.family;
+        document.querySelector("#sourceLevel").textContent = state.level;
+        document.querySelector("#sourceBoundary").textContent = state.boundary;
+        document.querySelector("#reflectionText").textContent = state.reflection;
+        document.querySelector("#carryText").textContent = state.carry;
+        document.querySelector("#supportText").textContent = state.support;
+        document.querySelector("#overclaimText").textContent = state.overclaim;
+        calmNote.value = state.note;
+        saveReflection.textContent = "Save Reflection";
+        saveReflection.classList.add("primary");
+        stateButtons.forEach((button) => {
+          button.classList.toggle("active", button.dataset.state === stateKey);
+        });
+        setStep(1);
+      }
+
+      function setStep(step) {
+        activeStep = step;
+        practiceSteps.forEach((item) => {
+          item.classList.toggle("active", Number(item.dataset.step) === step);
+        });
+        pathProgress.style.width = `${step * 25}%`;
+      }
+
+      stateButtons.forEach((button) => {
+        button.addEventListener("click", () => renderState(button.dataset.state));
+      });
+
+      nextStep.addEventListener("click", () => {
+        setStep(activeStep === 4 ? 1 : activeStep + 1);
+      });
+
+      startPath.addEventListener("click", () => {
+        startPath.textContent = "Preview Running";
+        setStep(1);
+        let step = 1;
+        const interval = window.setInterval(() => {
+          step += 1;
+          setStep(step);
+          if (step === 4) {
+            window.clearInterval(interval);
+            startPath.textContent = "Preview Complete";
+          }
+        }, 650);
+      });
+
+      saveReflection.addEventListener("click", () => {
+        saveReflection.textContent = "Reflection Drafted";
+        saveReflection.classList.remove("primary");
+      });
+
+      resetNote.addEventListener("click", () => {
+        calmNote.value = "";
+        saveReflection.textContent = "Save Reflection";
+        saveReflection.classList.add("primary");
+      });
+    </script>
+  </body>
+</html>

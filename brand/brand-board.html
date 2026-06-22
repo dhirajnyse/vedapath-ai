@@ -79,6 +79,32 @@
         white-space: nowrap;
       }
 
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .nav a {
+        min-height: 34px;
+        border-radius: 999px;
+        border: 1px solid transparent;
+        color: var(--muted-brown);
+        padding: 6px 11px;
+        font-size: 13px;
+        font-weight: 800;
+        text-decoration: none;
+      }
+
+      .nav a:hover,
+      .nav a:focus-visible {
+        border-color: rgba(168, 62, 18, 0.22);
+        color: var(--deep-ochre);
+        outline: none;
+      }
+
       .hero {
         display: grid;
         grid-template-columns: minmax(0, 1.05fr) minmax(300px, 0.95fr);
@@ -307,7 +333,12 @@
             <span>Source-first learning companion</span>
           </div>
         </a>
-        <div class="pill">Let us look at the source first.</div>
+        <nav class="nav" aria-label="Project links">
+          <a href="../build-status.html">Build</a>
+          <a href="../blueprint.html">Blueprint</a>
+          <a href="../calm.html">Calm</a>
+          <span class="pill">Let us look at the source first.</span>
+        </nav>
       </header>
 
       <section class="hero">

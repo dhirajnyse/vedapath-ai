@@ -1,0 +1,35 @@
+# VedaPath Calm Path Notes
+
+## Product Intent
+
+VedaPath Calm is a personal reflection doorway inside VedaPath AI. It gives users a quiet way to bring everyday restlessness, overwhelm, unclear decisions, or hesitation into a source-first learning flow.
+
+It must stay humble:
+
+- Not therapy
+- Not medical advice
+- Not emergency support
+- Not ritual instruction
+- Not a guru voice
+- Not a promise that one verse fixes suffering
+
+## Interaction Shape
+
+1. User chooses how they are arriving.
+2. VedaPath shows a source candidate and source family.
+3. The answer separates reflection from prescription.
+4. The user receives one grounded question and one small carry-forward action.
+5. Future versions can save reviewed patterns after real accounts and durable storage exist.
+
+## Current Source Candidates
+
+- Restless: Bhagavad Gita 2.48
+- Overwhelmed: Katha Upanishad 1.3.3-9
+- Seeking clarity: Mundaka Upanishad 1.1.4-5
+- Need courage: Bhagavad Gita 2.47
+
+These are prototype candidates. Before the real MVP, each entry needs verified Sanskrit, translation policy, source notes, and reviewer approval.
+
+## Guardrail
+
+Calm Path can create steadiness, but it should never pretend to be an authority over a user's life. The product voice should invite, label, and ground. It should not command.

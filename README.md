@@ -34,6 +34,7 @@ Let us look at the source first.
 - [Preview Hub](index.html)
 - [Brand Board](brand/brand-board.html)
 - [Build Status Page](build-status.html)
+- [Calm Path Preview](calm.html)
 - [Release Workflow](docs/RELEASE_WORKFLOW.md)
 
 ## North Star
@@ -42,13 +43,14 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v0.2.0` is a clickable prototype with:
+`v0.2.1` is a clickable prototype with:
 
 - Ask workspace
 - Source Card
 - Pramana Meter
 - Claim Checker
 - Learning Path
+- Calm Path Preview
 - Correction Loop placeholder
 
 ## Faster Release Commits
