@@ -39,3 +39,9 @@ Calm Path can create steadiness, but it should never pretend to be an authority 
 Daily Calm Loop adds browser-only prototype memory. It lets a user save one source-backed reflection for the day, see a seven-day pattern, and receive a next source suggestion based on deliberate entries.
 
 This is not production memory. It is device-local proof of the learning loop until real accounts, consent, export controls, and reviewed storage exist.
+
+## v0.2.3 Source Practice
+
+Source Practice turns Calm Path into a timed guided workflow. The user chooses a state, starts a one, three, or five minute practice, moves through Arrive, Read, Reflect, and Carry, then can save a completion in device-local memory.
+
+The source card must remain visible. The source candidate, text family, reflection question, and carry action should stay separate from therapy, ritual instruction, or personal authority claims.

@@ -1,0 +1,1103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VedaPath Source Practice</title>
+    <style>
+      :root {
+        --bhagwa: #d65a1f;
+        --deep-ochre: #a83e12;
+        --sacred-gold: #e0a83b;
+        --warm-ivory: #fff7ea;
+        --ink: #1f1a17;
+        --muted-brown: #5b4638;
+        --peacock-green: #145c4a;
+        --deep-indigo: #29335c;
+        --line: rgba(91, 70, 56, 0.16);
+        --panel: rgba(255, 255, 255, 0.66);
+        --panel-strong: rgba(255, 255, 255, 0.88);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--warm-ivory);
+        color: var(--ink);
+        font-family: Inter, "IBM Plex Sans", system-ui, sans-serif;
+        line-height: 1.5;
+      }
+
+      button,
+      textarea {
+        font: inherit;
+      }
+
+      button {
+        cursor: pointer;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .page {
+        width: min(1240px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 22px 0 48px;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding-bottom: 18px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        min-width: 0;
+      }
+
+      .brand img {
+        width: 50px;
+        height: 50px;
+        border-radius: 8px;
+        object-fit: cover;
+      }
+
+      .brand strong {
+        display: block;
+        font-size: 18px;
+      }
+
+      .brand span,
+      .muted,
+      .small,
+      .state-button span,
+      .source-card span,
+      .stat span,
+      .step-card p,
+      .entry-card p,
+      .boundary p,
+      .future-card p {
+        color: var(--muted-brown);
+      }
+
+      .brand span,
+      .small,
+      .source-card span,
+      .stat span {
+        font-size: 13px;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .link,
+      .version {
+        display: inline-flex;
+        align-items: center;
+        min-height: 34px;
+        border-radius: 999px;
+        padding: 6px 11px;
+        font-size: 13px;
+        font-weight: 800;
+      }
+
+      .link {
+        border: 1px solid transparent;
+        color: var(--muted-brown);
+      }
+
+      .link:hover,
+      .link:focus-visible,
+      .link.active {
+        border-color: rgba(168, 62, 18, 0.22);
+        color: var(--deep-ochre);
+        outline: none;
+      }
+
+      .version {
+        border: 1px solid rgba(168, 62, 18, 0.28);
+        background: rgba(255, 255, 255, 0.42);
+        color: var(--deep-ochre);
+      }
+
+      .workspace {
+        display: grid;
+        grid-template-columns: minmax(290px, 0.82fr) minmax(0, 1.16fr) minmax(300px, 0.9fr);
+        gap: 16px;
+        align-items: start;
+        padding-top: 18px;
+      }
+
+      .panel,
+      .state-button,
+      .source-card,
+      .step-card,
+      .stat,
+      .entry-card,
+      .boundary,
+      .future-card,
+      .day-cell {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+      }
+
+      .panel {
+        padding: 18px;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        min-height: 28px;
+        margin-bottom: 14px;
+        border-radius: 999px;
+        padding: 4px 10px;
+        background: rgba(214, 90, 31, 0.12);
+        color: var(--deep-ochre);
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        margin-bottom: 12px;
+        font-size: clamp(38px, 4vw, 58px);
+        line-height: 0.98;
+        letter-spacing: 0;
+      }
+
+      h2 {
+        margin-bottom: 12px;
+        font-size: 24px;
+      }
+
+      h3 {
+        margin-bottom: 8px;
+        font-size: 18px;
+      }
+
+      .state-list,
+      .step-list,
+      .entry-list,
+      .future-grid {
+        display: grid;
+        gap: 10px;
+      }
+
+      .state-button {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr);
+        gap: 10px;
+        align-items: center;
+        width: 100%;
+        min-height: 64px;
+        padding: 11px;
+        text-align: left;
+        color: inherit;
+      }
+
+      .state-button:hover,
+      .state-button:focus-visible,
+      .state-button.active,
+      .button:hover,
+      .button:focus-visible,
+      .pace-button:hover,
+      .pace-button:focus-visible,
+      .pace-button.active {
+        border-color: rgba(214, 90, 31, 0.48);
+        outline: 3px solid rgba(214, 90, 31, 0.12);
+      }
+
+      .state-button.active {
+        background: rgba(214, 90, 31, 0.1);
+      }
+
+      .state-icon,
+      .step-index {
+        display: grid;
+        place-items: center;
+        width: 34px;
+        height: 34px;
+        border-radius: 999px;
+        background: rgba(20, 92, 74, 0.12);
+        color: var(--peacock-green);
+        font-size: 13px;
+        font-weight: 900;
+      }
+
+      .state-button.active .state-icon,
+      .step-card.active .step-index {
+        background: var(--bhagwa);
+        color: white;
+      }
+
+      .state-button strong {
+        display: block;
+        font-size: 15px;
+      }
+
+      .state-button span {
+        display: block;
+        margin-top: 2px;
+        font-size: 13px;
+      }
+
+      .pace-row,
+      .button-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .pace-button,
+      .button {
+        display: inline-flex;
+        align-items: center;
+        min-height: 38px;
+        border: 1px solid rgba(168, 62, 18, 0.24);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.48);
+        color: var(--deep-ochre);
+        padding: 8px 11px;
+        font-weight: 850;
+      }
+
+      .pace-button.active,
+      .button.primary {
+        border-color: var(--bhagwa);
+        background: var(--bhagwa);
+        color: white;
+      }
+
+      .button.secondary {
+        border-color: rgba(20, 92, 74, 0.24);
+        color: var(--peacock-green);
+      }
+
+      textarea {
+        width: 100%;
+        min-height: 112px;
+        resize: vertical;
+        border: 1px solid rgba(168, 62, 18, 0.28);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.72);
+        color: var(--ink);
+        padding: 12px;
+      }
+
+      textarea:focus {
+        border-color: var(--bhagwa);
+        outline: 3px solid rgba(214, 90, 31, 0.12);
+      }
+
+      .practice-stage {
+        display: grid;
+        justify-items: center;
+        gap: 18px;
+        padding: 12px 0 18px;
+        text-align: center;
+      }
+
+      .timer-shell {
+        --progress: 0deg;
+        display: grid;
+        place-items: center;
+        width: min(100%, 330px);
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background:
+          radial-gradient(circle at center, var(--warm-ivory) 0 58%, transparent 59%),
+          conic-gradient(var(--bhagwa) var(--progress), rgba(168, 62, 18, 0.12) 0);
+        border: 1px solid rgba(168, 62, 18, 0.16);
+      }
+
+      .timer-core {
+        display: grid;
+        place-items: center;
+        width: 74%;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background: linear-gradient(180deg, #fff9ef 0%, #f5e1c3 100%);
+        border: 1px solid rgba(168, 62, 18, 0.16);
+        box-shadow: 0 18px 42px rgba(168, 62, 18, 0.12);
+      }
+
+      .timer-core img {
+        width: 108px;
+        height: auto;
+        margin-bottom: 2px;
+        animation: calmPulse 6s ease-in-out infinite;
+      }
+
+      .time {
+        display: block;
+        font-size: 46px;
+        line-height: 1;
+        font-weight: 900;
+      }
+
+      .stage-name {
+        display: block;
+        margin-top: 7px;
+        color: var(--muted-brown);
+        font-size: 13px;
+        font-weight: 800;
+      }
+
+      @keyframes calmPulse {
+        0%, 100% {
+          transform: scale(0.96);
+        }
+
+        50% {
+          transform: scale(1.04);
+        }
+      }
+
+      .source-card {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        padding: 12px;
+        border-left: 4px solid var(--bhagwa);
+        background: var(--panel-strong);
+      }
+
+      .source-card strong {
+        display: block;
+        margin-top: 4px;
+      }
+
+      .step-card {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr);
+        gap: 10px;
+        padding: 12px;
+        background: rgba(255, 255, 255, 0.46);
+      }
+
+      .step-card.active {
+        border-color: rgba(214, 90, 31, 0.46);
+        background: rgba(214, 90, 31, 0.09);
+      }
+
+      .step-card strong {
+        display: block;
+      }
+
+      .step-card p {
+        margin-bottom: 0;
+        font-size: 14px;
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        margin-top: 14px;
+      }
+
+      .stat,
+      .entry-card,
+      .future-card,
+      .boundary {
+        padding: 13px;
+      }
+
+      .stat strong {
+        display: block;
+        margin-top: 4px;
+        font-size: 26px;
+        line-height: 1;
+      }
+
+      .memory-strip {
+        display: grid;
+        grid-template-columns: repeat(7, minmax(0, 1fr));
+        gap: 7px;
+        margin: 12px 0 14px;
+      }
+
+      .day-cell {
+        min-height: 58px;
+        padding: 8px 6px;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.48);
+      }
+
+      .day-cell.has-entry {
+        border-color: rgba(214, 90, 31, 0.38);
+        background: rgba(214, 90, 31, 0.1);
+      }
+
+      .day-cell strong,
+      .day-cell span {
+        display: block;
+        font-size: 12px;
+      }
+
+      .day-cell span {
+        margin-top: 4px;
+        color: var(--muted-brown);
+        font-size: 11px;
+      }
+
+      .entry-card,
+      .future-card {
+        background: rgba(255, 255, 255, 0.46);
+      }
+
+      .entry-card strong,
+      .future-card strong {
+        display: block;
+        margin-bottom: 4px;
+      }
+
+      .entry-card p,
+      .future-card p,
+      .boundary p {
+        margin-bottom: 0;
+      }
+
+      .boundary {
+        margin-top: 14px;
+        border-style: dashed;
+        background: rgba(255, 255, 255, 0.34);
+      }
+
+      .section {
+        margin-top: 16px;
+        padding-top: 16px;
+        border-top: 1px solid var(--line);
+      }
+
+      .summary-output {
+        min-height: 136px;
+        margin-top: 10px;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        .timer-core img {
+          animation: none;
+        }
+      }
+
+      @media (max-width: 1120px) {
+        .workspace {
+          grid-template-columns: minmax(290px, 0.92fr) minmax(0, 1.08fr);
+        }
+
+        .memory-panel {
+          grid-column: 1 / -1;
+        }
+      }
+
+      @media (max-width: 780px) {
+        .page {
+          width: min(100% - 24px, 1240px);
+        }
+
+        .topbar {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .nav {
+          justify-content: flex-start;
+        }
+
+        .workspace,
+        .source-card,
+        .stats-grid,
+        .future-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .timer-shell {
+          width: min(100%, 286px);
+        }
+
+        .timer-core img {
+          width: 92px;
+        }
+
+        .time {
+          font-size: 40px;
+        }
+
+        .memory-strip {
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+
+        h1 {
+          font-size: clamp(34px, 10vw, 48px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top" aria-label="VedaPath AI home">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
+          <div>
+            <strong>VedaPath AI</strong>
+            <span>Guided source practice</span>
+          </div>
+        </a>
+        <nav class="nav" aria-label="Project links">
+          <a class="link" href="build-status.html">Build</a>
+          <a class="link" href="brand/brand-board.html">Brand</a>
+          <a class="link" href="blueprint.html">Blueprint</a>
+          <a class="link" href="calm.html">Calm</a>
+          <a class="link" href="daily.html">Daily</a>
+          <a class="link active" href="practice.html">Practice</a>
+          <span class="version">v0.2.3 practice</span>
+        </nav>
+      </header>
+
+      <section class="workspace" aria-label="Guided source practice workspace">
+        <aside class="panel">
+          <span class="eyebrow">Choose doorway</span>
+          <h1>Three quiet minutes, one clear source.</h1>
+          <p class="muted">A guided practice engine for people who need calm without losing accuracy, boundaries, or personal agency.</p>
+
+          <div class="state-list" aria-label="Practice state options">
+            <button class="state-button active" type="button" data-state="restless">
+              <span class="state-icon">1</span>
+              <span><strong>Restless</strong><span>Use action to settle attention.</span></span>
+            </button>
+            <button class="state-button" type="button" data-state="overwhelmed">
+              <span class="state-icon">2</span>
+              <span><strong>Overwhelmed</strong><span>Gather the senses before choosing.</span></span>
+            </button>
+            <button class="state-button" type="button" data-state="clarity">
+              <span class="state-icon">3</span>
+              <span><strong>Seeking clarity</strong><span>Sort facts, meaning, and priority.</span></span>
+            </button>
+            <button class="state-button" type="button" data-state="courage">
+              <span class="state-icon">4</span>
+              <span><strong>Need courage</strong><span>Return to the work you can touch.</span></span>
+            </button>
+          </div>
+
+          <div class="section">
+            <h2>Session Length</h2>
+            <div class="pace-row" aria-label="Practice duration">
+              <button class="pace-button" type="button" data-duration="60">1 min</button>
+              <button class="pace-button active" type="button" data-duration="180">3 min</button>
+              <button class="pace-button" type="button" data-duration="300">5 min</button>
+            </div>
+          </div>
+
+          <div class="section">
+            <label class="small" for="practiceNote">One line before practice</label>
+            <textarea id="practiceNote">I will act with steadiness before I chase the result.</textarea>
+          </div>
+        </aside>
+
+        <section class="panel" aria-live="polite">
+          <span class="eyebrow">Source practice</span>
+          <div class="practice-stage">
+            <div class="timer-shell" id="timerShell" aria-label="Practice timer progress">
+              <div class="timer-core">
+                <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI practice logo mark">
+                <span class="time" id="timeDisplay">03:00</span>
+                <span class="stage-name" id="stageName">Arrive</span>
+              </div>
+            </div>
+            <div>
+              <h1 id="practiceTitle">Steady action before inner noise.</h1>
+              <p class="muted" id="practiceInstruction">Name the state without judging it. Let the first step be honest, not dramatic.</p>
+              <div class="button-row">
+                <button class="button primary" id="startPractice" type="button">Start</button>
+                <button class="button secondary" id="pausePractice" type="button">Pause</button>
+                <button class="button" id="resetPractice" type="button">Reset</button>
+                <button class="button" id="completePractice" type="button">Complete</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="source-card" aria-label="Practice source card">
+            <div>
+              <span>Source candidate</span>
+              <strong id="practiceSource">Bhagavad Gita 2.48</strong>
+            </div>
+            <div>
+              <span>Text family</span>
+              <strong id="practiceFamily">Bhagavad Gita | Smriti</strong>
+            </div>
+            <div>
+              <span>Reflection question</span>
+              <strong id="practiceQuestion">What can I do calmly today?</strong>
+            </div>
+            <div>
+              <span>Carry action</span>
+              <strong id="practiceCarry">Do one small duty slowly and cleanly.</strong>
+            </div>
+          </div>
+
+          <div class="section">
+            <h2>Live Guidance</h2>
+            <div class="step-list">
+              <article class="step-card active" data-step="arrive">
+                <span class="step-index">1</span>
+                <div>
+                  <strong>Arrive</strong>
+                  <p>Name the state. Do not explain your whole life to yourself.</p>
+                </div>
+              </article>
+              <article class="step-card" data-step="read">
+                <span class="step-index">2</span>
+                <div>
+                  <strong>Read</strong>
+                  <p>Open the source card. Notice the family and the boundary.</p>
+                </div>
+              </article>
+              <article class="step-card" data-step="reflect">
+                <span class="step-index">3</span>
+                <div>
+                  <strong>Reflect</strong>
+                  <p>Answer one source-shaped question without overreaching.</p>
+                </div>
+              </article>
+              <article class="step-card" data-step="carry">
+                <span class="step-index">4</span>
+                <div>
+                  <strong>Carry</strong>
+                  <p>Leave with one small action that can survive real life.</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <aside class="panel memory-panel">
+          <span class="eyebrow">Local practice memory</span>
+          <h2>Your Practice Rhythm</h2>
+          <p class="muted">This prototype remembers practice completions only in this browser. It proves the product habit before accounts or sync.</p>
+
+          <div class="stats-grid">
+            <article class="stat">
+              <span>Completed sessions</span>
+              <strong id="sessionCount">0</strong>
+            </article>
+            <article class="stat">
+              <span>Practice minutes</span>
+              <strong id="minuteCount">0</strong>
+            </article>
+            <article class="stat">
+              <span>Current streak</span>
+              <strong id="streakCount">0</strong>
+            </article>
+            <article class="stat">
+              <span>Last source family</span>
+              <strong id="lastFamily">None</strong>
+            </article>
+          </div>
+
+          <div class="memory-strip" id="practiceStrip" aria-label="Seven day practice strip"></div>
+          <div class="entry-list" id="practiceEntries"></div>
+
+          <div class="button-row">
+            <button class="button secondary" id="copyPractice" type="button">Copy Handoff</button>
+            <button class="button" id="clearPractice" type="button">Clear Local Preview</button>
+          </div>
+          <textarea class="summary-output" id="practiceSummary" readonly hidden aria-label="Prepared practice handoff"></textarea>
+
+          <section class="boundary">
+            <h2>Calm Boundary</h2>
+            <p>This is reflection support, not therapy, medical advice, emergency support, ritual instruction, or a replacement for teachers, family, clinicians, or tradition.</p>
+          </section>
+        </aside>
+      </section>
+
+      <section class="section" aria-label="Practice future">
+        <h2>Why This Matters</h2>
+        <div class="future-grid">
+          <article class="future-card">
+            <strong>Calm becomes a workflow</strong>
+            <p>Users do not just read about steadiness. They move through a simple source-shaped loop.</p>
+          </article>
+          <article class="future-card">
+            <strong>Source cards stay central</strong>
+            <p>Every practice keeps citation, category, and overclaim boundary visible.</p>
+          </article>
+          <article class="future-card">
+            <strong>Private by default</strong>
+            <p>The prototype learns from deliberate completions on this device, not hidden tracking.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const practiceStates = {
+        restless: {
+          title: "Steady action before inner noise.",
+          source: "Bhagavad Gita 2.48",
+          family: "Bhagavad Gita | Smriti",
+          question: "What can I do calmly today?",
+          carry: "Do one small duty slowly and cleanly.",
+          note: "I will act with steadiness before I chase the result.",
+          instructions: {
+            arrive: "Name the state without judging it. Let the first step be honest, not dramatic.",
+            read: "Read the source family carefully: Gita, not direct Veda. The boundary keeps the practice humble.",
+            reflect: "Ask what is yours to do with balance, without making the outcome your identity.",
+            carry: "Choose one small duty. Do it slowly, cleanly, and without checking for praise."
+          }
+        },
+        overwhelmed: {
+          title: "Gather attention before the day gathers you.",
+          source: "Katha Upanishad 1.3.3-9",
+          family: "Upanishad | Shruti",
+          question: "What is pulling my attention hardest?",
+          carry: "Remove one input and choose the next useful step.",
+          note: "I will reduce one input before I decide what matters.",
+          instructions: {
+            arrive: "Notice the load without fighting it. Name the loudest pull on attention.",
+            read: "Use the chariot image as a source candidate, not as clinical guidance.",
+            reflect: "Ask which part needs care now: senses, mind, judgment, or direction.",
+            carry: "Remove one input for a few minutes. Decide only after attention returns."
+          }
+        },
+        clarity: {
+          title: "Ask what kind of knowing this needs.",
+          source: "Mundaka Upanishad 1.1.4-5",
+          family: "Upanishad | Shruti",
+          question: "Is this about facts, meaning, or priority?",
+          carry: "Write the decision in one sentence and name the missing source.",
+          note: "I will name the real question before chasing more information.",
+          instructions: {
+            arrive: "Let the confusion become specific. Do not solve every question at once.",
+            read: "Hold the source as a sorting lens for kinds of knowledge and purpose.",
+            reflect: "Ask whether you need information, interpretation, or priority.",
+            carry: "Write one sentence that names the decision and the next source needed."
+          }
+        },
+        courage: {
+          title: "Return to the work you can touch.",
+          source: "Bhagavad Gita 2.47",
+          family: "Bhagavad Gita | Smriti",
+          question: "What action is mine today?",
+          carry: "Begin for five focused minutes without negotiating with the whole future.",
+          note: "I will start the work for five minutes and let the future stay future.",
+          instructions: {
+            arrive: "Name the hesitation without turning it into identity.",
+            read: "Read the source as encouragement toward rightful effort, not pressure.",
+            reflect: "Ask which action is yours, even if the result is not yours to control.",
+            carry: "Start for five focused minutes. Let the whole future wait outside the room."
+          }
+        }
+      };
+
+      const stageOrder = ["arrive", "read", "reflect", "carry"];
+      const stageLabels = {
+        arrive: "Arrive",
+        read: "Read",
+        reflect: "Reflect",
+        carry: "Carry"
+      };
+      const storageKey = "vedapath.practice.v1";
+      const stateButtons = [...document.querySelectorAll(".state-button")];
+      const paceButtons = [...document.querySelectorAll(".pace-button")];
+      const stepCards = [...document.querySelectorAll(".step-card")];
+      const practiceNote = document.querySelector("#practiceNote");
+      const timerShell = document.querySelector("#timerShell");
+      const timeDisplay = document.querySelector("#timeDisplay");
+      const stageName = document.querySelector("#stageName");
+      const startPractice = document.querySelector("#startPractice");
+      const pausePractice = document.querySelector("#pausePractice");
+      const resetPractice = document.querySelector("#resetPractice");
+      const completePractice = document.querySelector("#completePractice");
+      const copyPractice = document.querySelector("#copyPractice");
+      const clearPractice = document.querySelector("#clearPractice");
+      const practiceSummary = document.querySelector("#practiceSummary");
+
+      let activeState = "restless";
+      let duration = 180;
+      let elapsed = 0;
+      let timerId = null;
+      let running = false;
+
+      function readSessions() {
+        try {
+          const parsed = JSON.parse(localStorage.getItem(storageKey) || "[]");
+          return Array.isArray(parsed) ? parsed : [];
+        } catch {
+          return [];
+        }
+      }
+
+      function writeSessions(sessions) {
+        localStorage.setItem(storageKey, JSON.stringify(sessions.slice(0, 50)));
+      }
+
+      function dateKey(date) {
+        return date.toISOString().slice(0, 10);
+      }
+
+      function formatTime(seconds) {
+        const minutes = Math.floor(seconds / 60).toString().padStart(2, "0");
+        const rest = Math.max(0, seconds % 60).toString().padStart(2, "0");
+        return `${minutes}:${rest}`;
+      }
+
+      function currentStage() {
+        const ratio = duration ? elapsed / duration : 0;
+        if (ratio >= 0.75) return "carry";
+        if (ratio >= 0.5) return "reflect";
+        if (ratio >= 0.25) return "read";
+        return "arrive";
+      }
+
+      function renderTimer() {
+        const remaining = Math.max(0, duration - elapsed);
+        const degrees = duration ? Math.round((elapsed / duration) * 360) : 0;
+        const stage = currentStage();
+        timerShell.style.setProperty("--progress", `${degrees}deg`);
+        timeDisplay.textContent = formatTime(remaining);
+        stageName.textContent = stageLabels[stage];
+        document.querySelector("#practiceInstruction").textContent = practiceStates[activeState].instructions[stage];
+        stepCards.forEach((card) => {
+          card.classList.toggle("active", card.dataset.step === stage);
+        });
+      }
+
+      function renderState(stateKey) {
+        const state = practiceStates[stateKey];
+        activeState = stateKey;
+        document.querySelector("#practiceTitle").textContent = state.title;
+        document.querySelector("#practiceSource").textContent = state.source;
+        document.querySelector("#practiceFamily").textContent = state.family;
+        document.querySelector("#practiceQuestion").textContent = state.question;
+        document.querySelector("#practiceCarry").textContent = state.carry;
+        practiceNote.value = state.note;
+        stateButtons.forEach((button) => {
+          button.classList.toggle("active", button.dataset.state === stateKey);
+        });
+        resetSession(false);
+      }
+
+      function setDuration(seconds) {
+        duration = seconds;
+        paceButtons.forEach((button) => {
+          button.classList.toggle("active", Number(button.dataset.duration) === seconds);
+        });
+        resetSession(false);
+      }
+
+      function resetSession(resetButtonText = true) {
+        window.clearInterval(timerId);
+        timerId = null;
+        running = false;
+        elapsed = 0;
+        if (resetButtonText) startPractice.textContent = "Start";
+        pausePractice.textContent = "Pause";
+        renderTimer();
+      }
+
+      function startSession() {
+        if (running) return;
+        running = true;
+        startPractice.textContent = "Running";
+        timerId = window.setInterval(() => {
+          elapsed += 1;
+          renderTimer();
+          if (elapsed >= duration) {
+            completeSession(true);
+          }
+        }, 1000);
+      }
+
+      function pauseSession() {
+        if (!running) return;
+        window.clearInterval(timerId);
+        timerId = null;
+        running = false;
+        startPractice.textContent = "Resume";
+        pausePractice.textContent = "Paused";
+      }
+
+      function completeSession(autoCompleted = false) {
+        window.clearInterval(timerId);
+        timerId = null;
+        running = false;
+        elapsed = duration;
+        renderTimer();
+        const state = practiceStates[activeState];
+        const now = new Date();
+        const session = {
+          id: `${now.getTime()}`,
+          dateKey: dateKey(now),
+          displayDate: now.toLocaleDateString(undefined, { month: "short", day: "numeric" }),
+          state: activeState,
+          duration,
+          source: state.source,
+          family: state.family,
+          carry: state.carry,
+          note: practiceNote.value.trim() || state.note
+        };
+        writeSessions([session, ...readSessions()]);
+        startPractice.textContent = autoCompleted ? "Completed" : "Saved";
+        renderMemory();
+      }
+
+      function getStreak(sessions) {
+        const dates = new Set(sessions.map((session) => session.dateKey));
+        let streak = 0;
+        const cursor = new Date();
+        for (let index = 0; index < 30; index += 1) {
+          const key = dateKey(cursor);
+          if (!dates.has(key)) break;
+          streak += 1;
+          cursor.setDate(cursor.getDate() - 1);
+        }
+        return streak;
+      }
+
+      function stateLabel(stateKey) {
+        return stateKey ? stateKey.charAt(0).toUpperCase() + stateKey.slice(1) : "None";
+      }
+
+      function renderMemory() {
+        const sessions = readSessions();
+        const minutes = Math.round(sessions.reduce((total, session) => total + session.duration, 0) / 60);
+        document.querySelector("#sessionCount").textContent = sessions.length;
+        document.querySelector("#minuteCount").textContent = minutes;
+        document.querySelector("#streakCount").textContent = getStreak(sessions);
+        document.querySelector("#lastFamily").textContent = sessions[0]?.family || "None";
+
+        const strip = document.querySelector("#practiceStrip");
+        const today = new Date();
+        const days = Array.from({ length: 7 }, (_, index) => {
+          const day = new Date(today);
+          day.setDate(today.getDate() - (6 - index));
+          return day;
+        });
+        strip.innerHTML = days.map((day) => {
+          const key = dateKey(day);
+          const count = sessions.filter((session) => session.dateKey === key).length;
+          const label = day.toLocaleDateString(undefined, { weekday: "short" });
+          return `
+            <div class="day-cell ${count ? "has-entry" : ""}">
+              <strong>${label}</strong>
+              <span>${count ? `${count} done` : "Open"}</span>
+            </div>
+          `;
+        }).join("");
+
+        const latest = sessions.slice(0, 4);
+        document.querySelector("#practiceEntries").innerHTML = latest.length ? latest.map((session) => `
+          <article class="entry-card">
+            <strong>${session.displayDate} | ${stateLabel(session.state)} | ${Math.round(session.duration / 60)} min</strong>
+            <p>${session.source}: ${session.carry}</p>
+          </article>
+        `).join("") : `
+          <article class="entry-card">
+            <strong>No completed practices yet</strong>
+            <p>Complete one short source practice and the rhythm will begin.</p>
+          </article>
+        `;
+      }
+
+      function prepareHandoff() {
+        const state = practiceStates[activeState];
+        const sessions = readSessions();
+        const text = [
+          "VedaPath Source Practice",
+          `State: ${stateLabel(activeState)}`,
+          `Source candidate: ${state.source}`,
+          `Question: ${state.question}`,
+          `Carry: ${state.carry}`,
+          `Practice sessions on this device: ${sessions.length}`,
+          `Note: ${practiceNote.value.trim() || state.note}`
+        ].join("\n");
+        practiceSummary.value = text;
+        practiceSummary.hidden = false;
+
+        const fallbackCopy = () => {
+          const helper = document.createElement("textarea");
+          helper.value = text;
+          helper.setAttribute("readonly", "");
+          helper.style.position = "fixed";
+          helper.style.left = "-9999px";
+          document.body.appendChild(helper);
+          helper.select();
+          const copied = document.execCommand("copy");
+          helper.remove();
+          copyPractice.textContent = copied ? "Copied" : "Handoff Ready";
+        };
+
+        if (navigator.clipboard?.writeText) {
+          navigator.clipboard.writeText(text).then(() => {
+            copyPractice.textContent = "Copied";
+          }).catch(fallbackCopy);
+          return;
+        }
+
+        try {
+          fallbackCopy();
+        } catch {
+          copyPractice.textContent = "Handoff Ready";
+        }
+      }
+
+      stateButtons.forEach((button) => {
+        button.addEventListener("click", () => renderState(button.dataset.state));
+      });
+
+      paceButtons.forEach((button) => {
+        button.addEventListener("click", () => setDuration(Number(button.dataset.duration)));
+      });
+
+      startPractice.addEventListener("click", startSession);
+      pausePractice.addEventListener("click", pauseSession);
+      resetPractice.addEventListener("click", () => resetSession());
+      completePractice.addEventListener("click", () => completeSession(false));
+      copyPractice.addEventListener("click", prepareHandoff);
+      clearPractice.addEventListener("click", () => {
+        if (!readSessions().length) return;
+        const shouldClear = window.confirm("Clear this browser's local practice preview entries?");
+        if (!shouldClear) return;
+        localStorage.removeItem(storageKey);
+        renderMemory();
+      });
+
+      renderTimer();
+      renderMemory();
+    </script>
+  </body>
+</html>

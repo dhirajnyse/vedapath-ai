@@ -1,6 +1,6 @@
-# v0.2.0 Prototype Notes
+# v0.2.3 Prototype Notes
 
-The v0.2.0 release turns the VedaPath AI homepage into a clickable product prototype.
+The v0.2.3 release turns the VedaPath AI homepage into a clickable product prototype with calm and practice surfaces.
 
 ## Included
 
@@ -11,6 +11,9 @@ The v0.2.0 release turns the VedaPath AI homepage into a clickable product proto
 - Layer tabs for source, Sanskrit, interpretations, and claim checking
 - Claim Checker panel
 - Learning Path rail
+- Calm Path
+- Daily Calm Loop
+- Source Practice timer and local rhythm
 - Correction Loop placeholder
 - MVP progress update
 
@@ -31,4 +34,3 @@ This release proves the product direction:
 ## Next Release
 
 v0.3.0 should add a structured source schema and the first 25 to 50 verified answer records.
-

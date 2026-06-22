@@ -36,6 +36,8 @@ Let us look at the source first.
 - [Build Status Page](build-status.html)
 - [Calm Path Preview](calm.html)
 - [Daily Calm Loop](daily.html)
+- [Source Practice](practice.html)
+- [Source Practice Notes](docs/SOURCE_PRACTICE.md)
 - [Release Workflow](docs/RELEASE_WORKFLOW.md)
 
 ## North Star
@@ -44,7 +46,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v0.2.2` is a clickable prototype with:
+`v0.2.3` is a clickable prototype with:
 
 - Ask workspace
 - Source Card
@@ -53,6 +55,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Learning Path
 - Calm Path Preview
 - Daily Calm Loop with device-local memory
+- Source Practice with timer, stages, source card, and local rhythm
 - Correction Loop placeholder
 
 ## Faster Release Commits

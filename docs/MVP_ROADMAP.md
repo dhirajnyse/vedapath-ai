@@ -23,7 +23,7 @@ Show the product experience without a live LLM backend.
 
 Status:
 
-Completed in v0.2.0.
+Completed in v0.2.3.
 
 Core screens:
 
@@ -33,6 +33,9 @@ Core screens:
 - Claim Checker
 - Learning Path
 - Correction Suggestion
+- Calm Path
+- Daily Calm Loop
+- Source Practice
 
 Success criteria:
 
@@ -133,12 +136,15 @@ Must have:
 - Pramana Meter
 - Claim Checker
 - simple learning path
+- calm and practice boundary model
 
 Should have:
 
 - Mantra Lens
 - sample Sanskrit layer
 - correction pipeline
+- Daily Calm Loop
+- Source Practice
 
 Later:
 

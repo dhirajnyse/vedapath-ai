@@ -11,6 +11,7 @@ It helps users move from curiosity to understanding through:
 - Sanskrit and translation layers
 - multiple interpretation views
 - guided learning paths
+- source-backed calm and practice flows
 - user and scholar correction loops
 
 ## What It Is
@@ -152,6 +153,18 @@ Flow:
 
 User suggestion -> AI pre-check -> reviewer queue -> scholar or moderator review -> accepted annotation -> version history
 
+### 8. Calm Path And Source Practice
+
+A bounded reflection mode for everyday steadiness:
+
+- choose a state
+- show a source candidate and source family
+- separate reflection from prescription
+- guide a short Arrive, Read, Reflect, Carry practice
+- save only deliberate practice history with consent
+
+This feature must never become therapy, medical advice, emergency support, ritual instruction, or a guru voice.
+
 ## Product Personality
 
 Calm. Reverent. Precise. Beginner-friendly. Never flashy about sacred material.
@@ -169,4 +182,3 @@ VedaPath should win by doing the opposite:
 - it separates text from interpretation
 - it invites human scholarship
 - it respects tradition without overclaiming
-
