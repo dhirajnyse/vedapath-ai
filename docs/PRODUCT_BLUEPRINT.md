@@ -13,6 +13,7 @@ It helps users move from curiosity to understanding through:
 - guided learning paths
 - source-backed calm and practice flows
 - searchable source library
+- source path builder with explicit user intention
 - user and scholar correction loops
 
 ## What It Is
@@ -181,6 +182,20 @@ Every record should include:
 - reviewer metadata before production
 
 The library should make it easy to find a source before asking the AI for an answer.
+
+### 10. Source Path Builder
+
+A source path turns library records into a short, cited route.
+
+It should:
+
+- begin from explicit user intention
+- show citation and source family on every step
+- let users mark progress without making the AI an authority
+- hand the next source into guided practice
+- keep prototype memory device-local until accounts and consent exist
+
+The path builder should never prescribe a life decision, ritual act, treatment plan, or spiritual conclusion. It should only organize the next source-backed step.
 
 ## Product Personality
 

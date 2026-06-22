@@ -49,3 +49,9 @@ The source card must remain visible. The source candidate, text family, reflecti
 ## v0.2.4 Source Library
 
 Source Library gives Calm Path and Source Practice a searchable source layer. A user can find a source candidate, save it to a device-local shelf, and send it into Practice while preserving citation, text family, and boundary.
+
+## v0.2.5 Source Path Builder
+
+Source Path Builder turns Calm, Library, and Practice into a small source-backed journey. A user chooses an intention, receives a short sequence of cited source candidates, marks progress locally, and sends the next source into Practice.
+
+The path must remain a learning scaffold. It should not become hidden profiling, therapy, ritual direction, or a guru voice.

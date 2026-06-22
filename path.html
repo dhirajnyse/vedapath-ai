@@ -1,0 +1,1113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VedaPath Source Path Builder</title>
+    <style>
+      :root {
+        --bhagwa: #d65a1f;
+        --deep-ochre: #a83e12;
+        --sacred-gold: #e0a83b;
+        --warm-ivory: #fff7ea;
+        --ink: #1f1a17;
+        --muted-brown: #5b4638;
+        --peacock-green: #145c4a;
+        --deep-indigo: #29335c;
+        --line: rgba(91, 70, 56, 0.16);
+        --panel: rgba(255, 255, 255, 0.66);
+        --panel-strong: rgba(255, 255, 255, 0.88);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--warm-ivory);
+        color: var(--ink);
+        font-family: Inter, "IBM Plex Sans", system-ui, sans-serif;
+        line-height: 1.5;
+      }
+
+      button,
+      textarea {
+        font: inherit;
+      }
+
+      button {
+        cursor: pointer;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .page {
+        width: min(1240px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 22px 0 48px;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding-bottom: 18px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        min-width: 0;
+      }
+
+      .brand img {
+        width: 50px;
+        height: 50px;
+        border-radius: 8px;
+        object-fit: cover;
+      }
+
+      .brand strong {
+        display: block;
+        font-size: 18px;
+      }
+
+      .brand span,
+      .muted,
+      .small,
+      .intent-button span,
+      .source-card span,
+      .path-card p,
+      .stat span,
+      .boundary p,
+      .future-card p {
+        color: var(--muted-brown);
+      }
+
+      .brand span,
+      .small,
+      .source-card span,
+      .stat span {
+        font-size: 13px;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .link,
+      .version {
+        display: inline-flex;
+        align-items: center;
+        min-height: 34px;
+        border-radius: 999px;
+        padding: 6px 11px;
+        font-size: 13px;
+        font-weight: 800;
+      }
+
+      .link {
+        border: 1px solid transparent;
+        color: var(--muted-brown);
+      }
+
+      .link:hover,
+      .link:focus-visible,
+      .link.active {
+        border-color: rgba(168, 62, 18, 0.22);
+        color: var(--deep-ochre);
+        outline: none;
+      }
+
+      .version {
+        border: 1px solid rgba(168, 62, 18, 0.28);
+        background: rgba(255, 255, 255, 0.42);
+        color: var(--deep-ochre);
+      }
+
+      .workspace {
+        display: grid;
+        grid-template-columns: minmax(290px, 0.82fr) minmax(0, 1.18fr) minmax(300px, 0.9fr);
+        gap: 16px;
+        align-items: start;
+        padding-top: 18px;
+      }
+
+      .panel,
+      .intent-button,
+      .path-card,
+      .source-card,
+      .stat,
+      .memory-card,
+      .boundary,
+      .future-card {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+      }
+
+      .panel {
+        padding: 18px;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        min-height: 28px;
+        margin-bottom: 14px;
+        border-radius: 999px;
+        padding: 4px 10px;
+        background: rgba(214, 90, 31, 0.12);
+        color: var(--deep-ochre);
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        margin-bottom: 12px;
+        font-size: 56px;
+        line-height: 0.98;
+        letter-spacing: 0;
+      }
+
+      h2 {
+        margin-bottom: 12px;
+        font-size: 24px;
+      }
+
+      h3 {
+        margin-bottom: 8px;
+        font-size: 18px;
+      }
+
+      .intent-list,
+      .path-list,
+      .future-grid {
+        display: grid;
+        gap: 10px;
+      }
+
+      .intent-button {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr);
+        gap: 10px;
+        align-items: center;
+        width: 100%;
+        min-height: 68px;
+        padding: 11px;
+        text-align: left;
+        color: inherit;
+      }
+
+      .intent-button:hover,
+      .intent-button:focus-visible,
+      .intent-button.active,
+      .button:hover,
+      .button:focus-visible,
+      .pace-button:hover,
+      .pace-button:focus-visible,
+      .pace-button.active,
+      .path-card:hover,
+      .path-card:focus-visible,
+      .path-card.active {
+        border-color: rgba(214, 90, 31, 0.48);
+        outline: 3px solid rgba(214, 90, 31, 0.12);
+      }
+
+      .intent-button.active,
+      .path-card.active {
+        background: rgba(214, 90, 31, 0.1);
+      }
+
+      .intent-index,
+      .path-index {
+        display: grid;
+        place-items: center;
+        width: 42px;
+        height: 34px;
+        border-radius: 999px;
+        background: rgba(20, 92, 74, 0.12);
+        color: var(--peacock-green);
+        font-size: 13px;
+        font-weight: 900;
+      }
+
+      .intent-button.active .intent-index,
+      .path-card.active .path-index {
+        background: var(--bhagwa);
+        color: white;
+      }
+
+      .path-card.done .path-index {
+        background: rgba(20, 92, 74, 0.16);
+        color: var(--peacock-green);
+      }
+
+      .intent-button strong,
+      .path-card strong {
+        display: block;
+        font-size: 15px;
+      }
+
+      .intent-button span,
+      .path-card p {
+        margin-bottom: 0;
+        font-size: 13px;
+      }
+
+      .pace-row,
+      .button-row,
+      .tag-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .pace-button,
+      .button,
+      .tag {
+        display: inline-flex;
+        align-items: center;
+        min-height: 38px;
+        border: 1px solid rgba(168, 62, 18, 0.24);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.48);
+        color: var(--deep-ochre);
+        padding: 8px 11px;
+        font-weight: 850;
+      }
+
+      .tag {
+        min-height: 28px;
+        border-radius: 999px;
+        padding: 4px 9px;
+        font-size: 12px;
+      }
+
+      .pace-button.active,
+      .button.primary {
+        border-color: var(--bhagwa);
+        background: var(--bhagwa);
+        color: white;
+      }
+
+      .button.secondary {
+        border-color: rgba(20, 92, 74, 0.24);
+        color: var(--peacock-green);
+      }
+
+      textarea {
+        width: 100%;
+        min-height: 112px;
+        resize: vertical;
+        border: 1px solid rgba(168, 62, 18, 0.28);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.72);
+        color: var(--ink);
+        padding: 12px;
+      }
+
+      textarea:focus {
+        border-color: var(--bhagwa);
+        outline: 3px solid rgba(214, 90, 31, 0.12);
+      }
+
+      .path-stage {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 18px;
+        align-items: center;
+        margin-bottom: 16px;
+      }
+
+      .mark {
+        display: grid;
+        place-items: center;
+        width: 152px;
+        height: 152px;
+        border: 1px solid rgba(168, 62, 18, 0.18);
+        border-radius: 8px;
+        background: linear-gradient(180deg, #fff9ef 0%, #f6e4ca 100%);
+        overflow: hidden;
+      }
+
+      .mark img {
+        width: 124px;
+        height: auto;
+        animation: calmPulse 6s ease-in-out infinite;
+      }
+
+      @keyframes calmPulse {
+        0%, 100% {
+          transform: scale(0.96);
+        }
+
+        50% {
+          transform: scale(1.04);
+        }
+      }
+
+      .source-card {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        padding: 12px;
+        border-left: 4px solid var(--bhagwa);
+        background: var(--panel-strong);
+      }
+
+      .source-card strong {
+        display: block;
+        margin-top: 4px;
+      }
+
+      .path-card {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr);
+        gap: 10px;
+        width: 100%;
+        padding: 12px;
+        text-align: left;
+        color: inherit;
+      }
+
+      .stats-grid,
+      .detail-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .stat,
+      .memory-card,
+      .boundary,
+      .future-card {
+        padding: 13px;
+      }
+
+      .stat strong {
+        display: block;
+        margin-top: 4px;
+        font-size: 26px;
+        line-height: 1;
+        overflow-wrap: anywhere;
+      }
+
+      .progress {
+        height: 10px;
+        margin: 12px 0 14px;
+        overflow: hidden;
+        border-radius: 999px;
+        background: rgba(168, 62, 18, 0.14);
+      }
+
+      .progress div {
+        height: 100%;
+        border-radius: inherit;
+        background: linear-gradient(90deg, var(--bhagwa), var(--sacred-gold));
+      }
+
+      .memory-card {
+        background: rgba(255, 255, 255, 0.46);
+      }
+
+      .memory-card strong,
+      .future-card strong {
+        display: block;
+        margin-bottom: 4px;
+      }
+
+      .memory-card p,
+      .boundary p,
+      .future-card p {
+        margin-bottom: 0;
+      }
+
+      .boundary {
+        margin-top: 14px;
+        border-style: dashed;
+        background: rgba(255, 255, 255, 0.34);
+      }
+
+      .section {
+        margin-top: 16px;
+        padding-top: 16px;
+        border-top: 1px solid var(--line);
+      }
+
+      .summary-output {
+        min-height: 136px;
+        margin-top: 10px;
+      }
+
+      [hidden] {
+        display: none !important;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        .mark img {
+          animation: none;
+        }
+      }
+
+      @media (max-width: 1120px) {
+        .workspace {
+          grid-template-columns: minmax(290px, 0.9fr) minmax(0, 1.1fr);
+        }
+
+        .memory-panel {
+          grid-column: 1 / -1;
+        }
+      }
+
+      @media (max-width: 780px) {
+        .page {
+          width: min(100% - 24px, 1240px);
+        }
+
+        .topbar {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .nav {
+          justify-content: flex-start;
+        }
+
+        .workspace,
+        .path-stage,
+        .source-card,
+        .stats-grid,
+        .detail-grid,
+        .future-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .mark {
+          width: 100%;
+          min-height: 164px;
+        }
+
+        h1 {
+          font-size: 42px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top" aria-label="VedaPath AI home">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
+          <div>
+            <strong>VedaPath AI</strong>
+            <span>Source path builder</span>
+          </div>
+        </a>
+        <nav class="nav" aria-label="Project links">
+          <a class="link" href="build-status.html">Build</a>
+          <a class="link" href="brand/brand-board.html">Brand</a>
+          <a class="link" href="blueprint.html">Blueprint</a>
+          <a class="link" href="calm.html">Calm</a>
+          <a class="link" href="daily.html">Daily</a>
+          <a class="link" href="practice.html">Practice</a>
+          <a class="link" href="library.html">Library</a>
+          <a class="link active" href="path.html">Path</a>
+          <span class="version">v0.2.5 path</span>
+        </nav>
+      </header>
+
+      <section class="workspace" aria-label="Source Path Builder workspace">
+        <aside class="panel">
+          <span class="eyebrow">Choose direction</span>
+          <h1>A personal path that begins with sources.</h1>
+          <p class="muted">Pick an intention. VedaPath builds a small cited route from the current source library, remembers progress on this device, and keeps the next step calm.</p>
+
+          <div class="intent-list" aria-label="Path intentions">
+            <button class="intent-button active" type="button" data-intent="steadiness">
+              <span class="intent-index">1</span>
+              <span><strong>Calm steadiness</strong><span>Act cleanly before chasing results.</span></span>
+            </button>
+            <button class="intent-button" type="button" data-intent="literacy">
+              <span class="intent-index">2</span>
+              <span><strong>Source literacy</strong><span>Learn families, labels, and boundaries.</span></span>
+            </button>
+            <button class="intent-button" type="button" data-intent="claims">
+              <span class="intent-index">3</span>
+              <span><strong>Claim clarity</strong><span>Separate source, tradition, and modern claim.</span></span>
+            </button>
+            <button class="intent-button" type="button" data-intent="mantra">
+              <span class="intent-index">4</span>
+              <span><strong>Mantra respect</strong><span>Approach mantra context without flattening it.</span></span>
+            </button>
+          </div>
+
+          <div class="section">
+            <h2>Path Size</h2>
+            <div class="pace-row" aria-label="Path size">
+              <button class="pace-button active" type="button" data-length="3">3 sources</button>
+              <button class="pace-button" type="button" data-length="5">5 sources</button>
+            </div>
+          </div>
+
+          <div class="section">
+            <label class="small" for="pathNote">One line of intent</label>
+            <textarea id="pathNote">I want a clear, calm way to keep learning without overclaiming.</textarea>
+            <div class="button-row">
+              <button class="button primary" id="savePath" type="button">Save Path</button>
+              <button class="button secondary" id="copyPath" type="button">Copy Path</button>
+            </div>
+            <textarea class="summary-output" id="pathSummary" readonly hidden aria-label="Prepared source path"></textarea>
+          </div>
+        </aside>
+
+        <section class="panel" aria-live="polite">
+          <div class="path-stage">
+            <div>
+              <span class="eyebrow">Current source step</span>
+              <h1 id="pathTitle">Steady action before inner noise.</h1>
+              <p class="muted" id="pathSummaryText">A source-backed first step for practicing action without turning outcomes into identity.</p>
+            </div>
+            <div class="mark" aria-label="VedaPath path logo animation">
+              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI path logo mark">
+            </div>
+          </div>
+
+          <div class="source-card" aria-label="Path source card">
+            <div>
+              <span>Source candidate</span>
+              <strong id="sourceCitation">Bhagavad Gita 2.48</strong>
+            </div>
+            <div>
+              <span>Text family</span>
+              <strong id="sourceFamily">Bhagavad Gita | Smriti</strong>
+            </div>
+            <div>
+              <span>Reflection question</span>
+              <strong id="sourceQuestion">What can I do calmly today?</strong>
+            </div>
+            <div>
+              <span>Carry action</span>
+              <strong id="sourceCarry">Do one small duty slowly and cleanly.</strong>
+            </div>
+          </div>
+
+          <div class="section">
+            <h2 id="pathName">Calm Steadiness Path</h2>
+            <div class="progress" aria-label="Source path progress">
+              <div id="pathProgress" style="width:0%"></div>
+            </div>
+            <div class="path-list" id="pathList"></div>
+            <div class="button-row" style="margin-top: 12px;">
+              <button class="button primary" id="completeStep" type="button">Mark Step Complete</button>
+              <button class="button secondary" id="sendPractice" type="button">Send to Practice</button>
+              <a class="button" href="practice.html">Open Practice</a>
+            </div>
+          </div>
+
+          <div class="section detail-grid">
+            <article class="memory-card">
+              <strong>Why this step matters</strong>
+              <p id="whyText">It keeps calm connected to responsible action, not passive escape.</p>
+            </article>
+            <article class="memory-card">
+              <strong>Boundary</strong>
+              <p id="boundaryText">Reflection support, not therapy, ritual instruction, or a life command.</p>
+            </article>
+          </div>
+        </section>
+
+        <aside class="panel memory-panel">
+          <span class="eyebrow">Device-local path memory</span>
+          <h2>Your Source Path Rhythm</h2>
+          <p class="muted">This prototype remembers only the path state in this browser. A production version needs accounts, consent, export, and reviewed source records.</p>
+
+          <div class="stats-grid">
+            <article class="stat">
+              <span>Completed steps</span>
+              <strong id="completedCount">0</strong>
+            </article>
+            <article class="stat">
+              <span>Path length</span>
+              <strong id="pathLength">3</strong>
+            </article>
+            <article class="stat">
+              <span>Next source</span>
+              <strong id="nextSource">Gita</strong>
+            </article>
+            <article class="stat">
+              <span>Source mix</span>
+              <strong id="sourceMix">Gita</strong>
+            </article>
+          </div>
+
+          <div class="section">
+            <article class="memory-card">
+              <strong id="memoryTitle">Saved path is ready</strong>
+              <p id="memoryText">Complete the first step and VedaPath will keep the next source visible.</p>
+            </article>
+          </div>
+
+          <div class="button-row">
+            <button class="button" id="clearPath" type="button">Clear Local Path</button>
+            <a class="button secondary" href="library.html">Open Library</a>
+          </div>
+
+          <section class="boundary">
+            <h2>Path Boundary</h2>
+            <p>The path is a learning and reflection scaffold. It should guide source order, not act as a guru, therapist, ritual authority, or hidden profiling system.</p>
+          </section>
+        </aside>
+      </section>
+
+      <section class="section" aria-label="Path future">
+        <h2>What This Unlocks</h2>
+        <div class="future-grid">
+          <article class="future-card">
+            <strong>Learning with direction</strong>
+            <p>Users move through a small route instead of bouncing between isolated cards.</p>
+          </article>
+          <article class="future-card">
+            <strong>Source library becomes alive</strong>
+            <p>Each library record can become a step in practice, claim checking, or study.</p>
+          </article>
+          <article class="future-card">
+            <strong>Future personalization guardrail</strong>
+            <p>The app can adapt from explicit user choices while keeping private notes local and bounded.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const sourceRecords = {
+        "gita-2-48": {
+          id: "gita-2-48",
+          title: "Steady action before inner noise",
+          citation: "Bhagavad Gita 2.48",
+          family: "Bhagavad Gita | Smriti",
+          familyShort: "Gita",
+          summary: "A source-backed first step for practicing action without turning outcomes into identity.",
+          question: "What can I do calmly today?",
+          carry: "Do one small duty slowly and cleanly.",
+          why: "It keeps calm connected to responsible action, not passive escape.",
+          boundary: "Reflection support, not therapy, ritual instruction, or a life command.",
+          stateKey: "restless"
+        },
+        "katha-1-3-3": {
+          id: "katha-1-3-3",
+          title: "Gather attention before choosing",
+          citation: "Katha Upanishad 1.3.3-9",
+          family: "Upanishad | Shruti",
+          familyShort: "Upanishad",
+          summary: "A symbolic source candidate for senses, mind, judgment, and direction.",
+          question: "What is pulling my attention hardest?",
+          carry: "Remove one input and choose the next useful step.",
+          why: "It gives overwhelmed attention a source-shaped map without becoming diagnosis.",
+          boundary: "Use this as metaphor, not clinical guidance.",
+          stateKey: "overwhelmed"
+        },
+        "mundaka-1-1-4": {
+          id: "mundaka-1-1-4",
+          title: "Ask what kind of knowing this needs",
+          citation: "Mundaka Upanishad 1.1.4-5",
+          family: "Upanishad | Shruti",
+          familyShort: "Upanishad",
+          summary: "A source candidate for sorting facts, interpretation, and deeper purpose.",
+          question: "Is this about facts, meaning, or priority?",
+          carry: "Write the decision in one sentence and name the missing source.",
+          why: "It turns vague confusion into a cleaner learning question.",
+          boundary: "Do not use this to dismiss practical skill, evidence, or expert help.",
+          stateKey: "clarity"
+        },
+        "gita-2-47": {
+          id: "gita-2-47",
+          title: "Return to the work you can touch",
+          citation: "Bhagavad Gita 2.47",
+          family: "Bhagavad Gita | Smriti",
+          familyShort: "Gita",
+          summary: "A source candidate for effort, duty, and outcome attachment.",
+          question: "What action is mine today?",
+          carry: "Begin for five focused minutes without negotiating with the whole future.",
+          why: "It gives hesitation one concrete starting edge.",
+          boundary: "Do not use this to pressure unsafe action or ignore real constraints.",
+          stateKey: "courage"
+        },
+        "isha-1": {
+          id: "isha-1",
+          title: "Hold responsibility lightly",
+          citation: "Isha Upanishad 1",
+          family: "Upanishad | Shruti",
+          familyShort: "Upanishad",
+          summary: "A source candidate for simplicity, participation, and non-clutching.",
+          question: "What can be held lightly today?",
+          carry: "Choose one responsibility without clutching at possession or praise.",
+          why: "It lets calm mature into participation without grasping.",
+          boundary: "Do not turn a compact verse into a complete life prescription.",
+          stateKey: "restless"
+        },
+        "gita-11-32": {
+          id: "gita-11-32",
+          title: "Correct the quote category",
+          citation: "Bhagavad Gita 11.32",
+          family: "Bhagavad Gita | Smriti",
+          familyShort: "Gita",
+          summary: "A source candidate for correcting the common Oppenheimer quote claim.",
+          question: "What category is the source actually in?",
+          carry: "Name the Gita and the category before explaining the cultural connection.",
+          why: "It makes precision feel kind instead of combative.",
+          boundary: "Do not call this a direct quote from the four Vedas.",
+          stateKey: "clarity"
+        },
+        "rigveda-3-62-10": {
+          id: "rigveda-3-62-10",
+          title: "Approach mantra with context",
+          citation: "Rigveda 3.62.10",
+          family: "Veda | Shruti",
+          familyShort: "Veda",
+          summary: "A source candidate for future Mantra Lens work with Sanskrit and tradition boundaries.",
+          question: "What context should accompany the mantra?",
+          carry: "Explain reverently and avoid prescribing practice.",
+          why: "It keeps mantra learning reverent, sourced, and careful.",
+          boundary: "Do not flatten pronunciation, ritual, or lineage context.",
+          stateKey: "clarity"
+        },
+        "chandogya-6-8-7": {
+          id: "chandogya-6-8-7",
+          title: "Label the interpretation layer",
+          citation: "Chandogya Upanishad 6.8.7",
+          family: "Upanishad | Shruti",
+          familyShort: "Upanishad",
+          summary: "A source candidate for Atman and Brahman with tradition-specific interpretation notes.",
+          question: "Which interpretation layer is being used?",
+          carry: "Label the school or tradition before summarizing the idea.",
+          why: "It prevents one tradition-specific summary from pretending to be every view.",
+          boundary: "Do not flatten Vedanta differences into one slogan.",
+          stateKey: "clarity"
+        },
+        "taittiriya-2-1-1": {
+          id: "taittiriya-2-1-1",
+          title: "Notice the layer needing care",
+          citation: "Taittiriya Upanishad 2.1.1",
+          family: "Upanishad | Shruti",
+          familyShort: "Upanishad",
+          summary: "A source candidate for guided study around body, breath, mind, understanding, and depth.",
+          question: "Which layer needs attention right now?",
+          carry: "Name one layer and choose one gentle next action.",
+          why: "It offers a structured way to slow down without medicalizing the moment.",
+          boundary: "Do not present this as a medical or psychological model.",
+          stateKey: "overwhelmed"
+        }
+      };
+
+      const pathTemplates = {
+        steadiness: {
+          name: "Calm Steadiness Path",
+          intent: "Build steadiness from source-backed action.",
+          note: "I want a clear, calm way to keep learning without overclaiming.",
+          ids: ["gita-2-48", "katha-1-3-3", "mundaka-1-1-4", "gita-2-47", "isha-1"]
+        },
+        literacy: {
+          name: "Source Literacy Path",
+          intent: "Learn the difference between source families and interpretation layers.",
+          note: "I want to understand source categories before I form opinions.",
+          ids: ["gita-11-32", "rigveda-3-62-10", "chandogya-6-8-7", "mundaka-1-1-4", "taittiriya-2-1-1"]
+        },
+        claims: {
+          name: "Claim Clarity Path",
+          intent: "Check claims without losing reverence or precision.",
+          note: "I want to correct claims gently and cite the right source.",
+          ids: ["gita-11-32", "chandogya-6-8-7", "mundaka-1-1-4", "rigveda-3-62-10", "gita-2-48"]
+        },
+        mantra: {
+          name: "Mantra Respect Path",
+          intent: "Approach mantra and sacred language with context and boundaries.",
+          note: "I want to learn mantra context without pretending to prescribe practice.",
+          ids: ["rigveda-3-62-10", "taittiriya-2-1-1", "mundaka-1-1-4", "isha-1", "gita-2-48"]
+        }
+      };
+
+      const storageKey = "vedapath.sourcePath.v1";
+      const launchKey = "vedapath.library.launch.v1";
+      const intentButtons = [...document.querySelectorAll(".intent-button")];
+      const paceButtons = [...document.querySelectorAll(".pace-button")];
+      const pathNote = document.querySelector("#pathNote");
+      const pathList = document.querySelector("#pathList");
+      const savePath = document.querySelector("#savePath");
+      const copyPath = document.querySelector("#copyPath");
+      const pathSummary = document.querySelector("#pathSummary");
+      const completeStep = document.querySelector("#completeStep");
+      const sendPractice = document.querySelector("#sendPractice");
+      const clearPath = document.querySelector("#clearPath");
+
+      let state = readState();
+
+      function readState() {
+        const fallback = {
+          intention: "steadiness",
+          length: 3,
+          activeId: "gita-2-48",
+          completedIds: [],
+          savedAt: null,
+          note: pathTemplates.steadiness.note
+        };
+        try {
+          const parsed = JSON.parse(localStorage.getItem(storageKey) || "null");
+          return parsed && parsed.intention ? { ...fallback, ...parsed } : fallback;
+        } catch {
+          return fallback;
+        }
+      }
+
+      function writeState() {
+        localStorage.setItem(storageKey, JSON.stringify(state));
+      }
+
+      function currentTemplate() {
+        return pathTemplates[state.intention] || pathTemplates.steadiness;
+      }
+
+      function currentIds() {
+        return currentTemplate().ids.slice(0, state.length);
+      }
+
+      function currentRecords() {
+        return currentIds().map((id) => sourceRecords[id]).filter(Boolean);
+      }
+
+      function selectedRecord() {
+        const records = currentRecords();
+        return records.find((record) => record.id === state.activeId) || records[0];
+      }
+
+      function nextIncompleteRecord() {
+        return currentRecords().find((record) => !state.completedIds.includes(record.id)) || currentRecords()[0];
+      }
+
+      function resetForPath(intention = state.intention, length = state.length) {
+        const template = pathTemplates[intention];
+        state = {
+          intention,
+          length,
+          activeId: template.ids[0],
+          completedIds: [],
+          savedAt: new Date().toISOString(),
+          note: template.note
+        };
+        pathNote.value = state.note;
+        writeState();
+        renderAll();
+      }
+
+      function sourceMix(records) {
+        const families = [...new Set(records.map((record) => record.familyShort))];
+        return families.join(" + ");
+      }
+
+      function renderControls() {
+        intentButtons.forEach((button) => {
+          button.classList.toggle("active", button.dataset.intent === state.intention);
+        });
+        paceButtons.forEach((button) => {
+          button.classList.toggle("active", Number(button.dataset.length) === state.length);
+        });
+        pathNote.value = state.note || currentTemplate().note;
+      }
+
+      function renderDetail() {
+        const record = selectedRecord();
+        document.querySelector("#pathTitle").textContent = record.title;
+        document.querySelector("#pathSummaryText").textContent = record.summary;
+        document.querySelector("#sourceCitation").textContent = record.citation;
+        document.querySelector("#sourceFamily").textContent = record.family;
+        document.querySelector("#sourceQuestion").textContent = record.question;
+        document.querySelector("#sourceCarry").textContent = record.carry;
+        document.querySelector("#whyText").textContent = record.why;
+        document.querySelector("#boundaryText").textContent = record.boundary;
+        completeStep.textContent = state.completedIds.includes(record.id) ? "Step Complete" : "Mark Step Complete";
+        sendPractice.textContent = "Send to Practice";
+      }
+
+      function renderPath() {
+        const records = currentRecords();
+        const completed = records.filter((record) => state.completedIds.includes(record.id)).length;
+        const percent = records.length ? Math.round((completed / records.length) * 100) : 0;
+        document.querySelector("#pathName").textContent = currentTemplate().name;
+        document.querySelector("#pathProgress").style.width = `${percent}%`;
+        pathList.innerHTML = records.map((record, index) => `
+          <button class="path-card ${record.id === state.activeId ? "active" : ""} ${state.completedIds.includes(record.id) ? "done" : ""}" type="button" data-path-id="${record.id}">
+            <span class="path-index">${state.completedIds.includes(record.id) ? "Done" : index + 1}</span>
+            <span>
+              <strong>${record.citation}</strong>
+              <p>${record.title} | ${record.familyShort}</p>
+              <span class="tag-row" style="margin-top: 8px;">
+                <span class="tag">${record.familyShort}</span>
+                <span class="tag">${record.stateKey}</span>
+              </span>
+            </span>
+          </button>
+        `).join("");
+
+        [...pathList.querySelectorAll("[data-path-id]")].forEach((button) => {
+          button.addEventListener("click", () => {
+            state.activeId = button.dataset.pathId;
+            writeState();
+            renderAll();
+          });
+        });
+      }
+
+      function renderMemory() {
+        const records = currentRecords();
+        const completed = records.filter((record) => state.completedIds.includes(record.id));
+        const next = nextIncompleteRecord();
+        document.querySelector("#completedCount").textContent = completed.length;
+        document.querySelector("#pathLength").textContent = records.length;
+        document.querySelector("#nextSource").textContent = next?.familyShort || "Done";
+        document.querySelector("#sourceMix").textContent = sourceMix(records);
+        document.querySelector("#memoryTitle").textContent = completed.length === records.length ? "Path complete on this device" : "Next source is ready";
+        document.querySelector("#memoryText").textContent = completed.length === records.length
+          ? "You completed this prototype path. Copy it or start another intention."
+          : `${next.citation}: ${next.question}`;
+      }
+
+      function renderAll() {
+        if (!currentIds().includes(state.activeId)) {
+          state.activeId = currentIds()[0];
+        }
+        renderControls();
+        renderPath();
+        renderDetail();
+        renderMemory();
+      }
+
+      function markComplete() {
+        const record = selectedRecord();
+        if (!state.completedIds.includes(record.id)) {
+          state.completedIds = [...state.completedIds, record.id];
+        }
+        const next = nextIncompleteRecord();
+        if (next) {
+          state.activeId = next.id;
+        }
+        writeState();
+        renderAll();
+      }
+
+      function saveCurrentPath() {
+        state.note = pathNote.value.trim() || currentTemplate().note;
+        state.savedAt = new Date().toISOString();
+        writeState();
+        savePath.textContent = "Path Saved";
+      }
+
+      function sendSelectedToPractice() {
+        const record = selectedRecord();
+        localStorage.setItem(launchKey, JSON.stringify({
+          id: record.id,
+          title: record.title,
+          citation: record.citation,
+          family: record.family,
+          question: record.question,
+          carry: record.carry,
+          boundary: record.boundary,
+          stateKey: record.stateKey
+        }));
+        sendPractice.textContent = "Ready in Practice";
+      }
+
+      function copyCurrentPath() {
+        state.note = pathNote.value.trim() || currentTemplate().note;
+        writeState();
+        const records = currentRecords();
+        const lines = records.map((record, index) => {
+          const status = state.completedIds.includes(record.id) ? "complete" : "open";
+          return `${index + 1}. ${record.citation} | ${record.title} | ${status}`;
+        });
+        const text = [
+          "VedaPath Source Path",
+          currentTemplate().name,
+          `Intent: ${state.note}`,
+          `Source mix: ${sourceMix(records)}`,
+          ...lines
+        ].join("\n");
+        pathSummary.value = text;
+        pathSummary.hidden = false;
+
+        const fallbackCopy = () => {
+          const helper = document.createElement("textarea");
+          helper.value = text;
+          helper.setAttribute("readonly", "");
+          helper.style.position = "fixed";
+          helper.style.left = "-9999px";
+          document.body.appendChild(helper);
+          helper.select();
+          const copied = document.execCommand("copy");
+          helper.remove();
+          copyPath.textContent = copied ? "Copied" : "Path Ready";
+        };
+
+        if (navigator.clipboard?.writeText) {
+          navigator.clipboard.writeText(text).then(() => {
+            copyPath.textContent = "Copied";
+          }).catch(fallbackCopy);
+          return;
+        }
+
+        try {
+          fallbackCopy();
+        } catch {
+          copyPath.textContent = "Path Ready";
+        }
+      }
+
+      intentButtons.forEach((button) => {
+        button.addEventListener("click", () => resetForPath(button.dataset.intent, state.length));
+      });
+
+      paceButtons.forEach((button) => {
+        button.addEventListener("click", () => resetForPath(state.intention, Number(button.dataset.length)));
+      });
+
+      savePath.addEventListener("click", saveCurrentPath);
+      copyPath.addEventListener("click", copyCurrentPath);
+      completeStep.addEventListener("click", markComplete);
+      sendPractice.addEventListener("click", sendSelectedToPractice);
+      clearPath.addEventListener("click", () => {
+        const shouldClear = window.confirm("Clear this browser's local source path?");
+        if (!shouldClear) return;
+        localStorage.removeItem(storageKey);
+        state = readState();
+        renderAll();
+      });
+
+      renderAll();
+    </script>
+  </body>
+</html>

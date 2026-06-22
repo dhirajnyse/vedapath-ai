@@ -11,6 +11,7 @@ Source Practice turns VedaPath Calm from a reading preview into a guided product
 - Practice history can be prototyped with device-local memory before accounts exist.
 - Users can copy a handoff summary without exposing private notes by default.
 - A selected Source Library record can shape the practice without losing citation context.
+- A selected Source Path step can shape the practice while preserving citation, family, and boundary.
 
 ## Practice Stages
 
