@@ -26,6 +26,7 @@ Let us look at the source first.
 - [Brand System](docs/BRAND_SYSTEM.md)
 - [MVP Roadmap](docs/MVP_ROADMAP.md)
 - [Sample Questions](docs/SAMPLE_QUESTIONS.md)
+- [Prototype Notes](docs/PROTOTYPE_NOTES.md)
 - [GitHub Repo Setup](docs/REPO_SETUP.md)
 - [GitHub Pages Setup](docs/PAGES_SETUP.md)
 - [Source Policy](docs/SOURCE_POLICY.md)
@@ -37,6 +38,17 @@ Let us look at the source first.
 ## North Star
 
 Make sacred and philosophical knowledge easier to approach without flattening its depth, confusing categories, or pretending the AI is an authority.
+
+## Current Release
+
+`v0.2.0` is a clickable prototype with:
+
+- Ask workspace
+- Source Card
+- Pramana Meter
+- Claim Checker
+- Learning Path
+- Correction Loop placeholder
 
 ## Faster Release Commits
 

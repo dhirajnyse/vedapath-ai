@@ -16,11 +16,16 @@
         --peacock-green: #145c4a;
         --deep-indigo: #29335c;
         --line: rgba(91, 70, 56, 0.16);
-        --panel: rgba(255, 255, 255, 0.62);
+        --panel: rgba(255, 255, 255, 0.66);
+        --panel-strong: rgba(255, 255, 255, 0.86);
       }
 
       * {
         box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
       }
 
       body {
@@ -31,23 +36,32 @@
         line-height: 1.5;
       }
 
+      button,
+      textarea {
+        font: inherit;
+      }
+
+      button {
+        cursor: pointer;
+      }
+
       a {
         color: inherit;
         text-decoration: none;
       }
 
-      main {
-        width: min(1160px, calc(100% - 32px));
+      .page {
+        width: min(1240px, calc(100% - 32px));
         margin: 0 auto;
-        padding: 28px 0 52px;
+        padding: 22px 0 46px;
       }
 
-      header {
+      .topbar {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 18px;
-        padding-bottom: 24px;
+        gap: 16px;
+        padding-bottom: 18px;
         border-bottom: 1px solid var(--line);
       }
 
@@ -71,220 +85,501 @@
       }
 
       .brand span,
-      .eyebrow,
-      .tile p,
-      .panel p,
-      .meta {
+      .muted,
+      .source-meta,
+      .path-step p,
+      .claim p,
+      .question-help,
+      .small {
         color: var(--muted-brown);
       }
 
       .brand span,
-      .meta {
+      .small {
         font-size: 13px;
       }
 
-      .pill {
-        border: 1px solid rgba(168, 62, 18, 0.28);
-        border-radius: 999px;
-        color: var(--deep-ochre);
-        padding: 8px 12px;
-        font-size: 13px;
-        font-weight: 700;
-        white-space: nowrap;
-      }
-
-      .hero {
-        display: grid;
-        grid-template-columns: minmax(0, 1.05fr) minmax(310px, 0.95fr);
-        gap: 34px;
-        align-items: center;
-        padding: 34px 0 36px;
-      }
-
-      h1 {
-        margin: 0;
-        font-size: clamp(42px, 8vw, 92px);
-        line-height: 0.94;
-        letter-spacing: 0;
-      }
-
-      .lead {
-        max-width: 700px;
-        margin: 20px 0 0;
-        color: var(--muted-brown);
-        font-size: 20px;
-      }
-
-      .actions {
+      .nav {
         display: flex;
+        align-items: center;
+        gap: 8px;
         flex-wrap: wrap;
-        gap: 10px;
-        margin-top: 24px;
+        justify-content: flex-end;
       }
 
-      .button {
+      .link,
+      .version {
         display: inline-flex;
         align-items: center;
-        justify-content: center;
-        min-height: 42px;
-        border-radius: 8px;
-        border: 1px solid rgba(168, 62, 18, 0.24);
-        padding: 9px 13px;
-        color: var(--deep-ochre);
+        min-height: 34px;
+        border-radius: 999px;
+        padding: 6px 11px;
+        font-size: 13px;
         font-weight: 800;
       }
 
-      .primary {
-        border-color: var(--bhagwa);
-        background: var(--bhagwa);
-        color: white;
+      .link {
+        border: 1px solid transparent;
+        color: var(--muted-brown);
       }
 
-      .mark-stage {
+      .link:hover,
+      .link:focus-visible {
+        border-color: rgba(168, 62, 18, 0.22);
+        color: var(--deep-ochre);
+        outline: none;
+      }
+
+      .version {
+        border: 1px solid rgba(168, 62, 18, 0.28);
+        color: var(--deep-ochre);
+        background: rgba(255, 255, 255, 0.42);
+      }
+
+      .workspace {
         display: grid;
-        place-items: center;
-        min-height: 380px;
-        border-radius: 8px;
-        background: linear-gradient(180deg, #fff9ef 0%, #f6e4ca 100%);
-        border: 1px solid rgba(168, 62, 18, 0.16);
-        overflow: hidden;
+        grid-template-columns: minmax(290px, 0.78fr) minmax(0, 1.35fr) minmax(280px, 0.82fr);
+        gap: 16px;
+        align-items: start;
+        padding-top: 18px;
       }
 
-      .mark-stage img {
-        width: min(92%, 480px);
-        height: auto;
-        display: block;
-      }
-
-      .section {
-        padding: 28px 0;
-        border-top: 1px solid var(--line);
-      }
-
-      h2 {
-        margin: 0 0 16px;
-        font-size: 24px;
-      }
-
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 14px;
-      }
-
-      .tile,
-      .panel {
+      .panel,
+      .answer-shell,
+      .rail-panel,
+      .source-block,
+      .meter-step,
+      .path-step,
+      .claim {
         border: 1px solid var(--line);
         border-radius: 8px;
         background: var(--panel);
       }
 
-      .tile {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-        min-height: 210px;
+      .panel,
+      .answer-shell,
+      .rail-panel {
         padding: 18px;
       }
 
-      .tile strong {
+      .logo-mark {
+        display: grid;
+        place-items: center;
+        min-height: 172px;
+        margin-bottom: 18px;
+        overflow: hidden;
+        border: 1px solid rgba(168, 62, 18, 0.16);
+        border-radius: 8px;
+        background: linear-gradient(180deg, #fff9ef 0%, #f5e1c3 100%);
+      }
+
+      .logo-mark img {
+        width: min(92%, 260px);
+        height: auto;
         display: block;
-        font-size: 22px;
       }
 
-      .tile p {
-        margin: 0;
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
       }
 
-      .tile .button {
-        width: fit-content;
-        margin-top: auto;
+      h1 {
+        margin-bottom: 12px;
+        font-size: clamp(38px, 6vw, 68px);
+        line-height: 0.96;
+        letter-spacing: 0;
       }
 
-      .status {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) minmax(280px, 0.8fr);
-        gap: 16px;
+      .ask-panel h1 {
+        font-size: clamp(34px, 3vw, 42px);
+        line-height: 1.02;
       }
 
-      .panel {
-        padding: 18px;
+      h2 {
+        margin-bottom: 12px;
+        font-size: 24px;
       }
 
-      .metric {
-        display: grid;
-        grid-template-columns: 1fr auto;
-        gap: 10px;
+      h3 {
+        margin-bottom: 8px;
+        font-size: 18px;
+      }
+
+      .eyebrow {
+        display: inline-flex;
         align-items: center;
-        padding: 12px 0;
-        border-bottom: 1px solid var(--line);
+        min-height: 28px;
+        margin: 0 0 14px;
+        border-radius: 999px;
+        padding: 4px 10px;
+        background: rgba(214, 90, 31, 0.12);
+        color: var(--deep-ochre);
+        font-size: 12px;
+        font-weight: 900;
       }
 
-      .metric:last-child {
-        border-bottom: 0;
+      .question-box {
+        display: grid;
+        gap: 10px;
       }
 
-      .metric span {
+      textarea {
+        width: 100%;
+        min-height: 126px;
+        resize: vertical;
+        border: 1px solid rgba(168, 62, 18, 0.28);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.72);
+        color: var(--ink);
+        padding: 13px;
+      }
+
+      textarea:focus {
+        border-color: var(--bhagwa);
+        outline: 3px solid rgba(214, 90, 31, 0.12);
+      }
+
+      .button-row,
+      .chips,
+      .tabs,
+      .source-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .button,
+      .chip,
+      .tab {
+        min-height: 38px;
+        border: 1px solid rgba(168, 62, 18, 0.24);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.48);
+        color: var(--deep-ochre);
+        padding: 8px 11px;
+        font-weight: 850;
+      }
+
+      .button.primary,
+      .chip.active,
+      .tab.active {
+        border-color: var(--bhagwa);
+        background: var(--bhagwa);
+        color: white;
+      }
+
+      .button.secondary {
+        color: var(--peacock-green);
+        border-color: rgba(20, 92, 74, 0.24);
+      }
+
+      .button:hover,
+      .button:focus-visible,
+      .chip:hover,
+      .chip:focus-visible,
+      .tab:hover,
+      .tab:focus-visible {
+        outline: 3px solid rgba(214, 90, 31, 0.12);
+      }
+
+      .question-help {
+        margin: 6px 0 10px;
+        font-size: 14px;
+      }
+
+      .answer-header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 14px;
+        margin-bottom: 18px;
+      }
+
+      .answer-header p {
+        max-width: 720px;
+        margin-bottom: 0;
+        color: var(--muted-brown);
+        font-size: 18px;
+      }
+
+      .source-pill {
+        display: inline-flex;
+        align-items: center;
+        min-height: 28px;
+        border-radius: 999px;
+        background: rgba(20, 92, 74, 0.12);
+        color: var(--peacock-green);
+        padding: 4px 10px;
+        font-size: 12px;
+        font-weight: 900;
+        white-space: nowrap;
+      }
+
+      .answer-title {
+        margin-bottom: 10px;
+      }
+
+      .answer-body {
+        display: grid;
+        gap: 14px;
+      }
+
+      .source-block {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 10px;
+        padding: 12px;
+        background: var(--panel-strong);
+        border-left: 4px solid var(--bhagwa);
+      }
+
+      .source-block div {
+        min-width: 0;
+      }
+
+      .source-meta {
+        display: block;
+        margin-bottom: 4px;
+        font-size: 12px;
+      }
+
+      .source-value {
+        font-weight: 900;
+      }
+
+      .meter {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 8px;
+      }
+
+      .meter-step {
+        min-height: 92px;
+        padding: 11px;
+        background: rgba(255, 255, 255, 0.44);
+      }
+
+      .meter-step.active {
+        border-color: rgba(214, 90, 31, 0.46);
+        background: rgba(214, 90, 31, 0.1);
+      }
+
+      .meter-step strong {
+        display: block;
+        margin-bottom: 5px;
+        font-size: 13px;
+      }
+
+      .meter-step span {
+        color: var(--muted-brown);
+        font-size: 12px;
+      }
+
+      .detail-area {
+        min-height: 220px;
+        border-top: 1px solid var(--line);
+        padding-top: 16px;
+      }
+
+      .detail-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .detail-box {
+        border-left: 3px solid rgba(214, 90, 31, 0.52);
+        padding: 2px 0 2px 12px;
+      }
+
+      .detail-box p,
+      .detail-area p {
         color: var(--muted-brown);
       }
 
-      .metric strong {
-        color: var(--deep-ochre);
+      .claim-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
       }
 
-      .progress {
-        height: 10px;
-        margin-top: 10px;
+      .claim {
+        padding: 13px;
+        background: rgba(255, 255, 255, 0.5);
+      }
+
+      .claim strong {
+        display: block;
+        margin-bottom: 6px;
+      }
+
+      .claim p {
+        margin-bottom: 0;
+        font-size: 14px;
+      }
+
+      .rail {
+        display: grid;
+        gap: 14px;
+      }
+
+      .rail-panel {
+        background: rgba(255, 255, 255, 0.56);
+      }
+
+      .path-list {
+        display: grid;
+        gap: 9px;
+      }
+
+      .path-step {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr);
+        gap: 10px;
+        align-items: start;
+        padding: 11px;
+        background: rgba(255, 255, 255, 0.42);
+      }
+
+      .path-index {
+        display: grid;
+        place-items: center;
+        width: 28px;
+        height: 28px;
+        border-radius: 999px;
+        background: rgba(214, 90, 31, 0.12);
+        color: var(--deep-ochre);
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      .path-step.done .path-index {
+        background: rgba(20, 92, 74, 0.13);
+        color: var(--peacock-green);
+      }
+
+      .path-step strong {
+        display: block;
+        margin-bottom: 3px;
+      }
+
+      .path-step p {
+        margin-bottom: 0;
+        font-size: 13px;
+      }
+
+      .mini-progress {
+        height: 9px;
         overflow: hidden;
         border-radius: 999px;
         background: rgba(168, 62, 18, 0.14);
       }
 
-      .bar {
+      .mini-progress div {
         height: 100%;
         border-radius: inherit;
         background: linear-gradient(90deg, var(--bhagwa), var(--sacred-gold));
       }
 
-      @media (max-width: 860px) {
-        .hero,
-        .status {
-          grid-template-columns: 1fr;
+      .correction {
+        border: 1px dashed rgba(168, 62, 18, 0.42);
+        border-radius: 8px;
+        padding: 12px;
+        background: rgba(255, 255, 255, 0.34);
+      }
+
+      .correction p {
+        margin-bottom: 10px;
+        color: var(--muted-brown);
+      }
+
+      .workspace-footer {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 16px;
+        padding-top: 16px;
+        border-top: 1px solid var(--line);
+      }
+
+      .footer-item {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 14px;
+        background: rgba(255, 255, 255, 0.42);
+      }
+
+      .footer-item strong {
+        display: block;
+        margin-bottom: 4px;
+      }
+
+      .footer-item p {
+        margin-bottom: 0;
+        color: var(--muted-brown);
+        font-size: 14px;
+      }
+
+      [hidden] {
+        display: none !important;
+      }
+
+      @media (max-width: 1100px) {
+        .workspace {
+          grid-template-columns: minmax(280px, 0.8fr) minmax(0, 1.2fr);
         }
 
-        .grid {
-          grid-template-columns: 1fr 1fr;
+        .rail {
+          grid-column: 1 / -1;
+          grid-template-columns: repeat(3, minmax(0, 1fr));
         }
       }
 
-      @media (max-width: 580px) {
-        main {
-          width: min(100% - 24px, 1160px);
-          padding-top: 18px;
+      @media (max-width: 780px) {
+        .page {
+          width: min(100% - 24px, 1240px);
         }
 
-        header {
+        .topbar,
+        .answer-header {
           align-items: flex-start;
           flex-direction: column;
         }
 
-        .grid {
+        .nav {
+          justify-content: flex-start;
+        }
+
+        .workspace,
+        .rail,
+        .source-block,
+        .meter,
+        .detail-grid,
+        .claim-grid,
+        .workspace-footer {
           grid-template-columns: 1fr;
         }
 
-        .lead {
-          font-size: 17px;
+        .logo-mark {
+          min-height: 132px;
         }
 
-        .mark-stage {
-          min-height: 270px;
+        .logo-mark img {
+          width: min(84%, 220px);
+        }
+
+        h1 {
+          font-size: clamp(34px, 10vw, 46px);
         }
       }
     </style>
   </head>
   <body>
-    <main>
-      <header>
+    <main class="page">
+      <header class="topbar">
         <a class="brand" href="./index.html" aria-label="VedaPath AI home">
           <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
           <div>
@@ -292,59 +587,442 @@
             <span>Source-first learning companion</span>
           </div>
         </a>
-        <div class="pill">v0.1.1 preview hub</div>
+        <nav class="nav" aria-label="Project links">
+          <a class="link" href="build-status.html">Build</a>
+          <a class="link" href="brand/brand-board.html">Brand</a>
+          <a class="link" href="docs/PRODUCT_BLUEPRINT.md">Blueprint</a>
+          <span class="version">v0.2.0 prototype</span>
+        </nav>
       </header>
 
-      <section class="hero">
-        <div>
-          <p class="eyebrow">Let us look at the source first.</p>
-          <h1>Ancient texts. Clear paths.</h1>
-          <p class="lead">A living product foundation for a simple, cited, Bhagwa-led learning companion for Vedic and Hindu philosophical texts.</p>
-          <div class="actions">
-            <a class="button primary" href="build-status.html">Open Build Status</a>
-            <a class="button" href="brand/brand-board.html">Open Brand Board</a>
-            <a class="button" href="docs/PRODUCT_BLUEPRINT.md">Read Blueprint</a>
+      <section class="workspace" aria-label="VedaPath AI prototype workspace">
+        <aside class="panel ask-panel">
+          <span class="eyebrow">Ask with source context</span>
+          <h1>Let us look at the source first.</h1>
+          <p class="muted">Choose a sample question or type your own. This prototype answers from a small curated set so the trust model stays visible.</p>
+
+          <div class="question-box">
+            <label class="small" for="questionInput">Question</label>
+            <textarea id="questionInput">What scripture did Oppenheimer quote?</textarea>
+            <div class="button-row">
+              <button class="button primary" id="askButton" type="button">Ask</button>
+              <button class="button secondary" id="claimButton" type="button">Check Claim</button>
+            </div>
           </div>
-        </div>
-        <div class="mark-stage">
-          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI 3D logo mark">
-        </div>
-      </section>
 
-      <section class="section">
-        <h2>Project Rooms</h2>
-        <div class="grid">
-          <article class="tile">
-            <strong>Build Status</strong>
-            <p>Version, roadmap phases, progress percentage, and next build checklist.</p>
-            <a class="button primary" href="build-status.html">Open</a>
-          </article>
-          <article class="tile">
-            <strong>Brand Board</strong>
-            <p>Logo, Bhagwa palette, UX principles, and sample answer-card direction.</p>
-            <a class="button" href="brand/brand-board.html">Open</a>
-          </article>
-          <article class="tile">
-            <strong>Product Blueprint</strong>
-            <p>The product position, audience, answer anatomy, and signature features.</p>
-            <a class="button" href="docs/PRODUCT_BLUEPRINT.md">Open</a>
-          </article>
-        </div>
-      </section>
+          <p class="question-help">Try one of these:</p>
+          <div class="chips" aria-label="Sample questions">
+            <button class="chip active" type="button" data-question="oppenheimer">Oppenheimer quote</button>
+            <button class="chip" type="button" data-question="gita-veda">Gita vs Vedas</button>
+            <button class="chip" type="button" data-question="gayatri">Gayatri mantra</button>
+            <button class="chip" type="button" data-question="quantum">Quantum physics claim</button>
+            <button class="chip" type="button" data-question="atman">Atman and Brahman</button>
+          </div>
+        </aside>
 
-      <section class="section status">
-        <div class="panel">
-          <h2>Current Direction</h2>
-          <p>VedaPath AI should win through simplicity, source labels, humble confidence, and progressive depth. The next release should become a clickable prototype rather than another static document set.</p>
-        </div>
-        <div class="panel">
-          <div class="metric"><span>Current version</span><strong>v0.1.1</strong></div>
-          <div class="metric"><span>MVP progress</span><strong>20%</strong></div>
-          <div class="progress" aria-hidden="true"><div class="bar" style="width:20%"></div></div>
-          <div class="metric"><span>Next release</span><strong>v0.2.0 prototype</strong></div>
-        </div>
+        <section class="answer-shell" aria-live="polite">
+          <div class="answer-header">
+            <div>
+              <span class="eyebrow">Prototype answer</span>
+              <h2 id="answerTitle" class="answer-title">Oppenheimer was quoting the Gita, not the four Vedas.</h2>
+              <p id="answerSummary">The famous line is associated with Bhagavad Gita 11.32. It is often called Vedic in popular culture, but the source is the Bhagavad Gita, a section of the Mahabharata usually classified as Smriti.</p>
+            </div>
+            <span class="source-pill" id="sourceFamily">Bhagavad Gita | Smriti</span>
+          </div>
+
+          <div class="answer-body">
+            <div class="source-block" aria-label="Source card">
+              <div>
+                <span class="source-meta">Primary citation</span>
+                <span class="source-value" id="citation">Bhagavad Gita 11.32</span>
+              </div>
+              <div>
+                <span class="source-meta">Pramana level</span>
+                <span class="source-value" id="pramana">Direct source</span>
+              </div>
+              <div>
+                <span class="source-meta">Confidence</span>
+                <span class="source-value" id="confidence">High</span>
+              </div>
+              <div>
+                <span class="source-meta">Do not overclaim</span>
+                <span class="source-value" id="caution">Do not call it a direct Vedic quote.</span>
+              </div>
+            </div>
+
+            <section aria-label="Pramana Meter">
+              <h3>Pramana Meter</h3>
+              <div class="meter">
+                <div class="meter-step active" data-meter="direct">
+                  <strong>Direct Source</strong>
+                  <span>Text passage is identifiable.</span>
+                </div>
+                <div class="meter-step" data-meter="commentary">
+                  <strong>Commentary</strong>
+                  <span>Tradition-specific reading.</span>
+                </div>
+                <div class="meter-step" data-meter="scholarly">
+                  <strong>Scholarly View</strong>
+                  <span>Academic context or debate.</span>
+                </div>
+                <div class="meter-step" data-meter="analogy">
+                  <strong>Modern Analogy</strong>
+                  <span>Helpful but not literal.</span>
+                </div>
+                <div class="meter-step" data-meter="speculative">
+                  <strong>Speculative</strong>
+                  <span>Marked with caution.</span>
+                </div>
+              </div>
+            </section>
+
+            <div class="tabs" role="tablist" aria-label="Answer layers">
+              <button class="tab active" type="button" data-tab="source">Source</button>
+              <button class="tab" type="button" data-tab="sanskrit">Sanskrit</button>
+              <button class="tab" type="button" data-tab="views">Interpretations</button>
+              <button class="tab" type="button" data-tab="claim">Claim Checker</button>
+            </div>
+
+            <section class="detail-area" id="detailArea">
+              <div class="detail-grid">
+                <div class="detail-box">
+                  <h3>What the source says</h3>
+                  <p id="sourceText">In the Gita's cosmic-form scene, Krishna identifies himself with world-transforming Time. Popular English renderings often use "I am become Death," but the source category should be stated carefully.</p>
+                </div>
+                <div class="detail-box">
+                  <h3>Why this matters</h3>
+                  <p id="sourceWhy">VedaPath should gently correct the category without shaming the user. The quote is not from the four Vedas, but it is connected to a wider Sanskrit philosophical world.</p>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <div class="workspace-footer">
+            <div class="footer-item">
+              <strong>Source labels</strong>
+              <p>Every answer separates Veda, Upanishad, Gita, commentary, and modern interpretation.</p>
+            </div>
+            <div class="footer-item">
+              <strong>Progressive depth</strong>
+              <p>Beginner summary first. Sanskrit, debate, and claim checking unfold only when opened.</p>
+            </div>
+            <div class="footer-item">
+              <strong>Human review</strong>
+              <p>User corrections should enter review before becoming accepted knowledge.</p>
+            </div>
+          </div>
+        </section>
+
+        <aside class="rail" aria-label="Learning and review rail">
+          <section class="rail-panel">
+            <h2>Learning Path</h2>
+            <p class="muted">A starter path for users who are curious but not yet sure where to begin.</p>
+            <div class="path-list">
+              <div class="path-step done">
+                <span class="path-index">1</span>
+                <div>
+                  <strong>Text families</strong>
+                  <p>Veda, Upanishad, Gita, Itihasa, Purana.</p>
+                </div>
+              </div>
+              <div class="path-step">
+                <span class="path-index">2</span>
+                <div>
+                  <strong>Source reading</strong>
+                  <p>Open a cited passage and compare layers.</p>
+                </div>
+              </div>
+              <div class="path-step">
+                <span class="path-index">3</span>
+                <div>
+                  <strong>Claim checking</strong>
+                  <p>Separate text, tradition, analogy, and overclaim.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="rail-panel">
+            <h2>MVP Progress</h2>
+            <div class="mini-progress" aria-label="MVP progress 34 percent">
+              <div style="width:34%"></div>
+            </div>
+            <p class="muted" style="margin-top: 10px;">34% toward a trusted MVP. Next: real retrieval, source schema, and curated passage data.</p>
+          </section>
+
+          <section class="rail-panel correction">
+            <h2>Correction Loop</h2>
+            <p>Found a source issue? In the real app, corrections become review tickets instead of silently changing answers.</p>
+            <button class="button" type="button" id="reviewButton">Suggest Review</button>
+          </section>
+        </aside>
       </section>
     </main>
+
+    <script>
+      const answers = {
+        "oppenheimer": {
+          question: "What scripture did Oppenheimer quote?",
+          title: "Oppenheimer was quoting the Gita, not the four Vedas.",
+          summary: "The famous line is associated with Bhagavad Gita 11.32. It is often called Vedic in popular culture, but the source is the Bhagavad Gita, a section of the Mahabharata usually classified as Smriti.",
+          family: "Bhagavad Gita | Smriti",
+          citation: "Bhagavad Gita 11.32",
+          pramana: "Direct source",
+          confidence: "High",
+          caution: "Do not call it a direct Vedic quote.",
+          meter: "direct",
+          tabs: {
+            source: [
+              ["What the source says", "In the Gita's cosmic-form scene, Krishna identifies himself with world-transforming Time. Popular English renderings often use \"I am become Death,\" but the source category should be stated carefully."],
+              ["Why this matters", "VedaPath should gently correct the category without shaming the user. The quote is not from the four Vedas, but it is connected to a wider Sanskrit philosophical world."]
+            ],
+            sanskrit: [
+              ["Key term", "The core idea often discussed is kala, Time. A full Sanskrit layer should show Devanagari, transliteration, translation variants, and translator notes."],
+              ["Prototype boundary", "This view is a placeholder until we load verified Sanskrit text and licensed translations."]
+            ],
+            views: [
+              ["Philosophical reading", "The verse appears during a revelation of cosmic form, duty, destruction, and time. It is not just a dramatic quote about violence."],
+              ["Popular culture reading", "Film and media references usually compress the context. VedaPath should restore the passage, chapter, and category."]
+            ],
+            claim: [
+              ["What the source says", "The line belongs to the Bhagavad Gita's cosmic-form scene."],
+              ["What tradition says", "Traditional readings connect the passage to divine manifestation, time, and dharma."],
+              ["Modern claim", "People often label it broadly as Vedic wisdom."],
+              ["Boundary", "It is not directly from the four Vedas."]
+            ]
+          }
+        },
+        "gita-veda": {
+          question: "Is the Bhagavad Gita part of the Vedas?",
+          title: "The Gita is not one of the four Vedas.",
+          summary: "The Bhagavad Gita belongs to the Mahabharata and is usually classified as Smriti. It is deeply shaped by Upanishadic and Vedic ideas, but VedaPath should not label it as a Veda.",
+          family: "Bhagavad Gita | Smriti",
+          citation: "Mahabharata, Bhishma Parva",
+          pramana: "Text classification",
+          confidence: "High",
+          caution: "Influenced by Vedic thought does not mean textually Veda.",
+          meter: "scholarly",
+          tabs: {
+            source: [
+              ["Classification", "The four Vedas are Rigveda, Samaveda, Yajurveda, and Atharvaveda. The Gita appears within the Mahabharata."],
+              ["Clean answer", "A user-friendly response should say: not Veda, but philosophically connected."]
+            ],
+            sanskrit: [
+              ["Shruti and Smriti", "Shruti means that which is heard. Smriti means remembered tradition. The Vedas are Shruti; the Gita is usually treated as Smriti."],
+              ["Term hygiene", "This is exactly where source labels prevent category confusion."]
+            ],
+            views: [
+              ["Vedanta use", "Vedanta traditions treat the Gita as a central philosophical text, often alongside the Upanishads and Brahma Sutras."],
+              ["Beginner path", "For many modern readers, the Gita is a better starting point than the Vedas, but it should still be labeled accurately."]
+            ],
+            claim: [
+              ["What the source says", "The Gita is part of the Mahabharata."],
+              ["What tradition says", "It is highly authoritative in many Hindu traditions."],
+              ["Modern claim", "Some people casually call it Vedic."],
+              ["Boundary", "Casual usage should not erase the Shruti and Smriti distinction."]
+            ]
+          }
+        },
+        "gayatri": {
+          question: "Explain the Gayatri mantra with source and caution.",
+          title: "The Gayatri mantra should be explained with reverence and source context.",
+          summary: "The Gayatri mantra is associated with Rigveda 3.62.10 and is among the most revered Vedic mantras. A careful explanation should avoid reducing it to a slogan or making casual ritual claims.",
+          family: "Rigveda | Veda",
+          citation: "Rigveda 3.62.10",
+          pramana: "Direct source",
+          confidence: "High",
+          caution: "Do not prescribe ritual use or flatten pronunciation tradition.",
+          meter: "direct",
+          tabs: {
+            source: [
+              ["What the source is", "A famous Rigvedic mantra addressed to Savitr. A full Mantra Lens should include Sanskrit, transliteration, word-by-word meaning, meter, and recitation notes."],
+              ["Careful framing", "Explain the broad meaning while respecting that recitation, initiation, and ritual context vary by tradition."]
+            ],
+            sanskrit: [
+              ["Mantra Lens need", "This is a flagship candidate for Devanagari, IAST, word split, chandas, devata, rishi, and audio later."],
+              ["Prototype boundary", "The live Sanskrit layer should be sourced from verified text before release."]
+            ],
+            views: [
+              ["Beginner reading", "Often explained as a meditation on divine illumination or awakening of understanding."],
+              ["Traditional caution", "Different communities treat pronunciation and practice with specific rules."]
+            ],
+            claim: [
+              ["What the source says", "It is a Vedic mantra in the Rigveda."],
+              ["What tradition says", "It is revered in many Hindu practices."],
+              ["Modern claim", "It is sometimes treated as a universal affirmation."],
+              ["Boundary", "Do not erase ritual, recitation, and lineage context."]
+            ]
+          }
+        },
+        "quantum": {
+          question: "Do the Vedas prove quantum physics?",
+          title: "No. Treat physics comparisons as analogies, not proof.",
+          summary: "Vedic and Upanishadic texts explore reality, consciousness, order, and being. Modern physics comparisons can be interesting, but VedaPath should clearly mark them as analogies unless a specific source directly supports a claim.",
+          family: "Modern claim | Cross-domain analogy",
+          citation: "No direct Vedic proof claim",
+          pramana: "Modern analogy",
+          confidence: "Medium",
+          caution: "Do not present analogy as scientific proof.",
+          meter: "analogy",
+          tabs: {
+            source: [
+              ["Textual basis", "Some passages invite philosophical reflection about reality, but that is not the same as a technical physics claim."],
+              ["Clean answer", "The honest response is: interesting comparison, not proof."]
+            ],
+            sanskrit: [
+              ["Term check", "Words like brahman, rta, and atman should not be translated as modern scientific terms without careful context."],
+              ["Prototype boundary", "Future source views should show exactly which word or passage people are using for the comparison."]
+            ],
+            views: [
+              ["Traditional view", "Classical interpretations usually focus on metaphysics, ritual, self, liberation, or cosmic order."],
+              ["Modern view", "Modern readers may use physics metaphors, but those should be labeled as contemporary interpretation."]
+            ],
+            claim: [
+              ["What the source says", "Texts discuss reality, order, consciousness, and ultimate principles in their own vocabulary."],
+              ["What tradition says", "Interpretive traditions frame these ideas philosophically and spiritually."],
+              ["Modern claim", "Some claim the Vedas predicted or proved quantum physics."],
+              ["Boundary", "That claim overextends the source unless supported by a precise passage and careful argument."]
+            ]
+          }
+        },
+        "atman": {
+          question: "What is the relationship between Atman and Brahman?",
+          title: "Atman and Brahman are central Upanishadic ideas, interpreted differently by traditions.",
+          summary: "Many Upanishadic discussions explore the self, ultimate reality, and liberation. VedaPath should present the concept, cite passages, and show that Advaita, Vishishtadvaita, and Dvaita read the relationship differently.",
+          family: "Upanishads | Vedanta",
+          citation: "Chandogya Upanishad 6.8.7 and related passages",
+          pramana: "Traditional commentary",
+          confidence: "Medium-high",
+          caution: "Do not present one Vedanta school as the only Hindu view.",
+          meter: "commentary",
+          tabs: {
+            source: [
+              ["Textual direction", "The Upanishads contain major passages about self and ultimate reality. A future source card should cite exact passages and translation variants."],
+              ["Careful framing", "The relationship between Atman and Brahman is not explained identically across all traditions."]
+            ],
+            sanskrit: [
+              ["Key terms", "Atman is often translated as self. Brahman is often translated as ultimate reality or absolute. Both need context-sensitive handling."],
+              ["Term caution", "Simple English glosses help beginners but can hide philosophical depth."]
+            ],
+            views: [
+              ["Advaita", "Often emphasizes non-duality of Atman and Brahman."],
+              ["Vishishtadvaita and Dvaita", "Read the relationship with different accounts of self, God, and reality. Samvada Mode should compare them respectfully."]
+            ],
+            claim: [
+              ["What the source says", "Upanishadic passages explore self and ultimate reality."],
+              ["What tradition says", "Vedanta schools interpret the relationship in distinct ways."],
+              ["Modern claim", "People may summarize it as everything is one."],
+              ["Boundary", "That phrase can be too blunt and tradition-specific without context."]
+            ]
+          }
+        }
+      };
+
+      const questionInput = document.querySelector("#questionInput");
+      const askButton = document.querySelector("#askButton");
+      const claimButton = document.querySelector("#claimButton");
+      const reviewButton = document.querySelector("#reviewButton");
+      const chips = [...document.querySelectorAll(".chip")];
+      const tabs = [...document.querySelectorAll(".tab")];
+      const meterSteps = [...document.querySelectorAll(".meter-step")];
+
+      let currentKey = "oppenheimer";
+      let currentTab = "source";
+
+      function setActiveChip(key) {
+        chips.forEach((chip) => {
+          chip.classList.toggle("active", chip.dataset.question === key);
+        });
+      }
+
+      function setActiveTab(tab) {
+        currentTab = tab;
+        tabs.forEach((button) => {
+          button.classList.toggle("active", button.dataset.tab === tab);
+        });
+        renderDetails();
+      }
+
+      function setActiveMeter(meter) {
+        meterSteps.forEach((step) => {
+          step.classList.toggle("active", step.dataset.meter === meter);
+        });
+      }
+
+      function pickAnswerFromText(text) {
+        const normalized = text.toLowerCase();
+        if (normalized.includes("quantum") || normalized.includes("science")) return "quantum";
+        if (normalized.includes("gayatri") || normalized.includes("savitr")) return "gayatri";
+        if (normalized.includes("atman") || normalized.includes("brahman")) return "atman";
+        if (normalized.includes("gita") || normalized.includes("veda")) return "gita-veda";
+        if (normalized.includes("oppenheimer") || normalized.includes("death")) return "oppenheimer";
+        return currentKey;
+      }
+
+      function renderAnswer(key) {
+        currentKey = key;
+        const answer = answers[key];
+        questionInput.value = answer.question;
+        document.querySelector("#answerTitle").textContent = answer.title;
+        document.querySelector("#answerSummary").textContent = answer.summary;
+        document.querySelector("#sourceFamily").textContent = answer.family;
+        document.querySelector("#citation").textContent = answer.citation;
+        document.querySelector("#pramana").textContent = answer.pramana;
+        document.querySelector("#confidence").textContent = answer.confidence;
+        document.querySelector("#caution").textContent = answer.caution;
+        setActiveChip(key);
+        setActiveMeter(answer.meter);
+        renderDetails();
+      }
+
+      function renderDetails() {
+        const answer = answers[currentKey];
+        const rows = answer.tabs[currentTab];
+        const detailArea = document.querySelector("#detailArea");
+
+        if (currentTab === "claim") {
+          detailArea.innerHTML = `<div class="claim-grid">${rows.map(([title, text]) => `
+            <div class="claim">
+              <strong>${title}</strong>
+              <p>${text}</p>
+            </div>
+          `).join("")}</div>`;
+          return;
+        }
+
+        detailArea.innerHTML = `<div class="detail-grid">${rows.map(([title, text]) => `
+          <div class="detail-box">
+            <h3>${title}</h3>
+            <p>${text}</p>
+          </div>
+        `).join("")}</div>`;
+      }
+
+      chips.forEach((chip) => {
+        chip.addEventListener("click", () => {
+          renderAnswer(chip.dataset.question);
+          setActiveTab("source");
+        });
+      });
+
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => setActiveTab(tab.dataset.tab));
+      });
+
+      askButton.addEventListener("click", () => {
+        renderAnswer(pickAnswerFromText(questionInput.value));
+        setActiveTab("source");
+      });
+
+      claimButton.addEventListener("click", () => {
+        renderAnswer(pickAnswerFromText(questionInput.value));
+        setActiveTab("claim");
+      });
+
+      reviewButton.addEventListener("click", () => {
+        reviewButton.textContent = "Review ticket drafted";
+        reviewButton.classList.add("primary");
+      });
+    </script>
   </body>
 </html>
-

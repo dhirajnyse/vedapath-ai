@@ -21,6 +21,10 @@ Goal:
 
 Show the product experience without a live LLM backend.
 
+Status:
+
+Completed in v0.2.0.
+
 Core screens:
 
 - Ask
@@ -41,6 +45,10 @@ Success criteria:
 Goal:
 
 Connect a small curated source set.
+
+Status:
+
+Next major product phase. First step is the source schema and verified sample records.
 
 Initial data:
 
@@ -138,4 +146,3 @@ Later:
 - scholar network
 - mobile app
 - multi-language support
-
