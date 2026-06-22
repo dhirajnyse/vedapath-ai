@@ -1,0 +1,30 @@
+{
+  "name": "VedaPath AI",
+  "colors": {
+    "bhagwa": "#D65A1F",
+    "deepOchre": "#A83E12",
+    "sacredGold": "#E0A83B",
+    "warmIvory": "#FFF7EA",
+    "palmLeaf": "#E9D8B8",
+    "softSand": "#F4E6CF",
+    "ink": "#1F1A17",
+    "mutedBrown": "#5B4638",
+    "peacockGreen": "#145C4A",
+    "deepIndigo": "#29335C"
+  },
+  "radii": {
+    "small": "6px",
+    "medium": "8px",
+    "large": "12px"
+  },
+  "typography": {
+    "interface": "Inter, IBM Plex Sans, system-ui, sans-serif",
+    "sanskrit": "Noto Serif Devanagari, Noto Serif, serif"
+  },
+  "principles": {
+    "primary": "Source first, screen simple",
+    "depth": "Progressive disclosure",
+    "trust": "Visible citations and confidence labels"
+  }
+}
+
