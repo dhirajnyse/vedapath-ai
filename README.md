@@ -46,3 +46,17 @@ After Git is initialized, use:
 ```
 
 Add `-Push` after the GitHub remote is connected.
+
+## Local Preview
+
+Run:
+
+```powershell
+.\scripts\serve-local.cmd
+```
+
+Then open:
+
+```text
+http://127.0.0.1:8088/
+```
