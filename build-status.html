@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VedaPath AI Build Status</title>
+    <style>
+      :root {
+        --bhagwa: #d65a1f;
+        --deep-ochre: #a83e12;
+        --sacred-gold: #e0a83b;
+        --warm-ivory: #fff7ea;
+        --soft-sand: #f4e6cf;
+        --ink: #1f1a17;
+        --muted-brown: #5b4638;
+        --peacock-green: #145c4a;
+        --deep-indigo: #29335c;
+        --line: rgba(91, 70, 56, 0.16);
+        --panel: rgba(255, 255, 255, 0.58);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--warm-ivory);
+        color: var(--ink);
+        font-family: Inter, "IBM Plex Sans", system-ui, sans-serif;
+        line-height: 1.5;
+      }
+
+      main {
+        width: min(1160px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 28px 0 52px;
+      }
+
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        padding-bottom: 28px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        min-width: 0;
+      }
+
+      .brand img {
+        width: 48px;
+        height: 48px;
+        border-radius: 8px;
+        object-fit: cover;
+      }
+
+      .brand strong {
+        display: block;
+        font-size: 18px;
+      }
+
+      .brand span,
+      .meta {
+        color: var(--muted-brown);
+        font-size: 13px;
+      }
+
+      h1 {
+        margin: 34px 0 12px;
+        font-size: clamp(36px, 7vw, 74px);
+        line-height: 0.96;
+        letter-spacing: 0;
+      }
+
+      .lead {
+        max-width: 760px;
+        margin: 0;
+        color: var(--muted-brown);
+        font-size: 19px;
+      }
+
+      .summary {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 14px;
+        margin: 30px 0;
+      }
+
+      .tile,
+      .panel,
+      .phase {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+      }
+
+      .tile {
+        padding: 16px;
+        min-height: 132px;
+      }
+
+      .tile span {
+        color: var(--muted-brown);
+        font-size: 13px;
+      }
+
+      .tile strong {
+        display: block;
+        margin-top: 8px;
+        font-size: 30px;
+        line-height: 1;
+      }
+
+      .tile p {
+        margin: 10px 0 0;
+        color: var(--muted-brown);
+        font-size: 14px;
+      }
+
+      .progress {
+        height: 10px;
+        margin-top: 14px;
+        overflow: hidden;
+        border-radius: 999px;
+        background: rgba(168, 62, 18, 0.14);
+      }
+
+      .bar {
+        height: 100%;
+        border-radius: inherit;
+        background: linear-gradient(90deg, var(--bhagwa), var(--sacred-gold));
+      }
+
+      .layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+        gap: 18px;
+        align-items: start;
+      }
+
+      .panel {
+        padding: 20px;
+      }
+
+      h2 {
+        margin: 0 0 16px;
+        font-size: 24px;
+      }
+
+      .roadmap {
+        display: grid;
+        gap: 12px;
+      }
+
+      .phase {
+        display: grid;
+        grid-template-columns: 116px minmax(0, 1fr) 72px;
+        gap: 14px;
+        align-items: center;
+        padding: 14px;
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 30px;
+        width: fit-content;
+        border-radius: 999px;
+        padding: 4px 10px;
+        font-size: 12px;
+        font-weight: 800;
+        color: var(--deep-ochre);
+        background: rgba(214, 90, 31, 0.12);
+      }
+
+      .done {
+        color: var(--peacock-green);
+        background: rgba(20, 92, 74, 0.12);
+      }
+
+      .later {
+        color: var(--deep-indigo);
+        background: rgba(41, 51, 92, 0.1);
+      }
+
+      .phase strong {
+        display: block;
+        margin-bottom: 4px;
+      }
+
+      .phase p,
+      .note p,
+      .checklist li {
+        color: var(--muted-brown);
+      }
+
+      .phase p {
+        margin: 0;
+        font-size: 14px;
+      }
+
+      .percent {
+        text-align: right;
+        font-weight: 800;
+        color: var(--deep-ochre);
+      }
+
+      .note {
+        border-left: 4px solid var(--bhagwa);
+      }
+
+      .note p {
+        margin: 0;
+      }
+
+      .checklist {
+        display: grid;
+        gap: 10px;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+
+      .checklist li {
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+      }
+
+      .dot {
+        flex: 0 0 auto;
+        width: 10px;
+        height: 10px;
+        margin-top: 7px;
+        border-radius: 999px;
+        background: var(--bhagwa);
+      }
+
+      .version {
+        display: grid;
+        gap: 12px;
+      }
+
+      .version-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .version-row:last-child {
+        padding-bottom: 0;
+        border-bottom: 0;
+      }
+
+      .version-row span {
+        color: var(--muted-brown);
+      }
+
+      @media (max-width: 900px) {
+        .summary,
+        .layout {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .layout {
+          align-items: stretch;
+        }
+      }
+
+      @media (max-width: 680px) {
+        main {
+          width: min(100% - 24px, 1160px);
+          padding-top: 18px;
+        }
+
+        header {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .summary,
+        .layout,
+        .phase {
+          grid-template-columns: 1fr;
+        }
+
+        .percent {
+          text-align: left;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <div class="brand">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
+          <div>
+            <strong>VedaPath AI</strong>
+            <span>Build tracker</span>
+          </div>
+        </div>
+        <div class="meta">Updated June 22, 2026 | Branch main</div>
+      </header>
+
+      <section>
+        <h1>Build Status</h1>
+        <p class="lead">A simple progress board for the journey from foundation package to a source-first Vedic learning companion.</p>
+      </section>
+
+      <section class="summary" aria-label="Progress summary">
+        <article class="tile">
+          <span>Current version</span>
+          <strong>v0.1.0</strong>
+          <p>Foundation, brand, roadmap, and repo workflow.</p>
+        </article>
+        <article class="tile">
+          <span>MVP progress</span>
+          <strong>18%</strong>
+          <div class="progress" aria-hidden="true"><div class="bar" style="width:18%"></div></div>
+          <p>Target: clickable prototype plus source-cited answer flow.</p>
+        </article>
+        <article class="tile">
+          <span>Full vision progress</span>
+          <strong>8%</strong>
+          <div class="progress" aria-hidden="true"><div class="bar" style="width:8%"></div></div>
+          <p>Long path: retrieval, learning loop, Sanskrit, voice, scholars.</p>
+        </article>
+        <article class="tile">
+          <span>Next release</span>
+          <strong>v0.2.0</strong>
+          <p>First clickable UX prototype with Ask, Source Card, and Claim Checker.</p>
+        </article>
+      </section>
+
+      <section class="layout">
+        <div class="panel">
+          <h2>Roadmap</h2>
+          <div class="roadmap">
+            <article class="phase">
+              <span class="badge done">Done</span>
+              <div>
+                <strong>Phase 0: Foundation</strong>
+                <p>Product blueprint, UX doctrine, brand system, repo setup, and first 3D logo concept.</p>
+              </div>
+              <div class="percent">100%</div>
+            </article>
+            <article class="phase">
+              <span class="badge">Active</span>
+              <div>
+                <strong>Phase 1: Clickable Prototype</strong>
+                <p>Functional first screen, answer card, Pramana Meter, Claim Checker, and Learning Path preview.</p>
+              </div>
+              <div class="percent">15%</div>
+            </article>
+            <article class="phase">
+              <span class="badge later">Next</span>
+              <div>
+                <strong>Phase 2: Curated Source Set</strong>
+                <p>First 25 to 50 verified questions, glossary entries, and source classification samples.</p>
+              </div>
+              <div class="percent">5%</div>
+            </article>
+            <article class="phase">
+              <span class="badge later">Later</span>
+              <div>
+                <strong>Phase 3: Retrieval Prototype</strong>
+                <p>Search and cited answer generation over the curated source set.</p>
+              </div>
+              <div class="percent">0%</div>
+            </article>
+            <article class="phase">
+              <span class="badge later">Later</span>
+              <div>
+                <strong>Phase 4: Learning Loop</strong>
+                <p>User profiles, question heatmap, correction queue, and reviewed annotation history.</p>
+              </div>
+              <div class="percent">0%</div>
+            </article>
+            <article class="phase">
+              <span class="badge later">Later</span>
+              <div>
+                <strong>Phase 5: Sanskrit, Voice, Scholars</strong>
+                <p>Mantra Lens depth, chant practice, verified reviewers, and interpretation notes.</p>
+              </div>
+              <div class="percent">0%</div>
+            </article>
+          </div>
+        </div>
+
+        <aside class="panel version">
+          <div>
+            <h2>Version Notes</h2>
+            <div class="version-row"><span>Release</span><strong>v0.1.0 Foundation</strong></div>
+            <div class="version-row"><span>Commit</span><strong>6e46218</strong></div>
+            <div class="version-row"><span>Goal</span><strong>Trusted MVP</strong></div>
+            <div class="version-row"><span>Status</span><strong>Ready for prototype</strong></div>
+          </div>
+
+          <div class="panel note">
+            <h2>North Star</h2>
+            <p>Make sacred and philosophical knowledge easier to approach without flattening its depth, confusing categories, or pretending the AI is an authority.</p>
+          </div>
+
+          <div>
+            <h2>Next Build Checklist</h2>
+            <ul class="checklist">
+              <li><span class="dot"></span><span>Design the first Ask workspace.</span></li>
+              <li><span class="dot"></span><span>Add sample answer with source classification.</span></li>
+              <li><span class="dot"></span><span>Create Pramana Meter component.</span></li>
+              <li><span class="dot"></span><span>Create Claim Checker view.</span></li>
+              <li><span class="dot"></span><span>Keep mobile simple and readable.</span></li>
+            </ul>
+          </div>
+        </aside>
+      </section>
+    </main>
+  </body>
+</html>
+

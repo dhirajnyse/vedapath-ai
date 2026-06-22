@@ -29,6 +29,7 @@ Let us look at the source first.
 - [GitHub Repo Setup](docs/REPO_SETUP.md)
 - [Source Policy](docs/SOURCE_POLICY.md)
 - [Brand Board](brand/brand-board.html)
+- [Build Status Page](build-status.html)
 - [Release Workflow](docs/RELEASE_WORKFLOW.md)
 
 ## North Star
@@ -40,7 +41,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 After Git is initialized, use:
 
 ```powershell
-.\scripts\release.ps1 -Message "Describe this release"
+.\scripts\release.cmd -Message "Describe this release"
 ```
 
 Add `-Push` after the GitHub remote is connected.

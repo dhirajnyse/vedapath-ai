@@ -7,7 +7,7 @@ This repo includes a small PowerShell helper for faster release commits.
 From the `vedapath-ai` folder:
 
 ```powershell
-.\scripts\release.ps1 -Message "Describe this release"
+.\scripts\release.cmd -Message "Describe this release"
 ```
 
 ## Commit And Push
@@ -15,8 +15,10 @@ From the `vedapath-ai` folder:
 After a GitHub remote is connected:
 
 ```powershell
-.\scripts\release.ps1 -Message "Describe this release" -Push
+.\scripts\release.cmd -Message "Describe this release" -Push
 ```
+
+The `.cmd` wrapper uses PowerShell with a process-only execution policy bypass, so it does not change your system policy.
 
 ## Recommended Message Style
 
@@ -31,4 +33,3 @@ Use short release messages:
 ## Safety Rule
 
 Review the changed files in GitHub Desktop before pushing public releases. The helper is meant to save time, not hide what changed.
-

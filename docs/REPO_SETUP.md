@@ -39,13 +39,13 @@ Replace `YOUR_USERNAME` with your GitHub username.
 After the repo is initialized, future release commits can use:
 
 ```powershell
-.\scripts\release.ps1 -Message "Add first clickable prototype"
+.\scripts\release.cmd -Message "Add first clickable prototype"
 ```
 
 After the remote is connected, add `-Push`:
 
 ```powershell
-.\scripts\release.ps1 -Message "Add first clickable prototype" -Push
+.\scripts\release.cmd -Message "Add first clickable prototype" -Push
 ```
 
 ## Recommended First Branching Model
