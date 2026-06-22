@@ -55,3 +55,9 @@ Source Library gives Calm Path and Source Practice a searchable source layer. A 
 Source Path Builder turns Calm, Library, and Practice into a small source-backed journey. A user chooses an intention, receives a short sequence of cited source candidates, marks progress locally, and sends the next source into Practice.
 
 The path must remain a learning scaffold. It should not become hidden profiling, therapy, ritual direction, or a guru voice.
+
+## v0.2.6 Calm Compass
+
+Calm Compass gives users one front door when life feels loud. A user chooses a present state, receives one source candidate, one reflection question, one carry action, and a route to the best next VedaPath room.
+
+The compass reads only deliberate browser-local prototype signals from Calm, Daily, Practice, Library, and Path. It must not become hidden profiling, therapy, emergency support, ritual instruction, or a guru voice.

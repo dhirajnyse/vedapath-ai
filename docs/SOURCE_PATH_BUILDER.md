@@ -25,6 +25,7 @@ It lets the user:
 - mark steps complete on this device
 - copy a plain-text path handoff
 - send the current source into Source Practice through `vedapath.library.launch.v1`
+- receive a calm-compass route-in when the user wants one source-backed next step
 
 ## Future Production Fields
 

@@ -1,0 +1,961 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VedaPath Calm Compass</title>
+    <style>
+      :root {
+        --bhagwa: #d65a1f;
+        --deep-ochre: #a83e12;
+        --sacred-gold: #e0a83b;
+        --warm-ivory: #fff7ea;
+        --ink: #1f1a17;
+        --muted-brown: #5b4638;
+        --peacock-green: #145c4a;
+        --deep-indigo: #29335c;
+        --line: rgba(91, 70, 56, 0.16);
+        --panel: rgba(255, 255, 255, 0.66);
+        --panel-strong: rgba(255, 255, 255, 0.88);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--warm-ivory);
+        color: var(--ink);
+        font-family: Inter, "IBM Plex Sans", system-ui, sans-serif;
+        line-height: 1.5;
+      }
+
+      button,
+      textarea {
+        font: inherit;
+      }
+
+      button {
+        cursor: pointer;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .page {
+        width: min(1240px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 22px 0 48px;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding-bottom: 18px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        min-width: 0;
+      }
+
+      .brand img {
+        width: 50px;
+        height: 50px;
+        border-radius: 8px;
+        object-fit: cover;
+      }
+
+      .brand strong {
+        display: block;
+        font-size: 18px;
+      }
+
+      .brand span,
+      .muted,
+      .small,
+      .state-button span,
+      .source-card span,
+      .step-card p,
+      .memory-card p,
+      .stat span,
+      .boundary p,
+      .future-card p {
+        color: var(--muted-brown);
+      }
+
+      .brand span,
+      .small,
+      .source-card span,
+      .stat span {
+        font-size: 13px;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .link,
+      .version {
+        display: inline-flex;
+        align-items: center;
+        min-height: 34px;
+        border-radius: 999px;
+        padding: 6px 11px;
+        font-size: 13px;
+        font-weight: 800;
+      }
+
+      .link {
+        border: 1px solid transparent;
+        color: var(--muted-brown);
+      }
+
+      .link:hover,
+      .link:focus-visible,
+      .link.active {
+        border-color: rgba(168, 62, 18, 0.22);
+        color: var(--deep-ochre);
+        outline: none;
+      }
+
+      .version {
+        border: 1px solid rgba(168, 62, 18, 0.28);
+        background: rgba(255, 255, 255, 0.42);
+        color: var(--deep-ochre);
+      }
+
+      .workspace {
+        display: grid;
+        grid-template-columns: minmax(290px, 0.84fr) minmax(0, 1.16fr) minmax(300px, 0.9fr);
+        gap: 16px;
+        align-items: start;
+        padding-top: 18px;
+      }
+
+      .panel,
+      .state-button,
+      .source-card,
+      .step-card,
+      .memory-card,
+      .stat,
+      .boundary,
+      .future-card {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+      }
+
+      .panel {
+        padding: 18px;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        min-height: 28px;
+        margin-bottom: 14px;
+        border-radius: 999px;
+        padding: 4px 10px;
+        background: rgba(214, 90, 31, 0.12);
+        color: var(--deep-ochre);
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        margin-bottom: 12px;
+        font-size: 56px;
+        line-height: 0.98;
+        letter-spacing: 0;
+      }
+
+      h2 {
+        margin-bottom: 12px;
+        font-size: 24px;
+      }
+
+      h3 {
+        margin-bottom: 8px;
+        font-size: 18px;
+      }
+
+      .state-list,
+      .step-list,
+      .future-grid,
+      .memory-list {
+        display: grid;
+        gap: 10px;
+      }
+
+      .state-button {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr);
+        gap: 10px;
+        align-items: center;
+        width: 100%;
+        min-height: 68px;
+        padding: 11px;
+        text-align: left;
+        color: inherit;
+      }
+
+      .state-button:hover,
+      .state-button:focus-visible,
+      .state-button.active,
+      .button:hover,
+      .button:focus-visible,
+      .step-card.active {
+        border-color: rgba(214, 90, 31, 0.48);
+        outline: 3px solid rgba(214, 90, 31, 0.12);
+      }
+
+      .state-button.active,
+      .step-card.active {
+        background: rgba(214, 90, 31, 0.1);
+      }
+
+      .state-icon,
+      .step-index {
+        display: grid;
+        place-items: center;
+        width: 34px;
+        height: 34px;
+        border-radius: 999px;
+        background: rgba(20, 92, 74, 0.12);
+        color: var(--peacock-green);
+        font-size: 13px;
+        font-weight: 900;
+      }
+
+      .state-button.active .state-icon,
+      .step-card.active .step-index {
+        background: var(--bhagwa);
+        color: white;
+      }
+
+      .state-button strong {
+        display: block;
+        font-size: 15px;
+      }
+
+      .state-button span {
+        display: block;
+        margin-top: 2px;
+        font-size: 13px;
+      }
+
+      textarea {
+        width: 100%;
+        min-height: 112px;
+        resize: vertical;
+        border: 1px solid rgba(168, 62, 18, 0.28);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.72);
+        color: var(--ink);
+        padding: 12px;
+      }
+
+      textarea:focus {
+        border-color: var(--bhagwa);
+        outline: 3px solid rgba(214, 90, 31, 0.12);
+      }
+
+      .button-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 10px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 38px;
+        border: 1px solid rgba(168, 62, 18, 0.24);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.48);
+        color: var(--deep-ochre);
+        padding: 8px 11px;
+        font-weight: 850;
+      }
+
+      .button.primary {
+        border-color: var(--bhagwa);
+        background: var(--bhagwa);
+        color: white;
+      }
+
+      .button.secondary {
+        border-color: rgba(20, 92, 74, 0.24);
+        color: var(--peacock-green);
+      }
+
+      .compass-stage {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 18px;
+        align-items: center;
+        margin-bottom: 16px;
+      }
+
+      .mark {
+        display: grid;
+        place-items: center;
+        width: 152px;
+        height: 152px;
+        border: 1px solid rgba(168, 62, 18, 0.18);
+        border-radius: 8px;
+        background: linear-gradient(180deg, #fff9ef 0%, #f6e4ca 100%);
+        overflow: hidden;
+      }
+
+      .mark img {
+        width: 124px;
+        height: auto;
+        animation: calmPulse 6s ease-in-out infinite;
+      }
+
+      @keyframes calmPulse {
+        0%, 100% {
+          transform: scale(0.96);
+        }
+
+        50% {
+          transform: scale(1.04);
+        }
+      }
+
+      .source-card {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        padding: 12px;
+        border-left: 4px solid var(--bhagwa);
+        background: var(--panel-strong);
+      }
+
+      .source-card strong {
+        display: block;
+        margin-top: 4px;
+      }
+
+      .step-card {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr);
+        gap: 10px;
+        padding: 12px;
+        background: rgba(255, 255, 255, 0.46);
+      }
+
+      .step-card strong,
+      .memory-card strong,
+      .future-card strong {
+        display: block;
+        margin-bottom: 4px;
+      }
+
+      .step-card p,
+      .memory-card p,
+      .future-card p {
+        margin-bottom: 0;
+      }
+
+      .progress {
+        height: 10px;
+        margin: 12px 0 14px;
+        overflow: hidden;
+        border-radius: 999px;
+        background: rgba(168, 62, 18, 0.14);
+      }
+
+      .progress div {
+        height: 100%;
+        width: 33%;
+        border-radius: inherit;
+        background: linear-gradient(90deg, var(--bhagwa), var(--sacred-gold));
+        transition: width 240ms ease;
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .stat,
+      .memory-card,
+      .boundary,
+      .future-card {
+        padding: 13px;
+      }
+
+      .stat strong {
+        display: block;
+        margin-top: 4px;
+        font-size: 26px;
+        line-height: 1;
+        overflow-wrap: anywhere;
+      }
+
+      .memory-card {
+        background: rgba(255, 255, 255, 0.46);
+      }
+
+      .boundary {
+        margin-top: 14px;
+        border-style: dashed;
+        background: rgba(255, 255, 255, 0.34);
+      }
+
+      .section {
+        margin-top: 16px;
+        padding-top: 16px;
+        border-top: 1px solid var(--line);
+      }
+
+      .summary-output {
+        min-height: 136px;
+        margin-top: 10px;
+      }
+
+      [hidden] {
+        display: none !important;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        .mark img {
+          animation: none;
+        }
+      }
+
+      @media (max-width: 1120px) {
+        .workspace {
+          grid-template-columns: minmax(290px, 0.9fr) minmax(0, 1.1fr);
+        }
+
+        .memory-panel {
+          grid-column: 1 / -1;
+        }
+      }
+
+      @media (max-width: 780px) {
+        .page {
+          width: min(100% - 24px, 1240px);
+        }
+
+        .topbar {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .nav {
+          justify-content: flex-start;
+        }
+
+        .workspace,
+        .compass-stage,
+        .source-card,
+        .stats-grid,
+        .future-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .mark {
+          width: 100%;
+          min-height: 164px;
+        }
+
+        h1 {
+          font-size: 42px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top" aria-label="VedaPath AI home">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
+          <div>
+            <strong>VedaPath AI</strong>
+            <span>Calm compass</span>
+          </div>
+        </a>
+        <nav class="nav" aria-label="Project links">
+          <a class="link" href="build-status.html">Build</a>
+          <a class="link" href="brand/brand-board.html">Brand</a>
+          <a class="link" href="blueprint.html">Blueprint</a>
+          <a class="link" href="calm.html">Calm</a>
+          <a class="link" href="daily.html">Daily</a>
+          <a class="link" href="practice.html">Practice</a>
+          <a class="link" href="library.html">Library</a>
+          <a class="link" href="path.html">Path</a>
+          <a class="link active" href="compass.html">Compass</a>
+          <span class="version">v0.2.6 compass</span>
+        </nav>
+      </header>
+
+      <section class="workspace" aria-label="Calm Compass workspace">
+        <aside class="panel">
+          <span class="eyebrow">Begin here</span>
+          <h1>When life feels loud, choose one clear next step.</h1>
+          <p class="muted">Calm Compass turns the current moment into a source-backed action and points you to the right VedaPath room.</p>
+
+          <div class="state-list" aria-label="Compass state options">
+            <button class="state-button active" type="button" data-state="restless">
+              <span class="state-icon">1</span>
+              <span><strong>Restless</strong><span>Too much motion, not enough direction.</span></span>
+            </button>
+            <button class="state-button" type="button" data-state="overwhelmed">
+              <span class="state-icon">2</span>
+              <span><strong>Overwhelmed</strong><span>Too many signals asking for attention.</span></span>
+            </button>
+            <button class="state-button" type="button" data-state="clarity">
+              <span class="state-icon">3</span>
+              <span><strong>Seeking clarity</strong><span>The real question is still blurry.</span></span>
+            </button>
+            <button class="state-button" type="button" data-state="courage">
+              <span class="state-icon">4</span>
+              <span><strong>Need courage</strong><span>The work is known, but the first step feels heavy.</span></span>
+            </button>
+          </div>
+
+          <div class="section">
+            <label class="small" for="compassNote">One honest line</label>
+            <textarea id="compassNote">I need one calm next step before I try to solve everything.</textarea>
+            <div class="button-row">
+              <button class="button primary" id="saveCompass" type="button">Save Compass Check</button>
+              <button class="button secondary" id="copyCompass" type="button">Copy Handoff</button>
+            </div>
+            <textarea class="summary-output" id="compassSummary" readonly hidden aria-label="Prepared compass handoff"></textarea>
+          </div>
+        </aside>
+
+        <section class="panel" aria-live="polite">
+          <div class="compass-stage">
+            <div>
+              <span class="eyebrow">Compass answer</span>
+              <h1 id="compassTitle">Steady action before inner noise.</h1>
+              <p class="muted" id="compassText">When the mind is restless, begin with one clean action and let the result stop shouting for a moment.</p>
+            </div>
+            <div class="mark" aria-label="Calm compass logo animation">
+              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI calm compass logo mark">
+            </div>
+          </div>
+
+          <div class="source-card" aria-label="Compass source card">
+            <div>
+              <span>Source candidate</span>
+              <strong id="sourceCitation">Bhagavad Gita 2.48</strong>
+            </div>
+            <div>
+              <span>Text family</span>
+              <strong id="sourceFamily">Bhagavad Gita | Smriti</strong>
+            </div>
+            <div>
+              <span>Question</span>
+              <strong id="sourceQuestion">What can I do calmly today?</strong>
+            </div>
+            <div>
+              <span>Carry action</span>
+              <strong id="sourceCarry">Do one small duty slowly and cleanly.</strong>
+            </div>
+          </div>
+
+          <div class="section">
+            <h2>60-Second Compass</h2>
+            <div class="progress" aria-label="Compass preview progress">
+              <div id="compassProgress"></div>
+            </div>
+            <div class="step-list">
+              <article class="step-card active" data-step="1">
+                <span class="step-index">1</span>
+                <div>
+                  <strong>Arrive</strong>
+                  <p id="arriveText">Name the state without turning it into your identity.</p>
+                </div>
+              </article>
+              <article class="step-card" data-step="2">
+                <span class="step-index">2</span>
+                <div>
+                  <strong>Read</strong>
+                  <p id="readText">Open the source family and keep the boundary visible.</p>
+                </div>
+              </article>
+              <article class="step-card" data-step="3">
+                <span class="step-index">3</span>
+                <div>
+                  <strong>Move</strong>
+                  <p id="moveText">Do one next action that is small enough to survive the day.</p>
+                </div>
+              </article>
+            </div>
+            <div class="button-row">
+              <button class="button primary" id="previewCompass" type="button">Preview 60 Seconds</button>
+              <button class="button secondary" id="sendPractice" type="button">Send to Practice</button>
+              <a class="button" id="bestRoom" href="practice.html">Open Best Room</a>
+            </div>
+          </div>
+        </section>
+
+        <aside class="panel memory-panel">
+          <span class="eyebrow">Local signal</span>
+          <h2>Your Compass Memory</h2>
+          <p class="muted">This reads only deliberate browser-local VedaPath entries. No account, sync, or hidden profiling exists in this prototype.</p>
+
+          <div class="stats-grid">
+            <article class="stat">
+              <span>Compass checks</span>
+              <strong id="compassCount">0</strong>
+            </article>
+            <article class="stat">
+              <span>Last state</span>
+              <strong id="lastState">None</strong>
+            </article>
+            <article class="stat">
+              <span>Daily entries</span>
+              <strong id="dailyCount">0</strong>
+            </article>
+            <article class="stat">
+              <span>Practice sessions</span>
+              <strong id="practiceCount">0</strong>
+            </article>
+          </div>
+
+          <div class="section memory-list" id="memoryList"></div>
+
+          <div class="button-row">
+            <button class="button" id="clearCompass" type="button">Clear Compass Memory</button>
+            <a class="button secondary" href="path.html">Open Path</a>
+          </div>
+
+          <section class="boundary">
+            <h2>Compass Boundary</h2>
+            <p>This is a calm routing prototype, not therapy, emergency support, ritual instruction, or a replacement for family, clinicians, teachers, or tradition.</p>
+          </section>
+        </aside>
+      </section>
+
+      <section class="section" aria-label="Compass future">
+        <h2>What This Unlocks</h2>
+        <div class="future-grid">
+          <article class="future-card">
+            <strong>One front door</strong>
+            <p>A new user can begin with one honest state instead of learning every product room first.</p>
+          </article>
+          <article class="future-card">
+            <strong>Calm routing</strong>
+            <p>The app can guide users to Calm, Daily, Practice, Library, or Path based on explicit choice.</p>
+          </article>
+          <article class="future-card">
+            <strong>Launch-ready habit</strong>
+            <p>VedaPath becomes something people can use in real life in under one minute.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const compassStates = {
+        restless: {
+          label: "Restless",
+          title: "Steady action before inner noise.",
+          text: "When the mind is restless, begin with one clean action and let the result stop shouting for a moment.",
+          source: "Bhagavad Gita 2.48",
+          family: "Bhagavad Gita | Smriti",
+          question: "What can I do calmly today?",
+          carry: "Do one small duty slowly and cleanly.",
+          arrive: "Name the state without turning it into your identity.",
+          read: "Use the Gita source card as a steadiness lens, not a command.",
+          move: "Pick one duty. Do it slowly enough that attention can return.",
+          bestRoom: "practice.html",
+          bestLabel: "Open Practice",
+          note: "I need one calm next step before I try to solve everything."
+        },
+        overwhelmed: {
+          label: "Overwhelmed",
+          title: "Gather attention before the day gathers you.",
+          text: "When everything asks for attention, reduce the field first. The next step should be smaller than the noise.",
+          source: "Katha Upanishad 1.3.3-9",
+          family: "Upanishad | Shruti",
+          question: "What is pulling my attention hardest?",
+          carry: "Remove one input and choose the next useful step.",
+          arrive: "Name the loudest pull on attention.",
+          read: "Treat the chariot image as metaphor, not diagnosis.",
+          move: "Close one input, write one priority, then continue.",
+          bestRoom: "calm.html",
+          bestLabel: "Open Calm",
+          note: "I will reduce one input before deciding what matters."
+        },
+        clarity: {
+          label: "Seeking clarity",
+          title: "Ask what kind of knowing this needs.",
+          text: "Confusion becomes lighter when the question is named. Sort facts, meaning, and priority before chasing more information.",
+          source: "Mundaka Upanishad 1.1.4-5",
+          family: "Upanishad | Shruti",
+          question: "Is this about facts, meaning, or priority?",
+          carry: "Write the decision in one sentence and name the missing source.",
+          arrive: "Let the confusion become specific.",
+          read: "Use the source as a sorting lens, not a final answer.",
+          move: "Write one sentence that names the real question.",
+          bestRoom: "path.html",
+          bestLabel: "Open Path",
+          note: "I need to know what kind of question I am actually asking."
+        },
+        courage: {
+          label: "Need courage",
+          title: "Return to the work you can touch.",
+          text: "Courage grows when the first action is near enough to begin and small enough to complete.",
+          source: "Bhagavad Gita 2.47",
+          family: "Bhagavad Gita | Smriti",
+          question: "What action is mine today?",
+          carry: "Begin for five focused minutes without negotiating with the whole future.",
+          arrive: "Name the hesitation without making it your identity.",
+          read: "Read effort and outcome separately.",
+          move: "Start for five minutes. Let the whole future wait outside the room.",
+          bestRoom: "daily.html",
+          bestLabel: "Open Daily",
+          note: "I will start the work for five minutes and let the future stay future."
+        }
+      };
+
+      const compassKey = "vedapath.calmCompass.v1";
+      const dailyKey = "vedapath.dailyCalm.v1";
+      const practiceKey = "vedapath.practice.v1";
+      const pathKey = "vedapath.sourcePath.v1";
+      const launchKey = "vedapath.library.launch.v1";
+      const stateButtons = [...document.querySelectorAll(".state-button")];
+      const stepCards = [...document.querySelectorAll(".step-card")];
+      const compassNote = document.querySelector("#compassNote");
+      const saveCompass = document.querySelector("#saveCompass");
+      const copyCompass = document.querySelector("#copyCompass");
+      const compassSummary = document.querySelector("#compassSummary");
+      const previewCompass = document.querySelector("#previewCompass");
+      const sendPractice = document.querySelector("#sendPractice");
+      const clearCompass = document.querySelector("#clearCompass");
+      let activeState = "restless";
+      let activeStep = 1;
+
+      function readArray(key) {
+        try {
+          const parsed = JSON.parse(localStorage.getItem(key) || "[]");
+          return Array.isArray(parsed) ? parsed : [];
+        } catch {
+          return [];
+        }
+      }
+
+      function writeCompass(entries) {
+        localStorage.setItem(compassKey, JSON.stringify(entries.slice(0, 40)));
+      }
+
+      function readPathState() {
+        try {
+          const parsed = JSON.parse(localStorage.getItem(pathKey) || "null");
+          return parsed || {};
+        } catch {
+          return {};
+        }
+      }
+
+      function stateLabel(key) {
+        return compassStates[key]?.label || "None";
+      }
+
+      function renderState(key) {
+        const state = compassStates[key];
+        activeState = key;
+        document.querySelector("#compassTitle").textContent = state.title;
+        document.querySelector("#compassText").textContent = state.text;
+        document.querySelector("#sourceCitation").textContent = state.source;
+        document.querySelector("#sourceFamily").textContent = state.family;
+        document.querySelector("#sourceQuestion").textContent = state.question;
+        document.querySelector("#sourceCarry").textContent = state.carry;
+        document.querySelector("#arriveText").textContent = state.arrive;
+        document.querySelector("#readText").textContent = state.read;
+        document.querySelector("#moveText").textContent = state.move;
+        document.querySelector("#bestRoom").setAttribute("href", state.bestRoom);
+        document.querySelector("#bestRoom").textContent = state.bestLabel;
+        compassNote.value = state.note;
+        stateButtons.forEach((button) => {
+          button.classList.toggle("active", button.dataset.state === key);
+        });
+        saveCompass.textContent = "Save Compass Check";
+        sendPractice.textContent = "Send to Practice";
+        setStep(1);
+      }
+
+      function setStep(step) {
+        activeStep = step;
+        stepCards.forEach((card) => {
+          card.classList.toggle("active", Number(card.dataset.step) === step);
+        });
+        document.querySelector("#compassProgress").style.width = `${step * 33.333}%`;
+      }
+
+      function saveCompassCheck() {
+        const state = compassStates[activeState];
+        const now = new Date();
+        const entry = {
+          id: `${now.getTime()}`,
+          displayDate: now.toLocaleDateString(undefined, { month: "short", day: "numeric" }),
+          state: activeState,
+          source: state.source,
+          family: state.family,
+          carry: state.carry,
+          note: compassNote.value.trim() || state.note
+        };
+        writeCompass([entry, ...readArray(compassKey)]);
+        saveCompass.textContent = "Compass Saved";
+        renderMemory();
+      }
+
+      function sendCompassToPractice() {
+        const state = compassStates[activeState];
+        localStorage.setItem(launchKey, JSON.stringify({
+          id: `compass-${activeState}`,
+          title: state.title,
+          citation: state.source,
+          family: state.family,
+          question: state.question,
+          carry: state.carry,
+          boundary: "Reflection support, not therapy, ritual instruction, or a life command.",
+          stateKey: activeState
+        }));
+        sendPractice.textContent = "Ready in Practice";
+      }
+
+      function copyCompassHandoff() {
+        const state = compassStates[activeState];
+        const text = [
+          "VedaPath Calm Compass",
+          `State: ${state.label}`,
+          `Source: ${state.source}`,
+          `Family: ${state.family}`,
+          `Question: ${state.question}`,
+          `Carry: ${state.carry}`,
+          `Note: ${compassNote.value.trim() || state.note}`
+        ].join("\n");
+        compassSummary.value = text;
+        compassSummary.hidden = false;
+
+        const fallbackCopy = () => {
+          const helper = document.createElement("textarea");
+          helper.value = text;
+          helper.setAttribute("readonly", "");
+          helper.style.position = "fixed";
+          helper.style.left = "-9999px";
+          document.body.appendChild(helper);
+          helper.select();
+          const copied = document.execCommand("copy");
+          helper.remove();
+          copyCompass.textContent = copied ? "Copied" : "Handoff Ready";
+        };
+
+        if (navigator.clipboard?.writeText) {
+          navigator.clipboard.writeText(text).then(() => {
+            copyCompass.textContent = "Copied";
+          }).catch(fallbackCopy);
+          return;
+        }
+
+        try {
+          fallbackCopy();
+        } catch {
+          copyCompass.textContent = "Handoff Ready";
+        }
+      }
+
+      function renderMemory() {
+        const compassEntries = readArray(compassKey);
+        const dailyEntries = readArray(dailyKey);
+        const practiceEntries = readArray(practiceKey);
+        const savedPath = readPathState();
+        const completedPath = Array.isArray(savedPath.completedIds) ? savedPath.completedIds.length : 0;
+        document.querySelector("#compassCount").textContent = compassEntries.length;
+        document.querySelector("#dailyCount").textContent = dailyEntries.length;
+        document.querySelector("#practiceCount").textContent = practiceEntries.length;
+        document.querySelector("#lastState").textContent = stateLabel(compassEntries[0]?.state);
+
+        const latest = compassEntries.slice(0, 3);
+        document.querySelector("#memoryList").innerHTML = `
+          <article class="memory-card">
+            <strong>Path progress signal</strong>
+            <p>${completedPath ? `${completedPath} source path step${completedPath === 1 ? "" : "s"} completed on this device.` : "No source path steps completed yet."}</p>
+          </article>
+          ${latest.length ? latest.map((entry) => `
+            <article class="memory-card">
+              <strong>${entry.displayDate} | ${stateLabel(entry.state)}</strong>
+              <p>${entry.carry}</p>
+            </article>
+          `).join("") : `
+            <article class="memory-card">
+              <strong>No compass checks yet</strong>
+              <p>Save one check and this local rhythm will begin.</p>
+            </article>
+          `}
+        `;
+      }
+
+      stateButtons.forEach((button) => {
+        button.addEventListener("click", () => renderState(button.dataset.state));
+      });
+
+      previewCompass.addEventListener("click", () => {
+        previewCompass.textContent = "Compass Running";
+        setStep(1);
+        let step = 1;
+        const interval = window.setInterval(() => {
+          step += 1;
+          setStep(step);
+          if (step === 3) {
+            window.clearInterval(interval);
+            previewCompass.textContent = "Compass Complete";
+          }
+        }, 520);
+      });
+
+      saveCompass.addEventListener("click", saveCompassCheck);
+      copyCompass.addEventListener("click", copyCompassHandoff);
+      sendPractice.addEventListener("click", sendCompassToPractice);
+      clearCompass.addEventListener("click", () => {
+        if (!readArray(compassKey).length) return;
+        const shouldClear = window.confirm("Clear this browser's local Compass checks?");
+        if (!shouldClear) return;
+        localStorage.removeItem(compassKey);
+        renderMemory();
+      });
+
+      renderMemory();
+    </script>
+  </body>
+</html>

@@ -42,6 +42,8 @@ Let us look at the source first.
 - [Source Library Notes](docs/SOURCE_LIBRARY.md)
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
+- [Calm Compass](compass.html)
+- [Calm Compass Notes](docs/CALM_COMPASS.md)
 - [Release Workflow](docs/RELEASE_WORKFLOW.md)
 
 ## North Star
@@ -50,7 +52,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v0.2.5` is a clickable prototype with:
+`v0.2.6` is a clickable prototype with:
 
 - Ask workspace
 - Source Card
@@ -62,6 +64,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Source Practice with timer, stages, source card, and local rhythm
 - Source Library with search, filters, device-local shelf, and practice handoff
 - Source Path Builder with intention, local progress, source mix, and practice handoff
+- Calm Compass with present-state routing, local signal, and practice handoff
 - Correction Loop placeholder
 
 ## Faster Release Commits

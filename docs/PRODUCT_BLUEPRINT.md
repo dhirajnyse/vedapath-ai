@@ -14,6 +14,7 @@ It helps users move from curiosity to understanding through:
 - source-backed calm and practice flows
 - searchable source library
 - source path builder with explicit user intention
+- calm compass for one source-backed next action
 - user and scholar correction loops
 
 ## What It Is
@@ -196,6 +197,20 @@ It should:
 - keep prototype memory device-local until accounts and consent exist
 
 The path builder should never prescribe a life decision, ritual act, treatment plan, or spiritual conclusion. It should only organize the next source-backed step.
+
+### 11. Calm Compass
+
+Calm Compass is the simplest doorway for users who arrive with restlessness, overwhelm, unclear priority, or hesitation.
+
+It should:
+
+- begin from an explicit present-state choice
+- recommend one source candidate, one reflection question, and one carry action
+- route the user to Calm, Daily, Practice, Library, or Path without hiding why
+- read only deliberate local prototype signals until accounts and consent exist
+- send the selected source into guided practice when helpful
+
+The compass must never pretend to diagnose, command, prescribe, or profile the user. It should slow the moment down and offer the next source-backed action.
 
 ## Product Personality
 
