@@ -302,6 +302,21 @@ It should:
 
 Seva Planner should make calm useful without turning service into self-erasure. The action should be small, bounded, and freely chosen.
 
+### 18. Morning Path
+
+Morning Path helps a user begin the day with one source-backed start.
+
+It should:
+
+- begin from the user's actual morning state
+- ask for one honest line
+- preserve source citation, text family, pramana level, and boundary
+- produce one clean first action
+- save prototype starts only in browser-local storage
+- avoid therapy claims, ritual authority, astrology, productivity shame, and app-issued commands
+
+Morning Path should make the first moment of the day calmer and more directed without pretending the product owns the user's life.
+
 ## Product Personality
 
 Calm. Reverent. Precise. Beginner-friendly. Never flashy about sacred material.

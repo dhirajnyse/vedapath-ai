@@ -23,7 +23,7 @@ Show the product experience without a live LLM backend.
 
 Status:
 
-Completed in v0.3.2.
+Completed in v0.3.3.
 
 Core screens:
 
@@ -45,6 +45,7 @@ Core screens:
 - Samvada Room
 - Sankalpa Studio
 - Seva Planner
+- Morning Path
 
 Success criteria:
 

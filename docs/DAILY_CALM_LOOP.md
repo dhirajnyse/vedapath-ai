@@ -41,6 +41,8 @@ Sankalpa Studio can become the daily loop's intention layer: one source-backed 2
 
 Seva Planner can become the daily loop's outward-action layer: one small helpful act chosen from real capacity, not guilt or hidden scoring.
 
+Morning Path can become the daily loop's opening layer: one source-backed first action chosen before the day becomes noisy.
+
 ## Product Voice
 
 The daily loop should feel steady, humble, and useful. It should not flatter, command, diagnose, or pretend the product knows the user's life.

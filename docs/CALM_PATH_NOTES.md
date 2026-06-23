@@ -96,4 +96,10 @@ Seva Planner turns calm into one bounded helpful act. It asks the user to choose
 
 The planner should never become moral ranking, guilt, savior energy, legal advice, emergency support, or a command to overextend.
 
+## v0.3.3 Morning Path
+
+Morning Path turns the first moment of the day into one source-backed start. It asks the user to name the morning state, write one honest line, and choose one clean first action.
+
+The morning tool should never become therapy, medical advice, ritual instruction, astrology, productivity shame, or a command that pretends the product owns the day.
+
 The dialogue tool must not become mediation, legal advice, a verdict engine, false equivalence, or a recommendation to continue unsafe conflict.

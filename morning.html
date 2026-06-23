@@ -1,9 +1,9 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>VedaPath Seva Planner</title>
+    <title>VedaPath Morning Path</title>
     <style>
       :root {
         --bhagwa: #d65a1f;
@@ -86,14 +86,14 @@
       .brand span,
       .muted,
       .small,
-      .domain-button span,
+      .path-button span,
       .source-card span,
       .stat span,
       .boundary p,
-      .plan-card p,
+      .day-card p,
       .memory-card p,
-      .seva-meta,
-      .tone-card span {
+      .morning-meta,
+      .rhythm-card span {
         color: var(--muted-brown);
       }
 
@@ -101,8 +101,8 @@
       .small,
       .source-card span,
       .stat span,
-      .seva-meta,
-      .tone-card span {
+      .morning-meta,
+      .rhythm-card span {
         font-size: 13px;
       }
 
@@ -146,22 +146,22 @@
 
       .workspace {
         display: grid;
-        grid-template-columns: minmax(292px, 0.86fr) minmax(0, 1.14fr) minmax(292px, 0.9fr);
+        grid-template-columns: minmax(292px, 0.88fr) minmax(0, 1.12fr) minmax(292px, 0.92fr);
         gap: 16px;
         align-items: start;
         padding-top: 18px;
       }
 
       .panel,
-      .domain-button,
+      .path-button,
       .source-card,
       .stat,
       .boundary,
-      .plan-card,
+      .day-card,
       .memory-card,
-      .seva-preview,
-      .tone-card,
-      .meter-card,
+      .morning-preview,
+      .rhythm-card,
+      .practice-step,
       .day-cell {
         border: 1px solid var(--line);
         border-radius: 8px;
@@ -194,7 +194,7 @@
 
       h1 {
         margin-bottom: 12px;
-        font-size: clamp(42px, 4.5vw, 62px);
+        font-size: clamp(42px, 4.7vw, 64px);
         line-height: 0.98;
         letter-spacing: 0;
       }
@@ -209,38 +209,38 @@
         font-size: 18px;
       }
 
-      .domain-list,
+      .path-list,
       .memory-list {
         display: grid;
         gap: 10px;
       }
 
-      .domain-button {
+      .path-button {
         display: grid;
         grid-template-columns: auto minmax(0, 1fr);
         gap: 10px;
         align-items: center;
         width: 100%;
-        min-height: 66px;
+        min-height: 68px;
         padding: 11px;
         text-align: left;
         color: inherit;
       }
 
-      .domain-button:hover,
-      .domain-button:focus-visible,
-      .domain-button.active,
+      .path-button:hover,
+      .path-button:focus-visible,
+      .path-button.active,
       .button:hover,
       .button:focus-visible {
         border-color: rgba(214, 90, 31, 0.48);
         outline: 3px solid rgba(214, 90, 31, 0.12);
       }
 
-      .domain-button.active {
+      .path-button.active {
         background: rgba(214, 90, 31, 0.1);
       }
 
-      .domain-icon {
+      .path-icon {
         display: inline-grid;
         place-items: center;
         width: 34px;
@@ -252,7 +252,7 @@
         font-weight: 900;
       }
 
-      .domain-button.active .domain-icon {
+      .path-button.active .path-icon {
         background: var(--bhagwa);
         color: white;
       }
@@ -283,7 +283,7 @@
       }
 
       .button-row,
-      .tone-grid {
+      .rhythm-grid {
         display: flex;
         align-items: center;
         gap: 8px;
@@ -295,7 +295,7 @@
       }
 
       .button,
-      .tone-card {
+      .rhythm-card {
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -318,33 +318,33 @@
         color: var(--peacock-green);
       }
 
-      .tone-card {
+      .rhythm-card {
         flex: 1 1 132px;
         justify-content: flex-start;
         gap: 8px;
         text-align: left;
       }
 
-      .tone-card.active {
+      .rhythm-card.active {
         border-color: rgba(214, 90, 31, 0.5);
         background: rgba(214, 90, 31, 0.1);
       }
 
-      .seva-shell {
+      .morning-shell {
         display: grid;
         gap: 16px;
       }
 
-      .seva-preview {
+      .morning-preview {
         overflow: hidden;
         padding: 18px;
         background:
+          radial-gradient(circle at 80% 14%, rgba(224, 168, 59, 0.2), transparent 32%),
           linear-gradient(135deg, rgba(20, 92, 74, 0.1), transparent 36%),
-          linear-gradient(225deg, rgba(214, 90, 31, 0.08), transparent 38%),
           rgba(255, 255, 255, 0.74);
       }
 
-      .seva-top {
+      .morning-top {
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -352,53 +352,53 @@
         margin-bottom: 18px;
       }
 
-      .seva-logo {
+      .morning-logo {
         display: flex;
         align-items: center;
         gap: 10px;
       }
 
-      .seva-logo img {
+      .morning-logo img {
         width: 58px;
         height: 58px;
         border-radius: 8px;
         object-fit: cover;
-        animation: calmPulse 7s ease-in-out infinite;
+        animation: morningPulse 8s ease-in-out infinite;
       }
 
-      @keyframes calmPulse {
+      @keyframes morningPulse {
         0%, 100% {
-          transform: scale(0.97);
+          transform: translateY(0) scale(0.98);
         }
 
         50% {
-          transform: scale(1.04);
+          transform: translateY(-2px) scale(1.04);
         }
       }
 
-      .plan-grid,
+      .day-grid,
       .source-card,
       .stats-grid,
-      .meter-grid {
+      .practice-grid {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 10px;
       }
 
-      .plan-card,
+      .day-card,
       .source-card,
-      .meter-card,
+      .practice-step,
       .boundary {
         padding: 14px;
       }
 
-      .plan-card.main {
+      .day-card.main {
         grid-column: 1 / -1;
         border-left: 4px solid var(--bhagwa);
         background: var(--panel-strong);
       }
 
-      .plan-card strong {
+      .day-card strong {
         display: block;
         margin-bottom: 8px;
         font-size: 19px;
@@ -416,11 +416,11 @@
         font-size: 17px;
       }
 
-      .meter-card {
+      .practice-step {
         min-height: 112px;
       }
 
-      .meter-card.active {
+      .practice-step.active {
         border-color: rgba(214, 90, 31, 0.38);
         background: rgba(214, 90, 31, 0.08);
       }
@@ -494,7 +494,7 @@
           scroll-behavior: auto;
         }
 
-        .seva-logo img {
+        .morning-logo img {
           animation: none;
         }
       }
@@ -526,12 +526,12 @@
         .workspace,
         .source-card,
         .stats-grid,
-        .meter-grid,
-        .plan-grid {
+        .practice-grid,
+        .day-grid {
           grid-template-columns: 1fr;
         }
 
-        .plan-card.main {
+        .day-card.main {
           grid-column: auto;
         }
 
@@ -539,7 +539,7 @@
           font-size: clamp(38px, 10vw, 48px);
         }
 
-        .seva-top {
+        .morning-top {
           align-items: flex-start;
           flex-direction: column;
         }
@@ -557,7 +557,7 @@
           <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
           <div>
             <strong>VedaPath AI</strong>
-            <span>Seva planner</span>
+            <span>Morning path</span>
           </div>
         </a>
         <nav class="nav" aria-label="Project links">
@@ -575,93 +575,93 @@
           <a class="link" href="reply.html">Reply</a>
           <a class="link" href="samvada.html">Samvada</a>
           <a class="link" href="sankalpa.html">Intent</a>
-          <a class="link active" href="seva.html">Seva</a>
-          <a class="link" href="morning.html">Morning</a>
+          <a class="link" href="seva.html">Seva</a>
+          <a class="link active" href="morning.html">Morning</a>
           <span class="version">v0.3.3 morning</span>
         </nav>
       </header>
 
-      <section class="workspace" aria-label="Seva Planner workspace">
+      <section class="workspace" aria-label="Morning Path workspace">
         <aside class="panel">
-          <span class="eyebrow">Calm into helpful action</span>
-          <h1>Let peace become useful.</h1>
-          <p class="muted">Choose where help is needed, name your capacity honestly, and leave with one source-backed act of service that does not become self-pressure.</p>
+          <span class="eyebrow">Begin before the noise</span>
+          <h1>Start the day with one clean source.</h1>
+          <p class="muted">Choose the morning you are actually in. VedaPath gives one source candidate, one honest line, and one first action without pretending the app owns your day.</p>
 
-          <div class="domain-list" aria-label="Seva domain options">
-            <button class="domain-button active" type="button" data-domain="family">
-              <span class="domain-icon">1</span>
-              <span><strong>Family</strong><span>Help close to home without control.</span></span>
+          <div class="path-list" aria-label="Morning state options">
+            <button class="path-button active" type="button" data-state="restless">
+              <span class="path-icon">1</span>
+              <span><strong>Restless</strong><span>Too much motion before direction.</span></span>
             </button>
-            <button class="domain-button" type="button" data-domain="work">
-              <span class="domain-icon">2</span>
-              <span><strong>Work</strong><span>Make one task easier for someone.</span></span>
+            <button class="path-button" type="button" data-state="heavy">
+              <span class="path-icon">2</span>
+              <span><strong>Heavy</strong><span>The day feels larger than your strength.</span></span>
             </button>
-            <button class="domain-button" type="button" data-domain="community">
-              <span class="domain-icon">3</span>
-              <span><strong>Community</strong><span>Offer a small useful contribution.</span></span>
+            <button class="path-button" type="button" data-state="scattered">
+              <span class="path-icon">3</span>
+              <span><strong>Scattered</strong><span>Many possible starts, no clean first step.</span></span>
             </button>
-            <button class="domain-button" type="button" data-domain="self">
-              <span class="domain-icon">4</span>
-              <span><strong>Self-care</strong><span>Serve the future self with kindness.</span></span>
+            <button class="path-button" type="button" data-state="steady">
+              <span class="path-icon">4</span>
+              <span><strong>Steady</strong><span>Energy is present; it needs a boundary.</span></span>
             </button>
           </div>
 
           <div class="section">
-            <label class="small" for="capacityInput">What capacity is real today?</label>
-            <textarea id="capacityInput">I can give twenty quiet minutes without pretending I can solve everything.</textarea>
+            <label class="small" for="morningInput">One honest line from this morning</label>
+            <textarea id="morningInput">I need the first step to be clean before the day becomes loud.</textarea>
           </div>
 
           <div class="section">
-            <label class="small">Seva tone</label>
-            <div class="tone-grid" aria-label="Seva tone options">
-              <button class="tone-card active" type="button" data-tone="quiet"><strong>Quiet</strong><span>No announcement.</span></button>
-              <button class="tone-card" type="button" data-tone="skilled"><strong>Skilled</strong><span>Use what I know.</span></button>
-              <button class="tone-card" type="button" data-tone="boundary"><strong>Bounded</strong><span>Help without depletion.</span></button>
+            <label class="small">Morning rhythm</label>
+            <div class="rhythm-grid" aria-label="Morning rhythm options">
+              <button class="rhythm-card active" type="button" data-rhythm="quiet"><strong>Quiet</strong><span>Low force.</span></button>
+              <button class="rhythm-card" type="button" data-rhythm="focused"><strong>Focused</strong><span>One task.</span></button>
+              <button class="rhythm-card" type="button" data-rhythm="kind"><strong>Kind</strong><span>No harshness.</span></button>
             </div>
           </div>
 
           <div class="button-row">
-            <button class="button primary" id="buildSeva" type="button">Build Seva</button>
-            <button class="button secondary" id="copySeva" type="button">Copy</button>
+            <button class="button primary" id="buildMorning" type="button">Build Morning</button>
+            <button class="button secondary" id="copyMorning" type="button">Copy</button>
           </div>
-          <textarea class="summary-output" id="sevaSummary" readonly hidden aria-label="Prepared seva plan"></textarea>
+          <textarea class="summary-output" id="morningSummary" readonly hidden aria-label="Prepared morning path"></textarea>
         </aside>
 
-        <section class="panel seva-shell" aria-live="polite">
-          <span class="eyebrow">Source-backed seva card</span>
-          <div class="seva-preview" aria-label="Seva card preview">
-            <div class="seva-top">
-              <div class="seva-logo">
-                <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI seva logo">
+        <section class="panel morning-shell" aria-live="polite">
+          <span class="eyebrow">Source-backed start card</span>
+          <div class="morning-preview" aria-label="Morning card preview">
+            <div class="morning-top">
+              <div class="morning-logo">
+                <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI morning logo">
                 <div>
-                  <strong>Seva Planner</strong>
-                  <span class="seva-meta" id="sevaMode">Family | Quiet</span>
+                  <strong>Morning Path</strong>
+                  <span class="morning-meta" id="morningMode">Restless | Quiet</span>
                 </div>
               </div>
-              <span class="version" id="sevaFamily">Bhagavad Gita | Smriti</span>
+              <span class="version" id="morningFamily">Bhagavad Gita | Smriti</span>
             </div>
 
-            <h1 id="sevaTitle">Today I help without trying to control.</h1>
-            <div class="plan-grid">
-              <article class="plan-card main">
-                <strong>One helpful act</strong>
-                <p id="sevaAction">Do one unnoticed household task cleanly, without turning it into proof of goodness.</p>
+            <h1 id="morningTitle">First, steady the direction.</h1>
+            <div class="day-grid">
+              <article class="day-card main">
+                <strong>First clean action</strong>
+                <p id="morningAction">Choose one duty that can be done without checking for praise.</p>
               </article>
-              <article class="plan-card">
-                <strong>My capacity</strong>
-                <p id="capacityOut">I can give twenty quiet minutes without pretending I can solve everything.</p>
+              <article class="day-card">
+                <strong>Honest line</strong>
+                <p id="lineOut">I need the first step to be clean before the day becomes loud.</p>
               </article>
-              <article class="plan-card">
+              <article class="day-card">
                 <strong>Boundary</strong>
-                <p id="sevaBoundaryOut">Offer help without bargaining for praise or taking over someone else&apos;s agency.</p>
+                <p id="morningBoundaryOut">This is a start, not a full life verdict.</p>
               </article>
             </div>
           </div>
 
-          <div class="source-card" aria-label="Seva source card">
+          <div class="source-card" aria-label="Morning source card">
             <div>
               <span>Source candidate</span>
-              <strong id="sourceCitation">Bhagavad Gita 3.19</strong>
+              <strong id="sourceCitation">Bhagavad Gita 2.48</strong>
             </div>
             <div>
               <span>Text family</span>
@@ -673,42 +673,42 @@
             </div>
             <div>
               <span>Do not overclaim</span>
-              <strong id="sourceBoundary">Service support, not a moral score.</strong>
+              <strong id="sourceBoundary">Morning support, not a command.</strong>
             </div>
           </div>
 
-          <section aria-label="Seva Meter">
-            <h2>Seva Meter</h2>
-            <div class="meter-grid">
-              <article class="meter-card active">
-                <strong>Small</strong>
-                <p class="muted">The action can be done today.</p>
+          <section aria-label="Morning Method">
+            <h2>Morning Method</h2>
+            <div class="practice-grid">
+              <article class="practice-step active">
+                <strong>Arrive</strong>
+                <p class="muted">Name the state honestly.</p>
               </article>
-              <article class="meter-card">
-                <strong>Useful</strong>
-                <p class="muted">The help meets a real need, not an image.</p>
+              <article class="practice-step">
+                <strong>Read</strong>
+                <p class="muted">Keep one source candidate visible.</p>
               </article>
-              <article class="meter-card">
-                <strong>Bounded</strong>
-                <p class="muted">Service does not erase agency or rest.</p>
+              <article class="practice-step">
+                <strong>Choose</strong>
+                <p class="muted">Pick one action that fits today.</p>
               </article>
-              <article class="meter-card">
-                <strong>Source Visible</strong>
-                <p class="muted">Citation, family, and caution stay attached.</p>
+              <article class="practice-step">
+                <strong>Carry</strong>
+                <p class="muted">Leave with a boundary, not pressure.</p>
               </article>
             </div>
           </section>
         </section>
 
         <aside class="panel memory-panel">
-          <span class="eyebrow">Local seva memory</span>
-          <h2>Your Helpful Acts</h2>
-          <p class="muted">Saved plans stay only in this browser. This tests service as a calm habit before accounts, sync, or reviewed storage exists.</p>
+          <span class="eyebrow">Local morning memory</span>
+          <h2>Your 7-Day Opening</h2>
+          <p class="muted">Saved starts stay only in this browser. This tests a gentle morning habit before accounts, sync, or reviewed storage exists.</p>
 
           <div class="stats-grid">
             <article class="stat">
-              <span>Saved plans</span>
-              <strong id="planCount">0</strong>
+              <span>Saved mornings</span>
+              <strong id="morningCount">0</strong>
             </article>
             <article class="stat">
               <span>Last source</span>
@@ -716,103 +716,103 @@
             </article>
           </div>
 
-          <div class="memory-strip" id="sevaStrip" aria-label="Seven day seva strip"></div>
-          <div class="section memory-list" id="planList"></div>
+          <div class="memory-strip" id="morningStrip" aria-label="Seven day morning strip"></div>
+          <div class="section memory-list" id="morningList"></div>
 
           <div class="button-row">
-            <button class="button" id="savePlan" type="button">Save Plan</button>
-            <button class="button" id="clearPlans" type="button">Clear Local Preview</button>
-            <a class="button secondary" href="sankalpa.html">Open Intent</a>
+            <button class="button" id="saveMorning" type="button">Save Morning</button>
+            <button class="button" id="clearMornings" type="button">Clear Local Preview</button>
+            <a class="button secondary" href="practice.html">Open Practice</a>
           </div>
 
           <section class="boundary">
-            <h2>Seva Boundary</h2>
-            <p>This is reflection support, not moral ranking, therapy, emergency support, legal advice, or a command to overextend yourself.</p>
+            <h2>Morning Boundary</h2>
+            <p>This is reflection support, not therapy, medical advice, emergency support, ritual instruction, astrology, or a replacement for teachers, family, clinicians, or tradition.</p>
           </section>
         </aside>
       </section>
     </main>
 
     <script>
-      const sevaDomains = {
-        family: {
-          label: "Family",
-          title: "Today I help without trying to control.",
+      const morningStates = {
+        restless: {
+          label: "Restless",
+          title: "First, steady the direction.",
+          source: "Bhagavad Gita 2.48",
+          family: "Bhagavad Gita | Smriti",
+          level: "Direct source candidate",
+          caution: "Morning support, not a command.",
+          quiet: "Choose one duty that can be done without checking for praise.",
+          focused: "Put the first real task on the table and keep the result out of your identity.",
+          kind: "Begin with one task gently enough that the mind does not rebel.",
+          boundaryLine: "This is a start, not a full life verdict."
+        },
+        heavy: {
+          label: "Heavy",
+          title: "Begin smaller than the weight.",
+          source: "Katha Upanishad 1.3.14",
+          family: "Upanishad | Shruti",
+          level: "Direct source candidate",
+          caution: "Encouragement is not pressure to perform.",
+          quiet: "Do one small necessary thing before judging the whole day.",
+          focused: "Pick the smallest step that opens the next step.",
+          kind: "Let the first action be respectful to your real energy.",
+          boundaryLine: "Do not turn a hard morning into a character judgment."
+        },
+        scattered: {
+          label: "Scattered",
+          title: "Gather attention before choosing.",
+          source: "Bhagavad Gita 6.26",
+          family: "Bhagavad Gita | Smriti",
+          level: "Direct source candidate",
+          caution: "Attention support, not clinical advice.",
+          quiet: "Write the three visible tasks, then choose only the first one.",
+          focused: "Close the extra doors for twenty minutes and move one task forward.",
+          kind: "Return attention without scolding yourself for wandering.",
+          boundaryLine: "Focus is a return, not a punishment."
+        },
+        steady: {
+          label: "Steady",
+          title: "Use strength without spilling it.",
           source: "Bhagavad Gita 3.19",
           family: "Bhagavad Gita | Smriti",
           level: "Direct source candidate",
-          caution: "Service support, not a moral score.",
-          quiet: "Do one unnoticed household task cleanly, without turning it into proof of goodness.",
-          skilled: "Use one practical skill to reduce friction at home without taking over.",
-          boundary: "Offer one bounded help and let the other person keep their agency.",
-          boundaryLine: "Offer help without bargaining for praise or taking over someone else's agency."
-        },
-        work: {
-          label: "Work",
-          title: "Today I make one shared task lighter.",
-          source: "Bhagavad Gita 2.47",
-          family: "Bhagavad Gita | Smriti",
-          level: "Direct source candidate",
-          caution: "Effort guidance is not productivity shame.",
-          quiet: "Clean up one small work item so the next person has less confusion.",
-          skilled: "Use one strength to unblock a teammate without needing credit.",
-          boundary: "Help within the role and time that are honestly yours today.",
-          boundaryLine: "Do not confuse service with silent overwork."
-        },
-        community: {
-          label: "Community",
-          title: "Today I contribute one visible good.",
-          source: "Bhagavad Gita 12.13",
-          family: "Bhagavad Gita | Smriti",
-          level: "Direct source candidate",
-          caution: "Compassion does not erase discernment or safety.",
-          quiet: "Do one small public good without announcing it.",
-          skilled: "Offer one useful skill to someone who can actually use it.",
-          boundary: "Choose a helpful act that does not create dependency or risk.",
-          boundaryLine: "Serve with care, not savior energy."
-        },
-        self: {
-          label: "Self-care",
-          title: "Today I serve the future self with respect.",
-          source: "Katha Upanishad 1.3.3-9",
-          family: "Upanishad | Shruti",
-          level: "Direct source candidate",
-          caution: "Self-care is not withdrawal from all responsibility.",
-          quiet: "Prepare one small thing now that will reduce tomorrow's confusion.",
-          skilled: "Use discipline gently: arrange the next step before willpower fades.",
-          boundary: "Protect one pocket of attention without dramatizing the whole day.",
-          boundaryLine: "Care for the self as a steward, not as an escape."
+          caution: "Action support, not productivity worship.",
+          quiet: "Do the useful work without making an announcement out of it.",
+          focused: "Spend the first strong hour on the duty that matters most.",
+          kind: "Let steadiness include patience for other people.",
+          boundaryLine: "Strength should serve the day, not consume it."
         }
       };
 
-      const toneLabels = {
+      const rhythmLabels = {
         quiet: "Quiet",
-        skilled: "Skilled",
-        boundary: "Bounded"
+        focused: "Focused",
+        kind: "Kind"
       };
 
-      const storageKey = "vedapath.seva.v1";
-      let activeDomain = "family";
-      let activeTone = "quiet";
+      const storageKey = "vedapath.morning.v1";
+      let activeState = "restless";
+      let activeRhythm = "quiet";
 
       const elements = {
-        capacityInput: document.getElementById("capacityInput"),
-        sevaTitle: document.getElementById("sevaTitle"),
-        sevaMode: document.getElementById("sevaMode"),
-        sevaFamily: document.getElementById("sevaFamily"),
-        sevaAction: document.getElementById("sevaAction"),
-        capacityOut: document.getElementById("capacityOut"),
-        sevaBoundaryOut: document.getElementById("sevaBoundaryOut"),
+        morningInput: document.getElementById("morningInput"),
+        morningTitle: document.getElementById("morningTitle"),
+        morningMode: document.getElementById("morningMode"),
+        morningFamily: document.getElementById("morningFamily"),
+        morningAction: document.getElementById("morningAction"),
+        lineOut: document.getElementById("lineOut"),
+        morningBoundaryOut: document.getElementById("morningBoundaryOut"),
         sourceCitation: document.getElementById("sourceCitation"),
         sourceFamily: document.getElementById("sourceFamily"),
         sourceLevel: document.getElementById("sourceLevel"),
         sourceBoundary: document.getElementById("sourceBoundary"),
-        sevaSummary: document.getElementById("sevaSummary"),
-        copySeva: document.getElementById("copySeva"),
-        planCount: document.getElementById("planCount"),
+        morningSummary: document.getElementById("morningSummary"),
+        copyMorning: document.getElementById("copyMorning"),
+        morningCount: document.getElementById("morningCount"),
         lastSource: document.getElementById("lastSource"),
-        planList: document.getElementById("planList"),
-        sevaStrip: document.getElementById("sevaStrip")
+        morningList: document.getElementById("morningList"),
+        morningStrip: document.getElementById("morningStrip")
       };
 
       function escapeHTML(value) {
@@ -830,7 +830,7 @@
         return cleaned.length > 180 ? `${cleaned.slice(0, 177)}...` : cleaned;
       }
 
-      function readPlans() {
+      function readMornings() {
         try {
           const parsed = JSON.parse(localStorage.getItem(storageKey) || "[]");
           return Array.isArray(parsed) ? parsed : [];
@@ -839,57 +839,57 @@
         }
       }
 
-      function writePlans(plans) {
-        localStorage.setItem(storageKey, JSON.stringify(plans.slice(-30)));
+      function writeMornings(mornings) {
+        localStorage.setItem(storageKey, JSON.stringify(mornings.slice(-30)));
       }
 
       function dateKey(date) {
         return date.toISOString().slice(0, 10);
       }
 
-      function currentPlan() {
-        const domain = sevaDomains[activeDomain];
+      function currentMorning() {
+        const state = morningStates[activeState];
         return {
-          domain,
-          capacity: cleanText(elements.capacityInput.value, "I can help in one small honest way today."),
-          action: domain[activeTone],
-          boundary: domain.boundaryLine
+          state,
+          line: cleanText(elements.morningInput.value, "I can begin with one clean step."),
+          action: state[activeRhythm],
+          boundary: state.boundaryLine
         };
       }
 
-      function renderPlan() {
-        const plan = currentPlan();
-        const domain = plan.domain;
-        elements.sevaTitle.textContent = domain.title;
-        elements.sevaMode.textContent = `${domain.label} | ${toneLabels[activeTone]}`;
-        elements.sevaFamily.textContent = domain.family;
-        elements.sevaAction.textContent = plan.action;
-        elements.capacityOut.textContent = plan.capacity;
-        elements.sevaBoundaryOut.textContent = plan.boundary;
-        elements.sourceCitation.textContent = domain.source;
-        elements.sourceFamily.textContent = domain.family;
-        elements.sourceLevel.textContent = domain.level;
-        elements.sourceBoundary.textContent = domain.caution;
-        elements.sevaSummary.value = [
-          "VedaPath Seva Plan",
-          domain.title,
-          `Source: ${domain.source}`,
-          `Family: ${domain.family}`,
-          `Domain: ${domain.label}`,
-          `Tone: ${toneLabels[activeTone]}`,
+      function renderMorning() {
+        const morning = currentMorning();
+        const state = morning.state;
+        elements.morningTitle.textContent = state.title;
+        elements.morningMode.textContent = `${state.label} | ${rhythmLabels[activeRhythm]}`;
+        elements.morningFamily.textContent = state.family;
+        elements.morningAction.textContent = morning.action;
+        elements.lineOut.textContent = morning.line;
+        elements.morningBoundaryOut.textContent = morning.boundary;
+        elements.sourceCitation.textContent = state.source;
+        elements.sourceFamily.textContent = state.family;
+        elements.sourceLevel.textContent = state.level;
+        elements.sourceBoundary.textContent = state.caution;
+        elements.morningSummary.value = [
+          "VedaPath Morning Path",
+          state.title,
+          `Source: ${state.source}`,
+          `Family: ${state.family}`,
+          `State: ${state.label}`,
+          `Rhythm: ${rhythmLabels[activeRhythm]}`,
           "",
-          `Capacity: ${plan.capacity}`,
-          `Helpful act: ${plan.action}`,
-          `Boundary: ${plan.boundary}`,
+          `Honest line: ${morning.line}`,
+          `First action: ${morning.action}`,
+          `Boundary: ${morning.boundary}`,
           "",
-          "Product boundary: Reflection support, not moral ranking, therapy, emergency support, legal advice, or a command."
+          "Product boundary: Reflection support, not therapy, emergency support, ritual instruction, astrology, medical advice, or a command."
         ].join("\n");
       }
 
       function renderMemory() {
-        const plans = readPlans();
-        elements.planCount.textContent = plans.length;
-        elements.lastSource.textContent = plans.length ? plans[plans.length - 1].source : "None";
+        const mornings = readMornings();
+        elements.morningCount.textContent = mornings.length;
+        elements.lastSource.textContent = mornings.length ? mornings[mornings.length - 1].source : "None";
 
         const today = new Date();
         const days = Array.from({ length: 7 }, (_, index) => {
@@ -897,9 +897,9 @@
           day.setDate(today.getDate() - (6 - index));
           return day;
         });
-        elements.sevaStrip.innerHTML = days.map((day) => {
+        elements.morningStrip.innerHTML = days.map((day) => {
           const key = dateKey(day);
-          const count = plans.filter((plan) => plan.dateKey === key).length;
+          const count = mornings.filter((morning) => morning.dateKey === key).length;
           const label = day.toLocaleDateString("en-US", { weekday: "short" });
           return `
             <div class="day-cell ${count ? "has-entry" : ""}">
@@ -909,82 +909,82 @@
           `;
         }).join("");
 
-        if (!plans.length) {
-          elements.planList.innerHTML = `
+        if (!mornings.length) {
+          elements.morningList.innerHTML = `
             <article class="memory-card">
-              <strong>No saved seva plans yet</strong>
-              <p>Build and save one helpful act to begin the local trail.</p>
+              <strong>No saved mornings yet</strong>
+              <p>Build and save one start to begin the local trail.</p>
             </article>
           `;
           return;
         }
 
-        elements.planList.innerHTML = plans.slice(-3).reverse().map((plan) => `
+        elements.morningList.innerHTML = mornings.slice(-3).reverse().map((morning) => `
           <article class="memory-card">
-            <strong>${escapeHTML(plan.date)} | ${escapeHTML(plan.label)}</strong>
-            <p>${escapeHTML(plan.action)}</p>
+            <strong>${escapeHTML(morning.date)} | ${escapeHTML(morning.label)}</strong>
+            <p>${escapeHTML(morning.action)}</p>
           </article>
         `).join("");
       }
 
-      function savePlan() {
-        const plan = currentPlan();
+      function saveMorning() {
+        const morning = currentMorning();
         const now = new Date();
-        const plans = readPlans();
-        plans.push({
+        const mornings = readMornings();
+        mornings.push({
           date: now.toLocaleDateString("en-US", { month: "short", day: "numeric" }),
           dateKey: dateKey(now),
-          label: plan.domain.label,
-          source: plan.domain.source,
-          action: plan.action
+          label: morning.state.label,
+          source: morning.state.source,
+          action: morning.action
         });
-        writePlans(plans);
+        writeMornings(mornings);
         renderMemory();
       }
 
-      function copyPlan() {
-        renderPlan();
-        elements.sevaSummary.hidden = false;
-        elements.sevaSummary.select();
-        const text = elements.sevaSummary.value;
+      function copyMorning() {
+        renderMorning();
+        elements.morningSummary.hidden = false;
+        elements.morningSummary.select();
+        const text = elements.morningSummary.value;
         const copied = navigator.clipboard && navigator.clipboard.writeText
           ? navigator.clipboard.writeText(text)
           : Promise.resolve(document.execCommand("copy"));
 
         copied.then(() => {
-          elements.copySeva.textContent = "Copied";
+          elements.copyMorning.textContent = "Copied";
           window.setTimeout(() => {
-            elements.copySeva.textContent = "Copy";
+            elements.copyMorning.textContent = "Copy";
           }, 1400);
         });
       }
 
-      document.querySelectorAll(".domain-button").forEach((button) => {
+      document.querySelectorAll(".path-button").forEach((button) => {
         button.addEventListener("click", () => {
-          activeDomain = button.dataset.domain;
-          document.querySelectorAll(".domain-button").forEach((item) => item.classList.toggle("active", item === button));
-          renderPlan();
+          activeState = button.dataset.state;
+          document.querySelectorAll(".path-button").forEach((item) => item.classList.toggle("active", item === button));
+          renderMorning();
         });
       });
 
-      document.querySelectorAll(".tone-card").forEach((button) => {
+      document.querySelectorAll(".rhythm-card").forEach((button) => {
         button.addEventListener("click", () => {
-          activeTone = button.dataset.tone;
-          document.querySelectorAll(".tone-card").forEach((item) => item.classList.toggle("active", item === button));
-          renderPlan();
+          activeRhythm = button.dataset.rhythm;
+          document.querySelectorAll(".rhythm-card").forEach((item) => item.classList.toggle("active", item === button));
+          renderMorning();
         });
       });
 
-      document.getElementById("buildSeva").addEventListener("click", renderPlan);
-      document.getElementById("copySeva").addEventListener("click", copyPlan);
-      document.getElementById("savePlan").addEventListener("click", savePlan);
-      document.getElementById("clearPlans").addEventListener("click", () => {
+      document.getElementById("buildMorning").addEventListener("click", renderMorning);
+      document.getElementById("copyMorning").addEventListener("click", copyMorning);
+      document.getElementById("saveMorning").addEventListener("click", saveMorning);
+      document.getElementById("clearMornings").addEventListener("click", () => {
         localStorage.removeItem(storageKey);
         renderMemory();
       });
-      elements.capacityInput.addEventListener("input", renderPlan);
+      elements.morningInput.addEventListener("input", renderMorning);
 
-      renderPlan();
+      renderMorning();
       renderMemory();
     </script>
   </body>
