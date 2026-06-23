@@ -15,6 +15,7 @@ Source Practice turns VedaPath Calm from a reading preview into a guided product
 - A selected Calm Compass source can shape the practice from one explicit present-state choice.
 - A completed carry action can become a Calm Card without losing source context.
 - A practice source can become a one-minute Source Bell when the user needs a smaller reset.
+- A practice source can frame Before Reply when the next action is a message.
 
 ## Practice Stages
 

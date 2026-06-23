@@ -48,6 +48,8 @@ Let us look at the source first.
 - [Calm Card Studio Notes](docs/CALM_CARD_STUDIO.md)
 - [Source Bell](bell.html)
 - [Source Bell Notes](docs/SOURCE_BELL.md)
+- [Before Reply](reply.html)
+- [Before Reply Notes](docs/BEFORE_REPLY.md)
 - [Release Workflow](docs/RELEASE_WORKFLOW.md)
 
 ## North Star
@@ -56,7 +58,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v0.2.8` is a clickable prototype with:
+`v0.2.9` is a clickable prototype with:
 
 - Ask workspace
 - Source Card
@@ -71,6 +73,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Calm Compass with present-state routing, local signal, and practice handoff
 - Calm Card Studio with visual card preview, local saved cards, copy text, and PNG export
 - Source Bell with one-minute visual pulse, optional soft bell, source card, carry action, and local rhythm
+- Before Reply with source-backed reply drafting, tone options, local saved drafts, and copy handoff
 - Correction Loop placeholder
 
 ## Faster Release Commits

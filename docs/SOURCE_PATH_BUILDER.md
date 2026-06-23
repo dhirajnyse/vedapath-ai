@@ -28,6 +28,7 @@ It lets the user:
 - receive a calm-compass route-in when the user wants one source-backed next step
 - send the next step toward Calm Card Studio as a personal visual reminder
 - send the next step toward Source Bell when the user needs a one-minute reset
+- send the next step toward Before Reply when the next step is a conversation
 
 ## Future Production Fields
 

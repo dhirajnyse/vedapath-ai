@@ -1,0 +1,918 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VedaPath Before Reply</title>
+    <style>
+      :root {
+        --bhagwa: #d65a1f;
+        --deep-ochre: #a83e12;
+        --sacred-gold: #e0a83b;
+        --warm-ivory: #fff7ea;
+        --ink: #1f1a17;
+        --muted-brown: #5b4638;
+        --peacock-green: #145c4a;
+        --deep-indigo: #29335c;
+        --line: rgba(91, 70, 56, 0.16);
+        --panel: rgba(255, 255, 255, 0.68);
+        --panel-strong: rgba(255, 255, 255, 0.9);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--warm-ivory);
+        color: var(--ink);
+        font-family: Inter, "IBM Plex Sans", system-ui, sans-serif;
+        line-height: 1.5;
+      }
+
+      button,
+      input,
+      textarea {
+        font: inherit;
+      }
+
+      button {
+        cursor: pointer;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .page {
+        width: min(1240px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 22px 0 48px;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding-bottom: 18px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        min-width: 0;
+      }
+
+      .brand img {
+        width: 50px;
+        height: 50px;
+        border-radius: 8px;
+        object-fit: cover;
+      }
+
+      .brand strong {
+        display: block;
+        font-size: 18px;
+      }
+
+      .brand span,
+      .muted,
+      .small,
+      .state-button span,
+      .source-card span,
+      .stat span,
+      .boundary p,
+      .draft-card p,
+      .reply-meta,
+      .pattern-card p,
+      .tone-card span {
+        color: var(--muted-brown);
+      }
+
+      .brand span,
+      .small,
+      .source-card span,
+      .stat span,
+      .reply-meta,
+      .tone-card span {
+        font-size: 13px;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .link,
+      .version {
+        display: inline-flex;
+        align-items: center;
+        min-height: 34px;
+        border-radius: 999px;
+        padding: 6px 11px;
+        font-size: 13px;
+        font-weight: 800;
+      }
+
+      .link {
+        border: 1px solid transparent;
+        color: var(--muted-brown);
+      }
+
+      .link:hover,
+      .link:focus-visible,
+      .link.active {
+        border-color: rgba(168, 62, 18, 0.22);
+        color: var(--deep-ochre);
+        outline: none;
+      }
+
+      .version {
+        border: 1px solid rgba(168, 62, 18, 0.28);
+        background: rgba(255, 255, 255, 0.42);
+        color: var(--deep-ochre);
+      }
+
+      .workspace {
+        display: grid;
+        grid-template-columns: minmax(292px, 0.86fr) minmax(0, 1.12fr) minmax(292px, 0.9fr);
+        gap: 16px;
+        align-items: start;
+        padding-top: 18px;
+      }
+
+      .panel,
+      .state-button,
+      .source-card,
+      .stat,
+      .boundary,
+      .draft-card,
+      .reply-preview,
+      .pattern-card,
+      .tone-card,
+      .meter-card {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+      }
+
+      .panel {
+        padding: 18px;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        min-height: 28px;
+        margin-bottom: 14px;
+        border-radius: 999px;
+        padding: 4px 10px;
+        background: rgba(214, 90, 31, 0.12);
+        color: var(--deep-ochre);
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        margin-bottom: 12px;
+        font-size: 54px;
+        line-height: 0.98;
+        letter-spacing: 0;
+      }
+
+      h2 {
+        margin-bottom: 12px;
+        font-size: 24px;
+      }
+
+      h3 {
+        margin-bottom: 8px;
+        font-size: 18px;
+      }
+
+      .state-list,
+      .draft-list,
+      .pattern-list {
+        display: grid;
+        gap: 10px;
+      }
+
+      .state-button,
+      .pattern-card {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr);
+        gap: 10px;
+        align-items: center;
+        width: 100%;
+        min-height: 66px;
+        padding: 11px;
+        text-align: left;
+        color: inherit;
+      }
+
+      .state-button:hover,
+      .state-button:focus-visible,
+      .state-button.active,
+      .button:hover,
+      .button:focus-visible {
+        border-color: rgba(214, 90, 31, 0.48);
+        outline: 3px solid rgba(214, 90, 31, 0.12);
+      }
+
+      .state-button.active,
+      .pattern-card.active {
+        background: rgba(214, 90, 31, 0.1);
+      }
+
+      .state-icon,
+      .pattern-index {
+        display: inline-grid;
+        place-items: center;
+        width: 34px;
+        height: 34px;
+        border-radius: 999px;
+        background: rgba(20, 92, 74, 0.12);
+        color: var(--peacock-green);
+        font-size: 13px;
+        font-weight: 900;
+      }
+
+      .state-button.active .state-icon,
+      .pattern-card.active .pattern-index {
+        background: var(--bhagwa);
+        color: white;
+      }
+
+      .section {
+        margin-top: 16px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 8px;
+      }
+
+      textarea,
+      input {
+        width: 100%;
+        border: 1px solid rgba(168, 62, 18, 0.24);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.72);
+        color: var(--ink);
+      }
+
+      textarea {
+        min-height: 106px;
+        resize: vertical;
+        padding: 12px;
+      }
+
+      input {
+        min-height: 44px;
+        padding: 0 12px;
+      }
+
+      .button-row,
+      .tone-grid {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .button-row {
+        margin-top: 10px;
+      }
+
+      .button,
+      .tone-card {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 42px;
+        border: 1px solid rgba(168, 62, 18, 0.28);
+        border-radius: 8px;
+        padding: 9px 13px;
+        background: rgba(255, 255, 255, 0.66);
+        color: var(--deep-ochre);
+        font-weight: 900;
+      }
+
+      .button.primary {
+        border-color: transparent;
+        background: var(--bhagwa);
+        color: white;
+      }
+
+      .button.secondary {
+        color: var(--peacock-green);
+      }
+
+      .tone-card {
+        flex: 1 1 144px;
+        justify-content: flex-start;
+        gap: 8px;
+        text-align: left;
+      }
+
+      .tone-card.active {
+        border-color: rgba(214, 90, 31, 0.5);
+        background: rgba(214, 90, 31, 0.1);
+      }
+
+      .reply-shell {
+        display: grid;
+        gap: 16px;
+      }
+
+      .reply-preview {
+        position: relative;
+        overflow: hidden;
+        padding: 18px;
+        background:
+          linear-gradient(135deg, rgba(214, 90, 31, 0.09), transparent 36%),
+          rgba(255, 255, 255, 0.74);
+      }
+
+      .reply-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 18px;
+      }
+
+      .reply-logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .reply-logo img {
+        width: 56px;
+        height: 56px;
+        border-radius: 8px;
+        object-fit: cover;
+      }
+
+      .reply-text {
+        min-height: 208px;
+        padding: 16px;
+        border-left: 4px solid var(--bhagwa);
+        border-radius: 8px;
+        background: var(--panel-strong);
+        font-size: 21px;
+        line-height: 1.42;
+      }
+
+      .reply-text p {
+        margin-bottom: 12px;
+      }
+
+      .reply-text p:last-child {
+        margin-bottom: 0;
+      }
+
+      .source-card,
+      .stats-grid,
+      .meter-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .source-card,
+      .meter-card,
+      .draft-card,
+      .boundary {
+        padding: 14px;
+      }
+
+      .source-card strong,
+      .stat strong {
+        display: block;
+        margin-top: 4px;
+        font-size: 17px;
+      }
+
+      .meter-card {
+        min-height: 120px;
+      }
+
+      .meter-card.active {
+        border-color: rgba(214, 90, 31, 0.38);
+        background: rgba(214, 90, 31, 0.08);
+      }
+
+      .meter-card strong,
+      .draft-card strong,
+      .pattern-card strong {
+        display: block;
+      }
+
+      .stat {
+        min-height: 82px;
+        padding: 13px;
+      }
+
+      .stat strong {
+        font-size: 25px;
+      }
+
+      .draft-list {
+        margin-top: 12px;
+      }
+
+      .draft-card p,
+      .pattern-card p,
+      .boundary p {
+        margin-bottom: 0;
+      }
+
+      .boundary {
+        margin-top: 16px;
+        border-style: dashed;
+        background: rgba(255, 255, 255, 0.38);
+      }
+
+      .summary-output {
+        min-height: 1px;
+      }
+
+      [hidden] {
+        display: none !important;
+      }
+
+      @media (max-width: 1120px) {
+        .workspace {
+          grid-template-columns: minmax(292px, 0.92fr) minmax(0, 1.08fr);
+        }
+
+        .memory-panel {
+          grid-column: 1 / -1;
+        }
+      }
+
+      @media (max-width: 780px) {
+        .page {
+          width: min(100% - 24px, 1240px);
+        }
+
+        .topbar {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .nav {
+          justify-content: flex-start;
+        }
+
+        .workspace,
+        .source-card,
+        .stats-grid,
+        .meter-grid {
+          grid-template-columns: 1fr;
+        }
+
+        h1 {
+          font-size: 42px;
+        }
+
+        .reply-text {
+          font-size: 18px;
+        }
+
+        .reply-top {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top" aria-label="VedaPath AI home">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
+          <div>
+            <strong>VedaPath AI</strong>
+            <span>Before reply</span>
+          </div>
+        </a>
+        <nav class="nav" aria-label="Project links">
+          <a class="link" href="build-status.html">Build</a>
+          <a class="link" href="brand/brand-board.html">Brand</a>
+          <a class="link" href="blueprint.html">Blueprint</a>
+          <a class="link" href="calm.html">Calm</a>
+          <a class="link" href="daily.html">Daily</a>
+          <a class="link" href="practice.html">Practice</a>
+          <a class="link" href="library.html">Library</a>
+          <a class="link" href="path.html">Path</a>
+          <a class="link" href="compass.html">Compass</a>
+          <a class="link" href="card.html">Card</a>
+          <a class="link" href="bell.html">Bell</a>
+          <a class="link active" href="reply.html">Reply</a>
+          <span class="version">v0.2.9 reply</span>
+        </nav>
+      </header>
+
+      <section class="workspace" aria-label="Before Reply workspace">
+        <aside class="panel">
+          <span class="eyebrow">Pause before sending</span>
+          <h1>Reply after the source, not the surge.</h1>
+          <p class="muted">Choose the emotional weather, name the situation, and draft a calmer reply with source, boundary, and agency visible.</p>
+
+          <div class="state-list" aria-label="Reply state options">
+            <button class="state-button active" type="button" data-state="heated">
+              <span class="state-icon">1</span>
+              <span><strong>Heated</strong><span>The reply may become sharper than the truth.</span></span>
+            </button>
+            <button class="state-button" type="button" data-state="hurt">
+              <span class="state-icon">2</span>
+              <span><strong>Hurt</strong><span>You want to be understood without attacking.</span></span>
+            </button>
+            <button class="state-button" type="button" data-state="defensive">
+              <span class="state-icon">3</span>
+              <span><strong>Defensive</strong><span>You need clarity before explanation.</span></span>
+            </button>
+            <button class="state-button" type="button" data-state="boundary">
+              <span class="state-icon">4</span>
+              <span><strong>Boundary</strong><span>You need firmness without cruelty.</span></span>
+            </button>
+          </div>
+
+          <div class="section">
+            <label class="small" for="situationInput">What happened?</label>
+            <textarea id="situationInput">I received a message that felt unfair, and I want to respond without escalating it.</textarea>
+          </div>
+
+          <div class="section">
+            <label class="small">Reply tone</label>
+            <div class="tone-grid" aria-label="Reply tone options">
+              <button class="tone-card active" type="button" data-tone="warm"><strong>Warm boundary</strong><span>Kind and firm.</span></button>
+              <button class="tone-card" type="button" data-tone="clear"><strong>Clear ask</strong><span>Specific next step.</span></button>
+              <button class="tone-card" type="button" data-tone="repair"><strong>Repair</strong><span>Lower heat first.</span></button>
+            </div>
+          </div>
+
+          <div class="button-row">
+            <button class="button primary" id="draftReply" type="button">Draft Reply</button>
+            <button class="button secondary" id="copyReply" type="button">Copy Reply</button>
+          </div>
+          <textarea class="summary-output" id="replySummary" readonly hidden aria-label="Prepared reply text"></textarea>
+        </aside>
+
+        <section class="panel reply-shell" aria-live="polite">
+          <span class="eyebrow">Source-backed reply draft</span>
+          <div class="reply-preview" aria-label="Before Reply preview">
+            <div class="reply-top">
+              <div class="reply-logo">
+                <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI before reply logo">
+                <div>
+                  <strong>Before Reply</strong>
+                  <span class="reply-meta" id="replyMode">Heated | Warm boundary</span>
+                </div>
+              </div>
+              <span class="version" id="replyFamily">Bhagavad Gita | Smriti</span>
+            </div>
+
+            <h1 id="replyTitle">Let the heat pass before the message travels.</h1>
+            <div class="reply-text" id="replyText">
+              <p>I want to respond carefully rather than quickly.</p>
+              <p>What I heard is that something felt unfair. I do want to address it, but I do not want this to become sharper than it needs to be.</p>
+              <p>Can we slow this down and agree on one concrete next step?</p>
+            </div>
+          </div>
+
+          <div class="source-card" aria-label="Before Reply source card">
+            <div>
+              <span>Source candidate</span>
+              <strong id="sourceCitation">Bhagavad Gita 2.62-63</strong>
+            </div>
+            <div>
+              <span>Text family</span>
+              <strong id="sourceFamily">Bhagavad Gita | Smriti</strong>
+            </div>
+            <div>
+              <span>Reply question</span>
+              <strong id="sourceQuestion">Will this reply reduce confusion or add heat?</strong>
+            </div>
+            <div>
+              <span>Boundary</span>
+              <strong>Pause support, not relationship advice.</strong>
+            </div>
+          </div>
+
+          <section aria-label="Reply Meter">
+            <h2>Reply Meter</h2>
+            <div class="meter-grid">
+              <article class="meter-card active">
+                <strong>Pause</strong>
+                <p class="muted">The draft starts by slowing the moment.</p>
+              </article>
+              <article class="meter-card">
+                <strong>Name</strong>
+                <p class="muted">It names the issue without making the person the problem.</p>
+              </article>
+              <article class="meter-card">
+                <strong>Ask</strong>
+                <p class="muted">It leaves with one concrete next step.</p>
+              </article>
+              <article class="meter-card">
+                <strong>Boundary</strong>
+                <p class="muted">It avoids surrendering agency or escalating harm.</p>
+              </article>
+            </div>
+          </section>
+        </section>
+
+        <aside class="panel memory-panel">
+          <span class="eyebrow">Local reply memory</span>
+          <h2>Your Reply Rhythm</h2>
+          <p class="muted">Saved drafts stay only in this browser. This tests the habit before accounts, sync, or private communication storage exists.</p>
+
+          <div class="stats-grid">
+            <article class="stat">
+              <span>Saved drafts</span>
+              <strong id="draftCount">0</strong>
+            </article>
+            <article class="stat">
+              <span>Last source</span>
+              <strong id="lastSource">None</strong>
+            </article>
+          </div>
+
+          <div class="section pattern-list" aria-label="Before Reply path">
+            <article class="pattern-card active">
+              <span class="pattern-index">1</span>
+              <div><strong>Pause</strong><p>Do not send from the first surge.</p></div>
+            </article>
+            <article class="pattern-card">
+              <span class="pattern-index">2</span>
+              <div><strong>Source</strong><p>Let one source candidate frame the tone.</p></div>
+            </article>
+            <article class="pattern-card">
+              <span class="pattern-index">3</span>
+              <div><strong>Reply</strong><p>Send only what still feels clear after the pause.</p></div>
+            </article>
+          </div>
+
+          <div class="section draft-list" id="draftList"></div>
+
+          <div class="button-row">
+            <button class="button" id="saveDraft" type="button">Save Draft</button>
+            <button class="button" id="clearDrafts" type="button">Clear Local Preview</button>
+            <a class="button secondary" href="bell.html">Open Bell</a>
+          </div>
+
+          <section class="boundary">
+            <h2>Safety Boundary</h2>
+            <p>This is a calm communication prototype. It is not therapy, legal advice, emergency support, conflict mediation, or a recommendation to remain in unsafe communication.</p>
+          </section>
+        </aside>
+      </section>
+    </main>
+
+    <script>
+      const replyStates = {
+        heated: {
+          label: "Heated",
+          title: "Let the heat pass before the message travels.",
+          source: "Bhagavad Gita 2.62-63",
+          family: "Bhagavad Gita | Smriti",
+          question: "Will this reply reduce confusion or add heat?",
+          frame: "Anger can cloud judgment. The product uses this only as a pause cue, not as a moral verdict."
+        },
+        hurt: {
+          label: "Hurt",
+          title: "Name the hurt without making harm larger.",
+          source: "Bhagavad Gita 12.13",
+          family: "Bhagavad Gita | Smriti",
+          question: "Can I be truthful without turning pain into attack?",
+          frame: "Compassion and non-hostility can guide tone while still allowing boundaries."
+        },
+        defensive: {
+          label: "Defensive",
+          title: "Clarify before defending.",
+          source: "Mundaka Upanishad 1.1.4-5",
+          family: "Upanishad | Shruti",
+          question: "Is this about facts, meaning, or priority?",
+          frame: "A question may need sorting before the answer tries to win."
+        },
+        boundary: {
+          label: "Boundary",
+          title: "Firm does not need to become cruel.",
+          source: "Bhagavad Gita 2.47",
+          family: "Bhagavad Gita | Smriti",
+          question: "What action is mine without owning the other person's reaction?",
+          frame: "A boundary can be an action with care, not a demand for control."
+        }
+      };
+
+      const toneTemplates = {
+        warm: {
+          label: "Warm boundary",
+          opener: "I want to respond carefully rather than quickly.",
+          ask: "Can we slow this down and agree on one concrete next step?"
+        },
+        clear: {
+          label: "Clear ask",
+          opener: "I want to keep this clear and useful.",
+          ask: "The next step I need is one specific point we can both respond to."
+        },
+        repair: {
+          label: "Repair",
+          opener: "I do not want this conversation to become harsher than the issue itself.",
+          ask: "Can we reset the tone and come back to the actual point?"
+        }
+      };
+
+      const storageKey = "vedapath.beforeReply.v1";
+      let activeState = "heated";
+      let activeTone = "warm";
+
+      const elements = {
+        situationInput: document.getElementById("situationInput"),
+        replyTitle: document.getElementById("replyTitle"),
+        replyText: document.getElementById("replyText"),
+        replyMode: document.getElementById("replyMode"),
+        replyFamily: document.getElementById("replyFamily"),
+        sourceCitation: document.getElementById("sourceCitation"),
+        sourceFamily: document.getElementById("sourceFamily"),
+        sourceQuestion: document.getElementById("sourceQuestion"),
+        replySummary: document.getElementById("replySummary"),
+        copyReply: document.getElementById("copyReply"),
+        draftCount: document.getElementById("draftCount"),
+        lastSource: document.getElementById("lastSource"),
+        draftList: document.getElementById("draftList")
+      };
+
+      function escapeHTML(value) {
+        return String(value)
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;")
+          .replace(/'/g, "&#039;");
+      }
+
+      function readDrafts() {
+        try {
+          const parsed = JSON.parse(localStorage.getItem(storageKey) || "[]");
+          return Array.isArray(parsed) ? parsed : [];
+        } catch (error) {
+          return [];
+        }
+      }
+
+      function writeDrafts(drafts) {
+        localStorage.setItem(storageKey, JSON.stringify(drafts.slice(-30)));
+      }
+
+      function simplifySituation(text) {
+        const cleaned = text.trim().replace(/\s+/g, " ");
+        if (!cleaned) {
+          return "this landed strongly";
+        }
+        return cleaned.length > 120 ? `${cleaned.slice(0, 117)}...` : cleaned;
+      }
+
+      function createReply() {
+        const state = replyStates[activeState];
+        const tone = toneTemplates[activeTone];
+        const situation = simplifySituation(elements.situationInput.value);
+        const middle = activeState === "boundary"
+          ? `What I can do is respond to the specific issue. What I cannot do is continue if the exchange becomes disrespectful.`
+          : `What I heard is: ${situation}. I want to address it without adding more heat.`;
+        return [
+          tone.opener,
+          middle,
+          tone.ask
+        ];
+      }
+
+      function renderReply() {
+        const state = replyStates[activeState];
+        const tone = toneTemplates[activeTone];
+        const lines = createReply();
+        elements.replyTitle.textContent = state.title;
+        elements.replyMode.textContent = `${state.label} | ${tone.label}`;
+        elements.replyFamily.textContent = state.family;
+        elements.sourceCitation.textContent = state.source;
+        elements.sourceFamily.textContent = state.family;
+        elements.sourceQuestion.textContent = state.question;
+        elements.replyText.innerHTML = lines.map((line) => `<p>${escapeHTML(line)}</p>`).join("");
+        elements.replySummary.value = [
+          "VedaPath Before Reply",
+          state.title,
+          `Source: ${state.source}`,
+          `Family: ${state.family}`,
+          `Question: ${state.question}`,
+          "",
+          ...lines,
+          "",
+          "Boundary: Calm communication support, not therapy, mediation, legal advice, or a safety plan."
+        ].join("\n");
+      }
+
+      function renderDrafts() {
+        const drafts = readDrafts();
+        elements.draftCount.textContent = drafts.length;
+        elements.lastSource.textContent = drafts.length ? drafts[drafts.length - 1].source : "None";
+        if (!drafts.length) {
+          elements.draftList.innerHTML = `
+            <article class="draft-card">
+              <strong>No saved reply drafts yet</strong>
+              <p>Draft and save one calm reply to begin the local rhythm.</p>
+            </article>
+          `;
+          return;
+        }
+        elements.draftList.innerHTML = drafts.slice(-3).reverse().map((draft) => `
+          <article class="draft-card">
+            <strong>${escapeHTML(draft.date)} | ${escapeHTML(draft.label)}</strong>
+            <p>${escapeHTML(draft.preview)}</p>
+          </article>
+        `).join("");
+      }
+
+      function saveDraft() {
+        const state = replyStates[activeState];
+        const lines = createReply();
+        const drafts = readDrafts();
+        drafts.push({
+          date: new Date().toLocaleDateString("en-US", { month: "short", day: "numeric" }),
+          label: state.label,
+          source: state.source,
+          preview: lines.join(" ").slice(0, 160)
+        });
+        writeDrafts(drafts);
+        renderDrafts();
+      }
+
+      function copyReply() {
+        renderReply();
+        elements.replySummary.hidden = false;
+        elements.replySummary.select();
+        const text = elements.replySummary.value;
+        const copied = navigator.clipboard && navigator.clipboard.writeText
+          ? navigator.clipboard.writeText(text)
+          : Promise.resolve(document.execCommand("copy"));
+
+        copied.then(() => {
+          elements.copyReply.textContent = "Copied";
+          window.setTimeout(() => {
+            elements.copyReply.textContent = "Copy Reply";
+          }, 1400);
+        });
+      }
+
+      document.querySelectorAll(".state-button").forEach((button) => {
+        button.addEventListener("click", () => {
+          activeState = button.dataset.state;
+          document.querySelectorAll(".state-button").forEach((item) => item.classList.toggle("active", item === button));
+          renderReply();
+        });
+      });
+
+      document.querySelectorAll(".tone-card").forEach((button) => {
+        button.addEventListener("click", () => {
+          activeTone = button.dataset.tone;
+          document.querySelectorAll(".tone-card").forEach((item) => item.classList.toggle("active", item === button));
+          renderReply();
+        });
+      });
+
+      document.getElementById("draftReply").addEventListener("click", renderReply);
+      document.getElementById("copyReply").addEventListener("click", copyReply);
+      document.getElementById("saveDraft").addEventListener("click", saveDraft);
+      document.getElementById("clearDrafts").addEventListener("click", () => {
+        localStorage.removeItem(storageKey);
+        renderDrafts();
+      });
+      elements.situationInput.addEventListener("input", renderReply);
+
+      renderReply();
+      renderDrafts();
+    </script>
+  </body>
+</html>

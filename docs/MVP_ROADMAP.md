@@ -23,7 +23,7 @@ Show the product experience without a live LLM backend.
 
 Status:
 
-Completed in v0.2.8.
+Completed in v0.2.9.
 
 Core screens:
 
@@ -41,6 +41,7 @@ Core screens:
 - Calm Compass
 - Calm Card Studio
 - Source Bell
+- Before Reply
 
 Success criteria:
 
@@ -160,6 +161,7 @@ Should have:
 - Calm Compass
 - Calm Card Studio
 - Source Bell
+- Before Reply
 
 Later:
 

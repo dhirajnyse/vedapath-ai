@@ -21,6 +21,10 @@ Source Bell is reflection support. It is not therapy, medical advice, emergency 
 
 This gives VedaPath a practical daily use case without abandoning the source-first promise. The source, category, question, action, and boundary stay visible even in a tiny calm moment.
 
+## Before Reply Bridge
+
+Source Bell can precede Before Reply when a user needs a quiet minute before drafting a message. The reply tool should preserve the bell's source frame and boundary instead of turning the pause into relationship advice.
+
 ## Future Data Fields
 
 - state label

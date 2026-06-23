@@ -23,7 +23,7 @@ It also reads deliberate prototype signals from:
 
 When the user sends a compass source to Practice, it writes a launch handoff to `vedapath.library.launch.v1` so Practice can keep citation, family, question, carry action, and boundary visible.
 
-The same source-backed action can also become a Calm Card when a user wants a visual reminder or shareable launch artifact. It can also start Source Bell when the user needs one quiet minute before the next action.
+The same source-backed action can also become a Calm Card when a user wants a visual reminder or shareable launch artifact. It can also start Source Bell when the user needs one quiet minute before the next action, or Before Reply when the next action is communication.
 
 ## Boundary
 

@@ -241,6 +241,20 @@ It should:
 
 The bell must never become therapy, medical advice, emergency support, ritual instruction, or a guru voice. It should make one grounded next action easier to carry.
 
+### 14. Before Reply
+
+Before Reply turns one heated communication moment into a calmer draft.
+
+It should:
+
+- begin from an explicit reply state
+- preserve source citation, text family, source question, tone, and boundary
+- help the user write one calmer reply with one concrete next step
+- save prototype drafts only in browser-local storage
+- avoid pretending to mediate conflict, diagnose relationships, or advise unsafe communication
+
+Before Reply should protect agency. It should never become therapy, legal advice, emergency support, conflict mediation, or a reason to remain in harmful contact.
+
 ## Product Personality
 
 Calm. Reverent. Precise. Beginner-friendly. Never flashy about sacred material.

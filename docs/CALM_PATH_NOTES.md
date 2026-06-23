@@ -73,3 +73,9 @@ The card must keep source, family, and boundary visible. It should make the prod
 Source Bell turns one source-backed action into a one-minute reset. It adds a visual pulse, optional soft browser bell, source card, carry action, and device-local rhythm.
 
 The bell should help a user arrive before acting. It must not become therapy, medical advice, emergency support, ritual instruction, or a guru voice.
+
+## v0.2.9 Before Reply
+
+Before Reply turns a reactive communication moment into a calmer draft. It uses a present-state choice, source candidate, reply tone, and one concrete next step.
+
+The reply tool must protect safety and agency. It is not therapy, legal advice, conflict mediation, emergency support, or a recommendation to remain in unsafe communication.
