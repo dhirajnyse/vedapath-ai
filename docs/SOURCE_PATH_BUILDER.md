@@ -27,6 +27,7 @@ It lets the user:
 - send the current source into Source Practice through `vedapath.library.launch.v1`
 - receive a calm-compass route-in when the user wants one source-backed next step
 - send the next step toward Calm Card Studio as a personal visual reminder
+- send the next step toward Source Bell when the user needs a one-minute reset
 
 ## Future Production Fields
 

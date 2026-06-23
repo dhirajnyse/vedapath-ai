@@ -227,6 +227,20 @@ It should:
 
 The card studio must not let shareability erase accuracy. Every card should make clear that it is reflection support, not a command, diagnosis, therapy, ritual instruction, or universal teaching.
 
+### 13. Source Bell
+
+Source Bell turns one source-backed reflection into a one-minute reset.
+
+It should:
+
+- begin from an explicit present-state choice
+- run a short visual pulse with optional browser-generated sound
+- preserve source citation, text family, source question, carry action, and boundary
+- save prototype rhythm only in browser-local storage
+- hand the selected action toward Calm Card Studio when useful
+
+The bell must never become therapy, medical advice, emergency support, ritual instruction, or a guru voice. It should make one grounded next action easier to carry.
+
 ## Product Personality
 
 Calm. Reverent. Precise. Beginner-friendly. Never flashy about sacred material.

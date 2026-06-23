@@ -27,6 +27,10 @@ Each card includes:
 
 The PNG export is generated in the browser from the current card preview. It does not upload the card anywhere.
 
+## Source Bell Bridge
+
+Source Bell can feed Calm Card Studio when a user wants to turn a one-minute carry action into a visual reminder. The card should preserve the bell's source, text family, question, action, and boundary.
+
 ## Boundary
 
 Calm Cards are personal reflections. They are not therapy, medical advice, emergency support, ritual instruction, diagnosis, or universal advice for other people.

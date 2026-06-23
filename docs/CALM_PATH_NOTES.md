@@ -67,3 +67,9 @@ The compass reads only deliberate browser-local prototype signals from Calm, Dai
 Calm Card Studio turns one source-backed action into a visual card for personal carrying, copying, or launch sharing.
 
 The card must keep source, family, and boundary visible. It should make the product memorable without becoming advice, therapy, ritual instruction, diagnosis, or a universal command.
+
+## v0.2.8 Source Bell
+
+Source Bell turns one source-backed action into a one-minute reset. It adds a visual pulse, optional soft browser bell, source card, carry action, and device-local rhythm.
+
+The bell should help a user arrive before acting. It must not become therapy, medical advice, emergency support, ritual instruction, or a guru voice.

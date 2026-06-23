@@ -1,0 +1,1028 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VedaPath Source Bell</title>
+    <style>
+      :root {
+        --bhagwa: #d65a1f;
+        --deep-ochre: #a83e12;
+        --sacred-gold: #e0a83b;
+        --warm-ivory: #fff7ea;
+        --ink: #1f1a17;
+        --muted-brown: #5b4638;
+        --peacock-green: #145c4a;
+        --deep-indigo: #29335c;
+        --line: rgba(91, 70, 56, 0.16);
+        --panel: rgba(255, 255, 255, 0.68);
+        --panel-strong: rgba(255, 255, 255, 0.9);
+        --progress: 0%;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--warm-ivory);
+        color: var(--ink);
+        font-family: Inter, "IBM Plex Sans", system-ui, sans-serif;
+        line-height: 1.5;
+      }
+
+      button,
+      input,
+      textarea {
+        font: inherit;
+      }
+
+      button {
+        cursor: pointer;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .page {
+        width: min(1240px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 22px 0 48px;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding-bottom: 18px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        min-width: 0;
+      }
+
+      .brand img {
+        width: 50px;
+        height: 50px;
+        border-radius: 8px;
+        object-fit: cover;
+      }
+
+      .brand strong {
+        display: block;
+        font-size: 18px;
+      }
+
+      .brand span,
+      .muted,
+      .small,
+      .state-button span,
+      .source-card span,
+      .stat span,
+      .boundary p,
+      .memory-card p,
+      .step-card p,
+      .bell-note,
+      .source-line {
+        color: var(--muted-brown);
+      }
+
+      .brand span,
+      .small,
+      .source-card span,
+      .stat span,
+      .bell-note,
+      .source-line {
+        font-size: 13px;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .link,
+      .version {
+        display: inline-flex;
+        align-items: center;
+        min-height: 34px;
+        border-radius: 999px;
+        padding: 6px 11px;
+        font-size: 13px;
+        font-weight: 800;
+      }
+
+      .link {
+        border: 1px solid transparent;
+        color: var(--muted-brown);
+      }
+
+      .link:hover,
+      .link:focus-visible,
+      .link.active {
+        border-color: rgba(168, 62, 18, 0.22);
+        color: var(--deep-ochre);
+        outline: none;
+      }
+
+      .version {
+        border: 1px solid rgba(168, 62, 18, 0.28);
+        background: rgba(255, 255, 255, 0.42);
+        color: var(--deep-ochre);
+      }
+
+      .workspace {
+        display: grid;
+        grid-template-columns: minmax(292px, 0.86fr) minmax(0, 1.12fr) minmax(292px, 0.9fr);
+        gap: 16px;
+        align-items: start;
+        padding-top: 18px;
+      }
+
+      .panel,
+      .state-button,
+      .source-card,
+      .stat,
+      .boundary,
+      .memory-card,
+      .step-card,
+      .bell-stage,
+      .carry-card {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+      }
+
+      .panel {
+        padding: 18px;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        min-height: 28px;
+        margin-bottom: 14px;
+        border-radius: 999px;
+        padding: 4px 10px;
+        background: rgba(214, 90, 31, 0.12);
+        color: var(--deep-ochre);
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        margin-bottom: 12px;
+        font-size: 54px;
+        line-height: 0.98;
+        letter-spacing: 0;
+      }
+
+      h2 {
+        margin-bottom: 12px;
+        font-size: 24px;
+      }
+
+      h3 {
+        margin-bottom: 8px;
+        font-size: 18px;
+      }
+
+      .state-list,
+      .memory-list,
+      .step-list {
+        display: grid;
+        gap: 10px;
+      }
+
+      .state-button {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr);
+        gap: 10px;
+        align-items: center;
+        width: 100%;
+        min-height: 66px;
+        padding: 11px;
+        text-align: left;
+        color: inherit;
+      }
+
+      .state-button:hover,
+      .state-button:focus-visible,
+      .state-button.active,
+      .button:hover,
+      .button:focus-visible {
+        border-color: rgba(214, 90, 31, 0.48);
+        outline: 3px solid rgba(214, 90, 31, 0.12);
+      }
+
+      .state-button.active {
+        background: rgba(214, 90, 31, 0.1);
+      }
+
+      .state-icon,
+      .step-index {
+        display: inline-grid;
+        place-items: center;
+        width: 34px;
+        height: 34px;
+        border-radius: 999px;
+        background: rgba(20, 92, 74, 0.12);
+        color: var(--peacock-green);
+        font-size: 13px;
+        font-weight: 900;
+      }
+
+      .state-button.active .state-icon,
+      .step-card.active .step-index {
+        background: var(--bhagwa);
+        color: white;
+      }
+
+      .section {
+        margin-top: 16px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 8px;
+      }
+
+      textarea,
+      input {
+        width: 100%;
+        border: 1px solid rgba(168, 62, 18, 0.24);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.72);
+        color: var(--ink);
+      }
+
+      textarea {
+        min-height: 92px;
+        resize: vertical;
+        padding: 12px;
+      }
+
+      input {
+        min-height: 44px;
+        padding: 0 12px;
+      }
+
+      .button-row {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-top: 10px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 42px;
+        border: 1px solid rgba(168, 62, 18, 0.28);
+        border-radius: 8px;
+        padding: 9px 13px;
+        background: rgba(255, 255, 255, 0.66);
+        color: var(--deep-ochre);
+        font-weight: 900;
+      }
+
+      .button.primary {
+        border-color: transparent;
+        background: var(--bhagwa);
+        color: white;
+      }
+
+      .button.secondary {
+        color: var(--peacock-green);
+      }
+
+      .bell-panel {
+        display: grid;
+        gap: 16px;
+      }
+
+      .bell-hero {
+        display: grid;
+        place-items: center;
+        min-height: 390px;
+        padding: 22px;
+        border-radius: 8px;
+        background:
+          radial-gradient(circle at 50% 48%, rgba(224, 168, 59, 0.2), transparent 38%),
+          linear-gradient(180deg, rgba(255, 255, 255, 0.74), rgba(255, 247, 234, 0.86));
+        border: 1px solid var(--line);
+      }
+
+      .bell-orb {
+        position: relative;
+        display: grid;
+        place-items: center;
+        width: min(100%, 320px);
+        aspect-ratio: 1;
+        border-radius: 999px;
+        background:
+          conic-gradient(var(--bhagwa) var(--progress), rgba(214, 90, 31, 0.12) 0),
+          radial-gradient(circle, rgba(255, 247, 234, 0.92) 0 58%, rgba(224, 168, 59, 0.22) 59% 70%, rgba(214, 90, 31, 0.12) 71% 100%);
+        box-shadow: 0 22px 70px rgba(168, 62, 18, 0.13);
+      }
+
+      .bell-orb.running::after {
+        position: absolute;
+        inset: 26px;
+        content: "";
+        border: 1px solid rgba(214, 90, 31, 0.2);
+        border-radius: inherit;
+        animation: breathe 6s ease-in-out infinite;
+      }
+
+      .bell-core {
+        display: grid;
+        justify-items: center;
+        gap: 10px;
+        width: 72%;
+        padding: 18px;
+        border-radius: 999px;
+        background: rgba(255, 247, 234, 0.88);
+        text-align: center;
+      }
+
+      .bell-core img {
+        width: 84px;
+        height: 84px;
+        border-radius: 8px;
+        object-fit: cover;
+      }
+
+      .time {
+        font-size: 48px;
+        line-height: 1;
+        font-weight: 950;
+        letter-spacing: 0;
+      }
+
+      .stage-name {
+        color: var(--deep-ochre);
+        font-weight: 900;
+      }
+
+      @keyframes breathe {
+        0%,
+        100% {
+          transform: scale(0.95);
+          opacity: 0.48;
+        }
+
+        50% {
+          transform: scale(1.04);
+          opacity: 0.95;
+        }
+      }
+
+      .source-card,
+      .stats-grid,
+      .carry-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .source-card,
+      .carry-card {
+        padding: 14px;
+      }
+
+      .source-card strong,
+      .stat strong {
+        display: block;
+        margin-top: 4px;
+        font-size: 17px;
+      }
+
+      .carry-card {
+        min-height: 128px;
+      }
+
+      .carry-card strong {
+        display: block;
+        font-size: 20px;
+        line-height: 1.2;
+      }
+
+      .step-card {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr);
+        gap: 11px;
+        align-items: center;
+        min-height: 70px;
+        padding: 11px;
+      }
+
+      .step-card.active {
+        border-color: rgba(214, 90, 31, 0.38);
+        background: rgba(214, 90, 31, 0.08);
+      }
+
+      .step-card strong {
+        display: block;
+      }
+
+      .step-card p,
+      .boundary p,
+      .memory-card p {
+        margin-bottom: 0;
+      }
+
+      .stat {
+        min-height: 82px;
+        padding: 13px;
+      }
+
+      .stat strong {
+        font-size: 25px;
+      }
+
+      .memory-list {
+        margin-top: 12px;
+      }
+
+      .memory-card {
+        padding: 12px;
+      }
+
+      .memory-card strong {
+        display: block;
+      }
+
+      .boundary {
+        margin-top: 16px;
+        padding: 14px;
+        border-style: dashed;
+        background: rgba(255, 255, 255, 0.38);
+      }
+
+      .summary-output {
+        min-height: 1px;
+      }
+
+      [hidden] {
+        display: none !important;
+      }
+
+      @media (max-width: 1120px) {
+        .workspace {
+          grid-template-columns: minmax(292px, 0.92fr) minmax(0, 1.08fr);
+        }
+
+        .memory-panel {
+          grid-column: 1 / -1;
+        }
+      }
+
+      @media (max-width: 780px) {
+        .page {
+          width: min(100% - 24px, 1240px);
+        }
+
+        .topbar {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .nav {
+          justify-content: flex-start;
+        }
+
+        .workspace,
+        .source-card,
+        .stats-grid,
+        .carry-grid {
+          grid-template-columns: 1fr;
+        }
+
+        h1 {
+          font-size: 42px;
+        }
+
+        .bell-hero {
+          min-height: 320px;
+          padding: 16px;
+        }
+
+        .time {
+          font-size: 40px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top" aria-label="VedaPath AI home">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
+          <div>
+            <strong>VedaPath AI</strong>
+            <span>Source bell</span>
+          </div>
+        </a>
+        <nav class="nav" aria-label="Project links">
+          <a class="link" href="build-status.html">Build</a>
+          <a class="link" href="brand/brand-board.html">Brand</a>
+          <a class="link" href="blueprint.html">Blueprint</a>
+          <a class="link" href="calm.html">Calm</a>
+          <a class="link" href="daily.html">Daily</a>
+          <a class="link" href="practice.html">Practice</a>
+          <a class="link" href="library.html">Library</a>
+          <a class="link" href="path.html">Path</a>
+          <a class="link" href="compass.html">Compass</a>
+          <a class="link" href="card.html">Card</a>
+          <a class="link active" href="bell.html">Bell</a>
+          <span class="version">v0.2.8 bell</span>
+        </nav>
+      </header>
+
+      <section class="workspace" aria-label="Source Bell workspace">
+        <aside class="panel">
+          <span class="eyebrow">One-minute source reset</span>
+          <h1>A bell before the next action.</h1>
+          <p class="muted">Choose your state, begin a quiet minute, read one source candidate, and leave with one grounded action.</p>
+
+          <div class="state-list" aria-label="Bell state options">
+            <button class="state-button active" type="button" data-state="restless">
+              <span class="state-icon">1</span>
+              <span><strong>Restless</strong><span>Too much motion, not enough stillness.</span></span>
+            </button>
+            <button class="state-button" type="button" data-state="overwhelmed">
+              <span class="state-icon">2</span>
+              <span><strong>Overwhelmed</strong><span>Everything feels like it needs attention.</span></span>
+            </button>
+            <button class="state-button" type="button" data-state="clarity">
+              <span class="state-icon">3</span>
+              <span><strong>Seeking clarity</strong><span>You need one clean question.</span></span>
+            </button>
+            <button class="state-button" type="button" data-state="courage">
+              <span class="state-icon">4</span>
+              <span><strong>Need courage</strong><span>You know the work, but feel hesitant.</span></span>
+            </button>
+          </div>
+
+          <div class="section">
+            <label class="small" for="carryLine">Carry action</label>
+            <textarea id="carryLine">Do one small duty slowly and cleanly.</textarea>
+          </div>
+
+          <div class="button-row">
+            <button class="button secondary" id="copyBell" type="button">Copy Handoff</button>
+            <button class="button" id="soundToggle" type="button" aria-pressed="true">Sound On</button>
+          </div>
+          <textarea class="summary-output" id="bellSummary" readonly hidden aria-label="Prepared source bell handoff"></textarea>
+        </aside>
+
+        <section class="panel bell-panel" aria-live="polite">
+          <span class="eyebrow">Source-guided bell</span>
+          <h1 id="bellTitle">Steady action before inner noise.</h1>
+          <p class="muted" id="bellIntro">Begin with balance rather than pressure. Let the bell make one small action visible.</p>
+
+          <div class="bell-hero">
+            <div class="bell-orb" id="bellOrb">
+              <div class="bell-core">
+                <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI source bell logo">
+                <div class="time" id="timeDisplay">01:00</div>
+                <div class="stage-name" id="stageName">Arrive</div>
+                <div class="bell-note" id="stageNote">Name the state without judging it.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="button-row" aria-label="Bell controls">
+            <button class="button primary" id="startBell" type="button">Start Bell</button>
+            <button class="button secondary" id="pauseBell" type="button">Pause</button>
+            <button class="button" id="resetBell" type="button">Reset</button>
+            <button class="button" id="completeBell" type="button">Mark Complete</button>
+          </div>
+
+          <div class="source-card" aria-label="Source Bell source card">
+            <div>
+              <span>Source candidate</span>
+              <strong id="sourceCitation">Bhagavad Gita 2.48</strong>
+            </div>
+            <div>
+              <span>Text family</span>
+              <strong id="sourceFamily">Bhagavad Gita | Smriti</strong>
+            </div>
+            <div>
+              <span>Today asks</span>
+              <strong id="sourceQuestion">What is mine to do calmly?</strong>
+            </div>
+            <div>
+              <span>Boundary</span>
+              <strong>Reflection support, not a command.</strong>
+            </div>
+          </div>
+
+          <div class="carry-grid">
+            <article class="carry-card">
+              <span class="source-line">What this supports</span>
+              <strong id="supportTitle">Steady action</strong>
+              <p class="muted" id="supportCopy">A careful reading about balance in action, not a promise of instant peace.</p>
+            </article>
+            <article class="carry-card">
+              <span class="source-line">Carry into life</span>
+              <strong id="carryTitle">Do one small duty slowly and cleanly.</strong>
+              <p class="muted">The product promise is a grounded next action, not an escape from responsibility.</p>
+            </article>
+          </div>
+        </section>
+
+        <aside class="panel memory-panel">
+          <span class="eyebrow">Local rhythm</span>
+          <h2>Your Source Bell Rhythm</h2>
+          <p class="muted">Saved bell sessions stay only in this browser. This proves the habit before accounts, sync, or reviewed storage.</p>
+
+          <div class="stats-grid">
+            <article class="stat">
+              <span>Completed bells</span>
+              <strong id="bellCount">0</strong>
+            </article>
+            <article class="stat">
+              <span>Total minutes</span>
+              <strong id="bellMinutes">0</strong>
+            </article>
+            <article class="stat">
+              <span>Current streak</span>
+              <strong id="bellStreak">0</strong>
+            </article>
+            <article class="stat">
+              <span>Last source</span>
+              <strong id="lastSource">None</strong>
+            </article>
+          </div>
+
+          <div class="section step-list" aria-label="Bell path steps">
+            <article class="step-card active" data-step="arrive">
+              <span class="step-index">1</span>
+              <div><strong>Arrive</strong><p>Name the state without judging it.</p></div>
+            </article>
+            <article class="step-card" data-step="read">
+              <span class="step-index">2</span>
+              <div><strong>Read</strong><p>Open one source candidate and category.</p></div>
+            </article>
+            <article class="step-card" data-step="carry">
+              <span class="step-index">3</span>
+              <div><strong>Carry</strong><p>Leave with one action you can actually do.</p></div>
+            </article>
+          </div>
+
+          <div class="section memory-list" id="bellList"></div>
+
+          <div class="button-row">
+            <button class="button" id="clearBells" type="button">Clear Local Preview</button>
+            <a class="button secondary" href="card.html">Open Card</a>
+          </div>
+
+          <section class="boundary">
+            <h2>Calm Boundary</h2>
+            <p>This is a source-backed reflection prototype. It is not therapy, medical advice, emergency support, ritual instruction, or a replacement for teachers, family, clinicians, or tradition.</p>
+          </section>
+        </aside>
+      </section>
+    </main>
+
+    <script>
+      const bellStates = {
+        restless: {
+          label: "Restless",
+          title: "Steady action before inner noise.",
+          intro: "Begin with balance rather than pressure. Let the bell make one small action visible.",
+          source: "Bhagavad Gita 2.48",
+          family: "Bhagavad Gita | Smriti",
+          question: "What is mine to do calmly?",
+          action: "Do one small duty slowly and cleanly.",
+          support: "Steady action",
+          supportCopy: "A careful reading about balance in action, not a promise of instant peace."
+        },
+        overwhelmed: {
+          label: "Overwhelmed",
+          title: "Let attention return before choosing.",
+          intro: "When everything asks for attention, the first task is to gather the field.",
+          source: "Katha Upanishad 1.3.3-9",
+          family: "Upanishad | Shruti",
+          question: "What is the nearest next step?",
+          action: "Name the nearest next step before the whole horizon.",
+          support: "Gathered attention",
+          supportCopy: "A chariot image can help separate senses, mind, and direction without turning it into a diagnosis."
+        },
+        clarity: {
+          label: "Seeking clarity",
+          title: "Ask what kind of knowing this needs.",
+          intro: "Some questions need facts, some need meaning, and some need priority.",
+          source: "Mundaka Upanishad 1.1.4-5",
+          family: "Upanishad | Shruti",
+          question: "Is this about facts, meaning, or priority?",
+          action: "Separate fact, meaning, and priority before answering.",
+          support: "Clean questioning",
+          supportCopy: "The higher and lower knowledge distinction can slow a confused question without flattening it."
+        },
+        courage: {
+          label: "Need courage",
+          title: "Act without turning outcome into identity.",
+          intro: "The work can be touched now. The result does not need to become your whole self.",
+          source: "Bhagavad Gita 2.47",
+          family: "Bhagavad Gita | Smriti",
+          question: "What action is mine without owning the result?",
+          action: "Touch the work and release the demand for praise.",
+          support: "Courageous duty",
+          supportCopy: "This supports action with boundaries. It should not be used to pressure someone into harmful endurance."
+        }
+      };
+
+      const storageKey = "vedapath.sourceBell.v1";
+      const duration = 60;
+      let activeState = "restless";
+      let remaining = duration;
+      let timer = null;
+      let soundOn = true;
+      let audioContext = null;
+
+      const elements = {
+        bellTitle: document.getElementById("bellTitle"),
+        bellIntro: document.getElementById("bellIntro"),
+        bellOrb: document.getElementById("bellOrb"),
+        timeDisplay: document.getElementById("timeDisplay"),
+        stageName: document.getElementById("stageName"),
+        stageNote: document.getElementById("stageNote"),
+        sourceCitation: document.getElementById("sourceCitation"),
+        sourceFamily: document.getElementById("sourceFamily"),
+        sourceQuestion: document.getElementById("sourceQuestion"),
+        supportTitle: document.getElementById("supportTitle"),
+        supportCopy: document.getElementById("supportCopy"),
+        carryTitle: document.getElementById("carryTitle"),
+        carryLine: document.getElementById("carryLine"),
+        bellCount: document.getElementById("bellCount"),
+        bellMinutes: document.getElementById("bellMinutes"),
+        bellStreak: document.getElementById("bellStreak"),
+        lastSource: document.getElementById("lastSource"),
+        bellList: document.getElementById("bellList"),
+        bellSummary: document.getElementById("bellSummary"),
+        copyBell: document.getElementById("copyBell"),
+        soundToggle: document.getElementById("soundToggle")
+      };
+
+      function formatTime(value) {
+        const minutes = Math.floor(value / 60).toString().padStart(2, "0");
+        const seconds = (value % 60).toString().padStart(2, "0");
+        return `${minutes}:${seconds}`;
+      }
+
+      function dateKey(date) {
+        return date.toISOString().slice(0, 10);
+      }
+
+      function readRecords() {
+        try {
+          const parsed = JSON.parse(localStorage.getItem(storageKey) || "[]");
+          return Array.isArray(parsed) ? parsed : [];
+        } catch (error) {
+          return [];
+        }
+      }
+
+      function writeRecords(records) {
+        localStorage.setItem(storageKey, JSON.stringify(records.slice(-30)));
+      }
+
+      function calculateStreak(records) {
+        const days = new Set(records.map((record) => record.dateKey));
+        let cursor = new Date();
+        let count = 0;
+        while (days.has(dateKey(cursor))) {
+          count += 1;
+          cursor.setDate(cursor.getDate() - 1);
+        }
+        return count;
+      }
+
+      function escapeHTML(value) {
+        return String(value)
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;")
+          .replace(/'/g, "&#039;");
+      }
+
+      function renderMemory() {
+        const records = readRecords();
+        elements.bellCount.textContent = records.length;
+        elements.bellMinutes.textContent = records.reduce((sum, record) => sum + record.minutes, 0);
+        elements.bellStreak.textContent = calculateStreak(records);
+        elements.lastSource.textContent = records.length ? records[records.length - 1].source : "None";
+
+        if (!records.length) {
+          elements.bellList.innerHTML = `
+            <article class="memory-card">
+              <strong>No completed bells yet</strong>
+              <p>Complete one source bell and the rhythm will begin.</p>
+            </article>
+          `;
+          return;
+        }
+
+        elements.bellList.innerHTML = records.slice(-3).reverse().map((record) => `
+          <article class="memory-card">
+            <strong>${escapeHTML(record.label)} | ${escapeHTML(record.source)}</strong>
+            <p>${escapeHTML(record.date)} - ${escapeHTML(record.action)}</p>
+          </article>
+        `).join("");
+      }
+
+      function setStage(stage) {
+        const stageText = {
+          arrive: ["Arrive", "Name the state without judging it."],
+          read: ["Read", "Let the source candidate set the frame."],
+          carry: ["Carry", "Leave with one action you can actually do."]
+        };
+        elements.stageName.textContent = stageText[stage][0];
+        elements.stageNote.textContent = stageText[stage][1];
+        document.querySelectorAll(".step-card").forEach((card) => {
+          card.classList.toggle("active", card.dataset.step === stage);
+        });
+      }
+
+      function updateClock() {
+        elements.timeDisplay.textContent = formatTime(remaining);
+        const progress = ((duration - remaining) / duration) * 100;
+        elements.bellOrb.style.setProperty("--progress", `${progress}%`);
+
+        if (remaining > 40) {
+          setStage("arrive");
+        } else if (remaining > 20) {
+          setStage("read");
+        } else {
+          setStage("carry");
+        }
+      }
+
+      function playBell() {
+        if (!soundOn || !window.AudioContext) {
+          return;
+        }
+
+        audioContext = audioContext || new AudioContext();
+        const oscillator = audioContext.createOscillator();
+        const gain = audioContext.createGain();
+        oscillator.type = "sine";
+        oscillator.frequency.setValueAtTime(528, audioContext.currentTime);
+        oscillator.frequency.exponentialRampToValueAtTime(792, audioContext.currentTime + 0.18);
+        gain.gain.setValueAtTime(0.0001, audioContext.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.16, audioContext.currentTime + 0.03);
+        gain.gain.exponentialRampToValueAtTime(0.0001, audioContext.currentTime + 0.9);
+        oscillator.connect(gain);
+        gain.connect(audioContext.destination);
+        oscillator.start();
+        oscillator.stop(audioContext.currentTime + 0.95);
+      }
+
+      function stopTimer() {
+        window.clearInterval(timer);
+        timer = null;
+        elements.bellOrb.classList.remove("running");
+      }
+
+      function startTimer() {
+        if (timer) {
+          return;
+        }
+        playBell();
+        elements.bellOrb.classList.add("running");
+        timer = window.setInterval(() => {
+          remaining = Math.max(0, remaining - 1);
+          updateClock();
+          if (remaining === 0) {
+            stopTimer();
+            playBell();
+          }
+        }, 1000);
+      }
+
+      function resetTimer() {
+        stopTimer();
+        remaining = duration;
+        updateClock();
+      }
+
+      function applyState(key) {
+        activeState = key;
+        const state = bellStates[key];
+        elements.bellTitle.textContent = state.title;
+        elements.bellIntro.textContent = state.intro;
+        elements.sourceCitation.textContent = state.source;
+        elements.sourceFamily.textContent = state.family;
+        elements.sourceQuestion.textContent = state.question;
+        elements.supportTitle.textContent = state.support;
+        elements.supportCopy.textContent = state.supportCopy;
+        elements.carryTitle.textContent = state.action;
+        elements.carryLine.value = state.action;
+        document.querySelectorAll(".state-button").forEach((button) => {
+          button.classList.toggle("active", button.dataset.state === key);
+        });
+        resetTimer();
+      }
+
+      function completeBell() {
+        const state = bellStates[activeState];
+        const now = new Date();
+        const action = elements.carryLine.value.trim() || state.action;
+        const records = readRecords();
+        records.push({
+          date: now.toLocaleDateString("en-US", { month: "short", day: "numeric" }),
+          dateKey: dateKey(now),
+          label: state.label,
+          source: state.source,
+          family: state.family,
+          action,
+          minutes: 1
+        });
+        writeRecords(records);
+        renderMemory();
+        resetTimer();
+      }
+
+      function copyHandoff() {
+        const state = bellStates[activeState];
+        const action = elements.carryLine.value.trim() || state.action;
+        const text = [
+          "VedaPath Source Bell",
+          state.title,
+          `Source: ${state.source}`,
+          `Family: ${state.family}`,
+          `Question: ${state.question}`,
+          `Carry action: ${action}`,
+          "Boundary: Reflection support, not therapy, ritual instruction, or a command."
+        ].join("\n");
+        elements.bellSummary.hidden = false;
+        elements.bellSummary.value = text;
+        elements.bellSummary.select();
+
+        const copied = navigator.clipboard && navigator.clipboard.writeText
+          ? navigator.clipboard.writeText(text)
+          : Promise.resolve(document.execCommand("copy"));
+
+        copied.then(() => {
+          elements.copyBell.textContent = "Copied";
+          window.setTimeout(() => {
+            elements.copyBell.textContent = "Copy Handoff";
+          }, 1400);
+        });
+      }
+
+      document.querySelectorAll(".state-button").forEach((button) => {
+        button.addEventListener("click", () => applyState(button.dataset.state));
+      });
+
+      document.getElementById("startBell").addEventListener("click", startTimer);
+      document.getElementById("pauseBell").addEventListener("click", stopTimer);
+      document.getElementById("resetBell").addEventListener("click", resetTimer);
+      document.getElementById("completeBell").addEventListener("click", completeBell);
+      elements.copyBell.addEventListener("click", copyHandoff);
+      elements.soundToggle.addEventListener("click", () => {
+        soundOn = !soundOn;
+        elements.soundToggle.textContent = soundOn ? "Sound On" : "Sound Off";
+        elements.soundToggle.setAttribute("aria-pressed", String(soundOn));
+      });
+      elements.carryLine.addEventListener("input", () => {
+        elements.carryTitle.textContent = elements.carryLine.value.trim() || bellStates[activeState].action;
+      });
+      document.getElementById("clearBells").addEventListener("click", () => {
+        localStorage.removeItem(storageKey);
+        renderMemory();
+      });
+
+      applyState(activeState);
+      renderMemory();
+    </script>
+  </body>
+</html>
