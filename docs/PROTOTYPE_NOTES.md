@@ -1,6 +1,6 @@
-# v0.3.3 Prototype Notes
+# v0.3.4 Prototype Notes
 
-The v0.3.3 release turns the VedaPath AI homepage into a clickable product prototype with calm, practice, source-library, source-path, calm-compass, calm-card, source-bell, before-reply, samvada, sankalpa, seva, and morning surfaces.
+The v0.3.4 release turns the VedaPath AI homepage into a clickable product prototype with calm, practice, source-library, source-path, calm-compass, calm-card, source-bell, before-reply, samvada, sankalpa, seva, morning, and evening surfaces.
 
 ## Included
 
@@ -24,6 +24,7 @@ The v0.3.3 release turns the VedaPath AI homepage into a clickable product proto
 - Sankalpa Studio with one private 24-hour intention, source card, carry action, and local trail
 - Seva Planner with one source-backed helpful act, capacity boundary, and local trail
 - Morning Path with one source-backed start, honest line, clean first action, and local seven-day opening
+- Evening Reflection with source-backed acknowledgement, release, clean close, and local seven-day closing
 - Correction Loop placeholder
 - MVP progress update
 
@@ -45,6 +46,7 @@ This release proves the product direction:
 - one source-backed minute can become a practical daily reset
 - one reactive message can become a calmer reply before it is sent
 - one morning can begin with source, honesty, boundary, and a clean first action
+- one evening can close with acknowledgement, release, and no self-judgment
 - one disagreement can become a source-backed shared question
 - the UI remains calm and Bhagwa-led without becoming visually loud
 

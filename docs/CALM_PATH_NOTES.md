@@ -102,4 +102,10 @@ Morning Path turns the first moment of the day into one source-backed start. It 
 
 The morning tool should never become therapy, medical advice, ritual instruction, astrology, productivity shame, or a command that pretends the product owns the day.
 
+## v0.3.4 Evening Reflection
+
+Evening Reflection turns the final moment of the day into one source-backed close. It asks the user to acknowledge one support, release one unresolved loop, and keep a gentle boundary visible.
+
+The evening tool should never become therapy, sleep treatment, medical advice, ritual instruction, astrology, rumination coaching, or a verdict on the user's worth.
+
 The dialogue tool must not become mediation, legal advice, a verdict engine, false equivalence, or a recommendation to continue unsafe conflict.

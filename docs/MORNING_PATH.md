@@ -39,3 +39,7 @@ The feature should help users begin without making the morning a moral score.
 Most calm products ask users to pause. Morning Path also asks them to begin.
 
 That makes the product more useful: VedaPath can support steadiness, learning, service, and daily action while keeping citation and humility visible.
+
+## Companion Feature
+
+Evening Reflection should close the same loop at night: acknowledge, release, and preserve one source-backed boundary before rest.

@@ -58,6 +58,8 @@ Let us look at the source first.
 - [Seva Planner Notes](docs/SEVA_PLANNER.md)
 - [Morning Path](morning.html)
 - [Morning Path Notes](docs/MORNING_PATH.md)
+- [Evening Reflection](evening.html)
+- [Evening Reflection Notes](docs/EVENING_REFLECTION.md)
 - [Release Workflow](docs/RELEASE_WORKFLOW.md)
 
 ## North Star
@@ -66,7 +68,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v0.3.3` is a clickable prototype with:
+`v0.3.4` is a clickable prototype with:
 
 - Ask workspace
 - Source Card
@@ -86,6 +88,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Sankalpa Studio with one private 24-hour intention, source card, carry action, and local trail
 - Seva Planner with one source-backed helpful act, capacity boundary, and local trail
 - Morning Path with one source-backed start, honest line, clean first action, and local seven-day opening
+- Evening Reflection with source-backed acknowledgement, release, clean close, and local seven-day closing
 - Correction Loop placeholder
 
 ## Faster Release Commits

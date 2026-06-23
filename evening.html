@@ -1,9 +1,9 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>VedaPath Morning Path</title>
+    <title>VedaPath Evening Reflection</title>
     <style>
       :root {
         --bhagwa: #d65a1f;
@@ -86,14 +86,14 @@
       .brand span,
       .muted,
       .small,
-      .path-button span,
+      .state-button span,
       .source-card span,
       .stat span,
       .boundary p,
-      .day-card p,
+      .reflection-card p,
       .memory-card p,
-      .morning-meta,
-      .rhythm-card span {
+      .evening-meta,
+      .close-card span {
         color: var(--muted-brown);
       }
 
@@ -101,8 +101,8 @@
       .small,
       .source-card span,
       .stat span,
-      .morning-meta,
-      .rhythm-card span {
+      .evening-meta,
+      .close-card span {
         font-size: 13px;
       }
 
@@ -153,15 +153,15 @@
       }
 
       .panel,
-      .path-button,
+      .state-button,
       .source-card,
       .stat,
       .boundary,
-      .day-card,
+      .reflection-card,
       .memory-card,
-      .morning-preview,
-      .rhythm-card,
-      .practice-step,
+      .evening-preview,
+      .close-card,
+      .method-step,
       .day-cell {
         border: 1px solid var(--line);
         border-radius: 8px;
@@ -209,13 +209,13 @@
         font-size: 18px;
       }
 
-      .path-list,
+      .state-list,
       .memory-list {
         display: grid;
         gap: 10px;
       }
 
-      .path-button {
+      .state-button {
         display: grid;
         grid-template-columns: auto minmax(0, 1fr);
         gap: 10px;
@@ -227,20 +227,20 @@
         color: inherit;
       }
 
-      .path-button:hover,
-      .path-button:focus-visible,
-      .path-button.active,
+      .state-button:hover,
+      .state-button:focus-visible,
+      .state-button.active,
       .button:hover,
       .button:focus-visible {
         border-color: rgba(214, 90, 31, 0.48);
         outline: 3px solid rgba(214, 90, 31, 0.12);
       }
 
-      .path-button.active {
+      .state-button.active {
         background: rgba(214, 90, 31, 0.1);
       }
 
-      .path-icon {
+      .state-icon {
         display: inline-grid;
         place-items: center;
         width: 34px;
@@ -252,7 +252,7 @@
         font-weight: 900;
       }
 
-      .path-button.active .path-icon {
+      .state-button.active .state-icon {
         background: var(--bhagwa);
         color: white;
       }
@@ -268,7 +268,7 @@
 
       textarea {
         width: 100%;
-        min-height: 110px;
+        min-height: 96px;
         resize: vertical;
         border: 1px solid rgba(168, 62, 18, 0.24);
         border-radius: 8px;
@@ -283,7 +283,7 @@
       }
 
       .button-row,
-      .rhythm-grid {
+      .close-grid {
         display: flex;
         align-items: center;
         gap: 8px;
@@ -295,7 +295,7 @@
       }
 
       .button,
-      .rhythm-card {
+      .close-card {
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -318,33 +318,33 @@
         color: var(--peacock-green);
       }
 
-      .rhythm-card {
+      .close-card {
         flex: 1 1 132px;
         justify-content: flex-start;
         gap: 8px;
         text-align: left;
       }
 
-      .rhythm-card.active {
+      .close-card.active {
         border-color: rgba(214, 90, 31, 0.5);
         background: rgba(214, 90, 31, 0.1);
       }
 
-      .morning-shell {
+      .evening-shell {
         display: grid;
         gap: 16px;
       }
 
-      .morning-preview {
+      .evening-preview {
         overflow: hidden;
         padding: 18px;
         background:
-          radial-gradient(circle at 80% 14%, rgba(224, 168, 59, 0.2), transparent 32%),
+          radial-gradient(circle at 82% 16%, rgba(41, 51, 92, 0.14), transparent 32%),
           linear-gradient(135deg, rgba(20, 92, 74, 0.1), transparent 36%),
           rgba(255, 255, 255, 0.74);
       }
 
-      .morning-top {
+      .evening-top {
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -352,53 +352,53 @@
         margin-bottom: 18px;
       }
 
-      .morning-logo {
+      .evening-logo {
         display: flex;
         align-items: center;
         gap: 10px;
       }
 
-      .morning-logo img {
+      .evening-logo img {
         width: 58px;
         height: 58px;
         border-radius: 8px;
         object-fit: cover;
-        animation: morningPulse 8s ease-in-out infinite;
+        animation: eveningPulse 8s ease-in-out infinite;
       }
 
-      @keyframes morningPulse {
+      @keyframes eveningPulse {
         0%, 100% {
-          transform: translateY(0) scale(0.98);
+          transform: scale(0.98);
         }
 
         50% {
-          transform: translateY(-2px) scale(1.04);
+          transform: scale(1.04);
         }
       }
 
-      .day-grid,
+      .reflection-grid,
       .source-card,
       .stats-grid,
-      .practice-grid {
+      .method-grid {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 10px;
       }
 
-      .day-card,
+      .reflection-card,
       .source-card,
-      .practice-step,
+      .method-step,
       .boundary {
         padding: 14px;
       }
 
-      .day-card.main {
+      .reflection-card.main {
         grid-column: 1 / -1;
         border-left: 4px solid var(--bhagwa);
         background: var(--panel-strong);
       }
 
-      .day-card strong {
+      .reflection-card strong {
         display: block;
         margin-bottom: 8px;
         font-size: 19px;
@@ -416,11 +416,11 @@
         font-size: 17px;
       }
 
-      .practice-step {
+      .method-step {
         min-height: 112px;
       }
 
-      .practice-step.active {
+      .method-step.active {
         border-color: rgba(214, 90, 31, 0.38);
         background: rgba(214, 90, 31, 0.08);
       }
@@ -494,7 +494,7 @@
           scroll-behavior: auto;
         }
 
-        .morning-logo img {
+        .evening-logo img {
           animation: none;
         }
       }
@@ -526,12 +526,12 @@
         .workspace,
         .source-card,
         .stats-grid,
-        .practice-grid,
-        .day-grid {
+        .method-grid,
+        .reflection-grid {
           grid-template-columns: 1fr;
         }
 
-        .day-card.main {
+        .reflection-card.main {
           grid-column: auto;
         }
 
@@ -539,7 +539,7 @@
           font-size: clamp(38px, 10vw, 48px);
         }
 
-        .morning-top {
+        .evening-top {
           align-items: flex-start;
           flex-direction: column;
         }
@@ -557,7 +557,7 @@
           <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
           <div>
             <strong>VedaPath AI</strong>
-            <span>Morning path</span>
+            <span>Evening reflection</span>
           </div>
         </a>
         <nav class="nav" aria-label="Project links">
@@ -576,93 +576,98 @@
           <a class="link" href="samvada.html">Samvada</a>
           <a class="link" href="sankalpa.html">Intent</a>
           <a class="link" href="seva.html">Seva</a>
-          <a class="link active" href="morning.html">Morning</a>
-          <a class="link" href="evening.html">Evening</a>
+          <a class="link" href="morning.html">Morning</a>
+          <a class="link active" href="evening.html">Evening</a>
           <span class="version">v0.3.4 evening</span>
         </nav>
       </header>
 
-      <section class="workspace" aria-label="Morning Path workspace">
+      <section class="workspace" aria-label="Evening Reflection workspace">
         <aside class="panel">
-          <span class="eyebrow">Begin before the noise</span>
-          <h1>Start the day with one clean source.</h1>
-          <p class="muted">Choose the morning you are actually in. VedaPath gives one source candidate, one honest line, and one first action without pretending the app owns your day.</p>
+          <span class="eyebrow">Close without self-judgment</span>
+          <h1>Put the day down with care.</h1>
+          <p class="muted">Choose the evening you are actually in. VedaPath gives one source candidate, one clean reflection, and one release so the day can end without becoming a verdict.</p>
 
-          <div class="path-list" aria-label="Morning state options">
-            <button class="path-button active" type="button" data-state="restless">
-              <span class="path-icon">1</span>
-              <span><strong>Restless</strong><span>Too much motion before direction.</span></span>
+          <div class="state-list" aria-label="Evening state options">
+            <button class="state-button active" type="button" data-state="tired">
+              <span class="state-icon">1</span>
+              <span><strong>Tired</strong><span>The body is asking for a gentler close.</span></span>
             </button>
-            <button class="path-button" type="button" data-state="heavy">
-              <span class="path-icon">2</span>
-              <span><strong>Heavy</strong><span>The day feels larger than your strength.</span></span>
+            <button class="state-button" type="button" data-state="tangled">
+              <span class="state-icon">2</span>
+              <span><strong>Tangled</strong><span>Too many unfinished thoughts remain open.</span></span>
             </button>
-            <button class="path-button" type="button" data-state="scattered">
-              <span class="path-icon">3</span>
-              <span><strong>Scattered</strong><span>Many possible starts, no clean first step.</span></span>
+            <button class="state-button" type="button" data-state="grateful">
+              <span class="state-icon">3</span>
+              <span><strong>Grateful</strong><span>Something supported you today.</span></span>
             </button>
-            <button class="path-button" type="button" data-state="steady">
-              <span class="path-icon">4</span>
-              <span><strong>Steady</strong><span>Energy is present; it needs a boundary.</span></span>
+            <button class="state-button" type="button" data-state="regretful">
+              <span class="state-icon">4</span>
+              <span><strong>Regretful</strong><span>A moment asks to be learned from, not carried as identity.</span></span>
             </button>
           </div>
 
           <div class="section">
-            <label class="small" for="morningInput">One honest line from this morning</label>
-            <textarea id="morningInput">I need the first step to be clean before the day becomes loud.</textarea>
+            <label class="small" for="gratitudeInput">One thing to acknowledge</label>
+            <textarea id="gratitudeInput">One small thing did not fall apart today.</textarea>
           </div>
 
           <div class="section">
-            <label class="small">Morning rhythm</label>
-            <div class="rhythm-grid" aria-label="Morning rhythm options">
-              <button class="rhythm-card active" type="button" data-rhythm="quiet"><strong>Quiet</strong><span>Low force.</span></button>
-              <button class="rhythm-card" type="button" data-rhythm="focused"><strong>Focused</strong><span>One task.</span></button>
-              <button class="rhythm-card" type="button" data-rhythm="kind"><strong>Kind</strong><span>No harshness.</span></button>
+            <label class="small" for="releaseInput">One thing to release tonight</label>
+            <textarea id="releaseInput">I do not need to solve tomorrow before resting.</textarea>
+          </div>
+
+          <div class="section">
+            <label class="small">Evening close</label>
+            <div class="close-grid" aria-label="Evening close options">
+              <button class="close-card active" type="button" data-close="soft"><strong>Soft</strong><span>Less force.</span></button>
+              <button class="close-card" type="button" data-close="clear"><strong>Clear</strong><span>One lesson.</span></button>
+              <button class="close-card" type="button" data-close="ready"><strong>Ready</strong><span>Seed tomorrow.</span></button>
             </div>
           </div>
 
           <div class="button-row">
-            <button class="button primary" id="buildMorning" type="button">Build Morning</button>
-            <button class="button secondary" id="copyMorning" type="button">Copy</button>
+            <button class="button primary" id="buildEvening" type="button">Build Evening</button>
+            <button class="button secondary" id="copyEvening" type="button">Copy</button>
           </div>
-          <textarea class="summary-output" id="morningSummary" readonly hidden aria-label="Prepared morning path"></textarea>
+          <textarea class="summary-output" id="eveningSummary" readonly hidden aria-label="Prepared evening reflection"></textarea>
         </aside>
 
-        <section class="panel morning-shell" aria-live="polite">
-          <span class="eyebrow">Source-backed start card</span>
-          <div class="morning-preview" aria-label="Morning card preview">
-            <div class="morning-top">
-              <div class="morning-logo">
-                <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI morning logo">
+        <section class="panel evening-shell" aria-live="polite">
+          <span class="eyebrow">Source-backed close card</span>
+          <div class="evening-preview" aria-label="Evening card preview">
+            <div class="evening-top">
+              <div class="evening-logo">
+                <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI evening logo">
                 <div>
-                  <strong>Morning Path</strong>
-                  <span class="morning-meta" id="morningMode">Restless | Quiet</span>
+                  <strong>Evening Reflection</strong>
+                  <span class="evening-meta" id="eveningMode">Tired | Soft</span>
                 </div>
               </div>
-              <span class="version" id="morningFamily">Bhagavad Gita | Smriti</span>
+              <span class="version" id="eveningFamily">Bhagavad Gita | Smriti</span>
             </div>
 
-            <h1 id="morningTitle">First, steady the direction.</h1>
-            <div class="day-grid">
-              <article class="day-card main">
-                <strong>First clean action</strong>
-                <p id="morningAction">Choose one duty that can be done without checking for praise.</p>
+            <h1 id="eveningTitle">Let rest be part of discipline.</h1>
+            <div class="reflection-grid">
+              <article class="reflection-card main">
+                <strong>Clean close</strong>
+                <p id="eveningAction">Reduce one demand before sleep. Rest is not failure.</p>
               </article>
-              <article class="day-card">
-                <strong>Honest line</strong>
-                <p id="lineOut">I need the first step to be clean before the day becomes loud.</p>
+              <article class="reflection-card">
+                <strong>Acknowledge</strong>
+                <p id="gratitudeOut">One small thing did not fall apart today.</p>
               </article>
-              <article class="day-card">
-                <strong>Boundary</strong>
-                <p id="morningBoundaryOut">This is a start, not a full life verdict.</p>
+              <article class="reflection-card">
+                <strong>Release</strong>
+                <p id="releaseOut">I do not need to solve tomorrow before resting.</p>
               </article>
             </div>
           </div>
 
-          <div class="source-card" aria-label="Morning source card">
+          <div class="source-card" aria-label="Evening source card">
             <div>
               <span>Source candidate</span>
-              <strong id="sourceCitation">Bhagavad Gita 2.48</strong>
+              <strong id="sourceCitation">Bhagavad Gita 6.17</strong>
             </div>
             <div>
               <span>Text family</span>
@@ -674,42 +679,42 @@
             </div>
             <div>
               <span>Do not overclaim</span>
-              <strong id="sourceBoundary">Morning support, not a command.</strong>
+              <strong id="sourceBoundary">Rest support, not medical advice.</strong>
             </div>
           </div>
 
-          <section aria-label="Morning Method">
-            <h2>Morning Method</h2>
-            <div class="practice-grid">
-              <article class="practice-step active">
-                <strong>Arrive</strong>
-                <p class="muted">Name the state honestly.</p>
+          <section aria-label="Evening Method">
+            <h2>Evening Method</h2>
+            <div class="method-grid">
+              <article class="method-step active">
+                <strong>Acknowledge</strong>
+                <p class="muted">Name one true support from the day.</p>
               </article>
-              <article class="practice-step">
-                <strong>Read</strong>
-                <p class="muted">Keep one source candidate visible.</p>
+              <article class="method-step">
+                <strong>Learn</strong>
+                <p class="muted">Take one lesson without self-attack.</p>
               </article>
-              <article class="practice-step">
-                <strong>Choose</strong>
-                <p class="muted">Pick one action that fits today.</p>
+              <article class="method-step">
+                <strong>Release</strong>
+                <p class="muted">Put down what cannot be solved tonight.</p>
               </article>
-              <article class="practice-step">
-                <strong>Carry</strong>
-                <p class="muted">Leave with a boundary, not pressure.</p>
+              <article class="method-step">
+                <strong>Seed</strong>
+                <p class="muted">Leave one clean next step for tomorrow.</p>
               </article>
             </div>
           </section>
         </section>
 
         <aside class="panel memory-panel">
-          <span class="eyebrow">Local morning memory</span>
-          <h2>Your 7-Day Opening</h2>
-          <p class="muted">Saved starts stay only in this browser. This tests a gentle morning habit before accounts, sync, or reviewed storage exists.</p>
+          <span class="eyebrow">Local evening memory</span>
+          <h2>Your 7-Day Closing</h2>
+          <p class="muted">Saved closes stay only in this browser. This tests a gentle evening rhythm before accounts, sync, or reviewed storage exists.</p>
 
           <div class="stats-grid">
             <article class="stat">
-              <span>Saved mornings</span>
-              <strong id="morningCount">0</strong>
+              <span>Saved evenings</span>
+              <strong id="eveningCount">0</strong>
             </article>
             <article class="stat">
               <span>Last source</span>
@@ -717,103 +722,104 @@
             </article>
           </div>
 
-          <div class="memory-strip" id="morningStrip" aria-label="Seven day morning strip"></div>
-          <div class="section memory-list" id="morningList"></div>
+          <div class="memory-strip" id="eveningStrip" aria-label="Seven day evening strip"></div>
+          <div class="section memory-list" id="eveningList"></div>
 
           <div class="button-row">
-            <button class="button" id="saveMorning" type="button">Save Morning</button>
-            <button class="button" id="clearMornings" type="button">Clear Local Preview</button>
-            <a class="button secondary" href="practice.html">Open Practice</a>
+            <button class="button" id="saveEvening" type="button">Save Evening</button>
+            <button class="button" id="clearEvenings" type="button">Clear Local Preview</button>
+            <a class="button secondary" href="morning.html">Open Morning</a>
           </div>
 
           <section class="boundary">
-            <h2>Morning Boundary</h2>
-            <p>This is reflection support, not therapy, medical advice, emergency support, ritual instruction, astrology, or a replacement for teachers, family, clinicians, or tradition.</p>
+            <h2>Evening Boundary</h2>
+            <p>This is reflection support, not therapy, medical advice, emergency support, sleep treatment, ritual instruction, astrology, or a replacement for teachers, family, clinicians, or tradition.</p>
           </section>
         </aside>
       </section>
     </main>
 
     <script>
-      const morningStates = {
-        restless: {
-          label: "Restless",
-          title: "First, steady the direction.",
-          source: "Bhagavad Gita 2.48",
+      const eveningStates = {
+        tired: {
+          label: "Tired",
+          title: "Let rest be part of discipline.",
+          source: "Bhagavad Gita 6.17",
           family: "Bhagavad Gita | Smriti",
           level: "Direct source candidate",
-          caution: "Morning support, not a command.",
-          quiet: "Choose one duty that can be done without checking for praise.",
-          focused: "Put the first real task on the table and keep the result out of your identity.",
-          kind: "Begin with one task gently enough that the mind does not rebel.",
-          boundaryLine: "This is a start, not a full life verdict."
+          caution: "Rest support, not medical advice.",
+          soft: "Reduce one demand before sleep. Rest is not failure.",
+          clear: "Name one real limit from today and stop arguing with it.",
+          ready: "Prepare one small thing for morning, then let the body rest.",
+          boundaryLine: "The day can be incomplete without being wasted."
         },
-        heavy: {
-          label: "Heavy",
-          title: "Begin smaller than the weight.",
-          source: "Katha Upanishad 1.3.14",
-          family: "Upanishad | Shruti",
-          level: "Direct source candidate",
-          caution: "Encouragement is not pressure to perform.",
-          quiet: "Do one small necessary thing before judging the whole day.",
-          focused: "Pick the smallest step that opens the next step.",
-          kind: "Let the first action be respectful to your real energy.",
-          boundaryLine: "Do not turn a hard morning into a character judgment."
-        },
-        scattered: {
-          label: "Scattered",
-          title: "Gather attention before choosing.",
+        tangled: {
+          label: "Tangled",
+          title: "Return the mind without force.",
           source: "Bhagavad Gita 6.26",
           family: "Bhagavad Gita | Smriti",
           level: "Direct source candidate",
           caution: "Attention support, not clinical advice.",
-          quiet: "Write the three visible tasks, then choose only the first one.",
-          focused: "Close the extra doors for twenty minutes and move one task forward.",
-          kind: "Return attention without scolding yourself for wandering.",
-          boundaryLine: "Focus is a return, not a punishment."
+          soft: "Write one open loop and decide it does not need tonight's answer.",
+          clear: "Separate the fact, the feeling, and the next possible step.",
+          ready: "Leave one note for tomorrow so the mind can stop circling.",
+          boundaryLine: "A thought can be noticed without being obeyed."
         },
-        steady: {
-          label: "Steady",
-          title: "Use strength without spilling it.",
-          source: "Bhagavad Gita 3.19",
+        grateful: {
+          label: "Grateful",
+          title: "Let support be seen clearly.",
+          source: "Taittiriya Upanishad 1.11",
+          family: "Upanishad | Shruti",
+          level: "Direct source candidate",
+          caution: "Gratitude support, not obligation or ritual command.",
+          soft: "Name one person, condition, or grace that helped today.",
+          clear: "Let gratitude become one respectful action, not performance.",
+          ready: "Carry one note of thanks into tomorrow's first interaction.",
+          boundaryLine: "Gratitude should open the heart, not erase discernment."
+        },
+        regretful: {
+          label: "Regretful",
+          title: "Learn without becoming the mistake.",
+          source: "Bhagavad Gita 2.47",
           family: "Bhagavad Gita | Smriti",
           level: "Direct source candidate",
-          caution: "Action support, not productivity worship.",
-          quiet: "Do the useful work without making an announcement out of it.",
-          focused: "Spend the first strong hour on the duty that matters most.",
-          kind: "Let steadiness include patience for other people.",
-          boundaryLine: "Strength should serve the day, not consume it."
+          caution: "Learning support, not absolution or shame.",
+          soft: "Name the lesson once, then stop replaying the scene.",
+          clear: "Choose one repair or prevention step that is honestly yours.",
+          ready: "Place the next right action in tomorrow, not in tonight's rumination.",
+          boundaryLine: "Responsibility is useful; identity-level shame is not."
         }
       };
 
-      const rhythmLabels = {
-        quiet: "Quiet",
-        focused: "Focused",
-        kind: "Kind"
+      const closeLabels = {
+        soft: "Soft",
+        clear: "Clear",
+        ready: "Ready"
       };
 
-      const storageKey = "vedapath.morning.v1";
-      let activeState = "restless";
-      let activeRhythm = "quiet";
+      const storageKey = "vedapath.evening.v1";
+      let activeState = "tired";
+      let activeClose = "soft";
 
       const elements = {
-        morningInput: document.getElementById("morningInput"),
-        morningTitle: document.getElementById("morningTitle"),
-        morningMode: document.getElementById("morningMode"),
-        morningFamily: document.getElementById("morningFamily"),
-        morningAction: document.getElementById("morningAction"),
-        lineOut: document.getElementById("lineOut"),
-        morningBoundaryOut: document.getElementById("morningBoundaryOut"),
+        gratitudeInput: document.getElementById("gratitudeInput"),
+        releaseInput: document.getElementById("releaseInput"),
+        eveningTitle: document.getElementById("eveningTitle"),
+        eveningMode: document.getElementById("eveningMode"),
+        eveningFamily: document.getElementById("eveningFamily"),
+        eveningAction: document.getElementById("eveningAction"),
+        gratitudeOut: document.getElementById("gratitudeOut"),
+        releaseOut: document.getElementById("releaseOut"),
         sourceCitation: document.getElementById("sourceCitation"),
         sourceFamily: document.getElementById("sourceFamily"),
         sourceLevel: document.getElementById("sourceLevel"),
         sourceBoundary: document.getElementById("sourceBoundary"),
-        morningSummary: document.getElementById("morningSummary"),
-        copyMorning: document.getElementById("copyMorning"),
-        morningCount: document.getElementById("morningCount"),
+        eveningSummary: document.getElementById("eveningSummary"),
+        copyEvening: document.getElementById("copyEvening"),
+        eveningCount: document.getElementById("eveningCount"),
         lastSource: document.getElementById("lastSource"),
-        morningList: document.getElementById("morningList"),
-        morningStrip: document.getElementById("morningStrip")
+        eveningList: document.getElementById("eveningList"),
+        eveningStrip: document.getElementById("eveningStrip")
       };
 
       function escapeHTML(value) {
@@ -831,7 +837,7 @@
         return cleaned.length > 180 ? `${cleaned.slice(0, 177)}...` : cleaned;
       }
 
-      function readMornings() {
+      function readEvenings() {
         try {
           const parsed = JSON.parse(localStorage.getItem(storageKey) || "[]");
           return Array.isArray(parsed) ? parsed : [];
@@ -840,57 +846,59 @@
         }
       }
 
-      function writeMornings(mornings) {
-        localStorage.setItem(storageKey, JSON.stringify(mornings.slice(-30)));
+      function writeEvenings(evenings) {
+        localStorage.setItem(storageKey, JSON.stringify(evenings.slice(-30)));
       }
 
       function dateKey(date) {
         return date.toISOString().slice(0, 10);
       }
 
-      function currentMorning() {
-        const state = morningStates[activeState];
+      function currentEvening() {
+        const state = eveningStates[activeState];
         return {
           state,
-          line: cleanText(elements.morningInput.value, "I can begin with one clean step."),
-          action: state[activeRhythm],
+          gratitude: cleanText(elements.gratitudeInput.value, "Something supported me today."),
+          release: cleanText(elements.releaseInput.value, "I can leave tomorrow's work for tomorrow."),
+          action: state[activeClose],
           boundary: state.boundaryLine
         };
       }
 
-      function renderMorning() {
-        const morning = currentMorning();
-        const state = morning.state;
-        elements.morningTitle.textContent = state.title;
-        elements.morningMode.textContent = `${state.label} | ${rhythmLabels[activeRhythm]}`;
-        elements.morningFamily.textContent = state.family;
-        elements.morningAction.textContent = morning.action;
-        elements.lineOut.textContent = morning.line;
-        elements.morningBoundaryOut.textContent = morning.boundary;
+      function renderEvening() {
+        const evening = currentEvening();
+        const state = evening.state;
+        elements.eveningTitle.textContent = state.title;
+        elements.eveningMode.textContent = `${state.label} | ${closeLabels[activeClose]}`;
+        elements.eveningFamily.textContent = state.family;
+        elements.eveningAction.textContent = evening.action;
+        elements.gratitudeOut.textContent = evening.gratitude;
+        elements.releaseOut.textContent = evening.release;
         elements.sourceCitation.textContent = state.source;
         elements.sourceFamily.textContent = state.family;
         elements.sourceLevel.textContent = state.level;
         elements.sourceBoundary.textContent = state.caution;
-        elements.morningSummary.value = [
-          "VedaPath Morning Path",
+        elements.eveningSummary.value = [
+          "VedaPath Evening Reflection",
           state.title,
           `Source: ${state.source}`,
           `Family: ${state.family}`,
           `State: ${state.label}`,
-          `Rhythm: ${rhythmLabels[activeRhythm]}`,
+          `Close: ${closeLabels[activeClose]}`,
           "",
-          `Honest line: ${morning.line}`,
-          `First action: ${morning.action}`,
-          `Boundary: ${morning.boundary}`,
+          `Acknowledge: ${evening.gratitude}`,
+          `Release: ${evening.release}`,
+          `Clean close: ${evening.action}`,
+          `Boundary: ${evening.boundary}`,
           "",
-          "Product boundary: Reflection support, not therapy, emergency support, ritual instruction, astrology, medical advice, or a command."
+          "Product boundary: Reflection support, not therapy, emergency support, sleep treatment, ritual instruction, astrology, medical advice, or a command."
         ].join("\n");
       }
 
       function renderMemory() {
-        const mornings = readMornings();
-        elements.morningCount.textContent = mornings.length;
-        elements.lastSource.textContent = mornings.length ? mornings[mornings.length - 1].source : "None";
+        const evenings = readEvenings();
+        elements.eveningCount.textContent = evenings.length;
+        elements.lastSource.textContent = evenings.length ? evenings[evenings.length - 1].source : "None";
 
         const today = new Date();
         const days = Array.from({ length: 7 }, (_, index) => {
@@ -898,9 +906,9 @@
           day.setDate(today.getDate() - (6 - index));
           return day;
         });
-        elements.morningStrip.innerHTML = days.map((day) => {
+        elements.eveningStrip.innerHTML = days.map((day) => {
           const key = dateKey(day);
-          const count = mornings.filter((morning) => morning.dateKey === key).length;
+          const count = evenings.filter((evening) => evening.dateKey === key).length;
           const label = day.toLocaleDateString("en-US", { weekday: "short" });
           return `
             <div class="day-cell ${count ? "has-entry" : ""}">
@@ -910,82 +918,83 @@
           `;
         }).join("");
 
-        if (!mornings.length) {
-          elements.morningList.innerHTML = `
+        if (!evenings.length) {
+          elements.eveningList.innerHTML = `
             <article class="memory-card">
-              <strong>No saved mornings yet</strong>
-              <p>Build and save one start to begin the local trail.</p>
+              <strong>No saved evenings yet</strong>
+              <p>Build and save one close to begin the local trail.</p>
             </article>
           `;
           return;
         }
 
-        elements.morningList.innerHTML = mornings.slice(-3).reverse().map((morning) => `
+        elements.eveningList.innerHTML = evenings.slice(-3).reverse().map((evening) => `
           <article class="memory-card">
-            <strong>${escapeHTML(morning.date)} | ${escapeHTML(morning.label)}</strong>
-            <p>${escapeHTML(morning.action)}</p>
+            <strong>${escapeHTML(evening.date)} | ${escapeHTML(evening.label)}</strong>
+            <p>${escapeHTML(evening.action)}</p>
           </article>
         `).join("");
       }
 
-      function saveMorning() {
-        const morning = currentMorning();
+      function saveEvening() {
+        const evening = currentEvening();
         const now = new Date();
-        const mornings = readMornings();
-        mornings.push({
+        const evenings = readEvenings();
+        evenings.push({
           date: now.toLocaleDateString("en-US", { month: "short", day: "numeric" }),
           dateKey: dateKey(now),
-          label: morning.state.label,
-          source: morning.state.source,
-          action: morning.action
+          label: evening.state.label,
+          source: evening.state.source,
+          action: evening.action
         });
-        writeMornings(mornings);
+        writeEvenings(evenings);
         renderMemory();
       }
 
-      function copyMorning() {
-        renderMorning();
-        elements.morningSummary.hidden = false;
-        elements.morningSummary.select();
-        const text = elements.morningSummary.value;
+      function copyEvening() {
+        renderEvening();
+        elements.eveningSummary.hidden = false;
+        elements.eveningSummary.select();
+        const text = elements.eveningSummary.value;
         const copied = navigator.clipboard && navigator.clipboard.writeText
           ? navigator.clipboard.writeText(text)
           : Promise.resolve(document.execCommand("copy"));
 
         copied.then(() => {
-          elements.copyMorning.textContent = "Copied";
+          elements.copyEvening.textContent = "Copied";
           window.setTimeout(() => {
-            elements.copyMorning.textContent = "Copy";
+            elements.copyEvening.textContent = "Copy";
           }, 1400);
         });
       }
 
-      document.querySelectorAll(".path-button").forEach((button) => {
+      document.querySelectorAll(".state-button").forEach((button) => {
         button.addEventListener("click", () => {
           activeState = button.dataset.state;
-          document.querySelectorAll(".path-button").forEach((item) => item.classList.toggle("active", item === button));
-          renderMorning();
+          document.querySelectorAll(".state-button").forEach((item) => item.classList.toggle("active", item === button));
+          renderEvening();
         });
       });
 
-      document.querySelectorAll(".rhythm-card").forEach((button) => {
+      document.querySelectorAll(".close-card").forEach((button) => {
         button.addEventListener("click", () => {
-          activeRhythm = button.dataset.rhythm;
-          document.querySelectorAll(".rhythm-card").forEach((item) => item.classList.toggle("active", item === button));
-          renderMorning();
+          activeClose = button.dataset.close;
+          document.querySelectorAll(".close-card").forEach((item) => item.classList.toggle("active", item === button));
+          renderEvening();
         });
       });
 
-      document.getElementById("buildMorning").addEventListener("click", renderMorning);
-      document.getElementById("copyMorning").addEventListener("click", copyMorning);
-      document.getElementById("saveMorning").addEventListener("click", saveMorning);
-      document.getElementById("clearMornings").addEventListener("click", () => {
+      document.getElementById("buildEvening").addEventListener("click", renderEvening);
+      document.getElementById("copyEvening").addEventListener("click", copyEvening);
+      document.getElementById("saveEvening").addEventListener("click", saveEvening);
+      document.getElementById("clearEvenings").addEventListener("click", () => {
         localStorage.removeItem(storageKey);
         renderMemory();
       });
-      elements.morningInput.addEventListener("input", renderMorning);
+      elements.gratitudeInput.addEventListener("input", renderEvening);
+      elements.releaseInput.addEventListener("input", renderEvening);
 
-      renderMorning();
+      renderEvening();
       renderMemory();
     </script>
   </body>

@@ -317,6 +317,21 @@ It should:
 
 Morning Path should make the first moment of the day calmer and more directed without pretending the product owns the user's life.
 
+### 19. Evening Reflection
+
+Evening Reflection helps a user close the day with one source-backed reflection.
+
+It should:
+
+- begin from the user's actual evening state
+- ask for one acknowledgement and one release
+- preserve source citation, text family, pramana level, and boundary
+- produce one clean close
+- save prototype closes only in browser-local storage
+- avoid therapy claims, sleep treatment claims, ritual authority, astrology, rumination loops, and app-issued verdicts
+
+Evening Reflection should help the user put the day down without making the day into a judgment of the self.
+
 ## Product Personality
 
 Calm. Reverent. Precise. Beginner-friendly. Never flashy about sacred material.

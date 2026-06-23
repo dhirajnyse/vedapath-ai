@@ -43,6 +43,8 @@ Seva Planner can become the daily loop's outward-action layer: one small helpful
 
 Morning Path can become the daily loop's opening layer: one source-backed first action chosen before the day becomes noisy.
 
+Evening Reflection can become the daily loop's closing layer: one source-backed acknowledgement and one release before rest.
+
 ## Product Voice
 
 The daily loop should feel steady, humble, and useful. It should not flatter, command, diagnose, or pretend the product knows the user's life.
