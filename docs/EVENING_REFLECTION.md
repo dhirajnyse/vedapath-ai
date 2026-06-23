@@ -39,3 +39,5 @@ The feature should reduce rumination, not deepen it.
 Morning Path helps a user begin. Evening Reflection helps the user close.
 
 Together they create a simple daily rhythm: start with source, live with care, close with humility, and return tomorrow without shame.
+
+Calm Rhythm can read the evening close as one local signal, but it must never treat a missed close as failure. The pattern exists to suggest a next room, not judge the day.

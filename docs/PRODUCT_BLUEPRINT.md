@@ -18,6 +18,7 @@ It helps users move from curiosity to understanding through:
 - calm card studio for shareable source-backed reflections
 - sankalpa studio for source-backed 24-hour intention setting
 - seva planner for turning calm into bounded helpful action
+- calm rhythm for private pattern reading and next-room routing
 - user and scholar correction loops
 
 ## What It Is
@@ -331,6 +332,21 @@ It should:
 - avoid therapy claims, sleep treatment claims, ritual authority, astrology, rumination loops, and app-issued verdicts
 
 Evening Reflection should help the user put the day down without making the day into a judgment of the self.
+
+### 20. Calm Rhythm
+
+Calm Rhythm helps a user see a privacy-preserving pattern across deliberate VedaPath room entries.
+
+It should:
+
+- read only browser-local prototype traces until accounts and consent exist
+- show which rooms have been used without scoring the user
+- suggest one next room based on visible local gaps or rhythm
+- preserve source citation, text family, and boundary for each rhythm mode
+- let users copy a handoff without syncing private entries
+- avoid diagnosis, therapy claims, surveillance, productivity pressure, hidden profiling, and app-issued identity labels
+
+Calm Rhythm should help the user notice the shape of a week without pretending the product knows who the user is.
 
 ## Product Personality
 

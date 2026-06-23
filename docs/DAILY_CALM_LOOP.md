@@ -45,6 +45,8 @@ Morning Path can become the daily loop's opening layer: one source-backed first 
 
 Evening Reflection can become the daily loop's closing layer: one source-backed acknowledgement and one release before rest.
 
+Calm Rhythm can become the daily loop's meta layer: a private pattern view across opening, closing, action, practice, communication, and reflection signals without accounts or sync in the prototype.
+
 ## Product Voice
 
 The daily loop should feel steady, humble, and useful. It should not flatter, command, diagnose, or pretend the product knows the user's life.

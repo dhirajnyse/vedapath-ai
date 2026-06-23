@@ -1,6 +1,6 @@
-# v0.3.4 Prototype Notes
+# v0.3.5 Prototype Notes
 
-The v0.3.4 release turns the VedaPath AI homepage into a clickable product prototype with calm, practice, source-library, source-path, calm-compass, calm-card, source-bell, before-reply, samvada, sankalpa, seva, morning, and evening surfaces.
+The v0.3.5 release turns the VedaPath AI homepage into a clickable product prototype with calm, practice, source-library, source-path, calm-compass, calm-card, source-bell, before-reply, samvada, sankalpa, seva, morning, evening, and rhythm surfaces.
 
 ## Included
 
@@ -25,6 +25,7 @@ The v0.3.4 release turns the VedaPath AI homepage into a clickable product proto
 - Seva Planner with one source-backed helpful act, capacity boundary, and local trail
 - Morning Path with one source-backed start, honest line, clean first action, and local seven-day opening
 - Evening Reflection with source-backed acknowledgement, release, clean close, and local seven-day closing
+- Calm Rhythm with browser-local pattern reading, next-room suggestion, source boundary, and copyable handoff
 - Correction Loop placeholder
 - MVP progress update
 
@@ -47,9 +48,10 @@ This release proves the product direction:
 - one reactive message can become a calmer reply before it is sent
 - one morning can begin with source, honesty, boundary, and a clean first action
 - one evening can close with acknowledgement, release, and no self-judgment
+- deliberate local traces can suggest one next room without accounts, sync, hidden profiling, or a score
 - one disagreement can become a source-backed shared question
 - the UI remains calm and Bhagwa-led without becoming visually loud
 
 ## Next Release
 
-v0.3.3 should turn the prototype library and path data into a structured source schema and the first 25 to 50 verified answer records.
+v0.3.6 should turn the prototype library, path, and rhythm data into a structured source schema and the first 25 to 50 verified answer records.

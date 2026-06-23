@@ -23,7 +23,7 @@ Show the product experience without a live LLM backend.
 
 Status:
 
-Completed in v0.3.4.
+Completed in v0.3.5.
 
 Core screens:
 
@@ -47,6 +47,7 @@ Core screens:
 - Seva Planner
 - Morning Path
 - Evening Reflection
+- Calm Rhythm
 
 Success criteria:
 
@@ -153,6 +154,7 @@ Must have:
 - calm compass routing from explicit present-state choice
 - calm card studio for shareable source-backed reflections
 - source bell for one-minute source-backed resets
+- calm rhythm for private pattern reading and next-room routing
 
 Should have:
 
@@ -172,6 +174,7 @@ Should have:
 - Seva Planner
 - Morning Path
 - Evening Reflection
+- Calm Rhythm
 
 Later:
 

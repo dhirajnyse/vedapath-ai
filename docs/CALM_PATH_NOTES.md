@@ -84,6 +84,8 @@ The reply tool must protect safety and agency. It is not therapy, legal advice, 
 
 Samvada Room turns disagreement into a source-backed shared question. It asks the user to restate both views fairly, then shows a source candidate and a boundary.
 
+The dialogue tool must not become mediation, legal advice, a verdict engine, false equivalence, or a recommendation to continue unsafe conflict.
+
 ## v0.3.1 Sankalpa Studio
 
 Sankalpa Studio turns personal calm into one source-backed 24-hour intention. It asks the user to name today's pressure, choose a need, and leave with one carry action.
@@ -108,4 +110,8 @@ Evening Reflection turns the final moment of the day into one source-backed clos
 
 The evening tool should never become therapy, sleep treatment, medical advice, ritual instruction, astrology, rumination coaching, or a verdict on the user's worth.
 
-The dialogue tool must not become mediation, legal advice, a verdict engine, false equivalence, or a recommendation to continue unsafe conflict.
+## v0.3.5 Calm Rhythm
+
+Calm Rhythm reads deliberate browser-local VedaPath traces and turns them into one next room suggestion.
+
+The rhythm lens should never become diagnosis, therapy, surveillance, scoring, hidden profiling, productivity pressure, ritual instruction, or a verdict on the user's identity.

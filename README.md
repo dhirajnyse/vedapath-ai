@@ -60,6 +60,8 @@ Let us look at the source first.
 - [Morning Path Notes](docs/MORNING_PATH.md)
 - [Evening Reflection](evening.html)
 - [Evening Reflection Notes](docs/EVENING_REFLECTION.md)
+- [Calm Rhythm](rhythm.html)
+- [Calm Rhythm Notes](docs/CALM_RHYTHM.md)
 - [Release Workflow](docs/RELEASE_WORKFLOW.md)
 
 ## North Star
@@ -68,7 +70,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v0.3.4` is a clickable prototype with:
+`v0.3.5` is a clickable prototype with:
 
 - Ask workspace
 - Source Card
@@ -89,6 +91,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Seva Planner with one source-backed helpful act, capacity boundary, and local trail
 - Morning Path with one source-backed start, honest line, clean first action, and local seven-day opening
 - Evening Reflection with source-backed acknowledgement, release, clean close, and local seven-day closing
+- Calm Rhythm with a browser-local pattern lens, next-room suggestion, and copyable privacy handoff
 - Correction Loop placeholder
 
 ## Faster Release Commits
