@@ -79,3 +79,9 @@ The bell should help a user arrive before acting. It must not become therapy, me
 Before Reply turns a reactive communication moment into a calmer draft. It uses a present-state choice, source candidate, reply tone, and one concrete next step.
 
 The reply tool must protect safety and agency. It is not therapy, legal advice, conflict mediation, emergency support, or a recommendation to remain in unsafe communication.
+
+## v0.3.0 Samvada Room
+
+Samvada Room turns disagreement into a source-backed shared question. It asks the user to restate both views fairly, then shows a source candidate and a boundary.
+
+The dialogue tool must not become mediation, legal advice, a verdict engine, false equivalence, or a recommendation to continue unsafe conflict.

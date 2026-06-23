@@ -29,6 +29,7 @@ It lets the user:
 - send the next step toward Calm Card Studio as a personal visual reminder
 - send the next step toward Source Bell when the user needs a one-minute reset
 - send the next step toward Before Reply when the next step is a conversation
+- send the next step toward Samvada Room when the next step is a respectful disagreement
 
 ## Future Production Fields
 

@@ -255,6 +255,21 @@ It should:
 
 Before Reply should protect agency. It should never become therapy, legal advice, emergency support, conflict mediation, or a reason to remain in harmful contact.
 
+### 15. Samvada Room
+
+Samvada Room turns disagreement into a source-backed shared question.
+
+It should:
+
+- begin from an explicit disagreement shape
+- ask the user to restate both views fairly
+- preserve source citation, text family, pramana level, and boundary
+- produce inquiry, not a verdict
+- save prototype maps only in browser-local storage
+- avoid false equivalence, hidden authority, mediation, and unsafe conflict advice
+
+Samvada Room should make dialogue calmer without flattening difference. It should never pretend every view is equally supported by a source.
+
 ## Product Personality
 
 Calm. Reverent. Precise. Beginner-friendly. Never flashy about sacred material.

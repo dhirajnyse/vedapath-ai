@@ -1,6 +1,6 @@
-# v0.2.9 Prototype Notes
+# v0.3.0 Prototype Notes
 
-The v0.2.9 release turns the VedaPath AI homepage into a clickable product prototype with calm, practice, source-library, source-path, calm-compass, calm-card, source-bell, and before-reply surfaces.
+The v0.3.0 release turns the VedaPath AI homepage into a clickable product prototype with calm, practice, source-library, source-path, calm-compass, calm-card, source-bell, before-reply, and samvada surfaces.
 
 ## Included
 
@@ -20,6 +20,7 @@ The v0.2.9 release turns the VedaPath AI homepage into a clickable product proto
 - Calm Card Studio with visual preview, local saved cards, copy text, and PNG export
 - Source Bell with one-minute visual pulse, optional soft browser bell, source card, carry action, and local rhythm
 - Before Reply with source-backed reply drafting, tone options, local saved drafts, and copy handoff
+- Samvada Room with fair restatement, source candidate, shared question, local maps, and copy handoff
 - Correction Loop placeholder
 - MVP progress update
 
@@ -40,6 +41,7 @@ This release proves the product direction:
 - one source-backed action can become a shareable visual artifact
 - one source-backed minute can become a practical daily reset
 - one reactive message can become a calmer reply before it is sent
+- one disagreement can become a source-backed shared question
 - the UI remains calm and Bhagwa-led without becoming visually loud
 
 ## Next Release

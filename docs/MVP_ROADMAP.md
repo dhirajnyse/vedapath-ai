@@ -23,7 +23,7 @@ Show the product experience without a live LLM backend.
 
 Status:
 
-Completed in v0.2.9.
+Completed in v0.3.0.
 
 Core screens:
 
@@ -42,6 +42,7 @@ Core screens:
 - Calm Card Studio
 - Source Bell
 - Before Reply
+- Samvada Room
 
 Success criteria:
 
@@ -162,6 +163,7 @@ Should have:
 - Calm Card Studio
 - Source Bell
 - Before Reply
+- Samvada Room
 
 Later:
 

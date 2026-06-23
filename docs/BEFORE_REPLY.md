@@ -21,6 +21,10 @@ Before Reply is communication support. It is not therapy, legal advice, emergenc
 
 Many people lose calm in the small moment before they press send. VedaPath can help by preserving agency, source context, and restraint at the exact point where a calmer action matters.
 
+## Samvada Bridge
+
+Before Reply can hand off to Samvada Room when the issue needs a shared question rather than a single reply. Samvada should preserve both views fairly without becoming mediation or a verdict.
+
 ## Future Data Fields
 
 - reply state

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>VedaPath Before Reply</title>
+    <title>VedaPath Samvada Room</title>
     <style>
       :root {
         --bhagwa: #d65a1f;
@@ -91,9 +91,9 @@
       .source-card span,
       .stat span,
       .boundary p,
-      .draft-card p,
-      .reply-meta,
-      .pattern-card p,
+      .map-card p,
+      .dialogue-card p,
+      .samvada-meta,
       .tone-card span {
         color: var(--muted-brown);
       }
@@ -102,7 +102,7 @@
       .small,
       .source-card span,
       .stat span,
-      .reply-meta,
+      .samvada-meta,
       .tone-card span {
         font-size: 13px;
       }
@@ -158,9 +158,9 @@
       .source-card,
       .stat,
       .boundary,
-      .draft-card,
-      .reply-preview,
-      .pattern-card,
+      .map-card,
+      .dialogue-card,
+      .samvada-preview,
       .tone-card,
       .meter-card {
         border: 1px solid var(--line);
@@ -210,14 +210,14 @@
       }
 
       .state-list,
-      .draft-list,
-      .pattern-list {
+      .map-list,
+      .dialogue-list {
         display: grid;
         gap: 10px;
       }
 
       .state-button,
-      .pattern-card {
+      .dialogue-card {
         display: grid;
         grid-template-columns: auto minmax(0, 1fr);
         gap: 10px;
@@ -239,12 +239,12 @@
       }
 
       .state-button.active,
-      .pattern-card.active {
+      .dialogue-card.active {
         background: rgba(214, 90, 31, 0.1);
       }
 
       .state-icon,
-      .pattern-index {
+      .dialogue-index {
         display: inline-grid;
         place-items: center;
         width: 34px;
@@ -257,7 +257,7 @@
       }
 
       .state-button.active .state-icon,
-      .pattern-card.active .pattern-index {
+      .dialogue-card.active .dialogue-index {
         background: var(--bhagwa);
         color: white;
       }
@@ -281,7 +281,7 @@
       }
 
       textarea {
-        min-height: 106px;
+        min-height: 90px;
         resize: vertical;
         padding: 12px;
       }
@@ -339,12 +339,12 @@
         background: rgba(214, 90, 31, 0.1);
       }
 
-      .reply-shell {
+      .samvada-shell {
         display: grid;
         gap: 16px;
       }
 
-      .reply-preview {
+      .samvada-preview {
         position: relative;
         overflow: hidden;
         padding: 18px;
@@ -353,7 +353,7 @@
           rgba(255, 255, 255, 0.74);
       }
 
-      .reply-top {
+      .samvada-top {
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -361,35 +361,40 @@
         margin-bottom: 18px;
       }
 
-      .reply-logo {
+      .samvada-logo {
         display: flex;
         align-items: center;
         gap: 10px;
       }
 
-      .reply-logo img {
+      .samvada-logo img {
         width: 56px;
         height: 56px;
         border-radius: 8px;
         object-fit: cover;
       }
 
-      .reply-text {
-        min-height: 208px;
-        padding: 16px;
-        border-left: 4px solid var(--bhagwa);
-        border-radius: 8px;
+      .dialogue-map {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .map-card {
+        min-height: 130px;
+        padding: 14px;
         background: var(--panel-strong);
-        font-size: 21px;
-        line-height: 1.42;
       }
 
-      .reply-text p {
-        margin-bottom: 12px;
+      .map-card.shared {
+        grid-column: 1 / -1;
+        border-left: 4px solid var(--bhagwa);
       }
 
-      .reply-text p:last-child {
-        margin-bottom: 0;
+      .map-card strong {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 19px;
       }
 
       .source-card,
@@ -402,7 +407,6 @@
 
       .source-card,
       .meter-card,
-      .draft-card,
       .boundary {
         padding: 14px;
       }
@@ -424,8 +428,7 @@
       }
 
       .meter-card strong,
-      .draft-card strong,
-      .pattern-card strong {
+      .dialogue-card strong {
         display: block;
       }
 
@@ -438,12 +441,12 @@
         font-size: 25px;
       }
 
-      .draft-list {
+      .dialogue-list {
         margin-top: 12px;
       }
 
-      .draft-card p,
-      .pattern-card p,
+      .dialogue-card p,
+      .map-card p,
       .boundary p {
         margin-bottom: 0;
       }
@@ -489,19 +492,20 @@
         .workspace,
         .source-card,
         .stats-grid,
-        .meter-grid {
+        .meter-grid,
+        .dialogue-map {
           grid-template-columns: 1fr;
+        }
+
+        .map-card.shared {
+          grid-column: auto;
         }
 
         h1 {
           font-size: 42px;
         }
 
-        .reply-text {
-          font-size: 18px;
-        }
-
-        .reply-top {
+        .samvada-top {
           align-items: flex-start;
           flex-direction: column;
         }
@@ -515,7 +519,7 @@
           <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
           <div>
             <strong>VedaPath AI</strong>
-            <span>Before reply</span>
+            <span>Samvada room</span>
           </div>
         </a>
         <nav class="nav" aria-label="Project links">
@@ -530,131 +534,145 @@
           <a class="link" href="compass.html">Compass</a>
           <a class="link" href="card.html">Card</a>
           <a class="link" href="bell.html">Bell</a>
-          <a class="link active" href="reply.html">Reply</a>
-          <a class="link" href="samvada.html">Samvada</a>
+          <a class="link" href="reply.html">Reply</a>
+          <a class="link active" href="samvada.html">Samvada</a>
           <span class="version">v0.3.0 samvada</span>
         </nav>
       </header>
 
-      <section class="workspace" aria-label="Before Reply workspace">
+      <section class="workspace" aria-label="Samvada Room workspace">
         <aside class="panel">
-          <span class="eyebrow">Pause before sending</span>
-          <h1>Reply after the source, not the surge.</h1>
-          <p class="muted">Choose the emotional weather, name the situation, and draft a calmer reply with source, boundary, and agency visible.</p>
+          <span class="eyebrow">Respectful dialogue</span>
+          <h1>Disagree without becoming enemies.</h1>
+          <p class="muted">Name both sides fairly, let one source candidate set the frame, and leave with a shared question instead of a sharper argument.</p>
 
-          <div class="state-list" aria-label="Reply state options">
-            <button class="state-button active" type="button" data-state="heated">
+          <div class="state-list" aria-label="Dialogue shape options">
+            <button class="state-button active" type="button" data-state="facts">
               <span class="state-icon">1</span>
-              <span><strong>Heated</strong><span>The reply may become sharper than the truth.</span></span>
+              <span><strong>Facts</strong><span>We may not be looking at the same evidence.</span></span>
             </button>
-            <button class="state-button" type="button" data-state="hurt">
+            <button class="state-button" type="button" data-state="meaning">
               <span class="state-icon">2</span>
-              <span><strong>Hurt</strong><span>You want to be understood without attacking.</span></span>
+              <span><strong>Meaning</strong><span>We read the same thing differently.</span></span>
             </button>
-            <button class="state-button" type="button" data-state="defensive">
+            <button class="state-button" type="button" data-state="values">
               <span class="state-icon">3</span>
-              <span><strong>Defensive</strong><span>You need clarity before explanation.</span></span>
+              <span><strong>Values</strong><span>We care about different goods.</span></span>
             </button>
-            <button class="state-button" type="button" data-state="boundary">
+            <button class="state-button" type="button" data-state="action">
               <span class="state-icon">4</span>
-              <span><strong>Boundary</strong><span>You need firmness without cruelty.</span></span>
+              <span><strong>Action</strong><span>We disagree on what to do next.</span></span>
             </button>
           </div>
 
           <div class="section">
-            <label class="small" for="situationInput">What happened?</label>
-            <textarea id="situationInput">I received a message that felt unfair, and I want to respond without escalating it.</textarea>
+            <label class="small" for="myView">My view</label>
+            <textarea id="myView">I think we should slow down and check the source before deciding.</textarea>
           </div>
 
           <div class="section">
-            <label class="small">Reply tone</label>
-            <div class="tone-grid" aria-label="Reply tone options">
-              <button class="tone-card active" type="button" data-tone="warm"><strong>Warm boundary</strong><span>Kind and firm.</span></button>
-              <button class="tone-card" type="button" data-tone="clear"><strong>Clear ask</strong><span>Specific next step.</span></button>
-              <button class="tone-card" type="button" data-tone="repair"><strong>Repair</strong><span>Lower heat first.</span></button>
+            <label class="small" for="otherView">Other view</label>
+            <textarea id="otherView">They think we already know enough and should act now.</textarea>
+          </div>
+
+          <div class="section">
+            <label class="small">Dialogue intent</label>
+            <div class="tone-grid" aria-label="Dialogue intent options">
+              <button class="tone-card active" type="button" data-intent="learn"><strong>Learn</strong><span>Understand before replying.</span></button>
+              <button class="tone-card" type="button" data-intent="clarify"><strong>Clarify</strong><span>Separate facts and meaning.</span></button>
+              <button class="tone-card" type="button" data-intent="decide"><strong>Decide</strong><span>Find the next small step.</span></button>
             </div>
           </div>
 
           <div class="button-row">
-            <button class="button primary" id="draftReply" type="button">Draft Reply</button>
-            <button class="button secondary" id="copyReply" type="button">Copy Reply</button>
+            <button class="button primary" id="buildMap" type="button">Build Map</button>
+            <button class="button secondary" id="copyMap" type="button">Copy Question</button>
           </div>
-          <textarea class="summary-output" id="replySummary" readonly hidden aria-label="Prepared reply text"></textarea>
+          <textarea class="summary-output" id="samvadaSummary" readonly hidden aria-label="Prepared samvada map"></textarea>
         </aside>
 
-        <section class="panel reply-shell" aria-live="polite">
-          <span class="eyebrow">Source-backed reply draft</span>
-          <div class="reply-preview" aria-label="Before Reply preview">
-            <div class="reply-top">
-              <div class="reply-logo">
-                <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI before reply logo">
+        <section class="panel samvada-shell" aria-live="polite">
+          <span class="eyebrow">Source-backed dialogue map</span>
+          <div class="samvada-preview" aria-label="Samvada map preview">
+            <div class="samvada-top">
+              <div class="samvada-logo">
+                <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI samvada logo">
                 <div>
-                  <strong>Before Reply</strong>
-                  <span class="reply-meta" id="replyMode">Heated | Warm boundary</span>
+                  <strong>Samvada Room</strong>
+                  <span class="samvada-meta" id="samvadaMode">Facts | Learn</span>
                 </div>
               </div>
-              <span class="version" id="replyFamily">Bhagavad Gita | Smriti</span>
+              <span class="version" id="samvadaFamily">Rigveda | Shruti</span>
             </div>
 
-            <h1 id="replyTitle">Let the heat pass before the message travels.</h1>
-            <div class="reply-text" id="replyText">
-              <p>I want to respond carefully rather than quickly.</p>
-              <p>What I heard is that something felt unfair. I do want to address it, but I do not want this to become sharper than it needs to be.</p>
-              <p>Can we slow this down and agree on one concrete next step?</p>
+            <h1 id="samvadaTitle">Let truth-seeking begin before winning.</h1>
+            <div class="dialogue-map">
+              <article class="map-card">
+                <strong>My view, fairly</strong>
+                <p id="myViewOut">I think we should slow down and check the source before deciding.</p>
+              </article>
+              <article class="map-card">
+                <strong>Other view, fairly</strong>
+                <p id="otherViewOut">They think we already know enough and should act now.</p>
+              </article>
+              <article class="map-card shared">
+                <strong>Shared question</strong>
+                <p id="sharedQuestion">What evidence would help both of us see the issue more clearly?</p>
+              </article>
             </div>
           </div>
 
-          <div class="source-card" aria-label="Before Reply source card">
+          <div class="source-card" aria-label="Samvada source card">
             <div>
               <span>Source candidate</span>
-              <strong id="sourceCitation">Bhagavad Gita 2.62-63</strong>
+              <strong id="sourceCitation">Rigveda 1.164.46</strong>
             </div>
             <div>
               <span>Text family</span>
-              <strong id="sourceFamily">Bhagavad Gita | Smriti</strong>
+              <strong id="sourceFamily">Rigveda | Shruti</strong>
             </div>
             <div>
-              <span>Reply question</span>
-              <strong id="sourceQuestion">Will this reply reduce confusion or add heat?</strong>
+              <span>Pramana level</span>
+              <strong id="sourceLevel">Direct source candidate</strong>
             </div>
             <div>
-              <span>Boundary</span>
-              <strong>Pause support, not relationship advice.</strong>
+              <span>Do not overclaim</span>
+              <strong id="sourceBoundary">Do not pretend all views are identical.</strong>
             </div>
           </div>
 
-          <section aria-label="Reply Meter">
-            <h2>Reply Meter</h2>
+          <section aria-label="Samvada Meter">
+            <h2>Samvada Meter</h2>
             <div class="meter-grid">
               <article class="meter-card active">
-                <strong>Pause</strong>
-                <p class="muted">The draft starts by slowing the moment.</p>
+                <strong>Fair Restatement</strong>
+                <p class="muted">Each side is named without caricature.</p>
               </article>
               <article class="meter-card">
-                <strong>Name</strong>
-                <p class="muted">It names the issue without making the person the problem.</p>
+                <strong>Source Frame</strong>
+                <p class="muted">The source candidate is visible before the question.</p>
               </article>
               <article class="meter-card">
-                <strong>Ask</strong>
-                <p class="muted">It leaves with one concrete next step.</p>
+                <strong>Shared Question</strong>
+                <p class="muted">The output becomes inquiry, not victory.</p>
               </article>
               <article class="meter-card">
                 <strong>Boundary</strong>
-                <p class="muted">It avoids surrendering agency or escalating harm.</p>
+                <p class="muted">The tool avoids mediation, verdicts, or hidden authority.</p>
               </article>
             </div>
           </section>
         </section>
 
         <aside class="panel memory-panel">
-          <span class="eyebrow">Local reply memory</span>
-          <h2>Your Reply Rhythm</h2>
-          <p class="muted">Saved drafts stay only in this browser. This tests the habit before accounts, sync, or private communication storage exists.</p>
+          <span class="eyebrow">Local dialogue memory</span>
+          <h2>Your Samvada Maps</h2>
+          <p class="muted">Saved maps stay only in this browser. This tests the habit before accounts, collaboration, or reviewed storage exists.</p>
 
           <div class="stats-grid">
             <article class="stat">
-              <span>Saved drafts</span>
-              <strong id="draftCount">0</strong>
+              <span>Saved maps</span>
+              <strong id="mapCount">0</strong>
             </article>
             <article class="stat">
               <span>Last source</span>
@@ -662,109 +680,105 @@
             </article>
           </div>
 
-          <div class="section pattern-list" aria-label="Before Reply path">
-            <article class="pattern-card active">
-              <span class="pattern-index">1</span>
-              <div><strong>Pause</strong><p>Do not send from the first surge.</p></div>
+          <div class="section dialogue-list" aria-label="Samvada path">
+            <article class="dialogue-card active">
+              <span class="dialogue-index">1</span>
+              <div><strong>Restate</strong><p>Show both views without mockery.</p></div>
             </article>
-            <article class="pattern-card">
-              <span class="pattern-index">2</span>
-              <div><strong>Source</strong><p>Let one source candidate frame the tone.</p></div>
+            <article class="dialogue-card">
+              <span class="dialogue-index">2</span>
+              <div><strong>Source</strong><p>Let one source candidate slow the tone.</p></div>
             </article>
-            <article class="pattern-card">
-              <span class="pattern-index">3</span>
-              <div><strong>Reply</strong><p>Send only what still feels clear after the pause.</p></div>
+            <article class="dialogue-card">
+              <span class="dialogue-index">3</span>
+              <div><strong>Question</strong><p>Ask what both sides can examine next.</p></div>
             </article>
           </div>
 
-          <div class="section draft-list" id="draftList"></div>
+          <div class="section map-list" id="mapList"></div>
 
           <div class="button-row">
-            <button class="button" id="saveDraft" type="button">Save Draft</button>
-            <button class="button" id="clearDrafts" type="button">Clear Local Preview</button>
-            <a class="button secondary" href="bell.html">Open Bell</a>
+            <button class="button" id="saveMap" type="button">Save Map</button>
+            <button class="button" id="clearMaps" type="button">Clear Local Preview</button>
+            <a class="button secondary" href="reply.html">Open Reply</a>
           </div>
 
           <section class="boundary">
-            <h2>Safety Boundary</h2>
-            <p>This is a calm communication prototype. It is not therapy, legal advice, emergency support, conflict mediation, or a recommendation to remain in unsafe communication.</p>
+            <h2>Dialogue Boundary</h2>
+            <p>Samvada Room is reflection support. It is not legal advice, therapy, mediation, a verdict engine, or a recommendation to continue unsafe conflict.</p>
           </section>
         </aside>
       </section>
     </main>
 
     <script>
-      const replyStates = {
-        heated: {
-          label: "Heated",
-          title: "Let the heat pass before the message travels.",
-          source: "Bhagavad Gita 2.62-63",
-          family: "Bhagavad Gita | Smriti",
-          question: "Will this reply reduce confusion or add heat?",
-          frame: "Anger can cloud judgment. The product uses this only as a pause cue, not as a moral verdict."
+      const samvadaStates = {
+        facts: {
+          label: "Facts",
+          title: "Let truth-seeking begin before winning.",
+          source: "Rigveda 1.164.46",
+          family: "Rigveda | Shruti",
+          level: "Direct source candidate",
+          boundary: "Do not pretend all views are identical.",
+          question: "What evidence would help both of us see the issue more clearly?"
         },
-        hurt: {
-          label: "Hurt",
-          title: "Name the hurt without making harm larger.",
+        meaning: {
+          label: "Meaning",
+          title: "A shared text can hold more than one reading.",
+          source: "Bhagavad Gita 4.34",
+          family: "Bhagavad Gita | Smriti",
+          level: "Direct source candidate",
+          boundary: "Questioning is not the same as surrendering judgment.",
+          question: "What question would help us understand the meaning before judging the person?"
+        },
+        values: {
+          label: "Values",
+          title: "Name the good each side is protecting.",
           source: "Bhagavad Gita 12.13",
           family: "Bhagavad Gita | Smriti",
-          question: "Can I be truthful without turning pain into attack?",
-          frame: "Compassion and non-hostility can guide tone while still allowing boundaries."
+          level: "Direct source candidate",
+          boundary: "Compassion does not erase real boundaries.",
+          question: "What value is each side trying to protect?"
         },
-        defensive: {
-          label: "Defensive",
-          title: "Clarify before defending.",
-          source: "Mundaka Upanishad 1.1.4-5",
-          family: "Upanishad | Shruti",
-          question: "Is this about facts, meaning, or priority?",
-          frame: "A question may need sorting before the answer tries to win."
-        },
-        boundary: {
-          label: "Boundary",
-          title: "Firm does not need to become cruel.",
+        action: {
+          label: "Action",
+          title: "Move from winning to the next right step.",
           source: "Bhagavad Gita 2.47",
           family: "Bhagavad Gita | Smriti",
-          question: "What action is mine without owning the other person's reaction?",
-          frame: "A boundary can be an action with care, not a demand for control."
+          level: "Direct source candidate",
+          boundary: "Action guidance is not control over outcomes.",
+          question: "What is the smallest next action we can both accept for now?"
         }
       };
 
-      const toneTemplates = {
-        warm: {
-          label: "Warm boundary",
-          opener: "I want to respond carefully rather than quickly.",
-          ask: "Can we slow this down and agree on one concrete next step?"
-        },
-        clear: {
-          label: "Clear ask",
-          opener: "I want to keep this clear and useful.",
-          ask: "The next step I need is one specific point we can both respond to."
-        },
-        repair: {
-          label: "Repair",
-          opener: "I do not want this conversation to become harsher than the issue itself.",
-          ask: "Can we reset the tone and come back to the actual point?"
-        }
+      const intentLabels = {
+        learn: "Learn",
+        clarify: "Clarify",
+        decide: "Decide"
       };
 
-      const storageKey = "vedapath.beforeReply.v1";
-      let activeState = "heated";
-      let activeTone = "warm";
+      const storageKey = "vedapath.samvada.v1";
+      let activeState = "facts";
+      let activeIntent = "learn";
 
       const elements = {
-        situationInput: document.getElementById("situationInput"),
-        replyTitle: document.getElementById("replyTitle"),
-        replyText: document.getElementById("replyText"),
-        replyMode: document.getElementById("replyMode"),
-        replyFamily: document.getElementById("replyFamily"),
+        myView: document.getElementById("myView"),
+        otherView: document.getElementById("otherView"),
+        samvadaTitle: document.getElementById("samvadaTitle"),
+        samvadaMode: document.getElementById("samvadaMode"),
+        samvadaFamily: document.getElementById("samvadaFamily"),
+        myViewOut: document.getElementById("myViewOut"),
+        otherViewOut: document.getElementById("otherViewOut"),
+        sharedQuestion: document.getElementById("sharedQuestion"),
         sourceCitation: document.getElementById("sourceCitation"),
         sourceFamily: document.getElementById("sourceFamily"),
-        sourceQuestion: document.getElementById("sourceQuestion"),
-        replySummary: document.getElementById("replySummary"),
-        copyReply: document.getElementById("copyReply"),
-        draftCount: document.getElementById("draftCount"),
+        sourceLevel: document.getElementById("sourceLevel"),
+        sourceBoundary: document.getElementById("sourceBoundary"),
+        samvadaSummary: document.getElementById("samvadaSummary"),
+        copyMap: document.getElementById("copyMap"),
+        mapCount: document.getElementById("mapCount"),
         lastSource: document.getElementById("lastSource"),
-        draftList: document.getElementById("draftList")
+        mapList: document.getElementById("mapList")
       };
 
       function escapeHTML(value) {
@@ -776,7 +790,15 @@
           .replace(/'/g, "&#039;");
       }
 
-      function readDrafts() {
+      function cleanText(value, fallback) {
+        const cleaned = value.trim().replace(/\s+/g, " ");
+        if (!cleaned) {
+          return fallback;
+        }
+        return cleaned.length > 180 ? `${cleaned.slice(0, 177)}...` : cleaned;
+      }
+
+      function readMaps() {
         try {
           const parsed = JSON.parse(localStorage.getItem(storageKey) || "[]");
           return Array.isArray(parsed) ? parsed : [];
@@ -785,104 +807,103 @@
         }
       }
 
-      function writeDrafts(drafts) {
-        localStorage.setItem(storageKey, JSON.stringify(drafts.slice(-30)));
+      function writeMaps(maps) {
+        localStorage.setItem(storageKey, JSON.stringify(maps.slice(-30)));
       }
 
-      function simplifySituation(text) {
-        const cleaned = text.trim().replace(/\s+/g, " ");
-        if (!cleaned) {
-          return "this landed strongly";
-        }
-        return cleaned.length > 120 ? `${cleaned.slice(0, 117)}...` : cleaned;
+      function currentMap() {
+        const state = samvadaStates[activeState];
+        const my = cleanText(elements.myView.value, "My view needs to be stated more clearly.");
+        const other = cleanText(elements.otherView.value, "The other view needs to be stated more fairly.");
+        const intentLine = activeIntent === "decide"
+          ? "What next action would reduce confusion without forcing agreement?"
+          : activeIntent === "clarify"
+            ? "What distinction would make this disagreement cleaner?"
+            : state.question;
+        return {
+          state,
+          my,
+          other,
+          question: intentLine
+        };
       }
 
-      function createReply() {
-        const state = replyStates[activeState];
-        const tone = toneTemplates[activeTone];
-        const situation = simplifySituation(elements.situationInput.value);
-        const middle = activeState === "boundary"
-          ? `What I can do is respond to the specific issue. What I cannot do is continue if the exchange becomes disrespectful.`
-          : `What I heard is: ${situation}. I want to address it without adding more heat.`;
-        return [
-          tone.opener,
-          middle,
-          tone.ask
-        ];
-      }
-
-      function renderReply() {
-        const state = replyStates[activeState];
-        const tone = toneTemplates[activeTone];
-        const lines = createReply();
-        elements.replyTitle.textContent = state.title;
-        elements.replyMode.textContent = `${state.label} | ${tone.label}`;
-        elements.replyFamily.textContent = state.family;
+      function renderMap() {
+        const map = currentMap();
+        const state = map.state;
+        elements.samvadaTitle.textContent = state.title;
+        elements.samvadaMode.textContent = `${state.label} | ${intentLabels[activeIntent]}`;
+        elements.samvadaFamily.textContent = state.family;
+        elements.myViewOut.textContent = map.my;
+        elements.otherViewOut.textContent = map.other;
+        elements.sharedQuestion.textContent = map.question;
         elements.sourceCitation.textContent = state.source;
         elements.sourceFamily.textContent = state.family;
-        elements.sourceQuestion.textContent = state.question;
-        elements.replyText.innerHTML = lines.map((line) => `<p>${escapeHTML(line)}</p>`).join("");
-        elements.replySummary.value = [
-          "VedaPath Before Reply",
+        elements.sourceLevel.textContent = state.level;
+        elements.sourceBoundary.textContent = state.boundary;
+        elements.samvadaSummary.value = [
+          "VedaPath Samvada Map",
           state.title,
           `Source: ${state.source}`,
           `Family: ${state.family}`,
-          `Question: ${state.question}`,
+          `Dialogue shape: ${state.label}`,
+          `Intent: ${intentLabels[activeIntent]}`,
           "",
-          ...lines,
+          `My view: ${map.my}`,
+          `Other view: ${map.other}`,
+          `Shared question: ${map.question}`,
           "",
-          "Boundary: Calm communication support, not therapy, mediation, legal advice, or a safety plan."
+          "Boundary: Reflection support, not mediation, legal advice, therapy, or a verdict."
         ].join("\n");
       }
 
-      function renderDrafts() {
-        const drafts = readDrafts();
-        elements.draftCount.textContent = drafts.length;
-        elements.lastSource.textContent = drafts.length ? drafts[drafts.length - 1].source : "None";
-        if (!drafts.length) {
-          elements.draftList.innerHTML = `
-            <article class="draft-card">
-              <strong>No saved reply drafts yet</strong>
-              <p>Draft and save one calm reply to begin the local rhythm.</p>
+      function renderMemory() {
+        const maps = readMaps();
+        elements.mapCount.textContent = maps.length;
+        elements.lastSource.textContent = maps.length ? maps[maps.length - 1].source : "None";
+        if (!maps.length) {
+          elements.mapList.innerHTML = `
+            <article class="map-card shared">
+              <strong>No saved samvada maps yet</strong>
+              <p>Build and save one dialogue map to begin the local rhythm.</p>
             </article>
           `;
           return;
         }
-        elements.draftList.innerHTML = drafts.slice(-3).reverse().map((draft) => `
-          <article class="draft-card">
-            <strong>${escapeHTML(draft.date)} | ${escapeHTML(draft.label)}</strong>
-            <p>${escapeHTML(draft.preview)}</p>
+        elements.mapList.innerHTML = maps.slice(-3).reverse().map((map) => `
+          <article class="map-card shared">
+            <strong>${escapeHTML(map.date)} | ${escapeHTML(map.label)}</strong>
+            <p>${escapeHTML(map.question)}</p>
           </article>
         `).join("");
       }
 
-      function saveDraft() {
-        const state = replyStates[activeState];
-        const lines = createReply();
-        const drafts = readDrafts();
-        drafts.push({
+      function saveMap() {
+        const map = currentMap();
+        const maps = readMaps();
+        maps.push({
           date: new Date().toLocaleDateString("en-US", { month: "short", day: "numeric" }),
-          label: state.label,
-          source: state.source,
-          preview: lines.join(" ").slice(0, 160)
+          label: map.state.label,
+          source: map.state.source,
+          question: map.question
         });
-        writeDrafts(drafts);
-        renderDrafts();
+        writeMaps(maps);
+        renderMemory();
       }
 
-      function copyReply() {
-        renderReply();
-        elements.replySummary.hidden = false;
-        elements.replySummary.select();
-        const text = elements.replySummary.value;
+      function copyMap() {
+        renderMap();
+        elements.samvadaSummary.hidden = false;
+        elements.samvadaSummary.select();
+        const text = elements.samvadaSummary.value;
         const copied = navigator.clipboard && navigator.clipboard.writeText
           ? navigator.clipboard.writeText(text)
           : Promise.resolve(document.execCommand("copy"));
 
         copied.then(() => {
-          elements.copyReply.textContent = "Copied";
+          elements.copyMap.textContent = "Copied";
           window.setTimeout(() => {
-            elements.copyReply.textContent = "Copy Reply";
+            elements.copyMap.textContent = "Copy Question";
           }, 1400);
         });
       }
@@ -891,29 +912,30 @@
         button.addEventListener("click", () => {
           activeState = button.dataset.state;
           document.querySelectorAll(".state-button").forEach((item) => item.classList.toggle("active", item === button));
-          renderReply();
+          renderMap();
         });
       });
 
       document.querySelectorAll(".tone-card").forEach((button) => {
         button.addEventListener("click", () => {
-          activeTone = button.dataset.tone;
+          activeIntent = button.dataset.intent;
           document.querySelectorAll(".tone-card").forEach((item) => item.classList.toggle("active", item === button));
-          renderReply();
+          renderMap();
         });
       });
 
-      document.getElementById("draftReply").addEventListener("click", renderReply);
-      document.getElementById("copyReply").addEventListener("click", copyReply);
-      document.getElementById("saveDraft").addEventListener("click", saveDraft);
-      document.getElementById("clearDrafts").addEventListener("click", () => {
+      document.getElementById("buildMap").addEventListener("click", renderMap);
+      document.getElementById("copyMap").addEventListener("click", copyMap);
+      document.getElementById("saveMap").addEventListener("click", saveMap);
+      document.getElementById("clearMaps").addEventListener("click", () => {
         localStorage.removeItem(storageKey);
-        renderDrafts();
+        renderMemory();
       });
-      elements.situationInput.addEventListener("input", renderReply);
+      elements.myView.addEventListener("input", renderMap);
+      elements.otherView.addEventListener("input", renderMap);
 
-      renderReply();
-      renderDrafts();
+      renderMap();
+      renderMemory();
     </script>
   </body>
 </html>
