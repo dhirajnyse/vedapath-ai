@@ -23,7 +23,7 @@ Show the product experience without a live LLM backend.
 
 Status:
 
-Completed in v0.3.0.
+Completed in v0.3.1.
 
 Core screens:
 
@@ -43,6 +43,7 @@ Core screens:
 - Source Bell
 - Before Reply
 - Samvada Room
+- Sankalpa Studio
 
 Success criteria:
 
@@ -164,6 +165,7 @@ Should have:
 - Source Bell
 - Before Reply
 - Samvada Room
+- Sankalpa Studio
 
 Later:
 

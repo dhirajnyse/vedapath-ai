@@ -16,6 +16,7 @@ It helps users move from curiosity to understanding through:
 - source path builder with explicit user intention
 - calm compass for one source-backed next action
 - calm card studio for shareable source-backed reflections
+- sankalpa studio for source-backed 24-hour intention setting
 - user and scholar correction loops
 
 ## What It Is
@@ -269,6 +270,21 @@ It should:
 - avoid false equivalence, hidden authority, mediation, and unsafe conflict advice
 
 Samvada Room should make dialogue calmer without flattening difference. It should never pretend every view is equally supported by a source.
+
+### 16. Sankalpa Studio
+
+Sankalpa Studio turns personal calm into one source-backed 24-hour intention.
+
+It should:
+
+- begin from an explicit inner need
+- ask the user to name today's pressure honestly
+- preserve source citation, text family, pramana level, and boundary
+- produce one small intention and one carry action
+- save prototype intentions only in browser-local storage
+- avoid ritual authority, therapy claims, productivity shame, and app-issued commands
+
+Sankalpa Studio should make calm concrete without pretending the app can control a user's life. The intention belongs to the user.
 
 ## Product Personality
 

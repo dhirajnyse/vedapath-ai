@@ -37,6 +37,8 @@ This data is not synced, reviewed, or production-grade.
 
 Daily Calm Loop records the user's deliberate pattern. Source Practice turns a single daily state into a short timed session with arrival, source reading, reflection, and carry action.
 
+Sankalpa Studio can become the daily loop's intention layer: one source-backed 24-hour line, one carry action, and a visible boundary before the user saves a reflection.
+
 ## Product Voice
 
 The daily loop should feel steady, humble, and useful. It should not flatter, command, diagnose, or pretend the product knows the user's life.

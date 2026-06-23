@@ -52,6 +52,8 @@ Let us look at the source first.
 - [Before Reply Notes](docs/BEFORE_REPLY.md)
 - [Samvada Room](samvada.html)
 - [Samvada Room Notes](docs/SAMVADA_ROOM.md)
+- [Sankalpa Studio](sankalpa.html)
+- [Sankalpa Studio Notes](docs/SANKALPA_STUDIO.md)
 - [Release Workflow](docs/RELEASE_WORKFLOW.md)
 
 ## North Star
@@ -60,7 +62,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v0.3.0` is a clickable prototype with:
+`v0.3.1` is a clickable prototype with:
 
 - Ask workspace
 - Source Card
@@ -77,6 +79,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Source Bell with one-minute visual pulse, optional soft bell, source card, carry action, and local rhythm
 - Before Reply with source-backed reply drafting, tone options, local saved drafts, and copy handoff
 - Samvada Room with fair restatement, source candidate, shared question, local maps, and copy handoff
+- Sankalpa Studio with one private 24-hour intention, source card, carry action, and local trail
 - Correction Loop placeholder
 
 ## Faster Release Commits

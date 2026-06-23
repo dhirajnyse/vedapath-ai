@@ -84,4 +84,10 @@ The reply tool must protect safety and agency. It is not therapy, legal advice, 
 
 Samvada Room turns disagreement into a source-backed shared question. It asks the user to restate both views fairly, then shows a source candidate and a boundary.
 
+## v0.3.1 Sankalpa Studio
+
+Sankalpa Studio turns personal calm into one source-backed 24-hour intention. It asks the user to name today's pressure, choose a need, and leave with one carry action.
+
+The studio should never become ritual instruction, therapy, medical advice, emergency support, productivity shame, or a guru voice.
+
 The dialogue tool must not become mediation, legal advice, a verdict engine, false equivalence, or a recommendation to continue unsafe conflict.

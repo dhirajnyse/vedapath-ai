@@ -1,6 +1,6 @@
-# v0.3.0 Prototype Notes
+# v0.3.1 Prototype Notes
 
-The v0.3.0 release turns the VedaPath AI homepage into a clickable product prototype with calm, practice, source-library, source-path, calm-compass, calm-card, source-bell, before-reply, and samvada surfaces.
+The v0.3.1 release turns the VedaPath AI homepage into a clickable product prototype with calm, practice, source-library, source-path, calm-compass, calm-card, source-bell, before-reply, samvada, and sankalpa surfaces.
 
 ## Included
 
@@ -21,6 +21,7 @@ The v0.3.0 release turns the VedaPath AI homepage into a clickable product proto
 - Source Bell with one-minute visual pulse, optional soft browser bell, source card, carry action, and local rhythm
 - Before Reply with source-backed reply drafting, tone options, local saved drafts, and copy handoff
 - Samvada Room with fair restatement, source candidate, shared question, local maps, and copy handoff
+- Sankalpa Studio with one private 24-hour intention, source card, carry action, and local trail
 - Correction Loop placeholder
 - MVP progress update
 
@@ -46,4 +47,4 @@ This release proves the product direction:
 
 ## Next Release
 
-v0.3.0 should turn the prototype library and path data into a structured source schema and the first 25 to 50 verified answer records.
+v0.3.2 should turn the prototype library and path data into a structured source schema and the first 25 to 50 verified answer records.
