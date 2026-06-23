@@ -35,3 +35,7 @@ VedaPath should help calm become concrete without pretending to control a user's
 - Sankalpa category labels
 - carry-action safety filters
 - consent-based account sync
+
+## Link To Seva Planner
+
+Sankalpa Studio can hand a 24-hour intention into Seva Planner when the next step is a small helpful act. The handoff should preserve source, family, and boundary so service stays grounded instead of becoming guilt.

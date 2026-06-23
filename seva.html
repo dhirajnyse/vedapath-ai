@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>VedaPath Sankalpa Studio</title>
+    <title>VedaPath Seva Planner</title>
     <style>
       :root {
         --bhagwa: #d65a1f;
@@ -86,15 +86,14 @@
       .brand span,
       .muted,
       .small,
-      .need-button span,
+      .domain-button span,
       .source-card span,
       .stat span,
       .boundary p,
-      .seed-card p,
+      .plan-card p,
       .memory-card p,
-      .path-step p,
-      .sankalpa-meta,
-      .rhythm-card span {
+      .seva-meta,
+      .tone-card span {
         color: var(--muted-brown);
       }
 
@@ -102,8 +101,8 @@
       .small,
       .source-card span,
       .stat span,
-      .sankalpa-meta,
-      .rhythm-card span {
+      .seva-meta,
+      .tone-card span {
         font-size: 13px;
       }
 
@@ -154,15 +153,14 @@
       }
 
       .panel,
-      .need-button,
+      .domain-button,
       .source-card,
       .stat,
       .boundary,
-      .seed-card,
+      .plan-card,
       .memory-card,
-      .path-step,
-      .sankalpa-preview,
-      .rhythm-card,
+      .seva-preview,
+      .tone-card,
       .meter-card,
       .day-cell {
         border: 1px solid var(--line);
@@ -211,15 +209,13 @@
         font-size: 18px;
       }
 
-      .need-list,
-      .memory-list,
-      .path-list {
+      .domain-list,
+      .memory-list {
         display: grid;
         gap: 10px;
       }
 
-      .need-button,
-      .path-step {
+      .domain-button {
         display: grid;
         grid-template-columns: auto minmax(0, 1fr);
         gap: 10px;
@@ -231,22 +227,20 @@
         color: inherit;
       }
 
-      .need-button:hover,
-      .need-button:focus-visible,
-      .need-button.active,
+      .domain-button:hover,
+      .domain-button:focus-visible,
+      .domain-button.active,
       .button:hover,
       .button:focus-visible {
         border-color: rgba(214, 90, 31, 0.48);
         outline: 3px solid rgba(214, 90, 31, 0.12);
       }
 
-      .need-button.active,
-      .path-step.active {
+      .domain-button.active {
         background: rgba(214, 90, 31, 0.1);
       }
 
-      .need-icon,
-      .path-index {
+      .domain-icon {
         display: inline-grid;
         place-items: center;
         width: 34px;
@@ -258,8 +252,7 @@
         font-weight: 900;
       }
 
-      .need-button.active .need-icon,
-      .path-step.active .path-index {
+      .domain-button.active .domain-icon {
         background: var(--bhagwa);
         color: white;
       }
@@ -290,7 +283,7 @@
       }
 
       .button-row,
-      .rhythm-grid {
+      .tone-grid {
         display: flex;
         align-items: center;
         gap: 8px;
@@ -302,7 +295,7 @@
       }
 
       .button,
-      .rhythm-card {
+      .tone-card {
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -325,33 +318,33 @@
         color: var(--peacock-green);
       }
 
-      .rhythm-card {
-        flex: 1 1 130px;
+      .tone-card {
+        flex: 1 1 132px;
         justify-content: flex-start;
         gap: 8px;
         text-align: left;
       }
 
-      .rhythm-card.active {
+      .tone-card.active {
         border-color: rgba(214, 90, 31, 0.5);
         background: rgba(214, 90, 31, 0.1);
       }
 
-      .sankalpa-shell {
+      .seva-shell {
         display: grid;
         gap: 16px;
       }
 
-      .sankalpa-preview {
-        position: relative;
+      .seva-preview {
         overflow: hidden;
         padding: 18px;
         background:
-          linear-gradient(135deg, rgba(214, 90, 31, 0.09), transparent 38%),
+          linear-gradient(135deg, rgba(20, 92, 74, 0.1), transparent 36%),
+          linear-gradient(225deg, rgba(214, 90, 31, 0.08), transparent 38%),
           rgba(255, 255, 255, 0.74);
       }
 
-      .sankalpa-top {
+      .seva-top {
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -359,13 +352,13 @@
         margin-bottom: 18px;
       }
 
-      .sankalpa-logo {
+      .seva-logo {
         display: flex;
         align-items: center;
         gap: 10px;
       }
 
-      .sankalpa-logo img {
+      .seva-logo img {
         width: 58px;
         height: 58px;
         border-radius: 8px;
@@ -383,7 +376,7 @@
         }
       }
 
-      .seed-grid,
+      .plan-grid,
       .source-card,
       .stats-grid,
       .meter-grid {
@@ -392,20 +385,20 @@
         gap: 10px;
       }
 
-      .seed-card,
+      .plan-card,
       .source-card,
       .meter-card,
       .boundary {
         padding: 14px;
       }
 
-      .seed-card.main {
+      .plan-card.main {
         grid-column: 1 / -1;
         border-left: 4px solid var(--bhagwa);
         background: var(--panel-strong);
       }
 
-      .seed-card strong {
+      .plan-card strong {
         display: block;
         margin-bottom: 8px;
         font-size: 19px;
@@ -432,11 +425,6 @@
         background: rgba(214, 90, 31, 0.08);
       }
 
-      .meter-card strong,
-      .path-step strong {
-        display: block;
-      }
-
       .stat {
         min-height: 82px;
         padding: 13px;
@@ -461,8 +449,8 @@
       }
 
       .day-cell.has-entry {
-        border-color: rgba(214, 90, 31, 0.38);
-        background: rgba(214, 90, 31, 0.1);
+        border-color: rgba(20, 92, 74, 0.38);
+        background: rgba(20, 92, 74, 0.1);
       }
 
       .day-cell strong,
@@ -493,17 +481,6 @@
         background: rgba(255, 255, 255, 0.38);
       }
 
-      .path-list {
-        margin-top: 12px;
-      }
-
-      .path-step p,
-      .seed-card p,
-      .memory-card p,
-      .boundary p {
-        margin-bottom: 0;
-      }
-
       .summary-output {
         min-height: 1px;
       }
@@ -517,7 +494,7 @@
           scroll-behavior: auto;
         }
 
-        .sankalpa-logo img {
+        .seva-logo img {
           animation: none;
         }
       }
@@ -550,11 +527,11 @@
         .source-card,
         .stats-grid,
         .meter-grid,
-        .seed-grid {
+        .plan-grid {
           grid-template-columns: 1fr;
         }
 
-        .seed-card.main {
+        .plan-card.main {
           grid-column: auto;
         }
 
@@ -562,7 +539,7 @@
           font-size: clamp(38px, 10vw, 48px);
         }
 
-        .sankalpa-top {
+        .seva-top {
           align-items: flex-start;
           flex-direction: column;
         }
@@ -580,7 +557,7 @@
           <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
           <div>
             <strong>VedaPath AI</strong>
-            <span>Sankalpa studio</span>
+            <span>Seva planner</span>
           </div>
         </a>
         <nav class="nav" aria-label="Project links">
@@ -597,93 +574,93 @@
           <a class="link" href="bell.html">Bell</a>
           <a class="link" href="reply.html">Reply</a>
           <a class="link" href="samvada.html">Samvada</a>
-          <a class="link active" href="sankalpa.html">Intent</a>
-          <a class="link" href="seva.html">Seva</a>
+          <a class="link" href="sankalpa.html">Intent</a>
+          <a class="link active" href="seva.html">Seva</a>
           <span class="version">v0.3.2 seva</span>
         </nav>
       </header>
 
-      <section class="workspace" aria-label="Sankalpa Studio workspace">
+      <section class="workspace" aria-label="Seva Planner workspace">
         <aside class="panel">
-          <span class="eyebrow">Private 24-hour intention</span>
-          <h1>Make calm a promise you can keep.</h1>
-          <p class="muted">Choose today&apos;s inner need, name the pressure honestly, and leave with one source-backed Sankalpa for the next 24 hours.</p>
+          <span class="eyebrow">Calm into helpful action</span>
+          <h1>Let peace become useful.</h1>
+          <p class="muted">Choose where help is needed, name your capacity honestly, and leave with one source-backed act of service that does not become self-pressure.</p>
 
-          <div class="need-list" aria-label="Sankalpa need options">
-            <button class="need-button active" type="button" data-need="steadiness">
-              <span class="need-icon">1</span>
-              <span><strong>Steadiness</strong><span>I need balance before result-chasing.</span></span>
+          <div class="domain-list" aria-label="Seva domain options">
+            <button class="domain-button active" type="button" data-domain="family">
+              <span class="domain-icon">1</span>
+              <span><strong>Family</strong><span>Help close to home without control.</span></span>
             </button>
-            <button class="need-button" type="button" data-need="clarity">
-              <span class="need-icon">2</span>
-              <span><strong>Clarity</strong><span>I need to sort the real question.</span></span>
+            <button class="domain-button" type="button" data-domain="work">
+              <span class="domain-icon">2</span>
+              <span><strong>Work</strong><span>Make one task easier for someone.</span></span>
             </button>
-            <button class="need-button" type="button" data-need="courage">
-              <span class="need-icon">3</span>
-              <span><strong>Courage</strong><span>I need to begin without owning the outcome.</span></span>
+            <button class="domain-button" type="button" data-domain="community">
+              <span class="domain-icon">3</span>
+              <span><strong>Community</strong><span>Offer a small useful contribution.</span></span>
             </button>
-            <button class="need-button" type="button" data-need="kindness">
-              <span class="need-icon">4</span>
-              <span><strong>Kindness</strong><span>I need strength without harshness.</span></span>
+            <button class="domain-button" type="button" data-domain="self">
+              <span class="domain-icon">4</span>
+              <span><strong>Self-care</strong><span>Serve the future self with kindness.</span></span>
             </button>
           </div>
 
           <div class="section">
-            <label class="small" for="pressureInput">What is pressing on today?</label>
-            <textarea id="pressureInput">I have too many moving pieces and I want to act without becoming scattered.</textarea>
+            <label class="small" for="capacityInput">What capacity is real today?</label>
+            <textarea id="capacityInput">I can give twenty quiet minutes without pretending I can solve everything.</textarea>
           </div>
 
           <div class="section">
-            <label class="small">Sankalpa rhythm</label>
-            <div class="rhythm-grid" aria-label="Sankalpa rhythm options">
-              <button class="rhythm-card active" type="button" data-rhythm="gentle"><strong>Gentle</strong><span>Soft but clear.</span></button>
-              <button class="rhythm-card" type="button" data-rhythm="focused"><strong>Focused</strong><span>One clean action.</span></button>
-              <button class="rhythm-card" type="button" data-rhythm="brave"><strong>Brave</strong><span>Begin anyway.</span></button>
+            <label class="small">Seva tone</label>
+            <div class="tone-grid" aria-label="Seva tone options">
+              <button class="tone-card active" type="button" data-tone="quiet"><strong>Quiet</strong><span>No announcement.</span></button>
+              <button class="tone-card" type="button" data-tone="skilled"><strong>Skilled</strong><span>Use what I know.</span></button>
+              <button class="tone-card" type="button" data-tone="boundary"><strong>Bounded</strong><span>Help without depletion.</span></button>
             </div>
           </div>
 
           <div class="button-row">
-            <button class="button primary" id="buildSankalpa" type="button">Build Sankalpa</button>
-            <button class="button secondary" id="copySankalpa" type="button">Copy</button>
+            <button class="button primary" id="buildSeva" type="button">Build Seva</button>
+            <button class="button secondary" id="copySeva" type="button">Copy</button>
           </div>
-          <textarea class="summary-output" id="sankalpaSummary" readonly hidden aria-label="Prepared sankalpa"></textarea>
+          <textarea class="summary-output" id="sevaSummary" readonly hidden aria-label="Prepared seva plan"></textarea>
         </aside>
 
-        <section class="panel sankalpa-shell" aria-live="polite">
-          <span class="eyebrow">Source-backed intention card</span>
-          <div class="sankalpa-preview" aria-label="Sankalpa card preview">
-            <div class="sankalpa-top">
-              <div class="sankalpa-logo">
-                <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI sankalpa logo">
+        <section class="panel seva-shell" aria-live="polite">
+          <span class="eyebrow">Source-backed seva card</span>
+          <div class="seva-preview" aria-label="Seva card preview">
+            <div class="seva-top">
+              <div class="seva-logo">
+                <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI seva logo">
                 <div>
-                  <strong>Sankalpa Studio</strong>
-                  <span class="sankalpa-meta" id="sankalpaMode">Steadiness | Gentle</span>
+                  <strong>Seva Planner</strong>
+                  <span class="seva-meta" id="sevaMode">Family | Quiet</span>
                 </div>
               </div>
-              <span class="version" id="sankalpaFamily">Bhagavad Gita | Smriti</span>
+              <span class="version" id="sevaFamily">Bhagavad Gita | Smriti</span>
             </div>
 
-            <h1 id="sankalpaTitle">Today I choose steady action before inner noise.</h1>
-            <div class="seed-grid">
-              <article class="seed-card main">
-                <strong>My Sankalpa</strong>
-                <p id="sankalpaLine">For the next 24 hours, I will do one useful thing slowly and cleanly before I chase the result.</p>
+            <h1 id="sevaTitle">Today I help without trying to control.</h1>
+            <div class="plan-grid">
+              <article class="plan-card main">
+                <strong>One helpful act</strong>
+                <p id="sevaAction">Do one unnoticed household task cleanly, without turning it into proof of goodness.</p>
               </article>
-              <article class="seed-card">
-                <strong>Today&apos;s pressure</strong>
-                <p id="pressureOut">I have too many moving pieces and I want to act without becoming scattered.</p>
+              <article class="plan-card">
+                <strong>My capacity</strong>
+                <p id="capacityOut">I can give twenty quiet minutes without pretending I can solve everything.</p>
               </article>
-              <article class="seed-card">
-                <strong>Carry action</strong>
-                <p id="carryOut">Choose one small duty. Start it for five minutes without checking for praise.</p>
+              <article class="plan-card">
+                <strong>Boundary</strong>
+                <p id="sevaBoundaryOut">Offer help without bargaining for praise or taking over someone else&apos;s agency.</p>
               </article>
             </div>
           </div>
 
-          <div class="source-card" aria-label="Sankalpa source card">
+          <div class="source-card" aria-label="Seva source card">
             <div>
               <span>Source candidate</span>
-              <strong id="sourceCitation">Bhagavad Gita 2.48</strong>
+              <strong id="sourceCitation">Bhagavad Gita 3.19</strong>
             </div>
             <div>
               <span>Text family</span>
@@ -695,42 +672,42 @@
             </div>
             <div>
               <span>Do not overclaim</span>
-              <strong id="sourceBoundary">Reflection support, not a guarantee of peace.</strong>
+              <strong id="sourceBoundary">Service support, not a moral score.</strong>
             </div>
           </div>
 
-          <section aria-label="Sankalpa Meter">
-            <h2>Sankalpa Meter</h2>
+          <section aria-label="Seva Meter">
+            <h2>Seva Meter</h2>
             <div class="meter-grid">
               <article class="meter-card active">
-                <strong>Specific</strong>
-                <p class="muted">The intention names one real next posture.</p>
+                <strong>Small</strong>
+                <p class="muted">The action can be done today.</p>
+              </article>
+              <article class="meter-card">
+                <strong>Useful</strong>
+                <p class="muted">The help meets a real need, not an image.</p>
+              </article>
+              <article class="meter-card">
+                <strong>Bounded</strong>
+                <p class="muted">Service does not erase agency or rest.</p>
               </article>
               <article class="meter-card">
                 <strong>Source Visible</strong>
-                <p class="muted">Citation, family, and boundary stay attached.</p>
-              </article>
-              <article class="meter-card">
-                <strong>24 Hours</strong>
-                <p class="muted">The promise is small enough to practice today.</p>
-              </article>
-              <article class="meter-card">
-                <strong>Agency</strong>
-                <p class="muted">The app suggests; the user chooses.</p>
+                <p class="muted">Citation, family, and caution stay attached.</p>
               </article>
             </div>
           </section>
         </section>
 
         <aside class="panel memory-panel">
-          <span class="eyebrow">Local Sankalpa memory</span>
-          <h2>Your Intention Trail</h2>
-          <p class="muted">Saved intentions stay only in this browser. This proves the loop before accounts, sync, or reviewed storage exists.</p>
+          <span class="eyebrow">Local seva memory</span>
+          <h2>Your Helpful Acts</h2>
+          <p class="muted">Saved plans stay only in this browser. This tests service as a calm habit before accounts, sync, or reviewed storage exists.</p>
 
           <div class="stats-grid">
             <article class="stat">
-              <span>Saved intentions</span>
-              <strong id="intentCount">0</strong>
+              <span>Saved plans</span>
+              <strong id="planCount">0</strong>
             </article>
             <article class="stat">
               <span>Last source</span>
@@ -738,119 +715,103 @@
             </article>
           </div>
 
-          <div class="memory-strip" id="intentStrip" aria-label="Seven day intention strip"></div>
-
-          <div class="section path-list" aria-label="Sankalpa path">
-            <article class="path-step active">
-              <span class="path-index">1</span>
-              <div><strong>Name</strong><p>State the pressure without dramatizing it.</p></div>
-            </article>
-            <article class="path-step">
-              <span class="path-index">2</span>
-              <div><strong>Source</strong><p>Let a source candidate give the intention a frame.</p></div>
-            </article>
-            <article class="path-step">
-              <span class="path-index">3</span>
-              <div><strong>Carry</strong><p>Choose one action that can survive the day.</p></div>
-            </article>
-          </div>
-
-          <div class="section memory-list" id="intentList"></div>
+          <div class="memory-strip" id="sevaStrip" aria-label="Seven day seva strip"></div>
+          <div class="section memory-list" id="planList"></div>
 
           <div class="button-row">
-            <button class="button" id="saveIntent" type="button">Save Intent</button>
-            <button class="button" id="clearIntents" type="button">Clear Local Preview</button>
-            <a class="button secondary" href="practice.html">Open Practice</a>
+            <button class="button" id="savePlan" type="button">Save Plan</button>
+            <button class="button" id="clearPlans" type="button">Clear Local Preview</button>
+            <a class="button secondary" href="sankalpa.html">Open Intent</a>
           </div>
 
           <section class="boundary">
-            <h2>Sankalpa Boundary</h2>
-            <p>This is reflection support, not ritual instruction, therapy, medical advice, emergency support, or a command from the app.</p>
+            <h2>Seva Boundary</h2>
+            <p>This is reflection support, not moral ranking, therapy, emergency support, legal advice, or a command to overextend yourself.</p>
           </section>
         </aside>
       </section>
     </main>
 
     <script>
-      const sankalpaNeeds = {
-        steadiness: {
-          label: "Steadiness",
-          title: "Today I choose steady action before inner noise.",
-          source: "Bhagavad Gita 2.48",
+      const sevaDomains = {
+        family: {
+          label: "Family",
+          title: "Today I help without trying to control.",
+          source: "Bhagavad Gita 3.19",
           family: "Bhagavad Gita | Smriti",
           level: "Direct source candidate",
-          boundary: "Reflection support, not a guarantee of peace.",
-          gentle: "For the next 24 hours, I will do one useful thing slowly and cleanly before I chase the result.",
-          focused: "For the next 24 hours, I will choose one duty, begin it, and leave the result outside my identity.",
-          brave: "For the next 24 hours, I will act with balance even when the outcome is still unknown.",
-          carry: "Choose one small duty. Start it for five minutes without checking for praise."
+          caution: "Service support, not a moral score.",
+          quiet: "Do one unnoticed household task cleanly, without turning it into proof of goodness.",
+          skilled: "Use one practical skill to reduce friction at home without taking over.",
+          boundary: "Offer one bounded help and let the other person keep their agency.",
+          boundaryLine: "Offer help without bargaining for praise or taking over someone else's agency."
         },
-        clarity: {
-          label: "Clarity",
-          title: "Today I ask the real question first.",
-          source: "Mundaka Upanishad 1.1.4-5",
-          family: "Upanishad | Shruti",
-          level: "Direct source candidate",
-          boundary: "Sorting knowledge is not rejection of ordinary life.",
-          gentle: "For the next 24 hours, I will name whether I need facts, meaning, or priority before I react.",
-          focused: "For the next 24 hours, I will write the real question in one sentence before seeking more inputs.",
-          brave: "For the next 24 hours, I will let one clear question interrupt confusion.",
-          carry: "Write one sentence that names the decision and the missing source."
-        },
-        courage: {
-          label: "Courage",
-          title: "Today I begin the work I can touch.",
+        work: {
+          label: "Work",
+          title: "Today I make one shared task lighter.",
           source: "Bhagavad Gita 2.47",
           family: "Bhagavad Gita | Smriti",
           level: "Direct source candidate",
-          boundary: "Effort guidance is not pressure, productivity shame, or control over outcomes.",
-          gentle: "For the next 24 hours, I will begin one honest action without demanding that it solve the whole future.",
-          focused: "For the next 24 hours, I will do the next right task and release the need to own every result.",
-          brave: "For the next 24 hours, I will start before certainty arrives.",
-          carry: "Begin one avoided task for five focused minutes."
+          caution: "Effort guidance is not productivity shame.",
+          quiet: "Clean up one small work item so the next person has less confusion.",
+          skilled: "Use one strength to unblock a teammate without needing credit.",
+          boundary: "Help within the role and time that are honestly yours today.",
+          boundaryLine: "Do not confuse service with silent overwork."
         },
-        kindness: {
-          label: "Kindness",
-          title: "Today I choose strength without harshness.",
+        community: {
+          label: "Community",
+          title: "Today I contribute one visible good.",
           source: "Bhagavad Gita 12.13",
           family: "Bhagavad Gita | Smriti",
           level: "Direct source candidate",
-          boundary: "Kindness does not erase safety, truth, or boundaries.",
-          gentle: "For the next 24 hours, I will speak one truth without turning it into a weapon.",
-          focused: "For the next 24 hours, I will keep my tone clean while keeping my boundary clear.",
-          brave: "For the next 24 hours, I will refuse cruelty without becoming cruel.",
-          carry: "Write the sentence you need to say. Remove one unnecessary sharp edge."
+          caution: "Compassion does not erase discernment or safety.",
+          quiet: "Do one small public good without announcing it.",
+          skilled: "Offer one useful skill to someone who can actually use it.",
+          boundary: "Choose a helpful act that does not create dependency or risk.",
+          boundaryLine: "Serve with care, not savior energy."
+        },
+        self: {
+          label: "Self-care",
+          title: "Today I serve the future self with respect.",
+          source: "Katha Upanishad 1.3.3-9",
+          family: "Upanishad | Shruti",
+          level: "Direct source candidate",
+          caution: "Self-care is not withdrawal from all responsibility.",
+          quiet: "Prepare one small thing now that will reduce tomorrow's confusion.",
+          skilled: "Use discipline gently: arrange the next step before willpower fades.",
+          boundary: "Protect one pocket of attention without dramatizing the whole day.",
+          boundaryLine: "Care for the self as a steward, not as an escape."
         }
       };
 
-      const rhythmLabels = {
-        gentle: "Gentle",
-        focused: "Focused",
-        brave: "Brave"
+      const toneLabels = {
+        quiet: "Quiet",
+        skilled: "Skilled",
+        boundary: "Bounded"
       };
 
-      const storageKey = "vedapath.sankalpa.v1";
-      let activeNeed = "steadiness";
-      let activeRhythm = "gentle";
+      const storageKey = "vedapath.seva.v1";
+      let activeDomain = "family";
+      let activeTone = "quiet";
 
       const elements = {
-        pressureInput: document.getElementById("pressureInput"),
-        sankalpaTitle: document.getElementById("sankalpaTitle"),
-        sankalpaMode: document.getElementById("sankalpaMode"),
-        sankalpaFamily: document.getElementById("sankalpaFamily"),
-        sankalpaLine: document.getElementById("sankalpaLine"),
-        pressureOut: document.getElementById("pressureOut"),
-        carryOut: document.getElementById("carryOut"),
+        capacityInput: document.getElementById("capacityInput"),
+        sevaTitle: document.getElementById("sevaTitle"),
+        sevaMode: document.getElementById("sevaMode"),
+        sevaFamily: document.getElementById("sevaFamily"),
+        sevaAction: document.getElementById("sevaAction"),
+        capacityOut: document.getElementById("capacityOut"),
+        sevaBoundaryOut: document.getElementById("sevaBoundaryOut"),
         sourceCitation: document.getElementById("sourceCitation"),
         sourceFamily: document.getElementById("sourceFamily"),
         sourceLevel: document.getElementById("sourceLevel"),
         sourceBoundary: document.getElementById("sourceBoundary"),
-        sankalpaSummary: document.getElementById("sankalpaSummary"),
-        copySankalpa: document.getElementById("copySankalpa"),
-        intentCount: document.getElementById("intentCount"),
+        sevaSummary: document.getElementById("sevaSummary"),
+        copySeva: document.getElementById("copySeva"),
+        planCount: document.getElementById("planCount"),
         lastSource: document.getElementById("lastSource"),
-        intentList: document.getElementById("intentList"),
-        intentStrip: document.getElementById("intentStrip")
+        planList: document.getElementById("planList"),
+        sevaStrip: document.getElementById("sevaStrip")
       };
 
       function escapeHTML(value) {
@@ -868,7 +829,7 @@
         return cleaned.length > 180 ? `${cleaned.slice(0, 177)}...` : cleaned;
       }
 
-      function readIntents() {
+      function readPlans() {
         try {
           const parsed = JSON.parse(localStorage.getItem(storageKey) || "[]");
           return Array.isArray(parsed) ? parsed : [];
@@ -877,57 +838,57 @@
         }
       }
 
-      function writeIntents(intents) {
-        localStorage.setItem(storageKey, JSON.stringify(intents.slice(-30)));
+      function writePlans(plans) {
+        localStorage.setItem(storageKey, JSON.stringify(plans.slice(-30)));
       }
 
       function dateKey(date) {
         return date.toISOString().slice(0, 10);
       }
 
-      function currentIntent() {
-        const need = sankalpaNeeds[activeNeed];
+      function currentPlan() {
+        const domain = sevaDomains[activeDomain];
         return {
-          need,
-          pressure: cleanText(elements.pressureInput.value, "Today needs one honest intention."),
-          line: need[activeRhythm],
-          carry: need.carry
+          domain,
+          capacity: cleanText(elements.capacityInput.value, "I can help in one small honest way today."),
+          action: domain[activeTone],
+          boundary: domain.boundaryLine
         };
       }
 
-      function renderIntent() {
-        const intent = currentIntent();
-        const need = intent.need;
-        elements.sankalpaTitle.textContent = need.title;
-        elements.sankalpaMode.textContent = `${need.label} | ${rhythmLabels[activeRhythm]}`;
-        elements.sankalpaFamily.textContent = need.family;
-        elements.sankalpaLine.textContent = intent.line;
-        elements.pressureOut.textContent = intent.pressure;
-        elements.carryOut.textContent = intent.carry;
-        elements.sourceCitation.textContent = need.source;
-        elements.sourceFamily.textContent = need.family;
-        elements.sourceLevel.textContent = need.level;
-        elements.sourceBoundary.textContent = need.boundary;
-        elements.sankalpaSummary.value = [
-          "VedaPath Sankalpa",
-          need.title,
-          `Source: ${need.source}`,
-          `Family: ${need.family}`,
-          `Need: ${need.label}`,
-          `Rhythm: ${rhythmLabels[activeRhythm]}`,
+      function renderPlan() {
+        const plan = currentPlan();
+        const domain = plan.domain;
+        elements.sevaTitle.textContent = domain.title;
+        elements.sevaMode.textContent = `${domain.label} | ${toneLabels[activeTone]}`;
+        elements.sevaFamily.textContent = domain.family;
+        elements.sevaAction.textContent = plan.action;
+        elements.capacityOut.textContent = plan.capacity;
+        elements.sevaBoundaryOut.textContent = plan.boundary;
+        elements.sourceCitation.textContent = domain.source;
+        elements.sourceFamily.textContent = domain.family;
+        elements.sourceLevel.textContent = domain.level;
+        elements.sourceBoundary.textContent = domain.caution;
+        elements.sevaSummary.value = [
+          "VedaPath Seva Plan",
+          domain.title,
+          `Source: ${domain.source}`,
+          `Family: ${domain.family}`,
+          `Domain: ${domain.label}`,
+          `Tone: ${toneLabels[activeTone]}`,
           "",
-          `Pressure: ${intent.pressure}`,
-          `Sankalpa: ${intent.line}`,
-          `Carry action: ${intent.carry}`,
+          `Capacity: ${plan.capacity}`,
+          `Helpful act: ${plan.action}`,
+          `Boundary: ${plan.boundary}`,
           "",
-          "Boundary: Reflection support, not ritual instruction, therapy, medical advice, or a command."
+          "Product boundary: Reflection support, not moral ranking, therapy, emergency support, legal advice, or a command."
         ].join("\n");
       }
 
       function renderMemory() {
-        const intents = readIntents();
-        elements.intentCount.textContent = intents.length;
-        elements.lastSource.textContent = intents.length ? intents[intents.length - 1].source : "None";
+        const plans = readPlans();
+        elements.planCount.textContent = plans.length;
+        elements.lastSource.textContent = plans.length ? plans[plans.length - 1].source : "None";
 
         const today = new Date();
         const days = Array.from({ length: 7 }, (_, index) => {
@@ -935,9 +896,9 @@
           day.setDate(today.getDate() - (6 - index));
           return day;
         });
-        elements.intentStrip.innerHTML = days.map((day) => {
+        elements.sevaStrip.innerHTML = days.map((day) => {
           const key = dateKey(day);
-          const count = intents.filter((intent) => intent.dateKey === key).length;
+          const count = plans.filter((plan) => plan.dateKey === key).length;
           const label = day.toLocaleDateString("en-US", { weekday: "short" });
           return `
             <div class="day-cell ${count ? "has-entry" : ""}">
@@ -947,82 +908,82 @@
           `;
         }).join("");
 
-        if (!intents.length) {
-          elements.intentList.innerHTML = `
+        if (!plans.length) {
+          elements.planList.innerHTML = `
             <article class="memory-card">
-              <strong>No saved intentions yet</strong>
-              <p>Build and save one Sankalpa to begin the local trail.</p>
+              <strong>No saved seva plans yet</strong>
+              <p>Build and save one helpful act to begin the local trail.</p>
             </article>
           `;
           return;
         }
 
-        elements.intentList.innerHTML = intents.slice(-3).reverse().map((intent) => `
+        elements.planList.innerHTML = plans.slice(-3).reverse().map((plan) => `
           <article class="memory-card">
-            <strong>${escapeHTML(intent.date)} | ${escapeHTML(intent.label)}</strong>
-            <p>${escapeHTML(intent.line)}</p>
+            <strong>${escapeHTML(plan.date)} | ${escapeHTML(plan.label)}</strong>
+            <p>${escapeHTML(plan.action)}</p>
           </article>
         `).join("");
       }
 
-      function saveIntent() {
-        const intent = currentIntent();
+      function savePlan() {
+        const plan = currentPlan();
         const now = new Date();
-        const intents = readIntents();
-        intents.push({
+        const plans = readPlans();
+        plans.push({
           date: now.toLocaleDateString("en-US", { month: "short", day: "numeric" }),
           dateKey: dateKey(now),
-          label: intent.need.label,
-          source: intent.need.source,
-          line: intent.line
+          label: plan.domain.label,
+          source: plan.domain.source,
+          action: plan.action
         });
-        writeIntents(intents);
+        writePlans(plans);
         renderMemory();
       }
 
-      function copyIntent() {
-        renderIntent();
-        elements.sankalpaSummary.hidden = false;
-        elements.sankalpaSummary.select();
-        const text = elements.sankalpaSummary.value;
+      function copyPlan() {
+        renderPlan();
+        elements.sevaSummary.hidden = false;
+        elements.sevaSummary.select();
+        const text = elements.sevaSummary.value;
         const copied = navigator.clipboard && navigator.clipboard.writeText
           ? navigator.clipboard.writeText(text)
           : Promise.resolve(document.execCommand("copy"));
 
         copied.then(() => {
-          elements.copySankalpa.textContent = "Copied";
+          elements.copySeva.textContent = "Copied";
           window.setTimeout(() => {
-            elements.copySankalpa.textContent = "Copy";
+            elements.copySeva.textContent = "Copy";
           }, 1400);
         });
       }
 
-      document.querySelectorAll(".need-button").forEach((button) => {
+      document.querySelectorAll(".domain-button").forEach((button) => {
         button.addEventListener("click", () => {
-          activeNeed = button.dataset.need;
-          document.querySelectorAll(".need-button").forEach((item) => item.classList.toggle("active", item === button));
-          renderIntent();
+          activeDomain = button.dataset.domain;
+          document.querySelectorAll(".domain-button").forEach((item) => item.classList.toggle("active", item === button));
+          renderPlan();
         });
       });
 
-      document.querySelectorAll(".rhythm-card").forEach((button) => {
+      document.querySelectorAll(".tone-card").forEach((button) => {
         button.addEventListener("click", () => {
-          activeRhythm = button.dataset.rhythm;
-          document.querySelectorAll(".rhythm-card").forEach((item) => item.classList.toggle("active", item === button));
-          renderIntent();
+          activeTone = button.dataset.tone;
+          document.querySelectorAll(".tone-card").forEach((item) => item.classList.toggle("active", item === button));
+          renderPlan();
         });
       });
 
-      document.getElementById("buildSankalpa").addEventListener("click", renderIntent);
-      document.getElementById("copySankalpa").addEventListener("click", copyIntent);
-      document.getElementById("saveIntent").addEventListener("click", saveIntent);
-      document.getElementById("clearIntents").addEventListener("click", () => {
+      document.getElementById("buildSeva").addEventListener("click", renderPlan);
+      document.getElementById("copySeva").addEventListener("click", copyPlan);
+      document.getElementById("savePlan").addEventListener("click", savePlan);
+      document.getElementById("clearPlans").addEventListener("click", () => {
         localStorage.removeItem(storageKey);
         renderMemory();
       });
-      elements.pressureInput.addEventListener("input", renderIntent);
+      elements.capacityInput.addEventListener("input", renderPlan);
 
-      renderIntent();
+      renderPlan();
       renderMemory();
     </script>
   </body>

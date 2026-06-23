@@ -17,6 +17,7 @@ It helps users move from curiosity to understanding through:
 - calm compass for one source-backed next action
 - calm card studio for shareable source-backed reflections
 - sankalpa studio for source-backed 24-hour intention setting
+- seva planner for turning calm into bounded helpful action
 - user and scholar correction loops
 
 ## What It Is
@@ -285,6 +286,21 @@ It should:
 - avoid ritual authority, therapy claims, productivity shame, and app-issued commands
 
 Sankalpa Studio should make calm concrete without pretending the app can control a user's life. The intention belongs to the user.
+
+### 17. Seva Planner
+
+Seva Planner turns personal calm into one source-backed helpful act.
+
+It should:
+
+- begin from an explicit service domain
+- ask the user to name real capacity
+- preserve source citation, text family, pramana level, and boundary
+- produce one small helpful act
+- save prototype plans only in browser-local storage
+- avoid moral ranking, guilt, savior energy, unsafe overextension, and app-issued commands
+
+Seva Planner should make calm useful without turning service into self-erasure. The action should be small, bounded, and freely chosen.
 
 ## Product Personality
 

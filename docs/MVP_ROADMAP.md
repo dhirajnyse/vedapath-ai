@@ -23,7 +23,7 @@ Show the product experience without a live LLM backend.
 
 Status:
 
-Completed in v0.3.1.
+Completed in v0.3.2.
 
 Core screens:
 
@@ -44,6 +44,7 @@ Core screens:
 - Before Reply
 - Samvada Room
 - Sankalpa Studio
+- Seva Planner
 
 Success criteria:
 
@@ -166,6 +167,7 @@ Should have:
 - Before Reply
 - Samvada Room
 - Sankalpa Studio
+- Seva Planner
 
 Later:
 

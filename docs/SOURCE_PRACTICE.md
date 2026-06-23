@@ -18,6 +18,7 @@ Source Practice turns VedaPath Calm from a reading preview into a guided product
 - A practice source can frame Before Reply when the next action is a message.
 - A practice source can frame Samvada Room when the next action is a disagreement.
 - A practice source can become a Sankalpa when the next action is one private 24-hour intention.
+- A practice source can become a Seva plan when the next action is one bounded helpful act.
 
 ## Practice Stages
 

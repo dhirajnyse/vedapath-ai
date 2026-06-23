@@ -90,4 +90,10 @@ Sankalpa Studio turns personal calm into one source-backed 24-hour intention. It
 
 The studio should never become ritual instruction, therapy, medical advice, emergency support, productivity shame, or a guru voice.
 
+## v0.3.2 Seva Planner
+
+Seva Planner turns calm into one bounded helpful act. It asks the user to choose a service domain, name real capacity, and keep a source-backed boundary visible.
+
+The planner should never become moral ranking, guilt, savior energy, legal advice, emergency support, or a command to overextend.
+
 The dialogue tool must not become mediation, legal advice, a verdict engine, false equivalence, or a recommendation to continue unsafe conflict.

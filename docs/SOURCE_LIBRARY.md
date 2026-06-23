@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Source Library is the first visible knowledge layer for VedaPath AI. It organizes prototype source candidates so users can search, filter, save a device-local shelf, send a selected source into Source Practice, feed Source Path Builder, support Calm Compass routing, shape Calm Card Studio outputs, power Source Bell resets, frame Before Reply drafts, support Samvada maps, and shape Sankalpa intentions.
+Source Library is the first visible knowledge layer for VedaPath AI. It organizes prototype source candidates so users can search, filter, save a device-local shelf, send a selected source into Source Practice, feed Source Path Builder, support Calm Compass routing, shape Calm Card Studio outputs, power Source Bell resets, frame Before Reply drafts, support Samvada maps, shape Sankalpa intentions, and guide Seva plans.
 
 ## What It Proves
 
@@ -17,6 +17,7 @@ Source Library is the first visible knowledge layer for VedaPath AI. It organize
 - The same records can support Before Reply drafts without turning communication support into advice.
 - The same records can support Samvada maps without pretending disagreement has no real differences.
 - The same records can support Sankalpa intentions without losing citation, family, or boundary.
+- The same records can support Seva plans without turning service into guilt or moral ranking.
 
 ## Current Record Shape
 
@@ -38,6 +39,7 @@ Each prototype record includes:
 - Reply tone hint
 - Samvada shape hint
 - Sankalpa need hint
+- Seva domain hint
 
 The current records are prototype candidates, not production source data.
 

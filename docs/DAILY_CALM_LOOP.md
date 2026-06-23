@@ -39,6 +39,8 @@ Daily Calm Loop records the user's deliberate pattern. Source Practice turns a s
 
 Sankalpa Studio can become the daily loop's intention layer: one source-backed 24-hour line, one carry action, and a visible boundary before the user saves a reflection.
 
+Seva Planner can become the daily loop's outward-action layer: one small helpful act chosen from real capacity, not guilt or hidden scoring.
+
 ## Product Voice
 
 The daily loop should feel steady, humble, and useful. It should not flatter, command, diagnose, or pretend the product knows the user's life.
