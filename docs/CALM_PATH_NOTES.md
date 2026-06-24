@@ -133,3 +133,9 @@ The retrieval layer should never turn a weak source match into certainty or a mo
 Passage Review Pack gives calm rooms a review gate before a source candidate becomes answer authority. It shows allowed use, restricted use, missing fields, review decision, and eval checks so calm guidance stays grounded and bounded.
 
 The review layer should never pretend prototype passage dossiers are final scholarship.
+
+## v0.4.1 Evaluation Runner
+
+Evaluation Runner checks calm and source answer drafts before they reach the user. It catches missing citation, source-family confusion, unsafe calm advice, ritual authority, and overclaiming.
+
+The evaluation layer should never replace human safety review or production monitoring.

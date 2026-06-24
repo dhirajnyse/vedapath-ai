@@ -23,7 +23,7 @@ Show the product experience without a live LLM backend.
 
 Status:
 
-Completed in v0.4.0.
+Completed in v0.4.1.
 
 Core screens:
 
@@ -40,6 +40,7 @@ Core screens:
 - Source Seeds
 - Retrieval Lab
 - Passage Review Pack
+- Evaluation Runner
 - Source Path Builder
 - Calm Compass
 - Calm Card Studio
@@ -66,7 +67,7 @@ Connect a small curated source set.
 
 Status:
 
-Active product phase. Source Seeds now shows the first structured source schema and prototype seed records. Retrieval Lab now shows the first source-stack ranking, match reason, boundary, and no-source claim refusal. Passage Review Pack now shows passage dossiers, allowed use, missing production fields, local review decisions, and evaluation checks.
+Active product phase. Source Seeds now shows the first structured source schema and prototype seed records. Retrieval Lab now shows the first source-stack ranking, match reason, boundary, and no-source claim refusal. Passage Review Pack now shows passage dossiers, allowed use, missing production fields, local review decisions, and evaluation checks. Evaluation Runner now checks answer drafts before user-facing trust.
 
 Initial data:
 
@@ -86,6 +87,7 @@ Features:
 - retrieval trace
 - no-source refusal for unsupported claims
 - passage review gate before answer authority
+- answer draft evaluation for citation gaps, source-family confusion, unsafe calm advice, ritual authority, and overclaiming
 
 Success criteria:
 
@@ -161,6 +163,7 @@ Must have:
 - source seed schema and review queue
 - retrieval lab with source stack and match reason
 - passage review pack with dossiers, allowed use, missing fields, and eval checks
+- evaluation runner with answer quality gates
 - prototype source path builder and local progress
 - calm compass routing from explicit present-state choice
 - calm card studio for shareable source-backed reflections
@@ -178,6 +181,7 @@ Should have:
 - Source Seeds
 - Retrieval Lab
 - Passage Review Pack
+- Evaluation Runner
 - Source Path Builder
 - Calm Compass
 - Calm Card Studio

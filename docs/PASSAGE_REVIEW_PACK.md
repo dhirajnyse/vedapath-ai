@@ -70,7 +70,7 @@ It protects the product from turning beautiful source references into unsupporte
 
 ## Next Step
 
-v0.4.1 should add an evaluation runner that checks answer drafts for:
+v0.4.1 adds an evaluation runner that checks answer drafts for:
 
 - missing citation
 - wrong source family
@@ -78,3 +78,9 @@ v0.4.1 should add an evaluation runner that checks answer drafts for:
 - unsafe calm or health advice
 - hidden interpretation layer
 - missing boundary
+
+## Link To Evaluation Runner
+
+Passage Review Pack decides whether a passage candidate can support an answer. Evaluation Runner checks whether the answer draft uses that support responsibly.
+
+The handoff should preserve citation, source family, allowed use, restricted use, and boundary.

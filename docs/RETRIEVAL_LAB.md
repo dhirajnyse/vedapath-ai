@@ -66,6 +66,10 @@ Retrieval Lab finds candidate sources. Passage Review Pack decides whether a can
 
 The retrieval stack should not become authoritative until each source candidate has a visible review dossier with allowed use, answer boundary, missing production fields, and evaluation checks.
 
+## Link To Evaluation Runner
+
+Retrieval Lab finds candidate sources and drafts an answer. Evaluation Runner checks the draft for citation gaps, source-family confusion, unsafe calm advice, ritual authority, and overclaiming before user-facing trust.
+
 ## Why It Matters
 
 The calming effect of VedaPath should come from clarity, not certainty theater.
