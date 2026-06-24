@@ -53,4 +53,6 @@ It is not final scholarship, source licensing approval, moderation policy, safet
 
 v0.4.4 adds Source Policy Console. v0.4.5 adds Trust Ledger so policy routes and queue decisions become visible governance records.
 
-v0.4.6 should turn those records into a durable source governance schema with reviewer identity, source edition fields, audit history, and evaluation fixtures.
+v0.4.6 adds Life Map so personal-life calm routes can stay source-backed, bounded, and local-only in the prototype.
+
+v0.4.7 should turn queue, policy, ledger, and life-map records into a durable source governance and consent schema with reviewer identity, source edition fields, audit history, privacy controls, and evaluation fixtures.

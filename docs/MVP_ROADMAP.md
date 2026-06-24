@@ -23,7 +23,7 @@ Show the product experience without a live LLM backend.
 
 Status:
 
-Completed in v0.4.5.
+Completed in v0.4.6.
 
 Core screens:
 
@@ -45,6 +45,7 @@ Core screens:
 - Reviewer Queue
 - Source Policy Console
 - Trust Ledger
+- Life Map
 - Source Path Builder
 - Calm Compass
 - Calm Card Studio
@@ -71,7 +72,7 @@ Connect a small curated source set.
 
 Status:
 
-Active product phase. Source Seeds now shows the first structured source schema and prototype seed records. Retrieval Lab now shows the first source-stack ranking, match reason, boundary, and no-source claim refusal. Passage Review Pack now shows passage dossiers, allowed use, missing production fields, local review decisions, and evaluation checks. Evaluation Runner now checks answer drafts before user-facing trust. Evaluation Dashboard now tests the evaluator as a visible release gate. Reviewer Queue now turns failed examples, flagged passages, retrieval gaps, and correction notes into local human-review cards. Source Policy Console now makes answer gates visible before the AI speaks with confidence. Trust Ledger now turns policy routes and queue decisions into versioned local governance records before accepted behavior changes.
+Active product phase. Source Seeds now shows the first structured source schema and prototype seed records. Retrieval Lab now shows the first source-stack ranking, match reason, boundary, and no-source claim refusal. Passage Review Pack now shows passage dossiers, allowed use, missing production fields, local review decisions, and evaluation checks. Evaluation Runner now checks answer drafts before user-facing trust. Evaluation Dashboard now tests the evaluator as a visible release gate. Reviewer Queue now turns failed examples, flagged passages, retrieval gaps, and correction notes into local human-review cards. Source Policy Console now makes answer gates visible before the AI speaks with confidence. Trust Ledger now turns policy routes and queue decisions into versioned local governance records before accepted behavior changes. Life Map now routes real-life moments to one source candidate, one boundary, and one next action without overstepping into advice.
 
 Initial data:
 
@@ -96,6 +97,7 @@ Features:
 - reviewer queue for failed examples, flagged passages, retrieval gaps, and user correction notes
 - source policy console for answer allowed, boundary required, review route, and decline/defer decisions
 - trust ledger for source-policy routes, reviewer needs, decision history, and governance handoff
+- life map for real-life moment routing with source, boundary, local pattern preview, and consent boundary
 
 Success criteria:
 
@@ -175,6 +177,7 @@ Must have:
 - reviewer queue before accepted knowledge changes
 - source policy console before confident answer behavior
 - trust ledger before accepted behavior changes
+- life map before any account-backed personal memory
 - prototype source path builder and local progress
 - calm compass routing from explicit present-state choice
 - calm card studio for shareable source-backed reflections
@@ -197,6 +200,7 @@ Should have:
 - Reviewer Queue
 - Source Policy Console
 - Trust Ledger
+- Life Map
 - Source Path Builder
 - Calm Compass
 - Calm Card Studio

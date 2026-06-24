@@ -69,4 +69,6 @@ This ledger is a prototype planning surface. It is not final scholarship, safety
 
 ## Next Step
 
-v0.4.6 should turn ledger records into a source governance schema with clear fields for production data, review identity, and audit history.
+v0.4.6 adds Life Map so personal-life calm routes can stay source-backed, bounded, and local-only in the prototype.
+
+v0.4.7 should turn ledger and life-map records into a source governance and consent schema with clear fields for production data, review identity, privacy controls, and audit history.
