@@ -50,6 +50,8 @@ Let us look at the source first.
 - [Evaluation Runner Notes](docs/EVALUATION_RUNNER.md)
 - [Evaluation Dashboard](dashboard.html)
 - [Evaluation Dashboard Notes](docs/EVALUATION_DASHBOARD.md)
+- [Reviewer Queue](queue.html)
+- [Reviewer Queue Notes](docs/REVIEWER_QUEUE.md)
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
 - [Calm Compass](compass.html)
@@ -80,7 +82,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v0.4.2` is a trusted MVP prototype with:
+`v0.4.3` is a trusted MVP prototype with:
 
 - Ask workspace
 - Source Card
@@ -96,6 +98,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Passage Review Pack with passage dossiers, meaning capsules, allowed use, boundaries, missing fields, eval checks, and local review decisions
 - Evaluation Runner with answer draft checks for citation gaps, source-family confusion, unsafe calm advice, ritual authority, and overclaiming
 - Evaluation Dashboard with answer test suite, expected behavior checks, blocked examples, source-family report, and reviewer export
+- Reviewer Queue with failed dashboard cases, flagged passages, correction notes, local review decisions, and copyable reviewer brief
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
 - Calm Card Studio with visual card preview, local saved cards, copy text, and PNG export

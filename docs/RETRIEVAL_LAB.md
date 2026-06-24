@@ -74,6 +74,10 @@ Retrieval Lab finds candidate sources and drafts an answer. Evaluation Runner ch
 
 Evaluation Dashboard runs the answer test suite so Retrieval, Review, and Eval behavior can be inspected before launch.
 
+## Link To Reviewer Queue
+
+Reviewer Queue turns source gaps, uncertain matches, and failed dashboard cases into review cards before they become source policy or accepted answer behavior.
+
 ## Why It Matters
 
 The calming effect of VedaPath should come from clarity, not certainty theater.

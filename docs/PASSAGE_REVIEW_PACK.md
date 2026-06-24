@@ -88,3 +88,9 @@ Passage Review Pack decides whether a passage candidate can support an answer. E
 Evaluation Dashboard checks whether the evaluator is blocking and passing the expected draft patterns before release.
 
 The handoff should preserve citation, source family, allowed use, restricted use, and boundary.
+
+## Link To Reviewer Queue
+
+Reviewer Queue turns flagged passage decisions and missing production fields into review cards with a visible next action.
+
+The queue should preserve the dossier source family, issue type, reviewer need, and boundary before any accepted knowledge changes.

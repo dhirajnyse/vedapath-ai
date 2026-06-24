@@ -71,7 +71,7 @@
         display: flex;
         align-items: center;
         gap: 12px;
-        min-width: 0;
+        flex: 0 0 auto;
       }
 
       .brand img {
@@ -84,7 +84,7 @@
       .brand strong {
         display: block;
         font-size: 18px;
-      }
+      white-space: nowrap;}
 
       .brand span,
       .muted,
@@ -469,6 +469,7 @@
           <a class="link" href="passages.html">Review</a>
           <a class="link" href="eval.html">Eval</a>
           <a class="link active" href="dashboard.html">Dash</a>
+          <a class="link" href="queue.html">Queue</a>
           <a class="link" href="path.html">Path</a>
           <a class="link" href="compass.html">Compass</a>
           <a class="link" href="card.html">Card</a>
@@ -480,7 +481,7 @@
           <a class="link" href="morning.html">Morning</a>
           <a class="link" href="evening.html">Evening</a>
           <a class="link" href="rhythm.html">Rhythm</a>
-          <span class="version">v0.4.2 dashboard</span>
+          <span class="version">v0.4.3 queue</span>
         </nav>
       </header>
 
@@ -527,6 +528,7 @@
               <button class="button primary" id="runSuite" type="button">Run Suite</button>
               <button class="button secondary" id="copyExport" type="button">Copy Reviewer Export</button>
               <a class="button" href="eval.html">Open Eval</a>
+              <a class="button" href="queue.html">Open Queue</a>
             </div>
           </div>
         </aside>
@@ -852,7 +854,7 @@
         const mismatches = suiteResults.filter((item) => !item.matches);
         const lines = [
           "VedaPath Evaluation Dashboard",
-          "Release: v0.4.2 dashboard",
+          "Release: v0.4.3 queue",
           `Expected behaviors: ${matched}/${total}`,
           `Release state: ${mismatches.length ? "Hold" : "Ready"}`,
           "",

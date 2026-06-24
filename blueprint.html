@@ -54,7 +54,7 @@
         display: flex;
         align-items: center;
         gap: 12px;
-        min-width: 0;
+        flex: 0 0 auto;
       }
 
       .brand img {
@@ -67,7 +67,7 @@
       .brand strong {
         display: block;
         font-size: 18px;
-      }
+      white-space: nowrap;}
 
       .brand span,
       .lead,
@@ -369,6 +369,7 @@
           <a class="link" href="passages.html">Review</a>
           <a class="link" href="eval.html">Eval</a>
           <a class="link" href="dashboard.html">Dash</a>
+          <a class="link" href="queue.html">Queue</a>
           <a class="link" href="path.html">Path</a>
           <a class="link" href="compass.html">Compass</a>
           <a class="link" href="card.html">Card</a>
@@ -380,7 +381,7 @@
           <a class="link" href="morning.html">Morning</a>
           <a class="link" href="evening.html">Evening</a>
           <a class="link" href="rhythm.html">Rhythm</a>
-          <span class="version">v0.4.2 dashboard</span>
+          <span class="version">v0.4.3 queue</span>
         </nav>
       </header>
 
@@ -512,6 +513,18 @@
           <div class="feature">
             <h3>Passage Review Pack</h3>
             <p>Shows meaning capsules, allowed use, missing production fields, review decisions, and evaluation checks before answer authority.</p>
+          </div>
+          <div class="feature">
+            <h3>Evaluation Runner</h3>
+            <p>Checks draft answers for citation gaps, source-family confusion, unsafe calm advice, ritual authority, and overclaiming.</p>
+          </div>
+          <div class="feature">
+            <h3>Evaluation Dashboard</h3>
+            <p>Turns answer checks into a visible release gate with blocked examples, issue counts, and reviewer export.</p>
+          </div>
+          <div class="feature">
+            <h3>Reviewer Queue</h3>
+            <p>Turns failed checks, flagged passages, retrieval gaps, and correction notes into human-review cards.</p>
           </div>
           <div class="feature">
             <h3>Source Path Builder</h3>

@@ -69,7 +69,7 @@
         display: flex;
         align-items: center;
         gap: 12px;
-        min-width: 0;
+        flex: 0 0 auto;
         text-decoration: none;
       }
 
@@ -83,7 +83,7 @@
       .brand strong {
         display: block;
         font-size: 18px;
-      }
+      white-space: nowrap;}
 
       .brand span,
       .muted,
@@ -603,6 +603,7 @@
           <a class="link" href="passages.html">Review</a>
           <a class="link" href="eval.html">Eval</a>
           <a class="link" href="dashboard.html">Dash</a>
+          <a class="link" href="queue.html">Queue</a>
           <a class="link" href="path.html">Path</a>
           <a class="link" href="compass.html">Compass</a>
           <a class="link" href="card.html">Card</a>
@@ -614,7 +615,7 @@
           <a class="link" href="morning.html">Morning</a>
           <a class="link" href="evening.html">Evening</a>
           <a class="link" href="rhythm.html">Rhythm</a>
-          <span class="version">v0.4.2 dashboard</span>
+          <span class="version">v0.4.3 queue</span>
         </nav>
       </header>
 
@@ -770,7 +771,7 @@
             <div class="mini-progress" aria-label="MVP progress 100 percent">
               <div style="width:100%"></div>
             </div>
-            <p class="muted" style="margin-top: 10px;">100% trusted MVP prototype. New: Evaluation Dashboard turns answer checks into a visible release gate with pass counts, blocked examples, and reviewer export.</p>
+            <p class="muted" style="margin-top: 10px;">100% trusted MVP prototype. New: Reviewer Queue turns failed checks, flagged passages, retrieval gaps, and correction notes into human-review cards.</p>
           </section>
 
           <section class="rail-panel">
@@ -825,6 +826,12 @@
             <h2>Evaluation Dashboard</h2>
             <p class="muted">Run the answer test suite, inspect blocked examples, and copy a reviewer-ready release report.</p>
             <a class="button" href="dashboard.html">Open Dashboard</a>
+          </section>
+
+          <section class="rail-panel">
+            <h2>Reviewer Queue</h2>
+            <p class="muted">Turn failed checks, flagged passages, retrieval gaps, and correction notes into local human-review cards.</p>
+            <a class="button" href="queue.html">Open Queue</a>
           </section>
 
           <section class="rail-panel">

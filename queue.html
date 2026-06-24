@@ -1,0 +1,955 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VedaPath Reviewer Queue</title>
+    <style>
+      :root {
+        --bhagwa: #d65a1f;
+        --deep-ochre: #a83e12;
+        --sacred-gold: #e0a83b;
+        --warm-ivory: #fff7ea;
+        --ink: #1f1a17;
+        --muted-brown: #5b4638;
+        --peacock-green: #145c4a;
+        --deep-indigo: #29335c;
+        --line: rgba(91, 70, 56, 0.16);
+        --panel: rgba(255, 255, 255, 0.68);
+        --panel-strong: rgba(255, 255, 255, 0.9);
+        --soft-red: #f9e6dc;
+        --soft-green: #e6f0eb;
+        --soft-gold: #fff5da;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--warm-ivory);
+        color: var(--ink);
+        font-family: Inter, "IBM Plex Sans", system-ui, sans-serif;
+        line-height: 1.5;
+      }
+
+      button,
+      textarea {
+        font: inherit;
+      }
+
+      button {
+        cursor: pointer;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .page {
+        width: min(1240px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 22px 0 48px;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding-bottom: 18px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex: 0 0 auto;
+      }
+
+      .brand img {
+        width: 50px;
+        height: 50px;
+        border-radius: 8px;
+        object-fit: cover;
+      }
+
+      .brand strong {
+        display: block;
+        font-size: 18px;
+      white-space: nowrap;}
+
+      .brand span,
+      .muted,
+      .small,
+      .queue-card p,
+      .stat span,
+      .source-meta,
+      .history-card p {
+        color: var(--muted-brown);
+      }
+
+      .brand span,
+      .small,
+      .stat span,
+      .source-meta {
+        font-size: 13px;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .link,
+      .version {
+        display: inline-flex;
+        align-items: center;
+        min-height: 34px;
+        border-radius: 999px;
+        padding: 6px 11px;
+        font-size: 13px;
+        font-weight: 800;
+      }
+
+      .link {
+        border: 1px solid transparent;
+        color: var(--muted-brown);
+      }
+
+      .link:hover,
+      .link:focus-visible,
+      .link.active {
+        border-color: rgba(168, 62, 18, 0.22);
+        color: var(--deep-ochre);
+        outline: none;
+      }
+
+      .version {
+        border: 1px solid rgba(168, 62, 18, 0.28);
+        background: rgba(255, 255, 255, 0.42);
+        color: var(--deep-ochre);
+      }
+
+      .workspace {
+        display: grid;
+        grid-template-columns: minmax(290px, 0.88fr) minmax(0, 1.36fr) minmax(300px, 0.92fr);
+        gap: 16px;
+        align-items: start;
+        padding-top: 18px;
+      }
+
+      .panel,
+      .queue-card,
+      .stat,
+      .detail-card,
+      .history-card,
+      .export-output {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+      }
+
+      .panel {
+        padding: 18px;
+      }
+
+      .hero-panel {
+        background:
+          linear-gradient(135deg, rgba(20, 92, 74, 0.08), rgba(255, 255, 255, 0.78) 44%),
+          var(--panel);
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        min-height: 28px;
+        margin-bottom: 14px;
+        border-radius: 999px;
+        padding: 4px 10px;
+        background: rgba(214, 90, 31, 0.12);
+        color: var(--deep-ochre);
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        margin-bottom: 12px;
+        font-size: clamp(40px, 4.8vw, 64px);
+        line-height: 0.98;
+        letter-spacing: 0;
+      }
+
+      h2 {
+        margin-bottom: 12px;
+        font-size: 24px;
+      }
+
+      h3 {
+        margin-bottom: 8px;
+        font-size: 18px;
+      }
+
+      .logo-frame {
+        display: grid;
+        place-items: center;
+        min-height: 168px;
+        margin: 16px 0;
+        border: 1px solid rgba(168, 62, 18, 0.16);
+        border-radius: 8px;
+        background: linear-gradient(180deg, #fff9ef 0%, #f6e4ca 100%);
+        overflow: hidden;
+      }
+
+      .logo-frame img {
+        width: min(78%, 220px);
+        height: auto;
+      }
+
+      .stats-grid,
+      .queue-list,
+      .history-list,
+      .detail-grid {
+        display: grid;
+        gap: 10px;
+      }
+
+      .stats-grid,
+      .detail-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .stat,
+      .queue-card,
+      .detail-card,
+      .history-card {
+        padding: 14px;
+      }
+
+      .stat {
+        min-height: 88px;
+      }
+
+      .stat strong {
+        display: block;
+        margin-top: 6px;
+        font-size: 30px;
+        line-height: 1;
+      }
+
+      .progress {
+        height: 10px;
+        overflow: hidden;
+        border-radius: 999px;
+        background: rgba(168, 62, 18, 0.14);
+      }
+
+      .progress div {
+        height: 100%;
+        border-radius: inherit;
+        background: linear-gradient(90deg, var(--bhagwa), var(--sacred-gold));
+      }
+
+      .button-row,
+      .filter-row,
+      .tag-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .button,
+      .filter,
+      .tag {
+        display: inline-flex;
+        align-items: center;
+        min-height: 34px;
+        border: 1px solid rgba(168, 62, 18, 0.24);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.48);
+        color: var(--deep-ochre);
+        padding: 7px 10px;
+        font-size: 13px;
+        font-weight: 850;
+      }
+
+      .button {
+        min-height: 40px;
+        font-size: 15px;
+      }
+
+      .button.primary,
+      .filter.active {
+        border-color: var(--bhagwa);
+        background: var(--bhagwa);
+        color: white;
+      }
+
+      .button.secondary {
+        border-color: rgba(20, 92, 74, 0.24);
+        color: var(--peacock-green);
+      }
+
+      .button:hover,
+      .button:focus-visible,
+      .filter:hover,
+      .filter:focus-visible,
+      .queue-card:hover,
+      .queue-card:focus-visible {
+        border-color: rgba(214, 90, 31, 0.48);
+        outline: 3px solid rgba(214, 90, 31, 0.12);
+      }
+
+      .tag {
+        min-height: 28px;
+        border-radius: 999px;
+      }
+
+      .tag.scholar,
+      .tag.new {
+        border-color: rgba(224, 168, 59, 0.34);
+        color: #8a5b10;
+      }
+
+      .tag.safety {
+        border-color: rgba(168, 62, 18, 0.24);
+        background: rgba(214, 90, 31, 0.08);
+        color: var(--deep-ochre);
+      }
+
+      .tag.accepted,
+      .tag.prototype {
+        border-color: rgba(20, 92, 74, 0.2);
+        background: rgba(20, 92, 74, 0.08);
+        color: var(--peacock-green);
+      }
+
+      .queue-card {
+        width: 100%;
+        text-align: left;
+        background: var(--panel-strong);
+      }
+
+      .queue-card.active {
+        border-color: rgba(214, 90, 31, 0.48);
+        background: rgba(255, 238, 226, 0.92);
+      }
+
+      .queue-card strong {
+        display: block;
+        margin-bottom: 5px;
+        font-size: 16px;
+      }
+
+      .queue-meta {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        margin-bottom: 10px;
+      }
+
+      .section {
+        margin-top: 16px;
+        padding-top: 16px;
+        border-top: 1px solid var(--line);
+      }
+
+      .detail-card,
+      .history-card {
+        background: rgba(255, 255, 255, 0.52);
+      }
+
+      .detail-card.strong {
+        border-left: 4px solid var(--bhagwa);
+      }
+
+      .detail-card strong,
+      .history-card strong {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      .export-output {
+        width: 100%;
+        min-height: 178px;
+        margin-top: 10px;
+        resize: vertical;
+        padding: 13px;
+        background: rgba(255, 255, 255, 0.78);
+        color: var(--ink);
+      }
+
+      .boundary {
+        border-style: dashed;
+        background: rgba(255, 255, 255, 0.34);
+      }
+
+      [hidden] {
+        display: none !important;
+      }
+
+      @media (max-width: 1120px) {
+        .workspace {
+          grid-template-columns: minmax(288px, 0.9fr) minmax(0, 1.1fr);
+        }
+
+        .rail-panel {
+          grid-column: 1 / -1;
+        }
+      }
+
+      @media (max-width: 780px) {
+        .page {
+          width: min(100% - 24px, 1240px);
+        }
+
+        .topbar,
+        .queue-meta {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .nav {
+          justify-content: flex-start;
+        }
+
+        .workspace,
+        .stats-grid,
+        .detail-grid {
+          grid-template-columns: 1fr;
+        }
+
+        h1 {
+          font-size: clamp(38px, 10vw, 48px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top" aria-label="VedaPath AI home">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
+          <div>
+            <strong>VedaPath AI</strong>
+            <span>Reviewer queue</span>
+          </div>
+        </a>
+        <nav class="nav" aria-label="Project links">
+          <a class="link" href="build-status.html">Build</a>
+          <a class="link" href="brand/brand-board.html">Brand</a>
+          <a class="link" href="blueprint.html">Blueprint</a>
+          <a class="link" href="calm.html">Calm</a>
+          <a class="link" href="daily.html">Daily</a>
+          <a class="link" href="practice.html">Practice</a>
+          <a class="link" href="library.html">Library</a>
+          <a class="link" href="seeds.html">Seeds</a>
+          <a class="link" href="retrieval.html">Retrieval</a>
+          <a class="link" href="passages.html">Review</a>
+          <a class="link" href="eval.html">Eval</a>
+          <a class="link" href="dashboard.html">Dash</a>
+          <a class="link active" href="queue.html">Queue</a>
+          <a class="link" href="path.html">Path</a>
+          <a class="link" href="compass.html">Compass</a>
+          <a class="link" href="card.html">Card</a>
+          <a class="link" href="bell.html">Bell</a>
+          <a class="link" href="reply.html">Reply</a>
+          <a class="link" href="samvada.html">Samvada</a>
+          <a class="link" href="sankalpa.html">Intent</a>
+          <a class="link" href="seva.html">Seva</a>
+          <a class="link" href="morning.html">Morning</a>
+          <a class="link" href="evening.html">Evening</a>
+          <a class="link" href="rhythm.html">Rhythm</a>
+          <span class="version">v0.4.3 queue</span>
+        </nav>
+      </header>
+
+      <section class="workspace" aria-label="Reviewer Queue workspace">
+        <aside class="panel">
+          <span class="eyebrow">Human review bridge</span>
+          <h1>Failed answers should become review cards.</h1>
+          <p class="muted">VedaPath must learn from mistakes through visible review, not silent rewrites. This prototype queues failed dashboard cases, flagged passages, and correction notes before they become accepted knowledge.</p>
+
+          <div class="logo-frame" aria-label="VedaPath reviewer queue mark">
+            <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI reviewer queue logo">
+          </div>
+
+          <div class="stats-grid" aria-label="Reviewer queue summary">
+            <article class="stat">
+              <span>Open cards</span>
+              <strong id="openCount">0</strong>
+            </article>
+            <article class="stat">
+              <span>Scholar needed</span>
+              <strong id="scholarCount">0</strong>
+            </article>
+            <article class="stat">
+              <span>Safety review</span>
+              <strong id="safetyCount">0</strong>
+            </article>
+            <article class="stat">
+              <span>Prototype accepted</span>
+              <strong id="acceptedCount">0</strong>
+            </article>
+          </div>
+
+          <div class="section">
+            <h2>Queue Readiness</h2>
+            <div class="progress" aria-label="Queue readiness percent">
+              <div id="queueBar" style="width:0%"></div>
+            </div>
+            <p class="muted" id="queueSummary" style="margin: 10px 0 0;">Review cards are ready for triage.</p>
+          </div>
+
+          <div class="section">
+            <h2>Source Of Cards</h2>
+            <div class="detail-grid">
+              <article class="detail-card">
+                <strong>Dashboard</strong>
+                <p>Blocked tests and category failures.</p>
+              </article>
+              <article class="detail-card">
+                <strong>Passages</strong>
+                <p>Flagged dossiers and missing fields.</p>
+              </article>
+              <article class="detail-card">
+                <strong>Corrections</strong>
+                <p>User notes that need review.</p>
+              </article>
+              <article class="detail-card">
+                <strong>Retrieval</strong>
+                <p>Source gaps and uncertain matches.</p>
+              </article>
+            </div>
+          </div>
+        </aside>
+
+        <section class="panel hero-panel" aria-live="polite">
+          <span class="eyebrow">Queue cards</span>
+          <h1 id="queueTitle">Review before authority.</h1>
+          <p class="muted">Each card preserves source family, risk type, reviewer need, and a recommended next action. Prototype decisions stay local in this browser.</p>
+
+          <div class="filter-row" aria-label="Queue filters">
+            <button class="filter active" type="button" data-filter="all">All</button>
+            <button class="filter" type="button" data-filter="new">New</button>
+            <button class="filter" type="button" data-filter="needs-scholar">Scholar</button>
+            <button class="filter" type="button" data-filter="safety-review">Safety</button>
+            <button class="filter" type="button" data-filter="accepted-prototype">Decided</button>
+          </div>
+
+          <section class="section">
+            <h2>Active Review Card</h2>
+            <div class="detail-grid">
+              <article class="detail-card strong">
+                <strong id="detailTitle">Select a card</strong>
+                <p id="detailIssue">Choose a queue item to see the review issue.</p>
+              </article>
+              <article class="detail-card">
+                <strong>Recommended reviewer</strong>
+                <p id="detailReviewer">Text classification reviewer</p>
+              </article>
+              <article class="detail-card">
+                <strong>Source family</strong>
+                <p id="detailSource">Bhagavad Gita | Smriti</p>
+              </article>
+              <article class="detail-card">
+                <strong>Next action</strong>
+                <p id="detailAction">Correct category and add boundary.</p>
+              </article>
+            </div>
+
+            <div class="button-row" style="margin-top: 12px;">
+              <button class="button primary" id="markScholar" type="button">Mark Needs Scholar</button>
+              <button class="button secondary" id="markSafety" type="button">Mark Safety Review</button>
+              <button class="button" id="acceptPrototype" type="button">Accept For Prototype</button>
+            </div>
+          </section>
+
+          <section class="section">
+            <h2>Queue</h2>
+            <div class="queue-list" id="queueList"></div>
+          </section>
+        </section>
+
+        <aside class="panel rail-panel">
+          <span class="eyebrow">Reviewer brief</span>
+          <h2>Copy The Handoff</h2>
+          <p class="muted">This is the bridge from prototype mistakes to a future reviewed source record, policy update, or answer-rule change.</p>
+
+          <div class="button-row">
+            <button class="button primary" id="copyBrief" type="button">Copy Queue Brief</button>
+            <button class="button" id="resetQueue" type="button">Reset Local Queue</button>
+          </div>
+          <textarea class="export-output" id="queueExport" readonly aria-label="Reviewer queue export"></textarea>
+
+          <section class="section">
+            <h2>Decision History</h2>
+            <div class="history-list" id="historyList"></div>
+          </section>
+
+          <section class="section detail-card boundary">
+            <h2>Review Boundary</h2>
+            <p>This queue is a prototype triage layer. It is not final scholarship, moderation, safety approval, source licensing, or production governance.</p>
+          </section>
+        </aside>
+      </section>
+    </main>
+
+    <script>
+      const queueKey = "vedapath.reviewerQueue.v1";
+      const memoryStore = {};
+      const storage = {
+        getItem(key) {
+          try {
+            return window.localStorage?.getItem(key) ?? memoryStore[key] ?? null;
+          } catch {
+            return memoryStore[key] ?? null;
+          }
+        },
+        setItem(key, value) {
+          memoryStore[key] = value;
+          try {
+            window.localStorage?.setItem(key, value);
+          } catch {
+            return;
+          }
+        },
+        removeItem(key) {
+          delete memoryStore[key];
+          try {
+            window.localStorage?.removeItem(key);
+          } catch {
+            return;
+          }
+        }
+      };
+
+      const seedCards = [
+        {
+          id: "opp-category",
+          title: "Oppenheimer called direct Veda",
+          origin: "Evaluation Dashboard",
+          risk: "Source-family confusion",
+          severity: "High",
+          reviewer: "Text classification reviewer",
+          source: "Bhagavad Gita | Smriti",
+          issue: "A draft calls Bhagavad Gita 11.32 a direct Veda quote.",
+          action: "Correct the source family, preserve Gita 11.32, and add the boundary: not directly from the four Vedas.",
+          status: "new"
+        },
+        {
+          id: "science-overclaim",
+          title: "Modern science overclaim",
+          origin: "Evaluation Dashboard",
+          risk: "Modern proof claim",
+          severity: "High",
+          reviewer: "Claim policy reviewer",
+          source: "Uncertain or analogy",
+          issue: "A draft says the Vedas prove quantum physics without source, context, or reviewed analogy framing.",
+          action: "Hold the answer, classify as modern analogy or unsupported claim, and require source-policy review.",
+          status: "new"
+        },
+        {
+          id: "unsafe-calm",
+          title: "Unsafe calm claim",
+          origin: "Evaluation Dashboard",
+          risk: "Safety boundary",
+          severity: "High",
+          reviewer: "Safety reviewer",
+          source: "Bhagavad Gita | Smriti",
+          issue: "A calm answer implies source reflection can replace medical or mental-health support.",
+          action: "Route to safety review and keep the boundary: reflection support only, not therapy or emergency help.",
+          status: "new"
+        },
+        {
+          id: "gayatri-ritual",
+          title: "Gayatri ritual authority",
+          origin: "Passage Review Pack",
+          risk: "Ritual authority",
+          severity: "Medium",
+          reviewer: "Ritual boundary reviewer",
+          source: "Rigveda | Veda",
+          issue: "A passage dossier needs a clearer line between explaining context and prescribing recitation or lineage rules.",
+          action: "Keep the record descriptive until verified Sanskrit, translation policy, and ritual boundary notes are complete.",
+          status: "new"
+        },
+        {
+          id: "user-correction-opp",
+          title: "User correction: Gita 11.32",
+          origin: "User correction note",
+          risk: "Correction loop",
+          severity: "Medium",
+          reviewer: "Source correction reviewer",
+          source: "Bhagavad Gita | Smriti",
+          issue: "A user corrected a popular claim: the Oppenheimer line should be labeled Bhagavad Gita 11.32, not four Vedas.",
+          action: "Accept the correction into prototype notes, then require reviewer identity before production knowledge.",
+          status: "new"
+        },
+        {
+          id: "atman-school",
+          title: "Atman and Brahman needs school context",
+          origin: "Retrieval Lab",
+          risk: "Interpretation flattening",
+          severity: "Medium",
+          reviewer: "Vedanta interpretation reviewer",
+          source: "Upanishad | Shruti",
+          issue: "A broad answer risks presenting one Vedanta reading as if all schools say the same thing.",
+          action: "Add interpretation labels, show multiple views, and keep school-specific claims behind reviewed depth.",
+          status: "new"
+        }
+      ];
+
+      let activeFilter = "all";
+      let selectedId = seedCards[0].id;
+      let queueState = readState();
+
+      const elements = {
+        openCount: document.getElementById("openCount"),
+        scholarCount: document.getElementById("scholarCount"),
+        safetyCount: document.getElementById("safetyCount"),
+        acceptedCount: document.getElementById("acceptedCount"),
+        queueBar: document.getElementById("queueBar"),
+        queueSummary: document.getElementById("queueSummary"),
+        queueTitle: document.getElementById("queueTitle"),
+        queueList: document.getElementById("queueList"),
+        detailTitle: document.getElementById("detailTitle"),
+        detailIssue: document.getElementById("detailIssue"),
+        detailReviewer: document.getElementById("detailReviewer"),
+        detailSource: document.getElementById("detailSource"),
+        detailAction: document.getElementById("detailAction"),
+        queueExport: document.getElementById("queueExport"),
+        historyList: document.getElementById("historyList")
+      };
+
+      function readState() {
+        const saved = storage.getItem(queueKey);
+        if (!saved) {
+          return {
+            cards: seedCards,
+            history: []
+          };
+        }
+        try {
+          const parsed = JSON.parse(saved);
+          const savedCards = Array.isArray(parsed.cards) ? parsed.cards : [];
+          const cards = seedCards.map((seed) => {
+            const existing = savedCards.find((card) => card.id === seed.id);
+            return existing ? { ...seed, status: existing.status || seed.status } : seed;
+          });
+          return {
+            cards,
+            history: Array.isArray(parsed.history) ? parsed.history : []
+          };
+        } catch {
+          return {
+            cards: seedCards,
+            history: []
+          };
+        }
+      }
+
+      function saveState() {
+        storage.setItem(queueKey, JSON.stringify(queueState));
+      }
+
+      function selectedCard() {
+        return queueState.cards.find((card) => card.id === selectedId) || queueState.cards[0];
+      }
+
+      function statusLabel(status) {
+        if (status === "needs-scholar") return "Needs scholar";
+        if (status === "safety-review") return "Safety review";
+        if (status === "accepted-prototype") return "Prototype accepted";
+        return "New";
+      }
+
+      function statusClass(status) {
+        if (status === "needs-scholar") return "scholar";
+        if (status === "safety-review") return "safety";
+        if (status === "accepted-prototype") return "accepted";
+        return "new";
+      }
+
+      function setStatus(status, label) {
+        const card = selectedCard();
+        queueState.cards = queueState.cards.map((item) => item.id === card.id ? { ...item, status } : item);
+        queueState.history = [
+          {
+            id: card.id,
+            title: card.title,
+            decision: label,
+            risk: card.risk,
+            source: card.source,
+            at: new Date().toLocaleString()
+          },
+          ...queueState.history
+        ].slice(0, 12);
+        saveState();
+        render();
+      }
+
+      function resetQueue() {
+        storage.removeItem(queueKey);
+        queueState = {
+          cards: seedCards,
+          history: []
+        };
+        selectedId = seedCards[0].id;
+        render();
+      }
+
+      function render() {
+        const total = queueState.cards.length;
+        const open = queueState.cards.filter((card) => card.status !== "accepted-prototype").length;
+        const scholar = queueState.cards.filter((card) => card.status === "needs-scholar").length;
+        const safety = queueState.cards.filter((card) => card.status === "safety-review").length;
+        const accepted = queueState.cards.filter((card) => card.status === "accepted-prototype").length;
+        const readiness = total ? Math.round((accepted / total) * 100) : 0;
+
+        elements.openCount.textContent = open;
+        elements.scholarCount.textContent = scholar;
+        elements.safetyCount.textContent = safety;
+        elements.acceptedCount.textContent = accepted;
+        elements.queueBar.style.width = `${readiness}%`;
+        elements.queueTitle.textContent = open ? "Review before authority." : "All prototype cards are decided.";
+        elements.queueSummary.textContent = open
+          ? `${open} cards still need review before production confidence.`
+          : "All cards have prototype decisions. Production still needs reviewer identity and source policy.";
+
+        const filtered = queueState.cards.filter((card) => activeFilter === "all" ? true : card.status === activeFilter);
+        elements.queueList.innerHTML = filtered.length ? filtered.map(renderCard).join("") : `
+          <article class="queue-card">
+            <strong>No cards in this filter</strong>
+            <p>Choose another filter to continue review.</p>
+          </article>
+        `;
+        document.querySelectorAll(".queue-card[data-id]").forEach((card) => {
+          card.addEventListener("click", () => {
+            selectedId = card.dataset.id;
+            render();
+          });
+        });
+
+        renderDetail(selectedCard());
+        renderHistory();
+        elements.queueExport.value = buildExport();
+      }
+
+      function renderCard(card) {
+        return `
+          <button class="queue-card ${card.id === selectedId ? "active" : ""}" type="button" data-id="${card.id}">
+            <div class="queue-meta">
+              <span class="tag ${statusClass(card.status)}">${statusLabel(card.status)}</span>
+              <span class="source-meta">${card.origin}</span>
+            </div>
+            <strong>${card.title}</strong>
+            <p>${card.risk} | ${card.severity}</p>
+          </button>
+        `;
+      }
+
+      function renderDetail(card) {
+        elements.detailTitle.textContent = card.title;
+        elements.detailIssue.textContent = card.issue;
+        elements.detailReviewer.textContent = card.reviewer;
+        elements.detailSource.textContent = card.source;
+        elements.detailAction.textContent = card.action;
+      }
+
+      function renderHistory() {
+        elements.historyList.innerHTML = queueState.history.length ? queueState.history.map((item) => `
+          <article class="history-card">
+            <strong>${item.decision}</strong>
+            <p>${item.title}</p>
+            <span class="source-meta">${item.at}</span>
+          </article>
+        `).join("") : `
+          <article class="history-card">
+            <strong>No local decisions yet</strong>
+            <p>Mark one card to begin a visible review trail.</p>
+          </article>
+        `;
+      }
+
+      function buildExport() {
+        const lines = [
+          "VedaPath Reviewer Queue",
+          "Release: v0.4.3 queue",
+          `Open cards: ${queueState.cards.filter((card) => card.status !== "accepted-prototype").length}`,
+          `Scholar needed: ${queueState.cards.filter((card) => card.status === "needs-scholar").length}`,
+          `Safety review: ${queueState.cards.filter((card) => card.status === "safety-review").length}`,
+          "",
+          "Cards:"
+        ];
+        queueState.cards.forEach((card) => {
+          lines.push(`- ${card.title}`);
+          lines.push(`  Status: ${statusLabel(card.status)}`);
+          lines.push(`  Origin: ${card.origin}`);
+          lines.push(`  Risk: ${card.risk}`);
+          lines.push(`  Source: ${card.source}`);
+          lines.push(`  Next: ${card.action}`);
+        });
+        if (queueState.history.length) {
+          lines.push("", "Recent local decisions:");
+          queueState.history.slice(0, 5).forEach((item) => {
+            lines.push(`- ${item.decision}: ${item.title} (${item.at})`);
+          });
+        }
+        lines.push("", "Boundary: prototype triage only. Production needs reviewer identity, source policy, source licensing, safety review, and versioned decision history.");
+        return lines.join("\n");
+      }
+
+      function copyBrief() {
+        const button = document.getElementById("copyBrief");
+        const text = elements.queueExport.value || buildExport();
+        const fallback = () => {
+          elements.queueExport.focus();
+          elements.queueExport.select();
+          document.execCommand("copy");
+          button.textContent = "Copied Brief";
+        };
+        if (navigator.clipboard?.writeText) {
+          navigator.clipboard.writeText(text).then(() => {
+            button.textContent = "Copied Brief";
+          }).catch(fallback);
+          return;
+        }
+        fallback();
+      }
+
+      document.querySelectorAll(".filter").forEach((button) => {
+        button.addEventListener("click", () => {
+          activeFilter = button.dataset.filter;
+          document.querySelectorAll(".filter").forEach((item) => item.classList.toggle("active", item === button));
+          render();
+        });
+      });
+
+      document.getElementById("markScholar").addEventListener("click", () => setStatus("needs-scholar", "Needs Scholar"));
+      document.getElementById("markSafety").addEventListener("click", () => setStatus("safety-review", "Safety Review"));
+      document.getElementById("acceptPrototype").addEventListener("click", () => setStatus("accepted-prototype", "Accepted For Prototype"));
+      document.getElementById("copyBrief").addEventListener("click", copyBrief);
+      document.getElementById("resetQueue").addEventListener("click", resetQueue);
+
+      render();
+    </script>
+  </body>
+</html>

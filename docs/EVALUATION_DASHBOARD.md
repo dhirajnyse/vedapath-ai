@@ -30,7 +30,7 @@ The dashboard makes the trust model visible without making the UI complicated.
 
 ## Current Prototype
 
-The v0.4.2 dashboard includes:
+The v0.4.2 release includes:
 
 - deterministic answer test suite
 - expected versus actual status
@@ -68,4 +68,4 @@ Before a real launch, the dashboard should become:
 
 ## Next Step
 
-v0.4.3 should add a reviewer queue that turns failed examples, flagged passages, and user correction notes into human-review cards.
+v0.4.3 adds Reviewer Queue, which turns failed examples, flagged passages, retrieval gaps, and user correction notes into human-review cards before accepted knowledge changes.

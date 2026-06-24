@@ -69,7 +69,7 @@
         display: flex;
         align-items: center;
         gap: 12px;
-        min-width: 0;
+        flex: 0 0 auto;
       }
 
       .brand img {
@@ -82,7 +82,7 @@
       .brand strong {
         display: block;
         font-size: 18px;
-      }
+      white-space: nowrap;}
 
       .brand span,
       .muted,
@@ -504,6 +504,7 @@
           <a class="link" href="passages.html">Review</a>
           <a class="link" href="eval.html">Eval</a>
           <a class="link" href="dashboard.html">Dash</a>
+          <a class="link" href="queue.html">Queue</a>
           <a class="link" href="path.html">Path</a>
           <a class="link" href="compass.html">Compass</a>
           <a class="link" href="card.html">Card</a>
@@ -515,7 +516,7 @@
           <a class="link" href="morning.html">Morning</a>
           <a class="link" href="evening.html">Evening</a>
           <a class="link" href="rhythm.html">Rhythm</a>
-          <span class="version">v0.4.2 dashboard</span>
+          <span class="version">v0.4.3 queue</span>
         </nav>
       </header>
 
@@ -618,6 +619,7 @@
               <button class="button" id="sendLibrary" type="button">Send to Library</button>
               <a class="button" href="library.html">Open Library</a>
               <a class="button" href="passages.html">Open Review</a>
+              <a class="button" href="queue.html">Open Queue</a>
             </div>
             <textarea class="seed-output" id="seedOutput" readonly hidden aria-label="Prepared source seed JSON"></textarea>
           </section>

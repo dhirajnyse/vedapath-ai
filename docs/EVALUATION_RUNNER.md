@@ -85,4 +85,4 @@ v0.4.2 turns the evaluator into a visible release dashboard:
 
 ## Next Step
 
-v0.4.3 should connect failed dashboard cases to a reviewer queue.
+v0.4.3 connects failed dashboard cases to Reviewer Queue so evaluation failures become human-review cards instead of silent fixes.
