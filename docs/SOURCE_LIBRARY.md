@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Source Library is the first visible knowledge layer for VedaPath AI. It organizes prototype source candidates so users can search, filter, save a device-local shelf, send a selected source into Source Practice, feed Source Seeds review, feed Source Path Builder, support Calm Compass routing, shape Calm Card Studio outputs, power Source Bell resets, frame Before Reply drafts, support Samvada maps, shape Sankalpa intentions, guide Seva plans, open Morning Path starts, close Evening Reflection cards, and support Calm Rhythm patterns.
+Source Library is the first visible knowledge layer for VedaPath AI. It organizes prototype source candidates so users can search, filter, save a device-local shelf, send a selected source into Source Practice, feed Source Seeds review, power Retrieval Lab ranking, feed Source Path Builder, support Calm Compass routing, shape Calm Card Studio outputs, power Source Bell resets, frame Before Reply drafts, support Samvada maps, shape Sankalpa intentions, guide Seva plans, open Morning Path starts, close Evening Reflection cards, and support Calm Rhythm patterns.
 
 ## What It Proves
 
@@ -22,6 +22,7 @@ Source Library is the first visible knowledge layer for VedaPath AI. It organize
 - The same records can support Evening Reflection without deepening rumination or self-judgment.
 - The same records can support Calm Rhythm without turning local traces into profiling or scoring.
 - The same records can become Source Seeds, where missing production fields and review gates are made explicit.
+- The same records can power Retrieval Lab, where answer drafts show source stack, match reason, confidence, and boundary.
 
 ## Current Record Shape
 
@@ -57,6 +58,12 @@ The current records are prototype candidates, not production source data.
 Source Library is for discovery. Source Seeds is for production readiness.
 
 The library can help a user find a source candidate. Seeds should help the team decide whether that candidate has enough verified text, metadata, reviewer notes, and licensing clarity to power retrieval.
+
+## Link To Retrieval Lab
+
+Retrieval Lab is for answer transparency.
+
+The lab should not simply return an answer. It should show which source was found, why it matched, which supporting records were considered, what the answer can safely say, and what still needs human review.
 
 ## Future Production Requirements
 

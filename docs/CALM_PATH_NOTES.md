@@ -121,3 +121,9 @@ The rhythm lens should never become diagnosis, therapy, surveillance, scoring, h
 Source Seeds gives the calm rooms a review-ready source-data layer. It makes citation, family, pramana level, boundary, and missing production fields visible before any source candidate powers retrieval.
 
 The seed layer should never pretend prototype citations are verified production authority.
+
+## v0.3.7 Retrieval Lab
+
+Retrieval Lab gives calm rooms a visible source-selection layer. It shows the source stack, match reason, confidence, and answer boundary before a calm answer is trusted.
+
+The retrieval layer should never turn a weak source match into certainty or a modern analogy into proof.

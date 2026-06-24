@@ -1,0 +1,1205 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VedaPath Retrieval Lab</title>
+    <style>
+      :root {
+        --bhagwa: #d65a1f;
+        --deep-ochre: #a83e12;
+        --sacred-gold: #e0a83b;
+        --warm-ivory: #fff7ea;
+        --ink: #1f1a17;
+        --muted-brown: #5b4638;
+        --peacock-green: #145c4a;
+        --deep-indigo: #29335c;
+        --line: rgba(91, 70, 56, 0.16);
+        --panel: rgba(255, 255, 255, 0.68);
+        --panel-strong: rgba(255, 255, 255, 0.9);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--warm-ivory);
+        color: var(--ink);
+        font-family: Inter, "IBM Plex Sans", system-ui, sans-serif;
+        line-height: 1.5;
+      }
+
+      button,
+      textarea {
+        font: inherit;
+      }
+
+      button {
+        cursor: pointer;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .page {
+        width: min(1240px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 22px 0 48px;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding-bottom: 18px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        min-width: 0;
+      }
+
+      .brand img {
+        width: 50px;
+        height: 50px;
+        border-radius: 8px;
+        object-fit: cover;
+      }
+
+      .brand strong {
+        display: block;
+        font-size: 18px;
+      }
+
+      .brand span,
+      .muted,
+      .small,
+      .source-card p,
+      .trace-card p,
+      .result-card p,
+      .history-card p,
+      .stat span,
+      .boundary p,
+      .source-meta {
+        color: var(--muted-brown);
+      }
+
+      .brand span,
+      .small,
+      .stat span,
+      .source-meta {
+        font-size: 13px;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .link,
+      .version {
+        display: inline-flex;
+        align-items: center;
+        min-height: 34px;
+        border-radius: 999px;
+        padding: 6px 11px;
+        font-size: 13px;
+        font-weight: 800;
+      }
+
+      .link {
+        border: 1px solid transparent;
+        color: var(--muted-brown);
+      }
+
+      .link:hover,
+      .link:focus-visible,
+      .link.active {
+        border-color: rgba(168, 62, 18, 0.22);
+        color: var(--deep-ochre);
+        outline: none;
+      }
+
+      .version {
+        border: 1px solid rgba(168, 62, 18, 0.28);
+        background: rgba(255, 255, 255, 0.42);
+        color: var(--deep-ochre);
+      }
+
+      .workspace {
+        display: grid;
+        grid-template-columns: minmax(288px, 0.86fr) minmax(0, 1.26fr) minmax(300px, 0.88fr);
+        gap: 16px;
+        align-items: start;
+        padding-top: 18px;
+      }
+
+      .panel,
+      .source-card,
+      .trace-card,
+      .result-card,
+      .history-card,
+      .stat,
+      .boundary,
+      .brief-output {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+      }
+
+      .panel {
+        padding: 18px;
+      }
+
+      .hero-panel {
+        overflow: hidden;
+        background:
+          radial-gradient(circle at 86% 12%, rgba(224, 168, 59, 0.18), transparent 34%),
+          linear-gradient(135deg, rgba(20, 92, 74, 0.1), transparent 48%),
+          rgba(255, 255, 255, 0.72);
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        min-height: 28px;
+        margin-bottom: 14px;
+        border-radius: 999px;
+        padding: 4px 10px;
+        background: rgba(214, 90, 31, 0.12);
+        color: var(--deep-ochre);
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        margin-bottom: 12px;
+        font-size: clamp(40px, 4.8vw, 64px);
+        line-height: 0.98;
+        letter-spacing: 0;
+      }
+
+      h2 {
+        margin-bottom: 12px;
+        font-size: 24px;
+      }
+
+      h3 {
+        margin-bottom: 8px;
+        font-size: 18px;
+      }
+
+      textarea {
+        width: 100%;
+        min-height: 150px;
+        resize: vertical;
+        border: 1px solid rgba(168, 62, 18, 0.28);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.72);
+        color: var(--ink);
+        padding: 13px;
+      }
+
+      textarea:focus {
+        border-color: var(--bhagwa);
+        outline: 3px solid rgba(214, 90, 31, 0.12);
+      }
+
+      .button-row,
+      .sample-row,
+      .tag-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .button,
+      .sample,
+      .tag {
+        display: inline-flex;
+        align-items: center;
+        min-height: 36px;
+        border: 1px solid rgba(168, 62, 18, 0.24);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.48);
+        color: var(--deep-ochre);
+        padding: 7px 10px;
+        font-size: 13px;
+        font-weight: 850;
+      }
+
+      .button {
+        min-height: 40px;
+        font-size: 15px;
+      }
+
+      .button.primary,
+      .sample.active {
+        border-color: var(--bhagwa);
+        background: var(--bhagwa);
+        color: white;
+      }
+
+      .button.secondary {
+        border-color: rgba(20, 92, 74, 0.24);
+        color: var(--peacock-green);
+      }
+
+      .button:hover,
+      .button:focus-visible,
+      .sample:hover,
+      .sample:focus-visible,
+      .source-card:hover,
+      .source-card:focus-visible {
+        border-color: rgba(214, 90, 31, 0.48);
+        outline: 3px solid rgba(214, 90, 31, 0.12);
+      }
+
+      .logo-frame {
+        display: grid;
+        place-items: center;
+        min-height: 172px;
+        margin: 16px 0;
+        border: 1px solid rgba(168, 62, 18, 0.16);
+        border-radius: 8px;
+        background: linear-gradient(180deg, #fff9ef 0%, #f6e4ca 100%);
+        overflow: hidden;
+      }
+
+      .logo-frame img {
+        width: min(82%, 250px);
+        height: auto;
+      }
+
+      .source-list,
+      .trace-list,
+      .result-grid,
+      .stats-grid,
+      .history-list {
+        display: grid;
+        gap: 10px;
+      }
+
+      .source-card {
+        width: 100%;
+        padding: 14px;
+        text-align: left;
+        color: inherit;
+      }
+
+      .source-card.active {
+        border-color: rgba(214, 90, 31, 0.48);
+        background: rgba(214, 90, 31, 0.08);
+      }
+
+      .source-card h3,
+      .source-card p {
+        margin-bottom: 6px;
+      }
+
+      .tag {
+        min-height: 28px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.54);
+      }
+
+      .tag.green {
+        border-color: rgba(20, 92, 74, 0.2);
+        color: var(--peacock-green);
+      }
+
+      .tag.indigo {
+        border-color: rgba(41, 51, 92, 0.2);
+        color: var(--deep-indigo);
+      }
+
+      .result-card,
+      .trace-card,
+      .history-card,
+      .boundary {
+        padding: 14px;
+      }
+
+      .result-card.strong {
+        border-left: 4px solid var(--bhagwa);
+        background: var(--panel-strong);
+      }
+
+      .result-grid,
+      .stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .result-card strong,
+      .trace-card strong,
+      .history-card strong {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      .result-card p,
+      .trace-card p,
+      .history-card p,
+      .boundary p {
+        margin-bottom: 0;
+      }
+
+      .answer-title {
+        margin-bottom: 12px;
+        font-size: clamp(30px, 3.8vw, 52px);
+        line-height: 1.02;
+      }
+
+      .source-strip {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 10px;
+        margin: 16px 0;
+        padding: 12px;
+        border: 1px solid var(--line);
+        border-left: 4px solid var(--bhagwa);
+        border-radius: 8px;
+        background: var(--panel-strong);
+      }
+
+      .source-value {
+        display: block;
+        font-weight: 900;
+      }
+
+      .score-bar {
+        height: 10px;
+        overflow: hidden;
+        border-radius: 999px;
+        background: rgba(168, 62, 18, 0.14);
+      }
+
+      .score-bar div {
+        height: 100%;
+        border-radius: inherit;
+        background: linear-gradient(90deg, var(--bhagwa), var(--sacred-gold));
+      }
+
+      .stat {
+        min-height: 82px;
+        padding: 13px;
+      }
+
+      .stat strong {
+        display: block;
+        margin-top: 4px;
+        font-size: 26px;
+        line-height: 1;
+      }
+
+      .section {
+        margin-top: 16px;
+        padding-top: 16px;
+        border-top: 1px solid var(--line);
+      }
+
+      .boundary {
+        margin-top: 16px;
+        border-style: dashed;
+        background: rgba(255, 255, 255, 0.34);
+      }
+
+      .brief-output {
+        min-height: 150px;
+        margin-top: 10px;
+        background: rgba(255, 255, 255, 0.78);
+      }
+
+      [hidden] {
+        display: none !important;
+      }
+
+      @media (max-width: 1120px) {
+        .workspace {
+          grid-template-columns: minmax(288px, 0.9fr) minmax(0, 1.1fr);
+        }
+
+        .memory-panel {
+          grid-column: 1 / -1;
+        }
+      }
+
+      @media (max-width: 780px) {
+        .page {
+          width: min(100% - 24px, 1240px);
+        }
+
+        .topbar {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .nav {
+          justify-content: flex-start;
+        }
+
+        .workspace,
+        .source-strip,
+        .result-grid,
+        .stats-grid {
+          grid-template-columns: 1fr;
+        }
+
+        h1 {
+          font-size: clamp(38px, 10vw, 48px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top" aria-label="VedaPath AI home">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
+          <div>
+            <strong>VedaPath AI</strong>
+            <span>Retrieval lab</span>
+          </div>
+        </a>
+        <nav class="nav" aria-label="Project links">
+          <a class="link" href="build-status.html">Build</a>
+          <a class="link" href="brand/brand-board.html">Brand</a>
+          <a class="link" href="blueprint.html">Blueprint</a>
+          <a class="link" href="calm.html">Calm</a>
+          <a class="link" href="daily.html">Daily</a>
+          <a class="link" href="practice.html">Practice</a>
+          <a class="link" href="library.html">Library</a>
+          <a class="link" href="seeds.html">Seeds</a>
+          <a class="link active" href="retrieval.html">Retrieval</a>
+          <a class="link" href="path.html">Path</a>
+          <a class="link" href="compass.html">Compass</a>
+          <a class="link" href="card.html">Card</a>
+          <a class="link" href="bell.html">Bell</a>
+          <a class="link" href="reply.html">Reply</a>
+          <a class="link" href="samvada.html">Samvada</a>
+          <a class="link" href="sankalpa.html">Intent</a>
+          <a class="link" href="seva.html">Seva</a>
+          <a class="link" href="morning.html">Morning</a>
+          <a class="link" href="evening.html">Evening</a>
+          <a class="link" href="rhythm.html">Rhythm</a>
+          <span class="version">v0.3.7 retrieval</span>
+        </nav>
+      </header>
+
+      <section class="workspace" aria-label="Retrieval Lab workspace">
+        <aside class="panel">
+          <span class="eyebrow">Ask against source seeds</span>
+          <h1>Retrieve before you answer.</h1>
+          <p class="muted">A calm preview of how VedaPath should search source seeds, explain why a passage was selected, and refuse overclaims when no direct source appears.</p>
+
+          <div class="logo-frame" aria-label="VedaPath retrieval mark">
+            <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI retrieval logo">
+          </div>
+
+          <label class="small" for="questionInput">Question or claim</label>
+          <textarea id="questionInput">How can I calm my mind before replying?</textarea>
+          <div class="button-row" style="margin-top: 10px;">
+            <button class="button primary" id="retrieveButton" type="button">Retrieve Sources</button>
+            <button class="button secondary" id="claimButton" type="button">Check Claim</button>
+          </div>
+
+          <div class="section">
+            <h2>Try</h2>
+            <div class="sample-row" aria-label="Sample retrieval questions">
+              <button class="sample active" type="button" data-sample="reply">Before replying</button>
+              <button class="sample" type="button" data-sample="oppenheimer">Oppenheimer quote</button>
+              <button class="sample" type="button" data-sample="gayatri">Gayatri mantra</button>
+              <button class="sample" type="button" data-sample="quantum">Quantum claim</button>
+              <button class="sample" type="button" data-sample="atman">Atman and Brahman</button>
+            </div>
+          </div>
+
+          <section class="section">
+            <h2>Source Stack</h2>
+            <div class="source-list" id="sourceStack"></div>
+          </section>
+        </aside>
+
+        <section class="panel hero-panel" aria-live="polite">
+          <span class="eyebrow">Retrieval answer draft</span>
+          <h1 class="answer-title" id="answerTitle">Return attention before reaction.</h1>
+          <p class="muted" id="answerSummary">The best current source candidate is Bhagavad Gita 6.26. It supports a calm return of attention before response, but it should not be framed as therapy or relationship advice.</p>
+
+          <div class="source-strip" aria-label="Primary retrieved source">
+            <div>
+              <span class="source-meta">Primary source</span>
+              <span class="source-value" id="resultCitation">Bhagavad Gita 6.26</span>
+            </div>
+            <div>
+              <span class="source-meta">Family</span>
+              <span class="source-value" id="resultFamily">Bhagavad Gita | Smriti</span>
+            </div>
+            <div>
+              <span class="source-meta">Confidence</span>
+              <span class="source-value" id="resultConfidence">High</span>
+            </div>
+            <div>
+              <span class="source-meta">Pramana</span>
+              <span class="source-value" id="resultPramana">Direct passage candidate</span>
+            </div>
+          </div>
+
+          <div class="section">
+            <h2>Why This Source</h2>
+            <div class="result-grid">
+              <article class="result-card strong">
+                <strong>Match reason</strong>
+                <p id="matchReason">The query mentions calm, mind, and reply. This seed is tagged for Reply, Bell, and Rhythm and focuses on returning attention.</p>
+              </article>
+              <article class="result-card">
+                <strong>Answer boundary</strong>
+                <p id="answerBoundary">Use as reflection support. Do not present it as therapy, conflict mediation, or relationship advice.</p>
+              </article>
+              <article class="result-card">
+                <strong>What the source can support</strong>
+                <p id="sourceSupport">A brief pause, a return of attention, and one less reactive next step.</p>
+              </article>
+              <article class="result-card">
+                <strong>What must be reviewed</strong>
+                <p id="reviewNeed">Verified Sanskrit, translation policy, safety note, and reviewer note.</p>
+              </article>
+            </div>
+          </div>
+
+          <div class="section">
+            <h2>Retrieval Trace</h2>
+            <div class="score-bar" aria-label="Retrieval confidence">
+              <div id="scoreBar" style="width:86%"></div>
+            </div>
+            <p class="muted" style="margin-top: 10px;"><span id="matchScore">86%</span> source fit based on query terms, use tags, source family, and boundary match.</p>
+            <div class="trace-list" id="traceList"></div>
+          </div>
+
+          <div class="section">
+            <h2>Handoff</h2>
+            <div class="button-row">
+              <button class="button primary" id="copyBrief" type="button">Copy Retrieval Brief</button>
+              <button class="button secondary" id="queueReview" type="button">Queue Review</button>
+              <a class="button" id="openSourceRoom" href="reply.html">Open Source Room</a>
+              <a class="button" href="seeds.html">Open Seeds</a>
+            </div>
+            <textarea class="brief-output" id="briefOutput" readonly hidden aria-label="Prepared retrieval brief"></textarea>
+          </div>
+        </section>
+
+        <aside class="panel memory-panel">
+          <span class="eyebrow">Transparent retrieval</span>
+          <h2>Lab Memory</h2>
+          <p class="muted">This prototype keeps only local retrieval history. Production memory needs accounts, consent, export, and reviewer-approved source records.</p>
+
+          <div class="stats-grid">
+            <article class="stat">
+              <span>Source seeds</span>
+              <strong id="seedCount">12</strong>
+            </article>
+            <article class="stat">
+              <span>Last fit</span>
+              <strong id="lastFit">86%</strong>
+            </article>
+            <article class="stat">
+              <span>Review queue</span>
+              <strong id="reviewCount">0</strong>
+            </article>
+            <article class="stat">
+              <span>History</span>
+              <strong id="historyCount">0</strong>
+            </article>
+          </div>
+
+          <div class="section">
+            <h2>Recent Retrievals</h2>
+            <div class="history-list" id="historyList"></div>
+          </div>
+
+          <div class="button-row">
+            <button class="button secondary" id="copyHistory" type="button">Copy History</button>
+            <button class="button" id="clearHistory" type="button">Clear Local Lab</button>
+          </div>
+
+          <section class="boundary">
+            <h2>Launch Boundary</h2>
+            <p>Retrieval Lab is a prototype over candidate source records. It must not claim final textual authority until passage text, editions, translations, reviewer decisions, and evaluation checks are complete.</p>
+          </section>
+        </aside>
+      </section>
+    </main>
+
+    <script>
+      const historyKey = "vedapath.retrievalLab.v1";
+      const reviewKey = "vedapath.retrievalReview.v1";
+      const memoryStore = {};
+      const storage = {
+        getItem(key) {
+          try {
+            return window.localStorage?.getItem(key) ?? memoryStore[key] ?? null;
+          } catch {
+            return memoryStore[key] ?? null;
+          }
+        },
+        setItem(key, value) {
+          memoryStore[key] = value;
+          try {
+            window.localStorage?.setItem(key, value);
+          } catch {
+            return;
+          }
+        },
+        removeItem(key) {
+          delete memoryStore[key];
+          try {
+            window.localStorage?.removeItem(key);
+          } catch {
+            return;
+          }
+        }
+      };
+
+      const samples = {
+        reply: "How can I calm my mind before replying?",
+        oppenheimer: "What scripture did Oppenheimer quote?",
+        gayatri: "Explain the Gayatri mantra with source and caution.",
+        quantum: "Do the Vedas prove quantum physics?",
+        atman: "What is the relationship between Atman and Brahman?"
+      };
+
+      const sourceRecords = [
+        {
+          id: "gita-2-48",
+          title: "Steadiness in action",
+          citation: "Bhagavad Gita 2.48",
+          family: "Bhagavad Gita | Smriti",
+          familyShort: "Gita",
+          uses: ["Calm", "Practice", "Rhythm"],
+          keywords: ["calm", "steady", "steadiness", "action", "balance", "outcome", "result", "practice"],
+          pramana: "Direct passage candidate",
+          confidence: "High",
+          answer: "Begin with steady action, not control of the result.",
+          support: "A reflective frame for balanced action and non-attachment to outcomes.",
+          boundary: "Use for reflection support, not therapy, ritual instruction, or spiritual authority.",
+          missing: "Verified Sanskrit, translation policy, edition metadata, reviewer note, licensing status.",
+          route: "practice.html"
+        },
+        {
+          id: "gita-2-47",
+          title: "Action and outcome",
+          citation: "Bhagavad Gita 2.47",
+          family: "Bhagavad Gita | Smriti",
+          familyShort: "Gita",
+          uses: ["Practice", "Morning", "Seva"],
+          keywords: ["action", "duty", "work", "outcome", "result", "morning", "seva", "effort"],
+          pramana: "Direct passage candidate",
+          confidence: "High",
+          answer: "Focus on the action that is yours to do.",
+          support: "A source candidate for effort, duty, and not turning results into identity.",
+          boundary: "Do not use this to pressure unsafe action or ignore real constraints.",
+          missing: "Verified Sanskrit, commentary variants, reviewer note, licensing status.",
+          route: "morning.html"
+        },
+        {
+          id: "gita-11-32",
+          title: "Oppenheimer quote source",
+          citation: "Bhagavad Gita 11.32",
+          family: "Bhagavad Gita | Smriti",
+          familyShort: "Gita",
+          uses: ["Claim", "Learning"],
+          keywords: ["oppenheimer", "death", "destroyer", "worlds", "quote", "gita", "mahabharata", "vedic"],
+          pramana: "Direct passage candidate",
+          confidence: "High",
+          answer: "The quote is associated with the Bhagavad Gita, not a direct passage from the four Vedas.",
+          support: "A source candidate for correcting source-family confusion.",
+          boundary: "Do not call this a direct quote from the four Vedas.",
+          missing: "Translation policy, popular quote note, reviewer note, licensing status.",
+          route: "index.html"
+        },
+        {
+          id: "rigveda-3-62-10",
+          title: "Gayatri mantra source",
+          citation: "Rigveda 3.62.10",
+          family: "Veda | Shruti",
+          familyShort: "Veda",
+          uses: ["Mantra", "Learning", "Claim"],
+          keywords: ["gayatri", "mantra", "veda", "rigveda", "savitr", "chant", "recitation", "sanskrit"],
+          pramana: "Direct passage candidate",
+          confidence: "High",
+          answer: "The Gayatri mantra is a Rigvedic source candidate that needs reverent context.",
+          support: "A future Mantra Lens candidate with Sanskrit, meter, recitation notes, and context.",
+          boundary: "Do not flatten pronunciation, ritual, or lineage context.",
+          missing: "Verified Sanskrit, IAST, meter, recitation note, translation rights.",
+          route: "blueprint.html"
+        },
+        {
+          id: "katha-1-3-3-9",
+          title: "Chariot of attention",
+          citation: "Katha Upanishad 1.3.3-9",
+          family: "Upanishad | Shruti",
+          familyShort: "Upanishad",
+          uses: ["Calm", "Practice", "Compass"],
+          keywords: ["attention", "mind", "senses", "direction", "compass", "overwhelmed", "clarity", "chariot"],
+          pramana: "Direct passage candidate",
+          confidence: "Medium-high",
+          answer: "Bring attention back to direction before the senses pull the whole moment.",
+          support: "A symbolic source candidate for attention, senses, mind, judgment, and direction.",
+          boundary: "Use as a metaphor, not diagnosis or clinical guidance.",
+          missing: "Verified Sanskrit, translation policy, symbol note, reviewer note.",
+          route: "compass.html"
+        },
+        {
+          id: "mundaka-1-1-4-5",
+          title: "Two kinds of knowing",
+          citation: "Mundaka Upanishad 1.1.4-5",
+          family: "Upanishad | Shruti",
+          familyShort: "Upanishad",
+          uses: ["Learning", "Calm", "Path"],
+          keywords: ["knowledge", "learning", "source", "facts", "meaning", "priority", "wisdom", "understand"],
+          pramana: "Direct passage candidate",
+          confidence: "Medium-high",
+          answer: "Separate practical information from deeper inquiry before answering.",
+          support: "A source candidate for sorting practical information, deeper inquiry, and source discipline.",
+          boundary: "Do not use this to dismiss practical skill, evidence, or expert help.",
+          missing: "Verified Sanskrit, translation policy, reviewer note, source edition.",
+          route: "path.html"
+        },
+        {
+          id: "chandogya-6-8-7",
+          title: "Self and ultimate reality",
+          citation: "Chandogya Upanishad 6.8.7",
+          family: "Upanishad | Shruti",
+          familyShort: "Upanishad",
+          uses: ["Learning", "Claim", "Samvada"],
+          keywords: ["atman", "brahman", "self", "ultimate", "reality", "vedanta", "nondual", "identity"],
+          pramana: "Direct passage candidate",
+          confidence: "Medium-high",
+          answer: "Atman and Brahman questions need source citation plus tradition-specific interpretation.",
+          support: "A source candidate for Atman and Brahman questions with interpretation notes.",
+          boundary: "Do not flatten Vedanta differences into one slogan.",
+          missing: "Verified Sanskrit, school notes, translation policy, reviewer note.",
+          route: "samvada.html"
+        },
+        {
+          id: "isha-1",
+          title: "Held lightly",
+          citation: "Isha Upanishad 1",
+          family: "Upanishad | Shruti",
+          familyShort: "Upanishad",
+          uses: ["Calm", "Seva", "Sankalpa"],
+          keywords: ["release", "intention", "sankalpa", "held", "lightly", "simplicity", "responsibility"],
+          pramana: "Direct passage candidate",
+          confidence: "Medium-high",
+          answer: "Hold the next action lightly without clutching at the whole future.",
+          support: "A source candidate for simplicity, responsibility, participation, and non-clutching.",
+          boundary: "Do not turn a compact verse into a complete life prescription.",
+          missing: "Verified Sanskrit, translation policy, commentary note, reviewer note.",
+          route: "sankalpa.html"
+        },
+        {
+          id: "taittiriya-1-11",
+          title: "Reverence and conduct",
+          citation: "Taittiriya Upanishad 1.11",
+          family: "Upanishad | Shruti",
+          familyShort: "Upanishad",
+          uses: ["Evening", "Seva", "Learning"],
+          keywords: ["gratitude", "teacher", "family", "conduct", "evening", "respect", "acknowledge"],
+          pramana: "Direct passage candidate",
+          confidence: "Medium-high",
+          answer: "Close the day by acknowledging support and returning to clean conduct.",
+          support: "A source candidate for gratitude, conduct, humility, and relationship with teachers and family.",
+          boundary: "Do not convert conduct teaching into guilt or control.",
+          missing: "Verified Sanskrit, context note, translation policy, reviewer note.",
+          route: "evening.html"
+        },
+        {
+          id: "gita-6-26",
+          title: "Return of attention",
+          citation: "Bhagavad Gita 6.26",
+          family: "Bhagavad Gita | Smriti",
+          familyShort: "Gita",
+          uses: ["Reply", "Bell", "Rhythm"],
+          keywords: ["reply", "respond", "reaction", "attention", "mind", "return", "pause", "bell", "rhythm"],
+          pramana: "Direct passage candidate",
+          confidence: "High",
+          answer: "Return attention before reaction.",
+          support: "A source candidate for returning attention before response.",
+          boundary: "Do not present this as conflict mediation, therapy, or relationship advice.",
+          missing: "Verified Sanskrit, translation policy, safety note, reviewer note.",
+          route: "reply.html"
+        },
+        {
+          id: "gita-3-19",
+          title: "Unattached helpful action",
+          citation: "Bhagavad Gita 3.19",
+          family: "Bhagavad Gita | Smriti",
+          familyShort: "Gita",
+          uses: ["Seva", "Sankalpa", "Rhythm"],
+          keywords: ["help", "helpful", "service", "seva", "act", "duty", "unattached", "applause"],
+          pramana: "Direct passage candidate",
+          confidence: "High",
+          answer: "Choose one helpful action without needing display or praise.",
+          support: "A source candidate for service without self-display or overextension.",
+          boundary: "Do not use this to create service guilt, savior energy, or unsafe overwork.",
+          missing: "Verified Sanskrit, commentary variants, capacity note, reviewer note.",
+          route: "seva.html"
+        },
+        {
+          id: "gita-6-17",
+          title: "Balanced rhythm",
+          citation: "Bhagavad Gita 6.17",
+          family: "Bhagavad Gita | Smriti",
+          familyShort: "Gita",
+          uses: ["Evening", "Rhythm", "Calm"],
+          keywords: ["balance", "rhythm", "sleep", "habit", "evening", "calm", "daily", "routine"],
+          pramana: "Direct passage candidate",
+          confidence: "High",
+          answer: "Let steadiness include balanced rhythm, not pressure.",
+          support: "A source candidate for balanced habits without turning the product into health advice.",
+          boundary: "Do not present this as sleep treatment, medical advice, or diagnosis.",
+          missing: "Verified Sanskrit, translation policy, health boundary, reviewer note.",
+          route: "evening.html"
+        }
+      ];
+
+      const gapRecord = {
+        id: "source-gap",
+        title: "No direct source match",
+        citation: "Source gap",
+        family: "Claim boundary | Needs review",
+        familyShort: "Gap",
+        uses: ["Claim", "Review"],
+        keywords: ["quantum", "science", "prove", "physics", "prediction"],
+        pramana: "No direct source",
+        confidence: "Low",
+        answer: "No reviewed source seed proves that claim.",
+        support: "The safe answer is to mark this as a modern analogy or unsupported claim until a precise passage and argument are reviewed.",
+        boundary: "Do not turn philosophical resonance into scientific proof.",
+        missing: "Precise passage, source edition, interpretation note, domain expert review, and claim evaluation.",
+        route: "seeds.html"
+      };
+
+      const questionInput = document.getElementById("questionInput");
+      const retrieveButton = document.getElementById("retrieveButton");
+      const claimButton = document.getElementById("claimButton");
+      const sourceStack = document.getElementById("sourceStack");
+      const traceList = document.getElementById("traceList");
+      const historyList = document.getElementById("historyList");
+      const briefOutput = document.getElementById("briefOutput");
+
+      function normalize(text) {
+        return text.toLowerCase().replace(/[^a-z0-9\s]/g, " ").replace(/\s+/g, " ").trim();
+      }
+
+      const stopwords = new Set(["the", "and", "with", "for", "from", "that", "this", "what", "when", "where", "how", "can", "does", "into", "before", "after", "about", "source"]);
+
+      let activeResult = buildResult(samples.reply);
+
+      function readArray(key) {
+        try {
+          const parsed = JSON.parse(storage.getItem(key) || "[]");
+          return Array.isArray(parsed) ? parsed : [];
+        } catch {
+          return [];
+        }
+      }
+
+      function writeArray(key, values) {
+        storage.setItem(key, JSON.stringify(values.slice(0, 20)));
+      }
+
+      function unique(values) {
+        return [...new Set(values)];
+      }
+
+      function scoreRecord(record, normalized) {
+        const tokens = normalized.split(" ").filter((token) => token.length > 2);
+        const haystack = normalize([
+          record.title,
+          record.citation,
+          record.family,
+          record.uses.join(" "),
+          record.keywords.join(" "),
+          record.answer,
+          record.support,
+          record.boundary
+        ].join(" "));
+        const keywordMatches = record.keywords.filter((keyword) => normalized.includes(keyword));
+        const tokenMatches = tokens.filter((token) => !stopwords.has(token) && haystack.includes(token));
+        let score = keywordMatches.length * 8 + unique(tokenMatches).length * 3;
+        if (normalized.includes(record.familyShort.toLowerCase())) score += 5;
+        if (record.uses.some((use) => normalized.includes(use.toLowerCase()))) score += 5;
+        if (record.id === "gita-11-32" && (normalized.includes("oppenheimer") || normalized.includes("death"))) score += 28;
+        if (record.id === "rigveda-3-62-10" && normalized.includes("gayatri")) score += 28;
+        if (record.id === "gita-6-26" && (normalized.includes("reply") || normalized.includes("respond"))) score += 24;
+        if (record.id === "chandogya-6-8-7" && (normalized.includes("atman") || normalized.includes("brahman"))) score += 28;
+        return {
+          record,
+          score,
+          matches: unique([...keywordMatches, ...tokenMatches]).slice(0, 8)
+        };
+      }
+
+      function isGapQuery(normalized) {
+        return (normalized.includes("quantum") || normalized.includes("physics") || normalized.includes("science")) &&
+          (normalized.includes("prove") || normalized.includes("veda") || normalized.includes("vedic"));
+      }
+
+      function buildResult(query) {
+        const normalized = normalize(query);
+        if (isGapQuery(normalized)) {
+          const supporting = ["mundaka-1-1-4-5", "chandogya-6-8-7"].map((id) => sourceRecords.find((record) => record.id === id));
+          return {
+            mode: "gap",
+            query,
+            primary: gapRecord,
+            supporting,
+            score: 42,
+            matches: ["quantum", "physics", "prove"],
+            title: "No direct source seed proves that claim.",
+            summary: "VedaPath should mark this as an overclaim. A philosophical comparison may be explored, but the current source set does not support saying the Vedas prove quantum physics.",
+            trace: [
+              ["Query detected", "The question asks for a scientific proof claim."],
+              ["Retrieval result", "No reviewed source seed directly supports that proof claim."],
+              ["Safe next step", "Route to review with precise passage, interpretation note, and domain check."]
+            ]
+          };
+        }
+
+        const scored = sourceRecords
+          .map((record) => scoreRecord(record, normalized))
+          .sort((a, b) => b.score - a.score);
+        const top = scored[0].score > 0 ? scored[0] : scoreRecord(sourceRecords[0], "calm action steadiness");
+        const supporting = scored
+          .filter((item) => item.record.id !== top.record.id && item.score > 0)
+          .slice(0, 2)
+          .map((item) => item.record);
+        const score = Math.min(94, Math.max(58, 54 + top.score));
+        return {
+          mode: "source",
+          query,
+          primary: top.record,
+          supporting,
+          score,
+          matches: top.matches.length ? top.matches : ["source", "boundary"],
+          title: top.record.answer,
+          summary: `${top.record.citation} is the best current candidate. ${top.record.support} VedaPath should keep the boundary visible before answering.`,
+          trace: [
+            ["Query terms", top.matches.length ? top.matches.join(", ") : "No strong lexical match, so defaulted to a calm source seed."],
+            ["Source family", top.record.family],
+            ["Use tags", top.record.uses.join(", ")],
+            ["Boundary check", top.record.boundary]
+          ]
+        };
+      }
+
+      function resultStack(result) {
+        return [result.primary, ...result.supporting].filter(Boolean);
+      }
+
+      function renderStack(result) {
+        sourceStack.innerHTML = resultStack(result).map((record, index) => `
+          <button class="source-card ${index === 0 ? "active" : ""}" type="button" data-source-id="${record.id}">
+            <h3>${index === 0 ? "Primary" : "Supporting"}: ${record.title}</h3>
+            <p>${record.citation} | ${record.family}</p>
+            <div class="tag-row">
+              ${record.uses.slice(0, 3).map((use) => `<span class="tag green">${use}</span>`).join("")}
+              <span class="tag indigo">${record.pramana}</span>
+            </div>
+          </button>
+        `).join("");
+
+        sourceStack.querySelectorAll("[data-source-id]").forEach((button) => {
+          button.addEventListener("click", () => {
+            const record = resultStack(activeResult).find((item) => item.id === button.dataset.sourceId);
+            if (!record) return;
+            activeResult = {
+              ...activeResult,
+              primary: record,
+              title: record.answer,
+              summary: `${record.citation} is now selected from the stack. ${record.support} Keep the boundary visible before using it.`,
+              score: Math.max(58, activeResult.score - 4)
+            };
+            renderAll(false);
+          });
+        });
+      }
+
+      function renderResult(result) {
+        document.getElementById("answerTitle").textContent = result.title;
+        document.getElementById("answerSummary").textContent = result.summary;
+        document.getElementById("resultCitation").textContent = result.primary.citation;
+        document.getElementById("resultFamily").textContent = result.primary.family;
+        document.getElementById("resultConfidence").textContent = result.primary.confidence;
+        document.getElementById("resultPramana").textContent = result.primary.pramana;
+        document.getElementById("matchReason").textContent = result.mode === "gap"
+          ? "The query asks for a proof claim, but the current source set does not contain a direct source seed for that claim."
+          : `Matched ${result.matches.join(", ")} against citation, use tags, source family, answer support, and boundary fields.`;
+        document.getElementById("answerBoundary").textContent = result.primary.boundary;
+        document.getElementById("sourceSupport").textContent = result.primary.support;
+        document.getElementById("reviewNeed").textContent = result.primary.missing;
+        document.getElementById("matchScore").textContent = `${result.score}%`;
+        document.getElementById("lastFit").textContent = `${result.score}%`;
+        document.getElementById("scoreBar").style.width = `${result.score}%`;
+        document.querySelector(".score-bar").setAttribute("aria-label", `Retrieval confidence ${result.score} percent`);
+        document.getElementById("openSourceRoom").setAttribute("href", result.primary.route);
+      }
+
+      function renderTrace(result) {
+        traceList.innerHTML = result.trace.map(([title, text]) => `
+          <article class="trace-card">
+            <strong>${title}</strong>
+            <p>${text}</p>
+          </article>
+        `).join("");
+      }
+
+      function renderMemory() {
+        const history = readArray(historyKey);
+        const review = readArray(reviewKey);
+        document.getElementById("seedCount").textContent = sourceRecords.length;
+        document.getElementById("historyCount").textContent = history.length;
+        document.getElementById("reviewCount").textContent = review.length;
+        historyList.innerHTML = history.length ? history.map((item) => `
+          <article class="history-card">
+            <strong>${item.citation}</strong>
+            <p>${item.query}</p>
+          </article>
+        `).join("") : `
+          <article class="history-card">
+            <strong>No retrieval history yet</strong>
+            <p>Ask a question and the local lab memory will show the source path.</p>
+          </article>
+        `;
+      }
+
+      function renderAll(saveHistory = true) {
+        renderStack(activeResult);
+        renderResult(activeResult);
+        renderTrace(activeResult);
+        if (saveHistory) saveRetrieval(activeResult);
+        renderMemory();
+      }
+
+      function saveRetrieval(result) {
+        const next = {
+          query: result.query,
+          citation: result.primary.citation,
+          score: result.score,
+          savedAt: new Date().toISOString()
+        };
+        const history = readArray(historyKey).filter((item) => item.query !== next.query || item.citation !== next.citation);
+        writeArray(historyKey, [next, ...history]);
+      }
+
+      function retrieveCurrent() {
+        activeResult = buildResult(questionInput.value.trim() || samples.reply);
+        renderAll();
+      }
+
+      function copyText(text, button, label) {
+        const fallback = () => {
+          briefOutput.hidden = false;
+          briefOutput.value = text;
+          briefOutput.select();
+          document.execCommand("copy");
+          button.textContent = label;
+        };
+
+        if (navigator.clipboard?.writeText) {
+          navigator.clipboard.writeText(text).then(() => {
+            button.textContent = label;
+          }).catch(fallback);
+          return;
+        }
+
+        fallback();
+      }
+
+      function retrievalBrief(result) {
+        return [
+          "VedaPath Retrieval Brief",
+          `Question: ${result.query}`,
+          `Primary: ${result.primary.citation}`,
+          `Family: ${result.primary.family}`,
+          `Fit: ${result.score}%`,
+          `Answer draft: ${result.title}`,
+          `Boundary: ${result.primary.boundary}`,
+          `Needs review: ${result.primary.missing}`
+        ].join("\n");
+      }
+
+      function queueReview() {
+        const item = {
+          query: activeResult.query,
+          citation: activeResult.primary.citation,
+          reason: activeResult.mode === "gap" ? "Source gap or overclaim" : "Reviewer should verify passage metadata",
+          savedAt: new Date().toISOString()
+        };
+        const queue = readArray(reviewKey).filter((entry) => entry.query !== item.query || entry.citation !== item.citation);
+        writeArray(reviewKey, [item, ...queue]);
+        document.getElementById("queueReview").textContent = "Queued";
+        renderMemory();
+      }
+
+      document.querySelectorAll(".sample").forEach((button) => {
+        button.addEventListener("click", () => {
+          document.querySelectorAll(".sample").forEach((item) => item.classList.toggle("active", item === button));
+          questionInput.value = samples[button.dataset.sample];
+          retrieveCurrent();
+        });
+      });
+
+      retrieveButton.addEventListener("click", retrieveCurrent);
+      claimButton.addEventListener("click", () => {
+        activeResult = buildResult(questionInput.value.trim() || samples.quantum);
+        renderAll();
+      });
+      document.getElementById("copyBrief").addEventListener("click", () => {
+        const text = retrievalBrief(activeResult);
+        briefOutput.hidden = false;
+        briefOutput.value = text;
+        copyText(text, document.getElementById("copyBrief"), "Copied Brief");
+      });
+      document.getElementById("queueReview").addEventListener("click", queueReview);
+      document.getElementById("copyHistory").addEventListener("click", () => {
+        const history = readArray(historyKey);
+        const text = history.length
+          ? history.map((item, index) => `${index + 1}. ${item.citation} | ${item.score}% | ${item.query}`).join("\n")
+          : "No retrieval history yet.";
+        briefOutput.hidden = false;
+        briefOutput.value = text;
+        copyText(text, document.getElementById("copyHistory"), "Copied History");
+      });
+      document.getElementById("clearHistory").addEventListener("click", () => {
+        storage.removeItem(historyKey);
+        storage.removeItem(reviewKey);
+        renderMemory();
+      });
+
+      renderAll(false);
+    </script>
+  </body>
+</html>

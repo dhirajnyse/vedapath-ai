@@ -1,6 +1,6 @@
-# v0.3.6 Prototype Notes
+# v0.3.7 Prototype Notes
 
-The v0.3.6 release turns the VedaPath AI homepage into a clickable product prototype with calm, practice, source-library, source-seeds, source-path, calm-compass, calm-card, source-bell, before-reply, samvada, sankalpa, seva, morning, evening, and rhythm surfaces.
+The v0.3.7 release turns the VedaPath AI homepage into a clickable product prototype with calm, practice, source-library, source-seeds, retrieval, source-path, calm-compass, calm-card, source-bell, before-reply, samvada, sankalpa, seva, morning, evening, and rhythm surfaces.
 
 ## Included
 
@@ -16,6 +16,7 @@ The v0.3.6 release turns the VedaPath AI homepage into a clickable product proto
 - Source Practice timer and local rhythm
 - Source Library with search, filters, shelf, and practice handoff
 - Source Seeds with structured records, review queue, missing fields, and copyable source-schema JSON
+- Retrieval Lab with source-stack ranking, match reasons, no-source claim refusal, copyable brief, and local review queue
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
 - Calm Card Studio with visual preview, local saved cards, copy text, and PNG export
@@ -32,7 +33,7 @@ The v0.3.6 release turns the VedaPath AI homepage into a clickable product proto
 
 ## Prototype Boundary
 
-The current app does not call a live LLM or retrieval backend. It uses a small curated in-page sample dataset so the first experience can test product shape, trust language, and UX simplicity before backend work begins.
+The current app does not call a live LLM or production retrieval backend. It uses a small curated in-page sample dataset so the first experience can test product shape, trust language, retrieval transparency, and UX simplicity before backend work begins.
 
 ## Why This Matters
 
@@ -44,6 +45,8 @@ This release proves the product direction:
 - deeper layers stay hidden until requested
 - source candidates can become a small personal route
 - prototype citations can become structured source records before retrieval begins
+- source records can produce a visible source stack, match reason, confidence, and boundary before an answer
+- unsupported proof claims can be refused as source gaps instead of dressed up as wisdom
 - one current-life state can route to the next useful product room
 - one source-backed action can become a shareable visual artifact
 - one source-backed minute can become a practical daily reset
@@ -56,4 +59,4 @@ This release proves the product direction:
 
 ## Next Release
 
-v0.3.7 should connect reviewed source seeds to the first retrieval prototype over verified passage data.
+v0.4.0 should add reviewed passage data, source edition metadata, translation policy, reviewer decisions, and evaluation checks.

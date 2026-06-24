@@ -15,6 +15,7 @@ It should help the team see:
 - what fields are ready for retrieval
 - what fields are missing before production
 - what a reviewer must check before a source can answer users
+- how Retrieval Lab will rank, cite, and bound answer drafts
 
 ## Current Seed Shape
 
@@ -59,6 +60,21 @@ Before any seed becomes a production source record, it needs:
 - boundary and overclaim warning
 - retrieval id and passage text
 - version history
+
+## Link To Retrieval Lab
+
+Retrieval Lab consumes the current seed shape and turns it into a transparent answer draft.
+
+The handoff is not just citation lookup. It must include:
+
+- primary source candidate
+- supporting source candidates
+- match reason
+- source family
+- confidence
+- answer boundary
+- missing review fields
+- no-source refusal when a claim is unsupported
 
 ## Guardrail
 

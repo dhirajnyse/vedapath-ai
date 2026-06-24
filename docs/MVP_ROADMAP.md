@@ -23,7 +23,7 @@ Show the product experience without a live LLM backend.
 
 Status:
 
-Completed in v0.3.6.
+Completed in v0.3.7.
 
 Core screens:
 
@@ -38,6 +38,7 @@ Core screens:
 - Source Practice
 - Source Library
 - Source Seeds
+- Retrieval Lab
 - Source Path Builder
 - Calm Compass
 - Calm Card Studio
@@ -64,7 +65,7 @@ Connect a small curated source set.
 
 Status:
 
-Active product phase. Source Seeds now shows the first structured source schema and prototype seed records.
+Active product phase. Source Seeds now shows the first structured source schema and prototype seed records. Retrieval Lab now shows the first source-stack ranking, match reason, boundary, and no-source claim refusal.
 
 Initial data:
 
@@ -80,6 +81,8 @@ Features:
 - cited answers
 - source classification
 - confidence labels
+- retrieval trace
+- no-source refusal for unsupported claims
 
 Success criteria:
 
@@ -153,6 +156,7 @@ Must have:
 - calm and practice boundary model
 - prototype source library and shelf
 - source seed schema and review queue
+- retrieval lab with source stack and match reason
 - prototype source path builder and local progress
 - calm compass routing from explicit present-state choice
 - calm card studio for shareable source-backed reflections
@@ -168,6 +172,7 @@ Should have:
 - Source Practice
 - Source Library
 - Source Seeds
+- Retrieval Lab
 - Source Path Builder
 - Calm Compass
 - Calm Card Studio
