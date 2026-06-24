@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Source Library is the first visible knowledge layer for VedaPath AI. It organizes prototype source candidates so users can search, filter, save a device-local shelf, send a selected source into Source Practice, feed Source Seeds review, power Retrieval Lab ranking, feed Source Path Builder, support Calm Compass routing, shape Calm Card Studio outputs, power Source Bell resets, frame Before Reply drafts, support Samvada maps, shape Sankalpa intentions, guide Seva plans, open Morning Path starts, close Evening Reflection cards, and support Calm Rhythm patterns.
+Source Library is the first visible knowledge layer for VedaPath AI. It organizes prototype source candidates so users can search, filter, save a device-local shelf, send a selected source into Source Practice, feed Source Seeds review, power Retrieval Lab ranking, feed Passage Review Pack dossiers, feed Source Path Builder, support Calm Compass routing, shape Calm Card Studio outputs, power Source Bell resets, frame Before Reply drafts, support Samvada maps, shape Sankalpa intentions, guide Seva plans, open Morning Path starts, close Evening Reflection cards, and support Calm Rhythm patterns.
 
 ## What It Proves
 
@@ -23,6 +23,7 @@ Source Library is the first visible knowledge layer for VedaPath AI. It organize
 - The same records can support Calm Rhythm without turning local traces into profiling or scoring.
 - The same records can become Source Seeds, where missing production fields and review gates are made explicit.
 - The same records can power Retrieval Lab, where answer drafts show source stack, match reason, confidence, and boundary.
+- The same records can enter Passage Review Pack, where allowed use, restricted use, review decisions, and evaluation checks are visible.
 
 ## Current Record Shape
 
@@ -64,6 +65,12 @@ The library can help a user find a source candidate. Seeds should help the team 
 Retrieval Lab is for answer transparency.
 
 The lab should not simply return an answer. It should show which source was found, why it matched, which supporting records were considered, what the answer can safely say, and what still needs human review.
+
+## Link To Passage Review Pack
+
+Passage Review Pack is for answer authority.
+
+A library item should not become a trusted retrieval source until its review dossier shows citation, source family, allowed use, restricted use, missing production fields, and evaluation checks.
 
 ## Future Production Requirements
 

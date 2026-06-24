@@ -127,3 +127,9 @@ The seed layer should never pretend prototype citations are verified production 
 Retrieval Lab gives calm rooms a visible source-selection layer. It shows the source stack, match reason, confidence, and answer boundary before a calm answer is trusted.
 
 The retrieval layer should never turn a weak source match into certainty or a modern analogy into proof.
+
+## v0.4.0 Passage Review Pack
+
+Passage Review Pack gives calm rooms a review gate before a source candidate becomes answer authority. It shows allowed use, restricted use, missing fields, review decision, and eval checks so calm guidance stays grounded and bounded.
+
+The review layer should never pretend prototype passage dossiers are final scholarship.

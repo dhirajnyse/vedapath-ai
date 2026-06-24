@@ -1,6 +1,6 @@
-# v0.3.7 Prototype Notes
+# v0.4.0 Prototype Notes
 
-The v0.3.7 release turns the VedaPath AI homepage into a clickable product prototype with calm, practice, source-library, source-seeds, retrieval, source-path, calm-compass, calm-card, source-bell, before-reply, samvada, sankalpa, seva, morning, evening, and rhythm surfaces.
+The v0.4.0 release turns the VedaPath AI homepage into a trusted MVP prototype with calm, practice, source-library, source-seeds, retrieval, passage-review, source-path, calm-compass, calm-card, source-bell, before-reply, samvada, sankalpa, seva, morning, evening, and rhythm surfaces.
 
 ## Included
 
@@ -17,6 +17,7 @@ The v0.3.7 release turns the VedaPath AI homepage into a clickable product proto
 - Source Library with search, filters, shelf, and practice handoff
 - Source Seeds with structured records, review queue, missing fields, and copyable source-schema JSON
 - Retrieval Lab with source-stack ranking, match reasons, no-source claim refusal, copyable brief, and local review queue
+- Passage Review Pack with passage dossiers, meaning capsules, allowed use, restricted use, missing fields, eval checks, copyable review card, and local review decisions
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
 - Calm Card Studio with visual preview, local saved cards, copy text, and PNG export
@@ -46,6 +47,7 @@ This release proves the product direction:
 - source candidates can become a small personal route
 - prototype citations can become structured source records before retrieval begins
 - source records can produce a visible source stack, match reason, confidence, and boundary before an answer
+- passage candidates can show a review decision and evaluation checks before they earn answer authority
 - unsupported proof claims can be refused as source gaps instead of dressed up as wisdom
 - one current-life state can route to the next useful product room
 - one source-backed action can become a shareable visual artifact
@@ -59,4 +61,4 @@ This release proves the product direction:
 
 ## Next Release
 
-v0.4.0 should add reviewed passage data, source edition metadata, translation policy, reviewer decisions, and evaluation checks.
+v0.4.1 should add an evaluation runner for citation mismatch, source-family confusion, unsafe calm advice, hidden interpretation layers, and overclaimed modern interpretations.

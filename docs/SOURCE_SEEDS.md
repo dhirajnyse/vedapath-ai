@@ -76,6 +76,12 @@ The handoff is not just citation lookup. It must include:
 - missing review fields
 - no-source refusal when a claim is unsupported
 
+## Link To Passage Review Pack
+
+Source Seeds defines candidate records. Passage Review Pack turns those records into review dossiers before answer authority.
+
+Each dossier should make allowed use, restricted use, reviewer decision, missing production fields, and evaluation checks visible.
+
 ## Guardrail
 
 Source Seeds must not pretend prototype citations are final authority.

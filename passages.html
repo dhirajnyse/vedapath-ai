@@ -1,0 +1,1183 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VedaPath Passage Review Pack</title>
+    <style>
+      :root {
+        --bhagwa: #d65a1f;
+        --deep-ochre: #a83e12;
+        --sacred-gold: #e0a83b;
+        --warm-ivory: #fff7ea;
+        --ink: #1f1a17;
+        --muted-brown: #5b4638;
+        --peacock-green: #145c4a;
+        --deep-indigo: #29335c;
+        --line: rgba(91, 70, 56, 0.16);
+        --panel: rgba(255, 255, 255, 0.68);
+        --panel-strong: rgba(255, 255, 255, 0.9);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--warm-ivory);
+        color: var(--ink);
+        font-family: Inter, "IBM Plex Sans", system-ui, sans-serif;
+        line-height: 1.5;
+      }
+
+      button,
+      input,
+      textarea {
+        font: inherit;
+      }
+
+      button {
+        cursor: pointer;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .page {
+        width: min(1240px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 22px 0 48px;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding-bottom: 18px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        min-width: 0;
+      }
+
+      .brand img {
+        width: 50px;
+        height: 50px;
+        border-radius: 8px;
+        object-fit: cover;
+      }
+
+      .brand strong {
+        display: block;
+        font-size: 18px;
+      }
+
+      .brand span,
+      .muted,
+      .small,
+      .passage-card p,
+      .review-card p,
+      .decision-card p,
+      .stat span,
+      .gate-card p,
+      .source-meta,
+      .timeline-card p {
+        color: var(--muted-brown);
+      }
+
+      .brand span,
+      .small,
+      .stat span,
+      .source-meta {
+        font-size: 13px;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .link,
+      .version {
+        display: inline-flex;
+        align-items: center;
+        min-height: 34px;
+        border-radius: 999px;
+        padding: 6px 11px;
+        font-size: 13px;
+        font-weight: 800;
+      }
+
+      .link {
+        border: 1px solid transparent;
+        color: var(--muted-brown);
+      }
+
+      .link:hover,
+      .link:focus-visible,
+      .link.active {
+        border-color: rgba(168, 62, 18, 0.22);
+        color: var(--deep-ochre);
+        outline: none;
+      }
+
+      .version {
+        border: 1px solid rgba(168, 62, 18, 0.28);
+        background: rgba(255, 255, 255, 0.42);
+        color: var(--deep-ochre);
+      }
+
+      .workspace {
+        display: grid;
+        grid-template-columns: minmax(288px, 0.86fr) minmax(0, 1.24fr) minmax(300px, 0.9fr);
+        gap: 16px;
+        align-items: start;
+        padding-top: 18px;
+      }
+
+      .panel,
+      .passage-card,
+      .review-card,
+      .decision-card,
+      .stat,
+      .gate-card,
+      .timeline-card,
+      .handoff-output {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+      }
+
+      .panel {
+        padding: 18px;
+      }
+
+      .hero-panel {
+        background:
+          linear-gradient(135deg, rgba(20, 92, 74, 0.08), rgba(255, 255, 255, 0.78) 42%),
+          var(--panel);
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        min-height: 28px;
+        margin-bottom: 14px;
+        border-radius: 999px;
+        padding: 4px 10px;
+        background: rgba(214, 90, 31, 0.12);
+        color: var(--deep-ochre);
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        margin-bottom: 12px;
+        font-size: clamp(40px, 4.7vw, 64px);
+        line-height: 0.98;
+        letter-spacing: 0;
+      }
+
+      h2 {
+        margin-bottom: 12px;
+        font-size: 24px;
+      }
+
+      h3 {
+        margin-bottom: 8px;
+        font-size: 18px;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        border: 1px solid rgba(168, 62, 18, 0.28);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.72);
+        color: var(--ink);
+        padding: 12px;
+      }
+
+      textarea {
+        min-height: 150px;
+        resize: vertical;
+      }
+
+      input:focus,
+      textarea:focus {
+        border-color: var(--bhagwa);
+        outline: 3px solid rgba(214, 90, 31, 0.12);
+      }
+
+      .button-row,
+      .filter-row,
+      .tag-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .button,
+      .filter-button,
+      .tag {
+        display: inline-flex;
+        align-items: center;
+        min-height: 34px;
+        border: 1px solid rgba(168, 62, 18, 0.24);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.48);
+        color: var(--deep-ochre);
+        padding: 7px 10px;
+        font-size: 13px;
+        font-weight: 850;
+      }
+
+      .button {
+        min-height: 40px;
+        font-size: 15px;
+      }
+
+      .button.primary,
+      .filter-button.active {
+        border-color: var(--bhagwa);
+        background: var(--bhagwa);
+        color: white;
+      }
+
+      .button.secondary {
+        border-color: rgba(20, 92, 74, 0.24);
+        color: var(--peacock-green);
+      }
+
+      .button:hover,
+      .button:focus-visible,
+      .filter-button:hover,
+      .filter-button:focus-visible,
+      .passage-card:hover,
+      .passage-card:focus-visible {
+        border-color: rgba(214, 90, 31, 0.48);
+        outline: 3px solid rgba(214, 90, 31, 0.12);
+      }
+
+      .passage-list,
+      .review-grid,
+      .decision-grid,
+      .stats-grid,
+      .gate-list,
+      .timeline-list {
+        display: grid;
+        gap: 10px;
+      }
+
+      .passage-card {
+        width: 100%;
+        padding: 14px;
+        text-align: left;
+        color: inherit;
+      }
+
+      .passage-card.active {
+        border-color: rgba(214, 90, 31, 0.48);
+        background: rgba(214, 90, 31, 0.08);
+      }
+
+      .passage-card h3,
+      .passage-card p {
+        margin-bottom: 6px;
+      }
+
+      .tag {
+        min-height: 28px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.54);
+      }
+
+      .tag.green {
+        border-color: rgba(20, 92, 74, 0.2);
+        color: var(--peacock-green);
+      }
+
+      .tag.indigo {
+        border-color: rgba(41, 51, 92, 0.2);
+        color: var(--deep-indigo);
+      }
+
+      .logo-frame {
+        display: grid;
+        place-items: center;
+        min-height: 168px;
+        margin: 16px 0;
+        border: 1px solid rgba(168, 62, 18, 0.16);
+        border-radius: 8px;
+        background: linear-gradient(180deg, #fff9ef 0%, #f6e4ca 100%);
+        overflow: hidden;
+      }
+
+      .logo-frame img {
+        width: min(82%, 248px);
+        height: auto;
+      }
+
+      .source-strip {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 10px;
+        margin: 16px 0;
+        padding: 12px;
+        border: 1px solid var(--line);
+        border-left: 4px solid var(--bhagwa);
+        border-radius: 8px;
+        background: var(--panel-strong);
+      }
+
+      .source-value {
+        display: block;
+        font-weight: 900;
+      }
+
+      .review-grid,
+      .decision-grid,
+      .stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .review-card,
+      .decision-card,
+      .gate-card,
+      .timeline-card {
+        padding: 14px;
+      }
+
+      .review-card.strong,
+      .decision-card.strong {
+        border-left: 4px solid var(--bhagwa);
+        background: var(--panel-strong);
+      }
+
+      .review-card strong,
+      .decision-card strong,
+      .gate-card strong,
+      .timeline-card strong {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      .review-card p,
+      .decision-card p,
+      .gate-card p,
+      .timeline-card p {
+        margin-bottom: 0;
+      }
+
+      .stat {
+        min-height: 82px;
+        padding: 13px;
+      }
+
+      .stat strong {
+        display: block;
+        margin-top: 4px;
+        font-size: 26px;
+        line-height: 1;
+      }
+
+      .progress {
+        height: 10px;
+        overflow: hidden;
+        border-radius: 999px;
+        background: rgba(168, 62, 18, 0.14);
+      }
+
+      .progress div {
+        height: 100%;
+        border-radius: inherit;
+        background: linear-gradient(90deg, var(--bhagwa), var(--sacred-gold));
+      }
+
+      .section {
+        margin-top: 16px;
+        padding-top: 16px;
+        border-top: 1px solid var(--line);
+      }
+
+      .boundary {
+        border-style: dashed;
+        background: rgba(255, 255, 255, 0.34);
+      }
+
+      .handoff-output {
+        min-height: 154px;
+        margin-top: 10px;
+        background: rgba(255, 255, 255, 0.78);
+      }
+
+      [hidden] {
+        display: none !important;
+      }
+
+      @media (max-width: 1120px) {
+        .workspace {
+          grid-template-columns: minmax(288px, 0.9fr) minmax(0, 1.1fr);
+        }
+
+        .review-panel {
+          grid-column: 1 / -1;
+        }
+      }
+
+      @media (max-width: 780px) {
+        .page {
+          width: min(100% - 24px, 1240px);
+        }
+
+        .topbar {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .nav {
+          justify-content: flex-start;
+        }
+
+        .workspace,
+        .source-strip,
+        .review-grid,
+        .decision-grid,
+        .stats-grid {
+          grid-template-columns: 1fr;
+        }
+
+        h1 {
+          font-size: clamp(38px, 10vw, 48px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top" aria-label="VedaPath AI home">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
+          <div>
+            <strong>VedaPath AI</strong>
+            <span>Passage review pack</span>
+          </div>
+        </a>
+        <nav class="nav" aria-label="Project links">
+          <a class="link" href="build-status.html">Build</a>
+          <a class="link" href="brand/brand-board.html">Brand</a>
+          <a class="link" href="blueprint.html">Blueprint</a>
+          <a class="link" href="calm.html">Calm</a>
+          <a class="link" href="daily.html">Daily</a>
+          <a class="link" href="practice.html">Practice</a>
+          <a class="link" href="library.html">Library</a>
+          <a class="link" href="seeds.html">Seeds</a>
+          <a class="link" href="retrieval.html">Retrieval</a>
+          <a class="link active" href="passages.html">Review</a>
+          <a class="link" href="path.html">Path</a>
+          <a class="link" href="compass.html">Compass</a>
+          <a class="link" href="card.html">Card</a>
+          <a class="link" href="bell.html">Bell</a>
+          <a class="link" href="reply.html">Reply</a>
+          <a class="link" href="samvada.html">Samvada</a>
+          <a class="link" href="sankalpa.html">Intent</a>
+          <a class="link" href="seva.html">Seva</a>
+          <a class="link" href="morning.html">Morning</a>
+          <a class="link" href="evening.html">Evening</a>
+          <a class="link" href="rhythm.html">Rhythm</a>
+          <span class="version">v0.4.0 review</span>
+        </nav>
+      </header>
+
+      <section class="workspace" aria-label="Passage Review Pack workspace">
+        <aside class="panel">
+          <span class="eyebrow">Reviewed passage discipline</span>
+          <h1>A source should earn the answer.</h1>
+          <p class="muted">The next trust layer for VedaPath: inspect a passage candidate, its allowed use, boundary, missing metadata, and review decision before it powers retrieval.</p>
+
+          <div class="logo-frame" aria-label="VedaPath review mark">
+            <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI review logo">
+          </div>
+
+          <label class="small" for="passageSearch">Search passage pack</label>
+          <input id="passageSearch" type="search" placeholder="Try Gita, Upanishad, calm, claim, mantra">
+
+          <div class="section">
+            <h2>Review Lens</h2>
+            <div class="filter-row" aria-label="Passage review filters">
+              <button class="filter-button active" type="button" data-filter="All">All</button>
+              <button class="filter-button" type="button" data-filter="Ready">Ready</button>
+              <button class="filter-button" type="button" data-filter="Needs Text">Needs Text</button>
+              <button class="filter-button" type="button" data-filter="Safety">Safety</button>
+              <button class="filter-button" type="button" data-filter="Claim">Claim</button>
+              <button class="filter-button" type="button" data-filter="Calm">Calm</button>
+              <button class="filter-button" type="button" data-filter="Mantra">Mantra</button>
+            </div>
+          </div>
+
+          <div class="section">
+            <h2 id="passageCount">12 passage records</h2>
+            <div class="passage-list" id="passageList"></div>
+          </div>
+        </aside>
+
+        <section class="panel hero-panel" aria-live="polite">
+          <span class="eyebrow">Selected passage dossier</span>
+          <h1 id="passageTitle">Steadiness in action.</h1>
+          <p class="muted" id="passageMeaning">Prototype meaning capsule: steadiness is practiced inside action, without turning the outcome into identity.</p>
+
+          <div class="source-strip" aria-label="Selected source metadata">
+            <div>
+              <span class="source-meta">Citation</span>
+              <span class="source-value" id="passageCitation">Bhagavad Gita 2.48</span>
+            </div>
+            <div>
+              <span class="source-meta">Family</span>
+              <span class="source-value" id="passageFamily">Bhagavad Gita | Smriti</span>
+            </div>
+            <div>
+              <span class="source-meta">Review status</span>
+              <span class="source-value" id="passageStatus">Ready for prototype</span>
+            </div>
+            <div>
+              <span class="source-meta">Gate fit</span>
+              <span class="source-value" id="passageFit">74%</span>
+            </div>
+          </div>
+
+          <section class="section">
+            <h2>Evidence Card</h2>
+            <div class="review-grid">
+              <article class="review-card strong">
+                <strong>Meaning capsule</strong>
+                <p id="meaningCard">Use as a calm action frame: do the next right action with steadiness, without measuring the self by the result.</p>
+              </article>
+              <article class="review-card">
+                <strong>Prototype text policy</strong>
+                <p id="textPolicy">Show citation and paraphrase only until verified Sanskrit, edition, translation rights, and reviewer note are present.</p>
+              </article>
+              <article class="review-card">
+                <strong>Allowed use</strong>
+                <p id="allowedUse">Calm, Practice, Rhythm</p>
+              </article>
+              <article class="review-card">
+                <strong>Do not use as</strong>
+                <p id="doNotUse">Therapy, ritual instruction, or spiritual authority.</p>
+              </article>
+            </div>
+          </section>
+
+          <section class="section">
+            <h2>Review Decision</h2>
+            <div class="decision-grid">
+              <article class="decision-card strong">
+                <strong>Current decision</strong>
+                <p id="reviewDecision">Accept for prototype only. Needs source edition and translation policy before production retrieval.</p>
+              </article>
+              <article class="decision-card">
+                <strong>Missing before production</strong>
+                <p id="missingFields">Verified Sanskrit, source edition, translation policy, reviewer note, licensing status.</p>
+              </article>
+              <article class="decision-card">
+                <strong>Eval checks</strong>
+                <p id="evalChecks">Citation shown, family label visible, boundary visible, no therapy claim.</p>
+              </article>
+              <article class="decision-card">
+                <strong>Answer boundary</strong>
+                <p id="answerBoundary">Use as reflection support, not a command or diagnosis.</p>
+              </article>
+            </div>
+          </section>
+
+          <section class="section">
+            <h2>Handoff</h2>
+            <div class="button-row">
+              <button class="button primary" id="acceptButton" type="button">Accept Prototype</button>
+              <button class="button secondary" id="scholarButton" type="button">Needs Scholar</button>
+              <button class="button" id="flagButton" type="button">Flag Boundary</button>
+              <button class="button" id="copyButton" type="button">Copy Review Card</button>
+              <a class="button" id="openRetrieval" href="retrieval.html">Open Retrieval</a>
+            </div>
+            <textarea class="handoff-output" id="handoffOutput" readonly hidden aria-label="Prepared passage review handoff"></textarea>
+          </section>
+        </section>
+
+        <aside class="panel review-panel">
+          <span class="eyebrow">MVP evidence gate</span>
+          <h2>Review Pack Health</h2>
+          <p class="muted">This is the first visible bridge from source seeds to production-grade retrieval. It keeps ambition honest.</p>
+
+          <div class="stats-grid">
+            <article class="stat">
+              <span>Passage records</span>
+              <strong id="totalPassages">12</strong>
+            </article>
+            <article class="stat">
+              <span>Prototype-ready</span>
+              <strong id="readyCount">5</strong>
+            </article>
+            <article class="stat">
+              <span>Local decisions</span>
+              <strong id="decisionCount">0</strong>
+            </article>
+            <article class="stat">
+              <span>Production-ready</span>
+              <strong id="productionReady">0</strong>
+            </article>
+          </div>
+
+          <div class="section">
+            <h2>Launch Gate</h2>
+            <div class="progress" aria-label="Review gate 64 percent">
+              <div id="gateBar" style="width:64%"></div>
+            </div>
+            <p class="muted" id="gateText" style="margin-top: 10px;">Passage structure is usable. Production authority still needs verified text, editions, translation rights, and human review.</p>
+          </div>
+
+          <section class="section">
+            <h2>Gate Checklist</h2>
+            <div class="gate-list">
+              <article class="gate-card">
+                <strong>1. Identify</strong>
+                <p>Every answer must show citation and source family before interpretation.</p>
+              </article>
+              <article class="gate-card">
+                <strong>2. Bound</strong>
+                <p>Every record must say what the passage must not be used to claim.</p>
+              </article>
+              <article class="gate-card">
+                <strong>3. Review</strong>
+                <p>Human review happens before a user correction becomes accepted knowledge.</p>
+              </article>
+              <article class="gate-card">
+                <strong>4. Evaluate</strong>
+                <p>Run checks for source-family confusion, unsafe advice, and modern overclaim.</p>
+              </article>
+            </div>
+          </section>
+
+          <section class="section">
+            <h2>Decision Timeline</h2>
+            <div class="timeline-list" id="timelineList"></div>
+          </section>
+
+          <section class="section gate-card boundary">
+            <h2>Trust Boundary</h2>
+            <p>Passage Review Pack is not final scholarship. It is the review operating system: citation, category, allowed use, missing fields, and evaluation checks stay visible until the real reviewed corpus is ready.</p>
+          </section>
+        </aside>
+      </section>
+    </main>
+
+    <script>
+      const decisionKey = "vedapath.passageReview.v1";
+      const memoryStore = {};
+      const storage = {
+        getItem(key) {
+          try {
+            return window.localStorage?.getItem(key) ?? memoryStore[key] ?? null;
+          } catch {
+            return memoryStore[key] ?? null;
+          }
+        },
+        setItem(key, value) {
+          memoryStore[key] = value;
+          try {
+            window.localStorage?.setItem(key, value);
+          } catch {
+            return;
+          }
+        },
+        removeItem(key) {
+          delete memoryStore[key];
+          try {
+            window.localStorage?.removeItem(key);
+          } catch {
+            return;
+          }
+        }
+      };
+
+      const passageRecords = [
+        {
+          id: "gita-2-48",
+          title: "Steadiness in action",
+          citation: "Bhagavad Gita 2.48",
+          family: "Bhagavad Gita | Smriti",
+          tags: ["Ready", "Calm", "Practice"],
+          fit: 74,
+          route: "practice.html",
+          meaning: "Prototype meaning capsule: steadiness is practiced inside action, without turning the outcome into identity.",
+          meaningCard: "Use as a calm action frame: do the next right action with steadiness, without measuring the self by the result.",
+          textPolicy: "Show citation and paraphrase only until verified Sanskrit, edition, translation rights, and reviewer note are present.",
+          allowed: "Calm, Practice, Rhythm",
+          doNotUse: "Therapy, ritual instruction, or spiritual authority.",
+          decision: "Accept for prototype only. Needs source edition and translation policy before production retrieval.",
+          missing: "Verified Sanskrit, source edition, translation policy, reviewer note, licensing status.",
+          evals: "Citation shown, family label visible, boundary visible, no therapy claim.",
+          boundary: "Use as reflection support, not a command or diagnosis."
+        },
+        {
+          id: "gita-2-47",
+          title: "Action and outcome",
+          citation: "Bhagavad Gita 2.47",
+          family: "Bhagavad Gita | Smriti",
+          tags: ["Ready", "Morning", "Seva"],
+          fit: 72,
+          route: "morning.html",
+          meaning: "Prototype meaning capsule: focus on the action that is actually yours, without pretending you control every result.",
+          meaningCard: "Useful for morning focus and clean effort. The passage should not become pressure to act without wisdom.",
+          textPolicy: "Prototype paraphrase only until source edition, translation policy, and commentary variants are reviewed.",
+          allowed: "Morning, Seva, Practice",
+          doNotUse: "Productivity pressure, unsafe duty, or ignoring constraints.",
+          decision: "Accept for prototype only with a visible capacity boundary.",
+          missing: "Verified Sanskrit, translation policy, commentary variants, capacity note.",
+          evals: "No guilt language, no unsafe duty claim, citation visible.",
+          boundary: "Do not use this to pressure unsafe action or ignore real constraints."
+        },
+        {
+          id: "gita-11-32",
+          title: "Oppenheimer quote source",
+          citation: "Bhagavad Gita 11.32",
+          family: "Bhagavad Gita | Smriti",
+          tags: ["Ready", "Claim"],
+          fit: 82,
+          route: "retrieval.html",
+          meaning: "Prototype meaning capsule: the famous quote belongs to the Gita's cosmic-form scene, not directly to the four Vedas.",
+          meaningCard: "Use to correct source category gently while preserving cultural context.",
+          textPolicy: "Quote handling needs translation policy and popular rendering note before production.",
+          allowed: "Claim Checker, Retrieval, Learning",
+          doNotUse: "Direct Veda citation or sensational film quote without context.",
+          decision: "Accept for prototype claim correction. Needs translation and quote-source policy.",
+          missing: "Translation policy, popular quote note, reviewer note, licensing status.",
+          evals: "Must say Gita, must not say four Vedas, must show Smriti label.",
+          boundary: "Do not call this a direct quote from the four Vedas."
+        },
+        {
+          id: "rigveda-3-62-10",
+          title: "Gayatri mantra source",
+          citation: "Rigveda 3.62.10",
+          family: "Veda | Shruti",
+          tags: ["Needs Text", "Mantra", "Claim"],
+          fit: 66,
+          route: "blueprint.html",
+          meaning: "Prototype meaning capsule: a revered Vedic mantra that must be handled with source, pronunciation, and practice caution.",
+          meaningCard: "Use for Mantra Lens planning, not casual instruction. The user should see reverence and limits.",
+          textPolicy: "Needs verified Sanskrit, IAST, meter, recitation note, and translation rights before full display.",
+          allowed: "Mantra Lens, Learning, Claim Checker",
+          doNotUse: "Ritual prescription, casual pronunciation certainty, or universal slogan.",
+          decision: "Needs text and tradition review before production use.",
+          missing: "Verified Sanskrit, IAST, meter, recitation note, translation rights.",
+          evals: "Must show Shruti label, must avoid ritual instruction, must show recitation caution.",
+          boundary: "Do not flatten pronunciation, ritual, or lineage context."
+        },
+        {
+          id: "katha-1-3-3-9",
+          title: "Chariot of attention",
+          citation: "Katha Upanishad 1.3.3-9",
+          family: "Upanishad | Shruti",
+          tags: ["Safety", "Calm"],
+          fit: 68,
+          route: "compass.html",
+          meaning: "Prototype meaning capsule: attention needs direction, not force. The metaphor can help users name what is pulling them.",
+          meaningCard: "Use as a symbolic attention frame in Compass and Practice. Keep it clearly metaphorical.",
+          textPolicy: "Needs verified Sanskrit, translation policy, and symbol note before deeper use.",
+          allowed: "Compass, Practice, Calm",
+          doNotUse: "Clinical diagnosis, control language, or mental-health replacement.",
+          decision: "Needs safety review before wider calm use.",
+          missing: "Verified Sanskrit, translation policy, symbol note, safety reviewer note.",
+          evals: "Must say metaphor, must not diagnose, must route crisis or clinical needs away.",
+          boundary: "Use as a metaphor, not diagnosis or clinical guidance."
+        },
+        {
+          id: "mundaka-1-1-4-5",
+          title: "Two kinds of knowing",
+          citation: "Mundaka Upanishad 1.1.4-5",
+          family: "Upanishad | Shruti",
+          tags: ["Ready", "Learning"],
+          fit: 70,
+          route: "path.html",
+          meaning: "Prototype meaning capsule: separate practical information from deeper inquiry so answers do not pretend every question has the same kind of proof.",
+          meaningCard: "Use to teach source discipline and question sorting.",
+          textPolicy: "Prototype paraphrase only until edition and translation policy are reviewed.",
+          allowed: "Learning Path, Retrieval, Source Policy",
+          doNotUse: "Anti-science language or dismissal of practical knowledge.",
+          decision: "Accept for prototype education and source hygiene.",
+          missing: "Verified Sanskrit, translation policy, reviewer note, source edition.",
+          evals: "No dismissal of evidence, family label visible, question type visible.",
+          boundary: "Do not use this to dismiss practical skill, evidence, or expert help."
+        },
+        {
+          id: "chandogya-6-8-7",
+          title: "Self and ultimate reality",
+          citation: "Chandogya Upanishad 6.8.7",
+          family: "Upanishad | Shruti",
+          tags: ["Needs Text", "Claim"],
+          fit: 64,
+          route: "samvada.html",
+          meaning: "Prototype meaning capsule: self and ultimate reality questions require tradition-specific interpretation, not one flattened slogan.",
+          meaningCard: "Use as a doorway into Samvada, showing that schools of Vedanta read the relationship differently.",
+          textPolicy: "Needs verified Sanskrit, translation policy, school notes, and reviewer note.",
+          allowed: "Samvada, Learning, Claim Checker",
+          doNotUse: "One-school universal claim or simplistic everything-is-one statement.",
+          decision: "Needs interpretation review before broad use.",
+          missing: "Verified Sanskrit, school notes, translation policy, reviewer note.",
+          evals: "Must show interpretation layer, must not flatten schools, must mark uncertainty.",
+          boundary: "Do not flatten Vedanta differences into one slogan."
+        },
+        {
+          id: "isha-1",
+          title: "Held lightly",
+          citation: "Isha Upanishad 1",
+          family: "Upanishad | Shruti",
+          tags: ["Safety", "Calm", "Seva"],
+          fit: 62,
+          route: "sankalpa.html",
+          meaning: "Prototype meaning capsule: hold action and possession lightly, without converting a compact verse into total life advice.",
+          meaningCard: "Use for Sankalpa and Seva when the user needs a small action with less clutching.",
+          textPolicy: "Needs translation policy, commentary note, and reviewer note before production.",
+          allowed: "Sankalpa, Seva, Calm",
+          doNotUse: "Financial advice, renunciation command, or moral pressure.",
+          decision: "Needs safety and commentary review.",
+          missing: "Verified Sanskrit, translation policy, commentary note, reviewer note.",
+          evals: "No financial instruction, no shame, boundary visible.",
+          boundary: "Do not turn a compact verse into a complete life prescription."
+        },
+        {
+          id: "taittiriya-1-11",
+          title: "Reverence and conduct",
+          citation: "Taittiriya Upanishad 1.11",
+          family: "Upanishad | Shruti",
+          tags: ["Needs Text", "Evening"],
+          fit: 60,
+          route: "evening.html",
+          meaning: "Prototype meaning capsule: gratitude and conduct can close the day without turning reflection into guilt.",
+          meaningCard: "Use for Evening Reflection and Seva with a gentle acknowledgement frame.",
+          textPolicy: "Needs verified text, context note, translation policy, and reviewer note.",
+          allowed: "Evening, Seva, Learning",
+          doNotUse: "Family guilt, authority pressure, or control.",
+          decision: "Needs context review before broader use.",
+          missing: "Verified Sanskrit, context note, translation policy, reviewer note.",
+          evals: "No guilt language, context visible, family pressure avoided.",
+          boundary: "Do not convert conduct teaching into guilt or control."
+        },
+        {
+          id: "gita-6-26",
+          title: "Return of attention",
+          citation: "Bhagavad Gita 6.26",
+          family: "Bhagavad Gita | Smriti",
+          tags: ["Ready", "Safety", "Calm"],
+          fit: 78,
+          route: "reply.html",
+          meaning: "Prototype meaning capsule: when the mind moves, return attention gently before responding.",
+          meaningCard: "Use for Before Reply and Bell as a pause and return frame.",
+          textPolicy: "Needs translation policy and safety note before production calm use.",
+          allowed: "Reply, Bell, Rhythm",
+          doNotUse: "Conflict mediation, therapy, or relationship advice.",
+          decision: "Accept for prototype with safety boundary visible.",
+          missing: "Verified Sanskrit, translation policy, safety note, reviewer note.",
+          evals: "No therapy claim, no relationship advice, pause action visible.",
+          boundary: "Do not present this as conflict mediation, therapy, or relationship advice."
+        },
+        {
+          id: "gita-3-19",
+          title: "Unattached helpful action",
+          citation: "Bhagavad Gita 3.19",
+          family: "Bhagavad Gita | Smriti",
+          tags: ["Safety", "Seva"],
+          fit: 64,
+          route: "seva.html",
+          meaning: "Prototype meaning capsule: helpful action should stay within capacity and not become a display of the self.",
+          meaningCard: "Use for Seva Planner when a user wants one small helpful act.",
+          textPolicy: "Needs commentary variants and capacity note before production.",
+          allowed: "Seva, Sankalpa, Rhythm",
+          doNotUse: "Service guilt, savior identity, or unsafe overwork.",
+          decision: "Needs capacity and safety review before production.",
+          missing: "Verified Sanskrit, commentary variants, capacity note, reviewer note.",
+          evals: "Capacity visible, no guilt, no savior framing.",
+          boundary: "Do not use this to create service guilt, savior energy, or unsafe overwork."
+        },
+        {
+          id: "gita-6-17",
+          title: "Balanced rhythm",
+          citation: "Bhagavad Gita 6.17",
+          family: "Bhagavad Gita | Smriti",
+          tags: ["Safety", "Calm"],
+          fit: 66,
+          route: "rhythm.html",
+          meaning: "Prototype meaning capsule: steadiness includes balanced rhythm, not pressure to optimize every moment.",
+          meaningCard: "Use for Rhythm and Evening as a habit balance frame.",
+          textPolicy: "Needs health boundary, translation policy, and reviewer note before production.",
+          allowed: "Rhythm, Evening, Calm",
+          doNotUse: "Sleep treatment, health diagnosis, or medical advice.",
+          decision: "Needs health boundary review before production.",
+          missing: "Verified Sanskrit, translation policy, health boundary, reviewer note.",
+          evals: "No medical advice, no diagnosis, boundary visible.",
+          boundary: "Do not present this as sleep treatment, medical advice, or diagnosis."
+        }
+      ];
+
+      const elements = {
+        passageSearch: document.getElementById("passageSearch"),
+        passageList: document.getElementById("passageList"),
+        passageCount: document.getElementById("passageCount"),
+        passageTitle: document.getElementById("passageTitle"),
+        passageMeaning: document.getElementById("passageMeaning"),
+        passageCitation: document.getElementById("passageCitation"),
+        passageFamily: document.getElementById("passageFamily"),
+        passageStatus: document.getElementById("passageStatus"),
+        passageFit: document.getElementById("passageFit"),
+        meaningCard: document.getElementById("meaningCard"),
+        textPolicy: document.getElementById("textPolicy"),
+        allowedUse: document.getElementById("allowedUse"),
+        doNotUse: document.getElementById("doNotUse"),
+        reviewDecision: document.getElementById("reviewDecision"),
+        missingFields: document.getElementById("missingFields"),
+        evalChecks: document.getElementById("evalChecks"),
+        answerBoundary: document.getElementById("answerBoundary"),
+        totalPassages: document.getElementById("totalPassages"),
+        readyCount: document.getElementById("readyCount"),
+        decisionCount: document.getElementById("decisionCount"),
+        productionReady: document.getElementById("productionReady"),
+        gateBar: document.getElementById("gateBar"),
+        gateText: document.getElementById("gateText"),
+        timelineList: document.getElementById("timelineList"),
+        handoffOutput: document.getElementById("handoffOutput"),
+        acceptButton: document.getElementById("acceptButton"),
+        scholarButton: document.getElementById("scholarButton"),
+        flagButton: document.getElementById("flagButton"),
+        copyButton: document.getElementById("copyButton"),
+        openRetrieval: document.getElementById("openRetrieval")
+      };
+
+      let selectedId = "gita-2-48";
+      let activeFilter = "All";
+
+      function readDecisions() {
+        try {
+          const parsed = JSON.parse(storage.getItem(decisionKey) || "[]");
+          return Array.isArray(parsed) ? parsed : [];
+        } catch {
+          return [];
+        }
+      }
+
+      function writeDecisions(decisions) {
+        storage.setItem(decisionKey, JSON.stringify(decisions.slice(0, 24)));
+      }
+
+      function selectedRecord() {
+        return passageRecords.find((record) => record.id === selectedId) || passageRecords[0];
+      }
+
+      function matchesFilter(record) {
+        if (activeFilter === "All") return true;
+        return record.tags.includes(activeFilter);
+      }
+
+      function matchesSearch(record) {
+        const query = elements.passageSearch.value.trim().toLowerCase();
+        if (!query) return true;
+        return [
+          record.title,
+          record.citation,
+          record.family,
+          record.tags.join(" "),
+          record.meaning,
+          record.boundary
+        ].join(" ").toLowerCase().includes(query);
+      }
+
+      function recordStatus(record) {
+        if (record.tags.includes("Ready")) return "Ready for prototype";
+        if (record.tags.includes("Needs Text")) return "Needs text review";
+        if (record.tags.includes("Safety")) return "Needs safety review";
+        return "Needs review";
+      }
+
+      function renderPassageList() {
+        const filtered = passageRecords.filter((record) => matchesFilter(record) && matchesSearch(record));
+        if (!filtered.some((record) => record.id === selectedId) && filtered[0]) {
+          selectedId = filtered[0].id;
+        }
+
+        elements.passageCount.textContent = `${filtered.length} passage record${filtered.length === 1 ? "" : "s"}`;
+        elements.passageList.innerHTML = filtered.length ? filtered.map((record) => `
+          <button class="passage-card ${record.id === selectedId ? "active" : ""}" type="button" data-passage-id="${record.id}">
+            <h3>${record.title}</h3>
+            <p>${record.citation} | ${record.family}</p>
+            <div class="tag-row">
+              ${record.tags.slice(0, 3).map((tag) => `<span class="tag ${tag === "Ready" ? "green" : "indigo"}">${tag}</span>`).join("")}
+            </div>
+          </button>
+        `).join("") : `
+          <article class="passage-card">
+            <h3>No passage found</h3>
+            <p>Try a broader citation, use-case, or review lens.</p>
+          </article>
+        `;
+
+        elements.passageList.querySelectorAll("[data-passage-id]").forEach((button) => {
+          button.addEventListener("click", () => {
+            selectedId = button.dataset.passageId;
+            renderAll();
+          });
+        });
+      }
+
+      function renderSelected() {
+        const record = selectedRecord();
+        elements.passageTitle.textContent = `${record.title}.`;
+        elements.passageMeaning.textContent = record.meaning;
+        elements.passageCitation.textContent = record.citation;
+        elements.passageFamily.textContent = record.family;
+        elements.passageStatus.textContent = recordStatus(record);
+        elements.passageFit.textContent = `${record.fit}%`;
+        elements.meaningCard.textContent = record.meaningCard;
+        elements.textPolicy.textContent = record.textPolicy;
+        elements.allowedUse.textContent = record.allowed;
+        elements.doNotUse.textContent = record.doNotUse;
+        elements.reviewDecision.textContent = record.decision;
+        elements.missingFields.textContent = record.missing;
+        elements.evalChecks.textContent = record.evals;
+        elements.answerBoundary.textContent = record.boundary;
+        elements.openRetrieval.setAttribute("href", record.route);
+      }
+
+      function renderHealth() {
+        const decisions = readDecisions();
+        const ready = passageRecords.filter((record) => record.tags.includes("Ready")).length;
+        const gate = Math.min(82, 64 + decisions.length * 2);
+        elements.totalPassages.textContent = passageRecords.length;
+        elements.readyCount.textContent = ready;
+        elements.decisionCount.textContent = decisions.length;
+        elements.productionReady.textContent = "0";
+        elements.gateBar.style.width = `${gate}%`;
+        elements.gateBar.parentElement.setAttribute("aria-label", `Review gate ${gate} percent`);
+        elements.gateText.textContent = decisions.length
+          ? "Local decisions are forming. The next real gate is verified text, translation rights, reviewer identities, and evaluation runs."
+          : "Passage structure is usable. Production authority still needs verified text, editions, translation rights, and human review.";
+
+        elements.timelineList.innerHTML = decisions.length ? decisions.map((decision) => `
+          <article class="timeline-card">
+            <strong>${decision.action}: ${decision.citation}</strong>
+            <p>${decision.note}</p>
+          </article>
+        `).join("") : `
+          <article class="timeline-card">
+            <strong>No local decisions yet</strong>
+            <p>Accept, flag, or route a passage to scholar review to preview the review operating model.</p>
+          </article>
+        `;
+      }
+
+      function reviewPayload(record) {
+        return {
+          id: record.id,
+          citation: record.citation,
+          family: record.family,
+          status: recordStatus(record),
+          meaningCapsule: record.meaningCard,
+          allowedUse: record.allowed,
+          doNotUseAs: record.doNotUse,
+          decision: record.decision,
+          missingBeforeProduction: record.missing,
+          evalChecks: record.evals,
+          boundary: record.boundary
+        };
+      }
+
+      function addDecision(action, note) {
+        const record = selectedRecord();
+        const item = {
+          action,
+          citation: record.citation,
+          note,
+          savedAt: new Date().toISOString()
+        };
+        const decisions = readDecisions().filter((decision) => decision.citation !== item.citation || decision.action !== item.action);
+        writeDecisions([item, ...decisions]);
+        renderHealth();
+      }
+
+      function copyText(text, button, doneLabel) {
+        const fallback = () => {
+          elements.handoffOutput.hidden = false;
+          elements.handoffOutput.value = text;
+          elements.handoffOutput.select();
+          document.execCommand("copy");
+          button.textContent = doneLabel;
+        };
+
+        if (navigator.clipboard?.writeText) {
+          navigator.clipboard.writeText(text).then(() => {
+            button.textContent = doneLabel;
+          }).catch(fallback);
+          return;
+        }
+
+        fallback();
+      }
+
+      function copyReviewCard() {
+        const text = JSON.stringify(reviewPayload(selectedRecord()), null, 2);
+        elements.handoffOutput.hidden = false;
+        elements.handoffOutput.value = text;
+        copyText(text, elements.copyButton, "Copied Review");
+      }
+
+      function renderAll() {
+        renderPassageList();
+        renderSelected();
+        renderHealth();
+      }
+
+      document.querySelectorAll(".filter-button").forEach((button) => {
+        button.addEventListener("click", () => {
+          activeFilter = button.dataset.filter;
+          document.querySelectorAll(".filter-button").forEach((item) => item.classList.toggle("active", item === button));
+          renderAll();
+        });
+      });
+
+      elements.passageSearch.addEventListener("input", renderAll);
+      elements.acceptButton.addEventListener("click", () => {
+        addDecision("Accepted for prototype", "Safe for prototype use with citation, family label, and boundary visible.");
+        elements.acceptButton.textContent = "Accepted";
+      });
+      elements.scholarButton.addEventListener("click", () => {
+        addDecision("Needs scholar", "Route to reviewer before production authority or deeper interpretation.");
+        elements.scholarButton.textContent = "Scholar Routed";
+      });
+      elements.flagButton.addEventListener("click", () => {
+        addDecision("Boundary flagged", selectedRecord().boundary);
+        elements.flagButton.textContent = "Boundary Flagged";
+      });
+      elements.copyButton.addEventListener("click", copyReviewCard);
+
+      renderAll();
+    </script>
+  </body>
+</html>

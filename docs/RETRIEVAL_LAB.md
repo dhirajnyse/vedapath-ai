@@ -60,6 +60,12 @@ Before Retrieval Lab becomes authoritative, VedaPath needs:
 - retrieval ids
 - evaluation checks for category confusion and overclaiming
 
+## Link To Passage Review Pack
+
+Retrieval Lab finds candidate sources. Passage Review Pack decides whether a candidate can safely support an answer.
+
+The retrieval stack should not become authoritative until each source candidate has a visible review dossier with allowed use, answer boundary, missing production fields, and evaluation checks.
+
 ## Why It Matters
 
 The calming effect of VedaPath should come from clarity, not certainty theater.

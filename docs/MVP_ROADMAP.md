@@ -23,7 +23,7 @@ Show the product experience without a live LLM backend.
 
 Status:
 
-Completed in v0.3.7.
+Completed in v0.4.0.
 
 Core screens:
 
@@ -39,6 +39,7 @@ Core screens:
 - Source Library
 - Source Seeds
 - Retrieval Lab
+- Passage Review Pack
 - Source Path Builder
 - Calm Compass
 - Calm Card Studio
@@ -65,7 +66,7 @@ Connect a small curated source set.
 
 Status:
 
-Active product phase. Source Seeds now shows the first structured source schema and prototype seed records. Retrieval Lab now shows the first source-stack ranking, match reason, boundary, and no-source claim refusal.
+Active product phase. Source Seeds now shows the first structured source schema and prototype seed records. Retrieval Lab now shows the first source-stack ranking, match reason, boundary, and no-source claim refusal. Passage Review Pack now shows passage dossiers, allowed use, missing production fields, local review decisions, and evaluation checks.
 
 Initial data:
 
@@ -74,6 +75,7 @@ Initial data:
 - Bhagavad Gita references for common cultural questions
 - glossary for core terms
 - source seed records with review gates and missing production fields
+- passage dossiers with allowed use, answer boundary, review decision, and evaluation checks
 
 Features:
 
@@ -83,6 +85,7 @@ Features:
 - confidence labels
 - retrieval trace
 - no-source refusal for unsupported claims
+- passage review gate before answer authority
 
 Success criteria:
 
@@ -157,6 +160,7 @@ Must have:
 - prototype source library and shelf
 - source seed schema and review queue
 - retrieval lab with source stack and match reason
+- passage review pack with dossiers, allowed use, missing fields, and eval checks
 - prototype source path builder and local progress
 - calm compass routing from explicit present-state choice
 - calm card studio for shareable source-backed reflections
@@ -173,6 +177,7 @@ Should have:
 - Source Library
 - Source Seeds
 - Retrieval Lab
+- Passage Review Pack
 - Source Path Builder
 - Calm Compass
 - Calm Card Studio
