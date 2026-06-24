@@ -52,3 +52,13 @@ The app may explain historical or textual context, but must not prescribe ritual
 
 A user should always be able to see why the app answered the way it did.
 
+## Interactive Console
+
+The v0.4.4 Source Policy Console turns these rules into visible answer routes:
+
+- answer allowed
+- boundary required
+- review route
+- decline or defer
+
+See [Source Policy Console](../policy.html) and [Source Policy Console Notes](SOURCE_POLICY_CONSOLE.md).

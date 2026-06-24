@@ -1,0 +1,1043 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VedaPath Source Policy Console</title>
+    <style>
+      :root {
+        --bg: #fff7ec;
+        --panel: rgba(255, 252, 247, 0.92);
+        --ink: #191411;
+        --muted-brown: #693820;
+        --bhagwa: #d65a1f;
+        --deep-ochre: #a83e12;
+        --gold: #e0a83b;
+        --peacock: #145c4a;
+        --indigo: #29335c;
+        --line: rgba(105, 56, 32, 0.18);
+        --soft: rgba(214, 90, 31, 0.1);
+        --cool: rgba(20, 92, 74, 0.1);
+        --shadow: 0 18px 45px rgba(105, 56, 32, 0.08);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        line-height: 1.5;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      button,
+      textarea {
+        font: inherit;
+      }
+
+      .page {
+        width: min(1240px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 22px 0 48px;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding-bottom: 18px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex: 0 0 auto;
+      }
+
+      .brand img {
+        width: 50px;
+        height: 50px;
+        border-radius: 8px;
+        object-fit: cover;
+      }
+
+      .brand strong {
+        display: block;
+        font-size: 18px;
+        white-space: nowrap;
+      }
+
+      .brand span,
+      .muted,
+      .small,
+      .policy-card p,
+      .stat span,
+      .source-meta,
+      .decision-note p {
+        color: var(--muted-brown);
+      }
+
+      .brand span,
+      .small,
+      .stat span,
+      .source-meta {
+        font-size: 13px;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .link,
+      .version {
+        display: inline-flex;
+        align-items: center;
+        min-height: 34px;
+        border-radius: 999px;
+        padding: 6px 11px;
+        font-size: 13px;
+        font-weight: 800;
+      }
+
+      .link {
+        border: 1px solid transparent;
+        color: var(--muted-brown);
+      }
+
+      .link:hover,
+      .link:focus-visible,
+      .link.active {
+        border-color: rgba(168, 62, 18, 0.22);
+        color: var(--deep-ochre);
+        outline: none;
+      }
+
+      .version {
+        border: 1px solid rgba(168, 62, 18, 0.28);
+        background: rgba(255, 255, 255, 0.42);
+        color: var(--deep-ochre);
+      }
+
+      .workspace {
+        display: grid;
+        grid-template-columns: 0.95fr 1.45fr 1fr;
+        gap: 16px;
+        margin-top: 18px;
+      }
+
+      .panel {
+        min-width: 0;
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 18px;
+        box-shadow: var(--shadow);
+      }
+
+      .hero-panel {
+        background:
+          linear-gradient(145deg, rgba(20, 92, 74, 0.05), rgba(255, 252, 247, 0.94) 45%),
+          var(--panel);
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        min-height: 28px;
+        border-radius: 999px;
+        padding: 5px 10px;
+        background: rgba(214, 90, 31, 0.1);
+        color: var(--deep-ochre);
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        margin-bottom: 14px;
+        font-size: clamp(42px, 6.2vw, 72px);
+        line-height: 0.98;
+        letter-spacing: 0;
+      }
+
+      .hero-panel h1 {
+        font-size: clamp(38px, 5.4vw, 66px);
+      }
+
+      h2 {
+        margin-bottom: 12px;
+        font-size: 25px;
+        line-height: 1.1;
+      }
+
+      h3 {
+        margin-bottom: 6px;
+        font-size: 17px;
+      }
+
+      .panel > p,
+      .hero-panel > p {
+        font-size: 17px;
+      }
+
+      .logo-frame {
+        display: grid;
+        place-items: center;
+        margin: 18px 0;
+        border: 1px solid rgba(224, 168, 59, 0.32);
+        border-radius: 8px;
+        background: #fff0dd;
+        overflow: hidden;
+      }
+
+      .logo-frame img {
+        width: min(220px, 80%);
+        aspect-ratio: 1;
+        object-fit: contain;
+      }
+
+      .stats-grid,
+      .detail-grid,
+      .matrix-grid {
+        display: grid;
+        gap: 10px;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .stat,
+      .detail-card,
+      .policy-card,
+      .decision-note {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.54);
+      }
+
+      .stat {
+        padding: 14px;
+      }
+
+      .stat strong {
+        display: block;
+        margin-top: 2px;
+        font-size: 26px;
+        line-height: 1.1;
+      }
+
+      .section {
+        margin-top: 18px;
+        padding-top: 18px;
+        border-top: 1px solid var(--line);
+      }
+
+      .progress {
+        height: 9px;
+        border-radius: 999px;
+        background: rgba(105, 56, 32, 0.14);
+        overflow: hidden;
+      }
+
+      .progress div {
+        height: 100%;
+        border-radius: inherit;
+        background: linear-gradient(90deg, var(--bhagwa), var(--gold));
+      }
+
+      .detail-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .detail-card {
+        padding: 14px;
+      }
+
+      .detail-card.strong {
+        border-left: 4px solid var(--bhagwa);
+      }
+
+      .detail-card strong,
+      .policy-card strong,
+      .decision-note strong {
+        display: block;
+        margin-bottom: 6px;
+        font-size: 16px;
+      }
+
+      .button-row,
+      .filter-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .button,
+      .filter,
+      .scenario {
+        border: 1px solid rgba(168, 62, 18, 0.24);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.5);
+        color: var(--deep-ochre);
+        font-weight: 900;
+        cursor: pointer;
+        transition: transform 160ms ease;
+      }
+
+      .button,
+      .filter {
+        min-height: 42px;
+        padding: 9px 12px;
+      }
+
+      .filter {
+        justify-content: center;
+        min-width: 84px;
+      }
+
+      .button.primary,
+      .filter.active {
+        border-color: var(--bhagwa);
+        background: var(--bhagwa);
+        color: #fffaf5;
+      }
+
+      .button.secondary {
+        border-color: rgba(20, 92, 74, 0.28);
+        color: var(--peacock);
+      }
+
+      .button:hover,
+      .button:focus-visible,
+      .filter:hover,
+      .filter:focus-visible,
+      .scenario:hover,
+      .scenario:focus-visible {
+        transform: translateY(-1px);
+        outline: none;
+      }
+
+      .scenario-list {
+        display: grid;
+        gap: 10px;
+      }
+
+      .scenario {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 12px;
+        width: 100%;
+        padding: 12px;
+        text-align: left;
+      }
+
+      .scenario.active {
+        border-color: rgba(214, 90, 31, 0.7);
+        background: rgba(214, 90, 31, 0.1);
+      }
+
+      .number {
+        display: inline-grid;
+        place-items: center;
+        width: 34px;
+        height: 34px;
+        border-radius: 999px;
+        background: rgba(20, 92, 74, 0.12);
+        color: var(--peacock);
+        font-size: 13px;
+        font-weight: 900;
+      }
+
+      .scenario.active .number,
+      .decision-badge.answer {
+        background: var(--bhagwa);
+        color: white;
+      }
+
+      .scenario p {
+        margin: 2px 0 0;
+      }
+
+      .decision-card {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 16px;
+        align-items: center;
+        margin: 16px 0;
+        padding: 16px;
+        border: 1px solid var(--line);
+        border-left: 5px solid var(--bhagwa);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.58);
+      }
+
+      .decision-card h2 {
+        margin-bottom: 8px;
+        font-size: 30px;
+      }
+
+      .decision-badge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 130px;
+        min-height: 44px;
+        border-radius: 999px;
+        padding: 8px 14px;
+        background: rgba(105, 56, 32, 0.12);
+        color: var(--muted-brown);
+        font-size: 13px;
+        font-weight: 900;
+        text-align: center;
+      }
+
+      .decision-badge.boundary {
+        background: rgba(224, 168, 59, 0.24);
+        color: #6b4310;
+      }
+
+      .decision-badge.review {
+        background: rgba(41, 51, 92, 0.12);
+        color: var(--indigo);
+      }
+
+      .decision-badge.decline {
+        background: rgba(168, 62, 18, 0.14);
+        color: var(--deep-ochre);
+      }
+
+      .policy-strip {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .policy-card {
+        padding: 13px;
+      }
+
+      .matrix-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .matrix-card {
+        min-height: 154px;
+      }
+
+      .export-output {
+        width: 100%;
+        min-height: 174px;
+        margin-top: 12px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 12px;
+        color: var(--ink);
+        background: rgba(255, 255, 255, 0.6);
+        resize: vertical;
+      }
+
+      .decision-note {
+        padding: 14px;
+      }
+
+      .boundary {
+        border-style: dashed;
+      }
+
+      @media (max-width: 1080px) {
+        .workspace {
+          grid-template-columns: 1fr;
+        }
+
+        .topbar {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .nav {
+          justify-content: flex-start;
+        }
+      }
+
+      @media (max-width: 720px) {
+        .page {
+          width: min(100% - 22px, 640px);
+          padding-top: 14px;
+        }
+
+        .detail-grid,
+        .policy-strip,
+        .matrix-grid,
+        .stats-grid,
+        .decision-card {
+          grid-template-columns: 1fr;
+        }
+
+        .link,
+        .version {
+          min-height: 32px;
+          padding: 5px 9px;
+          font-size: 12px;
+        }
+
+        h1,
+        .hero-panel h1 {
+          font-size: clamp(38px, 14vw, 58px);
+        }
+
+        .brand img {
+          width: 44px;
+          height: 44px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top" aria-label="VedaPath AI home">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo">
+          <span>
+            <strong>VedaPath AI</strong>
+            <span>Source policy console</span>
+          </span>
+        </a>
+        <nav class="nav" aria-label="Project links">
+          <a class="link" href="build-status.html">Build</a>
+          <a class="link" href="brand/brand-board.html">Brand</a>
+          <a class="link" href="blueprint.html">Blueprint</a>
+          <a class="link" href="calm.html">Calm</a>
+          <a class="link" href="daily.html">Daily</a>
+          <a class="link" href="practice.html">Practice</a>
+          <a class="link" href="library.html">Library</a>
+          <a class="link" href="seeds.html">Seeds</a>
+          <a class="link" href="retrieval.html">Retrieval</a>
+          <a class="link" href="passages.html">Review</a>
+          <a class="link" href="eval.html">Eval</a>
+          <a class="link" href="dashboard.html">Dash</a>
+          <a class="link" href="queue.html">Queue</a>
+          <a class="link active" href="policy.html">Policy</a>
+          <a class="link" href="path.html">Path</a>
+          <a class="link" href="compass.html">Compass</a>
+          <a class="link" href="card.html">Card</a>
+          <a class="link" href="bell.html">Bell</a>
+          <a class="link" href="reply.html">Reply</a>
+          <a class="link" href="samvada.html">Samvada</a>
+          <a class="link" href="sankalpa.html">Intent</a>
+          <a class="link" href="seva.html">Seva</a>
+          <a class="link" href="morning.html">Morning</a>
+          <a class="link" href="evening.html">Evening</a>
+          <a class="link" href="rhythm.html">Rhythm</a>
+          <span class="version">v0.4.4 policy</span>
+        </nav>
+      </header>
+
+      <section class="workspace" aria-label="Source Policy Console workspace">
+        <aside class="panel">
+          <span class="eyebrow">Before the answer</span>
+          <h1>Calm answers need clear policy.</h1>
+          <p class="muted">VedaPath should not only cite sources. It should show why an answer is allowed, bounded, delayed, or sent to review before confidence appears on screen.</p>
+
+          <div class="logo-frame" aria-label="VedaPath policy mark">
+            <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI source policy logo">
+          </div>
+
+          <div class="stats-grid" aria-label="Policy summary">
+            <article class="stat">
+              <span>Answer allowed</span>
+              <strong id="answerCount">0</strong>
+            </article>
+            <article class="stat">
+              <span>Boundary needed</span>
+              <strong id="boundaryCount">0</strong>
+            </article>
+            <article class="stat">
+              <span>Review routed</span>
+              <strong id="reviewCount">0</strong>
+            </article>
+            <article class="stat">
+              <span>Decline or defer</span>
+              <strong id="declineCount">0</strong>
+            </article>
+          </div>
+
+          <div class="section">
+            <h2>Policy Readiness</h2>
+            <div class="progress" aria-label="Policy readiness percent">
+              <div id="policyBar" style="width:0%"></div>
+            </div>
+            <p class="muted" id="policySummary" style="margin: 10px 0 0;">Policy rules are ready for prototype review.</p>
+          </div>
+
+          <div class="section">
+            <h2>What It Protects</h2>
+            <div class="detail-grid">
+              <article class="detail-card">
+                <strong>Source truth</strong>
+                <p>Do not merge Veda, Gita, Purana, commentary, and modern analogy.</p>
+              </article>
+              <article class="detail-card">
+                <strong>User calm</strong>
+                <p>Guide without becoming therapy, diagnosis, ritual authority, or command.</p>
+              </article>
+              <article class="detail-card">
+                <strong>Scholar trust</strong>
+                <p>Send uncertain claims to review before product behavior changes.</p>
+              </article>
+              <article class="detail-card">
+                <strong>Product memory</strong>
+                <p>Keep local prototype decisions separate from accepted knowledge.</p>
+              </article>
+            </div>
+          </div>
+        </aside>
+
+        <section class="panel hero-panel" aria-live="polite">
+          <span class="eyebrow">Decision simulator</span>
+          <h1 id="decisionTitle">Answer, but show the boundary.</h1>
+          <p class="muted">Select a user question type. The console shows the answer gate, source label, risk note, and next review path.</p>
+
+          <div class="filter-row" aria-label="Policy strictness">
+            <button class="filter" type="button" data-mode="gentle">Gentle</button>
+            <button class="filter active" type="button" data-mode="standard">Standard</button>
+            <button class="filter" type="button" data-mode="strict">Strict</button>
+          </div>
+
+          <article class="decision-card">
+            <div>
+              <h2 id="activeAction">Answer With Boundary</h2>
+              <p class="muted" id="activeReason">The source category is identifiable, but the answer must avoid overclaiming direct Vedic authority.</p>
+            </div>
+            <span class="decision-badge boundary" id="activeBadge">Boundary Required</span>
+          </article>
+
+          <div class="policy-strip" aria-label="Active policy details">
+            <article class="policy-card">
+              <strong>Source family</strong>
+              <p id="activeFamily">Bhagavad Gita | Smriti</p>
+            </article>
+            <article class="policy-card">
+              <strong>Pramana level</strong>
+              <p id="activePramana">Direct passage candidate</p>
+            </article>
+            <article class="policy-card">
+              <strong>Risk type</strong>
+              <p id="activeRisk">Category confusion</p>
+            </article>
+            <article class="policy-card">
+              <strong>Next path</strong>
+              <p id="activeNext">Answer with correction and optional reviewer queue.</p>
+            </article>
+          </div>
+
+          <section class="section">
+            <h2>Question Types</h2>
+            <div class="scenario-list" id="scenarioList"></div>
+          </section>
+
+          <section class="section">
+            <h2>Policy Matrix</h2>
+            <div class="matrix-grid" id="matrixGrid"></div>
+          </section>
+        </section>
+
+        <aside class="panel">
+          <span class="eyebrow">Launch control</span>
+          <h2>Copy Policy Brief</h2>
+          <p class="muted">This turns a product judgment into a clean handoff for reviewers, source curators, and future backend rules.</p>
+
+          <div class="button-row">
+            <button class="button primary" id="copyPolicy" type="button">Copy Policy Brief</button>
+            <button class="button secondary" id="sendQueue" type="button">Route To Queue</button>
+            <button class="button" id="resetPolicy" type="button">Reset Local Policy</button>
+          </div>
+          <textarea class="export-output" id="policyExport" readonly aria-label="Source policy export"></textarea>
+
+          <section class="section">
+            <h2>Decision Notes</h2>
+            <div class="decision-note">
+              <strong id="noteTitle">Visible humility</strong>
+              <p id="noteBody">The product can be useful without pretending every answer has the same source authority.</p>
+            </div>
+          </section>
+
+          <section class="section detail-card boundary">
+            <h2>Policy Boundary</h2>
+            <p>This console is a product prototype. It is not final theology, legal advice, medical advice, emergency support, moderation policy, or scholarly approval.</p>
+          </section>
+        </aside>
+      </section>
+    </main>
+
+    <script>
+      const policyKey = "vedapath.sourcePolicyConsole.v1";
+      const memoryStore = {};
+      const storage = {
+        getItem(key) {
+          try {
+            return window.localStorage?.getItem(key) ?? memoryStore[key] ?? null;
+          } catch {
+            return memoryStore[key] ?? null;
+          }
+        },
+        setItem(key, value) {
+          memoryStore[key] = value;
+          try {
+            window.localStorage?.setItem(key, value);
+          } catch {
+            return;
+          }
+        },
+        removeItem(key) {
+          delete memoryStore[key];
+          try {
+            window.localStorage?.removeItem(key);
+          } catch {
+            return;
+          }
+        }
+      };
+
+      const scenarios = [
+        {
+          id: "oppenheimer",
+          label: "Popular quote confusion",
+          question: "Did Oppenheimer quote the Vedas?",
+          action: "Answer With Boundary",
+          badge: "Boundary Required",
+          badgeClass: "boundary",
+          decision: "boundary",
+          family: "Bhagavad Gita | Smriti",
+          pramana: "Direct passage candidate",
+          risk: "Source category confusion",
+          next: "Correct the category and offer review if disputed.",
+          reason: "The passage is identifiable, but the answer must not call it a direct four-Veda quote.",
+          noteTitle: "Gentle correction",
+          noteBody: "Correct the category without shaming the user. Popular culture often uses Vedic loosely."
+        },
+        {
+          id: "direct-source",
+          label: "Direct source question",
+          question: "What does Bhagavad Gita 2.48 teach about action?",
+          action: "Answer With Source Card",
+          badge: "Answer Allowed",
+          badgeClass: "answer",
+          decision: "answer",
+          family: "Bhagavad Gita | Smriti",
+          pramana: "Direct passage",
+          risk: "Low category risk",
+          next: "Answer, cite, and keep interpretation layers optional.",
+          reason: "The user asks for a named source and the answer can show citation, plain meaning, and boundary.",
+          noteTitle: "Source-first answer",
+          noteBody: "Begin with the passage and make commentary or modern reflection a separate layer."
+        },
+        {
+          id: "science-claim",
+          label: "Modern science overclaim",
+          question: "Do the Vedas prove quantum physics?",
+          action: "Do Not Overclaim",
+          badge: "Review Route",
+          badgeClass: "review",
+          decision: "review",
+          family: "Modern analogy | uncertain",
+          pramana: "Analogy, not proof",
+          risk: "Inflated modern claim",
+          next: "Explain as comparison only and route strong claims to review.",
+          reason: "The product must separate source meaning from modern analogy and avoid certainty inflation.",
+          noteTitle: "No forced proof",
+          noteBody: "VedaPath can compare ideas carefully, but should not pretend ancient texts directly prove modern science."
+        },
+        {
+          id: "calm-risk",
+          label: "Personal distress",
+          question: "I feel panicked. Tell me what to do.",
+          action: "Give Safety Boundary",
+          badge: "Decline Or Defer",
+          badgeClass: "decline",
+          decision: "decline",
+          family: "Calm reflection | not clinical",
+          pramana: "Supportive reflection",
+          risk: "Medical or emergency boundary",
+          next: "Offer grounding language and encourage appropriate human support.",
+          reason: "The product can support steadiness, but cannot diagnose, treat, or replace emergency help.",
+          noteTitle: "Care without authority",
+          noteBody: "Calm features must stay gentle, non-clinical, and clear about when human support matters."
+        },
+        {
+          id: "ritual",
+          label: "Ritual instruction",
+          question: "Which mantra should I use to fix this problem?",
+          action: "Ask Source First",
+          badge: "Boundary Required",
+          badgeClass: "boundary",
+          decision: "boundary",
+          family: "Tradition-specific",
+          pramana: "Needs source and context",
+          risk: "Ritual authority",
+          next: "Ask for tradition, source, and suggest qualified guidance.",
+          reason: "VedaPath should explain sources, not prescribe ritual practice as authority.",
+          noteTitle: "Respect tradition",
+          noteBody: "The product should avoid acting as priest, guru, oracle, or fortune teller."
+        },
+        {
+          id: "unsourced",
+          label: "Unverified quote",
+          question: "I heard a Sanskrit line online. Is it Vedic?",
+          action: "Ask For Source",
+          badge: "Review Route",
+          badgeClass: "review",
+          decision: "review",
+          family: "Uncertain",
+          pramana: "No source yet",
+          risk: "Misattribution",
+          next: "Request text, transliteration, or source link before classifying.",
+          reason: "Without text or citation, the product should not invent a source family.",
+          noteTitle: "No invented citation",
+          noteBody: "Uncertainty should remain visible until a passage or source record is found."
+        }
+      ];
+
+      const matrix = [
+        {
+          title: "Named direct source",
+          body: "Answer with source card, citation, plain meaning, confidence, and optional deeper layers."
+        },
+        {
+          title: "Category confusion",
+          body: "Answer gently, correct the source family, and avoid flattening Gita, Veda, Purana, and commentary."
+        },
+        {
+          title: "Modern analogy",
+          body: "Allow comparison only. Do not convert similarity into proof or scientific authority."
+        },
+        {
+          title: "Unverified claim",
+          body: "Ask for the passage, transliteration, edition, or link before assigning a source label."
+        },
+        {
+          title: "Ritual authority",
+          body: "Explain textual context without prescribing practice or replacing teachers and tradition."
+        },
+        {
+          title: "Personal distress",
+          body: "Offer grounded reflection and clear safety boundaries. Never act as therapy or emergency support."
+        }
+      ];
+
+      const elements = {
+        scenarioList: document.getElementById("scenarioList"),
+        matrixGrid: document.getElementById("matrixGrid"),
+        decisionTitle: document.getElementById("decisionTitle"),
+        activeAction: document.getElementById("activeAction"),
+        activeReason: document.getElementById("activeReason"),
+        activeBadge: document.getElementById("activeBadge"),
+        activeFamily: document.getElementById("activeFamily"),
+        activePramana: document.getElementById("activePramana"),
+        activeRisk: document.getElementById("activeRisk"),
+        activeNext: document.getElementById("activeNext"),
+        answerCount: document.getElementById("answerCount"),
+        boundaryCount: document.getElementById("boundaryCount"),
+        reviewCount: document.getElementById("reviewCount"),
+        declineCount: document.getElementById("declineCount"),
+        policyBar: document.getElementById("policyBar"),
+        policySummary: document.getElementById("policySummary"),
+        policyExport: document.getElementById("policyExport"),
+        noteTitle: document.getElementById("noteTitle"),
+        noteBody: document.getElementById("noteBody")
+      };
+
+      let state = readState();
+
+      function readState() {
+        const fallback = { selectedId: "oppenheimer", mode: "standard", routed: [] };
+        try {
+          return { ...fallback, ...JSON.parse(storage.getItem(policyKey) || "{}") };
+        } catch {
+          return fallback;
+        }
+      }
+
+      function writeState() {
+        storage.setItem(policyKey, JSON.stringify(state));
+      }
+
+      function activeScenario() {
+        return scenarios.find((scenario) => scenario.id === state.selectedId) || scenarios[0];
+      }
+
+      function modeWord() {
+        if (state.mode === "gentle") return "Gentle language";
+        if (state.mode === "strict") return "Strict gate";
+        return "Standard gate";
+      }
+
+      function renderScenarios() {
+        elements.scenarioList.innerHTML = scenarios.map((scenario, index) => `
+          <button class="scenario ${scenario.id === state.selectedId ? "active" : ""}" type="button" data-id="${scenario.id}">
+            <span class="number">${index + 1}</span>
+            <span>
+              <strong>${scenario.label}</strong>
+              <p>${scenario.question}</p>
+            </span>
+          </button>
+        `).join("");
+
+        document.querySelectorAll(".scenario[data-id]").forEach((button) => {
+          button.addEventListener("click", () => {
+            state.selectedId = button.dataset.id;
+            writeState();
+            render();
+          });
+        });
+      }
+
+      function renderMatrix() {
+        elements.matrixGrid.innerHTML = matrix.map((item) => `
+          <article class="policy-card matrix-card">
+            <strong>${item.title}</strong>
+            <p>${item.body}</p>
+          </article>
+        `).join("");
+      }
+
+      function renderMode() {
+        document.querySelectorAll(".filter[data-mode]").forEach((button) => {
+          button.classList.toggle("active", button.dataset.mode === state.mode);
+        });
+      }
+
+      function renderCounts() {
+        const counts = { answer: 0, boundary: 0, review: 0, decline: 0 };
+        scenarios.forEach((scenario) => {
+          counts[scenario.decision] += 1;
+        });
+        const routedCount = state.routed.length;
+        elements.answerCount.textContent = counts.answer;
+        elements.boundaryCount.textContent = counts.boundary;
+        elements.reviewCount.textContent = counts.review + routedCount;
+        elements.declineCount.textContent = counts.decline;
+        const readiness = Math.round(((counts.answer + counts.boundary + counts.review + counts.decline) / scenarios.length) * 100);
+        elements.policyBar.style.width = `${readiness}%`;
+        elements.policySummary.textContent = `${readiness}% of sample scenarios have an explicit policy route. ${routedCount} item${routedCount === 1 ? "" : "s"} locally routed to queue.`;
+      }
+
+      function renderActive() {
+        const scenario = activeScenario();
+        elements.decisionTitle.textContent = scenario.action === "Answer With Source Card" ? "Answer when the source is clear." : "Answer, but show the boundary.";
+        elements.activeAction.textContent = scenario.action;
+        elements.activeReason.textContent = scenario.reason;
+        elements.activeBadge.textContent = scenario.badge;
+        elements.activeBadge.className = `decision-badge ${scenario.badgeClass}`;
+        elements.activeFamily.textContent = scenario.family;
+        elements.activePramana.textContent = scenario.pramana;
+        elements.activeRisk.textContent = scenario.risk;
+        elements.activeNext.textContent = scenario.next;
+        elements.noteTitle.textContent = scenario.noteTitle;
+        elements.noteBody.textContent = `${scenario.noteBody} Current mode: ${modeWord()}.`;
+        updateExport();
+      }
+
+      function updateExport() {
+        const scenario = activeScenario();
+        const lines = [
+          "VedaPath Source Policy Console",
+          "Release: v0.4.4 policy",
+          `Mode: ${modeWord()}`,
+          "",
+          `Question type: ${scenario.label}`,
+          `Sample question: ${scenario.question}`,
+          `Policy action: ${scenario.action}`,
+          `Source family: ${scenario.family}`,
+          `Pramana level: ${scenario.pramana}`,
+          `Risk type: ${scenario.risk}`,
+          `Next path: ${scenario.next}`,
+          "",
+          `Reason: ${scenario.reason}`,
+          "",
+          "Boundary: prototype policy only. Production needs reviewer identity, source licensing, evaluation fixtures, safety review, and versioned governance."
+        ];
+        elements.policyExport.value = lines.join("\n");
+      }
+
+      function copyText(text, button, copiedLabel) {
+        const original = button.textContent;
+        const copied = navigator.clipboard?.writeText
+          ? navigator.clipboard.writeText(text)
+          : Promise.reject(new Error("Clipboard unavailable"));
+        copied.then(() => {
+          button.textContent = copiedLabel;
+          setTimeout(() => {
+            button.textContent = original;
+          }, 1300);
+        }).catch(() => {
+          elements.policyExport.focus();
+          elements.policyExport.select();
+        });
+      }
+
+      function render() {
+        renderMode();
+        renderCounts();
+        renderScenarios();
+        renderMatrix();
+        renderActive();
+      }
+
+      document.querySelectorAll(".filter[data-mode]").forEach((button) => {
+        button.addEventListener("click", () => {
+          state.mode = button.dataset.mode;
+          writeState();
+          render();
+        });
+      });
+
+      document.getElementById("copyPolicy").addEventListener("click", () => {
+        copyText(elements.policyExport.value, document.getElementById("copyPolicy"), "Copied Policy");
+      });
+
+      document.getElementById("sendQueue").addEventListener("click", () => {
+        const scenario = activeScenario();
+        if (!state.routed.includes(scenario.id)) {
+          state.routed = [scenario.id, ...state.routed];
+          writeState();
+        }
+        copyText(`${elements.policyExport.value}\n\nQueue route requested: ${scenario.label}`, document.getElementById("sendQueue"), "Queued Locally");
+        render();
+      });
+
+      document.getElementById("resetPolicy").addEventListener("click", () => {
+        storage.removeItem(policyKey);
+        state = readState();
+        render();
+      });
+
+      render();
+    </script>
+  </body>
+</html>

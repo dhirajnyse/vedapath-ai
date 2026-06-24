@@ -63,9 +63,9 @@ Before a real launch, the dashboard should become:
 - reviewer identity and decision history
 - source edition and translation policy checks
 - regression reports before deployment
-- blocked answer review queue
+- blocked answer review queue and source policy route
 - exportable audit evidence
 
 ## Next Step
 
-v0.4.3 adds Reviewer Queue, which turns failed examples, flagged passages, retrieval gaps, and user correction notes into human-review cards before accepted knowledge changes.
+v0.4.3 adds Reviewer Queue, which turns failed examples, flagged passages, retrieval gaps, and user correction notes into human-review cards before accepted knowledge changes. v0.4.4 adds Source Policy Console so blocked examples also show the future answer rule they need.

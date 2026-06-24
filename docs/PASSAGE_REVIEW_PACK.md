@@ -94,3 +94,7 @@ The handoff should preserve citation, source family, allowed use, restricted use
 Reviewer Queue turns flagged passage decisions and missing production fields into review cards with a visible next action.
 
 The queue should preserve the dossier source family, issue type, reviewer need, and boundary before any accepted knowledge changes.
+
+## Link To Source Policy Console
+
+Source Policy Console turns passage review outcomes into answer behavior: direct answer, boundary required, review route, or defer.

@@ -64,6 +64,7 @@ Before evaluation becomes production infrastructure, VedaPath needs:
 - modern overclaim tests
 - ritual authority tests
 - reviewer override workflow
+- source policy route for answer, boundary, review, or defer decisions
 - regression reporting before release
 
 ## Launch Boundary
@@ -85,4 +86,4 @@ v0.4.2 turns the evaluator into a visible release dashboard:
 
 ## Next Step
 
-v0.4.3 connects failed dashboard cases to Reviewer Queue so evaluation failures become human-review cards instead of silent fixes.
+v0.4.3 connects failed dashboard cases to Reviewer Queue so evaluation failures become human-review cards instead of silent fixes. v0.4.4 adds Source Policy Console so the same failures can become visible answer rules.

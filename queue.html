@@ -467,6 +467,7 @@
           <a class="link" href="eval.html">Eval</a>
           <a class="link" href="dashboard.html">Dash</a>
           <a class="link active" href="queue.html">Queue</a>
+          <a class="link" href="policy.html">Policy</a>
           <a class="link" href="path.html">Path</a>
           <a class="link" href="compass.html">Compass</a>
           <a class="link" href="card.html">Card</a>
@@ -478,7 +479,7 @@
           <a class="link" href="morning.html">Morning</a>
           <a class="link" href="evening.html">Evening</a>
           <a class="link" href="rhythm.html">Rhythm</a>
-          <span class="version">v0.4.3 queue</span>
+          <span class="version">v0.4.4 policy</span>
         </nav>
       </header>
 
@@ -596,6 +597,7 @@
 
           <div class="button-row">
             <button class="button primary" id="copyBrief" type="button">Copy Queue Brief</button>
+            <a class="button secondary" href="policy.html">Open Policy</a>
             <button class="button" id="resetQueue" type="button">Reset Local Queue</button>
           </div>
           <textarea class="export-output" id="queueExport" readonly aria-label="Reviewer queue export"></textarea>
@@ -892,7 +894,7 @@
       function buildExport() {
         const lines = [
           "VedaPath Reviewer Queue",
-          "Release: v0.4.3 queue",
+          "Release: v0.4.4 policy",
           `Open cards: ${queueState.cards.filter((card) => card.status !== "accepted-prototype").length}`,
           `Scholar needed: ${queueState.cards.filter((card) => card.status === "needs-scholar").length}`,
           `Safety review: ${queueState.cards.filter((card) => card.status === "safety-review").length}`,

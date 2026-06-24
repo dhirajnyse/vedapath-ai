@@ -78,6 +78,10 @@ Evaluation Dashboard runs the answer test suite so Retrieval, Review, and Eval b
 
 Reviewer Queue turns source gaps, uncertain matches, and failed dashboard cases into review cards before they become source policy or accepted answer behavior.
 
+## Link To Source Policy Console
+
+Source Policy Console turns retrieval gaps and uncertain matches into explicit answer routes: answer, boundary, review, or defer.
+
 ## Why It Matters
 
 The calming effect of VedaPath should come from clarity, not certainty theater.

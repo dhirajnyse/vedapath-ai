@@ -23,7 +23,7 @@ Show the product experience without a live LLM backend.
 
 Status:
 
-Completed in v0.4.3.
+Completed in v0.4.4.
 
 Core screens:
 
@@ -43,6 +43,7 @@ Core screens:
 - Evaluation Runner
 - Evaluation Dashboard
 - Reviewer Queue
+- Source Policy Console
 - Source Path Builder
 - Calm Compass
 - Calm Card Studio
@@ -69,7 +70,7 @@ Connect a small curated source set.
 
 Status:
 
-Active product phase. Source Seeds now shows the first structured source schema and prototype seed records. Retrieval Lab now shows the first source-stack ranking, match reason, boundary, and no-source claim refusal. Passage Review Pack now shows passage dossiers, allowed use, missing production fields, local review decisions, and evaluation checks. Evaluation Runner now checks answer drafts before user-facing trust. Evaluation Dashboard now tests the evaluator as a visible release gate. Reviewer Queue now turns failed examples, flagged passages, retrieval gaps, and correction notes into local human-review cards.
+Active product phase. Source Seeds now shows the first structured source schema and prototype seed records. Retrieval Lab now shows the first source-stack ranking, match reason, boundary, and no-source claim refusal. Passage Review Pack now shows passage dossiers, allowed use, missing production fields, local review decisions, and evaluation checks. Evaluation Runner now checks answer drafts before user-facing trust. Evaluation Dashboard now tests the evaluator as a visible release gate. Reviewer Queue now turns failed examples, flagged passages, retrieval gaps, and correction notes into local human-review cards. Source Policy Console now makes answer gates visible before the AI speaks with confidence.
 
 Initial data:
 
@@ -92,6 +93,7 @@ Features:
 - answer draft evaluation for citation gaps, source-family confusion, unsafe calm advice, ritual authority, and overclaiming
 - evaluation dashboard for expected behavior checks, blocked examples, issue counts, and reviewer export
 - reviewer queue for failed examples, flagged passages, retrieval gaps, and user correction notes
+- source policy console for answer allowed, boundary required, review route, and decline/defer decisions
 
 Success criteria:
 
@@ -169,6 +171,7 @@ Must have:
 - passage review pack with dossiers, allowed use, missing fields, and eval checks
 - evaluation runner with answer quality gates
 - reviewer queue before accepted knowledge changes
+- source policy console before confident answer behavior
 - prototype source path builder and local progress
 - calm compass routing from explicit present-state choice
 - calm card studio for shareable source-backed reflections
@@ -189,6 +192,7 @@ Should have:
 - Evaluation Runner
 - Evaluation Dashboard
 - Reviewer Queue
+- Source Policy Console
 - Source Path Builder
 - Calm Compass
 - Calm Card Studio

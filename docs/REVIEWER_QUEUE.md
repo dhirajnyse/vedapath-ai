@@ -40,7 +40,7 @@ Before production, this queue should become:
 - reviewer identity and role
 - safety review labels
 - versioned decision history
-- links back to source seeds, passage dossiers, evaluator fixtures, and answer rules
+- links back to source seeds, passage dossiers, evaluator fixtures, source policy routes, and answer rules
 - exportable audit evidence
 
 ## Boundary
@@ -51,4 +51,4 @@ It is not final scholarship, source licensing approval, moderation policy, safet
 
 ## Next Step
 
-v0.4.4 should add a source policy console for edition, translation rights, reviewer identity, and decision history.
+v0.4.4 adds Source Policy Console. v0.4.5 should connect policy routes and queue decisions into versioned governance records.
