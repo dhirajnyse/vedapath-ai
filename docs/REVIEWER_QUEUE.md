@@ -55,4 +55,6 @@ v0.4.4 adds Source Policy Console. v0.4.5 adds Trust Ledger so policy routes and
 
 v0.4.6 adds Life Map so personal-life calm routes can stay source-backed, bounded, and local-only in the prototype.
 
-v0.4.7 should turn queue, policy, ledger, and life-map records into a durable source governance and consent schema with reviewer identity, source edition fields, audit history, privacy controls, and evaluation fixtures.
+v0.4.7 adds Calm Circle so shared moments can stay source-backed, bounded, and local-only in the prototype.
+
+v0.4.8 should turn queue, policy, ledger, life-map, and calm-circle records into a durable source governance and consent schema with reviewer identity, source edition fields, audit history, privacy controls, participant consent, and evaluation fixtures.

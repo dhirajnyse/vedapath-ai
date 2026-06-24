@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VedaPath Life Map</title>
+    <title>VedaPath Calm Circle</title>
     <style>
       :root {
         --bg: #fff7eb;
@@ -41,8 +41,8 @@
         font: inherit;
       }
 
-      button,
-      a {
+      a,
+      button {
         -webkit-tap-highlight-color: transparent;
       }
 
@@ -70,8 +70,7 @@
         text-decoration: none;
       }
 
-      .brand img,
-      .life-logo {
+      .brand img {
         width: 48px;
         height: 48px;
         border-radius: 8px;
@@ -119,7 +118,7 @@
 
       .workspace {
         display: grid;
-        grid-template-columns: minmax(260px, 0.84fr) minmax(420px, 1.25fr) minmax(280px, 0.9fr);
+        grid-template-columns: minmax(260px, 0.84fr) minmax(440px, 1.25fr) minmax(280px, 0.9fr);
         gap: 16px;
         margin-top: 18px;
       }
@@ -178,40 +177,41 @@
         color: var(--muted);
       }
 
-      .domain-list {
+      .circle-list {
         display: grid;
         gap: 10px;
         margin-top: 18px;
       }
 
-      .domain-card,
-      .day-chip,
-      .route-card,
-      .history-card {
+      .circle-card,
+      .step-card,
+      .history-card,
+      .stat,
+      .prompt-card {
         border: 1px solid var(--line);
         border-radius: 8px;
         background: rgba(255, 253, 248, 0.78);
       }
 
-      .domain-card {
+      .circle-card {
         display: grid;
         grid-template-columns: 42px 1fr;
         align-items: center;
         gap: 12px;
-        min-height: 78px;
+        min-height: 76px;
         width: 100%;
         padding: 12px;
         text-align: left;
         cursor: pointer;
       }
 
-      .domain-card.active {
+      .circle-card.active {
         border-color: #f2a58a;
         background: #fff0e7;
         box-shadow: inset 4px 0 0 var(--saffron);
       }
 
-      .domain-icon {
+      .circle-index {
         display: grid;
         place-items: center;
         width: 42px;
@@ -222,12 +222,12 @@
         font-weight: 900;
       }
 
-      .domain-card.active .domain-icon {
+      .circle-card.active .circle-index {
         background: var(--saffron);
         color: #fff;
       }
 
-      .domain-card strong,
+      .circle-card strong,
       .source-value,
       .stat-value {
         display: block;
@@ -235,17 +235,19 @@
         font-weight: 900;
       }
 
-      .domain-card p,
+      .circle-card p,
+      .step-card p,
       .history-card p,
-      .route-card p {
+      .prompt-card p {
         margin: 4px 0 0;
         font-size: 13px;
       }
 
-      .input-stack {
+      .input-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
         margin-top: 18px;
-        border-top: 1px solid var(--line);
-        padding-top: 16px;
       }
 
       label {
@@ -267,14 +269,9 @@
         line-height: 1.45;
       }
 
-      .answer-panel {
-        position: relative;
-        overflow: hidden;
-      }
-
       .answer-top {
         display: grid;
-        grid-template-columns: 1fr 170px;
+        grid-template-columns: 1fr 160px;
         gap: 18px;
         align-items: center;
       }
@@ -289,16 +286,16 @@
       }
 
       .logo-frame img {
-        width: 116px;
-        height: 116px;
+        width: 112px;
+        height: 112px;
         border-radius: 8px;
         object-fit: cover;
       }
 
       .source-grid,
-      .reflection-grid,
+      .prompt-grid,
       .stat-grid,
-      .routes {
+      .steps {
         display: grid;
         gap: 10px;
       }
@@ -325,25 +322,36 @@
         line-height: 1.25;
       }
 
-      .reflection-grid {
+      .prompt-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
-      .reflection-card {
-        min-height: 154px;
-        border: 1px solid var(--line);
-        border-left: 3px solid #efa98d;
-        border-radius: 8px;
+      .prompt-card {
+        min-height: 146px;
         padding: 16px;
-        background: #fffdf8;
+        border-left: 3px solid #efa98d;
       }
 
-      .reflection-card h3 {
+      .prompt-card h3 {
         font-size: 20px;
       }
 
+      .steps {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        margin-top: 16px;
+      }
+
+      .step-card {
+        min-height: 112px;
+        padding: 13px;
+      }
+
+      .step-card strong {
+        color: #050505;
+      }
+
       .boundary-box {
-        margin-top: 12px;
+        margin-top: 16px;
         border: 1px dashed #e8bda8;
         border-radius: 8px;
         padding: 14px;
@@ -382,8 +390,8 @@
 
       .button:hover,
       .button:focus-visible,
-      .domain-card:hover,
-      .domain-card:focus-visible {
+      .circle-card:hover,
+      .circle-card:focus-visible {
         transform: translateY(-1px);
         outline: none;
       }
@@ -395,10 +403,7 @@
 
       .stat {
         min-height: 86px;
-        border: 1px solid var(--line);
-        border-radius: 8px;
         padding: 13px;
-        background: #fffdf8;
       }
 
       .stat span {
@@ -411,35 +416,10 @@
         font-size: 26px;
       }
 
-      .week-row {
-        display: grid;
-        grid-template-columns: repeat(7, minmax(0, 1fr));
-        gap: 6px;
-        margin: 12px 0 14px;
-      }
-
-      .day-chip {
-        min-height: 54px;
-        padding: 8px 4px;
-        text-align: center;
-      }
-
-      .day-chip strong {
-        display: block;
-        font-size: 12px;
-      }
-
-      .day-chip span {
-        display: block;
-        margin-top: 4px;
-        color: var(--muted);
-        font-size: 11px;
-      }
-
       .history-list {
         display: grid;
         gap: 10px;
-        max-height: 216px;
+        max-height: 238px;
         overflow: auto;
         padding-right: 4px;
       }
@@ -448,22 +428,9 @@
         padding: 12px;
       }
 
-      .routes {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        margin-top: 14px;
-      }
-
-      .route-card {
-        padding: 13px;
-      }
-
-      .route-card strong {
-        color: #050505;
-      }
-
       .export-output {
         width: 100%;
-        min-height: 120px;
+        min-height: 124px;
         margin-top: 12px;
         font-size: 12px;
       }
@@ -490,11 +457,12 @@
         }
 
         .topbar,
-        .answer-top,
         .workspace,
+        .answer-top,
         .source-grid,
-        .reflection-grid,
-        .routes {
+        .prompt-grid,
+        .input-grid,
+        .steps {
           grid-template-columns: 1fr;
         }
 
@@ -512,10 +480,6 @@
       }
 
       @media (max-width: 460px) {
-        .week-row {
-          grid-template-columns: repeat(4, minmax(0, 1fr));
-        }
-
         .stat-grid {
           grid-template-columns: 1fr;
         }
@@ -529,7 +493,7 @@
           <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
           <div>
             <strong>VedaPath AI</strong>
-            <span>Life map preview</span>
+            <span>Calm circle preview</span>
           </div>
         </a>
         <nav class="nav" aria-label="Project links">
@@ -548,8 +512,8 @@
           <a class="link" href="queue.html">Queue</a>
           <a class="link" href="policy.html">Policy</a>
           <a class="link" href="ledger.html">Ledger</a>
-          <a class="link active" href="life.html">Life</a>
-          <a class="link" href="circle.html">Circle</a>
+          <a class="link" href="life.html">Life</a>
+          <a class="link active" href="circle.html">Circle</a>
           <a class="link" href="path.html">Path</a>
           <a class="link" href="compass.html">Compass</a>
           <a class="link" href="card.html">Card</a>
@@ -565,36 +529,42 @@
         </nav>
       </header>
 
-      <section class="workspace" aria-label="VedaPath Life Map workspace">
+      <section class="workspace" aria-label="VedaPath Calm Circle workspace">
         <aside class="panel">
-          <span class="eyebrow">Choose a life moment</span>
-          <h1>Calm for real life, not abstract peace.</h1>
-          <p>Pick what is asking for steadiness today. VedaPath responds with one source candidate, one clean boundary, and one next action.</p>
+          <span class="eyebrow">Choose the circle</span>
+          <h1>Shared calm begins before the verdict.</h1>
+          <p>Choose the conversation shape. VedaPath gives one source, one shared question, one boundary, and one small agreement.</p>
 
-          <div class="domain-list" id="domainList"></div>
+          <div class="circle-list" id="circleList"></div>
 
-          <div class="input-stack">
-            <label for="lifeLine">One honest line from today</label>
-            <textarea id="lifeLine">Too many work threads are pulling my attention at once.</textarea>
+          <div class="input-grid">
+            <div>
+              <label for="heardInput">What needs to be heard?</label>
+              <textarea id="heardInput">I need the conversation to slow down before we decide.</textarea>
+            </div>
+            <div>
+              <label for="hearInput">What can I try to hear?</label>
+              <textarea id="hearInput">I can hear that the other person may also be carrying pressure.</textarea>
+            </div>
           </div>
         </aside>
 
-        <section class="panel answer-panel" aria-live="polite">
+        <section class="panel" aria-live="polite">
           <div class="answer-top">
             <div>
-              <span class="eyebrow">Source-guided life map</span>
-              <h1 id="lifeTitle">Steady attention before scattered action.</h1>
-              <p id="lifeSummary">When work feels noisy, begin by separating what is yours to do from what is only demanding attention.</p>
+              <span class="eyebrow">Source-guided circle</span>
+              <h1 id="circleTitle">One pause before many voices.</h1>
+              <p id="circleSummary">A shared pause gives the group a chance to hear before it tries to win.</p>
             </div>
             <div class="logo-frame" aria-hidden="true">
               <img src="assets/vedapath-3d-logo-concept.png" alt="">
             </div>
           </div>
 
-          <div class="source-grid" aria-label="Life map source card">
+          <div class="source-grid" aria-label="Calm circle source card">
             <div>
               <span class="source-meta">Source candidate</span>
-              <span class="source-value" id="sourceCandidate">Bhagavad Gita 2.48</span>
+              <span class="source-value" id="sourceCandidate">Bhagavad Gita 17.15</span>
             </div>
             <div>
               <span class="source-meta">Text family</span>
@@ -606,87 +576,99 @@
             </div>
             <div>
               <span class="source-meta">Boundary</span>
-              <span class="source-value" id="sourceBoundary">Reflection support, not career advice.</span>
+              <span class="source-value" id="sourceBoundary">Reflection support, not mediation.</span>
             </div>
           </div>
 
-          <div class="reflection-grid">
-            <article class="reflection-card">
-              <h3>What to notice</h3>
-              <p id="noticeText">The mind may be treating every signal as equally urgent. A calmer first step is to name the one duty that is actually yours.</p>
+          <div class="prompt-grid">
+            <article class="prompt-card">
+              <h3>Shared question</h3>
+              <p id="sharedQuestion">What can we say truthfully that reduces confusion instead of increasing heat?</p>
             </article>
-            <article class="reflection-card">
-              <h3>Carry action</h3>
-              <p id="actionText">Choose one work thread. Write the next visible action. Do that before opening a second thread.</p>
+            <article class="prompt-card">
+              <h3>Small agreement</h3>
+              <p id="smallAgreement">Each person names one concern and one request before proposing a decision.</p>
+            </article>
+          </div>
+
+          <div class="steps" aria-label="Circle steps">
+            <article class="step-card">
+              <strong>Arrive</strong>
+              <p>Name the pressure without blaming.</p>
+            </article>
+            <article class="step-card">
+              <strong>Hear</strong>
+              <p>Repeat one thing you understood.</p>
+            </article>
+            <article class="step-card">
+              <strong>Ask</strong>
+              <p>Use the shared question once.</p>
+            </article>
+            <article class="step-card">
+              <strong>Agree</strong>
+              <p>Choose one small next step.</p>
             </article>
           </div>
 
           <div class="boundary-box">
-            <h3>Life Boundary</h3>
-            <p id="boundaryText">This is reflection support only. VedaPath is not making a professional, financial, medical, legal, or relationship decision for you.</p>
+            <h3>Circle Boundary</h3>
+            <p id="boundaryText">This is reflection support only. VedaPath is not mediating, judging, diagnosing, advising unsafe contact, or replacing professional help.</p>
           </div>
 
           <div class="button-row">
-            <button class="button primary" id="saveMap" type="button">Save Life Map</button>
-            <button class="button secondary" id="copyMap" type="button">Copy Handoff</button>
-            <a class="button" id="roomLink" href="practice.html">Open Practice</a>
+            <button class="button primary" id="saveCircle" type="button">Save Circle</button>
+            <button class="button secondary" id="copyCircle" type="button">Copy Circle Brief</button>
+            <a class="button" id="roomLink" href="samvada.html">Open Samvada</a>
           </div>
-
-          <section class="section">
-            <h2>Next Room</h2>
-            <div class="routes" id="routeList"></div>
-          </section>
         </section>
 
         <aside class="panel rail-panel">
-          <span class="eyebrow">Device-local memory</span>
-          <h2>Your Life Map Pattern</h2>
-          <p>This preview remembers saved life maps only in this browser. It proves the habit before accounts, sync, or production storage.</p>
+          <span class="eyebrow">Local circle memory</span>
+          <h2>Your Calm Circle Notes</h2>
+          <p>This preview stores circle notes only in this browser. It proves a shared-calm habit before accounts, invites, or sync exist.</p>
 
           <div class="stat-grid">
             <article class="stat">
-              <span>Saved maps</span>
+              <span>Saved circles</span>
               <strong class="stat-value" id="savedCount">0</strong>
             </article>
             <article class="stat">
-              <span>Top domain</span>
-              <strong class="stat-value" id="topDomain">None</strong>
+              <span>Most used circle</span>
+              <strong class="stat-value" id="topCircle">None</strong>
             </article>
             <article class="stat">
               <span>Last source</span>
               <strong class="stat-value" id="lastSource">None</strong>
             </article>
             <article class="stat">
-              <span>Suggested room</span>
-              <strong class="stat-value" id="nextRoom">Practice</strong>
+              <span>Next room</span>
+              <strong class="stat-value" id="nextRoom">Samvada</strong>
             </article>
           </div>
 
-          <div class="week-row" id="weekRow" aria-label="Seven day life map pattern"></div>
-
           <div class="history-list" id="historyList">
             <article class="history-card">
-              <strong>No saved life maps yet</strong>
-              <p>Save one honest line and the local pattern will begin.</p>
+              <strong>No saved circles yet</strong>
+              <p>Save one circle brief and the local pattern will begin.</p>
             </article>
           </div>
 
           <div class="button-row">
             <button class="button secondary" id="copyPattern" type="button">Copy Pattern</button>
-            <button class="button" id="clearMaps" type="button">Clear Local Preview</button>
+            <button class="button" id="clearCircles" type="button">Clear Local Preview</button>
           </div>
-          <textarea class="export-output" id="mapExport" readonly aria-label="Life map export"></textarea>
+          <textarea class="export-output" id="circleExport" readonly aria-label="Calm circle export"></textarea>
 
           <section class="section boundary-box">
             <h2>Privacy Boundary</h2>
-            <p>Saved entries stay in this browser as prototype memory. Production should require explicit accounts, consent, export controls, deletion controls, and reviewed source data before syncing anything.</p>
+            <p>Saved circle notes stay in this browser as prototype memory. Production should require consent from all participants, deletion controls, export controls, safety review, and clear rules for shared records.</p>
           </section>
         </aside>
       </section>
     </main>
 
     <script>
-      const lifeKey = "vedapath.lifeMap.v1";
+      const circleKey = "vedapath.calmCircle.v1";
       const memoryStore = {};
       const storage = {
         getItem(key) {
@@ -714,129 +696,102 @@
         }
       };
 
-      const domains = [
-        {
-          id: "work",
-          label: "Work pressure",
-          prompt: "Too many work threads are pulling my attention at once.",
-          title: "Steady attention before scattered action.",
-          summary: "When work feels noisy, begin by separating what is yours to do from what is only demanding attention.",
-          source: "Bhagavad Gita 2.48",
-          family: "Bhagavad Gita | Smriti",
-          pramana: "Direct passage candidate",
-          boundary: "Reflection support, not career advice.",
-          notice: "The mind may be treating every signal as equally urgent. A calmer first step is to name the one duty that is actually yours.",
-          action: "Choose one work thread. Write the next visible action. Do that before opening a second thread.",
-          room: "Practice",
-          roomHref: "practice.html"
-        },
+      const circles = [
         {
           id: "family",
-          label: "Family friction",
-          prompt: "I want to reply kindly without swallowing what matters.",
-          title: "Speak after the heat has named itself.",
-          summary: "A tense relationship moment needs honesty and restraint together, not silence or attack.",
+          label: "Family table",
+          prompt: "I need the conversation to slow down before we decide.",
+          hear: "I can hear that the other person may also be carrying pressure.",
+          title: "One pause before many voices.",
+          summary: "A shared pause gives the family a chance to hear before it tries to win.",
           source: "Bhagavad Gita 17.15",
           family: "Bhagavad Gita | Smriti",
           pramana: "Direct passage candidate",
+          boundary: "Reflection support, not family mediation.",
+          question: "What can we say truthfully that reduces confusion instead of increasing heat?",
+          agreement: "Each person names one concern and one request before proposing a decision.",
+          room: "Samvada",
+          roomHref: "samvada.html"
+        },
+        {
+          id: "team",
+          label: "Team pressure",
+          prompt: "We are moving fast but not hearing the same priority.",
+          hear: "I can hear the pressure to decide quickly.",
+          title: "Make the next action visible.",
+          summary: "Work tension softens when the next concrete action is separated from status, blame, and noise.",
+          source: "Bhagavad Gita 2.48",
+          family: "Bhagavad Gita | Smriti",
+          pramana: "Direct passage candidate",
+          boundary: "Reflection support, not workplace advice.",
+          question: "What is the one action we can agree on without pretending every concern is solved?",
+          agreement: "Write the next action, owner, and time boundary before debating everything else.",
+          room: "Life Map",
+          roomHref: "life.html"
+        },
+        {
+          id: "friend",
+          label: "Friendship repair",
+          prompt: "I want to repair without forcing closeness too quickly.",
+          hear: "I can hear that trust may need time and consistency.",
+          title: "Repair can be small and honest.",
+          summary: "A calm repair does not need a dramatic speech. It needs one truthful opening and one respectful boundary.",
+          source: "Bhagavad Gita 12.13-14",
+          family: "Bhagavad Gita | Smriti",
+          pramana: "Direct passage candidate",
           boundary: "Reflection support, not relationship advice.",
-          notice: "Before choosing words, notice whether you want to clarify, defend, punish, or repair.",
-          action: "Write one sentence that is true, kind enough to send, and specific enough to reduce confusion.",
+          question: "What can be acknowledged without demanding an immediate outcome?",
+          agreement: "Offer one acknowledgement and one clear next step, then leave room for response.",
           room: "Before Reply",
           roomHref: "reply.html"
         },
         {
-          id: "money",
-          label: "Money worry",
-          prompt: "Money thoughts are making the day feel smaller.",
-          title: "Separate fear from the next responsible step.",
-          summary: "Financial worry often becomes a fog. VedaPath can support a calm next action without pretending to advise.",
-          source: "Isha Upanishad 1",
-          family: "Upanishad | Shruti",
-          pramana: "Direct passage candidate",
-          boundary: "Reflection support, not financial advice.",
-          notice: "Notice the difference between what you know, what you fear, and what needs a real number.",
-          action: "Write one concrete money fact you can verify today. Do not turn the whole future into one feeling.",
-          room: "Sankalpa",
-          roomHref: "sankalpa.html"
-        },
-        {
-          id: "health",
-          label: "Health uncertainty",
-          prompt: "My body feels uncertain and my mind keeps filling gaps.",
-          title: "Let care be practical, not imagined certainty.",
-          summary: "Health uncertainty needs grounded attention and human support, not spiritual overconfidence.",
+          id: "self",
+          label: "Inner circle",
+          prompt: "Different parts of me are arguing and none feels fully heard.",
+          hear: "I can hear the part that wants safety and the part that wants movement.",
+          title: "Let the inner debate become a clean question.",
+          summary: "Self-conflict can slow down when each side is named without turning one side into an enemy.",
           source: "Katha Upanishad 1.3.3-9",
           family: "Upanishad | Shruti",
           pramana: "Traditional metaphor candidate",
-          boundary: "Reflection support, not medical advice.",
-          notice: "Notice whether the mind is searching for control where the next responsible care step is enough.",
-          action: "Choose one practical care step: rest, call the right person, note symptoms, or follow existing medical guidance.",
+          boundary: "Reflection support, not therapy.",
+          question: "Which part needs reassurance, and which part needs a next step?",
+          agreement: "Write one reassurance and one small action. Do not force a complete inner verdict.",
           room: "Calm",
           roomHref: "calm.html"
-        },
-        {
-          id: "noise",
-          label: "Digital noise",
-          prompt: "My attention feels split by notifications and comparison.",
-          title: "Return attention to one chosen doorway.",
-          summary: "Digital noise scatters agency. A source-backed pause can restore one clean choice.",
-          source: "Bhagavad Gita 6.26",
-          family: "Bhagavad Gita | Smriti",
-          pramana: "Direct passage candidate",
-          boundary: "Reflection support, not productivity prescription.",
-          notice: "Notice the exact doorway that keeps taking you away: message, feed, tab, or comparison.",
-          action: "Close one doorway for ten minutes. Put one source-backed action in front of it.",
-          room: "Source Bell",
-          roomHref: "bell.html"
-        },
-        {
-          id: "sleep",
-          label: "Sleep drift",
-          prompt: "The day is ending but my mind is still trying to continue.",
-          title: "Close the day without continuing the battle.",
-          summary: "A restless evening needs acknowledgement and release, not another round of self-judgment.",
-          source: "Bhagavad Gita 6.17",
-          family: "Bhagavad Gita | Smriti",
-          pramana: "Direct passage candidate",
-          boundary: "Reflection support, not sleep or medical advice.",
-          notice: "Notice whether the mind is trying to finish the whole day instead of closing one small loop.",
-          action: "Name one thing completed, one thing left for tomorrow, and one thing you can release tonight.",
-          room: "Evening",
-          roomHref: "evening.html"
         }
       ];
 
       const state = {
-        selectedId: "work",
+        selectedId: "family",
         entries: loadEntries()
       };
 
       const elements = {
-        domainList: document.getElementById("domainList"),
-        lifeLine: document.getElementById("lifeLine"),
-        lifeTitle: document.getElementById("lifeTitle"),
-        lifeSummary: document.getElementById("lifeSummary"),
+        circleList: document.getElementById("circleList"),
+        heardInput: document.getElementById("heardInput"),
+        hearInput: document.getElementById("hearInput"),
+        circleTitle: document.getElementById("circleTitle"),
+        circleSummary: document.getElementById("circleSummary"),
         sourceCandidate: document.getElementById("sourceCandidate"),
         sourceFamily: document.getElementById("sourceFamily"),
         sourcePramana: document.getElementById("sourcePramana"),
         sourceBoundary: document.getElementById("sourceBoundary"),
-        noticeText: document.getElementById("noticeText"),
-        actionText: document.getElementById("actionText"),
+        sharedQuestion: document.getElementById("sharedQuestion"),
+        smallAgreement: document.getElementById("smallAgreement"),
         boundaryText: document.getElementById("boundaryText"),
         roomLink: document.getElementById("roomLink"),
-        routeList: document.getElementById("routeList"),
         savedCount: document.getElementById("savedCount"),
-        topDomain: document.getElementById("topDomain"),
+        topCircle: document.getElementById("topCircle"),
         lastSource: document.getElementById("lastSource"),
         nextRoom: document.getElementById("nextRoom"),
-        weekRow: document.getElementById("weekRow"),
         historyList: document.getElementById("historyList"),
-        mapExport: document.getElementById("mapExport")
+        circleExport: document.getElementById("circleExport")
       };
 
       function loadEntries() {
-        const raw = storage.getItem(lifeKey);
+        const raw = storage.getItem(circleKey);
         if (!raw) return [];
         try {
           const parsed = JSON.parse(raw);
@@ -847,131 +802,104 @@
       }
 
       function saveEntries() {
-        storage.setItem(lifeKey, JSON.stringify(state.entries.slice(0, 20)));
+        storage.setItem(circleKey, JSON.stringify(state.entries.slice(0, 20)));
       }
 
-      function currentDomain() {
-        return domains.find((domain) => domain.id === state.selectedId) ?? domains[0];
+      function currentCircle() {
+        return circles.find((circle) => circle.id === state.selectedId) ?? circles[0];
       }
 
-      function renderDomains() {
-        elements.domainList.innerHTML = domains.map((domain, index) => `
-          <button class="domain-card ${domain.id === state.selectedId ? "active" : ""}" type="button" data-id="${domain.id}">
-            <span class="domain-icon">${index + 1}</span>
+      function renderCircles() {
+        elements.circleList.innerHTML = circles.map((circle, index) => `
+          <button class="circle-card ${circle.id === state.selectedId ? "active" : ""}" type="button" data-id="${circle.id}">
+            <span class="circle-index">${index + 1}</span>
             <span>
-              <strong>${domain.label}</strong>
-              <p>${domain.summary}</p>
+              <strong>${circle.label}</strong>
+              <p>${circle.summary}</p>
             </span>
           </button>
         `).join("");
 
-        document.querySelectorAll(".domain-card[data-id]").forEach((button) => {
+        document.querySelectorAll(".circle-card[data-id]").forEach((button) => {
           button.addEventListener("click", () => {
             state.selectedId = button.dataset.id;
-            elements.lifeLine.value = currentDomain().prompt;
+            elements.heardInput.value = currentCircle().prompt;
+            elements.hearInput.value = currentCircle().hear;
             render();
           });
         });
       }
 
       function renderMain() {
-        const domain = currentDomain();
-        elements.lifeTitle.textContent = domain.title;
-        elements.lifeSummary.textContent = domain.summary;
-        elements.sourceCandidate.textContent = domain.source;
-        elements.sourceFamily.textContent = domain.family;
-        elements.sourcePramana.textContent = domain.pramana;
-        elements.sourceBoundary.textContent = domain.boundary;
-        elements.noticeText.textContent = domain.notice;
-        elements.actionText.textContent = domain.action;
-        elements.boundaryText.textContent = `This is ${domain.boundary.toLowerCase()} VedaPath is not making the decision for you.`;
-        elements.roomLink.textContent = `Open ${domain.room}`;
-        elements.roomLink.href = domain.roomHref;
-        elements.routeList.innerHTML = [
-          domain,
-          ...domains.filter((item) => item.id !== domain.id).slice(0, 3)
-        ].map((item) => `
-          <a class="route-card" href="${item.roomHref}">
-            <strong>${item.room}</strong>
-            <p>${item.label}: ${item.action}</p>
-          </a>
-        `).join("");
+        const circle = currentCircle();
+        elements.circleTitle.textContent = circle.title;
+        elements.circleSummary.textContent = circle.summary;
+        elements.sourceCandidate.textContent = circle.source;
+        elements.sourceFamily.textContent = circle.family;
+        elements.sourcePramana.textContent = circle.pramana;
+        elements.sourceBoundary.textContent = circle.boundary;
+        elements.sharedQuestion.textContent = circle.question;
+        elements.smallAgreement.textContent = circle.agreement;
+        elements.boundaryText.textContent = `This is ${circle.boundary.toLowerCase()} VedaPath is not mediating, judging, diagnosing, advising unsafe contact, or replacing professional help.`;
+        elements.roomLink.textContent = `Open ${circle.room}`;
+        elements.roomLink.href = circle.roomHref;
+        elements.circleExport.value = buildExport();
       }
 
       function renderPattern() {
         const entries = state.entries;
         const counts = entries.reduce((acc, entry) => {
-          acc[entry.domain] = (acc[entry.domain] ?? 0) + 1;
+          acc[entry.circle] = (acc[entry.circle] ?? 0) + 1;
           return acc;
         }, {});
         const top = Object.entries(counts).sort((a, b) => b[1] - a[1])[0];
         const latest = entries[0];
-
         elements.savedCount.textContent = entries.length;
-        elements.topDomain.textContent = top ? top[0] : "None";
+        elements.topCircle.textContent = top ? top[0] : "None";
         elements.lastSource.textContent = latest ? latest.source : "None";
-        elements.nextRoom.textContent = latest ? latest.room : currentDomain().room;
-
-        const formatter = new Intl.DateTimeFormat("en", { weekday: "short" });
-        const today = new Date();
-        const days = Array.from({ length: 7 }, (_, index) => {
-          const date = new Date(today);
-          date.setDate(today.getDate() - (6 - index));
-          const key = date.toISOString().slice(0, 10);
-          const hit = entries.find((entry) => entry.dateKey === key);
-          return { label: formatter.format(date), value: hit ? hit.domain : "Open" };
-        });
-
-        elements.weekRow.innerHTML = days.map((day) => `
-          <div class="day-chip">
-            <strong>${day.label}</strong>
-            <span>${day.value}</span>
-          </div>
-        `).join("");
-
+        elements.nextRoom.textContent = latest ? latest.room : currentCircle().room;
         elements.historyList.innerHTML = entries.length
           ? entries.slice(0, 5).map((entry) => `
               <article class="history-card">
-                <strong>${entry.domain}</strong>
-                <p>${entry.line}</p>
+                <strong>${entry.circle}</strong>
+                <p>${entry.heard}</p>
                 <p>${entry.source} -> ${entry.room}</p>
               </article>
             `).join("")
-          : `<article class="history-card"><strong>No saved life maps yet</strong><p>Save one honest line and the local pattern will begin.</p></article>`;
-
-        elements.mapExport.value = buildExport();
+          : `<article class="history-card"><strong>No saved circles yet</strong><p>Save one circle brief and the local pattern will begin.</p></article>`;
       }
 
       function buildExport() {
-        const domain = currentDomain();
+        const circle = currentCircle();
         return [
-          "VedaPath Life Map",
+          "VedaPath Calm Circle",
           "Release: v0.4.7 calm circle",
-          `Moment: ${domain.label}`,
-          `Honest line: ${elements.lifeLine.value.trim() || domain.prompt}`,
-          `Source: ${domain.source}`,
-          `Text family: ${domain.family}`,
-          `Boundary: ${domain.boundary}`,
-          `Carry action: ${domain.action}`,
-          `Next room: ${domain.room}`
+          `Circle: ${circle.label}`,
+          `Needs to be heard: ${elements.heardInput.value.trim() || circle.prompt}`,
+          `Can try to hear: ${elements.hearInput.value.trim() || circle.hear}`,
+          `Source: ${circle.source}`,
+          `Text family: ${circle.family}`,
+          `Boundary: ${circle.boundary}`,
+          `Shared question: ${circle.question}`,
+          `Small agreement: ${circle.agreement}`,
+          `Next room: ${circle.room}`
         ].join("\n");
       }
 
-      function saveMap() {
-        const domain = currentDomain();
-        const now = new Date();
+      function saveCircle() {
+        const circle = currentCircle();
         state.entries.unshift({
-          domain: domain.label,
-          id: domain.id,
-          source: domain.source,
-          room: domain.room,
-          line: elements.lifeLine.value.trim() || domain.prompt,
-          dateKey: now.toISOString().slice(0, 10),
-          savedAt: now.toISOString()
+          circle: circle.label,
+          source: circle.source,
+          room: circle.room,
+          heard: elements.heardInput.value.trim() || circle.prompt,
+          hear: elements.hearInput.value.trim() || circle.hear,
+          savedAt: new Date().toISOString()
         });
         state.entries = state.entries.slice(0, 20);
         saveEntries();
         renderPattern();
+        elements.circleExport.value = buildExport();
       }
 
       function copyText(text, button, copiedLabel) {
@@ -982,7 +910,6 @@
             button.textContent = original;
           }, 1200);
         };
-
         if (navigator.clipboard?.writeText) {
           navigator.clipboard.writeText(text).then(done).catch(done);
         } else {
@@ -991,25 +918,28 @@
       }
 
       function render() {
-        renderDomains();
+        renderCircles();
         renderMain();
         renderPattern();
       }
 
-      elements.lifeLine.addEventListener("input", () => {
-        elements.mapExport.value = buildExport();
+      elements.heardInput.addEventListener("input", () => {
+        elements.circleExport.value = buildExport();
+      });
+      elements.hearInput.addEventListener("input", () => {
+        elements.circleExport.value = buildExport();
       });
 
-      document.getElementById("saveMap").addEventListener("click", saveMap);
-      document.getElementById("copyMap").addEventListener("click", () => {
-        copyText(buildExport(), document.getElementById("copyMap"), "Copied Handoff");
+      document.getElementById("saveCircle").addEventListener("click", saveCircle);
+      document.getElementById("copyCircle").addEventListener("click", () => {
+        copyText(buildExport(), document.getElementById("copyCircle"), "Copied Brief");
       });
       document.getElementById("copyPattern").addEventListener("click", () => {
-        copyText(elements.mapExport.value, document.getElementById("copyPattern"), "Copied Pattern");
+        copyText(elements.circleExport.value, document.getElementById("copyPattern"), "Copied Pattern");
       });
-      document.getElementById("clearMaps").addEventListener("click", () => {
+      document.getElementById("clearCircles").addEventListener("click", () => {
         state.entries = [];
-        storage.removeItem(lifeKey);
+        storage.removeItem(circleKey);
         renderPattern();
       });
 

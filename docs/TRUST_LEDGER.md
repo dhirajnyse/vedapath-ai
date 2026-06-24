@@ -71,4 +71,6 @@ This ledger is a prototype planning surface. It is not final scholarship, safety
 
 v0.4.6 adds Life Map so personal-life calm routes can stay source-backed, bounded, and local-only in the prototype.
 
-v0.4.7 should turn ledger and life-map records into a source governance and consent schema with clear fields for production data, review identity, privacy controls, and audit history.
+v0.4.7 adds Calm Circle so shared moments can stay source-backed, bounded, and local-only in the prototype.
+
+v0.4.8 should turn ledger, life-map, and calm-circle records into a source governance and consent schema with clear fields for production data, review identity, privacy controls, participant consent, and audit history.

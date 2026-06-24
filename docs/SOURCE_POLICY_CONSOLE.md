@@ -73,4 +73,6 @@ v0.4.5 adds Trust Ledger so every blocked, bounded, or uncertain answer can beco
 
 v0.4.6 adds Life Map so personal-life calm routes can stay source-backed, bounded, and local-only in the prototype.
 
-v0.4.7 should turn policy, ledger, queue, and life-map records into a durable source governance and consent schema with reviewer identity, source edition fields, audit history, privacy controls, and evaluation fixtures.
+v0.4.7 adds Calm Circle so shared moments can stay source-backed, bounded, and local-only in the prototype.
+
+v0.4.8 should turn policy, ledger, queue, life-map, and calm-circle records into a durable source governance and consent schema with reviewer identity, source edition fields, audit history, privacy controls, participant consent, and evaluation fixtures.

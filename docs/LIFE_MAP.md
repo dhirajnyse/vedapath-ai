@@ -66,4 +66,6 @@ Production should require:
 
 ## Next Step
 
-v0.4.7 should connect Life Map, Trust Ledger, Source Policy, and Reviewer Queue into a durable source governance and consent schema.
+v0.4.7 adds Calm Circle so shared moments can stay source-backed, bounded, and local-only in the prototype.
+
+v0.4.8 should connect Calm Circle, Life Map, Trust Ledger, Source Policy, and Reviewer Queue into a durable source governance and shared-consent schema.
