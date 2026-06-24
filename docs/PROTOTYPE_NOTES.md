@@ -1,6 +1,6 @@
-# v0.3.5 Prototype Notes
+# v0.3.6 Prototype Notes
 
-The v0.3.5 release turns the VedaPath AI homepage into a clickable product prototype with calm, practice, source-library, source-path, calm-compass, calm-card, source-bell, before-reply, samvada, sankalpa, seva, morning, evening, and rhythm surfaces.
+The v0.3.6 release turns the VedaPath AI homepage into a clickable product prototype with calm, practice, source-library, source-seeds, source-path, calm-compass, calm-card, source-bell, before-reply, samvada, sankalpa, seva, morning, evening, and rhythm surfaces.
 
 ## Included
 
@@ -15,6 +15,7 @@ The v0.3.5 release turns the VedaPath AI homepage into a clickable product proto
 - Daily Calm Loop
 - Source Practice timer and local rhythm
 - Source Library with search, filters, shelf, and practice handoff
+- Source Seeds with structured records, review queue, missing fields, and copyable source-schema JSON
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
 - Calm Card Studio with visual preview, local saved cards, copy text, and PNG export
@@ -42,6 +43,7 @@ This release proves the product direction:
 - users can see confidence and caution
 - deeper layers stay hidden until requested
 - source candidates can become a small personal route
+- prototype citations can become structured source records before retrieval begins
 - one current-life state can route to the next useful product room
 - one source-backed action can become a shareable visual artifact
 - one source-backed minute can become a practical daily reset
@@ -54,4 +56,4 @@ This release proves the product direction:
 
 ## Next Release
 
-v0.3.6 should turn the prototype library, path, and rhythm data into a structured source schema and the first 25 to 50 verified answer records.
+v0.3.7 should connect reviewed source seeds to the first retrieval prototype over verified passage data.

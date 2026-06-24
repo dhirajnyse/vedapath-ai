@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Source Library is the first visible knowledge layer for VedaPath AI. It organizes prototype source candidates so users can search, filter, save a device-local shelf, send a selected source into Source Practice, feed Source Path Builder, support Calm Compass routing, shape Calm Card Studio outputs, power Source Bell resets, frame Before Reply drafts, support Samvada maps, shape Sankalpa intentions, guide Seva plans, open Morning Path starts, close Evening Reflection cards, and support Calm Rhythm patterns.
+Source Library is the first visible knowledge layer for VedaPath AI. It organizes prototype source candidates so users can search, filter, save a device-local shelf, send a selected source into Source Practice, feed Source Seeds review, feed Source Path Builder, support Calm Compass routing, shape Calm Card Studio outputs, power Source Bell resets, frame Before Reply drafts, support Samvada maps, shape Sankalpa intentions, guide Seva plans, open Morning Path starts, close Evening Reflection cards, and support Calm Rhythm patterns.
 
 ## What It Proves
 
@@ -21,6 +21,7 @@ Source Library is the first visible knowledge layer for VedaPath AI. It organize
 - The same records can support Morning Path without turning the first action into a moral score.
 - The same records can support Evening Reflection without deepening rumination or self-judgment.
 - The same records can support Calm Rhythm without turning local traces into profiling or scoring.
+- The same records can become Source Seeds, where missing production fields and review gates are made explicit.
 
 ## Current Record Shape
 
@@ -46,8 +47,16 @@ Each prototype record includes:
 - Morning state hint
 - Evening state hint
 - Rhythm signal hint
+- Seed review status
+- Missing production fields
 
 The current records are prototype candidates, not production source data.
+
+## Link To Source Seeds
+
+Source Library is for discovery. Source Seeds is for production readiness.
+
+The library can help a user find a source candidate. Seeds should help the team decide whether that candidate has enough verified text, metadata, reviewer notes, and licensing clarity to power retrieval.
 
 ## Future Production Requirements
 

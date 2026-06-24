@@ -23,7 +23,7 @@ Show the product experience without a live LLM backend.
 
 Status:
 
-Completed in v0.3.5.
+Completed in v0.3.6.
 
 Core screens:
 
@@ -37,6 +37,7 @@ Core screens:
 - Daily Calm Loop
 - Source Practice
 - Source Library
+- Source Seeds
 - Source Path Builder
 - Calm Compass
 - Calm Card Studio
@@ -63,7 +64,7 @@ Connect a small curated source set.
 
 Status:
 
-Next major product phase. First step is the source schema and verified sample records.
+Active product phase. Source Seeds now shows the first structured source schema and prototype seed records.
 
 Initial data:
 
@@ -71,6 +72,7 @@ Initial data:
 - selected Vedic and Upanishadic passages
 - Bhagavad Gita references for common cultural questions
 - glossary for core terms
+- source seed records with review gates and missing production fields
 
 Features:
 
@@ -150,6 +152,7 @@ Must have:
 - simple learning path
 - calm and practice boundary model
 - prototype source library and shelf
+- source seed schema and review queue
 - prototype source path builder and local progress
 - calm compass routing from explicit present-state choice
 - calm card studio for shareable source-backed reflections
@@ -164,6 +167,7 @@ Should have:
 - Daily Calm Loop
 - Source Practice
 - Source Library
+- Source Seeds
 - Source Path Builder
 - Calm Compass
 - Calm Card Studio

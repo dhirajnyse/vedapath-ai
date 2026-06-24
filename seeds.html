@@ -1,0 +1,1146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VedaPath Source Seeds</title>
+    <style>
+      :root {
+        --bhagwa: #d65a1f;
+        --deep-ochre: #a83e12;
+        --sacred-gold: #e0a83b;
+        --warm-ivory: #fff7ea;
+        --ink: #1f1a17;
+        --muted-brown: #5b4638;
+        --peacock-green: #145c4a;
+        --deep-indigo: #29335c;
+        --line: rgba(91, 70, 56, 0.16);
+        --panel: rgba(255, 255, 255, 0.68);
+        --panel-strong: rgba(255, 255, 255, 0.9);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--warm-ivory);
+        color: var(--ink);
+        font-family: Inter, "IBM Plex Sans", system-ui, sans-serif;
+        line-height: 1.5;
+      }
+
+      button,
+      input,
+      textarea {
+        font: inherit;
+      }
+
+      button {
+        cursor: pointer;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .page {
+        width: min(1240px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 22px 0 48px;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding-bottom: 18px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        min-width: 0;
+      }
+
+      .brand img {
+        width: 50px;
+        height: 50px;
+        border-radius: 8px;
+        object-fit: cover;
+      }
+
+      .brand strong {
+        display: block;
+        font-size: 18px;
+      }
+
+      .brand span,
+      .muted,
+      .small,
+      .record-card p,
+      .detail-card p,
+      .field-card p,
+      .stat span,
+      .review-card p,
+      .boundary p,
+      .seed-meta span {
+        color: var(--muted-brown);
+      }
+
+      .brand span,
+      .small,
+      .stat span,
+      .seed-meta span {
+        font-size: 13px;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .link,
+      .version {
+        display: inline-flex;
+        align-items: center;
+        min-height: 34px;
+        border-radius: 999px;
+        padding: 6px 11px;
+        font-size: 13px;
+        font-weight: 800;
+      }
+
+      .link {
+        border: 1px solid transparent;
+        color: var(--muted-brown);
+      }
+
+      .link:hover,
+      .link:focus-visible,
+      .link.active {
+        border-color: rgba(168, 62, 18, 0.22);
+        color: var(--deep-ochre);
+        outline: none;
+      }
+
+      .version {
+        border: 1px solid rgba(168, 62, 18, 0.28);
+        background: rgba(255, 255, 255, 0.42);
+        color: var(--deep-ochre);
+      }
+
+      .workspace {
+        display: grid;
+        grid-template-columns: minmax(288px, 0.88fr) minmax(0, 1.22fr) minmax(300px, 0.9fr);
+        gap: 16px;
+        align-items: start;
+        padding-top: 18px;
+      }
+
+      .panel,
+      .record-card,
+      .detail-card,
+      .field-card,
+      .stat,
+      .review-card,
+      .boundary,
+      .seed-output {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+      }
+
+      .panel {
+        padding: 18px;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        min-height: 28px;
+        margin-bottom: 14px;
+        border-radius: 999px;
+        padding: 4px 10px;
+        background: rgba(214, 90, 31, 0.12);
+        color: var(--deep-ochre);
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        margin-bottom: 12px;
+        font-size: clamp(42px, 4.7vw, 64px);
+        line-height: 0.98;
+        letter-spacing: 0;
+      }
+
+      h2 {
+        margin-bottom: 12px;
+        font-size: 24px;
+      }
+
+      h3 {
+        margin-bottom: 8px;
+        font-size: 18px;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        border: 1px solid rgba(168, 62, 18, 0.28);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.72);
+        color: var(--ink);
+        padding: 12px;
+      }
+
+      textarea {
+        min-height: 156px;
+        resize: vertical;
+      }
+
+      input:focus,
+      textarea:focus {
+        border-color: var(--bhagwa);
+        outline: 3px solid rgba(214, 90, 31, 0.12);
+      }
+
+      .button-row,
+      .filter-row,
+      .tag-row,
+      .seed-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .button,
+      .filter-button,
+      .tag {
+        display: inline-flex;
+        align-items: center;
+        min-height: 34px;
+        border: 1px solid rgba(168, 62, 18, 0.24);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.48);
+        color: var(--deep-ochre);
+        padding: 7px 10px;
+        font-size: 13px;
+        font-weight: 850;
+      }
+
+      .button {
+        min-height: 40px;
+        font-size: 15px;
+      }
+
+      .button.primary,
+      .filter-button.active {
+        border-color: var(--bhagwa);
+        background: var(--bhagwa);
+        color: white;
+      }
+
+      .button.secondary {
+        border-color: rgba(20, 92, 74, 0.24);
+        color: var(--peacock-green);
+      }
+
+      .button:hover,
+      .button:focus-visible,
+      .filter-button:hover,
+      .filter-button:focus-visible,
+      .record-card:hover,
+      .record-card:focus-visible {
+        border-color: rgba(214, 90, 31, 0.48);
+        outline: 3px solid rgba(214, 90, 31, 0.12);
+      }
+
+      .record-list,
+      .field-grid,
+      .detail-grid,
+      .stats-grid,
+      .review-list {
+        display: grid;
+        gap: 10px;
+      }
+
+      .record-card {
+        width: 100%;
+        padding: 14px;
+        text-align: left;
+        color: inherit;
+      }
+
+      .record-card.active {
+        border-color: rgba(214, 90, 31, 0.48);
+        background: rgba(214, 90, 31, 0.08);
+      }
+
+      .record-card h3 {
+        margin-bottom: 4px;
+      }
+
+      .record-card p {
+        margin-bottom: 10px;
+      }
+
+      .tag {
+        min-height: 28px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.52);
+      }
+
+      .tag.green {
+        border-color: rgba(20, 92, 74, 0.2);
+        color: var(--peacock-green);
+      }
+
+      .tag.indigo {
+        border-color: rgba(41, 51, 92, 0.2);
+        color: var(--deep-indigo);
+      }
+
+      .hero-card {
+        overflow: hidden;
+        padding: 18px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background:
+          radial-gradient(circle at 88% 14%, rgba(224, 168, 59, 0.18), transparent 34%),
+          linear-gradient(135deg, rgba(20, 92, 74, 0.1), transparent 42%),
+          rgba(255, 255, 255, 0.74);
+      }
+
+      .hero-top {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 16px;
+        align-items: center;
+        margin-bottom: 16px;
+      }
+
+      .logo-frame {
+        display: grid;
+        place-items: center;
+        width: 132px;
+        height: 132px;
+        border: 1px solid rgba(168, 62, 18, 0.18);
+        border-radius: 8px;
+        background: linear-gradient(180deg, #fff9ef 0%, #f6e4ca 100%);
+        overflow: hidden;
+      }
+
+      .logo-frame img {
+        width: 104px;
+        height: auto;
+      }
+
+      .detail-grid,
+      .stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .field-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .detail-card,
+      .field-card,
+      .review-card,
+      .boundary {
+        padding: 14px;
+      }
+
+      .detail-card.strong {
+        border-left: 4px solid var(--bhagwa);
+        background: var(--panel-strong);
+      }
+
+      .detail-card strong,
+      .field-card strong,
+      .review-card strong {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      .detail-card p,
+      .field-card p,
+      .review-card p,
+      .boundary p {
+        margin-bottom: 0;
+      }
+
+      .stat {
+        min-height: 82px;
+        padding: 13px;
+      }
+
+      .stat strong {
+        display: block;
+        margin-top: 4px;
+        font-size: 26px;
+        line-height: 1;
+      }
+
+      .readiness {
+        height: 10px;
+        overflow: hidden;
+        border-radius: 999px;
+        background: rgba(168, 62, 18, 0.14);
+      }
+
+      .readiness div {
+        height: 100%;
+        border-radius: inherit;
+        background: linear-gradient(90deg, var(--bhagwa), var(--sacred-gold));
+      }
+
+      .section {
+        margin-top: 16px;
+        padding-top: 16px;
+        border-top: 1px solid var(--line);
+      }
+
+      .boundary {
+        margin-top: 16px;
+        border-style: dashed;
+        background: rgba(255, 255, 255, 0.34);
+      }
+
+      .seed-output {
+        min-height: 150px;
+        margin-top: 10px;
+        background: rgba(255, 255, 255, 0.78);
+      }
+
+      [hidden] {
+        display: none !important;
+      }
+
+      @media (max-width: 1120px) {
+        .workspace {
+          grid-template-columns: minmax(288px, 0.9fr) minmax(0, 1.1fr);
+        }
+
+        .review-panel {
+          grid-column: 1 / -1;
+        }
+      }
+
+      @media (max-width: 780px) {
+        .page {
+          width: min(100% - 24px, 1240px);
+        }
+
+        .topbar {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .nav {
+          justify-content: flex-start;
+        }
+
+        .workspace,
+        .hero-top,
+        .detail-grid,
+        .field-grid,
+        .stats-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .logo-frame {
+          width: 100%;
+          min-height: 146px;
+        }
+
+        h1 {
+          font-size: clamp(38px, 10vw, 48px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top" aria-label="VedaPath AI home">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
+          <div>
+            <strong>VedaPath AI</strong>
+            <span>Source seeds</span>
+          </div>
+        </a>
+        <nav class="nav" aria-label="Project links">
+          <a class="link" href="build-status.html">Build</a>
+          <a class="link" href="brand/brand-board.html">Brand</a>
+          <a class="link" href="blueprint.html">Blueprint</a>
+          <a class="link" href="calm.html">Calm</a>
+          <a class="link" href="daily.html">Daily</a>
+          <a class="link" href="practice.html">Practice</a>
+          <a class="link" href="library.html">Library</a>
+          <a class="link active" href="seeds.html">Seeds</a>
+          <a class="link" href="path.html">Path</a>
+          <a class="link" href="compass.html">Compass</a>
+          <a class="link" href="card.html">Card</a>
+          <a class="link" href="bell.html">Bell</a>
+          <a class="link" href="reply.html">Reply</a>
+          <a class="link" href="samvada.html">Samvada</a>
+          <a class="link" href="sankalpa.html">Intent</a>
+          <a class="link" href="seva.html">Seva</a>
+          <a class="link" href="morning.html">Morning</a>
+          <a class="link" href="evening.html">Evening</a>
+          <a class="link" href="rhythm.html">Rhythm</a>
+          <span class="version">v0.3.6 seeds</span>
+        </nav>
+      </header>
+
+      <section class="workspace" aria-label="Source Seeds workspace">
+        <aside class="panel">
+          <span class="eyebrow">Source schema begins</span>
+          <h1>Plant the first trusted source seeds.</h1>
+          <p class="muted">A small source-data room for turning prototype cards into reviewed, retrieval-ready records. It keeps the launch calm by showing what is ready, what is missing, and what must never be overclaimed.</p>
+
+          <div class="section">
+            <label class="small" for="seedSearch">Search seed records</label>
+            <input id="seedSearch" type="search" placeholder="Try Gita, Veda, calm, claim, mantra">
+          </div>
+
+          <div class="section">
+            <h2>Lens</h2>
+            <div class="filter-row" aria-label="Seed filters">
+              <button class="filter-button active" type="button" data-filter="All">All</button>
+              <button class="filter-button" type="button" data-filter="Veda">Veda</button>
+              <button class="filter-button" type="button" data-filter="Upanishad">Upanishad</button>
+              <button class="filter-button" type="button" data-filter="Gita">Gita</button>
+              <button class="filter-button" type="button" data-filter="Calm">Calm</button>
+              <button class="filter-button" type="button" data-filter="Claim">Claim</button>
+              <button class="filter-button" type="button" data-filter="Mantra">Mantra</button>
+              <button class="filter-button" type="button" data-filter="Needs review">Needs review</button>
+            </div>
+          </div>
+
+          <div class="section">
+            <h2 id="recordCount">12 seed records</h2>
+            <div class="record-list" id="recordList"></div>
+          </div>
+        </aside>
+
+        <section class="panel">
+          <div class="hero-card">
+            <div class="hero-top">
+              <div>
+                <span class="eyebrow">Selected seed</span>
+                <h1 id="seedTitle">Steadiness in action.</h1>
+                <p class="muted" id="seedSummary">A source candidate for balance in action, responsibility, and outcome attachment.</p>
+              </div>
+              <div class="logo-frame">
+                <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI source seed logo">
+              </div>
+            </div>
+
+            <div class="detail-grid">
+              <article class="detail-card strong">
+                <strong>Canonical citation</strong>
+                <p id="seedCitation">Bhagavad Gita 2.48</p>
+              </article>
+              <article class="detail-card">
+                <strong>Text family</strong>
+                <p id="seedFamily">Bhagavad Gita | Smriti</p>
+              </article>
+              <article class="detail-card">
+                <strong>Primary use</strong>
+                <p id="seedUse">Calm, Practice, Rhythm</p>
+              </article>
+              <article class="detail-card">
+                <strong>Pramana level</strong>
+                <p id="seedPramana">Direct passage candidate</p>
+              </article>
+            </div>
+          </div>
+
+          <section class="section">
+            <h2>Schema Preview</h2>
+            <div class="field-grid" id="fieldGrid"></div>
+          </section>
+
+          <section class="section">
+            <h2>Review Gate</h2>
+            <div class="detail-grid">
+              <article class="detail-card">
+                <strong>Ready now</strong>
+                <p id="seedReady">Citation, source family, use tags, boundary, and product route.</p>
+              </article>
+              <article class="detail-card">
+                <strong>Missing before production</strong>
+                <p id="seedMissing">Verified Sanskrit, translation policy, edition metadata, reviewer note, and licensing status.</p>
+              </article>
+              <article class="detail-card">
+                <strong>Question</strong>
+                <p id="seedQuestion">What can I do with steadiness today?</p>
+              </article>
+              <article class="detail-card">
+                <strong>Boundary</strong>
+                <p id="seedBoundary">Use for reflection support, not therapy, ritual instruction, or spiritual authority.</p>
+              </article>
+            </div>
+          </section>
+
+          <section class="section">
+            <h2>Handoff</h2>
+            <div class="button-row">
+              <button class="button primary" id="queueReview" type="button">Queue Review</button>
+              <button class="button secondary" id="copySeed" type="button">Copy Seed JSON</button>
+              <button class="button" id="sendLibrary" type="button">Send to Library</button>
+              <a class="button" href="library.html">Open Library</a>
+            </div>
+            <textarea class="seed-output" id="seedOutput" readonly hidden aria-label="Prepared source seed JSON"></textarea>
+          </section>
+        </section>
+
+        <aside class="panel review-panel">
+          <span class="eyebrow">MVP source gate</span>
+          <h2>Seed Readiness</h2>
+          <p class="muted">This room shows the product discipline needed before VedaPath answers from live retrieval.</p>
+
+          <div class="stats-grid">
+            <article class="stat">
+              <span>Prototype seeds</span>
+              <strong id="totalSeeds">12</strong>
+            </article>
+            <article class="stat">
+              <span>Review queued</span>
+              <strong id="queuedCount">0</strong>
+            </article>
+            <article class="stat">
+              <span>Family coverage</span>
+              <strong id="familyCount">4</strong>
+            </article>
+            <article class="stat">
+              <span>MVP seed gate</span>
+              <strong id="readinessScore">38%</strong>
+            </article>
+          </div>
+
+          <div class="section">
+            <div class="readiness" aria-label="Seed readiness 38 percent"><div id="readinessBar" style="width:38%"></div></div>
+            <p class="muted" id="readinessText" style="margin-top: 10px;">Schema shape is visible. Production still needs reviewed text, translation policy, and licensing.</p>
+          </div>
+
+          <section class="section">
+            <h2>Review Queue</h2>
+            <div class="review-list" id="reviewList"></div>
+          </section>
+
+          <div class="button-row">
+            <button class="button secondary" id="copyQueue" type="button">Copy Queue</button>
+            <button class="button" id="clearQueue" type="button">Clear Local Queue</button>
+          </div>
+
+          <section class="boundary">
+            <h2>Trust Boundary</h2>
+            <p>Source Seeds is not claiming final textual authority. It is a launch scaffold: every production record needs human review, source edition metadata, translation rights, and category checks.</p>
+          </section>
+        </aside>
+      </section>
+    </main>
+
+    <script>
+      const queueKey = "vedapath.sourceSeeds.v1";
+      const libraryLaunchKey = "vedapath.library.launch.v1";
+      const shelfKey = "vedapath.sourceShelf.v1";
+      const memoryStore = {};
+      const storage = {
+        getItem(key) {
+          try {
+            return window.localStorage?.getItem(key) ?? memoryStore[key] ?? null;
+          } catch {
+            return memoryStore[key] ?? null;
+          }
+        },
+        setItem(key, value) {
+          memoryStore[key] = value;
+          try {
+            window.localStorage?.setItem(key, value);
+          } catch {
+            return;
+          }
+        },
+        removeItem(key) {
+          delete memoryStore[key];
+          try {
+            window.localStorage?.removeItem(key);
+          } catch {
+            return;
+          }
+        }
+      };
+      const seedRecords = [
+        {
+          id: "gita-2-48",
+          title: "Steadiness in action",
+          citation: "Bhagavad Gita 2.48",
+          family: "Bhagavad Gita | Smriti",
+          familyShort: "Gita",
+          uses: ["Calm", "Practice", "Rhythm"],
+          pramana: "Direct passage candidate",
+          status: "Needs review",
+          summary: "A source candidate for balance in action, responsibility, and outcome attachment.",
+          question: "What can I do with steadiness today?",
+          boundary: "Use for reflection support, not therapy, ritual instruction, or spiritual authority.",
+          missing: ["verified Sanskrit", "translation policy", "edition metadata", "reviewer note", "licensing status"],
+          route: "practice.html"
+        },
+        {
+          id: "gita-2-47",
+          title: "Action and outcome",
+          citation: "Bhagavad Gita 2.47",
+          family: "Bhagavad Gita | Smriti",
+          familyShort: "Gita",
+          uses: ["Practice", "Morning", "Seva"],
+          pramana: "Direct passage candidate",
+          status: "Needs review",
+          summary: "A source candidate for effort, duty, and non-attachment to outcome.",
+          question: "Which action is actually mine today?",
+          boundary: "Do not use this to pressure unsafe action or ignore real constraints.",
+          missing: ["verified Sanskrit", "commentary variants", "reviewer note", "licensing status"],
+          route: "morning.html"
+        },
+        {
+          id: "gita-11-32",
+          title: "Oppenheimer quote source",
+          citation: "Bhagavad Gita 11.32",
+          family: "Bhagavad Gita | Smriti",
+          familyShort: "Gita",
+          uses: ["Claim", "Learning"],
+          pramana: "Direct passage candidate",
+          status: "Needs review",
+          summary: "A source candidate for correcting the claim that Oppenheimer quoted the four Vedas directly.",
+          question: "What category is the source actually in?",
+          boundary: "Do not call this a direct quote from the four Vedas.",
+          missing: ["translation policy", "popular quote note", "reviewer note", "licensing status"],
+          route: "index.html"
+        },
+        {
+          id: "rigveda-3-62-10",
+          title: "Gayatri mantra source",
+          citation: "Rigveda 3.62.10",
+          family: "Veda | Shruti",
+          familyShort: "Veda",
+          uses: ["Mantra", "Learning", "Claim"],
+          pramana: "Direct passage candidate",
+          status: "Needs review",
+          summary: "A source candidate for future Mantra Lens work with Sanskrit, meter, recitation notes, and context.",
+          question: "What context should accompany this mantra?",
+          boundary: "Do not flatten pronunciation, ritual, or lineage context.",
+          missing: ["verified Sanskrit", "IAST", "meter", "recitation note", "translation rights"],
+          route: "blueprint.html"
+        },
+        {
+          id: "katha-1-3-3-9",
+          title: "Chariot of attention",
+          citation: "Katha Upanishad 1.3.3-9",
+          family: "Upanishad | Shruti",
+          familyShort: "Upanishad",
+          uses: ["Calm", "Practice", "Compass"],
+          pramana: "Direct passage candidate",
+          status: "Needs review",
+          summary: "A symbolic source candidate for attention, senses, mind, judgment, and direction.",
+          question: "What is pulling my attention hardest?",
+          boundary: "Use as a metaphor, not diagnosis or clinical guidance.",
+          missing: ["verified Sanskrit", "translation policy", "symbol note", "reviewer note"],
+          route: "compass.html"
+        },
+        {
+          id: "mundaka-1-1-4-5",
+          title: "Two kinds of knowing",
+          citation: "Mundaka Upanishad 1.1.4-5",
+          family: "Upanishad | Shruti",
+          familyShort: "Upanishad",
+          uses: ["Learning", "Calm", "Path"],
+          pramana: "Direct passage candidate",
+          status: "Needs review",
+          summary: "A source candidate for sorting practical information, deeper inquiry, and source discipline.",
+          question: "Is this about facts, meaning, or priority?",
+          boundary: "Do not use this to dismiss practical skill, evidence, or expert help.",
+          missing: ["verified Sanskrit", "translation policy", "reviewer note", "source edition"],
+          route: "path.html"
+        },
+        {
+          id: "chandogya-6-8-7",
+          title: "Self and ultimate reality",
+          citation: "Chandogya Upanishad 6.8.7",
+          family: "Upanishad | Shruti",
+          familyShort: "Upanishad",
+          uses: ["Learning", "Claim", "Samvada"],
+          pramana: "Direct passage candidate",
+          status: "Needs review",
+          summary: "A source candidate for Atman and Brahman questions with tradition-specific interpretation notes.",
+          question: "Which interpretation layer is being used?",
+          boundary: "Do not flatten Vedanta differences into one slogan.",
+          missing: ["verified Sanskrit", "school notes", "translation policy", "reviewer note"],
+          route: "samvada.html"
+        },
+        {
+          id: "isha-1",
+          title: "Held lightly",
+          citation: "Isha Upanishad 1",
+          family: "Upanishad | Shruti",
+          familyShort: "Upanishad",
+          uses: ["Calm", "Seva", "Sankalpa"],
+          pramana: "Direct passage candidate",
+          status: "Needs review",
+          summary: "A source candidate for simplicity, responsibility, participation, and non-clutching.",
+          question: "What can be held lightly today?",
+          boundary: "Do not turn a compact verse into a complete life prescription.",
+          missing: ["verified Sanskrit", "translation policy", "commentary note", "reviewer note"],
+          route: "sankalpa.html"
+        },
+        {
+          id: "taittiriya-1-11",
+          title: "Reverence and conduct",
+          citation: "Taittiriya Upanishad 1.11",
+          family: "Upanishad | Shruti",
+          familyShort: "Upanishad",
+          uses: ["Evening", "Seva", "Learning"],
+          pramana: "Direct passage candidate",
+          status: "Needs review",
+          summary: "A source candidate for gratitude, conduct, humility, and relationship with teachers and family.",
+          question: "What support should be acknowledged before the day closes?",
+          boundary: "Do not convert conduct teaching into guilt or control.",
+          missing: ["verified Sanskrit", "context note", "translation policy", "reviewer note"],
+          route: "evening.html"
+        },
+        {
+          id: "gita-6-26",
+          title: "Return of attention",
+          citation: "Bhagavad Gita 6.26",
+          family: "Bhagavad Gita | Smriti",
+          familyShort: "Gita",
+          uses: ["Reply", "Bell", "Rhythm"],
+          pramana: "Direct passage candidate",
+          status: "Needs review",
+          summary: "A source candidate for returning attention before reaction.",
+          question: "Where should attention return before I respond?",
+          boundary: "Do not present this as conflict mediation, therapy, or relationship advice.",
+          missing: ["verified Sanskrit", "translation policy", "safety note", "reviewer note"],
+          route: "reply.html"
+        },
+        {
+          id: "gita-3-19",
+          title: "Unattached helpful action",
+          citation: "Bhagavad Gita 3.19",
+          family: "Bhagavad Gita | Smriti",
+          familyShort: "Gita",
+          uses: ["Seva", "Sankalpa", "Rhythm"],
+          pramana: "Direct passage candidate",
+          status: "Needs review",
+          summary: "A source candidate for service without self-display or overextension.",
+          question: "What helpful act can be done without needing applause?",
+          boundary: "Do not use this to create service guilt, savior energy, or unsafe overwork.",
+          missing: ["verified Sanskrit", "commentary variants", "capacity note", "reviewer note"],
+          route: "seva.html"
+        },
+        {
+          id: "gita-6-17",
+          title: "Balanced rhythm",
+          citation: "Bhagavad Gita 6.17",
+          family: "Bhagavad Gita | Smriti",
+          familyShort: "Gita",
+          uses: ["Evening", "Rhythm", "Calm"],
+          pramana: "Direct passage candidate",
+          status: "Needs review",
+          summary: "A source candidate for balanced habits without turning the product into sleep or health advice.",
+          question: "What balance would help this day close cleanly?",
+          boundary: "Do not present this as sleep treatment, medical advice, or diagnosis.",
+          missing: ["verified Sanskrit", "translation policy", "health boundary", "reviewer note"],
+          route: "evening.html"
+        }
+      ];
+
+      const schemaFields = [
+        ["id", "Stable product id for retrieval and versioning."],
+        ["citation", "Canonical display citation visible to users."],
+        ["family", "Text family such as Veda, Upanishad, or Bhagavad Gita."],
+        ["uses", "Product surfaces where this seed can safely appear."],
+        ["pramana", "Authority level shown in the answer or practice card."],
+        ["boundary", "Explicit anti-overclaim guardrail."],
+        ["missing", "Fields required before production use."],
+        ["route", "Best current prototype handoff room."]
+      ];
+
+      const elements = {
+        recordList: document.getElementById("recordList"),
+        seedSearch: document.getElementById("seedSearch"),
+        recordCount: document.getElementById("recordCount"),
+        seedTitle: document.getElementById("seedTitle"),
+        seedSummary: document.getElementById("seedSummary"),
+        seedCitation: document.getElementById("seedCitation"),
+        seedFamily: document.getElementById("seedFamily"),
+        seedUse: document.getElementById("seedUse"),
+        seedPramana: document.getElementById("seedPramana"),
+        seedReady: document.getElementById("seedReady"),
+        seedMissing: document.getElementById("seedMissing"),
+        seedQuestion: document.getElementById("seedQuestion"),
+        seedBoundary: document.getElementById("seedBoundary"),
+        fieldGrid: document.getElementById("fieldGrid"),
+        totalSeeds: document.getElementById("totalSeeds"),
+        queuedCount: document.getElementById("queuedCount"),
+        familyCount: document.getElementById("familyCount"),
+        readinessScore: document.getElementById("readinessScore"),
+        readinessBar: document.getElementById("readinessBar"),
+        readinessText: document.getElementById("readinessText"),
+        reviewList: document.getElementById("reviewList"),
+        seedOutput: document.getElementById("seedOutput"),
+        copySeed: document.getElementById("copySeed"),
+        queueReview: document.getElementById("queueReview"),
+        copyQueue: document.getElementById("copyQueue")
+      };
+
+      let activeFilter = "All";
+      let selectedId = "gita-2-48";
+
+      function readQueue() {
+        try {
+          const parsed = JSON.parse(storage.getItem(queueKey) || "[]");
+          return Array.isArray(parsed) ? parsed : [];
+        } catch {
+          return [];
+        }
+      }
+
+      function writeQueue(ids) {
+        storage.setItem(queueKey, JSON.stringify([...new Set(ids)].slice(0, 24)));
+      }
+
+      function readShelf() {
+        try {
+          const parsed = JSON.parse(storage.getItem(shelfKey) || "[]");
+          return Array.isArray(parsed) ? parsed : [];
+        } catch {
+          return [];
+        }
+      }
+
+      function selectedRecord() {
+        return seedRecords.find((record) => record.id === selectedId) || seedRecords[0];
+      }
+
+      function matchesFilter(record) {
+        if (activeFilter === "All") return true;
+        if (activeFilter === "Needs review") return record.status === "Needs review";
+        return record.familyShort === activeFilter || record.uses.includes(activeFilter);
+      }
+
+      function matchesSearch(record) {
+        const query = elements.seedSearch.value.trim().toLowerCase();
+        if (!query) return true;
+        return [
+          record.title,
+          record.citation,
+          record.family,
+          record.uses.join(" "),
+          record.summary,
+          record.boundary
+        ].join(" ").toLowerCase().includes(query);
+      }
+
+      function seedPayload(record) {
+        return {
+          id: record.id,
+          title: record.title,
+          citation: record.citation,
+          family: record.family,
+          uses: record.uses,
+          pramana: record.pramana,
+          status: record.status,
+          summary: record.summary,
+          question: record.question,
+          boundary: record.boundary,
+          missingBeforeProduction: record.missing,
+          route: record.route
+        };
+      }
+
+      function renderRecords() {
+        const filtered = seedRecords.filter((record) => matchesFilter(record) && matchesSearch(record));
+        if (!filtered.some((record) => record.id === selectedId) && filtered[0]) {
+          selectedId = filtered[0].id;
+        }
+
+        elements.recordCount.textContent = `${filtered.length} seed record${filtered.length === 1 ? "" : "s"}`;
+        elements.recordList.innerHTML = filtered.length ? filtered.map((record) => `
+          <button class="record-card ${record.id === selectedId ? "active" : ""}" type="button" data-seed-id="${record.id}">
+            <h3>${record.title}</h3>
+            <p>${record.citation} | ${record.family}</p>
+            <div class="tag-row">
+              ${record.uses.slice(0, 3).map((use) => `<span class="tag green">${use}</span>`).join("")}
+              <span class="tag indigo">${record.status}</span>
+            </div>
+          </button>
+        `).join("") : `
+          <article class="record-card">
+            <h3>No seeds found</h3>
+            <p>Try a broader source family, use-case, or citation term.</p>
+          </article>
+        `;
+
+        elements.recordList.querySelectorAll("[data-seed-id]").forEach((button) => {
+          button.addEventListener("click", () => {
+            selectedId = button.dataset.seedId;
+            renderAll();
+          });
+        });
+      }
+
+      function renderSelected() {
+        const record = selectedRecord();
+        elements.seedTitle.textContent = record.title;
+        elements.seedSummary.textContent = record.summary;
+        elements.seedCitation.textContent = record.citation;
+        elements.seedFamily.textContent = record.family;
+        elements.seedUse.textContent = record.uses.join(", ");
+        elements.seedPramana.textContent = record.pramana;
+        elements.seedReady.textContent = "Citation, source family, use tags, pramana label, boundary, and prototype route.";
+        elements.seedMissing.textContent = record.missing.join(", ");
+        elements.seedQuestion.textContent = record.question;
+        elements.seedBoundary.textContent = record.boundary;
+        elements.queueReview.textContent = readQueue().includes(record.id) ? "Queued" : "Queue Review";
+      }
+
+      function renderSchema() {
+        elements.fieldGrid.innerHTML = schemaFields.map(([field, description]) => `
+          <article class="field-card">
+            <strong>${field}</strong>
+            <p>${description}</p>
+          </article>
+        `).join("");
+      }
+
+      function renderReadiness() {
+        const queue = readQueue();
+        const families = new Set(seedRecords.map((record) => record.familyShort)).size;
+        const queued = queue.length;
+        const readiness = Math.min(62, 38 + queued * 2);
+        elements.totalSeeds.textContent = seedRecords.length;
+        elements.queuedCount.textContent = queued;
+        elements.familyCount.textContent = families;
+        elements.readinessScore.textContent = `${readiness}%`;
+        elements.readinessBar.style.width = `${readiness}%`;
+        elements.readinessBar.parentElement.setAttribute("aria-label", `Seed readiness ${readiness} percent`);
+        elements.readinessText.textContent = queued
+          ? "Review queue is forming. The next milestone is verified text, translation policy, and reviewer decisions."
+          : "Schema shape is visible. Production still needs reviewed text, translation policy, and licensing.";
+
+        const records = queue.map((id) => seedRecords.find((record) => record.id === id)).filter(Boolean);
+        elements.reviewList.innerHTML = records.length ? records.map((record) => `
+          <article class="review-card">
+            <strong>${record.citation}</strong>
+            <p>${record.title} | Missing: ${record.missing.slice(0, 3).join(", ")}</p>
+          </article>
+        `).join("") : `
+          <article class="review-card">
+            <strong>No local review queue yet</strong>
+            <p>Queue a seed to simulate the human review path before production retrieval.</p>
+          </article>
+        `;
+      }
+
+      function renderAll() {
+        renderRecords();
+        renderSelected();
+        renderSchema();
+        renderReadiness();
+      }
+
+      function queueSelected() {
+        writeQueue([selectedId, ...readQueue()]);
+        renderAll();
+      }
+
+      function copyText(text, button, doneLabel) {
+        const fallback = () => {
+          elements.seedOutput.hidden = false;
+          elements.seedOutput.value = text;
+          elements.seedOutput.select();
+          document.execCommand("copy");
+          button.textContent = doneLabel;
+        };
+
+        if (navigator.clipboard?.writeText) {
+          navigator.clipboard.writeText(text).then(() => {
+            button.textContent = doneLabel;
+          }).catch(fallback);
+          return;
+        }
+
+        fallback();
+      }
+
+      function copySelectedSeed() {
+        const text = JSON.stringify(seedPayload(selectedRecord()), null, 2);
+        elements.seedOutput.hidden = false;
+        elements.seedOutput.value = text;
+        copyText(text, elements.copySeed, "Copied JSON");
+      }
+
+      function copyReviewQueue() {
+        const records = readQueue().map((id) => seedRecords.find((record) => record.id === id)).filter(Boolean);
+        const text = records.length
+          ? records.map((record, index) => `${index + 1}. ${record.citation} | ${record.title} | Missing: ${record.missing.join(", ")}`).join("\n")
+          : "No source seeds queued yet.";
+        elements.seedOutput.hidden = false;
+        elements.seedOutput.value = text;
+        copyText(text, elements.copyQueue, "Copied Queue");
+      }
+
+      function sendToLibrary() {
+        const record = selectedRecord();
+        const shelf = readShelf();
+        storage.setItem(shelfKey, JSON.stringify([record.id, ...shelf.filter((id) => id !== record.id)].slice(0, 12)));
+        storage.setItem(libraryLaunchKey, JSON.stringify(seedPayload(record)));
+        document.getElementById("sendLibrary").textContent = "Ready in Library";
+      }
+
+      document.querySelectorAll(".filter-button").forEach((button) => {
+        button.addEventListener("click", () => {
+          activeFilter = button.dataset.filter;
+          document.querySelectorAll(".filter-button").forEach((item) => item.classList.toggle("active", item === button));
+          renderAll();
+        });
+      });
+
+      elements.seedSearch.addEventListener("input", renderAll);
+      elements.queueReview.addEventListener("click", queueSelected);
+      elements.copySeed.addEventListener("click", copySelectedSeed);
+      elements.copyQueue.addEventListener("click", copyReviewQueue);
+      document.getElementById("sendLibrary").addEventListener("click", sendToLibrary);
+      document.getElementById("clearQueue").addEventListener("click", () => {
+        storage.removeItem(queueKey);
+        renderAll();
+      });
+
+      renderAll();
+    </script>
+  </body>
+</html>

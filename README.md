@@ -40,6 +40,8 @@ Let us look at the source first.
 - [Source Practice Notes](docs/SOURCE_PRACTICE.md)
 - [Source Library](library.html)
 - [Source Library Notes](docs/SOURCE_LIBRARY.md)
+- [Source Seeds](seeds.html)
+- [Source Seeds Notes](docs/SOURCE_SEEDS.md)
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
 - [Calm Compass](compass.html)
@@ -70,7 +72,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v0.3.5` is a clickable prototype with:
+`v0.3.6` is a clickable prototype with:
 
 - Ask workspace
 - Source Card
@@ -81,6 +83,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Daily Calm Loop with device-local memory
 - Source Practice with timer, stages, source card, and local rhythm
 - Source Library with search, filters, device-local shelf, and practice handoff
+- Source Seeds with 12 structured seed records, review gates, missing fields, and source-schema handoff
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
 - Calm Card Studio with visual card preview, local saved cards, copy text, and PNG export

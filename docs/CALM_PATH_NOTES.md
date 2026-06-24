@@ -115,3 +115,9 @@ The evening tool should never become therapy, sleep treatment, medical advice, r
 Calm Rhythm reads deliberate browser-local VedaPath traces and turns them into one next room suggestion.
 
 The rhythm lens should never become diagnosis, therapy, surveillance, scoring, hidden profiling, productivity pressure, ritual instruction, or a verdict on the user's identity.
+
+## v0.3.6 Source Seeds
+
+Source Seeds gives the calm rooms a review-ready source-data layer. It makes citation, family, pramana level, boundary, and missing production fields visible before any source candidate powers retrieval.
+
+The seed layer should never pretend prototype citations are verified production authority.
