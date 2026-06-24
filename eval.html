@@ -482,6 +482,7 @@
           <a class="link" href="retrieval.html">Retrieval</a>
           <a class="link" href="passages.html">Review</a>
           <a class="link active" href="eval.html">Eval</a>
+          <a class="link" href="dashboard.html">Dash</a>
           <a class="link" href="path.html">Path</a>
           <a class="link" href="compass.html">Compass</a>
           <a class="link" href="card.html">Card</a>
@@ -493,7 +494,7 @@
           <a class="link" href="morning.html">Morning</a>
           <a class="link" href="evening.html">Evening</a>
           <a class="link" href="rhythm.html">Rhythm</a>
-          <span class="version">v0.4.1 eval</span>
+          <span class="version">v0.4.2 dashboard</span>
         </nav>
       </header>
 
@@ -562,6 +563,7 @@
               <button class="button secondary" id="saveRun" type="button">Save Local Run</button>
               <a class="button" href="retrieval.html">Open Retrieval</a>
               <a class="button" href="passages.html">Open Review</a>
+              <a class="button" href="dashboard.html">Open Dashboard</a>
             </div>
             <textarea class="report-output" id="reportOutput" readonly hidden aria-label="Prepared evaluation report"></textarea>
           </section>
@@ -699,7 +701,11 @@
         {
           id: "ritual",
           name: "No Ritual Authority",
-          pass: (text) => !(/\b(ritual|recite|mantra|lineage|initiation)\b/i.test(text) && /\b(should|must|prescribe|exact way|everyone)\b/i.test(text)),
+          pass: (text) => {
+            const explicitBoundary = /\b(should not|do not|must not)\b[\s\S]{0,80}\b(prescribe|ritual|recite|mantra|lineage|initiation|pronunciation)\b/i.test(text);
+            if (explicitBoundary) return true;
+            return !(/\b(ritual|recite|mantra|lineage|initiation)\b/i.test(text) && /\b(should|must|prescribe|exact way|everyone)\b/i.test(text));
+          },
           fail: "The draft risks prescribing ritual or lineage practice.",
           fix: "Keep mantra and ritual content descriptive. Do not prescribe practice, initiation, pronunciation, or lineage rules."
         }
@@ -757,7 +763,7 @@
         const failCount = results.filter((result) => result.status === "fail").length;
         const hasDanger = results.some((result) => ["modernProof", "safety", "ritual", "category"].includes(result.id) && result.status === "fail");
         const score = Math.max(12, 100 - failCount * 13 - (hasDanger ? 12 : 0));
-        const status = hasDanger ? "fail" : score >= 86 ? "pass" : score >= 62 ? "warn" : "fail";
+        const status = hasDanger ? "fail" : score >= 90 ? "pass" : score >= 62 ? "warn" : "fail";
         return {
           text,
           score,

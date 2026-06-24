@@ -23,7 +23,7 @@ Show the product experience without a live LLM backend.
 
 Status:
 
-Completed in v0.4.1.
+Completed in v0.4.2.
 
 Core screens:
 
@@ -41,6 +41,7 @@ Core screens:
 - Retrieval Lab
 - Passage Review Pack
 - Evaluation Runner
+- Evaluation Dashboard
 - Source Path Builder
 - Calm Compass
 - Calm Card Studio
@@ -67,7 +68,7 @@ Connect a small curated source set.
 
 Status:
 
-Active product phase. Source Seeds now shows the first structured source schema and prototype seed records. Retrieval Lab now shows the first source-stack ranking, match reason, boundary, and no-source claim refusal. Passage Review Pack now shows passage dossiers, allowed use, missing production fields, local review decisions, and evaluation checks. Evaluation Runner now checks answer drafts before user-facing trust.
+Active product phase. Source Seeds now shows the first structured source schema and prototype seed records. Retrieval Lab now shows the first source-stack ranking, match reason, boundary, and no-source claim refusal. Passage Review Pack now shows passage dossiers, allowed use, missing production fields, local review decisions, and evaluation checks. Evaluation Runner now checks answer drafts before user-facing trust. Evaluation Dashboard now tests the evaluator as a visible release gate.
 
 Initial data:
 
@@ -88,6 +89,7 @@ Features:
 - no-source refusal for unsupported claims
 - passage review gate before answer authority
 - answer draft evaluation for citation gaps, source-family confusion, unsafe calm advice, ritual authority, and overclaiming
+- evaluation dashboard for expected behavior checks, blocked examples, issue counts, and reviewer export
 
 Success criteria:
 
@@ -182,6 +184,7 @@ Should have:
 - Retrieval Lab
 - Passage Review Pack
 - Evaluation Runner
+- Evaluation Dashboard
 - Source Path Builder
 - Calm Compass
 - Calm Card Studio

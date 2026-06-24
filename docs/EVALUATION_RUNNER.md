@@ -72,9 +72,9 @@ Evaluation Runner is a prototype quality gate.
 
 It does not replace human scholarship, safety review, source policy, or production monitoring.
 
-## Next Step
+## v0.4.2 Dashboard
 
-v0.4.2 should turn the evaluator into a visible release dashboard:
+v0.4.2 turns the evaluator into a visible release dashboard:
 
 - answer test suite
 - pass and fail counts
@@ -82,3 +82,7 @@ v0.4.2 should turn the evaluator into a visible release dashboard:
 - source-family confusion report
 - safety boundary report
 - reviewer-ready export
+
+## Next Step
+
+v0.4.3 should connect failed dashboard cases to a reviewer queue.

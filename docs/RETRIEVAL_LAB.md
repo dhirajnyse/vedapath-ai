@@ -70,6 +70,10 @@ The retrieval stack should not become authoritative until each source candidate 
 
 Retrieval Lab finds candidate sources and drafts an answer. Evaluation Runner checks the draft for citation gaps, source-family confusion, unsafe calm advice, ritual authority, and overclaiming before user-facing trust.
 
+## Link To Evaluation Dashboard
+
+Evaluation Dashboard runs the answer test suite so Retrieval, Review, and Eval behavior can be inspected before launch.
+
 ## Why It Matters
 
 The calming effect of VedaPath should come from clarity, not certainty theater.

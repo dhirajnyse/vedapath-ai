@@ -83,4 +83,8 @@ v0.4.1 adds an evaluation runner that checks answer drafts for:
 
 Passage Review Pack decides whether a passage candidate can support an answer. Evaluation Runner checks whether the answer draft uses that support responsibly.
 
+## Link To Evaluation Dashboard
+
+Evaluation Dashboard checks whether the evaluator is blocking and passing the expected draft patterns before release.
+
 The handoff should preserve citation, source family, allowed use, restricted use, and boundary.
