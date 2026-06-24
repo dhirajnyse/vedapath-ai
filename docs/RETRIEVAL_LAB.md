@@ -82,6 +82,10 @@ Reviewer Queue turns source gaps, uncertain matches, and failed dashboard cases 
 
 Source Policy Console turns retrieval gaps and uncertain matches into explicit answer routes: answer, boundary, review, or defer.
 
+## Link To Trust Ledger
+
+Trust Ledger records which retrieval gaps, policy routes, and review needs are ready, held, blocked, or still draft before accepted answer behavior changes.
+
 ## Why It Matters
 
 The calming effect of VedaPath should come from clarity, not certainty theater.

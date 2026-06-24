@@ -69,4 +69,6 @@ This console is a product prototype. It is not final theology, legal advice, med
 
 ## Next Step
 
-v0.4.5 should connect policy routes to reviewer queue records so every blocked, bounded, or uncertain answer can become a versioned governance artifact.
+v0.4.5 adds Trust Ledger so every blocked, bounded, or uncertain answer can become a visible governance record.
+
+v0.4.6 should turn those records into a durable source governance schema with reviewer identity, source edition fields, audit history, and evaluation fixtures.

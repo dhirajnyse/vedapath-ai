@@ -54,6 +54,8 @@ Let us look at the source first.
 - [Reviewer Queue Notes](docs/REVIEWER_QUEUE.md)
 - [Source Policy Console](policy.html)
 - [Source Policy Console Notes](docs/SOURCE_POLICY_CONSOLE.md)
+- [Trust Ledger](ledger.html)
+- [Trust Ledger Notes](docs/TRUST_LEDGER.md)
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
 - [Calm Compass](compass.html)
@@ -84,7 +86,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v0.4.4` is a trusted MVP prototype with:
+`v0.4.5` is a trusted MVP prototype with:
 
 - Ask workspace
 - Source Card
@@ -102,6 +104,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Evaluation Dashboard with answer test suite, expected behavior checks, blocked examples, source-family report, and reviewer export
 - Reviewer Queue with failed dashboard cases, flagged passages, correction notes, local review decisions, and copyable reviewer brief
 - Source Policy Console with visible answer gates for source clarity, category confusion, modern analogy, ritual authority, personal distress, and reviewer routing
+- Trust Ledger with versioned governance records, policy route, evidence path, reviewer need, local status decisions, and copyable audit handoff
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
 - Calm Card Studio with visual card preview, local saved cards, copy text, and PNG export

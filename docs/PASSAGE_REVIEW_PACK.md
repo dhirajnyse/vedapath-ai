@@ -98,3 +98,7 @@ The queue should preserve the dossier source family, issue type, reviewer need, 
 ## Link To Source Policy Console
 
 Source Policy Console turns passage review outcomes into answer behavior: direct answer, boundary required, review route, or defer.
+
+## Link To Trust Ledger
+
+Trust Ledger preserves the policy route, evidence path, reviewer need, and local decision status before a passage review outcome changes product behavior.

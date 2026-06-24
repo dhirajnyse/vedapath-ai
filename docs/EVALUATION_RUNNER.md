@@ -86,4 +86,4 @@ v0.4.2 turns the evaluator into a visible release dashboard:
 
 ## Next Step
 
-v0.4.3 connects failed dashboard cases to Reviewer Queue so evaluation failures become human-review cards instead of silent fixes. v0.4.4 adds Source Policy Console so the same failures can become visible answer rules.
+v0.4.3 connects failed dashboard cases to Reviewer Queue so evaluation failures become human-review cards instead of silent fixes. v0.4.4 adds Source Policy Console so the same failures can become visible answer rules. v0.4.5 adds Trust Ledger so evaluator failures, policy routes, and queue decisions can become visible governance records before behavior changes.

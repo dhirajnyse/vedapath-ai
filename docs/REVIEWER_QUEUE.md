@@ -51,4 +51,6 @@ It is not final scholarship, source licensing approval, moderation policy, safet
 
 ## Next Step
 
-v0.4.4 adds Source Policy Console. v0.4.5 should connect policy routes and queue decisions into versioned governance records.
+v0.4.4 adds Source Policy Console. v0.4.5 adds Trust Ledger so policy routes and queue decisions become visible governance records.
+
+v0.4.6 should turn those records into a durable source governance schema with reviewer identity, source edition fields, audit history, and evaluation fixtures.

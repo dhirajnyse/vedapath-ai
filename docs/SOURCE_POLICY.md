@@ -62,3 +62,13 @@ The v0.4.4 Source Policy Console turns these rules into visible answer routes:
 - decline or defer
 
 See [Source Policy Console](../policy.html) and [Source Policy Console Notes](SOURCE_POLICY_CONSOLE.md).
+
+The v0.4.5 Trust Ledger turns these policy routes and review outcomes into local governance records:
+
+- evidence path
+- reviewer need
+- version state
+- local decision history
+- copyable governance handoff
+
+See [Trust Ledger](../ledger.html) and [Trust Ledger Notes](TRUST_LEDGER.md).

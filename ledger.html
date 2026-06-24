@@ -1,0 +1,977 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VedaPath Trust Ledger</title>
+    <style>
+      :root {
+        --bg: #fff7ec;
+        --panel: rgba(255, 252, 247, 0.92);
+        --ink: #191411;
+        --muted-brown: #693820;
+        --bhagwa: #d65a1f;
+        --deep-ochre: #a83e12;
+        --gold: #e0a83b;
+        --peacock: #145c4a;
+        --indigo: #29335c;
+        --line: rgba(105, 56, 32, 0.18);
+        --shadow: 0 18px 45px rgba(105, 56, 32, 0.08);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        line-height: 1.5;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      button,
+      textarea {
+        font: inherit;
+      }
+
+      .page {
+        width: min(1240px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 22px 0 48px;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding-bottom: 18px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex: 0 0 auto;
+      }
+
+      .brand img {
+        width: 50px;
+        height: 50px;
+        border-radius: 8px;
+        object-fit: cover;
+      }
+
+      .brand strong {
+        display: block;
+        font-size: 18px;
+        white-space: nowrap;
+      }
+
+      .brand span,
+      .muted,
+      .small,
+      .record-card p,
+      .stat span,
+      .source-meta,
+      .history-card p {
+        color: var(--muted-brown);
+      }
+
+      .brand span,
+      .small,
+      .stat span,
+      .source-meta {
+        font-size: 13px;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .link,
+      .version {
+        display: inline-flex;
+        align-items: center;
+        min-height: 34px;
+        border-radius: 999px;
+        padding: 6px 11px;
+        font-size: 13px;
+        font-weight: 800;
+      }
+
+      .link {
+        border: 1px solid transparent;
+        color: var(--muted-brown);
+      }
+
+      .link:hover,
+      .link:focus-visible,
+      .link.active {
+        border-color: rgba(168, 62, 18, 0.22);
+        color: var(--deep-ochre);
+        outline: none;
+      }
+
+      .version {
+        border: 1px solid rgba(168, 62, 18, 0.28);
+        background: rgba(255, 255, 255, 0.42);
+        color: var(--deep-ochre);
+      }
+
+      .workspace {
+        display: grid;
+        grid-template-columns: 0.95fr 1.45fr 1fr;
+        gap: 16px;
+        margin-top: 18px;
+      }
+
+      .panel {
+        min-width: 0;
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 18px;
+        box-shadow: var(--shadow);
+      }
+
+      .hero-panel {
+        background:
+          linear-gradient(145deg, rgba(20, 92, 74, 0.05), rgba(255, 252, 247, 0.94) 45%),
+          var(--panel);
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        min-height: 28px;
+        border-radius: 999px;
+        padding: 5px 10px;
+        background: rgba(214, 90, 31, 0.1);
+        color: var(--deep-ochre);
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        margin-bottom: 14px;
+        font-size: clamp(42px, 6.1vw, 72px);
+        line-height: 0.98;
+        letter-spacing: 0;
+      }
+
+      .hero-panel h1 {
+        font-size: clamp(38px, 5.1vw, 64px);
+      }
+
+      h2 {
+        margin-bottom: 12px;
+        font-size: 25px;
+        line-height: 1.1;
+      }
+
+      h3 {
+        margin-bottom: 6px;
+        font-size: 17px;
+      }
+
+      .panel > p,
+      .hero-panel > p {
+        font-size: 17px;
+      }
+
+      .logo-frame {
+        display: grid;
+        place-items: center;
+        margin: 18px 0;
+        border: 1px solid rgba(224, 168, 59, 0.32);
+        border-radius: 8px;
+        background: #fff0dd;
+        overflow: hidden;
+      }
+
+      .logo-frame img {
+        width: min(220px, 80%);
+        aspect-ratio: 1;
+        object-fit: contain;
+      }
+
+      .stats-grid,
+      .detail-grid,
+      .status-grid {
+        display: grid;
+        gap: 10px;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .stat,
+      .detail-card,
+      .record-card,
+      .history-card {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.54);
+      }
+
+      .stat {
+        padding: 14px;
+      }
+
+      .stat strong {
+        display: block;
+        margin-top: 2px;
+        font-size: 26px;
+        line-height: 1.1;
+      }
+
+      .section {
+        margin-top: 18px;
+        padding-top: 18px;
+        border-top: 1px solid var(--line);
+      }
+
+      .progress {
+        height: 9px;
+        border-radius: 999px;
+        background: rgba(105, 56, 32, 0.14);
+        overflow: hidden;
+      }
+
+      .progress div {
+        height: 100%;
+        border-radius: inherit;
+        background: linear-gradient(90deg, var(--bhagwa), var(--gold));
+      }
+
+      .detail-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .detail-card {
+        padding: 14px;
+      }
+
+      .detail-card.strong {
+        border-left: 4px solid var(--bhagwa);
+      }
+
+      .detail-card strong,
+      .record-card strong,
+      .history-card strong {
+        display: block;
+        margin-bottom: 6px;
+        font-size: 16px;
+      }
+
+      .button-row,
+      .filter-row,
+      .tag-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .button,
+      .filter,
+      .record-card {
+        border: 1px solid rgba(168, 62, 18, 0.24);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.5);
+        color: var(--deep-ochre);
+        font-weight: 900;
+        cursor: pointer;
+        transition: transform 160ms ease;
+      }
+
+      .button,
+      .filter {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 42px;
+        padding: 9px 12px;
+      }
+
+      .filter {
+        min-width: 84px;
+      }
+
+      .button.primary,
+      .filter.active {
+        border-color: var(--bhagwa);
+        background: var(--bhagwa);
+        color: #fffaf5;
+      }
+
+      .button.secondary {
+        border-color: rgba(20, 92, 74, 0.28);
+        color: var(--peacock);
+      }
+
+      .button:hover,
+      .button:focus-visible,
+      .filter:hover,
+      .filter:focus-visible,
+      .record-card:hover,
+      .record-card:focus-visible {
+        transform: translateY(-1px);
+        outline: none;
+      }
+
+      .record-list,
+      .history-list {
+        display: grid;
+        gap: 10px;
+      }
+
+      .record-card {
+        width: 100%;
+        padding: 13px;
+        text-align: left;
+      }
+
+      .record-card.active {
+        border-color: rgba(214, 90, 31, 0.68);
+        background: rgba(214, 90, 31, 0.1);
+      }
+
+      .record-card p {
+        margin-bottom: 0;
+      }
+
+      .tag {
+        display: inline-flex;
+        align-items: center;
+        min-height: 26px;
+        border-radius: 999px;
+        padding: 4px 9px;
+        background: rgba(20, 92, 74, 0.1);
+        color: var(--peacock);
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      .tag.warn {
+        background: rgba(224, 168, 59, 0.22);
+        color: #6b4310;
+      }
+
+      .tag.hot {
+        background: rgba(214, 90, 31, 0.12);
+        color: var(--deep-ochre);
+      }
+
+      .tag.cool {
+        background: rgba(41, 51, 92, 0.12);
+        color: var(--indigo);
+      }
+
+      .status-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .ledger-card {
+        padding: 16px;
+        border: 1px solid var(--line);
+        border-left: 5px solid var(--bhagwa);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.58);
+      }
+
+      .ledger-card h2 {
+        margin-bottom: 8px;
+        font-size: 30px;
+      }
+
+      .export-output {
+        width: 100%;
+        min-height: 174px;
+        margin-top: 12px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 12px;
+        color: var(--ink);
+        background: rgba(255, 255, 255, 0.6);
+        resize: vertical;
+      }
+
+      .history-card {
+        padding: 14px;
+      }
+
+      .boundary {
+        border-style: dashed;
+      }
+
+      @media (max-width: 1080px) {
+        .workspace {
+          grid-template-columns: 1fr;
+        }
+
+        .topbar {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .nav {
+          justify-content: flex-start;
+        }
+      }
+
+      @media (max-width: 720px) {
+        .page {
+          width: min(100% - 22px, 640px);
+          padding-top: 14px;
+        }
+
+        .detail-grid,
+        .status-grid,
+        .stats-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .link,
+        .version {
+          min-height: 32px;
+          padding: 5px 9px;
+          font-size: 12px;
+        }
+
+        h1,
+        .hero-panel h1 {
+          font-size: clamp(38px, 14vw, 58px);
+        }
+
+        .brand img {
+          width: 44px;
+          height: 44px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top" aria-label="VedaPath AI home">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo">
+          <span>
+            <strong>VedaPath AI</strong>
+            <span>Trust Ledger</span>
+          </span>
+        </a>
+        <nav class="nav" aria-label="Project links">
+          <a class="link" href="build-status.html">Build</a>
+          <a class="link" href="brand/brand-board.html">Brand</a>
+          <a class="link" href="blueprint.html">Blueprint</a>
+          <a class="link" href="calm.html">Calm</a>
+          <a class="link" href="daily.html">Daily</a>
+          <a class="link" href="practice.html">Practice</a>
+          <a class="link" href="library.html">Library</a>
+          <a class="link" href="seeds.html">Seeds</a>
+          <a class="link" href="retrieval.html">Retrieval</a>
+          <a class="link" href="passages.html">Review</a>
+          <a class="link" href="eval.html">Eval</a>
+          <a class="link" href="dashboard.html">Dash</a>
+          <a class="link" href="queue.html">Queue</a>
+          <a class="link" href="policy.html">Policy</a>
+          <a class="link active" href="ledger.html">Ledger</a>
+          <a class="link" href="path.html">Path</a>
+          <a class="link" href="compass.html">Compass</a>
+          <a class="link" href="card.html">Card</a>
+          <a class="link" href="bell.html">Bell</a>
+          <a class="link" href="reply.html">Reply</a>
+          <a class="link" href="samvada.html">Samvada</a>
+          <a class="link" href="sankalpa.html">Intent</a>
+          <a class="link" href="seva.html">Seva</a>
+          <a class="link" href="morning.html">Morning</a>
+          <a class="link" href="evening.html">Evening</a>
+          <a class="link" href="rhythm.html">Rhythm</a>
+          <span class="version">v0.4.5 ledger</span>
+        </nav>
+      </header>
+
+      <section class="workspace" aria-label="Trust Ledger workspace">
+        <aside class="panel">
+          <span class="eyebrow">Versioned trust</span>
+          <h1>Trust should leave a trace.</h1>
+          <p class="muted">A calm product should remember why an answer rule exists, who needs to review it, what source family it touches, and whether it is only a prototype decision.</p>
+
+          <div class="logo-frame" aria-label="VedaPath trust ledger mark">
+            <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI trust ledger logo">
+          </div>
+
+          <div class="stats-grid" aria-label="Trust ledger summary">
+            <article class="stat">
+              <span>Ledger records</span>
+              <strong id="recordCount">0</strong>
+            </article>
+            <article class="stat">
+              <span>Ready rules</span>
+              <strong id="readyCount">0</strong>
+            </article>
+            <article class="stat">
+              <span>Review holds</span>
+              <strong id="reviewCount">0</strong>
+            </article>
+            <article class="stat">
+              <span>Blocked rules</span>
+              <strong id="blockedCount">0</strong>
+            </article>
+          </div>
+
+          <div class="section">
+            <h2>Ledger Readiness</h2>
+            <div class="progress" aria-label="Ledger readiness percent">
+              <div id="ledgerBar" style="width:0%"></div>
+            </div>
+            <p class="muted" id="ledgerSummary" style="margin: 10px 0 0;">Records are ready for prototype review.</p>
+          </div>
+
+          <div class="section">
+            <h2>What A Record Carries</h2>
+            <div class="detail-grid">
+              <article class="detail-card">
+                <strong>Policy route</strong>
+                <p>Answer, boundary, review, ask for source, or defer.</p>
+              </article>
+              <article class="detail-card">
+                <strong>Evidence path</strong>
+                <p>Evaluation, retrieval, passage dossier, queue, or correction.</p>
+              </article>
+              <article class="detail-card">
+                <strong>Reviewer need</strong>
+                <p>Source, scholar, safety, translation, or product review.</p>
+              </article>
+              <article class="detail-card">
+                <strong>Version state</strong>
+                <p>Draft, review hold, ready prototype, or blocked.</p>
+              </article>
+            </div>
+          </div>
+        </aside>
+
+        <section class="panel hero-panel" aria-live="polite">
+          <span class="eyebrow">Governance record</span>
+          <h1 id="ledgerTitle">From policy to product memory.</h1>
+          <p class="muted">Choose a ledger record. The page shows the policy route, evidence trail, review need, and the status that would later become a durable backend record.</p>
+
+          <div class="filter-row" aria-label="Ledger filters">
+            <button class="filter active" type="button" data-filter="all">All</button>
+            <button class="filter" type="button" data-filter="ready">Ready</button>
+            <button class="filter" type="button" data-filter="review">Review</button>
+            <button class="filter" type="button" data-filter="blocked">Blocked</button>
+            <button class="filter" type="button" data-filter="draft">Draft</button>
+          </div>
+
+          <article class="ledger-card">
+            <div class="tag-row" id="activeTags" style="margin-bottom: 10px;"></div>
+            <h2 id="activeTitle">Select a record</h2>
+            <p class="muted" id="activeSummary">The active ledger record will appear here.</p>
+          </article>
+
+          <div class="status-grid section" aria-label="Active record details">
+            <article class="detail-card strong">
+              <strong>Policy route</strong>
+              <p id="activeRoute">Boundary required</p>
+            </article>
+            <article class="detail-card">
+              <strong>Evidence path</strong>
+              <p id="activeEvidence">Dashboard -> Queue -> Policy</p>
+            </article>
+            <article class="detail-card">
+              <strong>Reviewer need</strong>
+              <p id="activeReviewer">Source classification reviewer</p>
+            </article>
+          </div>
+
+          <div class="button-row" style="margin-top: 14px;">
+            <button class="button primary" id="markReady" type="button">Mark Ready Prototype</button>
+            <button class="button secondary" id="markReview" type="button">Hold For Review</button>
+            <button class="button" id="markBlocked" type="button">Block Rule</button>
+          </div>
+
+          <section class="section">
+            <h2>Ledger Records</h2>
+            <div class="record-list" id="recordList"></div>
+          </section>
+        </section>
+
+        <aside class="panel">
+          <span class="eyebrow">Audit handoff</span>
+          <h2>Copy Governance Brief</h2>
+          <p class="muted">This is the handoff that would become a versioned backend record after accounts, reviewer identity, and source licensing exist.</p>
+
+          <div class="button-row">
+            <button class="button primary" id="copyLedger" type="button">Copy Ledger Brief</button>
+            <button class="button secondary" id="routePolicy" type="button">Open Policy</button>
+            <button class="button" id="resetLedger" type="button">Reset Local Ledger</button>
+          </div>
+          <textarea class="export-output" id="ledgerExport" readonly aria-label="Trust ledger export"></textarea>
+
+          <section class="section">
+            <h2>Decision History</h2>
+            <div class="history-list" id="historyList"></div>
+          </section>
+
+          <section class="section detail-card boundary">
+            <h2>Governance Boundary</h2>
+            <p>This ledger is a prototype planning surface. It is not final scholarship, safety approval, moderation policy, source licensing, legal approval, or production governance.</p>
+          </section>
+        </aside>
+      </section>
+    </main>
+
+    <script>
+      const ledgerKey = "vedapath.trustLedger.v1";
+      const memoryStore = {};
+      const storage = {
+        getItem(key) {
+          try {
+            return window.localStorage?.getItem(key) ?? memoryStore[key] ?? null;
+          } catch {
+            return memoryStore[key] ?? null;
+          }
+        },
+        setItem(key, value) {
+          memoryStore[key] = value;
+          try {
+            window.localStorage?.setItem(key, value);
+          } catch {
+            return;
+          }
+        },
+        removeItem(key) {
+          delete memoryStore[key];
+          try {
+            window.localStorage?.removeItem(key);
+          } catch {
+            return;
+          }
+        }
+      };
+
+      const seedRecords = [
+        {
+          id: "gita-vs-veda",
+          title: "Gita quote labeled as direct Veda",
+          summary: "Popular culture calls the Oppenheimer line Vedic, but the answer should identify Bhagavad Gita 11.32 and avoid saying it is from the four Vedas.",
+          route: "Answer with boundary",
+          evidence: "Evaluation Dashboard -> Reviewer Queue -> Source Policy",
+          reviewer: "Source classification reviewer",
+          family: "Bhagavad Gita | Smriti",
+          risk: "Category confusion",
+          status: "review",
+          version: "rule-candidate-0045-A"
+        },
+        {
+          id: "direct-gita-action",
+          title: "Direct Gita action question",
+          summary: "Named-source questions about Bhagavad Gita 2.48 can answer with a source card, plain meaning, and optional deeper layers.",
+          route: "Answer allowed",
+          evidence: "Source Seeds -> Retrieval Lab -> Source Policy",
+          reviewer: "Product source reviewer",
+          family: "Bhagavad Gita | Smriti",
+          risk: "Low category risk",
+          status: "ready",
+          version: "rule-candidate-0045-B"
+        },
+        {
+          id: "modern-proof",
+          title: "Modern science proof claim",
+          summary: "Claims that the Vedas prove quantum physics should be blocked as proof language and reframed as analogy only.",
+          route: "Review route",
+          evidence: "Evaluation Runner -> Dashboard -> Policy",
+          reviewer: "Scholar and claim-check reviewer",
+          family: "Modern analogy | uncertain",
+          risk: "Inflated modern claim",
+          status: "blocked",
+          version: "rule-candidate-0045-C"
+        },
+        {
+          id: "distress-calm",
+          title: "Personal distress calm boundary",
+          summary: "Distress prompts can receive grounding language and human-support boundary, but not therapy, diagnosis, or emergency instruction.",
+          route: "Decline or defer",
+          evidence: "Calm Path -> Evaluation Runner -> Policy",
+          reviewer: "Safety reviewer",
+          family: "Calm reflection | not clinical",
+          risk: "Medical or emergency boundary",
+          status: "review",
+          version: "rule-candidate-0045-D"
+        },
+        {
+          id: "ritual-prescription",
+          title: "Ritual instruction request",
+          summary: "Mantra or ritual requests should ask for tradition and source context, then explain text without prescribing practice.",
+          route: "Ask source first",
+          evidence: "Policy Console -> Reviewer Queue",
+          reviewer: "Tradition and product boundary reviewer",
+          family: "Tradition-specific",
+          risk: "Ritual authority",
+          status: "draft",
+          version: "rule-candidate-0045-E"
+        },
+        {
+          id: "unsourced-quote",
+          title: "Unverified Sanskrit quote",
+          summary: "Unverified quotes need text, transliteration, edition, or link before VedaPath assigns a source family.",
+          route: "Ask for source",
+          evidence: "Source Library -> Retrieval Lab -> Policy",
+          reviewer: "Source curator",
+          family: "Uncertain",
+          risk: "Misattribution",
+          status: "draft",
+          version: "rule-candidate-0045-F"
+        }
+      ];
+
+      const statusLabels = {
+        ready: "Ready prototype",
+        review: "Review hold",
+        blocked: "Blocked rule",
+        draft: "Draft rule"
+      };
+
+      const elements = {
+        recordList: document.getElementById("recordList"),
+        historyList: document.getElementById("historyList"),
+        activeTags: document.getElementById("activeTags"),
+        activeTitle: document.getElementById("activeTitle"),
+        activeSummary: document.getElementById("activeSummary"),
+        activeRoute: document.getElementById("activeRoute"),
+        activeEvidence: document.getElementById("activeEvidence"),
+        activeReviewer: document.getElementById("activeReviewer"),
+        recordCount: document.getElementById("recordCount"),
+        readyCount: document.getElementById("readyCount"),
+        reviewCount: document.getElementById("reviewCount"),
+        blockedCount: document.getElementById("blockedCount"),
+        ledgerBar: document.getElementById("ledgerBar"),
+        ledgerSummary: document.getElementById("ledgerSummary"),
+        ledgerExport: document.getElementById("ledgerExport")
+      };
+
+      let state = readState();
+
+      function readState() {
+        const fallback = {
+          selectedId: "gita-vs-veda",
+          filter: "all",
+          overrides: {},
+          history: []
+        };
+        try {
+          return { ...fallback, ...JSON.parse(storage.getItem(ledgerKey) || "{}") };
+        } catch {
+          return fallback;
+        }
+      }
+
+      function writeState() {
+        storage.setItem(ledgerKey, JSON.stringify(state));
+      }
+
+      function records() {
+        return seedRecords.map((record) => ({ ...record, status: state.overrides[record.id] || record.status }));
+      }
+
+      function activeRecord() {
+        return records().find((record) => record.id === state.selectedId) || records()[0];
+      }
+
+      function visibleRecords() {
+        if (state.filter === "all") return records();
+        return records().filter((record) => record.status === state.filter);
+      }
+
+      function statusClass(status) {
+        if (status === "ready") return "";
+        if (status === "review") return "warn";
+        if (status === "blocked") return "hot";
+        return "cool";
+      }
+
+      function renderFilters() {
+        document.querySelectorAll(".filter[data-filter]").forEach((button) => {
+          button.classList.toggle("active", button.dataset.filter === state.filter);
+        });
+      }
+
+      function renderCounts() {
+        const all = records();
+        const ready = all.filter((record) => record.status === "ready").length;
+        const review = all.filter((record) => record.status === "review").length;
+        const blocked = all.filter((record) => record.status === "blocked").length;
+        const readiness = Math.round((ready / all.length) * 100);
+        elements.recordCount.textContent = all.length;
+        elements.readyCount.textContent = ready;
+        elements.reviewCount.textContent = review;
+        elements.blockedCount.textContent = blocked;
+        elements.ledgerBar.style.width = `${readiness}%`;
+        elements.ledgerSummary.textContent = `${readiness}% of sample rules are prototype-ready. ${review} need review and ${blocked} remain blocked.`;
+      }
+
+      function renderRecords() {
+        const shown = visibleRecords();
+        elements.recordList.innerHTML = shown.length
+          ? shown.map((record) => `
+              <button class="record-card ${record.id === state.selectedId ? "active" : ""}" type="button" data-id="${record.id}">
+                <div class="tag-row" style="margin-bottom: 8px;">
+                  <span class="tag ${statusClass(record.status)}">${statusLabels[record.status]}</span>
+                  <span class="tag">${record.route}</span>
+                </div>
+                <strong>${record.title}</strong>
+                <p>${record.family} | ${record.risk}</p>
+              </button>
+            `).join("")
+          : `<article class="history-card"><strong>No records in this filter</strong><p>Change filters or reset the ledger.</p></article>`;
+
+        document.querySelectorAll(".record-card[data-id]").forEach((button) => {
+          button.addEventListener("click", () => {
+            state.selectedId = button.dataset.id;
+            writeState();
+            render();
+          });
+        });
+      }
+
+      function renderActive() {
+        const record = activeRecord();
+        elements.activeTitle.textContent = record.title;
+        elements.activeSummary.textContent = record.summary;
+        elements.activeRoute.textContent = record.route;
+        elements.activeEvidence.textContent = record.evidence;
+        elements.activeReviewer.textContent = record.reviewer;
+        elements.activeTags.innerHTML = `
+          <span class="tag ${statusClass(record.status)}">${statusLabels[record.status]}</span>
+          <span class="tag">${record.version}</span>
+          <span class="tag">${record.family}</span>
+        `;
+        updateExport();
+      }
+
+      function renderHistory() {
+        elements.historyList.innerHTML = state.history.length
+          ? state.history.slice(0, 5).map((item) => `
+              <article class="history-card">
+                <strong>${item.status}</strong>
+                <p>${item.title}</p>
+                <p class="small">${item.time}</p>
+              </article>
+            `).join("")
+          : `<article class="history-card"><strong>No local decisions yet</strong><p>Promote, hold, or block a rule to begin the local ledger trail.</p></article>`;
+      }
+
+      function updateExport() {
+        const record = activeRecord();
+        const lines = [
+          "VedaPath Trust Ledger",
+          "Release: v0.4.5 ledger",
+          "",
+          `Record: ${record.title}`,
+          `Version id: ${record.version}`,
+          `Status: ${statusLabels[record.status]}`,
+          `Policy route: ${record.route}`,
+          `Source family: ${record.family}`,
+          `Risk type: ${record.risk}`,
+          `Evidence path: ${record.evidence}`,
+          `Reviewer need: ${record.reviewer}`,
+          "",
+          `Rule summary: ${record.summary}`,
+          "",
+          "Boundary: prototype ledger only. Production needs authenticated reviewer identity, source licensing, safety review, versioned storage, and audit controls."
+        ];
+        elements.ledgerExport.value = lines.join("\n");
+      }
+
+      function recordDecision(status) {
+        const record = activeRecord();
+        state.overrides[record.id] = status;
+        state.history = [{
+          title: record.title,
+          status: statusLabels[status],
+          time: new Date().toLocaleString()
+        }, ...state.history].slice(0, 10);
+        writeState();
+        render();
+      }
+
+      function copyText(text, button, copiedLabel) {
+        const original = button.textContent;
+        const copied = navigator.clipboard?.writeText
+          ? navigator.clipboard.writeText(text)
+          : Promise.reject(new Error("Clipboard unavailable"));
+        copied.then(() => {
+          button.textContent = copiedLabel;
+          setTimeout(() => {
+            button.textContent = original;
+          }, 1300);
+        }).catch(() => {
+          elements.ledgerExport.focus();
+          elements.ledgerExport.select();
+        });
+      }
+
+      function render() {
+        renderFilters();
+        renderCounts();
+        renderRecords();
+        renderActive();
+        renderHistory();
+      }
+
+      document.querySelectorAll(".filter[data-filter]").forEach((button) => {
+        button.addEventListener("click", () => {
+          state.filter = button.dataset.filter;
+          writeState();
+          render();
+        });
+      });
+
+      document.getElementById("markReady").addEventListener("click", () => recordDecision("ready"));
+      document.getElementById("markReview").addEventListener("click", () => recordDecision("review"));
+      document.getElementById("markBlocked").addEventListener("click", () => recordDecision("blocked"));
+
+      document.getElementById("copyLedger").addEventListener("click", () => {
+        copyText(elements.ledgerExport.value, document.getElementById("copyLedger"), "Copied Ledger");
+      });
+
+      document.getElementById("routePolicy").addEventListener("click", () => {
+        window.location.href = "policy.html";
+      });
+
+      document.getElementById("resetLedger").addEventListener("click", () => {
+        storage.removeItem(ledgerKey);
+        state = readState();
+        render();
+      });
+
+      render();
+    </script>
+  </body>
+</html>

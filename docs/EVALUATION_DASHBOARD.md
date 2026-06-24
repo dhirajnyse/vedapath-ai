@@ -68,4 +68,4 @@ Before a real launch, the dashboard should become:
 
 ## Next Step
 
-v0.4.3 adds Reviewer Queue, which turns failed examples, flagged passages, retrieval gaps, and user correction notes into human-review cards before accepted knowledge changes. v0.4.4 adds Source Policy Console so blocked examples also show the future answer rule they need.
+v0.4.3 adds Reviewer Queue, which turns failed examples, flagged passages, retrieval gaps, and user correction notes into human-review cards before accepted knowledge changes. v0.4.4 adds Source Policy Console so blocked examples also show the future answer rule they need. v0.4.5 adds Trust Ledger so those rules and review outcomes can become visible governance records before behavior changes.

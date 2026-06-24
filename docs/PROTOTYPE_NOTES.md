@@ -1,6 +1,6 @@
-# v0.4.4 Prototype Notes
+# v0.4.5 Prototype Notes
 
-The v0.4.4 release turns the VedaPath AI homepage into a trusted MVP prototype with calm, practice, source-library, source-seeds, retrieval, passage-review, evaluation, evaluation-dashboard, reviewer-queue, source-policy, source-path, calm-compass, calm-card, source-bell, before-reply, samvada, sankalpa, seva, morning, evening, and rhythm surfaces.
+The v0.4.5 release turns the VedaPath AI homepage into a trusted MVP prototype with calm, practice, source-library, source-seeds, retrieval, passage-review, evaluation, evaluation-dashboard, reviewer-queue, source-policy, trust-ledger, source-path, calm-compass, calm-card, source-bell, before-reply, samvada, sankalpa, seva, morning, evening, and rhythm surfaces.
 
 ## Included
 
@@ -22,6 +22,7 @@ The v0.4.4 release turns the VedaPath AI homepage into a trusted MVP prototype w
 - Evaluation Dashboard with deterministic answer suite, blocked examples, source-family report, and reviewer export
 - Reviewer Queue with failed dashboard cases, flagged passage issues, correction notes, local decisions, and copyable reviewer brief
 - Source Policy Console with answer gates for source clarity, category confusion, modern analogy, ritual authority, personal distress, and reviewer routing
+- Trust Ledger with policy route, evidence path, reviewer need, version state, local status decisions, decision history, and copyable governance brief
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
 - Calm Card Studio with visual preview, local saved cards, copy text, and PNG export
@@ -56,6 +57,7 @@ This release proves the product direction:
 - answer checks can be tested as a visible release gate before launch
 - failed examples, flagged passages, and correction notes can become review cards instead of silent fixes
 - policy routes can decide whether an answer should be allowed, bounded, reviewed, or deferred before the response appears
+- policy routes and queue decisions can become versioned governance records before accepted behavior changes
 - unsupported proof claims can be refused as source gaps instead of dressed up as wisdom
 - one current-life state can route to the next useful product room
 - one source-backed action can become a shareable visual artifact
@@ -69,4 +71,4 @@ This release proves the product direction:
 
 ## Next Release
 
-v0.4.5 should connect policy actions and reviewer queue decisions to versioned governance records.
+v0.4.6 should turn trust ledger records into a source governance schema with reviewer identity, source edition fields, audit history, and evaluation fixtures.

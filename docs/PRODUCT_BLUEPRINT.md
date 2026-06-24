@@ -299,7 +299,21 @@ It should:
 
 The console should never imply that a prototype rule is final theology, law, medical advice, emergency support, moderation policy, or scholarly approval.
 
-### 17. Source Path Builder
+### 17. Trust Ledger
+
+Trust Ledger turns policy routes and reviewer queue outcomes into visible governance records.
+
+It should:
+
+- preserve source family, risk type, policy route, evidence path, and reviewer need
+- show whether a rule is ready, held for review, blocked, or still draft
+- keep local prototype decisions visible before accepted behavior changes
+- copy a governance brief for backend rules, review sessions, and launch audits
+- link future records to source seeds, passage dossiers, evaluator fixtures, and answer policy
+
+The ledger should never pretend that local prototype status is final scholarship, source licensing approval, legal advice, safety approval, moderation policy, or production governance.
+
+### 18. Source Path Builder
 
 A source path turns library records into a short, cited route.
 
@@ -313,7 +327,7 @@ It should:
 
 The path builder should never prescribe a life decision, ritual act, treatment plan, or spiritual conclusion. It should only organize the next source-backed step.
 
-### 18. Calm Compass
+### 19. Calm Compass
 
 Calm Compass is the simplest doorway for users who arrive with restlessness, overwhelm, unclear priority, or hesitation.
 
@@ -327,7 +341,7 @@ It should:
 
 The compass must never pretend to diagnose, command, prescribe, or profile the user. It should slow the moment down and offer the next source-backed action.
 
-### 19. Calm Card Studio
+### 20. Calm Card Studio
 
 Calm Card Studio turns one source-backed reflection into a visual card.
 
@@ -341,7 +355,7 @@ It should:
 
 The card studio must not let shareability erase accuracy. Every card should make clear that it is reflection support, not a command, diagnosis, therapy, ritual instruction, or universal teaching.
 
-### 20. Source Bell
+### 21. Source Bell
 
 Source Bell turns one source-backed reflection into a one-minute reset.
 
@@ -355,7 +369,7 @@ It should:
 
 The bell must never become therapy, medical advice, emergency support, ritual instruction, or a guru voice. It should make one grounded next action easier to carry.
 
-### 21. Before Reply
+### 22. Before Reply
 
 Before Reply turns one heated communication moment into a calmer draft.
 
@@ -369,7 +383,7 @@ It should:
 
 Before Reply should protect agency. It should never become therapy, legal advice, emergency support, conflict mediation, or a reason to remain in harmful contact.
 
-### 22. Samvada Room
+### 23. Samvada Room
 
 Samvada Room turns disagreement into a source-backed shared question.
 
@@ -384,7 +398,7 @@ It should:
 
 Samvada Room should make dialogue calmer without flattening difference. It should never pretend every view is equally supported by a source.
 
-### 23. Sankalpa Studio
+### 24. Sankalpa Studio
 
 Sankalpa Studio turns personal calm into one source-backed 24-hour intention.
 
@@ -399,7 +413,7 @@ It should:
 
 Sankalpa Studio should make calm concrete without pretending the app can control a user's life. The intention belongs to the user.
 
-### 24. Seva Planner
+### 25. Seva Planner
 
 Seva Planner turns personal calm into one source-backed helpful act.
 
@@ -414,7 +428,7 @@ It should:
 
 Seva Planner should make calm useful without turning service into self-erasure. The action should be small, bounded, and freely chosen.
 
-### 25. Morning Path
+### 26. Morning Path
 
 Morning Path helps a user begin the day with one source-backed start.
 
@@ -429,7 +443,7 @@ It should:
 
 Morning Path should make the first moment of the day calmer and more directed without pretending the product owns the user's life.
 
-### 26. Evening Reflection
+### 27. Evening Reflection
 
 Evening Reflection helps a user close the day with one source-backed reflection.
 
@@ -444,7 +458,7 @@ It should:
 
 Evening Reflection should help the user put the day down without making the day into a judgment of the self.
 
-### 27. Calm Rhythm
+### 28. Calm Rhythm
 
 Calm Rhythm helps a user see a privacy-preserving pattern across deliberate VedaPath room entries.
 
