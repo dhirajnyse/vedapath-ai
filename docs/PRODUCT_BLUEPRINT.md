@@ -142,6 +142,7 @@ It helps users move from curiosity to understanding through:
 - Citation Drawer: Citation Drawer gives VedaPath a progressive evidence layer: simple answer first, inspectable source detail on demand.
 - Confidence Engine Demo: Confidence Engine Demo shows how VedaPath can produce high, medium, low, or no-answer states from inspectable source data.
 - Consent Settings Demo: Consent Settings Demo gives VedaPath a plain, reversible permission surface for future accounts and beta continuity.
+- Feedback Ticket Demo: Feedback Ticket Demo routes user corrections into typed product work while blocking sensitive personal intake.
 <!-- VEDAPATH MVP LANE SPRINT SUMMARY END -->
 
 ## What It Is
@@ -2186,6 +2187,21 @@ It should:
 - produce a copyable working-MVP-lane handoff
 
 Consent Settings Demo should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 134. Feedback Ticket Demo
+
+Feedback Ticket Demo routes user corrections into typed product work while blocking sensitive personal intake.
+
+It should:
+
+- Issue type: Source, category, translation, boundary, privacy, or usability.
+- Evidence: Page link, citation, and optional short note.
+- Privacy guard: No medical, crisis, family, or private identity details.
+- Route: Reviewer queue, product backlog, privacy hold, or no-action note.
+- preserve the boundary: Ticket demo, not live support intake.
+- produce a copyable working-MVP-lane handoff
+
+Feedback Ticket Demo should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH MVP LANE SPRINT BLUEPRINT END -->
 
 ## Product Personality
