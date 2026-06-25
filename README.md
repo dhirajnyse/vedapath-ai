@@ -111,6 +111,8 @@ Let us look at the source first.
 - [First 108 Questions Map Notes](docs/FIRST_108_QUESTIONS_MAP.md)
 - [Scholar Outreach Kit](outreach.html)
 - [Scholar Outreach Kit Notes](docs/SCHOLAR_OUTREACH_KIT.md)
+- [Calm Use Cases Gallery](usecases.html)
+- [Calm Use Cases Gallery Notes](docs/CALM_USE_CASES_GALLERY.md)
 <!-- VEDAPATH LAUNCH SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -189,6 +191,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Invite and Waitlist Prototype: Invite Prototype shapes early-access copy, consent language, and launch asks while avoiding fake sign-up behavior.
 - First 108 Questions Map: First 108 Questions Map helps move from prototype examples to a reviewed source dataset.
 - Scholar Outreach Kit: Scholar Outreach Kit creates respectful review requests with scope, evidence, and no endorsement pressure.
+- Calm Use Cases Gallery: Calm Use Cases Gallery shows where VedaPath can help everyday life without medical, therapeutic, or ritual claims.
 <!-- VEDAPATH LAUNCH SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff

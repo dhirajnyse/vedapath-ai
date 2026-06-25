@@ -48,6 +48,7 @@ It helps users move from curiosity to understanding through:
 - Invite and Waitlist Prototype: Invite Prototype shapes early-access copy, consent language, and launch asks while avoiding fake sign-up behavior.
 - First 108 Questions Map: First 108 Questions Map helps move from prototype examples to a reviewed source dataset.
 - Scholar Outreach Kit: Scholar Outreach Kit creates respectful review requests with scope, evidence, and no endorsement pressure.
+- Calm Use Cases Gallery: Calm Use Cases Gallery shows where VedaPath can help everyday life without medical, therapeutic, or ritual claims.
 <!-- VEDAPATH LAUNCH SPRINT SUMMARY END -->
 
 ## What It Is
@@ -914,6 +915,21 @@ It should:
 - produce a copyable founder handoff
 
 Scholar Outreach Kit should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 56. Calm Use Cases Gallery
+
+Calm Use Cases Gallery shows where VedaPath can help everyday life without medical, therapeutic, or ritual claims.
+
+It should:
+
+- Before reply: Pause before a difficult message.
+- Morning start: Begin with one source and one clean action.
+- Family conversation: Slow a shared moment around one question.
+- Evening close: Acknowledge, release, and close the day.
+- preserve the boundary: Reflection support, not therapy.
+- produce a copyable founder handoff
+
+Calm Use Cases Gallery should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH LAUNCH SPRINT BLUEPRINT END -->
 
 ## Product Personality
