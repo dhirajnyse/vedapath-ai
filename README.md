@@ -329,6 +329,8 @@ Let us look at the source first.
 - [Rights and Translation Gate Notes](docs/RIGHTS_AND_TRANSLATION_GATE.md)
 - [Reviewer Workflow Board](reviewworkflow.html)
 - [Reviewer Workflow Board Notes](docs/REVIEWER_WORKFLOW_BOARD.md)
+- [Beta User Consent Gate](betaconsent.html)
+- [Beta User Consent Gate Notes](docs/BETA_USER_CONSENT_GATE.md)
 <!-- VEDAPATH BETA IMPLEMENTATION SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -360,7 +362,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v1.7.1` is a trusted MVP prototype plus Reviewer Workflow Board with:
+`v1.7.2` is a trusted MVP prototype plus Beta User Consent Gate with:
 
 - Ask workspace
 - Source Card
@@ -526,6 +528,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Evaluation Fixture Lab: Evaluation Fixture Lab turns product risk into repeatable checks, making trust measurable before launch.
 - Rights and Translation Gate: Rights and Translation Gate gives VedaPath a practical way to cite carefully while avoiding careless text display.
 - Reviewer Workflow Board: Reviewer Workflow Board makes human review operational: scoped decisions create visible product behavior.
+- Beta User Consent Gate: Beta User Consent Gate protects the calm experience by making memory, sharing, contact, export, and deletion explicit.
 <!-- VEDAPATH BETA IMPLEMENTATION SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff

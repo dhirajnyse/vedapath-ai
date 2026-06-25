@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>VedaPath Reviewer Workflow Board</title>
+    <title>VedaPath Beta User Consent Gate</title>
     <link rel="stylesheet" href="assets/vedapath-sprint.css">
   </head>
   <body>
@@ -13,7 +13,7 @@
           <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
           <div>
             <strong>VedaPath AI</strong>
-            <span>Reviewer workflow</span>
+            <span>Beta consent gate</span>
           </div>
         </a>
         <nav class="nav" aria-label="Project links">
@@ -28,14 +28,14 @@
           <a class="link" href="answerassembly.html">Assembly</a>
           <a class="link" href="fixturelab.html">Fixtures</a>
           <a class="link" href="rightsgate.html">Rights</a>
-          <a class="link active" href="reviewworkflow.html">Review</a>
-          <a class="link" href="betaconsent.html">Consent</a>
+          <a class="link" href="reviewworkflow.html">Review</a>
+          <a class="link active" href="betaconsent.html">Consent</a>
           <!-- VEDAPATH BETA IMPLEMENTATION SPRINT NAV END -->
           <span class="version">v1.7.2 consent gate</span>
         </nav>
       </header>
 
-      <main class="workspace" aria-label="VedaPath Reviewer Workflow Board workspace">
+      <main class="workspace" aria-label="VedaPath Beta User Consent Gate workspace">
         <aside class="panel">
           <span class="eyebrow">Beta implementation sprint</span>
           <h2>Release Rooms</h2>
@@ -46,38 +46,38 @@
         <section class="panel">
           <div class="hero-grid">
             <div>
-              <span class="eyebrow">Human review</span>
-              <h1>Let review change what users see.</h1>
-              <p class="muted">A reviewer workflow board that turns tickets and source gaps into public answer states: approved, held, blocked, retired, or released.</p>
+              <span class="eyebrow">Beta consent</span>
+              <h1>Ask permission before the product remembers.</h1>
+              <p class="muted">A beta consent gate that separates anonymous browsing, local-only memory, account sync, review sharing, and product updates.</p>
             </div>
             <div class="mark-stage">
-              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Review logo">
+              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Consent logo">
             </div>
           </div>
 
           <div class="source-block" aria-label="Release source card">
             <div>
               <span class="source-meta">Release</span>
-              <span class="source-value">v1.7.1</span>
+              <span class="source-value">v1.7.2</span>
             </div>
             <div>
               <span class="source-meta">Source candidate</span>
-              <span class="source-value">Taittiriya Upanishad 1.11.1</span>
+              <span class="source-value">Bhagavad Gita 18.63</span>
             </div>
             <div>
               <span class="source-meta">Text family</span>
-              <span class="source-value">Upanishad | Shruti</span>
+              <span class="source-value">Bhagavad Gita | Smriti</span>
             </div>
             <div>
               <span class="source-meta">Boundary</span>
-              <span class="source-value">Workflow board demo, not actual reviewer approval.</span>
+              <span class="source-value">Consent gate demo, not account storage.</span>
             </div>
           </div>
 
           <h2>Implementation Signals</h2>
           <div class="item-list" id="itemList"></div>
 
-          <div class="tabs" role="tablist" aria-label="VedaPath Reviewer Workflow Board layers">
+          <div class="tabs" role="tablist" aria-label="VedaPath Beta User Consent Gate layers">
             <button class="tab active" type="button" data-mode="brief">Brief</button>
             <button class="tab" type="button" data-mode="checklist">Checklist</button>
             <button class="tab" type="button" data-mode="boundary">Boundary</button>
@@ -91,20 +91,20 @@
             <button class="button" id="copyBoundary" type="button">Copy Boundary</button>
           </div>
 
-          <textarea id="output" readonly aria-label="VedaPath Reviewer Workflow Board output"></textarea>
+          <textarea id="output" readonly aria-label="VedaPath Beta User Consent Gate output"></textarea>
         </section>
 
-        <aside class="panel tight" aria-label="VedaPath Reviewer Workflow Board sprint rail">
+        <aside class="panel tight" aria-label="VedaPath Beta User Consent Gate sprint rail">
           <span class="badge green">Implementation path</span>
-          <h2 style="margin-top: 14px;">Review Pulse</h2>
-          <p class="muted">Reviewer Workflow Board makes human review operational: scoped decisions create visible product behavior.</p>
-          <div class="progress" aria-label="Sprint progress 67 percent">
-            <div class="bar" style="--score:67%"></div>
+          <h2 style="margin-top: 14px;">Consent Pulse</h2>
+          <p class="muted">Beta User Consent Gate protects the calm experience by making memory, sharing, contact, export, and deletion explicit.</p>
+          <div class="progress" aria-label="Sprint progress 68 percent">
+            <div class="bar" style="--score:68%"></div>
           </div>
           <div class="metric-grid">
             <div class="metric">
               <span>Current</span>
-              <strong>v1.7.1</strong>
+              <strong>v1.7.2</strong>
             </div>
             <div class="metric">
               <span>Sprint</span>
@@ -112,11 +112,11 @@
             </div>
             <div class="metric">
               <span>Progress</span>
-              <strong>67%</strong>
+              <strong>68%</strong>
             </div>
             <div class="metric">
               <span>Next</span>
-              <strong>Beta User Consent Gate</strong>
+              <strong>Launch Readiness Checklist</strong>
             </div>
           </div>
 
@@ -148,71 +148,71 @@
     </div>
 
     <script type="application/json" id="room-data">{
-  "version": "v1.7.1",
-  "badge": "v1.7.1 review",
-  "slug": "reviewworkflow",
-  "nav": "Review",
-  "title": "VedaPath Reviewer Workflow Board",
-  "pageLabel": "Reviewer workflow",
-  "eyebrow": "Human review",
-  "h1": "Let review change what users see.",
-  "lead": "A reviewer workflow board that turns tickets and source gaps into public answer states: approved, held, blocked, retired, or released.",
-  "source": "Taittiriya Upanishad 1.11.1",
-  "family": "Upanishad | Shruti",
-  "stance": "Workflow board demo, not actual reviewer approval.",
-  "progress": 67,
-  "next": "Beta User Consent Gate",
-  "primaryAsk": "Design the workflow that decides when a source record can power public answers.",
-  "summary": "Reviewer Workflow Board makes human review operational: scoped decisions create visible product behavior.",
+  "version": "v1.7.2",
+  "badge": "v1.7.2 consent gate",
+  "slug": "betaconsent",
+  "nav": "Consent",
+  "title": "VedaPath Beta User Consent Gate",
+  "pageLabel": "Beta consent gate",
+  "eyebrow": "Beta consent",
+  "h1": "Ask permission before the product remembers.",
+  "lead": "A beta consent gate that separates anonymous browsing, local-only memory, account sync, review sharing, and product updates.",
+  "source": "Bhagavad Gita 18.63",
+  "family": "Bhagavad Gita | Smriti",
+  "stance": "Consent gate demo, not account storage.",
+  "progress": 68,
+  "next": "Launch Readiness Checklist",
+  "primaryAsk": "Make beta participation reversible, specific, and understandable.",
+  "summary": "Beta User Consent Gate protects the calm experience by making memory, sharing, contact, export, and deletion explicit.",
   "items": [
     [
-      "Queue columns",
-      "New, triaged, reviewer-needed, held, approved, blocked, and released.",
-      "Makes work visible."
+      "Consent choices",
+      "Local-only, sync later, reviewer-visible, email updates, or no memory.",
+      "Keeps permission specific."
     ],
     [
-      "Decision scope",
-      "Source, language, boundary, rights, or answer release.",
-      "Prevents broad endorsement."
+      "Data preview",
+      "Show the exact preference, reflection, or learning state before saving.",
+      "Creates clarity."
     ],
     [
-      "Public effect",
-      "Display, lower confidence, hide, fallback, or release.",
-      "Connects review to UX."
+      "Exit path",
+      "Clear local preview, export, delete, pause, and unsubscribe.",
+      "Preserves agency."
     ],
     [
-      "Audit trail",
-      "Decision note, ticket link, reviewer lane, and date.",
-      "Keeps changes accountable."
+      "Sensitive guard",
+      "No medical, crisis, private family, or identity-heavy stories in beta memory.",
+      "Protects users."
     ]
   ],
   "modes": {
     "brief": [
       [
         "Implementation promise",
-        "Reviewer Workflow Board makes human review operational: scoped decisions create visible product behavior."
+        "Beta User Consent Gate protects the calm experience by making memory, sharing, contact, export, and deletion explicit."
       ],
       [
         "Founder move",
-        "Design the workflow that decides when a source record can power public answers."
+        "Make beta participation reversible, specific, and understandable."
       ],
       [
         "Trust move",
-        "Keep this boundary visible: Workflow board demo, not actual reviewer approval."
+        "Keep this boundary visible: Consent gate demo, not account storage."
       ]
     ],
     "checklist": [
       [
-        "Queue columns",
-        "New, triaged, reviewer-needed, held, approved, blocked, and released."
+        "Consent choices",
+        "Local-only, sync later, reviewer-visible, email updates, or no memory."
       ],
       [
-        "Decision scope",
-        "Source, language, boundary, rights, or answer release."
+        "Data preview",
+        "Show the exact preference, reflection, or learning state before saving."
       ],
       [
-        "Public effect",
-        "Display, lower confidence, hide, fallback, or release."
+        "Exit path",
+        "Clear local preview, export, delete, pause, and unsubscribe."
       ]
     ],
     "boundary": [

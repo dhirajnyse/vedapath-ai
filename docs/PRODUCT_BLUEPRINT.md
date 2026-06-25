@@ -167,6 +167,7 @@ It helps users move from curiosity to understanding through:
 - Evaluation Fixture Lab: Evaluation Fixture Lab turns product risk into repeatable checks, making trust measurable before launch.
 - Rights and Translation Gate: Rights and Translation Gate gives VedaPath a practical way to cite carefully while avoiding careless text display.
 - Reviewer Workflow Board: Reviewer Workflow Board makes human review operational: scoped decisions create visible product behavior.
+- Beta User Consent Gate: Beta User Consent Gate protects the calm experience by making memory, sharing, contact, export, and deletion explicit.
 <!-- VEDAPATH BETA IMPLEMENTATION SPRINT SUMMARY END -->
 
 ## What It Is
@@ -2528,6 +2529,21 @@ It should:
 - produce a copyable beta-implementation handoff
 
 Reviewer Workflow Board should never claim production storage, live AI generation, public launch approval, authentication, licensed source text, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 155. Beta User Consent Gate
+
+Beta User Consent Gate protects the calm experience by making memory, sharing, contact, export, and deletion explicit.
+
+It should:
+
+- Consent choices: Local-only, sync later, reviewer-visible, email updates, or no memory.
+- Data preview: Show the exact preference, reflection, or learning state before saving.
+- Exit path: Clear local preview, export, delete, pause, and unsubscribe.
+- Sensitive guard: No medical, crisis, private family, or identity-heavy stories in beta memory.
+- preserve the boundary: Consent gate demo, not account storage.
+- produce a copyable beta-implementation handoff
+
+Beta User Consent Gate should never claim production storage, live AI generation, public launch approval, authentication, licensed source text, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH BETA IMPLEMENTATION SPRINT BLUEPRINT END -->
 
 ## Product Personality
