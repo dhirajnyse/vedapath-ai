@@ -39,6 +39,9 @@ It helps users move from curiosity to understanding through:
 - seva planner for turning calm into bounded helpful action
 - calm rhythm for private pattern reading and next-room routing
 - user and scholar correction loops
+<!-- VEDAPATH LAUNCH SPRINT SUMMARY START -->
+- Founder Signal Map: Founder Signal Map turns curiosity, feedback, and early reactions into visible product signals without hidden tracking.
+<!-- VEDAPATH LAUNCH SPRINT SUMMARY END -->
 
 ## What It Is
 
@@ -783,6 +786,23 @@ It should:
 - avoid diagnosis, therapy claims, surveillance, productivity pressure, hidden profiling, and app-issued identity labels
 
 Calm Rhythm should help the user notice the shape of a week without pretending the product knows who the user is.
+
+<!-- VEDAPATH LAUNCH SPRINT BLUEPRINT START -->
+### 48. Founder Signal Map
+
+Founder Signal Map turns curiosity, feedback, and early reactions into visible product signals without hidden tracking.
+
+It should:
+
+- Learner pull: Are beginners asking for clearer source labels?
+- Family calm: Are shared reflection rooms being opened?
+- Builder trust: Are people inspecting gates instead of only the logo?
+- Reviewer interest: Are careful readers offering corrections?
+- preserve the boundary: Signal, not surveillance.
+- produce a copyable founder handoff
+
+Founder Signal Map should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
+<!-- VEDAPATH LAUNCH SPRINT BLUEPRINT END -->
 
 ## Product Personality
 

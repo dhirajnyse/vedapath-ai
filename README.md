@@ -94,6 +94,10 @@ Let us look at the source first.
 - [Public Feedback Notes](docs/PUBLIC_FEEDBACK_INTAKE.md)
 - [Launch Story Room](story.html)
 - [Launch Story Notes](docs/LAUNCH_STORY_ROOM.md)
+<!-- VEDAPATH LAUNCH SPRINT LINKS START -->
+- [Founder Signal Map](signal.html)
+- [Founder Signal Map Notes](docs/FOUNDER_SIGNAL_MAP.md)
+<!-- VEDAPATH LAUNCH SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
 - [Calm Compass](compass.html)
@@ -124,7 +128,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v0.6.4` is a trusted MVP prototype plus a Launch Story Room with:
+`v0.6.5` is a trusted MVP prototype plus Founder Signal Map with:
 
 - Ask workspace
 - Source Card
@@ -162,6 +166,9 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Reviewer Identity and Access Gate with scoped reviewer roles, private identity stance, display policy, permissions, and blocked powers
 - Public Feedback Intake with source issue, category confusion, UX friction, boundary concern, review-ticket handoff, and blocked private-intake rules
 - Launch Story Room with audience variants, founder copy, social copy, reviewer ask, no-go claims, and source-first launch boundaries
+<!-- VEDAPATH LAUNCH SPRINT FEATURES START -->
+- Founder Signal Map: Founder Signal Map turns curiosity, feedback, and early reactions into visible product signals without hidden tracking.
+<!-- VEDAPATH LAUNCH SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
 - Calm Card Studio with visual card preview, local saved cards, copy text, and PNG export
