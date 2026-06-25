@@ -1,4 +1,4 @@
-# v1.7.3 Prototype Notes
+# v1.7.4 Prototype Notes
 
 The v0.7.4 release turns the VedaPath AI homepage into a trusted MVP prototype with calm, practice, source-library, source-seeds, retrieval, passage-review, evaluation, evaluation-dashboard, reviewer-queue, source-policy, trust-ledger, life-map, calm-circle, consent-gate, memory-gate, trust-model, calm-passport, backend-schema, schema-fixtures, evaluation-drill, learning-loop, sanskrit-lens, voice-boundary, scholar-review, launch-gate, production-bridge, source-storage, reviewer-access, public-feedback, launch-story, source-path, calm-compass, calm-card, source-bell, before-reply, samvada, sankalpa, seva, morning, evening, and rhythm surfaces.
 
@@ -172,6 +172,7 @@ The v0.7.4 release turns the VedaPath AI homepage into a trusted MVP prototype w
 - Reviewer Workflow Board: Reviewer Workflow Board makes human review operational: scoped decisions create visible product behavior.
 - Beta User Consent Gate: Beta User Consent Gate protects the calm experience by making memory, sharing, contact, export, and deletion explicit.
 - Launch Readiness Checklist: Launch Readiness Checklist gives VedaPath a calm gate: no beta until data, trust, consent, and support boundaries are explainable.
+- Beta Implementation Control Room: Beta Implementation Control Room completes the implementation-path sprint and prepares VedaPath for a serious first beta build decision.
 <!-- VEDAPATH BETA IMPLEMENTATION SPRINT NOTES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff

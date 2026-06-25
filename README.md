@@ -333,6 +333,8 @@ Let us look at the source first.
 - [Beta User Consent Gate Notes](docs/BETA_USER_CONSENT_GATE.md)
 - [Launch Readiness Checklist](betareadiness.html)
 - [Launch Readiness Checklist Notes](docs/LAUNCH_READINESS_CHECKLIST.md)
+- [Beta Implementation Control Room](implementationconsole.html)
+- [Beta Implementation Control Room Notes](docs/BETA_IMPLEMENTATION_CONTROL_ROOM.md)
 <!-- VEDAPATH BETA IMPLEMENTATION SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -364,7 +366,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v1.7.3` is a trusted MVP prototype plus Launch Readiness Checklist with:
+`v1.7.4` is a trusted MVP prototype plus Beta Implementation Control Room with:
 
 - Ask workspace
 - Source Card
@@ -532,6 +534,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Reviewer Workflow Board: Reviewer Workflow Board makes human review operational: scoped decisions create visible product behavior.
 - Beta User Consent Gate: Beta User Consent Gate protects the calm experience by making memory, sharing, contact, export, and deletion explicit.
 - Launch Readiness Checklist: Launch Readiness Checklist gives VedaPath a calm gate: no beta until data, trust, consent, and support boundaries are explainable.
+- Beta Implementation Control Room: Beta Implementation Control Room completes the implementation-path sprint and prepares VedaPath for a serious first beta build decision.
 <!-- VEDAPATH BETA IMPLEMENTATION SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
