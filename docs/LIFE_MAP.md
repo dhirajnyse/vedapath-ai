@@ -74,4 +74,6 @@ v0.4.9 adds Memory Gate so Life Map records can be blocked, kept local, routed t
 
 v0.5.0 adds Trust Model so Life Map, Consent Gate, Memory Gate, Trust Ledger, Reviewer Queue, Source Seeds, and Calm Rhythm connect as a visible production data architecture.
 
-v0.5.1 should convert that visual model into the first backend schema draft with durable ids, table relationships, migration notes, and account-memory consent flows.
+v0.5.1 adds Calm Passport so personal calm patterns can show may-remember fields, must-not-remember fields, export, deletion, withdrawal, and local grants before account-backed memory.
+
+v0.5.2 should convert that visual model into the first backend schema draft with durable ids, table relationships, migration notes, passport grants, and account-memory consent flows.

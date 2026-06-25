@@ -84,4 +84,6 @@ Trust Model is not:
 
 ## Next Step
 
-v0.5.1 should convert this visual model into the first backend schema draft with durable ids, table relationships, migration notes, and account-memory consent flows.
+v0.5.1 adds Calm Passport so the Trust Model becomes visible to users through may-remember fields, must-not-remember fields, export, deletion, withdrawal, and local passport grants.
+
+v0.5.2 should convert Trust Model and Calm Passport into the first backend schema draft with durable ids, table relationships, migration notes, account-memory consent, passport grants, export, and deletion flows.

@@ -1,6 +1,6 @@
-# v0.5.0 Prototype Notes
+# v0.5.1 Prototype Notes
 
-The v0.5.0 release turns the VedaPath AI homepage into a trusted MVP prototype with calm, practice, source-library, source-seeds, retrieval, passage-review, evaluation, evaluation-dashboard, reviewer-queue, source-policy, trust-ledger, life-map, calm-circle, consent-gate, memory-gate, trust-model, source-path, calm-compass, calm-card, source-bell, before-reply, samvada, sankalpa, seva, morning, evening, and rhythm surfaces.
+The v0.5.1 release turns the VedaPath AI homepage into a trusted MVP prototype with calm, practice, source-library, source-seeds, retrieval, passage-review, evaluation, evaluation-dashboard, reviewer-queue, source-policy, trust-ledger, life-map, calm-circle, consent-gate, memory-gate, trust-model, calm-passport, source-path, calm-compass, calm-card, source-bell, before-reply, samvada, sankalpa, seva, morning, evening, and rhythm surfaces.
 
 ## Included
 
@@ -28,6 +28,7 @@ The v0.5.0 release turns the VedaPath AI homepage into a trusted MVP prototype w
 - Consent Gate with shared calm, life-map, reviewer, and source-dataset governance checks before durable memory
 - Memory Gate with local draft, human review, Trust Ledger, and blocked routes before durable memory
 - Trust Model with production entities, source-to-memory flow, required fields, launch readiness, and copyable JSON schema preview
+- Calm Passport with may-remember fields, must-not-remember fields, user controls, local grants, export brief, and delete request
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
 - Calm Card Studio with visual preview, local saved cards, copy text, and PNG export
@@ -68,6 +69,7 @@ This release proves the product direction:
 - shared or knowledge-changing records can require visible purpose, scope, consent, deletion path, source trace, and review route before they become product memory
 - memory routes can visibly block, review, localize, or ledger records before durable storage
 - the production data model can be inspected before accounts, durable storage, or real memory are introduced
+- user memory controls can be inspected before account-backed memory is introduced
 - unsupported proof claims can be refused as source gaps instead of dressed up as wisdom
 - one current-life state can route to the next useful product room
 - one source-backed action can become a shareable visual artifact
@@ -81,4 +83,4 @@ This release proves the product direction:
 
 ## Next Release
 
-v0.5.1 should convert the Trust Model into the first backend schema draft with durable ids, table relationships, migration notes, and account-memory consent flows.
+v0.5.2 should convert Trust Model and Calm Passport into the first backend schema draft with durable ids, table relationships, migration notes, account-memory consent, passport grants, export, and deletion flows.

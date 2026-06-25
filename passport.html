@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VedaPath Calm Passport</title>
+    <style>
+      :root {
+        --bg: #fff7eb;
+        --panel: #fffdf8;
+        --ink: #1f1a17;
+        --muted: #694433;
+        --line: #ead8c8;
+        --soft: #fce8dd;
+        --saffron: #d65a1f;
+        --ochre: #a83f12;
+        --gold: #e0a83b;
+        --green: #145c4a;
+        --indigo: #29335c;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+      }
+
+      body,
+      button,
+      textarea,
+      input {
+        font: inherit;
+      }
+
+      a,
+      button {
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      .page {
+        width: min(1380px, calc(100% - 44px));
+        margin: 0 auto;
+        padding: 22px 0 34px;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        padding-bottom: 18px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        min-width: 214px;
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .brand img {
+        width: 48px;
+        height: 48px;
+        border-radius: 8px;
+        object-fit: cover;
+        box-shadow: 0 8px 22px rgba(166, 69, 16, 0.16);
+      }
+
+      .brand strong {
+        display: block;
+        font-size: 19px;
+        line-height: 1.1;
+      }
+
+      .brand span {
+        display: block;
+        margin-top: 4px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        gap: 8px 16px;
+      }
+
+      .link,
+      .version {
+        color: #3a2319;
+        font-size: 13px;
+        font-weight: 800;
+        text-decoration: none;
+      }
+
+      .link.active,
+      .version {
+        border: 1px solid #ecc3ad;
+        border-radius: 999px;
+        padding: 8px 12px;
+        color: #ad3d12;
+        background: rgba(255, 253, 248, 0.72);
+      }
+
+      .workspace {
+        display: grid;
+        grid-template-columns: minmax(290px, 0.9fr) minmax(460px, 1.24fr) minmax(290px, 0.92fr);
+        gap: 16px;
+        margin-top: 18px;
+      }
+
+      .panel,
+      .passport-card,
+      .field-card,
+      .control-card,
+      .stat,
+      .history-item,
+      .boundary-card {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgba(255, 253, 248, 0.84);
+      }
+
+      .panel {
+        padding: 20px;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        width: fit-content;
+        min-height: 28px;
+        border-radius: 999px;
+        padding: 6px 10px;
+        background: var(--soft);
+        color: #a63811;
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        margin: 14px 0;
+        font-size: clamp(43px, 6vw, 72px);
+        line-height: 0.95;
+        letter-spacing: 0;
+      }
+
+      h2 {
+        margin-bottom: 12px;
+        font-size: 26px;
+        line-height: 1.1;
+      }
+
+      h3 {
+        margin-bottom: 8px;
+        font-size: 17px;
+      }
+
+      p {
+        color: var(--muted);
+        line-height: 1.55;
+      }
+
+      .muted {
+        color: var(--muted);
+      }
+
+      .passport-list,
+      .field-grid,
+      .control-grid,
+      .stat-grid,
+      .history-list {
+        display: grid;
+        gap: 10px;
+      }
+
+      .passport-card {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 36px minmax(0, 1fr);
+        gap: 12px;
+        align-items: start;
+        padding: 12px;
+        color: inherit;
+        text-align: left;
+        cursor: pointer;
+      }
+
+      .passport-card.active {
+        border-color: #ef9a72;
+        background: #fff0e8;
+        box-shadow: 0 0 0 2px rgba(214, 90, 31, 0.08);
+      }
+
+      .passport-index {
+        display: grid;
+        place-items: center;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: #e5efea;
+        color: var(--green);
+        font-size: 13px;
+        font-weight: 900;
+      }
+
+      .passport-card.active .passport-index {
+        background: var(--saffron);
+        color: #fff;
+      }
+
+      .passport-card strong {
+        display: block;
+        margin-bottom: 3px;
+      }
+
+      .passport-card p,
+      .field-card p,
+      .control-card p,
+      .history-item span {
+        margin: 0;
+        font-size: 13px;
+        line-height: 1.45;
+      }
+
+      .source-card {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        margin: 16px 0;
+        padding: 14px;
+        border: 1px solid var(--line);
+        border-left: 4px solid var(--saffron);
+        border-radius: 8px;
+        background: rgba(255, 253, 248, 0.76);
+      }
+
+      .source-label {
+        display: block;
+        margin-bottom: 4px;
+        color: #704b3c;
+        font-size: 12px;
+      }
+
+      .source-value {
+        display: block;
+        color: #0f0d0c;
+        font-weight: 900;
+      }
+
+      .readiness {
+        margin: 16px 0;
+      }
+
+      .readiness-head {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 8px;
+        font-weight: 900;
+      }
+
+      .progress {
+        height: 10px;
+        overflow: hidden;
+        border-radius: 999px;
+        background: rgba(168, 62, 18, 0.14);
+      }
+
+      .bar {
+        height: 100%;
+        width: 0%;
+        border-radius: inherit;
+        background: linear-gradient(90deg, var(--saffron), var(--gold));
+        transition: width 180ms ease;
+      }
+
+      .field-grid,
+      .control-grid,
+      .stat-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin-top: 12px;
+      }
+
+      .field-card,
+      .control-card {
+        min-height: 106px;
+        padding: 12px;
+      }
+
+      .field-card strong,
+      .control-card strong,
+      .history-item strong {
+        display: block;
+        margin-bottom: 8px;
+      }
+
+      .field-card.allow {
+        border-color: rgba(20, 92, 74, 0.3);
+        background: rgba(20, 92, 74, 0.06);
+      }
+
+      .field-card.block {
+        border-color: rgba(214, 90, 31, 0.28);
+        background: #fff0e8;
+      }
+
+      .control-card {
+        display: grid;
+        grid-template-columns: 28px minmax(0, 1fr);
+        gap: 10px;
+        cursor: pointer;
+      }
+
+      .control-card input {
+        margin-top: 3px;
+        accent-color: var(--saffron);
+      }
+
+      .control-card.active {
+        border-color: #ef9a72;
+        background: #fff0e8;
+      }
+
+      .stat {
+        padding: 12px;
+      }
+
+      .stat span {
+        display: block;
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .stat strong {
+        display: block;
+        margin-top: 6px;
+        font-size: 24px;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 16px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 42px;
+        border: 1px solid #efbda6;
+        border-radius: 8px;
+        padding: 9px 13px;
+        background: rgba(255, 253, 248, 0.82);
+        color: #a83f12;
+        font-weight: 900;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      .button.primary {
+        border-color: var(--saffron);
+        background: var(--saffron);
+        color: #fff;
+      }
+
+      .button.secondary {
+        color: var(--green);
+        border-color: rgba(20, 92, 74, 0.28);
+      }
+
+      .history-item {
+        padding: 12px;
+      }
+
+      .history-item span {
+        display: block;
+        color: var(--muted);
+      }
+
+      .boundary-card {
+        margin-top: 14px;
+        padding: 16px;
+        border-style: dashed;
+      }
+
+      .passport-output {
+        display: none;
+        width: 100%;
+        min-height: 220px;
+        margin-top: 12px;
+        border: 1px solid #efc9b8;
+        border-radius: 8px;
+        background: rgba(255, 253, 248, 0.9);
+        color: var(--ink);
+        padding: 12px;
+        font: 12px ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+        resize: vertical;
+      }
+
+      button:focus-visible,
+      a:focus-visible,
+      textarea:focus {
+        outline: 3px solid rgba(214, 90, 31, 0.25);
+        outline-offset: 2px;
+      }
+
+      @media (max-width: 1120px) {
+        .workspace {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .side-panel {
+          grid-column: 1 / -1;
+        }
+      }
+
+      @media (max-width: 740px) {
+        .page {
+          width: min(100% - 24px, 1380px);
+          padding-top: 16px;
+        }
+
+        .topbar {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .nav {
+          justify-content: flex-start;
+        }
+
+        .workspace,
+        .source-card,
+        .field-grid,
+        .control-grid,
+        .stat-grid {
+          grid-template-columns: 1fr;
+        }
+
+        h1 {
+          font-size: clamp(39px, 14vw, 58px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page" id="top">
+      <header class="topbar">
+        <a class="brand" href="./index.html#top" aria-label="VedaPath AI home">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
+          <div>
+            <strong>VedaPath AI</strong>
+            <span>Calm passport preview</span>
+          </div>
+        </a>
+        <nav class="nav" aria-label="Project links">
+          <a class="link" href="build-status.html">Build</a>
+          <a class="link" href="brand/brand-board.html">Brand</a>
+          <a class="link" href="blueprint.html">Blueprint</a>
+          <a class="link" href="calm.html">Calm</a>
+          <a class="link" href="daily.html">Daily</a>
+          <a class="link" href="practice.html">Practice</a>
+          <a class="link" href="library.html">Library</a>
+          <a class="link" href="seeds.html">Seeds</a>
+          <a class="link" href="retrieval.html">Retrieval</a>
+          <a class="link" href="passages.html">Review</a>
+          <a class="link" href="eval.html">Eval</a>
+          <a class="link" href="dashboard.html">Dash</a>
+          <a class="link" href="queue.html">Queue</a>
+          <a class="link" href="policy.html">Policy</a>
+          <a class="link" href="ledger.html">Ledger</a>
+          <a class="link" href="life.html">Life</a>
+          <a class="link" href="circle.html">Circle</a>
+          <a class="link" href="consent.html">Consent</a>
+          <a class="link" href="memory.html">Memory</a>
+          <a class="link" href="model.html">Model</a>
+          <a class="link active" href="passport.html">Passport</a>
+          <a class="link" href="path.html">Path</a>
+          <a class="link" href="compass.html">Compass</a>
+          <a class="link" href="card.html">Card</a>
+          <a class="link" href="bell.html">Bell</a>
+          <a class="link" href="reply.html">Reply</a>
+          <a class="link" href="samvada.html">Samvada</a>
+          <a class="link" href="sankalpa.html">Intent</a>
+          <a class="link" href="seva.html">Seva</a>
+          <a class="link" href="morning.html">Morning</a>
+          <a class="link" href="evening.html">Evening</a>
+          <a class="link" href="rhythm.html">Rhythm</a>
+          <span class="version">v0.5.1 calm passport</span>
+        </nav>
+      </header>
+
+      <section class="workspace" aria-label="VedaPath Calm Passport workspace">
+        <aside class="panel">
+          <span class="eyebrow">VedaPath Calm Passport</span>
+          <h1>Your passport remembers less by design.</h1>
+          <p>Choose a record type and see exactly what VedaPath may remember, what it must not remember, and which controls stay with the user.</p>
+          <div class="passport-list" id="passportList"></div>
+        </aside>
+
+        <section class="panel">
+          <span class="eyebrow">Passport record</span>
+          <h1 id="recordTitle">Daily calm pattern stays user-owned.</h1>
+          <p id="recordSummary">A daily reflection can help the user notice their rhythm, but it should store only deliberate signals and never infer a diagnosis, identity, or hidden score.</p>
+
+          <div class="source-card" aria-label="Calm passport record metadata">
+            <div>
+              <span class="source-label">Passport route</span>
+              <span class="source-value" id="recordRoute">Local first</span>
+            </div>
+            <div>
+              <span class="source-label">Memory stance</span>
+              <span class="source-value" id="recordStance">User-owned</span>
+            </div>
+            <div>
+              <span class="source-label">Default retention</span>
+              <span class="source-value" id="recordRetention">7-day local preview</span>
+            </div>
+            <div>
+              <span class="source-label">Next room</span>
+              <span class="source-value" id="recordRoom">Calm Rhythm</span>
+            </div>
+          </div>
+
+          <div class="readiness">
+            <div class="readiness-head">
+              <span>Passport clarity</span>
+              <span id="clarityScore">0%</span>
+            </div>
+            <div class="progress" aria-hidden="true"><div class="bar" id="scoreBar"></div></div>
+          </div>
+
+          <h2>May Remember</h2>
+          <div class="field-grid" id="allowGrid"></div>
+
+          <h2 style="margin-top: 18px;">Must Not Remember</h2>
+          <div class="field-grid" id="blockGrid"></div>
+
+          <h2 style="margin-top: 18px;">User Controls</h2>
+          <div class="control-grid" id="controlGrid"></div>
+
+          <div class="actions">
+            <button class="button primary" id="saveGrant" type="button">Save Local Grant</button>
+            <button class="button secondary" id="copyPassport" type="button">Copy Passport</button>
+            <button class="button" id="copyDelete" type="button">Copy Delete Request</button>
+            <a class="button" id="nextRoom" href="rhythm.html">Open Calm Rhythm</a>
+          </div>
+          <textarea class="passport-output" id="passportOutput" readonly aria-label="Calm passport export"></textarea>
+        </section>
+
+        <aside class="panel side-panel">
+          <span class="eyebrow">Private preview</span>
+          <h2>Your Calm Passport</h2>
+          <p>This prototype stores grants only in this browser. Production must add account identity, export, deletion, withdrawal, and audit controls before real memory.</p>
+
+          <div class="stat-grid">
+            <div class="stat">
+              <span>Saved grants</span>
+              <strong id="savedCount">0</strong>
+            </div>
+            <div class="stat">
+              <span>Active record</span>
+              <strong id="activeRecord">None</strong>
+            </div>
+            <div class="stat">
+              <span>Opt-in state</span>
+              <strong id="optState">Local</strong>
+            </div>
+            <div class="stat">
+              <span>Delete ready</span>
+              <strong id="deleteReady">Yes</strong>
+            </div>
+          </div>
+
+          <div class="history-list" id="historyList">
+            <div class="history-item">
+              <strong>No saved passport grants yet</strong>
+              <span>Save one local grant and this preview will show the latest user-control state.</span>
+            </div>
+          </div>
+
+          <div class="actions">
+            <button class="button secondary" id="copyAll" type="button">Copy Grants</button>
+            <button class="button" id="clearPassport" type="button">Clear Local Preview</button>
+          </div>
+
+          <div class="boundary-card">
+            <h2>Passport Boundary</h2>
+            <p>Calm Passport is not a privacy policy, legal advice, therapy, identity verification, or production account system. It is a product promise preview: memory should be visible, reversible, minimal, and user-owned.</p>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <script>
+      const storageKey = "vedapath.calmPassport.v1";
+
+      const records = [
+        {
+          id: "calm_pattern",
+          label: "Daily calm pattern",
+          summary: "A private rhythm made from deliberate daily reflections.",
+          title: "Daily calm pattern stays user-owned.",
+          detail: "A daily reflection can help the user notice their rhythm, but it should store only deliberate signals and never infer a diagnosis, identity, or hidden score.",
+          route: "Local first",
+          stance: "User-owned",
+          retention: "7-day local preview",
+          room: "Calm Rhythm",
+          link: "rhythm.html",
+          clarity: 94,
+          allow: ["Selected state", "Source candidate", "One carry action", "Timestamp chosen by user"],
+          block: ["Diagnosis", "Personality score", "Hidden mood inference", "Private chat transcript"]
+        },
+        {
+          id: "source_shelf",
+          label: "Source shelf",
+          summary: "Saved source candidates for study and practice.",
+          title: "Source shelf remembers texts, not private identity.",
+          detail: "A shelf can remember selected source seeds and practice handoffs, but it should not build a secret belief profile or ranking of the user.",
+          route: "Exportable shelf",
+          stance: "Study-owned",
+          retention: "Until removed",
+          room: "Source Library",
+          link: "library.html",
+          clarity: 88,
+          allow: ["Source seed ids", "Practice handoff", "Shelf order", "User note"],
+          block: ["Belief score", "Religious identity inference", "Unreviewed source authority", "Third-party sharing"]
+        },
+        {
+          id: "shared_circle",
+          label: "Shared circle note",
+          summary: "Family, team, friendship, or inner-circle record.",
+          title: "Shared memory waits for all visible consent.",
+          detail: "Shared notes should stay local or blocked until participant consent, purpose, scope, deletion, and review route are visible.",
+          route: "Consent first",
+          stance: "Participant-owned",
+          retention: "Blocked until consent",
+          room: "Consent Gate",
+          link: "consent.html",
+          clarity: 76,
+          allow: ["Circle type", "Shared question", "Small agreement", "Consent state"],
+          block: ["Private conflict archive", "Relationship profile", "One-sided durable memory", "Mediator verdict"]
+        },
+        {
+          id: "review_correction",
+          label: "Reviewer correction",
+          summary: "A user correction that may change answer behavior.",
+          title: "Corrections become review work, not silent memory.",
+          detail: "A correction can become a reviewer ticket with evidence, but it should not silently rewrite accepted source behavior.",
+          route: "Human review",
+          stance: "Evidence-tied",
+          retention: "Until reviewed or withdrawn",
+          room: "Reviewer Queue",
+          link: "queue.html",
+          clarity: 90,
+          allow: ["Correction text", "Source evidence", "Reviewer route", "Decision status"],
+          block: ["Unreviewed authority", "Private user labeling", "Silent model update", "Retaliatory notes"]
+        },
+        {
+          id: "account_profile",
+          label: "Account profile",
+          summary: "Future settings for language, export, deletion, and consent.",
+          title: "Profile settings should be boring, clear, and reversible.",
+          detail: "A future account should store only the settings needed to make VedaPath useful, exportable, deleteable, and respectful.",
+          route: "Explicit opt-in",
+          stance: "Minimal",
+          retention: "Until deleted",
+          room: "Trust Model",
+          link: "model.html",
+          clarity: 82,
+          allow: ["Display name", "Language preference", "Export settings", "Memory opt-in state"],
+          block: ["Hidden profiling", "Sensitive identity guesses", "Default sync", "Irreversible memory"]
+        },
+        {
+          id: "distress_boundary",
+          label: "Distress boundary",
+          summary: "Sensitive personal distress or unsafe-contact content.",
+          title: "Distress content should not become product memory.",
+          detail: "Distress content should not become product memory. When a user is distressed, VedaPath should prioritize boundaries, support direction, and non-retention rather than personal memory.",
+          route: "Do not retain",
+          stance: "Protected",
+          retention: "No durable memory",
+          room: "Source Policy",
+          link: "policy.html",
+          clarity: 96,
+          allow: ["Boundary shown", "Decline or defer route", "Support direction", "Safety flag"],
+          block: ["Distress archive", "Risk profile", "Therapy notes", "Emergency decisioning"]
+        }
+      ];
+
+      const controls = [
+        ["export", "Export before sync", "User can read what will move before anything durable exists."],
+        ["delete", "Delete path visible", "Every durable record needs deletion and withdrawal controls."],
+        ["review", "Review before authority", "Corrections and sensitive records need human review before behavior changes."],
+        ["minimal", "Minimal by default", "Only deliberate fields are eligible for memory."],
+        ["local", "Local preview only", "This prototype is browser-local until production account consent exists."]
+      ];
+
+      const state = {
+        selectedId: "calm_pattern",
+        saved: loadSaved()
+      };
+
+      function loadSaved() {
+        try {
+          return JSON.parse(localStorage.getItem(storageKey)) || [];
+        } catch (error) {
+          return [];
+        }
+      }
+
+      function saveLocal() {
+        localStorage.setItem(storageKey, JSON.stringify(state.saved));
+      }
+
+      function selectedRecord() {
+        return records.find((record) => record.id === state.selectedId) || records[0];
+      }
+
+      function renderRecords() {
+        document.getElementById("passportList").innerHTML = records.map((record, index) => `
+          <button class="passport-card ${record.id === state.selectedId ? "active" : ""}" type="button" data-id="${record.id}">
+            <span class="passport-index">${index + 1}</span>
+            <span>
+              <strong>${record.label}</strong>
+              <p>${record.summary}</p>
+            </span>
+          </button>
+        `).join("");
+
+        document.querySelectorAll(".passport-card[data-id]").forEach((button) => {
+          button.addEventListener("click", () => {
+            state.selectedId = button.dataset.id;
+            renderAll();
+          });
+        });
+      }
+
+      function renderFields(id, fields, className) {
+        document.getElementById(id).innerHTML = fields.map((field) => `
+          <div class="field-card ${className}">
+            <strong>${field}</strong>
+            <p>${className === "allow" ? "Allowed only when visible to the user." : "Blocked from hidden or durable product memory."}</p>
+          </div>
+        `).join("");
+      }
+
+      function renderControls() {
+        document.getElementById("controlGrid").innerHTML = controls.map(([id, label, description]) => `
+          <label class="control-card active" for="control-${id}">
+            <input id="control-${id}" type="checkbox" data-control="${id}" checked>
+            <span>
+              <strong>${label}</strong>
+              <p>${description}</p>
+            </span>
+          </label>
+        `).join("");
+
+        document.querySelectorAll("[data-control]").forEach((input) => {
+          input.addEventListener("change", () => {
+            input.closest(".control-card").classList.toggle("active", input.checked);
+            updateStats();
+          });
+        });
+      }
+
+      function activeControls() {
+        return [...document.querySelectorAll("[data-control]")].filter((input) => input.checked).map((input) => {
+          return input.closest(".control-card").querySelector("strong").textContent;
+        });
+      }
+
+      function passportGrant() {
+        const record = selectedRecord();
+        return {
+          id: Date.now(),
+          release: "v0.5.1 calm passport",
+          record: record.label,
+          route: record.route,
+          stance: record.stance,
+          retention: record.retention,
+          room: record.room,
+          mayRemember: record.allow,
+          mustNotRemember: record.block,
+          controls: activeControls(),
+          createdAt: new Date().toISOString()
+        };
+      }
+
+      function passportText(grant = passportGrant()) {
+        return [
+          "VedaPath Calm Passport",
+          "Release: v0.5.1 calm passport",
+          `Record: ${grant.record}`,
+          `Route: ${grant.route}`,
+          `Memory stance: ${grant.stance}`,
+          `Retention: ${grant.retention}`,
+          `Next room: ${grant.room}`,
+          `May remember: ${grant.mayRemember.join(", ")}`,
+          `Must not remember: ${grant.mustNotRemember.join(", ")}`,
+          `User controls: ${grant.controls.join(", ")}`,
+          "Passport rule: user memory must be visible, reversible, minimal, exportable, deleteable, reviewable, and source-tied."
+        ].join("\n");
+      }
+
+      function deleteText() {
+        const record = selectedRecord();
+        return [
+          "VedaPath Calm Passport Delete Request",
+          "Release: v0.5.1 calm passport",
+          `Record: ${record.label}`,
+          `Route: ${record.route}`,
+          "Request: delete or withdraw this record from any future durable memory.",
+          "Prototype note: current preview data is browser-local only.",
+          "Production requirement: delete path must remove the user-owned record, audit the request, and preserve only the minimum legal or governance event if required."
+        ].join("\n");
+      }
+
+      function copyText(text, button, label) {
+        const output = document.getElementById("passportOutput");
+        output.style.display = "block";
+        output.value = text;
+        output.select();
+        const original = button.textContent;
+        button.textContent = label;
+        if (navigator.clipboard?.writeText) {
+          navigator.clipboard.writeText(text).catch(() => {});
+        }
+        setTimeout(() => {
+          button.textContent = original;
+        }, 1400);
+      }
+
+      function renderHistory() {
+        document.getElementById("savedCount").textContent = state.saved.length;
+        document.getElementById("activeRecord").textContent = state.saved[0]?.record || "None";
+        const history = document.getElementById("historyList");
+        if (!state.saved.length) {
+          history.innerHTML = `
+            <div class="history-item">
+              <strong>No saved passport grants yet</strong>
+              <span>Save one local grant and this preview will show the latest user-control state.</span>
+            </div>
+          `;
+          return;
+        }
+        history.innerHTML = state.saved.slice(0, 5).map((grant) => `
+          <div class="history-item">
+            <strong>${grant.record} - ${grant.route}</strong>
+            <span>${grant.retention} - ${grant.controls.length} controls active</span>
+          </div>
+        `).join("");
+      }
+
+      function updateStats() {
+        document.getElementById("optState").textContent = document.querySelector('[data-control="local"]').checked ? "Local" : "Paused";
+        document.getElementById("deleteReady").textContent = document.querySelector('[data-control="delete"]').checked ? "Yes" : "No";
+      }
+
+      function renderAll() {
+        const record = selectedRecord();
+        document.getElementById("recordTitle").textContent = record.title;
+        document.getElementById("recordSummary").textContent = record.detail;
+        document.getElementById("recordRoute").textContent = record.route;
+        document.getElementById("recordStance").textContent = record.stance;
+        document.getElementById("recordRetention").textContent = record.retention;
+        document.getElementById("recordRoom").textContent = record.room;
+        document.getElementById("clarityScore").textContent = `${record.clarity}%`;
+        document.getElementById("scoreBar").style.width = `${record.clarity}%`;
+        document.getElementById("nextRoom").href = record.link;
+        document.getElementById("nextRoom").textContent = `Open ${record.room}`;
+        renderRecords();
+        renderFields("allowGrid", record.allow, "allow");
+        renderFields("blockGrid", record.block, "block");
+        updateStats();
+      }
+
+      document.getElementById("saveGrant").addEventListener("click", () => {
+        const grant = passportGrant();
+        state.saved = [grant, ...state.saved].slice(0, 12);
+        saveLocal();
+        renderHistory();
+      });
+
+      document.getElementById("copyPassport").addEventListener("click", () => {
+        copyText(passportText(), document.getElementById("copyPassport"), "Copied Passport");
+      });
+
+      document.getElementById("copyDelete").addEventListener("click", () => {
+        copyText(deleteText(), document.getElementById("copyDelete"), "Copied Delete");
+      });
+
+      document.getElementById("copyAll").addEventListener("click", () => {
+        const text = state.saved.length ? state.saved.map((grant) => passportText(grant)).join("\n\n---\n\n") : "No Calm Passport grants saved yet.";
+        copyText(text, document.getElementById("copyAll"), "Copied Grants");
+      });
+
+      document.getElementById("clearPassport").addEventListener("click", () => {
+        if (!state.saved.length || confirm("Clear local Calm Passport preview grants?")) {
+          state.saved = [];
+          saveLocal();
+          renderHistory();
+        }
+      });
+
+      renderControls();
+      renderAll();
+      renderHistory();
+    </script>
+  </body>
+</html>
