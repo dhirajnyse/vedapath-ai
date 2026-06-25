@@ -85,6 +85,7 @@ It helps users move from curiosity to understanding through:
 - Feedback Triage Lab: Feedback Triage Lab turns beta reactions into actionable queues while blocking sensitive private intake.
 - Educator Kit: Educator Kit packages VedaPath's source-first method into teacher-safe cards and discussion prompts.
 - Return Rhythm Board: Return Rhythm Board shapes VedaPath retention around source curiosity, calm practice, and user-owned rhythm.
+- Launch Control Center: Launch Control Center completes the readiness sprint and gives VedaPath one calm founder launch decision surface.
 <!-- VEDAPATH READINESS SPRINT SUMMARY END -->
 
 ## What It Is
@@ -1419,6 +1420,21 @@ It should:
 - produce a copyable launch-readiness handoff
 
 Return Rhythm Board should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 87. Launch Control Center
+
+Launch Control Center completes the readiness sprint and gives VedaPath one calm founder launch decision surface.
+
+It should:
+
+- Hold: If source pack, privacy, or no-go checks are not ready.
+- Private pilot: If the first 25 records and feedback triage are ready.
+- Public beta: If source, safety, privacy, and launch copy are aligned.
+- Reviewer-first: If authority risk is the biggest blocker.
+- preserve the boundary: Founder decision center, not automatic launch approval.
+- produce a copyable launch-readiness handoff
+
+Launch Control Center should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH READINESS SPRINT BLUEPRINT END -->
 
 ## Product Personality

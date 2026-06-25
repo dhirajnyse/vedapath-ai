@@ -179,6 +179,8 @@ Let us look at the source first.
 - [Educator Kit Notes](docs/EDUCATOR_KIT.md)
 - [Return Rhythm Board](return.html)
 - [Return Rhythm Board Notes](docs/RETURN_RHYTHM_BOARD.md)
+- [Launch Control Center](launchcenter.html)
+- [Launch Control Center Notes](docs/LAUNCH_CONTROL_CENTER.md)
 <!-- VEDAPATH READINESS SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -210,7 +212,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v1.0.3` is a trusted MVP prototype plus Return Rhythm Board with:
+`v1.0.4` is a trusted MVP prototype plus Launch Control Center with:
 
 - Ask workspace
 - Source Card
@@ -294,6 +296,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Feedback Triage Lab: Feedback Triage Lab turns beta reactions into actionable queues while blocking sensitive private intake.
 - Educator Kit: Educator Kit packages VedaPath's source-first method into teacher-safe cards and discussion prompts.
 - Return Rhythm Board: Return Rhythm Board shapes VedaPath retention around source curiosity, calm practice, and user-owned rhythm.
+- Launch Control Center: Launch Control Center completes the readiness sprint and gives VedaPath one calm founder launch decision surface.
 <!-- VEDAPATH READINESS SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
