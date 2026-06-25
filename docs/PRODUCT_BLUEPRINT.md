@@ -130,6 +130,7 @@ It helps users move from curiosity to understanding through:
 - Consent Toggle Mock: Consent Toggle Mock makes VedaPath's memory promise tangible through named permissions and visible reversibility.
 - Reviewer Queue Mock: Reviewer Queue Mock makes scholar and careful-reader review practical by turning issues into scoped, evidence-backed decisions.
 - Source Import Checklist: Source Import Checklist turns dataset growth into a disciplined process with visible blockers and no-go fields.
+- Beta QA Matrix: Beta QA Matrix turns VedaPath's product values into release checks for trust, privacy, usability, and mobile simplicity.
 <!-- VEDAPATH IMPLEMENTATION SPRINT SUMMARY END -->
 
 ## What It Is
@@ -2023,6 +2024,21 @@ It should:
 - produce a copyable implementation-readiness handoff
 
 Source Import Checklist should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 124. Beta QA Matrix
+
+Beta QA Matrix turns VedaPath's product values into release checks for trust, privacy, usability, and mobile simplicity.
+
+It should:
+
+- Source QA: Citation visible, family clear, confidence reason shown.
+- Boundary QA: No guru, therapy, ritual, science overclaim, or crisis advice.
+- UX QA: No horizontal overflow, readable cards, working tabs, copy buttons.
+- Launch QA: Live Pages markers, clean git status, and rollback note.
+- preserve the boundary: QA matrix, not formal certification.
+- produce a copyable implementation-readiness handoff
+
+Beta QA Matrix should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH IMPLEMENTATION SPRINT BLUEPRINT END -->
 
 ## Product Personality
