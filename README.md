@@ -285,6 +285,8 @@ Let us look at the source first.
 - [Consent Settings Demo Notes](docs/CONSENT_SETTINGS_DEMO.md)
 - [Feedback Ticket Demo](feedbackticket.html)
 - [Feedback Ticket Demo Notes](docs/FEEDBACK_TICKET_DEMO.md)
+- [Reviewer Decision Demo](reviewdecision.html)
+- [Reviewer Decision Demo Notes](docs/REVIEWER_DECISION_DEMO.md)
 <!-- VEDAPATH MVP LANE SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -316,7 +318,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v1.5.1` is a trusted MVP prototype plus Feedback Ticket Demo with:
+`v1.5.2` is a trusted MVP prototype plus Reviewer Decision Demo with:
 
 - Ask workspace
 - Source Card
@@ -458,6 +460,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Confidence Engine Demo: Confidence Engine Demo shows how VedaPath can produce high, medium, low, or no-answer states from inspectable source data.
 - Consent Settings Demo: Consent Settings Demo gives VedaPath a plain, reversible permission surface for future accounts and beta continuity.
 - Feedback Ticket Demo: Feedback Ticket Demo routes user corrections into typed product work while blocking sensitive personal intake.
+- Reviewer Decision Demo: Reviewer Decision Demo shows how VedaPath can convert feedback tickets and source gaps into accountable release states.
 <!-- VEDAPATH MVP LANE SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff

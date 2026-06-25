@@ -143,6 +143,7 @@ It helps users move from curiosity to understanding through:
 - Confidence Engine Demo: Confidence Engine Demo shows how VedaPath can produce high, medium, low, or no-answer states from inspectable source data.
 - Consent Settings Demo: Consent Settings Demo gives VedaPath a plain, reversible permission surface for future accounts and beta continuity.
 - Feedback Ticket Demo: Feedback Ticket Demo routes user corrections into typed product work while blocking sensitive personal intake.
+- Reviewer Decision Demo: Reviewer Decision Demo shows how VedaPath can convert feedback tickets and source gaps into accountable release states.
 <!-- VEDAPATH MVP LANE SPRINT SUMMARY END -->
 
 ## What It Is
@@ -2202,6 +2203,21 @@ It should:
 - produce a copyable working-MVP-lane handoff
 
 Feedback Ticket Demo should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 135. Reviewer Decision Demo
+
+Reviewer Decision Demo shows how VedaPath can convert feedback tickets and source gaps into accountable release states.
+
+It should:
+
+- Lane: Source, language, boundary, rights, or answer release.
+- Choice: Approve, hold, block, request evidence, or retire.
+- Reason: Short note tied to evidence.
+- Public effect: Display, lower confidence, hide answer, or route fallback.
+- preserve the boundary: Decision demo, not actual reviewer approval.
+- produce a copyable working-MVP-lane handoff
+
+Reviewer Decision Demo should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH MVP LANE SPRINT BLUEPRINT END -->
 
 ## Product Personality

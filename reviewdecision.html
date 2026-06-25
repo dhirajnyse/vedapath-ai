@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>VedaPath Consent Settings Demo</title>
+    <title>VedaPath Reviewer Decision Demo</title>
     <link rel="stylesheet" href="assets/vedapath-sprint.css">
   </head>
   <body>
@@ -13,7 +13,7 @@
           <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
           <div>
             <strong>VedaPath AI</strong>
-            <span>Consent settings demo</span>
+            <span>Reviewer decision demo</span>
           </div>
         </a>
         <nav class="nav" aria-label="Project links">
@@ -29,15 +29,15 @@
           <a class="link" href="rendererdemo.html">Renderer</a>
           <a class="link" href="citationdrawer.html">Citation</a>
           <a class="link" href="confidenceengine.html">Confidence</a>
-          <a class="link active" href="consentsettings.html">Settings</a>
+          <a class="link" href="consentsettings.html">Settings</a>
           <a class="link" href="feedbackticket.html">Ticket</a>
-          <a class="link" href="reviewdecision.html">Decision</a>
+          <a class="link active" href="reviewdecision.html">Decision</a>
           <!-- VEDAPATH MVP LANE SPRINT NAV END -->
           <span class="version">v1.5.2 decision</span>
         </nav>
       </header>
 
-      <main class="workspace" aria-label="VedaPath Consent Settings Demo workspace">
+      <main class="workspace" aria-label="VedaPath Reviewer Decision Demo workspace">
         <aside class="panel">
           <span class="eyebrow">Working MVP lane sprint</span>
           <h2>Release Rooms</h2>
@@ -48,23 +48,23 @@
         <section class="panel">
           <div class="hero-grid">
             <div>
-              <span class="eyebrow">User control</span>
-              <h1>Make privacy settings part of the product, not a footnote.</h1>
-              <p class="muted">A consent settings demo for local memory, source path sync, beta email, reviewer follow-up, export, delete, and pause.</p>
+              <span class="eyebrow">Human trust</span>
+              <h1>Let reviewers decide one clear thing at a time.</h1>
+              <p class="muted">A reviewer decision demo for source approval, language hold, boundary correction, rights block, and answer release state.</p>
             </div>
             <div class="mark-stage">
-              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Settings logo">
+              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Decision logo">
             </div>
           </div>
 
           <div class="source-block" aria-label="Release source card">
             <div>
               <span class="source-meta">Release</span>
-              <span class="source-value">v1.5.0</span>
+              <span class="source-value">v1.5.2</span>
             </div>
             <div>
               <span class="source-meta">Source candidate</span>
-              <span class="source-value">Isha Upanishad 1</span>
+              <span class="source-value">Taittiriya Upanishad 1.11.1</span>
             </div>
             <div>
               <span class="source-meta">Text family</span>
@@ -72,14 +72,14 @@
             </div>
             <div>
               <span class="source-meta">Boundary</span>
-              <span class="source-value">Settings demo, not live account storage.</span>
+              <span class="source-value">Decision demo, not actual reviewer approval.</span>
             </div>
           </div>
 
           <h2>Decision Signals</h2>
           <div class="item-list" id="itemList"></div>
 
-          <div class="tabs" role="tablist" aria-label="VedaPath Consent Settings Demo layers">
+          <div class="tabs" role="tablist" aria-label="VedaPath Reviewer Decision Demo layers">
             <button class="tab active" type="button" data-mode="brief">Brief</button>
             <button class="tab" type="button" data-mode="checklist">Checklist</button>
             <button class="tab" type="button" data-mode="boundary">Boundary</button>
@@ -93,20 +93,20 @@
             <button class="button" id="copyBoundary" type="button">Copy Boundary</button>
           </div>
 
-          <textarea id="output" readonly aria-label="VedaPath Consent Settings Demo output"></textarea>
+          <textarea id="output" readonly aria-label="VedaPath Reviewer Decision Demo output"></textarea>
         </section>
 
-        <aside class="panel tight" aria-label="VedaPath Consent Settings Demo sprint rail">
+        <aside class="panel tight" aria-label="VedaPath Reviewer Decision Demo sprint rail">
           <span class="badge green">MVP lane</span>
-          <h2 style="margin-top: 14px;">Settings Pulse</h2>
-          <p class="muted">Consent Settings Demo gives VedaPath a plain, reversible permission surface for future accounts and beta continuity.</p>
-          <div class="progress" aria-label="Sprint progress 96 percent">
-            <div class="bar" style="--score:96%"></div>
+          <h2 style="margin-top: 14px;">Decision Pulse</h2>
+          <p class="muted">Reviewer Decision Demo shows how VedaPath can convert feedback tickets and source gaps into accountable release states.</p>
+          <div class="progress" aria-label="Sprint progress 98 percent">
+            <div class="bar" style="--score:98%"></div>
           </div>
           <div class="metric-grid">
             <div class="metric">
               <span>Current</span>
-              <strong>v1.5.0</strong>
+              <strong>v1.5.2</strong>
             </div>
             <div class="metric">
               <span>Sprint</span>
@@ -114,11 +114,11 @@
             </div>
             <div class="metric">
               <span>Progress</span>
-              <strong>96%</strong>
+              <strong>98%</strong>
             </div>
             <div class="metric">
               <span>Next</span>
-              <strong>Feedback Ticket Demo</strong>
+              <strong>Beta Landing Draft</strong>
             </div>
           </div>
 
@@ -150,85 +150,85 @@
     </div>
 
     <script type="application/json" id="room-data">{
-  "version": "v1.5.0",
-  "badge": "v1.5.0 consent",
-  "slug": "consentsettings",
-  "nav": "Settings",
-  "title": "VedaPath Consent Settings Demo",
-  "pageLabel": "Consent settings demo",
-  "eyebrow": "User control",
-  "h1": "Make privacy settings part of the product, not a footnote.",
-  "lead": "A consent settings demo for local memory, source path sync, beta email, reviewer follow-up, export, delete, and pause.",
-  "source": "Isha Upanishad 1",
+  "version": "v1.5.2",
+  "badge": "v1.5.2 decision",
+  "slug": "reviewdecision",
+  "nav": "Decision",
+  "title": "VedaPath Reviewer Decision Demo",
+  "pageLabel": "Reviewer decision demo",
+  "eyebrow": "Human trust",
+  "h1": "Let reviewers decide one clear thing at a time.",
+  "lead": "A reviewer decision demo for source approval, language hold, boundary correction, rights block, and answer release state.",
+  "source": "Taittiriya Upanishad 1.11.1",
   "family": "Upanishad | Shruti",
-  "stance": "Settings demo, not live account storage.",
-  "progress": 96,
-  "next": "Feedback Ticket Demo",
-  "primaryAsk": "Prepare user-owned controls before any real memory or account system is added.",
-  "summary": "Consent Settings Demo gives VedaPath a plain, reversible permission surface for future accounts and beta continuity.",
+  "stance": "Decision demo, not actual reviewer approval.",
+  "progress": 98,
+  "next": "Beta Landing Draft",
+  "primaryAsk": "Make reviewer decisions scoped enough to audit and safe enough to publish.",
+  "summary": "Reviewer Decision Demo shows how VedaPath can convert feedback tickets and source gaps into accountable release states.",
   "items": [
     [
-      "Local memory",
-      "Keep private reflections on device only.",
-      "Protects sensitive use."
+      "Lane",
+      "Source, language, boundary, rights, or answer release.",
+      "Narrows decision."
     ],
     [
-      "Sync path",
-      "Save learning path only after opt-in.",
-      "Adds continuity."
+      "Choice",
+      "Approve, hold, block, request evidence, or retire.",
+      "Clarifies state."
     ],
     [
-      "Contact",
-      "Separate beta updates from reviewer follow-up.",
-      "Avoids bundled consent."
+      "Reason",
+      "Short note tied to evidence.",
+      "Creates auditability."
     ],
     [
-      "Exit",
-      "Export, delete, pause, and clear local preview.",
-      "Preserves user agency."
+      "Public effect",
+      "Display, lower confidence, hide answer, or route fallback.",
+      "Connects review to UX."
     ]
   ],
   "modes": {
     "brief": [
       [
-        "Consent promise",
-        "The user should always know what VedaPath remembers."
+        "Decision promise",
+        "Review builds trust when the decision scope is precise."
+      ],
+      [
+        "Ops move",
+        "Separate source approval from answer release."
       ],
       [
         "UX move",
-        "Name each permission in ordinary language."
-      ],
-      [
-        "Data move",
-        "Every memory has an exit path."
+        "Let review state change what users see."
       ]
     ],
     "checklist": [
       [
-        "Specific",
-        "Does each setting have one purpose?"
+        "Scoped",
+        "Is the decision lane exact?"
       ],
       [
-        "Reversible",
-        "Can it be paused or deleted?"
+        "Auditable",
+        "Is the reason tied to evidence?"
       ],
       [
-        "Visible",
-        "Is privacy accessible from the product surface?"
+        "Effective",
+        "Does it change public answer behavior?"
       ]
     ],
     "boundary": [
       [
-        "No silent memory",
-        "Do not remember without permission."
+        "No broad endorsement",
+        "Do not present one review as tradition-wide approval."
       ],
       [
-        "No bundled contact",
-        "Do not combine email and review follow-up."
+        "No private identity leak",
+        "Do not publish reviewers without consent."
       ],
       [
-        "No hidden deletion",
-        "Do not make clearing data hard."
+        "No ignored block",
+        "Do not display blocked records."
       ]
     ]
   },
