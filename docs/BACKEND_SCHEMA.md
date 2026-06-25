@@ -155,6 +155,10 @@ v0.5.7 adds the Voice Boundary Seed before any audio, chant, or pronunciation fe
 
 v0.5.8 adds the Scholar Review Seed with reviewer roles, evidence notes, decision states, release gates, and copyable review handoffs.
 
-## v0.5.9 Direction
+## v0.5.9 Launch Gate
 
-The next release should add a Launch Gate Seed with public demo checklist, privacy copy, share-ready launch notes, and no-go release gates.
+v0.5.9 adds the Launch Gate Seed with public demo readiness, privacy copy, launch notes, scenario decisions, and no-go release gates.
+
+## v0.6.0 Direction
+
+v0.6.0 should add a Production Bridge Seed for durable storage, access boundaries, launch-gate records, and reviewer-owned release history.

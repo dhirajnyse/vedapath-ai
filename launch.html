@@ -1,0 +1,1063 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VedaPath Launch Gate</title>
+    <style>
+      :root {
+        --bg: #fff7ea;
+        --surface: #fffdf8;
+        --surface-strong: #fff1e7;
+        --ink: #1d1714;
+        --muted: #6c3b25;
+        --line: #ead7c8;
+        --bhagwa: #d65a1f;
+        --ochre: #a83f12;
+        --gold: #e0a83b;
+        --green: #145c4a;
+        --indigo: #29335c;
+        --soft-green: #e8f0ea;
+        --soft-red: #fde8dd;
+        --soft-gold: #fff3d7;
+        --shadow: 0 18px 50px rgba(70, 36, 14, 0.08);
+        --radius: 8px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: Arial, Helvetica, sans-serif;
+        line-height: 1.55;
+      }
+
+      button,
+      textarea {
+        font: inherit;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .shell {
+        width: min(1240px, calc(100% - 44px));
+        margin: 0 auto;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 22px;
+        padding: 22px 0 16px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        min-width: 220px;
+        text-decoration: none;
+      }
+
+      .brand img {
+        width: 48px;
+        height: 48px;
+        border-radius: 8px;
+        object-fit: cover;
+        box-shadow: 0 8px 22px rgba(214, 90, 31, 0.13);
+      }
+
+      .brand strong {
+        display: block;
+        font-size: 20px;
+        line-height: 1.1;
+      }
+
+      .brand span {
+        display: block;
+        margin-top: 2px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .link,
+      .version,
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 40px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 800;
+        white-space: nowrap;
+      }
+
+      .link {
+        padding: 8px 10px;
+        color: #432414;
+      }
+
+      .link.active,
+      .version {
+        border: 1px solid #efb899;
+        color: var(--ochre);
+        background: rgba(255, 253, 248, 0.74);
+      }
+
+      .version {
+        padding: 8px 14px;
+      }
+
+      .button {
+        border: 1px solid #efb899;
+        color: var(--ochre);
+        background: var(--surface);
+        padding: 10px 14px;
+        cursor: pointer;
+      }
+
+      .button.primary {
+        border-color: var(--bhagwa);
+        background: var(--bhagwa);
+        color: white;
+      }
+
+      .button.safe {
+        color: #064f43;
+        border-color: #b9d3ca;
+      }
+
+      .workspace {
+        display: grid;
+        grid-template-columns: 0.96fr 1.28fr 0.92fr;
+        gap: 16px;
+        padding: 20px 0 28px;
+      }
+
+      .panel {
+        background: rgba(255, 253, 248, 0.82);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 18px;
+        box-shadow: var(--shadow);
+      }
+
+      .panel.tight {
+        box-shadow: none;
+      }
+
+      .eyebrow,
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        min-height: 28px;
+        border-radius: 999px;
+        padding: 5px 10px;
+        font-size: 12px;
+        font-weight: 900;
+        color: var(--ochre);
+        background: var(--soft-red);
+      }
+
+      .badge.green {
+        color: var(--green);
+        background: var(--soft-green);
+      }
+
+      .badge.gold {
+        color: #7a4a05;
+        background: var(--soft-gold);
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        margin: 18px 0 12px;
+        font-size: clamp(42px, 6.3vw, 72px);
+        line-height: 0.95;
+        letter-spacing: 0;
+      }
+
+      h2 {
+        margin-bottom: 12px;
+        font-size: 26px;
+        line-height: 1.05;
+      }
+
+      h3 {
+        margin-bottom: 6px;
+        font-size: 16px;
+      }
+
+      .muted {
+        color: var(--muted);
+      }
+
+      .scenario-list,
+      .gate-list,
+      .metric-grid,
+      .steps,
+      .mini-grid {
+        display: grid;
+        gap: 10px;
+      }
+
+      .scenario-card,
+      .gate-card,
+      .step-card,
+      .metric,
+      .mini-card {
+        width: 100%;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: rgba(255, 253, 248, 0.78);
+        text-align: left;
+      }
+
+      .scenario-card {
+        display: grid;
+        grid-template-columns: 42px minmax(0, 1fr);
+        gap: 12px;
+        align-items: center;
+        padding: 12px;
+        cursor: pointer;
+      }
+
+      .scenario-card.active,
+      .scenario-card:hover,
+      .scenario-card:focus-visible {
+        border-color: #f09f79;
+        background: #fff0e7;
+        outline: none;
+      }
+
+      .scenario-index,
+      .step-index {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 34px;
+        height: 34px;
+        border-radius: 999px;
+        background: var(--soft-green);
+        color: var(--green);
+        font-size: 13px;
+        font-weight: 900;
+      }
+
+      .scenario-card.active .scenario-index,
+      .step-card.active .step-index {
+        background: var(--bhagwa);
+        color: white;
+      }
+
+      .scenario-card strong,
+      .scenario-card span:not(.scenario-index) {
+        display: block;
+      }
+
+      .scenario-card span:not(.scenario-index) {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .note-field {
+        margin-top: 16px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 6px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      textarea {
+        width: 100%;
+        min-height: 96px;
+        border: 1px solid #efc1aa;
+        border-radius: var(--radius);
+        background: #fffaf4;
+        color: var(--ink);
+        padding: 12px;
+        resize: vertical;
+      }
+
+      .launch-hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 150px;
+        gap: 18px;
+        align-items: center;
+      }
+
+      .mark-stage {
+        border: 1px solid #f1d0bd;
+        border-radius: var(--radius);
+        background: #fff0df;
+        padding: 10px;
+      }
+
+      .mark-stage img {
+        width: 100%;
+        aspect-ratio: 1;
+        object-fit: cover;
+        border-radius: 4px;
+        display: block;
+      }
+
+      .source-block {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+        margin: 18px 0;
+        padding: 14px;
+        border: 1px solid var(--line);
+        border-left: 4px solid var(--bhagwa);
+        border-radius: var(--radius);
+        background: var(--surface);
+      }
+
+      .source-meta {
+        display: block;
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .source-value {
+        display: block;
+        margin-top: 4px;
+        font-size: 16px;
+        font-weight: 900;
+        line-height: 1.35;
+      }
+
+      .gate-card {
+        display: grid;
+        grid-template-columns: 36px minmax(0, 1fr) auto;
+        gap: 12px;
+        align-items: start;
+        padding: 12px;
+      }
+
+      .gate-state {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 28px;
+        border-radius: 999px;
+        padding: 4px 10px;
+        color: var(--green);
+        background: var(--soft-green);
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      .gate-state.hold {
+        color: var(--ochre);
+        background: var(--soft-red);
+      }
+
+      .gate-state.watch {
+        color: #7a4a05;
+        background: var(--soft-gold);
+      }
+
+      .tabs,
+      .button-row {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .tabs {
+        margin: 16px 0 12px;
+        border-top: 1px solid var(--line);
+        padding-top: 14px;
+      }
+
+      .tab {
+        min-height: 40px;
+        border: 1px solid #efb899;
+        border-radius: 8px;
+        background: var(--surface);
+        color: var(--ochre);
+        padding: 9px 12px;
+        font-weight: 900;
+        cursor: pointer;
+      }
+
+      .tab.active {
+        border-color: var(--bhagwa);
+        background: var(--bhagwa);
+        color: white;
+      }
+
+      .mode-panel {
+        min-height: 148px;
+      }
+
+      .mini-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .mini-card {
+        padding: 13px;
+        border-left: 3px solid #f0a07d;
+      }
+
+      .review-output {
+        margin-top: 14px;
+        min-height: 154px;
+        font-family: Consolas, "Courier New", monospace;
+        font-size: 13px;
+      }
+
+      .metric-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin: 12px 0;
+      }
+
+      .metric {
+        padding: 12px;
+      }
+
+      .metric span {
+        display: block;
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .metric strong {
+        display: block;
+        margin-top: 5px;
+        font-size: 26px;
+        line-height: 1;
+      }
+
+      .progress {
+        height: 10px;
+        overflow: hidden;
+        border-radius: 999px;
+        background: rgba(168, 62, 18, 0.14);
+      }
+
+      .bar {
+        width: var(--score);
+        height: 100%;
+        border-radius: inherit;
+        background: linear-gradient(90deg, var(--bhagwa), var(--gold));
+      }
+
+      .step-card {
+        display: grid;
+        grid-template-columns: 40px minmax(0, 1fr);
+        gap: 12px;
+        align-items: center;
+        padding: 12px;
+      }
+
+      .step-card p,
+      .mini-card p,
+      .gate-card p {
+        margin-bottom: 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .boundary {
+        border-style: dashed;
+        box-shadow: none;
+      }
+
+      @media (max-width: 1100px) {
+        .workspace {
+          grid-template-columns: 1fr;
+        }
+
+        .topbar {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .nav {
+          justify-content: flex-start;
+        }
+      }
+
+      @media (max-width: 760px) {
+        .shell {
+          width: min(100% - 28px, 1240px);
+        }
+
+        .launch-hero,
+        .source-block,
+        .metric-grid,
+        .mini-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .mark-stage {
+          max-width: 180px;
+        }
+
+        h1 {
+          font-size: 46px;
+        }
+
+        .gate-card {
+          grid-template-columns: 34px minmax(0, 1fr);
+        }
+
+        .gate-state {
+          grid-column: 2;
+          justify-self: start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="shell" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top" aria-label="VedaPath AI home">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
+          <div>
+            <strong>VedaPath AI</strong>
+            <span>Launch gate seed</span>
+          </div>
+        </a>
+        <nav class="nav" aria-label="Project links">
+          <a class="link" href="build-status.html">Build</a>
+          <a class="link" href="brand/brand-board.html">Brand</a>
+          <a class="link" href="blueprint.html">Blueprint</a>
+          <a class="link" href="calm.html">Calm</a>
+          <a class="link" href="daily.html">Daily</a>
+          <a class="link" href="practice.html">Practice</a>
+          <a class="link" href="library.html">Library</a>
+          <a class="link" href="seeds.html">Seeds</a>
+          <a class="link" href="retrieval.html">Retrieval</a>
+          <a class="link" href="passages.html">Review</a>
+          <a class="link" href="eval.html">Eval</a>
+          <a class="link" href="dashboard.html">Dash</a>
+          <a class="link" href="queue.html">Queue</a>
+          <a class="link" href="policy.html">Policy</a>
+          <a class="link" href="ledger.html">Ledger</a>
+          <a class="link" href="life.html">Life</a>
+          <a class="link" href="circle.html">Circle</a>
+          <a class="link" href="consent.html">Consent</a>
+          <a class="link" href="memory.html">Memory</a>
+          <a class="link" href="model.html">Model</a>
+          <a class="link" href="passport.html">Passport</a>
+          <a class="link" href="schema.html">Schema</a>
+          <a class="link" href="fixtures.html">Fixtures</a>
+          <a class="link" href="drill.html">Drill</a>
+          <a class="link" href="loop.html">Loop</a>
+          <a class="link" href="lens.html">Lens</a>
+          <a class="link" href="voice.html">Voice</a>
+          <a class="link" href="scholar.html">Scholar</a>
+          <a class="link active" href="launch.html">Launch</a>
+          <a class="link" href="path.html">Path</a>
+          <a class="link" href="compass.html">Compass</a>
+          <a class="link" href="card.html">Card</a>
+          <a class="link" href="bell.html">Bell</a>
+          <a class="link" href="reply.html">Reply</a>
+          <a class="link" href="samvada.html">Samvada</a>
+          <a class="link" href="sankalpa.html">Intent</a>
+          <a class="link" href="seva.html">Seva</a>
+          <a class="link" href="morning.html">Morning</a>
+          <a class="link" href="evening.html">Evening</a>
+          <a class="link" href="rhythm.html">Rhythm</a>
+          <span class="version">v0.5.9 launch</span>
+        </nav>
+      </header>
+
+      <main class="workspace" aria-label="VedaPath Launch Gate workspace">
+        <aside class="panel">
+          <span class="eyebrow">Choose launch doorway</span>
+          <h1>Launch only what stays calm.</h1>
+          <p class="muted">Pick how VedaPath is being shown. The gate keeps public copy, privacy posture, scholar review, and no-go boundaries visible before excitement turns into overclaim.</p>
+
+          <div class="scenario-list" id="scenarioList"></div>
+
+          <div class="note-field">
+            <label for="audienceNote">Audience note</label>
+            <textarea id="audienceNote">People need calm, but the product must not pretend to be a guru, clinician, priest, or final authority.</textarea>
+          </div>
+        </aside>
+
+        <section class="panel">
+          <div class="launch-hero">
+            <div>
+              <span class="eyebrow">Launch Gate Seed</span>
+              <h2 id="launchTitle">Ready when trust is visible.</h2>
+              <p class="muted" id="launchSummary">A public demo can be inspiring only when source, privacy, review, and boundary language are visible before the first share.</p>
+            </div>
+            <div class="mark-stage">
+              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Launch Gate logo">
+            </div>
+          </div>
+
+          <div class="source-block" aria-label="Launch decision card">
+            <div>
+              <span class="source-meta">Launch decision</span>
+              <span class="source-value" id="launchDecision">Soft public demo ready</span>
+            </div>
+            <div>
+              <span class="source-meta">Privacy posture</span>
+              <span class="source-value" id="privacyPosture">Local-first preview</span>
+            </div>
+            <div>
+              <span class="source-meta">Review state</span>
+              <span class="source-value" id="reviewState">Scholar gate visible</span>
+            </div>
+            <div>
+              <span class="source-meta">Public promise</span>
+              <span class="source-value" id="publicPromise">No authority claim</span>
+            </div>
+          </div>
+
+          <h2>Release Gates</h2>
+          <div class="gate-list" id="gateList"></div>
+
+          <div class="tabs" role="tablist" aria-label="Launch gate layers">
+            <button class="tab active" type="button" data-mode="checklist">Checklist</button>
+            <button class="tab" type="button" data-mode="copy">Public Copy</button>
+            <button class="tab" type="button" data-mode="risks">No-Go</button>
+            <button class="tab" type="button" data-mode="handoff">Handoff</button>
+          </div>
+
+          <div class="mode-panel" id="modePanel"></div>
+
+          <div class="button-row" style="margin-top: 14px;">
+            <button class="button primary" id="copyLaunch" type="button">Copy Launch Brief</button>
+            <button class="button safe" id="copyPrivacy" type="button">Copy Privacy Copy</button>
+            <button class="button" id="copyNoGo" type="button">Copy No-Go Gate</button>
+          </div>
+
+          <textarea class="review-output" id="launchOutput" readonly aria-label="Launch Gate output"></textarea>
+        </section>
+
+        <aside class="rail" aria-label="Launch readiness rail">
+          <section class="panel tight">
+            <span class="badge green">Public readiness</span>
+            <h2 style="margin-top: 14px;">Launch Pulse</h2>
+            <p class="muted" id="pulseSummary">A soft public demo is close, but only the prototype promise is ready.</p>
+            <div class="progress" aria-label="Launch readiness score">
+              <div class="bar" id="scoreBar" style="--score:92%"></div>
+            </div>
+            <div class="metric-grid">
+              <div class="metric">
+                <span>Readiness</span>
+                <strong id="readinessScore">92%</strong>
+              </div>
+              <div class="metric">
+                <span>Blocked claims</span>
+                <strong id="blockedClaims">4</strong>
+              </div>
+              <div class="metric">
+                <span>Review gates</span>
+                <strong id="reviewGates">Visible</strong>
+              </div>
+              <div class="metric">
+                <span>Next release</span>
+                <strong id="nextRelease">v0.6.0</strong>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel tight" style="margin-top: 16px;">
+            <h2>Public Demo Gate</h2>
+            <div class="steps">
+              <div class="step-card active">
+                <span class="step-index">1</span>
+                <div>
+                  <strong>Source</strong>
+                  <p>Show citations before confidence.</p>
+                </div>
+              </div>
+              <div class="step-card">
+                <span class="step-index">2</span>
+                <div>
+                  <strong>Privacy</strong>
+                  <p>Say what stays local and what is not stored.</p>
+                </div>
+              </div>
+              <div class="step-card">
+                <span class="step-index">3</span>
+                <div>
+                  <strong>Review</strong>
+                  <p>Show what is prototype, reviewed, or blocked.</p>
+                </div>
+              </div>
+              <div class="step-card">
+                <span class="step-index">4</span>
+                <div>
+                  <strong>Share</strong>
+                  <p>Invite learning, not blind belief.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel tight boundary" style="margin-top: 16px;">
+            <h2>Launch Boundary</h2>
+            <p class="muted">This gate does not make VedaPath production-ready by itself. It makes readiness visible so public energy does not outrun source, consent, review, or care.</p>
+          </section>
+        </aside>
+      </main>
+    </div>
+
+    <script>
+      const launchScenarios = [
+        {
+          id: "public_demo",
+          name: "Public demo",
+          short: "Share the prototype link with broad early users.",
+          title: "Ready when trust is visible.",
+          summary: "A public demo can be inspiring only when source, privacy, review, and boundary language are visible before the first share.",
+          decision: "Soft public demo ready",
+          privacy: "Local-first preview",
+          review: "Scholar gate visible",
+          promise: "No authority claim",
+          score: 92,
+          blocked: 4,
+          next: "v0.6.0",
+          pulse: "A soft public demo is close, but only the prototype promise is ready.",
+          gates: [
+            ["Source trail", "Citations, source family, and boundary are visible.", "pass"],
+            ["Privacy line", "Device-local memory is named before the user saves anything.", "pass"],
+            ["Scholar review", "Review roles and blocked states are visible.", "pass"],
+            ["No-go copy", "Guru, therapy, ritual, and proof claims stay blocked.", "watch"]
+          ],
+          modes: {
+            checklist: [
+              ["Public entry", "Home, Build, Blueprint, Scholar, and Launch all show the current release."],
+              ["Demo promise", "Say prototype, source-first, calm support, and not final authority."],
+              ["Support route", "Invite source corrections into review instead of silent rewriting."]
+            ],
+            copy: [
+              ["Launch line", "VedaPath AI is a source-first calm learning companion for exploring Vedic and Hindu philosophical texts with citations, boundaries, and review gates."],
+              ["Audience line", "Start with a question, see the source category, then choose whether to go deeper."],
+              ["Tone line", "Calm, careful, and honest about what is still prototype."]
+            ],
+            risks: [
+              ["Authority risk", "Do not say the AI teaches dharma, replaces tradition, or settles philosophy."],
+              ["Privacy risk", "Do not imply account memory, sync, or durable storage exists yet."],
+              ["Source risk", "Do not claim every answer is scholar-approved."]
+            ],
+            handoff: [
+              ["Founder action", "Share the demo with a short boundary note and ask for source-quality feedback."],
+              ["Reviewer action", "Collect corrections as review tickets with citation, source family, and decision state."],
+              ["Product action", "Promote only the pages whose boundaries are visible."]
+            ]
+          }
+        },
+        {
+          id: "founder_share",
+          name: "Founder share",
+          short: "A personal note for trusted friends, builders, and early supporters.",
+          title: "Share the promise without inflating it.",
+          summary: "The founder story should carry the calm purpose while making the prototype limits plain.",
+          decision: "Share-ready founder note",
+          privacy: "No account promise",
+          review: "Review queue next",
+          promise: "Learning companion only",
+          score: 88,
+          blocked: 5,
+          next: "v0.6.0",
+          pulse: "This is ready for trusted circles if the note keeps boundaries visible.",
+          gates: [
+            ["Founder story", "The problem and care are clear.", "pass"],
+            ["Product limits", "Prototype status is visible.", "pass"],
+            ["Correction loop", "Feedback asks for sources, not praise.", "watch"],
+            ["Production claims", "No durable memory, audio, or scholar board claim.", "hold"]
+          ],
+          modes: {
+            checklist: [
+              ["Open honestly", "Say this is an early source-first prototype."],
+              ["Ask clearly", "Request source corrections, UX friction, and trust questions."],
+              ["Protect scope", "Do not invite personal crisis use or ritual dependence."]
+            ],
+            copy: [
+              ["Founder line", "I am building VedaPath AI to help people slow down, ask better questions, and see sources before confidence."],
+              ["Prototype line", "This is not a guru or authority. It is a careful learning surface with visible review gates."],
+              ["Feedback line", "Please challenge the sources, categories, and boundaries before praising the idea."]
+            ],
+            risks: [
+              ["Emotion risk", "Warm launch language can accidentally sound like spiritual authority."],
+              ["Virality risk", "A viral share can outrun review and support capacity."],
+              ["Trust risk", "Personal admiration should not become product proof."]
+            ],
+            handoff: [
+              ["Share channel", "Use a small trusted circle first."],
+              ["Feedback route", "Send claims, citations, and UX notes into the reviewer queue."],
+              ["Next decision", "Public sharing expands only after no-go language is tested."]
+            ]
+          }
+        },
+        {
+          id: "pilot_room",
+          name: "Pilot room",
+          short: "Invite a small learning group, teacher, or cultural reviewer.",
+          title: "A pilot needs consent before memory.",
+          summary: "A group pilot can be powerful only with consent, scope, review ownership, and export/deletion language visible.",
+          decision: "Pilot invite requires reviewer contact",
+          privacy: "Consent needed",
+          review: "Named reviewer pending",
+          promise: "Small group only",
+          score: 76,
+          blocked: 7,
+          next: "v0.6.0",
+          pulse: "The concept is strong, but a pilot should wait for named review and consent details.",
+          gates: [
+            ["Pilot scope", "Audience, duration, and feedback route are defined.", "watch"],
+            ["Consent copy", "Memory, export, and delete paths are visible.", "watch"],
+            ["Named reviewer", "A human review contact is not yet attached.", "hold"],
+            ["Production storage", "Durable storage is not implemented.", "hold"]
+          ],
+          modes: {
+            checklist: [
+              ["Pilot boundary", "Define who is invited, what is recorded, and what is not."],
+              ["Human review", "Name the reviewer role before accepting source corrections."],
+              ["Data path", "Explain export and deletion before saving any shared record."]
+            ],
+            copy: [
+              ["Pilot line", "This pilot studies whether a source-first calm interface helps people ask better questions."],
+              ["Consent line", "No shared memory should be treated as durable until consent, export, deletion, and review are implemented."],
+              ["Review line", "Feedback will be reviewed before it changes source behavior."]
+            ],
+            risks: [
+              ["Consent risk", "Group notes can expose sensitive personal or family context."],
+              ["Reviewer risk", "Without named review, corrections can look accepted too quickly."],
+              ["Storage risk", "Browser-local previews are not production records."]
+            ],
+            handoff: [
+              ["Pilot action", "Wait for a named reviewer and consent sheet."],
+              ["Product action", "Build the v0.6.0 storage and access model."],
+              ["Founder action", "Use the demo for observation, not production learning."]
+            ]
+          }
+        }
+      ];
+
+      const state = {
+        selectedId: "public_demo",
+        mode: "checklist"
+      };
+
+      function selectedScenario() {
+        return launchScenarios.find((item) => item.id === state.selectedId) || launchScenarios[0];
+      }
+
+      function gateClass(status) {
+        if (status === "hold") return "hold";
+        if (status === "watch") return "watch";
+        return "";
+      }
+
+      function renderScenarios() {
+        const list = document.getElementById("scenarioList");
+        list.innerHTML = launchScenarios.map((item, index) => `
+          <button class="scenario-card ${item.id === state.selectedId ? "active" : ""}" type="button" data-id="${item.id}">
+            <span class="scenario-index">${index + 1}</span>
+            <span>
+              <strong>${item.name}</strong>
+              <span>${item.short}</span>
+            </span>
+          </button>
+        `).join("");
+
+        [...list.querySelectorAll(".scenario-card")].forEach((button) => {
+          button.addEventListener("click", () => {
+            state.selectedId = button.dataset.id;
+            render();
+          });
+        });
+      }
+
+      function renderTabs() {
+        [...document.querySelectorAll(".tab")].forEach((tab) => {
+          tab.classList.toggle("active", tab.dataset.mode === state.mode);
+          tab.addEventListener("click", () => {
+            state.mode = tab.dataset.mode;
+            render();
+          }, { once: true });
+        });
+      }
+
+      function renderGateList() {
+        const item = selectedScenario();
+        document.getElementById("gateList").innerHTML = item.gates.map((gate, index) => `
+          <div class="gate-card">
+            <span class="scenario-index">${index + 1}</span>
+            <div>
+              <strong>${gate[0]}</strong>
+              <p>${gate[1]}</p>
+            </div>
+            <span class="gate-state ${gateClass(gate[2])}">${gate[2]}</span>
+          </div>
+        `).join("");
+      }
+
+      function renderScenario() {
+        const item = selectedScenario();
+        document.getElementById("launchTitle").textContent = item.title;
+        document.getElementById("launchSummary").textContent = item.summary;
+        document.getElementById("launchDecision").textContent = item.decision;
+        document.getElementById("privacyPosture").textContent = item.privacy;
+        document.getElementById("reviewState").textContent = item.review;
+        document.getElementById("publicPromise").textContent = item.promise;
+        document.getElementById("pulseSummary").textContent = item.pulse;
+        document.getElementById("readinessScore").textContent = `${item.score}%`;
+        document.getElementById("scoreBar").style.setProperty("--score", `${item.score}%`);
+        document.getElementById("blockedClaims").textContent = item.blocked;
+        document.getElementById("reviewGates").textContent = item.review.includes("visible") ? "Visible" : "Pending";
+        document.getElementById("nextRelease").textContent = item.next;
+        renderGateList();
+        renderModePanel();
+        document.getElementById("launchOutput").value = launchBrief();
+      }
+
+      function renderModePanel() {
+        const item = selectedScenario();
+        const rows = item.modes[state.mode] || item.modes.checklist;
+        document.getElementById("modePanel").innerHTML = `
+          <div class="mini-grid">
+            ${rows.map((row) => `
+              <div class="mini-card">
+                <h3>${row[0]}</h3>
+                <p>${row[1]}</p>
+              </div>
+            `).join("")}
+          </div>
+        `;
+      }
+
+      function launchPayload() {
+        const item = selectedScenario();
+        return {
+          product: "VedaPath AI",
+          release: "v0.5.9 launch",
+          feature: "Launch Gate Seed",
+          scenario_id: item.id,
+          decision: item.decision,
+          readiness_score: item.score,
+          privacy_posture: item.privacy,
+          review_state: item.review,
+          public_promise: item.promise,
+          blocked_claim_count: item.blocked,
+          gates: item.gates.map((gate) => ({ name: gate[0], note: gate[1], state: gate[2] })),
+          audience_note: document.getElementById("audienceNote").value,
+          boundary: "Launch readiness is visible, not final production certification."
+        };
+      }
+
+      function launchBrief() {
+        const item = selectedScenario();
+        return [
+          "VedaPath Launch Gate Brief",
+          "Release: v0.5.9 launch",
+          `Scenario: ${item.name}`,
+          `Decision: ${item.decision}`,
+          `Readiness: ${item.score}%`,
+          `Privacy: ${item.privacy}`,
+          `Review: ${item.review}`,
+          `Blocked claims: ${item.blocked}`,
+          `Audience note: ${document.getElementById("audienceNote").value}`,
+          "Boundary: public energy must not outrun source clarity, consent, review, or non-authority language."
+        ].join("\n");
+      }
+
+      function privacyCopy() {
+        const item = selectedScenario();
+        return [
+          "VedaPath Privacy Launch Copy",
+          "Release: v0.5.9 launch",
+          `Scenario: ${item.name}`,
+          "This prototype uses visible source and review boundaries.",
+          "Device-local previews should not be treated as account memory, sync, or production storage.",
+          "Personal reflections should remain user-owned. Future production memory must show consent, export, deletion, and review paths before launch."
+        ].join("\n");
+      }
+
+      function noGoCopy() {
+        const item = selectedScenario();
+        return [
+          "VedaPath Launch No-Go Gate",
+          "Release: v0.5.9 launch",
+          `Scenario: ${item.name}`,
+          "Must not: claim the AI is a guru, priest, therapist, doctor, scholar board, or final authority.",
+          "Must not: imply every answer is verified, every source is complete, or every user reflection is safe to store.",
+          "Must not: promote audio, ritual instruction, crisis support, durable memory, or public pilot data before review and consent gates are implemented.",
+          `Current decision: ${item.decision}`
+        ].join("\n");
+      }
+
+      function copyText(text, button, label) {
+        const original = button.textContent;
+        document.getElementById("launchOutput").value = text;
+        const finish = () => {
+          button.textContent = label;
+          window.setTimeout(() => {
+            button.textContent = original;
+          }, 1000);
+        };
+
+        if (navigator.clipboard && window.isSecureContext) {
+          navigator.clipboard.writeText(text).then(finish).catch(finish);
+        } else {
+          finish();
+        }
+      }
+
+      function render() {
+        renderScenarios();
+        renderTabs();
+        renderScenario();
+      }
+
+      document.getElementById("copyLaunch").addEventListener("click", () => {
+        copyText(launchBrief(), document.getElementById("copyLaunch"), "Launch Copied");
+      });
+
+      document.getElementById("copyPrivacy").addEventListener("click", () => {
+        copyText(privacyCopy(), document.getElementById("copyPrivacy"), "Privacy Copied");
+      });
+
+      document.getElementById("copyNoGo").addEventListener("click", () => {
+        copyText(noGoCopy(), document.getElementById("copyNoGo"), "No-Go Copied");
+      });
+
+      document.getElementById("audienceNote").addEventListener("input", () => {
+        document.getElementById("launchOutput").value = launchBrief();
+      });
+
+      render();
+    </script>
+  </body>
+</html>

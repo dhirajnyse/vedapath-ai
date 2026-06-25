@@ -107,6 +107,10 @@ Scholar Review must not:
 - promote audio without rights review
 - promote source text without edition metadata
 
-## v0.5.9 Direction
+## v0.5.9 Launch Gate
 
-The next release should add a Launch Gate Seed with public demo checklist, privacy copy, share-ready launch notes, and no-go release gates.
+v0.5.9 adds the Launch Gate Seed with public demo readiness, privacy copy, launch notes, scenario decisions, and no-go release gates.
+
+## v0.6.0 Direction
+
+v0.6.0 should add a Production Bridge Seed for durable storage, access boundaries, launch-gate records, and reviewer-owned release history.
