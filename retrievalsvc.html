@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>VedaPath Source API Contract</title>
+    <title>VedaPath Retrieval Service Blueprint</title>
     <link rel="stylesheet" href="assets/vedapath-sprint.css">
   </head>
   <body>
@@ -13,7 +13,7 @@
           <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
           <div>
             <strong>VedaPath AI</strong>
-            <span>Source API</span>
+            <span>Retrieval service</span>
           </div>
         </a>
         <nav class="nav" aria-label="Project links">
@@ -27,15 +27,15 @@
           <!-- VEDAPATH PRODUCTION SPRINT NAV START -->
           <a class="link" href="architecture.html">Arch</a>
           <a class="link" href="account.html">Account</a>
-          <a class="link active" href="sourceapi.html">Source API</a>
+          <a class="link" href="sourceapi.html">Source API</a>
           <a class="link" href="reviewflow.html">Review Flow</a>
-          <a class="link" href="retrievalsvc.html">Retrieval</a>
+          <a class="link active" href="retrievalsvc.html">Retrieval</a>
           <!-- VEDAPATH PRODUCTION SPRINT NAV END -->
           <span class="version">v1.0.9 retrieval svc</span>
         </nav>
       </header>
 
-      <main class="workspace" aria-label="VedaPath Source API Contract workspace">
+      <main class="workspace" aria-label="VedaPath Retrieval Service Blueprint workspace">
         <aside class="panel">
           <span class="eyebrow">Production readiness sprint</span>
           <h2>Release Rooms</h2>
@@ -46,38 +46,38 @@
         <section class="panel">
           <div class="hero-grid">
             <div>
-              <span class="eyebrow">Source service</span>
-              <h1>Let answers ask the source service first.</h1>
-              <p class="muted">A source API contract room for query, citation lookup, eligibility, review status, translation rights, and no-source refusal.</p>
+              <span class="eyebrow">Answer retrieval</span>
+              <h1>Retrieve only what is ready to answer.</h1>
+              <p class="muted">A retrieval service blueprint for ranking source records by match, eligibility, confidence, boundary, and explainable reason.</p>
             </div>
             <div class="mark-stage">
-              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Source API logo">
+              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Retrieval logo">
             </div>
           </div>
 
           <div class="source-block" aria-label="Release source card">
             <div>
               <span class="source-meta">Release</span>
-              <span class="source-value">v1.0.7</span>
+              <span class="source-value">v1.0.9</span>
             </div>
             <div>
               <span class="source-meta">Source candidate</span>
-              <span class="source-value">Rigveda 1.164.46</span>
+              <span class="source-value">Bhagavad Gita 4.34</span>
             </div>
             <div>
               <span class="source-meta">Text family</span>
-              <span class="source-value">Veda | Shruti</span>
+              <span class="source-value">Bhagavad Gita | Smriti</span>
             </div>
             <div>
               <span class="source-meta">Boundary</span>
-              <span class="source-value">API contract, not deployed service.</span>
+              <span class="source-value">Retrieval blueprint, not deployed retrieval.</span>
             </div>
           </div>
 
           <h2>Decision Signals</h2>
           <div class="item-list" id="itemList"></div>
 
-          <div class="tabs" role="tablist" aria-label="VedaPath Source API Contract layers">
+          <div class="tabs" role="tablist" aria-label="VedaPath Retrieval Service Blueprint layers">
             <button class="tab active" type="button" data-mode="brief">Brief</button>
             <button class="tab" type="button" data-mode="checklist">Checklist</button>
             <button class="tab" type="button" data-mode="boundary">Boundary</button>
@@ -91,20 +91,20 @@
             <button class="button" id="copyBoundary" type="button">Copy Boundary</button>
           </div>
 
-          <textarea id="output" readonly aria-label="VedaPath Source API Contract output"></textarea>
+          <textarea id="output" readonly aria-label="VedaPath Retrieval Service Blueprint output"></textarea>
         </section>
 
-        <aside class="panel tight" aria-label="VedaPath Source API Contract sprint rail">
+        <aside class="panel tight" aria-label="VedaPath Retrieval Service Blueprint sprint rail">
           <span class="badge green">Production readiness</span>
-          <h2 style="margin-top: 14px;">Source API Pulse</h2>
-          <p class="muted">Source API Contract describes the service boundary that every trusted answer must call before claiming confidence.</p>
-          <div class="progress" aria-label="Sprint progress 93 percent">
-            <div class="bar" style="--score:93%"></div>
+          <h2 style="margin-top: 14px;">Retrieval Pulse</h2>
+          <p class="muted">Retrieval Service Blueprint makes production answer generation depend on review state, source specificity, and visible match reasons.</p>
+          <div class="progress" aria-label="Sprint progress 95 percent">
+            <div class="bar" style="--score:95%"></div>
           </div>
           <div class="metric-grid">
             <div class="metric">
               <span>Current</span>
-              <strong>v1.0.7</strong>
+              <strong>v1.0.9</strong>
             </div>
             <div class="metric">
               <span>Sprint</span>
@@ -112,11 +112,11 @@
             </div>
             <div class="metric">
               <span>Progress</span>
-              <strong>93%</strong>
+              <strong>95%</strong>
             </div>
             <div class="metric">
               <span>Next</span>
-              <strong>Reviewer Workflow Contract</strong>
+              <strong>Answer Evaluation Harness</strong>
             </div>
           </div>
 
@@ -148,85 +148,85 @@
     </div>
 
     <script type="application/json" id="room-data">{
-  "version": "v1.0.7",
-  "badge": "v1.0.7 api",
-  "slug": "sourceapi",
-  "nav": "Source API",
-  "title": "VedaPath Source API Contract",
-  "pageLabel": "Source API",
-  "eyebrow": "Source service",
-  "h1": "Let answers ask the source service first.",
-  "lead": "A source API contract room for query, citation lookup, eligibility, review status, translation rights, and no-source refusal.",
-  "source": "Rigveda 1.164.46",
-  "family": "Veda | Shruti",
-  "stance": "API contract, not deployed service.",
-  "progress": 93,
-  "next": "Reviewer Workflow Contract",
-  "primaryAsk": "Define the source service response shape before building production retrieval.",
-  "summary": "Source API Contract describes the service boundary that every trusted answer must call before claiming confidence.",
+  "version": "v1.0.9",
+  "badge": "v1.0.9 retrieval svc",
+  "slug": "retrievalsvc",
+  "nav": "Retrieval",
+  "title": "VedaPath Retrieval Service Blueprint",
+  "pageLabel": "Retrieval service",
+  "eyebrow": "Answer retrieval",
+  "h1": "Retrieve only what is ready to answer.",
+  "lead": "A retrieval service blueprint for ranking source records by match, eligibility, confidence, boundary, and explainable reason.",
+  "source": "Bhagavad Gita 4.34",
+  "family": "Bhagavad Gita | Smriti",
+  "stance": "Retrieval blueprint, not deployed retrieval.",
+  "progress": 95,
+  "next": "Answer Evaluation Harness",
+  "primaryAsk": "Define retrieval ranking so answers prefer reviewed, eligible, source-specific records.",
+  "summary": "Retrieval Service Blueprint makes production answer generation depend on review state, source specificity, and visible match reasons.",
   "items": [
     [
-      "Query",
-      "Question text, requested depth, language, and user-safe context.",
-      "Finds candidate records."
+      "Match",
+      "Question intent, source family, topic, and claim type.",
+      "Finds likely records."
     ],
     [
-      "Source response",
-      "Citation, family, review state, rights state, and allowed use.",
-      "Tells answers what can be shown."
+      "Eligibility filter",
+      "Ready records first; hold, blocked, and no-rights records excluded.",
+      "Protects public output."
     ],
     [
-      "Eligibility",
-      "Ready, hold, blocked, reviewer-needed, or no-source.",
-      "Prevents false confidence."
+      "Reason",
+      "Why this record matched and what it cannot answer.",
+      "Keeps retrieval explainable."
     ],
     [
-      "Refusal",
-      "No source found or unsafe claim requires a careful boundary response.",
-      "Protects trust."
+      "Fallback",
+      "No-source, analogy-only, or reviewer-needed response.",
+      "Prevents hallucinated authority."
     ]
   ],
   "modes": {
     "brief": [
       [
-        "API promise",
-        "The answer layer should not invent confidence. It should receive confidence from source state."
+        "Retrieval promise",
+        "The system should prefer a narrower trusted answer over a broad uncertain one."
       ],
       [
         "Product move",
-        "Make missing source state a first-class answer condition."
+        "Show match reasons beside source cards."
       ],
       [
         "Engineering move",
-        "Design response contracts before choosing retrieval implementation details."
+        "Treat record eligibility as a hard gate before ranking."
       ]
     ],
     "checklist": [
       [
-        "Specific",
-        "Does the response include exact source identity?"
-      ],
-      [
         "Eligible",
-        "Can the answer know whether a record is public-ready?"
+        "Are blocked or hold records excluded from public answers?"
       ],
       [
-        "Refusable",
-        "Can no-source cases produce safe answers?"
+        "Explainable",
+        "Can the user see why a source was selected?"
+      ],
+      [
+        "Fallback",
+        "Is no-source handled without invention?"
       ]
     ],
     "boundary": [
       [
-        "No invented citation",
-        "Do not let answers create citation-like text."
+        "No retrieval overreach",
+        "Do not rank records that are not public-ready."
       ],
       [
-        "No rights bypass",
-        "Do not display translations or audio without rights state."
+        "No broad answer",
+        "Do not answer beyond the retrieved record scope."
       ],
       [
-        "No confidence leak",
-        "Do not expose high confidence for hold or blocked records."
+        "No hidden reason",
+        "Do not hide why a record was used."
       ]
     ]
   },

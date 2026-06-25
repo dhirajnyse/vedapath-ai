@@ -92,6 +92,7 @@ It helps users move from curiosity to understanding through:
 - Account Consent Prototype: Account Consent Prototype makes future sign-in useful, optional, and transparent before real authentication is added.
 - Source API Contract: Source API Contract describes the service boundary that every trusted answer must call before claiming confidence.
 - Reviewer Workflow Contract: Reviewer Workflow Contract turns review from a vague trust word into scoped decisions, states, and release gates.
+- Retrieval Service Blueprint: Retrieval Service Blueprint makes production answer generation depend on review state, source specificity, and visible match reasons.
 <!-- VEDAPATH PRODUCTION SPRINT SUMMARY END -->
 
 ## What It Is
@@ -1502,6 +1503,21 @@ It should:
 - produce a copyable production-readiness handoff
 
 Reviewer Workflow Contract should never claim production storage, verified answers, reviewer approval, authentication, analytics, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 92. Retrieval Service Blueprint
+
+Retrieval Service Blueprint makes production answer generation depend on review state, source specificity, and visible match reasons.
+
+It should:
+
+- Match: Question intent, source family, topic, and claim type.
+- Eligibility filter: Ready records first; hold, blocked, and no-rights records excluded.
+- Reason: Why this record matched and what it cannot answer.
+- Fallback: No-source, analogy-only, or reviewer-needed response.
+- preserve the boundary: Retrieval blueprint, not deployed retrieval.
+- produce a copyable production-readiness handoff
+
+Retrieval Service Blueprint should never claim production storage, verified answers, reviewer approval, authentication, analytics, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH PRODUCTION SPRINT BLUEPRINT END -->
 
 ## Product Personality
