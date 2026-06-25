@@ -1,0 +1,140 @@
+{
+  "product": "VedaPath AI",
+  "release": "v1.9.5",
+  "status": "guided source reader prototype",
+  "warning": "Prototype passage candidates only. No full scripture text, final commentary, therapy, ritual instruction, or spiritual authority.",
+  "passages": [
+    {
+      "id": "bg-2-48",
+      "title": "Steadiness in Action",
+      "source_candidate": "Bhagavad Gita 2.48",
+      "text_family": "Bhagavad Gita | Smriti",
+      "category": "action and steadiness",
+      "level": "beginner",
+      "plain_meaning": "The passage is commonly read as an invitation to act with steadiness rather than becoming owned by success or failure.",
+      "beginner_note": "Start with the action in front of you. Let the result matter, but do not let it become your whole identity.",
+      "context_boundary": "This is a reflection candidate, not therapy, medical advice, ritual instruction, or a promise of instant peace.",
+      "reflection_question": "What is one duty I can do clearly today without turning the outcome into my identity?",
+      "carry_action": "Choose one small task and do it slowly, cleanly, and without checking for praise.",
+      "reviewer_note": "Needs translation edition, commentary lane, and source rights review before public answer use.",
+      "no_go": "Do not use this passage to shame people for grief, illness, exhaustion, or real-world constraints.",
+      "signals": [
+        "action",
+        "steadiness",
+        "outcome",
+        "calm",
+        "duty"
+      ]
+    },
+    {
+      "id": "katha-1-2-1",
+      "title": "The Good and the Merely Pleasant",
+      "source_candidate": "Katha Upanishad 1.2.1",
+      "text_family": "Upanishad | Shruti",
+      "category": "choice and discernment",
+      "level": "curious learner",
+      "plain_meaning": "The passage is often read as a distinction between what is deeply good and what is only immediately pleasing.",
+      "beginner_note": "A calm path is not always the easy path. The first step is to name which choice gives depth, not just relief.",
+      "context_boundary": "This is a source-guided reflection, not moral policing, family advice, or spiritual authority.",
+      "reflection_question": "Which option before me feels pleasant now, and which option still feels clean tomorrow?",
+      "carry_action": "Delay one impulsive choice long enough to name the good you are protecting.",
+      "reviewer_note": "Needs Upanishad-specific commentary context and careful wording for modern ethical questions.",
+      "no_go": "Do not turn this into judgment of another person's life, relationship, health, or emergency decision.",
+      "signals": [
+        "choice",
+        "pleasant",
+        "good",
+        "discernment",
+        "clarity"
+      ]
+    },
+    {
+      "id": "mundaka-1-1-4",
+      "title": "Two Kinds of Knowing",
+      "source_candidate": "Mundaka Upanishad 1.1.4",
+      "text_family": "Upanishad | Shruti",
+      "category": "knowledge and depth",
+      "level": "philosophy learner",
+      "plain_meaning": "The passage is often associated with a distinction between lower and higher forms of knowledge.",
+      "beginner_note": "Some learning gathers facts. Some learning changes how you stand in the world. VedaPath should help users see the difference.",
+      "context_boundary": "This is an educational layer, not a ranking of people, schools, faiths, or modern disciplines.",
+      "reflection_question": "What am I trying to collect, and what am I trying to understand?",
+      "carry_action": "Turn one broad question into a narrower source question before seeking an answer.",
+      "reviewer_note": "Needs Sanskrit terms, commentary variants, and category caution before deeper public use.",
+      "no_go": "Do not use this passage to dismiss science, scholarship, work skills, or practical knowledge.",
+      "signals": [
+        "knowledge",
+        "learning",
+        "higher",
+        "lower",
+        "source"
+      ]
+    },
+    {
+      "id": "isha-1",
+      "title": "Held With Restraint",
+      "source_candidate": "Isha Upanishad 1",
+      "text_family": "Upanishad | Shruti",
+      "category": "restraint and belonging",
+      "level": "reflective reader",
+      "plain_meaning": "The passage is often approached as a meditation on living in the world without grasping at it as possession.",
+      "beginner_note": "The calm move is not escape. It is a different relationship with what you use, hold, and release.",
+      "context_boundary": "This is reflection support, not economic, legal, property, or renunciation advice.",
+      "reflection_question": "What am I holding so tightly that it has stopped serving the work?",
+      "carry_action": "Use one thing with care today, then leave it without needing it to define you.",
+      "reviewer_note": "Needs translation-rights review and school-specific interpretation boundaries.",
+      "no_go": "Do not use this passage to pressure someone to give up safety, money, shelter, or responsibility.",
+      "signals": [
+        "restraint",
+        "belonging",
+        "release",
+        "use",
+        "world"
+      ]
+    },
+    {
+      "id": "taittiriya-1-11-1",
+      "title": "Conduct After Learning",
+      "source_candidate": "Taittiriya Upanishad 1.11.1",
+      "text_family": "Upanishad | Shruti",
+      "category": "ethics and conduct",
+      "level": "teacher or student",
+      "plain_meaning": "This passage is often used to frame conduct, respect, truthfulness, and responsibility after learning.",
+      "beginner_note": "Learning becomes visible through conduct. The next step is not more noise, but cleaner action.",
+      "context_boundary": "This is educational reflection, not legal advice, institutional policy, or social command.",
+      "reflection_question": "Where should my learning become visible in behavior today?",
+      "carry_action": "Choose one honest, respectful action that makes learning practical.",
+      "reviewer_note": "Needs careful handling because conduct instructions can be overextended into modern authority claims.",
+      "no_go": "Do not use this passage to override consent, law, safety, or personal boundaries.",
+      "signals": [
+        "conduct",
+        "truth",
+        "respect",
+        "learning",
+        "teacher"
+      ]
+    },
+    {
+      "id": "bg-18-63",
+      "title": "Reflect and Choose",
+      "source_candidate": "Bhagavad Gita 18.63",
+      "text_family": "Bhagavad Gita | Smriti",
+      "category": "reflection and agency",
+      "level": "decision point",
+      "plain_meaning": "The passage is often read as honoring reflection and personal agency after instruction is given.",
+      "beginner_note": "A source can guide without replacing the person who must choose. That is the product posture too.",
+      "context_boundary": "This is a reflection candidate, not a command, oracle, or final authority over personal life.",
+      "reflection_question": "What have I heard clearly, and what choice is actually mine to make?",
+      "carry_action": "Write the next choice in one plain sentence, then take responsibility for one small step.",
+      "reviewer_note": "Needs commentary context because the speaker, setting, and theological frame matter.",
+      "no_go": "Do not use this passage to pretend every decision is easy, isolated, or free of real constraints.",
+      "signals": [
+        "choice",
+        "agency",
+        "instruction",
+        "reflection",
+        "decision"
+      ]
+    }
+  ]
+}

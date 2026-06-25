@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VedaPath Source Reader Shell</title>
+    <link rel="stylesheet" href="assets/vedapath-sprint.css">
+    <link rel="stylesheet" href="assets/vedapath-source-reader.css">
+  </head>
+  <body>
+    <div class="shell" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top" aria-label="VedaPath AI home">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
+          <div>
+            <strong>VedaPath AI</strong>
+            <span>Guided source reader</span>
+          </div>
+        </a>
+        <nav class="nav" aria-label="Project links">
+          <a class="link" href="build-status.html">Build</a>
+          <a class="link" href="brand/brand-board.html">Brand</a>
+          <a class="link" href="blueprint.html">Blueprint</a>
+          <a class="link" href="searchconsole.html">Search</a>
+          <!-- VEDAPATH GUIDED READER SPRINT NAV START -->
+          <a class="link active" href="readerstart.html">Reader</a>
+          <!-- VEDAPATH GUIDED READER SPRINT NAV END -->
+          <span class="version">v1.9.5 reader shell</span>
+        </nav>
+      </header>
+
+      <main class="workspace" aria-label="VedaPath Source Reader Shell workspace">
+        <aside class="panel">
+          <span class="eyebrow">Guided source reader sprint</span>
+          <h2>Release Rooms</h2>
+          <p class="muted">Ten focused rooms turn beta search into a calm source-opening reader.</p>
+          <div class="room-list" id="roomList"></div>
+        </aside>
+
+        <section class="panel">
+          <div class="hero-grid">
+            <div>
+              <span class="eyebrow">Guided reading</span>
+              <h1>Open one source slowly.</h1>
+              <p class="muted">A reader shell that turns search results into a calm source-opening experience with source identity, plain meaning, and visible boundary.</p>
+            </div>
+            <div class="mark-stage">
+              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Reader logo">
+            </div>
+          </div>
+
+          <div class="source-block" aria-label="Release source card">
+            <div>
+              <span class="source-meta">Release</span>
+              <span class="source-value">v1.9.5</span>
+            </div>
+            <div>
+              <span class="source-meta">Source candidate</span>
+              <span class="source-value">Bhagavad Gita 2.48</span>
+            </div>
+            <div>
+              <span class="source-meta">Text family</span>
+              <span class="source-value">Bhagavad Gita | Smriti</span>
+            </div>
+            <div>
+              <span class="source-meta">Boundary</span>
+              <span class="source-value">Reader shell, not commentary authority.</span>
+            </div>
+          </div>
+
+          <section class="source-reader" id="sourceReader" data-default-passage="bg-2-48" aria-label="Guided source reader">
+            <div class="reader-head">
+              <div>
+                <span class="eyebrow">Source-first reader</span>
+                <h2>Guided Source Reader</h2>
+                <p class="muted">Reads <strong>data/vedapath-reader-passages.json</strong>. Passage candidates are paraphrase-level prototypes until reviewed.</p>
+              </div>
+              <div id="readerStats" class="reader-stats" aria-live="polite"></div>
+            </div>
+            <div class="reader-layout">
+              <div>
+                <label class="reader-label" for="passageSelect">Choose source candidate</label>
+                <select id="passageSelect" class="reader-select"></select>
+                <div class="passage-list" id="passageList" aria-label="Passage candidates"></div>
+              </div>
+              <div>
+                <div id="readerSourceCard" class="reader-source-card"></div>
+                <div class="reader-tabs" id="readerTabs" role="tablist" aria-label="Reader layers"></div>
+                <div id="readerLayer" class="reader-layer"></div>
+                <div class="reader-actions">
+                  <button class="button primary" id="saveReading" type="button">Save Reading</button>
+                  <button class="button safe" id="copyReaderHandoff" type="button">Copy Handoff</button>
+                  <button class="button" id="clearReaderMemory" type="button">Clear Local Preview</button>
+                </div>
+                <label class="reader-label" for="readerHandoff">Reader handoff preview</label>
+                <textarea id="readerHandoff" readonly aria-label="Reader handoff output"></textarea>
+              </div>
+            </div>
+          </section>
+
+          <h2>Reader Signals</h2>
+          <div class="item-list" id="itemList"></div>
+
+          <div class="tabs" role="tablist" aria-label="VedaPath Source Reader Shell layers">
+            <button class="tab active" type="button" data-mode="brief">Brief</button>
+            <button class="tab" type="button" data-mode="checklist">Checklist</button>
+            <button class="tab" type="button" data-mode="boundary">Boundary</button>
+          </div>
+
+          <div id="modePanel"></div>
+
+          <div class="button-row" style="margin-top: 14px;">
+            <button class="button primary" id="copyBrief" type="button">Copy Brief</button>
+            <button class="button safe" id="copyJson" type="button">Copy JSON</button>
+            <button class="button" id="copyBoundary" type="button">Copy Boundary</button>
+          </div>
+
+          <textarea id="output" readonly aria-label="VedaPath Source Reader Shell output"></textarea>
+        </section>
+
+        <aside class="panel tight" aria-label="VedaPath Source Reader Shell sprint rail">
+          <span class="badge green">Guided reader</span>
+          <h2 style="margin-top: 14px;">Reader Pulse</h2>
+          <p class="muted">Source Reader Shell gives VedaPath the first calm reading surface after beta search.</p>
+          <div class="progress" aria-label="Sprint progress 91 percent">
+            <div class="bar" style="--score:91%"></div>
+          </div>
+          <div class="metric-grid">
+            <div class="metric">
+              <span>Current</span>
+              <strong>v1.9.5</strong>
+            </div>
+            <div class="metric">
+              <span>Sprint</span>
+              <strong>1/10</strong>
+            </div>
+            <div class="metric">
+              <span>Progress</span>
+              <strong>91%</strong>
+            </div>
+            <div class="metric">
+              <span>Next</span>
+              <strong>Passage Focus Lens</strong>
+            </div>
+          </div>
+
+          <div class="sprint-list">
+            <div class="sprint-step active">
+              <span class="step-index">1</span>
+              <div><strong>Choose</strong><p>Pick one source candidate.</p></div>
+            </div>
+            <div class="sprint-step">
+              <span class="step-index">2</span>
+              <div><strong>Read</strong><p>Separate meaning and boundary.</p></div>
+            </div>
+            <div class="sprint-step">
+              <span class="step-index">3</span>
+              <div><strong>Reflect</strong><p>Answer one clean question.</p></div>
+            </div>
+            <div class="sprint-step">
+              <span class="step-index">4</span>
+              <div><strong>Carry</strong><p>Leave with one small action.</p></div>
+            </div>
+          </div>
+
+          <section class="panel tight boundary" style="margin-top: 16px;">
+            <h2>Reader Boundary</h2>
+            <p class="muted">This is a guided source-reader prototype. It is not full scripture text, final commentary, therapy, ritual instruction, emergency support, or spiritual authority.</p>
+          </section>
+        </aside>
+      </main>
+    </div>
+
+    <script type="application/json" id="room-data">{
+  "version": "v1.9.5",
+  "badge": "v1.9.5 reader shell",
+  "slug": "readerstart",
+  "nav": "Reader",
+  "title": "VedaPath Source Reader Shell",
+  "pageLabel": "Guided source reader",
+  "eyebrow": "Guided reading",
+  "h1": "Open one source slowly.",
+  "lead": "A reader shell that turns search results into a calm source-opening experience with source identity, plain meaning, and visible boundary.",
+  "source": "Bhagavad Gita 2.48",
+  "family": "Bhagavad Gita | Smriti",
+  "stance": "Reader shell, not commentary authority.",
+  "progress": 91,
+  "next": "Passage Focus Lens",
+  "defaultPassage": "bg-2-48",
+  "primaryAsk": "Move from finding a source to opening it with a simple, bounded reader.",
+  "summary": "Source Reader Shell gives VedaPath the first calm reading surface after beta search.",
+  "items": [
+    [
+      "Passage picker",
+      "A user can choose one source candidate before reading.",
+      "Prevents scattered browsing."
+    ],
+    [
+      "Source card",
+      "Citation, family, category, and boundary remain visible.",
+      "Keeps trust close."
+    ],
+    [
+      "Plain meaning",
+      "Beginner-friendly explanation appears before deeper layers.",
+      "Keeps the path approachable."
+    ],
+    [
+      "No authority voice",
+      "The page avoids guru, therapy, and command language.",
+      "Protects product posture."
+    ]
+  ],
+  "modes": {
+    "brief": [
+      [
+        "Reader promise",
+        "Source Reader Shell gives VedaPath the first calm reading surface after beta search."
+      ],
+      [
+        "Founder move",
+        "Move from finding a source to opening it with a simple, bounded reader."
+      ],
+      [
+        "Trust move",
+        "Keep this boundary visible: Reader shell, not commentary authority."
+      ]
+    ],
+    "checklist": [
+      [
+        "Passage picker",
+        "A user can choose one source candidate before reading."
+      ],
+      [
+        "Source card",
+        "Citation, family, category, and boundary remain visible."
+      ],
+      [
+        "Plain meaning",
+        "Beginner-friendly explanation appears before deeper layers."
+      ]
+    ],
+    "boundary": [
+      [
+        "No commentary claim",
+        "Do not imply final interpretation, school consensus, or Sanskrit authority."
+      ],
+      [
+        "No therapy claim",
+        "Do not frame source reflection as medical care, emergency support, diagnosis, or mental health treatment."
+      ],
+      [
+        "No life-command claim",
+        "Do not present VedaPath as a guru, oracle, ritual authority, family authority, or replacement for teachers and tradition."
+      ]
+    ]
+  },
+  "rooms": [
+    {
+      "version": "v1.9.5",
+      "slug": "readerstart",
+      "nav": "Reader"
+    }
+  ]
+}</script>
+    <script src="assets/vedapath-sprint.js"></script>
+    <script src="assets/vedapath-source-reader.js"></script>
+  </body>
+</html>

@@ -380,6 +380,10 @@ Let us look at the source first.
 - [Interactive Beta Search Control Room](searchconsole.html)
 - [Interactive Beta Search Control Room Notes](docs/INTERACTIVE_BETA_SEARCH_CONTROL_ROOM.md)
 <!-- VEDAPATH INTERACTIVE SEARCH SPRINT LINKS END -->
+<!-- VEDAPATH GUIDED READER SPRINT LINKS START -->
+- [Source Reader Shell](readerstart.html)
+- [Source Reader Shell Notes](docs/SOURCE_READER_SHELL.md)
+<!-- VEDAPATH GUIDED READER SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
 - [Calm Compass](compass.html)
@@ -410,7 +414,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v1.9.4` is a trusted MVP prototype plus Interactive Beta Search Control Room with:
+`v1.9.5` is a trusted MVP prototype plus Source Reader Shell with:
 
 - Ask workspace
 - Source Card
@@ -604,6 +608,9 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Mobile Search Polish: Mobile Search Polish protects VedaPath's simplicity promise by keeping search usable and readable on small screens.
 - Interactive Beta Search Control Room: Interactive Beta Search Control Room completes the browser-only search sprint and makes the static beta seed usable without pretending it is production retrieval.
 <!-- VEDAPATH INTERACTIVE SEARCH SPRINT FEATURES END -->
+<!-- VEDAPATH GUIDED READER SPRINT FEATURES START -->
+- Source Reader Shell: Source Reader Shell gives VedaPath the first calm reading surface after beta search.
+<!-- VEDAPATH GUIDED READER SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
 - Calm Card Studio with visual card preview, local saved cards, copy text, and PNG export

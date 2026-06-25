@@ -195,6 +195,9 @@ It helps users move from curiosity to understanding through:
 - Mobile Search Polish: Mobile Search Polish protects VedaPath's simplicity promise by keeping search usable and readable on small screens.
 - Interactive Beta Search Control Room: Interactive Beta Search Control Room completes the browser-only search sprint and makes the static beta seed usable without pretending it is production retrieval.
 <!-- VEDAPATH INTERACTIVE SEARCH SPRINT SUMMARY END -->
+<!-- VEDAPATH GUIDED READER SPRINT SUMMARY START -->
+- Source Reader Shell: Source Reader Shell gives VedaPath the first calm reading surface after beta search.
+<!-- VEDAPATH GUIDED READER SPRINT SUMMARY END -->
 
 ## What It Is
 
@@ -2903,6 +2906,22 @@ It should:
 
 Interactive Beta Search Control Room should never claim live semantic retrieval, backend storage, live AI generation, reviewed corpus coverage, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH INTERACTIVE SEARCH SPRINT BLUEPRINT END -->
+<!-- VEDAPATH GUIDED READER SPRINT BLUEPRINT START -->
+### 178. Source Reader Shell
+
+Source Reader Shell gives VedaPath the first calm reading surface after beta search.
+
+It should:
+
+- Passage picker: A user can choose one source candidate before reading.
+- Source card: Citation, family, category, and boundary remain visible.
+- Plain meaning: Beginner-friendly explanation appears before deeper layers.
+- No authority voice: The page avoids guru, therapy, and command language.
+- preserve the boundary: Reader shell, not commentary authority.
+- keep the reader prototype browser-only until reviewed content, accounts, or backend storage are approved
+
+Source Reader Shell should never claim final commentary, full scripture text, translation rights, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
+<!-- VEDAPATH GUIDED READER SPRINT BLUEPRINT END -->
 
 ## Product Personality
 
