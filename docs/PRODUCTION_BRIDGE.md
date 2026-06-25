@@ -98,7 +98,7 @@ Required:
 - Let review records imply authority without role, scope, evidence, and rollback.
 - Let production storage blur source categories.
 
-## v0.6.1 Direction
+## v0.6.1 Source Storage
 
-The next release should define the Source Record Storage Plan: required fields, indexes, migration order, fixtures, and no-go checks for source data.
+v0.6.1 adds the Source Record Storage Plan with canonical source tables, translation layers, review links, retrieval indexes, fixtures, and no-go checks. v0.6.2 should add a Reviewer Identity and Access Gate with reviewer roles, permission scopes, display policy, and approval boundaries.
 

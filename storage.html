@@ -1,0 +1,1043 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VedaPath Source Storage Plan</title>
+    <style>
+      :root {
+        --bg: #fff7ea;
+        --surface: #fffdf8;
+        --ink: #1d1714;
+        --muted: #6c3b25;
+        --line: #ead7c8;
+        --bhagwa: #d65a1f;
+        --ochre: #a83f12;
+        --gold: #e0a83b;
+        --green: #145c4a;
+        --indigo: #29335c;
+        --soft-red: #fde8dd;
+        --soft-green: #e8f0ea;
+        --soft-gold: #fff3d7;
+        --shadow: 0 18px 50px rgba(70, 36, 14, 0.08);
+        --radius: 8px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: Arial, Helvetica, sans-serif;
+        line-height: 1.55;
+      }
+
+      button,
+      textarea {
+        font: inherit;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .shell {
+        width: min(1240px, calc(100% - 44px));
+        margin: 0 auto;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 22px;
+        padding: 22px 0 16px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        min-width: 220px;
+        text-decoration: none;
+      }
+
+      .brand img {
+        width: 48px;
+        height: 48px;
+        border-radius: 8px;
+        object-fit: cover;
+        box-shadow: 0 8px 22px rgba(214, 90, 31, 0.13);
+      }
+
+      .brand strong {
+        display: block;
+        font-size: 20px;
+        line-height: 1.1;
+      }
+
+      .brand span {
+        display: block;
+        margin-top: 2px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .link,
+      .version,
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 40px;
+        border-radius: var(--radius);
+        text-decoration: none;
+        font-weight: 800;
+        white-space: nowrap;
+      }
+
+      .link {
+        padding: 8px 10px;
+        color: #432414;
+      }
+
+      .link.active,
+      .version {
+        border: 1px solid #efb899;
+        color: var(--ochre);
+        background: rgba(255, 253, 248, 0.74);
+      }
+
+      .version {
+        padding: 8px 14px;
+      }
+
+      .button {
+        border: 1px solid #efb899;
+        color: var(--ochre);
+        background: var(--surface);
+        padding: 10px 14px;
+        cursor: pointer;
+      }
+
+      .button.primary {
+        border-color: var(--bhagwa);
+        background: var(--bhagwa);
+        color: white;
+      }
+
+      .button.safe {
+        border-color: #b9d3ca;
+        color: #064f43;
+      }
+
+      .workspace {
+        display: grid;
+        grid-template-columns: 0.96fr 1.26fr 0.92fr;
+        gap: 16px;
+        padding: 20px 0 28px;
+      }
+
+      .panel {
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: rgba(255, 253, 248, 0.84);
+        padding: 18px;
+        box-shadow: var(--shadow);
+      }
+
+      .panel.tight {
+        box-shadow: none;
+      }
+
+      .eyebrow,
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        min-height: 28px;
+        border-radius: 999px;
+        padding: 5px 10px;
+        font-size: 12px;
+        font-weight: 900;
+        color: var(--ochre);
+        background: var(--soft-red);
+      }
+
+      .badge.green {
+        color: var(--green);
+        background: var(--soft-green);
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        margin: 18px 0 12px;
+        font-size: clamp(42px, 6vw, 70px);
+        line-height: 0.96;
+        letter-spacing: 0;
+      }
+
+      h2 {
+        margin-bottom: 12px;
+        font-size: 26px;
+        line-height: 1.08;
+      }
+
+      h3 {
+        margin-bottom: 6px;
+        font-size: 16px;
+      }
+
+      .muted {
+        color: var(--muted);
+      }
+
+      .record-list,
+      .field-list,
+      .grid,
+      .metric-grid,
+      .step-list {
+        display: grid;
+        gap: 10px;
+      }
+
+      .record-card,
+      .field-card,
+      .mini-card,
+      .metric,
+      .step-card {
+        width: 100%;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: rgba(255, 253, 248, 0.78);
+        text-align: left;
+      }
+
+      .record-card {
+        display: grid;
+        grid-template-columns: 42px minmax(0, 1fr);
+        gap: 12px;
+        align-items: center;
+        padding: 12px;
+        cursor: pointer;
+      }
+
+      .record-card.active,
+      .record-card:hover,
+      .record-card:focus-visible {
+        border-color: #f09f79;
+        background: #fff0e7;
+        outline: none;
+      }
+
+      .record-index,
+      .step-index {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 34px;
+        height: 34px;
+        border-radius: 999px;
+        background: var(--soft-green);
+        color: var(--green);
+        font-size: 13px;
+        font-weight: 900;
+      }
+
+      .record-card.active .record-index,
+      .step-card.active .step-index {
+        background: var(--bhagwa);
+        color: white;
+      }
+
+      .record-card strong,
+      .record-card span:not(.record-index) {
+        display: block;
+      }
+
+      .record-card span:not(.record-index) {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .storage-hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 150px;
+        gap: 18px;
+        align-items: center;
+      }
+
+      .mark-stage {
+        border: 1px solid #f1d0bd;
+        border-radius: var(--radius);
+        background: #fff0df;
+        padding: 10px;
+      }
+
+      .mark-stage img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 1;
+        object-fit: cover;
+        border-radius: 4px;
+      }
+
+      .source-block {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+        margin: 18px 0;
+        padding: 14px;
+        border: 1px solid var(--line);
+        border-left: 4px solid var(--bhagwa);
+        border-radius: var(--radius);
+        background: var(--surface);
+      }
+
+      .source-meta {
+        display: block;
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .source-value {
+        display: block;
+        margin-top: 4px;
+        font-size: 16px;
+        font-weight: 900;
+        line-height: 1.35;
+      }
+
+      .field-card {
+        display: grid;
+        grid-template-columns: 36px minmax(0, 1fr) auto;
+        gap: 12px;
+        align-items: start;
+        padding: 12px;
+      }
+
+      .field-state {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 28px;
+        border-radius: 999px;
+        padding: 4px 10px;
+        color: var(--green);
+        background: var(--soft-green);
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      .field-state.watch {
+        color: #7a4a05;
+        background: var(--soft-gold);
+      }
+
+      .field-state.hold {
+        color: var(--ochre);
+        background: var(--soft-red);
+      }
+
+      .tabs,
+      .button-row {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .tabs {
+        margin: 16px 0 12px;
+        border-top: 1px solid var(--line);
+        padding-top: 14px;
+      }
+
+      .tab {
+        min-height: 40px;
+        border: 1px solid #efb899;
+        border-radius: var(--radius);
+        background: var(--surface);
+        color: var(--ochre);
+        padding: 9px 12px;
+        font-weight: 900;
+        cursor: pointer;
+      }
+
+      .tab.active {
+        border-color: var(--bhagwa);
+        background: var(--bhagwa);
+        color: white;
+      }
+
+      .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .mini-card {
+        padding: 13px;
+        border-left: 3px solid #f0a07d;
+      }
+
+      .mini-card p,
+      .field-card p,
+      .step-card p {
+        margin-bottom: 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      textarea {
+        width: 100%;
+        min-height: 154px;
+        margin-top: 14px;
+        border: 1px solid #efc1aa;
+        border-radius: var(--radius);
+        background: #fffaf4;
+        color: var(--ink);
+        padding: 12px;
+        resize: vertical;
+        font-family: Consolas, "Courier New", monospace;
+        font-size: 13px;
+      }
+
+      .metric-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin: 12px 0;
+      }
+
+      .metric {
+        padding: 12px;
+      }
+
+      .metric span {
+        display: block;
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .metric strong {
+        display: block;
+        margin-top: 5px;
+        font-size: 25px;
+        line-height: 1;
+      }
+
+      .progress {
+        height: 10px;
+        overflow: hidden;
+        border-radius: 999px;
+        background: rgba(168, 62, 18, 0.14);
+      }
+
+      .bar {
+        width: var(--score);
+        height: 100%;
+        border-radius: inherit;
+        background: linear-gradient(90deg, var(--bhagwa), var(--gold));
+      }
+
+      .step-card {
+        display: grid;
+        grid-template-columns: 40px minmax(0, 1fr);
+        gap: 12px;
+        align-items: center;
+        padding: 12px;
+      }
+
+      .boundary {
+        border-style: dashed;
+        box-shadow: none;
+      }
+
+      @media (max-width: 1100px) {
+        .workspace {
+          grid-template-columns: 1fr;
+        }
+
+        .topbar {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .nav {
+          justify-content: flex-start;
+        }
+      }
+
+      @media (max-width: 760px) {
+        .shell {
+          width: min(100% - 28px, 1240px);
+        }
+
+        .storage-hero,
+        .source-block,
+        .grid,
+        .metric-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .mark-stage {
+          max-width: 180px;
+        }
+
+        h1 {
+          font-size: 44px;
+        }
+
+        .field-card {
+          grid-template-columns: 34px minmax(0, 1fr);
+        }
+
+        .field-state {
+          grid-column: 2;
+          justify-self: start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="shell" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top" aria-label="VedaPath AI home">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
+          <div>
+            <strong>VedaPath AI</strong>
+            <span>Source storage plan</span>
+          </div>
+        </a>
+        <nav class="nav" aria-label="Project links">
+          <a class="link" href="build-status.html">Build</a>
+          <a class="link" href="brand/brand-board.html">Brand</a>
+          <a class="link" href="blueprint.html">Blueprint</a>
+          <a class="link" href="calm.html">Calm</a>
+          <a class="link" href="daily.html">Daily</a>
+          <a class="link" href="practice.html">Practice</a>
+          <a class="link" href="library.html">Library</a>
+          <a class="link" href="seeds.html">Seeds</a>
+          <a class="link" href="retrieval.html">Retrieval</a>
+          <a class="link" href="passages.html">Review</a>
+          <a class="link" href="eval.html">Eval</a>
+          <a class="link" href="dashboard.html">Dash</a>
+          <a class="link" href="queue.html">Queue</a>
+          <a class="link" href="policy.html">Policy</a>
+          <a class="link" href="ledger.html">Ledger</a>
+          <a class="link" href="life.html">Life</a>
+          <a class="link" href="circle.html">Circle</a>
+          <a class="link" href="consent.html">Consent</a>
+          <a class="link" href="memory.html">Memory</a>
+          <a class="link" href="model.html">Model</a>
+          <a class="link" href="passport.html">Passport</a>
+          <a class="link" href="schema.html">Schema</a>
+          <a class="link" href="fixtures.html">Fixtures</a>
+          <a class="link" href="drill.html">Drill</a>
+          <a class="link" href="loop.html">Loop</a>
+          <a class="link" href="lens.html">Lens</a>
+          <a class="link" href="voice.html">Voice</a>
+          <a class="link" href="scholar.html">Scholar</a>
+          <a class="link" href="launch.html">Launch</a>
+          <a class="link" href="bridge.html">Bridge</a>
+          <a class="link active" href="storage.html">Storage</a>
+          <a class="link" href="path.html">Path</a>
+          <a class="link" href="compass.html">Compass</a>
+          <a class="link" href="card.html">Card</a>
+          <a class="link" href="bell.html">Bell</a>
+          <a class="link" href="reply.html">Reply</a>
+          <a class="link" href="samvada.html">Samvada</a>
+          <a class="link" href="sankalpa.html">Intent</a>
+          <a class="link" href="seva.html">Seva</a>
+          <a class="link" href="morning.html">Morning</a>
+          <a class="link" href="evening.html">Evening</a>
+          <a class="link" href="rhythm.html">Rhythm</a>
+          <span class="version">v0.6.1 storage</span>
+        </nav>
+      </header>
+
+      <main class="workspace" aria-label="VedaPath Source Storage workspace">
+        <aside class="panel">
+          <span class="eyebrow">Choose storage layer</span>
+          <h1>Store the source before the answer.</h1>
+          <p class="muted">A production VedaPath should first preserve source records, review state, and retrieval metadata. Answers can change later; the source trail must stay stable.</p>
+          <div class="record-list" id="recordList"></div>
+        </aside>
+
+        <section class="panel">
+          <div class="storage-hero">
+            <div>
+              <span class="eyebrow">Source Record Storage Plan</span>
+              <h2 id="storageTitle">Canonical source records come first.</h2>
+              <p class="muted" id="storageSummary">The first production table should store source identity, citation, source family, allowed use, and review state.</p>
+            </div>
+            <div class="mark-stage">
+              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Source Storage logo">
+            </div>
+          </div>
+
+          <div class="source-block" aria-label="Storage decision card">
+            <div>
+              <span class="source-meta">Table</span>
+              <span class="source-value" id="tableName">source_seed</span>
+            </div>
+            <div>
+              <span class="source-meta">Primary key</span>
+              <span class="source-value" id="primaryKey">source_seed_id</span>
+            </div>
+            <div>
+              <span class="source-meta">Index priority</span>
+              <span class="source-value" id="indexPriority">family + citation</span>
+            </div>
+            <div>
+              <span class="source-meta">Migration step</span>
+              <span class="source-value" id="migrationStep">001 source core</span>
+            </div>
+          </div>
+
+          <h2>Required Fields</h2>
+          <div class="field-list" id="fieldList"></div>
+
+          <div class="tabs" role="tablist" aria-label="Source storage layers">
+            <button class="tab active" type="button" data-mode="schema">Schema</button>
+            <button class="tab" type="button" data-mode="indexes">Indexes</button>
+            <button class="tab" type="button" data-mode="fixtures">Fixtures</button>
+            <button class="tab" type="button" data-mode="checks">No-Go Checks</button>
+          </div>
+
+          <div id="modePanel"></div>
+
+          <div class="button-row" style="margin-top: 14px;">
+            <button class="button primary" id="copyPlan" type="button">Copy Storage Plan</button>
+            <button class="button safe" id="copyJson" type="button">Copy Table JSON</button>
+            <button class="button" id="copyFixture" type="button">Copy Fixture</button>
+          </div>
+
+          <textarea id="storageOutput" readonly aria-label="Source Storage output"></textarea>
+        </section>
+
+        <aside class="rail" aria-label="Storage readiness rail">
+          <section class="panel tight">
+            <span class="badge green">Storage readiness</span>
+            <h2 style="margin-top: 14px;">Source Storage Pulse</h2>
+            <p class="muted" id="pulseSummary">Core source records are ready to specify. Translation and retrieval tables follow after the canonical source id is stable.</p>
+            <div class="progress" aria-label="Source storage readiness">
+              <div class="bar" id="scoreBar" style="--score:88%"></div>
+            </div>
+            <div class="metric-grid">
+              <div class="metric">
+                <span>Readiness</span>
+                <strong id="readinessScore">88%</strong>
+              </div>
+              <div class="metric">
+                <span>Required fields</span>
+                <strong id="fieldCount">8</strong>
+              </div>
+              <div class="metric">
+                <span>Next build</span>
+                <strong id="nextBuild">v0.6.2</strong>
+              </div>
+              <div class="metric">
+                <span>Storage owner</span>
+                <strong id="owner">Source</strong>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel tight" style="margin-top: 16px;">
+            <h2>Migration Order</h2>
+            <div class="step-list">
+              <div class="step-card active">
+                <span class="step-index">1</span>
+                <div>
+                  <strong>Core source</strong>
+                  <p>Stable id, citation, family, and allowed use.</p>
+                </div>
+              </div>
+              <div class="step-card">
+                <span class="step-index">2</span>
+                <div>
+                  <strong>Review link</strong>
+                  <p>Decision id, reviewer role, and evidence note.</p>
+                </div>
+              </div>
+              <div class="step-card">
+                <span class="step-index">3</span>
+                <div>
+                  <strong>Retrieval index</strong>
+                  <p>Keywords, concept tags, and source stack rank.</p>
+                </div>
+              </div>
+              <div class="step-card">
+                <span class="step-index">4</span>
+                <div>
+                  <strong>Rollback</strong>
+                  <p>Previous version, replacement reason, and audit trail.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel tight boundary" style="margin-top: 16px;">
+            <h2>Storage Boundary</h2>
+            <p class="muted">This plan defines source data shape only. It does not store user reflections, accounts, audio files, or private reviewer identities.</p>
+          </section>
+        </aside>
+      </main>
+    </div>
+
+    <script>
+      const storageLayers = [
+        {
+          id: "source_core",
+          name: "Source core",
+          short: "Canonical citation, family, language, allowed use, and review state.",
+          title: "Canonical source records come first.",
+          summary: "The first production table should store source identity, citation, source family, allowed use, and review state.",
+          table: "source_seed",
+          primaryKey: "source_seed_id",
+          index: "family + citation",
+          migration: "001 source core",
+          score: 88,
+          fields: [
+            ["source_seed_id", "Stable durable id for source record.", "required"],
+            ["source_family", "Veda, Upanishad, Gita, Itihasa, Purana, commentary, or modern.", "required"],
+            ["citation", "Human-readable citation such as Bhagavad Gita 2.48.", "required"],
+            ["allowed_use", "Answer, practice, lens, voice, launch, or blocked.", "required"]
+          ],
+          modes: {
+            schema: [
+              ["source_seed_id", "TEXT PRIMARY KEY"],
+              ["source_family", "TEXT NOT NULL with controlled values"],
+              ["citation", "TEXT NOT NULL and user-visible"],
+              ["allowed_use", "TEXT NOT NULL and separated from answer authority"]
+            ],
+            indexes: [
+              ["idx_source_family", "Fast filtering by source family."],
+              ["idx_source_citation", "Fast lookup by citation and duplicate detection."],
+              ["idx_allowed_use", "Keeps voice, launch, and answer permissions separate."]
+            ],
+            fixtures: [
+              ["gita_2_48", "Prototype-ready source with direct citation and practice use."],
+              ["rv_3_62_10", "Voice blocked source with rights and reviewer gates pending."],
+              ["katha_1_3_14", "Tone-review source with calm-use caution."]
+            ],
+            checks: [
+              ["No missing citation", "Block records without citation."],
+              ["No blurred family", "Block records that call Gita a direct Veda."],
+              ["No hidden use", "Block records that do not declare allowed_use."]
+            ]
+          }
+        },
+        {
+          id: "translation_layer",
+          name: "Translation layer",
+          short: "Translation, transliteration, word lens, and edition notes.",
+          title: "Translation records need source edition context.",
+          summary: "Translation data should stay linked to a source seed and must not pretend one rendering settles all meanings.",
+          table: "source_translation",
+          primaryKey: "translation_id",
+          index: "source_seed_id + language",
+          migration: "002 translation layer",
+          score: 76,
+          fields: [
+            ["translation_id", "Stable id for a translation or rendering note.", "required"],
+            ["source_seed_id", "Foreign key to the canonical source.", "required"],
+            ["language", "Sanskrit, transliteration, English, or note language.", "required"],
+            ["translation_note", "Boundary and edition note for interpretation.", "watch"]
+          ],
+          modes: {
+            schema: [
+              ["translation_id", "TEXT PRIMARY KEY"],
+              ["source_seed_id", "TEXT NOT NULL REFERENCES source_seed"],
+              ["language", "TEXT NOT NULL"],
+              ["translation_note", "TEXT with reviewer caution"]
+            ],
+            indexes: [
+              ["idx_translation_source", "Find all translations for a source."],
+              ["idx_translation_language", "Filter Sanskrit, transliteration, English, or notes."],
+              ["idx_translation_review", "Find translation records needing review."]
+            ],
+            fixtures: [
+              ["gita_2_48_translit", "Transliteration layer tied to Bhagavad Gita 2.48."],
+              ["gita_2_48_plain", "Plain English explanation with boundary."],
+              ["rv_3_62_10_syllable", "Syllable hint without audio playback."]
+            ],
+            checks: [
+              ["No orphan translation", "Block translation without source_seed_id."],
+              ["No final rendering", "Block claims that one translation settles all interpretations."],
+              ["No ritual instruction", "Block translation notes that become ritual guidance."]
+            ]
+          }
+        },
+        {
+          id: "review_link",
+          name: "Review link",
+          short: "Reviewer decision, evidence note, role, status, and release id.",
+          title: "Review links make trust auditable.",
+          summary: "A source record should not gain production confidence without a review decision and evidence trail.",
+          table: "source_review_link",
+          primaryKey: "source_review_link_id",
+          index: "source_seed_id + status",
+          migration: "003 review link",
+          score: 72,
+          fields: [
+            ["source_review_link_id", "Stable link between source and decision.", "required"],
+            ["review_decision_id", "Decision record from reviewer workflow.", "required"],
+            ["review_role", "Sanskrit, translation, boundary, rights, or product.", "required"],
+            ["release_id", "Release where the decision became active.", "watch"]
+          ],
+          modes: {
+            schema: [
+              ["source_review_link_id", "TEXT PRIMARY KEY"],
+              ["source_seed_id", "TEXT NOT NULL REFERENCES source_seed"],
+              ["review_decision_id", "TEXT NOT NULL REFERENCES review_decision"],
+              ["release_id", "TEXT with release history"]
+            ],
+            indexes: [
+              ["idx_review_source", "Find decisions by source."],
+              ["idx_review_status", "Find blocked or pending records."],
+              ["idx_review_release", "Audit by release version."]
+            ],
+            fixtures: [
+              ["gita_2_48_review", "Approved for prototype source display."],
+              ["rv_3_62_10_rights", "Audio blocked until rights review."],
+              ["katha_1_3_14_tone", "Needs tone review before calm promotion."]
+            ],
+            checks: [
+              ["No anonymous production", "Block production status without review_decision_id."],
+              ["No merged roles", "Block one review from approving all roles."],
+              ["No silent rollback", "Block replacement without release id and note."]
+            ]
+          }
+        },
+        {
+          id: "retrieval_index",
+          name: "Retrieval index",
+          short: "Concept tags, search terms, source stack rank, and answer eligibility.",
+          title: "Retrieval can index only reviewed source facts.",
+          summary: "Search metadata helps answers find sources, but it must not become a back door for unsupported claims.",
+          table: "source_retrieval_index",
+          primaryKey: "retrieval_index_id",
+          index: "concept_tag + eligibility",
+          migration: "004 retrieval index",
+          score: 68,
+          fields: [
+            ["retrieval_index_id", "Stable id for search metadata.", "required"],
+            ["source_seed_id", "Foreign key to canonical source.", "required"],
+            ["concept_tags", "Controlled tags for retrieval matching.", "required"],
+            ["answer_eligibility", "Eligible, bounded, review, or blocked.", "required"]
+          ],
+          modes: {
+            schema: [
+              ["retrieval_index_id", "TEXT PRIMARY KEY"],
+              ["source_seed_id", "TEXT NOT NULL REFERENCES source_seed"],
+              ["concept_tags", "JSON array with controlled tags"],
+              ["answer_eligibility", "TEXT NOT NULL"]
+            ],
+            indexes: [
+              ["idx_concept_tags", "Search by concept or theme."],
+              ["idx_answer_eligibility", "Keep blocked sources out of answer generation."],
+              ["idx_source_stack_rank", "Rank source candidates without hiding boundaries."]
+            ],
+            fixtures: [
+              ["steady_action_tag", "Connects Bhagavad Gita 2.48 to calm practice."],
+              ["oppenheimer_tag", "Routes Oppenheimer quote to Gita, not four Vedas."],
+              ["audio_blocked_tag", "Keeps voice requests inside silent support."]
+            ],
+            checks: [
+              ["No unsupported proof", "Block retrieval tags that imply modern science proof."],
+              ["No blocked answer", "Block answer generation from ineligible source."],
+              ["No hidden ranking", "Show source stack reason before answer confidence."]
+            ]
+          }
+        }
+      ];
+
+      const state = {
+        selectedId: "source_core",
+        mode: "schema"
+      };
+
+      function selectedLayer() {
+        return storageLayers.find((item) => item.id === state.selectedId) || storageLayers[0];
+      }
+
+      function stateClass(value) {
+        if (value === "hold") return "hold";
+        if (value === "watch") return "watch";
+        return "";
+      }
+
+      function renderRecords() {
+        const list = document.getElementById("recordList");
+        list.innerHTML = storageLayers.map((item, index) => `
+          <button class="record-card ${item.id === state.selectedId ? "active" : ""}" type="button" data-id="${item.id}">
+            <span class="record-index">${index + 1}</span>
+            <span>
+              <strong>${item.name}</strong>
+              <span>${item.short}</span>
+            </span>
+          </button>
+        `).join("");
+
+        [...list.querySelectorAll(".record-card")].forEach((button) => {
+          button.addEventListener("click", () => {
+            state.selectedId = button.dataset.id;
+            render();
+          });
+        });
+      }
+
+      function renderTabs() {
+        [...document.querySelectorAll(".tab")].forEach((tab) => {
+          tab.classList.toggle("active", tab.dataset.mode === state.mode);
+          tab.addEventListener("click", () => {
+            state.mode = tab.dataset.mode;
+            render();
+          }, { once: true });
+        });
+      }
+
+      function renderFields() {
+        const item = selectedLayer();
+        document.getElementById("fieldList").innerHTML = item.fields.map((field, index) => `
+          <div class="field-card">
+            <span class="record-index">${index + 1}</span>
+            <div>
+              <strong>${field[0]}</strong>
+              <p>${field[1]}</p>
+            </div>
+            <span class="field-state ${stateClass(field[2])}">${field[2]}</span>
+          </div>
+        `).join("");
+      }
+
+      function renderModePanel() {
+        const item = selectedLayer();
+        const rows = item.modes[state.mode] || item.modes.schema;
+        document.getElementById("modePanel").innerHTML = `
+          <div class="grid">
+            ${rows.map((row) => `
+              <div class="mini-card">
+                <h3>${row[0]}</h3>
+                <p>${row[1]}</p>
+              </div>
+            `).join("")}
+          </div>
+        `;
+      }
+
+      function renderLayer() {
+        const item = selectedLayer();
+        document.getElementById("storageTitle").textContent = item.title;
+        document.getElementById("storageSummary").textContent = item.summary;
+        document.getElementById("tableName").textContent = item.table;
+        document.getElementById("primaryKey").textContent = item.primaryKey;
+        document.getElementById("indexPriority").textContent = item.index;
+        document.getElementById("migrationStep").textContent = item.migration;
+        document.getElementById("pulseSummary").textContent = item.summary;
+        document.getElementById("readinessScore").textContent = `${item.score}%`;
+        document.getElementById("scoreBar").style.setProperty("--score", `${item.score}%`);
+        document.getElementById("fieldCount").textContent = item.fields.length;
+        document.getElementById("owner").textContent = item.name.split(" ")[0];
+        renderFields();
+        renderModePanel();
+        document.getElementById("storageOutput").value = storageBrief();
+      }
+
+      function tablePayload() {
+        const item = selectedLayer();
+        return {
+          product: "VedaPath AI",
+          release: "v0.6.1 storage",
+          feature: "Source Record Storage Plan",
+          table: item.table,
+          primary_key: item.primaryKey,
+          index_priority: item.index,
+          migration_step: item.migration,
+          readiness_score: item.score,
+          fields: item.fields.map((field) => ({ name: field[0], note: field[1], state: field[2] })),
+          boundary: "Source storage does not create answer authority or user memory."
+        };
+      }
+
+      function storageBrief() {
+        const item = selectedLayer();
+        return [
+          "VedaPath Source Record Storage Plan",
+          "Release: v0.6.1 storage",
+          `Layer: ${item.name}`,
+          `Table: ${item.table}`,
+          `Primary key: ${item.primaryKey}`,
+          `Index priority: ${item.index}`,
+          `Migration: ${item.migration}`,
+          `Required fields: ${item.fields.length}`,
+          "Boundary: store source facts first; do not store personal memory, audio, or answer authority in this lane."
+        ].join("\n");
+      }
+
+      function fixtureBrief() {
+        const item = selectedLayer();
+        return [
+          "VedaPath Source Storage Fixture",
+          "Release: v0.6.1 storage",
+          `Table: ${item.table}`,
+          `Fixture family: ${item.name}`,
+          ...item.modes.fixtures.map((row) => `- ${row[0]}: ${row[1]}`),
+          "No-go: reject missing citation, blurred source family, hidden allowed use, and unsupported proof claims."
+        ].join("\n");
+      }
+
+      function copyText(text, button, label) {
+        const original = button.textContent;
+        document.getElementById("storageOutput").value = text;
+        const finish = () => {
+          button.textContent = label;
+          window.setTimeout(() => {
+            button.textContent = original;
+          }, 1000);
+        };
+
+        if (navigator.clipboard && window.isSecureContext) {
+          navigator.clipboard.writeText(text).then(finish).catch(finish);
+        } else {
+          finish();
+        }
+      }
+
+      function render() {
+        renderRecords();
+        renderTabs();
+        renderLayer();
+      }
+
+      document.getElementById("copyPlan").addEventListener("click", () => {
+        copyText(storageBrief(), document.getElementById("copyPlan"), "Plan Copied");
+      });
+
+      document.getElementById("copyJson").addEventListener("click", () => {
+        copyText(JSON.stringify(tablePayload(), null, 2), document.getElementById("copyJson"), "JSON Copied");
+      });
+
+      document.getElementById("copyFixture").addEventListener("click", () => {
+        copyText(fixtureBrief(), document.getElementById("copyFixture"), "Fixture Copied");
+      });
+
+      render();
+    </script>
+  </body>
+</html>

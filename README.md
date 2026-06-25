@@ -86,6 +86,8 @@ Let us look at the source first.
 - [Launch Gate Notes](docs/LAUNCH_GATE.md)
 - [Production Bridge Seed](bridge.html)
 - [Production Bridge Notes](docs/PRODUCTION_BRIDGE.md)
+- [Source Record Storage Plan](storage.html)
+- [Source Storage Notes](docs/SOURCE_STORAGE_PLAN.md)
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
 - [Calm Compass](compass.html)
@@ -116,7 +118,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v0.6.0` is a trusted MVP prototype plus a Production Bridge seed with:
+`v0.6.1` is a trusted MVP prototype plus a Source Record Storage Plan with:
 
 - Ask workspace
 - Source Card
@@ -150,6 +152,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Scholar Review Seed with reviewer roles, evidence notes, decision states, release gates, and copyable review handoffs
 - Launch Gate Seed with public demo readiness, privacy copy, launch notes, scenario decisions, and no-go release gates
 - Production Bridge Seed with record-family routes, storage lanes, consent needs, audit states, readiness scores, and copyable bridge handoffs
+- Source Record Storage Plan with required source fields, translation layers, review links, retrieval indexes, fixtures, and no-go checks
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
 - Calm Card Studio with visual card preview, local saved cards, copy text, and PNG export
