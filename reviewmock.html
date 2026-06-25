@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>VedaPath Answer Renderer Shell</title>
+    <title>VedaPath Reviewer Queue Mock</title>
     <link rel="stylesheet" href="assets/vedapath-sprint.css">
   </head>
   <body>
@@ -13,7 +13,7 @@
           <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
           <div>
             <strong>VedaPath AI</strong>
-            <span>Answer renderer shell</span>
+            <span>Reviewer queue mock</span>
           </div>
         </a>
         <nav class="nav" aria-label="Project links">
@@ -25,16 +25,16 @@
           <a class="link" href="calm.html">Calm</a>
           <!-- VEDAPATH IMPLEMENTATION SPRINT NAV START -->
           <a class="link" href="sourcejson.html">Source JSON</a>
-          <a class="link active" href="answerrenderer.html">Renderer</a>
+          <a class="link" href="answerrenderer.html">Renderer</a>
           <a class="link" href="betawaitlist.html">Waitlist</a>
           <a class="link" href="consenttoggle.html">Consent</a>
-          <a class="link" href="reviewmock.html">Review Mock</a>
+          <a class="link active" href="reviewmock.html">Review Mock</a>
           <!-- VEDAPATH IMPLEMENTATION SPRINT NAV END -->
           <span class="version">v1.3.9 queue</span>
         </nav>
       </header>
 
-      <main class="workspace" aria-label="VedaPath Answer Renderer Shell workspace">
+      <main class="workspace" aria-label="VedaPath Reviewer Queue Mock workspace">
         <aside class="panel">
           <span class="eyebrow">Implementation readiness sprint</span>
           <h2>Release Rooms</h2>
@@ -45,38 +45,38 @@
         <section class="panel">
           <div class="hero-grid">
             <div>
-              <span class="eyebrow">Answer implementation</span>
-              <h1>Render trust the same way every time.</h1>
-              <p class="muted">An answer renderer shell that turns source JSON into direct answer, source card, confidence card, deeper layer, and boundary line.</p>
+              <span class="eyebrow">Human review handoff</span>
+              <h1>Give reviewers the exact next decision.</h1>
+              <p class="muted">A reviewer queue mock with lane, evidence, answer impact, missing fields, decision choices, and no-endorsement language.</p>
             </div>
             <div class="mark-stage">
-              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Renderer logo">
+              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Review Mock logo">
             </div>
           </div>
 
           <div class="source-block" aria-label="Release source card">
             <div>
               <span class="source-meta">Release</span>
-              <span class="source-value">v1.3.6</span>
+              <span class="source-value">v1.3.9</span>
             </div>
             <div>
               <span class="source-meta">Source candidate</span>
-              <span class="source-value">Bhagavad Gita 4.34</span>
+              <span class="source-value">Taittiriya Upanishad 1.11.1</span>
             </div>
             <div>
               <span class="source-meta">Text family</span>
-              <span class="source-value">Bhagavad Gita | Smriti</span>
+              <span class="source-value">Upanishad | Shruti</span>
             </div>
             <div>
               <span class="source-meta">Boundary</span>
-              <span class="source-value">Renderer shell, not live AI generation.</span>
+              <span class="source-value">Queue mock, not reviewer approval.</span>
             </div>
           </div>
 
           <h2>Decision Signals</h2>
           <div class="item-list" id="itemList"></div>
 
-          <div class="tabs" role="tablist" aria-label="VedaPath Answer Renderer Shell layers">
+          <div class="tabs" role="tablist" aria-label="VedaPath Reviewer Queue Mock layers">
             <button class="tab active" type="button" data-mode="brief">Brief</button>
             <button class="tab" type="button" data-mode="checklist">Checklist</button>
             <button class="tab" type="button" data-mode="boundary">Boundary</button>
@@ -90,20 +90,20 @@
             <button class="button" id="copyBoundary" type="button">Copy Boundary</button>
           </div>
 
-          <textarea id="output" readonly aria-label="VedaPath Answer Renderer Shell output"></textarea>
+          <textarea id="output" readonly aria-label="VedaPath Reviewer Queue Mock output"></textarea>
         </section>
 
-        <aside class="panel tight" aria-label="VedaPath Answer Renderer Shell sprint rail">
+        <aside class="panel tight" aria-label="VedaPath Reviewer Queue Mock sprint rail">
           <span class="badge green">Implementation readiness</span>
-          <h2 style="margin-top: 14px;">Renderer Pulse</h2>
-          <p class="muted">Answer Renderer Shell separates presentation from generation so every answer shows source, confidence, and boundary consistently.</p>
-          <div class="progress" aria-label="Sprint progress 92 percent">
-            <div class="bar" style="--score:92%"></div>
+          <h2 style="margin-top: 14px;">Review Mock Pulse</h2>
+          <p class="muted">Reviewer Queue Mock makes scholar and careful-reader review practical by turning issues into scoped, evidence-backed decisions.</p>
+          <div class="progress" aria-label="Sprint progress 95 percent">
+            <div class="bar" style="--score:95%"></div>
           </div>
           <div class="metric-grid">
             <div class="metric">
               <span>Current</span>
-              <strong>v1.3.6</strong>
+              <strong>v1.3.9</strong>
             </div>
             <div class="metric">
               <span>Sprint</span>
@@ -111,11 +111,11 @@
             </div>
             <div class="metric">
               <span>Progress</span>
-              <strong>92%</strong>
+              <strong>95%</strong>
             </div>
             <div class="metric">
               <span>Next</span>
-              <strong>Beta Waitlist Room</strong>
+              <strong>Source Import Checklist</strong>
             </div>
           </div>
 
@@ -147,85 +147,85 @@
     </div>
 
     <script type="application/json" id="room-data">{
-  "version": "v1.3.6",
-  "badge": "v1.3.6 renderer",
-  "slug": "answerrenderer",
-  "nav": "Renderer",
-  "title": "VedaPath Answer Renderer Shell",
-  "pageLabel": "Answer renderer shell",
-  "eyebrow": "Answer implementation",
-  "h1": "Render trust the same way every time.",
-  "lead": "An answer renderer shell that turns source JSON into direct answer, source card, confidence card, deeper layer, and boundary line.",
-  "source": "Bhagavad Gita 4.34",
-  "family": "Bhagavad Gita | Smriti",
-  "stance": "Renderer shell, not live AI generation.",
-  "progress": 92,
-  "next": "Beta Waitlist Room",
-  "primaryAsk": "Define the repeatable answer surface before connecting an AI model.",
-  "summary": "Answer Renderer Shell separates presentation from generation so every answer shows source, confidence, and boundary consistently.",
+  "version": "v1.3.9",
+  "badge": "v1.3.9 queue",
+  "slug": "reviewmock",
+  "nav": "Review Mock",
+  "title": "VedaPath Reviewer Queue Mock",
+  "pageLabel": "Reviewer queue mock",
+  "eyebrow": "Human review handoff",
+  "h1": "Give reviewers the exact next decision.",
+  "lead": "A reviewer queue mock with lane, evidence, answer impact, missing fields, decision choices, and no-endorsement language.",
+  "source": "Taittiriya Upanishad 1.11.1",
+  "family": "Upanishad | Shruti",
+  "stance": "Queue mock, not reviewer approval.",
+  "progress": 95,
+  "next": "Source Import Checklist",
+  "primaryAsk": "Define how source issues become small review decisions instead of vague feedback.",
+  "summary": "Reviewer Queue Mock makes scholar and careful-reader review practical by turning issues into scoped, evidence-backed decisions.",
   "items": [
     [
-      "Direct answer",
-      "One useful answer sentence before detail.",
-      "Protects simplicity."
+      "Lane",
+      "Source, Sanskrit, translation, interpretation, boundary, or rights.",
+      "Narrows responsibility."
     ],
     [
-      "Source card",
-      "Citation, family, review state, rights note, and source id.",
-      "Shows grounding."
+      "Evidence",
+      "Citation, current answer, user concern, and missing field.",
+      "Saves reviewer time."
     ],
     [
-      "Confidence card",
-      "Basis, risk, missing field, and upgrade path.",
-      "Explains trust."
+      "Decision",
+      "Approve, hold, block, request evidence, or retire.",
+      "Keeps state clear."
     ],
     [
-      "Boundary line",
-      "What not to overclaim and when review is needed.",
-      "Keeps humility visible."
+      "Audit",
+      "Decision note without public identity leakage.",
+      "Creates traceable trust."
     ]
   ],
   "modes": {
     "brief": [
       [
-        "Renderer promise",
-        "Trust should be a stable component, not custom copy."
+        "Queue promise",
+        "Review work should be small enough to complete."
       ],
       [
-        "UX move",
-        "Use one answer anatomy across all flows."
+        "Ops move",
+        "Give each card one decision lane."
       ],
       [
-        "Engineering move",
-        "Let source data decide what the renderer can show."
+        "Trust move",
+        "Publish state, not private reviewer pressure."
       ]
     ],
     "checklist": [
       [
-        "Consistent",
-        "Does every answer show the same trust parts?"
+        "Scoped",
+        "Is there one review lane?"
       ],
       [
-        "Readable",
-        "Is the first answer still simple?"
+        "Evidence-backed",
+        "Can the reviewer see why it matters?"
       ],
       [
-        "Guarded",
-        "Can missing source fields hide risky sections?"
+        "Auditable",
+        "Can the decision be traced later?"
       ]
     ],
     "boundary": [
       [
-        "No model magic",
-        "Do not connect generation before source state exists."
+        "No endorsement blur",
+        "Do not turn review into public endorsement."
       ],
       [
-        "No hidden citation",
-        "Do not bury the source card."
+        "No vague cards",
+        "Do not ask reviewers to inspect everything."
       ],
       [
-        "No confidence theater",
-        "Do not display confidence without reasons."
+        "No identity leak",
+        "Do not publish names without consent."
       ]
     ]
   },

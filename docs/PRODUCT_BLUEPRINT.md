@@ -128,6 +128,7 @@ It helps users move from curiosity to understanding through:
 - Answer Renderer Shell: Answer Renderer Shell separates presentation from generation so every answer shows source, confidence, and boundary consistently.
 - Beta Waitlist Room: Beta Waitlist Room turns launch excitement into a careful intake path that respects user expectation and product limits.
 - Consent Toggle Mock: Consent Toggle Mock makes VedaPath's memory promise tangible through named permissions and visible reversibility.
+- Reviewer Queue Mock: Reviewer Queue Mock makes scholar and careful-reader review practical by turning issues into scoped, evidence-backed decisions.
 <!-- VEDAPATH IMPLEMENTATION SPRINT SUMMARY END -->
 
 ## What It Is
@@ -1991,6 +1992,21 @@ It should:
 - produce a copyable implementation-readiness handoff
 
 Consent Toggle Mock should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 122. Reviewer Queue Mock
+
+Reviewer Queue Mock makes scholar and careful-reader review practical by turning issues into scoped, evidence-backed decisions.
+
+It should:
+
+- Lane: Source, Sanskrit, translation, interpretation, boundary, or rights.
+- Evidence: Citation, current answer, user concern, and missing field.
+- Decision: Approve, hold, block, request evidence, or retire.
+- Audit: Decision note without public identity leakage.
+- preserve the boundary: Queue mock, not reviewer approval.
+- produce a copyable implementation-readiness handoff
+
+Reviewer Queue Mock should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH IMPLEMENTATION SPRINT BLUEPRINT END -->
 
 ## Product Personality
