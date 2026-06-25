@@ -301,6 +301,8 @@ Let us look at the source first.
 - [Local Retrieval Workspace Notes](docs/LOCAL_RETRIEVAL_WORKSPACE.md)
 - [Answer Composer Workspace](answercomposer.html)
 - [Answer Composer Workspace Notes](docs/ANSWER_COMPOSER_WORKSPACE.md)
+- [Citation Evidence Panel](evidencepanel.html)
+- [Citation Evidence Panel Notes](docs/CITATION_EVIDENCE_PANEL.md)
 <!-- VEDAPATH WORKING DATA SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -332,7 +334,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v1.5.8` is a trusted MVP prototype plus Answer Composer Workspace with:
+`v1.5.9` is a trusted MVP prototype plus Citation Evidence Panel with:
 
 - Ask workspace
 - Source Card
@@ -483,6 +485,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Query Router Demo: Query Router Demo makes the first invisible step visible: VedaPath should understand what kind of answer is allowed before it searches.
 - Local Retrieval Workspace: Local Retrieval Workspace gives VedaPath a practical search preview with eligible records, hold states, and visible match reasons.
 - Answer Composer Workspace: Answer Composer Workspace connects retrieval to the user-facing answer, preserving one calm structure across source, meaning, and boundary.
+- Citation Evidence Panel: Citation Evidence Panel gives VedaPath an evidence drawer that can support curiosity, correction, and scholar review while keeping the main surface calm.
 <!-- VEDAPATH WORKING DATA SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff

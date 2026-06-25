@@ -152,6 +152,7 @@ It helps users move from curiosity to understanding through:
 - Query Router Demo: Query Router Demo makes the first invisible step visible: VedaPath should understand what kind of answer is allowed before it searches.
 - Local Retrieval Workspace: Local Retrieval Workspace gives VedaPath a practical search preview with eligible records, hold states, and visible match reasons.
 - Answer Composer Workspace: Answer Composer Workspace connects retrieval to the user-facing answer, preserving one calm structure across source, meaning, and boundary.
+- Citation Evidence Panel: Citation Evidence Panel gives VedaPath an evidence drawer that can support curiosity, correction, and scholar review while keeping the main surface calm.
 <!-- VEDAPATH WORKING DATA SPRINT SUMMARY END -->
 
 ## What It Is
@@ -2317,6 +2318,21 @@ It should:
 - produce a copyable working-data handoff
 
 Answer Composer Workspace should never claim production storage, live retrieval, live AI generation, authentication, licensed source text, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 142. Citation Evidence Panel
+
+Citation Evidence Panel gives VedaPath an evidence drawer that can support curiosity, correction, and scholar review while keeping the main surface calm.
+
+It should:
+
+- Source identity: Text family, citation, section note, and edition note.
+- Context window: What the source can support and what it cannot support.
+- Translation state: Draft, public-domain, licensed, or reviewer-needed.
+- Related review: Open issues, resolved decisions, and suggested corrections.
+- preserve the boundary: Evidence UI demo, not licensed full-text display.
+- produce a copyable working-data handoff
+
+Citation Evidence Panel should never claim production storage, live retrieval, live AI generation, authentication, licensed source text, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH WORKING DATA SPRINT BLUEPRINT END -->
 
 ## Product Personality
