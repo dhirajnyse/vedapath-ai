@@ -748,6 +748,9 @@ ${shortTitle(item)} should never claim production storage, verified answers, rev
 
 function updateBuildStatus() {
   let content = read("build-status.html");
+  if (!content.includes('href="tower.html">Control Tower</a>')) {
+    content = content.replace('<a href="founder.html">Founder Console</a>', '<a href="founder.html">Founder Console</a> | <a href="tower.html">Control Tower</a>');
+  }
   content = content.replace(/<span>Current version<\/span>\s*<strong>[^<]+<\/strong>\s*<p>[\s\S]*?<\/p>/, `<span>Current version</span>
           <strong>${active.version}</strong>
           <p>Personal calm sprint through ${shortTitle(active)}: ${visible.map(shortTitle).join(", ")}.</p>`);
