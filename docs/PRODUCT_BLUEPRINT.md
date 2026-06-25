@@ -185,6 +185,7 @@ It helps users move from curiosity to understanding through:
 <!-- VEDAPATH STATIC BETA DATA SPRINT SUMMARY END -->
 <!-- VEDAPATH INTERACTIVE SEARCH SPRINT SUMMARY START -->
 - Beta Search Shell: Beta Search Shell turns the static seed into a usable beta surface without pretending retrieval or generation is live.
+- Source Filter Bar: Source Filter Bar makes search calmer by giving users visible constraints instead of a blank text box.
 <!-- VEDAPATH INTERACTIVE SEARCH SPRINT SUMMARY END -->
 
 ## What It Is
@@ -2758,6 +2759,21 @@ It should:
 - keep the search browser-only until a real backend is approved
 
 Beta Search Shell should never claim live semantic retrieval, backend storage, live AI generation, reviewed corpus coverage, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 169. Source Filter Bar
+
+Source Filter Bar makes search calmer by giving users visible constraints instead of a blank text box.
+
+It should:
+
+- Family filter: Gita, Veda, Upanishad, or other families can be inspected separately.
+- Review filter: Review-needed and prototype records remain visibly separate from eligible records.
+- Intent filter: Lookup, category check, and reflection preview are not mixed casually.
+- Risk filter: Blocked claims remain readable and searchable.
+- preserve the boundary: Static filter prototype, not verified taxonomy.
+- keep the search browser-only until a real backend is approved
+
+Source Filter Bar should never claim live semantic retrieval, backend storage, live AI generation, reviewed corpus coverage, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH INTERACTIVE SEARCH SPRINT BLUEPRINT END -->
 
 ## Product Personality

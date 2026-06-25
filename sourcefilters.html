@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>VedaPath Beta Search Shell</title>
+    <title>VedaPath Source Filter Bar</title>
     <link rel="stylesheet" href="assets/vedapath-sprint.css">
     <link rel="stylesheet" href="assets/vedapath-beta-search.css">
   </head>
@@ -14,7 +14,7 @@
           <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
           <div>
             <strong>VedaPath AI</strong>
-            <span>Beta search shell</span>
+            <span>Source filters</span>
           </div>
         </a>
         <nav class="nav" aria-label="Project links">
@@ -23,14 +23,14 @@
           <a class="link" href="blueprint.html">Blueprint</a>
           <a class="link" href="datasetconsole.html">Dataset</a>
           <!-- VEDAPATH INTERACTIVE SEARCH SPRINT NAV START -->
-          <a class="link active" href="betasearchshell.html">Shell</a>
-          <a class="link" href="sourcefilters.html">Filters</a>
+          <a class="link" href="betasearchshell.html">Shell</a>
+          <a class="link active" href="sourcefilters.html">Filters</a>
           <!-- VEDAPATH INTERACTIVE SEARCH SPRINT NAV END -->
           <span class="version">v1.8.6 filters</span>
         </nav>
       </header>
 
-      <main class="workspace" aria-label="VedaPath Beta Search Shell workspace">
+      <main class="workspace" aria-label="VedaPath Source Filter Bar workspace">
         <aside class="panel">
           <span class="eyebrow">Interactive beta search sprint</span>
           <h2>Release Rooms</h2>
@@ -41,35 +41,35 @@
         <section class="panel">
           <div class="hero-grid">
             <div>
-              <span class="eyebrow">Interactive search</span>
-              <h1>Let users search the seed without mystery.</h1>
-              <p class="muted">A first browser-only search shell that reads the static beta seed and shows reviewed status, source family, blocked claims, and fallback boundaries.</p>
+              <span class="eyebrow">Filter controls</span>
+              <h1>Filter by what matters for trust.</h1>
+              <p class="muted">A filter bar that helps users narrow by source family, review status, allowed intent, and visible blocked claims.</p>
             </div>
             <div class="mark-stage">
-              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Shell logo">
+              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Filters logo">
             </div>
           </div>
 
           <div class="source-block" aria-label="Release source card">
             <div>
               <span class="source-meta">Release</span>
-              <span class="source-value">v1.8.5</span>
+              <span class="source-value">v1.8.6</span>
             </div>
             <div>
               <span class="source-meta">Source candidate</span>
-              <span class="source-value">Bhagavad Gita 2.48</span>
+              <span class="source-value">Mundaka Upanishad 1.1.4</span>
             </div>
             <div>
               <span class="source-meta">Text family</span>
-              <span class="source-value">Bhagavad Gita | Smriti</span>
+              <span class="source-value">Upanishad | Shruti</span>
             </div>
             <div>
               <span class="source-meta">Boundary</span>
-              <span class="source-value">Browser-only search shell, not live retrieval.</span>
+              <span class="source-value">Static filter prototype, not verified taxonomy.</span>
             </div>
           </div>
 
-          <section class="beta-search" id="betaSearch" data-default-query="steadiness" aria-label="Interactive beta search">
+          <section class="beta-search" id="betaSearch" data-default-query="upanishad" aria-label="Interactive beta search">
             <div class="search-head">
               <div>
                 <span class="eyebrow">Browser-only seed search</span>
@@ -80,7 +80,7 @@
             </div>
             <label class="search-label" for="betaSearchInput">Search source, family, boundary, or blocked claim</label>
             <div class="search-row">
-              <input id="betaSearchInput" class="search-input" type="search" autocomplete="off" value="steadiness" placeholder="Try Gita, review, therapy, source">
+              <input id="betaSearchInput" class="search-input" type="search" autocomplete="off" value="upanishad" placeholder="Try Gita, review, therapy, source">
               <button class="button primary" id="betaSearchButton" type="button">Search</button>
             </div>
             <div class="query-chips" id="betaSearchChips" aria-label="Quick searches"></div>
@@ -92,7 +92,7 @@
           <h2>Search Signals</h2>
           <div class="item-list" id="itemList"></div>
 
-          <div class="tabs" role="tablist" aria-label="VedaPath Beta Search Shell layers">
+          <div class="tabs" role="tablist" aria-label="VedaPath Source Filter Bar layers">
             <button class="tab active" type="button" data-mode="brief">Brief</button>
             <button class="tab" type="button" data-mode="checklist">Checklist</button>
             <button class="tab" type="button" data-mode="boundary">Boundary</button>
@@ -106,20 +106,20 @@
             <button class="button" id="copyBoundary" type="button">Copy Boundary</button>
           </div>
 
-          <textarea id="output" readonly aria-label="VedaPath Beta Search Shell output"></textarea>
+          <textarea id="output" readonly aria-label="VedaPath Source Filter Bar output"></textarea>
         </section>
 
-        <aside class="panel tight" aria-label="VedaPath Beta Search Shell sprint rail">
+        <aside class="panel tight" aria-label="VedaPath Source Filter Bar sprint rail">
           <span class="badge green">Browser-only search</span>
-          <h2 style="margin-top: 14px;">Shell Pulse</h2>
-          <p class="muted">Beta Search Shell turns the static seed into a usable beta surface without pretending retrieval or generation is live.</p>
-          <div class="progress" aria-label="Sprint progress 81 percent">
-            <div class="bar" style="--score:81%"></div>
+          <h2 style="margin-top: 14px;">Filters Pulse</h2>
+          <p class="muted">Source Filter Bar makes search calmer by giving users visible constraints instead of a blank text box.</p>
+          <div class="progress" aria-label="Sprint progress 82 percent">
+            <div class="bar" style="--score:82%"></div>
           </div>
           <div class="metric-grid">
             <div class="metric">
               <span>Current</span>
-              <strong>v1.8.5</strong>
+              <strong>v1.8.6</strong>
             </div>
             <div class="metric">
               <span>Sprint</span>
@@ -127,11 +127,11 @@
             </div>
             <div class="metric">
               <span>Progress</span>
-              <strong>81%</strong>
+              <strong>82%</strong>
             </div>
             <div class="metric">
               <span>Next</span>
-              <strong>Source Filter Bar</strong>
+              <strong>Result Reason Panel</strong>
             </div>
           </div>
 
@@ -163,72 +163,72 @@
     </div>
 
     <script type="application/json" id="room-data">{
-  "version": "v1.8.5",
-  "badge": "v1.8.5 search shell",
-  "slug": "betasearchshell",
-  "nav": "Shell",
-  "title": "VedaPath Beta Search Shell",
-  "pageLabel": "Beta search shell",
-  "eyebrow": "Interactive search",
-  "h1": "Let users search the seed without mystery.",
-  "lead": "A first browser-only search shell that reads the static beta seed and shows reviewed status, source family, blocked claims, and fallback boundaries.",
-  "source": "Bhagavad Gita 2.48",
-  "family": "Bhagavad Gita | Smriti",
-  "stance": "Browser-only search shell, not live retrieval.",
-  "progress": 81,
-  "next": "Source Filter Bar",
-  "defaultQuery": "steadiness",
-  "primaryAsk": "Make static beta records searchable while keeping every result visibly prototype and review-needed.",
-  "summary": "Beta Search Shell turns the static seed into a usable beta surface without pretending retrieval or generation is live.",
+  "version": "v1.8.6",
+  "badge": "v1.8.6 filters",
+  "slug": "sourcefilters",
+  "nav": "Filters",
+  "title": "VedaPath Source Filter Bar",
+  "pageLabel": "Source filters",
+  "eyebrow": "Filter controls",
+  "h1": "Filter by what matters for trust.",
+  "lead": "A filter bar that helps users narrow by source family, review status, allowed intent, and visible blocked claims.",
+  "source": "Mundaka Upanishad 1.1.4",
+  "family": "Upanishad | Shruti",
+  "stance": "Static filter prototype, not verified taxonomy.",
+  "progress": 82,
+  "next": "Result Reason Panel",
+  "defaultQuery": "upanishad",
+  "primaryAsk": "Let users narrow source records without hiding review and rights boundaries.",
+  "summary": "Source Filter Bar makes search calmer by giving users visible constraints instead of a blank text box.",
   "items": [
     [
-      "Search input",
-      "Keyword search across title, citation, family, summary, and blocked claims.",
-      "Makes the seed usable."
+      "Family filter",
+      "Gita, Veda, Upanishad, or other families can be inspected separately.",
+      "Prevents category blur."
     ],
     [
-      "Result cards",
-      "Every result shows source candidate, family, review state, and rights state.",
-      "Keeps trust visible."
+      "Review filter",
+      "Review-needed and prototype records remain visibly separate from eligible records.",
+      "Keeps quality honest."
     ],
     [
-      "Prototype mark",
-      "Records remain non-public-answer-eligible until reviewed.",
-      "Prevents overclaim."
+      "Intent filter",
+      "Lookup, category check, and reflection preview are not mixed casually.",
+      "Protects answer type."
     ],
     [
-      "Empty state",
-      "No result leads to a careful fallback rather than invention.",
-      "Protects the answer path."
+      "Risk filter",
+      "Blocked claims remain readable and searchable.",
+      "Teaches boundaries."
     ]
   ],
   "modes": {
     "brief": [
       [
         "Search promise",
-        "Beta Search Shell turns the static seed into a usable beta surface without pretending retrieval or generation is live."
+        "Source Filter Bar makes search calmer by giving users visible constraints instead of a blank text box."
       ],
       [
         "Founder move",
-        "Make static beta records searchable while keeping every result visibly prototype and review-needed."
+        "Let users narrow source records without hiding review and rights boundaries."
       ],
       [
         "Trust move",
-        "Keep this boundary visible: Browser-only search shell, not live retrieval."
+        "Keep this boundary visible: Static filter prototype, not verified taxonomy."
       ]
     ],
     "checklist": [
       [
-        "Search input",
-        "Keyword search across title, citation, family, summary, and blocked claims."
+        "Family filter",
+        "Gita, Veda, Upanishad, or other families can be inspected separately."
       ],
       [
-        "Result cards",
-        "Every result shows source candidate, family, review state, and rights state."
+        "Review filter",
+        "Review-needed and prototype records remain visibly separate from eligible records."
       ],
       [
-        "Prototype mark",
-        "Records remain non-public-answer-eligible until reviewed."
+        "Intent filter",
+        "Lookup, category check, and reflection preview are not mixed casually."
       ]
     ],
     "boundary": [
