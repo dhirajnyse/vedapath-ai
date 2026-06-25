@@ -130,6 +130,6 @@ This plan does not create durable user memory, accounts, audio files, reviewer i
 
 It only defines how source facts should be shaped before later systems depend on them.
 
-## v0.6.2 Direction
+## v0.6.2 Reviewer Access
 
-The next release should add a Reviewer Identity and Access Gate with reviewer roles, permission scopes, display policy, and approval boundaries.
+v0.6.2 adds the Reviewer Identity and Access Gate with scoped reviewer roles, permission scopes, display policy, private identity stance, and blocked powers. v0.6.3 should add a Public Feedback Intake that turns source issues, category confusion, UX friction, and boundary concerns into review tickets.

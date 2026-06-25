@@ -29,6 +29,7 @@ It helps users move from curiosity to understanding through:
 - learning loop seed with repeated questions, reviewer decisions, source gaps, and no hidden profiling
 - Sanskrit lens seed with text, transliteration, word sense, meter status, and recitation boundaries
 - source record storage plan with canonical source fields, translation layers, review links, retrieval indexes, fixtures, and no-go checks
+- reviewer identity and access gate with scoped reviewer roles, display policy, private identity stance, and blocked powers
 - source path builder with explicit user intention
 - calm compass for one source-backed next action
 - calm card studio for shareable source-backed reflections
@@ -572,7 +573,24 @@ It should:
 
 Source Record Storage Plan should never imply that durable production storage, user memory, reviewer authority, licensed audio, or verified answers already exist.
 
-### 34. Source Path Builder
+### 34. Reviewer Identity and Access Gate
+
+Reviewer Identity and Access Gate defines who can approve which review lane before source records, answer behavior, media assets, or launch copy gain trust.
+
+It should:
+
+- separate Sanskrit, translation, boundary, rights, and product review roles
+- keep private reviewer identity behind access controls while showing public role labels
+- define permissions for read, annotate, hold, approve, block, rollback, and release note actions
+- require an audit event for every approval, hold, block, or rollback
+- prevent one reviewer role from approving every dimension
+- block anonymous production approval
+- show display policy before exposing any reviewer identity
+- produce copyable access briefs, permission JSON, and boundary handoffs
+
+Reviewer Identity and Access Gate should never verify scholars by itself, expose private reviewer identity by default, let the AI certify its own decisions, or turn scoped review into final spiritual authority.
+
+### 35. Source Path Builder
 
 A source path turns library records into a short, cited route.
 
@@ -586,7 +604,7 @@ It should:
 
 The path builder should never prescribe a life decision, ritual act, treatment plan, or spiritual conclusion. It should only organize the next source-backed step.
 
-### 35. Calm Compass
+### 36. Calm Compass
 
 Calm Compass is the simplest doorway for users who arrive with restlessness, overwhelm, unclear priority, or hesitation.
 
@@ -600,7 +618,7 @@ It should:
 
 The compass must never pretend to diagnose, command, prescribe, or profile the user. It should slow the moment down and offer the next source-backed action.
 
-### 36. Calm Card Studio
+### 37. Calm Card Studio
 
 Calm Card Studio turns one source-backed reflection into a visual card.
 
@@ -614,7 +632,7 @@ It should:
 
 The card studio must not let shareability erase accuracy. Every card should make clear that it is reflection support, not a command, diagnosis, therapy, ritual instruction, or universal teaching.
 
-### 37. Source Bell
+### 38. Source Bell
 
 Source Bell turns one source-backed reflection into a one-minute reset.
 
@@ -628,7 +646,7 @@ It should:
 
 The bell must never become therapy, medical advice, emergency support, ritual instruction, or a guru voice. It should make one grounded next action easier to carry.
 
-### 38. Before Reply
+### 39. Before Reply
 
 Before Reply turns one heated communication moment into a calmer draft.
 
@@ -642,7 +660,7 @@ It should:
 
 Before Reply should protect agency. It should never become therapy, legal advice, emergency support, conflict mediation, or a reason to remain in harmful contact.
 
-### 39. Samvada Room
+### 40. Samvada Room
 
 Samvada Room turns disagreement into a source-backed shared question.
 
@@ -657,7 +675,7 @@ It should:
 
 Samvada Room should make dialogue calmer without flattening difference. It should never pretend every view is equally supported by a source.
 
-### 40. Sankalpa Studio
+### 41. Sankalpa Studio
 
 Sankalpa Studio turns personal calm into one source-backed 24-hour intention.
 
@@ -672,7 +690,7 @@ It should:
 
 Sankalpa Studio should make calm concrete without pretending the app can control a user's life. The intention belongs to the user.
 
-### 41. Seva Planner
+### 42. Seva Planner
 
 Seva Planner turns personal calm into one source-backed helpful act.
 
@@ -687,7 +705,7 @@ It should:
 
 Seva Planner should make calm useful without turning service into self-erasure. The action should be small, bounded, and freely chosen.
 
-### 42. Morning Path
+### 43. Morning Path
 
 Morning Path helps a user begin the day with one source-backed start.
 
@@ -702,7 +720,7 @@ It should:
 
 Morning Path should make the first moment of the day calmer and more directed without pretending the product owns the user's life.
 
-### 43. Evening Reflection
+### 44. Evening Reflection
 
 Evening Reflection helps a user close the day with one source-backed reflection.
 
@@ -717,7 +735,7 @@ It should:
 
 Evening Reflection should help the user put the day down without making the day into a judgment of the self.
 
-### 44. Calm Rhythm
+### 45. Calm Rhythm
 
 Calm Rhythm helps a user see a privacy-preserving pattern across deliberate VedaPath room entries.
 

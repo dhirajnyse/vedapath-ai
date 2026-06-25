@@ -127,4 +127,4 @@ v0.5.9 adds the Launch Gate Seed with public demo readiness, privacy copy, launc
 
 ## v0.6.0 Production Bridge
 
-v0.6.0 adds the Production Bridge Seed with record-family routes, storage lanes, consent needs, audit states, readiness scores, and copyable bridge handoffs. v0.6.1 adds the Source Record Storage Plan with canonical source tables, translation layers, review links, retrieval indexes, fixtures, and no-go checks. v0.6.2 should add a Reviewer Identity and Access Gate with reviewer roles, permission scopes, display policy, and approval boundaries.
+v0.6.0 adds the Production Bridge Seed with record-family routes, storage lanes, consent needs, audit states, readiness scores, and copyable bridge handoffs. v0.6.1 adds the Source Record Storage Plan with canonical source tables, translation layers, review links, retrieval indexes, fixtures, and no-go checks. v0.6.2 adds the Reviewer Identity and Access Gate with scoped reviewer roles, permission scopes, display policy, private identity stance, and blocked powers. v0.6.3 should add a Public Feedback Intake that turns source issues, category confusion, UX friction, and boundary concerns into review tickets.
