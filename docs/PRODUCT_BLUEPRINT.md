@@ -151,6 +151,7 @@ It helps users move from curiosity to understanding through:
 - Working Source Data Pack: Working Source Data Pack gives VedaPath a visible data spine: every answer starts from a record that can be reviewed, limited, and improved.
 - Query Router Demo: Query Router Demo makes the first invisible step visible: VedaPath should understand what kind of answer is allowed before it searches.
 - Local Retrieval Workspace: Local Retrieval Workspace gives VedaPath a practical search preview with eligible records, hold states, and visible match reasons.
+- Answer Composer Workspace: Answer Composer Workspace connects retrieval to the user-facing answer, preserving one calm structure across source, meaning, and boundary.
 <!-- VEDAPATH WORKING DATA SPRINT SUMMARY END -->
 
 ## What It Is
@@ -2301,6 +2302,21 @@ It should:
 - produce a copyable working-data handoff
 
 Local Retrieval Workspace should never claim production storage, live retrieval, live AI generation, authentication, licensed source text, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 141. Answer Composer Workspace
+
+Answer Composer Workspace connects retrieval to the user-facing answer, preserving one calm structure across source, meaning, and boundary.
+
+It should:
+
+- Direct answer: One useful sentence first.
+- Source card: Citation, family, basis, confidence, and review state stay near the answer.
+- Depth layers: Plain meaning appears first; Sanskrit and debate unfold on demand.
+- Boundary line: Every answer says what not to overclaim.
+- preserve the boundary: Answer composition demo, not live generation.
+- produce a copyable working-data handoff
+
+Answer Composer Workspace should never claim production storage, live retrieval, live AI generation, authentication, licensed source text, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH WORKING DATA SPRINT BLUEPRINT END -->
 
 ## Product Personality

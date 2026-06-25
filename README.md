@@ -299,6 +299,8 @@ Let us look at the source first.
 - [Query Router Demo Notes](docs/QUERY_ROUTER_DEMO.md)
 - [Local Retrieval Workspace](retrievalworkspace.html)
 - [Local Retrieval Workspace Notes](docs/LOCAL_RETRIEVAL_WORKSPACE.md)
+- [Answer Composer Workspace](answercomposer.html)
+- [Answer Composer Workspace Notes](docs/ANSWER_COMPOSER_WORKSPACE.md)
 <!-- VEDAPATH WORKING DATA SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -330,7 +332,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v1.5.7` is a trusted MVP prototype plus Local Retrieval Workspace with:
+`v1.5.8` is a trusted MVP prototype plus Answer Composer Workspace with:
 
 - Ask workspace
 - Source Card
@@ -480,6 +482,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Working Source Data Pack: Working Source Data Pack gives VedaPath a visible data spine: every answer starts from a record that can be reviewed, limited, and improved.
 - Query Router Demo: Query Router Demo makes the first invisible step visible: VedaPath should understand what kind of answer is allowed before it searches.
 - Local Retrieval Workspace: Local Retrieval Workspace gives VedaPath a practical search preview with eligible records, hold states, and visible match reasons.
+- Answer Composer Workspace: Answer Composer Workspace connects retrieval to the user-facing answer, preserving one calm structure across source, meaning, and boundary.
 <!-- VEDAPATH WORKING DATA SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
