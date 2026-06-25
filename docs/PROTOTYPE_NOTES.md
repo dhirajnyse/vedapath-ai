@@ -1,4 +1,4 @@
-# v0.9.3 Prototype Notes
+# v0.9.4 Prototype Notes
 
 The v0.7.4 release turns the VedaPath AI homepage into a trusted MVP prototype with calm, practice, source-library, source-seeds, retrieval, passage-review, evaluation, evaluation-dashboard, reviewer-queue, source-policy, trust-ledger, life-map, calm-circle, consent-gate, memory-gate, trust-model, calm-passport, backend-schema, schema-fixtures, evaluation-drill, learning-loop, sanskrit-lens, voice-boundary, scholar-review, launch-gate, production-bridge, source-storage, reviewer-access, public-feedback, launch-story, source-path, calm-compass, calm-card, source-bell, before-reply, samvada, sankalpa, seva, morning, evening, and rhythm surfaces.
 
@@ -76,6 +76,7 @@ The v0.7.4 release turns the VedaPath AI homepage into a trusted MVP prototype w
 - Teacher Companion Mode: Teacher Companion Mode gives educators source-first materials while keeping human teaching, tradition, and context central.
 - Student Study Mode: Student Study Mode turns VedaPath into a gentle study companion with source recall, comparison, and claim-checking habits.
 - Beta Signal Ledger: Beta Signal Ledger helps the founder learn from launch while keeping privacy, consent, and signal humility intact.
+- Public Beta Command Center: Public Beta Command Center completes the beta sprint and gives the founder one calm launch decision surface.
 <!-- VEDAPATH BETA SPRINT NOTES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff

@@ -157,6 +157,8 @@ Let us look at the source first.
 - [Student Study Mode Notes](docs/STUDENT_STUDY_MODE.md)
 - [Beta Signal Ledger](signals.html)
 - [Beta Signal Ledger Notes](docs/BETA_SIGNAL_LEDGER.md)
+- [Public Beta Command Center](command.html)
+- [Public Beta Command Center Notes](docs/PUBLIC_BETA_COMMAND_CENTER.md)
 <!-- VEDAPATH BETA SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -188,7 +190,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v0.9.3` is a trusted MVP prototype plus Beta Signal Ledger with:
+`v0.9.4` is a trusted MVP prototype plus Public Beta Command Center with:
 
 - Ask workspace
 - Source Card
@@ -260,6 +262,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Teacher Companion Mode: Teacher Companion Mode gives educators source-first materials while keeping human teaching, tradition, and context central.
 - Student Study Mode: Student Study Mode turns VedaPath into a gentle study companion with source recall, comparison, and claim-checking habits.
 - Beta Signal Ledger: Beta Signal Ledger helps the founder learn from launch while keeping privacy, consent, and signal humility intact.
+- Public Beta Command Center: Public Beta Command Center completes the beta sprint and gives the founder one calm launch decision surface.
 <!-- VEDAPATH BETA SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
