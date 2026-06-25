@@ -79,6 +79,7 @@ It helps users move from curiosity to understanding through:
 - Beta Launch Checklist: Beta Launch Checklist turns launch excitement into visible ready, review, privacy, and hold lanes.
 - First 25 Source Pack: First 25 Source Pack narrows the beta dataset to a small, reviewable, high-frequency group of source-backed questions.
 - Citation Inspector: Citation Inspector makes source quality visible before any answer receives high confidence.
+- Review Trail: Review Trail makes source and boundary decisions auditable without turning reviewer participation into broad endorsement.
 <!-- VEDAPATH READINESS SPRINT SUMMARY END -->
 
 ## What It Is
@@ -1323,6 +1324,21 @@ It should:
 - produce a copyable launch-readiness handoff
 
 Citation Inspector should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 81. Review Trail
+
+Review Trail makes source and boundary decisions auditable without turning reviewer participation into broad endorsement.
+
+It should:
+
+- Decision scope: Source, translation, boundary, rights, or product wording.
+- Decision state: Approve, hold, block, or request evidence.
+- Change note: What changed and why.
+- Display consent: Whether reviewer identity may be shown.
+- preserve the boundary: Review trail, not endorsement.
+- produce a copyable launch-readiness handoff
+
+Review Trail should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH READINESS SPRINT BLUEPRINT END -->
 
 ## Product Personality

@@ -167,6 +167,8 @@ Let us look at the source first.
 - [First 25 Source Pack Notes](docs/FIRST_25_SOURCE_PACK.md)
 - [Citation Inspector](citation.html)
 - [Citation Inspector Notes](docs/CITATION_INSPECTOR.md)
+- [Review Trail](reviewtrail.html)
+- [Review Trail Notes](docs/REVIEW_TRAIL.md)
 <!-- VEDAPATH READINESS SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -198,7 +200,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v0.9.7` is a trusted MVP prototype plus Citation Inspector with:
+`v0.9.8` is a trusted MVP prototype plus Review Trail with:
 
 - Ask workspace
 - Source Card
@@ -276,6 +278,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Beta Launch Checklist: Beta Launch Checklist turns launch excitement into visible ready, review, privacy, and hold lanes.
 - First 25 Source Pack: First 25 Source Pack narrows the beta dataset to a small, reviewable, high-frequency group of source-backed questions.
 - Citation Inspector: Citation Inspector makes source quality visible before any answer receives high confidence.
+- Review Trail: Review Trail makes source and boundary decisions auditable without turning reviewer participation into broad endorsement.
 <!-- VEDAPATH READINESS SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
