@@ -86,4 +86,4 @@ Trust Model is not:
 
 v0.5.1 adds Calm Passport so the Trust Model becomes visible to users through may-remember fields, must-not-remember fields, export, deletion, withdrawal, and local passport grants.
 
-v0.5.2 converts Trust Model and Calm Passport into the first backend schema draft with durable ids, table relationships, migration notes, account-memory consent, passport grants, export, and deletion flows. v0.5.3 should add schema fixtures and validation checks.
+v0.5.2 converts Trust Model and Calm Passport into the first backend schema draft with durable ids, table relationships, migration notes, account-memory consent, passport grants, export, and deletion flows. v0.5.3 adds schema fixtures and validation checks. v0.5.4 should combine answer drills with fixture drills.

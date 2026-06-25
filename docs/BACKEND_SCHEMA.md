@@ -124,9 +124,9 @@ The initial backend should preserve this order:
 - No account-backed calm pattern without explicit consent and passport controls.
 - No production claim that the schema is live before backend storage exists.
 
-## v0.5.3 Direction
+## v0.5.3 Fixture Pack
 
-The next release should add schema fixtures and validation checks:
+v0.5.3 adds schema fixtures and validation checks:
 
 - JSON sample rows for all seven tables
 - route validation examples
@@ -134,3 +134,7 @@ The next release should add schema fixtures and validation checks:
 - export payload shape
 - review-decision fixture
 - no-go test cases for hidden profiling and distress retention
+
+## v0.5.4 Direction
+
+The next release should add an Evaluation Drill Room that runs user-facing answer drafts, backend fixture checks, and no-go cases together before a release is considered safe.

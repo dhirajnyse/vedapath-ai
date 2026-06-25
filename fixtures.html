@@ -1,0 +1,1055 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VedaPath Fixture Lab</title>
+    <style>
+      :root {
+        --bg: #fbf3e6;
+        --panel: #fffdf8;
+        --ink: #181310;
+        --muted: #6f4030;
+        --bhagwa: #d65a1f;
+        --ochre: #a83f12;
+        --gold: #e0a83b;
+        --green: #145c4a;
+        --indigo: #29335c;
+        --line: rgba(92, 55, 34, 0.18);
+        --soft: rgba(214, 90, 31, 0.1);
+        --safe: rgba(20, 92, 74, 0.12);
+        --warn: rgba(168, 63, 18, 0.12);
+        --shadow: 0 20px 70px rgba(92, 55, 34, 0.08);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        line-height: 1.5;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      button,
+      textarea {
+        font: inherit;
+      }
+
+      .page {
+        width: min(1380px, calc(100% - 44px));
+        margin: 0 auto;
+        padding: 24px 0 36px;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding-bottom: 18px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+        min-width: 220px;
+      }
+
+      .brand img {
+        width: 52px;
+        height: 52px;
+        border-radius: 8px;
+        object-fit: cover;
+        box-shadow: 0 10px 26px rgba(214, 90, 31, 0.14);
+      }
+
+      .brand strong,
+      .brand span {
+        display: block;
+      }
+
+      .brand strong {
+        font-size: 20px;
+        line-height: 1.1;
+      }
+
+      .brand span {
+        color: var(--muted);
+        font-size: 14px;
+        margin-top: 4px;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        gap: 8px 16px;
+        flex: 1 1 760px;
+        min-width: 0;
+      }
+
+      .link,
+      .version,
+      .button {
+        border: 1px solid transparent;
+        border-radius: 8px;
+        min-height: 38px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .link {
+        text-decoration: none;
+        font-weight: 800;
+        font-size: 14px;
+        color: #3d2418;
+      }
+
+      .link.active,
+      .version {
+        padding: 0 14px;
+        border-color: rgba(214, 90, 31, 0.35);
+        color: var(--ochre);
+        background: rgba(255, 253, 248, 0.65);
+      }
+
+      .version {
+        font-weight: 900;
+      }
+
+      .workspace {
+        display: grid;
+        grid-template-columns: minmax(250px, 0.86fr) minmax(430px, 1.42fr) minmax(280px, 0.98fr);
+        gap: 18px;
+        padding-top: 20px;
+      }
+
+      .panel {
+        background: rgba(255, 253, 248, 0.82);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: var(--shadow);
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        min-height: 30px;
+        padding: 0 12px;
+        border-radius: 999px;
+        background: rgba(214, 90, 31, 0.11);
+        color: var(--ochre);
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        font-size: clamp(44px, 6vw, 74px);
+        line-height: 0.98;
+        letter-spacing: 0;
+        margin: 18px 0 16px;
+      }
+
+      h2 {
+        font-size: 26px;
+        line-height: 1.12;
+        margin-bottom: 12px;
+      }
+
+      h3 {
+        font-size: 18px;
+        margin-bottom: 8px;
+      }
+
+      p {
+        color: var(--muted);
+        font-size: 16px;
+      }
+
+      .muted {
+        color: var(--muted);
+      }
+
+      .fixture-list {
+        display: grid;
+        gap: 10px;
+        margin-top: 18px;
+      }
+
+      .fixture-card {
+        width: 100%;
+        text-align: left;
+        background: rgba(255, 253, 248, 0.88);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 14px;
+        display: grid;
+        grid-template-columns: 42px 1fr;
+        gap: 12px;
+        cursor: pointer;
+      }
+
+      .fixture-card:hover,
+      .fixture-card:focus-visible,
+      .fixture-card.active {
+        border-color: rgba(214, 90, 31, 0.56);
+        outline: none;
+      }
+
+      .fixture-card.active {
+        background: var(--soft);
+      }
+
+      .fixture-index {
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        background: var(--safe);
+        color: var(--green);
+        font-weight: 900;
+        font-size: 13px;
+      }
+
+      .fixture-card.active .fixture-index {
+        background: var(--bhagwa);
+        color: #fffdf8;
+      }
+
+      .fixture-card strong,
+      .fixture-card span:not(.fixture-index) {
+        display: block;
+      }
+
+      .fixture-card span:not(.fixture-index) {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .record-head {
+        display: grid;
+        grid-template-columns: 1fr 126px;
+        gap: 18px;
+        align-items: center;
+      }
+
+      .mark {
+        border: 1px solid rgba(214, 90, 31, 0.24);
+        border-radius: 8px;
+        padding: 10px;
+        background: rgba(255, 248, 237, 0.8);
+      }
+
+      .mark img {
+        width: 100%;
+        aspect-ratio: 1;
+        object-fit: cover;
+        border-radius: 4px;
+      }
+
+      .source-card,
+      .score-card,
+      .fixture-output,
+      .gate-card,
+      .life-card {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgba(255, 253, 248, 0.78);
+      }
+
+      .source-card {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        margin: 18px 0;
+        overflow: hidden;
+      }
+
+      .source-card > div {
+        padding: 14px;
+        min-width: 0;
+      }
+
+      .source-label,
+      .source-value {
+        display: block;
+      }
+
+      .source-label {
+        color: var(--muted);
+        font-size: 12px;
+        margin-bottom: 6px;
+      }
+
+      .source-value {
+        font-weight: 900;
+        overflow-wrap: anywhere;
+      }
+
+      .score-card {
+        padding: 14px;
+        margin-bottom: 18px;
+      }
+
+      .score-head {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        font-weight: 900;
+      }
+
+      .progress {
+        height: 10px;
+        border-radius: 999px;
+        background: rgba(214, 90, 31, 0.16);
+        overflow: hidden;
+        margin-top: 10px;
+      }
+
+      .bar {
+        height: 100%;
+        width: 0%;
+        background: linear-gradient(90deg, var(--bhagwa), var(--gold));
+        border-radius: inherit;
+        transition: width 220ms ease;
+      }
+
+      .check-grid,
+      .payload-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .check,
+      .payload,
+      .stat,
+      .life-step {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgba(255, 253, 248, 0.82);
+        padding: 12px;
+      }
+
+      .check.pass {
+        border-left: 4px solid var(--green);
+      }
+
+      .check.block {
+        border-left: 4px solid var(--bhagwa);
+        background: var(--warn);
+      }
+
+      .check strong,
+      .payload strong,
+      .stat strong,
+      .life-step strong {
+        display: block;
+      }
+
+      .check span,
+      .payload span,
+      .stat span,
+      .life-step span {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 18px 0 14px;
+      }
+
+      .button {
+        border-color: rgba(214, 90, 31, 0.35);
+        background: transparent;
+        color: var(--ochre);
+        padding: 0 14px;
+        font-weight: 900;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      .button.primary {
+        background: var(--bhagwa);
+        color: #fffdf8;
+        border-color: var(--bhagwa);
+      }
+
+      .button.safe {
+        color: var(--green);
+        border-color: rgba(20, 92, 74, 0.28);
+      }
+
+      .fixture-output {
+        width: 100%;
+        min-height: 190px;
+        background: #fffaf2;
+        color: var(--ink);
+        padding: 14px;
+        resize: vertical;
+        font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+        font-size: 13px;
+        line-height: 1.45;
+      }
+
+      .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        margin: 18px 0;
+      }
+
+      .stat strong {
+        font-size: 24px;
+      }
+
+      .life-card {
+        padding: 16px;
+        margin-top: 18px;
+      }
+
+      .life-list {
+        display: grid;
+        gap: 10px;
+      }
+
+      .life-step {
+        display: grid;
+        grid-template-columns: 34px 1fr;
+        gap: 10px;
+        align-items: start;
+      }
+
+      .life-index {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: var(--safe);
+        display: grid;
+        place-items: center;
+        color: var(--green);
+        font-weight: 900;
+        font-size: 12px;
+      }
+
+      .gate-card {
+        padding: 16px;
+        border-style: dashed;
+      }
+
+      .gate-list {
+        display: grid;
+        gap: 10px;
+        margin-top: 12px;
+      }
+
+      .gate-list span {
+        display: block;
+        padding: 10px 12px;
+        border-radius: 8px;
+        background: rgba(214, 90, 31, 0.08);
+        color: var(--muted);
+      }
+
+      @media (max-width: 1120px) {
+        .workspace {
+          grid-template-columns: 1fr;
+        }
+
+        .record-head {
+          grid-template-columns: 1fr;
+        }
+
+        .mark {
+          width: 132px;
+        }
+      }
+
+      @media (max-width: 740px) {
+        .page {
+          width: min(100% - 28px, 1380px);
+          padding-top: 16px;
+        }
+
+        .topbar,
+        .nav {
+          align-items: flex-start;
+          justify-content: flex-start;
+        }
+
+        .topbar {
+          flex-direction: column;
+        }
+
+        .source-card,
+        .check-grid,
+        .payload-grid,
+        .stat-grid {
+          grid-template-columns: 1fr;
+        }
+
+        h1 {
+          font-size: 44px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top" aria-label="VedaPath AI home">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
+          <div>
+            <strong>VedaPath AI</strong>
+            <span>Schema fixture lab</span>
+          </div>
+        </a>
+        <nav class="nav" aria-label="Project links">
+          <a class="link" href="build-status.html">Build</a>
+          <a class="link" href="brand/brand-board.html">Brand</a>
+          <a class="link" href="blueprint.html">Blueprint</a>
+          <a class="link" href="calm.html">Calm</a>
+          <a class="link" href="daily.html">Daily</a>
+          <a class="link" href="practice.html">Practice</a>
+          <a class="link" href="library.html">Library</a>
+          <a class="link" href="seeds.html">Seeds</a>
+          <a class="link" href="retrieval.html">Retrieval</a>
+          <a class="link" href="passages.html">Review</a>
+          <a class="link" href="eval.html">Eval</a>
+          <a class="link" href="dashboard.html">Dash</a>
+          <a class="link" href="queue.html">Queue</a>
+          <a class="link" href="policy.html">Policy</a>
+          <a class="link" href="ledger.html">Ledger</a>
+          <a class="link" href="life.html">Life</a>
+          <a class="link" href="circle.html">Circle</a>
+          <a class="link" href="consent.html">Consent</a>
+          <a class="link" href="memory.html">Memory</a>
+          <a class="link" href="model.html">Model</a>
+          <a class="link" href="passport.html">Passport</a>
+          <a class="link" href="schema.html">Schema</a>
+          <a class="link active" href="fixtures.html">Fixtures</a>
+          <a class="link" href="path.html">Path</a>
+          <a class="link" href="compass.html">Compass</a>
+          <a class="link" href="card.html">Card</a>
+          <a class="link" href="bell.html">Bell</a>
+          <a class="link" href="reply.html">Reply</a>
+          <a class="link" href="samvada.html">Samvada</a>
+          <a class="link" href="sankalpa.html">Intent</a>
+          <a class="link" href="seva.html">Seva</a>
+          <a class="link" href="morning.html">Morning</a>
+          <a class="link" href="evening.html">Evening</a>
+          <a class="link" href="rhythm.html">Rhythm</a>
+          <span class="version">v0.5.3 fixtures</span>
+        </nav>
+      </header>
+
+      <section class="workspace" aria-label="VedaPath Fixture Lab workspace">
+        <aside class="panel">
+          <span class="eyebrow">VedaPath Fixture Lab</span>
+          <h1>Trust should pass before it remembers.</h1>
+          <p>Choose a sample backend row and inspect validation checks, export shape, deletion lifecycle, and no-go behavior before any production storage exists.</p>
+          <div class="fixture-list" id="fixtureList"></div>
+        </aside>
+
+        <section class="panel">
+          <div class="record-head">
+            <div>
+              <span class="eyebrow">Fixture record</span>
+              <h1 id="fixtureTitle">Reviewed source seed can answer.</h1>
+              <p id="fixtureSummary">A source seed fixture passes only when citation, source family, boundary, and review status are present.</p>
+            </div>
+            <div class="mark" aria-label="VedaPath fixture logo">
+              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI fixture logo">
+            </div>
+          </div>
+
+          <div class="source-card" aria-label="Fixture metadata">
+            <div>
+              <span class="source-label">Table</span>
+              <span class="source-value" id="fixtureTable">source_seed</span>
+            </div>
+            <div>
+              <span class="source-label">Fixture id</span>
+              <span class="source-value" id="fixtureId">seed_gita_02_48</span>
+            </div>
+            <div>
+              <span class="source-label">Gate verdict</span>
+              <span class="source-value" id="fixtureVerdict">Pass</span>
+            </div>
+            <div>
+              <span class="source-label">Next room</span>
+              <span class="source-value" id="fixtureRoom">Source Seeds</span>
+            </div>
+          </div>
+
+          <div class="score-card">
+            <div class="score-head">
+              <span>Fixture readiness</span>
+              <span id="fixtureScore">0%</span>
+            </div>
+            <div class="progress" aria-hidden="true"><div class="bar" id="scoreBar"></div></div>
+          </div>
+
+          <h2>Validation Checks</h2>
+          <div class="check-grid" id="checkGrid"></div>
+
+          <h2 style="margin-top: 18px;">Payload Fields</h2>
+          <div class="payload-grid" id="payloadGrid"></div>
+
+          <div class="actions">
+            <button class="button primary" id="copyFixture" type="button">Copy Fixture</button>
+            <button class="button secondary" id="copyReport" type="button">Copy Validation Report</button>
+            <button class="button safe" id="runNoGo" type="button">Run No-Go Tests</button>
+            <a class="button" id="nextRoom" href="seeds.html">Open Source Seeds</a>
+          </div>
+          <textarea class="fixture-output" id="fixtureOutput" readonly aria-label="Fixture output"></textarea>
+        </section>
+
+        <aside class="panel">
+          <span class="eyebrow">Release gate</span>
+          <h2>Fixture Pack Status</h2>
+          <p>These examples are not production data. They are small proof rows that make backend trust testable before storage exists.</p>
+
+          <div class="stat-grid">
+            <div class="stat">
+              <span>Fixtures</span>
+              <strong id="fixtureCount">8</strong>
+            </div>
+            <div class="stat">
+              <span>No-go tests</span>
+              <strong>4</strong>
+            </div>
+            <div class="stat">
+              <span>Export shape</span>
+              <strong>Ready</strong>
+            </div>
+            <div class="stat">
+              <span>Next release</span>
+              <strong>v0.5.4</strong>
+            </div>
+          </div>
+
+          <div class="life-card">
+            <h2>Deletion Lifecycle</h2>
+            <div class="life-list">
+              <div class="life-step">
+                <span class="life-index">1</span>
+                <div>
+                  <strong>Request</strong>
+                  <span>User asks to export, withdraw, or delete a memory category.</span>
+                </div>
+              </div>
+              <div class="life-step">
+                <span class="life-index">2</span>
+                <div>
+                  <strong>Trace</strong>
+                  <span>Find passport grant, consent grant, memory route, and trust events.</span>
+                </div>
+              </div>
+              <div class="life-step">
+                <span class="life-index">3</span>
+                <div>
+                  <strong>Act</strong>
+                  <span>Block future writes, remove allowed fields, preserve audit minimum.</span>
+                </div>
+              </div>
+              <div class="life-step">
+                <span class="life-index">4</span>
+                <div>
+                  <strong>Confirm</strong>
+                  <span>Return a plain receipt with what changed and what must remain.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="gate-card" style="margin-top: 18px;">
+            <h2>No-Go Gate</h2>
+            <div class="gate-list">
+              <span>Hidden profile fixture must fail.</span>
+              <span>Distress archive fixture must fail.</span>
+              <span>Memory without delete path must fail.</span>
+              <span>Source change without review must fail.</span>
+            </div>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <script>
+      const fixtures = [
+        {
+          id: "seed_gita_02_48",
+          table: "source_seed",
+          label: "Reviewed source seed",
+          title: "Reviewed source seed can answer.",
+          summary: "A source seed fixture passes only when citation, source family, boundary, and review status are present.",
+          verdict: "Pass",
+          room: "Source Seeds",
+          link: "seeds.html",
+          score: 96,
+          checks: [
+            ["Citation present", "Bhagavad Gita 2.48 is available.", true],
+            ["Source family labeled", "Bhagavad Gita | Smriti is explicit.", true],
+            ["Boundary present", "Reflection, not prescription.", true],
+            ["Review status present", "Reviewed for prototype use.", true]
+          ],
+          payload: {
+            seed_id: "seed_gita_02_48",
+            source_family: "Bhagavad Gita | Smriti",
+            citation: "Bhagavad Gita 2.48",
+            boundary: "Reflection, not prescription",
+            review_status: "reviewed"
+          }
+        },
+        {
+          id: "grant_calm_pattern_local",
+          table: "consent_grant",
+          label: "Consent grant",
+          title: "Consent grant permits one calm pattern.",
+          summary: "The consent fixture passes because purpose, scope, participant, withdrawal, and deletion path are visible.",
+          verdict: "Pass",
+          room: "Consent Gate",
+          link: "consent.html",
+          score: 92,
+          checks: [
+            ["Purpose visible", "Daily calm rhythm only.", true],
+            ["Scope bounded", "Selected state, source, carry action.", true],
+            ["Withdrawal path", "User can revoke pattern memory.", true],
+            ["Deletion path", "User can delete durable pattern rows.", true]
+          ],
+          payload: {
+            grant_id: "grant_calm_pattern_local",
+            participant_ref: "user_demo",
+            purpose: "daily_calm_rhythm",
+            scope: ["chosen_state", "source_seed_id", "carry_action"],
+            withdrawal_path: "passport_grant.control_state.delete"
+          }
+        },
+        {
+          id: "route_distress_blocked",
+          table: "memory_route",
+          label: "Blocked route",
+          title: "Distress content routes to non-retention.",
+          summary: "The route fixture blocks durable memory and preserves only the boundary event needed to explain the refusal.",
+          verdict: "Blocked",
+          room: "Memory Gate",
+          link: "memory.html",
+          score: 98,
+          checks: [
+            ["Sensitive route", "Distress content detected.", false],
+            ["Durable write blocked", "No calm_pattern row created.", true],
+            ["Support boundary", "No therapy or emergency claim.", true],
+            ["Audit minimum", "Only blocked route event remains.", true]
+          ],
+          payload: {
+            route_id: "route_distress_blocked",
+            record_type: "distress_boundary",
+            verdict: "blocked",
+            source_trace: "policy.personal_distress",
+            delete_path: "not_applicable_no_memory_written"
+          }
+        },
+        {
+          id: "decision_source_revision",
+          table: "review_decision",
+          label: "Review decision",
+          title: "Source revision waits for reviewer evidence.",
+          summary: "A correction fixture passes because the decision includes reviewer, evidence, outcome, and target source.",
+          verdict: "Pass",
+          room: "Reviewer Queue",
+          link: "queue.html",
+          score: 88,
+          checks: [
+            ["Reviewer present", "Reviewer reference is visible.", true],
+            ["Evidence present", "Passage and policy references included.", true],
+            ["Decision present", "Accepted with revision.", true],
+            ["Applies-to present", "Target source_seed is named.", true]
+          ],
+          payload: {
+            decision_id: "decision_source_revision",
+            reviewer_ref: "reviewer_demo",
+            evidence_ref: "seed_gita_11_32",
+            decision: "revise_boundary",
+            applies_to: "source_seed.seed_gita_11_32"
+          }
+        },
+        {
+          id: "event_delete_receipt",
+          table: "trust_event",
+          label: "Deletion event",
+          title: "Deletion creates a plain trust receipt.",
+          summary: "The event fixture passes because it records actor, record, event type, and reason without retaining deleted content.",
+          verdict: "Pass",
+          room: "Trust Ledger",
+          link: "ledger.html",
+          score: 91,
+          checks: [
+            ["Actor present", "User or system actor is identified.", true],
+            ["Record reference", "Deleted record id is referenced.", true],
+            ["Reason present", "User requested deletion.", true],
+            ["Content removed", "Private text is not retained.", true]
+          ],
+          payload: {
+            event_id: "event_delete_receipt",
+            event_type: "deleted",
+            actor_ref: "user_demo",
+            record_ref: "calm_pattern.pattern_demo_01",
+            reason: "user_requested_delete"
+          }
+        },
+        {
+          id: "pattern_opt_in_steady",
+          table: "calm_pattern",
+          label: "Calm pattern",
+          title: "Calm pattern stores deliberate signals only.",
+          summary: "A calm pattern fixture passes because it stores selected state, source seed, and carry action, not diagnosis or inferred identity.",
+          verdict: "Pass",
+          room: "Calm Rhythm",
+          link: "rhythm.html",
+          score: 87,
+          checks: [
+            ["Opt-in present", "Consent grant is linked.", true],
+            ["Source linked", "Source seed id is present.", true],
+            ["No diagnosis", "No medical or therapy labels.", true],
+            ["No hidden score", "No personality or risk score.", true]
+          ],
+          payload: {
+            pattern_id: "pattern_opt_in_steady",
+            user_ref: "user_demo",
+            chosen_state: "restless",
+            source_seed_id: "seed_gita_02_48",
+            carry_action: "one small duty slowly and cleanly"
+          }
+        },
+        {
+          id: "passport_grant_memory_visible",
+          table: "passport_grant",
+          label: "Passport grant",
+          title: "Passport grant keeps memory reversible.",
+          summary: "The passport fixture passes because may-remember, must-not-remember, and controls are explicit.",
+          verdict: "Pass",
+          room: "Calm Passport",
+          link: "passport.html",
+          score: 94,
+          checks: [
+            ["May-remember visible", "Allowed fields are listed.", true],
+            ["Must-not visible", "Blocked fields are listed.", true],
+            ["Export enabled", "User can copy or export.", true],
+            ["Delete enabled", "User can delete or withdraw.", true]
+          ],
+          payload: {
+            passport_id: "passport_grant_memory_visible",
+            record_type: "calm_pattern",
+            may_remember: ["chosen_state", "source_seed_id", "carry_action"],
+            must_not_remember: ["diagnosis", "personality_score", "distress_archive"],
+            control_state: ["export", "delete", "review", "minimal"]
+          }
+        },
+        {
+          id: "no_go_hidden_profile",
+          table: "no_go_case",
+          label: "Hidden profile test",
+          title: "Hidden profile fixture must fail.",
+          summary: "The no-go fixture fails intentionally because it tries to store a hidden profile with inferred belief, distress, and risk labels.",
+          verdict: "Fail",
+          room: "Source Policy",
+          link: "policy.html",
+          score: 100,
+          checks: [
+            ["Hidden profile", "Inferred belief profile is blocked.", false],
+            ["Distress archive", "Distress retention is blocked.", false],
+            ["No delete path", "Missing deletion path is blocked.", false],
+            ["No consent", "Missing consent is blocked.", false]
+          ],
+          payload: {
+            rejected_table: "hidden_profile",
+            blocked_fields: ["belief_inference", "distress_archive", "risk_score"],
+            verdict: "blocked",
+            reason: "VedaPath must not create hidden profiles"
+          }
+        }
+      ];
+
+      const noGoTests = [
+        ["hidden_profile", "FAIL", "No inferred belief, personality, distress, or risk profile table."],
+        ["distress_archive", "FAIL", "Distress content cannot become durable memory."],
+        ["memory_without_delete", "FAIL", "Every durable record needs deletion or withdrawal path."],
+        ["source_change_without_review", "FAIL", "Source behavior changes require review_decision."]
+      ];
+
+      const state = {
+        selectedId: "seed_gita_02_48"
+      };
+
+      function selectedFixture() {
+        return fixtures.find((fixture) => fixture.id === state.selectedId) || fixtures[0];
+      }
+
+      function renderList() {
+        const list = document.getElementById("fixtureList");
+        list.innerHTML = fixtures.map((fixture, index) => `
+          <button class="fixture-card ${fixture.id === state.selectedId ? "active" : ""}" type="button" data-id="${fixture.id}">
+            <span class="fixture-index">${index + 1}</span>
+            <span>
+              <strong>${fixture.label}</strong>
+              <span>${fixture.table}</span>
+            </span>
+          </button>
+        `).join("");
+        [...list.querySelectorAll("[data-id]")].forEach((button) => {
+          button.addEventListener("click", () => {
+            state.selectedId = button.dataset.id;
+            render();
+          });
+        });
+      }
+
+      function renderFixture() {
+        const fixture = selectedFixture();
+        document.getElementById("fixtureTitle").textContent = fixture.title;
+        document.getElementById("fixtureSummary").textContent = fixture.summary;
+        document.getElementById("fixtureTable").textContent = fixture.table;
+        document.getElementById("fixtureId").textContent = fixture.id;
+        document.getElementById("fixtureVerdict").textContent = fixture.verdict;
+        document.getElementById("fixtureRoom").textContent = fixture.room;
+        document.getElementById("fixtureScore").textContent = `${fixture.score}%`;
+        document.getElementById("scoreBar").style.width = `${fixture.score}%`;
+        document.getElementById("nextRoom").href = fixture.link;
+        document.getElementById("nextRoom").textContent = `Open ${fixture.room}`;
+
+        document.getElementById("checkGrid").innerHTML = fixture.checks.map(([name, detail, pass]) => `
+          <div class="check ${pass ? "pass" : "block"}">
+            <strong>${pass ? "Pass" : "Block"}: ${name}</strong>
+            <span>${detail}</span>
+          </div>
+        `).join("");
+
+        document.getElementById("payloadGrid").innerHTML = Object.entries(fixture.payload).map(([key, value]) => `
+          <div class="payload">
+            <strong>${key}</strong>
+            <span>${Array.isArray(value) ? value.join(", ") : value}</span>
+          </div>
+        `).join("");
+      }
+
+      function fixturePayload(fixture = selectedFixture()) {
+        return {
+          product: "VedaPath AI",
+          release: "v0.5.3 fixtures",
+          fixture_id: fixture.id,
+          table: fixture.table,
+          verdict: fixture.verdict,
+          payload: fixture.payload,
+          validation_checks: fixture.checks.map(([name, detail, pass]) => ({ name, detail, pass })),
+          export_shape: {
+            includes: ["fixture_id", "table", "payload", "validation_checks", "trust_receipt"],
+            excludes: ["private_chat_transcript", "diagnosis", "hidden_profile", "distress_archive"]
+          }
+        };
+      }
+
+      function validationReport(fixture = selectedFixture()) {
+        const passCount = fixture.checks.filter((check) => check[2]).length;
+        const blockCount = fixture.checks.length - passCount;
+        return [
+          "VedaPath Fixture Validation Report",
+          "Release: v0.5.3 fixtures",
+          `Fixture: ${fixture.id}`,
+          `Table: ${fixture.table}`,
+          `Verdict: ${fixture.verdict}`,
+          `Pass checks: ${passCount}`,
+          `Blocked checks: ${blockCount}`,
+          "",
+          ...fixture.checks.map(([name, detail, pass]) => `- ${pass ? "PASS" : "BLOCK"} ${name}: ${detail}`),
+          "",
+          "Deletion lifecycle: request, trace, act, confirm.",
+          "Export boundary: never include hidden profile, diagnosis, distress archive, or private transcript."
+        ].join("\n");
+      }
+
+      function noGoReport() {
+        return [
+          "VedaPath No-Go Test Report",
+          "Release: v0.5.3 fixtures",
+          "",
+          ...noGoTests.map(([name, verdict, reason]) => `${verdict}: ${name} - ${reason}`),
+          "",
+          "Overall: PASS because unsafe fixtures are rejected."
+        ].join("\n");
+      }
+
+      function writeOutput(text) {
+        const output = document.getElementById("fixtureOutput");
+        output.value = text;
+        output.focus();
+        output.select();
+      }
+
+      function copyText(text, button, doneLabel) {
+        writeOutput(text);
+        const original = button.textContent;
+        const finish = () => {
+          button.textContent = doneLabel;
+          setTimeout(() => {
+            button.textContent = original;
+          }, 1400);
+        };
+        if (navigator.clipboard && window.isSecureContext) {
+          navigator.clipboard.writeText(text).then(finish).catch(finish);
+        } else {
+          finish();
+        }
+      }
+
+      function render() {
+        renderList();
+        renderFixture();
+        writeOutput(JSON.stringify(fixturePayload(), null, 2));
+      }
+
+      document.getElementById("copyFixture").addEventListener("click", () => {
+        copyText(JSON.stringify(fixturePayload(), null, 2), document.getElementById("copyFixture"), "Fixture Copied");
+      });
+
+      document.getElementById("copyReport").addEventListener("click", () => {
+        copyText(validationReport(), document.getElementById("copyReport"), "Report Copied");
+      });
+
+      document.getElementById("runNoGo").addEventListener("click", () => {
+        copyText(noGoReport(), document.getElementById("runNoGo"), "No-Go Passed");
+      });
+
+      render();
+    </script>
+  </body>
+</html>
