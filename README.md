@@ -226,6 +226,10 @@ Let us look at the source first.
 - [World Launch Beacon](launchbeacon.html)
 - [World Launch Beacon Notes](docs/WORLD_LAUNCH_BEACON.md)
 <!-- VEDAPATH PRODUCTIZATION SPRINT LINKS END -->
+<!-- VEDAPATH ACTIVATION SPRINT LINKS START -->
+- [Public Beta Welcome](betawelcome.html)
+- [Public Beta Welcome Notes](docs/PUBLIC_BETA_WELCOME.md)
+<!-- VEDAPATH ACTIVATION SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
 - [Calm Compass](compass.html)
@@ -256,7 +260,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v1.2.4` is a trusted MVP prototype plus World Launch Beacon with:
+`v1.2.5` is a trusted MVP prototype plus Public Beta Welcome with:
 
 - Ask workspace
 - Source Card
@@ -366,6 +370,9 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Founder Launch Pipeline: Founder Launch Pipeline gathers the practical public-launch lanes into one calm decision board for the founder.
 - World Launch Beacon: World Launch Beacon completes the productization sprint and frames VedaPath as calm, source-first, public-facing, and still honest about its limits.
 <!-- VEDAPATH PRODUCTIZATION SPRINT FEATURES END -->
+<!-- VEDAPATH ACTIVATION SPRINT FEATURES START -->
+- Public Beta Welcome: Public Beta Welcome gives VedaPath a simple public doorway for curious visitors, calm seekers, students, and reviewers.
+<!-- VEDAPATH ACTIVATION SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
 - Calm Card Studio with visual card preview, local saved cards, copy text, and PNG export

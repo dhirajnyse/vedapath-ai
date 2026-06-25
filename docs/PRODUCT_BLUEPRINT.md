@@ -111,6 +111,9 @@ It helps users move from curiosity to understanding through:
 - Founder Launch Pipeline: Founder Launch Pipeline gathers the practical public-launch lanes into one calm decision board for the founder.
 - World Launch Beacon: World Launch Beacon completes the productization sprint and frames VedaPath as calm, source-first, public-facing, and still honest about its limits.
 <!-- VEDAPATH PRODUCTIZATION SPRINT SUMMARY END -->
+<!-- VEDAPATH ACTIVATION SPRINT SUMMARY START -->
+- Public Beta Welcome: Public Beta Welcome gives VedaPath a simple public doorway for curious visitors, calm seekers, students, and reviewers.
+<!-- VEDAPATH ACTIVATION SPRINT SUMMARY END -->
 
 ## What It Is
 
@@ -1762,6 +1765,22 @@ It should:
 
 World Launch Beacon should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH PRODUCTIZATION SPRINT BLUEPRINT END -->
+<!-- VEDAPATH ACTIVATION SPRINT BLUEPRINT START -->
+### 108. Public Beta Welcome
+
+Public Beta Welcome gives VedaPath a simple public doorway for curious visitors, calm seekers, students, and reviewers.
+
+It should:
+
+- Choose path: Ask a source question, take a calm practice, or inspect trust.
+- Show boundary: Prototype status, no guru voice, no therapy claim, no ritual authority.
+- Use the logo: Keep the Bhagwa mark visible as energy with calm restraint.
+- Invite return: Offer a saved local path without forcing sign-in.
+- preserve the boundary: Welcome prototype, not production onboarding.
+- produce a copyable public beta activation handoff
+
+Public Beta Welcome should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
+<!-- VEDAPATH ACTIVATION SPRINT BLUEPRINT END -->
 
 ## Product Personality
 
