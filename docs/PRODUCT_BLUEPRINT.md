@@ -140,6 +140,7 @@ It helps users move from curiosity to understanding through:
 - Local Retrieval Demo: Local Retrieval Demo proves the first MVP answer can start with eligible source records instead of broad model guessing.
 - Answer Renderer Demo: Answer Renderer Demo turns source-first trust into one clean, repeatable card that stays readable on mobile.
 - Citation Drawer: Citation Drawer gives VedaPath a progressive evidence layer: simple answer first, inspectable source detail on demand.
+- Confidence Engine Demo: Confidence Engine Demo shows how VedaPath can produce high, medium, low, or no-answer states from inspectable source data.
 <!-- VEDAPATH MVP LANE SPRINT SUMMARY END -->
 
 ## What It Is
@@ -2154,6 +2155,21 @@ It should:
 - produce a copyable working-MVP-lane handoff
 
 Citation Drawer should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 132. Confidence Engine Demo
+
+Confidence Engine Demo shows how VedaPath can produce high, medium, low, or no-answer states from inspectable source data.
+
+It should:
+
+- Basis: Direct passage, commentary, scholarly view, analogy, or uncertain.
+- Review lane: Reviewed, draft, held, blocked, or specialist-needed.
+- Risk: Ritual, therapy, science, privacy, or category overclaim.
+- Result: High, medium, low, reviewer-needed, or no-source.
+- preserve the boundary: Confidence logic demo, not automated certification.
+- produce a copyable working-MVP-lane handoff
+
+Confidence Engine Demo should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH MVP LANE SPRINT BLUEPRINT END -->
 
 ## Product Personality

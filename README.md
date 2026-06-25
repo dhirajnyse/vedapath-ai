@@ -279,6 +279,8 @@ Let us look at the source first.
 - [Answer Renderer Demo Notes](docs/ANSWER_RENDERER_DEMO.md)
 - [Citation Drawer](citationdrawer.html)
 - [Citation Drawer Notes](docs/CITATION_DRAWER.md)
+- [Confidence Engine Demo](confidenceengine.html)
+- [Confidence Engine Demo Notes](docs/CONFIDENCE_ENGINE_DEMO.md)
 <!-- VEDAPATH MVP LANE SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -310,7 +312,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v1.4.8` is a trusted MVP prototype plus Citation Drawer with:
+`v1.4.9` is a trusted MVP prototype plus Confidence Engine Demo with:
 
 - Ask workspace
 - Source Card
@@ -449,6 +451,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Local Retrieval Demo: Local Retrieval Demo proves the first MVP answer can start with eligible source records instead of broad model guessing.
 - Answer Renderer Demo: Answer Renderer Demo turns source-first trust into one clean, repeatable card that stays readable on mobile.
 - Citation Drawer: Citation Drawer gives VedaPath a progressive evidence layer: simple answer first, inspectable source detail on demand.
+- Confidence Engine Demo: Confidence Engine Demo shows how VedaPath can produce high, medium, low, or no-answer states from inspectable source data.
 <!-- VEDAPATH MVP LANE SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
