@@ -1,4 +1,4 @@
-# v1.0.9 Prototype Notes
+# v1.1.0 Prototype Notes
 
 The v0.7.4 release turns the VedaPath AI homepage into a trusted MVP prototype with calm, practice, source-library, source-seeds, retrieval, passage-review, evaluation, evaluation-dashboard, reviewer-queue, source-policy, trust-ledger, life-map, calm-circle, consent-gate, memory-gate, trust-model, calm-passport, backend-schema, schema-fixtures, evaluation-drill, learning-loop, sanskrit-lens, voice-boundary, scholar-review, launch-gate, production-bridge, source-storage, reviewer-access, public-feedback, launch-story, source-path, calm-compass, calm-card, source-bell, before-reply, samvada, sankalpa, seva, morning, evening, and rhythm surfaces.
 
@@ -96,6 +96,7 @@ The v0.7.4 release turns the VedaPath AI homepage into a trusted MVP prototype w
 - Source API Contract: Source API Contract describes the service boundary that every trusted answer must call before claiming confidence.
 - Reviewer Workflow Contract: Reviewer Workflow Contract turns review from a vague trust word into scoped decisions, states, and release gates.
 - Retrieval Service Blueprint: Retrieval Service Blueprint makes production answer generation depend on review state, source specificity, and visible match reasons.
+- Answer Evaluation Harness: Answer Evaluation Harness turns VedaPath's trust rules into repeatable checks before new answer behavior is shipped.
 <!-- VEDAPATH PRODUCTION SPRINT NOTES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff

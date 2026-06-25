@@ -93,6 +93,7 @@ It helps users move from curiosity to understanding through:
 - Source API Contract: Source API Contract describes the service boundary that every trusted answer must call before claiming confidence.
 - Reviewer Workflow Contract: Reviewer Workflow Contract turns review from a vague trust word into scoped decisions, states, and release gates.
 - Retrieval Service Blueprint: Retrieval Service Blueprint makes production answer generation depend on review state, source specificity, and visible match reasons.
+- Answer Evaluation Harness: Answer Evaluation Harness turns VedaPath's trust rules into repeatable checks before new answer behavior is shipped.
 <!-- VEDAPATH PRODUCTION SPRINT SUMMARY END -->
 
 ## What It Is
@@ -1518,6 +1519,21 @@ It should:
 - produce a copyable production-readiness handoff
 
 Retrieval Service Blueprint should never claim production storage, verified answers, reviewer approval, authentication, analytics, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 93. Answer Evaluation Harness
+
+Answer Evaluation Harness turns VedaPath's trust rules into repeatable checks before new answer behavior is shipped.
+
+It should:
+
+- Citation coverage: Every serious answer needs citation or no-source explanation.
+- Category clarity: Veda, Upanishad, Gita, Purana, commentary, modern analogy.
+- Boundary safety: Guru voice, therapy, ritual, science overclaim, and privacy risks.
+- Escalation: Reviewer-needed cases become queue items.
+- preserve the boundary: Evaluation design, not automated certification.
+- produce a copyable production-readiness handoff
+
+Answer Evaluation Harness should never claim production storage, verified answers, reviewer approval, authentication, analytics, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH PRODUCTION SPRINT BLUEPRINT END -->
 
 ## Product Personality

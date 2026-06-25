@@ -193,6 +193,8 @@ Let us look at the source first.
 - [Reviewer Workflow Contract Notes](docs/REVIEWER_WORKFLOW_CONTRACT.md)
 - [Retrieval Service Blueprint](retrievalsvc.html)
 - [Retrieval Service Blueprint Notes](docs/RETRIEVAL_SERVICE_BLUEPRINT.md)
+- [Answer Evaluation Harness](evalharness.html)
+- [Answer Evaluation Harness Notes](docs/ANSWER_EVALUATION_HARNESS.md)
 <!-- VEDAPATH PRODUCTION SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -224,7 +226,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v1.0.9` is a trusted MVP prototype plus Retrieval Service Blueprint with:
+`v1.1.0` is a trusted MVP prototype plus Answer Evaluation Harness with:
 
 - Ask workspace
 - Source Card
@@ -316,6 +318,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Source API Contract: Source API Contract describes the service boundary that every trusted answer must call before claiming confidence.
 - Reviewer Workflow Contract: Reviewer Workflow Contract turns review from a vague trust word into scoped decisions, states, and release gates.
 - Retrieval Service Blueprint: Retrieval Service Blueprint makes production answer generation depend on review state, source specificity, and visible match reasons.
+- Answer Evaluation Harness: Answer Evaluation Harness turns VedaPath's trust rules into repeatable checks before new answer behavior is shipped.
 <!-- VEDAPATH PRODUCTION SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff

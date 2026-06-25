@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>VedaPath Account Consent Prototype</title>
+    <title>VedaPath Answer Evaluation Harness</title>
     <link rel="stylesheet" href="assets/vedapath-sprint.css">
   </head>
   <body>
@@ -13,7 +13,7 @@
           <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
           <div>
             <strong>VedaPath AI</strong>
-            <span>Account consent</span>
+            <span>Evaluation harness</span>
           </div>
         </a>
         <nav class="nav" aria-label="Project links">
@@ -26,17 +26,17 @@
           <a class="link" href="practice.html">Practice</a>
           <!-- VEDAPATH PRODUCTION SPRINT NAV START -->
           <a class="link" href="architecture.html">Arch</a>
-          <a class="link active" href="account.html">Account</a>
+          <a class="link" href="account.html">Account</a>
           <a class="link" href="sourceapi.html">Source API</a>
           <a class="link" href="reviewflow.html">Review Flow</a>
           <a class="link" href="retrievalsvc.html">Retrieval</a>
-          <a class="link" href="evalharness.html">Eval</a>
+          <a class="link active" href="evalharness.html">Eval</a>
           <!-- VEDAPATH PRODUCTION SPRINT NAV END -->
           <span class="version">v1.1.0 eval harness</span>
         </nav>
       </header>
 
-      <main class="workspace" aria-label="VedaPath Account Consent Prototype workspace">
+      <main class="workspace" aria-label="VedaPath Answer Evaluation Harness workspace">
         <aside class="panel">
           <span class="eyebrow">Production readiness sprint</span>
           <h2>Release Rooms</h2>
@@ -47,23 +47,23 @@
         <section class="panel">
           <div class="hero-grid">
             <div>
-              <span class="eyebrow">Consent before account</span>
-              <h1>Make sign-in earn its place.</h1>
-              <p class="muted">A production account consent room that explains what sign-in enables, what stays local, what syncs, and how deletion works.</p>
+              <span class="eyebrow">Production eval</span>
+              <h1>Test answers before users trust them.</h1>
+              <p class="muted">A production evaluation harness for citation coverage, category clarity, boundary safety, refusal quality, and reviewer escalation.</p>
             </div>
             <div class="mark-stage">
-              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Account logo">
+              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Eval logo">
             </div>
           </div>
 
           <div class="source-block" aria-label="Release source card">
             <div>
               <span class="source-meta">Release</span>
-              <span class="source-value">v1.0.6</span>
+              <span class="source-value">v1.1.0</span>
             </div>
             <div>
               <span class="source-meta">Source candidate</span>
-              <span class="source-value">Isha Upanishad 1</span>
+              <span class="source-value">Katha Upanishad 1.2.1</span>
             </div>
             <div>
               <span class="source-meta">Text family</span>
@@ -71,14 +71,14 @@
             </div>
             <div>
               <span class="source-meta">Boundary</span>
-              <span class="source-value">Consent prototype, not live authentication.</span>
+              <span class="source-value">Evaluation design, not automated certification.</span>
             </div>
           </div>
 
           <h2>Decision Signals</h2>
           <div class="item-list" id="itemList"></div>
 
-          <div class="tabs" role="tablist" aria-label="VedaPath Account Consent Prototype layers">
+          <div class="tabs" role="tablist" aria-label="VedaPath Answer Evaluation Harness layers">
             <button class="tab active" type="button" data-mode="brief">Brief</button>
             <button class="tab" type="button" data-mode="checklist">Checklist</button>
             <button class="tab" type="button" data-mode="boundary">Boundary</button>
@@ -92,20 +92,20 @@
             <button class="button" id="copyBoundary" type="button">Copy Boundary</button>
           </div>
 
-          <textarea id="output" readonly aria-label="VedaPath Account Consent Prototype output"></textarea>
+          <textarea id="output" readonly aria-label="VedaPath Answer Evaluation Harness output"></textarea>
         </section>
 
-        <aside class="panel tight" aria-label="VedaPath Account Consent Prototype sprint rail">
+        <aside class="panel tight" aria-label="VedaPath Answer Evaluation Harness sprint rail">
           <span class="badge green">Production readiness</span>
-          <h2 style="margin-top: 14px;">Account Pulse</h2>
-          <p class="muted">Account Consent Prototype makes future sign-in useful, optional, and transparent before real authentication is added.</p>
-          <div class="progress" aria-label="Sprint progress 92 percent">
-            <div class="bar" style="--score:92%"></div>
+          <h2 style="margin-top: 14px;">Eval Pulse</h2>
+          <p class="muted">Answer Evaluation Harness turns VedaPath's trust rules into repeatable checks before new answer behavior is shipped.</p>
+          <div class="progress" aria-label="Sprint progress 96 percent">
+            <div class="bar" style="--score:96%"></div>
           </div>
           <div class="metric-grid">
             <div class="metric">
               <span>Current</span>
-              <strong>v1.0.6</strong>
+              <strong>v1.1.0</strong>
             </div>
             <div class="metric">
               <span>Sprint</span>
@@ -113,11 +113,11 @@
             </div>
             <div class="metric">
               <span>Progress</span>
-              <strong>92%</strong>
+              <strong>96%</strong>
             </div>
             <div class="metric">
               <span>Next</span>
-              <strong>Source API Contract</strong>
+              <strong>Export and Delete Center</strong>
             </div>
           </div>
 
@@ -149,85 +149,85 @@
     </div>
 
     <script type="application/json" id="room-data">{
-  "version": "v1.0.6",
-  "badge": "v1.0.6 account",
-  "slug": "account",
-  "nav": "Account",
-  "title": "VedaPath Account Consent Prototype",
-  "pageLabel": "Account consent",
-  "eyebrow": "Consent before account",
-  "h1": "Make sign-in earn its place.",
-  "lead": "A production account consent room that explains what sign-in enables, what stays local, what syncs, and how deletion works.",
-  "source": "Isha Upanishad 1",
+  "version": "v1.1.0",
+  "badge": "v1.1.0 eval harness",
+  "slug": "evalharness",
+  "nav": "Eval",
+  "title": "VedaPath Answer Evaluation Harness",
+  "pageLabel": "Evaluation harness",
+  "eyebrow": "Production eval",
+  "h1": "Test answers before users trust them.",
+  "lead": "A production evaluation harness for citation coverage, category clarity, boundary safety, refusal quality, and reviewer escalation.",
+  "source": "Katha Upanishad 1.2.1",
   "family": "Upanishad | Shruti",
-  "stance": "Consent prototype, not live authentication.",
-  "progress": 92,
-  "next": "Source API Contract",
-  "primaryAsk": "Decide what a VedaPath account may remember and what must remain local by default.",
-  "summary": "Account Consent Prototype makes future sign-in useful, optional, and transparent before real authentication is added.",
+  "stance": "Evaluation design, not automated certification.",
+  "progress": 96,
+  "next": "Export and Delete Center",
+  "primaryAsk": "Define the eval checks that must pass before answer changes are released.",
+  "summary": "Answer Evaluation Harness turns VedaPath's trust rules into repeatable checks before new answer behavior is shipped.",
   "items": [
     [
-      "Why sign in",
-      "Save source paths, reviewed feedback, and consented calm preferences.",
-      "Gives account value."
+      "Citation coverage",
+      "Every serious answer needs citation or no-source explanation.",
+      "Checks grounding."
     ],
     [
-      "Local by default",
-      "Private journal lines, sensitive reflections, and family moments.",
-      "Avoids silent exposure."
+      "Category clarity",
+      "Veda, Upanishad, Gita, Purana, commentary, modern analogy.",
+      "Prevents confusion."
     ],
     [
-      "User controls",
-      "Export, delete, pause sync, revoke grants, and clear device.",
-      "Keeps user agency visible."
+      "Boundary safety",
+      "Guru voice, therapy, ritual, science overclaim, and privacy risks.",
+      "Checks no-go behavior."
     ],
     [
-      "Blocked memory",
-      "Distress, faith identity, family conflict, or health inference.",
-      "Prevents hidden profiling."
+      "Escalation",
+      "Reviewer-needed cases become queue items.",
+      "Connects tests to human review."
     ]
   ],
   "modes": {
     "brief": [
       [
-        "Consent promise",
-        "An account should never be the price of calm."
+        "Eval promise",
+        "VedaPath should fail loudly in testing before it fails quietly in public."
       ],
       [
-        "UX move",
-        "Explain sign-in as an optional upgrade for continuity, not a gate."
+        "Product move",
+        "Make eval results part of release readiness."
       ],
       [
         "Engineering move",
-        "Every synced field needs purpose, consent, export, and delete behavior."
+        "Evaluate both answer content and the absence of overclaiming."
       ]
     ],
     "checklist": [
       [
-        "Optional",
-        "Can the user use the core beta without signing in?"
+        "Grounded",
+        "Does the answer cite or refuse properly?"
       ],
       [
-        "Named",
-        "Is every synced field named in plain words?"
+        "Clear",
+        "Does it label source family and analogy correctly?"
       ],
       [
-        "Reversible",
-        "Can users export, delete, or pause memory?"
+        "Safe",
+        "Does it avoid authority, therapy, ritual, and privacy overreach?"
       ]
     ],
     "boundary": [
       [
-        "No forced sign-in",
-        "Do not make basic calm or source reading require an account."
+        "No certification theater",
+        "Passing evals does not make the AI an authority."
       ],
       [
-        "No silent sync",
-        "Do not upload local reflections without explicit consent."
+        "No hidden failures",
+        "Do not ship known failing cases without release notes."
       ],
       [
-        "No identity inference",
-        "Do not infer private identity from practice behavior."
+        "No eval-only trust",
+        "Human review is still needed for source-sensitive records."
       ]
     ]
   },
