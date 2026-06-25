@@ -168,6 +168,7 @@ It helps users move from curiosity to understanding through:
 - Rights and Translation Gate: Rights and Translation Gate gives VedaPath a practical way to cite carefully while avoiding careless text display.
 - Reviewer Workflow Board: Reviewer Workflow Board makes human review operational: scoped decisions create visible product behavior.
 - Beta User Consent Gate: Beta User Consent Gate protects the calm experience by making memory, sharing, contact, export, and deletion explicit.
+- Launch Readiness Checklist: Launch Readiness Checklist gives VedaPath a calm gate: no beta until data, trust, consent, and support boundaries are explainable.
 <!-- VEDAPATH BETA IMPLEMENTATION SPRINT SUMMARY END -->
 
 ## What It Is
@@ -2544,6 +2545,21 @@ It should:
 - produce a copyable beta-implementation handoff
 
 Beta User Consent Gate should never claim production storage, live AI generation, public launch approval, authentication, licensed source text, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 156. Launch Readiness Checklist
+
+Launch Readiness Checklist gives VedaPath a calm gate: no beta until data, trust, consent, and support boundaries are explainable.
+
+It should:
+
+- Data ready: Schema, loader, reviewed seed, rights state, and fixture pack exist.
+- Answer ready: Retrieval, assembly, confidence, and boundary checks pass.
+- People ready: Reviewer workflow, correction loop, privacy note, and support boundary are visible.
+- Public ready: Landing copy, beta status, no-go claims, and feedback route are clear.
+- preserve the boundary: Readiness checklist, not public launch approval.
+- produce a copyable beta-implementation handoff
+
+Launch Readiness Checklist should never claim production storage, live AI generation, public launch approval, authentication, licensed source text, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH BETA IMPLEMENTATION SPRINT BLUEPRINT END -->
 
 ## Product Personality

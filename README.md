@@ -331,6 +331,8 @@ Let us look at the source first.
 - [Reviewer Workflow Board Notes](docs/REVIEWER_WORKFLOW_BOARD.md)
 - [Beta User Consent Gate](betaconsent.html)
 - [Beta User Consent Gate Notes](docs/BETA_USER_CONSENT_GATE.md)
+- [Launch Readiness Checklist](betareadiness.html)
+- [Launch Readiness Checklist Notes](docs/LAUNCH_READINESS_CHECKLIST.md)
 <!-- VEDAPATH BETA IMPLEMENTATION SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -362,7 +364,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v1.7.2` is a trusted MVP prototype plus Beta User Consent Gate with:
+`v1.7.3` is a trusted MVP prototype plus Launch Readiness Checklist with:
 
 - Ask workspace
 - Source Card
@@ -529,6 +531,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Rights and Translation Gate: Rights and Translation Gate gives VedaPath a practical way to cite carefully while avoiding careless text display.
 - Reviewer Workflow Board: Reviewer Workflow Board makes human review operational: scoped decisions create visible product behavior.
 - Beta User Consent Gate: Beta User Consent Gate protects the calm experience by making memory, sharing, contact, export, and deletion explicit.
+- Launch Readiness Checklist: Launch Readiness Checklist gives VedaPath a calm gate: no beta until data, trust, consent, and support boundaries are explainable.
 <!-- VEDAPATH BETA IMPLEMENTATION SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff

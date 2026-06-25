@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>VedaPath Retrieval Scoring Harness</title>
+    <title>VedaPath Launch Readiness Checklist</title>
     <link rel="stylesheet" href="assets/vedapath-sprint.css">
   </head>
   <body>
@@ -13,7 +13,7 @@
           <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
           <div>
             <strong>VedaPath AI</strong>
-            <span>Retrieval scoring</span>
+            <span>Launch readiness</span>
           </div>
         </a>
         <nav class="nav" aria-label="Project links">
@@ -24,19 +24,19 @@
           <!-- VEDAPATH BETA IMPLEMENTATION SPRINT NAV START -->
           <a class="link" href="sourcecontract.html">Schema</a>
           <a class="link" href="datasetloader.html">Loader</a>
-          <a class="link active" href="retrievalscoring.html">Scoring</a>
+          <a class="link" href="retrievalscoring.html">Scoring</a>
           <a class="link" href="answerassembly.html">Assembly</a>
           <a class="link" href="fixturelab.html">Fixtures</a>
           <a class="link" href="rightsgate.html">Rights</a>
           <a class="link" href="reviewworkflow.html">Review</a>
           <a class="link" href="betaconsent.html">Consent</a>
-          <a class="link" href="betareadiness.html">Ready</a>
+          <a class="link active" href="betareadiness.html">Ready</a>
           <!-- VEDAPATH BETA IMPLEMENTATION SPRINT NAV END -->
           <span class="version">v1.7.3 readiness</span>
         </nav>
       </header>
 
-      <main class="workspace" aria-label="VedaPath Retrieval Scoring Harness workspace">
+      <main class="workspace" aria-label="VedaPath Launch Readiness Checklist workspace">
         <aside class="panel">
           <span class="eyebrow">Beta implementation sprint</span>
           <h2>Release Rooms</h2>
@@ -47,38 +47,38 @@
         <section class="panel">
           <div class="hero-grid">
             <div>
-              <span class="eyebrow">Retrieval logic</span>
-              <h1>Score match quality without hiding judgment.</h1>
-              <p class="muted">A retrieval scoring harness that explains why one source candidate was selected, held, or rejected.</p>
+              <span class="eyebrow">Beta readiness</span>
+              <h1>Launch only what the team can explain.</h1>
+              <p class="muted">A launch readiness checklist for source data, retrieval behavior, answer fixtures, review workflow, consent, privacy, and public copy.</p>
             </div>
             <div class="mark-stage">
-              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Scoring logo">
+              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Ready logo">
             </div>
           </div>
 
           <div class="source-block" aria-label="Release source card">
             <div>
               <span class="source-meta">Release</span>
-              <span class="source-value">v1.6.7</span>
+              <span class="source-value">v1.7.3</span>
             </div>
             <div>
               <span class="source-meta">Source candidate</span>
-              <span class="source-value">Rigveda 1.164.46</span>
+              <span class="source-value">Bhagavad Gita 4.34</span>
             </div>
             <div>
               <span class="source-meta">Text family</span>
-              <span class="source-value">Veda | Shruti</span>
+              <span class="source-value">Bhagavad Gita | Smriti</span>
             </div>
             <div>
               <span class="source-meta">Boundary</span>
-              <span class="source-value">Scoring harness, not production semantic search.</span>
+              <span class="source-value">Readiness checklist, not public launch approval.</span>
             </div>
           </div>
 
           <h2>Implementation Signals</h2>
           <div class="item-list" id="itemList"></div>
 
-          <div class="tabs" role="tablist" aria-label="VedaPath Retrieval Scoring Harness layers">
+          <div class="tabs" role="tablist" aria-label="VedaPath Launch Readiness Checklist layers">
             <button class="tab active" type="button" data-mode="brief">Brief</button>
             <button class="tab" type="button" data-mode="checklist">Checklist</button>
             <button class="tab" type="button" data-mode="boundary">Boundary</button>
@@ -92,20 +92,20 @@
             <button class="button" id="copyBoundary" type="button">Copy Boundary</button>
           </div>
 
-          <textarea id="output" readonly aria-label="VedaPath Retrieval Scoring Harness output"></textarea>
+          <textarea id="output" readonly aria-label="VedaPath Launch Readiness Checklist output"></textarea>
         </section>
 
-        <aside class="panel tight" aria-label="VedaPath Retrieval Scoring Harness sprint rail">
+        <aside class="panel tight" aria-label="VedaPath Launch Readiness Checklist sprint rail">
           <span class="badge green">Implementation path</span>
-          <h2 style="margin-top: 14px;">Scoring Pulse</h2>
-          <p class="muted">Retrieval Scoring Harness maps match strength, source eligibility, risk, and fallback behavior into an inspectable decision.</p>
-          <div class="progress" aria-label="Sprint progress 63 percent">
-            <div class="bar" style="--score:63%"></div>
+          <h2 style="margin-top: 14px;">Ready Pulse</h2>
+          <p class="muted">Launch Readiness Checklist gives VedaPath a calm gate: no beta until data, trust, consent, and support boundaries are explainable.</p>
+          <div class="progress" aria-label="Sprint progress 69 percent">
+            <div class="bar" style="--score:69%"></div>
           </div>
           <div class="metric-grid">
             <div class="metric">
               <span>Current</span>
-              <strong>v1.6.7</strong>
+              <strong>v1.7.3</strong>
             </div>
             <div class="metric">
               <span>Sprint</span>
@@ -113,11 +113,11 @@
             </div>
             <div class="metric">
               <span>Progress</span>
-              <strong>63%</strong>
+              <strong>69%</strong>
             </div>
             <div class="metric">
               <span>Next</span>
-              <strong>Answer Assembly Contract</strong>
+              <strong>Beta Implementation Control Room</strong>
             </div>
           </div>
 
@@ -149,71 +149,71 @@
     </div>
 
     <script type="application/json" id="room-data">{
-  "version": "v1.6.7",
-  "badge": "v1.6.7 scoring",
-  "slug": "retrievalscoring",
-  "nav": "Scoring",
-  "title": "VedaPath Retrieval Scoring Harness",
-  "pageLabel": "Retrieval scoring",
-  "eyebrow": "Retrieval logic",
-  "h1": "Score match quality without hiding judgment.",
-  "lead": "A retrieval scoring harness that explains why one source candidate was selected, held, or rejected.",
-  "source": "Rigveda 1.164.46",
-  "family": "Veda | Shruti",
-  "stance": "Scoring harness, not production semantic search.",
-  "progress": 63,
-  "next": "Answer Assembly Contract",
-  "primaryAsk": "Make retrieval scoring readable enough for both users and reviewers.",
-  "summary": "Retrieval Scoring Harness maps match strength, source eligibility, risk, and fallback behavior into an inspectable decision.",
+  "version": "v1.7.3",
+  "badge": "v1.7.3 readiness",
+  "slug": "betareadiness",
+  "nav": "Ready",
+  "title": "VedaPath Launch Readiness Checklist",
+  "pageLabel": "Launch readiness",
+  "eyebrow": "Beta readiness",
+  "h1": "Launch only what the team can explain.",
+  "lead": "A launch readiness checklist for source data, retrieval behavior, answer fixtures, review workflow, consent, privacy, and public copy.",
+  "source": "Bhagavad Gita 4.34",
+  "family": "Bhagavad Gita | Smriti",
+  "stance": "Readiness checklist, not public launch approval.",
+  "progress": 69,
+  "next": "Beta Implementation Control Room",
+  "primaryAsk": "Define the checklist that must be green before a public beta invite.",
+  "summary": "Launch Readiness Checklist gives VedaPath a calm gate: no beta until data, trust, consent, and support boundaries are explainable.",
   "items": [
     [
-      "Intent match",
-      "Question route is compared to allowed source intents.",
-      "Avoids wrong answer lanes."
+      "Data ready",
+      "Schema, loader, reviewed seed, rights state, and fixture pack exist.",
+      "Validates source inputs."
     ],
     [
-      "Concept match",
-      "Topic tags, Sanskrit concepts, and plain-language terms are compared.",
-      "Keeps retrieval useful."
+      "Answer ready",
+      "Retrieval, assembly, confidence, and boundary checks pass.",
+      "Validates output."
     ],
     [
-      "Trust weight",
-      "Review state and confidence basis adjust the result.",
-      "Keeps quality above volume."
+      "People ready",
+      "Reviewer workflow, correction loop, privacy note, and support boundary are visible.",
+      "Validates operations."
     ],
     [
-      "Reject reason",
-      "No match, unsafe scope, rights hold, or reviewer-needed appears plainly.",
-      "Keeps failure honest."
+      "Public ready",
+      "Landing copy, beta status, no-go claims, and feedback route are clear.",
+      "Validates launch story."
     ]
   ],
   "modes": {
     "brief": [
       [
         "Implementation promise",
-        "Retrieval Scoring Harness maps match strength, source eligibility, risk, and fallback behavior into an inspectable decision."
+        "Launch Readiness Checklist gives VedaPath a calm gate: no beta until data, trust, consent, and support boundaries are explainable."
       ],
       [
         "Founder move",
-        "Make retrieval scoring readable enough for both users and reviewers."
+        "Define the checklist that must be green before a public beta invite."
       ],
       [
         "Trust move",
-        "Keep this boundary visible: Scoring harness, not production semantic search."
+        "Keep this boundary visible: Readiness checklist, not public launch approval."
       ]
     ],
     "checklist": [
       [
-        "Intent match",
-        "Question route is compared to allowed source intents."
+        "Data ready",
+        "Schema, loader, reviewed seed, rights state, and fixture pack exist."
       ],
       [
-        "Concept match",
-        "Topic tags, Sanskrit concepts, and plain-language terms are compared."
+        "Answer ready",
+        "Retrieval, assembly, confidence, and boundary checks pass."
       ],
       [
-        "Trust weight",
-        "Review state and confidence basis adjust the result."
+        "People ready",
+        "Reviewer workflow, correction loop, privacy note, and support boundary are visible."
       ]
     ],
     "boundary": [
