@@ -1,6 +1,6 @@
-# v0.6.7 Prototype Notes
+# v0.6.8 Prototype Notes
 
-The v0.6.7 release turns the VedaPath AI homepage into a trusted MVP prototype with calm, practice, source-library, source-seeds, retrieval, passage-review, evaluation, evaluation-dashboard, reviewer-queue, source-policy, trust-ledger, life-map, calm-circle, consent-gate, memory-gate, trust-model, calm-passport, backend-schema, schema-fixtures, evaluation-drill, learning-loop, sanskrit-lens, voice-boundary, scholar-review, launch-gate, production-bridge, source-storage, reviewer-access, public-feedback, launch-story, source-path, calm-compass, calm-card, source-bell, before-reply, samvada, sankalpa, seva, morning, evening, and rhythm surfaces.
+The v0.6.8 release turns the VedaPath AI homepage into a trusted MVP prototype with calm, practice, source-library, source-seeds, retrieval, passage-review, evaluation, evaluation-dashboard, reviewer-queue, source-policy, trust-ledger, life-map, calm-circle, consent-gate, memory-gate, trust-model, calm-passport, backend-schema, schema-fixtures, evaluation-drill, learning-loop, sanskrit-lens, voice-boundary, scholar-review, launch-gate, production-bridge, source-storage, reviewer-access, public-feedback, launch-story, source-path, calm-compass, calm-card, source-bell, before-reply, samvada, sankalpa, seva, morning, evening, and rhythm surfaces.
 
 ## Included
 
@@ -46,6 +46,7 @@ The v0.6.7 release turns the VedaPath AI homepage into a trusted MVP prototype w
 - Founder Signal Map: Founder Signal Map turns curiosity, feedback, and early reactions into visible product signals without hidden tracking.
 - Trust Demo Tour: Trust Demo Tour gives the product a calm walkthrough: ask, source, boundary, review, feedback, story, and next action.
 - Source Record Studio: Source Record Studio makes source storage tactile: record fields, translation notes, review flags, and retrieval eligibility.
+- Reviewer Workbench: Reviewer Workbench turns review identity and access rules into a visible, role-scoped decision room.
 <!-- VEDAPATH LAUNCH SPRINT NOTES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff

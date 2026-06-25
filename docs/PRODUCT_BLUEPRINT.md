@@ -43,6 +43,7 @@ It helps users move from curiosity to understanding through:
 - Founder Signal Map: Founder Signal Map turns curiosity, feedback, and early reactions into visible product signals without hidden tracking.
 - Trust Demo Tour: Trust Demo Tour gives the product a calm walkthrough: ask, source, boundary, review, feedback, story, and next action.
 - Source Record Studio: Source Record Studio makes source storage tactile: record fields, translation notes, review flags, and retrieval eligibility.
+- Reviewer Workbench: Reviewer Workbench turns review identity and access rules into a visible, role-scoped decision room.
 <!-- VEDAPATH LAUNCH SPRINT SUMMARY END -->
 
 ## What It Is
@@ -834,6 +835,21 @@ It should:
 - produce a copyable founder handoff
 
 Source Record Studio should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 51. Reviewer Workbench
+
+Reviewer Workbench turns review identity and access rules into a visible, role-scoped decision room.
+
+It should:
+
+- Source lane: Citation, family, edition, and passage match.
+- Translation lane: Meaning, rendering, rights, and notes.
+- Boundary lane: No-go claims, calm safety, and authority posture.
+- Product lane: UX clarity, release notes, and user-facing flow.
+- preserve the boundary: Scoped review, not final verdict.
+- produce a copyable founder handoff
+
+Reviewer Workbench should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH LAUNCH SPRINT BLUEPRINT END -->
 
 ## Product Personality
