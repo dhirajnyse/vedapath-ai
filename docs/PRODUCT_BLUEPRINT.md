@@ -99,6 +99,9 @@ It helps users move from curiosity to understanding through:
 - Launch Ops Runbook: Launch Ops Runbook gives VedaPath a practical operating rhythm for release, feedback, incidents, rollback, and reviewer escalation.
 - Production Control Room: Production Control Room completes the production-readiness sprint and turns the next step into one concrete implementation lane.
 <!-- VEDAPATH PRODUCTION SPRINT SUMMARY END -->
+<!-- VEDAPATH PRODUCTIZATION SPRINT SUMMARY START -->
+- Source Service Sandbox: Source Service Sandbox gives VedaPath a narrow first implementation lane: one query, one candidate set, one eligibility decision, and one safe fallback.
+<!-- VEDAPATH PRODUCTIZATION SPRINT SUMMARY END -->
 
 ## What It Is
 
@@ -1599,6 +1602,22 @@ It should:
 
 Production Control Room should never claim production storage, verified answers, reviewer approval, authentication, analytics, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH PRODUCTION SPRINT BLUEPRINT END -->
+<!-- VEDAPATH PRODUCTIZATION SPRINT BLUEPRINT START -->
+### 98. Source Service Sandbox
+
+Source Service Sandbox gives VedaPath a narrow first implementation lane: one query, one candidate set, one eligibility decision, and one safe fallback.
+
+It should:
+
+- Query contract: Question text, source family hint, depth, language, and safety context.
+- Eligibility state: Ready, hold, blocked, rights-needed, reviewer-needed, or no-source.
+- Response reason: Match reason, missing fields, and public-display allowance.
+- Fallback: No-source and analogy-only answers get careful boundaries.
+- preserve the boundary: Service sandbox, not a live API.
+- produce a copyable public-productization handoff
+
+Source Service Sandbox should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
+<!-- VEDAPATH PRODUCTIZATION SPRINT BLUEPRINT END -->
 
 ## Product Personality
 

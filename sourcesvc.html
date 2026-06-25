@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VedaPath Source Service Sandbox</title>
+    <link rel="stylesheet" href="assets/vedapath-sprint.css">
+  </head>
+  <body>
+    <div class="shell" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top" aria-label="VedaPath AI home">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
+          <div>
+            <strong>VedaPath AI</strong>
+            <span>Source service sandbox</span>
+          </div>
+        </a>
+        <nav class="nav" aria-label="Project links">
+          <a class="link" href="build-status.html">Build</a>
+          <a class="link" href="brand/brand-board.html">Brand</a>
+          <a class="link" href="blueprint.html">Blueprint</a>
+          <a class="link" href="prodcontrol.html">Prod Control</a>
+          <a class="link" href="calm.html">Calm</a>
+          <a class="link" href="practice.html">Practice</a>
+          <!-- VEDAPATH PRODUCTIZATION SPRINT NAV START -->
+          <a class="link active" href="sourcesvc.html">Source Svc</a>
+          <!-- VEDAPATH PRODUCTIZATION SPRINT NAV END -->
+          <span class="version">v1.1.5 source svc</span>
+        </nav>
+      </header>
+
+      <main class="workspace" aria-label="VedaPath Source Service Sandbox workspace">
+        <aside class="panel">
+          <span class="eyebrow">Public productization sprint</span>
+          <h2>Release Rooms</h2>
+          <p class="muted">Ten focused rooms move VedaPath from production readiness toward a public, calm, source-first product shell.</p>
+          <div class="room-list" id="roomList"></div>
+        </aside>
+
+        <section class="panel">
+          <div class="hero-grid">
+            <div>
+              <span class="eyebrow">Backend lane preview</span>
+              <h1>Make the source service visible before it is live.</h1>
+              <p class="muted">A clickable sandbox for query shape, source eligibility, reviewer state, rights status, and no-source responses before production backend work begins.</p>
+            </div>
+            <div class="mark-stage">
+              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Source Svc logo">
+            </div>
+          </div>
+
+          <div class="source-block" aria-label="Release source card">
+            <div>
+              <span class="source-meta">Release</span>
+              <span class="source-value">v1.1.5</span>
+            </div>
+            <div>
+              <span class="source-meta">Source candidate</span>
+              <span class="source-value">Mundaka Upanishad 1.1.4</span>
+            </div>
+            <div>
+              <span class="source-meta">Text family</span>
+              <span class="source-value">Upanishad | Shruti</span>
+            </div>
+            <div>
+              <span class="source-meta">Boundary</span>
+              <span class="source-value">Service sandbox, not a live API.</span>
+            </div>
+          </div>
+
+          <h2>Decision Signals</h2>
+          <div class="item-list" id="itemList"></div>
+
+          <div class="tabs" role="tablist" aria-label="VedaPath Source Service Sandbox layers">
+            <button class="tab active" type="button" data-mode="brief">Brief</button>
+            <button class="tab" type="button" data-mode="checklist">Checklist</button>
+            <button class="tab" type="button" data-mode="boundary">Boundary</button>
+          </div>
+
+          <div id="modePanel"></div>
+
+          <div class="button-row" style="margin-top: 14px;">
+            <button class="button primary" id="copyBrief" type="button">Copy Brief</button>
+            <button class="button safe" id="copyJson" type="button">Copy JSON</button>
+            <button class="button" id="copyBoundary" type="button">Copy Boundary</button>
+          </div>
+
+          <textarea id="output" readonly aria-label="VedaPath Source Service Sandbox output"></textarea>
+        </section>
+
+        <aside class="panel tight" aria-label="VedaPath Source Service Sandbox sprint rail">
+          <span class="badge green">Public productization</span>
+          <h2 style="margin-top: 14px;">Source Svc Pulse</h2>
+          <p class="muted">Source Service Sandbox gives VedaPath a narrow first implementation lane: one query, one candidate set, one eligibility decision, and one safe fallback.</p>
+          <div class="progress" aria-label="Sprint progress 91 percent">
+            <div class="bar" style="--score:91%"></div>
+          </div>
+          <div class="metric-grid">
+            <div class="metric">
+              <span>Current</span>
+              <strong>v1.1.5</strong>
+            </div>
+            <div class="metric">
+              <span>Sprint</span>
+              <strong>1/10</strong>
+            </div>
+            <div class="metric">
+              <span>Progress</span>
+              <strong>91%</strong>
+            </div>
+            <div class="metric">
+              <span>Next</span>
+              <strong>Answer Preview Workbench</strong>
+            </div>
+          </div>
+
+          <div class="sprint-list">
+            <div class="sprint-step active">
+              <span class="step-index">1</span>
+              <div><strong>Focus</strong><p>Name the public use case.</p></div>
+            </div>
+            <div class="sprint-step">
+              <span class="step-index">2</span>
+              <div><strong>Ground</strong><p>Attach source and boundary.</p></div>
+            </div>
+            <div class="sprint-step">
+              <span class="step-index">3</span>
+              <div><strong>Control</strong><p>Show consent, review, or hold state.</p></div>
+            </div>
+            <div class="sprint-step">
+              <span class="step-index">4</span>
+              <div><strong>Ship</strong><p>Choose one honest next lane.</p></div>
+            </div>
+          </div>
+
+          <section class="panel tight boundary" style="margin-top: 16px;">
+            <h2>Release Boundary</h2>
+            <p class="muted">This is a public-productization prototype. It does not create production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, emergency support, or spiritual authority.</p>
+          </section>
+        </aside>
+      </main>
+    </div>
+
+    <script type="application/json" id="room-data">{
+  "version": "v1.1.5",
+  "badge": "v1.1.5 source svc",
+  "slug": "sourcesvc",
+  "nav": "Source Svc",
+  "title": "VedaPath Source Service Sandbox",
+  "pageLabel": "Source service sandbox",
+  "eyebrow": "Backend lane preview",
+  "h1": "Make the source service visible before it is live.",
+  "lead": "A clickable sandbox for query shape, source eligibility, reviewer state, rights status, and no-source responses before production backend work begins.",
+  "source": "Mundaka Upanishad 1.1.4",
+  "family": "Upanishad | Shruti",
+  "stance": "Service sandbox, not a live API.",
+  "progress": 91,
+  "next": "Answer Preview Workbench",
+  "primaryAsk": "Freeze the public source-service contract before writing production retrieval code.",
+  "summary": "Source Service Sandbox gives VedaPath a narrow first implementation lane: one query, one candidate set, one eligibility decision, and one safe fallback.",
+  "items": [
+    [
+      "Query contract",
+      "Question text, source family hint, depth, language, and safety context.",
+      "Keeps input shape small."
+    ],
+    [
+      "Eligibility state",
+      "Ready, hold, blocked, rights-needed, reviewer-needed, or no-source.",
+      "Stops false confidence early."
+    ],
+    [
+      "Response reason",
+      "Match reason, missing fields, and public-display allowance.",
+      "Makes retrieval explainable."
+    ],
+    [
+      "Fallback",
+      "No-source and analogy-only answers get careful boundaries.",
+      "Protects the user's trust."
+    ]
+  ],
+  "modes": {
+    "brief": [
+      [
+        "Build promise",
+        "The backend should first make source state visible, not clever."
+      ],
+      [
+        "UX move",
+        "Show eligibility and match reason beside the answer."
+      ],
+      [
+        "Engineering move",
+        "Return no-source as a product state, not as an error."
+      ]
+    ],
+    "checklist": [
+      [
+        "Small",
+        "Can one endpoint answer one source lookup clearly?"
+      ],
+      [
+        "Gated",
+        "Can it block hold and rights-needed records?"
+      ],
+      [
+        "Readable",
+        "Can a non-engineer understand why the answer was allowed?"
+      ]
+    ],
+    "boundary": [
+      [
+        "No live claim",
+        "Do not call this a deployed API."
+      ],
+      [
+        "No hidden confidence",
+        "Do not let the answer layer invent confidence."
+      ],
+      [
+        "No rights bypass",
+        "Do not display restricted translation or audio fields."
+      ]
+    ]
+  },
+  "rooms": [
+    {
+      "version": "v1.1.5",
+      "slug": "sourcesvc",
+      "nav": "Source Svc"
+    }
+  ]
+}</script>
+    <script src="assets/vedapath-sprint.js"></script>
+  </body>
+</html>

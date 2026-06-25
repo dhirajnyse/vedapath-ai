@@ -204,6 +204,10 @@ Let us look at the source first.
 - [Production Control Room](prodcontrol.html)
 - [Production Control Room Notes](docs/PRODUCTION_CONTROL_ROOM.md)
 <!-- VEDAPATH PRODUCTION SPRINT LINKS END -->
+<!-- VEDAPATH PRODUCTIZATION SPRINT LINKS START -->
+- [Source Service Sandbox](sourcesvc.html)
+- [Source Service Sandbox Notes](docs/SOURCE_SERVICE_SANDBOX.md)
+<!-- VEDAPATH PRODUCTIZATION SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
 - [Calm Compass](compass.html)
@@ -234,7 +238,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v1.1.4` is a trusted MVP prototype plus Production Control Room with:
+`v1.1.5` is a trusted MVP prototype plus Source Service Sandbox with:
 
 - Ask workspace
 - Source Card
@@ -332,6 +336,9 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Launch Ops Runbook: Launch Ops Runbook gives VedaPath a practical operating rhythm for release, feedback, incidents, rollback, and reviewer escalation.
 - Production Control Room: Production Control Room completes the production-readiness sprint and turns the next step into one concrete implementation lane.
 <!-- VEDAPATH PRODUCTION SPRINT FEATURES END -->
+<!-- VEDAPATH PRODUCTIZATION SPRINT FEATURES START -->
+- Source Service Sandbox: Source Service Sandbox gives VedaPath a narrow first implementation lane: one query, one candidate set, one eligibility decision, and one safe fallback.
+<!-- VEDAPATH PRODUCTIZATION SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
 - Calm Card Studio with visual card preview, local saved cards, copy text, and PNG export
