@@ -123,6 +123,9 @@ It helps users move from curiosity to understanding through:
 - Launch Story Studio: Launch Story Studio helps VedaPath speak to the world with calm confidence and visible limits.
 - Public Beta Beacon: Public Beta Beacon completes the activation sprint and gives VedaPath one calm decision surface before real public beta work.
 <!-- VEDAPATH ACTIVATION SPRINT SUMMARY END -->
+<!-- VEDAPATH IMPLEMENTATION SPRINT SUMMARY START -->
+- Source JSON Contract: Source JSON Contract gives VedaPath a stable source-record shape that future retrieval, review, and answer rendering can share.
+<!-- VEDAPATH IMPLEMENTATION SPRINT SUMMARY END -->
 
 ## What It Is
 
@@ -1925,6 +1928,22 @@ It should:
 
 Public Beta Beacon should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH ACTIVATION SPRINT BLUEPRINT END -->
+<!-- VEDAPATH IMPLEMENTATION SPRINT BLUEPRINT START -->
+### 118. Source JSON Contract
+
+Source JSON Contract gives VedaPath a stable source-record shape that future retrieval, review, and answer rendering can share.
+
+It should:
+
+- Identity: Source id, citation, family, text layer, and edition note.
+- Use rights: Display allowed, quote limit, translation status, and audio status.
+- Review: Lane states for source, language, boundary, and product.
+- Coverage: Questions it can answer and claims it must refuse.
+- preserve the boundary: Data contract, not a live database.
+- produce a copyable implementation-readiness handoff
+
+Source JSON Contract should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
+<!-- VEDAPATH IMPLEMENTATION SPRINT BLUEPRINT END -->
 
 ## Product Personality
 

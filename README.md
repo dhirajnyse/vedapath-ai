@@ -248,6 +248,10 @@ Let us look at the source first.
 - [Public Beta Beacon](betabeacon.html)
 - [Public Beta Beacon Notes](docs/PUBLIC_BETA_BEACON.md)
 <!-- VEDAPATH ACTIVATION SPRINT LINKS END -->
+<!-- VEDAPATH IMPLEMENTATION SPRINT LINKS START -->
+- [Source JSON Contract](sourcejson.html)
+- [Source JSON Contract Notes](docs/SOURCE_JSON_CONTRACT.md)
+<!-- VEDAPATH IMPLEMENTATION SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
 - [Calm Compass](compass.html)
@@ -278,7 +282,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v1.3.4` is a trusted MVP prototype plus Public Beta Beacon with:
+`v1.3.5` is a trusted MVP prototype plus Source JSON Contract with:
 
 - Ask workspace
 - Source Card
@@ -400,6 +404,9 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Launch Story Studio: Launch Story Studio helps VedaPath speak to the world with calm confidence and visible limits.
 - Public Beta Beacon: Public Beta Beacon completes the activation sprint and gives VedaPath one calm decision surface before real public beta work.
 <!-- VEDAPATH ACTIVATION SPRINT FEATURES END -->
+<!-- VEDAPATH IMPLEMENTATION SPRINT FEATURES START -->
+- Source JSON Contract: Source JSON Contract gives VedaPath a stable source-record shape that future retrieval, review, and answer rendering can share.
+<!-- VEDAPATH IMPLEMENTATION SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
 - Calm Card Studio with visual card preview, local saved cards, copy text, and PNG export
