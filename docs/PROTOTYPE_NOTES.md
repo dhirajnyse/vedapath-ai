@@ -1,4 +1,4 @@
-# v0.8.1 Prototype Notes
+# v0.8.2 Prototype Notes
 
 The v0.7.4 release turns the VedaPath AI homepage into a trusted MVP prototype with calm, practice, source-library, source-seeds, retrieval, passage-review, evaluation, evaluation-dashboard, reviewer-queue, source-policy, trust-ledger, life-map, calm-circle, consent-gate, memory-gate, trust-model, calm-passport, backend-schema, schema-fixtures, evaluation-drill, learning-loop, sanskrit-lens, voice-boundary, scholar-review, launch-gate, production-bridge, source-storage, reviewer-access, public-feedback, launch-story, source-path, calm-compass, calm-card, source-bell, before-reply, samvada, sankalpa, seva, morning, evening, and rhythm surfaces.
 
@@ -62,6 +62,7 @@ The v0.7.4 release turns the VedaPath AI homepage into a trusted MVP prototype w
 - Family Calm Mode: Family Calm Mode helps a household slow one conversation without storing private conflict or acting as a counselor.
 - Workplace Steadiness Mode: Workplace Steadiness Mode translates calm into practical work moments without pretending to manage careers or mental health.
 - Festival and Daily Calendar: Festival and Daily Calendar gives VedaPath a seasonal learning layer while keeping regional, ritual, and date boundaries explicit.
+- Mantra Pronunciation Prep: Mantra Pronunciation Prep turns future audio into a careful source, review, and rights workflow before any sound is shipped.
 <!-- VEDAPATH PERSONAL SPRINT NOTES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff

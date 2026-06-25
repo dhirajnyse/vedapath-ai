@@ -59,6 +59,7 @@ It helps users move from curiosity to understanding through:
 - Family Calm Mode: Family Calm Mode helps a household slow one conversation without storing private conflict or acting as a counselor.
 - Workplace Steadiness Mode: Workplace Steadiness Mode translates calm into practical work moments without pretending to manage careers or mental health.
 - Festival and Daily Calendar: Festival and Daily Calendar gives VedaPath a seasonal learning layer while keeping regional, ritual, and date boundaries explicit.
+- Mantra Pronunciation Prep: Mantra Pronunciation Prep turns future audio into a careful source, review, and rights workflow before any sound is shipped.
 <!-- VEDAPATH PERSONAL SPRINT SUMMARY END -->
 
 ## What It Is
@@ -1061,6 +1062,21 @@ It should:
 - produce a copyable founder handoff
 
 Festival and Daily Calendar should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 65. Mantra Pronunciation Prep
+
+Mantra Pronunciation Prep turns future audio into a careful source, review, and rights workflow before any sound is shipped.
+
+It should:
+
+- Source: Passage, meter, deity, seer, and source URL.
+- Text: Devanagari, IAST, word split, and syllable groups.
+- Review: Source reviewer, pronunciation reviewer, and rights reviewer.
+- Audio gate: License, speaker, tradition note, and silent fallback.
+- preserve the boundary: Pronunciation prep, not recitation authority.
+- produce a copyable founder handoff
+
+Mantra Pronunciation Prep should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH PERSONAL SPRINT BLUEPRINT END -->
 
 ## Product Personality
