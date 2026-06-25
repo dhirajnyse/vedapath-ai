@@ -84,6 +84,7 @@ It helps users move from curiosity to understanding through:
 - Pilot Launch Room: Pilot Launch Room defines a small beta launch with audience, promise, source scope, feedback path, and stop conditions.
 - Feedback Triage Lab: Feedback Triage Lab turns beta reactions into actionable queues while blocking sensitive private intake.
 - Educator Kit: Educator Kit packages VedaPath's source-first method into teacher-safe cards and discussion prompts.
+- Return Rhythm Board: Return Rhythm Board shapes VedaPath retention around source curiosity, calm practice, and user-owned rhythm.
 <!-- VEDAPATH READINESS SPRINT SUMMARY END -->
 
 ## What It Is
@@ -1403,6 +1404,21 @@ It should:
 - produce a copyable launch-readiness handoff
 
 Educator Kit should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 86. Return Rhythm Board
+
+Return Rhythm Board shapes VedaPath retention around source curiosity, calm practice, and user-owned rhythm.
+
+It should:
+
+- Daily source: One optional passage or concept.
+- Weekly review: One source learned, one claim corrected, one calm action carried.
+- Local streak: Device-local completion count with clear reset.
+- Reminder boundary: No guilt, no spiritual ranking, no private inference.
+- preserve the boundary: Return rhythm, not habit pressure.
+- produce a copyable launch-readiness handoff
+
+Return Rhythm Board should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH READINESS SPRINT BLUEPRINT END -->
 
 ## Product Personality
