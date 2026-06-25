@@ -150,6 +150,7 @@ It helps users move from curiosity to understanding through:
 <!-- VEDAPATH WORKING DATA SPRINT SUMMARY START -->
 - Working Source Data Pack: Working Source Data Pack gives VedaPath a visible data spine: every answer starts from a record that can be reviewed, limited, and improved.
 - Query Router Demo: Query Router Demo makes the first invisible step visible: VedaPath should understand what kind of answer is allowed before it searches.
+- Local Retrieval Workspace: Local Retrieval Workspace gives VedaPath a practical search preview with eligible records, hold states, and visible match reasons.
 <!-- VEDAPATH WORKING DATA SPRINT SUMMARY END -->
 
 ## What It Is
@@ -2285,6 +2286,21 @@ It should:
 - produce a copyable working-data handoff
 
 Query Router Demo should never claim production storage, live retrieval, live AI generation, authentication, licensed source text, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 140. Local Retrieval Workspace
+
+Local Retrieval Workspace gives VedaPath a practical search preview with eligible records, hold states, and visible match reasons.
+
+It should:
+
+- Candidate list: Return a small list with citation, family, topic, and review state.
+- Match reason: Explain the keyword, concept, or category connection.
+- Eligibility gate: Blocked, rights-needed, and specialist-needed records cannot answer publicly.
+- No-source path: When nothing fits, the product says so plainly.
+- preserve the boundary: Local retrieval demo, not production search.
+- produce a copyable working-data handoff
+
+Local Retrieval Workspace should never claim production storage, live retrieval, live AI generation, authentication, licensed source text, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH WORKING DATA SPRINT BLUEPRINT END -->
 
 ## Product Personality

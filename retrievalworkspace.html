@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>VedaPath Query Router Demo</title>
+    <title>VedaPath Local Retrieval Workspace</title>
     <link rel="stylesheet" href="assets/vedapath-sprint.css">
   </head>
   <body>
@@ -13,7 +13,7 @@
           <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
           <div>
             <strong>VedaPath AI</strong>
-            <span>Query router</span>
+            <span>Local retrieval workspace</span>
           </div>
         </a>
         <nav class="nav" aria-label="Project links">
@@ -25,14 +25,14 @@
           <a class="link" href="mvpcontrol.html">MVP Control</a>
           <!-- VEDAPATH WORKING DATA SPRINT NAV START -->
           <a class="link" href="workingdata.html">Data</a>
-          <a class="link active" href="queryrouter.html">Router</a>
-          <a class="link" href="retrievalworkspace.html">Retrieve</a>
+          <a class="link" href="queryrouter.html">Router</a>
+          <a class="link active" href="retrievalworkspace.html">Retrieve</a>
           <!-- VEDAPATH WORKING DATA SPRINT NAV END -->
           <span class="version">v1.5.7 retrieval</span>
         </nav>
       </header>
 
-      <main class="workspace" aria-label="VedaPath Query Router Demo workspace">
+      <main class="workspace" aria-label="VedaPath Local Retrieval Workspace workspace">
         <aside class="panel">
           <span class="eyebrow">Working data demo sprint</span>
           <h2>Release Rooms</h2>
@@ -43,38 +43,38 @@
         <section class="panel">
           <div class="hero-grid">
             <div>
-              <span class="eyebrow">Question routing</span>
-              <h1>Route the question before answering it.</h1>
-              <p class="muted">A simple router that classifies a question as source lookup, category check, calm reflection, interpretation comparison, or reviewer-needed.</p>
+              <span class="eyebrow">Retrieval workspace</span>
+              <h1>Rank only the records that are allowed to answer.</h1>
+              <p class="muted">A retrieval workspace that scores source candidates by eligibility, match reason, source family, review state, and boundary fit.</p>
             </div>
             <div class="mark-stage">
-              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Router logo">
+              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Retrieve logo">
             </div>
           </div>
 
           <div class="source-block" aria-label="Release source card">
             <div>
               <span class="source-meta">Release</span>
-              <span class="source-value">v1.5.6</span>
+              <span class="source-value">v1.5.7</span>
             </div>
             <div>
               <span class="source-meta">Source candidate</span>
-              <span class="source-value">Rigveda 1.164.46</span>
+              <span class="source-value">Mundaka Upanishad 1.1.4</span>
             </div>
             <div>
               <span class="source-meta">Text family</span>
-              <span class="source-value">Veda | Shruti</span>
+              <span class="source-value">Upanishad | Shruti</span>
             </div>
             <div>
               <span class="source-meta">Boundary</span>
-              <span class="source-value">Routing prototype, not live classification.</span>
+              <span class="source-value">Local retrieval demo, not production search.</span>
             </div>
           </div>
 
           <h2>Working Chain Signals</h2>
           <div class="item-list" id="itemList"></div>
 
-          <div class="tabs" role="tablist" aria-label="VedaPath Query Router Demo layers">
+          <div class="tabs" role="tablist" aria-label="VedaPath Local Retrieval Workspace layers">
             <button class="tab active" type="button" data-mode="brief">Brief</button>
             <button class="tab" type="button" data-mode="checklist">Checklist</button>
             <button class="tab" type="button" data-mode="boundary">Boundary</button>
@@ -88,20 +88,20 @@
             <button class="button" id="copyBoundary" type="button">Copy Boundary</button>
           </div>
 
-          <textarea id="output" readonly aria-label="VedaPath Query Router Demo output"></textarea>
+          <textarea id="output" readonly aria-label="VedaPath Local Retrieval Workspace output"></textarea>
         </section>
 
-        <aside class="panel tight" aria-label="VedaPath Query Router Demo sprint rail">
+        <aside class="panel tight" aria-label="VedaPath Local Retrieval Workspace sprint rail">
           <span class="badge green">Working MVP chain</span>
-          <h2 style="margin-top: 14px;">Router Pulse</h2>
-          <p class="muted">Query Router Demo makes the first invisible step visible: VedaPath should understand what kind of answer is allowed before it searches.</p>
-          <div class="progress" aria-label="Sprint progress 102 percent">
-            <div class="bar" style="--score:102%"></div>
+          <h2 style="margin-top: 14px;">Retrieve Pulse</h2>
+          <p class="muted">Local Retrieval Workspace gives VedaPath a practical search preview with eligible records, hold states, and visible match reasons.</p>
+          <div class="progress" aria-label="Sprint progress 103 percent">
+            <div class="bar" style="--score:103%"></div>
           </div>
           <div class="metric-grid">
             <div class="metric">
               <span>Current</span>
-              <strong>v1.5.6</strong>
+              <strong>v1.5.7</strong>
             </div>
             <div class="metric">
               <span>Sprint</span>
@@ -109,11 +109,11 @@
             </div>
             <div class="metric">
               <span>Progress</span>
-              <strong>102%</strong>
+              <strong>103%</strong>
             </div>
             <div class="metric">
               <span>Next</span>
-              <strong>Local Retrieval Workspace</strong>
+              <strong>Answer Composer Workspace</strong>
             </div>
           </div>
 
@@ -145,71 +145,71 @@
     </div>
 
     <script type="application/json" id="room-data">{
-  "version": "v1.5.6",
-  "badge": "v1.5.6 router",
-  "slug": "queryrouter",
-  "nav": "Router",
-  "title": "VedaPath Query Router Demo",
-  "pageLabel": "Query router",
-  "eyebrow": "Question routing",
-  "h1": "Route the question before answering it.",
-  "lead": "A simple router that classifies a question as source lookup, category check, calm reflection, interpretation comparison, or reviewer-needed.",
-  "source": "Rigveda 1.164.46",
-  "family": "Veda | Shruti",
-  "stance": "Routing prototype, not live classification.",
-  "progress": 102,
-  "next": "Local Retrieval Workspace",
-  "primaryAsk": "Separate question intent before retrieval so the answer can stay narrow and honest.",
-  "summary": "Query Router Demo makes the first invisible step visible: VedaPath should understand what kind of answer is allowed before it searches.",
+  "version": "v1.5.7",
+  "badge": "v1.5.7 retrieval",
+  "slug": "retrievalworkspace",
+  "nav": "Retrieve",
+  "title": "VedaPath Local Retrieval Workspace",
+  "pageLabel": "Local retrieval workspace",
+  "eyebrow": "Retrieval workspace",
+  "h1": "Rank only the records that are allowed to answer.",
+  "lead": "A retrieval workspace that scores source candidates by eligibility, match reason, source family, review state, and boundary fit.",
+  "source": "Mundaka Upanishad 1.1.4",
+  "family": "Upanishad | Shruti",
+  "stance": "Local retrieval demo, not production search.",
+  "progress": 103,
+  "next": "Answer Composer Workspace",
+  "primaryAsk": "Show why a source candidate was selected before any answer is composed.",
+  "summary": "Local Retrieval Workspace gives VedaPath a practical search preview with eligible records, hold states, and visible match reasons.",
   "items": [
     [
-      "Intent label",
-      "Lookup, compare, claim-check, calm reflection, or no-answer.",
-      "Sets the answer lane."
+      "Candidate list",
+      "Return a small list with citation, family, topic, and review state.",
+      "Makes selection inspectable."
     ],
     [
-      "Risk label",
-      "Science overclaim, therapy, ritual, category confusion, or sensitive personal context.",
-      "Adds caution early."
+      "Match reason",
+      "Explain the keyword, concept, or category connection.",
+      "Builds trust."
     ],
     [
-      "Needed evidence",
-      "Direct passage, commentary, scholarly view, or reviewer decision.",
-      "Guides retrieval."
+      "Eligibility gate",
+      "Blocked, rights-needed, and specialist-needed records cannot answer publicly.",
+      "Keeps output safe."
     ],
     [
-      "Fallback state",
-      "If the question is too broad or risky, route to a careful next step.",
-      "Protects the user."
+      "No-source path",
+      "When nothing fits, the product says so plainly.",
+      "Avoids invention."
     ]
   ],
   "modes": {
     "brief": [
       [
         "Product promise",
-        "Query Router Demo makes the first invisible step visible: VedaPath should understand what kind of answer is allowed before it searches."
+        "Local Retrieval Workspace gives VedaPath a practical search preview with eligible records, hold states, and visible match reasons."
       ],
       [
         "Founder move",
-        "Separate question intent before retrieval so the answer can stay narrow and honest."
+        "Show why a source candidate was selected before any answer is composed."
       ],
       [
         "Trust move",
-        "Keep the visible boundary: Routing prototype, not live classification."
+        "Keep the visible boundary: Local retrieval demo, not production search."
       ]
     ],
     "checklist": [
       [
-        "Intent label",
-        "Lookup, compare, claim-check, calm reflection, or no-answer."
+        "Candidate list",
+        "Return a small list with citation, family, topic, and review state."
       ],
       [
-        "Risk label",
-        "Science overclaim, therapy, ritual, category confusion, or sensitive personal context."
+        "Match reason",
+        "Explain the keyword, concept, or category connection."
       ],
       [
-        "Needed evidence",
-        "Direct passage, commentary, scholarly view, or reviewer decision."
+        "Eligibility gate",
+        "Blocked, rights-needed, and specialist-needed records cannot answer publicly."
       ]
     ],
     "boundary": [
