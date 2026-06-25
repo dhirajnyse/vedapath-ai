@@ -239,6 +239,8 @@ Let us look at the source first.
 - [Calm Companion Notes](docs/CALM_COMPANION.md)
 - [Feedback Portal](feedbackportal.html)
 - [Feedback Portal Notes](docs/FEEDBACK_PORTAL.md)
+- [Scholar Packet Builder](scholarpacket.html)
+- [Scholar Packet Builder Notes](docs/SCHOLAR_PACKET_BUILDER.md)
 <!-- VEDAPATH ACTIVATION SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -270,7 +272,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v1.3.0` is a trusted MVP prototype plus Feedback Portal with:
+`v1.3.1` is a trusted MVP prototype plus Scholar Packet Builder with:
 
 - Ask workspace
 - Source Card
@@ -387,6 +389,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Learning Trail: Learning Trail lets VedaPath grow depth progressively while keeping the first answer calm and readable.
 - Calm Companion: Calm Companion gives users a short source-backed reflection path for everyday steadiness without therapy, diagnosis, or dependency.
 - Feedback Portal: Feedback Portal turns public reactions into structured improvement signals while blocking sensitive personal intake.
+- Scholar Packet Builder: Scholar Packet Builder packages VedaPath review requests with evidence, scope, and no-endorsement language.
 <!-- VEDAPATH ACTIVATION SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff

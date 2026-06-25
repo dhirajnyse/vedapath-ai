@@ -118,6 +118,7 @@ It helps users move from curiosity to understanding through:
 - Learning Trail: Learning Trail lets VedaPath grow depth progressively while keeping the first answer calm and readable.
 - Calm Companion: Calm Companion gives users a short source-backed reflection path for everyday steadiness without therapy, diagnosis, or dependency.
 - Feedback Portal: Feedback Portal turns public reactions into structured improvement signals while blocking sensitive personal intake.
+- Scholar Packet Builder: Scholar Packet Builder packages VedaPath review requests with evidence, scope, and no-endorsement language.
 <!-- VEDAPATH ACTIVATION SPRINT SUMMARY END -->
 
 ## What It Is
@@ -1860,6 +1861,21 @@ It should:
 - produce a copyable public beta activation handoff
 
 Feedback Portal should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 114. Scholar Packet Builder
+
+Scholar Packet Builder packages VedaPath review requests with evidence, scope, and no-endorsement language.
+
+It should:
+
+- Citation pack: Source, edition, translation note, and uncertainty.
+- Answer draft: What the user would see and where confidence appears.
+- Review lane: Source, language, interpretation, boundary, or rights.
+- Consent: Private feedback, named credit, or anonymous review.
+- preserve the boundary: Packet prototype, not a scholarly agreement.
+- produce a copyable public beta activation handoff
+
+Scholar Packet Builder should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH ACTIVATION SPRINT BLUEPRINT END -->
 
 ## Product Personality
