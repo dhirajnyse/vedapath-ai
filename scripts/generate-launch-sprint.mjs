@@ -897,8 +897,9 @@ function renderMode() {
 }
 
 function briefText() {
+  const featureTitle = data.title.replace(/^VedaPath\\s+/, "");
   return [
-    \`VedaPath \${data.title}\`,
+    \`VedaPath \${featureTitle}\`,
     \`Release: \${data.version}\`,
     \`Primary ask: \${data.primaryAsk}\`,
     \`Source candidate: \${data.source}\`,
