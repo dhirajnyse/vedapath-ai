@@ -116,6 +116,7 @@ It helps users move from curiosity to understanding through:
 - Question Studio: Question Studio improves the first ask by separating text lookup, concept explanation, claim check, calm reflection, and modern analogy.
 - Confidence Card: Confidence Card makes answer trust visible through source strength, review state, boundary risk, and missing evidence.
 - Learning Trail: Learning Trail lets VedaPath grow depth progressively while keeping the first answer calm and readable.
+- Calm Companion: Calm Companion gives users a short source-backed reflection path for everyday steadiness without therapy, diagnosis, or dependency.
 <!-- VEDAPATH ACTIVATION SPRINT SUMMARY END -->
 
 ## What It Is
@@ -1828,6 +1829,21 @@ It should:
 - produce a copyable public beta activation handoff
 
 Learning Trail should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 112. Calm Companion
+
+Calm Companion gives users a short source-backed reflection path for everyday steadiness without therapy, diagnosis, or dependency.
+
+It should:
+
+- Arrive: Name the moment without judging it.
+- Read: Open one source candidate and category.
+- Reflect: Answer one clean question.
+- Carry: Choose one small action in ordinary life.
+- preserve the boundary: Reflection support, not therapy or emergency support.
+- produce a copyable public beta activation handoff
+
+Calm Companion should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH ACTIVATION SPRINT BLUEPRINT END -->
 
 ## Product Personality

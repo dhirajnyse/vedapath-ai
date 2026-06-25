@@ -235,6 +235,8 @@ Let us look at the source first.
 - [Confidence Card Notes](docs/CONFIDENCE_CARD.md)
 - [Learning Trail](learningtrail.html)
 - [Learning Trail Notes](docs/LEARNING_TRAIL.md)
+- [Calm Companion](calmcompanion.html)
+- [Calm Companion Notes](docs/CALM_COMPANION.md)
 <!-- VEDAPATH ACTIVATION SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -266,7 +268,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v1.2.8` is a trusted MVP prototype plus Learning Trail with:
+`v1.2.9` is a trusted MVP prototype plus Calm Companion with:
 
 - Ask workspace
 - Source Card
@@ -381,6 +383,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Question Studio: Question Studio improves the first ask by separating text lookup, concept explanation, claim check, calm reflection, and modern analogy.
 - Confidence Card: Confidence Card makes answer trust visible through source strength, review state, boundary risk, and missing evidence.
 - Learning Trail: Learning Trail lets VedaPath grow depth progressively while keeping the first answer calm and readable.
+- Calm Companion: Calm Companion gives users a short source-backed reflection path for everyday steadiness without therapy, diagnosis, or dependency.
 <!-- VEDAPATH ACTIVATION SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
