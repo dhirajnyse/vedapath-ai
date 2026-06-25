@@ -187,6 +187,7 @@ It helps users move from curiosity to understanding through:
 - Beta Search Shell: Beta Search Shell turns the static seed into a usable beta surface without pretending retrieval or generation is live.
 - Source Filter Bar: Source Filter Bar makes search calmer by giving users visible constraints instead of a blank text box.
 - Result Reason Panel: Result Reason Panel makes search less magical by showing match fields, review state, and no-go boundaries beside each record.
+- Question Match Preview: Question Match Preview connects seed records with expected beta questions so source routing can be tested before live AI.
 <!-- VEDAPATH INTERACTIVE SEARCH SPRINT SUMMARY END -->
 
 ## What It Is
@@ -2790,6 +2791,21 @@ It should:
 - keep the search browser-only until a real backend is approved
 
 Result Reason Panel should never claim live semantic retrieval, backend storage, live AI generation, reviewed corpus coverage, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 171. Question Match Preview
+
+Question Match Preview connects seed records with expected beta questions so source routing can be tested before live AI.
+
+It should:
+
+- Fixture search: Known questions become visible examples.
+- Expected route: Source-first preview, fallback, or review-needed behavior is displayed.
+- Expected source: The fixture names the source candidate.
+- Reviewer flag: Reviewer-needed remains visible before public use.
+- preserve the boundary: Fixture preview, not real user intent detection.
+- keep the search browser-only until a real backend is approved
+
+Question Match Preview should never claim live semantic retrieval, backend storage, live AI generation, reviewed corpus coverage, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH INTERACTIVE SEARCH SPRINT BLUEPRINT END -->
 
 ## Product Personality

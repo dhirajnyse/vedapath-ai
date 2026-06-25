@@ -365,6 +365,8 @@ Let us look at the source first.
 - [Source Filter Bar Notes](docs/SOURCE_FILTER_BAR.md)
 - [Result Reason Panel](resultreasons.html)
 - [Result Reason Panel Notes](docs/RESULT_REASON_PANEL.md)
+- [Question Match Preview](questionmatch.html)
+- [Question Match Preview Notes](docs/QUESTION_MATCH_PREVIEW.md)
 <!-- VEDAPATH INTERACTIVE SEARCH SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -396,7 +398,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v1.8.7` is a trusted MVP prototype plus Result Reason Panel with:
+`v1.8.8` is a trusted MVP prototype plus Question Match Preview with:
 
 - Ask workspace
 - Source Card
@@ -582,6 +584,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Beta Search Shell: Beta Search Shell turns the static seed into a usable beta surface without pretending retrieval or generation is live.
 - Source Filter Bar: Source Filter Bar makes search calmer by giving users visible constraints instead of a blank text box.
 - Result Reason Panel: Result Reason Panel makes search less magical by showing match fields, review state, and no-go boundaries beside each record.
+- Question Match Preview: Question Match Preview connects seed records with expected beta questions so source routing can be tested before live AI.
 <!-- VEDAPATH INTERACTIVE SEARCH SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
