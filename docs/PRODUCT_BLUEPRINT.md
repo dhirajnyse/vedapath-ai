@@ -189,6 +189,7 @@ It helps users move from curiosity to understanding through:
 - Result Reason Panel: Result Reason Panel makes search less magical by showing match fields, review state, and no-go boundaries beside each record.
 - Question Match Preview: Question Match Preview connects seed records with expected beta questions so source routing can be tested before live AI.
 - Fallback Explorer: Fallback Explorer makes refusal and uncertainty part of the product experience rather than a dead end.
+- Search Evidence Drawer: Search Evidence Drawer gives VedaPath a simple result-to-evidence interaction that preserves source boundaries.
 <!-- VEDAPATH INTERACTIVE SEARCH SPRINT SUMMARY END -->
 
 ## What It Is
@@ -2822,6 +2823,21 @@ It should:
 - keep the search browser-only until a real backend is approved
 
 Fallback Explorer should never claim live semantic retrieval, backend storage, live AI generation, reviewed corpus coverage, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 173. Search Evidence Drawer
+
+Search Evidence Drawer gives VedaPath a simple result-to-evidence interaction that preserves source boundaries.
+
+It should:
+
+- Citation detail: Source candidate and family remain visible.
+- Rights state: Display-citation-only is clear.
+- Review state: Review-needed remains the default.
+- Boundary handoff: Blocked claims remain close to each result.
+- preserve the boundary: Evidence drawer prototype, not licensed source display.
+- keep the search browser-only until a real backend is approved
+
+Search Evidence Drawer should never claim live semantic retrieval, backend storage, live AI generation, reviewed corpus coverage, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH INTERACTIVE SEARCH SPRINT BLUEPRINT END -->
 
 ## Product Personality

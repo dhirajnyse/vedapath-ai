@@ -369,6 +369,8 @@ Let us look at the source first.
 - [Question Match Preview Notes](docs/QUESTION_MATCH_PREVIEW.md)
 - [Fallback Explorer](fallbackexplorer.html)
 - [Fallback Explorer Notes](docs/FALLBACK_EXPLORER.md)
+- [Search Evidence Drawer](searchevidence.html)
+- [Search Evidence Drawer Notes](docs/SEARCH_EVIDENCE_DRAWER.md)
 <!-- VEDAPATH INTERACTIVE SEARCH SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -400,7 +402,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v1.8.9` is a trusted MVP prototype plus Fallback Explorer with:
+`v1.9.0` is a trusted MVP prototype plus Search Evidence Drawer with:
 
 - Ask workspace
 - Source Card
@@ -588,6 +590,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Result Reason Panel: Result Reason Panel makes search less magical by showing match fields, review state, and no-go boundaries beside each record.
 - Question Match Preview: Question Match Preview connects seed records with expected beta questions so source routing can be tested before live AI.
 - Fallback Explorer: Fallback Explorer makes refusal and uncertainty part of the product experience rather than a dead end.
+- Search Evidence Drawer: Search Evidence Drawer gives VedaPath a simple result-to-evidence interaction that preserves source boundaries.
 <!-- VEDAPATH INTERACTIVE SEARCH SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
