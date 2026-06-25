@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>VedaPath Question Studio</title>
+    <title>VedaPath Feedback Portal</title>
     <link rel="stylesheet" href="assets/vedapath-sprint.css">
   </head>
   <body>
@@ -13,7 +13,7 @@
           <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
           <div>
             <strong>VedaPath AI</strong>
-            <span>Question studio</span>
+            <span>Feedback portal</span>
           </div>
         </a>
         <nav class="nav" aria-label="Project links">
@@ -25,17 +25,17 @@
           <a class="link" href="calm.html">Calm</a>
           <!-- VEDAPATH ACTIVATION SPRINT NAV START -->
           <a class="link" href="betawelcome.html">Welcome</a>
-          <a class="link active" href="questionstudio.html">Question</a>
+          <a class="link" href="questionstudio.html">Question</a>
           <a class="link" href="confidencecard.html">Confidence</a>
           <a class="link" href="learningtrail.html">Trail</a>
           <a class="link" href="calmcompanion.html">Companion</a>
-          <a class="link" href="feedbackportal.html">Feedback</a>
+          <a class="link active" href="feedbackportal.html">Feedback</a>
           <!-- VEDAPATH ACTIVATION SPRINT NAV END -->
           <span class="version">v1.3.0 feedback</span>
         </nav>
       </header>
 
-      <main class="workspace" aria-label="VedaPath Question Studio workspace">
+      <main class="workspace" aria-label="VedaPath Feedback Portal workspace">
         <aside class="panel">
           <span class="eyebrow">Public beta activation sprint</span>
           <h2>Release Rooms</h2>
@@ -46,38 +46,38 @@
         <section class="panel">
           <div class="hero-grid">
             <div>
-              <span class="eyebrow">Ask with source context</span>
-              <h1>Help the user ask a better first question.</h1>
-              <p class="muted">A question studio with prompt types, source-family hints, claim-risk labels, and a no-source fallback before answer generation.</p>
+              <span class="eyebrow">Public learning loop</span>
+              <h1>Let users improve trust without exposing themselves.</h1>
+              <p class="muted">A public feedback portal for source issue, category confusion, answer boundary, privacy concern, and product friction reports.</p>
             </div>
             <div class="mark-stage">
-              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Question logo">
+              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Feedback logo">
             </div>
           </div>
 
           <div class="source-block" aria-label="Release source card">
             <div>
               <span class="source-meta">Release</span>
-              <span class="source-value">v1.2.6</span>
+              <span class="source-value">v1.3.0</span>
             </div>
             <div>
               <span class="source-meta">Source candidate</span>
-              <span class="source-value">Rigveda 1.164.46</span>
+              <span class="source-value">Bhagavad Gita 18.63</span>
             </div>
             <div>
               <span class="source-meta">Text family</span>
-              <span class="source-value">Veda | Shruti</span>
+              <span class="source-value">Bhagavad Gita | Smriti</span>
             </div>
             <div>
               <span class="source-meta">Boundary</span>
-              <span class="source-value">Question-shaping prototype, not live retrieval.</span>
+              <span class="source-value">Feedback prototype, not live intake.</span>
             </div>
           </div>
 
           <h2>Decision Signals</h2>
           <div class="item-list" id="itemList"></div>
 
-          <div class="tabs" role="tablist" aria-label="VedaPath Question Studio layers">
+          <div class="tabs" role="tablist" aria-label="VedaPath Feedback Portal layers">
             <button class="tab active" type="button" data-mode="brief">Brief</button>
             <button class="tab" type="button" data-mode="checklist">Checklist</button>
             <button class="tab" type="button" data-mode="boundary">Boundary</button>
@@ -91,20 +91,20 @@
             <button class="button" id="copyBoundary" type="button">Copy Boundary</button>
           </div>
 
-          <textarea id="output" readonly aria-label="VedaPath Question Studio output"></textarea>
+          <textarea id="output" readonly aria-label="VedaPath Feedback Portal output"></textarea>
         </section>
 
-        <aside class="panel tight" aria-label="VedaPath Question Studio sprint rail">
+        <aside class="panel tight" aria-label="VedaPath Feedback Portal sprint rail">
           <span class="badge green">Beta activation</span>
-          <h2 style="margin-top: 14px;">Question Pulse</h2>
-          <p class="muted">Question Studio improves the first ask by separating text lookup, concept explanation, claim check, calm reflection, and modern analogy.</p>
-          <div class="progress" aria-label="Sprint progress 92 percent">
-            <div class="bar" style="--score:92%"></div>
+          <h2 style="margin-top: 14px;">Feedback Pulse</h2>
+          <p class="muted">Feedback Portal turns public reactions into structured improvement signals while blocking sensitive personal intake.</p>
+          <div class="progress" aria-label="Sprint progress 96 percent">
+            <div class="bar" style="--score:96%"></div>
           </div>
           <div class="metric-grid">
             <div class="metric">
               <span>Current</span>
-              <strong>v1.2.6</strong>
+              <strong>v1.3.0</strong>
             </div>
             <div class="metric">
               <span>Sprint</span>
@@ -112,11 +112,11 @@
             </div>
             <div class="metric">
               <span>Progress</span>
-              <strong>92%</strong>
+              <strong>96%</strong>
             </div>
             <div class="metric">
               <span>Next</span>
-              <strong>Confidence Card</strong>
+              <strong>Scholar Packet</strong>
             </div>
           </div>
 
@@ -148,85 +148,85 @@
     </div>
 
     <script type="application/json" id="room-data">{
-  "version": "v1.2.6",
-  "badge": "v1.2.6 question",
-  "slug": "questionstudio",
-  "nav": "Question",
-  "title": "VedaPath Question Studio",
-  "pageLabel": "Question studio",
-  "eyebrow": "Ask with source context",
-  "h1": "Help the user ask a better first question.",
-  "lead": "A question studio with prompt types, source-family hints, claim-risk labels, and a no-source fallback before answer generation.",
-  "source": "Rigveda 1.164.46",
-  "family": "Veda | Shruti",
-  "stance": "Question-shaping prototype, not live retrieval.",
-  "progress": 92,
-  "next": "Confidence Card",
-  "primaryAsk": "Shape user questions so VedaPath can answer with source clarity instead of broad guessing.",
-  "summary": "Question Studio improves the first ask by separating text lookup, concept explanation, claim check, calm reflection, and modern analogy.",
+  "version": "v1.3.0",
+  "badge": "v1.3.0 feedback",
+  "slug": "feedbackportal",
+  "nav": "Feedback",
+  "title": "VedaPath Feedback Portal",
+  "pageLabel": "Feedback portal",
+  "eyebrow": "Public learning loop",
+  "h1": "Let users improve trust without exposing themselves.",
+  "lead": "A public feedback portal for source issue, category confusion, answer boundary, privacy concern, and product friction reports.",
+  "source": "Bhagavad Gita 18.63",
+  "family": "Bhagavad Gita | Smriti",
+  "stance": "Feedback prototype, not live intake.",
+  "progress": 96,
+  "next": "Scholar Packet",
+  "primaryAsk": "Design feedback intake so users can report issues safely and specifically.",
+  "summary": "Feedback Portal turns public reactions into structured improvement signals while blocking sensitive personal intake.",
   "items": [
     [
-      "Prompt type",
-      "Lookup, explain, compare, claim check, calm reflection, or analogy.",
-      "Clarifies answer mode."
+      "Issue type",
+      "Source, category, translation, boundary, privacy, or usability.",
+      "Routes work."
     ],
     [
-      "Source hint",
-      "Veda, Upanishad, Gita, Purana, commentary, modern view, or unsure.",
-      "Prevents category confusion."
+      "Evidence",
+      "Optional citation, screenshot note, or page link.",
+      "Improves triage."
     ],
     [
-      "Risk label",
-      "Science claim, ritual claim, distress claim, or tradition claim.",
-      "Routes caution early."
+      "Privacy",
+      "Warn users not to submit private distress, medical, or family details.",
+      "Protects users."
     ],
     [
-      "Fallback",
-      "If no source is available, say so directly.",
-      "Protects trust."
+      "Outcome",
+      "Review queue, hold decision, product backlog, or no-action note.",
+      "Closes the loop."
     ]
   ],
   "modes": {
     "brief": [
       [
-        "Question promise",
-        "A better question is the first source-safety feature."
+        "Feedback promise",
+        "Users should be able to correct the product without oversharing."
       ],
       [
-        "Product move",
-        "Let the user mark the kind of answer they want."
+        "Ops move",
+        "Turn every report into a typed queue item."
       ],
       [
-        "Trust move",
-        "Show when a question needs review or a no-source answer."
+        "Privacy move",
+        "Block sensitive personal detail at the door."
       ]
     ],
     "checklist": [
       [
         "Typed",
-        "Does the question have an answer mode?"
+        "Is every report categorized?"
       ],
       [
-        "Scoped",
-        "Is source family known or marked unsure?"
+        "Useful",
+        "Does it ask for evidence without demanding private data?"
       ],
       [
-        "Safe",
-        "Are risky claim types flagged before answering?"
+        "Routed",
+        "Can the team see the next action?"
       ]
     ],
     "boundary": [
       [
-        "No leading user",
-        "Do not force the user toward a claim."
+        "No private intake",
+        "Do not collect sensitive personal stories."
       ],
       [
-        "No false source",
-        "Do not invent a source family from weak hints."
+        "No support promise",
+        "Do not imply live crisis or counseling support."
       ],
       [
-        "No distress intake",
-        "Do not collect private crisis details."
+        "No silent rewrite",
+        "Do not change source knowledge without review."
       ]
     ]
   },

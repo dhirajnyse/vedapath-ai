@@ -117,6 +117,7 @@ It helps users move from curiosity to understanding through:
 - Confidence Card: Confidence Card makes answer trust visible through source strength, review state, boundary risk, and missing evidence.
 - Learning Trail: Learning Trail lets VedaPath grow depth progressively while keeping the first answer calm and readable.
 - Calm Companion: Calm Companion gives users a short source-backed reflection path for everyday steadiness without therapy, diagnosis, or dependency.
+- Feedback Portal: Feedback Portal turns public reactions into structured improvement signals while blocking sensitive personal intake.
 <!-- VEDAPATH ACTIVATION SPRINT SUMMARY END -->
 
 ## What It Is
@@ -1844,6 +1845,21 @@ It should:
 - produce a copyable public beta activation handoff
 
 Calm Companion should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 113. Feedback Portal
+
+Feedback Portal turns public reactions into structured improvement signals while blocking sensitive personal intake.
+
+It should:
+
+- Issue type: Source, category, translation, boundary, privacy, or usability.
+- Evidence: Optional citation, screenshot note, or page link.
+- Privacy: Warn users not to submit private distress, medical, or family details.
+- Outcome: Review queue, hold decision, product backlog, or no-action note.
+- preserve the boundary: Feedback prototype, not live intake.
+- produce a copyable public beta activation handoff
+
+Feedback Portal should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH ACTIVATION SPRINT BLUEPRINT END -->
 
 ## Product Personality
