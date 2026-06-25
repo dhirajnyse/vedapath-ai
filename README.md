@@ -163,6 +163,8 @@ Let us look at the source first.
 <!-- VEDAPATH READINESS SPRINT LINKS START -->
 - [Beta Launch Checklist](launchcheck.html)
 - [Beta Launch Checklist Notes](docs/BETA_LAUNCH_CHECKLIST.md)
+- [First 25 Source Pack](sourcepack.html)
+- [First 25 Source Pack Notes](docs/FIRST_25_SOURCE_PACK.md)
 <!-- VEDAPATH READINESS SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -194,7 +196,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v0.9.5` is a trusted MVP prototype plus Beta Launch Checklist with:
+`v0.9.6` is a trusted MVP prototype plus First 25 Source Pack with:
 
 - Ask workspace
 - Source Card
@@ -270,6 +272,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 <!-- VEDAPATH BETA SPRINT FEATURES END -->
 <!-- VEDAPATH READINESS SPRINT FEATURES START -->
 - Beta Launch Checklist: Beta Launch Checklist turns launch excitement into visible ready, review, privacy, and hold lanes.
+- First 25 Source Pack: First 25 Source Pack narrows the beta dataset to a small, reviewable, high-frequency group of source-backed questions.
 <!-- VEDAPATH READINESS SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff

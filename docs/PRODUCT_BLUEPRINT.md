@@ -77,6 +77,7 @@ It helps users move from curiosity to understanding through:
 <!-- VEDAPATH BETA SPRINT SUMMARY END -->
 <!-- VEDAPATH READINESS SPRINT SUMMARY START -->
 - Beta Launch Checklist: Beta Launch Checklist turns launch excitement into visible ready, review, privacy, and hold lanes.
+- First 25 Source Pack: First 25 Source Pack narrows the beta dataset to a small, reviewable, high-frequency group of source-backed questions.
 <!-- VEDAPATH READINESS SPRINT SUMMARY END -->
 
 ## What It Is
@@ -1291,6 +1292,21 @@ It should:
 - produce a copyable launch-readiness handoff
 
 Beta Launch Checklist should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 79. First 25 Source Pack
+
+First 25 Source Pack narrows the beta dataset to a small, reviewable, high-frequency group of source-backed questions.
+
+It should:
+
+- Famous confusion: Oppenheimer, Gita vs Veda, Gayatri, karma, dharma.
+- Source basics: Veda, Upanishad, Gita, Itihasa, Purana, commentary.
+- Calm practice: Steady action, self-lift, before reply, family conversation.
+- Modern claims: Science, productivity, success, quantum, and wellness claims.
+- preserve the boundary: Source-pack planning, not verified dataset.
+- produce a copyable launch-readiness handoff
+
+First 25 Source Pack should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH READINESS SPRINT BLUEPRINT END -->
 
 ## Product Personality
