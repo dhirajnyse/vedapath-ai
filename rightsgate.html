@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>VedaPath Retrieval Scoring Harness</title>
+    <title>VedaPath Rights and Translation Gate</title>
     <link rel="stylesheet" href="assets/vedapath-sprint.css">
   </head>
   <body>
@@ -13,7 +13,7 @@
           <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
           <div>
             <strong>VedaPath AI</strong>
-            <span>Retrieval scoring</span>
+            <span>Rights gate</span>
           </div>
         </a>
         <nav class="nav" aria-label="Project links">
@@ -24,16 +24,16 @@
           <!-- VEDAPATH BETA IMPLEMENTATION SPRINT NAV START -->
           <a class="link" href="sourcecontract.html">Schema</a>
           <a class="link" href="datasetloader.html">Loader</a>
-          <a class="link active" href="retrievalscoring.html">Scoring</a>
+          <a class="link" href="retrievalscoring.html">Scoring</a>
           <a class="link" href="answerassembly.html">Assembly</a>
           <a class="link" href="fixturelab.html">Fixtures</a>
-          <a class="link" href="rightsgate.html">Rights</a>
+          <a class="link active" href="rightsgate.html">Rights</a>
           <!-- VEDAPATH BETA IMPLEMENTATION SPRINT NAV END -->
           <span class="version">v1.7.0 rights</span>
         </nav>
       </header>
 
-      <main class="workspace" aria-label="VedaPath Retrieval Scoring Harness workspace">
+      <main class="workspace" aria-label="VedaPath Rights and Translation Gate workspace">
         <aside class="panel">
           <span class="eyebrow">Beta implementation sprint</span>
           <h2>Release Rooms</h2>
@@ -44,38 +44,38 @@
         <section class="panel">
           <div class="hero-grid">
             <div>
-              <span class="eyebrow">Retrieval logic</span>
-              <h1>Score match quality without hiding judgment.</h1>
-              <p class="muted">A retrieval scoring harness that explains why one source candidate was selected, held, or rejected.</p>
+              <span class="eyebrow">Rights and language</span>
+              <h1>Respect the text before displaying the text.</h1>
+              <p class="muted">A rights and translation gate that separates citation, paraphrase, public-domain text, licensed text, and reviewer-needed language.</p>
             </div>
             <div class="mark-stage">
-              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Scoring logo">
+              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Rights logo">
             </div>
           </div>
 
           <div class="source-block" aria-label="Release source card">
             <div>
               <span class="source-meta">Release</span>
-              <span class="source-value">v1.6.7</span>
+              <span class="source-value">v1.7.0</span>
             </div>
             <div>
               <span class="source-meta">Source candidate</span>
-              <span class="source-value">Rigveda 1.164.46</span>
+              <span class="source-value">Isha Upanishad 1</span>
             </div>
             <div>
               <span class="source-meta">Text family</span>
-              <span class="source-value">Veda | Shruti</span>
+              <span class="source-value">Upanishad | Shruti</span>
             </div>
             <div>
               <span class="source-meta">Boundary</span>
-              <span class="source-value">Scoring harness, not production semantic search.</span>
+              <span class="source-value">Rights gate demo, not legal advice.</span>
             </div>
           </div>
 
           <h2>Implementation Signals</h2>
           <div class="item-list" id="itemList"></div>
 
-          <div class="tabs" role="tablist" aria-label="VedaPath Retrieval Scoring Harness layers">
+          <div class="tabs" role="tablist" aria-label="VedaPath Rights and Translation Gate layers">
             <button class="tab active" type="button" data-mode="brief">Brief</button>
             <button class="tab" type="button" data-mode="checklist">Checklist</button>
             <button class="tab" type="button" data-mode="boundary">Boundary</button>
@@ -89,20 +89,20 @@
             <button class="button" id="copyBoundary" type="button">Copy Boundary</button>
           </div>
 
-          <textarea id="output" readonly aria-label="VedaPath Retrieval Scoring Harness output"></textarea>
+          <textarea id="output" readonly aria-label="VedaPath Rights and Translation Gate output"></textarea>
         </section>
 
-        <aside class="panel tight" aria-label="VedaPath Retrieval Scoring Harness sprint rail">
+        <aside class="panel tight" aria-label="VedaPath Rights and Translation Gate sprint rail">
           <span class="badge green">Implementation path</span>
-          <h2 style="margin-top: 14px;">Scoring Pulse</h2>
-          <p class="muted">Retrieval Scoring Harness maps match strength, source eligibility, risk, and fallback behavior into an inspectable decision.</p>
-          <div class="progress" aria-label="Sprint progress 63 percent">
-            <div class="bar" style="--score:63%"></div>
+          <h2 style="margin-top: 14px;">Rights Pulse</h2>
+          <p class="muted">Rights and Translation Gate gives VedaPath a practical way to cite carefully while avoiding careless text display.</p>
+          <div class="progress" aria-label="Sprint progress 66 percent">
+            <div class="bar" style="--score:66%"></div>
           </div>
           <div class="metric-grid">
             <div class="metric">
               <span>Current</span>
-              <strong>v1.6.7</strong>
+              <strong>v1.7.0</strong>
             </div>
             <div class="metric">
               <span>Sprint</span>
@@ -110,11 +110,11 @@
             </div>
             <div class="metric">
               <span>Progress</span>
-              <strong>63%</strong>
+              <strong>66%</strong>
             </div>
             <div class="metric">
               <span>Next</span>
-              <strong>Answer Assembly Contract</strong>
+              <strong>Reviewer Workflow Board</strong>
             </div>
           </div>
 
@@ -146,71 +146,71 @@
     </div>
 
     <script type="application/json" id="room-data">{
-  "version": "v1.6.7",
-  "badge": "v1.6.7 scoring",
-  "slug": "retrievalscoring",
-  "nav": "Scoring",
-  "title": "VedaPath Retrieval Scoring Harness",
-  "pageLabel": "Retrieval scoring",
-  "eyebrow": "Retrieval logic",
-  "h1": "Score match quality without hiding judgment.",
-  "lead": "A retrieval scoring harness that explains why one source candidate was selected, held, or rejected.",
-  "source": "Rigveda 1.164.46",
-  "family": "Veda | Shruti",
-  "stance": "Scoring harness, not production semantic search.",
-  "progress": 63,
-  "next": "Answer Assembly Contract",
-  "primaryAsk": "Make retrieval scoring readable enough for both users and reviewers.",
-  "summary": "Retrieval Scoring Harness maps match strength, source eligibility, risk, and fallback behavior into an inspectable decision.",
+  "version": "v1.7.0",
+  "badge": "v1.7.0 rights",
+  "slug": "rightsgate",
+  "nav": "Rights",
+  "title": "VedaPath Rights and Translation Gate",
+  "pageLabel": "Rights gate",
+  "eyebrow": "Rights and language",
+  "h1": "Respect the text before displaying the text.",
+  "lead": "A rights and translation gate that separates citation, paraphrase, public-domain text, licensed text, and reviewer-needed language.",
+  "source": "Isha Upanishad 1",
+  "family": "Upanishad | Shruti",
+  "stance": "Rights gate demo, not legal advice.",
+  "progress": 66,
+  "next": "Reviewer Workflow Board",
+  "primaryAsk": "Prevent VedaPath from mixing citation confidence with display rights.",
+  "summary": "Rights and Translation Gate gives VedaPath a practical way to cite carefully while avoiding careless text display.",
   "items": [
     [
-      "Intent match",
-      "Question route is compared to allowed source intents.",
-      "Avoids wrong answer lanes."
+      "Display mode",
+      "Citation only, paraphrase, public-domain excerpt, licensed excerpt, or hidden text.",
+      "Separates use cases."
     ],
     [
-      "Concept match",
-      "Topic tags, Sanskrit concepts, and plain-language terms are compared.",
-      "Keeps retrieval useful."
+      "Translation note",
+      "Translator, source, review state, and date are named when available.",
+      "Adds context."
     ],
     [
-      "Trust weight",
-      "Review state and confidence basis adjust the result.",
-      "Keeps quality above volume."
+      "Rights hold",
+      "Unclear or restricted text can still inform internal review but cannot be shown publicly.",
+      "Protects launch."
     ],
     [
-      "Reject reason",
-      "No match, unsafe scope, rights hold, or reviewer-needed appears plainly.",
-      "Keeps failure honest."
+      "Reviewer lane",
+      "Language issues route to Sanskrit, translation, or scholarly review.",
+      "Improves accuracy."
     ]
   ],
   "modes": {
     "brief": [
       [
         "Implementation promise",
-        "Retrieval Scoring Harness maps match strength, source eligibility, risk, and fallback behavior into an inspectable decision."
+        "Rights and Translation Gate gives VedaPath a practical way to cite carefully while avoiding careless text display."
       ],
       [
         "Founder move",
-        "Make retrieval scoring readable enough for both users and reviewers."
+        "Prevent VedaPath from mixing citation confidence with display rights."
       ],
       [
         "Trust move",
-        "Keep this boundary visible: Scoring harness, not production semantic search."
+        "Keep this boundary visible: Rights gate demo, not legal advice."
       ]
     ],
     "checklist": [
       [
-        "Intent match",
-        "Question route is compared to allowed source intents."
+        "Display mode",
+        "Citation only, paraphrase, public-domain excerpt, licensed excerpt, or hidden text."
       ],
       [
-        "Concept match",
-        "Topic tags, Sanskrit concepts, and plain-language terms are compared."
+        "Translation note",
+        "Translator, source, review state, and date are named when available."
       ],
       [
-        "Trust weight",
-        "Review state and confidence basis adjust the result."
+        "Rights hold",
+        "Unclear or restricted text can still inform internal review but cannot be shown publicly."
       ]
     ],
     "boundary": [

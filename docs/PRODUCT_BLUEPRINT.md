@@ -165,6 +165,7 @@ It helps users move from curiosity to understanding through:
 - Retrieval Scoring Harness: Retrieval Scoring Harness maps match strength, source eligibility, risk, and fallback behavior into an inspectable decision.
 - Answer Assembly Contract: Answer Assembly Contract gives VedaPath a repeatable output shape that can be tested before it becomes generative.
 - Evaluation Fixture Lab: Evaluation Fixture Lab turns product risk into repeatable checks, making trust measurable before launch.
+- Rights and Translation Gate: Rights and Translation Gate gives VedaPath a practical way to cite carefully while avoiding careless text display.
 <!-- VEDAPATH BETA IMPLEMENTATION SPRINT SUMMARY END -->
 
 ## What It Is
@@ -2496,6 +2497,21 @@ It should:
 - produce a copyable beta-implementation handoff
 
 Evaluation Fixture Lab should never claim production storage, live AI generation, public launch approval, authentication, licensed source text, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 153. Rights and Translation Gate
+
+Rights and Translation Gate gives VedaPath a practical way to cite carefully while avoiding careless text display.
+
+It should:
+
+- Display mode: Citation only, paraphrase, public-domain excerpt, licensed excerpt, or hidden text.
+- Translation note: Translator, source, review state, and date are named when available.
+- Rights hold: Unclear or restricted text can still inform internal review but cannot be shown publicly.
+- Reviewer lane: Language issues route to Sanskrit, translation, or scholarly review.
+- preserve the boundary: Rights gate demo, not legal advice.
+- produce a copyable beta-implementation handoff
+
+Rights and Translation Gate should never claim production storage, live AI generation, public launch approval, authentication, licensed source text, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH BETA IMPLEMENTATION SPRINT BLUEPRINT END -->
 
 ## Product Personality
