@@ -162,6 +162,7 @@ It helps users move from curiosity to understanding through:
 <!-- VEDAPATH BETA IMPLEMENTATION SPRINT SUMMARY START -->
 - Source Schema Contract: Source Schema Contract turns VedaPath's trust language into fields a real implementation can validate.
 - Static Dataset Loader: Static Dataset Loader gives VedaPath a safe first ingestion path before any backend or account system exists.
+- Retrieval Scoring Harness: Retrieval Scoring Harness maps match strength, source eligibility, risk, and fallback behavior into an inspectable decision.
 <!-- VEDAPATH BETA IMPLEMENTATION SPRINT SUMMARY END -->
 
 ## What It Is
@@ -2448,6 +2449,21 @@ It should:
 - produce a copyable beta-implementation handoff
 
 Static Dataset Loader should never claim production storage, live AI generation, public launch approval, authentication, licensed source text, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 150. Retrieval Scoring Harness
+
+Retrieval Scoring Harness maps match strength, source eligibility, risk, and fallback behavior into an inspectable decision.
+
+It should:
+
+- Intent match: Question route is compared to allowed source intents.
+- Concept match: Topic tags, Sanskrit concepts, and plain-language terms are compared.
+- Trust weight: Review state and confidence basis adjust the result.
+- Reject reason: No match, unsafe scope, rights hold, or reviewer-needed appears plainly.
+- preserve the boundary: Scoring harness, not production semantic search.
+- produce a copyable beta-implementation handoff
+
+Retrieval Scoring Harness should never claim production storage, live AI generation, public launch approval, authentication, licensed source text, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH BETA IMPLEMENTATION SPRINT BLUEPRINT END -->
 
 ## Product Personality
