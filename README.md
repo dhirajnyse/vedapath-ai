@@ -259,6 +259,8 @@ Let us look at the source first.
 - [Consent Toggle Mock Notes](docs/CONSENT_TOGGLE_MOCK.md)
 - [Reviewer Queue Mock](reviewmock.html)
 - [Reviewer Queue Mock Notes](docs/REVIEWER_QUEUE_MOCK.md)
+- [Source Import Checklist](sourceimport.html)
+- [Source Import Checklist Notes](docs/SOURCE_IMPORT_CHECKLIST.md)
 <!-- VEDAPATH IMPLEMENTATION SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -290,7 +292,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v1.3.9` is a trusted MVP prototype plus Reviewer Queue Mock with:
+`v1.4.0` is a trusted MVP prototype plus Source Import Checklist with:
 
 - Ask workspace
 - Source Card
@@ -418,6 +420,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Beta Waitlist Room: Beta Waitlist Room turns launch excitement into a careful intake path that respects user expectation and product limits.
 - Consent Toggle Mock: Consent Toggle Mock makes VedaPath's memory promise tangible through named permissions and visible reversibility.
 - Reviewer Queue Mock: Reviewer Queue Mock makes scholar and careful-reader review practical by turning issues into scoped, evidence-backed decisions.
+- Source Import Checklist: Source Import Checklist turns dataset growth into a disciplined process with visible blockers and no-go fields.
 <!-- VEDAPATH IMPLEMENTATION SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff

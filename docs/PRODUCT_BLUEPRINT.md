@@ -129,6 +129,7 @@ It helps users move from curiosity to understanding through:
 - Beta Waitlist Room: Beta Waitlist Room turns launch excitement into a careful intake path that respects user expectation and product limits.
 - Consent Toggle Mock: Consent Toggle Mock makes VedaPath's memory promise tangible through named permissions and visible reversibility.
 - Reviewer Queue Mock: Reviewer Queue Mock makes scholar and careful-reader review practical by turning issues into scoped, evidence-backed decisions.
+- Source Import Checklist: Source Import Checklist turns dataset growth into a disciplined process with visible blockers and no-go fields.
 <!-- VEDAPATH IMPLEMENTATION SPRINT SUMMARY END -->
 
 ## What It Is
@@ -2007,6 +2008,21 @@ It should:
 - produce a copyable implementation-readiness handoff
 
 Reviewer Queue Mock should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 123. Source Import Checklist
+
+Source Import Checklist turns dataset growth into a disciplined process with visible blockers and no-go fields.
+
+It should:
+
+- Citation: Text family, section, verse, edition, and source URL.
+- Language: Original text, transliteration, translation note, and uncertainty.
+- Rights: Display, quote, translation, and audio permissions.
+- Eligibility: Ready, hold, blocked, or reviewer-needed.
+- preserve the boundary: Import checklist, not corpus ingestion.
+- produce a copyable implementation-readiness handoff
+
+Source Import Checklist should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH IMPLEMENTATION SPRINT BLUEPRINT END -->
 
 ## Product Personality

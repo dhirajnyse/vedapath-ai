@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>VedaPath Source JSON Contract</title>
+    <title>VedaPath Source Import Checklist</title>
     <link rel="stylesheet" href="assets/vedapath-sprint.css">
   </head>
   <body>
@@ -13,7 +13,7 @@
           <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
           <div>
             <strong>VedaPath AI</strong>
-            <span>Source JSON contract</span>
+            <span>Source import checklist</span>
           </div>
         </a>
         <nav class="nav" aria-label="Project links">
@@ -24,18 +24,18 @@
           <a class="link" href="trustcenter.html">Trust</a>
           <a class="link" href="calm.html">Calm</a>
           <!-- VEDAPATH IMPLEMENTATION SPRINT NAV START -->
-          <a class="link active" href="sourcejson.html">Source JSON</a>
+          <a class="link" href="sourcejson.html">Source JSON</a>
           <a class="link" href="answerrenderer.html">Renderer</a>
           <a class="link" href="betawaitlist.html">Waitlist</a>
           <a class="link" href="consenttoggle.html">Consent</a>
           <a class="link" href="reviewmock.html">Review Mock</a>
-          <a class="link" href="sourceimport.html">Import</a>
+          <a class="link active" href="sourceimport.html">Import</a>
           <!-- VEDAPATH IMPLEMENTATION SPRINT NAV END -->
           <span class="version">v1.4.0 import</span>
         </nav>
       </header>
 
-      <main class="workspace" aria-label="VedaPath Source JSON Contract workspace">
+      <main class="workspace" aria-label="VedaPath Source Import Checklist workspace">
         <aside class="panel">
           <span class="eyebrow">Implementation readiness sprint</span>
           <h2>Release Rooms</h2>
@@ -46,38 +46,38 @@
         <section class="panel">
           <div class="hero-grid">
             <div>
-              <span class="eyebrow">Implementation lane</span>
-              <h1>Give every source record a home shape.</h1>
-              <p class="muted">A source JSON contract for citation, family, passage, allowed use, review state, rights state, answer coverage, and no-go boundaries.</p>
+              <span class="eyebrow">Dataset operations</span>
+              <h1>Import sources only when the gaps are named.</h1>
+              <p class="muted">A source import checklist for citation, edition, language fields, translation rights, review lanes, public eligibility, and blocked claims.</p>
             </div>
             <div class="mark-stage">
-              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Source JSON logo">
+              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Import logo">
             </div>
           </div>
 
           <div class="source-block" aria-label="Release source card">
             <div>
               <span class="source-meta">Release</span>
-              <span class="source-value">v1.3.5</span>
+              <span class="source-value">v1.4.0</span>
             </div>
             <div>
               <span class="source-meta">Source candidate</span>
-              <span class="source-value">Mundaka Upanishad 1.1.4</span>
+              <span class="source-value">Rigveda 1.164.46</span>
             </div>
             <div>
               <span class="source-meta">Text family</span>
-              <span class="source-value">Upanishad | Shruti</span>
+              <span class="source-value">Veda | Shruti</span>
             </div>
             <div>
               <span class="source-meta">Boundary</span>
-              <span class="source-value">Data contract, not a live database.</span>
+              <span class="source-value">Import checklist, not corpus ingestion.</span>
             </div>
           </div>
 
           <h2>Decision Signals</h2>
           <div class="item-list" id="itemList"></div>
 
-          <div class="tabs" role="tablist" aria-label="VedaPath Source JSON Contract layers">
+          <div class="tabs" role="tablist" aria-label="VedaPath Source Import Checklist layers">
             <button class="tab active" type="button" data-mode="brief">Brief</button>
             <button class="tab" type="button" data-mode="checklist">Checklist</button>
             <button class="tab" type="button" data-mode="boundary">Boundary</button>
@@ -91,20 +91,20 @@
             <button class="button" id="copyBoundary" type="button">Copy Boundary</button>
           </div>
 
-          <textarea id="output" readonly aria-label="VedaPath Source JSON Contract output"></textarea>
+          <textarea id="output" readonly aria-label="VedaPath Source Import Checklist output"></textarea>
         </section>
 
-        <aside class="panel tight" aria-label="VedaPath Source JSON Contract sprint rail">
+        <aside class="panel tight" aria-label="VedaPath Source Import Checklist sprint rail">
           <span class="badge green">Implementation readiness</span>
-          <h2 style="margin-top: 14px;">Source JSON Pulse</h2>
-          <p class="muted">Source JSON Contract gives VedaPath a stable source-record shape that future retrieval, review, and answer rendering can share.</p>
-          <div class="progress" aria-label="Sprint progress 91 percent">
-            <div class="bar" style="--score:91%"></div>
+          <h2 style="margin-top: 14px;">Import Pulse</h2>
+          <p class="muted">Source Import Checklist turns dataset growth into a disciplined process with visible blockers and no-go fields.</p>
+          <div class="progress" aria-label="Sprint progress 96 percent">
+            <div class="bar" style="--score:96%"></div>
           </div>
           <div class="metric-grid">
             <div class="metric">
               <span>Current</span>
-              <strong>v1.3.5</strong>
+              <strong>v1.4.0</strong>
             </div>
             <div class="metric">
               <span>Sprint</span>
@@ -112,11 +112,11 @@
             </div>
             <div class="metric">
               <span>Progress</span>
-              <strong>91%</strong>
+              <strong>96%</strong>
             </div>
             <div class="metric">
               <span>Next</span>
-              <strong>Answer Renderer Shell</strong>
+              <strong>Beta QA Matrix</strong>
             </div>
           </div>
 
@@ -148,85 +148,85 @@
     </div>
 
     <script type="application/json" id="room-data">{
-  "version": "v1.3.5",
-  "badge": "v1.3.5 json",
-  "slug": "sourcejson",
-  "nav": "Source JSON",
-  "title": "VedaPath Source JSON Contract",
-  "pageLabel": "Source JSON contract",
-  "eyebrow": "Implementation lane",
-  "h1": "Give every source record a home shape.",
-  "lead": "A source JSON contract for citation, family, passage, allowed use, review state, rights state, answer coverage, and no-go boundaries.",
-  "source": "Mundaka Upanishad 1.1.4",
-  "family": "Upanishad | Shruti",
-  "stance": "Data contract, not a live database.",
-  "progress": 91,
-  "next": "Answer Renderer Shell",
-  "primaryAsk": "Freeze the first source-record shape before backend or retrieval work begins.",
-  "summary": "Source JSON Contract gives VedaPath a stable source-record shape that future retrieval, review, and answer rendering can share.",
+  "version": "v1.4.0",
+  "badge": "v1.4.0 import",
+  "slug": "sourceimport",
+  "nav": "Import",
+  "title": "VedaPath Source Import Checklist",
+  "pageLabel": "Source import checklist",
+  "eyebrow": "Dataset operations",
+  "h1": "Import sources only when the gaps are named.",
+  "lead": "A source import checklist for citation, edition, language fields, translation rights, review lanes, public eligibility, and blocked claims.",
+  "source": "Rigveda 1.164.46",
+  "family": "Veda | Shruti",
+  "stance": "Import checklist, not corpus ingestion.",
+  "progress": 96,
+  "next": "Beta QA Matrix",
+  "primaryAsk": "Make source import boring, careful, and reviewable before scaling the dataset.",
+  "summary": "Source Import Checklist turns dataset growth into a disciplined process with visible blockers and no-go fields.",
   "items": [
     [
-      "Identity",
-      "Source id, citation, family, text layer, and edition note.",
-      "Stops category blur."
+      "Citation",
+      "Text family, section, verse, edition, and source URL.",
+      "Grounds the record."
     ],
     [
-      "Use rights",
-      "Display allowed, quote limit, translation status, and audio status.",
-      "Prevents rights overreach."
+      "Language",
+      "Original text, transliteration, translation note, and uncertainty.",
+      "Protects meaning."
     ],
     [
-      "Review",
-      "Lane states for source, language, boundary, and product.",
-      "Makes trust inspectable."
+      "Rights",
+      "Display, quote, translation, and audio permissions.",
+      "Avoids rights mistakes."
     ],
     [
-      "Coverage",
-      "Questions it can answer and claims it must refuse.",
-      "Keeps answers narrow."
+      "Eligibility",
+      "Ready, hold, blocked, or reviewer-needed.",
+      "Controls public use."
     ]
   ],
   "modes": {
     "brief": [
       [
-        "Contract promise",
-        "A calm product starts with disciplined records."
+        "Import promise",
+        "Dataset growth should be slower than trust loss."
       ],
       [
-        "Build move",
-        "Write the record shape before choosing storage."
+        "Ops move",
+        "Mark blockers before records enter answers."
       ],
       [
-        "Trust move",
-        "Make missing fields block public confidence."
+        "Quality move",
+        "Make every missing field visible."
       ]
     ],
     "checklist": [
       [
-        "Complete",
-        "Does each record carry citation, rights, and review fields?"
+        "Cited",
+        "Is the source identity exact?"
       ],
       [
-        "Reusable",
-        "Can retrieval and answer rendering read the same shape?"
+        "Allowed",
+        "Are rights fields clear?"
       ],
       [
-        "Blocking",
-        "Can missing fields stop public use?"
+        "Eligible",
+        "Can this record answer public questions?"
       ]
     ],
     "boundary": [
       [
-        "No live data claim",
-        "Do not imply this JSON is a production database."
+        "No mass import",
+        "Do not bulk import without review fields."
       ],
       [
-        "No hidden rights",
-        "Do not omit rights state."
+        "No rights guess",
+        "Do not assume translation or audio rights."
       ],
       [
-        "No broad coverage",
-        "Do not let one source answer every nearby topic."
+        "No hidden gaps",
+        "Do not hide incomplete records."
       ]
     ]
   },
