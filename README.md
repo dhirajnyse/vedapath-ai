@@ -287,6 +287,8 @@ Let us look at the source first.
 - [Feedback Ticket Demo Notes](docs/FEEDBACK_TICKET_DEMO.md)
 - [Reviewer Decision Demo](reviewdecision.html)
 - [Reviewer Decision Demo Notes](docs/REVIEWER_DECISION_DEMO.md)
+- [Beta Landing Draft](betalanding.html)
+- [Beta Landing Draft Notes](docs/BETA_LANDING_DRAFT.md)
 <!-- VEDAPATH MVP LANE SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -318,7 +320,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v1.5.2` is a trusted MVP prototype plus Reviewer Decision Demo with:
+`v1.5.3` is a trusted MVP prototype plus Beta Landing Draft with:
 
 - Ask workspace
 - Source Card
@@ -461,6 +463,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Consent Settings Demo: Consent Settings Demo gives VedaPath a plain, reversible permission surface for future accounts and beta continuity.
 - Feedback Ticket Demo: Feedback Ticket Demo routes user corrections into typed product work while blocking sensitive personal intake.
 - Reviewer Decision Demo: Reviewer Decision Demo shows how VedaPath can convert feedback tickets and source gaps into accountable release states.
+- Beta Landing Draft: Beta Landing Draft turns VedaPath's MVP lane into public-facing copy without losing source-first humility.
 <!-- VEDAPATH MVP LANE SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff

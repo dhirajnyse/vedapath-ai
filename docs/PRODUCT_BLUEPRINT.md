@@ -144,6 +144,7 @@ It helps users move from curiosity to understanding through:
 - Consent Settings Demo: Consent Settings Demo gives VedaPath a plain, reversible permission surface for future accounts and beta continuity.
 - Feedback Ticket Demo: Feedback Ticket Demo routes user corrections into typed product work while blocking sensitive personal intake.
 - Reviewer Decision Demo: Reviewer Decision Demo shows how VedaPath can convert feedback tickets and source gaps into accountable release states.
+- Beta Landing Draft: Beta Landing Draft turns VedaPath's MVP lane into public-facing copy without losing source-first humility.
 <!-- VEDAPATH MVP LANE SPRINT SUMMARY END -->
 
 ## What It Is
@@ -2218,6 +2219,21 @@ It should:
 - produce a copyable working-MVP-lane handoff
 
 Reviewer Decision Demo should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 136. Beta Landing Draft
+
+Beta Landing Draft turns VedaPath's MVP lane into public-facing copy without losing source-first humility.
+
+It should:
+
+- Promise: Ancient texts. Clear paths. Source-first calm.
+- Proof: Source card, confidence reason, citation drawer, and trust center.
+- Use: Ask, inspect, reflect, learn, and return.
+- Boundary: Prototype, no authority, no therapy, no ritual replacement.
+- preserve the boundary: Landing draft, not final marketing approval.
+- produce a copyable working-MVP-lane handoff
+
+Beta Landing Draft should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH MVP LANE SPRINT BLUEPRINT END -->
 
 ## Product Personality
