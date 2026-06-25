@@ -157,6 +157,7 @@ It helps users move from curiosity to understanding through:
 - Consent Memory Preview: Consent Memory Preview keeps calm personal use from becoming hidden tracking: memory must be named, limited, and under user control.
 - Feedback Queue Simulator: Feedback Queue Simulator shows how VedaPath can learn from users through typed, privacy-light review tickets instead of silent answer rewrites.
 - Reviewer Decision Log: Reviewer Decision Log gives VedaPath a way to publish better answers because decisions are scoped, reasoned, and visible.
+- Working MVP Console: Working MVP Console completes the working data demo sprint and gives VedaPath a practical static-data path toward a real beta slice.
 <!-- VEDAPATH WORKING DATA SPRINT SUMMARY END -->
 
 ## What It Is
@@ -2397,6 +2398,21 @@ It should:
 - produce a copyable working-data handoff
 
 Reviewer Decision Log should never claim production storage, live retrieval, live AI generation, authentication, licensed source text, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 147. Working MVP Console
+
+Working MVP Console completes the working data demo sprint and gives VedaPath a practical static-data path toward a real beta slice.
+
+It should:
+
+- Input: Question route and source data record.
+- Grounding: Retrieval, evidence panel, and confidence rulebook.
+- User control: Consent memory and feedback queue.
+- Human review: Reviewer decisions change public answer state.
+- preserve the boundary: Working MVP console, not production launch.
+- produce a copyable working-data handoff
+
+Working MVP Console should never claim production storage, live retrieval, live AI generation, authentication, licensed source text, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH WORKING DATA SPRINT BLUEPRINT END -->
 
 ## Product Personality

@@ -311,6 +311,8 @@ Let us look at the source first.
 - [Feedback Queue Simulator Notes](docs/FEEDBACK_QUEUE_SIMULATOR.md)
 - [Reviewer Decision Log](decisionlog.html)
 - [Reviewer Decision Log Notes](docs/REVIEWER_DECISION_LOG.md)
+- [Working MVP Console](workingconsole.html)
+- [Working MVP Console Notes](docs/WORKING_MVP_CONSOLE.md)
 <!-- VEDAPATH WORKING DATA SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -342,7 +344,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v1.6.3` is a trusted MVP prototype plus Reviewer Decision Log with:
+`v1.6.4` is a trusted MVP prototype plus Working MVP Console with:
 
 - Ask workspace
 - Source Card
@@ -498,6 +500,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Consent Memory Preview: Consent Memory Preview keeps calm personal use from becoming hidden tracking: memory must be named, limited, and under user control.
 - Feedback Queue Simulator: Feedback Queue Simulator shows how VedaPath can learn from users through typed, privacy-light review tickets instead of silent answer rewrites.
 - Reviewer Decision Log: Reviewer Decision Log gives VedaPath a way to publish better answers because decisions are scoped, reasoned, and visible.
+- Working MVP Console: Working MVP Console completes the working data demo sprint and gives VedaPath a practical static-data path toward a real beta slice.
 <!-- VEDAPATH WORKING DATA SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
