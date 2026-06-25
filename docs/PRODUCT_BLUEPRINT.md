@@ -80,6 +80,7 @@ It helps users move from curiosity to understanding through:
 - First 25 Source Pack: First 25 Source Pack narrows the beta dataset to a small, reviewable, high-frequency group of source-backed questions.
 - Citation Inspector: Citation Inspector makes source quality visible before any answer receives high confidence.
 - Review Trail: Review Trail makes source and boundary decisions auditable without turning reviewer participation into broad endorsement.
+- Boundary Safety QA: Boundary Safety QA turns VedaPath's humility into testable refusal and caution checks.
 <!-- VEDAPATH READINESS SPRINT SUMMARY END -->
 
 ## What It Is
@@ -1339,6 +1340,21 @@ It should:
 - produce a copyable launch-readiness handoff
 
 Review Trail should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 82. Boundary Safety QA
+
+Boundary Safety QA turns VedaPath's humility into testable refusal and caution checks.
+
+It should:
+
+- Authority: Guru, oracle, priest, ritual authority, or final verdict.
+- Health: Therapy, diagnosis, emergency support, or medical claims.
+- Science: Proof of quantum physics, success, or modern claims.
+- Privacy: Hidden profiling, student tracking, family conflict storage.
+- preserve the boundary: Safety QA, not legal or medical advice.
+- produce a copyable launch-readiness handoff
+
+Boundary Safety QA should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH READINESS SPRINT BLUEPRINT END -->
 
 ## Product Personality

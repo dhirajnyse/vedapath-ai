@@ -169,6 +169,8 @@ Let us look at the source first.
 - [Citation Inspector Notes](docs/CITATION_INSPECTOR.md)
 - [Review Trail](reviewtrail.html)
 - [Review Trail Notes](docs/REVIEW_TRAIL.md)
+- [Boundary Safety QA](safety.html)
+- [Boundary Safety QA Notes](docs/BOUNDARY_SAFETY_QA.md)
 <!-- VEDAPATH READINESS SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -200,7 +202,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v0.9.8` is a trusted MVP prototype plus Review Trail with:
+`v0.9.9` is a trusted MVP prototype plus Boundary Safety QA with:
 
 - Ask workspace
 - Source Card
@@ -279,6 +281,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - First 25 Source Pack: First 25 Source Pack narrows the beta dataset to a small, reviewable, high-frequency group of source-backed questions.
 - Citation Inspector: Citation Inspector makes source quality visible before any answer receives high confidence.
 - Review Trail: Review Trail makes source and boundary decisions auditable without turning reviewer participation into broad endorsement.
+- Boundary Safety QA: Boundary Safety QA turns VedaPath's humility into testable refusal and caution checks.
 <!-- VEDAPATH READINESS SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff

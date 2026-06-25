@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>VedaPath Citation Inspector</title>
+    <title>VedaPath Boundary Safety QA</title>
     <link rel="stylesheet" href="assets/vedapath-sprint.css">
   </head>
   <body>
@@ -13,7 +13,7 @@
           <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
           <div>
             <strong>VedaPath AI</strong>
-            <span>Citation inspector</span>
+            <span>Boundary QA</span>
           </div>
         </a>
         <nav class="nav" aria-label="Project links">
@@ -27,15 +27,15 @@
           <!-- VEDAPATH READINESS SPRINT NAV START -->
           <a class="link" href="launchcheck.html">Checklist</a>
           <a class="link" href="sourcepack.html">Source Pack</a>
-          <a class="link active" href="citation.html">Citation</a>
+          <a class="link" href="citation.html">Citation</a>
           <a class="link" href="reviewtrail.html">Trail</a>
-          <a class="link" href="safety.html">Safety</a>
+          <a class="link active" href="safety.html">Safety</a>
           <!-- VEDAPATH READINESS SPRINT NAV END -->
           <span class="version">v0.9.9 safety</span>
         </nav>
       </header>
 
-      <main class="workspace" aria-label="VedaPath Citation Inspector workspace">
+      <main class="workspace" aria-label="VedaPath Boundary Safety QA workspace">
         <aside class="panel">
           <span class="eyebrow">Launch readiness sprint</span>
           <h2>Release Rooms</h2>
@@ -46,38 +46,38 @@
         <section class="panel">
           <div class="hero-grid">
             <div>
-              <span class="eyebrow">Citation quality</span>
-              <h1>Make every citation inspectable.</h1>
-              <p class="muted">A citation quality room that checks source family, passage id, translation layer, rights note, reviewer state, and answer eligibility.</p>
+              <span class="eyebrow">No-go testing</span>
+              <h1>Test what the product must refuse.</h1>
+              <p class="muted">A no-go QA room for checking guru voice, therapy claims, ritual instruction, scientific overclaims, privacy leaks, and source-family confusion.</p>
             </div>
             <div class="mark-stage">
-              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Citation logo">
+              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Safety logo">
             </div>
           </div>
 
           <div class="source-block" aria-label="Release source card">
             <div>
               <span class="source-meta">Release</span>
-              <span class="source-value">v0.9.7</span>
+              <span class="source-value">v0.9.9</span>
             </div>
             <div>
               <span class="source-meta">Source candidate</span>
-              <span class="source-value">Rigveda 1.164.46</span>
+              <span class="source-value">Katha Upanishad 1.2.1</span>
             </div>
             <div>
               <span class="source-meta">Text family</span>
-              <span class="source-value">Veda | Shruti</span>
+              <span class="source-value">Upanishad | Shruti</span>
             </div>
             <div>
               <span class="source-meta">Boundary</span>
-              <span class="source-value">Citation inspection, not final authority.</span>
+              <span class="source-value">Safety QA, not legal or medical advice.</span>
             </div>
           </div>
 
           <h2>Decision Signals</h2>
           <div class="item-list" id="itemList"></div>
 
-          <div class="tabs" role="tablist" aria-label="VedaPath Citation Inspector layers">
+          <div class="tabs" role="tablist" aria-label="VedaPath Boundary Safety QA layers">
             <button class="tab active" type="button" data-mode="brief">Brief</button>
             <button class="tab" type="button" data-mode="checklist">Checklist</button>
             <button class="tab" type="button" data-mode="boundary">Boundary</button>
@@ -91,20 +91,20 @@
             <button class="button" id="copyBoundary" type="button">Copy Boundary</button>
           </div>
 
-          <textarea id="output" readonly aria-label="VedaPath Citation Inspector output"></textarea>
+          <textarea id="output" readonly aria-label="VedaPath Boundary Safety QA output"></textarea>
         </section>
 
-        <aside class="panel tight" aria-label="VedaPath Citation Inspector sprint rail">
+        <aside class="panel tight" aria-label="VedaPath Boundary Safety QA sprint rail">
           <span class="badge green">Readiness progress</span>
-          <h2 style="margin-top: 14px;">Citation Pulse</h2>
-          <p class="muted">Citation Inspector makes source quality visible before any answer receives high confidence.</p>
-          <div class="progress" aria-label="Sprint progress 93 percent">
-            <div class="bar" style="--score:93%"></div>
+          <h2 style="margin-top: 14px;">Safety Pulse</h2>
+          <p class="muted">Boundary Safety QA turns VedaPath's humility into testable refusal and caution checks.</p>
+          <div class="progress" aria-label="Sprint progress 95 percent">
+            <div class="bar" style="--score:95%"></div>
           </div>
           <div class="metric-grid">
             <div class="metric">
               <span>Current</span>
-              <strong>v0.9.7</strong>
+              <strong>v0.9.9</strong>
             </div>
             <div class="metric">
               <span>Sprint</span>
@@ -112,11 +112,11 @@
             </div>
             <div class="metric">
               <span>Progress</span>
-              <strong>93%</strong>
+              <strong>95%</strong>
             </div>
             <div class="metric">
               <span>Next</span>
-              <strong>Review Trail</strong>
+              <strong>Pilot Launch Room</strong>
             </div>
           </div>
 
@@ -148,85 +148,85 @@
     </div>
 
     <script type="application/json" id="room-data">{
-  "version": "v0.9.7",
-  "badge": "v0.9.7 citation",
-  "slug": "citation",
-  "nav": "Citation",
-  "title": "VedaPath Citation Inspector",
-  "pageLabel": "Citation inspector",
-  "eyebrow": "Citation quality",
-  "h1": "Make every citation inspectable.",
-  "lead": "A citation quality room that checks source family, passage id, translation layer, rights note, reviewer state, and answer eligibility.",
-  "source": "Rigveda 1.164.46",
-  "family": "Veda | Shruti",
-  "stance": "Citation inspection, not final authority.",
-  "progress": 93,
-  "next": "Review Trail",
-  "primaryAsk": "Define the citation checks required before a source powers a beta answer.",
-  "summary": "Citation Inspector makes source quality visible before any answer receives high confidence.",
+  "version": "v0.9.9",
+  "badge": "v0.9.9 safety",
+  "slug": "safety",
+  "nav": "Safety",
+  "title": "VedaPath Boundary Safety QA",
+  "pageLabel": "Boundary QA",
+  "eyebrow": "No-go testing",
+  "h1": "Test what the product must refuse.",
+  "lead": "A no-go QA room for checking guru voice, therapy claims, ritual instruction, scientific overclaims, privacy leaks, and source-family confusion.",
+  "source": "Katha Upanishad 1.2.1",
+  "family": "Upanishad | Shruti",
+  "stance": "Safety QA, not legal or medical advice.",
+  "progress": 95,
+  "next": "Pilot Launch Room",
+  "primaryAsk": "Create the no-go checks that every beta release must pass.",
+  "summary": "Boundary Safety QA turns VedaPath's humility into testable refusal and caution checks.",
   "items": [
     [
-      "Identity",
-      "Source family, text name, chapter or passage id, and edition note.",
-      "Prevents broad source confusion."
+      "Authority",
+      "Guru, oracle, priest, ritual authority, or final verdict.",
+      "Must be refused or softened."
     ],
     [
-      "Language",
-      "Original text, transliteration, translation, and translation rights.",
-      "Prevents unreviewed display."
+      "Health",
+      "Therapy, diagnosis, emergency support, or medical claims.",
+      "Must route to real-world support."
     ],
     [
-      "Context",
-      "Plain meaning, tradition note, and interpretation caveat.",
-      "Prevents flattening depth."
+      "Science",
+      "Proof of quantum physics, success, or modern claims.",
+      "Must label analogy and uncertainty."
     ],
     [
-      "Eligibility",
-      "Ready, hold, blocked, or reviewer-needed.",
-      "Prevents false confidence."
+      "Privacy",
+      "Hidden profiling, student tracking, family conflict storage.",
+      "Must block or require explicit consent."
     ]
   ],
   "modes": {
     "brief": [
       [
-        "Inspector promise",
-        "A citation should be something a careful reader can inspect, not a decoration under an answer."
-      ],
-      [
-        "UX move",
-        "Show missing citation fields as visible holds."
+        "Safety promise",
+        "A calm product becomes trustworthy partly by refusing the wrong work."
       ],
       [
         "Release move",
-        "Only eligible citations can appear in beta answer cards."
+        "Each beta release needs no-go checks before public copy."
+      ],
+      [
+        "UX move",
+        "Refusals should be gentle, useful, and source-aware when possible."
       ]
     ],
     "checklist": [
       [
-        "Specific",
-        "Does the citation identify a passage, not only a tradition?"
+        "Identify",
+        "Which boundary could this feature cross?"
       ],
       [
-        "Licensed",
-        "Is display or translation use allowed?"
+        "Refuse",
+        "Does the product decline the unsafe role clearly?"
       ],
       [
-        "Reviewed",
-        "Is the source state explicit?"
+        "Redirect",
+        "Does it offer a safer next step?"
       ]
     ],
     "boundary": [
       [
-        "No decorative citation",
-        "Do not use citations as trust decoration without inspectable fields."
+        "No guru voice",
+        "Do not speak as spiritual authority."
       ],
       [
-        "No rights blur",
-        "Do not display translations or audio without rights review."
+        "No therapy claim",
+        "Do not diagnose, treat, or handle emergencies."
       ],
       [
-        "No confidence shortcut",
-        "Do not use high confidence when citation state is incomplete."
+        "No private inference",
+        "Do not infer personal identity or distress from use."
       ]
     ]
   },
