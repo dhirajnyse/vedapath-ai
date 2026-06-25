@@ -60,6 +60,7 @@ It helps users move from curiosity to understanding through:
 - Workplace Steadiness Mode: Workplace Steadiness Mode translates calm into practical work moments without pretending to manage careers or mental health.
 - Festival and Daily Calendar: Festival and Daily Calendar gives VedaPath a seasonal learning layer while keeping regional, ritual, and date boundaries explicit.
 - Mantra Pronunciation Prep: Mantra Pronunciation Prep turns future audio into a careful source, review, and rights workflow before any sound is shipped.
+- Launch Landing Kit: Launch Landing Kit creates clear launch copy that shows calm, source-first trust, prototype status, and boundaries.
 <!-- VEDAPATH PERSONAL SPRINT SUMMARY END -->
 
 ## What It Is
@@ -1077,6 +1078,21 @@ It should:
 - produce a copyable founder handoff
 
 Mantra Pronunciation Prep should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 66. Launch Landing Kit
+
+Launch Landing Kit creates clear launch copy that shows calm, source-first trust, prototype status, and boundaries.
+
+It should:
+
+- Headline: Ancient texts. Clear paths.
+- Proof: Source card, Pramana Meter, review queue, build status.
+- Audience: Learners, families, workers, reviewers, and founders.
+- Boundary: Prototype, not guru, therapy, ritual, or verified authority.
+- preserve the boundary: Invitation, not authority claim.
+- produce a copyable founder handoff
+
+Launch Landing Kit should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH PERSONAL SPRINT BLUEPRINT END -->
 
 ## Product Personality
