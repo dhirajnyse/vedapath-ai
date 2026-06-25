@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>VedaPath Beta Waitlist Room</title>
+    <title>VedaPath Release Candidate Room</title>
     <link rel="stylesheet" href="assets/vedapath-sprint.css">
   </head>
   <body>
@@ -13,7 +13,7 @@
           <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
           <div>
             <strong>VedaPath AI</strong>
-            <span>Beta waitlist room</span>
+            <span>Release candidate room</span>
           </div>
         </a>
         <nav class="nav" aria-label="Project links">
@@ -26,20 +26,20 @@
           <!-- VEDAPATH IMPLEMENTATION SPRINT NAV START -->
           <a class="link" href="sourcejson.html">Source JSON</a>
           <a class="link" href="answerrenderer.html">Renderer</a>
-          <a class="link active" href="betawaitlist.html">Waitlist</a>
+          <a class="link" href="betawaitlist.html">Waitlist</a>
           <a class="link" href="consenttoggle.html">Consent</a>
           <a class="link" href="reviewmock.html">Review Mock</a>
           <a class="link" href="sourceimport.html">Import</a>
           <a class="link" href="betaqa.html">QA</a>
           <a class="link" href="helpcenter.html">Help</a>
           <a class="link" href="foundermetrics.html">Metrics</a>
-          <a class="link" href="releasecandidate.html">Candidate</a>
+          <a class="link active" href="releasecandidate.html">Candidate</a>
           <!-- VEDAPATH IMPLEMENTATION SPRINT NAV END -->
           <span class="version">v1.4.4 candidate</span>
         </nav>
       </header>
 
-      <main class="workspace" aria-label="VedaPath Beta Waitlist Room workspace">
+      <main class="workspace" aria-label="VedaPath Release Candidate Room workspace">
         <aside class="panel">
           <span class="eyebrow">Implementation readiness sprint</span>
           <h2>Release Rooms</h2>
@@ -50,19 +50,19 @@
         <section class="panel">
           <div class="hero-grid">
             <div>
-              <span class="eyebrow">Public beta intake</span>
-              <h1>Invite early users without rushing the promise.</h1>
-              <p class="muted">A waitlist room for audience type, interest path, consent note, beta boundary, feedback willingness, and launch hold state.</p>
+              <span class="eyebrow">Implementation decision</span>
+              <h1>Choose one real lane and make it shippable.</h1>
+              <p class="muted">A release candidate room that gathers source JSON, answer renderer, waitlist, consent, review mock, import checklist, QA, help, and metrics into one implementation decision.</p>
             </div>
             <div class="mark-stage">
-              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Waitlist logo">
+              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Candidate logo">
             </div>
           </div>
 
           <div class="source-block" aria-label="Release source card">
             <div>
               <span class="source-meta">Release</span>
-              <span class="source-value">v1.3.7</span>
+              <span class="source-value">v1.4.4</span>
             </div>
             <div>
               <span class="source-meta">Source candidate</span>
@@ -74,14 +74,14 @@
             </div>
             <div>
               <span class="source-meta">Boundary</span>
-              <span class="source-value">Waitlist prototype, not live signup.</span>
+              <span class="source-value">Release candidate decision, not production launch.</span>
             </div>
           </div>
 
           <h2>Decision Signals</h2>
           <div class="item-list" id="itemList"></div>
 
-          <div class="tabs" role="tablist" aria-label="VedaPath Beta Waitlist Room layers">
+          <div class="tabs" role="tablist" aria-label="VedaPath Release Candidate Room layers">
             <button class="tab active" type="button" data-mode="brief">Brief</button>
             <button class="tab" type="button" data-mode="checklist">Checklist</button>
             <button class="tab" type="button" data-mode="boundary">Boundary</button>
@@ -95,20 +95,20 @@
             <button class="button" id="copyBoundary" type="button">Copy Boundary</button>
           </div>
 
-          <textarea id="output" readonly aria-label="VedaPath Beta Waitlist Room output"></textarea>
+          <textarea id="output" readonly aria-label="VedaPath Release Candidate Room output"></textarea>
         </section>
 
-        <aside class="panel tight" aria-label="VedaPath Beta Waitlist Room sprint rail">
+        <aside class="panel tight" aria-label="VedaPath Release Candidate Room sprint rail">
           <span class="badge green">Implementation readiness</span>
-          <h2 style="margin-top: 14px;">Waitlist Pulse</h2>
-          <p class="muted">Beta Waitlist Room turns launch excitement into a careful intake path that respects user expectation and product limits.</p>
-          <div class="progress" aria-label="Sprint progress 93 percent">
-            <div class="bar" style="--score:93%"></div>
+          <h2 style="margin-top: 14px;">Candidate Pulse</h2>
+          <p class="muted">Release Candidate Room completes the implementation-readiness sprint and turns VedaPath's next step into one shippable lane.</p>
+          <div class="progress" aria-label="Sprint progress 100 percent">
+            <div class="bar" style="--score:100%"></div>
           </div>
           <div class="metric-grid">
             <div class="metric">
               <span>Current</span>
-              <strong>v1.3.7</strong>
+              <strong>v1.4.4</strong>
             </div>
             <div class="metric">
               <span>Sprint</span>
@@ -116,11 +116,11 @@
             </div>
             <div class="metric">
               <span>Progress</span>
-              <strong>93%</strong>
+              <strong>100%</strong>
             </div>
             <div class="metric">
               <span>Next</span>
-              <strong>Consent Toggle Mock</strong>
+              <strong>Founder instruction</strong>
             </div>
           </div>
 
@@ -152,85 +152,85 @@
     </div>
 
     <script type="application/json" id="room-data">{
-  "version": "v1.3.7",
-  "badge": "v1.3.7 waitlist",
-  "slug": "betawaitlist",
-  "nav": "Waitlist",
-  "title": "VedaPath Beta Waitlist Room",
-  "pageLabel": "Beta waitlist room",
-  "eyebrow": "Public beta intake",
-  "h1": "Invite early users without rushing the promise.",
-  "lead": "A waitlist room for audience type, interest path, consent note, beta boundary, feedback willingness, and launch hold state.",
+  "version": "v1.4.4",
+  "badge": "v1.4.4 candidate",
+  "slug": "releasecandidate",
+  "nav": "Candidate",
+  "title": "VedaPath Release Candidate Room",
+  "pageLabel": "Release candidate room",
+  "eyebrow": "Implementation decision",
+  "h1": "Choose one real lane and make it shippable.",
+  "lead": "A release candidate room that gathers source JSON, answer renderer, waitlist, consent, review mock, import checklist, QA, help, and metrics into one implementation decision.",
   "source": "Bhagavad Gita 18.63",
   "family": "Bhagavad Gita | Smriti",
-  "stance": "Waitlist prototype, not live signup.",
-  "progress": 93,
-  "next": "Consent Toggle Mock",
-  "primaryAsk": "Shape beta intake around consent, source interest, and reviewable feedback.",
-  "summary": "Beta Waitlist Room turns launch excitement into a careful intake path that respects user expectation and product limits.",
+  "stance": "Release candidate decision, not production launch.",
+  "progress": 100,
+  "next": "Founder instruction",
+  "primaryAsk": "Choose the next real build lane: source JSON plus renderer, waitlist plus consent, or reviewer queue plus import checklist.",
+  "summary": "Release Candidate Room completes the implementation-readiness sprint and turns VedaPath's next step into one shippable lane.",
   "items": [
     [
-      "Audience",
-      "Learner, teacher, parent, reviewer, creator, or calm seeker.",
-      "Guides beta cohorts."
+      "Source lane",
+      "Source JSON, import checklist, QA, and renderer shell.",
+      "Best for answer trust."
     ],
     [
-      "Interest",
-      "Ask, learn, calm, teach, review, or build with sources.",
-      "Shows why they came."
+      "User lane",
+      "Waitlist, consent toggles, help center, and metrics.",
+      "Best for beta entry."
     ],
     [
-      "Consent",
-      "Email permission, feedback permission, and privacy boundary.",
-      "Protects trust."
+      "Review lane",
+      "Reviewer mock, scholar packets, source score, and hold states.",
+      "Best for human trust."
     ],
     [
-      "Hold state",
-      "Beta access waits until source scope and support routes are ready.",
-      "Keeps launch honest."
+      "Decision",
+      "Pick one lane, name blockers, and define done.",
+      "Prevents scattered building."
     ]
   ],
   "modes": {
     "brief": [
       [
-        "Waitlist promise",
-        "A waitlist should gather fit, not hype."
+        "Candidate promise",
+        "The next sprint should implement one narrow thing well."
       ],
       [
-        "Launch move",
-        "Invite the right early users for a narrow beta."
+        "Founder move",
+        "Choose source, user, or review lane before more pages."
       ],
       [
-        "Privacy move",
-        "Collect only what supports beta access."
+        "Build move",
+        "Make the chosen lane testable and shippable."
       ]
     ],
     "checklist": [
       [
-        "Minimal",
-        "Does the waitlist avoid unnecessary personal data?"
+        "Narrow",
+        "Is the lane small enough to build?"
       ],
       [
-        "Useful",
-        "Can audience type guide beta scope?"
+        "Valuable",
+        "Does it reduce the biggest launch risk?"
       ],
       [
-        "Honest",
-        "Is prototype status visible?"
+        "Testable",
+        "Can we verify it with real checks?"
       ]
     ],
     "boundary": [
       [
-        "No public signup claim",
-        "Do not call this a live waitlist."
+        "No all-at-once build",
+        "Do not build source, user, and review systems together."
       ],
       [
-        "No sensitive intake",
-        "Do not collect private distress or health details."
+        "No production claim",
+        "Do not call this a launch."
       ],
       [
-        "No access promise",
-        "Do not promise immediate beta entry."
+        "No trust shortcut",
+        "Do not skip source, consent, review, or QA gates."
       ]
     ]
   },

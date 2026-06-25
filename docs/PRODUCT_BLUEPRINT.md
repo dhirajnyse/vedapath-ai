@@ -133,6 +133,7 @@ It helps users move from curiosity to understanding through:
 - Beta QA Matrix: Beta QA Matrix turns VedaPath's product values into release checks for trust, privacy, usability, and mobile simplicity.
 - Help Boundary Center: Help Boundary Center gives VedaPath a plain-language support surface that reduces confusion and protects users.
 - Founder Metrics Board: Founder Metrics Board keeps VedaPath launch learning focused on source quality, trust risk, and product clarity.
+- Release Candidate Room: Release Candidate Room completes the implementation-readiness sprint and turns VedaPath's next step into one shippable lane.
 <!-- VEDAPATH IMPLEMENTATION SPRINT SUMMARY END -->
 
 ## What It Is
@@ -2071,6 +2072,21 @@ It should:
 - produce a copyable implementation-readiness handoff
 
 Founder Metrics Board should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 127. Release Candidate Room
+
+Release Candidate Room completes the implementation-readiness sprint and turns VedaPath's next step into one shippable lane.
+
+It should:
+
+- Source lane: Source JSON, import checklist, QA, and renderer shell.
+- User lane: Waitlist, consent toggles, help center, and metrics.
+- Review lane: Reviewer mock, scholar packets, source score, and hold states.
+- Decision: Pick one lane, name blockers, and define done.
+- preserve the boundary: Release candidate decision, not production launch.
+- produce a copyable implementation-readiness handoff
+
+Release Candidate Room should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH IMPLEMENTATION SPRINT BLUEPRINT END -->
 
 ## Product Personality

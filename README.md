@@ -267,6 +267,8 @@ Let us look at the source first.
 - [Help Boundary Center Notes](docs/HELP_BOUNDARY_CENTER.md)
 - [Founder Metrics Board](foundermetrics.html)
 - [Founder Metrics Board Notes](docs/FOUNDER_METRICS_BOARD.md)
+- [Release Candidate Room](releasecandidate.html)
+- [Release Candidate Room Notes](docs/RELEASE_CANDIDATE_ROOM.md)
 <!-- VEDAPATH IMPLEMENTATION SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -298,7 +300,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v1.4.3` is a trusted MVP prototype plus Founder Metrics Board with:
+`v1.4.4` is a trusted MVP prototype plus Release Candidate Room with:
 
 - Ask workspace
 - Source Card
@@ -430,6 +432,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Beta QA Matrix: Beta QA Matrix turns VedaPath's product values into release checks for trust, privacy, usability, and mobile simplicity.
 - Help Boundary Center: Help Boundary Center gives VedaPath a plain-language support surface that reduces confusion and protects users.
 - Founder Metrics Board: Founder Metrics Board keeps VedaPath launch learning focused on source quality, trust risk, and product clarity.
+- Release Candidate Room: Release Candidate Room completes the implementation-readiness sprint and turns VedaPath's next step into one shippable lane.
 <!-- VEDAPATH IMPLEMENTATION SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
