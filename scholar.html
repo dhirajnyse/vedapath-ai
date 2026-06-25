@@ -1,0 +1,1038 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VedaPath Scholar Review</title>
+    <style>
+      :root {
+        --bg: #fff7ea;
+        --surface: #fffdf8;
+        --surface-strong: #fff1e7;
+        --ink: #1d1714;
+        --muted: #6c3b25;
+        --line: #ead7c8;
+        --bhagwa: #d65a1f;
+        --ochre: #a83f12;
+        --gold: #e0a83b;
+        --green: #145c4a;
+        --indigo: #29335c;
+        --soft-green: #e8f0ea;
+        --soft-red: #fde8dd;
+        --soft-gold: #fff3d7;
+        --shadow: 0 18px 50px rgba(70, 36, 14, 0.08);
+        --radius: 8px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: Arial, Helvetica, sans-serif;
+        line-height: 1.55;
+      }
+
+      button,
+      textarea {
+        font: inherit;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .shell {
+        width: min(1240px, calc(100% - 44px));
+        margin: 0 auto;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 22px;
+        padding: 22px 0 16px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+        min-width: 220px;
+      }
+
+      .brand img {
+        width: 48px;
+        height: 48px;
+        border-radius: 8px;
+        object-fit: cover;
+        box-shadow: 0 8px 22px rgba(214, 90, 31, 0.13);
+      }
+
+      .brand strong {
+        display: block;
+        font-size: 20px;
+        line-height: 1.1;
+      }
+
+      .brand span {
+        display: block;
+        color: var(--muted);
+        font-size: 13px;
+        margin-top: 2px;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .link,
+      .version,
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 40px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 800;
+        white-space: nowrap;
+      }
+
+      .link {
+        padding: 8px 10px;
+        color: #432414;
+      }
+
+      .link.active,
+      .version {
+        border: 1px solid #efb899;
+        color: var(--ochre);
+        background: rgba(255, 253, 248, 0.74);
+      }
+
+      .version {
+        padding: 8px 14px;
+      }
+
+      .button {
+        border: 1px solid #efb899;
+        color: var(--ochre);
+        background: var(--surface);
+        padding: 10px 14px;
+        cursor: pointer;
+      }
+
+      .button.primary {
+        border-color: var(--bhagwa);
+        background: var(--bhagwa);
+        color: white;
+      }
+
+      .button.safe {
+        color: #064f43;
+        border-color: #b9d3ca;
+      }
+
+      .workspace {
+        display: grid;
+        grid-template-columns: 0.95fr 1.35fr 0.9fr;
+        gap: 16px;
+        padding: 20px 0 28px;
+      }
+
+      .panel {
+        background: rgba(255, 253, 248, 0.82);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 18px;
+        box-shadow: var(--shadow);
+      }
+
+      .panel.tight {
+        box-shadow: none;
+      }
+
+      .eyebrow,
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        min-height: 28px;
+        border-radius: 999px;
+        padding: 5px 10px;
+        font-size: 12px;
+        font-weight: 900;
+        color: var(--ochre);
+        background: var(--soft-red);
+      }
+
+      .badge.green {
+        color: #075244;
+        background: var(--soft-green);
+      }
+
+      .badge.gold {
+        color: #6e4310;
+        background: var(--soft-gold);
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        font-size: clamp(48px, 8vw, 88px);
+        line-height: 0.96;
+        letter-spacing: 0;
+        margin: 18px 0;
+      }
+
+      h2 {
+        font-size: 26px;
+        line-height: 1.12;
+        margin-bottom: 12px;
+      }
+
+      h3 {
+        font-size: 18px;
+        margin-bottom: 6px;
+      }
+
+      .muted {
+        color: var(--muted);
+      }
+
+      .case-list,
+      .role-grid,
+      .gate-grid,
+      .evidence-grid,
+      .protocol-grid {
+        display: grid;
+        gap: 10px;
+      }
+
+      .case-list {
+        margin-top: 18px;
+      }
+
+      .case-card {
+        display: grid;
+        grid-template-columns: 34px 1fr;
+        gap: 12px;
+        width: 100%;
+        text-align: left;
+        border: 1px solid var(--line);
+        background: var(--surface);
+        color: var(--ink);
+        border-radius: var(--radius);
+        padding: 12px;
+        cursor: pointer;
+      }
+
+      .case-card:hover,
+      .case-card:focus-visible,
+      .case-card.active {
+        border-color: #eea37e;
+        background: var(--surface-strong);
+        outline: none;
+      }
+
+      .case-index {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        color: var(--green);
+        background: var(--soft-green);
+        font-weight: 900;
+      }
+
+      .case-card.active .case-index {
+        color: white;
+        background: var(--bhagwa);
+      }
+
+      .case-card strong,
+      .case-card span:not(.case-index) {
+        display: block;
+      }
+
+      .case-card span:not(.case-index) {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .review-hero {
+        display: grid;
+        grid-template-columns: 1fr 170px;
+        gap: 16px;
+        align-items: center;
+      }
+
+      .review-hero img {
+        width: 100%;
+        aspect-ratio: 1;
+        border-radius: var(--radius);
+        object-fit: cover;
+        border: 1px solid #efc9b1;
+        background: #fff4e5;
+      }
+
+      .source-card {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        margin: 18px 0 16px;
+        border-left: 4px solid var(--bhagwa);
+        padding: 14px;
+        background: var(--surface);
+        border-radius: var(--radius);
+        border-top: 1px solid var(--line);
+        border-right: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .source-meta {
+        display: block;
+        color: var(--muted);
+        font-size: 12px;
+        margin-bottom: 4px;
+      }
+
+      .source-value {
+        display: block;
+        font-weight: 900;
+        overflow-wrap: anywhere;
+      }
+
+      .role-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .role-card,
+      .gate,
+      .evidence,
+      .protocol-step {
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 12px;
+        background: var(--surface);
+      }
+
+      .role-card {
+        min-height: 122px;
+      }
+
+      .role-card.approved {
+        border-color: #b9d3ca;
+        background: #f4fbf7;
+      }
+
+      .role-card.pending {
+        border-color: #f0cf8b;
+        background: #fffaf0;
+      }
+
+      .role-card.blocked {
+        border-color: #efb899;
+        background: #fff1e7;
+      }
+
+      .role-card strong,
+      .role-card span,
+      .gate strong,
+      .gate span,
+      .evidence strong,
+      .evidence span {
+        display: block;
+      }
+
+      .role-card span,
+      .gate span,
+      .evidence span {
+        color: var(--muted);
+        font-size: 13px;
+        margin-top: 8px;
+      }
+
+      .gate-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        margin-top: 14px;
+      }
+
+      .gate.pass {
+        border-left: 4px solid var(--green);
+      }
+
+      .gate.wait {
+        border-left: 4px solid var(--gold);
+      }
+
+      .gate.block {
+        border-left: 4px solid var(--bhagwa);
+      }
+
+      .tabs {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        border-top: 1px solid var(--line);
+        padding-top: 16px;
+        margin-top: 16px;
+      }
+
+      .tab {
+        min-height: 40px;
+        border-radius: 8px;
+        border: 1px solid #efb899;
+        color: var(--ochre);
+        background: var(--surface);
+        padding: 9px 12px;
+        font-weight: 900;
+        cursor: pointer;
+      }
+
+      .tab.active {
+        background: var(--bhagwa);
+        color: white;
+        border-color: var(--bhagwa);
+      }
+
+      .mode-panel {
+        margin-top: 14px;
+      }
+
+      .evidence-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .evidence.review {
+        border-left: 3px solid var(--gold);
+      }
+
+      .evidence.boundary {
+        border-left: 3px solid var(--indigo);
+      }
+
+      .evidence.approved {
+        border-left: 3px solid var(--green);
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 16px 0;
+      }
+
+      .review-output {
+        width: 100%;
+        min-height: 164px;
+        resize: vertical;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: #fffaf4;
+        color: var(--ink);
+        padding: 14px;
+      }
+
+      .mini-stat {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-top: 12px;
+      }
+
+      .stat {
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 12px;
+        background: var(--surface);
+      }
+
+      .stat strong {
+        display: block;
+        font-size: 28px;
+        line-height: 1.1;
+      }
+
+      .protocol-step {
+        display: grid;
+        grid-template-columns: 38px 1fr;
+        gap: 12px;
+        align-items: start;
+      }
+
+      .protocol-step strong,
+      .protocol-step span {
+        display: block;
+      }
+
+      .protocol-step span {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .boundary {
+        margin-top: 16px;
+        border: 1px dashed #eab18f;
+        border-radius: var(--radius);
+        padding: 14px;
+      }
+
+      @media (max-width: 980px) {
+        .workspace,
+        .review-hero {
+          grid-template-columns: 1fr;
+        }
+
+        .topbar {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .nav {
+          justify-content: flex-start;
+        }
+      }
+
+      @media (max-width: 680px) {
+        .shell {
+          width: min(100% - 28px, 1240px);
+        }
+
+        h1 {
+          font-size: 44px;
+        }
+
+        .source-card,
+        .role-grid,
+        .gate-grid,
+        .evidence-grid,
+        .mini-stat {
+          grid-template-columns: 1fr;
+        }
+
+        .link,
+        .version,
+        .button,
+        .tab {
+          min-height: 38px;
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="shell" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top" aria-label="VedaPath AI home">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo">
+          <span>
+            <strong>VedaPath AI</strong>
+            <span>Scholar review seed</span>
+          </span>
+        </a>
+        <nav class="nav" aria-label="Project links">
+          <a class="link" href="build-status.html">Build</a>
+          <a class="link" href="brand/brand-board.html">Brand</a>
+          <a class="link" href="blueprint.html">Blueprint</a>
+          <a class="link" href="calm.html">Calm</a>
+          <a class="link" href="daily.html">Daily</a>
+          <a class="link" href="practice.html">Practice</a>
+          <a class="link" href="library.html">Library</a>
+          <a class="link" href="seeds.html">Seeds</a>
+          <a class="link" href="retrieval.html">Retrieval</a>
+          <a class="link" href="passages.html">Review</a>
+          <a class="link" href="eval.html">Eval</a>
+          <a class="link" href="dashboard.html">Dash</a>
+          <a class="link" href="queue.html">Queue</a>
+          <a class="link" href="policy.html">Policy</a>
+          <a class="link" href="ledger.html">Ledger</a>
+          <a class="link" href="life.html">Life</a>
+          <a class="link" href="circle.html">Circle</a>
+          <a class="link" href="consent.html">Consent</a>
+          <a class="link" href="memory.html">Memory</a>
+          <a class="link" href="model.html">Model</a>
+          <a class="link" href="passport.html">Passport</a>
+          <a class="link" href="schema.html">Schema</a>
+          <a class="link" href="fixtures.html">Fixtures</a>
+          <a class="link" href="drill.html">Drill</a>
+          <a class="link" href="loop.html">Loop</a>
+          <a class="link" href="lens.html">Lens</a>
+          <a class="link" href="voice.html">Voice</a>
+          <a class="link active" href="scholar.html">Scholar</a>
+          <a class="link" href="path.html">Path</a>
+          <a class="link" href="compass.html">Compass</a>
+          <a class="link" href="card.html">Card</a>
+          <a class="link" href="bell.html">Bell</a>
+          <a class="link" href="reply.html">Reply</a>
+          <a class="link" href="samvada.html">Samvada</a>
+          <a class="link" href="sankalpa.html">Intent</a>
+          <a class="link" href="seva.html">Seva</a>
+          <a class="link" href="morning.html">Morning</a>
+          <a class="link" href="evening.html">Evening</a>
+          <a class="link" href="rhythm.html">Rhythm</a>
+          <span class="version">v0.5.8 scholar</span>
+        </nav>
+      </header>
+
+      <main class="workspace" aria-label="VedaPath Scholar Review workspace">
+        <section class="panel">
+          <span class="eyebrow">Human review</span>
+          <h1>Trust needs named evidence.</h1>
+          <p class="muted">Choose a review case. VedaPath shows reviewer roles, evidence status, approval state, and the exact boundary before a source, Lens, or Voice record can move forward.</p>
+          <div class="case-list" id="caseList"></div>
+        </section>
+
+        <section class="panel">
+          <div class="review-hero">
+            <div>
+              <span class="eyebrow">Scholar Review Seed</span>
+              <h2 id="reviewTitle">A source is not trusted until review is visible.</h2>
+              <p class="muted" id="reviewSummary">The review layer keeps source text, interpretation, voice, and rights decisions separate before a release claim is made.</p>
+            </div>
+            <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Scholar Review logo">
+          </div>
+
+          <div class="source-card" aria-label="Review source metadata">
+            <div>
+              <span class="source-meta">Review case</span>
+              <span class="source-value" id="caseName">Sanskrit Lens source card</span>
+            </div>
+            <div>
+              <span class="source-meta">Record type</span>
+              <span class="source-value" id="recordType">Lens seed</span>
+            </div>
+            <div>
+              <span class="source-meta">Primary source</span>
+              <span class="source-value" id="sourceCitation">Bhagavad Gita 2.48</span>
+            </div>
+            <div>
+              <span class="source-meta">Release decision</span>
+              <span class="source-value" id="releaseDecision">Prototype approved</span>
+            </div>
+          </div>
+
+          <h2>Reviewer Roles</h2>
+          <div class="role-grid" id="roleGrid"></div>
+
+          <h2 style="margin-top: 18px;">Release Gate</h2>
+          <div class="gate-grid" id="gateGrid"></div>
+
+          <div class="tabs" role="tablist" aria-label="Scholar review layers">
+            <button class="tab active" type="button" data-mode="evidence">Evidence</button>
+            <button class="tab" type="button" data-mode="decision">Decision</button>
+            <button class="tab" type="button" data-mode="risks">Risks</button>
+            <button class="tab" type="button" data-mode="handoff">Handoff</button>
+          </div>
+          <div class="mode-panel" id="modePanel"></div>
+
+          <div class="actions">
+            <button class="button primary" id="copyReview" type="button">Copy Review Brief</button>
+            <button class="button safe" id="copyGate" type="button">Copy Gate JSON</button>
+            <button class="button" id="copyBoundary" type="button">Copy Boundary</button>
+            <a class="button" href="queue.html">Open Queue</a>
+          </div>
+
+          <textarea class="review-output" id="reviewOutput" readonly aria-label="Scholar Review output"></textarea>
+        </section>
+
+        <aside>
+          <section class="panel tight">
+            <span class="badge green">Launch guard</span>
+            <h2 style="margin-top: 12px;">Review Health</h2>
+            <p class="muted">This seed makes review status visible before product confidence rises.</p>
+            <div class="mini-stat">
+              <div class="stat">
+                <span class="source-meta">Roles</span>
+                <strong id="roleCount">4</strong>
+              </div>
+              <div class="stat">
+                <span class="source-meta">Open gaps</span>
+                <strong id="gapCount">1</strong>
+              </div>
+              <div class="stat">
+                <span class="source-meta">Decision</span>
+                <strong id="decisionShort">Review</strong>
+              </div>
+              <div class="stat">
+                <span class="source-meta">Promotion</span>
+                <strong id="promotionState">Blocked</strong>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel tight" style="margin-top: 16px;">
+            <span class="badge gold">Protocol</span>
+            <h2 style="margin-top: 12px;">Before Trust</h2>
+            <div class="protocol-grid">
+              <div class="protocol-step">
+                <span class="case-index">1</span>
+                <div><strong>Separate roles</strong><span>Sanskrit, translation, product boundary, and rights review are different jobs.</span></div>
+              </div>
+              <div class="protocol-step">
+                <span class="case-index">2</span>
+                <div><strong>Name evidence</strong><span>Every approval cites the source edition, note, or missing field.</span></div>
+              </div>
+              <div class="protocol-step">
+                <span class="case-index">3</span>
+                <div><strong>Block promotion</strong><span>Incomplete records stay prototype-only, even when the UI looks ready.</span></div>
+              </div>
+              <div class="protocol-step">
+                <span class="case-index">4</span>
+                <div><strong>Keep humility</strong><span>Review improves trust; it does not make the AI an authority.</span></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="boundary">
+            <h2>Scholar Boundary</h2>
+            <p class="muted">This is a review workflow preview, not a claim that a scholar board exists yet. Production needs named reviewers, consent, evidence records, and governance before public trust labels.</p>
+          </section>
+        </aside>
+      </main>
+    </div>
+
+    <script>
+      const reviewCases = [
+        {
+          id: "lens_gita_2_48",
+          label: "Lens source card",
+          name: "Sanskrit Lens source card",
+          type: "Lens seed",
+          citation: "Bhagavad Gita 2.48",
+          title: "Prototype approval with visible evidence.",
+          summary: "The source card can stay live as a prototype because text, transliteration, boundary, and review gaps are visible.",
+          decision: "Prototype approved",
+          promotion: "Prototype only",
+          roles: [
+            ["Sanskrit text", "Approved", "approved"],
+            ["Translation note", "Needs edition note", "pending"],
+            ["Product boundary", "Approved", "approved"],
+            ["Rights", "Text only", "pending"]
+          ],
+          gates: [
+            ["Prototype UI", "Pass", "pass"],
+            ["Production trust", "Wait", "wait"],
+            ["Audio or voice", "Blocked", "block"]
+          ],
+          modes: {
+            evidence: [
+              ["Source edition", "Primary citation is visible; production needs edition metadata.", "review"],
+              ["Transliteration", "Prototype transliteration is visible and marked as study support.", "approved"],
+              ["Boundary", "No ritual instruction or final translation authority.", "approved"],
+              ["Gap", "Rights and edition fields must be structured before production.", "review"]
+            ],
+            decision: [
+              ["Decision", "Approved for prototype display only.", "approved"],
+              ["Why", "The UI labels source family, citation, confidence boundary, and review gaps.", "approved"],
+              ["Promotion limit", "Cannot become production source data until edition and rights fields are complete.", "boundary"],
+              ["Next action", "Create source edition and rights evidence records.", "review"]
+            ],
+            risks: [
+              ["Risk", "Users may mistake prototype text for final scholarship.", "boundary"],
+              ["Mitigation", "Keep review status and boundary near the source card.", "approved"],
+              ["Risk", "Translation debates may be flattened.", "boundary"],
+              ["Mitigation", "Keep interpretation notes separate from source text.", "approved"]
+            ],
+            handoff: [
+              ["Queue", "Route edition metadata and rights status to reviewer queue.", "review"],
+              ["Owner", "Source reviewer plus product boundary reviewer.", "review"],
+              ["Exit criteria", "Edition, rights, and boundary evidence attached.", "approved"],
+              ["Release label", "Prototype approved, production pending.", "boundary"]
+            ]
+          }
+        },
+        {
+          id: "voice_rv_3_62_10",
+          label: "Voice audio lock",
+          name: "Gayatri voice boundary",
+          type: "Voice seed",
+          citation: "Rigveda 3.62.10",
+          title: "The right decision is to keep audio locked.",
+          summary: "Mantra audio should wait until accent, meter, source edition, performer consent, rights, and ritual boundary are reviewed.",
+          decision: "Audio blocked",
+          promotion: "Locked",
+          roles: [
+            ["Sanskrit text", "Needs accent review", "pending"],
+            ["Translation note", "Study only", "pending"],
+            ["Product boundary", "Approved", "approved"],
+            ["Rights", "Missing audio license", "blocked"]
+          ],
+          gates: [
+            ["Silent preview", "Pass", "pass"],
+            ["Pronunciation note", "Wait", "wait"],
+            ["Playable audio", "Blocked", "block"]
+          ],
+          modes: {
+            evidence: [
+              ["Accent evidence", "Vedic accent and pada review are not attached.", "review"],
+              ["Meter evidence", "Meter label is useful but not enough for recitation support.", "review"],
+              ["Rights evidence", "No performer consent, license scope, or takedown path exists.", "boundary"],
+              ["Boundary evidence", "No ritual instruction, initiation guidance, or eligibility claim.", "approved"]
+            ],
+            decision: [
+              ["Decision", "Audio remains locked.", "boundary"],
+              ["Why", "The product has no reviewed accent record and no licensed audio asset.", "boundary"],
+              ["Allowed", "Silent syllable preview and reviewer handoff.", "approved"],
+              ["Next action", "Create review record for accent, rights, attribution, and allowed surfaces.", "review"]
+            ],
+            risks: [
+              ["Risk", "Audio may be perceived as chant coaching or ritual authority.", "boundary"],
+              ["Mitigation", "Keep Voice Boundary before any playback control.", "approved"],
+              ["Risk", "Unlicensed audio could enter the product.", "boundary"],
+              ["Mitigation", "Require license id and takedown path before audio asset id.", "review"]
+            ],
+            handoff: [
+              ["Queue", "Route to Sanskrit reviewer, rights reviewer, and product boundary reviewer.", "review"],
+              ["Owner", "Voice boundary lead.", "review"],
+              ["Exit criteria", "Accent, source edition, license, consent, and boundary fields complete.", "approved"],
+              ["Release label", "Silent preview only.", "boundary"]
+            ]
+          }
+        },
+        {
+          id: "katha_tone",
+          label: "Tone safety",
+          name: "Katha Upanishad tone review",
+          type: "Calm and Voice seed",
+          citation: "Katha Upanishad 1.3.14",
+          title: "Powerful lines need gentle product tone.",
+          summary: "The review question is not only source accuracy. It is whether the product turns a strong verse into pressure.",
+          decision: "Needs tone review",
+          promotion: "Review required",
+          roles: [
+            ["Sanskrit text", "Source check needed", "pending"],
+            ["Translation note", "Needs context", "pending"],
+            ["Product boundary", "Needs tone pass", "pending"],
+            ["Rights", "No audio", "approved"]
+          ],
+          gates: [
+            ["Source display", "Wait", "wait"],
+            ["Calm use", "Wait", "wait"],
+            ["Voice use", "Blocked", "block"]
+          ],
+          modes: {
+            evidence: [
+              ["Source evidence", "Passage anchor exists but edition metadata is missing.", "review"],
+              ["Tone evidence", "The product must avoid urgency, fear pressure, or command voice.", "boundary"],
+              ["Rights evidence", "No audio is present, so rights risk is currently low.", "approved"],
+              ["Boundary evidence", "No salvation promise or spiritual status verdict.", "approved"]
+            ],
+            decision: [
+              ["Decision", "Needs review before calm or voice promotion.", "review"],
+              ["Why", "A strong verse can become pressure if the interface speaks too dramatically.", "boundary"],
+              ["Allowed", "Reviewer queue card and careful source note.", "approved"],
+              ["Next action", "Add tone review rubric and source edition note.", "review"]
+            ],
+            risks: [
+              ["Risk", "The app may sound like it is commanding a life decision.", "boundary"],
+              ["Mitigation", "Use invitation language and user agency language.", "approved"],
+              ["Risk", "A user may treat the line as emergency advice.", "boundary"],
+              ["Mitigation", "Keep calm boundary and support disclaimers visible.", "review"]
+            ],
+            handoff: [
+              ["Queue", "Route to translation/context reviewer and product tone reviewer.", "review"],
+              ["Owner", "Calm boundary reviewer.", "review"],
+              ["Exit criteria", "Tone rubric passes and edition evidence is attached.", "approved"],
+              ["Release label", "Review required.", "boundary"]
+            ]
+          }
+        }
+      ];
+
+      const state = {
+        selectedId: "lens_gita_2_48",
+        mode: "evidence"
+      };
+
+      function selectedCase() {
+        return reviewCases.find((item) => item.id === state.selectedId) || reviewCases[0];
+      }
+
+      function cardClass(status) {
+        if (status === "approved") return "approved";
+        if (status === "blocked") return "blocked";
+        return "pending";
+      }
+
+      function itemClass(kind) {
+        if (kind === "approved") return "approved";
+        if (kind === "boundary") return "boundary";
+        return "review";
+      }
+
+      function renderList() {
+        const list = document.getElementById("caseList");
+        list.innerHTML = reviewCases.map((item, index) => `
+          <button class="case-card ${item.id === state.selectedId ? "active" : ""}" type="button" data-id="${item.id}">
+            <span class="case-index">${index + 1}</span>
+            <span>
+              <strong>${item.label}</strong>
+              <span>${item.citation}</span>
+            </span>
+          </button>
+        `).join("");
+
+        [...list.querySelectorAll("[data-id]")].forEach((button) => {
+          button.addEventListener("click", () => {
+            state.selectedId = button.dataset.id;
+            render();
+          });
+        });
+      }
+
+      function renderTabs() {
+        [...document.querySelectorAll(".tab")].forEach((tab) => {
+          tab.classList.toggle("active", tab.dataset.mode === state.mode);
+          tab.addEventListener("click", () => {
+            state.mode = tab.dataset.mode;
+            render();
+          });
+        });
+      }
+
+      function renderCase() {
+        const item = selectedCase();
+        document.getElementById("reviewTitle").textContent = item.title;
+        document.getElementById("reviewSummary").textContent = item.summary;
+        document.getElementById("caseName").textContent = item.name;
+        document.getElementById("recordType").textContent = item.type;
+        document.getElementById("sourceCitation").textContent = item.citation;
+        document.getElementById("releaseDecision").textContent = item.decision;
+        document.getElementById("roleCount").textContent = item.roles.length;
+        document.getElementById("gapCount").textContent = item.roles.filter((role) => role[2] !== "approved").length;
+        document.getElementById("decisionShort").textContent = item.decision.split(" ")[0];
+        document.getElementById("promotionState").textContent = item.promotion;
+
+        document.getElementById("roleGrid").innerHTML = item.roles.map((role) => `
+          <div class="role-card ${cardClass(role[2])}">
+            <strong>${role[0]}</strong>
+            <span>${role[1]}</span>
+          </div>
+        `).join("");
+
+        document.getElementById("gateGrid").innerHTML = item.gates.map((gate) => `
+          <div class="gate ${gate[2]}">
+            <strong>${gate[0]}</strong>
+            <span>${gate[1]}</span>
+          </div>
+        `).join("");
+
+        document.getElementById("modePanel").innerHTML = `
+          <div class="evidence-grid">
+            ${item.modes[state.mode].map((entry) => `
+              <div class="evidence ${itemClass(entry[2])}">
+                <strong>${entry[0]}</strong>
+                <span>${entry[1]}</span>
+              </div>
+            `).join("")}
+          </div>
+        `;
+
+        document.getElementById("reviewOutput").value = reviewBrief();
+      }
+
+      function reviewPayload() {
+        const item = selectedCase();
+        return {
+          product: "VedaPath AI",
+          release: "v0.5.8 scholar",
+          feature: "Scholar Review Seed",
+          case_id: item.id,
+          record_type: item.type,
+          citation: item.citation,
+          decision: item.decision,
+          promotion_state: item.promotion,
+          roles: item.roles.map((role) => ({ role: role[0], status: role[1], class: role[2] })),
+          gates: item.gates.map((gate) => ({ gate: gate[0], status: gate[1], class: gate[2] })),
+          boundary: "Review improves trust but does not make the AI an authority."
+        };
+      }
+
+      function reviewBrief() {
+        const item = selectedCase();
+        return [
+          "VedaPath Scholar Review Brief",
+          "Release: v0.5.8 scholar",
+          `Case: ${item.name}`,
+          `Record type: ${item.type}`,
+          `Source: ${item.citation}`,
+          `Decision: ${item.decision}`,
+          `Promotion: ${item.promotion}`,
+          `Open gaps: ${item.roles.filter((role) => role[2] !== "approved").length}`,
+          "Boundary: review status must remain visible; prototype approval is not final scholarship or AI authority."
+        ].join("\n");
+      }
+
+      function boundaryBrief() {
+        const item = selectedCase();
+        return [
+          "VedaPath Scholar Review Boundary",
+          "Release: v0.5.8 scholar",
+          `Case: ${item.name}`,
+          "Allowed: evidence notes, reviewer roles, decision states, release gates, and queue handoff.",
+          "Must not: pretend a scholar board exists, hide missing evidence, turn prototype review into production authority, or let the AI certify itself.",
+          "User promise: VedaPath shows what is reviewed, what is missing, and what remains blocked."
+        ].join("\n");
+      }
+
+      function copyText(text, button, label) {
+        const original = button.textContent;
+        document.getElementById("reviewOutput").value = text;
+        const finish = () => {
+          button.textContent = label;
+          window.setTimeout(() => {
+            button.textContent = original;
+          }, 1000);
+        };
+
+        if (navigator.clipboard && window.isSecureContext) {
+          navigator.clipboard.writeText(text).then(finish).catch(finish);
+        } else {
+          finish();
+        }
+      }
+
+      function render() {
+        renderList();
+        renderTabs();
+        renderCase();
+      }
+
+      document.getElementById("copyReview").addEventListener("click", () => {
+        copyText(reviewBrief(), document.getElementById("copyReview"), "Review Copied");
+      });
+
+      document.getElementById("copyGate").addEventListener("click", () => {
+        copyText(JSON.stringify(reviewPayload(), null, 2), document.getElementById("copyGate"), "Gate Copied");
+      });
+
+      document.getElementById("copyBoundary").addEventListener("click", () => {
+        copyText(boundaryBrief(), document.getElementById("copyBoundary"), "Boundary Copied");
+      });
+
+      render();
+    </script>
+  </body>
+</html>

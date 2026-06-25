@@ -121,4 +121,8 @@ Voice Boundary must not become:
 
 ## v0.5.8 Direction
 
-The next release should add a Scholar Review Seed: reviewer roles, decision states, evidence notes, source edition fields, and release approval rules for Lens and Voice records.
+v0.5.8 adds the Scholar Review Seed: reviewer roles, decision states, evidence notes, source edition fields, and release approval rules for Lens and Voice records.
+
+## v0.5.9 Direction
+
+The next release should add a Launch Gate Seed with public demo checklist, privacy copy, share-ready launch notes, and no-go release gates.

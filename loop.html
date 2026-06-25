@@ -547,6 +547,7 @@
           <a class="link active" href="loop.html">Loop</a>
           <a class="link" href="lens.html">Lens</a>
           <a class="link" href="voice.html">Voice</a>
+          <a class="link" href="scholar.html">Scholar</a>
           <a class="link" href="path.html">Path</a>
           <a class="link" href="compass.html">Compass</a>
           <a class="link" href="card.html">Card</a>
@@ -558,7 +559,7 @@
           <a class="link" href="morning.html">Morning</a>
           <a class="link" href="evening.html">Evening</a>
           <a class="link" href="rhythm.html">Rhythm</a>
-          <span class="version">v0.5.7 voice</span>
+          <span class="version">v0.5.8 scholar</span>
         </nav>
       </header>
 
@@ -866,7 +867,7 @@
       function loopPayload(signal = selectedSignal()) {
         return {
           product: "VedaPath AI",
-          release: "v0.5.7 voice",
+          release: "v0.5.8 scholar",
           signal_id: signal.id,
           decision: signal.decision,
           owner: signal.owner,
@@ -882,7 +883,7 @@
       function learningBrief(signal = selectedSignal()) {
         return [
           "VedaPath Learning Loop Brief",
-          "Release: v0.5.7 voice",
+          "Release: v0.5.8 scholar",
           `Signal: ${signal.id}`,
           `Decision: ${signal.decision}`,
           `Owner: ${signal.owner}`,
@@ -900,7 +901,7 @@
       function boundaryBrief(signal = selectedSignal()) {
         return [
           "VedaPath Learning Boundary",
-          "Release: v0.5.7 voice",
+          "Release: v0.5.8 scholar",
           `Signal: ${signal.id}`,
           "",
           `Allowed to learn: ${signal.allowed}`,

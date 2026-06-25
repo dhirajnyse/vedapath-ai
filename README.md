@@ -80,6 +80,8 @@ Let us look at the source first.
 - [Sanskrit Lens Notes](docs/SANSKRIT_LENS.md)
 - [Voice Boundary Seed](voice.html)
 - [Voice Boundary Notes](docs/VOICE_BOUNDARY.md)
+- [Scholar Review Seed](scholar.html)
+- [Scholar Review Notes](docs/SCHOLAR_REVIEW.md)
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
 - [Calm Compass](compass.html)
@@ -110,7 +112,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v0.5.7` is a trusted MVP prototype plus a Voice Boundary seed with:
+`v0.5.8` is a trusted MVP prototype plus a Scholar Review seed with:
 
 - Ask workspace
 - Source Card
@@ -141,6 +143,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Learning Loop Seed with repeated question patterns, reviewer decisions, source gaps, blocked learning boundaries, and copyable learning briefs
 - Sanskrit Lens Seed with reviewed passage seeds, Sanskrit text, transliteration, word lens, meter status, source notes, and recitation boundaries
 - Voice Boundary Seed with silent pronunciation support, syllable hints, reviewer gate, license gate, and no ritual authority before audio
+- Scholar Review Seed with reviewer roles, evidence notes, decision states, release gates, and copyable review handoffs
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
 - Calm Card Studio with visual card preview, local saved cards, copy text, and PNG export

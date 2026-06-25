@@ -576,6 +576,7 @@
           <a class="link" href="loop.html">Loop</a>
           <a class="link" href="lens.html">Lens</a>
           <a class="link active" href="voice.html">Voice</a>
+          <a class="link" href="scholar.html">Scholar</a>
           <a class="link" href="path.html">Path</a>
           <a class="link" href="compass.html">Compass</a>
           <a class="link" href="card.html">Card</a>
@@ -587,7 +588,7 @@
           <a class="link" href="morning.html">Morning</a>
           <a class="link" href="evening.html">Evening</a>
           <a class="link" href="rhythm.html">Rhythm</a>
-          <span class="version">v0.5.7 voice</span>
+          <span class="version">v0.5.8 scholar</span>
         </nav>
       </header>
 
@@ -723,7 +724,7 @@
           rule: "No audio before review",
           review: "Reviewer checks transliteration, syllable grouping, and teaching boundary.",
           license: "Text display only in prototype. Audio requires speaker consent and usage rights.",
-          syllables: ["yo", "ga", "sthaá¸¥", "ku", "ru", "kar", "mÄ", "á¹‡i"],
+          syllables: ["yo", "ga", "sthaÃ¡Â¸Â¥", "ku", "ru", "kar", "mÃ„Â", "Ã¡Â¹â€¡i"],
           gates: [
             ["Source", "Visible", "active"],
             ["Syllables", "Prototype", "active"],
@@ -768,7 +769,7 @@
           rule: "No urgency pressure",
           review: "Reviewer checks source edition, translation note, and tone.",
           license: "No audio. Future recitation needs rights and context notes.",
-          syllables: ["ut", "tiá¹£", "á¹­ha", "ta", "jÄ", "gra", "ta"],
+          syllables: ["ut", "tiÃ¡Â¹Â£", "Ã¡Â¹Â­ha", "ta", "jÃ„Â", "gra", "ta"],
           gates: [
             ["Source", "Visible", "active"],
             ["Tone", "Gentle", "active"],
@@ -813,7 +814,7 @@
           rule: "No ritual authority",
           review: "Reviewer checks Vedic accent, pada, meter, tradition boundary, and source edition.",
           license: "Audio requires explicit rights, attribution, speaker consent, and context boundary.",
-          syllables: ["tat", "sa", "vi", "tur", "va", "re", "á¹‡yam"],
+          syllables: ["tat", "sa", "vi", "tur", "va", "re", "Ã¡Â¹â€¡yam"],
           gates: [
             ["Source", "Visible", "active"],
             ["Meter", "Known", "active"],
@@ -934,7 +935,7 @@
         const seed = selectedSeed();
         return {
           product: "VedaPath AI",
-          release: "v0.5.7 voice",
+          release: "v0.5.8 scholar",
           feature: "Voice Boundary Seed",
           citation: seed.citation,
           family: seed.family,
@@ -951,14 +952,14 @@
         const seed = selectedSeed();
         return [
           "VedaPath Voice Boundary Brief",
-          "Release: v0.5.7 voice",
+          "Release: v0.5.8 scholar",
           `Citation: ${seed.citation}`,
           `Family: ${seed.family}`,
           `Voice status: ${seed.status}`,
           `Production rule: ${seed.rule}`,
           `Review: ${seed.review}`,
           `License: ${seed.license}`,
-          `Syllable preview: ${seed.syllables.join(" Â· ")}`,
+          `Syllable preview: ${seed.syllables.join(" Ã‚Â· ")}`,
           "Boundary: no audio before review, no ritual instruction, no eligibility judgment, no unlicensed recitation."
         ].join("\n");
       }
@@ -967,7 +968,7 @@
         const seed = selectedSeed();
         return [
           "VedaPath Voice Reviewer Handoff",
-          "Release: v0.5.7 voice",
+          "Release: v0.5.8 scholar",
           `Source: ${seed.citation}`,
           `Text family: ${seed.family}`,
           `Reviewer task: ${seed.review}`,
@@ -981,7 +982,7 @@
         const seed = selectedSeed();
         return [
           "VedaPath Voice Boundary",
-          "Release: v0.5.7 voice",
+          "Release: v0.5.8 scholar",
           `Source: ${seed.citation}`,
           "Allowed: source display, silent syllable preview, reviewer handoff, license checklist, cautious study pacing.",
           "Must not: chant coaching, ritual instruction, guru voice, initiation guidance, eligibility judgment, spiritual status verdict, therapy, or unlicensed audio.",

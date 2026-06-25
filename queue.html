@@ -481,6 +481,7 @@
           <a class="link" href="loop.html">Loop</a>
           <a class="link" href="lens.html">Lens</a>
           <a class="link" href="voice.html">Voice</a>
+          <a class="link" href="scholar.html">Scholar</a>
           <a class="link" href="path.html">Path</a>
           <a class="link" href="compass.html">Compass</a>
           <a class="link" href="card.html">Card</a>
@@ -492,7 +493,7 @@
           <a class="link" href="morning.html">Morning</a>
           <a class="link" href="evening.html">Evening</a>
           <a class="link" href="rhythm.html">Rhythm</a>
-          <span class="version">v0.5.7 voice</span>
+          <span class="version">v0.5.8 scholar</span>
         </nav>
       </header>
 
@@ -908,7 +909,7 @@
       function buildExport() {
         const lines = [
           "VedaPath Reviewer Queue",
-          "Release: v0.5.7 voice",
+          "Release: v0.5.8 scholar",
           `Open cards: ${queueState.cards.filter((card) => card.status !== "accepted-prototype").length}`,
           `Scholar needed: ${queueState.cards.filter((card) => card.status === "needs-scholar").length}`,
           `Safety review: ${queueState.cards.filter((card) => card.status === "safety-review").length}`,

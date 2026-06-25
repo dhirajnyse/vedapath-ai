@@ -503,7 +503,24 @@ It should:
 
 Voice Boundary Seed should never become chant coaching, ritual instruction, guru voice, initiation guidance, eligibility judgment, spiritual status verdict, therapy, diagnosis, emergency support, or unlicensed audio reuse.
 
-### 30. Source Path Builder
+### 30. Scholar Review Seed
+
+Scholar Review Seed makes trust review visible before source, Lens, or Voice records can be promoted.
+
+It should:
+
+- separate Sanskrit text, translation, product boundary, and rights review roles
+- show reviewer status without pretending a scholar board already exists
+- preserve evidence notes for source edition, license, interpretation, and boundary decisions
+- show release decisions such as prototype approved, review required, audio blocked, or production pending
+- block promotion when evidence is missing
+- produce copyable review briefs, gate JSON, and boundary notes
+- connect review outcomes back to Reviewer Queue, Trust Ledger, Lens, and Voice
+- keep prototype confidence visibly different from production trust
+
+Scholar Review Seed should never hide missing evidence, let the AI certify itself, flatten disagreement between traditions, promote audio without rights review, or turn prototype review into final authority.
+
+### 31. Source Path Builder
 
 A source path turns library records into a short, cited route.
 
@@ -517,7 +534,7 @@ It should:
 
 The path builder should never prescribe a life decision, ritual act, treatment plan, or spiritual conclusion. It should only organize the next source-backed step.
 
-### 31. Calm Compass
+### 32. Calm Compass
 
 Calm Compass is the simplest doorway for users who arrive with restlessness, overwhelm, unclear priority, or hesitation.
 
@@ -531,7 +548,7 @@ It should:
 
 The compass must never pretend to diagnose, command, prescribe, or profile the user. It should slow the moment down and offer the next source-backed action.
 
-### 32. Calm Card Studio
+### 33. Calm Card Studio
 
 Calm Card Studio turns one source-backed reflection into a visual card.
 
@@ -545,7 +562,7 @@ It should:
 
 The card studio must not let shareability erase accuracy. Every card should make clear that it is reflection support, not a command, diagnosis, therapy, ritual instruction, or universal teaching.
 
-### 33. Source Bell
+### 34. Source Bell
 
 Source Bell turns one source-backed reflection into a one-minute reset.
 
@@ -559,7 +576,7 @@ It should:
 
 The bell must never become therapy, medical advice, emergency support, ritual instruction, or a guru voice. It should make one grounded next action easier to carry.
 
-### 34. Before Reply
+### 35. Before Reply
 
 Before Reply turns one heated communication moment into a calmer draft.
 
@@ -573,7 +590,7 @@ It should:
 
 Before Reply should protect agency. It should never become therapy, legal advice, emergency support, conflict mediation, or a reason to remain in harmful contact.
 
-### 35. Samvada Room
+### 36. Samvada Room
 
 Samvada Room turns disagreement into a source-backed shared question.
 
@@ -588,7 +605,7 @@ It should:
 
 Samvada Room should make dialogue calmer without flattening difference. It should never pretend every view is equally supported by a source.
 
-### 36. Sankalpa Studio
+### 37. Sankalpa Studio
 
 Sankalpa Studio turns personal calm into one source-backed 24-hour intention.
 
@@ -603,7 +620,7 @@ It should:
 
 Sankalpa Studio should make calm concrete without pretending the app can control a user's life. The intention belongs to the user.
 
-### 37. Seva Planner
+### 38. Seva Planner
 
 Seva Planner turns personal calm into one source-backed helpful act.
 
@@ -618,7 +635,7 @@ It should:
 
 Seva Planner should make calm useful without turning service into self-erasure. The action should be small, bounded, and freely chosen.
 
-### 38. Morning Path
+### 39. Morning Path
 
 Morning Path helps a user begin the day with one source-backed start.
 
@@ -633,7 +650,7 @@ It should:
 
 Morning Path should make the first moment of the day calmer and more directed without pretending the product owns the user's life.
 
-### 39. Evening Reflection
+### 40. Evening Reflection
 
 Evening Reflection helps a user close the day with one source-backed reflection.
 
@@ -648,7 +665,7 @@ It should:
 
 Evening Reflection should help the user put the day down without making the day into a judgment of the self.
 
-### 40. Calm Rhythm
+### 41. Calm Rhythm
 
 Calm Rhythm helps a user see a privacy-preserving pattern across deliberate VedaPath room entries.
 
