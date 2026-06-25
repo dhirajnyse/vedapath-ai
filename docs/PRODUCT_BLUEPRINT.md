@@ -121,6 +121,7 @@ It helps users move from curiosity to understanding through:
 - Scholar Packet Builder: Scholar Packet Builder packages VedaPath review requests with evidence, scope, and no-endorsement language.
 - Source Pack Scoreboard: Source Pack Scoreboard gives the founder a simple view of ready, held, blocked, and reviewer-needed source records.
 - Launch Story Studio: Launch Story Studio helps VedaPath speak to the world with calm confidence and visible limits.
+- Public Beta Beacon: Public Beta Beacon completes the activation sprint and gives VedaPath one calm decision surface before real public beta work.
 <!-- VEDAPATH ACTIVATION SPRINT SUMMARY END -->
 
 ## What It Is
@@ -1908,6 +1909,21 @@ It should:
 - produce a copyable public beta activation handoff
 
 Launch Story Studio should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 117. Public Beta Beacon
+
+Public Beta Beacon completes the activation sprint and gives VedaPath one calm decision surface before real public beta work.
+
+It should:
+
+- First visit: Welcome path and question studio.
+- First answer: Confidence card and learning trail.
+- Return: Calm companion and user-owned rhythm.
+- Improve: Feedback portal, scholar packet, source scoreboard, and launch story.
+- preserve the boundary: Beta decision surface, not production approval.
+- produce a copyable public beta activation handoff
+
+Public Beta Beacon should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH ACTIVATION SPRINT BLUEPRINT END -->
 
 ## Product Personality

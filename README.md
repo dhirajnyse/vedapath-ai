@@ -245,6 +245,8 @@ Let us look at the source first.
 - [Source Pack Scoreboard Notes](docs/SOURCE_PACK_SCOREBOARD.md)
 - [Launch Story Studio](launchstory.html)
 - [Launch Story Studio Notes](docs/LAUNCH_STORY_STUDIO.md)
+- [Public Beta Beacon](betabeacon.html)
+- [Public Beta Beacon Notes](docs/PUBLIC_BETA_BEACON.md)
 <!-- VEDAPATH ACTIVATION SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -276,7 +278,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v1.3.3` is a trusted MVP prototype plus Launch Story Studio with:
+`v1.3.4` is a trusted MVP prototype plus Public Beta Beacon with:
 
 - Ask workspace
 - Source Card
@@ -396,6 +398,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Scholar Packet Builder: Scholar Packet Builder packages VedaPath review requests with evidence, scope, and no-endorsement language.
 - Source Pack Scoreboard: Source Pack Scoreboard gives the founder a simple view of ready, held, blocked, and reviewer-needed source records.
 - Launch Story Studio: Launch Story Studio helps VedaPath speak to the world with calm confidence and visible limits.
+- Public Beta Beacon: Public Beta Beacon completes the activation sprint and gives VedaPath one calm decision surface before real public beta work.
 <!-- VEDAPATH ACTIVATION SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
