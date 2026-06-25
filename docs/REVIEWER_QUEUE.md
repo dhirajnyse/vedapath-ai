@@ -65,4 +65,4 @@ v0.5.0 adds Trust Model so Reviewer Queue, Consent Gate, Memory Gate, Trust Ledg
 
 v0.5.1 adds Calm Passport so corrections and review records can show may-remember fields, must-not-remember fields, export, deletion, withdrawal, and local grants before account-backed memory.
 
-v0.5.2 should convert that visual model into the first backend schema draft with durable ids, table relationships, migration notes, passport grants, and account-memory consent flows.
+v0.5.2 adds that backend schema draft. v0.5.3 should add schema fixtures, route validation examples, deletion lifecycle notes, export payloads, and no-go tests.

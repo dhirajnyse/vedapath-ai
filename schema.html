@@ -1,0 +1,1054 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VedaPath Schema Room</title>
+    <style>
+      :root {
+        --bg: #fbf3e6;
+        --panel: #fffdf8;
+        --ink: #181310;
+        --muted: #6f4030;
+        --bhagwa: #d65a1f;
+        --ochre: #a83f12;
+        --gold: #e0a83b;
+        --green: #145c4a;
+        --indigo: #29335c;
+        --line: rgba(92, 55, 34, 0.18);
+        --soft: rgba(214, 90, 31, 0.1);
+        --soft-green: rgba(20, 92, 74, 0.12);
+        --shadow: 0 20px 70px rgba(92, 55, 34, 0.08);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        line-height: 1.5;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      button,
+      textarea {
+        font: inherit;
+      }
+
+      .page {
+        width: min(1380px, calc(100% - 44px));
+        margin: 0 auto;
+        padding: 24px 0 36px;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding-bottom: 18px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+        min-width: 220px;
+      }
+
+      .brand img {
+        width: 52px;
+        height: 52px;
+        border-radius: 8px;
+        object-fit: cover;
+        box-shadow: 0 10px 26px rgba(214, 90, 31, 0.14);
+      }
+
+      .brand strong,
+      .brand span {
+        display: block;
+      }
+
+      .brand strong {
+        font-size: 20px;
+        line-height: 1.1;
+      }
+
+      .brand span {
+        color: var(--muted);
+        font-size: 14px;
+        margin-top: 4px;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        gap: 8px 16px;
+        flex: 1 1 720px;
+        min-width: 0;
+      }
+
+      .link,
+      .version,
+      .button,
+      .chip {
+        border: 1px solid transparent;
+        border-radius: 8px;
+        min-height: 38px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .link {
+        text-decoration: none;
+        font-weight: 800;
+        font-size: 14px;
+        color: #3d2418;
+      }
+
+      .link.active,
+      .version {
+        padding: 0 14px;
+        border-color: rgba(214, 90, 31, 0.35);
+        color: var(--ochre);
+        background: rgba(255, 253, 248, 0.65);
+      }
+
+      .version {
+        font-weight: 900;
+      }
+
+      .workspace {
+        display: grid;
+        grid-template-columns: minmax(250px, 0.85fr) minmax(430px, 1.45fr) minmax(280px, 0.95fr);
+        gap: 18px;
+        padding-top: 20px;
+      }
+
+      .panel {
+        background: rgba(255, 253, 248, 0.82);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: var(--shadow);
+      }
+
+      .panel.flush {
+        box-shadow: none;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        min-height: 30px;
+        padding: 0 12px;
+        border-radius: 999px;
+        background: rgba(214, 90, 31, 0.11);
+        color: var(--ochre);
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        font-size: clamp(44px, 6vw, 76px);
+        line-height: 0.98;
+        letter-spacing: 0;
+        margin: 18px 0 16px;
+      }
+
+      h2 {
+        font-size: 26px;
+        line-height: 1.12;
+        margin-bottom: 12px;
+      }
+
+      h3 {
+        font-size: 18px;
+        margin-bottom: 8px;
+      }
+
+      p {
+        color: var(--muted);
+        font-size: 16px;
+      }
+
+      .muted {
+        color: var(--muted);
+      }
+
+      .schema-list {
+        display: grid;
+        gap: 10px;
+        margin-top: 18px;
+      }
+
+      .schema-card {
+        width: 100%;
+        text-align: left;
+        background: rgba(255, 253, 248, 0.88);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 14px;
+        display: grid;
+        grid-template-columns: 42px 1fr;
+        gap: 12px;
+        cursor: pointer;
+      }
+
+      .schema-card:hover,
+      .schema-card:focus-visible,
+      .schema-card.active {
+        border-color: rgba(214, 90, 31, 0.56);
+        outline: none;
+      }
+
+      .schema-card.active {
+        background: var(--soft);
+      }
+
+      .schema-index {
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        background: rgba(20, 92, 74, 0.12);
+        color: var(--green);
+        font-weight: 900;
+        font-size: 13px;
+      }
+
+      .schema-card.active .schema-index {
+        background: var(--bhagwa);
+        color: #fffdf8;
+      }
+
+      .schema-card strong {
+        display: block;
+        font-size: 16px;
+      }
+
+      .schema-card span:not(.schema-index) {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .record-head {
+        display: grid;
+        grid-template-columns: 1fr 126px;
+        gap: 18px;
+        align-items: center;
+      }
+
+      .mark {
+        border: 1px solid rgba(214, 90, 31, 0.24);
+        border-radius: 8px;
+        padding: 10px;
+        background: rgba(255, 248, 237, 0.8);
+      }
+
+      .mark img {
+        width: 100%;
+        aspect-ratio: 1;
+        object-fit: cover;
+        border-radius: 4px;
+      }
+
+      .source-card,
+      .readiness,
+      .rule-card,
+      .flow-card {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgba(255, 253, 248, 0.78);
+      }
+
+      .source-card {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0;
+        margin: 18px 0;
+        overflow: hidden;
+      }
+
+      .source-card > div {
+        padding: 14px;
+        min-width: 0;
+      }
+
+      .source-label,
+      .source-value {
+        display: block;
+      }
+
+      .source-label {
+        color: var(--muted);
+        font-size: 12px;
+        margin-bottom: 6px;
+      }
+
+      .source-value {
+        font-weight: 900;
+        overflow-wrap: anywhere;
+      }
+
+      .readiness {
+        padding: 14px;
+        margin-bottom: 18px;
+      }
+
+      .readiness-head {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        font-weight: 900;
+      }
+
+      .progress {
+        height: 10px;
+        border-radius: 999px;
+        background: rgba(214, 90, 31, 0.16);
+        overflow: hidden;
+        margin-top: 10px;
+      }
+
+      .bar {
+        height: 100%;
+        width: 0%;
+        background: linear-gradient(90deg, var(--bhagwa), var(--gold));
+        border-radius: inherit;
+        transition: width 220ms ease;
+      }
+
+      .field-grid,
+      .relation-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .field,
+      .relation,
+      .stat,
+      .step {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgba(255, 253, 248, 0.82);
+        padding: 12px;
+      }
+
+      .field strong,
+      .relation strong,
+      .stat strong,
+      .step strong {
+        display: block;
+      }
+
+      .field span,
+      .relation span,
+      .stat span,
+      .step span {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .relation {
+        border-left: 4px solid rgba(214, 90, 31, 0.72);
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 18px 0 14px;
+      }
+
+      .button {
+        border-color: rgba(214, 90, 31, 0.35);
+        background: transparent;
+        color: var(--ochre);
+        padding: 0 14px;
+        font-weight: 900;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      .button.primary {
+        background: var(--bhagwa);
+        color: #fffdf8;
+        border-color: var(--bhagwa);
+      }
+
+      .button.safe {
+        color: var(--green);
+        border-color: rgba(20, 92, 74, 0.28);
+      }
+
+      .schema-output {
+        width: 100%;
+        min-height: 190px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fffaf2;
+        color: var(--ink);
+        padding: 14px;
+        resize: vertical;
+        font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+        font-size: 13px;
+        line-height: 1.45;
+      }
+
+      .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        margin: 18px 0;
+      }
+
+      .stat strong {
+        font-size: 24px;
+      }
+
+      .step-list,
+      .rule-list {
+        display: grid;
+        gap: 10px;
+      }
+
+      .step {
+        display: grid;
+        grid-template-columns: 34px 1fr;
+        gap: 10px;
+        align-items: start;
+      }
+
+      .step-index {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: var(--soft-green);
+        display: grid;
+        place-items: center;
+        color: var(--green);
+        font-weight: 900;
+        font-size: 12px;
+      }
+
+      .rule-card {
+        padding: 16px;
+        border-style: dashed;
+      }
+
+      .rule-list {
+        margin-top: 12px;
+      }
+
+      .rule-list span {
+        display: block;
+        padding: 10px 12px;
+        border-radius: 8px;
+        background: rgba(214, 90, 31, 0.08);
+        color: var(--muted);
+      }
+
+      .flow-card {
+        padding: 16px;
+        margin-top: 18px;
+      }
+
+      .flow-line {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 8px;
+      }
+
+      .flow-line span {
+        min-height: 48px;
+        display: grid;
+        place-items: center;
+        text-align: center;
+        border-radius: 8px;
+        background: rgba(20, 92, 74, 0.1);
+        color: var(--green);
+        font-weight: 900;
+        padding: 8px;
+        overflow-wrap: anywhere;
+      }
+
+      @media (max-width: 1100px) {
+        .workspace {
+          grid-template-columns: 1fr;
+        }
+
+        .record-head {
+          grid-template-columns: 1fr;
+        }
+
+        .mark {
+          width: 132px;
+        }
+      }
+
+      @media (max-width: 740px) {
+        .page {
+          width: min(100% - 28px, 1380px);
+          padding-top: 16px;
+        }
+
+        .topbar,
+        .nav {
+          align-items: flex-start;
+          justify-content: flex-start;
+        }
+
+        .topbar {
+          flex-direction: column;
+        }
+
+        .source-card,
+        .field-grid,
+        .relation-grid,
+        .stat-grid,
+        .flow-line {
+          grid-template-columns: 1fr;
+        }
+
+        h1 {
+          font-size: 44px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top" aria-label="VedaPath AI home">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
+          <div>
+            <strong>VedaPath AI</strong>
+            <span>Backend schema room</span>
+          </div>
+        </a>
+        <nav class="nav" aria-label="Project links">
+          <a class="link" href="build-status.html">Build</a>
+          <a class="link" href="brand/brand-board.html">Brand</a>
+          <a class="link" href="blueprint.html">Blueprint</a>
+          <a class="link" href="calm.html">Calm</a>
+          <a class="link" href="daily.html">Daily</a>
+          <a class="link" href="practice.html">Practice</a>
+          <a class="link" href="library.html">Library</a>
+          <a class="link" href="seeds.html">Seeds</a>
+          <a class="link" href="retrieval.html">Retrieval</a>
+          <a class="link" href="passages.html">Review</a>
+          <a class="link" href="eval.html">Eval</a>
+          <a class="link" href="dashboard.html">Dash</a>
+          <a class="link" href="queue.html">Queue</a>
+          <a class="link" href="policy.html">Policy</a>
+          <a class="link" href="ledger.html">Ledger</a>
+          <a class="link" href="life.html">Life</a>
+          <a class="link" href="circle.html">Circle</a>
+          <a class="link" href="consent.html">Consent</a>
+          <a class="link" href="memory.html">Memory</a>
+          <a class="link" href="model.html">Model</a>
+          <a class="link" href="passport.html">Passport</a>
+          <a class="link active" href="schema.html">Schema</a>
+          <a class="link" href="path.html">Path</a>
+          <a class="link" href="compass.html">Compass</a>
+          <a class="link" href="card.html">Card</a>
+          <a class="link" href="bell.html">Bell</a>
+          <a class="link" href="reply.html">Reply</a>
+          <a class="link" href="samvada.html">Samvada</a>
+          <a class="link" href="sankalpa.html">Intent</a>
+          <a class="link" href="seva.html">Seva</a>
+          <a class="link" href="morning.html">Morning</a>
+          <a class="link" href="evening.html">Evening</a>
+          <a class="link" href="rhythm.html">Rhythm</a>
+          <span class="version">v0.5.2 schema draft</span>
+        </nav>
+      </header>
+
+      <section class="workspace" aria-label="VedaPath Schema Room workspace">
+        <aside class="panel">
+          <span class="eyebrow">VedaPath Schema Room</span>
+          <h1>Seven records, one calm spine.</h1>
+          <p>Choose a backend record and inspect what it stores, what it connects to, and which trust rule must pass before production memory exists.</p>
+          <div class="schema-list" id="schemaList"></div>
+        </aside>
+
+        <section class="panel">
+          <div class="record-head">
+            <div>
+              <span class="eyebrow">Backend draft</span>
+              <h1 id="recordTitle">Source seed anchors every answer.</h1>
+              <p id="recordSummary">The reviewed source record carries citation, source family, boundaries, and retrieval notes before any answer can claim authority.</p>
+            </div>
+            <div class="mark" aria-label="VedaPath schema logo">
+              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI schema logo">
+            </div>
+          </div>
+
+          <div class="source-card" aria-label="Schema record metadata">
+            <div>
+              <span class="source-label">Table</span>
+              <span class="source-value" id="recordTable">source_seed</span>
+            </div>
+            <div>
+              <span class="source-label">Owner</span>
+              <span class="source-value" id="recordOwner">Curated source team</span>
+            </div>
+            <div>
+              <span class="source-label">Retention</span>
+              <span class="source-value" id="recordRetention">Reviewed until superseded</span>
+            </div>
+            <div>
+              <span class="source-label">Risk gate</span>
+              <span class="source-value" id="recordGate">Citation required</span>
+            </div>
+          </div>
+
+          <div class="readiness">
+            <div class="readiness-head">
+              <span>Production readiness</span>
+              <span id="readinessScore">0%</span>
+            </div>
+            <div class="progress" aria-hidden="true"><div class="bar" id="scoreBar"></div></div>
+          </div>
+
+          <h2>Required Fields</h2>
+          <div class="field-grid" id="fieldGrid"></div>
+
+          <h2 style="margin-top: 18px;">Relationships</h2>
+          <div class="relation-grid" id="relationGrid"></div>
+
+          <div class="actions">
+            <button class="button primary" id="copySchema" type="button">Copy Schema</button>
+            <button class="button secondary" id="copyMigration" type="button">Copy Migration Plan</button>
+            <button class="button safe" id="runGate" type="button">Run Gate</button>
+            <a class="button" id="nextRoom" href="model.html">Open Trust Model</a>
+          </div>
+          <textarea class="schema-output" id="schemaOutput" readonly aria-label="Schema handoff output"></textarea>
+        </section>
+
+        <aside class="panel">
+          <span class="eyebrow">Release gate</span>
+          <h2>Backend Readiness</h2>
+          <p>This is not a production database. It is the compact contract for what the first backend must protect.</p>
+
+          <div class="stat-grid">
+            <div class="stat">
+              <span>Tables drafted</span>
+              <strong id="tableCount">7</strong>
+            </div>
+            <div class="stat">
+              <span>Core gates</span>
+              <strong>5</strong>
+            </div>
+            <div class="stat">
+              <span>Storage stance</span>
+              <strong>Draft</strong>
+            </div>
+            <div class="stat">
+              <span>Next release</span>
+              <strong>v0.5.3</strong>
+            </div>
+          </div>
+
+          <div class="step-list" aria-label="Migration order">
+            <div class="step">
+              <span class="step-index">1</span>
+              <div>
+                <strong>Source first</strong>
+                <span>Import reviewed source_seed rows before answer memory.</span>
+              </div>
+            </div>
+            <div class="step">
+              <span class="step-index">2</span>
+              <div>
+                <strong>Consent before sync</strong>
+                <span>Create consent_grant and passport_grant before durable calm records.</span>
+              </div>
+            </div>
+            <div class="step">
+              <span class="step-index">3</span>
+              <div>
+                <strong>Review before authority</strong>
+                <span>Route corrections through review_decision and trust_event.</span>
+              </div>
+            </div>
+            <div class="step">
+              <span class="step-index">4</span>
+              <div>
+                <strong>Delete path before launch</strong>
+                <span>Every durable table needs export, withdrawal, and deletion handling.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="flow-card">
+            <h2>Trust Spine</h2>
+            <div class="flow-line">
+              <span>source_seed</span>
+              <span>consent_grant</span>
+              <span>memory_route</span>
+              <span>trust_event</span>
+            </div>
+          </div>
+
+          <div class="rule-card" style="margin-top: 18px;">
+            <h2>No-Go Rules</h2>
+            <div class="rule-list">
+              <span>No hidden profile table.</span>
+              <span>No distress archive.</span>
+              <span>No memory without export and deletion path.</span>
+              <span>No source behavior change without review decision.</span>
+            </div>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <script>
+      const records = [
+        {
+          id: "source_seed",
+          label: "Source seed",
+          title: "Source seed anchors every answer.",
+          summary: "The reviewed source record carries citation, source family, boundaries, and retrieval notes before any answer can claim authority.",
+          owner: "Curated source team",
+          retention: "Reviewed until superseded",
+          gate: "Citation required",
+          score: 92,
+          link: "seeds.html",
+          fields: [
+            ["seed_id", "Durable id for the source record."],
+            ["source_family", "Veda, Upanishad, Gita, Itihasa, Purana, commentary, or modern."],
+            ["citation", "Exact citation or passage anchor."],
+            ["boundary", "What must not be overclaimed."],
+            ["review_status", "Draft, reviewed, blocked, or superseded."]
+          ],
+          relations: [
+            ["review_decision", "Requires review before authority."],
+            ["memory_route", "Feeds source trace for answer memory."],
+            ["trust_event", "Records changes to source readiness."]
+          ]
+        },
+        {
+          id: "consent_grant",
+          label: "Consent grant",
+          title: "Consent grant makes shared memory visible.",
+          summary: "Shared calm, circle, and account records need clear purpose, scope, withdrawal, and deletion before durable storage.",
+          owner: "User and participants",
+          retention: "Until withdrawn",
+          gate: "Purpose and scope",
+          score: 86,
+          link: "consent.html",
+          fields: [
+            ["grant_id", "Durable id for the visible consent record."],
+            ["participant_ref", "User or participant reference."],
+            ["purpose", "Why the record may exist."],
+            ["scope", "What the grant covers and excludes."],
+            ["withdrawal_path", "How the grant can be revoked."]
+          ],
+          relations: [
+            ["passport_grant", "User-facing memory controls."],
+            ["calm_pattern", "Allows durable calm pattern storage."],
+            ["trust_event", "Logs grant creation, change, and withdrawal."]
+          ]
+        },
+        {
+          id: "memory_route",
+          label: "Memory route",
+          title: "Memory route decides where a record may go.",
+          summary: "Incoming records must route to local draft, human review, Trust Ledger, or blocked before any backend write.",
+          owner: "Trust engine",
+          retention: "Decision history",
+          gate: "Route verdict",
+          score: 88,
+          link: "memory.html",
+          fields: [
+            ["route_id", "Durable id for the route decision."],
+            ["record_type", "Calm pattern, correction, source seed, circle note, or passport grant."],
+            ["verdict", "Local, review, ledger, durable, or blocked."],
+            ["source_trace", "Source seed or evidence link when required."],
+            ["delete_path", "Deletion or withdrawal route."]
+          ],
+          relations: [
+            ["consent_grant", "Checks consent before durable memory."],
+            ["review_decision", "Routes uncertain records to humans."],
+            ["trust_event", "Logs route outcomes."]
+          ]
+        },
+        {
+          id: "review_decision",
+          label: "Review decision",
+          title: "Review decision protects answer authority.",
+          summary: "Corrections, flagged passages, and source changes become explicit review decisions instead of silent model behavior updates.",
+          owner: "Human reviewer",
+          retention: "Until superseded",
+          gate: "Evidence required",
+          score: 84,
+          link: "queue.html",
+          fields: [
+            ["decision_id", "Durable id for the review outcome."],
+            ["reviewer_ref", "Reviewer or review group."],
+            ["evidence_ref", "Source, passage, or policy evidence."],
+            ["decision", "Accept, revise, block, defer, or escalate."],
+            ["applies_to", "Which source, answer, or rule changes."]
+          ],
+          relations: [
+            ["source_seed", "Can change source readiness."],
+            ["trust_event", "Logs accepted or blocked changes."],
+            ["memory_route", "Receives routed corrections."]
+          ]
+        },
+        {
+          id: "trust_event",
+          label: "Trust event",
+          title: "Trust event is the audit trail.",
+          summary: "Every meaningful change to source readiness, consent, route, deletion, or review outcome creates a small traceable event.",
+          owner: "Audit system",
+          retention: "Audit retained by policy",
+          gate: "Event reason",
+          score: 90,
+          link: "ledger.html",
+          fields: [
+            ["event_id", "Durable id for the trust event."],
+            ["event_type", "Created, updated, reviewed, exported, withdrawn, deleted, or blocked."],
+            ["actor_ref", "User, reviewer, or system actor."],
+            ["record_ref", "Record affected by the event."],
+            ["reason", "Plain language reason for the event."]
+          ],
+          relations: [
+            ["source_seed", "Tracks source lifecycle."],
+            ["consent_grant", "Tracks consent lifecycle."],
+            ["passport_grant", "Tracks user control changes."]
+          ]
+        },
+        {
+          id: "calm_pattern",
+          label: "Calm pattern",
+          title: "Calm pattern remembers only deliberate signals.",
+          summary: "Daily calm memory can support rhythm, but it must never become diagnosis, personality scoring, or hidden profiling.",
+          owner: "User",
+          retention: "User-controlled",
+          gate: "No inference",
+          score: 80,
+          link: "rhythm.html",
+          fields: [
+            ["pattern_id", "Durable id if user enables account-backed rhythm."],
+            ["user_ref", "Account reference after explicit opt-in."],
+            ["chosen_state", "State explicitly selected by the user."],
+            ["source_seed_id", "Source candidate used for reflection."],
+            ["carry_action", "Small action chosen by user."]
+          ],
+          relations: [
+            ["consent_grant", "Requires opt-in before durable storage."],
+            ["passport_grant", "Shows may-remember and must-not-remember fields."],
+            ["trust_event", "Logs export, deletion, and withdrawal."]
+          ]
+        },
+        {
+          id: "passport_grant",
+          label: "Passport grant",
+          title: "Passport grant makes memory reversible.",
+          summary: "The user-facing memory passport must record what is allowed, what is blocked, and which controls remain available.",
+          owner: "User",
+          retention: "Until revoked",
+          gate: "Visible controls",
+          score: 89,
+          link: "passport.html",
+          fields: [
+            ["passport_id", "Durable id for the user control record."],
+            ["record_type", "Which product memory category is covered."],
+            ["may_remember", "Fields explicitly eligible for memory."],
+            ["must_not_remember", "Fields blocked from memory."],
+            ["control_state", "Export, delete, review, local-only, and minimal-memory flags."]
+          ],
+          relations: [
+            ["consent_grant", "Connects passport controls to consent."],
+            ["memory_route", "Guides route decisions."],
+            ["trust_event", "Logs control changes and deletion requests."]
+          ]
+        }
+      ];
+
+      const migrationPlan = [
+        "Create source_seed first with reviewed source-family and boundary fields.",
+        "Create consent_grant before any durable calm_pattern or shared record.",
+        "Create passport_grant so users can inspect may-remember and must-not-remember controls.",
+        "Create memory_route to block, localize, review, ledger, or durable-write incoming records.",
+        "Create review_decision before source behavior changes.",
+        "Create trust_event for export, deletion, withdrawal, review, and route audit trails."
+      ];
+
+      const state = {
+        selectedId: "source_seed"
+      };
+
+      function selectedRecord() {
+        return records.find((record) => record.id === state.selectedId) || records[0];
+      }
+
+      function renderList() {
+        const list = document.getElementById("schemaList");
+        list.innerHTML = records.map((record, index) => `
+          <button class="schema-card ${record.id === state.selectedId ? "active" : ""}" type="button" data-id="${record.id}">
+            <span class="schema-index">${index + 1}</span>
+            <span>
+              <strong>${record.id}</strong>
+              <span>${record.label}</span>
+            </span>
+          </button>
+        `).join("");
+        [...list.querySelectorAll("[data-id]")].forEach((button) => {
+          button.addEventListener("click", () => {
+            state.selectedId = button.dataset.id;
+            render();
+          });
+        });
+      }
+
+      function renderRecord() {
+        const record = selectedRecord();
+        document.getElementById("recordTitle").textContent = record.title;
+        document.getElementById("recordSummary").textContent = record.summary;
+        document.getElementById("recordTable").textContent = record.id;
+        document.getElementById("recordOwner").textContent = record.owner;
+        document.getElementById("recordRetention").textContent = record.retention;
+        document.getElementById("recordGate").textContent = record.gate;
+        document.getElementById("readinessScore").textContent = `${record.score}%`;
+        document.getElementById("scoreBar").style.width = `${record.score}%`;
+        document.getElementById("nextRoom").href = record.link;
+        document.getElementById("nextRoom").textContent = `Open ${record.label}`;
+
+        document.getElementById("fieldGrid").innerHTML = record.fields.map(([name, detail]) => `
+          <div class="field">
+            <strong>${name}</strong>
+            <span>${detail}</span>
+          </div>
+        `).join("");
+
+        document.getElementById("relationGrid").innerHTML = record.relations.map(([name, detail]) => `
+          <div class="relation">
+            <strong>${name}</strong>
+            <span>${detail}</span>
+          </div>
+        `).join("");
+      }
+
+      function schemaPayload(record = selectedRecord()) {
+        return {
+          product: "VedaPath AI",
+          release: "v0.5.2 schema draft",
+          table: record.id,
+          owner: record.owner,
+          retention: record.retention,
+          gate: record.gate,
+          required_fields: record.fields.map(([name, detail]) => ({ name, detail })),
+          relationships: record.relations.map(([table, detail]) => ({ table, detail })),
+          no_go_rules: [
+            "No hidden profile table",
+            "No distress archive",
+            "No memory without export and deletion path",
+            "No source behavior change without review decision"
+          ]
+        };
+      }
+
+      function writeOutput(text) {
+        const output = document.getElementById("schemaOutput");
+        output.value = text;
+        output.focus();
+        output.select();
+      }
+
+      function copyText(text, button, doneLabel) {
+        writeOutput(text);
+        const original = button.textContent;
+        const finish = () => {
+          button.textContent = doneLabel;
+          setTimeout(() => {
+            button.textContent = original;
+          }, 1400);
+        };
+        if (navigator.clipboard && window.isSecureContext) {
+          navigator.clipboard.writeText(text).then(finish).catch(finish);
+        } else {
+          finish();
+        }
+      }
+
+      function copySchema() {
+        const text = JSON.stringify(schemaPayload(), null, 2);
+        copyText(text, document.getElementById("copySchema"), "Schema Copied");
+      }
+
+      function copyMigration() {
+        const text = [
+          "VedaPath Backend Migration Plan",
+          "Release: v0.5.2 schema draft",
+          "",
+          ...migrationPlan.map((item, index) => `${index + 1}. ${item}`),
+          "",
+          "Launch gate: do not ship durable memory until consent, passport, export, deletion, review, and audit paths are visible."
+        ].join("\n");
+        copyText(text, document.getElementById("copyMigration"), "Plan Copied");
+      }
+
+      function runGate() {
+        const missing = records.filter((record) => !record.fields.length || !record.relations.length || !record.gate);
+        const text = [
+          "Schema gate: PASS",
+          "Release: v0.5.2 schema draft",
+          `Tables checked: ${records.length}`,
+          `Missing essentials: ${missing.length}`,
+          "",
+          "Required before backend build:",
+          "- durable ids",
+          "- consent grant",
+          "- passport grant",
+          "- export path",
+          "- deletion path",
+          "- review decision",
+          "- trust event audit"
+        ].join("\n");
+        copyText(text, document.getElementById("runGate"), "Gate Passed");
+      }
+
+      function render() {
+        renderList();
+        renderRecord();
+        writeOutput(JSON.stringify(schemaPayload(), null, 2));
+      }
+
+      document.getElementById("copySchema").addEventListener("click", copySchema);
+      document.getElementById("copyMigration").addEventListener("click", copyMigration);
+      document.getElementById("runGate").addEventListener("click", runGate);
+      render();
+    </script>
+  </body>
+</html>

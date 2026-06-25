@@ -499,6 +499,7 @@
           <a class="link" href="memory.html">Memory</a>
           <a class="link" href="model.html">Model</a>
           <a class="link active" href="passport.html">Passport</a>
+          <a class="link" href="schema.html">Schema</a>
           <a class="link" href="path.html">Path</a>
           <a class="link" href="compass.html">Compass</a>
           <a class="link" href="card.html">Card</a>
@@ -510,7 +511,7 @@
           <a class="link" href="morning.html">Morning</a>
           <a class="link" href="evening.html">Evening</a>
           <a class="link" href="rhythm.html">Rhythm</a>
-          <span class="version">v0.5.1 calm passport</span>
+          <span class="version">v0.5.2 schema draft</span>
         </nav>
       </header>
 
@@ -798,7 +799,7 @@
         const record = selectedRecord();
         return {
           id: Date.now(),
-          release: "v0.5.1 calm passport",
+          release: "v0.5.2 schema draft",
           record: record.label,
           route: record.route,
           stance: record.stance,
@@ -814,7 +815,7 @@
       function passportText(grant = passportGrant()) {
         return [
           "VedaPath Calm Passport",
-          "Release: v0.5.1 calm passport",
+          "Release: v0.5.2 schema draft",
           `Record: ${grant.record}`,
           `Route: ${grant.route}`,
           `Memory stance: ${grant.stance}`,
@@ -831,7 +832,7 @@
         const record = selectedRecord();
         return [
           "VedaPath Calm Passport Delete Request",
-          "Release: v0.5.1 calm passport",
+          "Release: v0.5.2 schema draft",
           `Record: ${record.label}`,
           `Route: ${record.route}`,
           "Request: delete or withdraw this record from any future durable memory.",

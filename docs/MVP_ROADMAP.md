@@ -23,7 +23,7 @@ Show the product experience without a live LLM backend.
 
 Status:
 
-Completed in v0.5.1.
+Completed in v0.5.2.
 
 Core screens:
 
@@ -51,6 +51,7 @@ Core screens:
 - Memory Gate
 - Trust Model
 - Calm Passport
+- Backend Schema Room
 - Source Path Builder
 - Calm Compass
 - Calm Card Studio
@@ -77,7 +78,7 @@ Connect a small curated source set.
 
 Status:
 
-Active product phase. Source Seeds now shows the first structured source schema and prototype seed records. Retrieval Lab now shows the first source-stack ranking, match reason, boundary, and no-source claim refusal. Passage Review Pack now shows passage dossiers, allowed use, missing production fields, local review decisions, and evaluation checks. Evaluation Runner now checks answer drafts before user-facing trust. Evaluation Dashboard now tests the evaluator as a visible release gate. Reviewer Queue now turns failed examples, flagged passages, retrieval gaps, and correction notes into local human-review cards. Source Policy Console now makes answer gates visible before the AI speaks with confidence. Trust Ledger now turns policy routes and queue decisions into versioned local governance records before accepted behavior changes. Life Map now routes real-life moments to one source candidate, one boundary, and one next action without overstepping into advice. Calm Circle now routes shared moments to one source, one shared question, and one small agreement without pretending to mediate or judge. Consent Gate now makes purpose, scope, consent, deletion path, source trace, and review route visible before shared or knowledge-changing records become durable memory. Memory Gate now routes incoming records to local draft, human review, Trust Ledger, or blocked based on consent, source trace, deletion, review, and audit fields. Trust Model now connects source, consent, memory, review, ledger, and calm-pattern records as a visible production data architecture. Calm Passport now shows may-remember fields, must-not-remember fields, export, delete, revoke, and local grants from the user's point of view.
+Active product phase. Source Seeds now shows the first structured source schema and prototype seed records. Retrieval Lab now shows the first source-stack ranking, match reason, boundary, and no-source claim refusal. Passage Review Pack now shows passage dossiers, allowed use, missing production fields, local review decisions, and evaluation checks. Evaluation Runner now checks answer drafts before user-facing trust. Evaluation Dashboard now tests the evaluator as a visible release gate. Reviewer Queue now turns failed examples, flagged passages, retrieval gaps, and correction notes into local human-review cards. Source Policy Console now makes answer gates visible before the AI speaks with confidence. Trust Ledger now turns policy routes and queue decisions into versioned local governance records before accepted behavior changes. Life Map now routes real-life moments to one source candidate, one boundary, and one next action without overstepping into advice. Calm Circle now routes shared moments to one source, one shared question, and one small agreement without pretending to mediate or judge. Consent Gate now makes purpose, scope, consent, deletion path, source trace, and review route visible before shared or knowledge-changing records become durable memory. Memory Gate now routes incoming records to local draft, human review, Trust Ledger, or blocked based on consent, source trace, deletion, review, and audit fields. Trust Model now connects source, consent, memory, review, ledger, and calm-pattern records as a visible production data architecture. Calm Passport now shows may-remember fields, must-not-remember fields, export, delete, revoke, and local grants from the user's point of view. Backend Schema Room now converts those trust rooms into seven draft tables, relationships, migration order, and no-go rules.
 
 Initial data:
 
@@ -108,6 +109,7 @@ Features:
 - memory gate for local draft, review, Trust Ledger, and blocked routes before durable memory
 - trust model for source, consent, memory, review, ledger, and calm-pattern records before backend persistence
 - calm passport for user-visible memory controls before account-backed memory
+- backend schema draft for seven trust tables, migration order, export, deletion, review, and no-go rules
 
 Success criteria:
 

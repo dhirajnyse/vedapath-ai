@@ -59,4 +59,4 @@ Calm Passport is not:
 
 ## Next Step
 
-v0.5.2 should create the first backend schema draft for `source_seed`, `consent_grant`, `memory_route`, `review_decision`, `trust_event`, `calm_pattern`, and `passport_grant`, with export and deletion flow notes.
+v0.5.2 adds the first backend schema draft for `source_seed`, `consent_grant`, `memory_route`, `review_decision`, `trust_event`, `calm_pattern`, and `passport_grant`. v0.5.3 should add schema fixtures, export payloads, deletion lifecycle notes, route validations, and no-go tests.

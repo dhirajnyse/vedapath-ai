@@ -1,6 +1,6 @@
-# v0.5.1 Prototype Notes
+# v0.5.2 Prototype Notes
 
-The v0.5.1 release turns the VedaPath AI homepage into a trusted MVP prototype with calm, practice, source-library, source-seeds, retrieval, passage-review, evaluation, evaluation-dashboard, reviewer-queue, source-policy, trust-ledger, life-map, calm-circle, consent-gate, memory-gate, trust-model, calm-passport, source-path, calm-compass, calm-card, source-bell, before-reply, samvada, sankalpa, seva, morning, evening, and rhythm surfaces.
+The v0.5.2 release turns the VedaPath AI homepage into a trusted MVP prototype with calm, practice, source-library, source-seeds, retrieval, passage-review, evaluation, evaluation-dashboard, reviewer-queue, source-policy, trust-ledger, life-map, calm-circle, consent-gate, memory-gate, trust-model, calm-passport, backend-schema, source-path, calm-compass, calm-card, source-bell, before-reply, samvada, sankalpa, seva, morning, evening, and rhythm surfaces.
 
 ## Included
 
@@ -83,4 +83,4 @@ This release proves the product direction:
 
 ## Next Release
 
-v0.5.2 should convert Trust Model and Calm Passport into the first backend schema draft with durable ids, table relationships, migration notes, account-memory consent, passport grants, export, and deletion flows.
+v0.5.2 adds the Backend Schema Room with durable ids, table relationships, migration notes, account-memory consent, passport grants, export, and deletion flow notes. v0.5.3 should add schema fixtures and validation checks.

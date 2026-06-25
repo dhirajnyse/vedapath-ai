@@ -68,6 +68,8 @@ Let us look at the source first.
 - [Trust Model Notes](docs/TRUST_MODEL.md)
 - [Calm Passport](passport.html)
 - [Calm Passport Notes](docs/CALM_PASSPORT.md)
+- [Backend Schema Room](schema.html)
+- [Backend Schema Notes](docs/BACKEND_SCHEMA.md)
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
 - [Calm Compass](compass.html)
@@ -98,7 +100,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v0.5.1` is a trusted MVP prototype plus a user-owned Calm Passport preview with:
+`v0.5.2` is a trusted MVP prototype plus a backend schema draft with:
 
 - Ask workspace
 - Source Card
@@ -123,6 +125,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Memory Gate with local draft, human review, Trust Ledger, and blocked routes before durable memory
 - Trust Model with production entities, source-to-memory flow, required fields, launch readiness, and copyable JSON schema preview
 - Calm Passport with may-remember fields, must-not-remember fields, export, delete, and revoke controls
+- Backend Schema Room with source_seed, consent_grant, memory_route, review_decision, trust_event, calm_pattern, passport_grant, migration order, and no-go rules
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
 - Calm Card Studio with visual card preview, local saved cards, copy text, and PNG export
