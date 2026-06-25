@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>VedaPath Source Storage Plan</title>
+    <title>VedaPath Public Feedback Intake</title>
     <style>
       :root {
         --bg: #fff7ea;
@@ -36,7 +36,8 @@
       }
 
       button,
-      textarea {
+      textarea,
+      input {
         font: inherit;
       }
 
@@ -209,7 +210,7 @@
         color: var(--muted);
       }
 
-      .record-list,
+      .category-list,
       .field-list,
       .grid,
       .metric-grid,
@@ -218,7 +219,7 @@
         gap: 10px;
       }
 
-      .record-card,
+      .category-card,
       .field-card,
       .mini-card,
       .metric,
@@ -230,7 +231,7 @@
         text-align: left;
       }
 
-      .record-card {
+      .category-card {
         display: grid;
         grid-template-columns: 42px minmax(0, 1fr);
         gap: 12px;
@@ -239,15 +240,15 @@
         cursor: pointer;
       }
 
-      .record-card.active,
-      .record-card:hover,
-      .record-card:focus-visible {
+      .category-card.active,
+      .category-card:hover,
+      .category-card:focus-visible {
         border-color: #f09f79;
         background: #fff0e7;
         outline: none;
       }
 
-      .record-index,
+      .category-index,
       .step-index {
         display: inline-flex;
         align-items: center;
@@ -261,23 +262,23 @@
         font-weight: 900;
       }
 
-      .record-card.active .record-index,
+      .category-card.active .category-index,
       .step-card.active .step-index {
         background: var(--bhagwa);
         color: white;
       }
 
-      .record-card strong,
-      .record-card span:not(.record-index) {
+      .category-card strong,
+      .category-card span:not(.category-index) {
         display: block;
       }
 
-      .record-card span:not(.record-index) {
+      .category-card span:not(.category-index) {
         color: var(--muted);
         font-size: 13px;
       }
 
-      .storage-hero {
+      .feedback-hero {
         display: grid;
         grid-template-columns: minmax(0, 1fr) 150px;
         gap: 18px;
@@ -356,6 +357,17 @@
         background: var(--soft-red);
       }
 
+      .input-area {
+        margin: 16px 0;
+      }
+
+      .input-area label {
+        display: block;
+        margin-bottom: 6px;
+        font-size: 13px;
+        color: var(--muted);
+      }
+
       .tabs,
       .button-row {
         display: flex;
@@ -405,14 +417,18 @@
 
       textarea {
         width: 100%;
-        min-height: 154px;
-        margin-top: 14px;
+        min-height: 124px;
         border: 1px solid #efc1aa;
         border-radius: var(--radius);
         background: #fffaf4;
         color: var(--ink);
         padding: 12px;
         resize: vertical;
+      }
+
+      #feedbackOutput {
+        min-height: 154px;
+        margin-top: 14px;
         font-family: Consolas, "Courier New", monospace;
         font-size: 13px;
       }
@@ -486,7 +502,7 @@
           width: min(100% - 28px, 1240px);
         }
 
-        .storage-hero,
+        .feedback-hero,
         .source-block,
         .grid,
         .metric-grid {
@@ -519,7 +535,7 @@
           <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
           <div>
             <strong>VedaPath AI</strong>
-            <span>Source storage plan</span>
+            <span>Public feedback intake</span>
           </div>
         </a>
         <nav class="nav" aria-label="Project links">
@@ -553,9 +569,9 @@
           <a class="link" href="scholar.html">Scholar</a>
           <a class="link" href="launch.html">Launch</a>
           <a class="link" href="bridge.html">Bridge</a>
-          <a class="link active" href="storage.html">Storage</a>
+          <a class="link" href="storage.html">Storage</a>
           <a class="link" href="access.html">Access</a>
-          <a class="link" href="feedback.html">Feedback</a>
+          <a class="link active" href="feedback.html">Feedback</a>
           <a class="link" href="path.html">Path</a>
           <a class="link" href="compass.html">Compass</a>
           <a class="link" href="card.html">Card</a>
@@ -571,311 +587,320 @@
         </nav>
       </header>
 
-      <main class="workspace" aria-label="VedaPath Source Storage workspace">
+      <main class="workspace" aria-label="VedaPath Public Feedback workspace">
         <aside class="panel">
-          <span class="eyebrow">Choose storage layer</span>
-          <h1>Store the source before the answer.</h1>
-          <p class="muted">A production VedaPath should first preserve source records, review state, and retrieval metadata. Answers can change later; the source trail must stay stable.</p>
-          <div class="record-list" id="recordList"></div>
+          <span class="eyebrow">Choose feedback type</span>
+          <h1>Feedback becomes a review ticket.</h1>
+          <p class="muted">Public launch feedback should help improve sources, categories, UX, and boundaries without silently rewriting knowledge or collecting private distress.</p>
+          <div class="category-list" id="categoryList"></div>
         </aside>
 
         <section class="panel">
-          <div class="storage-hero">
+          <div class="feedback-hero">
             <div>
-              <span class="eyebrow">Source Record Storage Plan</span>
-              <h2 id="storageTitle">Canonical source records come first.</h2>
-              <p class="muted" id="storageSummary">The first production table should store source identity, citation, source family, allowed use, and review state.</p>
+              <span class="eyebrow">Public Feedback Intake</span>
+              <h2 id="feedbackTitle">Source issues need a citation trail.</h2>
+              <p class="muted" id="feedbackSummary">A visitor can report a wrong citation, missing passage, or source mismatch. The output is a review ticket, not accepted knowledge.</p>
             </div>
             <div class="mark-stage">
-              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Source Storage logo">
+              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Public Feedback logo">
             </div>
           </div>
 
-          <div class="source-block" aria-label="Storage decision card">
+          <div class="source-block" aria-label="Feedback decision card">
             <div>
-              <span class="source-meta">Table</span>
-              <span class="source-value" id="tableName">source_seed</span>
+              <span class="source-meta">Ticket type</span>
+              <span class="source-value" id="ticketType">source_issue</span>
             </div>
             <div>
-              <span class="source-meta">Primary key</span>
-              <span class="source-value" id="primaryKey">source_seed_id</span>
+              <span class="source-meta">Reviewer route</span>
+              <span class="source-value" id="reviewerRoute">Source reviewer</span>
             </div>
             <div>
-              <span class="source-meta">Index priority</span>
-              <span class="source-value" id="indexPriority">family + citation</span>
+              <span class="source-meta">Default priority</span>
+              <span class="source-value" id="priority">High</span>
             </div>
             <div>
-              <span class="source-meta">Migration step</span>
-              <span class="source-value" id="migrationStep">001 source core</span>
+              <span class="source-meta">Intake state</span>
+              <span class="source-value" id="intakeState">Review ticket</span>
             </div>
           </div>
 
-          <h2>Required Fields</h2>
+          <div class="input-area">
+            <label for="visitorNote">Visitor note</label>
+            <textarea id="visitorNote">The Oppenheimer quote should say Bhagavad Gita, not the four Vedas.</textarea>
+          </div>
+
+          <h2>Required Ticket Fields</h2>
           <div class="field-list" id="fieldList"></div>
 
-          <div class="tabs" role="tablist" aria-label="Source storage layers">
-            <button class="tab active" type="button" data-mode="schema">Schema</button>
-            <button class="tab" type="button" data-mode="indexes">Indexes</button>
-            <button class="tab" type="button" data-mode="fixtures">Fixtures</button>
-            <button class="tab" type="button" data-mode="checks">No-Go Checks</button>
+          <div class="tabs" role="tablist" aria-label="Feedback intake layers">
+            <button class="tab active" type="button" data-mode="ticket">Ticket</button>
+            <button class="tab" type="button" data-mode="triage">Triage</button>
+            <button class="tab" type="button" data-mode="route">Reviewer Route</button>
+            <button class="tab" type="button" data-mode="blocked">Blocked Intake</button>
           </div>
 
           <div id="modePanel"></div>
 
           <div class="button-row" style="margin-top: 14px;">
-            <button class="button primary" id="copyPlan" type="button">Copy Storage Plan</button>
-            <button class="button safe" id="copyJson" type="button">Copy Table JSON</button>
-            <button class="button" id="copyFixture" type="button">Copy Fixture</button>
+            <button class="button primary" id="copyTicket" type="button">Copy Ticket</button>
+            <button class="button safe" id="copyJson" type="button">Copy Ticket JSON</button>
+            <button class="button" id="copyBoundary" type="button">Copy Intake Boundary</button>
           </div>
 
-          <textarea id="storageOutput" readonly aria-label="Source Storage output"></textarea>
+          <textarea id="feedbackOutput" readonly aria-label="Public Feedback output"></textarea>
         </section>
 
-        <aside class="rail" aria-label="Storage readiness rail">
+        <aside class="rail" aria-label="Feedback readiness rail">
           <section class="panel tight">
-            <span class="badge green">Storage readiness</span>
-            <h2 style="margin-top: 14px;">Source Storage Pulse</h2>
-            <p class="muted" id="pulseSummary">Core source records are ready to specify. Translation and retrieval tables follow after the canonical source id is stable.</p>
-            <div class="progress" aria-label="Source storage readiness">
-              <div class="bar" id="scoreBar" style="--score:88%"></div>
+            <span class="badge green">Feedback readiness</span>
+            <h2 style="margin-top: 14px;">Launch Feedback Pulse</h2>
+            <p class="muted" id="pulseSummary">Public feedback is ready as a ticketing preview. Production needs accounts, consent, moderation, spam controls, and reviewer routing.</p>
+            <div class="progress" aria-label="Feedback readiness">
+              <div class="bar" id="scoreBar" style="--score:72%"></div>
             </div>
             <div class="metric-grid">
               <div class="metric">
                 <span>Readiness</span>
-                <strong id="readinessScore">88%</strong>
+                <strong id="readinessScore">72%</strong>
               </div>
               <div class="metric">
-                <span>Required fields</span>
-                <strong id="fieldCount">8</strong>
+                <span>Fields</span>
+                <strong id="fieldCount">5</strong>
               </div>
               <div class="metric">
                 <span>Next build</span>
-                <strong id="nextBuild">v0.6.2</strong>
+                <strong id="nextBuild">v0.6.4</strong>
               </div>
               <div class="metric">
-                <span>Storage owner</span>
-                <strong id="owner">Source</strong>
+                <span>Storage stance</span>
+                <strong id="storageStance">Local</strong>
               </div>
             </div>
           </section>
 
           <section class="panel tight" style="margin-top: 16px;">
-            <h2>Migration Order</h2>
+            <h2>Intake Order</h2>
             <div class="step-list">
               <div class="step-card active">
                 <span class="step-index">1</span>
                 <div>
-                  <strong>Core source</strong>
-                  <p>Stable id, citation, family, and allowed use.</p>
+                  <strong>Categorize</strong>
+                  <p>Separate source, category, UX, and boundary feedback.</p>
                 </div>
               </div>
               <div class="step-card">
                 <span class="step-index">2</span>
                 <div>
-                  <strong>Review link</strong>
-                  <p>Decision id, reviewer role, and evidence note.</p>
+                  <strong>Sanitize</strong>
+                  <p>Remove private distress, personal data, and unsafe requests.</p>
                 </div>
               </div>
               <div class="step-card">
                 <span class="step-index">3</span>
                 <div>
-                  <strong>Retrieval index</strong>
-                  <p>Keywords, concept tags, and source stack rank.</p>
+                  <strong>Route</strong>
+                  <p>Send to reviewer queue, UX backlog, or launch boundary review.</p>
                 </div>
               </div>
               <div class="step-card">
                 <span class="step-index">4</span>
                 <div>
-                  <strong>Rollback</strong>
-                  <p>Previous version, replacement reason, and audit trail.</p>
+                  <strong>Review</strong>
+                  <p>Promote only after evidence and reviewer decision.</p>
                 </div>
               </div>
             </div>
           </section>
 
           <section class="panel tight boundary" style="margin-top: 16px;">
-            <h2>Storage Boundary</h2>
-            <p class="muted">This plan defines source data shape only. It does not store user reflections, accounts, audio files, or private reviewer identities.</p>
+            <h2>Feedback Boundary</h2>
+            <p class="muted">This preview does not submit data to a server. It does not accept feedback as truth, collect private distress, or replace reviewer judgment.</p>
           </section>
         </aside>
       </main>
     </div>
 
     <script>
-      const storageLayers = [
+      const feedbackTypes = [
         {
-          id: "source_core",
-          name: "Source core",
-          short: "Canonical citation, family, language, allowed use, and review state.",
-          title: "Canonical source records come first.",
-          summary: "The first production table should store source identity, citation, source family, allowed use, and review state.",
-          table: "source_seed",
-          primaryKey: "source_seed_id",
-          index: "family + citation",
-          migration: "001 source core",
-          score: 88,
-          fields: [
-            ["source_seed_id", "Stable durable id for source record.", "required"],
-            ["source_family", "Veda, Upanishad, Gita, Itihasa, Purana, commentary, or modern.", "required"],
-            ["citation", "Human-readable citation such as Bhagavad Gita 2.48.", "required"],
-            ["allowed_use", "Answer, practice, lens, voice, launch, or blocked.", "required"]
-          ],
-          modes: {
-            schema: [
-              ["source_seed_id", "TEXT PRIMARY KEY"],
-              ["source_family", "TEXT NOT NULL with controlled values"],
-              ["citation", "TEXT NOT NULL and user-visible"],
-              ["allowed_use", "TEXT NOT NULL and separated from answer authority"]
-            ],
-            indexes: [
-              ["idx_source_family", "Fast filtering by source family."],
-              ["idx_source_citation", "Fast lookup by citation and duplicate detection."],
-              ["idx_allowed_use", "Keeps voice, launch, and answer permissions separate."]
-            ],
-            fixtures: [
-              ["gita_2_48", "Prototype-ready source with direct citation and practice use."],
-              ["rv_3_62_10", "Voice blocked source with rights and reviewer gates pending."],
-              ["katha_1_3_14", "Tone-review source with calm-use caution."]
-            ],
-            checks: [
-              ["No missing citation", "Block records without citation."],
-              ["No blurred family", "Block records that call Gita a direct Veda."],
-              ["No hidden use", "Block records that do not declare allowed_use."]
-            ]
-          }
-        },
-        {
-          id: "translation_layer",
-          name: "Translation layer",
-          short: "Translation, transliteration, word lens, and edition notes.",
-          title: "Translation records need source edition context.",
-          summary: "Translation data should stay linked to a source seed and must not pretend one rendering settles all meanings.",
-          table: "source_translation",
-          primaryKey: "translation_id",
-          index: "source_seed_id + language",
-          migration: "002 translation layer",
-          score: 76,
-          fields: [
-            ["translation_id", "Stable id for a translation or rendering note.", "required"],
-            ["source_seed_id", "Foreign key to the canonical source.", "required"],
-            ["language", "Sanskrit, transliteration, English, or note language.", "required"],
-            ["translation_note", "Boundary and edition note for interpretation.", "watch"]
-          ],
-          modes: {
-            schema: [
-              ["translation_id", "TEXT PRIMARY KEY"],
-              ["source_seed_id", "TEXT NOT NULL REFERENCES source_seed"],
-              ["language", "TEXT NOT NULL"],
-              ["translation_note", "TEXT with reviewer caution"]
-            ],
-            indexes: [
-              ["idx_translation_source", "Find all translations for a source."],
-              ["idx_translation_language", "Filter Sanskrit, transliteration, English, or notes."],
-              ["idx_translation_review", "Find translation records needing review."]
-            ],
-            fixtures: [
-              ["gita_2_48_translit", "Transliteration layer tied to Bhagavad Gita 2.48."],
-              ["gita_2_48_plain", "Plain English explanation with boundary."],
-              ["rv_3_62_10_syllable", "Syllable hint without audio playback."]
-            ],
-            checks: [
-              ["No orphan translation", "Block translation without source_seed_id."],
-              ["No final rendering", "Block claims that one translation settles all interpretations."],
-              ["No ritual instruction", "Block translation notes that become ritual guidance."]
-            ]
-          }
-        },
-        {
-          id: "review_link",
-          name: "Review link",
-          short: "Reviewer decision, evidence note, role, status, and release id.",
-          title: "Review links make trust auditable.",
-          summary: "A source record should not gain production confidence without a review decision and evidence trail.",
-          table: "source_review_link",
-          primaryKey: "source_review_link_id",
-          index: "source_seed_id + status",
-          migration: "003 review link",
+          id: "source_issue",
+          name: "Source issue",
+          short: "Wrong citation, missing passage, or source-family mismatch.",
+          title: "Source issues need a citation trail.",
+          summary: "A visitor can report a wrong citation, missing passage, or source mismatch. The output is a review ticket, not accepted knowledge.",
+          route: "Source reviewer",
+          priority: "High",
+          intakeState: "Review ticket",
           score: 72,
+          storage: "Local",
+          example: "The Oppenheimer quote should say Bhagavad Gita, not the four Vedas.",
           fields: [
-            ["source_review_link_id", "Stable link between source and decision.", "required"],
-            ["review_decision_id", "Decision record from reviewer workflow.", "required"],
-            ["review_role", "Sanskrit, translation, boundary, rights, or product.", "required"],
-            ["release_id", "Release where the decision became active.", "watch"]
+            ["feedback_id", "Temporary id for this feedback ticket.", "required"],
+            ["source_claim", "The citation, quote, or source category being challenged.", "required"],
+            ["visitor_note", "The user's note, sanitized before review.", "required"],
+            ["reviewer_route", "Source reviewer or translation reviewer.", "required"],
+            ["evidence_needed", "What proof is needed before accepting the correction.", "watch"]
           ],
           modes: {
-            schema: [
-              ["source_review_link_id", "TEXT PRIMARY KEY"],
-              ["source_seed_id", "TEXT NOT NULL REFERENCES source_seed"],
-              ["review_decision_id", "TEXT NOT NULL REFERENCES review_decision"],
-              ["release_id", "TEXT with release history"]
+            ticket: [
+              ["Ticket shape", "source_issue with source_claim, visitor_note, and evidence_needed."],
+              ["Accepted state", "Review ticket only until a reviewer verifies the issue."],
+              ["User copy", "Thank you. We will review the source trail before changing behavior."]
             ],
-            indexes: [
-              ["idx_review_source", "Find decisions by source."],
-              ["idx_review_status", "Find blocked or pending records."],
-              ["idx_review_release", "Audit by release version."]
+            triage: [
+              ["Priority", "High when a public answer might mislabel source family."],
+              ["Sanitize", "Remove contact details, personal distress, or unrelated claims."],
+              ["Duplicate check", "Match against source_seed_id, citation, and known category-confusion tests."]
             ],
-            fixtures: [
-              ["gita_2_48_review", "Approved for prototype source display."],
-              ["rv_3_62_10_rights", "Audio blocked until rights review."],
-              ["katha_1_3_14_tone", "Needs tone review before calm promotion."]
+            route: [
+              ["Primary route", "Source reviewer"],
+              ["Secondary route", "Translation reviewer if meaning or rendering is disputed."],
+              ["Audit link", "Reviewer Queue and Trust Ledger after verification."]
             ],
-            checks: [
-              ["No anonymous production", "Block production status without review_decision_id."],
-              ["No merged roles", "Block one review from approving all roles."],
-              ["No silent rollback", "Block replacement without release id and note."]
+            blocked: [
+              ["No direct rewrite", "Visitor feedback cannot edit accepted knowledge directly."],
+              ["No private distress", "Personal crisis or medical content must not enter public feedback."],
+              ["No authority request", "Requests for ritual, guru, or diagnosis guidance are declined."]
             ]
           }
         },
         {
-          id: "retrieval_index",
-          name: "Retrieval index",
-          short: "Concept tags, search terms, source stack rank, and answer eligibility.",
-          title: "Retrieval can index only reviewed source facts.",
-          summary: "Search metadata helps answers find sources, but it must not become a back door for unsupported claims.",
-          table: "source_retrieval_index",
-          primaryKey: "retrieval_index_id",
-          index: "concept_tag + eligibility",
-          migration: "004 retrieval index",
-          score: 68,
+          id: "category_confusion",
+          name: "Category confusion",
+          short: "Veda, Upanishad, Gita, Itihasa, Purana, or commentary mix-up.",
+          title: "Category confusion should become a teaching moment.",
+          summary: "When a visitor sees a source-family mix-up, VedaPath should route it to review and improve labels without shaming the user.",
+          route: "Boundary + source",
+          priority: "High",
+          intakeState: "Clarify ticket",
+          score: 70,
+          storage: "Local",
+          example: "This answer calls the Gita a Veda. It should explain the category more carefully.",
           fields: [
-            ["retrieval_index_id", "Stable id for search metadata.", "required"],
-            ["source_seed_id", "Foreign key to canonical source.", "required"],
-            ["concept_tags", "Controlled tags for retrieval matching.", "required"],
-            ["answer_eligibility", "Eligible, bounded, review, or blocked.", "required"]
+            ["feedback_id", "Temporary id for this feedback ticket.", "required"],
+            ["confused_family", "The source family that may be mislabeled.", "required"],
+            ["correct_family", "Suggested category if known.", "watch"],
+            ["visitor_note", "Sanitized note from the visitor.", "required"],
+            ["teaching_need", "Plain-language explanation needed.", "required"]
           ],
           modes: {
-            schema: [
-              ["retrieval_index_id", "TEXT PRIMARY KEY"],
-              ["source_seed_id", "TEXT NOT NULL REFERENCES source_seed"],
-              ["concept_tags", "JSON array with controlled tags"],
-              ["answer_eligibility", "TEXT NOT NULL"]
+            ticket: [
+              ["Ticket shape", "category_confusion with confused_family and teaching_need."],
+              ["Accepted state", "Needs reviewer check plus clearer UX label."],
+              ["User copy", "Good catch. We will review the label and improve the explanation."]
             ],
-            indexes: [
-              ["idx_concept_tags", "Search by concept or theme."],
-              ["idx_answer_eligibility", "Keep blocked sources out of answer generation."],
-              ["idx_source_stack_rank", "Rank source candidates without hiding boundaries."]
+            triage: [
+              ["Priority", "High when source-family labels could mislead beginners."],
+              ["Sanitize", "Remove debate language and keep the category correction."],
+              ["Duplicate check", "Match against known Veda/Gita/Upanishad confusion patterns."]
             ],
-            fixtures: [
-              ["steady_action_tag", "Connects Bhagavad Gita 2.48 to calm practice."],
-              ["oppenheimer_tag", "Routes Oppenheimer quote to Gita, not four Vedas."],
-              ["audio_blocked_tag", "Keeps voice requests inside silent support."]
+            route: [
+              ["Primary route", "Source reviewer"],
+              ["Secondary route", "Boundary reviewer if copy feels defensive or overclaims."],
+              ["Audit link", "Evaluation Dashboard category-confusion suite."]
             ],
-            checks: [
-              ["No unsupported proof", "Block retrieval tags that imply modern science proof."],
-              ["No blocked answer", "Block answer generation from ineligible source."],
-              ["No hidden ranking", "Show source stack reason before answer confidence."]
+            blocked: [
+              ["No shaming", "Do not shame the visitor for using popular wording."],
+              ["No flattening", "Do not erase philosophical connections while correcting category."],
+              ["No instant promotion", "Do not rewrite labels without review."]
+            ]
+          }
+        },
+        {
+          id: "ux_friction",
+          name: "UX friction",
+          short: "Confusing flow, unclear button, crowded card, or mobile issue.",
+          title: "UX feedback should protect simplicity.",
+          summary: "A visitor can report a confusing surface. The output should become a design ticket without mixing with source-truth review.",
+          route: "Product backlog",
+          priority: "Medium",
+          intakeState: "UX ticket",
+          score: 76,
+          storage: "Local",
+          example: "The reviewer queue label is confusing on mobile. I expected it to say Review Tickets.",
+          fields: [
+            ["feedback_id", "Temporary id for this feedback ticket.", "required"],
+            ["surface", "The page, card, button, or flow involved.", "required"],
+            ["friction_note", "What felt unclear or heavy.", "required"],
+            ["device_context", "Desktop, mobile, or unknown.", "watch"],
+            ["simplicity_goal", "What the user expected instead.", "required"]
+          ],
+          modes: {
+            ticket: [
+              ["Ticket shape", "ux_friction with surface, friction_note, and simplicity_goal."],
+              ["Accepted state", "Product backlog item, not source correction."],
+              ["User copy", "Thank you. We will use this to simplify the flow."]
+            ],
+            triage: [
+              ["Priority", "Medium by default, high when it blocks source understanding."],
+              ["Sanitize", "Keep the UX signal, remove personal details."],
+              ["Duplicate check", "Match page and surface against recent UX tickets."]
+            ],
+            route: [
+              ["Primary route", "Product backlog"],
+              ["Secondary route", "Boundary reviewer if the UX encourages overclaiming."],
+              ["Audit link", "Launch story and homepage simplicity checks."]
+            ],
+            blocked: [
+              ["No feature pileup", "Do not add complexity just because it was requested."],
+              ["No hidden tracking", "Do not infer identity or behavior from UX feedback."],
+              ["No source rewrite", "UX feedback cannot change source facts."]
+            ]
+          }
+        },
+        {
+          id: "boundary_concern",
+          name: "Boundary concern",
+          short: "Guru voice, therapy claim, ritual advice, crisis use, or overclaim.",
+          title: "Boundary concerns go straight to review.",
+          summary: "If the product sounds too authoritative, therapeutic, ritual, or certain, the feedback should become a high-priority boundary ticket.",
+          route: "Boundary reviewer",
+          priority: "Critical",
+          intakeState: "Hold ticket",
+          score: 80,
+          storage: "Local",
+          example: "This calm answer sounds like therapy advice. It should be framed as reflection support only.",
+          fields: [
+            ["feedback_id", "Temporary id for this feedback ticket.", "required"],
+            ["boundary_type", "Guru, therapy, ritual, crisis, modern proof, or privacy.", "required"],
+            ["visitor_note", "Sanitized note from the visitor.", "required"],
+            ["hold_reason", "Why the wording should be held.", "required"],
+            ["reviewer_route", "Boundary reviewer or launch gate.", "required"]
+          ],
+          modes: {
+            ticket: [
+              ["Ticket shape", "boundary_concern with boundary_type and hold_reason."],
+              ["Accepted state", "Hold candidate until boundary reviewer checks it."],
+              ["User copy", "Thank you. We will review this boundary before promoting the wording."]
+            ],
+            triage: [
+              ["Priority", "Critical when the concern involves therapy, crisis, ritual authority, or guru voice."],
+              ["Sanitize", "Remove private story details and keep the product-language concern."],
+              ["Duplicate check", "Match against no-go cases and launch gate blocked claims."]
+            ],
+            route: [
+              ["Primary route", "Boundary reviewer"],
+              ["Secondary route", "Launch Gate when public copy is involved."],
+              ["Audit link", "Trust Ledger after reviewer decision."]
+            ],
+            blocked: [
+              ["No crisis handling", "Public feedback is not emergency support."],
+              ["No private archive", "Do not keep personal distress details."],
+              ["No guru escalation", "Do not route the user toward spiritual authority claims."]
             ]
           }
         }
       ];
 
       const state = {
-        selectedId: "source_core",
-        mode: "schema"
+        selectedId: "source_issue",
+        mode: "ticket"
       };
 
-      function selectedLayer() {
-        return storageLayers.find((item) => item.id === state.selectedId) || storageLayers[0];
+      function selectedFeedback() {
+        return feedbackTypes.find((item) => item.id === state.selectedId) || feedbackTypes[0];
       }
 
       function stateClass(value) {
@@ -884,11 +909,15 @@
         return "";
       }
 
-      function renderRecords() {
-        const list = document.getElementById("recordList");
-        list.innerHTML = storageLayers.map((item, index) => `
-          <button class="record-card ${item.id === state.selectedId ? "active" : ""}" type="button" data-id="${item.id}">
-            <span class="record-index">${index + 1}</span>
+      function sanitizeNote(value) {
+        return value.replace(/\s+/g, " ").trim().slice(0, 220) || selectedFeedback().example;
+      }
+
+      function renderCategories() {
+        const list = document.getElementById("categoryList");
+        list.innerHTML = feedbackTypes.map((item, index) => `
+          <button class="category-card ${item.id === state.selectedId ? "active" : ""}" type="button" data-id="${item.id}">
+            <span class="category-index">${index + 1}</span>
             <span>
               <strong>${item.name}</strong>
               <span>${item.short}</span>
@@ -896,9 +925,10 @@
           </button>
         `).join("");
 
-        [...list.querySelectorAll(".record-card")].forEach((button) => {
+        [...list.querySelectorAll(".category-card")].forEach((button) => {
           button.addEventListener("click", () => {
             state.selectedId = button.dataset.id;
+            document.getElementById("visitorNote").value = selectedFeedback().example;
             render();
           });
         });
@@ -915,10 +945,10 @@
       }
 
       function renderFields() {
-        const item = selectedLayer();
+        const item = selectedFeedback();
         document.getElementById("fieldList").innerHTML = item.fields.map((field, index) => `
           <div class="field-card">
-            <span class="record-index">${index + 1}</span>
+            <span class="category-index">${index + 1}</span>
             <div>
               <strong>${field[0]}</strong>
               <p>${field[1]}</p>
@@ -929,8 +959,8 @@
       }
 
       function renderModePanel() {
-        const item = selectedLayer();
-        const rows = item.modes[state.mode] || item.modes.schema;
+        const item = selectedFeedback();
+        const rows = item.modes[state.mode] || item.modes.ticket;
         document.getElementById("modePanel").innerHTML = `
           <div class="grid">
             ${rows.map((row) => `
@@ -943,70 +973,68 @@
         `;
       }
 
-      function renderLayer() {
-        const item = selectedLayer();
-        document.getElementById("storageTitle").textContent = item.title;
-        document.getElementById("storageSummary").textContent = item.summary;
-        document.getElementById("tableName").textContent = item.table;
-        document.getElementById("primaryKey").textContent = item.primaryKey;
-        document.getElementById("indexPriority").textContent = item.index;
-        document.getElementById("migrationStep").textContent = item.migration;
+      function renderFeedback() {
+        const item = selectedFeedback();
+        document.getElementById("feedbackTitle").textContent = item.title;
+        document.getElementById("feedbackSummary").textContent = item.summary;
+        document.getElementById("ticketType").textContent = item.id;
+        document.getElementById("reviewerRoute").textContent = item.route;
+        document.getElementById("priority").textContent = item.priority;
+        document.getElementById("intakeState").textContent = item.intakeState;
         document.getElementById("pulseSummary").textContent = item.summary;
         document.getElementById("readinessScore").textContent = `${item.score}%`;
         document.getElementById("scoreBar").style.setProperty("--score", `${item.score}%`);
         document.getElementById("fieldCount").textContent = item.fields.length;
-        document.getElementById("owner").textContent = item.name.split(" ")[0];
+        document.getElementById("storageStance").textContent = item.storage;
         renderFields();
         renderModePanel();
-        document.getElementById("storageOutput").value = storageBrief();
+        document.getElementById("feedbackOutput").value = ticketBrief();
       }
 
-      function tablePayload() {
-        const item = selectedLayer();
+      function ticketPayload() {
+        const item = selectedFeedback();
         return {
           product: "VedaPath AI",
-          release: "v0.6.1 storage",
-          feature: "Source Record Storage Plan",
-          table: item.table,
-          primary_key: item.primaryKey,
-          index_priority: item.index,
-          migration_step: item.migration,
-          readiness_score: item.score,
+          release: "v0.6.3 feedback",
+          feature: "Public Feedback Intake",
+          ticket_type: item.id,
+          reviewer_route: item.route,
+          priority: item.priority,
+          intake_state: item.intakeState,
+          visitor_note: sanitizeNote(document.getElementById("visitorNote").value),
           fields: item.fields.map((field) => ({ name: field[0], note: field[1], state: field[2] })),
-          boundary: "Source storage does not create answer authority or user memory."
+          boundary: "Public feedback creates a review ticket, not accepted knowledge or private memory."
         };
       }
 
-      function storageBrief() {
-        const item = selectedLayer();
+      function ticketBrief() {
+        const payload = ticketPayload();
         return [
-          "VedaPath Source Record Storage Plan",
-          "Release: v0.6.1 storage",
-          `Layer: ${item.name}`,
-          `Table: ${item.table}`,
-          `Primary key: ${item.primaryKey}`,
-          `Index priority: ${item.index}`,
-          `Migration: ${item.migration}`,
-          `Required fields: ${item.fields.length}`,
-          "Boundary: store source facts first; do not store personal memory, audio, or answer authority in this lane."
+          "VedaPath Public Feedback Ticket",
+          "Release: v0.6.3 feedback",
+          `Ticket type: ${payload.ticket_type}`,
+          `Reviewer route: ${payload.reviewer_route}`,
+          `Priority: ${payload.priority}`,
+          `Intake state: ${payload.intake_state}`,
+          `Visitor note: ${payload.visitor_note}`,
+          "Boundary: feedback becomes a review ticket only; no direct knowledge rewrite, private distress archive, or guru-authority request."
         ].join("\n");
       }
 
-      function fixtureBrief() {
-        const item = selectedLayer();
+      function boundaryBrief() {
+        const item = selectedFeedback();
         return [
-          "VedaPath Source Storage Fixture",
-          "Release: v0.6.1 storage",
-          `Table: ${item.table}`,
-          `Fixture family: ${item.name}`,
-          ...item.modes.fixtures.map((row) => `- ${row[0]}: ${row[1]}`),
-          "No-go: reject missing citation, blurred source family, hidden allowed use, and unsupported proof claims."
+          "VedaPath Public Feedback Boundary",
+          "Release: v0.6.3 feedback",
+          `Ticket type: ${item.id}`,
+          ...item.modes.blocked.map((row) => `- ${row[0]}: ${row[1]}`),
+          "No-go: accepted knowledge rewrite, private distress storage, personal data collection, spam, and spiritual-authority escalation."
         ].join("\n");
       }
 
       function copyText(text, button, label) {
         const original = button.textContent;
-        document.getElementById("storageOutput").value = text;
+        document.getElementById("feedbackOutput").value = text;
         const finish = () => {
           button.textContent = label;
           window.setTimeout(() => {
@@ -1022,21 +1050,25 @@
       }
 
       function render() {
-        renderRecords();
+        renderCategories();
         renderTabs();
-        renderLayer();
+        renderFeedback();
       }
 
-      document.getElementById("copyPlan").addEventListener("click", () => {
-        copyText(storageBrief(), document.getElementById("copyPlan"), "Plan Copied");
+      document.getElementById("visitorNote").addEventListener("input", () => {
+        document.getElementById("feedbackOutput").value = ticketBrief();
+      });
+
+      document.getElementById("copyTicket").addEventListener("click", () => {
+        copyText(ticketBrief(), document.getElementById("copyTicket"), "Ticket Copied");
       });
 
       document.getElementById("copyJson").addEventListener("click", () => {
-        copyText(JSON.stringify(tablePayload(), null, 2), document.getElementById("copyJson"), "JSON Copied");
+        copyText(JSON.stringify(ticketPayload(), null, 2), document.getElementById("copyJson"), "JSON Copied");
       });
 
-      document.getElementById("copyFixture").addEventListener("click", () => {
-        copyText(fixtureBrief(), document.getElementById("copyFixture"), "Fixture Copied");
+      document.getElementById("copyBoundary").addEventListener("click", () => {
+        copyText(boundaryBrief(), document.getElementById("copyBoundary"), "Boundary Copied");
       });
 
       render();

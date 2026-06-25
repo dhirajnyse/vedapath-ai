@@ -133,6 +133,6 @@ This gate is a product plan, not a live identity system.
 
 It does not verify scholars, expose reviewer identities, create legal compliance, or grant production authority by itself.
 
-## v0.6.3 Direction
+## v0.6.3 Public Feedback
 
-The next release should add a Public Feedback Intake so launch visitors can report source issues, category confusion, UX friction, and boundary concerns as review tickets rather than free-form praise.
+v0.6.3 adds the Public Feedback Intake with source issue, category confusion, UX friction, boundary concern, review-ticket handoff, and blocked private-intake rules. v0.6.4 should add a Launch Story Room with audience variants, founder copy, no-go claims, and source-first launch boundaries.

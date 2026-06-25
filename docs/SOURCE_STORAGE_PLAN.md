@@ -132,4 +132,4 @@ It only defines how source facts should be shaped before later systems depend on
 
 ## v0.6.2 Reviewer Access
 
-v0.6.2 adds the Reviewer Identity and Access Gate with scoped reviewer roles, permission scopes, display policy, private identity stance, and blocked powers. v0.6.3 should add a Public Feedback Intake that turns source issues, category confusion, UX friction, and boundary concerns into review tickets.
+v0.6.2 adds the Reviewer Identity and Access Gate with scoped reviewer roles, permission scopes, display policy, private identity stance, and blocked powers. v0.6.3 adds the Public Feedback Intake with source issue, category confusion, UX friction, boundary concern, review-ticket handoff, and blocked private-intake rules. v0.6.4 should add a Launch Story Room with audience variants, founder copy, no-go claims, and source-first launch boundaries.
