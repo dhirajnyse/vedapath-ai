@@ -72,6 +72,7 @@ It helps users move from curiosity to understanding through:
 - Consent and Privacy Room: Consent and Privacy Room makes user trust visible before VedaPath moves from local prototype memory to real storage.
 - Teacher Companion Mode: Teacher Companion Mode gives educators source-first materials while keeping human teaching, tradition, and context central.
 - Student Study Mode: Student Study Mode turns VedaPath into a gentle study companion with source recall, comparison, and claim-checking habits.
+- Beta Signal Ledger: Beta Signal Ledger helps the founder learn from launch while keeping privacy, consent, and signal humility intact.
 <!-- VEDAPATH BETA SPRINT SUMMARY END -->
 
 ## What It Is
@@ -1240,6 +1241,21 @@ It should:
 - produce a copyable beta handoff
 
 Student Study Mode should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 76. Beta Signal Ledger
+
+Beta Signal Ledger helps the founder learn from launch while keeping privacy, consent, and signal humility intact.
+
+It should:
+
+- Question pull: Which questions repeat across visitors?
+- Trust friction: Where do users ask for source or correction?
+- Calm return: Which local flows users repeat willingly.
+- Reviewer signal: Who offers correction or source help?
+- preserve the boundary: Product learning, not user surveillance.
+- produce a copyable beta handoff
+
+Beta Signal Ledger should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH BETA SPRINT BLUEPRINT END -->
 
 ## Product Personality
