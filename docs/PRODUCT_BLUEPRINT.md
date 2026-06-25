@@ -155,6 +155,7 @@ It helps users move from curiosity to understanding through:
 - Citation Evidence Panel: Citation Evidence Panel gives VedaPath an evidence drawer that can support curiosity, correction, and scholar review while keeping the main surface calm.
 - Confidence Rulebook: Confidence Rulebook makes trust less magical: the product explains why it is confident, cautious, waiting for review, or refusing to answer.
 - Consent Memory Preview: Consent Memory Preview keeps calm personal use from becoming hidden tracking: memory must be named, limited, and under user control.
+- Feedback Queue Simulator: Feedback Queue Simulator shows how VedaPath can learn from users through typed, privacy-light review tickets instead of silent answer rewrites.
 <!-- VEDAPATH WORKING DATA SPRINT SUMMARY END -->
 
 ## What It Is
@@ -2365,6 +2366,21 @@ It should:
 - produce a copyable working-data handoff
 
 Consent Memory Preview should never claim production storage, live retrieval, live AI generation, authentication, licensed source text, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 145. Feedback Queue Simulator
+
+Feedback Queue Simulator shows how VedaPath can learn from users through typed, privacy-light review tickets instead of silent answer rewrites.
+
+It should:
+
+- Ticket type: Source, category, translation, boundary, privacy, or UX.
+- Evidence fields: Page, citation, answer id, and short note.
+- Privacy filter: Warn against private medical, crisis, family, or identity details.
+- Queue state: New, triaged, reviewer-needed, blocked, resolved, or released.
+- preserve the boundary: Feedback queue demo, not live support intake.
+- produce a copyable working-data handoff
+
+Feedback Queue Simulator should never claim production storage, live retrieval, live AI generation, authentication, licensed source text, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH WORKING DATA SPRINT BLUEPRINT END -->
 
 ## Product Personality

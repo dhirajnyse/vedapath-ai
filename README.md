@@ -307,6 +307,8 @@ Let us look at the source first.
 - [Confidence Rulebook Notes](docs/CONFIDENCE_RULEBOOK.md)
 - [Consent Memory Preview](memorypreview.html)
 - [Consent Memory Preview Notes](docs/CONSENT_MEMORY_PREVIEW.md)
+- [Feedback Queue Simulator](feedbackqueue.html)
+- [Feedback Queue Simulator Notes](docs/FEEDBACK_QUEUE_SIMULATOR.md)
 <!-- VEDAPATH WORKING DATA SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -338,7 +340,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v1.6.1` is a trusted MVP prototype plus Consent Memory Preview with:
+`v1.6.2` is a trusted MVP prototype plus Feedback Queue Simulator with:
 
 - Ask workspace
 - Source Card
@@ -492,6 +494,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Citation Evidence Panel: Citation Evidence Panel gives VedaPath an evidence drawer that can support curiosity, correction, and scholar review while keeping the main surface calm.
 - Confidence Rulebook: Confidence Rulebook makes trust less magical: the product explains why it is confident, cautious, waiting for review, or refusing to answer.
 - Consent Memory Preview: Consent Memory Preview keeps calm personal use from becoming hidden tracking: memory must be named, limited, and under user control.
+- Feedback Queue Simulator: Feedback Queue Simulator shows how VedaPath can learn from users through typed, privacy-light review tickets instead of silent answer rewrites.
 <!-- VEDAPATH WORKING DATA SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff

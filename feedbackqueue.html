@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>VedaPath Query Router Demo</title>
+    <title>VedaPath Feedback Queue Simulator</title>
     <link rel="stylesheet" href="assets/vedapath-sprint.css">
   </head>
   <body>
@@ -13,7 +13,7 @@
           <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
           <div>
             <strong>VedaPath AI</strong>
-            <span>Query router</span>
+            <span>Feedback queue</span>
           </div>
         </a>
         <nav class="nav" aria-label="Project links">
@@ -25,19 +25,19 @@
           <a class="link" href="mvpcontrol.html">MVP Control</a>
           <!-- VEDAPATH WORKING DATA SPRINT NAV START -->
           <a class="link" href="workingdata.html">Data</a>
-          <a class="link active" href="queryrouter.html">Router</a>
+          <a class="link" href="queryrouter.html">Router</a>
           <a class="link" href="retrievalworkspace.html">Retrieve</a>
           <a class="link" href="answercomposer.html">Compose</a>
           <a class="link" href="evidencepanel.html">Evidence</a>
           <a class="link" href="confidencerules.html">Rules</a>
           <a class="link" href="memorypreview.html">Memory</a>
-          <a class="link" href="feedbackqueue.html">Feedback</a>
+          <a class="link active" href="feedbackqueue.html">Feedback</a>
           <!-- VEDAPATH WORKING DATA SPRINT NAV END -->
           <span class="version">v1.6.2 feedback</span>
         </nav>
       </header>
 
-      <main class="workspace" aria-label="VedaPath Query Router Demo workspace">
+      <main class="workspace" aria-label="VedaPath Feedback Queue Simulator workspace">
         <aside class="panel">
           <span class="eyebrow">Working data demo sprint</span>
           <h2>Release Rooms</h2>
@@ -48,38 +48,38 @@
         <section class="panel">
           <div class="hero-grid">
             <div>
-              <span class="eyebrow">Question routing</span>
-              <h1>Route the question before answering it.</h1>
-              <p class="muted">A simple router that classifies a question as source lookup, category check, calm reflection, interpretation comparison, or reviewer-needed.</p>
+              <span class="eyebrow">Correction queue</span>
+              <h1>Turn user feedback into careful queues.</h1>
+              <p class="muted">A feedback queue simulator that routes citation issues, category confusion, translation concerns, boundary flags, and usability friction into reviewable tickets.</p>
             </div>
             <div class="mark-stage">
-              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Router logo">
+              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Feedback logo">
             </div>
           </div>
 
           <div class="source-block" aria-label="Release source card">
             <div>
               <span class="source-meta">Release</span>
-              <span class="source-value">v1.5.6</span>
+              <span class="source-value">v1.6.2</span>
             </div>
             <div>
               <span class="source-meta">Source candidate</span>
-              <span class="source-value">Rigveda 1.164.46</span>
+              <span class="source-value">Bhagavad Gita 18.63</span>
             </div>
             <div>
               <span class="source-meta">Text family</span>
-              <span class="source-value">Veda | Shruti</span>
+              <span class="source-value">Bhagavad Gita | Smriti</span>
             </div>
             <div>
               <span class="source-meta">Boundary</span>
-              <span class="source-value">Routing prototype, not live classification.</span>
+              <span class="source-value">Feedback queue demo, not live support intake.</span>
             </div>
           </div>
 
           <h2>Working Chain Signals</h2>
           <div class="item-list" id="itemList"></div>
 
-          <div class="tabs" role="tablist" aria-label="VedaPath Query Router Demo layers">
+          <div class="tabs" role="tablist" aria-label="VedaPath Feedback Queue Simulator layers">
             <button class="tab active" type="button" data-mode="brief">Brief</button>
             <button class="tab" type="button" data-mode="checklist">Checklist</button>
             <button class="tab" type="button" data-mode="boundary">Boundary</button>
@@ -93,20 +93,20 @@
             <button class="button" id="copyBoundary" type="button">Copy Boundary</button>
           </div>
 
-          <textarea id="output" readonly aria-label="VedaPath Query Router Demo output"></textarea>
+          <textarea id="output" readonly aria-label="VedaPath Feedback Queue Simulator output"></textarea>
         </section>
 
-        <aside class="panel tight" aria-label="VedaPath Query Router Demo sprint rail">
+        <aside class="panel tight" aria-label="VedaPath Feedback Queue Simulator sprint rail">
           <span class="badge green">Working MVP chain</span>
-          <h2 style="margin-top: 14px;">Router Pulse</h2>
-          <p class="muted">Query Router Demo makes the first invisible step visible: VedaPath should understand what kind of answer is allowed before it searches.</p>
-          <div class="progress" aria-label="Sprint progress 102 percent">
-            <div class="bar" style="--score:102%"></div>
+          <h2 style="margin-top: 14px;">Feedback Pulse</h2>
+          <p class="muted">Feedback Queue Simulator shows how VedaPath can learn from users through typed, privacy-light review tickets instead of silent answer rewrites.</p>
+          <div class="progress" aria-label="Sprint progress 108 percent">
+            <div class="bar" style="--score:108%"></div>
           </div>
           <div class="metric-grid">
             <div class="metric">
               <span>Current</span>
-              <strong>v1.5.6</strong>
+              <strong>v1.6.2</strong>
             </div>
             <div class="metric">
               <span>Sprint</span>
@@ -114,11 +114,11 @@
             </div>
             <div class="metric">
               <span>Progress</span>
-              <strong>102%</strong>
+              <strong>108%</strong>
             </div>
             <div class="metric">
               <span>Next</span>
-              <strong>Local Retrieval Workspace</strong>
+              <strong>Reviewer Decision Log</strong>
             </div>
           </div>
 
@@ -150,71 +150,71 @@
     </div>
 
     <script type="application/json" id="room-data">{
-  "version": "v1.5.6",
-  "badge": "v1.5.6 router",
-  "slug": "queryrouter",
-  "nav": "Router",
-  "title": "VedaPath Query Router Demo",
-  "pageLabel": "Query router",
-  "eyebrow": "Question routing",
-  "h1": "Route the question before answering it.",
-  "lead": "A simple router that classifies a question as source lookup, category check, calm reflection, interpretation comparison, or reviewer-needed.",
-  "source": "Rigveda 1.164.46",
-  "family": "Veda | Shruti",
-  "stance": "Routing prototype, not live classification.",
-  "progress": 102,
-  "next": "Local Retrieval Workspace",
-  "primaryAsk": "Separate question intent before retrieval so the answer can stay narrow and honest.",
-  "summary": "Query Router Demo makes the first invisible step visible: VedaPath should understand what kind of answer is allowed before it searches.",
+  "version": "v1.6.2",
+  "badge": "v1.6.2 feedback",
+  "slug": "feedbackqueue",
+  "nav": "Feedback",
+  "title": "VedaPath Feedback Queue Simulator",
+  "pageLabel": "Feedback queue",
+  "eyebrow": "Correction queue",
+  "h1": "Turn user feedback into careful queues.",
+  "lead": "A feedback queue simulator that routes citation issues, category confusion, translation concerns, boundary flags, and usability friction into reviewable tickets.",
+  "source": "Bhagavad Gita 18.63",
+  "family": "Bhagavad Gita | Smriti",
+  "stance": "Feedback queue demo, not live support intake.",
+  "progress": 108,
+  "next": "Reviewer Decision Log",
+  "primaryAsk": "Give users a way to improve the product without collecting sensitive personal stories.",
+  "summary": "Feedback Queue Simulator shows how VedaPath can learn from users through typed, privacy-light review tickets instead of silent answer rewrites.",
   "items": [
     [
-      "Intent label",
-      "Lookup, compare, claim-check, calm reflection, or no-answer.",
-      "Sets the answer lane."
+      "Ticket type",
+      "Source, category, translation, boundary, privacy, or UX.",
+      "Routes the work."
     ],
     [
-      "Risk label",
-      "Science overclaim, therapy, ritual, category confusion, or sensitive personal context.",
-      "Adds caution early."
+      "Evidence fields",
+      "Page, citation, answer id, and short note.",
+      "Makes review possible."
     ],
     [
-      "Needed evidence",
-      "Direct passage, commentary, scholarly view, or reviewer decision.",
-      "Guides retrieval."
+      "Privacy filter",
+      "Warn against private medical, crisis, family, or identity details.",
+      "Keeps intake safe."
     ],
     [
-      "Fallback state",
-      "If the question is too broad or risky, route to a careful next step.",
-      "Protects the user."
+      "Queue state",
+      "New, triaged, reviewer-needed, blocked, resolved, or released.",
+      "Creates operational clarity."
     ]
   ],
   "modes": {
     "brief": [
       [
         "Product promise",
-        "Query Router Demo makes the first invisible step visible: VedaPath should understand what kind of answer is allowed before it searches."
+        "Feedback Queue Simulator shows how VedaPath can learn from users through typed, privacy-light review tickets instead of silent answer rewrites."
       ],
       [
         "Founder move",
-        "Separate question intent before retrieval so the answer can stay narrow and honest."
+        "Give users a way to improve the product without collecting sensitive personal stories."
       ],
       [
         "Trust move",
-        "Keep the visible boundary: Routing prototype, not live classification."
+        "Keep the visible boundary: Feedback queue demo, not live support intake."
       ]
     ],
     "checklist": [
       [
-        "Intent label",
-        "Lookup, compare, claim-check, calm reflection, or no-answer."
+        "Ticket type",
+        "Source, category, translation, boundary, privacy, or UX."
       ],
       [
-        "Risk label",
-        "Science overclaim, therapy, ritual, category confusion, or sensitive personal context."
+        "Evidence fields",
+        "Page, citation, answer id, and short note."
       ],
       [
-        "Needed evidence",
-        "Direct passage, commentary, scholarly view, or reviewer decision."
+        "Privacy filter",
+        "Warn against private medical, crisis, family, or identity details."
       ]
     ],
     "boundary": [
