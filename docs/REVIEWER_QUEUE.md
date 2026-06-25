@@ -61,4 +61,6 @@ v0.4.8 adds Consent Gate so queue, policy, ledger, life-map, calm-circle, and so
 
 v0.4.9 adds Memory Gate so missing consent, source trace, deletion path, review route, or audit fields become visible blockers before accepted product memory changes.
 
-v0.5.0 should turn Reviewer Queue, Consent Gate, Memory Gate, Trust Ledger, and Source Seeds into the first production data model draft.
+v0.5.0 adds Trust Model so Reviewer Queue, Consent Gate, Memory Gate, Trust Ledger, Source Seeds, and Calm Rhythm connect as a visible production data architecture.
+
+v0.5.1 should convert that visual model into the first backend schema draft with durable ids, table relationships, migration notes, and account-memory consent flows.

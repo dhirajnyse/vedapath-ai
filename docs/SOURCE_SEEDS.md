@@ -96,6 +96,12 @@ Before a seed can move beyond prototype status, the product should show:
 - audit event
 - final route: local draft, human review, Trust Ledger, or blocked
 
+## Link To Trust Model
+
+Trust Model turns Source Seeds into the `source_seed` production entity.
+
+Before durable retrieval authority, each seed should connect to consent when needed, memory route, review decision, trust event, export path, deletion path, and audit history.
+
 ## Guardrail
 
 Source Seeds must not pretend prototype citations are final authority.

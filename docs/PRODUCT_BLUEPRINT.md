@@ -21,6 +21,7 @@ It helps users move from curiosity to understanding through:
 - reviewer queue with failed examples, flagged passages, correction notes, and local decisions
 - consent gate with visible purpose, scope, consent, deletion, source trace, and review route before durable memory
 - memory gate with local draft, review, Trust Ledger, and blocked routes before durable storage
+- production trust model for source, consent, memory, review, ledger, and calm-pattern records
 - source path builder with explicit user intention
 - calm compass for one source-backed next action
 - calm card studio for shareable source-backed reflections
@@ -371,7 +372,22 @@ It should:
 
 Memory Gate should never become legal advice, compliance certification, therapy, mediation, a hidden scoring system, or a reason to collect more data.
 
-### 22. Source Path Builder
+### 22. Trust Model
+
+Trust Model turns VedaPath's trust rooms into the first production data architecture.
+
+It should:
+
+- connect Source Seeds, Consent Gate, Memory Gate, Reviewer Queue, Trust Ledger, and Calm Rhythm
+- define core entities such as source_seed, consent_grant, memory_route, review_decision, trust_event, and calm_pattern
+- show required fields before durable backend memory exists
+- separate deliberate user-owned calm patterns from inferred profiling
+- make export, deletion, withdrawal, review, and audit paths first-class product controls
+- provide a copyable schema preview for backend planning
+
+Trust Model should never become a production database by itself, legal certification, hidden profiling, a reason to collect more data, or an automated authority system.
+
+### 23. Source Path Builder
 
 A source path turns library records into a short, cited route.
 
@@ -385,7 +401,7 @@ It should:
 
 The path builder should never prescribe a life decision, ritual act, treatment plan, or spiritual conclusion. It should only organize the next source-backed step.
 
-### 23. Calm Compass
+### 24. Calm Compass
 
 Calm Compass is the simplest doorway for users who arrive with restlessness, overwhelm, unclear priority, or hesitation.
 
@@ -399,7 +415,7 @@ It should:
 
 The compass must never pretend to diagnose, command, prescribe, or profile the user. It should slow the moment down and offer the next source-backed action.
 
-### 24. Calm Card Studio
+### 25. Calm Card Studio
 
 Calm Card Studio turns one source-backed reflection into a visual card.
 
@@ -413,7 +429,7 @@ It should:
 
 The card studio must not let shareability erase accuracy. Every card should make clear that it is reflection support, not a command, diagnosis, therapy, ritual instruction, or universal teaching.
 
-### 25. Source Bell
+### 26. Source Bell
 
 Source Bell turns one source-backed reflection into a one-minute reset.
 
@@ -427,7 +443,7 @@ It should:
 
 The bell must never become therapy, medical advice, emergency support, ritual instruction, or a guru voice. It should make one grounded next action easier to carry.
 
-### 26. Before Reply
+### 27. Before Reply
 
 Before Reply turns one heated communication moment into a calmer draft.
 
@@ -441,7 +457,7 @@ It should:
 
 Before Reply should protect agency. It should never become therapy, legal advice, emergency support, conflict mediation, or a reason to remain in harmful contact.
 
-### 27. Samvada Room
+### 28. Samvada Room
 
 Samvada Room turns disagreement into a source-backed shared question.
 
@@ -456,7 +472,7 @@ It should:
 
 Samvada Room should make dialogue calmer without flattening difference. It should never pretend every view is equally supported by a source.
 
-### 28. Sankalpa Studio
+### 29. Sankalpa Studio
 
 Sankalpa Studio turns personal calm into one source-backed 24-hour intention.
 
@@ -471,7 +487,7 @@ It should:
 
 Sankalpa Studio should make calm concrete without pretending the app can control a user's life. The intention belongs to the user.
 
-### 29. Seva Planner
+### 30. Seva Planner
 
 Seva Planner turns personal calm into one source-backed helpful act.
 
@@ -486,7 +502,7 @@ It should:
 
 Seva Planner should make calm useful without turning service into self-erasure. The action should be small, bounded, and freely chosen.
 
-### 30. Morning Path
+### 31. Morning Path
 
 Morning Path helps a user begin the day with one source-backed start.
 
@@ -501,7 +517,7 @@ It should:
 
 Morning Path should make the first moment of the day calmer and more directed without pretending the product owns the user's life.
 
-### 31. Evening Reflection
+### 32. Evening Reflection
 
 Evening Reflection helps a user close the day with one source-backed reflection.
 
@@ -516,7 +532,7 @@ It should:
 
 Evening Reflection should help the user put the day down without making the day into a judgment of the self.
 
-### 32. Calm Rhythm
+### 33. Calm Rhythm
 
 Calm Rhythm helps a user see a privacy-preserving pattern across deliberate VedaPath room entries.
 

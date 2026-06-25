@@ -95,4 +95,6 @@ A durable implementation should enforce:
 
 ## Next Step
 
-v0.5.0 should turn Memory Gate, Consent Gate, Trust Ledger, Reviewer Queue, and Source Seeds into the first production data model draft.
+v0.5.0 adds Trust Model so Memory Gate, Consent Gate, Trust Ledger, Reviewer Queue, Source Seeds, and Calm Rhythm connect as a visible production data architecture.
+
+v0.5.1 should convert that visual model into the first backend schema draft with durable ids, table relationships, migration notes, and account-memory consent flows.

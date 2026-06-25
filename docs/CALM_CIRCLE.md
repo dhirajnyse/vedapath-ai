@@ -68,4 +68,6 @@ v0.4.8 adds Consent Gate so shared records can name purpose, scope, participant 
 
 v0.4.9 adds Memory Gate so Calm Circle records can be blocked, kept local, routed to review, or sent toward Trust Ledger before durable memory.
 
-v0.5.0 should turn Calm Circle, Consent Gate, Memory Gate, Trust Ledger, Reviewer Queue, and Source Seeds into the first production data model draft.
+v0.5.0 adds Trust Model so Calm Circle, Consent Gate, Memory Gate, Trust Ledger, Reviewer Queue, Source Seeds, and Calm Rhythm connect as a visible production data architecture.
+
+v0.5.1 should convert that visual model into the first backend schema draft with durable ids, table relationships, migration notes, and account-memory consent flows.

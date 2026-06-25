@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VedaPath Trust Model</title>
+    <style>
+      :root {
+        --bg: #fff7eb;
+        --panel: #fffdf8;
+        --ink: #1f1a17;
+        --muted: #694433;
+        --line: #ead8c8;
+        --soft: #fce8dd;
+        --saffron: #d65a1f;
+        --ochre: #a83f12;
+        --gold: #e0a83b;
+        --green: #145c4a;
+        --indigo: #29335c;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+      }
+
+      body,
+      button,
+      textarea {
+        font: inherit;
+      }
+
+      a,
+      button {
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      .page {
+        width: min(1380px, calc(100% - 44px));
+        margin: 0 auto;
+        padding: 22px 0 34px;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        padding-bottom: 18px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        min-width: 214px;
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .brand img {
+        width: 48px;
+        height: 48px;
+        border-radius: 8px;
+        object-fit: cover;
+        box-shadow: 0 8px 22px rgba(166, 69, 16, 0.16);
+      }
+
+      .brand strong {
+        display: block;
+        font-size: 19px;
+        line-height: 1.1;
+      }
+
+      .brand span {
+        display: block;
+        margin-top: 4px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        gap: 8px 16px;
+      }
+
+      .link,
+      .version {
+        color: #3a2319;
+        font-size: 13px;
+        font-weight: 800;
+        text-decoration: none;
+      }
+
+      .link.active,
+      .version {
+        border: 1px solid #ecc3ad;
+        border-radius: 999px;
+        padding: 8px 12px;
+        color: #ad3d12;
+        background: rgba(255, 253, 248, 0.72);
+      }
+
+      .workspace {
+        display: grid;
+        grid-template-columns: minmax(290px, 0.88fr) minmax(460px, 1.24fr) minmax(290px, 0.92fr);
+        gap: 16px;
+        margin-top: 18px;
+      }
+
+      .panel,
+      .entity-card,
+      .schema-card,
+      .stat,
+      .flow-node,
+      .field-card,
+      .boundary-card,
+      .review-card {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgba(255, 253, 248, 0.84);
+      }
+
+      .panel {
+        padding: 20px;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        width: fit-content;
+        min-height: 28px;
+        border-radius: 999px;
+        padding: 6px 10px;
+        background: var(--soft);
+        color: #a63811;
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        margin: 14px 0;
+        font-size: clamp(43px, 6vw, 72px);
+        line-height: 0.95;
+        letter-spacing: 0;
+      }
+
+      h2 {
+        margin-bottom: 12px;
+        font-size: 26px;
+        line-height: 1.1;
+      }
+
+      h3 {
+        margin-bottom: 8px;
+        font-size: 17px;
+      }
+
+      p {
+        color: var(--muted);
+        line-height: 1.55;
+      }
+
+      .muted {
+        color: var(--muted);
+      }
+
+      .entity-list,
+      .schema-grid,
+      .stat-grid,
+      .field-grid,
+      .review-grid,
+      .flow-grid {
+        display: grid;
+        gap: 10px;
+      }
+
+      .entity-card {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 36px minmax(0, 1fr);
+        gap: 12px;
+        align-items: start;
+        padding: 12px;
+        color: inherit;
+        text-align: left;
+        cursor: pointer;
+      }
+
+      .entity-card.active {
+        border-color: #ef9a72;
+        background: #fff0e8;
+        box-shadow: 0 0 0 2px rgba(214, 90, 31, 0.08);
+      }
+
+      .entity-index {
+        display: grid;
+        place-items: center;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: #e5efea;
+        color: var(--green);
+        font-size: 13px;
+        font-weight: 900;
+      }
+
+      .entity-card.active .entity-index {
+        background: var(--saffron);
+        color: #fff;
+      }
+
+      .entity-card strong {
+        display: block;
+        margin-bottom: 3px;
+      }
+
+      .entity-card p {
+        margin: 0;
+        font-size: 13px;
+        line-height: 1.45;
+      }
+
+      .source-card {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        margin: 16px 0;
+        padding: 14px;
+        border: 1px solid var(--line);
+        border-left: 4px solid var(--saffron);
+        border-radius: 8px;
+        background: rgba(255, 253, 248, 0.76);
+      }
+
+      .source-label {
+        display: block;
+        margin-bottom: 4px;
+        color: #704b3c;
+        font-size: 12px;
+      }
+
+      .source-value {
+        display: block;
+        color: #0f0d0c;
+        font-weight: 900;
+      }
+
+      .readiness {
+        margin: 16px 0;
+      }
+
+      .readiness-head {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 8px;
+        font-weight: 900;
+      }
+
+      .progress {
+        height: 10px;
+        overflow: hidden;
+        border-radius: 999px;
+        background: rgba(168, 62, 18, 0.14);
+      }
+
+      .bar {
+        height: 100%;
+        width: 0%;
+        border-radius: inherit;
+        background: linear-gradient(90deg, var(--saffron), var(--gold));
+        transition: width 180ms ease;
+      }
+
+      .flow-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        margin: 14px 0;
+      }
+
+      .flow-node {
+        min-height: 112px;
+        padding: 14px;
+      }
+
+      .flow-node.active {
+        border-color: #ef9a72;
+        background: #fff0e8;
+      }
+
+      .flow-node strong,
+      .schema-card strong,
+      .field-card strong,
+      .review-card strong {
+        display: block;
+        margin-bottom: 8px;
+      }
+
+      .flow-node p,
+      .schema-card p,
+      .field-card p,
+      .review-card p {
+        margin: 0;
+        font-size: 13px;
+      }
+
+      .field-grid,
+      .schema-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin-top: 12px;
+      }
+
+      .field-card,
+      .schema-card,
+      .review-card {
+        min-height: 104px;
+        padding: 12px;
+      }
+
+      .field-card.ok {
+        border-color: rgba(20, 92, 74, 0.3);
+        background: rgba(20, 92, 74, 0.06);
+      }
+
+      .field-card.warn {
+        border-color: rgba(214, 90, 31, 0.28);
+        background: #fff0e8;
+      }
+
+      .stat-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin: 14px 0;
+      }
+
+      .stat {
+        padding: 12px;
+      }
+
+      .stat span {
+        display: block;
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .stat strong {
+        display: block;
+        margin-top: 6px;
+        font-size: 24px;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 16px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 42px;
+        border: 1px solid #efbda6;
+        border-radius: 8px;
+        padding: 9px 13px;
+        background: rgba(255, 253, 248, 0.82);
+        color: #a83f12;
+        font-weight: 900;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      .button.primary {
+        border-color: var(--saffron);
+        background: var(--saffron);
+        color: #fff;
+      }
+
+      .button.secondary {
+        color: var(--green);
+        border-color: rgba(20, 92, 74, 0.28);
+      }
+
+      .model-output {
+        display: none;
+        width: 100%;
+        min-height: 230px;
+        margin-top: 12px;
+        border: 1px solid #efc9b8;
+        border-radius: 8px;
+        background: rgba(255, 253, 248, 0.9);
+        color: var(--ink);
+        padding: 12px;
+        font: 12px ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+        resize: vertical;
+      }
+
+      .boundary-card {
+        margin-top: 14px;
+        padding: 16px;
+        border-style: dashed;
+      }
+
+      .review-grid {
+        margin-top: 12px;
+      }
+
+      button:focus-visible,
+      a:focus-visible,
+      textarea:focus {
+        outline: 3px solid rgba(214, 90, 31, 0.25);
+        outline-offset: 2px;
+      }
+
+      @media (max-width: 1120px) {
+        .workspace {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .side-panel {
+          grid-column: 1 / -1;
+        }
+      }
+
+      @media (max-width: 740px) {
+        .page {
+          width: min(100% - 24px, 1380px);
+          padding-top: 16px;
+        }
+
+        .topbar {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .nav {
+          justify-content: flex-start;
+        }
+
+        .workspace,
+        .source-card,
+        .flow-grid,
+        .field-grid,
+        .schema-grid,
+        .stat-grid {
+          grid-template-columns: 1fr;
+        }
+
+        h1 {
+          font-size: clamp(39px, 14vw, 58px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page" id="top">
+      <header class="topbar">
+        <a class="brand" href="./index.html#top" aria-label="VedaPath AI home">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
+          <div>
+            <strong>VedaPath AI</strong>
+            <span>Trust model preview</span>
+          </div>
+        </a>
+        <nav class="nav" aria-label="Project links">
+          <a class="link" href="build-status.html">Build</a>
+          <a class="link" href="brand/brand-board.html">Brand</a>
+          <a class="link" href="blueprint.html">Blueprint</a>
+          <a class="link" href="calm.html">Calm</a>
+          <a class="link" href="daily.html">Daily</a>
+          <a class="link" href="practice.html">Practice</a>
+          <a class="link" href="library.html">Library</a>
+          <a class="link" href="seeds.html">Seeds</a>
+          <a class="link" href="retrieval.html">Retrieval</a>
+          <a class="link" href="passages.html">Review</a>
+          <a class="link" href="eval.html">Eval</a>
+          <a class="link" href="dashboard.html">Dash</a>
+          <a class="link" href="queue.html">Queue</a>
+          <a class="link" href="policy.html">Policy</a>
+          <a class="link" href="ledger.html">Ledger</a>
+          <a class="link" href="life.html">Life</a>
+          <a class="link" href="circle.html">Circle</a>
+          <a class="link" href="consent.html">Consent</a>
+          <a class="link" href="memory.html">Memory</a>
+          <a class="link active" href="model.html">Model</a>
+          <a class="link" href="path.html">Path</a>
+          <a class="link" href="compass.html">Compass</a>
+          <a class="link" href="card.html">Card</a>
+          <a class="link" href="bell.html">Bell</a>
+          <a class="link" href="reply.html">Reply</a>
+          <a class="link" href="samvada.html">Samvada</a>
+          <a class="link" href="sankalpa.html">Intent</a>
+          <a class="link" href="seva.html">Seva</a>
+          <a class="link" href="morning.html">Morning</a>
+          <a class="link" href="evening.html">Evening</a>
+          <a class="link" href="rhythm.html">Rhythm</a>
+          <span class="version">v0.5.0 trust model</span>
+        </nav>
+      </header>
+
+      <section class="workspace" aria-label="VedaPath Trust Model workspace">
+        <aside class="panel">
+          <span class="eyebrow">Choose data object</span>
+          <h1>Calm needs a trustworthy memory model.</h1>
+          <p>Click a production entity. VedaPath should only remember through clear source, consent, review, deletion, and audit relationships.</p>
+          <div class="entity-list" id="entityList"></div>
+        </aside>
+
+        <section class="panel">
+          <span class="eyebrow">Production contract</span>
+          <h1 id="entityTitle">Memory Route is the gate before recall.</h1>
+          <p id="entitySummary">A route record decides whether an incoming calm, source, or review event can stay local, move to review, enter Trust Ledger, or remain blocked.</p>
+
+          <div class="source-card" aria-label="Trust model entity metadata">
+            <div>
+              <span class="source-label">Entity</span>
+              <span class="source-value" id="entityName">memory_route</span>
+            </div>
+            <div>
+              <span class="source-label">Product room</span>
+              <span class="source-value" id="entityRoom">Memory Gate</span>
+            </div>
+            <div>
+              <span class="source-label">Primary owner</span>
+              <span class="source-value" id="entityOwner">User plus reviewer route</span>
+            </div>
+            <div>
+              <span class="source-label">Storage stance</span>
+              <span class="source-value" id="entityStorage">Durable only after gate passes</span>
+            </div>
+          </div>
+
+          <div class="readiness">
+            <div class="readiness-head">
+              <span>Launch readiness</span>
+              <span id="modelScore">0%</span>
+            </div>
+            <div class="progress" aria-hidden="true"><div class="bar" id="scoreBar"></div></div>
+          </div>
+
+          <h2>Source To Memory Flow</h2>
+          <div class="flow-grid" aria-label="Data flow">
+            <div class="flow-node" data-flow="source">
+              <strong>1. Source trace</strong>
+              <p>Every answer and reflection carries a source seed, citation, family, and boundary.</p>
+            </div>
+            <div class="flow-node" data-flow="consent">
+              <strong>2. Consent gate</strong>
+              <p>Purpose, scope, withdrawal, and deletion are visible before durable storage.</p>
+            </div>
+            <div class="flow-node" data-flow="memory">
+              <strong>3. Memory route</strong>
+              <p>Local, review, ledger, or blocked route is recorded before recall.</p>
+            </div>
+            <div class="flow-node" data-flow="review">
+              <strong>4. Human review</strong>
+              <p>Knowledge-changing and sensitive records wait for reviewer identity and evidence.</p>
+            </div>
+            <div class="flow-node" data-flow="ledger">
+              <strong>5. Trust ledger</strong>
+              <p>Accepted behavior changes become versioned and auditable.</p>
+            </div>
+            <div class="flow-node" data-flow="user">
+              <strong>6. User controls</strong>
+              <p>Export, delete, and revoke controls stay visible to the person using the product.</p>
+            </div>
+          </div>
+
+          <h2>Required Fields</h2>
+          <div class="field-grid" id="fieldGrid"></div>
+
+          <div class="actions">
+            <button class="button primary" id="copyModel" type="button">Copy Model Brief</button>
+            <button class="button secondary" id="copySchema" type="button">Copy JSON Schema</button>
+            <a class="button" id="entityRoomLink" href="memory.html">Open Memory Gate</a>
+          </div>
+          <textarea class="model-output" id="modelOutput" readonly aria-label="Trust model export"></textarea>
+        </section>
+
+        <aside class="panel side-panel">
+          <span class="eyebrow">Launch architecture</span>
+          <h2>v0.5.0 Trust Model</h2>
+          <p>This page is the bridge from prototype to backend. It shows which records can exist, how they relate, and what must be true before VedaPath remembers.</p>
+
+          <div class="stat-grid">
+            <div class="stat">
+              <span>Core entities</span>
+              <strong id="entityCount">6</strong>
+            </div>
+            <div class="stat">
+              <span>Guardrail fields</span>
+              <strong id="fieldCount">0</strong>
+            </div>
+            <div class="stat">
+              <span>Default route</span>
+              <strong id="defaultRoute">Review</strong>
+            </div>
+            <div class="stat">
+              <span>Storage posture</span>
+              <strong id="posture">Minimal</strong>
+            </div>
+          </div>
+
+          <div class="boundary-card">
+            <h2>Design Rule</h2>
+            <p>No personal calm pattern, source record, user correction, or shared-circle note becomes durable memory until it has purpose, consent, source trace, deletion path, review route, and audit visibility.</p>
+          </div>
+
+          <h2 style="margin-top: 18px;">Backend Tables</h2>
+          <div class="schema-grid">
+            <div class="schema-card">
+              <strong>source_seed</strong>
+              <p>Reviewed source candidates, citations, families, rights, and retrieval boundaries.</p>
+            </div>
+            <div class="schema-card">
+              <strong>consent_grant</strong>
+              <p>Purpose, scope, participant state, withdrawal, export, and deletion path.</p>
+            </div>
+            <div class="schema-card">
+              <strong>memory_route</strong>
+              <p>Local, review, ledger, or blocked verdict before recall or durable reuse.</p>
+            </div>
+            <div class="schema-card">
+              <strong>review_decision</strong>
+              <p>Reviewer identity, evidence, decision, source impact, and safety flags.</p>
+            </div>
+            <div class="schema-card">
+              <strong>trust_event</strong>
+              <p>Versioned governance event tied to answer behavior, review, and audit history.</p>
+            </div>
+            <div class="schema-card">
+              <strong>calm_pattern</strong>
+              <p>User-owned reflection pattern with minimal fields, export, and delete controls.</p>
+            </div>
+          </div>
+
+          <h2 style="margin-top: 18px;">Next Build</h2>
+          <div class="review-grid">
+            <div class="review-card">
+              <strong>D1 schema draft</strong>
+              <p>Convert this visual model into durable tables, ids, and migration notes.</p>
+            </div>
+            <div class="review-card">
+              <strong>Account consent</strong>
+              <p>Add explicit account, export, deletion, and memory opt-in flows before real storage.</p>
+            </div>
+            <div class="review-card">
+              <strong>Source expansion</strong>
+              <p>Grow Source Seeds to 25 to 50 reviewed source records before retrieval authority.</p>
+            </div>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <script>
+      const entities = [
+        {
+          id: "memory_route",
+          label: "Memory Route",
+          summary: "Decides whether a record is local, review, ledger, or blocked.",
+          title: "Memory Route is the gate before recall.",
+          detail: "A route record decides whether an incoming calm, source, or review event can stay local, move to review, enter Trust Ledger, or remain blocked.",
+          room: "Memory Gate",
+          owner: "User plus reviewer route",
+          storage: "Durable only after gate passes",
+          posture: "Minimal",
+          route: "Review",
+          link: "memory.html",
+          flow: "memory",
+          readiness: 92,
+          fields: [
+            ["record_id", "Durable id tied to the original calm, source, or review record.", true],
+            ["route_verdict", "One of local, review, ledger, or blocked.", true],
+            ["consent_grant_id", "Required when a person, group, or private pattern is involved.", true],
+            ["source_trace_id", "Required when the record changes source authority or answer behavior.", true],
+            ["deletion_path", "Defines export, deletion, retention, and withdrawal path.", true],
+            ["audit_event_id", "Required before durable reuse or recall.", false]
+          ]
+        },
+        {
+          id: "consent_grant",
+          label: "Consent Grant",
+          summary: "Names purpose, scope, participant consent, and withdrawal.",
+          title: "Consent Grant protects agency before memory.",
+          detail: "Consent Grant makes purpose, allowed use, blocked use, withdrawal, export, and deletion visible before any shared or personal record becomes durable.",
+          room: "Consent Gate",
+          owner: "User or participant group",
+          storage: "Durable only with revocation path",
+          posture: "User controlled",
+          route: "Gate first",
+          link: "consent.html",
+          flow: "consent",
+          readiness: 90,
+          fields: [
+            ["consent_id", "Stable id for the consent record.", true],
+            ["purpose", "Plain-language reason the record exists.", true],
+            ["scope", "Allowed use and blocked use.", true],
+            ["participant_state", "Who consented and what remains unresolved.", true],
+            ["withdrawal_path", "How consent can be revoked.", true],
+            ["deletion_path", "How the record can be exported and deleted.", true]
+          ]
+        },
+        {
+          id: "source_seed",
+          label: "Source Seed",
+          summary: "Turns prototype citations into reviewable source records.",
+          title: "Source Seed gives retrieval something honest to stand on.",
+          detail: "Source Seed holds citation, family, passage, rights, reviewer status, boundary, and overclaim warning before the app treats a source as answer authority.",
+          room: "Source Seeds",
+          owner: "Source reviewer",
+          storage: "Durable after source review",
+          posture: "Evidence first",
+          route: "Review",
+          link: "seeds.html",
+          flow: "source",
+          readiness: 84,
+          fields: [
+            ["seed_id", "Stable id for retrieval and passage review.", true],
+            ["citation", "Text family, work, chapter, verse, or passage locator.", true],
+            ["source_family", "Veda, Upanishad, Gita, Itihasa, Purana, commentary, or modern.", true],
+            ["rights_status", "Translation and edition policy.", false],
+            ["review_status", "Candidate, reviewed, blocked, or needs scholar.", true],
+            ["boundary", "What the source must not be used to claim.", true]
+          ]
+        },
+        {
+          id: "review_decision",
+          label: "Review Decision",
+          summary: "Prevents silent knowledge-base changes.",
+          title: "Review Decision keeps improvements accountable.",
+          detail: "Reviewer decisions turn corrections, failed evaluations, passage flags, and policy issues into accepted, blocked, or held changes with evidence.",
+          room: "Reviewer Queue",
+          owner: "Human reviewer",
+          storage: "Durable with reviewer identity",
+          posture: "Human reviewed",
+          route: "Reviewer Queue",
+          link: "queue.html",
+          flow: "review",
+          readiness: 86,
+          fields: [
+            ["decision_id", "Stable id for review history.", true],
+            ["origin_record_id", "Source, answer, queue card, or user correction that triggered review.", true],
+            ["reviewer_identity", "Reviewer role and identity in production.", false],
+            ["evidence_path", "Source seed, passage dossier, evaluation fixture, or policy route.", true],
+            ["decision", "Accept, hold, block, revise, or needs scholar.", true],
+            ["version_impact", "Which answer behavior or source record changes.", true]
+          ]
+        },
+        {
+          id: "trust_event",
+          label: "Trust Event",
+          summary: "Versions accepted behavior changes and audit history.",
+          title: "Trust Event makes confidence auditable.",
+          detail: "Trust Event records the final governance event when answer rules, source status, policy routes, or memory behavior become accepted product behavior.",
+          room: "Trust Ledger",
+          owner: "Governance owner",
+          storage: "Durable audit log",
+          posture: "Auditable",
+          route: "Ledger",
+          link: "ledger.html",
+          flow: "ledger",
+          readiness: 88,
+          fields: [
+            ["event_id", "Stable audit id.", true],
+            ["event_type", "Policy route, source status, review outcome, or memory rule.", true],
+            ["version", "Product version where behavior changed.", true],
+            ["evidence_path", "Linked source, review, consent, memory, and evaluation records.", true],
+            ["rollback_path", "How the decision can be reversed.", false],
+            ["audit_timestamp", "When the accepted route changed.", true]
+          ]
+        },
+        {
+          id: "calm_pattern",
+          label: "Calm Pattern",
+          summary: "Personal reflection memory with restraint and user control.",
+          title: "Calm Pattern should help without profiling.",
+          detail: "Calm Pattern keeps only deliberate user-owned reflection signals and must never infer identity, diagnose, score, or pressure the user.",
+          room: "Calm Rhythm",
+          owner: "User",
+          storage: "Opt-in only",
+          posture: "Private by design",
+          route: "User controls",
+          link: "rhythm.html",
+          flow: "user",
+          readiness: 78,
+          fields: [
+            ["pattern_id", "Stable id only after explicit account memory opt-in.", false],
+            ["user_owned_state", "User-selected state, not inferred profile.", true],
+            ["source_context", "Source candidate and boundary shown to the user.", true],
+            ["retention_window", "Short, understandable retention period.", false],
+            ["export_path", "User-readable export before sync.", true],
+            ["delete_path", "Clear deletion and revocation control.", true]
+          ]
+        }
+      ];
+
+      const state = {
+        selectedId: "memory_route"
+      };
+
+      function selectedEntity() {
+        return entities.find((entity) => entity.id === state.selectedId) || entities[0];
+      }
+
+      function renderEntities() {
+        const list = document.getElementById("entityList");
+        list.innerHTML = entities.map((entity, index) => `
+          <button class="entity-card ${entity.id === state.selectedId ? "active" : ""}" type="button" data-id="${entity.id}">
+            <span class="entity-index">${index + 1}</span>
+            <span>
+              <strong>${entity.label}</strong>
+              <p>${entity.summary}</p>
+            </span>
+          </button>
+        `).join("");
+
+        document.querySelectorAll(".entity-card[data-id]").forEach((button) => {
+          button.addEventListener("click", () => {
+            state.selectedId = button.dataset.id;
+            renderAll();
+          });
+        });
+      }
+
+      function renderFields(entity) {
+        document.getElementById("fieldGrid").innerHTML = entity.fields.map(([name, description, ready]) => `
+          <div class="field-card ${ready ? "ok" : "warn"}">
+            <strong>${name}</strong>
+            <p>${description}</p>
+          </div>
+        `).join("");
+      }
+
+      function renderFlow(entity) {
+        document.querySelectorAll("[data-flow]").forEach((node) => {
+          node.classList.toggle("active", node.dataset.flow === entity.flow);
+        });
+      }
+
+      function entitySchema(entity) {
+        return {
+          release: "v0.5.0 trust model",
+          entity: entity.id,
+          productRoom: entity.room,
+          owner: entity.owner,
+          storageStance: entity.storage,
+          defaultRoute: entity.route,
+          posture: entity.posture,
+          readiness: entity.readiness,
+          requiredFields: entity.fields.map(([name, description, ready]) => ({
+            name,
+            description,
+            readyForPrototype: ready
+          })),
+          productionRule: "No durable memory without purpose, consent, source trace, deletion path, review route, and audit visibility."
+        };
+      }
+
+      function modelBrief(entity) {
+        const missing = entity.fields.filter((field) => !field[2]).map((field) => field[0]);
+        return [
+          "VedaPath Trust Model",
+          "Release: v0.5.0 trust model",
+          `Entity: ${entity.id}`,
+          `Product room: ${entity.room}`,
+          `Owner: ${entity.owner}`,
+          `Storage stance: ${entity.storage}`,
+          `Default route: ${entity.route}`,
+          `Launch readiness: ${entity.readiness}%`,
+          `Fields: ${entity.fields.map((field) => field[0]).join(", ")}`,
+          `Needs production work: ${missing.join(", ") || "None"}`,
+          "Rule: memory must be user-owned, source-tied, deleteable, reviewable, auditable, and minimal."
+        ].join("\n");
+      }
+
+      function showOutput(text, button, label) {
+        const output = document.getElementById("modelOutput");
+        output.style.display = "block";
+        output.value = text;
+        output.select();
+        const original = button.textContent;
+        button.textContent = label;
+        if (navigator.clipboard?.writeText) {
+          navigator.clipboard.writeText(text).catch(() => {});
+        }
+        setTimeout(() => {
+          button.textContent = original;
+        }, 1400);
+      }
+
+      function renderAll() {
+        const entity = selectedEntity();
+        document.getElementById("entityTitle").textContent = entity.title;
+        document.getElementById("entitySummary").textContent = entity.detail;
+        document.getElementById("entityName").textContent = entity.id;
+        document.getElementById("entityRoom").textContent = entity.room;
+        document.getElementById("entityOwner").textContent = entity.owner;
+        document.getElementById("entityStorage").textContent = entity.storage;
+        document.getElementById("modelScore").textContent = `${entity.readiness}%`;
+        document.getElementById("scoreBar").style.width = `${entity.readiness}%`;
+        document.getElementById("fieldCount").textContent = entity.fields.length;
+        document.getElementById("defaultRoute").textContent = entity.route;
+        document.getElementById("posture").textContent = entity.posture;
+        document.getElementById("entityRoomLink").href = entity.link;
+        document.getElementById("entityRoomLink").textContent = `Open ${entity.room}`;
+        renderEntities();
+        renderFields(entity);
+        renderFlow(entity);
+      }
+
+      document.getElementById("copyModel").addEventListener("click", () => {
+        showOutput(modelBrief(selectedEntity()), document.getElementById("copyModel"), "Copied Brief");
+      });
+
+      document.getElementById("copySchema").addEventListener("click", () => {
+        showOutput(JSON.stringify(entitySchema(selectedEntity()), null, 2), document.getElementById("copySchema"), "Copied JSON");
+      });
+
+      renderAll();
+    </script>
+  </body>
+</html>
