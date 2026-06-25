@@ -53,6 +53,7 @@ It helps users move from curiosity to understanding through:
 <!-- VEDAPATH LAUNCH SPRINT SUMMARY END -->
 <!-- VEDAPATH PERSONAL SPRINT SUMMARY START -->
 - Guided Onboarding Path: Guided Onboarding Path turns the first visit into one calm choice instead of a crowded tour.
+- Personal Calm Profile: Personal Calm Profile shows what VedaPath may remember, what it must not infer, and how a user can export or clear it.
 <!-- VEDAPATH PERSONAL SPRINT SUMMARY END -->
 
 ## What It Is
@@ -965,6 +966,21 @@ It should:
 - produce a copyable founder handoff
 
 Guided Onboarding Path should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 59. Personal Calm Profile
+
+Personal Calm Profile shows what VedaPath may remember, what it must not infer, and how a user can export or clear it.
+
+It should:
+
+- Tone: Plain, reflective, scholarly, or very brief.
+- Depth: Beginner, Sanskrit learner, philosophy reader, or reviewer.
+- Boundaries: No therapy, no ritual instruction, no authority voice.
+- Controls: Export, clear, pause memory, and local-only status.
+- preserve the boundary: Preference memory, not identity judgment.
+- produce a copyable founder handoff
+
+Personal Calm Profile should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH PERSONAL SPRINT BLUEPRINT END -->
 
 ## Product Personality

@@ -119,6 +119,8 @@ Let us look at the source first.
 <!-- VEDAPATH PERSONAL SPRINT LINKS START -->
 - [Guided Onboarding Path](onboard.html)
 - [Guided Onboarding Path Notes](docs/GUIDED_ONBOARDING_PATH.md)
+- [Personal Calm Profile](profile.html)
+- [Personal Calm Profile Notes](docs/PERSONAL_CALM_PROFILE.md)
 <!-- VEDAPATH PERSONAL SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -150,7 +152,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v0.7.5` is a trusted MVP prototype plus Guided Onboarding Path with:
+`v0.7.6` is a trusted MVP prototype plus Personal Calm Profile with:
 
 - Ask workspace
 - Source Card
@@ -202,6 +204,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 <!-- VEDAPATH LAUNCH SPRINT FEATURES END -->
 <!-- VEDAPATH PERSONAL SPRINT FEATURES START -->
 - Guided Onboarding Path: Guided Onboarding Path turns the first visit into one calm choice instead of a crowded tour.
+- Personal Calm Profile: Personal Calm Profile shows what VedaPath may remember, what it must not infer, and how a user can export or clear it.
 <!-- VEDAPATH PERSONAL SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
