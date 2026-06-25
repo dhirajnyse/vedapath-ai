@@ -71,6 +71,7 @@ It helps users move from curiosity to understanding through:
 - Reviewer Ops Board: Reviewer Ops Board turns scholar and careful-reader help into scoped tasks, decisions, and release gates.
 - Consent and Privacy Room: Consent and Privacy Room makes user trust visible before VedaPath moves from local prototype memory to real storage.
 - Teacher Companion Mode: Teacher Companion Mode gives educators source-first materials while keeping human teaching, tradition, and context central.
+- Student Study Mode: Student Study Mode turns VedaPath into a gentle study companion with source recall, comparison, and claim-checking habits.
 <!-- VEDAPATH BETA SPRINT SUMMARY END -->
 
 ## What It Is
@@ -1224,6 +1225,21 @@ It should:
 - produce a copyable beta handoff
 
 Teacher Companion Mode should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 75. Student Study Mode
+
+Student Study Mode turns VedaPath into a gentle study companion with source recall, comparison, and claim-checking habits.
+
+It should:
+
+- Recall: Remember the source family and citation.
+- Plain meaning: Explain the idea without jargon.
+- Compare: Separate text, tradition, and modern analogy.
+- Return: Save one local study card and next source.
+- preserve the boundary: Study aid, not exam authority.
+- produce a copyable beta handoff
+
+Student Study Mode should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH BETA SPRINT BLUEPRINT END -->
 
 ## Product Personality

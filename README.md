@@ -153,6 +153,8 @@ Let us look at the source first.
 - [Consent and Privacy Room Notes](docs/CONSENT_AND_PRIVACY_ROOM.md)
 - [Teacher Companion Mode](teacher.html)
 - [Teacher Companion Mode Notes](docs/TEACHER_COMPANION_MODE.md)
+- [Student Study Mode](student.html)
+- [Student Study Mode Notes](docs/STUDENT_STUDY_MODE.md)
 <!-- VEDAPATH BETA SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -184,7 +186,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v0.9.1` is a trusted MVP prototype plus Teacher Companion Mode with:
+`v0.9.2` is a trusted MVP prototype plus Student Study Mode with:
 
 - Ask workspace
 - Source Card
@@ -254,6 +256,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Reviewer Ops Board: Reviewer Ops Board turns scholar and careful-reader help into scoped tasks, decisions, and release gates.
 - Consent and Privacy Room: Consent and Privacy Room makes user trust visible before VedaPath moves from local prototype memory to real storage.
 - Teacher Companion Mode: Teacher Companion Mode gives educators source-first materials while keeping human teaching, tradition, and context central.
+- Student Study Mode: Student Study Mode turns VedaPath into a gentle study companion with source recall, comparison, and claim-checking habits.
 <!-- VEDAPATH BETA SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
