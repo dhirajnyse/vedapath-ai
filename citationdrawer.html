@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>VedaPath MVP Source Seed</title>
+    <title>VedaPath Citation Drawer</title>
     <link rel="stylesheet" href="assets/vedapath-sprint.css">
   </head>
   <body>
@@ -13,7 +13,7 @@
           <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
           <div>
             <strong>VedaPath AI</strong>
-            <span>MVP source seed</span>
+            <span>Citation drawer</span>
           </div>
         </a>
         <nav class="nav" aria-label="Project links">
@@ -24,16 +24,16 @@
           <a class="link" href="betabeacon.html">Beta</a>
           <a class="link" href="trustcenter.html">Trust</a>
           <!-- VEDAPATH MVP LANE SPRINT NAV START -->
-          <a class="link active" href="mvpseed.html">Seed</a>
+          <a class="link" href="mvpseed.html">Seed</a>
           <a class="link" href="localretrieval.html">Retrieval</a>
           <a class="link" href="rendererdemo.html">Renderer</a>
-          <a class="link" href="citationdrawer.html">Citation</a>
+          <a class="link active" href="citationdrawer.html">Citation</a>
           <!-- VEDAPATH MVP LANE SPRINT NAV END -->
           <span class="version">v1.4.8 citation</span>
         </nav>
       </header>
 
-      <main class="workspace" aria-label="VedaPath MVP Source Seed workspace">
+      <main class="workspace" aria-label="VedaPath Citation Drawer workspace">
         <aside class="panel">
           <span class="eyebrow">Working MVP lane sprint</span>
           <h2>Release Rooms</h2>
@@ -44,38 +44,38 @@
         <section class="panel">
           <div class="hero-grid">
             <div>
-              <span class="eyebrow">Working MVP lane</span>
-              <h1>Start the real product with a tiny trusted seed.</h1>
-              <p class="muted">A first working source seed for the MVP lane: small enough to review, structured enough to power retrieval, and honest about gaps.</p>
+              <span class="eyebrow">Evidence detail</span>
+              <h1>Let curious users inspect the source without leaving the answer.</h1>
+              <p class="muted">A citation drawer for source identity, passage context, translation note, review state, related records, and correction route.</p>
             </div>
             <div class="mark-stage">
-              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Seed logo">
+              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Citation logo">
             </div>
           </div>
 
           <div class="source-block" aria-label="Release source card">
             <div>
               <span class="source-meta">Release</span>
-              <span class="source-value">v1.4.5</span>
+              <span class="source-value">v1.4.8</span>
             </div>
             <div>
               <span class="source-meta">Source candidate</span>
-              <span class="source-value">Bhagavad Gita 2.48</span>
+              <span class="source-value">Rigveda 1.164.46</span>
             </div>
             <div>
               <span class="source-meta">Text family</span>
-              <span class="source-value">Bhagavad Gita | Smriti</span>
+              <span class="source-value">Veda | Shruti</span>
             </div>
             <div>
               <span class="source-meta">Boundary</span>
-              <span class="source-value">MVP data seed, not verified corpus coverage.</span>
+              <span class="source-value">Citation UI prototype, not licensed text display.</span>
             </div>
           </div>
 
           <h2>Decision Signals</h2>
           <div class="item-list" id="itemList"></div>
 
-          <div class="tabs" role="tablist" aria-label="VedaPath MVP Source Seed layers">
+          <div class="tabs" role="tablist" aria-label="VedaPath Citation Drawer layers">
             <button class="tab active" type="button" data-mode="brief">Brief</button>
             <button class="tab" type="button" data-mode="checklist">Checklist</button>
             <button class="tab" type="button" data-mode="boundary">Boundary</button>
@@ -89,20 +89,20 @@
             <button class="button" id="copyBoundary" type="button">Copy Boundary</button>
           </div>
 
-          <textarea id="output" readonly aria-label="VedaPath MVP Source Seed output"></textarea>
+          <textarea id="output" readonly aria-label="VedaPath Citation Drawer output"></textarea>
         </section>
 
-        <aside class="panel tight" aria-label="VedaPath MVP Source Seed sprint rail">
+        <aside class="panel tight" aria-label="VedaPath Citation Drawer sprint rail">
           <span class="badge green">MVP lane</span>
-          <h2 style="margin-top: 14px;">Seed Pulse</h2>
-          <p class="muted">MVP Source Seed narrows VedaPath from many prototypes to a small source set that can power a real first answer lane.</p>
-          <div class="progress" aria-label="Sprint progress 91 percent">
-            <div class="bar" style="--score:91%"></div>
+          <h2 style="margin-top: 14px;">Citation Pulse</h2>
+          <p class="muted">Citation Drawer gives VedaPath a progressive evidence layer: simple answer first, inspectable source detail on demand.</p>
+          <div class="progress" aria-label="Sprint progress 94 percent">
+            <div class="bar" style="--score:94%"></div>
           </div>
           <div class="metric-grid">
             <div class="metric">
               <span>Current</span>
-              <strong>v1.4.5</strong>
+              <strong>v1.4.8</strong>
             </div>
             <div class="metric">
               <span>Sprint</span>
@@ -110,11 +110,11 @@
             </div>
             <div class="metric">
               <span>Progress</span>
-              <strong>91%</strong>
+              <strong>94%</strong>
             </div>
             <div class="metric">
               <span>Next</span>
-              <strong>Local Retrieval Demo</strong>
+              <strong>Confidence Engine Demo</strong>
             </div>
           </div>
 
@@ -146,85 +146,85 @@
     </div>
 
     <script type="application/json" id="room-data">{
-  "version": "v1.4.5",
-  "badge": "v1.4.5 seed",
-  "slug": "mvpseed",
-  "nav": "Seed",
-  "title": "VedaPath MVP Source Seed",
-  "pageLabel": "MVP source seed",
-  "eyebrow": "Working MVP lane",
-  "h1": "Start the real product with a tiny trusted seed.",
-  "lead": "A first working source seed for the MVP lane: small enough to review, structured enough to power retrieval, and honest about gaps.",
-  "source": "Bhagavad Gita 2.48",
-  "family": "Bhagavad Gita | Smriti",
-  "stance": "MVP data seed, not verified corpus coverage.",
-  "progress": 91,
-  "next": "Local Retrieval Demo",
-  "primaryAsk": "Choose the first source records that are narrow, reviewable, and useful for beta answers.",
-  "summary": "MVP Source Seed narrows VedaPath from many prototypes to a small source set that can power a real first answer lane.",
+  "version": "v1.4.8",
+  "badge": "v1.4.8 citation",
+  "slug": "citationdrawer",
+  "nav": "Citation",
+  "title": "VedaPath Citation Drawer",
+  "pageLabel": "Citation drawer",
+  "eyebrow": "Evidence detail",
+  "h1": "Let curious users inspect the source without leaving the answer.",
+  "lead": "A citation drawer for source identity, passage context, translation note, review state, related records, and correction route.",
+  "source": "Rigveda 1.164.46",
+  "family": "Veda | Shruti",
+  "stance": "Citation UI prototype, not licensed text display.",
+  "progress": 94,
+  "next": "Confidence Engine Demo",
+  "primaryAsk": "Design source inspection without overwhelming beginner answers.",
+  "summary": "Citation Drawer gives VedaPath a progressive evidence layer: simple answer first, inspectable source detail on demand.",
   "items": [
     [
-      "Record shape",
-      "Citation, family, public answer scope, review state, and no-go claims.",
-      "Makes retrieval possible."
+      "Identity",
+      "Text family, citation, edition note, and source id.",
+      "Prevents confusion."
     ],
     [
-      "First topics",
-      "Steady action, source categories, question discipline, and calm boundaries.",
-      "Serves early users."
+      "Context",
+      "What the passage can and cannot answer.",
+      "Keeps scope narrow."
     ],
     [
-      "Review gaps",
-      "Translation note, commentary lane, rights state, and Sanskrit review.",
-      "Keeps humility visible."
+      "Review state",
+      "Source, language, boundary, and rights lanes.",
+      "Shows trust status."
     ],
     [
-      "Ready rule",
-      "Only reviewed and eligible records can power public confidence.",
-      "Protects trust."
+      "Correction",
+      "Report citation, category, translation, or boundary issue.",
+      "Improves the source set."
     ]
   ],
   "modes": {
     "brief": [
       [
-        "Seed promise",
-        "The MVP should begin with a small source set that is easy to inspect."
+        "Drawer promise",
+        "Depth should be available without making the first answer heavy."
       ],
       [
-        "Product move",
-        "Prefer ten strong records over a hundred vague ones."
+        "UX move",
+        "Keep evidence one click away, not one page away."
       ],
       [
         "Trust move",
-        "Make every missing field visible before public use."
+        "Show review lanes beside the citation."
       ]
     ],
     "checklist": [
       [
-        "Narrow",
-        "Can each record answer a specific beta question?"
+        "Inspectible",
+        "Can a user see source identity clearly?"
       ],
       [
-        "Reviewed",
-        "Is the review state explicit?"
+        "Scoped",
+        "Does the drawer say what the source cannot support?"
       ],
       [
-        "Blocked",
-        "Are no-go claims named?"
+        "Correctable",
+        "Can users report an issue?"
       ]
     ],
     "boundary": [
       [
-        "No corpus claim",
-        "Do not imply broad scriptural coverage."
+        "No full-text claim",
+        "Do not display restricted translations."
       ],
       [
-        "No hidden gaps",
-        "Do not hide missing review or rights fields."
+        "No context inflation",
+        "Do not overextend one passage."
       ],
       [
-        "No public confidence",
-        "Do not use draft records for high-confidence answers."
+        "No hidden correction",
+        "Do not bury issue reporting."
       ]
     ]
   },

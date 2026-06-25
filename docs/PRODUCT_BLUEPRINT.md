@@ -139,6 +139,7 @@ It helps users move from curiosity to understanding through:
 - MVP Source Seed: MVP Source Seed narrows VedaPath from many prototypes to a small source set that can power a real first answer lane.
 - Local Retrieval Demo: Local Retrieval Demo proves the first MVP answer can start with eligible source records instead of broad model guessing.
 - Answer Renderer Demo: Answer Renderer Demo turns source-first trust into one clean, repeatable card that stays readable on mobile.
+- Citation Drawer: Citation Drawer gives VedaPath a progressive evidence layer: simple answer first, inspectable source detail on demand.
 <!-- VEDAPATH MVP LANE SPRINT SUMMARY END -->
 
 ## What It Is
@@ -2138,6 +2139,21 @@ It should:
 - produce a copyable working-MVP-lane handoff
 
 Answer Renderer Demo should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 131. Citation Drawer
+
+Citation Drawer gives VedaPath a progressive evidence layer: simple answer first, inspectable source detail on demand.
+
+It should:
+
+- Identity: Text family, citation, edition note, and source id.
+- Context: What the passage can and cannot answer.
+- Review state: Source, language, boundary, and rights lanes.
+- Correction: Report citation, category, translation, or boundary issue.
+- preserve the boundary: Citation UI prototype, not licensed text display.
+- produce a copyable working-MVP-lane handoff
+
+Citation Drawer should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH MVP LANE SPRINT BLUEPRINT END -->
 
 ## Product Personality
