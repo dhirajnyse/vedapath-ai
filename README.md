@@ -275,6 +275,8 @@ Let us look at the source first.
 - [MVP Source Seed Notes](docs/MVP_SOURCE_SEED.md)
 - [Local Retrieval Demo](localretrieval.html)
 - [Local Retrieval Demo Notes](docs/LOCAL_RETRIEVAL_DEMO.md)
+- [Answer Renderer Demo](rendererdemo.html)
+- [Answer Renderer Demo Notes](docs/ANSWER_RENDERER_DEMO.md)
 <!-- VEDAPATH MVP LANE SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -306,7 +308,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v1.4.6` is a trusted MVP prototype plus Local Retrieval Demo with:
+`v1.4.7` is a trusted MVP prototype plus Answer Renderer Demo with:
 
 - Ask workspace
 - Source Card
@@ -443,6 +445,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 <!-- VEDAPATH MVP LANE SPRINT FEATURES START -->
 - MVP Source Seed: MVP Source Seed narrows VedaPath from many prototypes to a small source set that can power a real first answer lane.
 - Local Retrieval Demo: Local Retrieval Demo proves the first MVP answer can start with eligible source records instead of broad model guessing.
+- Answer Renderer Demo: Answer Renderer Demo turns source-first trust into one clean, repeatable card that stays readable on mobile.
 <!-- VEDAPATH MVP LANE SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff

@@ -138,6 +138,7 @@ It helps users move from curiosity to understanding through:
 <!-- VEDAPATH MVP LANE SPRINT SUMMARY START -->
 - MVP Source Seed: MVP Source Seed narrows VedaPath from many prototypes to a small source set that can power a real first answer lane.
 - Local Retrieval Demo: Local Retrieval Demo proves the first MVP answer can start with eligible source records instead of broad model guessing.
+- Answer Renderer Demo: Answer Renderer Demo turns source-first trust into one clean, repeatable card that stays readable on mobile.
 <!-- VEDAPATH MVP LANE SPRINT SUMMARY END -->
 
 ## What It Is
@@ -2122,6 +2123,21 @@ It should:
 - produce a copyable working-MVP-lane handoff
 
 Local Retrieval Demo should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 130. Answer Renderer Demo
+
+Answer Renderer Demo turns source-first trust into one clean, repeatable card that stays readable on mobile.
+
+It should:
+
+- Direct answer: One clear response first.
+- Source card: Citation, family, review state, and rights status.
+- Confidence reason: Why the answer is direct, limited, or uncertain.
+- Boundary: What not to overclaim and what needs review.
+- preserve the boundary: Static renderer demo, not AI generation.
+- produce a copyable working-MVP-lane handoff
+
+Answer Renderer Demo should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH MVP LANE SPRINT BLUEPRINT END -->
 
 ## Product Personality
