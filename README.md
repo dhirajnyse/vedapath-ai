@@ -97,6 +97,8 @@ Let us look at the source first.
 <!-- VEDAPATH LAUNCH SPRINT LINKS START -->
 - [Founder Signal Map](signal.html)
 - [Founder Signal Map Notes](docs/FOUNDER_SIGNAL_MAP.md)
+- [Trust Demo Tour](tour.html)
+- [Trust Demo Tour Notes](docs/TRUST_DEMO_TOUR.md)
 <!-- VEDAPATH LAUNCH SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -168,6 +170,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Launch Story Room with audience variants, founder copy, social copy, reviewer ask, no-go claims, and source-first launch boundaries
 <!-- VEDAPATH LAUNCH SPRINT FEATURES START -->
 - Founder Signal Map: Founder Signal Map turns curiosity, feedback, and early reactions into visible product signals without hidden tracking.
+- Trust Demo Tour: Trust Demo Tour gives the product a calm walkthrough: ask, source, boundary, review, feedback, story, and next action.
 <!-- VEDAPATH LAUNCH SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff

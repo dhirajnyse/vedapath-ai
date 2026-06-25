@@ -575,6 +575,7 @@
           <a class="link" href="story.html">Story</a>
           <!-- VEDAPATH SPRINT NAV START -->
           <a class="link" href="signal.html">Signal</a>
+          <a class="link" href="tour.html">Tour</a>
           <!-- VEDAPATH SPRINT NAV END -->
           <a class="link" href="path.html">Path</a>
           <a class="link" href="compass.html">Compass</a>
@@ -587,7 +588,7 @@
           <a class="link" href="morning.html">Morning</a>
           <a class="link" href="evening.html">Evening</a>
           <a class="link" href="rhythm.html">Rhythm</a>
-          <span class="version">v0.6.5 signal</span>
+          <span class="version">v0.6.6 tour</span>
         </nav>
       </header>
 
@@ -999,7 +1000,7 @@
         const item = selectedFeedback();
         return {
           product: "VedaPath AI",
-          release: "v0.6.5 signal",
+          release: "v0.6.6 tour",
           feature: "Public Feedback Intake",
           ticket_type: item.id,
           reviewer_route: item.route,
@@ -1015,7 +1016,7 @@
         const payload = ticketPayload();
         return [
           "VedaPath Public Feedback Ticket",
-          "Release: v0.6.5 signal",
+          "Release: v0.6.6 tour",
           `Ticket type: ${payload.ticket_type}`,
           `Reviewer route: ${payload.reviewer_route}`,
           `Priority: ${payload.priority}`,
@@ -1029,7 +1030,7 @@
         const item = selectedFeedback();
         return [
           "VedaPath Public Feedback Boundary",
-          "Release: v0.6.5 signal",
+          "Release: v0.6.6 tour",
           `Ticket type: ${item.id}`,
           ...item.modes.blocked.map((row) => `- ${row[0]}: ${row[1]}`),
           "No-go: accepted knowledge rewrite, private distress storage, personal data collection, spam, and spiritual-authority escalation."

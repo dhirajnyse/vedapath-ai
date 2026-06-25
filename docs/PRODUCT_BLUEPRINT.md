@@ -41,6 +41,7 @@ It helps users move from curiosity to understanding through:
 - user and scholar correction loops
 <!-- VEDAPATH LAUNCH SPRINT SUMMARY START -->
 - Founder Signal Map: Founder Signal Map turns curiosity, feedback, and early reactions into visible product signals without hidden tracking.
+- Trust Demo Tour: Trust Demo Tour gives the product a calm walkthrough: ask, source, boundary, review, feedback, story, and next action.
 <!-- VEDAPATH LAUNCH SPRINT SUMMARY END -->
 
 ## What It Is
@@ -802,6 +803,21 @@ It should:
 - produce a copyable founder handoff
 
 Founder Signal Map should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 49. Trust Demo Tour
+
+Trust Demo Tour gives the product a calm walkthrough: ask, source, boundary, review, feedback, story, and next action.
+
+It should:
+
+- Ask: Start from a real question.
+- Source: Open citation and source family.
+- Boundary: Show what not to overclaim.
+- Review: Route issues visibly.
+- preserve the boundary: Demo, not proof.
+- produce a copyable founder handoff
+
+Trust Demo Tour should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH LAUNCH SPRINT BLUEPRINT END -->
 
 ## Product Personality
