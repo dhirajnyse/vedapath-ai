@@ -105,6 +105,10 @@ Required handoff fields:
 - boundary
 - next action
 
-## v0.5.5 Direction
+## v0.5.5 Learning Loop
 
-The next release should turn repeated drill results into a small learning-loop seed: question patterns, reviewer decisions, and source gaps, without hidden profiling or private identity inference.
+v0.5.5 adds the Learning Loop Seed, turning repeated drill results, question patterns, reviewer decisions, and source gaps into visible product improvement without hidden profiling or private identity inference.
+
+## v0.5.6 Direction
+
+The next release should add a Sanskrit Lens seed for a few reviewed passages: transliteration, word meaning, meter, translation notes, and recitation boundaries.

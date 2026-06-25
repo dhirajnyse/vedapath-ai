@@ -1,0 +1,955 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VedaPath Learning Loop</title>
+    <style>
+      :root {
+        --bg: #fbf3e6;
+        --panel: #fffdf8;
+        --ink: #181310;
+        --muted: #6f4030;
+        --bhagwa: #d65a1f;
+        --ochre: #a83f12;
+        --gold: #e0a83b;
+        --green: #145c4a;
+        --indigo: #29335c;
+        --line: rgba(92, 55, 34, 0.18);
+        --soft: rgba(214, 90, 31, 0.1);
+        --safe: rgba(20, 92, 74, 0.12);
+        --hold: rgba(224, 168, 59, 0.18);
+        --warn: rgba(168, 63, 18, 0.12);
+        --shadow: 0 20px 70px rgba(92, 55, 34, 0.08);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        line-height: 1.5;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      button,
+      textarea {
+        font: inherit;
+      }
+
+      .page {
+        width: min(1400px, calc(100% - 44px));
+        margin: 0 auto;
+        padding: 24px 0 36px;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding-bottom: 18px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+        min-width: 220px;
+      }
+
+      .brand img {
+        width: 52px;
+        height: 52px;
+        border-radius: 8px;
+        object-fit: cover;
+        box-shadow: 0 10px 26px rgba(214, 90, 31, 0.14);
+      }
+
+      .brand strong,
+      .brand span {
+        display: block;
+      }
+
+      .brand strong {
+        font-size: 20px;
+        line-height: 1.1;
+      }
+
+      .brand span {
+        color: var(--muted);
+        font-size: 14px;
+        margin-top: 4px;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        gap: 8px 16px;
+        flex: 1 1 780px;
+        min-width: 0;
+      }
+
+      .link,
+      .version,
+      .button {
+        border: 1px solid transparent;
+        border-radius: 8px;
+        min-height: 38px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .link {
+        text-decoration: none;
+        font-weight: 800;
+        font-size: 14px;
+        color: #3d2418;
+      }
+
+      .link.active,
+      .version {
+        padding: 0 14px;
+        border-color: rgba(214, 90, 31, 0.35);
+        color: var(--ochre);
+        background: rgba(255, 253, 248, 0.65);
+      }
+
+      .version {
+        font-weight: 900;
+      }
+
+      .workspace {
+        display: grid;
+        grid-template-columns: minmax(250px, 0.88fr) minmax(440px, 1.42fr) minmax(280px, 0.96fr);
+        gap: 18px;
+        padding-top: 20px;
+      }
+
+      .panel {
+        background: rgba(255, 253, 248, 0.82);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: var(--shadow);
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        min-height: 30px;
+        padding: 0 12px;
+        border-radius: 999px;
+        background: rgba(214, 90, 31, 0.11);
+        color: var(--ochre);
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        font-size: clamp(44px, 6vw, 74px);
+        line-height: 0.98;
+        letter-spacing: 0;
+        margin: 18px 0 16px;
+      }
+
+      h2 {
+        font-size: 26px;
+        line-height: 1.12;
+        margin-bottom: 12px;
+      }
+
+      h3 {
+        font-size: 18px;
+        margin-bottom: 8px;
+      }
+
+      p {
+        color: var(--muted);
+        font-size: 16px;
+      }
+
+      .muted {
+        color: var(--muted);
+      }
+
+      .signal-list,
+      .map-grid,
+      .boundary-grid,
+      .stat-grid,
+      .step-list {
+        display: grid;
+        gap: 10px;
+      }
+
+      .signal-list {
+        margin-top: 18px;
+      }
+
+      .signal-card {
+        width: 100%;
+        text-align: left;
+        background: rgba(255, 253, 248, 0.88);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 14px;
+        display: grid;
+        grid-template-columns: 42px 1fr;
+        gap: 12px;
+        cursor: pointer;
+      }
+
+      .signal-card:hover,
+      .signal-card:focus-visible,
+      .signal-card.active {
+        border-color: rgba(214, 90, 31, 0.56);
+        outline: none;
+      }
+
+      .signal-card.active {
+        background: var(--soft);
+      }
+
+      .signal-index,
+      .step-index {
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        background: var(--safe);
+        color: var(--green);
+        font-weight: 900;
+        font-size: 13px;
+      }
+
+      .signal-card.active .signal-index {
+        background: var(--bhagwa);
+        color: #fffdf8;
+      }
+
+      .signal-card strong,
+      .signal-card span:not(.signal-index) {
+        display: block;
+      }
+
+      .signal-card span:not(.signal-index) {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .record-head {
+        display: grid;
+        grid-template-columns: 1fr 126px;
+        gap: 18px;
+        align-items: center;
+      }
+
+      .mark {
+        border: 1px solid rgba(214, 90, 31, 0.24);
+        border-radius: 8px;
+        padding: 10px;
+        background: rgba(255, 248, 237, 0.8);
+      }
+
+      .mark img {
+        width: 100%;
+        aspect-ratio: 1;
+        object-fit: cover;
+        border-radius: 4px;
+      }
+
+      .source-card,
+      .score-card,
+      .loop-output,
+      .map-item,
+      .boundary,
+      .stat,
+      .step {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgba(255, 253, 248, 0.78);
+      }
+
+      .source-card {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        margin: 18px 0;
+        overflow: hidden;
+      }
+
+      .source-card > div {
+        padding: 14px;
+        min-width: 0;
+      }
+
+      .source-label,
+      .source-value {
+        display: block;
+      }
+
+      .source-label {
+        color: var(--muted);
+        font-size: 12px;
+        margin-bottom: 6px;
+      }
+
+      .source-value {
+        font-weight: 900;
+        overflow-wrap: anywhere;
+      }
+
+      .score-card {
+        padding: 14px;
+        margin-bottom: 18px;
+      }
+
+      .score-head {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        font-weight: 900;
+      }
+
+      .progress {
+        height: 10px;
+        border-radius: 999px;
+        background: rgba(214, 90, 31, 0.16);
+        overflow: hidden;
+        margin-top: 10px;
+      }
+
+      .bar {
+        height: 100%;
+        width: 0%;
+        background: linear-gradient(90deg, var(--bhagwa), var(--gold));
+        border-radius: inherit;
+        transition: width 220ms ease;
+      }
+
+      .map-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .map-item,
+      .boundary {
+        padding: 14px;
+      }
+
+      .map-item strong,
+      .map-item span,
+      .boundary strong,
+      .boundary span,
+      .stat strong,
+      .stat span,
+      .step strong,
+      .step span {
+        display: block;
+      }
+
+      .map-item span,
+      .boundary span,
+      .stat span,
+      .step span {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .map-item.learn {
+        border-left: 4px solid var(--green);
+      }
+
+      .map-item.review {
+        border-left: 4px solid var(--gold);
+        background: var(--hold);
+      }
+
+      .map-item.block {
+        border-left: 4px solid var(--bhagwa);
+        background: var(--warn);
+      }
+
+      .boundary-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin-top: 18px;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 18px 0 14px;
+      }
+
+      .button {
+        border-color: rgba(214, 90, 31, 0.35);
+        background: transparent;
+        color: var(--ochre);
+        padding: 0 14px;
+        font-weight: 900;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      .button.primary {
+        background: var(--bhagwa);
+        color: #fffdf8;
+        border-color: var(--bhagwa);
+      }
+
+      .button.safe {
+        color: var(--green);
+        border-color: rgba(20, 92, 74, 0.28);
+      }
+
+      .loop-output {
+        width: 100%;
+        min-height: 184px;
+        background: #fffaf2;
+        color: var(--ink);
+        padding: 14px;
+        resize: vertical;
+        font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+        font-size: 13px;
+        line-height: 1.45;
+      }
+
+      .stat-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin: 18px 0;
+      }
+
+      .stat {
+        padding: 12px;
+      }
+
+      .stat strong {
+        font-size: 24px;
+      }
+
+      .step {
+        display: grid;
+        grid-template-columns: 34px 1fr;
+        gap: 10px;
+        align-items: start;
+        padding: 12px;
+      }
+
+      .guard-card {
+        border: 1px dashed var(--line);
+        border-radius: 8px;
+        padding: 16px;
+        margin-top: 18px;
+      }
+
+      @media (max-width: 1140px) {
+        .workspace {
+          grid-template-columns: 1fr;
+        }
+
+        .record-head {
+          grid-template-columns: 1fr;
+        }
+
+        .mark {
+          width: 132px;
+        }
+      }
+
+      @media (max-width: 740px) {
+        .page {
+          width: min(100% - 28px, 1400px);
+          padding-top: 16px;
+        }
+
+        .topbar,
+        .nav {
+          align-items: flex-start;
+          justify-content: flex-start;
+        }
+
+        .topbar {
+          flex-direction: column;
+        }
+
+        .source-card,
+        .map-grid,
+        .boundary-grid,
+        .stat-grid {
+          grid-template-columns: 1fr;
+        }
+
+        h1 {
+          font-size: 44px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top" aria-label="VedaPath AI home">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept" loading="eager" decoding="async">
+          <div>
+            <strong>VedaPath AI</strong>
+            <span>Learning loop seed</span>
+          </div>
+        </a>
+        <nav class="nav" aria-label="Project links">
+          <a class="link" href="build-status.html">Build</a>
+          <a class="link" href="brand/brand-board.html">Brand</a>
+          <a class="link" href="blueprint.html">Blueprint</a>
+          <a class="link" href="calm.html">Calm</a>
+          <a class="link" href="daily.html">Daily</a>
+          <a class="link" href="practice.html">Practice</a>
+          <a class="link" href="library.html">Library</a>
+          <a class="link" href="seeds.html">Seeds</a>
+          <a class="link" href="retrieval.html">Retrieval</a>
+          <a class="link" href="passages.html">Review</a>
+          <a class="link" href="eval.html">Eval</a>
+          <a class="link" href="dashboard.html">Dash</a>
+          <a class="link" href="queue.html">Queue</a>
+          <a class="link" href="policy.html">Policy</a>
+          <a class="link" href="ledger.html">Ledger</a>
+          <a class="link" href="life.html">Life</a>
+          <a class="link" href="circle.html">Circle</a>
+          <a class="link" href="consent.html">Consent</a>
+          <a class="link" href="memory.html">Memory</a>
+          <a class="link" href="model.html">Model</a>
+          <a class="link" href="passport.html">Passport</a>
+          <a class="link" href="schema.html">Schema</a>
+          <a class="link" href="fixtures.html">Fixtures</a>
+          <a class="link" href="drill.html">Drill</a>
+          <a class="link active" href="loop.html">Loop</a>
+          <a class="link" href="path.html">Path</a>
+          <a class="link" href="compass.html">Compass</a>
+          <a class="link" href="card.html">Card</a>
+          <a class="link" href="bell.html">Bell</a>
+          <a class="link" href="reply.html">Reply</a>
+          <a class="link" href="samvada.html">Samvada</a>
+          <a class="link" href="sankalpa.html">Intent</a>
+          <a class="link" href="seva.html">Seva</a>
+          <a class="link" href="morning.html">Morning</a>
+          <a class="link" href="evening.html">Evening</a>
+          <a class="link" href="rhythm.html">Rhythm</a>
+          <span class="version">v0.5.5 loop</span>
+        </nav>
+      </header>
+
+      <section class="workspace" aria-label="VedaPath Learning Loop workspace">
+        <aside class="panel">
+          <span class="eyebrow">Learning Loop Seed</span>
+          <h1>The product can learn without profiling the person.</h1>
+          <p>Choose a signal and see how VedaPath turns questions, review decisions, and source gaps into visible improvement without hidden identity inference.</p>
+          <div class="signal-list" id="signalList"></div>
+        </aside>
+
+        <section class="panel">
+          <div class="record-head">
+            <div>
+              <span class="eyebrow">Loop record</span>
+              <h1 id="signalTitle">Gita versus Veda confusion becomes a source gap.</h1>
+              <p id="signalSummary">Repeated questions about the Gita and the four Vedas should improve source labels and beginner explanations, not create a belief profile.</p>
+            </div>
+            <div class="mark" aria-label="VedaPath loop logo">
+              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI loop logo" loading="eager" decoding="async">
+            </div>
+          </div>
+
+          <div class="source-card" aria-label="Learning loop metadata">
+            <div>
+              <span class="source-label">Signal id</span>
+              <span class="source-value" id="signalId">cluster_gita_veda</span>
+            </div>
+            <div>
+              <span class="source-label">Loop decision</span>
+              <span class="source-value" id="loopDecision">Improve source label</span>
+            </div>
+            <div>
+              <span class="source-label">Owner</span>
+              <span class="source-value" id="signalOwner">Source Seeds</span>
+            </div>
+            <div>
+              <span class="source-label">Privacy stance</span>
+              <span class="source-value" id="privacyStance">Aggregate only</span>
+            </div>
+          </div>
+
+          <div class="score-card">
+            <div class="score-head">
+              <span>Learning readiness</span>
+              <span id="loopScore">0%</span>
+            </div>
+            <div class="progress" aria-hidden="true"><div class="bar" id="scoreBar"></div></div>
+          </div>
+
+          <h2>Signal Map</h2>
+          <div class="map-grid" id="mapGrid"></div>
+
+          <div class="boundary-grid" aria-label="Learning boundary">
+            <div class="boundary">
+              <strong>Allowed to learn</strong>
+              <span id="allowedLearn">Which answer needs clearer source labeling.</span>
+            </div>
+            <div class="boundary">
+              <strong>Must not learn</strong>
+              <span id="blockedLearn">Who the user is, what they believe, or their private emotional state.</span>
+            </div>
+          </div>
+
+          <div class="actions">
+            <button class="button primary" id="runLoop" type="button">Run Loop</button>
+            <button class="button safe" id="copyBrief" type="button">Copy Learning Brief</button>
+            <button class="button" id="copyBoundary" type="button">Copy Boundary</button>
+            <a class="button" href="drill.html">Open Drill</a>
+          </div>
+          <textarea class="loop-output" id="loopOutput" readonly aria-label="Learning loop output"></textarea>
+        </section>
+
+        <aside class="panel">
+          <span class="eyebrow">Founder view</span>
+          <h2>Loop Health</h2>
+          <p>The learning loop is about improving the product surface. It should never quietly remember people, beliefs, distress, or identity.</p>
+
+          <div class="stat-grid">
+            <div class="stat">
+              <span>Signals</span>
+              <strong id="signalCount">6</strong>
+            </div>
+            <div class="stat">
+              <span>Source gaps</span>
+              <strong>3</strong>
+            </div>
+            <div class="stat">
+              <span>Review routes</span>
+              <strong>2</strong>
+            </div>
+            <div class="stat">
+              <span>Blocked learnings</span>
+              <strong>2</strong>
+            </div>
+          </div>
+
+          <div class="guard-card">
+            <h2>Learning Protocol</h2>
+            <div class="step-list">
+              <div class="step">
+                <span class="step-index">1</span>
+                <div>
+                  <strong>Cluster content</strong>
+                  <span>Group similar questions or failed checks without storing identity.</span>
+                </div>
+              </div>
+              <div class="step">
+                <span class="step-index">2</span>
+                <div>
+                  <strong>Find source gap</strong>
+                  <span>Ask which source seed, passage note, or boundary needs work.</span>
+                </div>
+              </div>
+              <div class="step">
+                <span class="step-index">3</span>
+                <div>
+                  <strong>Route review</strong>
+                  <span>Send behavior changes to reviewer queue before acceptance.</span>
+                </div>
+              </div>
+              <div class="step">
+                <span class="step-index">4</span>
+                <div>
+                  <strong>Publish visibly</strong>
+                  <span>Record what changed, why, and which personal data was not used.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="guard-card">
+            <h2>Next Signal</h2>
+            <p>v0.5.6 should bring a Sanskrit Lens seed: transliteration, word meaning, meter, and recitation boundaries for a few reviewed passages.</p>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <script>
+      const signals = [
+        {
+          id: "cluster_gita_veda",
+          label: "Gita versus Veda",
+          title: "Gita versus Veda confusion becomes a source gap.",
+          summary: "Repeated questions about the Gita and the four Vedas should improve source labels and beginner explanations, not create a belief profile.",
+          decision: "Improve source label",
+          owner: "Source Seeds",
+          privacy: "Aggregate only",
+          score: 94,
+          allowed: "Which answer needs clearer source labeling.",
+          blocked: "Who the user is, what they believe, or their private emotional state.",
+          map: [
+            ["Input signal", "42 similar questions ask whether the Gita is one of the Vedas.", "learn"],
+            ["Source gap", "Add a beginner seed explaining Shruti, Smriti, Veda, and Gita classification.", "learn"],
+            ["Review route", "Reviewer checks wording before the source seed becomes canonical.", "review"],
+            ["No-go", "Do not infer the user's religion, knowledge level, or belief from the question.", "block"]
+          ]
+        },
+        {
+          id: "gap_quantum_claim",
+          label: "Quantum overclaim",
+          title: "Modern science claims become a comparison gap.",
+          summary: "A repeated unsupported proof claim should create a reviewed comparison note, not a viral answer pattern.",
+          decision: "Add comparison review",
+          owner: "Policy Console",
+          privacy: "Question pattern only",
+          score: 88,
+          allowed: "Which claim lacks a reviewed source and comparison boundary.",
+          blocked: "Whether a person is scientific, skeptical, religious, or credulous.",
+          map: [
+            ["Input signal", "The Vedas prove quantum physics appears across Ask, Drill, and Dashboard checks.", "learn"],
+            ["Source gap", "Need a reviewed modern-analogy note with clear no-proof language.", "review"],
+            ["Review route", "Scholarly reviewer checks comparison wording before broader use.", "review"],
+            ["No-go", "Do not tune the app toward sensational proof claims.", "block"]
+          ]
+        },
+        {
+          id: "review_boundary_change",
+          label: "Boundary revision",
+          title: "Reviewer decisions teach the product where to slow down.",
+          summary: "When reviewers revise source boundaries, VedaPath should learn the safer boundary pattern and keep the evidence visible.",
+          decision: "Update boundary pattern",
+          owner: "Reviewer Queue",
+          privacy: "Review evidence only",
+          score: 91,
+          allowed: "Which phrase, source, and boundary changed after review.",
+          blocked: "Which user triggered the review or any private chat text.",
+          map: [
+            ["Input signal", "Two reviewed decisions ask for softer language around Katha Upanishad courage reflections.", "learn"],
+            ["Source gap", "Boundary template needs a source-specific caution.", "learn"],
+            ["Review route", "Accepted reviewer decision creates a trust_event before answer behavior changes.", "review"],
+            ["No-go", "Do not silently rewrite answer behavior without a visible decision.", "block"]
+          ]
+        },
+        {
+          id: "block_hidden_profile",
+          label: "Hidden profile",
+          title: "Blocked hidden profiling becomes a permanent no-go lesson.",
+          summary: "The system can learn that a pattern is forbidden without storing the forbidden profile or the person behind it.",
+          decision: "Keep blocked",
+          owner: "Memory Gate",
+          privacy: "No retention",
+          score: 100,
+          allowed: "The no-go rule: hidden profile attempts must fail.",
+          blocked: "Belief inference, distress archive, emotional state archive, personality score, risk score, or private identity.",
+          map: [
+            ["Input signal", "A fixture or request tries to store inferred belief and risk labels.", "block"],
+            ["Source gap", "No source gap is needed; this is a policy block.", "block"],
+            ["Review route", "Only policy text can be reviewed, never the hidden profile content.", "review"],
+            ["No-go", "No durable memory row may be created.", "block"]
+          ]
+        },
+        {
+          id: "calm_boundary_pattern",
+          label: "Calm boundary",
+          title: "Calm practice repeats teach boundary wording.",
+          summary: "Repeated calm-path use can improve generic boundary wording while keeping personal reflections local and reversible.",
+          decision: "Improve boundary copy",
+          owner: "Calm Passport",
+          privacy: "User-controlled",
+          score: 86,
+          allowed: "Which boundary phrase helps users understand reflection versus therapy.",
+          blocked: "Daily entries, distress details, health status, or personal diagnosis.",
+          map: [
+            ["Input signal", "Users repeatedly open Calm, Practice, and Rhythm after source-backed reflections.", "learn"],
+            ["Source gap", "Boundary copy should better explain reflection support.", "learn"],
+            ["Review route", "Product reviewer approves wording before it appears in calm rooms.", "review"],
+            ["No-go", "Do not use calm traces to infer mental health state.", "block"]
+          ]
+        },
+        {
+          id: "mantra_lens_gap",
+          label: "Mantra Lens",
+          title: "Repeated Sanskrit curiosity becomes the next source build.",
+          summary: "Interest in mantra explanation should create a Sanskrit Lens backlog item with source, transliteration, word meaning, and recitation boundaries.",
+          decision: "Create v0.5.6 seed",
+          owner: "Sanskrit Lens",
+          privacy: "Topic aggregate",
+          score: 82,
+          allowed: "Which passage needs Sanskrit, transliteration, word meaning, meter, and boundary.",
+          blocked: "Whether a user practices, chants, or belongs to a tradition.",
+          map: [
+            ["Input signal", "Gayatri and Sanskrit-term questions appear across Ask, Library, and Practice.", "learn"],
+            ["Source gap", "Need a small reviewed Sanskrit Lens seed before deeper mantra features.", "learn"],
+            ["Review route", "Reviewer checks text, transliteration, and recitation boundary.", "review"],
+            ["No-go", "Do not prescribe ritual practice or infer lineage.", "block"]
+          ]
+        }
+      ];
+
+      const state = {
+        selectedId: "cluster_gita_veda"
+      };
+
+      function selectedSignal() {
+        return signals.find((signal) => signal.id === state.selectedId) || signals[0];
+      }
+
+      function mapClass(kind) {
+        if (kind === "learn") return "learn";
+        if (kind === "review") return "review";
+        return "block";
+      }
+
+      function renderList() {
+        const list = document.getElementById("signalList");
+        list.innerHTML = signals.map((signal, index) => `
+          <button class="signal-card ${signal.id === state.selectedId ? "active" : ""}" type="button" data-id="${signal.id}">
+            <span class="signal-index">${index + 1}</span>
+            <span>
+              <strong>${signal.label}</strong>
+              <span>${signal.decision}</span>
+            </span>
+          </button>
+        `).join("");
+        [...list.querySelectorAll("[data-id]")].forEach((button) => {
+          button.addEventListener("click", () => {
+            state.selectedId = button.dataset.id;
+            render();
+          });
+        });
+      }
+
+      function renderSignal() {
+        const signal = selectedSignal();
+        document.getElementById("signalTitle").textContent = signal.title;
+        document.getElementById("signalSummary").textContent = signal.summary;
+        document.getElementById("signalId").textContent = signal.id;
+        document.getElementById("loopDecision").textContent = signal.decision;
+        document.getElementById("signalOwner").textContent = signal.owner;
+        document.getElementById("privacyStance").textContent = signal.privacy;
+        document.getElementById("loopScore").textContent = `${signal.score}%`;
+        document.getElementById("scoreBar").style.width = `${signal.score}%`;
+        document.getElementById("allowedLearn").textContent = signal.allowed;
+        document.getElementById("blockedLearn").textContent = signal.blocked;
+        document.getElementById("mapGrid").innerHTML = signal.map.map(([name, detail, kind]) => `
+          <div class="map-item ${mapClass(kind)}">
+            <strong>${name}</strong>
+            <span>${detail}</span>
+          </div>
+        `).join("");
+      }
+
+      function loopPayload(signal = selectedSignal()) {
+        return {
+          product: "VedaPath AI",
+          release: "v0.5.5 loop",
+          signal_id: signal.id,
+          decision: signal.decision,
+          owner: signal.owner,
+          privacy_stance: signal.privacy,
+          learning_readiness: signal.score,
+          allowed_to_learn: signal.allowed,
+          must_not_learn: signal.blocked,
+          map: signal.map.map(([name, detail, kind]) => ({ name, detail, kind })),
+          rule: "Learn content gaps and review outcomes, never hidden profiles."
+        };
+      }
+
+      function learningBrief(signal = selectedSignal()) {
+        return [
+          "VedaPath Learning Loop Brief",
+          "Release: v0.5.5 loop",
+          `Signal: ${signal.id}`,
+          `Decision: ${signal.decision}`,
+          `Owner: ${signal.owner}`,
+          `Privacy stance: ${signal.privacy}`,
+          `Learning readiness: ${signal.score}%`,
+          "",
+          "Signal map:",
+          ...signal.map.map(([name, detail, kind]) => `- ${name} [${kind}]: ${detail}`),
+          "",
+          `Allowed to learn: ${signal.allowed}`,
+          `Must not learn: ${signal.blocked}`
+        ].join("\n");
+      }
+
+      function boundaryBrief(signal = selectedSignal()) {
+        return [
+          "VedaPath Learning Boundary",
+          "Release: v0.5.5 loop",
+          `Signal: ${signal.id}`,
+          "",
+          `Allowed to learn: ${signal.allowed}`,
+          `Must not learn: ${signal.blocked}`,
+          "",
+          "Permanent boundary: product learning may improve source seeds, policy wording, reviewer routes, and source gaps. It must not infer identity, belief, mental health, lineage, personality, or risk."
+        ].join("\n");
+      }
+
+      function writeOutput(text) {
+        const output = document.getElementById("loopOutput");
+        output.value = text;
+        output.focus();
+        output.select();
+      }
+
+      function copyText(text, button, doneLabel) {
+        writeOutput(text);
+        const original = button.textContent;
+        const finish = () => {
+          button.textContent = doneLabel;
+          setTimeout(() => {
+            button.textContent = original;
+          }, 1400);
+        };
+        if (navigator.clipboard && window.isSecureContext) {
+          navigator.clipboard.writeText(text).then(finish).catch(finish);
+        } else {
+          finish();
+        }
+      }
+
+      function render() {
+        renderList();
+        renderSignal();
+        writeOutput(JSON.stringify(loopPayload(), null, 2));
+      }
+
+      document.getElementById("runLoop").addEventListener("click", () => {
+        copyText(JSON.stringify(loopPayload(), null, 2), document.getElementById("runLoop"), "Loop Ran");
+      });
+
+      document.getElementById("copyBrief").addEventListener("click", () => {
+        copyText(learningBrief(), document.getElementById("copyBrief"), "Brief Copied");
+      });
+
+      document.getElementById("copyBoundary").addEventListener("click", () => {
+        copyText(boundaryBrief(), document.getElementById("copyBoundary"), "Boundary Copied");
+      });
+
+      render();
+    </script>
+  </body>
+</html>

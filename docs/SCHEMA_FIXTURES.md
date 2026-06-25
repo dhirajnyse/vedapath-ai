@@ -169,6 +169,10 @@ The product should treat rejected fixtures as success for the trust system.
 
 v0.5.4 adds the Evaluation Drill Room, which runs user-facing answer drafts, backend fixture checks, and no-go cases together before a release is considered safe.
 
-## v0.5.5 Direction
+## v0.5.5 Learning Loop
 
-The next release should turn repeated drill results into a small learning-loop seed: question patterns, reviewer decisions, and source gaps, without hidden profiling or private identity inference.
+v0.5.5 adds the Learning Loop Seed, turning repeated question patterns, reviewer decisions, source gaps, and blocked learning boundaries into visible product improvement without hidden profiling or private identity inference.
+
+## v0.5.6 Direction
+
+The next release should add a Sanskrit Lens seed with transliteration, word meaning, meter, translation notes, and recitation boundaries.

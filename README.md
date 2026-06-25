@@ -74,6 +74,8 @@ Let us look at the source first.
 - [Schema Fixture Notes](docs/SCHEMA_FIXTURES.md)
 - [Evaluation Drill Room](drill.html)
 - [Evaluation Drill Notes](docs/EVALUATION_DRILL.md)
+- [Learning Loop Seed](loop.html)
+- [Learning Loop Notes](docs/LEARNING_LOOP.md)
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
 - [Calm Compass](compass.html)
@@ -104,7 +106,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v0.5.4` is a trusted MVP prototype plus an evaluation drill room with:
+`v0.5.5` is a trusted MVP prototype plus a learning loop seed with:
 
 - Ask workspace
 - Source Card
@@ -132,6 +134,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Backend Schema Room with source_seed, consent_grant, memory_route, review_decision, trust_event, calm_pattern, passport_grant, migration order, and no-go rules
 - Schema Fixture Lab with sample rows, validation checks, export shape, deletion lifecycle, and no-go tests
 - Evaluation Drill Room with answer checks, backend fixture checks, no-go cases, release decisions, queue handoffs, and copyable founder briefs
+- Learning Loop Seed with repeated question patterns, reviewer decisions, source gaps, blocked learning boundaries, and copyable learning briefs
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
 - Calm Card Studio with visual card preview, local saved cards, copy text, and PNG export

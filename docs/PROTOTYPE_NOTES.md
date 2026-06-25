@@ -1,6 +1,6 @@
-# v0.5.4 Prototype Notes
+# v0.5.5 Prototype Notes
 
-The v0.5.4 release turns the VedaPath AI homepage into a trusted MVP prototype with calm, practice, source-library, source-seeds, retrieval, passage-review, evaluation, evaluation-dashboard, reviewer-queue, source-policy, trust-ledger, life-map, calm-circle, consent-gate, memory-gate, trust-model, calm-passport, backend-schema, schema-fixtures, evaluation-drill, source-path, calm-compass, calm-card, source-bell, before-reply, samvada, sankalpa, seva, morning, evening, and rhythm surfaces.
+The v0.5.5 release turns the VedaPath AI homepage into a trusted MVP prototype with calm, practice, source-library, source-seeds, retrieval, passage-review, evaluation, evaluation-dashboard, reviewer-queue, source-policy, trust-ledger, life-map, calm-circle, consent-gate, memory-gate, trust-model, calm-passport, backend-schema, schema-fixtures, evaluation-drill, learning-loop, source-path, calm-compass, calm-card, source-bell, before-reply, samvada, sankalpa, seva, morning, evening, and rhythm surfaces.
 
 ## Included
 
@@ -32,6 +32,7 @@ The v0.5.4 release turns the VedaPath AI homepage into a trusted MVP prototype w
 - Backend Schema Room with seven trust tables, relationships, migration order, and no-go rules
 - Schema Fixture Lab with sample rows, validation checks, export shape, deletion lifecycle, and no-go tests
 - Evaluation Drill Room with answer checks, backend fixture checks, no-go cases, release decisions, queue handoffs, and copyable founder briefs
+- Learning Loop Seed with repeated question patterns, reviewer decisions, source gaps, blocked learning boundaries, and copyable learning briefs
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
 - Calm Card Studio with visual preview, local saved cards, copy text, and PNG export
@@ -75,6 +76,7 @@ This release proves the product direction:
 - user memory controls can be inspected before account-backed memory is introduced
 - backend fixture behavior can be tested before production storage exists
 - answer checks, fixture checks, and no-go cases can run together before a release is treated as safe
+- repeated questions, source gaps, reviewer decisions, and no-go cases can improve product behavior without hidden profiling
 - unsupported proof claims can be refused as source gaps instead of dressed up as wisdom
 - one current-life state can route to the next useful product room
 - one source-backed action can become a shareable visual artifact
@@ -88,4 +90,4 @@ This release proves the product direction:
 
 ## Next Release
 
-v0.5.4 adds the Evaluation Drill Room, combining answer checks, fixture checks, no-go cases, release decisions, queue handoffs, and founder-ready briefs. v0.5.5 should seed a learning loop from repeated questions, reviewer decisions, and source gaps without hidden profiling.
+v0.5.5 adds the Learning Loop Seed with repeated question patterns, reviewer decisions, source gaps, blocked learning boundaries, and copyable learning briefs. v0.5.6 should add a Sanskrit Lens seed with transliteration, word meaning, meter, translation notes, and recitation boundaries.
