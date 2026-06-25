@@ -231,6 +231,8 @@ Let us look at the source first.
 - [Public Beta Welcome Notes](docs/PUBLIC_BETA_WELCOME.md)
 - [Question Studio](questionstudio.html)
 - [Question Studio Notes](docs/QUESTION_STUDIO.md)
+- [Confidence Card](confidencecard.html)
+- [Confidence Card Notes](docs/CONFIDENCE_CARD.md)
 <!-- VEDAPATH ACTIVATION SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -262,7 +264,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v1.2.6` is a trusted MVP prototype plus Question Studio with:
+`v1.2.7` is a trusted MVP prototype plus Confidence Card with:
 
 - Ask workspace
 - Source Card
@@ -375,6 +377,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 <!-- VEDAPATH ACTIVATION SPRINT FEATURES START -->
 - Public Beta Welcome: Public Beta Welcome gives VedaPath a simple public doorway for curious visitors, calm seekers, students, and reviewers.
 - Question Studio: Question Studio improves the first ask by separating text lookup, concept explanation, claim check, calm reflection, and modern analogy.
+- Confidence Card: Confidence Card makes answer trust visible through source strength, review state, boundary risk, and missing evidence.
 <!-- VEDAPATH ACTIVATION SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff

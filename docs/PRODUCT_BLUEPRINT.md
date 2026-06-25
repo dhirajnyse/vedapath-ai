@@ -114,6 +114,7 @@ It helps users move from curiosity to understanding through:
 <!-- VEDAPATH ACTIVATION SPRINT SUMMARY START -->
 - Public Beta Welcome: Public Beta Welcome gives VedaPath a simple public doorway for curious visitors, calm seekers, students, and reviewers.
 - Question Studio: Question Studio improves the first ask by separating text lookup, concept explanation, claim check, calm reflection, and modern analogy.
+- Confidence Card: Confidence Card makes answer trust visible through source strength, review state, boundary risk, and missing evidence.
 <!-- VEDAPATH ACTIVATION SPRINT SUMMARY END -->
 
 ## What It Is
@@ -1796,6 +1797,21 @@ It should:
 - produce a copyable public beta activation handoff
 
 Question Studio should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 110. Confidence Card
+
+Confidence Card makes answer trust visible through source strength, review state, boundary risk, and missing evidence.
+
+It should:
+
+- Source strength: Direct passage, commentary, scholarly view, analogy, or uncertain.
+- Review state: Draft, reviewed, held, blocked, or needs specialist review.
+- Risk state: Category confusion, overclaim, ritual, therapy, or modern science risk.
+- Upgrade path: What source, reviewer, or field would raise confidence.
+- preserve the boundary: Confidence display, not certification.
+- produce a copyable public beta activation handoff
+
+Confidence Card should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH ACTIVATION SPRINT BLUEPRINT END -->
 
 ## Product Personality
