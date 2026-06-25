@@ -145,6 +145,7 @@ It helps users move from curiosity to understanding through:
 - Feedback Ticket Demo: Feedback Ticket Demo routes user corrections into typed product work while blocking sensitive personal intake.
 - Reviewer Decision Demo: Reviewer Decision Demo shows how VedaPath can convert feedback tickets and source gaps into accountable release states.
 - Beta Landing Draft: Beta Landing Draft turns VedaPath's MVP lane into public-facing copy without losing source-first humility.
+- MVP Lane Control Room: MVP Lane Control Room completes the working-MVP-lane sprint and gives VedaPath one practical path from prototype to shippable beta slice.
 <!-- VEDAPATH MVP LANE SPRINT SUMMARY END -->
 
 ## What It Is
@@ -2234,6 +2235,21 @@ It should:
 - produce a copyable working-MVP-lane handoff
 
 Beta Landing Draft should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 137. MVP Lane Control Room
+
+MVP Lane Control Room completes the working-MVP-lane sprint and gives VedaPath one practical path from prototype to shippable beta slice.
+
+It should:
+
+- Data: Source seed and reviewable record shape.
+- Answer: Retrieval, renderer, citation drawer, and confidence engine.
+- User: Consent settings, feedback ticket, and beta landing.
+- Review: Reviewer decision and hold states.
+- preserve the boundary: MVP lane control, not production launch.
+- produce a copyable working-MVP-lane handoff
+
+MVP Lane Control Room should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH MVP LANE SPRINT BLUEPRINT END -->
 
 ## Product Personality
