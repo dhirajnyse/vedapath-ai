@@ -314,6 +314,10 @@ Let us look at the source first.
 - [Working MVP Console](workingconsole.html)
 - [Working MVP Console Notes](docs/WORKING_MVP_CONSOLE.md)
 <!-- VEDAPATH WORKING DATA SPRINT LINKS END -->
+<!-- VEDAPATH BETA IMPLEMENTATION SPRINT LINKS START -->
+- [Source Schema Contract](sourcecontract.html)
+- [Source Schema Contract Notes](docs/SOURCE_SCHEMA_CONTRACT.md)
+<!-- VEDAPATH BETA IMPLEMENTATION SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
 - [Calm Compass](compass.html)
@@ -344,7 +348,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v1.6.4` is a trusted MVP prototype plus Working MVP Console with:
+`v1.6.5` is a trusted MVP prototype plus Source Schema Contract with:
 
 - Ask workspace
 - Source Card
@@ -502,6 +506,9 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Reviewer Decision Log: Reviewer Decision Log gives VedaPath a way to publish better answers because decisions are scoped, reasoned, and visible.
 - Working MVP Console: Working MVP Console completes the working data demo sprint and gives VedaPath a practical static-data path toward a real beta slice.
 <!-- VEDAPATH WORKING DATA SPRINT FEATURES END -->
+<!-- VEDAPATH BETA IMPLEMENTATION SPRINT FEATURES START -->
+- Source Schema Contract: Source Schema Contract turns VedaPath's trust language into fields a real implementation can validate.
+<!-- VEDAPATH BETA IMPLEMENTATION SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
 - Calm Card Studio with visual card preview, local saved cards, copy text, and PNG export

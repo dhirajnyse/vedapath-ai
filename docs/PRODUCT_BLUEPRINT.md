@@ -159,6 +159,9 @@ It helps users move from curiosity to understanding through:
 - Reviewer Decision Log: Reviewer Decision Log gives VedaPath a way to publish better answers because decisions are scoped, reasoned, and visible.
 - Working MVP Console: Working MVP Console completes the working data demo sprint and gives VedaPath a practical static-data path toward a real beta slice.
 <!-- VEDAPATH WORKING DATA SPRINT SUMMARY END -->
+<!-- VEDAPATH BETA IMPLEMENTATION SPRINT SUMMARY START -->
+- Source Schema Contract: Source Schema Contract turns VedaPath's trust language into fields a real implementation can validate.
+<!-- VEDAPATH BETA IMPLEMENTATION SPRINT SUMMARY END -->
 
 ## What It Is
 
@@ -2414,6 +2417,22 @@ It should:
 
 Working MVP Console should never claim production storage, live retrieval, live AI generation, authentication, licensed source text, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH WORKING DATA SPRINT BLUEPRINT END -->
+<!-- VEDAPATH BETA IMPLEMENTATION SPRINT BLUEPRINT START -->
+### 148. Source Schema Contract
+
+Source Schema Contract turns VedaPath's trust language into fields a real implementation can validate.
+
+It should:
+
+- Identity fields: id, title, citation, family, section, and source note.
+- Review fields: review state, reviewer lane, rights state, and confidence basis.
+- Answer scope: allowed intents, blocked claims, fallback copy, and risk tags.
+- Change log: created date, last review, decision note, and retired state.
+- preserve the boundary: Schema contract, not a complete source database.
+- produce a copyable beta-implementation handoff
+
+Source Schema Contract should never claim production storage, live AI generation, public launch approval, authentication, licensed source text, therapy, ritual instruction, crisis support, or spiritual authority.
+<!-- VEDAPATH BETA IMPLEMENTATION SPRINT BLUEPRINT END -->
 
 ## Product Personality
 
