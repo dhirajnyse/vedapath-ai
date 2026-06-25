@@ -149,6 +149,7 @@ It helps users move from curiosity to understanding through:
 <!-- VEDAPATH MVP LANE SPRINT SUMMARY END -->
 <!-- VEDAPATH WORKING DATA SPRINT SUMMARY START -->
 - Working Source Data Pack: Working Source Data Pack gives VedaPath a visible data spine: every answer starts from a record that can be reviewed, limited, and improved.
+- Query Router Demo: Query Router Demo makes the first invisible step visible: VedaPath should understand what kind of answer is allowed before it searches.
 <!-- VEDAPATH WORKING DATA SPRINT SUMMARY END -->
 
 ## What It Is
@@ -2269,6 +2270,21 @@ It should:
 - produce a copyable working-data handoff
 
 Working Source Data Pack should never claim production storage, live retrieval, live AI generation, authentication, licensed source text, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 139. Query Router Demo
+
+Query Router Demo makes the first invisible step visible: VedaPath should understand what kind of answer is allowed before it searches.
+
+It should:
+
+- Intent label: Lookup, compare, claim-check, calm reflection, or no-answer.
+- Risk label: Science overclaim, therapy, ritual, category confusion, or sensitive personal context.
+- Needed evidence: Direct passage, commentary, scholarly view, or reviewer decision.
+- Fallback state: If the question is too broad or risky, route to a careful next step.
+- preserve the boundary: Routing prototype, not live classification.
+- produce a copyable working-data handoff
+
+Query Router Demo should never claim production storage, live retrieval, live AI generation, authentication, licensed source text, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH WORKING DATA SPRINT BLUEPRINT END -->
 
 ## Product Personality

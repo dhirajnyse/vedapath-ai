@@ -295,6 +295,8 @@ Let us look at the source first.
 <!-- VEDAPATH WORKING DATA SPRINT LINKS START -->
 - [Working Source Data Pack](workingdata.html)
 - [Working Source Data Pack Notes](docs/WORKING_SOURCE_DATA_PACK.md)
+- [Query Router Demo](queryrouter.html)
+- [Query Router Demo Notes](docs/QUERY_ROUTER_DEMO.md)
 <!-- VEDAPATH WORKING DATA SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -326,7 +328,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v1.5.5` is a trusted MVP prototype plus Working Source Data Pack with:
+`v1.5.6` is a trusted MVP prototype plus Query Router Demo with:
 
 - Ask workspace
 - Source Card
@@ -474,6 +476,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 <!-- VEDAPATH MVP LANE SPRINT FEATURES END -->
 <!-- VEDAPATH WORKING DATA SPRINT FEATURES START -->
 - Working Source Data Pack: Working Source Data Pack gives VedaPath a visible data spine: every answer starts from a record that can be reviewed, limited, and improved.
+- Query Router Demo: Query Router Demo makes the first invisible step visible: VedaPath should understand what kind of answer is allowed before it searches.
 <!-- VEDAPATH WORKING DATA SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
