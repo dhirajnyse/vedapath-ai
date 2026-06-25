@@ -107,6 +107,7 @@ It helps users move from curiosity to understanding through:
 - Public Trust Center: Public Trust Center gives users one plain place to inspect VedaPath's boundaries, source method, privacy posture, and correction path.
 - First Answer Flow: First Answer Flow makes VedaPath's public entry tangible: ask, see source, read clearly, notice boundary, and continue gently.
 - Return Rhythm Engine: Return Rhythm Engine turns retention into a respectful rhythm: source curiosity, small practice, and user-controlled reminders.
+- Scholar Invitation Room: Scholar Invitation Room helps VedaPath ask for help with humility: clear scope, cited evidence, time respect, and consented public credit.
 <!-- VEDAPATH PRODUCTIZATION SPRINT SUMMARY END -->
 
 ## What It Is
@@ -1713,6 +1714,21 @@ It should:
 - produce a copyable public-productization handoff
 
 Return Rhythm Engine should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 105. Scholar Invitation Room
+
+Scholar Invitation Room helps VedaPath ask for help with humility: clear scope, cited evidence, time respect, and consented public credit.
+
+It should:
+
+- Scope: Which records, fields, and decisions need review.
+- Evidence pack: Citation, translation note, current answer, boundary, and open question.
+- Credit consent: Private review, named credit, or anonymous contribution.
+- No endorsement: Review is scoped feedback, not tradition-wide approval.
+- preserve the boundary: Invitation prototype, not a reviewer agreement.
+- produce a copyable public-productization handoff
+
+Scholar Invitation Room should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH PRODUCTIZATION SPRINT BLUEPRINT END -->
 
 ## Product Personality
