@@ -133,6 +133,6 @@ This preview is device-local and does not submit data to a server.
 
 It does not accept feedback as truth, collect private distress, replace reviewers, or provide emergency support.
 
-## v0.6.4 Direction
+## v0.6.4 Launch Story
 
-The next release should add a Launch Story Room so public launch copy can explain VedaPath with warmth, accuracy, source-first humility, and no overclaiming.
+v0.6.4 adds the Launch Story Room so public launch copy can explain VedaPath with warmth, accuracy, source-first humility, no-go claims, reviewer asks, and no overclaiming.

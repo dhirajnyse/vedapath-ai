@@ -1,6 +1,6 @@
-# v0.6.3 Prototype Notes
+# v0.6.4 Prototype Notes
 
-The v0.6.3 release turns the VedaPath AI homepage into a trusted MVP prototype with calm, practice, source-library, source-seeds, retrieval, passage-review, evaluation, evaluation-dashboard, reviewer-queue, source-policy, trust-ledger, life-map, calm-circle, consent-gate, memory-gate, trust-model, calm-passport, backend-schema, schema-fixtures, evaluation-drill, learning-loop, sanskrit-lens, voice-boundary, scholar-review, launch-gate, production-bridge, source-storage, reviewer-access, public-feedback, source-path, calm-compass, calm-card, source-bell, before-reply, samvada, sankalpa, seva, morning, evening, and rhythm surfaces.
+The v0.6.4 release turns the VedaPath AI homepage into a trusted MVP prototype with calm, practice, source-library, source-seeds, retrieval, passage-review, evaluation, evaluation-dashboard, reviewer-queue, source-policy, trust-ledger, life-map, calm-circle, consent-gate, memory-gate, trust-model, calm-passport, backend-schema, schema-fixtures, evaluation-drill, learning-loop, sanskrit-lens, voice-boundary, scholar-review, launch-gate, production-bridge, source-storage, reviewer-access, public-feedback, launch-story, source-path, calm-compass, calm-card, source-bell, before-reply, samvada, sankalpa, seva, morning, evening, and rhythm surfaces.
 
 ## Included
 
@@ -38,6 +38,10 @@ The v0.6.3 release turns the VedaPath AI homepage into a trusted MVP prototype w
 - Scholar Review Seed with reviewer roles, evidence notes, decision states, release gates, and copyable review handoffs
 - Launch Gate Seed with public demo readiness, privacy copy, launch notes, scenario decisions, and no-go release gates
 - Production Bridge Seed with record-family routes, storage lanes, consent needs, audit states, readiness scores, and copyable bridge handoffs
+- Source Record Storage Plan with canonical source tables, translation layers, review links, retrieval indexes, fixtures, and no-go checks
+- Reviewer Identity and Access Gate with scoped reviewer roles, permission scopes, display policy, private identity stance, and blocked powers
+- Public Feedback Intake with source issue, category confusion, UX friction, boundary concern, review-ticket handoff, and blocked private-intake rules
+- Launch Story Room with audience variants, founder copy, social copy, reviewer ask, no-go claims, and source-first launch boundaries
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
 - Calm Card Studio with visual preview, local saved cards, copy text, and PNG export
@@ -92,8 +96,9 @@ This release proves the product direction:
 - one evening can close with acknowledgement, release, and no self-judgment
 - deliberate local traces can suggest one next room without accounts, sync, hidden profiling, or a score
 - one disagreement can become a source-backed shared question
+- public launch copy can stay warm and exciting while keeping no-go claims visible
 - the UI remains calm and Bhagwa-led without becoming visually loud
 
 ## Next Release
 
-v0.5.6 adds the Sanskrit Lens Seed with reviewed passage seeds, Sanskrit text, transliteration, word lens, meter status, source notes, and recitation boundaries. v0.5.7 adds the Voice Boundary Seed with silent pronunciation support, syllable hints, reviewer gate, license gate, and no ritual authority before audio. v0.5.8 adds the Scholar Review Seed with reviewer roles, evidence notes, decision states, release gates, and copyable review handoffs. v0.5.9 adds the Launch Gate Seed with public demo readiness, privacy copy, launch notes, scenario decisions, and no-go release gates. v0.6.0 adds the Production Bridge Seed with record-family routes, storage lanes, consent needs, audit states, readiness scores, and copyable bridge handoffs. v0.6.1 adds the Source Record Storage Plan with canonical source tables, translation layers, review links, retrieval indexes, fixtures, and no-go checks. v0.6.2 adds the Reviewer Identity and Access Gate with scoped reviewer roles, permission scopes, display policy, private identity stance, and blocked powers. v0.6.3 adds the Public Feedback Intake with source issue, category confusion, UX friction, boundary concern, review-ticket handoff, and blocked private-intake rules. v0.6.4 should add a Launch Story Room with audience variants, founder copy, no-go claims, and source-first launch boundaries.
+v0.5.6 adds the Sanskrit Lens Seed with reviewed passage seeds, Sanskrit text, transliteration, word lens, meter status, source notes, and recitation boundaries. v0.5.7 adds the Voice Boundary Seed with silent pronunciation support, syllable hints, reviewer gate, license gate, and no ritual authority before audio. v0.5.8 adds the Scholar Review Seed with reviewer roles, evidence notes, decision states, release gates, and copyable review handoffs. v0.5.9 adds the Launch Gate Seed with public demo readiness, privacy copy, launch notes, scenario decisions, and no-go release gates. v0.6.0 adds the Production Bridge Seed with record-family routes, storage lanes, consent needs, audit states, readiness scores, and copyable bridge handoffs. v0.6.1 adds the Source Record Storage Plan with canonical source tables, translation layers, review links, retrieval indexes, fixtures, and no-go checks. v0.6.2 adds the Reviewer Identity and Access Gate with scoped reviewer roles, permission scopes, display policy, private identity stance, and blocked powers. v0.6.3 adds the Public Feedback Intake with source issue, category confusion, UX friction, boundary concern, review-ticket handoff, and blocked private-intake rules. v0.6.4 adds the Launch Story Room with audience variants, founder copy, social copy, reviewer ask, no-go claims, and source-first launch boundaries. The five-build sprint now pauses for founder direction before production implementation and licensed audio planning.

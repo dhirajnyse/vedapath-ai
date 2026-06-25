@@ -1,0 +1,1027 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VedaPath Launch Story Room</title>
+    <style>
+      :root {
+        --bg: #fff7ea;
+        --surface: #fffdf8;
+        --ink: #1d1714;
+        --muted: #6c3b25;
+        --line: #ead7c8;
+        --bhagwa: #d65a1f;
+        --ochre: #a83f12;
+        --gold: #e0a83b;
+        --green: #145c4a;
+        --indigo: #29335c;
+        --soft-red: #fde8dd;
+        --soft-green: #e8f0ea;
+        --soft-gold: #fff3d7;
+        --shadow: 0 18px 50px rgba(70, 36, 14, 0.08);
+        --radius: 8px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: Arial, Helvetica, sans-serif;
+        line-height: 1.55;
+      }
+
+      button,
+      textarea {
+        font: inherit;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .shell {
+        width: min(1240px, calc(100% - 44px));
+        margin: 0 auto;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 22px;
+        padding: 22px 0 16px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        min-width: 220px;
+        text-decoration: none;
+      }
+
+      .brand img {
+        width: 48px;
+        height: 48px;
+        border-radius: 8px;
+        object-fit: cover;
+        box-shadow: 0 8px 22px rgba(214, 90, 31, 0.13);
+      }
+
+      .brand strong {
+        display: block;
+        font-size: 20px;
+        line-height: 1.1;
+      }
+
+      .brand span {
+        display: block;
+        margin-top: 2px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .link,
+      .version,
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 40px;
+        border-radius: var(--radius);
+        text-decoration: none;
+        font-weight: 800;
+        white-space: nowrap;
+      }
+
+      .link {
+        padding: 8px 10px;
+        color: #432414;
+      }
+
+      .link.active,
+      .version {
+        border: 1px solid #efb899;
+        color: var(--ochre);
+        background: rgba(255, 253, 248, 0.74);
+      }
+
+      .version {
+        padding: 8px 14px;
+      }
+
+      .button {
+        border: 1px solid #efb899;
+        color: var(--ochre);
+        background: var(--surface);
+        padding: 10px 14px;
+        cursor: pointer;
+      }
+
+      .button.primary {
+        border-color: var(--bhagwa);
+        background: var(--bhagwa);
+        color: white;
+      }
+
+      .button.safe {
+        border-color: #b9d3ca;
+        color: #064f43;
+      }
+
+      .workspace {
+        display: grid;
+        grid-template-columns: 0.96fr 1.26fr 0.92fr;
+        gap: 16px;
+        padding: 20px 0 28px;
+      }
+
+      .panel {
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: rgba(255, 253, 248, 0.84);
+        padding: 18px;
+        box-shadow: var(--shadow);
+      }
+
+      .panel.tight {
+        box-shadow: none;
+      }
+
+      .eyebrow,
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        min-height: 28px;
+        border-radius: 999px;
+        padding: 5px 10px;
+        font-size: 12px;
+        font-weight: 900;
+        color: var(--ochre);
+        background: var(--soft-red);
+      }
+
+      .badge.green {
+        color: var(--green);
+        background: var(--soft-green);
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        margin: 18px 0 12px;
+        font-size: clamp(42px, 6vw, 70px);
+        line-height: 0.96;
+        letter-spacing: 0;
+      }
+
+      h2 {
+        margin-bottom: 12px;
+        font-size: 26px;
+        line-height: 1.08;
+      }
+
+      h3 {
+        margin-bottom: 6px;
+        font-size: 16px;
+      }
+
+      .muted {
+        color: var(--muted);
+      }
+
+      .audience-list,
+      .claim-list,
+      .grid,
+      .metric-grid,
+      .step-list {
+        display: grid;
+        gap: 10px;
+      }
+
+      .audience-card,
+      .claim-card,
+      .mini-card,
+      .metric,
+      .step-card {
+        width: 100%;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: rgba(255, 253, 248, 0.78);
+        text-align: left;
+      }
+
+      .audience-card {
+        display: grid;
+        grid-template-columns: 42px minmax(0, 1fr);
+        gap: 12px;
+        align-items: center;
+        padding: 12px;
+        cursor: pointer;
+      }
+
+      .audience-card.active,
+      .audience-card:hover,
+      .audience-card:focus-visible {
+        border-color: #f09f79;
+        background: #fff0e7;
+        outline: none;
+      }
+
+      .audience-index,
+      .step-index {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 34px;
+        height: 34px;
+        border-radius: 999px;
+        background: var(--soft-green);
+        color: var(--green);
+        font-size: 13px;
+        font-weight: 900;
+      }
+
+      .audience-card.active .audience-index,
+      .step-card.active .step-index {
+        background: var(--bhagwa);
+        color: white;
+      }
+
+      .audience-card strong,
+      .audience-card span:not(.audience-index) {
+        display: block;
+      }
+
+      .audience-card span:not(.audience-index) {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .story-hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 150px;
+        gap: 18px;
+        align-items: center;
+      }
+
+      .mark-stage {
+        border: 1px solid #f1d0bd;
+        border-radius: var(--radius);
+        background: #fff0df;
+        padding: 10px;
+      }
+
+      .mark-stage img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 1;
+        object-fit: cover;
+        border-radius: 4px;
+      }
+
+      .source-block {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+        margin: 18px 0;
+        padding: 14px;
+        border: 1px solid var(--line);
+        border-left: 4px solid var(--bhagwa);
+        border-radius: var(--radius);
+        background: var(--surface);
+      }
+
+      .source-meta {
+        display: block;
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .source-value {
+        display: block;
+        margin-top: 4px;
+        font-size: 16px;
+        font-weight: 900;
+        line-height: 1.35;
+      }
+
+      .claim-card {
+        display: grid;
+        grid-template-columns: 36px minmax(0, 1fr) auto;
+        gap: 12px;
+        align-items: start;
+        padding: 12px;
+      }
+
+      .claim-state {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 28px;
+        border-radius: 999px;
+        padding: 4px 10px;
+        color: var(--green);
+        background: var(--soft-green);
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      .claim-state.hold {
+        color: var(--ochre);
+        background: var(--soft-red);
+      }
+
+      .tabs,
+      .button-row {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .tabs {
+        margin: 16px 0 12px;
+        border-top: 1px solid var(--line);
+        padding-top: 14px;
+      }
+
+      .tab {
+        min-height: 40px;
+        border: 1px solid #efb899;
+        border-radius: var(--radius);
+        background: var(--surface);
+        color: var(--ochre);
+        padding: 9px 12px;
+        font-weight: 900;
+        cursor: pointer;
+      }
+
+      .tab.active {
+        border-color: var(--bhagwa);
+        background: var(--bhagwa);
+        color: white;
+      }
+
+      .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .mini-card {
+        padding: 13px;
+        border-left: 3px solid #f0a07d;
+      }
+
+      .mini-card p,
+      .claim-card p,
+      .step-card p {
+        margin-bottom: 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      textarea {
+        width: 100%;
+        min-height: 154px;
+        margin-top: 14px;
+        border: 1px solid #efc1aa;
+        border-radius: var(--radius);
+        background: #fffaf4;
+        color: var(--ink);
+        padding: 12px;
+        resize: vertical;
+        font-family: Consolas, "Courier New", monospace;
+        font-size: 13px;
+      }
+
+      .metric-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin: 12px 0;
+      }
+
+      .metric {
+        padding: 12px;
+      }
+
+      .metric span {
+        display: block;
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .metric strong {
+        display: block;
+        margin-top: 5px;
+        font-size: 25px;
+        line-height: 1;
+      }
+
+      .progress {
+        height: 10px;
+        overflow: hidden;
+        border-radius: 999px;
+        background: rgba(168, 62, 18, 0.14);
+      }
+
+      .bar {
+        width: var(--score);
+        height: 100%;
+        border-radius: inherit;
+        background: linear-gradient(90deg, var(--bhagwa), var(--gold));
+      }
+
+      .step-card {
+        display: grid;
+        grid-template-columns: 40px minmax(0, 1fr);
+        gap: 12px;
+        align-items: center;
+        padding: 12px;
+      }
+
+      .boundary {
+        border-style: dashed;
+        box-shadow: none;
+      }
+
+      @media (max-width: 1100px) {
+        .workspace {
+          grid-template-columns: 1fr;
+        }
+
+        .topbar {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .nav {
+          justify-content: flex-start;
+        }
+      }
+
+      @media (max-width: 760px) {
+        .shell {
+          width: min(100% - 28px, 1240px);
+        }
+
+        .story-hero,
+        .source-block,
+        .grid,
+        .metric-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .mark-stage {
+          max-width: 180px;
+        }
+
+        h1 {
+          font-size: 44px;
+        }
+
+        .claim-card {
+          grid-template-columns: 34px minmax(0, 1fr);
+        }
+
+        .claim-state {
+          grid-column: 2;
+          justify-self: start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="shell" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top" aria-label="VedaPath AI home">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
+          <div>
+            <strong>VedaPath AI</strong>
+            <span>Launch story room</span>
+          </div>
+        </a>
+        <nav class="nav" aria-label="Project links">
+          <a class="link" href="build-status.html">Build</a>
+          <a class="link" href="brand/brand-board.html">Brand</a>
+          <a class="link" href="blueprint.html">Blueprint</a>
+          <a class="link" href="calm.html">Calm</a>
+          <a class="link" href="daily.html">Daily</a>
+          <a class="link" href="practice.html">Practice</a>
+          <a class="link" href="library.html">Library</a>
+          <a class="link" href="seeds.html">Seeds</a>
+          <a class="link" href="retrieval.html">Retrieval</a>
+          <a class="link" href="passages.html">Review</a>
+          <a class="link" href="eval.html">Eval</a>
+          <a class="link" href="dashboard.html">Dash</a>
+          <a class="link" href="queue.html">Queue</a>
+          <a class="link" href="policy.html">Policy</a>
+          <a class="link" href="ledger.html">Ledger</a>
+          <a class="link" href="life.html">Life</a>
+          <a class="link" href="circle.html">Circle</a>
+          <a class="link" href="consent.html">Consent</a>
+          <a class="link" href="memory.html">Memory</a>
+          <a class="link" href="model.html">Model</a>
+          <a class="link" href="passport.html">Passport</a>
+          <a class="link" href="schema.html">Schema</a>
+          <a class="link" href="fixtures.html">Fixtures</a>
+          <a class="link" href="drill.html">Drill</a>
+          <a class="link" href="loop.html">Loop</a>
+          <a class="link" href="lens.html">Lens</a>
+          <a class="link" href="voice.html">Voice</a>
+          <a class="link" href="scholar.html">Scholar</a>
+          <a class="link" href="launch.html">Launch</a>
+          <a class="link" href="bridge.html">Bridge</a>
+          <a class="link" href="storage.html">Storage</a>
+          <a class="link" href="access.html">Access</a>
+          <a class="link" href="feedback.html">Feedback</a>
+          <a class="link active" href="story.html">Story</a>
+          <a class="link" href="path.html">Path</a>
+          <a class="link" href="compass.html">Compass</a>
+          <a class="link" href="card.html">Card</a>
+          <a class="link" href="bell.html">Bell</a>
+          <a class="link" href="reply.html">Reply</a>
+          <a class="link" href="samvada.html">Samvada</a>
+          <a class="link" href="sankalpa.html">Intent</a>
+          <a class="link" href="seva.html">Seva</a>
+          <a class="link" href="morning.html">Morning</a>
+          <a class="link" href="evening.html">Evening</a>
+          <a class="link" href="rhythm.html">Rhythm</a>
+          <span class="version">v0.6.4 story</span>
+        </nav>
+      </header>
+
+      <main class="workspace" aria-label="VedaPath Launch Story workspace">
+        <aside class="panel">
+          <span class="eyebrow">Choose audience</span>
+          <h1>Tell the story without overclaiming.</h1>
+          <p class="muted">VedaPath should launch with warmth and conviction, but the story must stay source-first, clear about prototype limits, and free from guru or therapy claims.</p>
+          <div class="audience-list" id="audienceList"></div>
+        </aside>
+
+        <section class="panel">
+          <div class="story-hero">
+            <div>
+              <span class="eyebrow">Launch Story Room</span>
+              <h2 id="storyTitle">Invite learners through the source.</h2>
+              <p class="muted" id="storySummary">For curious learners, the launch story should promise clarity, citations, and calm navigation without pretending the AI is an authority.</p>
+            </div>
+            <div class="mark-stage">
+              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Launch Story logo">
+            </div>
+          </div>
+
+          <div class="source-block" aria-label="Launch story decision card">
+            <div>
+              <span class="source-meta">Audience</span>
+              <span class="source-value" id="audienceKey">learners</span>
+            </div>
+            <div>
+              <span class="source-meta">Tone</span>
+              <span class="source-value" id="tone">Warm clarity</span>
+            </div>
+            <div>
+              <span class="source-meta">Primary ask</span>
+              <span class="source-value" id="primaryAsk">Try a source question</span>
+            </div>
+            <div>
+              <span class="source-meta">Launch state</span>
+              <span class="source-value" id="launchState">Public prototype</span>
+            </div>
+          </div>
+
+          <h2>Launch Claims</h2>
+          <div class="claim-list" id="claimList"></div>
+
+          <div class="tabs" role="tablist" aria-label="Launch story copy modes">
+            <button class="tab active" type="button" data-mode="founder">Founder Note</button>
+            <button class="tab" type="button" data-mode="social">Social Copy</button>
+            <button class="tab" type="button" data-mode="reviewer">Reviewer Ask</button>
+            <button class="tab" type="button" data-mode="nogo">No-Go Claims</button>
+          </div>
+
+          <div id="modePanel"></div>
+
+          <div class="button-row" style="margin-top: 14px;">
+            <button class="button primary" id="copyStory" type="button">Copy Story</button>
+            <button class="button safe" id="copyJson" type="button">Copy Story JSON</button>
+            <button class="button" id="copyNoGo" type="button">Copy No-Go List</button>
+          </div>
+
+          <textarea id="storyOutput" readonly aria-label="Launch Story output"></textarea>
+        </section>
+
+        <aside class="rail" aria-label="Launch story readiness rail">
+          <section class="panel tight">
+            <span class="badge green">Launch story readiness</span>
+            <h2 style="margin-top: 14px;">Story Pulse</h2>
+            <p class="muted" id="pulseSummary">The launch story is ready for prototype sharing when every claim is bounded, source-first, and easy to route into feedback.</p>
+            <div class="progress" aria-label="Launch story readiness">
+              <div class="bar" id="scoreBar" style="--score:86%"></div>
+            </div>
+            <div class="metric-grid">
+              <div class="metric">
+                <span>Readiness</span>
+                <strong id="readinessScore">86%</strong>
+              </div>
+              <div class="metric">
+                <span>Claims</span>
+                <strong id="claimCount">4</strong>
+              </div>
+              <div class="metric">
+                <span>Next build</span>
+                <strong id="nextBuild">pause</strong>
+              </div>
+              <div class="metric">
+                <span>Hype filter</span>
+                <strong id="hypeFilter">On</strong>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel tight" style="margin-top: 16px;">
+            <h2>Launch Order</h2>
+            <div class="step-list">
+              <div class="step-card active">
+                <span class="step-index">1</span>
+                <div>
+                  <strong>Name the promise</strong>
+                  <p>Source-first learning, not spiritual authority.</p>
+                </div>
+              </div>
+              <div class="step-card">
+                <span class="step-index">2</span>
+                <div>
+                  <strong>Show the product</strong>
+                  <p>Ask, source card, review gates, calm tools.</p>
+                </div>
+              </div>
+              <div class="step-card">
+                <span class="step-index">3</span>
+                <div>
+                  <strong>Ask for feedback</strong>
+                  <p>Route notes into tickets, not applause alone.</p>
+                </div>
+              </div>
+              <div class="step-card">
+                <span class="step-index">4</span>
+                <div>
+                  <strong>Hold the boundary</strong>
+                  <p>No guru, therapy, ritual, crisis, or verified-answer claims.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel tight boundary" style="margin-top: 16px;">
+            <h2>Story Boundary</h2>
+            <p class="muted">This room writes launch copy for a prototype. It does not claim verified scholarship, production storage, therapeutic support, ritual authority, or a formal scholar board.</p>
+          </section>
+        </aside>
+      </main>
+    </div>
+
+    <script>
+      const storyAudiences = [
+        {
+          id: "learners",
+          name: "Learners",
+          short: "Curious users who want source-backed clarity.",
+          title: "Invite learners through the source.",
+          summary: "For curious learners, the launch story should promise clarity, citations, and calm navigation without pretending the AI is an authority.",
+          tone: "Warm clarity",
+          ask: "Try a source question",
+          state: "Public prototype",
+          score: 86,
+          claims: [
+            ["Source-first", "Every serious answer should show source family, citation, and boundary.", "allow"],
+            ["Clear categories", "The product distinguishes Veda, Upanishad, Gita, Itihasa, Purana, commentary, and modern view.", "allow"],
+            ["Calm tools", "Reflection support stays bounded and non-therapeutic.", "allow"],
+            ["Prototype limits", "Source data, reviewers, and storage are still becoming production systems.", "hold"]
+          ],
+          modes: {
+            founder: [
+              ["Opening", "I am building VedaPath AI to help people approach Hindu philosophical texts by looking at the source first."],
+              ["Promise", "Ask a question, see the source family, citation, confidence, and what not to overclaim."],
+              ["Boundary", "It is not a guru, therapist, ritual authority, or final scholar voice."]
+            ],
+            social: [
+              ["Short post", "VedaPath AI is a source-first learning companion for Vedic and Hindu philosophical texts."],
+              ["Invitation", "Try a question, check the citation, and tell us where the source or UX needs review."],
+              ["Boundary", "Prototype only: careful, cited, and still under review."]
+            ],
+            reviewer: [
+              ["Ask", "Please review source labels, citations, category boundaries, and places where the copy overclaims."],
+              ["Best feedback", "A source issue, category confusion, UX friction, or boundary concern."],
+              ["Route", "Feedback becomes a review ticket before behavior changes."]
+            ],
+            nogo: [
+              ["No verified-answer claim", "Do not say every answer is verified."],
+              ["No guru claim", "Do not say VedaPath gives spiritual instruction."],
+              ["No therapy claim", "Do not describe calm tools as mental-health support."]
+            ]
+          }
+        },
+        {
+          id: "families",
+          name: "Families",
+          short: "Parents, youth, and homes seeking calm learning.",
+          title: "Make tradition approachable without pressure.",
+          summary: "For families, the story should feel gentle and practical: a way to ask better questions together without judgment or authority theater.",
+          tone: "Gentle confidence",
+          ask: "Open a calm source",
+          state: "Family-safe prototype",
+          score: 82,
+          claims: [
+            ["Beginner-friendly", "Questions can start from films, quotes, school, or family conversations.", "allow"],
+            ["No shame", "Popular wording gets corrected gently with source context.", "allow"],
+            ["Shared calm", "Calm Circle and practice rooms support reflection, not mediation.", "allow"],
+            ["Private boundaries", "Personal family content should not become public feedback or durable memory.", "hold"]
+          ],
+          modes: {
+            founder: [
+              ["Opening", "VedaPath AI is for people who want to understand their tradition without being judged for where they begin."],
+              ["Promise", "It slows the question down, shows the source, and offers a careful next step."],
+              ["Boundary", "It is not a replacement for family, teachers, priests, scholars, or care professionals."]
+            ],
+            social: [
+              ["Short post", "A calm way to ask source-backed questions about Hindu texts and ideas."],
+              ["Invitation", "Begin with one quote, one concept, or one moment where you want clarity."],
+              ["Boundary", "No guru voice, no diagnosis, no ritual instruction."]
+            ],
+            reviewer: [
+              ["Ask", "Please check whether family-facing copy feels welcoming without becoming spiritual authority."],
+              ["Best feedback", "Tone concerns, unclear source labels, or places where a boundary should be stronger."],
+              ["Route", "Boundary concerns go to review before launch copy changes."]
+            ],
+            nogo: [
+              ["No parenting advice", "Do not present VedaPath as family counseling."],
+              ["No ritual direction", "Do not prescribe practice or eligibility."],
+              ["No private archive", "Do not store family conflict as product memory."]
+            ]
+          }
+        },
+        {
+          id: "builders",
+          name: "Builders",
+          short: "Product, AI, and trust-minded people.",
+          title: "Show the trust architecture, not only the demo.",
+          summary: "For builders, the story should highlight the visible gates: source storage, reviewer access, feedback intake, evaluation, consent, memory, and no-go checks.",
+          tone: "Precise product clarity",
+          ask: "Inspect the trust gates",
+          state: "Trust prototype",
+          score: 88,
+          claims: [
+            ["Visible gates", "Source, review, evaluation, consent, memory, and feedback gates are product surfaces.", "allow"],
+            ["Human review", "Corrections and promotions are designed to route through review.", "allow"],
+            ["Local prototypes", "Several memory previews are browser-local until account systems exist.", "allow"],
+            ["No backend claim", "Do not imply production infrastructure is complete.", "hold"]
+          ],
+          modes: {
+            founder: [
+              ["Opening", "VedaPath AI is being built with trust surfaces visible from the first prototype."],
+              ["Promise", "The demo shows how answers, sources, reviewers, feedback, memory, and launch claims should be gated."],
+              ["Boundary", "This is not yet a production backend or verified scholar network."]
+            ],
+            social: [
+              ["Short post", "A source-first AI product where trust gates are part of the interface."],
+              ["Invitation", "Explore the prototype and look for places where the source, review, or boundary model can improve."],
+              ["Boundary", "Prototype architecture, not production certification."]
+            ],
+            reviewer: [
+              ["Ask", "Please inspect the trust flow: Source Storage, Reviewer Access, Feedback Intake, Evaluation, and Launch Gate."],
+              ["Best feedback", "Missing data fields, confusing gates, unclear no-go claims, or UX friction."],
+              ["Route", "Product feedback goes to the backlog; source feedback goes to review."]
+            ],
+            nogo: [
+              ["No production claim", "Do not say durable storage, accounts, reviewers, or audio are live."],
+              ["No compliance claim", "Do not present trust gates as legal certification."],
+              ["No autonomous authority", "Do not imply the AI self-approves changes."]
+            ]
+          }
+        },
+        {
+          id: "reviewers",
+          name: "Reviewers",
+          short: "Scholars, teachers, Sanskrit learners, and careful readers.",
+          title: "Ask for review without pretending approval exists.",
+          summary: "For reviewers, the launch story should be humble and specific: please examine sources, labels, boundaries, and missing evidence.",
+          tone: "Respectful precision",
+          ask: "Review one source trail",
+          state: "Review invitation",
+          score: 84,
+          claims: [
+            ["Specific ask", "Review source labels, citations, translation notes, and boundaries.", "allow"],
+            ["No board claim", "Reviewer pages are prototypes until real identities and access exist.", "hold"],
+            ["Traceable notes", "Feedback becomes a ticket with evidence need and reviewer route.", "allow"],
+            ["Multiple views", "Interpretive plurality should stay visible where relevant.", "allow"]
+          ],
+          modes: {
+            founder: [
+              ["Opening", "VedaPath AI needs careful reviewers before it deserves trust."],
+              ["Promise", "The prototype shows what it knows, what it does not know, and where review is required."],
+              ["Boundary", "No scholar board or final approval is claimed."]
+            ],
+            social: [
+              ["Short post", "Calling careful readers: VedaPath AI needs source, category, and boundary review."],
+              ["Invitation", "Pick one source trail and tell us what is wrong, missing, or overclaimed."],
+              ["Boundary", "Feedback becomes a ticket, not immediate product truth."]
+            ],
+            reviewer: [
+              ["Ask", "Please review one source record, one answer boundary, or one public launch claim."],
+              ["Best feedback", "Citation evidence, source-family correction, translation caution, or no-go wording."],
+              ["Route", "Your note becomes a review ticket until identity and access gates are live."]
+            ],
+            nogo: [
+              ["No scholar-board claim", "Do not imply reviewers have formally approved the product."],
+              ["No final interpretation", "Do not imply VedaPath settles tradition-wide debate."],
+              ["No hidden reviewer identity", "Do not expose reviewer identity without consent and access policy."]
+            ]
+          }
+        }
+      ];
+
+      const state = {
+        selectedId: "learners",
+        mode: "founder"
+      };
+
+      function selectedAudience() {
+        return storyAudiences.find((item) => item.id === state.selectedId) || storyAudiences[0];
+      }
+
+      function stateClass(value) {
+        return value === "hold" ? "hold" : "";
+      }
+
+      function renderAudiences() {
+        const list = document.getElementById("audienceList");
+        list.innerHTML = storyAudiences.map((item, index) => `
+          <button class="audience-card ${item.id === state.selectedId ? "active" : ""}" type="button" data-id="${item.id}">
+            <span class="audience-index">${index + 1}</span>
+            <span>
+              <strong>${item.name}</strong>
+              <span>${item.short}</span>
+            </span>
+          </button>
+        `).join("");
+
+        [...list.querySelectorAll(".audience-card")].forEach((button) => {
+          button.addEventListener("click", () => {
+            state.selectedId = button.dataset.id;
+            render();
+          });
+        });
+      }
+
+      function renderTabs() {
+        [...document.querySelectorAll(".tab")].forEach((tab) => {
+          tab.classList.toggle("active", tab.dataset.mode === state.mode);
+          tab.addEventListener("click", () => {
+            state.mode = tab.dataset.mode;
+            render();
+          }, { once: true });
+        });
+      }
+
+      function renderClaims() {
+        const item = selectedAudience();
+        document.getElementById("claimList").innerHTML = item.claims.map((claim, index) => `
+          <div class="claim-card">
+            <span class="audience-index">${index + 1}</span>
+            <div>
+              <strong>${claim[0]}</strong>
+              <p>${claim[1]}</p>
+            </div>
+            <span class="claim-state ${stateClass(claim[2])}">${claim[2]}</span>
+          </div>
+        `).join("");
+      }
+
+      function renderModePanel() {
+        const item = selectedAudience();
+        const rows = item.modes[state.mode] || item.modes.founder;
+        document.getElementById("modePanel").innerHTML = `
+          <div class="grid">
+            ${rows.map((row) => `
+              <div class="mini-card">
+                <h3>${row[0]}</h3>
+                <p>${row[1]}</p>
+              </div>
+            `).join("")}
+          </div>
+        `;
+      }
+
+      function renderStory() {
+        const item = selectedAudience();
+        document.getElementById("storyTitle").textContent = item.title;
+        document.getElementById("storySummary").textContent = item.summary;
+        document.getElementById("audienceKey").textContent = item.id;
+        document.getElementById("tone").textContent = item.tone;
+        document.getElementById("primaryAsk").textContent = item.ask;
+        document.getElementById("launchState").textContent = item.state;
+        document.getElementById("pulseSummary").textContent = item.summary;
+        document.getElementById("readinessScore").textContent = `${item.score}%`;
+        document.getElementById("scoreBar").style.setProperty("--score", `${item.score}%`);
+        document.getElementById("claimCount").textContent = item.claims.length;
+        renderClaims();
+        renderModePanel();
+        document.getElementById("storyOutput").value = storyBrief();
+      }
+
+      function storyPayload() {
+        const item = selectedAudience();
+        return {
+          product: "VedaPath AI",
+          release: "v0.6.4 story",
+          feature: "Launch Story Room",
+          audience: item.id,
+          tone: item.tone,
+          primary_ask: item.ask,
+          launch_state: item.state,
+          claims: item.claims.map((claim) => ({ label: claim[0], copy: claim[1], state: claim[2] })),
+          boundary: "Launch copy must stay source-first and must not claim guru authority, therapy, ritual instruction, verified scholarship, or production storage."
+        };
+      }
+
+      function storyBrief() {
+        const item = selectedAudience();
+        const rows = item.modes[state.mode] || item.modes.founder;
+        return [
+          "VedaPath Launch Story",
+          "Release: v0.6.4 story",
+          `Audience: ${item.name}`,
+          `Tone: ${item.tone}`,
+          `Primary ask: ${item.ask}`,
+          ...rows.map((row) => `${row[0]}: ${row[1]}`),
+          "Boundary: source-first prototype; no guru, therapy, ritual, crisis, verified-answer, scholar-board, or production-storage claim."
+        ].join("\n");
+      }
+
+      function noGoBrief() {
+        const item = selectedAudience();
+        return [
+          "VedaPath Launch No-Go Claims",
+          "Release: v0.6.4 story",
+          `Audience: ${item.name}`,
+          ...item.modes.nogo.map((row) => `- ${row[0]}: ${row[1]}`),
+          "Always avoid: guru voice, therapy support, ritual instruction, crisis handling, verified scholarship, formal scholar board, and production storage claims."
+        ].join("\n");
+      }
+
+      function copyText(text, button, label) {
+        const original = button.textContent;
+        document.getElementById("storyOutput").value = text;
+        const finish = () => {
+          button.textContent = label;
+          window.setTimeout(() => {
+            button.textContent = original;
+          }, 1000);
+        };
+
+        if (navigator.clipboard && window.isSecureContext) {
+          navigator.clipboard.writeText(text).then(finish).catch(finish);
+        } else {
+          finish();
+        }
+      }
+
+      function render() {
+        renderAudiences();
+        renderTabs();
+        renderStory();
+      }
+
+      document.getElementById("copyStory").addEventListener("click", () => {
+        copyText(storyBrief(), document.getElementById("copyStory"), "Story Copied");
+      });
+
+      document.getElementById("copyJson").addEventListener("click", () => {
+        copyText(JSON.stringify(storyPayload(), null, 2), document.getElementById("copyJson"), "JSON Copied");
+      });
+
+      document.getElementById("copyNoGo").addEventListener("click", () => {
+        copyText(noGoBrief(), document.getElementById("copyNoGo"), "No-Go Copied");
+      });
+
+      render();
+    </script>
+  </body>
+</html>

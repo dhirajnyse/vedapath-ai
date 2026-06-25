@@ -135,4 +135,4 @@ It does not verify scholars, expose reviewer identities, create legal compliance
 
 ## v0.6.3 Public Feedback
 
-v0.6.3 adds the Public Feedback Intake with source issue, category confusion, UX friction, boundary concern, review-ticket handoff, and blocked private-intake rules. v0.6.4 should add a Launch Story Room with audience variants, founder copy, no-go claims, and source-first launch boundaries.
+v0.6.3 adds the Public Feedback Intake with source issue, category confusion, UX friction, boundary concern, review-ticket handoff, and blocked private-intake rules. v0.6.4 adds the Launch Story Room with audience variants, founder copy, social copy, reviewer ask, no-go claims, and source-first launch boundaries. The five-build sprint now pauses for founder direction before production implementation and licensed audio planning.
