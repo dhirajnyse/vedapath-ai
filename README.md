@@ -109,6 +109,8 @@ Let us look at the source first.
 - [Invite and Waitlist Prototype Notes](docs/INVITE_AND_WAITLIST_PROTOTYPE.md)
 - [First 108 Questions Map](questions.html)
 - [First 108 Questions Map Notes](docs/FIRST_108_QUESTIONS_MAP.md)
+- [Scholar Outreach Kit](outreach.html)
+- [Scholar Outreach Kit Notes](docs/SCHOLAR_OUTREACH_KIT.md)
 <!-- VEDAPATH LAUNCH SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -186,6 +188,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Launch Readiness Board: Launch Readiness Board connects demo readiness, trust gates, public copy, feedback routing, and blocked claims.
 - Invite and Waitlist Prototype: Invite Prototype shapes early-access copy, consent language, and launch asks while avoiding fake sign-up behavior.
 - First 108 Questions Map: First 108 Questions Map helps move from prototype examples to a reviewed source dataset.
+- Scholar Outreach Kit: Scholar Outreach Kit creates respectful review requests with scope, evidence, and no endorsement pressure.
 <!-- VEDAPATH LAUNCH SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff

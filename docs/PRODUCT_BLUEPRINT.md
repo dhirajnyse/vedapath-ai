@@ -47,6 +47,7 @@ It helps users move from curiosity to understanding through:
 - Launch Readiness Board: Launch Readiness Board connects demo readiness, trust gates, public copy, feedback routing, and blocked claims.
 - Invite and Waitlist Prototype: Invite Prototype shapes early-access copy, consent language, and launch asks while avoiding fake sign-up behavior.
 - First 108 Questions Map: First 108 Questions Map helps move from prototype examples to a reviewed source dataset.
+- Scholar Outreach Kit: Scholar Outreach Kit creates respectful review requests with scope, evidence, and no endorsement pressure.
 <!-- VEDAPATH LAUNCH SPRINT SUMMARY END -->
 
 ## What It Is
@@ -898,6 +899,21 @@ It should:
 - produce a copyable founder handoff
 
 First 108 Questions Map should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 55. Scholar Outreach Kit
+
+Scholar Outreach Kit creates respectful review requests with scope, evidence, and no endorsement pressure.
+
+It should:
+
+- Source reviewer: Check source family, passage id, and edition.
+- Translation reviewer: Check meaning, rendering, and license note.
+- Boundary reviewer: Check overclaim, guru voice, therapy, ritual, crisis.
+- Product reviewer: Check whether the interface explains trust clearly.
+- preserve the boundary: Outreach, not endorsement.
+- produce a copyable founder handoff
+
+Scholar Outreach Kit should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH LAUNCH SPRINT BLUEPRINT END -->
 
 ## Product Personality
