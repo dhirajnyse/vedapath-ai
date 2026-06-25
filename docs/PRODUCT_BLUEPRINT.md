@@ -89,6 +89,7 @@ It helps users move from curiosity to understanding through:
 <!-- VEDAPATH READINESS SPRINT SUMMARY END -->
 <!-- VEDAPATH PRODUCTION SPRINT SUMMARY START -->
 - Production Architecture Map: Production Architecture Map turns VedaPath's prototype rooms into a clear service map for source trust, privacy, review, and launch operations.
+- Account Consent Prototype: Account Consent Prototype makes future sign-in useful, optional, and transparent before real authentication is added.
 <!-- VEDAPATH PRODUCTION SPRINT SUMMARY END -->
 
 ## What It Is
@@ -1454,6 +1455,21 @@ It should:
 - produce a copyable production-readiness handoff
 
 Production Architecture Map should never claim production storage, verified answers, reviewer approval, authentication, analytics, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 89. Account Consent Prototype
+
+Account Consent Prototype makes future sign-in useful, optional, and transparent before real authentication is added.
+
+It should:
+
+- Why sign in: Save source paths, reviewed feedback, and consented calm preferences.
+- Local by default: Private journal lines, sensitive reflections, and family moments.
+- User controls: Export, delete, pause sync, revoke grants, and clear device.
+- Blocked memory: Distress, faith identity, family conflict, or health inference.
+- preserve the boundary: Consent prototype, not live authentication.
+- produce a copyable production-readiness handoff
+
+Account Consent Prototype should never claim production storage, verified answers, reviewer approval, authentication, analytics, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH PRODUCTION SPRINT BLUEPRINT END -->
 
 ## Product Personality
