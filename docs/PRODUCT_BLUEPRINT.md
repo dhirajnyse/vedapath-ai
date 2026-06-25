@@ -91,6 +91,7 @@ It helps users move from curiosity to understanding through:
 - Production Architecture Map: Production Architecture Map turns VedaPath's prototype rooms into a clear service map for source trust, privacy, review, and launch operations.
 - Account Consent Prototype: Account Consent Prototype makes future sign-in useful, optional, and transparent before real authentication is added.
 - Source API Contract: Source API Contract describes the service boundary that every trusted answer must call before claiming confidence.
+- Reviewer Workflow Contract: Reviewer Workflow Contract turns review from a vague trust word into scoped decisions, states, and release gates.
 <!-- VEDAPATH PRODUCTION SPRINT SUMMARY END -->
 
 ## What It Is
@@ -1486,6 +1487,21 @@ It should:
 - produce a copyable production-readiness handoff
 
 Source API Contract should never claim production storage, verified answers, reviewer approval, authentication, analytics, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 91. Reviewer Workflow Contract
+
+Reviewer Workflow Contract turns review from a vague trust word into scoped decisions, states, and release gates.
+
+It should:
+
+- Draft: Record exists with missing fields visible.
+- Review lanes: Source, language, boundary, rights, and product review.
+- Decision: Approve, hold, block, request evidence, or retire.
+- Audit: Who reviewed what lane, when, and why.
+- preserve the boundary: Workflow contract, not endorsement.
+- produce a copyable production-readiness handoff
+
+Reviewer Workflow Contract should never claim production storage, verified answers, reviewer approval, authentication, analytics, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH PRODUCTION SPRINT BLUEPRINT END -->
 
 ## Product Personality
