@@ -580,6 +580,7 @@
           <a class="link" href="workbench.html">Workbench</a>
           <a class="link" href="readiness.html">Ready</a>
           <a class="link" href="invite.html">Invite</a>
+          <a class="link" href="questions.html">Questions</a>
           <!-- VEDAPATH SPRINT NAV END -->
           <a class="link" href="path.html">Path</a>
           <a class="link" href="compass.html">Compass</a>
@@ -592,7 +593,7 @@
           <a class="link" href="morning.html">Morning</a>
           <a class="link" href="evening.html">Evening</a>
           <a class="link" href="rhythm.html">Rhythm</a>
-          <span class="version">v0.7.0 invite</span>
+          <span class="version">v0.7.1 questions</span>
         </nav>
       </header>
 
@@ -1004,7 +1005,7 @@
         const item = selectedFeedback();
         return {
           product: "VedaPath AI",
-          release: "v0.7.0 invite",
+          release: "v0.7.1 questions",
           feature: "Public Feedback Intake",
           ticket_type: item.id,
           reviewer_route: item.route,
@@ -1020,7 +1021,7 @@
         const payload = ticketPayload();
         return [
           "VedaPath Public Feedback Ticket",
-          "Release: v0.7.0 invite",
+          "Release: v0.7.1 questions",
           `Ticket type: ${payload.ticket_type}`,
           `Reviewer route: ${payload.reviewer_route}`,
           `Priority: ${payload.priority}`,
@@ -1034,7 +1035,7 @@
         const item = selectedFeedback();
         return [
           "VedaPath Public Feedback Boundary",
-          "Release: v0.7.0 invite",
+          "Release: v0.7.1 questions",
           `Ticket type: ${item.id}`,
           ...item.modes.blocked.map((row) => `- ${row[0]}: ${row[1]}`),
           "No-go: accepted knowledge rewrite, private distress storage, personal data collection, spam, and spiritual-authority escalation."

@@ -559,6 +559,7 @@
           <a class="link" href="workbench.html">Workbench</a>
           <a class="link" href="readiness.html">Ready</a>
           <a class="link" href="invite.html">Invite</a>
+          <a class="link" href="questions.html">Questions</a>
           <!-- VEDAPATH SPRINT NAV END -->
           <a class="link" href="path.html">Path</a>
           <a class="link" href="compass.html">Compass</a>
@@ -571,7 +572,7 @@
           <a class="link" href="morning.html">Morning</a>
           <a class="link" href="evening.html">Evening</a>
           <a class="link" href="rhythm.html">Rhythm</a>
-          <span class="version">v0.7.0 invite</span>
+          <span class="version">v0.7.1 questions</span>
         </nav>
       </header>
 
@@ -958,7 +959,7 @@
         const item = selectedAudience();
         return {
           product: "VedaPath AI",
-          release: "v0.7.0 invite",
+          release: "v0.7.1 questions",
           feature: "Launch Story Room",
           audience: item.id,
           tone: item.tone,
@@ -974,7 +975,7 @@
         const rows = item.modes[state.mode] || item.modes.founder;
         return [
           "VedaPath Launch Story",
-          "Release: v0.7.0 invite",
+          "Release: v0.7.1 questions",
           `Audience: ${item.name}`,
           `Tone: ${item.tone}`,
           `Primary ask: ${item.ask}`,
@@ -987,7 +988,7 @@
         const item = selectedAudience();
         return [
           "VedaPath Launch No-Go Claims",
-          "Release: v0.7.0 invite",
+          "Release: v0.7.1 questions",
           `Audience: ${item.name}`,
           ...item.modes.nogo.map((row) => `- ${row[0]}: ${row[1]}`),
           "Always avoid: guru voice, therapy support, ritual instruction, crisis handling, verified scholarship, formal scholar board, and production storage claims."

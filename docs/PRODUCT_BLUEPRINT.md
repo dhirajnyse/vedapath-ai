@@ -46,6 +46,7 @@ It helps users move from curiosity to understanding through:
 - Reviewer Workbench: Reviewer Workbench turns review identity and access rules into a visible, role-scoped decision room.
 - Launch Readiness Board: Launch Readiness Board connects demo readiness, trust gates, public copy, feedback routing, and blocked claims.
 - Invite and Waitlist Prototype: Invite Prototype shapes early-access copy, consent language, and launch asks while avoiding fake sign-up behavior.
+- First 108 Questions Map: First 108 Questions Map helps move from prototype examples to a reviewed source dataset.
 <!-- VEDAPATH LAUNCH SPRINT SUMMARY END -->
 
 ## What It Is
@@ -882,6 +883,21 @@ It should:
 - produce a copyable founder handoff
 
 Invite and Waitlist Prototype should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 54. First 108 Questions Map
+
+First 108 Questions Map helps move from prototype examples to a reviewed source dataset.
+
+It should:
+
+- Source basics: What is Veda, Upanishad, Gita, Itihasa, Purana?
+- Famous quotes: Oppenheimer, Gayatri, Tat tvam asi, karma, dharma.
+- Calm practice: How do source ideas support steadiness?
+- Modern claims: Science, quantum, productivity, success claims.
+- preserve the boundary: Question map, not answer bank.
+- produce a copyable founder handoff
+
+First 108 Questions Map should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH LAUNCH SPRINT BLUEPRINT END -->
 
 ## Product Personality
