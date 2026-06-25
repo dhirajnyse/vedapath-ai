@@ -70,4 +70,6 @@ v0.4.7 added Calm Circle so shared moments can stay source-backed, bounded, and 
 
 v0.4.8 adds Consent Gate so Life Map records can name purpose, scope, deletion path, source trace, and review route before durable memory.
 
-v0.4.9 should enforce Consent Gate fields across Life Map, Calm Circle, Trust Ledger, Reviewer Queue, and Source Seeds.
+v0.4.9 adds Memory Gate so Life Map records can be blocked, kept local, routed to review, or sent toward Trust Ledger before durable memory.
+
+v0.5.0 should turn Life Map, Consent Gate, Memory Gate, Trust Ledger, Reviewer Queue, and Source Seeds into the first production data model draft.

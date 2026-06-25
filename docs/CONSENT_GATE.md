@@ -88,4 +88,6 @@ A durable implementation should store:
 
 ## Next Step
 
-v0.4.9 should connect Consent Gate with Trust Ledger, Reviewer Queue, Life Map, and Calm Circle so a record cannot become accepted product memory unless the consent and source-governance fields are present.
+v0.4.9 adds Memory Gate so records can be blocked, kept local, routed to review, or sent toward Trust Ledger based on governance fields.
+
+v0.5.0 should turn Consent Gate, Memory Gate, Trust Ledger, Reviewer Queue, and Source Seeds into the first production data model draft.

@@ -77,4 +77,6 @@ v0.4.7 added Calm Circle so shared moments can stay source-backed, bounded, and 
 
 v0.4.8 adds Consent Gate so policy, ledger, queue, life-map, calm-circle, and source-dataset records can show purpose, scope, deletion, source trace, participant consent, and review route before durable memory.
 
-v0.4.9 should make missing Consent Gate fields a visible policy blocker.
+v0.4.9 adds Memory Gate so missing governance fields become visible route blockers before durable memory.
+
+v0.5.0 should turn Source Policy Console routes, Consent Gate, Memory Gate, Trust Ledger, Reviewer Queue, and Source Seeds into the first production data model draft.

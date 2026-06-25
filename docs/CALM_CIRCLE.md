@@ -66,4 +66,6 @@ Production should require:
 
 v0.4.8 adds Consent Gate so shared records can name purpose, scope, participant consent, deletion path, source trace, and review route before durable memory.
 
-v0.4.9 should enforce Consent Gate fields across Calm Circle, Life Map, Trust Ledger, Reviewer Queue, and Source Seeds.
+v0.4.9 adds Memory Gate so Calm Circle records can be blocked, kept local, routed to review, or sent toward Trust Ledger before durable memory.
+
+v0.5.0 should turn Calm Circle, Consent Gate, Memory Gate, Trust Ledger, Reviewer Queue, and Source Seeds into the first production data model draft.

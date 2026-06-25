@@ -82,6 +82,20 @@ Source Seeds defines candidate records. Passage Review Pack turns those records 
 
 Each dossier should make allowed use, restricted use, reviewer decision, missing production fields, and evaluation checks visible.
 
+## Link To Memory Gate
+
+Memory Gate checks whether a source-dataset record has enough governance to become durable product memory.
+
+Before a seed can move beyond prototype status, the product should show:
+
+- purpose
+- consent proof when people or shared records are involved
+- source trace
+- deletion path
+- human review route
+- audit event
+- final route: local draft, human review, Trust Ledger, or blocked
+
 ## Guardrail
 
 Source Seeds must not pretend prototype citations are final authority.

@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VedaPath Memory Gate</title>
+    <style>
+      :root {
+        --bg: #fff7eb;
+        --panel: #fffdf8;
+        --ink: #1f1a17;
+        --muted: #694433;
+        --line: #ead8c8;
+        --soft: #fce8dd;
+        --saffron: #d65a1f;
+        --ochre: #a83f12;
+        --gold: #e0a83b;
+        --green: #145c4a;
+        --indigo: #29335c;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+      }
+
+      body,
+      button,
+      textarea,
+      input {
+        font: inherit;
+      }
+
+      a,
+      button {
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      .page {
+        width: min(1380px, calc(100% - 44px));
+        margin: 0 auto;
+        padding: 22px 0 34px;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        padding-bottom: 18px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        min-width: 214px;
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .brand img {
+        width: 48px;
+        height: 48px;
+        border-radius: 8px;
+        object-fit: cover;
+        box-shadow: 0 8px 22px rgba(166, 69, 16, 0.16);
+      }
+
+      .brand strong {
+        display: block;
+        font-size: 19px;
+        line-height: 1.1;
+      }
+
+      .brand span {
+        display: block;
+        margin-top: 4px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        gap: 8px 16px;
+      }
+
+      .link,
+      .version {
+        color: #3a2319;
+        font-size: 13px;
+        font-weight: 800;
+        text-decoration: none;
+      }
+
+      .link.active,
+      .version {
+        border: 1px solid #ecc3ad;
+        border-radius: 999px;
+        padding: 8px 12px;
+        color: #ad3d12;
+        background: rgba(255, 253, 248, 0.72);
+      }
+
+      .workspace {
+        display: grid;
+        grid-template-columns: minmax(280px, 0.88fr) minmax(430px, 1.24fr) minmax(290px, 0.92fr);
+        gap: 16px;
+        margin-top: 18px;
+      }
+
+      .panel {
+        background: rgba(255, 253, 248, 0.84);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 20px;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        width: fit-content;
+        min-height: 28px;
+        border-radius: 999px;
+        padding: 6px 10px;
+        background: var(--soft);
+        color: #a63811;
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        margin: 14px 0;
+        font-size: clamp(43px, 6vw, 72px);
+        line-height: 0.95;
+        letter-spacing: 0;
+      }
+
+      h2 {
+        margin-bottom: 12px;
+        font-size: 26px;
+        line-height: 1.1;
+      }
+
+      h3 {
+        margin-bottom: 8px;
+        font-size: 17px;
+      }
+
+      p {
+        color: var(--muted);
+        line-height: 1.55;
+      }
+
+      .muted {
+        color: var(--muted);
+      }
+
+      .record-list,
+      .check-list,
+      .history-list,
+      .stat-grid,
+      .field-grid,
+      .route-grid,
+      .schema-list {
+        display: grid;
+        gap: 10px;
+      }
+
+      .record-card,
+      .check-card,
+      .history-item,
+      .stat,
+      .route-card,
+      .field,
+      .schema-card,
+      .source-card,
+      .verdict-card,
+      .boundary-card {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgba(255, 253, 248, 0.76);
+      }
+
+      .record-card,
+      .check-card {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 36px minmax(0, 1fr);
+        gap: 12px;
+        align-items: start;
+        padding: 12px;
+        text-align: left;
+        cursor: pointer;
+      }
+
+      .record-card.active,
+      .check-card.active {
+        border-color: #ef9a72;
+        background: #fff0e8;
+        box-shadow: 0 0 0 2px rgba(214, 90, 31, 0.08);
+      }
+
+      .record-index,
+      .check-index {
+        display: grid;
+        place-items: center;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: #e5efea;
+        color: var(--green);
+        font-size: 13px;
+        font-weight: 900;
+      }
+
+      .record-card.active .record-index,
+      .check-card.active .check-index {
+        background: var(--saffron);
+        color: #fff;
+      }
+
+      .record-card strong,
+      .check-card strong {
+        display: block;
+        margin-bottom: 3px;
+      }
+
+      .record-card p,
+      .check-card p {
+        margin: 0;
+        font-size: 13px;
+        line-height: 1.45;
+      }
+
+      .check-card input {
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      label {
+        display: block;
+        color: #5f3929;
+        font-size: 13px;
+      }
+
+      textarea,
+      input[type="text"] {
+        width: 100%;
+        min-height: 54px;
+        margin-top: 6px;
+        border: 1px solid #efc9b8;
+        border-radius: 8px;
+        background: rgba(255, 253, 248, 0.9);
+        color: var(--ink);
+        padding: 10px 12px;
+        resize: vertical;
+      }
+
+      input[type="text"] {
+        min-height: 44px;
+      }
+
+      textarea:focus,
+      input[type="text"]:focus,
+      button:focus-visible,
+      a:focus-visible {
+        outline: 3px solid rgba(214, 90, 31, 0.25);
+        outline-offset: 2px;
+      }
+
+      .source-card {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        margin: 16px 0;
+        padding: 14px;
+        border-left: 4px solid var(--saffron);
+      }
+
+      .source-label {
+        display: block;
+        margin-bottom: 4px;
+        color: #704b3c;
+        font-size: 12px;
+      }
+
+      .source-value {
+        display: block;
+        color: #0f0d0c;
+        font-weight: 900;
+      }
+
+      .verdict-card {
+        margin: 16px 0;
+        padding: 16px;
+        border-left: 4px solid var(--indigo);
+      }
+
+      .verdict-card.ready {
+        border-left-color: var(--green);
+        background: rgba(20, 92, 74, 0.07);
+      }
+
+      .verdict-card.blocked {
+        border-left-color: var(--saffron);
+        background: #fff0e8;
+      }
+
+      .verdict-card.review {
+        border-left-color: var(--gold);
+        background: rgba(224, 168, 59, 0.12);
+      }
+
+      .verdict-title {
+        display: block;
+        margin-bottom: 6px;
+        font-size: 22px;
+        font-weight: 950;
+      }
+
+      .readiness {
+        margin: 16px 0;
+      }
+
+      .readiness-head {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 8px;
+        font-weight: 900;
+      }
+
+      .progress {
+        height: 10px;
+        overflow: hidden;
+        border-radius: 999px;
+        background: rgba(168, 62, 18, 0.14);
+      }
+
+      .bar {
+        height: 100%;
+        width: 0%;
+        border-radius: inherit;
+        background: linear-gradient(90deg, var(--saffron), var(--gold));
+        transition: width 180ms ease;
+      }
+
+      .route-grid,
+      .field-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin-top: 14px;
+      }
+
+      .route-card,
+      .field {
+        padding: 14px;
+        min-height: 108px;
+      }
+
+      .route-card strong,
+      .field strong {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 15px;
+      }
+
+      .route-card.active {
+        border-color: #ef9a72;
+        background: #fff0e8;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 16px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 42px;
+        border: 1px solid #efbda6;
+        border-radius: 8px;
+        padding: 9px 13px;
+        background: rgba(255, 253, 248, 0.82);
+        color: #a83f12;
+        font-weight: 900;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      .button.primary {
+        border-color: var(--saffron);
+        background: var(--saffron);
+        color: #fff;
+      }
+
+      .button.secondary {
+        color: var(--green);
+        border-color: rgba(20, 92, 74, 0.28);
+      }
+
+      .stat-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin: 14px 0;
+      }
+
+      .stat {
+        padding: 12px;
+      }
+
+      .stat span {
+        display: block;
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .stat strong {
+        display: block;
+        margin-top: 6px;
+        font-size: 24px;
+      }
+
+      .history-list {
+        margin-top: 12px;
+      }
+
+      .history-item {
+        padding: 12px;
+      }
+
+      .history-item strong,
+      .history-item span {
+        display: block;
+      }
+
+      .history-item span {
+        margin-top: 4px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .schema-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin-top: 12px;
+      }
+
+      .schema-card {
+        min-height: 98px;
+        padding: 12px;
+      }
+
+      .schema-card strong {
+        display: block;
+        margin-bottom: 7px;
+      }
+
+      .schema-card p {
+        margin: 0;
+        font-size: 13px;
+      }
+
+      .boundary-card {
+        margin-top: 14px;
+        border-style: dashed;
+        padding: 16px;
+      }
+
+      .export-output {
+        display: none;
+        min-height: 180px;
+        margin-top: 12px;
+        font-size: 13px;
+      }
+
+      @media (max-width: 1120px) {
+        .workspace {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .side-panel {
+          grid-column: 1 / -1;
+        }
+      }
+
+      @media (max-width: 740px) {
+        .page {
+          width: min(100% - 24px, 1380px);
+          padding-top: 16px;
+        }
+
+        .topbar {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .nav {
+          justify-content: flex-start;
+        }
+
+        .workspace,
+        .source-card,
+        .route-grid,
+        .field-grid,
+        .stat-grid,
+        .schema-list {
+          grid-template-columns: 1fr;
+        }
+
+        h1 {
+          font-size: clamp(39px, 14vw, 58px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page" id="top">
+      <header class="topbar">
+        <a class="brand" href="./index.html#top" aria-label="VedaPath AI home">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
+          <div>
+            <strong>VedaPath AI</strong>
+            <span>Memory gate preview</span>
+          </div>
+        </a>
+        <nav class="nav" aria-label="Project links">
+          <a class="link" href="build-status.html">Build</a>
+          <a class="link" href="brand/brand-board.html">Brand</a>
+          <a class="link" href="blueprint.html">Blueprint</a>
+          <a class="link" href="calm.html">Calm</a>
+          <a class="link" href="daily.html">Daily</a>
+          <a class="link" href="practice.html">Practice</a>
+          <a class="link" href="library.html">Library</a>
+          <a class="link" href="seeds.html">Seeds</a>
+          <a class="link" href="retrieval.html">Retrieval</a>
+          <a class="link" href="passages.html">Review</a>
+          <a class="link" href="eval.html">Eval</a>
+          <a class="link" href="dashboard.html">Dash</a>
+          <a class="link" href="queue.html">Queue</a>
+          <a class="link" href="policy.html">Policy</a>
+          <a class="link" href="ledger.html">Ledger</a>
+          <a class="link" href="life.html">Life</a>
+          <a class="link" href="circle.html">Circle</a>
+          <a class="link" href="consent.html">Consent</a>
+          <a class="link active" href="memory.html">Memory</a>
+          <a class="link" href="path.html">Path</a>
+          <a class="link" href="compass.html">Compass</a>
+          <a class="link" href="card.html">Card</a>
+          <a class="link" href="bell.html">Bell</a>
+          <a class="link" href="reply.html">Reply</a>
+          <a class="link" href="samvada.html">Samvada</a>
+          <a class="link" href="sankalpa.html">Intent</a>
+          <a class="link" href="seva.html">Seva</a>
+          <a class="link" href="morning.html">Morning</a>
+          <a class="link" href="evening.html">Evening</a>
+          <a class="link" href="rhythm.html">Rhythm</a>
+          <span class="version">v0.4.9 memory gate</span>
+        </nav>
+      </header>
+
+      <section class="workspace" aria-label="VedaPath Memory Gate workspace">
+        <aside class="panel">
+          <span class="eyebrow">Route the record</span>
+          <h1>Memory should pass through a gate.</h1>
+          <p>Choose an incoming VedaPath record. The gate checks whether the record can stay local, become durable, route to review, or remain blocked.</p>
+
+          <div class="record-list" id="recordList"></div>
+
+          <div class="field-grid">
+            <label>
+              Record owner
+              <input id="recordOwner" type="text" value="Prototype user">
+            </label>
+            <label>
+              Review destination
+              <input id="reviewDestination" type="text" value="Reviewer Queue">
+            </label>
+          </div>
+        </aside>
+
+        <section class="panel">
+          <span class="eyebrow">Governance route</span>
+          <h1 id="recordTitle">Shared record is not ready for memory.</h1>
+          <p id="recordSummary">A Calm Circle note needs participant consent before it becomes durable product memory.</p>
+
+          <div class="source-card" aria-label="Memory gate source and boundary">
+            <div>
+              <span class="source-label">Source candidate</span>
+              <span class="source-value" id="sourceCandidate">Bhagavad Gita 17.15</span>
+            </div>
+            <div>
+              <span class="source-label">Record type</span>
+              <span class="source-value" id="recordType">Calm Circle</span>
+            </div>
+            <div>
+              <span class="source-label">Consent state</span>
+              <span class="source-value" id="consentState">Missing participant consent</span>
+            </div>
+            <div>
+              <span class="source-label">Boundary</span>
+              <span class="source-value" id="recordBoundary">Local draft only.</span>
+            </div>
+          </div>
+
+          <div class="verdict-card blocked" id="verdictCard">
+            <span class="verdict-title" id="verdictTitle">Blocked before durable memory</span>
+            <p id="verdictText">This record can stay as a local draft, but it cannot be synced, searched, reused, or placed in the Trust Ledger until missing fields are resolved.</p>
+          </div>
+
+          <div class="readiness">
+            <div class="readiness-head">
+              <span>Memory readiness</span>
+              <span id="memoryScore">0%</span>
+            </div>
+            <div class="progress" aria-hidden="true"><div class="bar" id="scoreBar"></div></div>
+          </div>
+
+          <h2>Required fields</h2>
+          <div class="check-list" id="checkList"></div>
+
+          <div class="route-grid" aria-label="Route cards">
+            <div class="route-card" data-route-card="local">
+              <strong>Local draft</strong>
+              <p>Safe for prototype-only browser memory when durable fields are missing.</p>
+            </div>
+            <div class="route-card" data-route-card="review">
+              <strong>Human review</strong>
+              <p>Needed when the record changes knowledge, safety, source status, or shared memory.</p>
+            </div>
+            <div class="route-card" data-route-card="ledger">
+              <strong>Trust Ledger</strong>
+              <p>Only allowed when consent, source trace, deletion, review, and audit fields are present.</p>
+            </div>
+            <div class="route-card" data-route-card="blocked">
+              <strong>Blocked</strong>
+              <p>Visible stop when the app would otherwise remember too much too quickly.</p>
+            </div>
+          </div>
+
+          <div class="field-grid">
+            <label>
+              Route note
+              <textarea id="routeNote">Keep this record local until missing consent and governance fields are resolved.</textarea>
+            </label>
+            <label>
+              Audit note
+              <textarea id="auditNote">Future production should write an audit event whenever a memory route changes.</textarea>
+            </label>
+          </div>
+
+          <div class="actions">
+            <button class="button primary" id="saveDecision" type="button">Save Decision</button>
+            <button class="button secondary" id="copyDecision" type="button">Copy Memory Brief</button>
+            <a class="button" id="nextRoom" href="consent.html">Open Consent Gate</a>
+          </div>
+        </section>
+
+        <aside class="panel side-panel">
+          <span class="eyebrow">Local route preview</span>
+          <h2>Your Memory Gate Notes</h2>
+          <p>This is a private prototype route log in this browser only. Production memory needs platform storage, identity, consent, export, deletion, and audit controls.</p>
+
+          <div class="stat-grid">
+            <div class="stat">
+              <span>Saved routes</span>
+              <strong id="savedCount">0</strong>
+            </div>
+            <div class="stat">
+              <span>Last verdict</span>
+              <strong id="lastVerdict">None</strong>
+            </div>
+            <div class="stat">
+              <span>Last record</span>
+              <strong id="lastRecord">None</strong>
+            </div>
+            <div class="stat">
+              <span>Last score</span>
+              <strong id="lastScore">0%</strong>
+            </div>
+          </div>
+
+          <div class="history-list" id="historyList">
+            <div class="history-item">
+              <strong>No memory decisions saved yet</strong>
+              <span>Save one route and the local preview will show what future production storage must enforce.</span>
+            </div>
+          </div>
+
+          <div class="actions">
+            <button class="button secondary" id="copyPattern" type="button">Copy Route Pattern</button>
+            <button class="button" id="clearMemory" type="button">Clear Local Preview</button>
+          </div>
+          <textarea class="export-output" id="memoryExport" readonly aria-label="Memory gate export"></textarea>
+
+          <div class="boundary-card">
+            <h2>Memory Boundary</h2>
+            <p id="boundaryText">Memory Gate is not legal advice, compliance certification, therapy, mediation, or a production privacy system. It is a prototype decision layer showing what must be enforced before VedaPath remembers.</p>
+          </div>
+
+          <h2 style="margin-top: 18px;">Enforcement Fields</h2>
+          <div class="schema-list">
+            <div class="schema-card">
+              <strong>Consent proof</strong>
+              <p>Who consented, what scope they accepted, and how withdrawal works.</p>
+            </div>
+            <div class="schema-card">
+              <strong>Source proof</strong>
+              <p>Source seed, passage dossier, citation, source family, and review status.</p>
+            </div>
+            <div class="schema-card">
+              <strong>Route proof</strong>
+              <p>Local, review, ledger, or blocked route with clear reason and timestamp.</p>
+            </div>
+            <div class="schema-card">
+              <strong>Deletion proof</strong>
+              <p>Retention, export, deletion, audit history, and privacy classification.</p>
+            </div>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <script>
+      const storageKey = "vedapath.memoryGate.v1";
+
+      const checks = [
+        ["purpose", "Purpose named", "The record explains why it exists."],
+        ["consent", "Consent proof", "Private or shared memory has an explicit consent state."],
+        ["source", "Source trace", "The source seed, passage, citation, and family are attached."],
+        ["deletion", "Deletion path", "Export, retention, and deletion paths are visible."],
+        ["review", "Review route", "Sensitive or knowledge-changing records have a human route."],
+        ["audit", "Audit event", "A future durable route can be traced and reversed."]
+      ];
+
+      const records = [
+        {
+          id: "circle",
+          label: "Calm Circle",
+          summary: "Shared family or team reflection wants durable memory.",
+          title: "Shared record is not ready for memory.",
+          detail: "A Calm Circle note needs participant consent before it becomes durable product memory.",
+          source: "Bhagavad Gita 17.15",
+          type: "Calm Circle",
+          consent: "Missing participant consent",
+          boundary: "Local draft only.",
+          routeNote: "Keep this record local until missing consent and governance fields are resolved.",
+          auditNote: "Future production should write an audit event whenever a shared memory route changes.",
+          defaults: { purpose: true, consent: false, source: true, deletion: true, review: true, audit: false },
+          next: "consent.html",
+          nextLabel: "Open Consent Gate"
+        },
+        {
+          id: "life",
+          label: "Life Map",
+          summary: "Private life moment wants a next-room pattern suggestion.",
+          title: "Private route can stay local only.",
+          detail: "A Life Map signal can help the current session, but it should not become durable profiling without explicit memory consent.",
+          source: "Katha Upanishad 1.3.3-9",
+          type: "Life Map",
+          consent: "Device-local only",
+          boundary: "No identity inference.",
+          routeNote: "Use this only for local next-room routing until account-backed memory consent exists.",
+          auditNote: "Future production should separate deliberate signals from inferred profile data.",
+          defaults: { purpose: true, consent: true, source: true, deletion: true, review: false, audit: false },
+          next: "life.html",
+          nextLabel: "Open Life Map"
+        },
+        {
+          id: "review",
+          label: "Reviewer Correction",
+          summary: "A user correction wants to change accepted answer behavior.",
+          title: "Knowledge change must route to review.",
+          detail: "A correction can become a reviewer ticket, but it should not rewrite accepted behavior without evidence, reviewer identity, and audit trail.",
+          source: "Reviewer Queue",
+          type: "Correction record",
+          consent: "Reporter-visible route",
+          boundary: "Review before authority.",
+          routeNote: "Send to reviewer queue and keep accepted behavior unchanged until review is complete.",
+          auditNote: "Future production should record who reviewed, what evidence changed, and which answer behavior moved.",
+          defaults: { purpose: true, consent: true, source: true, deletion: true, review: true, audit: false },
+          next: "queue.html",
+          nextLabel: "Open Reviewer Queue"
+        },
+        {
+          id: "dataset",
+          label: "Source Dataset",
+          summary: "A source seed wants retrieval authority.",
+          title: "Source input needs provenance before power.",
+          detail: "A source record should not power confident retrieval until source edition, rights, review status, and evaluator fixtures are present.",
+          source: "Source Seeds",
+          type: "Dataset intake",
+          consent: "Editor route required",
+          boundary: "Upload is not authority.",
+          routeNote: "Block retrieval authority until source provenance, rights, review status, and evaluation fixtures are present.",
+          auditNote: "Future production should record source edition, translation rights, reviewer identity, and evaluation coverage.",
+          defaults: { purpose: true, consent: true, source: false, deletion: true, review: true, audit: false },
+          next: "seeds.html",
+          nextLabel: "Open Source Seeds"
+        }
+      ];
+
+      const state = {
+        selectedId: "circle",
+        saved: loadSaved()
+      };
+
+      function loadSaved() {
+        try {
+          return JSON.parse(localStorage.getItem(storageKey)) || [];
+        } catch (error) {
+          return [];
+        }
+      }
+
+      function saveLocal() {
+        localStorage.setItem(storageKey, JSON.stringify(state.saved));
+      }
+
+      function selectedRecord() {
+        return records.find((record) => record.id === state.selectedId) || records[0];
+      }
+
+      function renderRecords() {
+        document.getElementById("recordList").innerHTML = records.map((record, index) => `
+          <button class="record-card ${record.id === state.selectedId ? "active" : ""}" type="button" data-id="${record.id}">
+            <span class="record-index">${index + 1}</span>
+            <span>
+              <strong>${record.label}</strong>
+              <p>${record.summary}</p>
+            </span>
+          </button>
+        `).join("");
+
+        document.querySelectorAll(".record-card[data-id]").forEach((button) => {
+          button.addEventListener("click", () => {
+            state.selectedId = button.dataset.id;
+            applyRecord();
+            renderRecords();
+          });
+        });
+      }
+
+      function renderChecks() {
+        document.getElementById("checkList").innerHTML = checks.map(([id, label, description], index) => `
+          <label class="check-card" for="check-${id}">
+            <input id="check-${id}" type="checkbox" data-check="${id}">
+            <span class="check-index">${index + 1}</span>
+            <span>
+              <strong>${label}</strong>
+              <p>${description}</p>
+            </span>
+          </label>
+        `).join("");
+
+        document.querySelectorAll("[data-check]").forEach((input) => {
+          input.addEventListener("change", () => {
+            input.closest(".check-card").classList.toggle("active", input.checked);
+            renderDecision();
+          });
+        });
+      }
+
+      function applyRecord() {
+        const record = selectedRecord();
+        document.getElementById("recordTitle").textContent = record.title;
+        document.getElementById("recordSummary").textContent = record.detail;
+        document.getElementById("sourceCandidate").textContent = record.source;
+        document.getElementById("recordType").textContent = record.type;
+        document.getElementById("consentState").textContent = record.consent;
+        document.getElementById("recordBoundary").textContent = record.boundary;
+        document.getElementById("routeNote").value = record.routeNote;
+        document.getElementById("auditNote").value = record.auditNote;
+        const nextRoom = document.getElementById("nextRoom");
+        nextRoom.href = record.next;
+        nextRoom.textContent = record.nextLabel;
+        Object.entries(record.defaults).forEach(([id, value]) => {
+          const input = document.querySelector(`[data-check="${id}"]`);
+          if (input) {
+            input.checked = value;
+            input.closest(".check-card").classList.toggle("active", value);
+          }
+        });
+        renderDecision();
+      }
+
+      function checkedMap() {
+        return Object.fromEntries([...document.querySelectorAll("[data-check]")].map((input) => [input.dataset.check, input.checked]));
+      }
+
+      function activeChecks() {
+        return [...document.querySelectorAll("[data-check]")].filter((input) => input.checked);
+      }
+
+      function routeDecision() {
+        const map = checkedMap();
+        const score = Math.round((activeChecks().length / checks.length) * 100);
+        if (map.purpose && map.consent && map.source && map.deletion && map.review && map.audit) {
+          return {
+            route: "ledger",
+            score,
+            title: "Ready for Trust Ledger",
+            text: "This record has enough visible governance to become durable memory after production identity and storage controls exist.",
+            className: "ready"
+          };
+        }
+        if (!map.consent || !map.source || !map.deletion) {
+          return {
+            route: "blocked",
+            score,
+            title: "Blocked before durable memory",
+            text: "This record can stay local, but it cannot be synced, searched, reused, or trusted until missing consent, source, or deletion fields are resolved.",
+            className: "blocked"
+          };
+        }
+        if (!map.review || !map.audit) {
+          return {
+            route: "review",
+            score,
+            title: "Route to human review",
+            text: "The core fields exist, but review or audit is incomplete. Send this record to a reviewer before it becomes accepted memory.",
+            className: "review"
+          };
+        }
+        return {
+          route: "local",
+          score,
+          title: "Local draft only",
+          text: "This record can remain in the current browser preview, but it should not become durable memory yet.",
+          className: "blocked"
+        };
+      }
+
+      function renderDecision() {
+        const decision = routeDecision();
+        document.getElementById("memoryScore").textContent = `${decision.score}%`;
+        document.getElementById("scoreBar").style.width = `${decision.score}%`;
+        document.getElementById("verdictTitle").textContent = decision.title;
+        document.getElementById("verdictText").textContent = decision.text;
+        const card = document.getElementById("verdictCard");
+        card.className = `verdict-card ${decision.className}`;
+        document.querySelectorAll("[data-route-card]").forEach((routeCard) => {
+          routeCard.classList.toggle("active", routeCard.dataset.routeCard === decision.route);
+        });
+        return decision;
+      }
+
+      function currentRoute() {
+        const record = selectedRecord();
+        const decision = renderDecision();
+        return {
+          id: Date.now(),
+          record: record.label,
+          type: record.type,
+          source: record.source,
+          consent: record.consent,
+          boundary: record.boundary,
+          verdict: decision.title,
+          route: decision.route,
+          score: decision.score,
+          owner: document.getElementById("recordOwner").value.trim() || "Prototype user",
+          destination: document.getElementById("reviewDestination").value.trim() || "Reviewer Queue",
+          routeNote: document.getElementById("routeNote").value.trim(),
+          auditNote: document.getElementById("auditNote").value.trim(),
+          checks: activeChecks().map((input) => input.closest(".check-card").querySelector("strong").textContent),
+          createdAt: new Date().toISOString()
+        };
+      }
+
+      function renderMemory() {
+        const saved = state.saved;
+        document.getElementById("savedCount").textContent = saved.length;
+        document.getElementById("lastVerdict").textContent = saved[0]?.verdict || "None";
+        document.getElementById("lastRecord").textContent = saved[0]?.record || "None";
+        document.getElementById("lastScore").textContent = saved[0] ? `${saved[0].score}%` : "0%";
+
+        const historyList = document.getElementById("historyList");
+        if (!saved.length) {
+          historyList.innerHTML = `
+            <div class="history-item">
+              <strong>No memory decisions saved yet</strong>
+              <span>Save one route and the local preview will show what future production storage must enforce.</span>
+            </div>
+          `;
+          return;
+        }
+
+        historyList.innerHTML = saved.slice(0, 5).map((route) => `
+          <div class="history-item">
+            <strong>${route.record} - ${route.verdict}</strong>
+            <span>${route.score}% ready - ${route.source}</span>
+            <span>${route.routeNote}</span>
+          </div>
+        `).join("");
+      }
+
+      function buildExport(route = currentRoute()) {
+        return [
+          "VedaPath Memory Gate",
+          "Release: v0.4.9 memory gate",
+          `Record: ${route.record}`,
+          `Type: ${route.type}`,
+          `Verdict: ${route.verdict}`,
+          `Route: ${route.route}`,
+          `Readiness: ${route.score}%`,
+          `Source: ${route.source}`,
+          `Consent state: ${route.consent}`,
+          `Boundary: ${route.boundary}`,
+          `Owner: ${route.owner}`,
+          `Review destination: ${route.destination}`,
+          `Checks present: ${route.checks.join(", ") || "None"}`,
+          `Route note: ${route.routeNote}`,
+          `Audit note: ${route.auditNote}`,
+          "Production rule: if consent proof, source trace, deletion path, review route, or audit event is missing, durable memory must be blocked or routed to review."
+        ].join("\n");
+      }
+
+      function copyText(text, button, copiedLabel) {
+        const output = document.getElementById("memoryExport");
+        output.style.display = "block";
+        output.value = text;
+        output.select();
+
+        const done = () => {
+          const original = button.textContent;
+          button.textContent = copiedLabel;
+          setTimeout(() => {
+            button.textContent = original;
+          }, 1400);
+        };
+
+        if (navigator.clipboard?.writeText) {
+          navigator.clipboard.writeText(text).then(done).catch(done);
+        } else {
+          done();
+        }
+      }
+
+      document.getElementById("saveDecision").addEventListener("click", () => {
+        const route = currentRoute();
+        state.saved = [route, ...state.saved].slice(0, 12);
+        saveLocal();
+        renderMemory();
+      });
+
+      document.getElementById("copyDecision").addEventListener("click", () => {
+        copyText(buildExport(), document.getElementById("copyDecision"), "Copied Brief");
+      });
+
+      document.getElementById("copyPattern").addEventListener("click", () => {
+        const text = state.saved.length
+          ? state.saved.map((route) => `${route.record}: ${route.verdict} - ${route.score}% - ${route.source}`).join("\n")
+          : "No memory gate routes saved yet.";
+        copyText(text, document.getElementById("copyPattern"), "Copied Pattern");
+      });
+
+      document.getElementById("clearMemory").addEventListener("click", () => {
+        if (!state.saved.length || confirm("Clear local memory gate preview records?")) {
+          state.saved = [];
+          saveLocal();
+          renderMemory();
+        }
+      });
+
+      renderRecords();
+      renderChecks();
+      applyRecord();
+      renderMemory();
+    </script>
+  </body>
+</html>
