@@ -156,6 +156,7 @@ It helps users move from curiosity to understanding through:
 - Confidence Rulebook: Confidence Rulebook makes trust less magical: the product explains why it is confident, cautious, waiting for review, or refusing to answer.
 - Consent Memory Preview: Consent Memory Preview keeps calm personal use from becoming hidden tracking: memory must be named, limited, and under user control.
 - Feedback Queue Simulator: Feedback Queue Simulator shows how VedaPath can learn from users through typed, privacy-light review tickets instead of silent answer rewrites.
+- Reviewer Decision Log: Reviewer Decision Log gives VedaPath a way to publish better answers because decisions are scoped, reasoned, and visible.
 <!-- VEDAPATH WORKING DATA SPRINT SUMMARY END -->
 
 ## What It Is
@@ -2381,6 +2382,21 @@ It should:
 - produce a copyable working-data handoff
 
 Feedback Queue Simulator should never claim production storage, live retrieval, live AI generation, authentication, licensed source text, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 146. Reviewer Decision Log
+
+Reviewer Decision Log gives VedaPath a way to publish better answers because decisions are scoped, reasoned, and visible.
+
+It should:
+
+- Decision lane: Source, language, boundary, rights, answer release, or UX.
+- Decision result: Approve, hold, block, request evidence, retire, or release.
+- Reason note: Short reason tied to evidence or ticket id.
+- Public effect: Display, lower confidence, hide answer, ask reviewer, or route fallback.
+- preserve the boundary: Decision log demo, not scholar endorsement.
+- produce a copyable working-data handoff
+
+Reviewer Decision Log should never claim production storage, live retrieval, live AI generation, authentication, licensed source text, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH WORKING DATA SPRINT BLUEPRINT END -->
 
 ## Product Personality

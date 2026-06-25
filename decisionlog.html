@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>VedaPath Citation Evidence Panel</title>
+    <title>VedaPath Reviewer Decision Log</title>
     <link rel="stylesheet" href="assets/vedapath-sprint.css">
   </head>
   <body>
@@ -13,7 +13,7 @@
           <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
           <div>
             <strong>VedaPath AI</strong>
-            <span>Citation evidence</span>
+            <span>Reviewer decisions</span>
           </div>
         </a>
         <nav class="nav" aria-label="Project links">
@@ -28,17 +28,17 @@
           <a class="link" href="queryrouter.html">Router</a>
           <a class="link" href="retrievalworkspace.html">Retrieve</a>
           <a class="link" href="answercomposer.html">Compose</a>
-          <a class="link active" href="evidencepanel.html">Evidence</a>
+          <a class="link" href="evidencepanel.html">Evidence</a>
           <a class="link" href="confidencerules.html">Rules</a>
           <a class="link" href="memorypreview.html">Memory</a>
           <a class="link" href="feedbackqueue.html">Feedback</a>
-          <a class="link" href="decisionlog.html">Decisions</a>
+          <a class="link active" href="decisionlog.html">Decisions</a>
           <!-- VEDAPATH WORKING DATA SPRINT NAV END -->
           <span class="version">v1.6.3 decisions</span>
         </nav>
       </header>
 
-      <main class="workspace" aria-label="VedaPath Citation Evidence Panel workspace">
+      <main class="workspace" aria-label="VedaPath Reviewer Decision Log workspace">
         <aside class="panel">
           <span class="eyebrow">Working data demo sprint</span>
           <h2>Release Rooms</h2>
@@ -49,23 +49,23 @@
         <section class="panel">
           <div class="hero-grid">
             <div>
-              <span class="eyebrow">Evidence panel</span>
-              <h1>Keep evidence close to every claim.</h1>
-              <p class="muted">A citation evidence panel that shows source identity, passage context, translation status, related claims, and review notes without crowding the main answer.</p>
+              <span class="eyebrow">Review log</span>
+              <h1>Record review decisions without making them endorsements.</h1>
+              <p class="muted">A reviewer decision log that separates source approval, translation note, boundary correction, answer release, and public display state.</p>
             </div>
             <div class="mark-stage">
-              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Evidence logo">
+              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Decisions logo">
             </div>
           </div>
 
           <div class="source-block" aria-label="Release source card">
             <div>
               <span class="source-meta">Release</span>
-              <span class="source-value">v1.5.9</span>
+              <span class="source-value">v1.6.3</span>
             </div>
             <div>
               <span class="source-meta">Source candidate</span>
-              <span class="source-value">Katha Upanishad 1.2.1</span>
+              <span class="source-value">Taittiriya Upanishad 1.11.1</span>
             </div>
             <div>
               <span class="source-meta">Text family</span>
@@ -73,14 +73,14 @@
             </div>
             <div>
               <span class="source-meta">Boundary</span>
-              <span class="source-value">Evidence UI demo, not licensed full-text display.</span>
+              <span class="source-value">Decision log demo, not scholar endorsement.</span>
             </div>
           </div>
 
           <h2>Working Chain Signals</h2>
           <div class="item-list" id="itemList"></div>
 
-          <div class="tabs" role="tablist" aria-label="VedaPath Citation Evidence Panel layers">
+          <div class="tabs" role="tablist" aria-label="VedaPath Reviewer Decision Log layers">
             <button class="tab active" type="button" data-mode="brief">Brief</button>
             <button class="tab" type="button" data-mode="checklist">Checklist</button>
             <button class="tab" type="button" data-mode="boundary">Boundary</button>
@@ -94,20 +94,20 @@
             <button class="button" id="copyBoundary" type="button">Copy Boundary</button>
           </div>
 
-          <textarea id="output" readonly aria-label="VedaPath Citation Evidence Panel output"></textarea>
+          <textarea id="output" readonly aria-label="VedaPath Reviewer Decision Log output"></textarea>
         </section>
 
-        <aside class="panel tight" aria-label="VedaPath Citation Evidence Panel sprint rail">
+        <aside class="panel tight" aria-label="VedaPath Reviewer Decision Log sprint rail">
           <span class="badge green">Working MVP chain</span>
-          <h2 style="margin-top: 14px;">Evidence Pulse</h2>
-          <p class="muted">Citation Evidence Panel gives VedaPath an evidence drawer that can support curiosity, correction, and scholar review while keeping the main surface calm.</p>
-          <div class="progress" aria-label="Sprint progress 105 percent">
-            <div class="bar" style="--score:105%"></div>
+          <h2 style="margin-top: 14px;">Decisions Pulse</h2>
+          <p class="muted">Reviewer Decision Log gives VedaPath a way to publish better answers because decisions are scoped, reasoned, and visible.</p>
+          <div class="progress" aria-label="Sprint progress 109 percent">
+            <div class="bar" style="--score:109%"></div>
           </div>
           <div class="metric-grid">
             <div class="metric">
               <span>Current</span>
-              <strong>v1.5.9</strong>
+              <strong>v1.6.3</strong>
             </div>
             <div class="metric">
               <span>Sprint</span>
@@ -115,11 +115,11 @@
             </div>
             <div class="metric">
               <span>Progress</span>
-              <strong>105%</strong>
+              <strong>109%</strong>
             </div>
             <div class="metric">
               <span>Next</span>
-              <strong>Confidence Rulebook</strong>
+              <strong>Working MVP Console</strong>
             </div>
           </div>
 
@@ -151,71 +151,71 @@
     </div>
 
     <script type="application/json" id="room-data">{
-  "version": "v1.5.9",
-  "badge": "v1.5.9 evidence",
-  "slug": "evidencepanel",
-  "nav": "Evidence",
-  "title": "VedaPath Citation Evidence Panel",
-  "pageLabel": "Citation evidence",
-  "eyebrow": "Evidence panel",
-  "h1": "Keep evidence close to every claim.",
-  "lead": "A citation evidence panel that shows source identity, passage context, translation status, related claims, and review notes without crowding the main answer.",
-  "source": "Katha Upanishad 1.2.1",
+  "version": "v1.6.3",
+  "badge": "v1.6.3 decisions",
+  "slug": "decisionlog",
+  "nav": "Decisions",
+  "title": "VedaPath Reviewer Decision Log",
+  "pageLabel": "Reviewer decisions",
+  "eyebrow": "Review log",
+  "h1": "Record review decisions without making them endorsements.",
+  "lead": "A reviewer decision log that separates source approval, translation note, boundary correction, answer release, and public display state.",
+  "source": "Taittiriya Upanishad 1.11.1",
   "family": "Upanishad | Shruti",
-  "stance": "Evidence UI demo, not licensed full-text display.",
-  "progress": 105,
-  "next": "Confidence Rulebook",
-  "primaryAsk": "Make every serious claim inspectable without turning the first answer into a research paper.",
-  "summary": "Citation Evidence Panel gives VedaPath an evidence drawer that can support curiosity, correction, and scholar review while keeping the main surface calm.",
+  "stance": "Decision log demo, not scholar endorsement.",
+  "progress": 109,
+  "next": "Working MVP Console",
+  "primaryAsk": "Make human review auditable while avoiding broad claims of authority.",
+  "summary": "Reviewer Decision Log gives VedaPath a way to publish better answers because decisions are scoped, reasoned, and visible.",
   "items": [
     [
-      "Source identity",
-      "Text family, citation, section note, and edition note.",
-      "Prevents category confusion."
+      "Decision lane",
+      "Source, language, boundary, rights, answer release, or UX.",
+      "Keeps review narrow."
     ],
     [
-      "Context window",
-      "What the source can support and what it cannot support.",
-      "Keeps claims bounded."
+      "Decision result",
+      "Approve, hold, block, request evidence, retire, or release.",
+      "Creates state."
     ],
     [
-      "Translation state",
-      "Draft, public-domain, licensed, or reviewer-needed.",
-      "Protects rights and accuracy."
+      "Reason note",
+      "Short reason tied to evidence or ticket id.",
+      "Makes review auditable."
     ],
     [
-      "Related review",
-      "Open issues, resolved decisions, and suggested corrections.",
-      "Creates a learning loop."
+      "Public effect",
+      "Display, lower confidence, hide answer, ask reviewer, or route fallback.",
+      "Connects review to users."
     ]
   ],
   "modes": {
     "brief": [
       [
         "Product promise",
-        "Citation Evidence Panel gives VedaPath an evidence drawer that can support curiosity, correction, and scholar review while keeping the main surface calm."
+        "Reviewer Decision Log gives VedaPath a way to publish better answers because decisions are scoped, reasoned, and visible."
       ],
       [
         "Founder move",
-        "Make every serious claim inspectable without turning the first answer into a research paper."
+        "Make human review auditable while avoiding broad claims of authority."
       ],
       [
         "Trust move",
-        "Keep the visible boundary: Evidence UI demo, not licensed full-text display."
+        "Keep the visible boundary: Decision log demo, not scholar endorsement."
       ]
     ],
     "checklist": [
       [
-        "Source identity",
-        "Text family, citation, section note, and edition note."
+        "Decision lane",
+        "Source, language, boundary, rights, answer release, or UX."
       ],
       [
-        "Context window",
-        "What the source can support and what it cannot support."
+        "Decision result",
+        "Approve, hold, block, request evidence, retire, or release."
       ],
       [
-        "Translation state",
-        "Draft, public-domain, licensed, or reviewer-needed."
+        "Reason note",
+        "Short reason tied to evidence or ticket id."
       ]
     ],
     "boundary": [
