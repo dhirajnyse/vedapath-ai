@@ -135,6 +135,10 @@ v0.5.3 adds schema fixtures and validation checks:
 - review-decision fixture
 - no-go test cases for hidden profiling and distress retention
 
-## v0.5.4 Direction
+## v0.5.4 Evaluation Drill
 
-The next release should add an Evaluation Drill Room that runs user-facing answer drafts, backend fixture checks, and no-go cases together before a release is considered safe.
+v0.5.4 adds the Evaluation Drill Room, which runs user-facing answer drafts, backend fixture checks, and no-go cases together before a release is considered safe.
+
+## v0.5.5 Direction
+
+The next release should turn repeated drill results into a small learning-loop seed: question patterns, reviewer decisions, and source gaps, without hidden profiling or private identity inference.

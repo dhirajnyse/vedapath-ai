@@ -59,4 +59,4 @@ Calm Passport is not:
 
 ## Next Step
 
-v0.5.2 adds the first backend schema draft for `source_seed`, `consent_grant`, `memory_route`, `review_decision`, `trust_event`, `calm_pattern`, and `passport_grant`. v0.5.3 adds schema fixtures, export payloads, deletion lifecycle notes, route validations, and no-go tests. v0.5.4 should combine answer drills with fixture drills.
+v0.5.2 adds the first backend schema draft for `source_seed`, `consent_grant`, `memory_route`, `review_decision`, `trust_event`, `calm_pattern`, and `passport_grant`. v0.5.3 adds schema fixtures, export payloads, deletion lifecycle notes, route validations, and no-go tests. v0.5.4 adds the Evaluation Drill Room, combining answer checks, fixture checks, and no-go cases. v0.5.5 should seed a learning loop from repeated questions, reviewer decisions, and source gaps without hidden profiling.

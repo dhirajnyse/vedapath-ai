@@ -507,6 +507,7 @@
           <a class="link" href="passport.html">Passport</a>
           <a class="link" href="schema.html">Schema</a>
           <a class="link" href="fixtures.html">Fixtures</a>
+          <a class="link" href="drill.html">Drill</a>
           <a class="link" href="path.html">Path</a>
           <a class="link" href="compass.html">Compass</a>
           <a class="link" href="card.html">Card</a>
@@ -518,7 +519,7 @@
           <a class="link" href="morning.html">Morning</a>
           <a class="link" href="evening.html">Evening</a>
           <a class="link" href="rhythm.html">Rhythm</a>
-          <span class="version">v0.5.3 fixtures</span>
+          <span class="version">v0.5.4 drill</span>
         </nav>
       </header>
 
@@ -603,7 +604,7 @@
 
         <aside class="panel side-panel">
           <span class="eyebrow">Launch architecture</span>
-          <h2>v0.5.3 fixtures</h2>
+          <h2>v0.5.4 drill</h2>
           <p>This page is the bridge from prototype to backend. It shows which records can exist, how they relate, and what must be true before VedaPath remembers.</p>
 
           <div class="stat-grid">
@@ -864,7 +865,7 @@
 
       function entitySchema(entity) {
         return {
-          release: "v0.5.3 fixtures",
+          release: "v0.5.4 drill",
           entity: entity.id,
           productRoom: entity.room,
           owner: entity.owner,
@@ -885,7 +886,7 @@
         const missing = entity.fields.filter((field) => !field[2]).map((field) => field[0]);
         return [
           "VedaPath Trust Model",
-          "Release: v0.5.3 fixtures",
+          "Release: v0.5.4 drill",
           `Entity: ${entity.id}`,
           `Product room: ${entity.room}`,
           `Owner: ${entity.owner}`,

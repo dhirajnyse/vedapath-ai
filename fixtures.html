@@ -557,6 +557,7 @@
           <a class="link" href="passport.html">Passport</a>
           <a class="link" href="schema.html">Schema</a>
           <a class="link active" href="fixtures.html">Fixtures</a>
+          <a class="link" href="drill.html">Drill</a>
           <a class="link" href="path.html">Path</a>
           <a class="link" href="compass.html">Compass</a>
           <a class="link" href="card.html">Card</a>
@@ -568,7 +569,7 @@
           <a class="link" href="morning.html">Morning</a>
           <a class="link" href="evening.html">Evening</a>
           <a class="link" href="rhythm.html">Rhythm</a>
-          <span class="version">v0.5.3 fixtures</span>
+          <span class="version">v0.5.4 drill</span>
         </nav>
       </header>
 
@@ -654,7 +655,7 @@
             </div>
             <div class="stat">
               <span>Next release</span>
-              <strong>v0.5.4</strong>
+              <strong>v0.5.5</strong>
             </div>
           </div>
 
@@ -965,7 +966,7 @@
       function fixturePayload(fixture = selectedFixture()) {
         return {
           product: "VedaPath AI",
-          release: "v0.5.3 fixtures",
+          release: "v0.5.4 drill",
           fixture_id: fixture.id,
           table: fixture.table,
           verdict: fixture.verdict,
@@ -983,7 +984,7 @@
         const blockCount = fixture.checks.length - passCount;
         return [
           "VedaPath Fixture Validation Report",
-          "Release: v0.5.3 fixtures",
+          "Release: v0.5.4 drill",
           `Fixture: ${fixture.id}`,
           `Table: ${fixture.table}`,
           `Verdict: ${fixture.verdict}`,
@@ -1000,7 +1001,7 @@
       function noGoReport() {
         return [
           "VedaPath No-Go Test Report",
-          "Release: v0.5.3 fixtures",
+          "Release: v0.5.4 drill",
           "",
           ...noGoTests.map(([name, verdict, reason]) => `${verdict}: ${name} - ${reason}`),
           "",

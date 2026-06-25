@@ -1,6 +1,6 @@
-# v0.5.3 Prototype Notes
+# v0.5.4 Prototype Notes
 
-The v0.5.3 release turns the VedaPath AI homepage into a trusted MVP prototype with calm, practice, source-library, source-seeds, retrieval, passage-review, evaluation, evaluation-dashboard, reviewer-queue, source-policy, trust-ledger, life-map, calm-circle, consent-gate, memory-gate, trust-model, calm-passport, backend-schema, schema-fixtures, source-path, calm-compass, calm-card, source-bell, before-reply, samvada, sankalpa, seva, morning, evening, and rhythm surfaces.
+The v0.5.4 release turns the VedaPath AI homepage into a trusted MVP prototype with calm, practice, source-library, source-seeds, retrieval, passage-review, evaluation, evaluation-dashboard, reviewer-queue, source-policy, trust-ledger, life-map, calm-circle, consent-gate, memory-gate, trust-model, calm-passport, backend-schema, schema-fixtures, evaluation-drill, source-path, calm-compass, calm-card, source-bell, before-reply, samvada, sankalpa, seva, morning, evening, and rhythm surfaces.
 
 ## Included
 
@@ -29,6 +29,9 @@ The v0.5.3 release turns the VedaPath AI homepage into a trusted MVP prototype w
 - Memory Gate with local draft, human review, Trust Ledger, and blocked routes before durable memory
 - Trust Model with production entities, source-to-memory flow, required fields, launch readiness, and copyable JSON schema preview
 - Calm Passport with may-remember fields, must-not-remember fields, user controls, local grants, export brief, and delete request
+- Backend Schema Room with seven trust tables, relationships, migration order, and no-go rules
+- Schema Fixture Lab with sample rows, validation checks, export shape, deletion lifecycle, and no-go tests
+- Evaluation Drill Room with answer checks, backend fixture checks, no-go cases, release decisions, queue handoffs, and copyable founder briefs
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
 - Calm Card Studio with visual preview, local saved cards, copy text, and PNG export
@@ -70,6 +73,8 @@ This release proves the product direction:
 - memory routes can visibly block, review, localize, or ledger records before durable storage
 - the production data model can be inspected before accounts, durable storage, or real memory are introduced
 - user memory controls can be inspected before account-backed memory is introduced
+- backend fixture behavior can be tested before production storage exists
+- answer checks, fixture checks, and no-go cases can run together before a release is treated as safe
 - unsupported proof claims can be refused as source gaps instead of dressed up as wisdom
 - one current-life state can route to the next useful product room
 - one source-backed action can become a shareable visual artifact
@@ -83,4 +88,4 @@ This release proves the product direction:
 
 ## Next Release
 
-v0.5.3 adds the Schema Fixture Lab with sample rows, validation checks, export shape, deletion lifecycle, and no-go tests. v0.5.4 should combine answer drills with fixture drills.
+v0.5.4 adds the Evaluation Drill Room, combining answer checks, fixture checks, no-go cases, release decisions, queue handoffs, and founder-ready briefs. v0.5.5 should seed a learning loop from repeated questions, reviewer decisions, and source gaps without hidden profiling.
