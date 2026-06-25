@@ -321,6 +321,8 @@ Let us look at the source first.
 - [Static Dataset Loader Notes](docs/STATIC_DATASET_LOADER.md)
 - [Retrieval Scoring Harness](retrievalscoring.html)
 - [Retrieval Scoring Harness Notes](docs/RETRIEVAL_SCORING_HARNESS.md)
+- [Answer Assembly Contract](answerassembly.html)
+- [Answer Assembly Contract Notes](docs/ANSWER_ASSEMBLY_CONTRACT.md)
 <!-- VEDAPATH BETA IMPLEMENTATION SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -352,7 +354,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v1.6.7` is a trusted MVP prototype plus Retrieval Scoring Harness with:
+`v1.6.8` is a trusted MVP prototype plus Answer Assembly Contract with:
 
 - Ask workspace
 - Source Card
@@ -514,6 +516,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Source Schema Contract: Source Schema Contract turns VedaPath's trust language into fields a real implementation can validate.
 - Static Dataset Loader: Static Dataset Loader gives VedaPath a safe first ingestion path before any backend or account system exists.
 - Retrieval Scoring Harness: Retrieval Scoring Harness maps match strength, source eligibility, risk, and fallback behavior into an inspectable decision.
+- Answer Assembly Contract: Answer Assembly Contract gives VedaPath a repeatable output shape that can be tested before it becomes generative.
 <!-- VEDAPATH BETA IMPLEMENTATION SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
