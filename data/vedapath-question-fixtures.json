@@ -1,6 +1,6 @@
 {
   "product": "VedaPath AI",
-  "release": "v1.7.7",
+  "release": "v1.7.8",
   "status": "question fixture prototype",
   "fixtures": [
     {
@@ -25,6 +25,14 @@
       "expected_route": "source_first_preview",
       "expected_source_candidate": "Mundaka Upanishad 1.1.4",
       "expected_boundary": "Topic map prototype, not full tradition taxonomy.",
+      "reviewer_needed": true
+    },
+    {
+      "id": "fixture-categorymatrix",
+      "question": "Make category confusion visible before users receive a confident answer.",
+      "expected_route": "source_first_preview",
+      "expected_source_candidate": "Rigveda 1.164.46",
+      "expected_boundary": "Category matrix, not universal classification authority.",
       "reviewer_needed": true
     }
   ]

@@ -1,6 +1,6 @@
 {
   "product": "VedaPath AI",
-  "release": "v1.7.7",
+  "release": "v1.7.8",
   "status": "static beta seed prototype",
   "warning": "Prototype data only. Records are not public answer eligible until reviewed.",
   "records": [
@@ -61,7 +61,7 @@
       "title": "Beta Topic Map Board",
       "source_candidate": "Mundaka Upanishad 1.1.4",
       "text_family": "Upanishad | Shruti",
-      "status": "active-prototype",
+      "status": "prototype-support",
       "public_answer_eligible": false,
       "review_state": "review-needed",
       "rights_state": "display-citation-only",
@@ -78,6 +78,31 @@
       ],
       "boundary": "Topic map prototype, not full tradition taxonomy.",
       "summary": "Beta Topic Map Board prevents VedaPath from drifting into broad coverage before its first trusted lanes are ready."
+    },
+    {
+      "id": "vp-v1-7-8-categorymatrix",
+      "release": "v1.7.8",
+      "slug": "categorymatrix",
+      "title": "Category Safety Matrix",
+      "source_candidate": "Rigveda 1.164.46",
+      "text_family": "Veda | Shruti",
+      "status": "active-prototype",
+      "public_answer_eligible": false,
+      "review_state": "review-needed",
+      "rights_state": "display-citation-only",
+      "allowed_intents": [
+        "source_lookup",
+        "category_check",
+        "reflection_preview"
+      ],
+      "blocked_claims": [
+        "therapy",
+        "ritual_authority",
+        "science_proof",
+        "complete_corpus_coverage"
+      ],
+      "boundary": "Category matrix, not universal classification authority.",
+      "summary": "Category Safety Matrix gives VedaPath a simple way to stop popular-culture shortcuts from becoming product truth."
     }
   ]
 }

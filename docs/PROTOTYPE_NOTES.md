@@ -1,4 +1,4 @@
-# v1.7.7 Prototype Notes
+# v1.7.8 Prototype Notes
 
 The v0.7.4 release turns the VedaPath AI homepage into a trusted MVP prototype with calm, practice, source-library, source-seeds, retrieval, passage-review, evaluation, evaluation-dashboard, reviewer-queue, source-policy, trust-ledger, life-map, calm-circle, consent-gate, memory-gate, trust-model, calm-passport, backend-schema, schema-fixtures, evaluation-drill, learning-loop, sanskrit-lens, voice-boundary, scholar-review, launch-gate, production-bridge, source-storage, reviewer-access, public-feedback, launch-story, source-path, calm-compass, calm-card, source-bell, before-reply, samvada, sankalpa, seva, morning, evening, and rhythm surfaces.
 
@@ -178,6 +178,7 @@ The v0.7.4 release turns the VedaPath AI homepage into a trusted MVP prototype w
 - Beta Source Seed Pack: Beta Source Seed Pack creates the first concrete source inventory for VedaPath's beta data path.
 - Question Fixture Set: Question Fixture Set gives VedaPath a repeatable way to test whether source routing and answer boundaries are improving.
 - Beta Topic Map Board: Beta Topic Map Board prevents VedaPath from drifting into broad coverage before its first trusted lanes are ready.
+- Category Safety Matrix: Category Safety Matrix gives VedaPath a simple way to stop popular-culture shortcuts from becoming product truth.
 <!-- VEDAPATH STATIC BETA DATA SPRINT NOTES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff

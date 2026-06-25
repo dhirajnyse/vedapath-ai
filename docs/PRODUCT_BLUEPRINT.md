@@ -175,6 +175,7 @@ It helps users move from curiosity to understanding through:
 - Beta Source Seed Pack: Beta Source Seed Pack creates the first concrete source inventory for VedaPath's beta data path.
 - Question Fixture Set: Question Fixture Set gives VedaPath a repeatable way to test whether source routing and answer boundaries are improving.
 - Beta Topic Map Board: Beta Topic Map Board prevents VedaPath from drifting into broad coverage before its first trusted lanes are ready.
+- Category Safety Matrix: Category Safety Matrix gives VedaPath a simple way to stop popular-culture shortcuts from becoming product truth.
 <!-- VEDAPATH STATIC BETA DATA SPRINT SUMMARY END -->
 
 ## What It Is
@@ -2627,6 +2628,21 @@ It should:
 - keep source records review-needed until explicitly approved
 
 Beta Topic Map Board should never claim complete corpus coverage, production storage, live semantic search, live AI generation, public launch approval, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 161. Category Safety Matrix
+
+Category Safety Matrix gives VedaPath a simple way to stop popular-culture shortcuts from becoming product truth.
+
+It should:
+
+- Source label: Each answer must say where it stands.
+- Common confusion: Gita vs Veda, Upanishad vs Veda, tradition vs text, analogy vs claim.
+- Correction copy: Gentle correction without shaming the user.
+- Hold rule: Uncertain category routes to reviewer or low confidence.
+- preserve the boundary: Category matrix, not universal classification authority.
+- keep source records review-needed until explicitly approved
+
+Category Safety Matrix should never claim complete corpus coverage, production storage, live semantic search, live AI generation, public launch approval, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH STATIC BETA DATA SPRINT BLUEPRINT END -->
 
 ## Product Personality
