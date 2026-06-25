@@ -66,6 +66,7 @@ It helps users move from curiosity to understanding through:
 <!-- VEDAPATH BETA SPRINT SUMMARY START -->
 - Beta Welcome Room: Beta Welcome Room turns the public entry into a simple, source-first doorway instead of a crowded product map.
 - First Session Flow: First Session Flow makes VedaPath testable as a beginning-to-end experience: arrive, ask, source, reflect, carry, and return.
+- Source Dataset Studio: Source Dataset Studio narrows the product from many prototype ideas to a first reviewable beta dataset.
 <!-- VEDAPATH BETA SPRINT SUMMARY END -->
 
 ## What It Is
@@ -1144,6 +1145,21 @@ It should:
 - produce a copyable beta handoff
 
 First Session Flow should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 70. Source Dataset Studio
+
+Source Dataset Studio narrows the product from many prototype ideas to a first reviewable beta dataset.
+
+It should:
+
+- Question source: Every record should start from a real user question.
+- Citation fields: Text family, passage id, translation note, and source URL are required.
+- Review lane: Each record needs source, language, boundary, and rights status.
+- Beta eligibility: Only complete-enough records should power public answers.
+- preserve the boundary: Dataset planning, not verified authority.
+- produce a copyable beta handoff
+
+Source Dataset Studio should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH BETA SPRINT BLUEPRINT END -->
 
 ## Product Personality

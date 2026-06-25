@@ -143,6 +143,8 @@ Let us look at the source first.
 - [Beta Welcome Room Notes](docs/BETA_WELCOME_ROOM.md)
 - [First Session Flow](flow.html)
 - [First Session Flow Notes](docs/FIRST_SESSION_FLOW.md)
+- [Source Dataset Studio](dataset.html)
+- [Source Dataset Studio Notes](docs/SOURCE_DATASET_STUDIO.md)
 <!-- VEDAPATH BETA SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -174,7 +176,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v0.8.6` is a trusted MVP prototype plus First Session Flow with:
+`v0.8.7` is a trusted MVP prototype plus Source Dataset Studio with:
 
 - Ask workspace
 - Source Card
@@ -239,6 +241,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 <!-- VEDAPATH BETA SPRINT FEATURES START -->
 - Beta Welcome Room: Beta Welcome Room turns the public entry into a simple, source-first doorway instead of a crowded product map.
 - First Session Flow: First Session Flow makes VedaPath testable as a beginning-to-end experience: arrive, ask, source, reflect, carry, and return.
+- Source Dataset Studio: Source Dataset Studio narrows the product from many prototype ideas to a first reviewable beta dataset.
 <!-- VEDAPATH BETA SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
