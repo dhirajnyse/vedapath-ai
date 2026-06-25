@@ -178,6 +178,7 @@ It helps users move from curiosity to understanding through:
 - Category Safety Matrix: Category Safety Matrix gives VedaPath a simple way to stop popular-culture shortcuts from becoming product truth.
 - No-Answer Fallback Set: No-Answer Fallback Set makes VedaPath safer by treating refusal as a designed product moment, not an error.
 - Static Source Search Prototype: Static Source Search Prototype gives VedaPath a visible bridge from curated seed data to source-first answer retrieval.
+- Static Answer Preview Lab: Static Answer Preview Lab makes the beta answer path tangible without pretending generation or broad retrieval is live.
 <!-- VEDAPATH STATIC BETA DATA SPRINT SUMMARY END -->
 
 ## What It Is
@@ -2675,6 +2676,21 @@ It should:
 - keep source records review-needed until explicitly approved
 
 Static Source Search Prototype should never claim complete corpus coverage, production storage, live semantic search, live AI generation, public launch approval, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 164. Static Answer Preview Lab
+
+Static Answer Preview Lab makes the beta answer path tangible without pretending generation or broad retrieval is live.
+
+It should:
+
+- Answer slot: One direct answer constrained by the source record.
+- Evidence slot: Citation, family, review state, and basis.
+- Confidence slot: High, medium, low, hold, or no-answer with reason.
+- Boundary slot: What not to overclaim and what to ask next.
+- preserve the boundary: Static answer preview, not live model generation.
+- keep source records review-needed until explicitly approved
+
+Static Answer Preview Lab should never claim complete corpus coverage, production storage, live semantic search, live AI generation, public launch approval, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH STATIC BETA DATA SPRINT BLUEPRINT END -->
 
 ## Product Personality

@@ -1,6 +1,6 @@
 {
   "product": "VedaPath AI",
-  "release": "v1.8.0",
+  "release": "v1.8.1",
   "status": "question fixture prototype",
   "fixtures": [
     {
@@ -49,6 +49,14 @@
       "expected_route": "source_first_preview",
       "expected_source_candidate": "Isha Upanishad 1",
       "expected_boundary": "Static search prototype, not live semantic retrieval.",
+      "reviewer_needed": true
+    },
+    {
+      "id": "fixture-answerpreview",
+      "question": "Show the answer shape that a reviewed seed record can safely support.",
+      "expected_route": "source_first_preview",
+      "expected_source_candidate": "Bhagavad Gita 18.63",
+      "expected_boundary": "Static answer preview, not live model generation.",
       "reviewer_needed": true
     }
   ]

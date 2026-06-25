@@ -1,6 +1,6 @@
 {
   "product": "VedaPath AI",
-  "release": "v1.8.0",
+  "release": "v1.8.1",
   "status": "static beta seed prototype",
   "warning": "Prototype data only. Records are not public answer eligible until reviewed.",
   "records": [
@@ -136,7 +136,7 @@
       "title": "Static Source Search Prototype",
       "source_candidate": "Isha Upanishad 1",
       "text_family": "Upanishad | Shruti",
-      "status": "active-prototype",
+      "status": "prototype-support",
       "public_answer_eligible": false,
       "review_state": "review-needed",
       "rights_state": "display-citation-only",
@@ -153,6 +153,31 @@
       ],
       "boundary": "Static search prototype, not live semantic retrieval.",
       "summary": "Static Source Search Prototype gives VedaPath a visible bridge from curated seed data to source-first answer retrieval."
+    },
+    {
+      "id": "vp-v1-8-1-answerpreview",
+      "release": "v1.8.1",
+      "slug": "answerpreview",
+      "title": "Static Answer Preview Lab",
+      "source_candidate": "Bhagavad Gita 18.63",
+      "text_family": "Bhagavad Gita | Smriti",
+      "status": "active-prototype",
+      "public_answer_eligible": false,
+      "review_state": "review-needed",
+      "rights_state": "display-citation-only",
+      "allowed_intents": [
+        "source_lookup",
+        "category_check",
+        "reflection_preview"
+      ],
+      "blocked_claims": [
+        "therapy",
+        "ritual_authority",
+        "science_proof",
+        "complete_corpus_coverage"
+      ],
+      "boundary": "Static answer preview, not live model generation.",
+      "summary": "Static Answer Preview Lab makes the beta answer path tangible without pretending generation or broad retrieval is live."
     }
   ]
 }
