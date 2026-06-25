@@ -65,6 +65,7 @@ It helps users move from curiosity to understanding through:
 <!-- VEDAPATH PERSONAL SPRINT SUMMARY END -->
 <!-- VEDAPATH BETA SPRINT SUMMARY START -->
 - Beta Welcome Room: Beta Welcome Room turns the public entry into a simple, source-first doorway instead of a crowded product map.
+- First Session Flow: First Session Flow makes VedaPath testable as a beginning-to-end experience: arrive, ask, source, reflect, carry, and return.
 <!-- VEDAPATH BETA SPRINT SUMMARY END -->
 
 ## What It Is
@@ -1128,6 +1129,21 @@ It should:
 - produce a copyable beta handoff
 
 Beta Welcome Room should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 69. First Session Flow
+
+First Session Flow makes VedaPath testable as a beginning-to-end experience: arrive, ask, source, reflect, carry, and return.
+
+It should:
+
+- Arrive: Name why the user is here.
+- Source: Show one source candidate before expanding.
+- Boundary: Say what the answer does not claim.
+- Return: End with one next room and one saved local signal.
+- preserve the boundary: Guided session, not therapy or instruction.
+- produce a copyable beta handoff
+
+First Session Flow should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH BETA SPRINT BLUEPRINT END -->
 
 ## Product Personality
