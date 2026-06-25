@@ -151,6 +151,8 @@ Let us look at the source first.
 - [Reviewer Ops Board Notes](docs/REVIEWER_OPS_BOARD.md)
 - [Consent and Privacy Room](privacy.html)
 - [Consent and Privacy Room Notes](docs/CONSENT_AND_PRIVACY_ROOM.md)
+- [Teacher Companion Mode](teacher.html)
+- [Teacher Companion Mode Notes](docs/TEACHER_COMPANION_MODE.md)
 <!-- VEDAPATH BETA SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -182,7 +184,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v0.9.0` is a trusted MVP prototype plus Consent and Privacy Room with:
+`v0.9.1` is a trusted MVP prototype plus Teacher Companion Mode with:
 
 - Ask workspace
 - Source Card
@@ -251,6 +253,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Answer Contract: Answer Contract turns VedaPath's trust philosophy into a repeatable response format for beta answers.
 - Reviewer Ops Board: Reviewer Ops Board turns scholar and careful-reader help into scoped tasks, decisions, and release gates.
 - Consent and Privacy Room: Consent and Privacy Room makes user trust visible before VedaPath moves from local prototype memory to real storage.
+- Teacher Companion Mode: Teacher Companion Mode gives educators source-first materials while keeping human teaching, tradition, and context central.
 <!-- VEDAPATH BETA SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff

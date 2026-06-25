@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>VedaPath Reviewer Ops Board</title>
+    <title>VedaPath Teacher Companion Mode</title>
     <link rel="stylesheet" href="assets/vedapath-sprint.css">
   </head>
   <body>
@@ -13,7 +13,7 @@
           <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
           <div>
             <strong>VedaPath AI</strong>
-            <span>Reviewer ops</span>
+            <span>Teacher companion</span>
           </div>
         </a>
         <nav class="nav" aria-label="Project links">
@@ -29,15 +29,15 @@
           <a class="link" href="flow.html">Flow</a>
           <a class="link" href="dataset.html">Dataset</a>
           <a class="link" href="answer.html">Answer</a>
-          <a class="link active" href="reviewops.html">Ops</a>
+          <a class="link" href="reviewops.html">Ops</a>
           <a class="link" href="privacy.html">Privacy</a>
-          <a class="link" href="teacher.html">Teacher</a>
+          <a class="link active" href="teacher.html">Teacher</a>
           <!-- VEDAPATH BETA SPRINT NAV END -->
           <span class="version">v0.9.1 teacher</span>
         </nav>
       </header>
 
-      <main class="workspace" aria-label="VedaPath Reviewer Ops Board workspace">
+      <main class="workspace" aria-label="VedaPath Teacher Companion Mode workspace">
         <aside class="panel">
           <span class="eyebrow">Public beta sprint</span>
           <h2>Release Rooms</h2>
@@ -48,23 +48,23 @@
         <section class="panel">
           <div class="hero-grid">
             <div>
-              <span class="eyebrow">Human review operations</span>
-              <h1>Make review practical before making it prestigious.</h1>
-              <p class="muted">A small operations board for assigning source, translation, boundary, and product review tasks without claiming endorsement.</p>
+              <span class="eyebrow">Teaching support</span>
+              <h1>Support teachers without replacing them.</h1>
+              <p class="muted">A teacher-facing mode for preparing source cards, discussion prompts, boundaries, and homework paths without claiming classroom authority.</p>
             </div>
             <div class="mark-stage">
-              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Ops logo">
+              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Teacher logo">
             </div>
           </div>
 
           <div class="source-block" aria-label="Release source card">
             <div>
               <span class="source-meta">Release</span>
-              <span class="source-value">v0.8.9</span>
+              <span class="source-value">v0.9.1</span>
             </div>
             <div>
               <span class="source-meta">Source candidate</span>
-              <span class="source-value">Taittiriya Upanishad 1.11.1</span>
+              <span class="source-value">Katha Upanishad 1.2.23</span>
             </div>
             <div>
               <span class="source-meta">Text family</span>
@@ -72,14 +72,14 @@
             </div>
             <div>
               <span class="source-meta">Boundary</span>
-              <span class="source-value">Review operations, not endorsement.</span>
+              <span class="source-value">Teaching support, not teacher replacement.</span>
             </div>
           </div>
 
           <h2>Decision Signals</h2>
           <div class="item-list" id="itemList"></div>
 
-          <div class="tabs" role="tablist" aria-label="VedaPath Reviewer Ops Board layers">
+          <div class="tabs" role="tablist" aria-label="VedaPath Teacher Companion Mode layers">
             <button class="tab active" type="button" data-mode="brief">Brief</button>
             <button class="tab" type="button" data-mode="checklist">Checklist</button>
             <button class="tab" type="button" data-mode="boundary">Boundary</button>
@@ -93,20 +93,20 @@
             <button class="button" id="copyBoundary" type="button">Copy Boundary</button>
           </div>
 
-          <textarea id="output" readonly aria-label="VedaPath Reviewer Ops Board output"></textarea>
+          <textarea id="output" readonly aria-label="VedaPath Teacher Companion Mode output"></textarea>
         </section>
 
-        <aside class="panel tight" aria-label="VedaPath Reviewer Ops Board sprint rail">
+        <aside class="panel tight" aria-label="VedaPath Teacher Companion Mode sprint rail">
           <span class="badge green">Beta progress</span>
-          <h2 style="margin-top: 14px;">Ops Pulse</h2>
-          <p class="muted">Reviewer Ops Board turns scholar and careful-reader help into scoped tasks, decisions, and release gates.</p>
-          <div class="progress" aria-label="Sprint progress 95 percent">
-            <div class="bar" style="--score:95%"></div>
+          <h2 style="margin-top: 14px;">Teacher Pulse</h2>
+          <p class="muted">Teacher Companion Mode gives educators source-first materials while keeping human teaching, tradition, and context central.</p>
+          <div class="progress" aria-label="Sprint progress 97 percent">
+            <div class="bar" style="--score:97%"></div>
           </div>
           <div class="metric-grid">
             <div class="metric">
               <span>Current</span>
-              <strong>v0.8.9</strong>
+              <strong>v0.9.1</strong>
             </div>
             <div class="metric">
               <span>Sprint</span>
@@ -114,11 +114,11 @@
             </div>
             <div class="metric">
               <span>Progress</span>
-              <strong>95%</strong>
+              <strong>97%</strong>
             </div>
             <div class="metric">
               <span>Next</span>
-              <strong>Consent and Privacy Room</strong>
+              <strong>Student Study Mode</strong>
             </div>
           </div>
 
@@ -150,85 +150,85 @@
     </div>
 
     <script type="application/json" id="room-data">{
-  "version": "v0.8.9",
-  "badge": "v0.8.9 ops",
-  "slug": "reviewops",
-  "nav": "Ops",
-  "title": "VedaPath Reviewer Ops Board",
-  "pageLabel": "Reviewer ops",
-  "eyebrow": "Human review operations",
-  "h1": "Make review practical before making it prestigious.",
-  "lead": "A small operations board for assigning source, translation, boundary, and product review tasks without claiming endorsement.",
-  "source": "Taittiriya Upanishad 1.11.1",
+  "version": "v0.9.1",
+  "badge": "v0.9.1 teacher",
+  "slug": "teacher",
+  "nav": "Teacher",
+  "title": "VedaPath Teacher Companion Mode",
+  "pageLabel": "Teacher companion",
+  "eyebrow": "Teaching support",
+  "h1": "Support teachers without replacing them.",
+  "lead": "A teacher-facing mode for preparing source cards, discussion prompts, boundaries, and homework paths without claiming classroom authority.",
+  "source": "Katha Upanishad 1.2.23",
   "family": "Upanishad | Shruti",
-  "stance": "Review operations, not endorsement.",
-  "progress": 95,
-  "next": "Consent and Privacy Room",
-  "primaryAsk": "Define the first reviewer workflow that can run with a small trusted group.",
-  "summary": "Reviewer Ops Board turns scholar and careful-reader help into scoped tasks, decisions, and release gates.",
+  "stance": "Teaching support, not teacher replacement.",
+  "progress": 97,
+  "next": "Student Study Mode",
+  "primaryAsk": "Design one classroom-safe handoff a teacher would actually use.",
+  "summary": "Teacher Companion Mode gives educators source-first materials while keeping human teaching, tradition, and context central.",
   "items": [
     [
-      "Task scope",
-      "One reviewer should know exactly what they are deciding.",
-      "Avoids vague endorsement pressure."
+      "Lesson card",
+      "One source, plain meaning, and optional depth.",
+      "Useful without overwhelming students."
     ],
     [
-      "Evidence packet",
-      "Attach passage, answer, source fields, and blocked claims.",
-      "Makes review fast and respectful."
+      "Discussion question",
+      "One respectful question with multiple possible views.",
+      "Supports conversation, not dogma."
     ],
     [
-      "Decision state",
-      "Approve, hold, block, or request evidence.",
-      "Keeps review auditable."
+      "Boundary note",
+      "What not to overclaim in class.",
+      "Keeps category and tradition care visible."
     ],
     [
-      "Private identity",
-      "Reviewer names stay private unless consented.",
-      "Protects trust and dignity."
+      "Homework path",
+      "One reading, one reflection, one source check.",
+      "Makes learning actionable."
     ]
   ],
   "modes": {
     "brief": [
       [
-        "Ops promise",
-        "Review should feel like careful product work, not ceremony."
+        "Teacher promise",
+        "VedaPath can prepare materials, but the teacher remains the teacher."
       ],
       [
-        "Founder move",
-        "Start with five reviewers and one narrow source lane."
+        "UX move",
+        "Make source cards printable, copyable, and bounded."
       ],
       [
-        "Trust move",
-        "Never imply outreach equals approval."
+        "Beta move",
+        "Test with teachers who need citations, not spectacle."
       ]
     ],
     "checklist": [
       [
-        "Scoped",
-        "Can the reviewer say yes or no to one field?"
+        "Useful",
+        "Would a teacher use this without editing everything?"
       ],
       [
-        "Evidence",
-        "Is the source packet complete enough?"
+        "Plural",
+        "Does it respect multiple interpretations?"
       ],
       [
-        "Consent",
-        "Is reviewer display permission separate from review work?"
+        "Bounded",
+        "Does it avoid replacing teacher judgment?"
       ]
     ],
     "boundary": [
       [
-        "No endorsement blur",
-        "Do not imply a reviewer endorses the whole product."
+        "No replacement",
+        "Do not position VedaPath as the teacher."
       ],
       [
-        "No unpaid burden",
-        "Do not ask for broad review without narrow scope."
+        "No single doctrine",
+        "Do not flatten traditions into one view."
       ],
       [
-        "No spiritual certification",
-        "Review improves product quality, not authority."
+        "No classroom surveillance",
+        "Do not collect student data in prototype mode."
       ]
     ]
   },

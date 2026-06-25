@@ -70,6 +70,7 @@ It helps users move from curiosity to understanding through:
 - Answer Contract: Answer Contract turns VedaPath's trust philosophy into a repeatable response format for beta answers.
 - Reviewer Ops Board: Reviewer Ops Board turns scholar and careful-reader help into scoped tasks, decisions, and release gates.
 - Consent and Privacy Room: Consent and Privacy Room makes user trust visible before VedaPath moves from local prototype memory to real storage.
+- Teacher Companion Mode: Teacher Companion Mode gives educators source-first materials while keeping human teaching, tradition, and context central.
 <!-- VEDAPATH BETA SPRINT SUMMARY END -->
 
 ## What It Is
@@ -1208,6 +1209,21 @@ It should:
 - produce a copyable beta handoff
 
 Consent and Privacy Room should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 74. Teacher Companion Mode
+
+Teacher Companion Mode gives educators source-first materials while keeping human teaching, tradition, and context central.
+
+It should:
+
+- Lesson card: One source, plain meaning, and optional depth.
+- Discussion question: One respectful question with multiple possible views.
+- Boundary note: What not to overclaim in class.
+- Homework path: One reading, one reflection, one source check.
+- preserve the boundary: Teaching support, not teacher replacement.
+- produce a copyable beta handoff
+
+Teacher Companion Mode should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH BETA SPRINT BLUEPRINT END -->
 
 ## Product Personality
