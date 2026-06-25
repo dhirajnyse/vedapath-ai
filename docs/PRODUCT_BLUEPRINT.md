@@ -147,6 +147,9 @@ It helps users move from curiosity to understanding through:
 - Beta Landing Draft: Beta Landing Draft turns VedaPath's MVP lane into public-facing copy without losing source-first humility.
 - MVP Lane Control Room: MVP Lane Control Room completes the working-MVP-lane sprint and gives VedaPath one practical path from prototype to shippable beta slice.
 <!-- VEDAPATH MVP LANE SPRINT SUMMARY END -->
+<!-- VEDAPATH WORKING DATA SPRINT SUMMARY START -->
+- Working Source Data Pack: Working Source Data Pack gives VedaPath a visible data spine: every answer starts from a record that can be reviewed, limited, and improved.
+<!-- VEDAPATH WORKING DATA SPRINT SUMMARY END -->
 
 ## What It Is
 
@@ -2251,6 +2254,22 @@ It should:
 
 MVP Lane Control Room should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH MVP LANE SPRINT BLUEPRINT END -->
+<!-- VEDAPATH WORKING DATA SPRINT BLUEPRINT START -->
+### 138. Working Source Data Pack
+
+Working Source Data Pack gives VedaPath a visible data spine: every answer starts from a record that can be reviewed, limited, and improved.
+
+It should:
+
+- Record identity: Each entry has id, title, citation, text family, and topic tags.
+- Review fields: Each entry names source review, language review, rights state, and boundary risk.
+- Answer scope: Each entry lists allowed questions, blocked claims, and fallback behavior.
+- Beta seed: Begin with a small reviewed pack before adding scale.
+- preserve the boundary: Static source data demo, not verified corpus coverage.
+- produce a copyable working-data handoff
+
+Working Source Data Pack should never claim production storage, live retrieval, live AI generation, authentication, licensed source text, therapy, ritual instruction, crisis support, or spiritual authority.
+<!-- VEDAPATH WORKING DATA SPRINT BLUEPRINT END -->
 
 ## Product Personality
 

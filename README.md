@@ -292,6 +292,10 @@ Let us look at the source first.
 - [MVP Lane Control Room](mvpcontrol.html)
 - [MVP Lane Control Room Notes](docs/MVP_LANE_CONTROL_ROOM.md)
 <!-- VEDAPATH MVP LANE SPRINT LINKS END -->
+<!-- VEDAPATH WORKING DATA SPRINT LINKS START -->
+- [Working Source Data Pack](workingdata.html)
+- [Working Source Data Pack Notes](docs/WORKING_SOURCE_DATA_PACK.md)
+<!-- VEDAPATH WORKING DATA SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
 - [Calm Compass](compass.html)
@@ -322,7 +326,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v1.5.4` is a trusted MVP prototype plus MVP Lane Control Room with:
+`v1.5.5` is a trusted MVP prototype plus Working Source Data Pack with:
 
 - Ask workspace
 - Source Card
@@ -468,6 +472,9 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Beta Landing Draft: Beta Landing Draft turns VedaPath's MVP lane into public-facing copy without losing source-first humility.
 - MVP Lane Control Room: MVP Lane Control Room completes the working-MVP-lane sprint and gives VedaPath one practical path from prototype to shippable beta slice.
 <!-- VEDAPATH MVP LANE SPRINT FEATURES END -->
+<!-- VEDAPATH WORKING DATA SPRINT FEATURES START -->
+- Working Source Data Pack: Working Source Data Pack gives VedaPath a visible data spine: every answer starts from a record that can be reviewed, limited, and improved.
+<!-- VEDAPATH WORKING DATA SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
 - Calm Card Studio with visual card preview, local saved cards, copy text, and PNG export

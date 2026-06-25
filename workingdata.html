@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VedaPath Working Source Data Pack</title>
+    <link rel="stylesheet" href="assets/vedapath-sprint.css">
+  </head>
+  <body>
+    <div class="shell" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top" aria-label="VedaPath AI home">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
+          <div>
+            <strong>VedaPath AI</strong>
+            <span>Working source data</span>
+          </div>
+        </a>
+        <nav class="nav" aria-label="Project links">
+          <a class="link" href="build-status.html">Build</a>
+          <a class="link" href="brand/brand-board.html">Brand</a>
+          <a class="link" href="blueprint.html">Blueprint</a>
+          <a class="link" href="releasecandidate.html">Candidate</a>
+          <a class="link" href="betabeacon.html">Beta</a>
+          <a class="link" href="mvpcontrol.html">MVP Control</a>
+          <!-- VEDAPATH WORKING DATA SPRINT NAV START -->
+          <a class="link active" href="workingdata.html">Data</a>
+          <!-- VEDAPATH WORKING DATA SPRINT NAV END -->
+          <span class="version">v1.5.5 data pack</span>
+        </nav>
+      </header>
+
+      <main class="workspace" aria-label="VedaPath Working Source Data Pack workspace">
+        <aside class="panel">
+          <span class="eyebrow">Working data demo sprint</span>
+          <h2>Release Rooms</h2>
+          <p class="muted">Ten focused rooms turn the MVP lane into a source-data-to-answer chain a beta user can understand.</p>
+          <div class="room-list" id="roomList"></div>
+        </aside>
+
+        <section class="panel">
+          <div class="hero-grid">
+            <div>
+              <span class="eyebrow">Working data demo</span>
+              <h1>Turn source records into product fuel.</h1>
+              <p class="muted">A compact working data pack that shows how one source record can carry citation, family, review state, user question fit, and visible boundaries.</p>
+            </div>
+            <div class="mark-stage">
+              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Data logo">
+            </div>
+          </div>
+
+          <div class="source-block" aria-label="Release source card">
+            <div>
+              <span class="source-meta">Release</span>
+              <span class="source-value">v1.5.5</span>
+            </div>
+            <div>
+              <span class="source-meta">Source candidate</span>
+              <span class="source-value">Bhagavad Gita 2.48</span>
+            </div>
+            <div>
+              <span class="source-meta">Text family</span>
+              <span class="source-value">Bhagavad Gita | Smriti</span>
+            </div>
+            <div>
+              <span class="source-meta">Boundary</span>
+              <span class="source-value">Static source data demo, not verified corpus coverage.</span>
+            </div>
+          </div>
+
+          <h2>Working Chain Signals</h2>
+          <div class="item-list" id="itemList"></div>
+
+          <div class="tabs" role="tablist" aria-label="VedaPath Working Source Data Pack layers">
+            <button class="tab active" type="button" data-mode="brief">Brief</button>
+            <button class="tab" type="button" data-mode="checklist">Checklist</button>
+            <button class="tab" type="button" data-mode="boundary">Boundary</button>
+          </div>
+
+          <div id="modePanel"></div>
+
+          <div class="button-row" style="margin-top: 14px;">
+            <button class="button primary" id="copyBrief" type="button">Copy Brief</button>
+            <button class="button safe" id="copyJson" type="button">Copy JSON</button>
+            <button class="button" id="copyBoundary" type="button">Copy Boundary</button>
+          </div>
+
+          <textarea id="output" readonly aria-label="VedaPath Working Source Data Pack output"></textarea>
+        </section>
+
+        <aside class="panel tight" aria-label="VedaPath Working Source Data Pack sprint rail">
+          <span class="badge green">Working MVP chain</span>
+          <h2 style="margin-top: 14px;">Data Pulse</h2>
+          <p class="muted">Working Source Data Pack gives VedaPath a visible data spine: every answer starts from a record that can be reviewed, limited, and improved.</p>
+          <div class="progress" aria-label="Sprint progress 101 percent">
+            <div class="bar" style="--score:101%"></div>
+          </div>
+          <div class="metric-grid">
+            <div class="metric">
+              <span>Current</span>
+              <strong>v1.5.5</strong>
+            </div>
+            <div class="metric">
+              <span>Sprint</span>
+              <strong>1/10</strong>
+            </div>
+            <div class="metric">
+              <span>Progress</span>
+              <strong>101%</strong>
+            </div>
+            <div class="metric">
+              <span>Next</span>
+              <strong>Query Router Demo</strong>
+            </div>
+          </div>
+
+          <div class="sprint-list">
+            <div class="sprint-step active">
+              <span class="step-index">1</span>
+              <div><strong>Data</strong><p>Shape source records.</p></div>
+            </div>
+            <div class="sprint-step">
+              <span class="step-index">2</span>
+              <div><strong>Retrieve</strong><p>Find eligible evidence.</p></div>
+            </div>
+            <div class="sprint-step">
+              <span class="step-index">3</span>
+              <div><strong>Answer</strong><p>Compose with confidence.</p></div>
+            </div>
+            <div class="sprint-step">
+              <span class="step-index">4</span>
+              <div><strong>Review</strong><p>Route feedback and decisions.</p></div>
+            </div>
+          </div>
+
+          <section class="panel tight boundary" style="margin-top: 16px;">
+            <h2>Release Boundary</h2>
+            <p class="muted">This is a working data demo. It does not create production storage, live retrieval, authentication, licensed source text, therapy, ritual instruction, emergency support, or spiritual authority.</p>
+          </section>
+        </aside>
+      </main>
+    </div>
+
+    <script type="application/json" id="room-data">{
+  "version": "v1.5.5",
+  "badge": "v1.5.5 data pack",
+  "slug": "workingdata",
+  "nav": "Data",
+  "title": "VedaPath Working Source Data Pack",
+  "pageLabel": "Working source data",
+  "eyebrow": "Working data demo",
+  "h1": "Turn source records into product fuel.",
+  "lead": "A compact working data pack that shows how one source record can carry citation, family, review state, user question fit, and visible boundaries.",
+  "source": "Bhagavad Gita 2.48",
+  "family": "Bhagavad Gita | Smriti",
+  "stance": "Static source data demo, not verified corpus coverage.",
+  "progress": 101,
+  "next": "Query Router Demo",
+  "primaryAsk": "Make the first source data shape concrete enough to power retrieval, answer rendering, and review.",
+  "summary": "Working Source Data Pack gives VedaPath a visible data spine: every answer starts from a record that can be reviewed, limited, and improved.",
+  "items": [
+    [
+      "Record identity",
+      "Each entry has id, title, citation, text family, and topic tags.",
+      "Makes source lookup stable."
+    ],
+    [
+      "Review fields",
+      "Each entry names source review, language review, rights state, and boundary risk.",
+      "Keeps trust visible."
+    ],
+    [
+      "Answer scope",
+      "Each entry lists allowed questions, blocked claims, and fallback behavior.",
+      "Prevents broad overclaim."
+    ],
+    [
+      "Beta seed",
+      "Begin with a small reviewed pack before adding scale.",
+      "Protects quality."
+    ]
+  ],
+  "modes": {
+    "brief": [
+      [
+        "Product promise",
+        "Working Source Data Pack gives VedaPath a visible data spine: every answer starts from a record that can be reviewed, limited, and improved."
+      ],
+      [
+        "Founder move",
+        "Make the first source data shape concrete enough to power retrieval, answer rendering, and review."
+      ],
+      [
+        "Trust move",
+        "Keep the visible boundary: Static source data demo, not verified corpus coverage."
+      ]
+    ],
+    "checklist": [
+      [
+        "Record identity",
+        "Each entry has id, title, citation, text family, and topic tags."
+      ],
+      [
+        "Review fields",
+        "Each entry names source review, language review, rights state, and boundary risk."
+      ],
+      [
+        "Answer scope",
+        "Each entry lists allowed questions, blocked claims, and fallback behavior."
+      ]
+    ],
+    "boundary": [
+      [
+        "No production claim",
+        "Do not imply live storage, live retrieval, live AI generation, or verified public corpus coverage."
+      ],
+      [
+        "No authority claim",
+        "Do not present VedaPath as a guru, ritual authority, therapist, emergency service, or replacement for teachers and tradition."
+      ],
+      [
+        "No hidden data",
+        "Do not remember personal context without explicit consent, export, pause, and delete controls."
+      ]
+    ]
+  },
+  "rooms": [
+    {
+      "version": "v1.5.5",
+      "slug": "workingdata",
+      "nav": "Data"
+    }
+  ]
+}</script>
+    <script src="assets/vedapath-sprint.js"></script>
+  </body>
+</html>
