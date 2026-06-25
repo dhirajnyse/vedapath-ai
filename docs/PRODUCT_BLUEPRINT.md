@@ -56,6 +56,7 @@ It helps users move from curiosity to understanding through:
 - Personal Calm Profile: Personal Calm Profile shows what VedaPath may remember, what it must not infer, and how a user can export or clear it.
 - Source Journey Map: Source Journey Map makes the learning path visible so users understand how VedaPath moves from curiosity to cited clarity.
 - Reflection Journal Prototype: Reflection Journal Prototype gives daily calm a private writing surface without turning personal notes into hidden product data.
+- Family Calm Mode: Family Calm Mode helps a household slow one conversation without storing private conflict or acting as a counselor.
 <!-- VEDAPATH PERSONAL SPRINT SUMMARY END -->
 
 ## What It Is
@@ -1013,6 +1014,21 @@ It should:
 - produce a copyable founder handoff
 
 Reflection Journal Prototype should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 62. Family Calm Mode
+
+Family Calm Mode helps a household slow one conversation without storing private conflict or acting as a counselor.
+
+It should:
+
+- Arrive: Name the shared moment without blaming.
+- Source: Use one source candidate for steadiness.
+- Question: Ask one clean question everyone can answer.
+- Agreement: Choose one small next action.
+- preserve the boundary: Conversation support, not family therapy.
+- produce a copyable founder handoff
+
+Family Calm Mode should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH PERSONAL SPRINT BLUEPRINT END -->
 
 ## Product Personality
