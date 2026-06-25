@@ -18,7 +18,7 @@ const releases = [
     source: "Bhagavad Gita 2.48",
     family: "Bhagavad Gita | Smriti",
     stance: "Static source data demo, not verified corpus coverage.",
-    progress: 101,
+    progress: 51,
     next: "Query Router Demo",
     primaryAsk: "Make the first source data shape concrete enough to power retrieval, answer rendering, and review.",
     summary: "Working Source Data Pack gives VedaPath a visible data spine: every answer starts from a record that can be reviewed, limited, and improved.",
@@ -42,7 +42,7 @@ const releases = [
     source: "Rigveda 1.164.46",
     family: "Veda | Shruti",
     stance: "Routing prototype, not live classification.",
-    progress: 102,
+    progress: 52,
     next: "Local Retrieval Workspace",
     primaryAsk: "Separate question intent before retrieval so the answer can stay narrow and honest.",
     summary: "Query Router Demo makes the first invisible step visible: VedaPath should understand what kind of answer is allowed before it searches.",
@@ -66,7 +66,7 @@ const releases = [
     source: "Mundaka Upanishad 1.1.4",
     family: "Upanishad | Shruti",
     stance: "Local retrieval demo, not production search.",
-    progress: 103,
+    progress: 53,
     next: "Answer Composer Workspace",
     primaryAsk: "Show why a source candidate was selected before any answer is composed.",
     summary: "Local Retrieval Workspace gives VedaPath a practical search preview with eligible records, hold states, and visible match reasons.",
@@ -90,7 +90,7 @@ const releases = [
     source: "Bhagavad Gita 2.47",
     family: "Bhagavad Gita | Smriti",
     stance: "Answer composition demo, not live generation.",
-    progress: 104,
+    progress: 54,
     next: "Citation Evidence Panel",
     primaryAsk: "Turn the source record into a clean answer pattern before adding model generation.",
     summary: "Answer Composer Workspace connects retrieval to the user-facing answer, preserving one calm structure across source, meaning, and boundary.",
@@ -114,7 +114,7 @@ const releases = [
     source: "Katha Upanishad 1.2.1",
     family: "Upanishad | Shruti",
     stance: "Evidence UI demo, not licensed full-text display.",
-    progress: 105,
+    progress: 55,
     next: "Confidence Rulebook",
     primaryAsk: "Make every serious claim inspectable without turning the first answer into a research paper.",
     summary: "Citation Evidence Panel gives VedaPath an evidence drawer that can support curiosity, correction, and scholar review while keeping the main surface calm.",
@@ -138,7 +138,7 @@ const releases = [
     source: "Bhagavad Gita 4.34",
     family: "Bhagavad Gita | Smriti",
     stance: "Confidence rules demo, not automated certification.",
-    progress: 106,
+    progress: 56,
     next: "Consent Memory Preview",
     primaryAsk: "Define confidence from visible rules so users can understand and challenge it.",
     summary: "Confidence Rulebook makes trust less magical: the product explains why it is confident, cautious, waiting for review, or refusing to answer.",
@@ -162,7 +162,7 @@ const releases = [
     source: "Isha Upanishad 1",
     family: "Upanishad | Shruti",
     stance: "Consent memory prototype, not account sync.",
-    progress: 107,
+    progress: 57,
     next: "Feedback Queue Simulator",
     primaryAsk: "Make future personalization opt-in, visible, reversible, and modest.",
     summary: "Consent Memory Preview keeps calm personal use from becoming hidden tracking: memory must be named, limited, and under user control.",
@@ -186,7 +186,7 @@ const releases = [
     source: "Bhagavad Gita 18.63",
     family: "Bhagavad Gita | Smriti",
     stance: "Feedback queue demo, not live support intake.",
-    progress: 108,
+    progress: 58,
     next: "Reviewer Decision Log",
     primaryAsk: "Give users a way to improve the product without collecting sensitive personal stories.",
     summary: "Feedback Queue Simulator shows how VedaPath can learn from users through typed, privacy-light review tickets instead of silent answer rewrites.",
@@ -210,7 +210,7 @@ const releases = [
     source: "Taittiriya Upanishad 1.11.1",
     family: "Upanishad | Shruti",
     stance: "Decision log demo, not scholar endorsement.",
-    progress: 109,
+    progress: 59,
     next: "Working MVP Console",
     primaryAsk: "Make human review auditable while avoiding broad claims of authority.",
     summary: "Reviewer Decision Log gives VedaPath a way to publish better answers because decisions are scoped, reasoned, and visible.",
@@ -234,7 +234,7 @@ const releases = [
     source: "Bhagavad Gita 18.63",
     family: "Bhagavad Gita | Smriti",
     stance: "Working MVP console, not production launch.",
-    progress: 110,
+    progress: 60,
     next: "Founder instruction",
     primaryAsk: "Choose the first production implementation path: static data beta, hosted backend, or reviewer workflow.",
     summary: "Working MVP Console completes the working data demo sprint and gives VedaPath a practical static-data path toward a real beta slice.",
@@ -600,12 +600,12 @@ function updateBuildStatus() {
           <strong>${active.version}</strong>
           <p>Working data demo sprint through ${shortTitle(active)}: ${visible.map(shortTitle).join(", ")}.</p>`);
   content = content.replace(/<span>MVP progress<\/span>\s*<strong>[^<]+<\/strong>\s*<div class="progress" aria-hidden="true"><div class="bar" style="width:[^"]+"><\/div><\/div>\s*<p>[\s\S]*?<\/p>/, `<span>MVP progress</span>
-          <strong>${Math.min(100, active.progress - 45)}%</strong>
-          <div class="progress" aria-hidden="true"><div class="bar" style="width:${Math.min(100, active.progress - 45)}%"></div></div>
+          <strong>${Math.min(100, 40 + visible.length * 4)}%</strong>
+          <div class="progress" aria-hidden="true"><div class="bar" style="width:${Math.min(100, 40 + visible.length * 4)}%"></div></div>
           <p>Working data demo sprint progress: ${visible.length}/10 rooms complete. Next: production implementation choice.</p>`);
   content = content.replace(/<span>Full vision progress<\/span>\s*<strong>[^<]+<\/strong>\s*<div class="progress" aria-hidden="true"><div class="bar" style="width:[^"]+"><\/div><\/div>\s*<p>[\s\S]*?<\/p>/, `<span>Full vision progress</span>
-          <strong>${active.progress}%</strong>
-          <div class="progress" aria-hidden="true"><div class="bar" style="width:${active.progress}%"></div></div>
+          <strong>${Math.min(100, 20 + visible.length)}%</strong>
+          <div class="progress" aria-hidden="true"><div class="bar" style="width:${Math.min(100, 20 + visible.length)}%"></div></div>
           <p>Working data chain progress: data, retrieval, answer composition, evidence, consent, feedback, and review are now mapped as product surfaces.</p>`);
   content = content.replace(/<span>Next release<\/span>\s*<strong>[\s\S]*?<\/strong>\s*<p>[\s\S]*?<\/p>/, `<span>Next release</span>
           <strong>${future[0]?.version || "Founder instruction"}</strong>
