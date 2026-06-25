@@ -173,6 +173,7 @@ It helps users move from curiosity to understanding through:
 <!-- VEDAPATH BETA IMPLEMENTATION SPRINT SUMMARY END -->
 <!-- VEDAPATH STATIC BETA DATA SPRINT SUMMARY START -->
 - Beta Source Seed Pack: Beta Source Seed Pack creates the first concrete source inventory for VedaPath's beta data path.
+- Question Fixture Set: Question Fixture Set gives VedaPath a repeatable way to test whether source routing and answer boundaries are improving.
 <!-- VEDAPATH STATIC BETA DATA SPRINT SUMMARY END -->
 
 ## What It Is
@@ -2595,6 +2596,21 @@ It should:
 - keep source records review-needed until explicitly approved
 
 Beta Source Seed Pack should never claim complete corpus coverage, production storage, live semantic search, live AI generation, public launch approval, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 159. Question Fixture Set
+
+Question Fixture Set gives VedaPath a repeatable way to test whether source routing and answer boundaries are improving.
+
+It should:
+
+- Question text: Plain-language user question plus normalized intent.
+- Expected route: Source lookup, claim check, calm reflection, compare, or no-answer.
+- Expected source: Citation candidate or reviewer-needed fallback.
+- Expected boundary: What the answer must not imply.
+- preserve the boundary: Question fixture demo, not production evaluation coverage.
+- keep source records review-needed until explicitly approved
+
+Question Fixture Set should never claim complete corpus coverage, production storage, live semantic search, live AI generation, public launch approval, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH STATIC BETA DATA SPRINT BLUEPRINT END -->
 
 ## Product Personality

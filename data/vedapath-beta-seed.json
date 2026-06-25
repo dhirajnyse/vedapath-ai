@@ -1,6 +1,6 @@
 {
   "product": "VedaPath AI",
-  "release": "v1.7.5",
+  "release": "v1.7.6",
   "status": "static beta seed prototype",
   "warning": "Prototype data only. Records are not public answer eligible until reviewed.",
   "records": [
@@ -11,7 +11,7 @@
       "title": "Beta Source Seed Pack",
       "source_candidate": "Bhagavad Gita 2.48",
       "text_family": "Bhagavad Gita | Smriti",
-      "status": "active-prototype",
+      "status": "prototype-support",
       "public_answer_eligible": false,
       "review_state": "review-needed",
       "rights_state": "display-citation-only",
@@ -28,6 +28,31 @@
       ],
       "boundary": "Static candidate seed, not verified public corpus coverage.",
       "summary": "Beta Source Seed Pack creates the first concrete source inventory for VedaPath's beta data path."
+    },
+    {
+      "id": "vp-v1-7-6-questionfixtures",
+      "release": "v1.7.6",
+      "slug": "questionfixtures",
+      "title": "Question Fixture Set",
+      "source_candidate": "Bhagavad Gita 2.47",
+      "text_family": "Bhagavad Gita | Smriti",
+      "status": "active-prototype",
+      "public_answer_eligible": false,
+      "review_state": "review-needed",
+      "rights_state": "display-citation-only",
+      "allowed_intents": [
+        "source_lookup",
+        "category_check",
+        "reflection_preview"
+      ],
+      "blocked_claims": [
+        "therapy",
+        "ritual_authority",
+        "science_proof",
+        "complete_corpus_coverage"
+      ],
+      "boundary": "Question fixture demo, not production evaluation coverage.",
+      "summary": "Question Fixture Set gives VedaPath a repeatable way to test whether source routing and answer boundaries are improving."
     }
   ]
 }

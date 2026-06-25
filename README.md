@@ -339,6 +339,8 @@ Let us look at the source first.
 <!-- VEDAPATH STATIC BETA DATA SPRINT LINKS START -->
 - [Beta Source Seed Pack](betasourcepack.html)
 - [Beta Source Seed Pack Notes](docs/BETA_SOURCE_SEED_PACK.md)
+- [Question Fixture Set](questionfixtures.html)
+- [Question Fixture Set Notes](docs/QUESTION_FIXTURE_SET.md)
 <!-- VEDAPATH STATIC BETA DATA SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -370,7 +372,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v1.7.5` is a trusted MVP prototype plus Beta Source Seed Pack with:
+`v1.7.6` is a trusted MVP prototype plus Question Fixture Set with:
 
 - Ask workspace
 - Source Card
@@ -542,6 +544,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 <!-- VEDAPATH BETA IMPLEMENTATION SPRINT FEATURES END -->
 <!-- VEDAPATH STATIC BETA DATA SPRINT FEATURES START -->
 - Beta Source Seed Pack: Beta Source Seed Pack creates the first concrete source inventory for VedaPath's beta data path.
+- Question Fixture Set: Question Fixture Set gives VedaPath a repeatable way to test whether source routing and answer boundaries are improving.
 <!-- VEDAPATH STATIC BETA DATA SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff

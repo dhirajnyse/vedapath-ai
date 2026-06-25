@@ -1,6 +1,6 @@
 {
   "product": "VedaPath AI",
-  "release": "v1.7.5",
+  "release": "v1.7.6",
   "status": "question fixture prototype",
   "fixtures": [
     {
@@ -9,6 +9,14 @@
       "expected_route": "source_first_preview",
       "expected_source_candidate": "Bhagavad Gita 2.48",
       "expected_boundary": "Static candidate seed, not verified public corpus coverage.",
+      "reviewer_needed": true
+    },
+    {
+      "id": "fixture-questionfixtures",
+      "question": "Capture the questions the first beta must answer, refuse, or route to review.",
+      "expected_route": "source_first_preview",
+      "expected_source_candidate": "Bhagavad Gita 2.47",
+      "expected_boundary": "Question fixture demo, not production evaluation coverage.",
       "reviewer_needed": true
     }
   ]
