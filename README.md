@@ -375,6 +375,8 @@ Let us look at the source first.
 - [Review State Filter Notes](docs/REVIEW_STATE_FILTER.md)
 - [Copy Handoff Builder](handoffbuilder.html)
 - [Copy Handoff Builder Notes](docs/COPY_HANDOFF_BUILDER.md)
+- [Mobile Search Polish](mobilesearch.html)
+- [Mobile Search Polish Notes](docs/MOBILE_SEARCH_POLISH.md)
 <!-- VEDAPATH INTERACTIVE SEARCH SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -406,7 +408,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v1.9.2` is a trusted MVP prototype plus Copy Handoff Builder with:
+`v1.9.3` is a trusted MVP prototype plus Mobile Search Polish with:
 
 - Ask workspace
 - Source Card
@@ -597,6 +599,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Search Evidence Drawer: Search Evidence Drawer gives VedaPath a simple result-to-evidence interaction that preserves source boundaries.
 - Review State Filter: Review State Filter makes source status a first-class search control instead of buried metadata.
 - Copy Handoff Builder: Copy Handoff Builder turns beta search into an operations bridge, giving reviewers compact context without hidden automation.
+- Mobile Search Polish: Mobile Search Polish protects VedaPath's simplicity promise by keeping search usable and readable on small screens.
 <!-- VEDAPATH INTERACTIVE SEARCH SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff

@@ -192,6 +192,7 @@ It helps users move from curiosity to understanding through:
 - Search Evidence Drawer: Search Evidence Drawer gives VedaPath a simple result-to-evidence interaction that preserves source boundaries.
 - Review State Filter: Review State Filter makes source status a first-class search control instead of buried metadata.
 - Copy Handoff Builder: Copy Handoff Builder turns beta search into an operations bridge, giving reviewers compact context without hidden automation.
+- Mobile Search Polish: Mobile Search Polish protects VedaPath's simplicity promise by keeping search usable and readable on small screens.
 <!-- VEDAPATH INTERACTIVE SEARCH SPRINT SUMMARY END -->
 
 ## What It Is
@@ -2870,6 +2871,21 @@ It should:
 - keep the search browser-only until a real backend is approved
 
 Copy Handoff Builder should never claim live semantic retrieval, backend storage, live AI generation, reviewed corpus coverage, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 176. Mobile Search Polish
+
+Mobile Search Polish protects VedaPath's simplicity promise by keeping search usable and readable on small screens.
+
+It should:
+
+- Single column: Search controls and results stack cleanly.
+- Stable controls: Inputs and chips do not shift the layout unpredictably.
+- Readable cards: Source, family, review, and boundary stay scannable.
+- Copy area: Handoff text remains available without crowding the result list.
+- preserve the boundary: Responsive polish, not native app release.
+- keep the search browser-only until a real backend is approved
+
+Mobile Search Polish should never claim live semantic retrieval, backend storage, live AI generation, reviewed corpus coverage, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH INTERACTIVE SEARCH SPRINT BLUEPRINT END -->
 
 ## Product Personality

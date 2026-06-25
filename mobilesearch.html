@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>VedaPath Fallback Explorer</title>
+    <title>VedaPath Mobile Search Polish</title>
     <link rel="stylesheet" href="assets/vedapath-sprint.css">
     <link rel="stylesheet" href="assets/vedapath-beta-search.css">
   </head>
@@ -14,7 +14,7 @@
           <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
           <div>
             <strong>VedaPath AI</strong>
-            <span>Fallback explorer</span>
+            <span>Mobile search polish</span>
           </div>
         </a>
         <nav class="nav" aria-label="Project links">
@@ -27,17 +27,17 @@
           <a class="link" href="sourcefilters.html">Filters</a>
           <a class="link" href="resultreasons.html">Reasons</a>
           <a class="link" href="questionmatch.html">Question</a>
-          <a class="link active" href="fallbackexplorer.html">Fallbacks</a>
+          <a class="link" href="fallbackexplorer.html">Fallbacks</a>
           <a class="link" href="searchevidence.html">Evidence</a>
           <a class="link" href="reviewstatefilter.html">Review</a>
           <a class="link" href="handoffbuilder.html">Handoff</a>
-          <a class="link" href="mobilesearch.html">Mobile</a>
+          <a class="link active" href="mobilesearch.html">Mobile</a>
           <!-- VEDAPATH INTERACTIVE SEARCH SPRINT NAV END -->
           <span class="version">v1.9.3 mobile</span>
         </nav>
       </header>
 
-      <main class="workspace" aria-label="VedaPath Fallback Explorer workspace">
+      <main class="workspace" aria-label="VedaPath Mobile Search Polish workspace">
         <aside class="panel">
           <span class="eyebrow">Interactive beta search sprint</span>
           <h2>Release Rooms</h2>
@@ -48,35 +48,35 @@
         <section class="panel">
           <div class="hero-grid">
             <div>
-              <span class="eyebrow">No-answer UX</span>
-              <h1>Show the careful path when search is empty.</h1>
-              <p class="muted">A fallback explorer that turns no result, no eligible record, rights hold, and sensitive context into clear next steps.</p>
+              <span class="eyebrow">Mobile UX</span>
+              <h1>Make beta search calm on a small screen.</h1>
+              <p class="muted">A mobile search polish pass that keeps input, filters, results, and handoff readable on phone-size layouts.</p>
             </div>
             <div class="mark-stage">
-              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Fallbacks logo">
+              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Mobile logo">
             </div>
           </div>
 
           <div class="source-block" aria-label="Release source card">
             <div>
               <span class="source-meta">Release</span>
-              <span class="source-value">v1.8.9</span>
+              <span class="source-value">v1.9.3</span>
             </div>
             <div>
               <span class="source-meta">Source candidate</span>
-              <span class="source-value">Katha Upanishad 1.2.1</span>
+              <span class="source-value">Bhagavad Gita 18.63</span>
             </div>
             <div>
               <span class="source-meta">Text family</span>
-              <span class="source-value">Upanishad | Shruti</span>
+              <span class="source-value">Bhagavad Gita | Smriti</span>
             </div>
             <div>
               <span class="source-meta">Boundary</span>
-              <span class="source-value">Fallback explorer, not safety certification.</span>
+              <span class="source-value">Responsive polish, not native app release.</span>
             </div>
           </div>
 
-          <section class="beta-search" id="betaSearch" data-default-query="therapy" aria-label="Interactive beta search">
+          <section class="beta-search" id="betaSearch" data-default-query="source" aria-label="Interactive beta search">
             <div class="search-head">
               <div>
                 <span class="eyebrow">Browser-only seed search</span>
@@ -87,7 +87,7 @@
             </div>
             <label class="search-label" for="betaSearchInput">Search source, family, boundary, or blocked claim</label>
             <div class="search-row">
-              <input id="betaSearchInput" class="search-input" type="search" autocomplete="off" value="therapy" placeholder="Try Gita, review, therapy, source">
+              <input id="betaSearchInput" class="search-input" type="search" autocomplete="off" value="source" placeholder="Try Gita, review, therapy, source">
               <button class="button primary" id="betaSearchButton" type="button">Search</button>
             </div>
             <div class="query-chips" id="betaSearchChips" aria-label="Quick searches"></div>
@@ -99,7 +99,7 @@
           <h2>Search Signals</h2>
           <div class="item-list" id="itemList"></div>
 
-          <div class="tabs" role="tablist" aria-label="VedaPath Fallback Explorer layers">
+          <div class="tabs" role="tablist" aria-label="VedaPath Mobile Search Polish layers">
             <button class="tab active" type="button" data-mode="brief">Brief</button>
             <button class="tab" type="button" data-mode="checklist">Checklist</button>
             <button class="tab" type="button" data-mode="boundary">Boundary</button>
@@ -113,20 +113,20 @@
             <button class="button" id="copyBoundary" type="button">Copy Boundary</button>
           </div>
 
-          <textarea id="output" readonly aria-label="VedaPath Fallback Explorer output"></textarea>
+          <textarea id="output" readonly aria-label="VedaPath Mobile Search Polish output"></textarea>
         </section>
 
-        <aside class="panel tight" aria-label="VedaPath Fallback Explorer sprint rail">
+        <aside class="panel tight" aria-label="VedaPath Mobile Search Polish sprint rail">
           <span class="badge green">Browser-only search</span>
-          <h2 style="margin-top: 14px;">Fallbacks Pulse</h2>
-          <p class="muted">Fallback Explorer makes refusal and uncertainty part of the product experience rather than a dead end.</p>
-          <div class="progress" aria-label="Sprint progress 85 percent">
-            <div class="bar" style="--score:85%"></div>
+          <h2 style="margin-top: 14px;">Mobile Pulse</h2>
+          <p class="muted">Mobile Search Polish protects VedaPath's simplicity promise by keeping search usable and readable on small screens.</p>
+          <div class="progress" aria-label="Sprint progress 89 percent">
+            <div class="bar" style="--score:89%"></div>
           </div>
           <div class="metric-grid">
             <div class="metric">
               <span>Current</span>
-              <strong>v1.8.9</strong>
+              <strong>v1.9.3</strong>
             </div>
             <div class="metric">
               <span>Sprint</span>
@@ -134,11 +134,11 @@
             </div>
             <div class="metric">
               <span>Progress</span>
-              <strong>85%</strong>
+              <strong>89%</strong>
             </div>
             <div class="metric">
               <span>Next</span>
-              <strong>Evidence Drawer Preview</strong>
+              <strong>Interactive Beta Search Control Room</strong>
             </div>
           </div>
 
@@ -170,72 +170,72 @@
     </div>
 
     <script type="application/json" id="room-data">{
-  "version": "v1.8.9",
-  "badge": "v1.8.9 fallbacks",
-  "slug": "fallbackexplorer",
-  "nav": "Fallbacks",
-  "title": "VedaPath Fallback Explorer",
-  "pageLabel": "Fallback explorer",
-  "eyebrow": "No-answer UX",
-  "h1": "Show the careful path when search is empty.",
-  "lead": "A fallback explorer that turns no result, no eligible record, rights hold, and sensitive context into clear next steps.",
-  "source": "Katha Upanishad 1.2.1",
-  "family": "Upanishad | Shruti",
-  "stance": "Fallback explorer, not safety certification.",
-  "progress": 85,
-  "next": "Evidence Drawer Preview",
-  "defaultQuery": "therapy",
-  "primaryAsk": "Make empty search outcomes respectful, useful, and bounded.",
-  "summary": "Fallback Explorer makes refusal and uncertainty part of the product experience rather than a dead end.",
+  "version": "v1.9.3",
+  "badge": "v1.9.3 mobile",
+  "slug": "mobilesearch",
+  "nav": "Mobile",
+  "title": "VedaPath Mobile Search Polish",
+  "pageLabel": "Mobile search polish",
+  "eyebrow": "Mobile UX",
+  "h1": "Make beta search calm on a small screen.",
+  "lead": "A mobile search polish pass that keeps input, filters, results, and handoff readable on phone-size layouts.",
+  "source": "Bhagavad Gita 18.63",
+  "family": "Bhagavad Gita | Smriti",
+  "stance": "Responsive polish, not native app release.",
+  "progress": 89,
+  "next": "Interactive Beta Search Control Room",
+  "defaultQuery": "source",
+  "primaryAsk": "Keep the beta search workflow usable without forcing dense desktop controls onto mobile.",
+  "summary": "Mobile Search Polish protects VedaPath's simplicity promise by keeping search usable and readable on small screens.",
   "items": [
     [
-      "No result",
-      "Invite a narrower source question.",
-      "Avoids vague answers."
+      "Single column",
+      "Search controls and results stack cleanly.",
+      "Keeps reading calm."
     ],
     [
-      "No eligible record",
-      "Explain review-needed state before answer composition.",
-      "Avoids false confidence."
+      "Stable controls",
+      "Inputs and chips do not shift the layout unpredictably.",
+      "Prevents friction."
     ],
     [
-      "Sensitive context",
-      "Avoid therapy, crisis, medical, legal, and family advice.",
-      "Protects users."
+      "Readable cards",
+      "Source, family, review, and boundary stay scannable.",
+      "Protects trust."
     ],
     [
-      "Rights hold",
-      "Show citation identity without showing restricted text.",
-      "Respects source use."
+      "Copy area",
+      "Handoff text remains available without crowding the result list.",
+      "Supports action."
     ]
   ],
   "modes": {
     "brief": [
       [
         "Search promise",
-        "Fallback Explorer makes refusal and uncertainty part of the product experience rather than a dead end."
+        "Mobile Search Polish protects VedaPath's simplicity promise by keeping search usable and readable on small screens."
       ],
       [
         "Founder move",
-        "Make empty search outcomes respectful, useful, and bounded."
+        "Keep the beta search workflow usable without forcing dense desktop controls onto mobile."
       ],
       [
         "Trust move",
-        "Keep this boundary visible: Fallback explorer, not safety certification."
+        "Keep this boundary visible: Responsive polish, not native app release."
       ]
     ],
     "checklist": [
       [
-        "No result",
-        "Invite a narrower source question."
+        "Single column",
+        "Search controls and results stack cleanly."
       ],
       [
-        "No eligible record",
-        "Explain review-needed state before answer composition."
+        "Stable controls",
+        "Inputs and chips do not shift the layout unpredictably."
       ],
       [
-        "Sensitive context",
-        "Avoid therapy, crisis, medical, legal, and family advice."
+        "Readable cards",
+        "Source, family, review, and boundary stay scannable."
       ]
     ],
     "boundary": [
