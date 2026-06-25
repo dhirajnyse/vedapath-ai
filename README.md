@@ -147,6 +147,8 @@ Let us look at the source first.
 - [Source Dataset Studio Notes](docs/SOURCE_DATASET_STUDIO.md)
 - [Answer Contract](answer.html)
 - [Answer Contract Notes](docs/ANSWER_CONTRACT.md)
+- [Reviewer Ops Board](reviewops.html)
+- [Reviewer Ops Board Notes](docs/REVIEWER_OPS_BOARD.md)
 <!-- VEDAPATH BETA SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -178,7 +180,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v0.8.8` is a trusted MVP prototype plus Answer Contract with:
+`v0.8.9` is a trusted MVP prototype plus Reviewer Ops Board with:
 
 - Ask workspace
 - Source Card
@@ -245,6 +247,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - First Session Flow: First Session Flow makes VedaPath testable as a beginning-to-end experience: arrive, ask, source, reflect, carry, and return.
 - Source Dataset Studio: Source Dataset Studio narrows the product from many prototype ideas to a first reviewable beta dataset.
 - Answer Contract: Answer Contract turns VedaPath's trust philosophy into a repeatable response format for beta answers.
+- Reviewer Ops Board: Reviewer Ops Board turns scholar and careful-reader help into scoped tasks, decisions, and release gates.
 <!-- VEDAPATH BETA SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff

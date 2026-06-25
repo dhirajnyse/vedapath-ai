@@ -68,6 +68,7 @@ It helps users move from curiosity to understanding through:
 - First Session Flow: First Session Flow makes VedaPath testable as a beginning-to-end experience: arrive, ask, source, reflect, carry, and return.
 - Source Dataset Studio: Source Dataset Studio narrows the product from many prototype ideas to a first reviewable beta dataset.
 - Answer Contract: Answer Contract turns VedaPath's trust philosophy into a repeatable response format for beta answers.
+- Reviewer Ops Board: Reviewer Ops Board turns scholar and careful-reader help into scoped tasks, decisions, and release gates.
 <!-- VEDAPATH BETA SPRINT SUMMARY END -->
 
 ## What It Is
@@ -1176,6 +1177,21 @@ It should:
 - produce a copyable beta handoff
 
 Answer Contract should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 72. Reviewer Ops Board
+
+Reviewer Ops Board turns scholar and careful-reader help into scoped tasks, decisions, and release gates.
+
+It should:
+
+- Task scope: One reviewer should know exactly what they are deciding.
+- Evidence packet: Attach passage, answer, source fields, and blocked claims.
+- Decision state: Approve, hold, block, or request evidence.
+- Private identity: Reviewer names stay private unless consented.
+- preserve the boundary: Review operations, not endorsement.
+- produce a copyable beta handoff
+
+Reviewer Ops Board should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH BETA SPRINT BLUEPRINT END -->
 
 ## Product Personality
