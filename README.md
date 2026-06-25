@@ -265,6 +265,8 @@ Let us look at the source first.
 - [Beta QA Matrix Notes](docs/BETA_QA_MATRIX.md)
 - [Help Boundary Center](helpcenter.html)
 - [Help Boundary Center Notes](docs/HELP_BOUNDARY_CENTER.md)
+- [Founder Metrics Board](foundermetrics.html)
+- [Founder Metrics Board Notes](docs/FOUNDER_METRICS_BOARD.md)
 <!-- VEDAPATH IMPLEMENTATION SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -296,7 +298,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v1.4.2` is a trusted MVP prototype plus Help Boundary Center with:
+`v1.4.3` is a trusted MVP prototype plus Founder Metrics Board with:
 
 - Ask workspace
 - Source Card
@@ -427,6 +429,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Source Import Checklist: Source Import Checklist turns dataset growth into a disciplined process with visible blockers and no-go fields.
 - Beta QA Matrix: Beta QA Matrix turns VedaPath's product values into release checks for trust, privacy, usability, and mobile simplicity.
 - Help Boundary Center: Help Boundary Center gives VedaPath a plain-language support surface that reduces confusion and protects users.
+- Founder Metrics Board: Founder Metrics Board keeps VedaPath launch learning focused on source quality, trust risk, and product clarity.
 <!-- VEDAPATH IMPLEMENTATION SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff

@@ -132,6 +132,7 @@ It helps users move from curiosity to understanding through:
 - Source Import Checklist: Source Import Checklist turns dataset growth into a disciplined process with visible blockers and no-go fields.
 - Beta QA Matrix: Beta QA Matrix turns VedaPath's product values into release checks for trust, privacy, usability, and mobile simplicity.
 - Help Boundary Center: Help Boundary Center gives VedaPath a plain-language support surface that reduces confusion and protects users.
+- Founder Metrics Board: Founder Metrics Board keeps VedaPath launch learning focused on source quality, trust risk, and product clarity.
 <!-- VEDAPATH IMPLEMENTATION SPRINT SUMMARY END -->
 
 ## What It Is
@@ -2055,6 +2056,21 @@ It should:
 - produce a copyable implementation-readiness handoff
 
 Help Boundary Center should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 126. Founder Metrics Board
+
+Founder Metrics Board keeps VedaPath launch learning focused on source quality, trust risk, and product clarity.
+
+It should:
+
+- Readiness: Ready source records, held records, and reviewer-needed records.
+- Interest: Waitlist cohort and chosen path, collected with consent.
+- Quality: Feedback type, correction rate, and unresolved trust issues.
+- Hold: Reasons to pause: source risk, privacy concern, support gap, or UI issue.
+- preserve the boundary: Metrics design, not live analytics.
+- produce a copyable implementation-readiness handoff
+
+Founder Metrics Board should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH IMPLEMENTATION SPRINT BLUEPRINT END -->
 
 ## Product Personality
