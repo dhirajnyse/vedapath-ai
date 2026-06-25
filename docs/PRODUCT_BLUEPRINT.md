@@ -81,6 +81,7 @@ It helps users move from curiosity to understanding through:
 - Citation Inspector: Citation Inspector makes source quality visible before any answer receives high confidence.
 - Review Trail: Review Trail makes source and boundary decisions auditable without turning reviewer participation into broad endorsement.
 - Boundary Safety QA: Boundary Safety QA turns VedaPath's humility into testable refusal and caution checks.
+- Pilot Launch Room: Pilot Launch Room defines a small beta launch with audience, promise, source scope, feedback path, and stop conditions.
 <!-- VEDAPATH READINESS SPRINT SUMMARY END -->
 
 ## What It Is
@@ -1355,6 +1356,21 @@ It should:
 - produce a copyable launch-readiness handoff
 
 Boundary Safety QA should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 83. Pilot Launch Room
+
+Pilot Launch Room defines a small beta launch with audience, promise, source scope, feedback path, and stop conditions.
+
+It should:
+
+- Audience: Learners curious about source clarity, not everyone at once.
+- Promise: Ask a question and see source, context, confidence, and boundary.
+- Source scope: First 25 reviewed or review-labeled questions.
+- Stop condition: Pause if source confusion, privacy risk, or overclaiming appears.
+- preserve the boundary: Pilot plan, not mass launch.
+- produce a copyable launch-readiness handoff
+
+Pilot Launch Room should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH READINESS SPRINT BLUEPRINT END -->
 
 ## Product Personality
