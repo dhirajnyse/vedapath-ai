@@ -45,6 +45,7 @@ It helps users move from curiosity to understanding through:
 - Source Record Studio: Source Record Studio makes source storage tactile: record fields, translation notes, review flags, and retrieval eligibility.
 - Reviewer Workbench: Reviewer Workbench turns review identity and access rules into a visible, role-scoped decision room.
 - Launch Readiness Board: Launch Readiness Board connects demo readiness, trust gates, public copy, feedback routing, and blocked claims.
+- Invite and Waitlist Prototype: Invite Prototype shapes early-access copy, consent language, and launch asks while avoiding fake sign-up behavior.
 <!-- VEDAPATH LAUNCH SPRINT SUMMARY END -->
 
 ## What It Is
@@ -866,6 +867,21 @@ It should:
 - produce a copyable founder handoff
 
 Launch Readiness Board should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 53. Invite and Waitlist Prototype
+
+Invite Prototype shapes early-access copy, consent language, and launch asks while avoiding fake sign-up behavior.
+
+It should:
+
+- Learner invite: For people curious about sources.
+- Family invite: For shared calm and conversation.
+- Reviewer invite: For careful readers and scholars.
+- Builder invite: For product and trust-minded people.
+- preserve the boundary: Invitation, not capture.
+- produce a copyable founder handoff
+
+Invite and Waitlist Prototype should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH LAUNCH SPRINT BLUEPRINT END -->
 
 ## Product Personality
