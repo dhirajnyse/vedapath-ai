@@ -1,6 +1,6 @@
 {
   "product": "VedaPath AI",
-  "release": "v1.7.9",
+  "release": "v1.8.0",
   "status": "static beta seed prototype",
   "warning": "Prototype data only. Records are not public answer eligible until reviewed.",
   "records": [
@@ -111,7 +111,7 @@
       "title": "No-Answer Fallback Set",
       "source_candidate": "Katha Upanishad 1.2.1",
       "text_family": "Upanishad | Shruti",
-      "status": "active-prototype",
+      "status": "prototype-support",
       "public_answer_eligible": false,
       "review_state": "review-needed",
       "rights_state": "display-citation-only",
@@ -128,6 +128,31 @@
       ],
       "boundary": "Fallback copy demo, not safety certification.",
       "summary": "No-Answer Fallback Set makes VedaPath safer by treating refusal as a designed product moment, not an error."
+    },
+    {
+      "id": "vp-v1-8-0-staticsearch",
+      "release": "v1.8.0",
+      "slug": "staticsearch",
+      "title": "Static Source Search Prototype",
+      "source_candidate": "Isha Upanishad 1",
+      "text_family": "Upanishad | Shruti",
+      "status": "active-prototype",
+      "public_answer_eligible": false,
+      "review_state": "review-needed",
+      "rights_state": "display-citation-only",
+      "allowed_intents": [
+        "source_lookup",
+        "category_check",
+        "reflection_preview"
+      ],
+      "blocked_claims": [
+        "therapy",
+        "ritual_authority",
+        "science_proof",
+        "complete_corpus_coverage"
+      ],
+      "boundary": "Static search prototype, not live semantic retrieval.",
+      "summary": "Static Source Search Prototype gives VedaPath a visible bridge from curated seed data to source-first answer retrieval."
     }
   ]
 }

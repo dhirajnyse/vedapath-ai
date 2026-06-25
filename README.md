@@ -347,6 +347,8 @@ Let us look at the source first.
 - [Category Safety Matrix Notes](docs/CATEGORY_SAFETY_MATRIX.md)
 - [No-Answer Fallback Set](fallbackset.html)
 - [No-Answer Fallback Set Notes](docs/NO_ANSWER_FALLBACK_SET.md)
+- [Static Source Search Prototype](staticsearch.html)
+- [Static Source Search Prototype Notes](docs/STATIC_SOURCE_SEARCH_PROTOTYPE.md)
 <!-- VEDAPATH STATIC BETA DATA SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -378,7 +380,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v1.7.9` is a trusted MVP prototype plus No-Answer Fallback Set with:
+`v1.8.0` is a trusted MVP prototype plus Static Source Search Prototype with:
 
 - Ask workspace
 - Source Card
@@ -554,6 +556,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Beta Topic Map Board: Beta Topic Map Board prevents VedaPath from drifting into broad coverage before its first trusted lanes are ready.
 - Category Safety Matrix: Category Safety Matrix gives VedaPath a simple way to stop popular-culture shortcuts from becoming product truth.
 - No-Answer Fallback Set: No-Answer Fallback Set makes VedaPath safer by treating refusal as a designed product moment, not an error.
+- Static Source Search Prototype: Static Source Search Prototype gives VedaPath a visible bridge from curated seed data to source-first answer retrieval.
 <!-- VEDAPATH STATIC BETA DATA SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff

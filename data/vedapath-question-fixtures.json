@@ -1,6 +1,6 @@
 {
   "product": "VedaPath AI",
-  "release": "v1.7.9",
+  "release": "v1.8.0",
   "status": "question fixture prototype",
   "fixtures": [
     {
@@ -41,6 +41,14 @@
       "expected_route": "no_answer_fallback",
       "expected_source_candidate": "Katha Upanishad 1.2.1",
       "expected_boundary": "Fallback copy demo, not safety certification.",
+      "reviewer_needed": true
+    },
+    {
+      "id": "fixture-staticsearch",
+      "question": "Prove that the first beta can find candidate records without guessing.",
+      "expected_route": "source_first_preview",
+      "expected_source_candidate": "Isha Upanishad 1",
+      "expected_boundary": "Static search prototype, not live semantic retrieval.",
       "reviewer_needed": true
     }
   ]

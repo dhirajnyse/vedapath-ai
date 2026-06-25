@@ -177,6 +177,7 @@ It helps users move from curiosity to understanding through:
 - Beta Topic Map Board: Beta Topic Map Board prevents VedaPath from drifting into broad coverage before its first trusted lanes are ready.
 - Category Safety Matrix: Category Safety Matrix gives VedaPath a simple way to stop popular-culture shortcuts from becoming product truth.
 - No-Answer Fallback Set: No-Answer Fallback Set makes VedaPath safer by treating refusal as a designed product moment, not an error.
+- Static Source Search Prototype: Static Source Search Prototype gives VedaPath a visible bridge from curated seed data to source-first answer retrieval.
 <!-- VEDAPATH STATIC BETA DATA SPRINT SUMMARY END -->
 
 ## What It Is
@@ -2659,6 +2660,21 @@ It should:
 - keep source records review-needed until explicitly approved
 
 No-Answer Fallback Set should never claim complete corpus coverage, production storage, live semantic search, live AI generation, public launch approval, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 163. Static Source Search Prototype
+
+Static Source Search Prototype gives VedaPath a visible bridge from curated seed data to source-first answer retrieval.
+
+It should:
+
+- Filter fields: Topic, family, intent, review state, and risk tag.
+- Result reason: Explain why a record matched the question.
+- Hold display: Held records can explain why they are not eligible.
+- No-result state: A no-source fallback appears before any answer is composed.
+- preserve the boundary: Static search prototype, not live semantic retrieval.
+- keep source records review-needed until explicitly approved
+
+Static Source Search Prototype should never claim complete corpus coverage, production storage, live semantic search, live AI generation, public launch approval, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH STATIC BETA DATA SPRINT BLUEPRINT END -->
 
 ## Product Personality
