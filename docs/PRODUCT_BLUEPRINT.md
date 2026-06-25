@@ -96,6 +96,7 @@ It helps users move from curiosity to understanding through:
 - Answer Evaluation Harness: Answer Evaluation Harness turns VedaPath's trust rules into repeatable checks before new answer behavior is shipped.
 - Export and Delete Center: Export and Delete Center makes user-owned memory practical by designing export, deletion, revocation, and local-clear controls.
 - Privacy-Safe Analytics: Privacy-Safe Analytics defines launch learning around aggregate product signals rather than hidden identity or distress inference.
+- Launch Ops Runbook: Launch Ops Runbook gives VedaPath a practical operating rhythm for release, feedback, incidents, rollback, and reviewer escalation.
 <!-- VEDAPATH PRODUCTION SPRINT SUMMARY END -->
 
 ## What It Is
@@ -1566,6 +1567,21 @@ It should:
 - produce a copyable production-readiness handoff
 
 Privacy-Safe Analytics should never claim production storage, verified answers, reviewer approval, authentication, analytics, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 96. Launch Ops Runbook
+
+Launch Ops Runbook gives VedaPath a practical operating rhythm for release, feedback, incidents, rollback, and reviewer escalation.
+
+It should:
+
+- Pilot scope: Audience, source pack, live surfaces, and held claims.
+- Incident types: Source error, category confusion, privacy concern, unsafe answer.
+- Escalation: Reviewer, founder, product, privacy, or hold decision.
+- Rollback: Remove claim, hide answer, pause feature, or stop pilot.
+- preserve the boundary: Operations runbook, not automatic approval.
+- produce a copyable production-readiness handoff
+
+Launch Ops Runbook should never claim production storage, verified answers, reviewer approval, authentication, analytics, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH PRODUCTION SPRINT BLUEPRINT END -->
 
 ## Product Personality

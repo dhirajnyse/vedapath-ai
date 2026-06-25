@@ -1,4 +1,4 @@
-# v1.1.2 Prototype Notes
+# v1.1.3 Prototype Notes
 
 The v0.7.4 release turns the VedaPath AI homepage into a trusted MVP prototype with calm, practice, source-library, source-seeds, retrieval, passage-review, evaluation, evaluation-dashboard, reviewer-queue, source-policy, trust-ledger, life-map, calm-circle, consent-gate, memory-gate, trust-model, calm-passport, backend-schema, schema-fixtures, evaluation-drill, learning-loop, sanskrit-lens, voice-boundary, scholar-review, launch-gate, production-bridge, source-storage, reviewer-access, public-feedback, launch-story, source-path, calm-compass, calm-card, source-bell, before-reply, samvada, sankalpa, seva, morning, evening, and rhythm surfaces.
 
@@ -99,6 +99,7 @@ The v0.7.4 release turns the VedaPath AI homepage into a trusted MVP prototype w
 - Answer Evaluation Harness: Answer Evaluation Harness turns VedaPath's trust rules into repeatable checks before new answer behavior is shipped.
 - Export and Delete Center: Export and Delete Center makes user-owned memory practical by designing export, deletion, revocation, and local-clear controls.
 - Privacy-Safe Analytics: Privacy-Safe Analytics defines launch learning around aggregate product signals rather than hidden identity or distress inference.
+- Launch Ops Runbook: Launch Ops Runbook gives VedaPath a practical operating rhythm for release, feedback, incidents, rollback, and reviewer escalation.
 <!-- VEDAPATH PRODUCTION SPRINT NOTES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff

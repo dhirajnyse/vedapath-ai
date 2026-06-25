@@ -199,6 +199,8 @@ Let us look at the source first.
 - [Export and Delete Center Notes](docs/EXPORT_AND_DELETE_CENTER.md)
 - [Privacy-Safe Analytics](analytics.html)
 - [Privacy-Safe Analytics Notes](docs/PRIVACY_SAFE_ANALYTICS.md)
+- [Launch Ops Runbook](runbook.html)
+- [Launch Ops Runbook Notes](docs/LAUNCH_OPS_RUNBOOK.md)
 <!-- VEDAPATH PRODUCTION SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -230,7 +232,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v1.1.2` is a trusted MVP prototype plus Privacy-Safe Analytics with:
+`v1.1.3` is a trusted MVP prototype plus Launch Ops Runbook with:
 
 - Ask workspace
 - Source Card
@@ -325,6 +327,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Answer Evaluation Harness: Answer Evaluation Harness turns VedaPath's trust rules into repeatable checks before new answer behavior is shipped.
 - Export and Delete Center: Export and Delete Center makes user-owned memory practical by designing export, deletion, revocation, and local-clear controls.
 - Privacy-Safe Analytics: Privacy-Safe Analytics defines launch learning around aggregate product signals rather than hidden identity or distress inference.
+- Launch Ops Runbook: Launch Ops Runbook gives VedaPath a practical operating rhythm for release, feedback, incidents, rollback, and reviewer escalation.
 <!-- VEDAPATH PRODUCTION SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
