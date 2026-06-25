@@ -1,0 +1,1053 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VedaPath Production Bridge</title>
+    <style>
+      :root {
+        --bg: #fff7ea;
+        --surface: #fffdf8;
+        --ink: #1d1714;
+        --muted: #6c3b25;
+        --line: #ead7c8;
+        --bhagwa: #d65a1f;
+        --ochre: #a83f12;
+        --gold: #e0a83b;
+        --green: #145c4a;
+        --indigo: #29335c;
+        --soft-red: #fde8dd;
+        --soft-green: #e8f0ea;
+        --soft-gold: #fff3d7;
+        --shadow: 0 18px 50px rgba(70, 36, 14, 0.08);
+        --radius: 8px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: Arial, Helvetica, sans-serif;
+        line-height: 1.55;
+      }
+
+      button,
+      textarea {
+        font: inherit;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .shell {
+        width: min(1240px, calc(100% - 44px));
+        margin: 0 auto;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 22px;
+        padding: 22px 0 16px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        min-width: 220px;
+        text-decoration: none;
+      }
+
+      .brand img {
+        width: 48px;
+        height: 48px;
+        border-radius: 8px;
+        object-fit: cover;
+        box-shadow: 0 8px 22px rgba(214, 90, 31, 0.13);
+      }
+
+      .brand strong {
+        display: block;
+        font-size: 20px;
+        line-height: 1.1;
+      }
+
+      .brand span {
+        display: block;
+        margin-top: 2px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .link,
+      .version,
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 40px;
+        border-radius: var(--radius);
+        text-decoration: none;
+        font-weight: 800;
+        white-space: nowrap;
+      }
+
+      .link {
+        padding: 8px 10px;
+        color: #432414;
+      }
+
+      .link.active,
+      .version {
+        border: 1px solid #efb899;
+        color: var(--ochre);
+        background: rgba(255, 253, 248, 0.74);
+      }
+
+      .version {
+        padding: 8px 14px;
+      }
+
+      .button {
+        border: 1px solid #efb899;
+        color: var(--ochre);
+        background: var(--surface);
+        padding: 10px 14px;
+        cursor: pointer;
+      }
+
+      .button.primary {
+        border-color: var(--bhagwa);
+        background: var(--bhagwa);
+        color: white;
+      }
+
+      .button.safe {
+        border-color: #b9d3ca;
+        color: #064f43;
+      }
+
+      .workspace {
+        display: grid;
+        grid-template-columns: 0.94fr 1.28fr 0.92fr;
+        gap: 16px;
+        padding: 20px 0 28px;
+      }
+
+      .panel {
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: rgba(255, 253, 248, 0.84);
+        padding: 18px;
+        box-shadow: var(--shadow);
+      }
+
+      .panel.tight {
+        box-shadow: none;
+      }
+
+      .eyebrow,
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        min-height: 28px;
+        border-radius: 999px;
+        padding: 5px 10px;
+        font-size: 12px;
+        font-weight: 900;
+        color: var(--ochre);
+        background: var(--soft-red);
+      }
+
+      .badge.green {
+        color: var(--green);
+        background: var(--soft-green);
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        margin: 18px 0 12px;
+        font-size: clamp(42px, 6.1vw, 72px);
+        line-height: 0.95;
+        letter-spacing: 0;
+      }
+
+      h2 {
+        margin-bottom: 12px;
+        font-size: 26px;
+        line-height: 1.08;
+      }
+
+      h3 {
+        margin-bottom: 6px;
+        font-size: 16px;
+      }
+
+      .muted {
+        color: var(--muted);
+      }
+
+      .route-list,
+      .contract-list,
+      .entity-grid,
+      .metric-grid,
+      .flow-list {
+        display: grid;
+        gap: 10px;
+      }
+
+      .route-card,
+      .contract-card,
+      .entity-card,
+      .metric,
+      .flow-step {
+        width: 100%;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: rgba(255, 253, 248, 0.78);
+        text-align: left;
+      }
+
+      .route-card {
+        display: grid;
+        grid-template-columns: 42px minmax(0, 1fr);
+        gap: 12px;
+        align-items: center;
+        padding: 12px;
+        cursor: pointer;
+      }
+
+      .route-card.active,
+      .route-card:hover,
+      .route-card:focus-visible {
+        border-color: #f09f79;
+        background: #fff0e7;
+        outline: none;
+      }
+
+      .route-index,
+      .flow-index {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 34px;
+        height: 34px;
+        border-radius: 999px;
+        background: var(--soft-green);
+        color: var(--green);
+        font-size: 13px;
+        font-weight: 900;
+      }
+
+      .route-card.active .route-index,
+      .flow-step.active .flow-index {
+        background: var(--bhagwa);
+        color: white;
+      }
+
+      .route-card strong,
+      .route-card span:not(.route-index) {
+        display: block;
+      }
+
+      .route-card span:not(.route-index) {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .bridge-hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 150px;
+        gap: 18px;
+        align-items: center;
+      }
+
+      .mark-stage {
+        border: 1px solid #f1d0bd;
+        border-radius: var(--radius);
+        background: #fff0df;
+        padding: 10px;
+      }
+
+      .mark-stage img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 1;
+        object-fit: cover;
+        border-radius: 4px;
+      }
+
+      .source-block {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+        margin: 18px 0;
+        padding: 14px;
+        border: 1px solid var(--line);
+        border-left: 4px solid var(--bhagwa);
+        border-radius: var(--radius);
+        background: var(--surface);
+      }
+
+      .source-meta {
+        display: block;
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .source-value {
+        display: block;
+        margin-top: 4px;
+        font-size: 16px;
+        font-weight: 900;
+        line-height: 1.35;
+      }
+
+      .contract-card {
+        display: grid;
+        grid-template-columns: 36px minmax(0, 1fr) auto;
+        gap: 12px;
+        align-items: start;
+        padding: 12px;
+      }
+
+      .contract-state {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 28px;
+        border-radius: 999px;
+        padding: 4px 10px;
+        color: var(--green);
+        background: var(--soft-green);
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      .contract-state.watch {
+        color: #7a4a05;
+        background: var(--soft-gold);
+      }
+
+      .contract-state.hold {
+        color: var(--ochre);
+        background: var(--soft-red);
+      }
+
+      .tabs,
+      .button-row {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .tabs {
+        margin: 16px 0 12px;
+        border-top: 1px solid var(--line);
+        padding-top: 14px;
+      }
+
+      .tab {
+        min-height: 40px;
+        border: 1px solid #efb899;
+        border-radius: var(--radius);
+        background: var(--surface);
+        color: var(--ochre);
+        padding: 9px 12px;
+        font-weight: 900;
+        cursor: pointer;
+      }
+
+      .tab.active {
+        border-color: var(--bhagwa);
+        background: var(--bhagwa);
+        color: white;
+      }
+
+      .entity-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .entity-card {
+        padding: 13px;
+        border-left: 3px solid #f0a07d;
+      }
+
+      .entity-card p,
+      .contract-card p,
+      .flow-step p {
+        margin-bottom: 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      textarea {
+        width: 100%;
+        min-height: 150px;
+        margin-top: 14px;
+        border: 1px solid #efc1aa;
+        border-radius: var(--radius);
+        background: #fffaf4;
+        color: var(--ink);
+        padding: 12px;
+        resize: vertical;
+        font-family: Consolas, "Courier New", monospace;
+        font-size: 13px;
+      }
+
+      .metric-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin: 12px 0;
+      }
+
+      .metric {
+        padding: 12px;
+      }
+
+      .metric span {
+        display: block;
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .metric strong {
+        display: block;
+        margin-top: 5px;
+        font-size: 25px;
+        line-height: 1;
+      }
+
+      .progress {
+        height: 10px;
+        overflow: hidden;
+        border-radius: 999px;
+        background: rgba(168, 62, 18, 0.14);
+      }
+
+      .bar {
+        width: var(--score);
+        height: 100%;
+        border-radius: inherit;
+        background: linear-gradient(90deg, var(--bhagwa), var(--gold));
+      }
+
+      .flow-step {
+        display: grid;
+        grid-template-columns: 40px minmax(0, 1fr);
+        gap: 12px;
+        align-items: center;
+        padding: 12px;
+      }
+
+      .boundary {
+        border-style: dashed;
+        box-shadow: none;
+      }
+
+      @media (max-width: 1100px) {
+        .workspace {
+          grid-template-columns: 1fr;
+        }
+
+        .topbar {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .nav {
+          justify-content: flex-start;
+        }
+      }
+
+      @media (max-width: 760px) {
+        .shell {
+          width: min(100% - 28px, 1240px);
+        }
+
+        .bridge-hero,
+        .source-block,
+        .entity-grid,
+        .metric-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .mark-stage {
+          max-width: 180px;
+        }
+
+        h1 {
+          font-size: 45px;
+        }
+
+        .contract-card {
+          grid-template-columns: 34px minmax(0, 1fr);
+        }
+
+        .contract-state {
+          grid-column: 2;
+          justify-self: start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="shell" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top" aria-label="VedaPath AI home">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
+          <div>
+            <strong>VedaPath AI</strong>
+            <span>Production bridge seed</span>
+          </div>
+        </a>
+        <nav class="nav" aria-label="Project links">
+          <a class="link" href="build-status.html">Build</a>
+          <a class="link" href="brand/brand-board.html">Brand</a>
+          <a class="link" href="blueprint.html">Blueprint</a>
+          <a class="link" href="calm.html">Calm</a>
+          <a class="link" href="daily.html">Daily</a>
+          <a class="link" href="practice.html">Practice</a>
+          <a class="link" href="library.html">Library</a>
+          <a class="link" href="seeds.html">Seeds</a>
+          <a class="link" href="retrieval.html">Retrieval</a>
+          <a class="link" href="passages.html">Review</a>
+          <a class="link" href="eval.html">Eval</a>
+          <a class="link" href="dashboard.html">Dash</a>
+          <a class="link" href="queue.html">Queue</a>
+          <a class="link" href="policy.html">Policy</a>
+          <a class="link" href="ledger.html">Ledger</a>
+          <a class="link" href="life.html">Life</a>
+          <a class="link" href="circle.html">Circle</a>
+          <a class="link" href="consent.html">Consent</a>
+          <a class="link" href="memory.html">Memory</a>
+          <a class="link" href="model.html">Model</a>
+          <a class="link" href="passport.html">Passport</a>
+          <a class="link" href="schema.html">Schema</a>
+          <a class="link" href="fixtures.html">Fixtures</a>
+          <a class="link" href="drill.html">Drill</a>
+          <a class="link" href="loop.html">Loop</a>
+          <a class="link" href="lens.html">Lens</a>
+          <a class="link" href="voice.html">Voice</a>
+          <a class="link" href="scholar.html">Scholar</a>
+          <a class="link" href="launch.html">Launch</a>
+          <a class="link active" href="bridge.html">Bridge</a>
+          <a class="link" href="path.html">Path</a>
+          <a class="link" href="compass.html">Compass</a>
+          <a class="link" href="card.html">Card</a>
+          <a class="link" href="bell.html">Bell</a>
+          <a class="link" href="reply.html">Reply</a>
+          <a class="link" href="samvada.html">Samvada</a>
+          <a class="link" href="sankalpa.html">Intent</a>
+          <a class="link" href="seva.html">Seva</a>
+          <a class="link" href="morning.html">Morning</a>
+          <a class="link" href="evening.html">Evening</a>
+          <a class="link" href="rhythm.html">Rhythm</a>
+          <span class="version">v0.6.0 bridge</span>
+        </nav>
+      </header>
+
+      <main class="workspace" aria-label="VedaPath Production Bridge workspace">
+        <aside class="panel">
+          <span class="eyebrow">Choose production route</span>
+          <h1>Bridge only what can be trusted.</h1>
+          <p class="muted">Select the record family that wants to leave prototype space. The bridge shows the storage, consent, review, and audit conditions before anything becomes durable.</p>
+          <div class="route-list" id="routeList"></div>
+        </aside>
+
+        <section class="panel">
+          <div class="bridge-hero">
+            <div>
+              <span class="eyebrow">Production Bridge Seed</span>
+              <h2 id="bridgeTitle">Source records can cross first.</h2>
+              <p class="muted" id="bridgeSummary">Source seeds are the safest first durable records because they are citation-led, reviewable, and not personal memory.</p>
+            </div>
+            <div class="mark-stage">
+              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Production Bridge logo">
+            </div>
+          </div>
+
+          <div class="source-block" aria-label="Production bridge decision card">
+            <div>
+              <span class="source-meta">Bridge decision</span>
+              <span class="source-value" id="bridgeDecision">Eligible for schema draft</span>
+            </div>
+            <div>
+              <span class="source-meta">Storage lane</span>
+              <span class="source-value" id="storageLane">D1 structured records</span>
+            </div>
+            <div>
+              <span class="source-meta">Consent need</span>
+              <span class="source-value" id="consentNeed">No personal consent</span>
+            </div>
+            <div>
+              <span class="source-meta">Audit state</span>
+              <span class="source-value" id="auditState">Reviewer history required</span>
+            </div>
+          </div>
+
+          <h2>Bridge Contract</h2>
+          <div class="contract-list" id="contractList"></div>
+
+          <div class="tabs" role="tablist" aria-label="Production bridge layers">
+            <button class="tab active" type="button" data-mode="records">Records</button>
+            <button class="tab" type="button" data-mode="guards">Guards</button>
+            <button class="tab" type="button" data-mode="risks">Risks</button>
+            <button class="tab" type="button" data-mode="handoff">Handoff</button>
+          </div>
+
+          <div id="modePanel"></div>
+
+          <div class="button-row" style="margin-top: 14px;">
+            <button class="button primary" id="copyBridge" type="button">Copy Bridge Brief</button>
+            <button class="button safe" id="copySchema" type="button">Copy Schema JSON</button>
+            <button class="button" id="copyBoundary" type="button">Copy Boundary</button>
+          </div>
+
+          <textarea id="bridgeOutput" readonly aria-label="Production Bridge output"></textarea>
+        </section>
+
+        <aside class="rail" aria-label="Production readiness rail">
+          <section class="panel tight">
+            <span class="badge green">Production readiness</span>
+            <h2 style="margin-top: 14px;">Bridge Pulse</h2>
+            <p class="muted" id="pulseSummary">Start with source data. Keep personal memory, audio, and pilot records behind stronger gates.</p>
+            <div class="progress" aria-label="Production bridge readiness">
+              <div class="bar" id="scoreBar" style="--score:86%"></div>
+            </div>
+            <div class="metric-grid">
+              <div class="metric">
+                <span>Readiness</span>
+                <strong id="readinessScore">86%</strong>
+              </div>
+              <div class="metric">
+                <span>Required gates</span>
+                <strong id="requiredGates">4</strong>
+              </div>
+              <div class="metric">
+                <span>Next build</span>
+                <strong id="nextBuild">v0.6.1</strong>
+              </div>
+              <div class="metric">
+                <span>Bridge lane</span>
+                <strong id="bridgeLane">Source</strong>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel tight" style="margin-top: 16px;">
+            <h2>Production Flow</h2>
+            <div class="flow-list">
+              <div class="flow-step active">
+                <span class="flow-index">1</span>
+                <div>
+                  <strong>Define</strong>
+                  <p>Record shape, owner, and allowed use.</p>
+                </div>
+              </div>
+              <div class="flow-step">
+                <span class="flow-index">2</span>
+                <div>
+                  <strong>Gate</strong>
+                  <p>Consent, source, review, and deletion checks.</p>
+                </div>
+              </div>
+              <div class="flow-step">
+                <span class="flow-index">3</span>
+                <div>
+                  <strong>Persist</strong>
+                  <p>Store only reviewed fields with durable ids.</p>
+                </div>
+              </div>
+              <div class="flow-step">
+                <span class="flow-index">4</span>
+                <div>
+                  <strong>Audit</strong>
+                  <p>Keep release history and rollback path visible.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel tight boundary" style="margin-top: 16px;">
+            <h2>Bridge Boundary</h2>
+            <p class="muted">This is a production planning layer, not a live backend. No durable user memory, licensed audio, or pilot data should be promised until the storage and access gates exist.</p>
+          </section>
+        </aside>
+      </main>
+    </div>
+
+    <script>
+      const bridgeRoutes = [
+        {
+          id: "source_records",
+          name: "Source records",
+          short: "Structured citations, source family, review state, and allowed use.",
+          title: "Source records can cross first.",
+          summary: "Source seeds are the safest first durable records because they are citation-led, reviewable, and not personal memory.",
+          decision: "Eligible for schema draft",
+          storage: "D1 structured records",
+          consent: "No personal consent",
+          audit: "Reviewer history required",
+          score: 86,
+          gates: 4,
+          lane: "Source",
+          pulse: "Start with source data. Keep personal memory, audio, and pilot records behind stronger gates.",
+          contract: [
+            ["Durable id", "Every source record needs stable id, citation, source family, and version.", "pass"],
+            ["Reviewer state", "Prototype-ready, needs review, blocked, or production-approved must be explicit.", "pass"],
+            ["Allowed use", "Answer, practice, voice, and launch permissions must be separated.", "watch"],
+            ["Rollback", "Every promoted source needs prior version and reviewer note.", "watch"]
+          ],
+          modes: {
+            records: [
+              ["source_seed", "Canonical source candidate with citation, family, language, allowed use, review state, and missing fields."],
+              ["review_decision", "Human decision record tied to source_seed, reviewer role, evidence note, and release id."],
+              ["trust_event", "Append-only event for promote, block, edit, rollback, or defer."]
+            ],
+            guards: [
+              ["No silent promotion", "A source cannot move from prototype to production without review_decision."],
+              ["No category blur", "Veda, Upanishad, Gita, commentary, and modern interpretation remain separate."],
+              ["No answer authority", "A source can be production-ready while an answer still needs evaluation."]
+            ],
+            risks: [
+              ["Edition mismatch", "Different editions or translations can change meaning."],
+              ["Overconfidence", "Durable source storage can make users assume every answer is verified."],
+              ["Review fatigue", "Too many tiny edits can bypass meaningful review unless batched."]
+            ],
+            handoff: [
+              ["Next build", "v0.6.1 should define the Source Record Storage Plan."],
+              ["Schema action", "Create required fields, indexes, and migration order."],
+              ["QA action", "Add fixtures for promote, block, rollback, and missing-citation cases."]
+            ]
+          }
+        },
+        {
+          id: "review_records",
+          name: "Review records",
+          short: "Reviewer decisions, role boundaries, launch gates, and release history.",
+          title: "Review records need identity before authority.",
+          summary: "Review decisions can become durable only when reviewer role, scope, and change history are visible.",
+          decision: "Eligible after access gate",
+          storage: "D1 append-only events",
+          consent: "Reviewer identity required",
+          audit: "Immutable decision trail",
+          score: 74,
+          gates: 6,
+          lane: "Review",
+          pulse: "Review data is close, but reviewer identity and access rules must come first.",
+          contract: [
+            ["Reviewer role", "Sanskrit, translation, boundary, rights, and product review roles stay separate.", "pass"],
+            ["Identity gate", "Reviewer identity and permission scope are required before production.", "hold"],
+            ["Decision trail", "Approved, blocked, deferred, or needs-review decisions stay append-only.", "pass"],
+            ["Conflict note", "Disagreement between interpretations must remain visible.", "watch"]
+          ],
+          modes: {
+            records: [
+              ["reviewer_profile", "Reviewer id, role, scope, public display policy, and active status."],
+              ["review_decision", "Decision state, evidence note, source id, release id, and rollback link."],
+              ["launch_gate", "Public demo and pilot readiness decisions with no-go reasons."]
+            ],
+            guards: [
+              ["No anonymous authority", "Production review cannot say approved without a reviewer role and scope."],
+              ["No merged roles", "Translation review does not automatically approve ritual, audio, or product claims."],
+              ["No hidden conflict", "Alternate views remain visible instead of being flattened."]
+            ],
+            risks: [
+              ["Role inflation", "A reviewer may be expert in one area but not another."],
+              ["Social pressure", "A public founder story can pressure reviewers to approve too quickly."],
+              ["Rollback gap", "Bad review data needs a clean reversal path."]
+            ],
+            handoff: [
+              ["Next build", "v0.6.2 should define Reviewer Identity and Access Gate."],
+              ["Schema action", "Create reviewer_profile and permission_scope fields."],
+              ["QA action", "Test no approval without role, scope, and evidence note."]
+            ]
+          }
+        },
+        {
+          id: "user_calm_records",
+          name: "User calm records",
+          short: "Personal reflections, calm rhythm, passport grants, and deletion controls.",
+          title: "Personal calm records wait behind consent.",
+          summary: "User-owned records are valuable but more sensitive than source data. Consent, export, deletion, and account boundaries must exist first.",
+          decision: "Hold for consent and account model",
+          storage: "D1 with user ownership",
+          consent: "Explicit user consent",
+          audit: "Export and deletion required",
+          score: 58,
+          gates: 8,
+          lane: "User",
+          pulse: "Keep calm records local until the product has real ownership, export, and deletion controls.",
+          contract: [
+            ["User owner", "Every calm record needs an explicit owner id and purpose.", "hold"],
+            ["Consent grant", "Remember, export, delete, and revoke controls are required.", "hold"],
+            ["Sensitive boundary", "Distress, health, family, and spiritual status notes need extra care.", "hold"],
+            ["Local fallback", "Browser-local preview remains acceptable for prototype testing.", "pass"]
+          ],
+          modes: {
+            records: [
+              ["calm_pattern", "User-owned reflection pattern with source, state, action, and retention policy."],
+              ["passport_grant", "May-remember, must-not-remember, export, delete, and revoke preferences."],
+              ["consent_grant", "Purpose, scope, actor, expiry, and deletion path."]
+            ],
+            guards: [
+              ["No hidden profile", "Do not infer identity, belief, distress, or family context silently."],
+              ["No crisis archive", "Crisis or medical context should not become durable memory."],
+              ["No stuck memory", "User must be able to export, delete, and revoke."]
+            ],
+            risks: [
+              ["Over-personalization", "Calm memory can feel intimate and must stay user-owned."],
+              ["Support risk", "Personal distress can be mistaken for therapy support."],
+              ["Retention risk", "A prototype habit can become unwanted permanent storage."]
+            ],
+            handoff: [
+              ["Future build", "Durable calm records wait until consent and access are implemented."],
+              ["Schema action", "Connect consent_grant, passport_grant, and calm_pattern."],
+              ["QA action", "Test export, delete, revoke, and must-not-remember paths."]
+            ]
+          }
+        },
+        {
+          id: "voice_audio_records",
+          name: "Voice and audio",
+          short: "Pronunciation support, rights review, playback state, and recitation boundaries.",
+          title: "Audio waits until rights and review are firm.",
+          summary: "Voice can deepen the product, but audio must stay blocked until licensing, reviewer, and ritual-boundary gates are complete.",
+          decision: "Blocked from production",
+          storage: "R2 later, metadata in D1",
+          consent: "Rights and reviewer approval",
+          audit: "License trail required",
+          score: 42,
+          gates: 9,
+          lane: "Audio",
+          pulse: "No audio crosses yet. Silent pronunciation support remains the trusted bridge.",
+          contract: [
+            ["License proof", "Audio source, rights, reuse terms, and expiry must be recorded.", "hold"],
+            ["Reviewer gate", "Pronunciation and boundary review must be separate from source approval.", "hold"],
+            ["Ritual boundary", "No chant coaching, initiation guidance, or spiritual eligibility claim.", "hold"],
+            ["Silent fallback", "Syllable hints and non-audio study support can remain available.", "pass"]
+          ],
+          modes: {
+            records: [
+              ["audio_asset", "Future R2 object metadata with license id, reviewer status, and source link."],
+              ["voice_boundary", "Pronunciation support state, allowed use, blocked use, and reviewer note."],
+              ["rights_review", "Rights owner, license terms, expiry, and reuse boundary."]
+            ],
+            guards: [
+              ["No unlicensed playback", "Playback stays blocked without rights review."],
+              ["No ritual instruction", "Pronunciation support does not become initiation, eligibility, or ritual guidance."],
+              ["No guru voice", "Audio must not imitate authority or spiritual command."]
+            ],
+            risks: [
+              ["Rights risk", "Public audio can create copyright and tradition-sensitive problems."],
+              ["Authority risk", "A voice can feel more authoritative than text."],
+              ["Context risk", "Pronunciation without teacher context can be misunderstood."]
+            ],
+            handoff: [
+              ["Future build", "Licensed audio waits beyond v0.6.x planning."],
+              ["Schema action", "Prepare audio_asset and rights_review only after legal/source review."],
+              ["QA action", "Keep playback controls absent until all gates pass."]
+            ]
+          }
+        }
+      ];
+
+      const state = {
+        selectedId: "source_records",
+        mode: "records"
+      };
+
+      function selectedRoute() {
+        return bridgeRoutes.find((item) => item.id === state.selectedId) || bridgeRoutes[0];
+      }
+
+      function stateClass(value) {
+        if (value === "hold") return "hold";
+        if (value === "watch") return "watch";
+        return "";
+      }
+
+      function renderRoutes() {
+        const list = document.getElementById("routeList");
+        list.innerHTML = bridgeRoutes.map((item, index) => `
+          <button class="route-card ${item.id === state.selectedId ? "active" : ""}" type="button" data-id="${item.id}">
+            <span class="route-index">${index + 1}</span>
+            <span>
+              <strong>${item.name}</strong>
+              <span>${item.short}</span>
+            </span>
+          </button>
+        `).join("");
+
+        [...list.querySelectorAll(".route-card")].forEach((button) => {
+          button.addEventListener("click", () => {
+            state.selectedId = button.dataset.id;
+            render();
+          });
+        });
+      }
+
+      function renderTabs() {
+        [...document.querySelectorAll(".tab")].forEach((tab) => {
+          tab.classList.toggle("active", tab.dataset.mode === state.mode);
+          tab.addEventListener("click", () => {
+            state.mode = tab.dataset.mode;
+            render();
+          }, { once: true });
+        });
+      }
+
+      function renderContract() {
+        const item = selectedRoute();
+        document.getElementById("contractList").innerHTML = item.contract.map((row, index) => `
+          <div class="contract-card">
+            <span class="route-index">${index + 1}</span>
+            <div>
+              <strong>${row[0]}</strong>
+              <p>${row[1]}</p>
+            </div>
+            <span class="contract-state ${stateClass(row[2])}">${row[2]}</span>
+          </div>
+        `).join("");
+      }
+
+      function renderModePanel() {
+        const item = selectedRoute();
+        const rows = item.modes[state.mode] || item.modes.records;
+        document.getElementById("modePanel").innerHTML = `
+          <div class="entity-grid">
+            ${rows.map((row) => `
+              <div class="entity-card">
+                <h3>${row[0]}</h3>
+                <p>${row[1]}</p>
+              </div>
+            `).join("")}
+          </div>
+        `;
+      }
+
+      function renderRoute() {
+        const item = selectedRoute();
+        document.getElementById("bridgeTitle").textContent = item.title;
+        document.getElementById("bridgeSummary").textContent = item.summary;
+        document.getElementById("bridgeDecision").textContent = item.decision;
+        document.getElementById("storageLane").textContent = item.storage;
+        document.getElementById("consentNeed").textContent = item.consent;
+        document.getElementById("auditState").textContent = item.audit;
+        document.getElementById("pulseSummary").textContent = item.pulse;
+        document.getElementById("readinessScore").textContent = `${item.score}%`;
+        document.getElementById("scoreBar").style.setProperty("--score", `${item.score}%`);
+        document.getElementById("requiredGates").textContent = item.gates;
+        document.getElementById("bridgeLane").textContent = item.lane;
+        renderContract();
+        renderModePanel();
+        document.getElementById("bridgeOutput").value = bridgeBrief();
+      }
+
+      function bridgePayload() {
+        const item = selectedRoute();
+        return {
+          product: "VedaPath AI",
+          release: "v0.6.0 bridge",
+          feature: "Production Bridge Seed",
+          route_id: item.id,
+          decision: item.decision,
+          storage_lane: item.storage,
+          consent_need: item.consent,
+          audit_state: item.audit,
+          readiness_score: item.score,
+          required_gates: item.gates,
+          contract: item.contract.map((row) => ({ name: row[0], note: row[1], state: row[2] })),
+          boundary: "Production Bridge is planning, not live durable storage."
+        };
+      }
+
+      function bridgeBrief() {
+        const item = selectedRoute();
+        return [
+          "VedaPath Production Bridge Brief",
+          "Release: v0.6.0 bridge",
+          `Route: ${item.name}`,
+          `Decision: ${item.decision}`,
+          `Storage lane: ${item.storage}`,
+          `Consent need: ${item.consent}`,
+          `Audit state: ${item.audit}`,
+          `Readiness: ${item.score}%`,
+          "Boundary: do not promise durable storage, user memory, licensed audio, or production review until the relevant gates exist."
+        ].join("\n");
+      }
+
+      function boundaryBrief() {
+        const item = selectedRoute();
+        return [
+          "VedaPath Production Bridge Boundary",
+          "Release: v0.6.0 bridge",
+          `Route: ${item.name}`,
+          "Must not: treat static prototype pages as production infrastructure.",
+          "Must not: persist personal calm records before consent, export, deletion, and access controls.",
+          "Must not: promote audio before rights review, pronunciation review, and ritual-boundary review.",
+          "Must not: let review records imply authority without role, scope, evidence note, and rollback path."
+        ].join("\n");
+      }
+
+      function copyText(text, button, label) {
+        const original = button.textContent;
+        document.getElementById("bridgeOutput").value = text;
+        const finish = () => {
+          button.textContent = label;
+          window.setTimeout(() => {
+            button.textContent = original;
+          }, 1000);
+        };
+
+        if (navigator.clipboard && window.isSecureContext) {
+          navigator.clipboard.writeText(text).then(finish).catch(finish);
+        } else {
+          finish();
+        }
+      }
+
+      function render() {
+        renderRoutes();
+        renderTabs();
+        renderRoute();
+      }
+
+      document.getElementById("copyBridge").addEventListener("click", () => {
+        copyText(bridgeBrief(), document.getElementById("copyBridge"), "Bridge Copied");
+      });
+
+      document.getElementById("copySchema").addEventListener("click", () => {
+        copyText(JSON.stringify(bridgePayload(), null, 2), document.getElementById("copySchema"), "Schema Copied");
+      });
+
+      document.getElementById("copyBoundary").addEventListener("click", () => {
+        copyText(boundaryBrief(), document.getElementById("copyBoundary"), "Boundary Copied");
+      });
+
+      render();
+    </script>
+  </body>
+</html>

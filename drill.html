@@ -561,6 +561,7 @@
           <a class="link" href="voice.html">Voice</a>
           <a class="link" href="scholar.html">Scholar</a>
           <a class="link" href="launch.html">Launch</a>
+          <a class="link" href="bridge.html">Bridge</a>
           <a class="link" href="path.html">Path</a>
           <a class="link" href="compass.html">Compass</a>
           <a class="link" href="card.html">Card</a>
@@ -572,7 +573,7 @@
           <a class="link" href="morning.html">Morning</a>
           <a class="link" href="evening.html">Evening</a>
           <a class="link" href="rhythm.html">Rhythm</a>
-          <span class="version">v0.5.9 launch</span>
+          <span class="version">v0.6.0 bridge</span>
         </nav>
       </header>
 
@@ -877,7 +878,7 @@
       function briefPayload(drill = selectedDrill()) {
         return {
           product: "VedaPath AI",
-          release: "v0.5.9 launch",
+          release: "v0.6.0 bridge",
           scenario_id: drill.id,
           decision: drill.decision,
           readiness: drill.score,
@@ -893,7 +894,7 @@
       function releaseBrief(drill = selectedDrill()) {
         return [
           "VedaPath Evaluation Drill Brief",
-          "Release: v0.5.9 launch",
+          "Release: v0.6.0 bridge",
           `Scenario: ${drill.id}`,
           `Decision: ${drill.decision}`,
           `Launch readiness: ${drill.score}%`,
@@ -912,7 +913,7 @@
         const needsQueue = drill.decision === "Needs review" || drill.gates.some((gate) => gate[1] === "Hold");
         return [
           "VedaPath Queue Handoff",
-          "Release: v0.5.9 launch",
+          "Release: v0.6.0 bridge",
           `Scenario: ${drill.id}`,
           `Queue needed: ${needsQueue ? "Yes" : "No"}`,
           `Reviewer route: ${drill.route}`,

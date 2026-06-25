@@ -165,4 +165,4 @@ v0.5.9 adds the Launch Gate Seed with public demo readiness, privacy copy, launc
 
 ## v0.6.0 Direction
 
-v0.6.0 should add a Production Bridge Seed for durable storage, access boundaries, launch-gate records, and reviewer-owned release history.
+v0.6.0 adds the Production Bridge Seed with record-family routes, storage lanes, consent needs, audit states, readiness scores, and copyable bridge handoffs. v0.6.1 should add a Source Record Storage Plan with required fields, indexes, migration order, fixtures, and no-go checks.

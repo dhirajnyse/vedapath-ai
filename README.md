@@ -84,6 +84,8 @@ Let us look at the source first.
 - [Scholar Review Notes](docs/SCHOLAR_REVIEW.md)
 - [Launch Gate Seed](launch.html)
 - [Launch Gate Notes](docs/LAUNCH_GATE.md)
+- [Production Bridge Seed](bridge.html)
+- [Production Bridge Notes](docs/PRODUCTION_BRIDGE.md)
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
 - [Calm Compass](compass.html)
@@ -114,7 +116,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v0.5.9` is a trusted MVP prototype plus a Launch Gate seed with:
+`v0.6.0` is a trusted MVP prototype plus a Production Bridge seed with:
 
 - Ask workspace
 - Source Card
@@ -147,6 +149,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Voice Boundary Seed with silent pronunciation support, syllable hints, reviewer gate, license gate, and no ritual authority before audio
 - Scholar Review Seed with reviewer roles, evidence notes, decision states, release gates, and copyable review handoffs
 - Launch Gate Seed with public demo readiness, privacy copy, launch notes, scenario decisions, and no-go release gates
+- Production Bridge Seed with record-family routes, storage lanes, consent needs, audit states, readiness scores, and copyable bridge handoffs
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
 - Calm Card Studio with visual card preview, local saved cards, copy text, and PNG export

@@ -120,6 +120,10 @@ When this becomes backend-backed, a launch gate record should include:
 - `created_at`
 - `created_by`
 
-## v0.6.0 Direction
+## v0.6.0 Production Bridge
 
-The next release should begin the production bridge: durable storage and access planning for source seeds, review decisions, launch gates, and user-owned calm records.
+v0.6.0 adds the Production Bridge Seed with record-family routes, storage lanes, consent needs, audit states, readiness scores, and copyable bridge handoffs.
+
+## v0.6.1 Direction
+
+v0.6.1 should add a Source Record Storage Plan with required fields, indexes, migration order, fixtures, and no-go checks.
