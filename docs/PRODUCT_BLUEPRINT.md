@@ -105,6 +105,7 @@ It helps users move from curiosity to understanding through:
 - Consent Memory Vault: Consent Memory Vault makes future personalization explicit: remembered only with purpose, permission, export, delete, and pause.
 - Reviewer Operations Desk: Reviewer Operations Desk turns expert help into scoped tasks, visible decision states, and calm release lanes.
 - Public Trust Center: Public Trust Center gives users one plain place to inspect VedaPath's boundaries, source method, privacy posture, and correction path.
+- First Answer Flow: First Answer Flow makes VedaPath's public entry tangible: ask, see source, read clearly, notice boundary, and continue gently.
 <!-- VEDAPATH PRODUCTIZATION SPRINT SUMMARY END -->
 
 ## What It Is
@@ -1681,6 +1682,21 @@ It should:
 - produce a copyable public-productization handoff
 
 Public Trust Center should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 103. First Answer Flow
+
+First Answer Flow makes VedaPath's public entry tangible: ask, see source, read clearly, notice boundary, and continue gently.
+
+It should:
+
+- Ask: One question box with sample prompts and no crowded onboarding.
+- Source: Citation and source family before deeper interpretation.
+- Answer: Direct answer, plain meaning, and optional deeper layer.
+- Continue: One next question, one saved path, or one calm reflection.
+- preserve the boundary: First-use prototype, not live AI answering.
+- produce a copyable public-productization handoff
+
+First Answer Flow should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH PRODUCTIZATION SPRINT BLUEPRINT END -->
 
 ## Product Personality

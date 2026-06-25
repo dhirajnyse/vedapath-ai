@@ -215,6 +215,8 @@ Let us look at the source first.
 - [Reviewer Operations Desk Notes](docs/REVIEWER_OPERATIONS_DESK.md)
 - [Public Trust Center](trustcenter.html)
 - [Public Trust Center Notes](docs/PUBLIC_TRUST_CENTER.md)
+- [First Answer Flow](firstanswer.html)
+- [First Answer Flow Notes](docs/FIRST_ANSWER_FLOW.md)
 <!-- VEDAPATH PRODUCTIZATION SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -246,7 +248,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v1.1.9` is a trusted MVP prototype plus Public Trust Center with:
+`v1.2.0` is a trusted MVP prototype plus First Answer Flow with:
 
 - Ask workspace
 - Source Card
@@ -350,6 +352,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Consent Memory Vault: Consent Memory Vault makes future personalization explicit: remembered only with purpose, permission, export, delete, and pause.
 - Reviewer Operations Desk: Reviewer Operations Desk turns expert help into scoped tasks, visible decision states, and calm release lanes.
 - Public Trust Center: Public Trust Center gives users one plain place to inspect VedaPath's boundaries, source method, privacy posture, and correction path.
+- First Answer Flow: First Answer Flow makes VedaPath's public entry tangible: ask, see source, read clearly, notice boundary, and continue gently.
 <!-- VEDAPATH PRODUCTIZATION SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
