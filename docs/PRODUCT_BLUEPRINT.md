@@ -51,6 +51,9 @@ It helps users move from curiosity to understanding through:
 - Calm Use Cases Gallery: Calm Use Cases Gallery shows where VedaPath can help everyday life without medical, therapeutic, or ritual claims.
 - Founder Console: Founder Console summarizes the ten-build sprint and turns it into one next decision.
 <!-- VEDAPATH LAUNCH SPRINT SUMMARY END -->
+<!-- VEDAPATH PERSONAL SPRINT SUMMARY START -->
+- Guided Onboarding Path: Guided Onboarding Path turns the first visit into one calm choice instead of a crowded tour.
+<!-- VEDAPATH PERSONAL SPRINT SUMMARY END -->
 
 ## What It Is
 
@@ -947,6 +950,22 @@ It should:
 
 Founder Console should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH LAUNCH SPRINT BLUEPRINT END -->
+<!-- VEDAPATH PERSONAL SPRINT BLUEPRINT START -->
+### 58. Guided Onboarding Path
+
+Guided Onboarding Path turns the first visit into one calm choice instead of a crowded tour.
+
+It should:
+
+- Beginner: Needs plain source labels before Sanskrit depth.
+- Restless: Needs a short reflection without therapy claims.
+- Researcher: Needs citations, review status, and boundaries.
+- Founder: Needs next product decision and launch evidence.
+- preserve the boundary: Orientation, not conversion pressure.
+- produce a copyable founder handoff
+
+Guided Onboarding Path should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
+<!-- VEDAPATH PERSONAL SPRINT BLUEPRINT END -->
 
 ## Product Personality
 

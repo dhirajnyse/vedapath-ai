@@ -116,6 +116,10 @@ Let us look at the source first.
 - [Founder Console](founder.html)
 - [Founder Console Notes](docs/FOUNDER_CONSOLE.md)
 <!-- VEDAPATH LAUNCH SPRINT LINKS END -->
+<!-- VEDAPATH PERSONAL SPRINT LINKS START -->
+- [Guided Onboarding Path](onboard.html)
+- [Guided Onboarding Path Notes](docs/GUIDED_ONBOARDING_PATH.md)
+<!-- VEDAPATH PERSONAL SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
 - [Calm Compass](compass.html)
@@ -146,7 +150,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v0.6.5` is a trusted MVP prototype plus Founder Signal Map with:
+`v0.7.5` is a trusted MVP prototype plus Guided Onboarding Path with:
 
 - Ask workspace
 - Source Card
@@ -196,6 +200,9 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Calm Use Cases Gallery: Calm Use Cases Gallery shows where VedaPath can help everyday life without medical, therapeutic, or ritual claims.
 - Founder Console: Founder Console summarizes the ten-build sprint and turns it into one next decision.
 <!-- VEDAPATH LAUNCH SPRINT FEATURES END -->
+<!-- VEDAPATH PERSONAL SPRINT FEATURES START -->
+- Guided Onboarding Path: Guided Onboarding Path turns the first visit into one calm choice instead of a crowded tour.
+<!-- VEDAPATH PERSONAL SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
 - Calm Card Studio with visual card preview, local saved cards, copy text, and PNG export
