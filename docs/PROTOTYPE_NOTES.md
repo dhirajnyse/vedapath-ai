@@ -1,6 +1,6 @@
-# v0.5.6 Prototype Notes
+# v0.5.7 Prototype Notes
 
-The v0.5.6 release turns the VedaPath AI homepage into a trusted MVP prototype with calm, practice, source-library, source-seeds, retrieval, passage-review, evaluation, evaluation-dashboard, reviewer-queue, source-policy, trust-ledger, life-map, calm-circle, consent-gate, memory-gate, trust-model, calm-passport, backend-schema, schema-fixtures, evaluation-drill, learning-loop, sanskrit-lens, source-path, calm-compass, calm-card, source-bell, before-reply, samvada, sankalpa, seva, morning, evening, and rhythm surfaces.
+The v0.5.7 release turns the VedaPath AI homepage into a trusted MVP prototype with calm, practice, source-library, source-seeds, retrieval, passage-review, evaluation, evaluation-dashboard, reviewer-queue, source-policy, trust-ledger, life-map, calm-circle, consent-gate, memory-gate, trust-model, calm-passport, backend-schema, schema-fixtures, evaluation-drill, learning-loop, sanskrit-lens, voice-boundary, source-path, calm-compass, calm-card, source-bell, before-reply, samvada, sankalpa, seva, morning, evening, and rhythm surfaces.
 
 ## Included
 
@@ -34,6 +34,7 @@ The v0.5.6 release turns the VedaPath AI homepage into a trusted MVP prototype w
 - Evaluation Drill Room with answer checks, backend fixture checks, no-go cases, release decisions, queue handoffs, and copyable founder briefs
 - Learning Loop Seed with repeated question patterns, reviewer decisions, source gaps, blocked learning boundaries, and copyable learning briefs
 - Sanskrit Lens Seed with Sanskrit text, transliteration, word lens, meter status, source notes, and recitation boundaries
+- Voice Boundary Seed with silent pronunciation support, syllable hints, reviewer gate, license gate, and no ritual authority before audio
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
 - Calm Card Studio with visual preview, local saved cards, copy text, and PNG export
@@ -92,4 +93,4 @@ This release proves the product direction:
 
 ## Next Release
 
-v0.5.6 adds the Sanskrit Lens Seed with reviewed passage seeds, Sanskrit text, transliteration, word lens, meter status, source notes, and recitation boundaries. v0.5.7 should add a Voice Boundary Seed before any audio feature: pronunciation support rules, licensing fields, reviewer status, and a hard separation between study support and ritual instruction.
+v0.5.6 adds the Sanskrit Lens Seed with reviewed passage seeds, Sanskrit text, transliteration, word lens, meter status, source notes, and recitation boundaries. v0.5.7 adds the Voice Boundary Seed with silent pronunciation support, syllable hints, reviewer gate, license gate, and no ritual authority before audio. v0.5.8 should add a Scholar Review Seed.

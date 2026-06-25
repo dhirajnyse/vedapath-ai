@@ -118,6 +118,10 @@ Sanskrit Lens must not:
 - add audio without license and review
 - use mantra interest to profile the user
 
-## v0.5.7 Direction
+## v0.5.7 Voice Boundary
 
-The next release should add a Voice Boundary Seed before any audio feature: pronunciation support rules, licensing fields, reviewer status, and a hard separation between study support and ritual instruction.
+v0.5.7 adds the Voice Boundary Seed before any audio feature: pronunciation support rules, licensing fields, reviewer status, and a hard separation between study support and ritual instruction.
+
+## v0.5.8 Direction
+
+The next release should add a Scholar Review Seed with reviewer roles, decision states, evidence notes, and release approval rules.

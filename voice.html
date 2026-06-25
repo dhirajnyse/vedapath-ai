@@ -1,0 +1,1030 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VedaPath Voice Boundary</title>
+    <style>
+      :root {
+        --bg: #fff7ea;
+        --surface: #fffdf8;
+        --surface-strong: #fff2e8;
+        --ink: #1d1714;
+        --muted: #6c3b25;
+        --line: #ead7c8;
+        --bhagwa: #d65a1f;
+        --ochre: #a83f12;
+        --gold: #e0a83b;
+        --green: #145c4a;
+        --indigo: #29335c;
+        --soft-green: #e8f0ea;
+        --soft-red: #fde8dd;
+        --soft-gold: #fff3d7;
+        --shadow: 0 18px 50px rgba(70, 36, 14, 0.08);
+        --radius: 8px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: Arial, Helvetica, sans-serif;
+        line-height: 1.55;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      button,
+      textarea,
+      input {
+        font: inherit;
+      }
+
+      .shell {
+        width: min(1240px, calc(100% - 44px));
+        margin: 0 auto;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 22px;
+        padding: 22px 0 16px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+        min-width: 220px;
+      }
+
+      .brand img {
+        width: 48px;
+        height: 48px;
+        border-radius: 8px;
+        object-fit: cover;
+        box-shadow: 0 8px 22px rgba(214, 90, 31, 0.13);
+      }
+
+      .brand strong {
+        display: block;
+        font-size: 20px;
+        line-height: 1.1;
+      }
+
+      .brand span {
+        display: block;
+        color: var(--muted);
+        font-size: 13px;
+        margin-top: 2px;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .link,
+      .version,
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 40px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 800;
+        white-space: nowrap;
+      }
+
+      .link {
+        padding: 8px 10px;
+        color: #432414;
+      }
+
+      .link.active,
+      .version {
+        border: 1px solid #efb899;
+        color: var(--ochre);
+        background: rgba(255, 253, 248, 0.74);
+      }
+
+      .version {
+        padding: 8px 14px;
+      }
+
+      .button {
+        border: 1px solid #efb899;
+        color: var(--ochre);
+        background: var(--surface);
+        padding: 10px 14px;
+        cursor: pointer;
+      }
+
+      .button.primary {
+        border-color: var(--bhagwa);
+        background: var(--bhagwa);
+        color: white;
+      }
+
+      .button.safe {
+        color: #064f43;
+        border-color: #b9d3ca;
+      }
+
+      .workspace {
+        display: grid;
+        grid-template-columns: 0.9fr 1.35fr 0.95fr;
+        gap: 16px;
+        padding: 20px 0 28px;
+      }
+
+      .panel {
+        background: rgba(255, 253, 248, 0.82);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 18px;
+        box-shadow: var(--shadow);
+      }
+
+      .panel.tight {
+        box-shadow: none;
+      }
+
+      .eyebrow,
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        min-height: 28px;
+        border-radius: 999px;
+        padding: 5px 10px;
+        font-size: 12px;
+        font-weight: 900;
+        color: var(--ochre);
+        background: var(--soft-red);
+      }
+
+      .badge.green {
+        color: #075244;
+        background: var(--soft-green);
+      }
+
+      .badge.gold {
+        color: #6e4310;
+        background: var(--soft-gold);
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        font-size: clamp(48px, 8vw, 88px);
+        line-height: 0.96;
+        letter-spacing: 0;
+        margin: 18px 0 18px;
+      }
+
+      h2 {
+        font-size: 26px;
+        line-height: 1.12;
+        margin-bottom: 12px;
+      }
+
+      h3 {
+        font-size: 18px;
+        margin-bottom: 6px;
+      }
+
+      .muted {
+        color: var(--muted);
+      }
+
+      .selector-list {
+        display: grid;
+        gap: 10px;
+        margin-top: 18px;
+      }
+
+      .voice-card {
+        display: grid;
+        grid-template-columns: 34px 1fr;
+        gap: 12px;
+        width: 100%;
+        text-align: left;
+        border: 1px solid var(--line);
+        background: var(--surface);
+        color: var(--ink);
+        border-radius: var(--radius);
+        padding: 12px;
+        cursor: pointer;
+      }
+
+      .voice-card:hover,
+      .voice-card:focus-visible,
+      .voice-card.active {
+        border-color: #eea37e;
+        background: var(--surface-strong);
+        outline: none;
+      }
+
+      .voice-index {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        color: var(--green);
+        background: var(--soft-green);
+        font-weight: 900;
+      }
+
+      .voice-card.active .voice-index {
+        color: white;
+        background: var(--bhagwa);
+      }
+
+      .voice-card strong,
+      .voice-card span:not(.voice-index) {
+        display: block;
+      }
+
+      .voice-card span:not(.voice-index) {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .voice-hero {
+        display: grid;
+        grid-template-columns: 1fr 180px;
+        gap: 16px;
+        align-items: center;
+      }
+
+      .voice-hero img {
+        width: 100%;
+        aspect-ratio: 1;
+        border-radius: var(--radius);
+        object-fit: cover;
+        border: 1px solid #efc9b1;
+        background: #fff4e5;
+      }
+
+      .source-card,
+      .gate-grid,
+      .protocol-grid,
+      .syllable-grid {
+        display: grid;
+        gap: 10px;
+      }
+
+      .source-card {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin: 18px 0 16px;
+        border-left: 4px solid var(--bhagwa);
+        padding: 14px;
+        background: var(--surface);
+        border-radius: var(--radius);
+        border-top: 1px solid var(--line);
+        border-right: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .source-meta {
+        display: block;
+        color: var(--muted);
+        font-size: 12px;
+        margin-bottom: 4px;
+      }
+
+      .source-value {
+        display: block;
+        font-weight: 900;
+        overflow-wrap: anywhere;
+      }
+
+      .gate-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        margin: 12px 0 16px;
+      }
+
+      .gate {
+        min-height: 116px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 12px;
+        background: var(--surface);
+      }
+
+      .gate.active {
+        border-color: #ef9b76;
+        background: #fff0e8;
+      }
+
+      .gate strong,
+      .gate span {
+        display: block;
+      }
+
+      .gate span {
+        color: var(--muted);
+        font-size: 13px;
+        margin-top: 8px;
+      }
+
+      .syllable-grid {
+        grid-template-columns: repeat(auto-fit, minmax(64px, 1fr));
+        padding: 14px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: #fffaf3;
+      }
+
+      .syllable {
+        min-height: 50px;
+        display: grid;
+        place-items: center;
+        border-radius: var(--radius);
+        border: 1px solid #f1c8ad;
+        background: white;
+        font-weight: 900;
+        color: var(--ochre);
+      }
+
+      .tabs {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        border-top: 1px solid var(--line);
+        padding-top: 16px;
+        margin-top: 16px;
+      }
+
+      .tab {
+        min-height: 40px;
+        border-radius: 8px;
+        border: 1px solid #efb899;
+        color: var(--ochre);
+        background: var(--surface);
+        padding: 9px 12px;
+        font-weight: 900;
+        cursor: pointer;
+      }
+
+      .tab.active {
+        background: var(--bhagwa);
+        color: white;
+        border-color: var(--bhagwa);
+      }
+
+      .mode-panel {
+        margin-top: 14px;
+      }
+
+      .mode-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .mode-item {
+        border-left: 3px solid var(--bhagwa);
+        background: var(--surface);
+        border-radius: var(--radius);
+        border-top: 1px solid var(--line);
+        border-right: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        padding: 12px;
+      }
+
+      .mode-item.review {
+        border-left-color: var(--gold);
+      }
+
+      .mode-item.boundary {
+        border-left-color: var(--indigo);
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 16px 0;
+      }
+
+      .voice-output {
+        width: 100%;
+        min-height: 164px;
+        resize: vertical;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: #fffaf4;
+        color: var(--ink);
+        padding: 14px;
+      }
+
+      .protocol-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .protocol-step {
+        display: grid;
+        grid-template-columns: 38px 1fr;
+        gap: 12px;
+        align-items: start;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 12px;
+        background: var(--surface);
+      }
+
+      .protocol-step strong,
+      .protocol-step span {
+        display: block;
+      }
+
+      .protocol-step span {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .mini-stat {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-top: 12px;
+      }
+
+      .stat {
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 12px;
+        background: var(--surface);
+      }
+
+      .stat strong {
+        display: block;
+        font-size: 28px;
+        line-height: 1.1;
+      }
+
+      .boundary {
+        margin-top: 16px;
+        border: 1px dashed #eab18f;
+        border-radius: var(--radius);
+        padding: 14px;
+      }
+
+      @media (max-width: 980px) {
+        .workspace,
+        .voice-hero {
+          grid-template-columns: 1fr;
+        }
+
+        .topbar {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .nav {
+          justify-content: flex-start;
+        }
+      }
+
+      @media (max-width: 680px) {
+        .shell {
+          width: min(100% - 28px, 1240px);
+        }
+
+        h1 {
+          font-size: 44px;
+        }
+
+        .source-card,
+        .gate-grid,
+        .mode-list,
+        .mini-stat {
+          grid-template-columns: 1fr;
+        }
+
+        .link,
+        .version,
+        .button,
+        .tab {
+          min-height: 38px;
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="shell" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top" aria-label="VedaPath AI home">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo">
+          <span>
+            <strong>VedaPath AI</strong>
+            <span>Voice boundary seed</span>
+          </span>
+        </a>
+        <nav class="nav" aria-label="Project links">
+          <a class="link" href="build-status.html">Build</a>
+          <a class="link" href="brand/brand-board.html">Brand</a>
+          <a class="link" href="blueprint.html">Blueprint</a>
+          <a class="link" href="calm.html">Calm</a>
+          <a class="link" href="daily.html">Daily</a>
+          <a class="link" href="practice.html">Practice</a>
+          <a class="link" href="library.html">Library</a>
+          <a class="link" href="seeds.html">Seeds</a>
+          <a class="link" href="retrieval.html">Retrieval</a>
+          <a class="link" href="passages.html">Review</a>
+          <a class="link" href="eval.html">Eval</a>
+          <a class="link" href="dashboard.html">Dash</a>
+          <a class="link" href="queue.html">Queue</a>
+          <a class="link" href="policy.html">Policy</a>
+          <a class="link" href="ledger.html">Ledger</a>
+          <a class="link" href="life.html">Life</a>
+          <a class="link" href="circle.html">Circle</a>
+          <a class="link" href="consent.html">Consent</a>
+          <a class="link" href="memory.html">Memory</a>
+          <a class="link" href="model.html">Model</a>
+          <a class="link" href="passport.html">Passport</a>
+          <a class="link" href="schema.html">Schema</a>
+          <a class="link" href="fixtures.html">Fixtures</a>
+          <a class="link" href="drill.html">Drill</a>
+          <a class="link" href="loop.html">Loop</a>
+          <a class="link" href="lens.html">Lens</a>
+          <a class="link active" href="voice.html">Voice</a>
+          <a class="link" href="path.html">Path</a>
+          <a class="link" href="compass.html">Compass</a>
+          <a class="link" href="card.html">Card</a>
+          <a class="link" href="bell.html">Bell</a>
+          <a class="link" href="reply.html">Reply</a>
+          <a class="link" href="samvada.html">Samvada</a>
+          <a class="link" href="sankalpa.html">Intent</a>
+          <a class="link" href="seva.html">Seva</a>
+          <a class="link" href="morning.html">Morning</a>
+          <a class="link" href="evening.html">Evening</a>
+          <a class="link" href="rhythm.html">Rhythm</a>
+          <span class="version">v0.5.7 voice</span>
+        </nav>
+      </header>
+
+      <main class="workspace" aria-label="VedaPath Voice Boundary workspace">
+        <section class="panel">
+          <span class="eyebrow">Before audio</span>
+          <h1>Let the voice wait for review.</h1>
+          <p class="muted">Choose a passage seed. VedaPath shows what pronunciation support may display, what requires reviewer approval, and what must never become ritual authority.</p>
+
+          <div class="selector-list" id="voiceList"></div>
+        </section>
+
+        <section class="panel">
+          <div class="voice-hero">
+            <div>
+              <span class="eyebrow">Silent voice seed</span>
+              <h2 id="voiceTitle">Pronunciation support without pretending authority.</h2>
+              <p class="muted" id="voiceSummary">The first voice product should be quiet: text, syllable hints, reviewer status, licensing, and boundary before audio.</p>
+            </div>
+            <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Voice Boundary logo">
+          </div>
+
+          <div class="source-card" aria-label="Voice source metadata">
+            <div>
+              <span class="source-meta">Source candidate</span>
+              <span class="source-value" id="sourceCitation">Bhagavad Gita 2.48</span>
+            </div>
+            <div>
+              <span class="source-meta">Text family</span>
+              <span class="source-value" id="sourceFamily">Bhagavad Gita | Smriti</span>
+            </div>
+            <div>
+              <span class="source-meta">Voice status</span>
+              <span class="source-value" id="voiceStatus">Silent preview only</span>
+            </div>
+            <div>
+              <span class="source-meta">Production rule</span>
+              <span class="source-value" id="voiceRule">No audio before review</span>
+            </div>
+          </div>
+
+          <h2>Readiness Gate</h2>
+          <div class="gate-grid" id="gateGrid"></div>
+
+          <h2>Syllable Preview</h2>
+          <p class="muted" id="syllableNote">Prototype syllable grouping for study UI only. It is not pronunciation certification.</p>
+          <div class="syllable-grid" id="syllableGrid"></div>
+
+          <div class="tabs" role="tablist" aria-label="Voice boundary layers">
+            <button class="tab active" type="button" data-mode="boundary">Boundary</button>
+            <button class="tab" type="button" data-mode="review">Reviewer</button>
+            <button class="tab" type="button" data-mode="license">License</button>
+            <button class="tab" type="button" data-mode="product">Product</button>
+          </div>
+          <div class="mode-panel" id="modePanel"></div>
+
+          <div class="actions">
+            <button class="button primary" id="copyVoice" type="button">Copy Voice Brief</button>
+            <button class="button safe" id="copyReview" type="button">Copy Reviewer Handoff</button>
+            <button class="button" id="copyBoundary" type="button">Copy Boundary</button>
+            <a class="button" href="lens.html">Open Lens</a>
+          </div>
+
+          <textarea class="voice-output" id="voiceOutput" readonly aria-label="Voice Boundary output"></textarea>
+        </section>
+
+        <aside>
+          <section class="panel tight">
+            <span class="badge green">Launch guard</span>
+            <h2 style="margin-top: 12px;">Voice Health</h2>
+            <p class="muted">This release proves that voice can be designed as a trust system before it becomes an audio feature.</p>
+            <div class="mini-stat">
+              <div class="stat">
+                <span class="source-meta">Audio files</span>
+                <strong>0</strong>
+              </div>
+              <div class="stat">
+                <span class="source-meta">Required gates</span>
+                <strong>4</strong>
+              </div>
+              <div class="stat">
+                <span class="source-meta">Reviewer state</span>
+                <strong id="reviewState">Needed</strong>
+              </div>
+              <div class="stat">
+                <span class="source-meta">License state</span>
+                <strong id="licenseState">Needed</strong>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel tight" style="margin-top: 16px;">
+            <span class="badge gold">Protocol</span>
+            <h2 style="margin-top: 12px;">Voice Before Voice</h2>
+            <div class="protocol-grid">
+              <div class="protocol-step">
+                <span class="voice-index">1</span>
+                <div><strong>Show text</strong><span>Open source, family, and passage anchor first.</span></div>
+              </div>
+              <div class="protocol-step">
+                <span class="voice-index">2</span>
+                <div><strong>Mark uncertainty</strong><span>Separate syllable hints from pronunciation authority.</span></div>
+              </div>
+              <div class="protocol-step">
+                <span class="voice-index">3</span>
+                <div><strong>Check rights</strong><span>Audio requires license, speaker consent, and attribution.</span></div>
+              </div>
+              <div class="protocol-step">
+                <span class="voice-index">4</span>
+                <div><strong>Keep agency</strong><span>No pressure, ritual instruction, or spiritual status verdict.</span></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="boundary">
+            <h2>Voice Boundary</h2>
+            <p class="muted">This is pronunciation-support design, not chanting instruction, ritual guidance, therapy, certification, lineage authority, or a replacement for teachers and tradition.</p>
+          </section>
+        </aside>
+      </main>
+    </div>
+
+    <script>
+      const voiceSeeds = [
+        {
+          id: "gita_2_48",
+          label: "Steady action",
+          citation: "Bhagavad Gita 2.48",
+          family: "Bhagavad Gita | Smriti",
+          title: "Silent voice begins with a reviewed source.",
+          summary: "This passage can support study pacing, but any pronunciation feature still needs reviewer status and audio rights.",
+          status: "Silent preview only",
+          rule: "No audio before review",
+          review: "Reviewer checks transliteration, syllable grouping, and teaching boundary.",
+          license: "Text display only in prototype. Audio requires speaker consent and usage rights.",
+          syllables: ["yo", "ga", "sthaá¸¥", "ku", "ru", "kar", "mÄ", "á¹‡i"],
+          gates: [
+            ["Source", "Visible", "active"],
+            ["Syllables", "Prototype", "active"],
+            ["Reviewer", "Needed", "review"],
+            ["Audio", "Blocked", "boundary"]
+          ],
+          modes: {
+            boundary: [
+              ["Allowed", "Silent syllable preview, source family, citation, and caution.", "source"],
+              ["Must not", "No chanting instruction, ritual prescription, or spiritual status claim.", "boundary"],
+              ["User agency", "The user chooses study pace; the product does not command practice.", "boundary"],
+              ["Production rule", "Do not unlock audio until reviewer and license fields are complete.", "review"]
+            ],
+            review: [
+              ["Text check", "Confirm Sanskrit text and transliteration against the selected edition.", "review"],
+              ["Syllable check", "Mark syllable grouping as study support, not pronunciation certification.", "review"],
+              ["Boundary check", "Confirm no guru voice, ritual instruction, or eligibility language appears.", "boundary"],
+              ["Release gate", "Reviewer decision required before any playable audio.", "review"]
+            ],
+            license: [
+              ["Prototype", "No audio asset is shipped in this seed.", "source"],
+              ["Future audio", "Requires speaker consent, usage scope, attribution, storage path, and takedown path.", "review"],
+              ["No scraping", "Do not reuse third-party recitation audio without rights.", "boundary"],
+              ["Export", "Voice records must show source, license, reviewer, and boundary fields.", "source"]
+            ],
+            product: [
+              ["First feature", "Silent read-along with visible source and boundary.", "source"],
+              ["Next feature", "Reviewer-approved pronunciation notes without audio.", "review"],
+              ["Later feature", "Licensed audio only after rights, review, and consent are visible.", "review"],
+              ["North star", "Help users slow down without pretending to authorize practice.", "source"]
+            ]
+          }
+        },
+        {
+          id: "katha_1_3_14",
+          label: "Wake up carefully",
+          citation: "Katha Upanishad 1.3.14",
+          family: "Katha Upanishad | Shruti",
+          title: "A strong verse needs a softer product voice.",
+          summary: "This seed can support a source-guided pause, but the app must avoid dramatic command language.",
+          status: "Reviewer required",
+          rule: "No urgency pressure",
+          review: "Reviewer checks source edition, translation note, and tone.",
+          license: "No audio. Future recitation needs rights and context notes.",
+          syllables: ["ut", "tiá¹£", "á¹­ha", "ta", "jÄ", "gra", "ta"],
+          gates: [
+            ["Source", "Visible", "active"],
+            ["Tone", "Gentle", "active"],
+            ["Reviewer", "Needed", "review"],
+            ["Audio", "Blocked", "boundary"]
+          ],
+          modes: {
+            boundary: [
+              ["Allowed", "Study note, transliteration preview, and careful tone.", "source"],
+              ["Must not", "No fear pressure, salvation promise, initiation claim, or ritual authority.", "boundary"],
+              ["Tone", "Use invitation language rather than command language.", "boundary"],
+              ["Production rule", "No audio until pronunciation and context are reviewed.", "review"]
+            ],
+            review: [
+              ["Source check", "Confirm passage numbering and edition display.", "review"],
+              ["Tone check", "Keep the UX steady, not alarmist.", "boundary"],
+              ["Pronunciation check", "Mark uncertain chandas and phonetic choices for review.", "review"],
+              ["Release gate", "Needs scholar or trained reviewer before voice mode.", "review"]
+            ],
+            license: [
+              ["Prototype", "Text and handoff only; no audio playback.", "source"],
+              ["Rights", "Future audio requires performer consent and allowed distribution scope.", "review"],
+              ["Storage", "Keep license metadata with audio object, not as hidden notes.", "source"],
+              ["No-go", "No unlicensed recitation imports.", "boundary"]
+            ],
+            product: [
+              ["User value", "Help the user approach a powerful line without being pushed.", "source"],
+              ["Interaction", "Show source, then one calm reflection prompt.", "source"],
+              ["Safety", "Separate inspiration from instruction.", "boundary"],
+              ["Next step", "Reviewer handoff before any voice surface.", "review"]
+            ]
+          }
+        },
+        {
+          id: "rv_3_62_10",
+          label: "Gayatri boundary",
+          citation: "Rigveda 3.62.10",
+          family: "Rigveda | Shruti",
+          title: "Mantra audio must be the last feature, not the first.",
+          summary: "This seed makes VedaPath honest: source, meter, accent, recitation context, and rights must be reviewed before audio.",
+          status: "Audio locked",
+          rule: "No ritual authority",
+          review: "Reviewer checks Vedic accent, pada, meter, tradition boundary, and source edition.",
+          license: "Audio requires explicit rights, attribution, speaker consent, and context boundary.",
+          syllables: ["tat", "sa", "vi", "tur", "va", "re", "á¹‡yam"],
+          gates: [
+            ["Source", "Visible", "active"],
+            ["Meter", "Known", "active"],
+            ["Accent", "Review", "review"],
+            ["Audio", "Locked", "boundary"]
+          ],
+          modes: {
+            boundary: [
+              ["Allowed", "Source classification, meter label, and cautious study note.", "source"],
+              ["Must not", "No ritual instruction, initiation guidance, eligibility judgment, or audio authority.", "boundary"],
+              ["Tradition", "Do not flatten different recitation and practice contexts.", "boundary"],
+              ["Production rule", "Do not ship mantra audio without review and rights.", "review"]
+            ],
+            review: [
+              ["Accent", "Vedic accent and recitation markings need expert review.", "review"],
+              ["Meter", "Gayatri meter label is useful but not enough for recitation.", "source"],
+              ["Context", "Show that practice contexts vary by tradition.", "boundary"],
+              ["Release gate", "Audio remains locked until reviewer approval and license are attached.", "review"]
+            ],
+            license: [
+              ["Audio rights", "Speaker consent, license scope, attribution, and takedown path are required.", "review"],
+              ["Data record", "Store source id, reviewer id, performer id, license id, and allowed surfaces.", "source"],
+              ["No-go", "No scraped, copied, or unattributed chant audio.", "boundary"],
+              ["User trust", "Show why audio is unavailable when gates are incomplete.", "source"]
+            ],
+            product: [
+              ["Best surprise", "The app refuses to rush mantra audio.", "boundary"],
+              ["Silent mode", "Let users see the text and boundary before hearing anything.", "source"],
+              ["Future mode", "Licensed, reviewed audio with pause, transcript, and source card.", "review"],
+              ["North star", "Respect depth while keeping the UI simple.", "source"]
+            ]
+          }
+        }
+      ];
+
+      const state = {
+        selectedId: "gita_2_48",
+        mode: "boundary"
+      };
+
+      function selectedSeed() {
+        return voiceSeeds.find((seed) => seed.id === state.selectedId) || voiceSeeds[0];
+      }
+
+      function lensClass(kind) {
+        if (kind === "review") return "review";
+        if (kind === "boundary") return "boundary";
+        return "";
+      }
+
+      function renderList() {
+        const list = document.getElementById("voiceList");
+        list.innerHTML = voiceSeeds.map((seed, index) => `
+          <button class="voice-card ${seed.id === state.selectedId ? "active" : ""}" type="button" data-id="${seed.id}">
+            <span class="voice-index">${index + 1}</span>
+            <span>
+              <strong>${seed.label}</strong>
+              <span>${seed.citation}</span>
+            </span>
+          </button>
+        `).join("");
+
+        [...list.querySelectorAll("[data-id]")].forEach((button) => {
+          button.addEventListener("click", () => {
+            state.selectedId = button.dataset.id;
+            render();
+          });
+        });
+      }
+
+      function renderTabs() {
+        [...document.querySelectorAll(".tab")].forEach((tab) => {
+          tab.classList.toggle("active", tab.dataset.mode === state.mode);
+          tab.addEventListener("click", () => {
+            state.mode = tab.dataset.mode;
+            render();
+          });
+        });
+      }
+
+      function renderSeed() {
+        const seed = selectedSeed();
+        document.getElementById("voiceTitle").textContent = seed.title;
+        document.getElementById("voiceSummary").textContent = seed.summary;
+        document.getElementById("sourceCitation").textContent = seed.citation;
+        document.getElementById("sourceFamily").textContent = seed.family;
+        document.getElementById("voiceStatus").textContent = seed.status;
+        document.getElementById("voiceRule").textContent = seed.rule;
+        document.getElementById("reviewState").textContent = seed.gates.some((gate) => gate[2] === "review") ? "Needed" : "Ready";
+        document.getElementById("licenseState").textContent = seed.license.includes("requires") ? "Needed" : "Draft";
+
+        document.getElementById("gateGrid").innerHTML = seed.gates.map((gate) => `
+          <div class="gate ${gate[2] === "active" ? "active" : ""}">
+            <strong>${gate[0]}</strong>
+            <span>${gate[1]}</span>
+          </div>
+        `).join("");
+
+        document.getElementById("syllableGrid").innerHTML = seed.syllables.map((syllable) => `
+          <span class="syllable">${syllable}</span>
+        `).join("");
+
+        document.getElementById("modePanel").innerHTML = `
+          <div class="mode-list">
+            ${seed.modes[state.mode].map((item) => `
+              <div class="mode-item ${lensClass(item[2])}">
+                <strong>${item[0]}</strong>
+                <p class="muted">${item[1]}</p>
+              </div>
+            `).join("")}
+          </div>
+        `;
+
+        document.getElementById("voiceOutput").value = voiceBrief();
+      }
+
+      function voicePayload() {
+        const seed = selectedSeed();
+        return {
+          product: "VedaPath AI",
+          release: "v0.5.7 voice",
+          feature: "Voice Boundary Seed",
+          citation: seed.citation,
+          family: seed.family,
+          status: seed.status,
+          rule: seed.rule,
+          review: seed.review,
+          license: seed.license,
+          syllables: seed.syllables,
+          boundary: "No audio, chanting instruction, ritual authority, eligibility judgment, or unlicensed recitation."
+        };
+      }
+
+      function voiceBrief() {
+        const seed = selectedSeed();
+        return [
+          "VedaPath Voice Boundary Brief",
+          "Release: v0.5.7 voice",
+          `Citation: ${seed.citation}`,
+          `Family: ${seed.family}`,
+          `Voice status: ${seed.status}`,
+          `Production rule: ${seed.rule}`,
+          `Review: ${seed.review}`,
+          `License: ${seed.license}`,
+          `Syllable preview: ${seed.syllables.join(" Â· ")}`,
+          "Boundary: no audio before review, no ritual instruction, no eligibility judgment, no unlicensed recitation."
+        ].join("\n");
+      }
+
+      function reviewerBrief() {
+        const seed = selectedSeed();
+        return [
+          "VedaPath Voice Reviewer Handoff",
+          "Release: v0.5.7 voice",
+          `Source: ${seed.citation}`,
+          `Text family: ${seed.family}`,
+          `Reviewer task: ${seed.review}`,
+          `License task: ${seed.license}`,
+          "Check: Sanskrit text, transliteration, syllable split, accent or meter note, audio rights, attribution, and no-go language.",
+          "Decision needed before: pronunciation notes, audio playback, saved voice packs, or public sharing."
+        ].join("\n");
+      }
+
+      function boundaryBrief() {
+        const seed = selectedSeed();
+        return [
+          "VedaPath Voice Boundary",
+          "Release: v0.5.7 voice",
+          `Source: ${seed.citation}`,
+          "Allowed: source display, silent syllable preview, reviewer handoff, license checklist, cautious study pacing.",
+          "Must not: chant coaching, ritual instruction, guru voice, initiation guidance, eligibility judgment, spiritual status verdict, therapy, or unlicensed audio.",
+          "User promise: voice support arrives only after source, review, rights, and boundary are visible."
+        ].join("\n");
+      }
+
+      function copyText(text, button, label) {
+        const original = button.textContent;
+        const finish = () => {
+          document.getElementById("voiceOutput").value = text;
+          button.textContent = label;
+          window.setTimeout(() => {
+            button.textContent = original;
+          }, 1000);
+        };
+
+        if (navigator.clipboard && window.isSecureContext) {
+          navigator.clipboard.writeText(text).then(finish).catch(finish);
+        } else {
+          finish();
+        }
+      }
+
+      function render() {
+        renderList();
+        renderTabs();
+        renderSeed();
+      }
+
+      document.getElementById("copyVoice").addEventListener("click", () => {
+        copyText(voiceBrief(), document.getElementById("copyVoice"), "Voice Copied");
+      });
+
+      document.getElementById("copyReview").addEventListener("click", () => {
+        copyText(reviewerBrief(), document.getElementById("copyReview"), "Handoff Copied");
+      });
+
+      document.getElementById("copyBoundary").addEventListener("click", () => {
+        copyText(boundaryBrief(), document.getElementById("copyBoundary"), "Boundary Copied");
+      });
+
+      render();
+    </script>
+  </body>
+</html>

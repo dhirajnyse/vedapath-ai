@@ -151,6 +151,10 @@ Source behavior changes should move through:
 
 v0.5.6 adds the Sanskrit Lens Seed for a few reviewed passages: Sanskrit text, transliteration, word meaning, meter status, translation notes, source URL, and recitation boundaries.
 
-## v0.5.7 Direction
+## v0.5.7 Voice Boundary
 
-The next release should add a Voice Boundary Seed before any audio feature: pronunciation support rules, licensing fields, reviewer status, and a hard separation between study support and ritual instruction.
+v0.5.7 adds the Voice Boundary Seed before any audio feature: pronunciation support rules, licensing fields, reviewer status, and a hard separation between study support and ritual instruction.
+
+## v0.5.8 Direction
+
+The next release should add a Scholar Review Seed with reviewer roles, decision states, evidence notes, and release approval rules.

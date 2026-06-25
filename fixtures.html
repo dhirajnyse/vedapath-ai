@@ -560,6 +560,7 @@
           <a class="link" href="drill.html">Drill</a>
           <a class="link" href="loop.html">Loop</a>
           <a class="link" href="lens.html">Lens</a>
+          <a class="link" href="voice.html">Voice</a>
           <a class="link" href="path.html">Path</a>
           <a class="link" href="compass.html">Compass</a>
           <a class="link" href="card.html">Card</a>
@@ -571,7 +572,7 @@
           <a class="link" href="morning.html">Morning</a>
           <a class="link" href="evening.html">Evening</a>
           <a class="link" href="rhythm.html">Rhythm</a>
-          <span class="version">v0.5.6 lens</span>
+          <span class="version">v0.5.7 voice</span>
         </nav>
       </header>
 
@@ -968,7 +969,7 @@
       function fixturePayload(fixture = selectedFixture()) {
         return {
           product: "VedaPath AI",
-          release: "v0.5.6 lens",
+          release: "v0.5.7 voice",
           fixture_id: fixture.id,
           table: fixture.table,
           verdict: fixture.verdict,
@@ -986,7 +987,7 @@
         const blockCount = fixture.checks.length - passCount;
         return [
           "VedaPath Fixture Validation Report",
-          "Release: v0.5.6 lens",
+          "Release: v0.5.7 voice",
           `Fixture: ${fixture.id}`,
           `Table: ${fixture.table}`,
           `Verdict: ${fixture.verdict}`,
@@ -1003,7 +1004,7 @@
       function noGoReport() {
         return [
           "VedaPath No-Go Test Report",
-          "Release: v0.5.6 lens",
+          "Release: v0.5.7 voice",
           "",
           ...noGoTests.map(([name, verdict, reason]) => `${verdict}: ${name} - ${reason}`),
           "",

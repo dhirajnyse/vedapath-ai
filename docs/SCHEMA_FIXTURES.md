@@ -177,6 +177,10 @@ v0.5.5 adds the Learning Loop Seed, turning repeated question patterns, reviewer
 
 v0.5.6 adds the Sanskrit Lens Seed with Sanskrit text, transliteration, word meaning, meter status, translation notes, source URLs, and recitation boundaries.
 
-## v0.5.7 Direction
+## v0.5.7 Voice Boundary
 
-The next release should add a Voice Boundary Seed before any audio, chant, or pronunciation feature.
+v0.5.7 adds the Voice Boundary Seed before any audio, chant, or pronunciation feature: silent pronunciation support, syllable hints, reviewer gate, license gate, and no ritual authority.
+
+## v0.5.8 Direction
+
+The next release should add a Scholar Review Seed with reviewer roles, decision states, evidence notes, and release approval rules.
