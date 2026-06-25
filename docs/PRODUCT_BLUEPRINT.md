@@ -95,6 +95,7 @@ It helps users move from curiosity to understanding through:
 - Retrieval Service Blueprint: Retrieval Service Blueprint makes production answer generation depend on review state, source specificity, and visible match reasons.
 - Answer Evaluation Harness: Answer Evaluation Harness turns VedaPath's trust rules into repeatable checks before new answer behavior is shipped.
 - Export and Delete Center: Export and Delete Center makes user-owned memory practical by designing export, deletion, revocation, and local-clear controls.
+- Privacy-Safe Analytics: Privacy-Safe Analytics defines launch learning around aggregate product signals rather than hidden identity or distress inference.
 <!-- VEDAPATH PRODUCTION SPRINT SUMMARY END -->
 
 ## What It Is
@@ -1550,6 +1551,21 @@ It should:
 - produce a copyable production-readiness handoff
 
 Export and Delete Center should never claim production storage, verified answers, reviewer approval, authentication, analytics, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 95. Privacy-Safe Analytics
+
+Privacy-Safe Analytics defines launch learning around aggregate product signals rather than hidden identity or distress inference.
+
+It should:
+
+- Aggregate use: Room opens, completion counts, and source card interactions.
+- Source gaps: No-source queries, correction requests, and review-needed categories.
+- Explicit feedback: User-submitted issue type and optional note.
+- Blocked inference: No faith, distress, family, health, or identity profiling.
+- preserve the boundary: Product analytics design, not user profiling.
+- produce a copyable production-readiness handoff
+
+Privacy-Safe Analytics should never claim production storage, verified answers, reviewer approval, authentication, analytics, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH PRODUCTION SPRINT BLUEPRINT END -->
 
 ## Product Personality
