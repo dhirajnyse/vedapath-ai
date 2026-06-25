@@ -173,6 +173,10 @@ v0.5.4 adds the Evaluation Drill Room, which runs user-facing answer drafts, bac
 
 v0.5.5 adds the Learning Loop Seed, turning repeated question patterns, reviewer decisions, source gaps, and blocked learning boundaries into visible product improvement without hidden profiling or private identity inference.
 
-## v0.5.6 Direction
+## v0.5.6 Sanskrit Lens
 
-The next release should add a Sanskrit Lens seed with transliteration, word meaning, meter, translation notes, and recitation boundaries.
+v0.5.6 adds the Sanskrit Lens Seed with Sanskrit text, transliteration, word meaning, meter status, translation notes, source URLs, and recitation boundaries.
+
+## v0.5.7 Direction
+
+The next release should add a Voice Boundary Seed before any audio, chant, or pronunciation feature.

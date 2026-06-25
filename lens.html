@@ -1,0 +1,1057 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VedaPath Sanskrit Lens</title>
+    <style>
+      :root {
+        --bg: #fbf3e6;
+        --panel: #fffdf8;
+        --ink: #181310;
+        --muted: #6f4030;
+        --bhagwa: #d65a1f;
+        --ochre: #a83f12;
+        --gold: #e0a83b;
+        --green: #145c4a;
+        --indigo: #29335c;
+        --line: rgba(92, 55, 34, 0.18);
+        --soft: rgba(214, 90, 31, 0.1);
+        --safe: rgba(20, 92, 74, 0.12);
+        --hold: rgba(224, 168, 59, 0.18);
+        --warn: rgba(168, 63, 18, 0.12);
+        --shadow: 0 20px 70px rgba(92, 55, 34, 0.08);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        line-height: 1.5;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      button,
+      textarea {
+        font: inherit;
+      }
+
+      .page {
+        width: min(1400px, calc(100% - 44px));
+        margin: 0 auto;
+        padding: 24px 0 36px;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding-bottom: 18px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+        min-width: 220px;
+      }
+
+      .brand img {
+        width: 52px;
+        height: 52px;
+        border-radius: 8px;
+        object-fit: cover;
+        box-shadow: 0 10px 26px rgba(214, 90, 31, 0.14);
+      }
+
+      .brand strong,
+      .brand span {
+        display: block;
+      }
+
+      .brand strong {
+        font-size: 20px;
+        line-height: 1.1;
+      }
+
+      .brand span {
+        color: var(--muted);
+        font-size: 14px;
+        margin-top: 4px;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        gap: 8px 16px;
+        flex: 1 1 780px;
+        min-width: 0;
+      }
+
+      .link,
+      .version,
+      .button {
+        border: 1px solid transparent;
+        border-radius: 8px;
+        min-height: 38px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .link {
+        text-decoration: none;
+        font-weight: 800;
+        font-size: 14px;
+        color: #3d2418;
+      }
+
+      .link.active,
+      .version {
+        padding: 0 14px;
+        border-color: rgba(214, 90, 31, 0.35);
+        color: var(--ochre);
+        background: rgba(255, 253, 248, 0.65);
+      }
+
+      .version {
+        font-weight: 900;
+      }
+
+      .workspace {
+        display: grid;
+        grid-template-columns: minmax(250px, 0.9fr) minmax(440px, 1.38fr) minmax(280px, 0.95fr);
+        gap: 18px;
+        padding-top: 20px;
+      }
+
+      .panel {
+        background: rgba(255, 253, 248, 0.82);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: var(--shadow);
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        min-height: 30px;
+        padding: 0 12px;
+        border-radius: 999px;
+        background: rgba(214, 90, 31, 0.11);
+        color: var(--ochre);
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        font-size: clamp(42px, 5.8vw, 72px);
+        line-height: 0.98;
+        letter-spacing: 0;
+        margin: 18px 0 16px;
+      }
+
+      h2 {
+        font-size: 26px;
+        line-height: 1.12;
+        margin-bottom: 12px;
+      }
+
+      h3 {
+        font-size: 18px;
+        margin-bottom: 8px;
+      }
+
+      p {
+        color: var(--muted);
+        font-size: 16px;
+      }
+
+      .muted {
+        color: var(--muted);
+      }
+
+      .passage-list,
+      .word-grid,
+      .lens-grid,
+      .stat-grid,
+      .step-list,
+      .tabs {
+        display: grid;
+        gap: 10px;
+      }
+
+      .passage-list {
+        margin-top: 18px;
+      }
+
+      .passage-card {
+        width: 100%;
+        text-align: left;
+        background: rgba(255, 253, 248, 0.88);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 14px;
+        display: grid;
+        grid-template-columns: 42px 1fr;
+        gap: 12px;
+        cursor: pointer;
+      }
+
+      .passage-card:hover,
+      .passage-card:focus-visible,
+      .passage-card.active {
+        border-color: rgba(214, 90, 31, 0.56);
+        outline: none;
+      }
+
+      .passage-card.active {
+        background: var(--soft);
+      }
+
+      .passage-index,
+      .step-index {
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        background: var(--safe);
+        color: var(--green);
+        font-weight: 900;
+        font-size: 13px;
+      }
+
+      .passage-card.active .passage-index {
+        background: var(--bhagwa);
+        color: #fffdf8;
+      }
+
+      .passage-card strong,
+      .passage-card span:not(.passage-index) {
+        display: block;
+      }
+
+      .passage-card span:not(.passage-index) {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .record-head {
+        display: grid;
+        grid-template-columns: 1fr 126px;
+        gap: 18px;
+        align-items: center;
+      }
+
+      .mark {
+        border: 1px solid rgba(214, 90, 31, 0.24);
+        border-radius: 8px;
+        padding: 10px;
+        background: rgba(255, 248, 237, 0.8);
+      }
+
+      .mark img {
+        width: 100%;
+        aspect-ratio: 1;
+        object-fit: cover;
+        border-radius: 4px;
+      }
+
+      .source-card,
+      .word-card,
+      .lens-output,
+      .lens-item,
+      .stat,
+      .step,
+      .sanskrit-block,
+      .tab-panel {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgba(255, 253, 248, 0.78);
+      }
+
+      .source-card {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        margin: 18px 0;
+        overflow: hidden;
+      }
+
+      .source-card > div {
+        padding: 14px;
+        min-width: 0;
+      }
+
+      .source-label,
+      .source-value {
+        display: block;
+      }
+
+      .source-label {
+        color: var(--muted);
+        font-size: 12px;
+        margin-bottom: 6px;
+      }
+
+      .source-value {
+        font-weight: 900;
+        overflow-wrap: anywhere;
+      }
+
+      .sanskrit-block {
+        padding: 18px;
+        margin-bottom: 18px;
+      }
+
+      .devanagari {
+        font-family: "Noto Serif Devanagari", "Nirmala UI", serif;
+        font-size: clamp(25px, 3vw, 36px);
+        line-height: 1.5;
+        margin-bottom: 12px;
+      }
+
+      .translit {
+        color: var(--muted);
+        font-size: 17px;
+      }
+
+      .word-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .word-card,
+      .lens-item,
+      .tab-panel {
+        padding: 14px;
+      }
+
+      .word-card strong,
+      .word-card span,
+      .lens-item strong,
+      .lens-item span,
+      .stat strong,
+      .stat span,
+      .step strong,
+      .step span {
+        display: block;
+      }
+
+      .word-card span,
+      .lens-item span,
+      .stat span,
+      .step span {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .tabs {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        margin: 18px 0 12px;
+      }
+
+      .tab {
+        min-height: 48px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgba(255, 253, 248, 0.82);
+        color: #3d2418;
+        font-weight: 900;
+        cursor: pointer;
+      }
+
+      .tab.active {
+        background: var(--bhagwa);
+        border-color: var(--bhagwa);
+        color: #fffdf8;
+      }
+
+      .lens-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin-top: 12px;
+      }
+
+      .lens-item.source {
+        border-left: 4px solid var(--green);
+      }
+
+      .lens-item.review {
+        border-left: 4px solid var(--gold);
+        background: var(--hold);
+      }
+
+      .lens-item.boundary {
+        border-left: 4px solid var(--bhagwa);
+        background: var(--warn);
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 18px 0 14px;
+      }
+
+      .button {
+        border-color: rgba(214, 90, 31, 0.35);
+        background: transparent;
+        color: var(--ochre);
+        padding: 0 14px;
+        font-weight: 900;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      .button.primary {
+        background: var(--bhagwa);
+        color: #fffdf8;
+        border-color: var(--bhagwa);
+      }
+
+      .button.safe {
+        color: var(--green);
+        border-color: rgba(20, 92, 74, 0.28);
+      }
+
+      .lens-output {
+        width: 100%;
+        min-height: 184px;
+        background: #fffaf2;
+        color: var(--ink);
+        padding: 14px;
+        resize: vertical;
+        font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+        font-size: 13px;
+        line-height: 1.45;
+      }
+
+      .stat-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin: 18px 0;
+      }
+
+      .stat {
+        padding: 12px;
+      }
+
+      .stat strong {
+        font-size: 24px;
+      }
+
+      .step {
+        display: grid;
+        grid-template-columns: 34px 1fr;
+        gap: 10px;
+        align-items: start;
+        padding: 12px;
+      }
+
+      .guard-card {
+        border: 1px dashed var(--line);
+        border-radius: 8px;
+        padding: 16px;
+        margin-top: 18px;
+      }
+
+      @media (max-width: 1140px) {
+        .workspace {
+          grid-template-columns: 1fr;
+        }
+
+        .record-head {
+          grid-template-columns: 1fr;
+        }
+
+        .mark {
+          width: 132px;
+        }
+      }
+
+      @media (max-width: 760px) {
+        .page {
+          width: min(100% - 28px, 1400px);
+          padding-top: 16px;
+        }
+
+        .topbar,
+        .nav {
+          align-items: flex-start;
+          justify-content: flex-start;
+        }
+
+        .topbar {
+          flex-direction: column;
+        }
+
+        .source-card,
+        .word-grid,
+        .lens-grid,
+        .stat-grid,
+        .tabs {
+          grid-template-columns: 1fr;
+        }
+
+        h1 {
+          font-size: 44px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top" aria-label="VedaPath AI home">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept" loading="eager" decoding="async">
+          <div>
+            <strong>VedaPath AI</strong>
+            <span>Sanskrit lens seed</span>
+          </div>
+        </a>
+        <nav class="nav" aria-label="Project links">
+          <a class="link" href="build-status.html">Build</a>
+          <a class="link" href="brand/brand-board.html">Brand</a>
+          <a class="link" href="blueprint.html">Blueprint</a>
+          <a class="link" href="calm.html">Calm</a>
+          <a class="link" href="daily.html">Daily</a>
+          <a class="link" href="practice.html">Practice</a>
+          <a class="link" href="library.html">Library</a>
+          <a class="link" href="seeds.html">Seeds</a>
+          <a class="link" href="retrieval.html">Retrieval</a>
+          <a class="link" href="passages.html">Review</a>
+          <a class="link" href="eval.html">Eval</a>
+          <a class="link" href="dashboard.html">Dash</a>
+          <a class="link" href="queue.html">Queue</a>
+          <a class="link" href="policy.html">Policy</a>
+          <a class="link" href="ledger.html">Ledger</a>
+          <a class="link" href="life.html">Life</a>
+          <a class="link" href="circle.html">Circle</a>
+          <a class="link" href="consent.html">Consent</a>
+          <a class="link" href="memory.html">Memory</a>
+          <a class="link" href="model.html">Model</a>
+          <a class="link" href="passport.html">Passport</a>
+          <a class="link" href="schema.html">Schema</a>
+          <a class="link" href="fixtures.html">Fixtures</a>
+          <a class="link" href="drill.html">Drill</a>
+          <a class="link" href="loop.html">Loop</a>
+          <a class="link active" href="lens.html">Lens</a>
+          <a class="link" href="path.html">Path</a>
+          <a class="link" href="compass.html">Compass</a>
+          <a class="link" href="card.html">Card</a>
+          <a class="link" href="bell.html">Bell</a>
+          <a class="link" href="reply.html">Reply</a>
+          <a class="link" href="samvada.html">Samvada</a>
+          <a class="link" href="sankalpa.html">Intent</a>
+          <a class="link" href="seva.html">Seva</a>
+          <a class="link" href="morning.html">Morning</a>
+          <a class="link" href="evening.html">Evening</a>
+          <a class="link" href="rhythm.html">Rhythm</a>
+          <span class="version">v0.5.6 lens</span>
+        </nav>
+      </header>
+
+      <section class="workspace" aria-label="VedaPath Sanskrit Lens workspace">
+        <aside class="panel">
+          <span class="eyebrow">Sanskrit Lens Seed</span>
+          <h1>See the text before the takeaway.</h1>
+          <p>Choose a reviewed passage seed. VedaPath opens the Sanskrit, transliteration, word sense, meter status, and recitation boundary before it offers meaning.</p>
+          <div class="passage-list" id="passageList"></div>
+        </aside>
+
+        <section class="panel">
+          <div class="record-head">
+            <div>
+              <span class="eyebrow" id="sourceFamily">Bhagavad Gita | Smriti</span>
+              <h1 id="passageTitle">Steady action before outcome identity.</h1>
+              <p id="plainMeaning">Act from steadiness; let success and failure stop owning your identity.</p>
+            </div>
+            <div class="mark" aria-label="VedaPath Sanskrit Lens logo">
+              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI Sanskrit Lens logo" loading="eager" decoding="async">
+            </div>
+          </div>
+
+          <div class="source-card" aria-label="Sanskrit Lens metadata">
+            <div>
+              <span class="source-label">Citation</span>
+              <span class="source-value" id="citation">Bhagavad Gita 2.48</span>
+            </div>
+            <div>
+              <span class="source-label">Source status</span>
+              <span class="source-value" id="sourceStatus">Seed reviewed</span>
+            </div>
+            <div>
+              <span class="source-label">Meter</span>
+              <span class="source-value" id="meter">Anushtubh shloka</span>
+            </div>
+            <div>
+              <span class="source-label">Boundary</span>
+              <span class="source-value" id="boundary">Reflection, not command.</span>
+            </div>
+          </div>
+
+          <div class="sanskrit-block">
+            <div class="devanagari" id="devanagari">योगस्थः कुरु कर्माणि सङ्गं त्यक्त्वा धनञ्जय।<br>सिद्ध्यसिद्ध्योः समो भूत्वा समत्वं योग उच्यते।।2.48।।</div>
+            <div class="translit" id="translit">yoga-sthaḥ kuru karmāṇi saṅgaṁ tyaktvā dhanañjaya | siddhy-asiddhyoḥ samo bhūtvā samatvaṁ yoga ucyate ||</div>
+          </div>
+
+          <h2>Word Lens</h2>
+          <div class="word-grid" id="wordGrid"></div>
+
+          <div class="tabs" role="tablist" aria-label="Sanskrit Lens layers">
+            <button class="tab active" type="button" data-mode="source">Source</button>
+            <button class="tab" type="button" data-mode="words">Words</button>
+            <button class="tab" type="button" data-mode="meter">Meter</button>
+            <button class="tab" type="button" data-mode="notes">Notes</button>
+            <button class="tab" type="button" data-mode="boundary">Boundary</button>
+          </div>
+
+          <div class="tab-panel" id="modePanel"></div>
+
+          <div class="actions">
+            <button class="button primary" id="copySource" type="button">Copy Source Card</button>
+            <button class="button safe" id="copyJson" type="button">Copy Lens JSON</button>
+            <button class="button" id="copyBoundary" type="button">Copy Boundary</button>
+            <a class="button" href="loop.html">Send to Loop</a>
+          </div>
+          <textarea class="lens-output" id="lensOutput" readonly aria-label="Sanskrit Lens output"></textarea>
+        </section>
+
+        <aside class="panel">
+          <span class="eyebrow">Review protocol</span>
+          <h2>Lens Health</h2>
+          <p>A Sanskrit layer should slow the answer down. It helps the user inspect the text without turning the app into a priest, chanting teacher, or final translator.</p>
+
+          <div class="stat-grid">
+            <div class="stat">
+              <span>Passage seeds</span>
+              <strong>3</strong>
+            </div>
+            <div class="stat">
+              <span>Word rows</span>
+              <strong id="wordCount">0</strong>
+            </div>
+            <div class="stat">
+              <span>Boundaries</span>
+              <strong>3</strong>
+            </div>
+            <div class="stat">
+              <span>Review state</span>
+              <strong>Seed</strong>
+            </div>
+          </div>
+
+          <div class="guard-card">
+            <h2>Lens Protocol</h2>
+            <div class="step-list">
+              <div class="step">
+                <span class="step-index">1</span>
+                <div>
+                  <strong>Open source</strong>
+                  <span>Show citation and source family before meaning.</span>
+                </div>
+              </div>
+              <div class="step">
+                <span class="step-index">2</span>
+                <div>
+                  <strong>Separate layers</strong>
+                  <span>Keep text, transliteration, word sense, and notes apart.</span>
+                </div>
+              </div>
+              <div class="step">
+                <span class="step-index">3</span>
+                <div>
+                  <strong>Flag meter</strong>
+                  <span>State what is known and what needs scholar review.</span>
+                </div>
+              </div>
+              <div class="step">
+                <span class="step-index">4</span>
+                <div>
+                  <strong>Hold boundary</strong>
+                  <span>No ritual instruction, lineage inference, or audio claim without review.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="guard-card">
+            <h2>Next Signal</h2>
+            <p>v0.5.7 should add a voice boundary seed before any recitation audio: pronunciation support, review status, licensing, and no ritual authority.</p>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <script>
+      const passages = [
+        {
+          id: "gita_2_48",
+          label: "Steady action",
+          family: "Bhagavad Gita | Smriti",
+          title: "Steady action before outcome identity.",
+          citation: "Bhagavad Gita 2.48",
+          status: "Seed reviewed",
+          meter: "Anushtubh shloka",
+          boundary: "Reflection, not command.",
+          sourceUrl: "https://www.gitasupersite.iitk.ac.in/srimad?field_chapter_value=2&field_nsutra_value=48&language=dv",
+          devanagari: "योगस्थः कुरु कर्माणि सङ्गं त्यक्त्वा धनञ्जय।<br>सिद्ध्यसिद्ध्योः समो भूत्वा समत्वं योग उच्यते।।2.48।।",
+          translit: "yoga-sthaḥ kuru karmāṇi saṅgaṁ tyaktvā dhanañjaya | siddhy-asiddhyoḥ samo bhūtvā samatvaṁ yoga ucyate ||",
+          meaning: "Act from steadiness; let success and failure stop owning your identity.",
+          words: [
+            ["yoga-sthaḥ", "established in yoga, steadiness"],
+            ["kuru", "do, perform"],
+            ["karmāṇi", "actions or duties"],
+            ["saṅgaṁ tyaktvā", "letting go of attachment"],
+            ["dhanañjaya", "Arjuna, addressed by name"],
+            ["siddhy-asiddhyoḥ", "in success and non-success"],
+            ["samaḥ bhūtvā", "becoming even or balanced"],
+            ["samatvam", "equanimity"],
+            ["yoga ucyate", "is called yoga"]
+          ],
+          modes: {
+            source: [
+              ["Primary anchor", "Gita Supersite text for chapter 2, verse 48.", "source"],
+              ["Text family", "Bhagavad Gita in the Mahabharata, usually classified as Smriti.", "source"],
+              ["Use case", "Good for calm action, duty, and outcome-boundary reflections.", "source"],
+              ["No-go", "Do not flatten it into a productivity slogan or detach action from dharma.", "boundary"]
+            ],
+            words: [
+              ["Split status", "Prototype split, ready for scholar review before production.", "review"],
+              ["Key idea", "The verse joins action with steadiness, not passivity.", "source"],
+              ["Beginner note", "Samatva points toward balanced relation to results.", "source"],
+              ["No-go", "Do not claim the verse says all outcomes are meaningless.", "boundary"]
+            ],
+            meter: [
+              ["Meter", "Anushtubh shloka, the common Gita verse pattern.", "source"],
+              ["Production field", "Future record should store syllable scan and pada split.", "review"],
+              ["Audio status", "No audio is included in this seed.", "boundary"],
+              ["No-go", "Do not offer chant coaching without licensed audio and reviewer approval.", "boundary"]
+            ],
+            notes: [
+              ["Plain meaning", "Steady action matters before outcome identity.", "source"],
+              ["Interpretation layer", "Traditional commentaries differ on yoga, duty, and renunciation.", "review"],
+              ["Modern use", "Useful as reflection support, not as a universal command.", "source"],
+              ["No-go", "Do not use this to pressure someone into unsafe or unethical action.", "boundary"]
+            ],
+            boundary: [
+              ["Allowed", "Source-backed reflection on steadiness, action, and results.", "source"],
+              ["Must not", "No therapy, command, ritual instruction, or life verdict.", "boundary"],
+              ["Review need", "Commentary comparison should come before deep doctrinal claims.", "review"],
+              ["Carry line", "Do the next duty calmly; do not make the result your identity.", "source"]
+            ]
+          }
+        },
+        {
+          id: "katha_1_3_14",
+          label: "Awake and understand",
+          family: "Katha Upanishad | Shruti",
+          title: "Awake, approach, and understand.",
+          citation: "Katha Upanishad 1.3.14",
+          status: "Seed reviewed",
+          meter: "Chandas review needed",
+          boundary: "Study prompt, not salvation claim.",
+          sourceUrl: "https://sanskritdocuments.org/doc_upanishhat/katha.html",
+          devanagari: "उत्तिष्ठत जाग्रत<br>प्राप्य वरान्निबोधत ।<br>क्षुरस्य धारा निशिता दुरत्यया<br>दुर्गं पथस्तत्कवयो वदन्ति ॥ १४॥",
+          translit: "uttiṣṭhata jāgrata prāpya varān nibodhata | kṣurasya dhārā niśitā duratyayā durgaṁ pathas tat kavayo vadanti ||",
+          meaning: "Wake up, seek worthy guidance, and understand; the path is subtle and difficult.",
+          words: [
+            ["uttiṣṭhata", "arise, stand up"],
+            ["jāgrata", "awake, become alert"],
+            ["prāpya", "having reached or approached"],
+            ["varān", "the excellent, worthy teachers"],
+            ["nibodhata", "understand, learn"],
+            ["kṣurasya dhārā", "edge of a razor"],
+            ["niśitā duratyayā", "sharp and hard to cross"],
+            ["durgaṁ pathaḥ", "difficult path"],
+            ["kavayaḥ vadanti", "the wise say"]
+          ],
+          modes: {
+            source: [
+              ["Primary anchor", "Sanskrit Documents Katha Upanishad, first adhyaya, third valli, verse 14.", "source"],
+              ["Text family", "Katha Upanishad, a Shruti text associated with the Krishna Yajurveda.", "source"],
+              ["Use case", "Good for learning path, humility, and guided study boundaries.", "source"],
+              ["No-go", "Do not turn the verse into fear, pressure, or a spiritual status test.", "boundary"]
+            ],
+            words: [
+              ["Split status", "Prototype split, with compound review still needed.", "review"],
+              ["Key idea", "The motion is wake, approach, understand; not rush, perform, declare.", "source"],
+              ["Beginner note", "The razor image marks subtle difficulty, not despair.", "source"],
+              ["No-go", "Do not claim VedaPath itself is the teacher named by the verse.", "boundary"]
+            ],
+            meter: [
+              ["Meter", "Marked for chandas review before production.", "review"],
+              ["Production field", "Store pada split, syllable scan, and recension note later.", "review"],
+              ["Audio status", "No recitation audio is included in this seed.", "boundary"],
+              ["No-go", "Do not teach recitation from this prototype text alone.", "boundary"]
+            ],
+            notes: [
+              ["Plain meaning", "Wakefulness is paired with seeking guidance and understanding.", "source"],
+              ["Interpretation layer", "The verse is often read as a call to disciplined self-knowledge.", "review"],
+              ["Modern use", "Useful for study motivation, not self-judgment.", "source"],
+              ["No-go", "Do not use the razor image to intensify distress.", "boundary"]
+            ],
+            boundary: [
+              ["Allowed", "Source-backed reflection on attention, guidance, and humility.", "source"],
+              ["Must not", "No guru voice, salvation claim, fear pressure, or ritual authority.", "boundary"],
+              ["Review need", "Commentary and meter details need scholar review.", "review"],
+              ["Carry line", "Wake up gently; seek a good source before deciding.", "source"]
+            ]
+          }
+        },
+        {
+          id: "rv_3_62_10",
+          label: "Gayatri source seed",
+          family: "Rigveda 3.62.10 | Shruti",
+          title: "A mantra seed needs stronger boundaries.",
+          citation: "Rigveda 3.62.10",
+          status: "Seed needs reviewer",
+          meter: "Gayatri meter",
+          boundary: "No ritual instruction.",
+          sourceUrl: "https://en.wikipedia.org/wiki/Gayatri_Mantra",
+          devanagari: "तत्सवितुर्वरेण्यं ।<br>भर्गो देवस्य धीमहि ।<br>धियो यो नः प्रचोदयात् ॥",
+          translit: "tat savitur vareṇyaṁ | bhargo devasya dhīmahi | dhiyo yo naḥ pracodayāt ||",
+          meaning: "A compact invocation around Savitr, radiance, contemplation, and the stirring of understanding.",
+          words: [
+            ["tat", "that"],
+            ["savituḥ", "of Savitr"],
+            ["vareṇyam", "excellent, worthy of choosing"],
+            ["bhargaḥ", "radiance, splendor"],
+            ["devasya", "of the divine one"],
+            ["dhīmahi", "we contemplate"],
+            ["dhiyo", "understandings, intellects"],
+            ["yaḥ", "who, which"],
+            ["naḥ pracodayāt", "may impel or guide us"]
+          ],
+          modes: {
+            source: [
+              ["Primary anchor", "Reference seed for the Gayatri mantra as Rigveda 3.62.10.", "review"],
+              ["Text family", "Rigvedic Shruti, associated with Savitr.", "source"],
+              ["Use case", "Good for source classification, meter display, and boundary design.", "source"],
+              ["No-go", "Do not provide initiation, lineage, or ritual instruction.", "boundary"]
+            ],
+            words: [
+              ["Split status", "Prototype educational split; production needs Vedic accent and pada review.", "review"],
+              ["Key idea", "The verse is about contemplation and illumination of understanding.", "source"],
+              ["Beginner note", "This seed omits ritual prefixes and practice instructions.", "boundary"],
+              ["No-go", "Do not claim this is a complete recitation guide.", "boundary"]
+            ],
+            meter: [
+              ["Meter", "Gayatri meter, commonly understood as three padas of eight syllables.", "source"],
+              ["Production field", "Future record should include accent, pada, and recension notes.", "review"],
+              ["Audio status", "No audio or chanting cadence is included.", "boundary"],
+              ["No-go", "Do not infer who may chant or prescribe practice rules.", "boundary"]
+            ],
+            notes: [
+              ["Plain meaning", "The text points toward contemplation of Savitr's radiance and awakened understanding.", "source"],
+              ["Interpretation layer", "Traditional and reform contexts differ; treat practice context carefully.", "review"],
+              ["Modern use", "Useful for explaining source, meter, and meaning layers.", "source"],
+              ["No-go", "Do not use this prototype to settle ritual access debates.", "boundary"]
+            ],
+            boundary: [
+              ["Allowed", "Source classification, rough word sense, meter label, and study note.", "source"],
+              ["Must not", "No ritual instruction, initiation guidance, ritual prescription, lineage claim, or audio authority.", "boundary"],
+              ["Review need", "Vedic accent, recitation context, and source edition require review.", "review"],
+              ["Carry line", "Look at the source with humility before using a mantra in public explanation.", "source"]
+            ]
+          }
+        }
+      ];
+
+      const state = {
+        selectedId: "gita_2_48",
+        mode: "source"
+      };
+
+      function selectedPassage() {
+        return passages.find((passage) => passage.id === state.selectedId) || passages[0];
+      }
+
+      function lensClass(kind) {
+        if (kind === "source") return "source";
+        if (kind === "review") return "review";
+        return "boundary";
+      }
+
+      function renderList() {
+        const list = document.getElementById("passageList");
+        list.innerHTML = passages.map((passage, index) => `
+          <button class="passage-card ${passage.id === state.selectedId ? "active" : ""}" type="button" data-id="${passage.id}">
+            <span class="passage-index">${index + 1}</span>
+            <span>
+              <strong>${passage.label}</strong>
+              <span>${passage.citation}</span>
+            </span>
+          </button>
+        `).join("");
+        [...list.querySelectorAll("[data-id]")].forEach((button) => {
+          button.addEventListener("click", () => {
+            state.selectedId = button.dataset.id;
+            render();
+          });
+        });
+      }
+
+      function renderTabs() {
+        [...document.querySelectorAll(".tab")].forEach((tab) => {
+          tab.classList.toggle("active", tab.dataset.mode === state.mode);
+          tab.addEventListener("click", () => {
+            state.mode = tab.dataset.mode;
+            render();
+          }, { once: true });
+        });
+      }
+
+      function renderPassage() {
+        const passage = selectedPassage();
+        document.getElementById("sourceFamily").textContent = passage.family;
+        document.getElementById("passageTitle").textContent = passage.title;
+        document.getElementById("plainMeaning").textContent = passage.meaning;
+        document.getElementById("citation").textContent = passage.citation;
+        document.getElementById("sourceStatus").textContent = passage.status;
+        document.getElementById("meter").textContent = passage.meter;
+        document.getElementById("boundary").textContent = passage.boundary;
+        document.getElementById("devanagari").innerHTML = passage.devanagari;
+        document.getElementById("translit").textContent = passage.translit;
+        document.getElementById("wordCount").textContent = passage.words.length;
+        document.getElementById("wordGrid").innerHTML = passage.words.map(([term, meaning]) => `
+          <div class="word-card">
+            <strong>${term}</strong>
+            <span>${meaning}</span>
+          </div>
+        `).join("");
+
+        const rows = passage.modes[state.mode] || passage.modes.source;
+        document.getElementById("modePanel").innerHTML = `
+          <h2>${state.mode.charAt(0).toUpperCase() + state.mode.slice(1)} Layer</h2>
+          <div class="lens-grid">
+            ${rows.map(([name, detail, kind]) => `
+              <div class="lens-item ${lensClass(kind)}">
+                <strong>${name}</strong>
+                <span>${detail}</span>
+              </div>
+            `).join("")}
+          </div>
+        `;
+      }
+
+      function lensPayload(passage = selectedPassage()) {
+        return {
+          product: "VedaPath AI",
+          release: "v0.5.6 lens",
+          lens_id: passage.id,
+          citation: passage.citation,
+          source_family: passage.family,
+          source_status: passage.status,
+          meter: passage.meter,
+          boundary: passage.boundary,
+          source_url: passage.sourceUrl,
+          plain_meaning: passage.meaning,
+          transliteration: passage.translit,
+          words: passage.words.map(([term, meaning]) => ({ term, meaning })),
+          selected_layer: state.mode,
+          rule: "Sanskrit Lens separates source text, word sense, notes, and recitation boundary before meaning."
+        };
+      }
+
+      function sourceBrief(passage = selectedPassage()) {
+        return [
+          "VedaPath Sanskrit Lens Source Card",
+          "Release: v0.5.6 lens",
+          `Citation: ${passage.citation}`,
+          `Source family: ${passage.family}`,
+          `Source status: ${passage.status}`,
+          `Meter: ${passage.meter}`,
+          `Boundary: ${passage.boundary}`,
+          `Source URL: ${passage.sourceUrl}`,
+          "",
+          `Plain meaning: ${passage.meaning}`,
+          "",
+          "Word lens:",
+          ...passage.words.map(([term, meaning]) => `- ${term}: ${meaning}`)
+        ].join("\n");
+      }
+
+      function boundaryBrief(passage = selectedPassage()) {
+        return [
+          "VedaPath Sanskrit Lens Boundary",
+          "Release: v0.5.6 lens",
+          `Citation: ${passage.citation}`,
+          "",
+          `Allowed: text display, transliteration, word sense, meter status, source notes, and cautious reflection.`,
+          `Must not: ritual instruction, chant coaching, lineage inference, final translation claim, therapy, command, or spiritual status verdict.`,
+          "",
+          `Passage boundary: ${passage.boundary}`
+        ].join("\n");
+      }
+
+      function writeOutput(text) {
+        const output = document.getElementById("lensOutput");
+        output.value = text;
+        output.focus();
+        output.select();
+      }
+
+      function copyText(text, button, doneLabel) {
+        writeOutput(text);
+        const original = button.textContent;
+        const finish = () => {
+          button.textContent = doneLabel;
+          setTimeout(() => {
+            button.textContent = original;
+          }, 1400);
+        };
+        if (navigator.clipboard && window.isSecureContext) {
+          navigator.clipboard.writeText(text).then(finish).catch(finish);
+        } else {
+          finish();
+        }
+      }
+
+      function render() {
+        renderList();
+        renderTabs();
+        renderPassage();
+        writeOutput(JSON.stringify(lensPayload(), null, 2));
+      }
+
+      document.getElementById("copySource").addEventListener("click", () => {
+        copyText(sourceBrief(), document.getElementById("copySource"), "Source Copied");
+      });
+
+      document.getElementById("copyJson").addEventListener("click", () => {
+        copyText(JSON.stringify(lensPayload(), null, 2), document.getElementById("copyJson"), "JSON Copied");
+      });
+
+      document.getElementById("copyBoundary").addEventListener("click", () => {
+        copyText(boundaryBrief(), document.getElementById("copyBoundary"), "Boundary Copied");
+      });
+
+      render();
+    </script>
+  </body>
+</html>

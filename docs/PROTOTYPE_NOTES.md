@@ -1,6 +1,6 @@
-# v0.5.5 Prototype Notes
+# v0.5.6 Prototype Notes
 
-The v0.5.5 release turns the VedaPath AI homepage into a trusted MVP prototype with calm, practice, source-library, source-seeds, retrieval, passage-review, evaluation, evaluation-dashboard, reviewer-queue, source-policy, trust-ledger, life-map, calm-circle, consent-gate, memory-gate, trust-model, calm-passport, backend-schema, schema-fixtures, evaluation-drill, learning-loop, source-path, calm-compass, calm-card, source-bell, before-reply, samvada, sankalpa, seva, morning, evening, and rhythm surfaces.
+The v0.5.6 release turns the VedaPath AI homepage into a trusted MVP prototype with calm, practice, source-library, source-seeds, retrieval, passage-review, evaluation, evaluation-dashboard, reviewer-queue, source-policy, trust-ledger, life-map, calm-circle, consent-gate, memory-gate, trust-model, calm-passport, backend-schema, schema-fixtures, evaluation-drill, learning-loop, sanskrit-lens, source-path, calm-compass, calm-card, source-bell, before-reply, samvada, sankalpa, seva, morning, evening, and rhythm surfaces.
 
 ## Included
 
@@ -33,6 +33,7 @@ The v0.5.5 release turns the VedaPath AI homepage into a trusted MVP prototype w
 - Schema Fixture Lab with sample rows, validation checks, export shape, deletion lifecycle, and no-go tests
 - Evaluation Drill Room with answer checks, backend fixture checks, no-go cases, release decisions, queue handoffs, and copyable founder briefs
 - Learning Loop Seed with repeated question patterns, reviewer decisions, source gaps, blocked learning boundaries, and copyable learning briefs
+- Sanskrit Lens Seed with Sanskrit text, transliteration, word lens, meter status, source notes, and recitation boundaries
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
 - Calm Card Studio with visual preview, local saved cards, copy text, and PNG export
@@ -77,6 +78,7 @@ This release proves the product direction:
 - backend fixture behavior can be tested before production storage exists
 - answer checks, fixture checks, and no-go cases can run together before a release is treated as safe
 - repeated questions, source gaps, reviewer decisions, and no-go cases can improve product behavior without hidden profiling
+- Sanskrit passages can open in visible layers before the product offers meaning
 - unsupported proof claims can be refused as source gaps instead of dressed up as wisdom
 - one current-life state can route to the next useful product room
 - one source-backed action can become a shareable visual artifact
@@ -90,4 +92,4 @@ This release proves the product direction:
 
 ## Next Release
 
-v0.5.5 adds the Learning Loop Seed with repeated question patterns, reviewer decisions, source gaps, blocked learning boundaries, and copyable learning briefs. v0.5.6 should add a Sanskrit Lens seed with transliteration, word meaning, meter, translation notes, and recitation boundaries.
+v0.5.6 adds the Sanskrit Lens Seed with reviewed passage seeds, Sanskrit text, transliteration, word lens, meter status, source notes, and recitation boundaries. v0.5.7 should add a Voice Boundary Seed before any audio feature: pronunciation support rules, licensing fields, reviewer status, and a hard separation between study support and ritual instruction.

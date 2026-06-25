@@ -147,6 +147,10 @@ Source behavior changes should move through:
 4. trust event
 5. visible release note
 
-## v0.5.6 Direction
+## v0.5.6 Sanskrit Lens
 
-The next release should add a Sanskrit Lens seed for a few reviewed passages: transliteration, word meaning, meter, translation notes, and recitation boundaries.
+v0.5.6 adds the Sanskrit Lens Seed for a few reviewed passages: Sanskrit text, transliteration, word meaning, meter status, translation notes, source URL, and recitation boundaries.
+
+## v0.5.7 Direction
+
+The next release should add a Voice Boundary Seed before any audio feature: pronunciation support rules, licensing fields, reviewer status, and a hard separation between study support and ritual instruction.

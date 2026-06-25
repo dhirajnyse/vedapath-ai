@@ -579,6 +579,7 @@
           <a class="link" href="fixtures.html">Fixtures</a>
           <a class="link" href="drill.html">Drill</a>
           <a class="link" href="loop.html">Loop</a>
+          <a class="link" href="lens.html">Lens</a>
           <a class="link" href="path.html">Path</a>
           <a class="link" href="compass.html">Compass</a>
           <a class="link" href="card.html">Card</a>
@@ -590,7 +591,7 @@
           <a class="link" href="morning.html">Morning</a>
           <a class="link" href="evening.html">Evening</a>
           <a class="link" href="rhythm.html">Rhythm</a>
-          <span class="version">v0.5.5 loop</span>
+          <span class="version">v0.5.6 lens</span>
         </nav>
       </header>
 
@@ -966,7 +967,7 @@
       function schemaPayload(record = selectedRecord()) {
         return {
           product: "VedaPath AI",
-          release: "v0.5.5 loop",
+          release: "v0.5.6 lens",
           table: record.id,
           owner: record.owner,
           retention: record.retention,
@@ -1013,7 +1014,7 @@
       function copyMigration() {
         const text = [
           "VedaPath Backend Migration Plan",
-          "Release: v0.5.5 loop",
+          "Release: v0.5.6 lens",
           "",
           ...migrationPlan.map((item, index) => `${index + 1}. ${item}`),
           "",
@@ -1026,7 +1027,7 @@
         const missing = records.filter((record) => !record.fields.length || !record.relations.length || !record.gate);
         const text = [
           "Schema gate: PASS",
-          "Release: v0.5.5 loop",
+          "Release: v0.5.6 lens",
           `Tables checked: ${records.length}`,
           `Missing essentials: ${missing.length}`,
           "",
