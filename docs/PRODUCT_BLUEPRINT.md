@@ -104,6 +104,7 @@ It helps users move from curiosity to understanding through:
 - Answer Preview Workbench: Answer Preview Workbench turns VedaPath's source-first doctrine into a simple answer card users can scan without losing depth.
 - Consent Memory Vault: Consent Memory Vault makes future personalization explicit: remembered only with purpose, permission, export, delete, and pause.
 - Reviewer Operations Desk: Reviewer Operations Desk turns expert help into scoped tasks, visible decision states, and calm release lanes.
+- Public Trust Center: Public Trust Center gives users one plain place to inspect VedaPath's boundaries, source method, privacy posture, and correction path.
 <!-- VEDAPATH PRODUCTIZATION SPRINT SUMMARY END -->
 
 ## What It Is
@@ -1665,6 +1666,21 @@ It should:
 - produce a copyable public-productization handoff
 
 Reviewer Operations Desk should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 102. Public Trust Center
+
+Public Trust Center gives users one plain place to inspect VedaPath's boundaries, source method, privacy posture, and correction path.
+
+It should:
+
+- Source method: What counts as source-backed, commentary, analogy, or uncertain.
+- Privacy posture: Local memory, synced grants, export, delete, and blocked inference.
+- Review process: What human review means and what it does not mean.
+- Correction route: How users report source, category, translation, or boundary issues.
+- preserve the boundary: Trust-center prototype, not legal compliance certification.
+- produce a copyable public-productization handoff
+
+Public Trust Center should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH PRODUCTIZATION SPRINT BLUEPRINT END -->
 
 ## Product Personality

@@ -213,6 +213,8 @@ Let us look at the source first.
 - [Consent Memory Vault Notes](docs/CONSENT_MEMORY_VAULT.md)
 - [Reviewer Operations Desk](reviewdesk.html)
 - [Reviewer Operations Desk Notes](docs/REVIEWER_OPERATIONS_DESK.md)
+- [Public Trust Center](trustcenter.html)
+- [Public Trust Center Notes](docs/PUBLIC_TRUST_CENTER.md)
 <!-- VEDAPATH PRODUCTIZATION SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -244,7 +246,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v1.1.8` is a trusted MVP prototype plus Reviewer Operations Desk with:
+`v1.1.9` is a trusted MVP prototype plus Public Trust Center with:
 
 - Ask workspace
 - Source Card
@@ -347,6 +349,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Answer Preview Workbench: Answer Preview Workbench turns VedaPath's source-first doctrine into a simple answer card users can scan without losing depth.
 - Consent Memory Vault: Consent Memory Vault makes future personalization explicit: remembered only with purpose, permission, export, delete, and pause.
 - Reviewer Operations Desk: Reviewer Operations Desk turns expert help into scoped tasks, visible decision states, and calm release lanes.
+- Public Trust Center: Public Trust Center gives users one plain place to inspect VedaPath's boundaries, source method, privacy posture, and correction path.
 <!-- VEDAPATH PRODUCTIZATION SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
