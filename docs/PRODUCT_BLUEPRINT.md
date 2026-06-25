@@ -127,6 +127,7 @@ It helps users move from curiosity to understanding through:
 - Source JSON Contract: Source JSON Contract gives VedaPath a stable source-record shape that future retrieval, review, and answer rendering can share.
 - Answer Renderer Shell: Answer Renderer Shell separates presentation from generation so every answer shows source, confidence, and boundary consistently.
 - Beta Waitlist Room: Beta Waitlist Room turns launch excitement into a careful intake path that respects user expectation and product limits.
+- Consent Toggle Mock: Consent Toggle Mock makes VedaPath's memory promise tangible through named permissions and visible reversibility.
 <!-- VEDAPATH IMPLEMENTATION SPRINT SUMMARY END -->
 
 ## What It Is
@@ -1975,6 +1976,21 @@ It should:
 - produce a copyable implementation-readiness handoff
 
 Beta Waitlist Room should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 121. Consent Toggle Mock
+
+Consent Toggle Mock makes VedaPath's memory promise tangible through named permissions and visible reversibility.
+
+It should:
+
+- Local only: Keep reflections and drafts on device.
+- Sync path: Save source trail and learning preferences after opt-in.
+- Contact: Allow beta updates or reviewer follow-up separately.
+- Exit: Export, delete, revoke, pause, and clear device.
+- preserve the boundary: Consent UI mock, not production accounts.
+- produce a copyable implementation-readiness handoff
+
+Consent Toggle Mock should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH IMPLEMENTATION SPRINT BLUEPRINT END -->
 
 ## Product Personality
