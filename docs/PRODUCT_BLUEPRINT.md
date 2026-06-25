@@ -54,6 +54,7 @@ It helps users move from curiosity to understanding through:
 <!-- VEDAPATH PERSONAL SPRINT SUMMARY START -->
 - Guided Onboarding Path: Guided Onboarding Path turns the first visit into one calm choice instead of a crowded tour.
 - Personal Calm Profile: Personal Calm Profile shows what VedaPath may remember, what it must not infer, and how a user can export or clear it.
+- Source Journey Map: Source Journey Map makes the learning path visible so users understand how VedaPath moves from curiosity to cited clarity.
 <!-- VEDAPATH PERSONAL SPRINT SUMMARY END -->
 
 ## What It Is
@@ -981,6 +982,21 @@ It should:
 - produce a copyable founder handoff
 
 Personal Calm Profile should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 60. Source Journey Map
+
+Source Journey Map makes the learning path visible so users understand how VedaPath moves from curiosity to cited clarity.
+
+It should:
+
+- Question: What is the user really asking?
+- Source: Which source family and citation are relevant?
+- Meaning: What is the plain first explanation?
+- Depth: What Sanskrit, commentary, or debate layer is optional?
+- preserve the boundary: Learning route, not final mastery.
+- produce a copyable founder handoff
+
+Source Journey Map should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH PERSONAL SPRINT BLUEPRINT END -->
 
 ## Product Personality
