@@ -191,6 +191,7 @@ It helps users move from curiosity to understanding through:
 - Fallback Explorer: Fallback Explorer makes refusal and uncertainty part of the product experience rather than a dead end.
 - Search Evidence Drawer: Search Evidence Drawer gives VedaPath a simple result-to-evidence interaction that preserves source boundaries.
 - Review State Filter: Review State Filter makes source status a first-class search control instead of buried metadata.
+- Copy Handoff Builder: Copy Handoff Builder turns beta search into an operations bridge, giving reviewers compact context without hidden automation.
 <!-- VEDAPATH INTERACTIVE SEARCH SPRINT SUMMARY END -->
 
 ## What It Is
@@ -2854,6 +2855,21 @@ It should:
 - keep the search browser-only until a real backend is approved
 
 Review State Filter should never claim live semantic retrieval, backend storage, live AI generation, reviewed corpus coverage, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 175. Copy Handoff Builder
+
+Copy Handoff Builder turns beta search into an operations bridge, giving reviewers compact context without hidden automation.
+
+It should:
+
+- Handoff text: Release, query, result count, source candidates, and boundary summary.
+- No ticket claim: Copy text is not a submitted support ticket.
+- Review focus: Source, rights, category, and boundary are named.
+- Privacy note: No user personal context is included.
+- preserve the boundary: Copy handoff prototype, not live ticket creation.
+- keep the search browser-only until a real backend is approved
+
+Copy Handoff Builder should never claim live semantic retrieval, backend storage, live AI generation, reviewed corpus coverage, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH INTERACTIVE SEARCH SPRINT BLUEPRINT END -->
 
 ## Product Personality
