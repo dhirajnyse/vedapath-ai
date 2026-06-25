@@ -164,6 +164,7 @@ It helps users move from curiosity to understanding through:
 - Static Dataset Loader: Static Dataset Loader gives VedaPath a safe first ingestion path before any backend or account system exists.
 - Retrieval Scoring Harness: Retrieval Scoring Harness maps match strength, source eligibility, risk, and fallback behavior into an inspectable decision.
 - Answer Assembly Contract: Answer Assembly Contract gives VedaPath a repeatable output shape that can be tested before it becomes generative.
+- Evaluation Fixture Lab: Evaluation Fixture Lab turns product risk into repeatable checks, making trust measurable before launch.
 <!-- VEDAPATH BETA IMPLEMENTATION SPRINT SUMMARY END -->
 
 ## What It Is
@@ -2480,6 +2481,21 @@ It should:
 - produce a copyable beta-implementation handoff
 
 Answer Assembly Contract should never claim production storage, live AI generation, public launch approval, authentication, licensed source text, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 152. Evaluation Fixture Lab
+
+Evaluation Fixture Lab turns product risk into repeatable checks, making trust measurable before launch.
+
+It should:
+
+- Category check: Gita, Veda, Upanishad, Purana, commentary, and modern interpretation are tested separately.
+- Support check: Every direct answer must map to source support or fallback.
+- Boundary check: Therapy, ritual, science, and personal crisis claims require visible limits.
+- Regression pack: Known mistakes become fixtures before public release.
+- preserve the boundary: Evaluation fixture demo, not automated certification.
+- produce a copyable beta-implementation handoff
+
+Evaluation Fixture Lab should never claim production storage, live AI generation, public launch approval, authentication, licensed source text, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH BETA IMPLEMENTATION SPRINT BLUEPRINT END -->
 
 ## Product Personality

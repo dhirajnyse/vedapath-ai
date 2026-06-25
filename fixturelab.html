@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>VedaPath Static Dataset Loader</title>
+    <title>VedaPath Evaluation Fixture Lab</title>
     <link rel="stylesheet" href="assets/vedapath-sprint.css">
   </head>
   <body>
@@ -13,7 +13,7 @@
           <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
           <div>
             <strong>VedaPath AI</strong>
-            <span>Static dataset loader</span>
+            <span>Evaluation fixture lab</span>
           </div>
         </a>
         <nav class="nav" aria-label="Project links">
@@ -23,16 +23,16 @@
           <a class="link" href="workingconsole.html">Working MVP</a>
           <!-- VEDAPATH BETA IMPLEMENTATION SPRINT NAV START -->
           <a class="link" href="sourcecontract.html">Schema</a>
-          <a class="link active" href="datasetloader.html">Loader</a>
+          <a class="link" href="datasetloader.html">Loader</a>
           <a class="link" href="retrievalscoring.html">Scoring</a>
           <a class="link" href="answerassembly.html">Assembly</a>
-          <a class="link" href="fixturelab.html">Fixtures</a>
+          <a class="link active" href="fixturelab.html">Fixtures</a>
           <!-- VEDAPATH BETA IMPLEMENTATION SPRINT NAV END -->
           <span class="version">v1.6.9 eval</span>
         </nav>
       </header>
 
-      <main class="workspace" aria-label="VedaPath Static Dataset Loader workspace">
+      <main class="workspace" aria-label="VedaPath Evaluation Fixture Lab workspace">
         <aside class="panel">
           <span class="eyebrow">Beta implementation sprint</span>
           <h2>Release Rooms</h2>
@@ -43,23 +43,23 @@
         <section class="panel">
           <div class="hero-grid">
             <div>
-              <span class="eyebrow">Data loading</span>
-              <h1>Load only records that pass the gate.</h1>
-              <p class="muted">A static dataset loader preview for importing reviewed source records while rejecting missing fields, blocked rights, or unsafe answer scopes.</p>
+              <span class="eyebrow">Quality checks</span>
+              <h1>Test the answer before trusting the answer.</h1>
+              <p class="muted">An evaluation fixture lab for source category confusion, unsupported claims, missing boundary, and unsafe calm-path language.</p>
             </div>
             <div class="mark-stage">
-              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Loader logo">
+              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Fixtures logo">
             </div>
           </div>
 
           <div class="source-block" aria-label="Release source card">
             <div>
               <span class="source-meta">Release</span>
-              <span class="source-value">v1.6.6</span>
+              <span class="source-value">v1.6.9</span>
             </div>
             <div>
               <span class="source-meta">Source candidate</span>
-              <span class="source-value">Mundaka Upanishad 1.1.4</span>
+              <span class="source-value">Katha Upanishad 1.2.1</span>
             </div>
             <div>
               <span class="source-meta">Text family</span>
@@ -67,14 +67,14 @@
             </div>
             <div>
               <span class="source-meta">Boundary</span>
-              <span class="source-value">Static loader demo, not production ingestion.</span>
+              <span class="source-value">Evaluation fixture demo, not automated certification.</span>
             </div>
           </div>
 
           <h2>Implementation Signals</h2>
           <div class="item-list" id="itemList"></div>
 
-          <div class="tabs" role="tablist" aria-label="VedaPath Static Dataset Loader layers">
+          <div class="tabs" role="tablist" aria-label="VedaPath Evaluation Fixture Lab layers">
             <button class="tab active" type="button" data-mode="brief">Brief</button>
             <button class="tab" type="button" data-mode="checklist">Checklist</button>
             <button class="tab" type="button" data-mode="boundary">Boundary</button>
@@ -88,20 +88,20 @@
             <button class="button" id="copyBoundary" type="button">Copy Boundary</button>
           </div>
 
-          <textarea id="output" readonly aria-label="VedaPath Static Dataset Loader output"></textarea>
+          <textarea id="output" readonly aria-label="VedaPath Evaluation Fixture Lab output"></textarea>
         </section>
 
-        <aside class="panel tight" aria-label="VedaPath Static Dataset Loader sprint rail">
+        <aside class="panel tight" aria-label="VedaPath Evaluation Fixture Lab sprint rail">
           <span class="badge green">Implementation path</span>
-          <h2 style="margin-top: 14px;">Loader Pulse</h2>
-          <p class="muted">Static Dataset Loader gives VedaPath a safe first ingestion path before any backend or account system exists.</p>
-          <div class="progress" aria-label="Sprint progress 62 percent">
-            <div class="bar" style="--score:62%"></div>
+          <h2 style="margin-top: 14px;">Fixtures Pulse</h2>
+          <p class="muted">Evaluation Fixture Lab turns product risk into repeatable checks, making trust measurable before launch.</p>
+          <div class="progress" aria-label="Sprint progress 65 percent">
+            <div class="bar" style="--score:65%"></div>
           </div>
           <div class="metric-grid">
             <div class="metric">
               <span>Current</span>
-              <strong>v1.6.6</strong>
+              <strong>v1.6.9</strong>
             </div>
             <div class="metric">
               <span>Sprint</span>
@@ -109,11 +109,11 @@
             </div>
             <div class="metric">
               <span>Progress</span>
-              <strong>62%</strong>
+              <strong>65%</strong>
             </div>
             <div class="metric">
               <span>Next</span>
-              <strong>Retrieval Scoring Harness</strong>
+              <strong>Rights and Translation Gate</strong>
             </div>
           </div>
 
@@ -145,71 +145,71 @@
     </div>
 
     <script type="application/json" id="room-data">{
-  "version": "v1.6.6",
-  "badge": "v1.6.6 loader",
-  "slug": "datasetloader",
-  "nav": "Loader",
-  "title": "VedaPath Static Dataset Loader",
-  "pageLabel": "Static dataset loader",
-  "eyebrow": "Data loading",
-  "h1": "Load only records that pass the gate.",
-  "lead": "A static dataset loader preview for importing reviewed source records while rejecting missing fields, blocked rights, or unsafe answer scopes.",
-  "source": "Mundaka Upanishad 1.1.4",
+  "version": "v1.6.9",
+  "badge": "v1.6.9 eval",
+  "slug": "fixturelab",
+  "nav": "Fixtures",
+  "title": "VedaPath Evaluation Fixture Lab",
+  "pageLabel": "Evaluation fixture lab",
+  "eyebrow": "Quality checks",
+  "h1": "Test the answer before trusting the answer.",
+  "lead": "An evaluation fixture lab for source category confusion, unsupported claims, missing boundary, and unsafe calm-path language.",
+  "source": "Katha Upanishad 1.2.1",
   "family": "Upanishad | Shruti",
-  "stance": "Static loader demo, not production ingestion.",
-  "progress": 62,
-  "next": "Retrieval Scoring Harness",
-  "primaryAsk": "Prove that draft records cannot silently become public answer fuel.",
-  "summary": "Static Dataset Loader gives VedaPath a safe first ingestion path before any backend or account system exists.",
+  "stance": "Evaluation fixture demo, not automated certification.",
+  "progress": 65,
+  "next": "Rights and Translation Gate",
+  "primaryAsk": "Create visible test cases for the errors VedaPath must never normalize.",
+  "summary": "Evaluation Fixture Lab turns product risk into repeatable checks, making trust measurable before launch.",
   "items": [
     [
-      "Validation",
-      "Required fields, allowed families, and citation format are checked.",
-      "Prevents broken records."
+      "Category check",
+      "Gita, Veda, Upanishad, Purana, commentary, and modern interpretation are tested separately.",
+      "Prevents source confusion."
     ],
     [
-      "Eligibility",
-      "Draft, blocked, rights-needed, and specialist-needed records stay out of public answers.",
-      "Protects output."
+      "Support check",
+      "Every direct answer must map to source support or fallback.",
+      "Blocks unsupported confidence."
     ],
     [
-      "Import report",
-      "Accepted, held, blocked, and duplicate records are counted.",
-      "Makes QA visible."
+      "Boundary check",
+      "Therapy, ritual, science, and personal crisis claims require visible limits.",
+      "Keeps users safe."
     ],
     [
-      "Fallback pack",
-      "No-source and reviewer-needed examples ship with the dataset.",
-      "Prevents invention."
+      "Regression pack",
+      "Known mistakes become fixtures before public release.",
+      "Protects future builds."
     ]
   ],
   "modes": {
     "brief": [
       [
         "Implementation promise",
-        "Static Dataset Loader gives VedaPath a safe first ingestion path before any backend or account system exists."
+        "Evaluation Fixture Lab turns product risk into repeatable checks, making trust measurable before launch."
       ],
       [
         "Founder move",
-        "Prove that draft records cannot silently become public answer fuel."
+        "Create visible test cases for the errors VedaPath must never normalize."
       ],
       [
         "Trust move",
-        "Keep this boundary visible: Static loader demo, not production ingestion."
+        "Keep this boundary visible: Evaluation fixture demo, not automated certification."
       ]
     ],
     "checklist": [
       [
-        "Validation",
-        "Required fields, allowed families, and citation format are checked."
+        "Category check",
+        "Gita, Veda, Upanishad, Purana, commentary, and modern interpretation are tested separately."
       ],
       [
-        "Eligibility",
-        "Draft, blocked, rights-needed, and specialist-needed records stay out of public answers."
+        "Support check",
+        "Every direct answer must map to source support or fallback."
       ],
       [
-        "Import report",
-        "Accepted, held, blocked, and duplicate records are counted."
+        "Boundary check",
+        "Therapy, ritual, science, and personal crisis claims require visible limits."
       ]
     ],
     "boundary": [
