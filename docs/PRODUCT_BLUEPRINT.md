@@ -97,6 +97,7 @@ It helps users move from curiosity to understanding through:
 - Export and Delete Center: Export and Delete Center makes user-owned memory practical by designing export, deletion, revocation, and local-clear controls.
 - Privacy-Safe Analytics: Privacy-Safe Analytics defines launch learning around aggregate product signals rather than hidden identity or distress inference.
 - Launch Ops Runbook: Launch Ops Runbook gives VedaPath a practical operating rhythm for release, feedback, incidents, rollback, and reviewer escalation.
+- Production Control Room: Production Control Room completes the production-readiness sprint and turns the next step into one concrete implementation lane.
 <!-- VEDAPATH PRODUCTION SPRINT SUMMARY END -->
 
 ## What It Is
@@ -1582,6 +1583,21 @@ It should:
 - produce a copyable production-readiness handoff
 
 Launch Ops Runbook should never claim production storage, verified answers, reviewer approval, authentication, analytics, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 97. Production Control Room
+
+Production Control Room completes the production-readiness sprint and turns the next step into one concrete implementation lane.
+
+It should:
+
+- Source service first: Build source records, citation inspector, API, and retrieval eligibility.
+- Consent first: Build accounts, grants, export, delete, and local-clear behavior.
+- Review first: Build reviewer workflow, audit trail, and release gates.
+- Eval first: Build answer tests, no-go checks, and release dashboards.
+- preserve the boundary: Founder decision center, not production approval.
+- produce a copyable production-readiness handoff
+
+Production Control Room should never claim production storage, verified answers, reviewer approval, authentication, analytics, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH PRODUCTION SPRINT BLUEPRINT END -->
 
 ## Product Personality

@@ -201,6 +201,8 @@ Let us look at the source first.
 - [Privacy-Safe Analytics Notes](docs/PRIVACY_SAFE_ANALYTICS.md)
 - [Launch Ops Runbook](runbook.html)
 - [Launch Ops Runbook Notes](docs/LAUNCH_OPS_RUNBOOK.md)
+- [Production Control Room](prodcontrol.html)
+- [Production Control Room Notes](docs/PRODUCTION_CONTROL_ROOM.md)
 <!-- VEDAPATH PRODUCTION SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -232,7 +234,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v1.1.3` is a trusted MVP prototype plus Launch Ops Runbook with:
+`v1.1.4` is a trusted MVP prototype plus Production Control Room with:
 
 - Ask workspace
 - Source Card
@@ -328,6 +330,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Export and Delete Center: Export and Delete Center makes user-owned memory practical by designing export, deletion, revocation, and local-clear controls.
 - Privacy-Safe Analytics: Privacy-Safe Analytics defines launch learning around aggregate product signals rather than hidden identity or distress inference.
 - Launch Ops Runbook: Launch Ops Runbook gives VedaPath a practical operating rhythm for release, feedback, incidents, rollback, and reviewer escalation.
+- Production Control Room: Production Control Room completes the production-readiness sprint and turns the next step into one concrete implementation lane.
 <!-- VEDAPATH PRODUCTION SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
