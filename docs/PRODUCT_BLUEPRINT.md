@@ -61,6 +61,7 @@ It helps users move from curiosity to understanding through:
 - Festival and Daily Calendar: Festival and Daily Calendar gives VedaPath a seasonal learning layer while keeping regional, ritual, and date boundaries explicit.
 - Mantra Pronunciation Prep: Mantra Pronunciation Prep turns future audio into a careful source, review, and rights workflow before any sound is shipped.
 - Launch Landing Kit: Launch Landing Kit creates clear launch copy that shows calm, source-first trust, prototype status, and boundaries.
+- Next Build Control Tower: Next Build Control Tower completes the personal calm sprint and frames the next real product decision.
 <!-- VEDAPATH PERSONAL SPRINT SUMMARY END -->
 
 ## What It Is
@@ -1093,6 +1094,21 @@ It should:
 - produce a copyable founder handoff
 
 Launch Landing Kit should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 67. Next Build Control Tower
+
+Next Build Control Tower completes the personal calm sprint and frames the next real product decision.
+
+It should:
+
+- Ship path: Polish onboarding and landing for public users.
+- Trust path: Build real source data and reviewer operations.
+- Calm path: Deepen journal, family, work, and calendar flows.
+- Sound path: Prepare mantra and voice rights with reviewers.
+- preserve the boundary: Founder decision, not automatic roadmap.
+- produce a copyable founder handoff
+
+Next Build Control Tower should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH PERSONAL SPRINT BLUEPRINT END -->
 
 ## Product Personality

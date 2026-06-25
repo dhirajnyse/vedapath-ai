@@ -135,6 +135,8 @@ Let us look at the source first.
 - [Mantra Pronunciation Prep Notes](docs/MANTRA_PRONUNCIATION_PREP.md)
 - [Launch Landing Kit](landing.html)
 - [Launch Landing Kit Notes](docs/LAUNCH_LANDING_KIT.md)
+- [Next Build Control Tower](tower.html)
+- [Next Build Control Tower Notes](docs/NEXT_BUILD_CONTROL_TOWER.md)
 <!-- VEDAPATH PERSONAL SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -166,7 +168,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v0.8.3` is a trusted MVP prototype plus Launch Landing Kit with:
+`v0.8.4` is a trusted MVP prototype plus Next Build Control Tower with:
 
 - Ask workspace
 - Source Card
@@ -226,6 +228,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Festival and Daily Calendar: Festival and Daily Calendar gives VedaPath a seasonal learning layer while keeping regional, ritual, and date boundaries explicit.
 - Mantra Pronunciation Prep: Mantra Pronunciation Prep turns future audio into a careful source, review, and rights workflow before any sound is shipped.
 - Launch Landing Kit: Launch Landing Kit creates clear launch copy that shows calm, source-first trust, prototype status, and boundaries.
+- Next Build Control Tower: Next Build Control Tower completes the personal calm sprint and frames the next real product decision.
 <!-- VEDAPATH PERSONAL SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
