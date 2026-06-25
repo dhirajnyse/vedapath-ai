@@ -55,6 +55,7 @@ It helps users move from curiosity to understanding through:
 - Guided Onboarding Path: Guided Onboarding Path turns the first visit into one calm choice instead of a crowded tour.
 - Personal Calm Profile: Personal Calm Profile shows what VedaPath may remember, what it must not infer, and how a user can export or clear it.
 - Source Journey Map: Source Journey Map makes the learning path visible so users understand how VedaPath moves from curiosity to cited clarity.
+- Reflection Journal Prototype: Reflection Journal Prototype gives daily calm a private writing surface without turning personal notes into hidden product data.
 <!-- VEDAPATH PERSONAL SPRINT SUMMARY END -->
 
 ## What It Is
@@ -997,6 +998,21 @@ It should:
 - produce a copyable founder handoff
 
 Source Journey Map should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 61. Reflection Journal Prototype
+
+Reflection Journal Prototype gives daily calm a private writing surface without turning personal notes into hidden product data.
+
+It should:
+
+- One line: What is true right now?
+- Source card: Which passage frames the day?
+- Carry action: What small action follows?
+- Export: Copy or clear the local entry.
+- preserve the boundary: Reflection, not therapy or confession.
+- produce a copyable founder handoff
+
+Reflection Journal Prototype should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH PERSONAL SPRINT BLUEPRINT END -->
 
 ## Product Personality

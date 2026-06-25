@@ -123,6 +123,8 @@ Let us look at the source first.
 - [Personal Calm Profile Notes](docs/PERSONAL_CALM_PROFILE.md)
 - [Source Journey Map](journey.html)
 - [Source Journey Map Notes](docs/SOURCE_JOURNEY_MAP.md)
+- [Reflection Journal Prototype](journal.html)
+- [Reflection Journal Prototype Notes](docs/REFLECTION_JOURNAL_PROTOTYPE.md)
 <!-- VEDAPATH PERSONAL SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -154,7 +156,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v0.7.7` is a trusted MVP prototype plus Source Journey Map with:
+`v0.7.8` is a trusted MVP prototype plus Reflection Journal Prototype with:
 
 - Ask workspace
 - Source Card
@@ -208,6 +210,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Guided Onboarding Path: Guided Onboarding Path turns the first visit into one calm choice instead of a crowded tour.
 - Personal Calm Profile: Personal Calm Profile shows what VedaPath may remember, what it must not infer, and how a user can export or clear it.
 - Source Journey Map: Source Journey Map makes the learning path visible so users understand how VedaPath moves from curiosity to cited clarity.
+- Reflection Journal Prototype: Reflection Journal Prototype gives daily calm a private writing surface without turning personal notes into hidden product data.
 <!-- VEDAPATH PERSONAL SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
