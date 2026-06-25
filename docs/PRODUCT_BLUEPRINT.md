@@ -67,6 +67,7 @@ It helps users move from curiosity to understanding through:
 - Beta Welcome Room: Beta Welcome Room turns the public entry into a simple, source-first doorway instead of a crowded product map.
 - First Session Flow: First Session Flow makes VedaPath testable as a beginning-to-end experience: arrive, ask, source, reflect, carry, and return.
 - Source Dataset Studio: Source Dataset Studio narrows the product from many prototype ideas to a first reviewable beta dataset.
+- Answer Contract: Answer Contract turns VedaPath's trust philosophy into a repeatable response format for beta answers.
 <!-- VEDAPATH BETA SPRINT SUMMARY END -->
 
 ## What It Is
@@ -1160,6 +1161,21 @@ It should:
 - produce a copyable beta handoff
 
 Source Dataset Studio should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 71. Answer Contract
+
+Answer Contract turns VedaPath's trust philosophy into a repeatable response format for beta answers.
+
+It should:
+
+- Direct answer: Start with the clearest useful response.
+- Source card: Show citation, family, confidence, and review state.
+- Depth layers: Offer Sanskrit, commentary, or debate only on demand.
+- Correction route: Let source issues become reviewed tickets.
+- preserve the boundary: Answer format, not final interpretation.
+- produce a copyable beta handoff
+
+Answer Contract should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH BETA SPRINT BLUEPRINT END -->
 
 ## Product Personality
