@@ -83,6 +83,7 @@ It helps users move from curiosity to understanding through:
 - Boundary Safety QA: Boundary Safety QA turns VedaPath's humility into testable refusal and caution checks.
 - Pilot Launch Room: Pilot Launch Room defines a small beta launch with audience, promise, source scope, feedback path, and stop conditions.
 - Feedback Triage Lab: Feedback Triage Lab turns beta reactions into actionable queues while blocking sensitive private intake.
+- Educator Kit: Educator Kit packages VedaPath's source-first method into teacher-safe cards and discussion prompts.
 <!-- VEDAPATH READINESS SPRINT SUMMARY END -->
 
 ## What It Is
@@ -1387,6 +1388,21 @@ It should:
 - produce a copyable launch-readiness handoff
 
 Feedback Triage Lab should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 85. Educator Kit
+
+Educator Kit packages VedaPath's source-first method into teacher-safe cards and discussion prompts.
+
+It should:
+
+- Source card: Citation, family, plain meaning, and confidence.
+- Discussion: One fair question with more than one possible view.
+- Compare: Text, tradition, modern analogy, and boundary.
+- Handoff: Copyable classroom note with no student tracking.
+- preserve the boundary: Educator support, not teacher replacement.
+- produce a copyable launch-readiness handoff
+
+Educator Kit should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH READINESS SPRINT BLUEPRINT END -->
 
 ## Product Personality
