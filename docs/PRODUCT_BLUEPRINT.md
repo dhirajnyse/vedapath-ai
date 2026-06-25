@@ -135,6 +135,9 @@ It helps users move from curiosity to understanding through:
 - Founder Metrics Board: Founder Metrics Board keeps VedaPath launch learning focused on source quality, trust risk, and product clarity.
 - Release Candidate Room: Release Candidate Room completes the implementation-readiness sprint and turns VedaPath's next step into one shippable lane.
 <!-- VEDAPATH IMPLEMENTATION SPRINT SUMMARY END -->
+<!-- VEDAPATH MVP LANE SPRINT SUMMARY START -->
+- MVP Source Seed: MVP Source Seed narrows VedaPath from many prototypes to a small source set that can power a real first answer lane.
+<!-- VEDAPATH MVP LANE SPRINT SUMMARY END -->
 
 ## What It Is
 
@@ -2088,6 +2091,22 @@ It should:
 
 Release Candidate Room should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH IMPLEMENTATION SPRINT BLUEPRINT END -->
+<!-- VEDAPATH MVP LANE SPRINT BLUEPRINT START -->
+### 128. MVP Source Seed
+
+MVP Source Seed narrows VedaPath from many prototypes to a small source set that can power a real first answer lane.
+
+It should:
+
+- Record shape: Citation, family, public answer scope, review state, and no-go claims.
+- First topics: Steady action, source categories, question discipline, and calm boundaries.
+- Review gaps: Translation note, commentary lane, rights state, and Sanskrit review.
+- Ready rule: Only reviewed and eligible records can power public confidence.
+- preserve the boundary: MVP data seed, not verified corpus coverage.
+- produce a copyable working-MVP-lane handoff
+
+MVP Source Seed should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
+<!-- VEDAPATH MVP LANE SPRINT BLUEPRINT END -->
 
 ## Product Personality
 

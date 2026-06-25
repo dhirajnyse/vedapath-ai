@@ -270,6 +270,10 @@ Let us look at the source first.
 - [Release Candidate Room](releasecandidate.html)
 - [Release Candidate Room Notes](docs/RELEASE_CANDIDATE_ROOM.md)
 <!-- VEDAPATH IMPLEMENTATION SPRINT LINKS END -->
+<!-- VEDAPATH MVP LANE SPRINT LINKS START -->
+- [MVP Source Seed](mvpseed.html)
+- [MVP Source Seed Notes](docs/MVP_SOURCE_SEED.md)
+<!-- VEDAPATH MVP LANE SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
 - [Calm Compass](compass.html)
@@ -300,7 +304,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v1.4.4` is a trusted MVP prototype plus Release Candidate Room with:
+`v1.4.5` is a trusted MVP prototype plus MVP Source Seed with:
 
 - Ask workspace
 - Source Card
@@ -434,6 +438,9 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Founder Metrics Board: Founder Metrics Board keeps VedaPath launch learning focused on source quality, trust risk, and product clarity.
 - Release Candidate Room: Release Candidate Room completes the implementation-readiness sprint and turns VedaPath's next step into one shippable lane.
 <!-- VEDAPATH IMPLEMENTATION SPRINT FEATURES END -->
+<!-- VEDAPATH MVP LANE SPRINT FEATURES START -->
+- MVP Source Seed: MVP Source Seed narrows VedaPath from many prototypes to a small source set that can power a real first answer lane.
+<!-- VEDAPATH MVP LANE SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
 - Calm Card Studio with visual card preview, local saved cards, copy text, and PNG export
