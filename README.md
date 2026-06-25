@@ -99,6 +99,8 @@ Let us look at the source first.
 - [Founder Signal Map Notes](docs/FOUNDER_SIGNAL_MAP.md)
 - [Trust Demo Tour](tour.html)
 - [Trust Demo Tour Notes](docs/TRUST_DEMO_TOUR.md)
+- [Source Record Studio](record.html)
+- [Source Record Studio Notes](docs/SOURCE_RECORD_STUDIO.md)
 <!-- VEDAPATH LAUNCH SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -171,6 +173,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 <!-- VEDAPATH LAUNCH SPRINT FEATURES START -->
 - Founder Signal Map: Founder Signal Map turns curiosity, feedback, and early reactions into visible product signals without hidden tracking.
 - Trust Demo Tour: Trust Demo Tour gives the product a calm walkthrough: ask, source, boundary, review, feedback, story, and next action.
+- Source Record Studio: Source Record Studio makes source storage tactile: record fields, translation notes, review flags, and retrieval eligibility.
 <!-- VEDAPATH LAUNCH SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff

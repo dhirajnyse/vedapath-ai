@@ -42,6 +42,7 @@ It helps users move from curiosity to understanding through:
 <!-- VEDAPATH LAUNCH SPRINT SUMMARY START -->
 - Founder Signal Map: Founder Signal Map turns curiosity, feedback, and early reactions into visible product signals without hidden tracking.
 - Trust Demo Tour: Trust Demo Tour gives the product a calm walkthrough: ask, source, boundary, review, feedback, story, and next action.
+- Source Record Studio: Source Record Studio makes source storage tactile: record fields, translation notes, review flags, and retrieval eligibility.
 <!-- VEDAPATH LAUNCH SPRINT SUMMARY END -->
 
 ## What It Is
@@ -818,6 +819,21 @@ It should:
 - produce a copyable founder handoff
 
 Trust Demo Tour should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 50. Source Record Studio
+
+Source Record Studio makes source storage tactile: record fields, translation notes, review flags, and retrieval eligibility.
+
+It should:
+
+- Source identity: Text family, citation, edition, and language.
+- Translation layer: Rendering, translator, license, and notes.
+- Review state: Source, translation, boundary, and rights lanes.
+- Use boundary: Allowed use, blocked use, and no-go claims.
+- preserve the boundary: Draft record, not authority.
+- produce a copyable founder handoff
+
+Source Record Studio should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH LAUNCH SPRINT BLUEPRINT END -->
 
 ## Product Personality
