@@ -154,6 +154,7 @@ It helps users move from curiosity to understanding through:
 - Answer Composer Workspace: Answer Composer Workspace connects retrieval to the user-facing answer, preserving one calm structure across source, meaning, and boundary.
 - Citation Evidence Panel: Citation Evidence Panel gives VedaPath an evidence drawer that can support curiosity, correction, and scholar review while keeping the main surface calm.
 - Confidence Rulebook: Confidence Rulebook makes trust less magical: the product explains why it is confident, cautious, waiting for review, or refusing to answer.
+- Consent Memory Preview: Consent Memory Preview keeps calm personal use from becoming hidden tracking: memory must be named, limited, and under user control.
 <!-- VEDAPATH WORKING DATA SPRINT SUMMARY END -->
 
 ## What It Is
@@ -2349,6 +2350,21 @@ It should:
 - produce a copyable working-data handoff
 
 Confidence Rulebook should never claim production storage, live retrieval, live AI generation, authentication, licensed source text, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 144. Consent Memory Preview
+
+Consent Memory Preview keeps calm personal use from becoming hidden tracking: memory must be named, limited, and under user control.
+
+It should:
+
+- Memory preview: Show the exact learning preference or reflection summary before saving.
+- Storage label: Device-local, account sync, reviewer-visible, or never saved.
+- Exit controls: Export, pause, delete, and clear local preview.
+- Sensitive block: Medical, crisis, private family, and identity details should not enter prototype memory.
+- preserve the boundary: Consent memory prototype, not account sync.
+- produce a copyable working-data handoff
+
+Consent Memory Preview should never claim production storage, live retrieval, live AI generation, authentication, licensed source text, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH WORKING DATA SPRINT BLUEPRINT END -->
 
 ## Product Personality
