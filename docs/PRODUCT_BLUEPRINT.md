@@ -78,6 +78,7 @@ It helps users move from curiosity to understanding through:
 <!-- VEDAPATH READINESS SPRINT SUMMARY START -->
 - Beta Launch Checklist: Beta Launch Checklist turns launch excitement into visible ready, review, privacy, and hold lanes.
 - First 25 Source Pack: First 25 Source Pack narrows the beta dataset to a small, reviewable, high-frequency group of source-backed questions.
+- Citation Inspector: Citation Inspector makes source quality visible before any answer receives high confidence.
 <!-- VEDAPATH READINESS SPRINT SUMMARY END -->
 
 ## What It Is
@@ -1307,6 +1308,21 @@ It should:
 - produce a copyable launch-readiness handoff
 
 First 25 Source Pack should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 80. Citation Inspector
+
+Citation Inspector makes source quality visible before any answer receives high confidence.
+
+It should:
+
+- Identity: Source family, text name, chapter or passage id, and edition note.
+- Language: Original text, transliteration, translation, and translation rights.
+- Context: Plain meaning, tradition note, and interpretation caveat.
+- Eligibility: Ready, hold, blocked, or reviewer-needed.
+- preserve the boundary: Citation inspection, not final authority.
+- produce a copyable launch-readiness handoff
+
+Citation Inspector should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH READINESS SPRINT BLUEPRINT END -->
 
 ## Product Personality
