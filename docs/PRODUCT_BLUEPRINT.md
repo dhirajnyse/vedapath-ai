@@ -180,6 +180,7 @@ It helps users move from curiosity to understanding through:
 - Static Source Search Prototype: Static Source Search Prototype gives VedaPath a visible bridge from curated seed data to source-first answer retrieval.
 - Static Answer Preview Lab: Static Answer Preview Lab makes the beta answer path tangible without pretending generation or broad retrieval is live.
 - Beta Data Quality Console: Beta Data Quality Console turns invisible source-data risk into plain checks a founder or reviewer can inspect.
+- Beta Seed Review Pack: Beta Seed Review Pack turns the static beta dataset into a human-readable handoff for source, language, rights, and boundary review.
 <!-- VEDAPATH STATIC BETA DATA SPRINT SUMMARY END -->
 
 ## What It Is
@@ -2707,6 +2708,21 @@ It should:
 - keep source records review-needed until explicitly approved
 
 Beta Data Quality Console should never claim complete corpus coverage, production storage, live semantic search, live AI generation, public launch approval, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 166. Beta Seed Review Pack
+
+Beta Seed Review Pack turns the static beta dataset into a human-readable handoff for source, language, rights, and boundary review.
+
+It should:
+
+- Record summary: Each record has one-line source identity and beta purpose.
+- Fixture summary: Questions expected to pass, hold, or no-answer.
+- Risk summary: Category confusion, rights hold, sensitive context, or overclaim risk.
+- Decision request: Approve, hold, block, or request evidence.
+- preserve the boundary: Review handoff demo, not scholar endorsement.
+- keep source records review-needed until explicitly approved
+
+Beta Seed Review Pack should never claim complete corpus coverage, production storage, live semantic search, live AI generation, public launch approval, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH STATIC BETA DATA SPRINT BLUEPRINT END -->
 
 ## Product Personality

@@ -1,6 +1,6 @@
 {
   "product": "VedaPath AI",
-  "release": "v1.8.2",
+  "release": "v1.8.3",
   "status": "question fixture prototype",
   "fixtures": [
     {
@@ -65,6 +65,14 @@
       "expected_route": "source_first_preview",
       "expected_source_candidate": "Taittiriya Upanishad 1.11.1",
       "expected_boundary": "Quality console demo, not complete data audit.",
+      "reviewer_needed": true
+    },
+    {
+      "id": "fixture-seedreview",
+      "question": "Prepare a review packet that a human can inspect without digging through the whole site.",
+      "expected_route": "source_first_preview",
+      "expected_source_candidate": "Bhagavad Gita 4.34",
+      "expected_boundary": "Review handoff demo, not scholar endorsement.",
       "reviewer_needed": true
     }
   ]
