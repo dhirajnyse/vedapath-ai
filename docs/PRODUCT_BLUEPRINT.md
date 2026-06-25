@@ -137,6 +137,7 @@ It helps users move from curiosity to understanding through:
 <!-- VEDAPATH IMPLEMENTATION SPRINT SUMMARY END -->
 <!-- VEDAPATH MVP LANE SPRINT SUMMARY START -->
 - MVP Source Seed: MVP Source Seed narrows VedaPath from many prototypes to a small source set that can power a real first answer lane.
+- Local Retrieval Demo: Local Retrieval Demo proves the first MVP answer can start with eligible source records instead of broad model guessing.
 <!-- VEDAPATH MVP LANE SPRINT SUMMARY END -->
 
 ## What It Is
@@ -2106,6 +2107,21 @@ It should:
 - produce a copyable working-MVP-lane handoff
 
 MVP Source Seed should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 129. Local Retrieval Demo
+
+Local Retrieval Demo proves the first MVP answer can start with eligible source records instead of broad model guessing.
+
+It should:
+
+- Question route: Lookup, explain, compare, claim-check, or calm reflection.
+- Match reason: Topic, source family, keyword, and answer scope.
+- Eligibility: Ready records pass; hold, blocked, and rights-needed records stop.
+- Fallback: No-source and reviewer-needed become honest product states.
+- preserve the boundary: Static retrieval demo, not production search.
+- produce a copyable working-MVP-lane handoff
+
+Local Retrieval Demo should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH MVP LANE SPRINT BLUEPRINT END -->
 
 ## Product Personality
