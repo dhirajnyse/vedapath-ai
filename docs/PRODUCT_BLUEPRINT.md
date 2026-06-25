@@ -90,6 +90,7 @@ It helps users move from curiosity to understanding through:
 <!-- VEDAPATH PRODUCTION SPRINT SUMMARY START -->
 - Production Architecture Map: Production Architecture Map turns VedaPath's prototype rooms into a clear service map for source trust, privacy, review, and launch operations.
 - Account Consent Prototype: Account Consent Prototype makes future sign-in useful, optional, and transparent before real authentication is added.
+- Source API Contract: Source API Contract describes the service boundary that every trusted answer must call before claiming confidence.
 <!-- VEDAPATH PRODUCTION SPRINT SUMMARY END -->
 
 ## What It Is
@@ -1470,6 +1471,21 @@ It should:
 - produce a copyable production-readiness handoff
 
 Account Consent Prototype should never claim production storage, verified answers, reviewer approval, authentication, analytics, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 90. Source API Contract
+
+Source API Contract describes the service boundary that every trusted answer must call before claiming confidence.
+
+It should:
+
+- Query: Question text, requested depth, language, and user-safe context.
+- Source response: Citation, family, review state, rights state, and allowed use.
+- Eligibility: Ready, hold, blocked, reviewer-needed, or no-source.
+- Refusal: No source found or unsafe claim requires a careful boundary response.
+- preserve the boundary: API contract, not deployed service.
+- produce a copyable production-readiness handoff
+
+Source API Contract should never claim production storage, verified answers, reviewer approval, authentication, analytics, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH PRODUCTION SPRINT BLUEPRINT END -->
 
 ## Product Personality

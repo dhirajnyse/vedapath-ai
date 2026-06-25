@@ -187,6 +187,8 @@ Let us look at the source first.
 - [Production Architecture Map Notes](docs/PRODUCTION_ARCHITECTURE_MAP.md)
 - [Account Consent Prototype](account.html)
 - [Account Consent Prototype Notes](docs/ACCOUNT_CONSENT_PROTOTYPE.md)
+- [Source API Contract](sourceapi.html)
+- [Source API Contract Notes](docs/SOURCE_API_CONTRACT.md)
 <!-- VEDAPATH PRODUCTION SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -218,7 +220,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v1.0.6` is a trusted MVP prototype plus Account Consent Prototype with:
+`v1.0.7` is a trusted MVP prototype plus Source API Contract with:
 
 - Ask workspace
 - Source Card
@@ -307,6 +309,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 <!-- VEDAPATH PRODUCTION SPRINT FEATURES START -->
 - Production Architecture Map: Production Architecture Map turns VedaPath's prototype rooms into a clear service map for source trust, privacy, review, and launch operations.
 - Account Consent Prototype: Account Consent Prototype makes future sign-in useful, optional, and transparent before real authentication is added.
+- Source API Contract: Source API Contract describes the service boundary that every trusted answer must call before claiming confidence.
 <!-- VEDAPATH PRODUCTION SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff

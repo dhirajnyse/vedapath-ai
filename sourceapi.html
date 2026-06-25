@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>VedaPath Account Consent Prototype</title>
+    <title>VedaPath Source API Contract</title>
     <link rel="stylesheet" href="assets/vedapath-sprint.css">
   </head>
   <body>
@@ -13,7 +13,7 @@
           <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
           <div>
             <strong>VedaPath AI</strong>
-            <span>Account consent</span>
+            <span>Source API</span>
           </div>
         </a>
         <nav class="nav" aria-label="Project links">
@@ -26,14 +26,14 @@
           <a class="link" href="practice.html">Practice</a>
           <!-- VEDAPATH PRODUCTION SPRINT NAV START -->
           <a class="link" href="architecture.html">Arch</a>
-          <a class="link active" href="account.html">Account</a>
-          <a class="link" href="sourceapi.html">Source API</a>
+          <a class="link" href="account.html">Account</a>
+          <a class="link active" href="sourceapi.html">Source API</a>
           <!-- VEDAPATH PRODUCTION SPRINT NAV END -->
           <span class="version">v1.0.7 api</span>
         </nav>
       </header>
 
-      <main class="workspace" aria-label="VedaPath Account Consent Prototype workspace">
+      <main class="workspace" aria-label="VedaPath Source API Contract workspace">
         <aside class="panel">
           <span class="eyebrow">Production readiness sprint</span>
           <h2>Release Rooms</h2>
@@ -44,38 +44,38 @@
         <section class="panel">
           <div class="hero-grid">
             <div>
-              <span class="eyebrow">Consent before account</span>
-              <h1>Make sign-in earn its place.</h1>
-              <p class="muted">A production account consent room that explains what sign-in enables, what stays local, what syncs, and how deletion works.</p>
+              <span class="eyebrow">Source service</span>
+              <h1>Let answers ask the source service first.</h1>
+              <p class="muted">A source API contract room for query, citation lookup, eligibility, review status, translation rights, and no-source refusal.</p>
             </div>
             <div class="mark-stage">
-              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Account logo">
+              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Source API logo">
             </div>
           </div>
 
           <div class="source-block" aria-label="Release source card">
             <div>
               <span class="source-meta">Release</span>
-              <span class="source-value">v1.0.6</span>
+              <span class="source-value">v1.0.7</span>
             </div>
             <div>
               <span class="source-meta">Source candidate</span>
-              <span class="source-value">Isha Upanishad 1</span>
+              <span class="source-value">Rigveda 1.164.46</span>
             </div>
             <div>
               <span class="source-meta">Text family</span>
-              <span class="source-value">Upanishad | Shruti</span>
+              <span class="source-value">Veda | Shruti</span>
             </div>
             <div>
               <span class="source-meta">Boundary</span>
-              <span class="source-value">Consent prototype, not live authentication.</span>
+              <span class="source-value">API contract, not deployed service.</span>
             </div>
           </div>
 
           <h2>Decision Signals</h2>
           <div class="item-list" id="itemList"></div>
 
-          <div class="tabs" role="tablist" aria-label="VedaPath Account Consent Prototype layers">
+          <div class="tabs" role="tablist" aria-label="VedaPath Source API Contract layers">
             <button class="tab active" type="button" data-mode="brief">Brief</button>
             <button class="tab" type="button" data-mode="checklist">Checklist</button>
             <button class="tab" type="button" data-mode="boundary">Boundary</button>
@@ -89,20 +89,20 @@
             <button class="button" id="copyBoundary" type="button">Copy Boundary</button>
           </div>
 
-          <textarea id="output" readonly aria-label="VedaPath Account Consent Prototype output"></textarea>
+          <textarea id="output" readonly aria-label="VedaPath Source API Contract output"></textarea>
         </section>
 
-        <aside class="panel tight" aria-label="VedaPath Account Consent Prototype sprint rail">
+        <aside class="panel tight" aria-label="VedaPath Source API Contract sprint rail">
           <span class="badge green">Production readiness</span>
-          <h2 style="margin-top: 14px;">Account Pulse</h2>
-          <p class="muted">Account Consent Prototype makes future sign-in useful, optional, and transparent before real authentication is added.</p>
-          <div class="progress" aria-label="Sprint progress 92 percent">
-            <div class="bar" style="--score:92%"></div>
+          <h2 style="margin-top: 14px;">Source API Pulse</h2>
+          <p class="muted">Source API Contract describes the service boundary that every trusted answer must call before claiming confidence.</p>
+          <div class="progress" aria-label="Sprint progress 93 percent">
+            <div class="bar" style="--score:93%"></div>
           </div>
           <div class="metric-grid">
             <div class="metric">
               <span>Current</span>
-              <strong>v1.0.6</strong>
+              <strong>v1.0.7</strong>
             </div>
             <div class="metric">
               <span>Sprint</span>
@@ -110,11 +110,11 @@
             </div>
             <div class="metric">
               <span>Progress</span>
-              <strong>92%</strong>
+              <strong>93%</strong>
             </div>
             <div class="metric">
               <span>Next</span>
-              <strong>Source API Contract</strong>
+              <strong>Reviewer Workflow Contract</strong>
             </div>
           </div>
 
@@ -146,85 +146,85 @@
     </div>
 
     <script type="application/json" id="room-data">{
-  "version": "v1.0.6",
-  "badge": "v1.0.6 account",
-  "slug": "account",
-  "nav": "Account",
-  "title": "VedaPath Account Consent Prototype",
-  "pageLabel": "Account consent",
-  "eyebrow": "Consent before account",
-  "h1": "Make sign-in earn its place.",
-  "lead": "A production account consent room that explains what sign-in enables, what stays local, what syncs, and how deletion works.",
-  "source": "Isha Upanishad 1",
-  "family": "Upanishad | Shruti",
-  "stance": "Consent prototype, not live authentication.",
-  "progress": 92,
-  "next": "Source API Contract",
-  "primaryAsk": "Decide what a VedaPath account may remember and what must remain local by default.",
-  "summary": "Account Consent Prototype makes future sign-in useful, optional, and transparent before real authentication is added.",
+  "version": "v1.0.7",
+  "badge": "v1.0.7 api",
+  "slug": "sourceapi",
+  "nav": "Source API",
+  "title": "VedaPath Source API Contract",
+  "pageLabel": "Source API",
+  "eyebrow": "Source service",
+  "h1": "Let answers ask the source service first.",
+  "lead": "A source API contract room for query, citation lookup, eligibility, review status, translation rights, and no-source refusal.",
+  "source": "Rigveda 1.164.46",
+  "family": "Veda | Shruti",
+  "stance": "API contract, not deployed service.",
+  "progress": 93,
+  "next": "Reviewer Workflow Contract",
+  "primaryAsk": "Define the source service response shape before building production retrieval.",
+  "summary": "Source API Contract describes the service boundary that every trusted answer must call before claiming confidence.",
   "items": [
     [
-      "Why sign in",
-      "Save source paths, reviewed feedback, and consented calm preferences.",
-      "Gives account value."
+      "Query",
+      "Question text, requested depth, language, and user-safe context.",
+      "Finds candidate records."
     ],
     [
-      "Local by default",
-      "Private journal lines, sensitive reflections, and family moments.",
-      "Avoids silent exposure."
+      "Source response",
+      "Citation, family, review state, rights state, and allowed use.",
+      "Tells answers what can be shown."
     ],
     [
-      "User controls",
-      "Export, delete, pause sync, revoke grants, and clear device.",
-      "Keeps user agency visible."
+      "Eligibility",
+      "Ready, hold, blocked, reviewer-needed, or no-source.",
+      "Prevents false confidence."
     ],
     [
-      "Blocked memory",
-      "Distress, faith identity, family conflict, or health inference.",
-      "Prevents hidden profiling."
+      "Refusal",
+      "No source found or unsafe claim requires a careful boundary response.",
+      "Protects trust."
     ]
   ],
   "modes": {
     "brief": [
       [
-        "Consent promise",
-        "An account should never be the price of calm."
+        "API promise",
+        "The answer layer should not invent confidence. It should receive confidence from source state."
       ],
       [
-        "UX move",
-        "Explain sign-in as an optional upgrade for continuity, not a gate."
+        "Product move",
+        "Make missing source state a first-class answer condition."
       ],
       [
         "Engineering move",
-        "Every synced field needs purpose, consent, export, and delete behavior."
+        "Design response contracts before choosing retrieval implementation details."
       ]
     ],
     "checklist": [
       [
-        "Optional",
-        "Can the user use the core beta without signing in?"
+        "Specific",
+        "Does the response include exact source identity?"
       ],
       [
-        "Named",
-        "Is every synced field named in plain words?"
+        "Eligible",
+        "Can the answer know whether a record is public-ready?"
       ],
       [
-        "Reversible",
-        "Can users export, delete, or pause memory?"
+        "Refusable",
+        "Can no-source cases produce safe answers?"
       ]
     ],
     "boundary": [
       [
-        "No forced sign-in",
-        "Do not make basic calm or source reading require an account."
+        "No invented citation",
+        "Do not let answers create citation-like text."
       ],
       [
-        "No silent sync",
-        "Do not upload local reflections without explicit consent."
+        "No rights bypass",
+        "Do not display translations or audio without rights state."
       ],
       [
-        "No identity inference",
-        "Do not infer private identity from practice behavior."
+        "No confidence leak",
+        "Do not expose high confidence for hold or blocked records."
       ]
     ]
   },
