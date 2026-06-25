@@ -119,6 +119,7 @@ It helps users move from curiosity to understanding through:
 - Calm Companion: Calm Companion gives users a short source-backed reflection path for everyday steadiness without therapy, diagnosis, or dependency.
 - Feedback Portal: Feedback Portal turns public reactions into structured improvement signals while blocking sensitive personal intake.
 - Scholar Packet Builder: Scholar Packet Builder packages VedaPath review requests with evidence, scope, and no-endorsement language.
+- Source Pack Scoreboard: Source Pack Scoreboard gives the founder a simple view of ready, held, blocked, and reviewer-needed source records.
 <!-- VEDAPATH ACTIVATION SPRINT SUMMARY END -->
 
 ## What It Is
@@ -1876,6 +1877,21 @@ It should:
 - produce a copyable public beta activation handoff
 
 Scholar Packet Builder should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 115. Source Pack Scoreboard
+
+Source Pack Scoreboard gives the founder a simple view of ready, held, blocked, and reviewer-needed source records.
+
+It should:
+
+- Completeness: Citation, source family, translation note, and answer boundary.
+- Review: Draft, reviewed, held, blocked, or specialist-needed.
+- Coverage: Which public questions the source can answer.
+- Risk: Rights, ritual, therapy, science, or category overclaim.
+- preserve the boundary: Dataset-readiness prototype, not verified corpus status.
+- produce a copyable public beta activation handoff
+
+Source Pack Scoreboard should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH ACTIVATION SPRINT BLUEPRINT END -->
 
 ## Product Personality
