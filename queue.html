@@ -471,6 +471,7 @@
           <a class="link" href="ledger.html">Ledger</a>
           <a class="link" href="life.html">Life</a>
           <a class="link" href="circle.html">Circle</a>
+          <a class="link" href="consent.html">Consent</a>
           <a class="link" href="path.html">Path</a>
           <a class="link" href="compass.html">Compass</a>
           <a class="link" href="card.html">Card</a>
@@ -482,7 +483,7 @@
           <a class="link" href="morning.html">Morning</a>
           <a class="link" href="evening.html">Evening</a>
           <a class="link" href="rhythm.html">Rhythm</a>
-          <span class="version">v0.4.7 calm circle</span>
+          <span class="version">v0.4.8 consent gate</span>
         </nav>
       </header>
 
@@ -898,7 +899,7 @@
       function buildExport() {
         const lines = [
           "VedaPath Reviewer Queue",
-          "Release: v0.4.7 calm circle",
+          "Release: v0.4.8 consent gate",
           `Open cards: ${queueState.cards.filter((card) => card.status !== "accepted-prototype").length}`,
           `Scholar needed: ${queueState.cards.filter((card) => card.status === "needs-scholar").length}`,
           `Safety review: ${queueState.cards.filter((card) => card.status === "safety-review").length}`,

@@ -60,6 +60,8 @@ Let us look at the source first.
 - [Life Map Notes](docs/LIFE_MAP.md)
 - [Calm Circle](circle.html)
 - [Calm Circle Notes](docs/CALM_CIRCLE.md)
+- [Consent Gate](consent.html)
+- [Consent Gate Notes](docs/CONSENT_GATE.md)
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
 - [Calm Compass](compass.html)
@@ -90,7 +92,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v0.4.7` is a trusted MVP prototype with:
+`v0.4.8` is a trusted MVP prototype with:
 
 - Ask workspace
 - Source Card
@@ -111,6 +113,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Trust Ledger with versioned governance records, policy route, evidence path, reviewer need, local status decisions, and copyable audit handoff
 - Life Map with real-life moment routing, source card, boundary, carry action, next room, and browser-local pattern preview
 - Calm Circle with family, team, friendship, and inner conversation routing into one source, one shared question, one boundary, and one small agreement
+- Consent Gate with purpose, scope, consent, deletion, source trace, review route, readiness scoring, and local governance handoff
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
 - Calm Card Studio with visual card preview, local saved cards, copy text, and PNG export

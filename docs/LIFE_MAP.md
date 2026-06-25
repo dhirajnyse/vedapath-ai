@@ -66,6 +66,8 @@ Production should require:
 
 ## Next Step
 
-v0.4.7 adds Calm Circle so shared moments can stay source-backed, bounded, and local-only in the prototype.
+v0.4.7 added Calm Circle so shared moments can stay source-backed, bounded, and local-only in the prototype.
 
-v0.4.8 should connect Calm Circle, Life Map, Trust Ledger, Source Policy, and Reviewer Queue into a durable source governance and shared-consent schema.
+v0.4.8 adds Consent Gate so Life Map records can name purpose, scope, deletion path, source trace, and review route before durable memory.
+
+v0.4.9 should enforce Consent Gate fields across Life Map, Calm Circle, Trust Ledger, Reviewer Queue, and Source Seeds.

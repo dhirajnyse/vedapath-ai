@@ -1,6 +1,6 @@
-# v0.4.7 Prototype Notes
+# v0.4.8 Prototype Notes
 
-The v0.4.7 release turns the VedaPath AI homepage into a trusted MVP prototype with calm, practice, source-library, source-seeds, retrieval, passage-review, evaluation, evaluation-dashboard, reviewer-queue, source-policy, trust-ledger, life-map, calm-circle, source-path, calm-compass, calm-card, source-bell, before-reply, samvada, sankalpa, seva, morning, evening, and rhythm surfaces.
+The v0.4.8 release turns the VedaPath AI homepage into a trusted MVP prototype with calm, practice, source-library, source-seeds, retrieval, passage-review, evaluation, evaluation-dashboard, reviewer-queue, source-policy, trust-ledger, life-map, calm-circle, consent-gate, source-path, calm-compass, calm-card, source-bell, before-reply, samvada, sankalpa, seva, morning, evening, and rhythm surfaces.
 
 ## Included
 
@@ -25,6 +25,7 @@ The v0.4.7 release turns the VedaPath AI homepage into a trusted MVP prototype w
 - Trust Ledger with policy route, evidence path, reviewer need, version state, local status decisions, decision history, and copyable governance brief
 - Life Map with work, family, money, health, digital-noise, and sleep-drift routing into one source, one boundary, one carry action, and local pattern preview
 - Calm Circle with family, team, friendship, and inner conversation routing into one source, one shared question, one boundary, one small agreement, and local circle notes
+- Consent Gate with shared calm, life-map, reviewer, and source-dataset governance checks before durable memory
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
 - Calm Card Studio with visual preview, local saved cards, copy text, and PNG export
@@ -62,6 +63,7 @@ This release proves the product direction:
 - policy routes and queue decisions can become versioned governance records before accepted behavior changes
 - real-life moments can enter the product without the AI pretending to give therapy, finance, medical, legal, ritual, or relationship advice
 - shared moments can slow down around a source-backed question without the AI pretending to mediate, judge, or decide for the group
+- shared or knowledge-changing records can require visible purpose, scope, consent, deletion path, source trace, and review route before they become product memory
 - unsupported proof claims can be refused as source gaps instead of dressed up as wisdom
 - one current-life state can route to the next useful product room
 - one source-backed action can become a shareable visual artifact
@@ -75,4 +77,4 @@ This release proves the product direction:
 
 ## Next Release
 
-v0.4.8 should connect Calm Circle, Life Map, Trust Ledger, Source Policy, and Reviewer Queue into a durable source governance and shared-consent schema.
+v0.4.9 should connect Consent Gate to Trust Ledger, Reviewer Queue, Life Map, Calm Circle, and Source Seeds so missing consent or source-governance fields block durable memory.

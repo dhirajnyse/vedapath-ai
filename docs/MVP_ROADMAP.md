@@ -23,7 +23,7 @@ Show the product experience without a live LLM backend.
 
 Status:
 
-Completed in v0.4.7.
+Completed in v0.4.8.
 
 Core screens:
 
@@ -47,6 +47,7 @@ Core screens:
 - Trust Ledger
 - Life Map
 - Calm Circle
+- Consent Gate
 - Source Path Builder
 - Calm Compass
 - Calm Card Studio
@@ -73,7 +74,7 @@ Connect a small curated source set.
 
 Status:
 
-Active product phase. Source Seeds now shows the first structured source schema and prototype seed records. Retrieval Lab now shows the first source-stack ranking, match reason, boundary, and no-source claim refusal. Passage Review Pack now shows passage dossiers, allowed use, missing production fields, local review decisions, and evaluation checks. Evaluation Runner now checks answer drafts before user-facing trust. Evaluation Dashboard now tests the evaluator as a visible release gate. Reviewer Queue now turns failed examples, flagged passages, retrieval gaps, and correction notes into local human-review cards. Source Policy Console now makes answer gates visible before the AI speaks with confidence. Trust Ledger now turns policy routes and queue decisions into versioned local governance records before accepted behavior changes. Life Map now routes real-life moments to one source candidate, one boundary, and one next action without overstepping into advice. Calm Circle now routes shared moments to one source, one shared question, and one small agreement without pretending to mediate or judge.
+Active product phase. Source Seeds now shows the first structured source schema and prototype seed records. Retrieval Lab now shows the first source-stack ranking, match reason, boundary, and no-source claim refusal. Passage Review Pack now shows passage dossiers, allowed use, missing production fields, local review decisions, and evaluation checks. Evaluation Runner now checks answer drafts before user-facing trust. Evaluation Dashboard now tests the evaluator as a visible release gate. Reviewer Queue now turns failed examples, flagged passages, retrieval gaps, and correction notes into local human-review cards. Source Policy Console now makes answer gates visible before the AI speaks with confidence. Trust Ledger now turns policy routes and queue decisions into versioned local governance records before accepted behavior changes. Life Map now routes real-life moments to one source candidate, one boundary, and one next action without overstepping into advice. Calm Circle now routes shared moments to one source, one shared question, and one small agreement without pretending to mediate or judge. Consent Gate now makes purpose, scope, consent, deletion path, source trace, and review route visible before shared or knowledge-changing records become durable memory.
 
 Initial data:
 
@@ -100,6 +101,7 @@ Features:
 - trust ledger for source-policy routes, reviewer needs, decision history, and governance handoff
 - life map for real-life moment routing with source, boundary, local pattern preview, and consent boundary
 - calm circle for shared moment routing with source, shared question, small agreement, and participant-consent boundary
+- consent gate for shared calm, life-map, reviewer, and source-dataset records before durable product memory
 
 Success criteria:
 
@@ -181,6 +183,7 @@ Must have:
 - trust ledger before accepted behavior changes
 - life map before any account-backed personal memory
 - calm circle before any account-backed shared memory
+- consent gate before shared or knowledge-changing durable memory
 - prototype source path builder and local progress
 - calm compass routing from explicit present-state choice
 - calm card studio for shareable source-backed reflections
@@ -205,6 +208,7 @@ Should have:
 - Trust Ledger
 - Life Map
 - Calm Circle
+- Consent Gate
 - Source Path Builder
 - Calm Compass
 - Calm Card Studio

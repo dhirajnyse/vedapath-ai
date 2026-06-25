@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VedaPath Consent Gate</title>
+    <style>
+      :root {
+        --bg: #fff7eb;
+        --panel: #fffdf8;
+        --ink: #1f1a17;
+        --muted: #694433;
+        --line: #ead8c8;
+        --soft: #fce8dd;
+        --saffron: #d65a1f;
+        --ochre: #a83f12;
+        --gold: #e0a83b;
+        --green: #145c4a;
+        --indigo: #29335c;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+      }
+
+      body,
+      button,
+      textarea,
+      input {
+        font: inherit;
+      }
+
+      a,
+      button {
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      .page {
+        width: min(1380px, calc(100% - 44px));
+        margin: 0 auto;
+        padding: 22px 0 34px;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        padding-bottom: 18px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        min-width: 214px;
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .brand img {
+        width: 48px;
+        height: 48px;
+        border-radius: 8px;
+        object-fit: cover;
+        box-shadow: 0 8px 22px rgba(166, 69, 16, 0.16);
+      }
+
+      .brand strong {
+        display: block;
+        font-size: 19px;
+        line-height: 1.1;
+      }
+
+      .brand span {
+        display: block;
+        margin-top: 4px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        gap: 8px 16px;
+      }
+
+      .link,
+      .version {
+        color: #3a2319;
+        font-size: 13px;
+        font-weight: 800;
+        text-decoration: none;
+      }
+
+      .link.active,
+      .version {
+        border: 1px solid #ecc3ad;
+        border-radius: 999px;
+        padding: 8px 12px;
+        color: #ad3d12;
+        background: rgba(255, 253, 248, 0.72);
+      }
+
+      .workspace {
+        display: grid;
+        grid-template-columns: minmax(280px, 0.9fr) minmax(430px, 1.25fr) minmax(280px, 0.9fr);
+        gap: 16px;
+        margin-top: 18px;
+      }
+
+      .panel {
+        background: rgba(255, 253, 248, 0.84);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 20px;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        width: fit-content;
+        min-height: 28px;
+        border-radius: 999px;
+        padding: 6px 10px;
+        background: var(--soft);
+        color: #a63811;
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        margin: 14px 0;
+        font-size: clamp(43px, 6vw, 72px);
+        line-height: 0.95;
+        letter-spacing: 0;
+      }
+
+      h2 {
+        margin-bottom: 12px;
+        font-size: 26px;
+        line-height: 1.1;
+      }
+
+      h3 {
+        margin-bottom: 8px;
+        font-size: 17px;
+      }
+
+      p {
+        color: var(--muted);
+        line-height: 1.55;
+      }
+
+      .muted {
+        color: var(--muted);
+      }
+
+      .gate-list,
+      .control-list,
+      .history-list,
+      .stat-grid,
+      .field-grid,
+      .schema-list {
+        display: grid;
+        gap: 10px;
+      }
+
+      .gate-card,
+      .control-card,
+      .history-item,
+      .stat,
+      .field,
+      .schema-card,
+      .source-card,
+      .boundary-card {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgba(255, 253, 248, 0.76);
+      }
+
+      .gate-card,
+      .control-card {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 36px minmax(0, 1fr);
+        gap: 12px;
+        align-items: start;
+        padding: 12px;
+        text-align: left;
+        cursor: pointer;
+      }
+
+      .gate-card {
+        color: inherit;
+      }
+
+      .gate-card.active,
+      .control-card.active {
+        border-color: #ef9a72;
+        background: #fff0e8;
+        box-shadow: 0 0 0 2px rgba(214, 90, 31, 0.08);
+      }
+
+      .gate-index,
+      .control-check {
+        display: grid;
+        place-items: center;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: #e5efea;
+        color: var(--green);
+        font-size: 13px;
+        font-weight: 900;
+      }
+
+      .gate-card.active .gate-index,
+      .control-card.active .control-check {
+        background: var(--saffron);
+        color: #fff;
+      }
+
+      .gate-card strong,
+      .control-card strong {
+        display: block;
+        margin-bottom: 3px;
+      }
+
+      .gate-card p,
+      .control-card p {
+        margin: 0;
+        font-size: 13px;
+        line-height: 1.45;
+      }
+
+      .control-card input {
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      label {
+        display: block;
+        color: #5f3929;
+        font-size: 13px;
+      }
+
+      textarea,
+      input[type="text"] {
+        width: 100%;
+        min-height: 54px;
+        margin-top: 6px;
+        border: 1px solid #efc9b8;
+        border-radius: 8px;
+        background: rgba(255, 253, 248, 0.9);
+        color: var(--ink);
+        padding: 10px 12px;
+        resize: vertical;
+      }
+
+      input[type="text"] {
+        min-height: 44px;
+      }
+
+      textarea:focus,
+      input[type="text"]:focus,
+      button:focus-visible,
+      a:focus-visible {
+        outline: 3px solid rgba(214, 90, 31, 0.25);
+        outline-offset: 2px;
+      }
+
+      .source-card {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        margin: 16px 0;
+        padding: 14px;
+        border-left: 4px solid var(--saffron);
+      }
+
+      .source-label {
+        display: block;
+        margin-bottom: 4px;
+        color: #704b3c;
+        font-size: 12px;
+      }
+
+      .source-value {
+        display: block;
+        color: #0f0d0c;
+        font-weight: 900;
+      }
+
+      .readiness {
+        margin: 16px 0;
+      }
+
+      .readiness-head {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 8px;
+        font-weight: 900;
+      }
+
+      .progress {
+        height: 10px;
+        overflow: hidden;
+        border-radius: 999px;
+        background: rgba(168, 62, 18, 0.14);
+      }
+
+      .bar {
+        height: 100%;
+        width: 0%;
+        border-radius: inherit;
+        background: linear-gradient(90deg, var(--saffron), var(--gold));
+        transition: width 180ms ease;
+      }
+
+      .field-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin-top: 14px;
+      }
+
+      .field {
+        padding: 14px;
+        min-height: 116px;
+      }
+
+      .field strong {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 15px;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 16px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 42px;
+        border: 1px solid #efbda6;
+        border-radius: 8px;
+        padding: 9px 13px;
+        background: rgba(255, 253, 248, 0.82);
+        color: #a83f12;
+        font-weight: 900;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      .button.primary {
+        border-color: var(--saffron);
+        background: var(--saffron);
+        color: #fff;
+      }
+
+      .button.secondary {
+        color: var(--green);
+        border-color: rgba(20, 92, 74, 0.28);
+      }
+
+      .stat-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin: 14px 0;
+      }
+
+      .stat {
+        padding: 12px;
+      }
+
+      .stat span {
+        display: block;
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .stat strong {
+        display: block;
+        margin-top: 6px;
+        font-size: 24px;
+      }
+
+      .history-list {
+        margin-top: 12px;
+      }
+
+      .history-item {
+        padding: 12px;
+      }
+
+      .history-item strong {
+        display: block;
+      }
+
+      .history-item span {
+        display: block;
+        margin-top: 4px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .schema-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin-top: 12px;
+      }
+
+      .schema-card {
+        min-height: 98px;
+        padding: 12px;
+      }
+
+      .schema-card strong {
+        display: block;
+        margin-bottom: 7px;
+      }
+
+      .schema-card p {
+        margin: 0;
+        font-size: 13px;
+      }
+
+      .boundary-card {
+        margin-top: 14px;
+        border-style: dashed;
+        padding: 16px;
+      }
+
+      .export-output {
+        display: none;
+        min-height: 180px;
+        margin-top: 12px;
+        font-size: 13px;
+      }
+
+      @media (max-width: 1120px) {
+        .workspace {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .side-panel {
+          grid-column: 1 / -1;
+        }
+      }
+
+      @media (max-width: 740px) {
+        .page {
+          width: min(100% - 24px, 1380px);
+          padding-top: 16px;
+        }
+
+        .topbar {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .nav {
+          justify-content: flex-start;
+        }
+
+        .workspace,
+        .source-card,
+        .field-grid,
+        .stat-grid,
+        .schema-list {
+          grid-template-columns: 1fr;
+        }
+
+        h1 {
+          font-size: clamp(39px, 14vw, 58px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page" id="top">
+      <header class="topbar">
+        <a class="brand" href="./index.html#top" aria-label="VedaPath AI home">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
+          <div>
+            <strong>VedaPath AI</strong>
+            <span>Consent gate preview</span>
+          </div>
+        </a>
+        <nav class="nav" aria-label="Project links">
+          <a class="link" href="build-status.html">Build</a>
+          <a class="link" href="brand/brand-board.html">Brand</a>
+          <a class="link" href="blueprint.html">Blueprint</a>
+          <a class="link" href="calm.html">Calm</a>
+          <a class="link" href="daily.html">Daily</a>
+          <a class="link" href="practice.html">Practice</a>
+          <a class="link" href="library.html">Library</a>
+          <a class="link" href="seeds.html">Seeds</a>
+          <a class="link" href="retrieval.html">Retrieval</a>
+          <a class="link" href="passages.html">Review</a>
+          <a class="link" href="eval.html">Eval</a>
+          <a class="link" href="dashboard.html">Dash</a>
+          <a class="link" href="queue.html">Queue</a>
+          <a class="link" href="policy.html">Policy</a>
+          <a class="link" href="ledger.html">Ledger</a>
+          <a class="link" href="life.html">Life</a>
+          <a class="link" href="circle.html">Circle</a>
+          <a class="link active" href="consent.html">Consent</a>
+          <a class="link" href="path.html">Path</a>
+          <a class="link" href="compass.html">Compass</a>
+          <a class="link" href="card.html">Card</a>
+          <a class="link" href="bell.html">Bell</a>
+          <a class="link" href="reply.html">Reply</a>
+          <a class="link" href="samvada.html">Samvada</a>
+          <a class="link" href="sankalpa.html">Intent</a>
+          <a class="link" href="seva.html">Seva</a>
+          <a class="link" href="morning.html">Morning</a>
+          <a class="link" href="evening.html">Evening</a>
+          <a class="link" href="rhythm.html">Rhythm</a>
+          <span class="version">v0.4.8 consent gate</span>
+        </nav>
+      </header>
+
+      <section class="workspace" aria-label="VedaPath Consent Gate workspace">
+        <aside class="panel">
+          <span class="eyebrow">Before shared memory</span>
+          <h1>Consent before the record.</h1>
+          <p>Choose what kind of VedaPath record is being created. The gate turns calm, source, privacy, and review boundaries into one visible agreement.</p>
+
+          <div class="gate-list" id="gateList"></div>
+
+          <div class="field-grid">
+            <label>
+              Record name
+              <input id="recordName" type="text" value="Family calm circle note">
+            </label>
+            <label>
+              Review owner
+              <input id="reviewOwner" type="text" value="Human reviewer before shared storage">
+            </label>
+          </div>
+        </aside>
+
+        <section class="panel">
+          <span class="eyebrow">Consent schema preview</span>
+          <h1 id="gateTitle">Shared calm needs an explicit yes.</h1>
+          <p id="gateSummary">A shared reflection should not become product memory until purpose, scope, privacy, deletion, and review are visible.</p>
+
+          <div class="source-card" aria-label="Consent gate source and boundary">
+            <div>
+              <span class="source-label">Source candidate</span>
+              <span class="source-value" id="sourceCandidate">Bhagavad Gita 17.15</span>
+            </div>
+            <div>
+              <span class="source-label">Text family</span>
+              <span class="source-value" id="sourceFamily">Bhagavad Gita | Smriti</span>
+            </div>
+            <div>
+              <span class="source-label">Governance level</span>
+              <span class="source-value" id="governanceLevel">Shared record gate</span>
+            </div>
+            <div>
+              <span class="source-label">Boundary</span>
+              <span class="source-value" id="sourceBoundary">Consent, not permission pressure.</span>
+            </div>
+          </div>
+
+          <div class="readiness">
+            <div class="readiness-head">
+              <span>Gate readiness</span>
+              <span id="consentScore">0%</span>
+            </div>
+            <div class="progress" aria-hidden="true"><div class="bar" id="scoreBar"></div></div>
+          </div>
+
+          <h2>Required checks</h2>
+          <div class="control-list" id="controlList"></div>
+
+          <div class="field-grid">
+            <label>
+              Allowed use
+              <textarea id="allowedUse">Use this record only to keep the shared reflection source-backed, bounded, and reviewable.</textarea>
+            </label>
+            <label>
+              Not allowed
+              <textarea id="notAllowed">Do not use this record to judge a person, profile a relationship, train hidden behavior, or make a private conflict searchable.</textarea>
+            </label>
+            <label>
+              Retention note
+              <textarea id="retentionNote">Prototype memory stays in this browser. Production needs explicit consent, export, deletion, and audit controls.</textarea>
+            </label>
+            <label>
+              Participant note
+              <textarea id="participantNote">All participants should know what is saved, why it is saved, who can see it, and how it can be deleted.</textarea>
+            </label>
+          </div>
+
+          <div class="actions">
+            <button class="button primary" id="saveConsent" type="button">Save Gate</button>
+            <button class="button secondary" id="copyConsent" type="button">Copy Consent Brief</button>
+            <a class="button" id="nextRoom" href="circle.html">Open Calm Circle</a>
+          </div>
+        </section>
+
+        <aside class="panel side-panel">
+          <span class="eyebrow">Local governance preview</span>
+          <h2>Your Consent Gate Notes</h2>
+          <p>This is private prototype memory in this browser only. It proves the governance workflow before accounts, sync, or shared records.</p>
+
+          <div class="stat-grid">
+            <div class="stat">
+              <span>Saved gates</span>
+              <strong id="savedCount">0</strong>
+            </div>
+            <div class="stat">
+              <span>Last readiness</span>
+              <strong id="lastScore">0%</strong>
+            </div>
+            <div class="stat">
+              <span>Top record type</span>
+              <strong id="topGate">None</strong>
+            </div>
+            <div class="stat">
+              <span>Last source</span>
+              <strong id="lastSource">None</strong>
+            </div>
+          </div>
+
+          <div class="history-list" id="historyList">
+            <div class="history-item">
+              <strong>No consent gates saved yet</strong>
+              <span>Save one gate and the local preview will show what production governance must protect.</span>
+            </div>
+          </div>
+
+          <div class="actions">
+            <button class="button secondary" id="copyPattern" type="button">Copy Pattern</button>
+            <button class="button" id="clearConsent" type="button">Clear Local Preview</button>
+          </div>
+          <textarea class="export-output" id="consentExport" readonly aria-label="Consent gate export"></textarea>
+
+          <div class="boundary-card">
+            <h2>Consent Boundary</h2>
+            <p id="boundaryText">Consent Gate is not legal advice, therapy, mediation, relationship counseling, compliance certification, or a way to pressure someone into sharing. It is a product-design gate for visible consent and review.</p>
+          </div>
+
+          <h2 style="margin-top: 18px;">Production fields</h2>
+          <div class="schema-list">
+            <div class="schema-card">
+              <strong>Participant consent</strong>
+              <p>Who agreed, when, to what scope, and with what withdrawal path.</p>
+            </div>
+            <div class="schema-card">
+              <strong>Source trace</strong>
+              <p>Source seed, passage dossier, citation, and source-family label.</p>
+            </div>
+            <div class="schema-card">
+              <strong>Privacy controls</strong>
+              <p>Visibility, retention, export, deletion, and sensitive-field rules.</p>
+            </div>
+            <div class="schema-card">
+              <strong>Review route</strong>
+              <p>Human reviewer, queue state, audit history, and evaluator checks.</p>
+            </div>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <script>
+      const storageKey = "vedapath.consentGate.v1";
+
+      const gates = [
+        {
+          id: "circle",
+          label: "Calm Circle",
+          summary: "A shared reflection before a family, team, or friendship record is stored.",
+          title: "Shared calm needs an explicit yes.",
+          detail: "A shared reflection should not become product memory until purpose, scope, privacy, deletion, and review are visible.",
+          source: "Bhagavad Gita 17.15",
+          family: "Bhagavad Gita | Smriti",
+          level: "Shared record gate",
+          boundary: "Consent, not permission pressure.",
+          allowed: "Use this record only to keep the shared reflection source-backed, bounded, and reviewable.",
+          blocked: "Do not use this record to judge a person, profile a relationship, train hidden behavior, or make a private conflict searchable.",
+          retention: "Prototype memory stays in this browser. Production needs explicit consent, export, deletion, and audit controls.",
+          participant: "All participants should know what is saved, why it is saved, who can see it, and how it can be deleted.",
+          next: "circle.html",
+          nextLabel: "Open Calm Circle"
+        },
+        {
+          id: "life",
+          label: "Life Map",
+          summary: "A private life-moment route before patterns or next-room suggestions are remembered.",
+          title: "Private reflection needs a visible limit.",
+          detail: "A life-map record should keep the user's agency intact by naming purpose, retention, and what the product must never infer.",
+          source: "Katha Upanishad 1.3.3-9",
+          family: "Upanishad | Shruti",
+          level: "Personal reflection gate",
+          boundary: "Reflection support, not life surveillance.",
+          allowed: "Use this record only to route one self-chosen next step and one source-backed reflection.",
+          blocked: "Do not infer identity, diagnosis, relationship status, finances, health, or spiritual rank from a private moment.",
+          retention: "Keep prototype records device-local. Production should offer opt-in sync, export, deletion, and minimum retention.",
+          participant: "The user should understand what pattern is visible and be able to reset it without penalty.",
+          next: "life.html",
+          nextLabel: "Open Life Map"
+        },
+        {
+          id: "review",
+          label: "Reviewer Queue",
+          summary: "A correction or source issue before it becomes accepted product knowledge.",
+          title: "Corrections need review before authority.",
+          detail: "A user suggestion should become a review ticket, not an instant rewrite of accepted source behavior.",
+          source: "Source Policy Console",
+          family: "Product governance",
+          level: "Human review gate",
+          boundary: "Review routing, not silent truth changes.",
+          allowed: "Use this record to route a source issue, category concern, or boundary failure to a human review path.",
+          blocked: "Do not silently replace source answers or accept corrections without reviewer identity and evidence trace.",
+          retention: "Store review status, source evidence, reviewer need, and audit history. Avoid private user details unless essential.",
+          participant: "The reporter should know whether the issue is queued, accepted, rejected, or needs more evidence.",
+          next: "queue.html",
+          nextLabel: "Open Reviewer Queue"
+        },
+        {
+          id: "dataset",
+          label: "Source Dataset",
+          summary: "A source seed before retrieval treats it as trusted input.",
+          title: "A source record needs provenance before power.",
+          detail: "Retrieval should only trust records that carry source edition, rights, review status, and evaluation coverage.",
+          source: "Source Seeds",
+          family: "Retrieval governance",
+          level: "Dataset intake gate",
+          boundary: "Citable input, not authority by upload.",
+          allowed: "Use this record to document source family, citation, edition, translation status, reviewer state, and allowed answer use.",
+          blocked: "Do not let unreviewed, unsourced, or rights-unclear text power confident answers.",
+          retention: "Keep source provenance, rights state, reviewer status, and evaluation fixtures together.",
+          participant: "Editors should know which fields are missing before a record becomes retrieval-ready.",
+          next: "seeds.html",
+          nextLabel: "Open Source Seeds"
+        }
+      ];
+
+      const controls = [
+        ["purpose", "Purpose named", "The record says why it exists before it is stored."],
+        ["participants", "Consent visible", "People affected by the record have an explicit agreement path."],
+        ["scope", "Scope limited", "Allowed use and blocked use are both written down."],
+        ["source", "Source attached", "The source family, citation, and pramana level stay with the record."],
+        ["deletion", "Deletion path", "A future user can export, reset, or delete the record."],
+        ["review", "Review route", "Sensitive or knowledge-changing records go through human review."]
+      ];
+
+      const state = {
+        selectedId: "circle",
+        saved: loadSaved()
+      };
+
+      function loadSaved() {
+        try {
+          return JSON.parse(localStorage.getItem(storageKey)) || [];
+        } catch (error) {
+          return [];
+        }
+      }
+
+      function saveLocal() {
+        localStorage.setItem(storageKey, JSON.stringify(state.saved));
+      }
+
+      function selectedGate() {
+        return gates.find((gate) => gate.id === state.selectedId) || gates[0];
+      }
+
+      function renderGates() {
+        const gateList = document.getElementById("gateList");
+        gateList.innerHTML = gates.map((gate, index) => `
+          <button class="gate-card ${gate.id === state.selectedId ? "active" : ""}" type="button" data-id="${gate.id}">
+            <span class="gate-index">${index + 1}</span>
+            <span>
+              <strong>${gate.label}</strong>
+              <p>${gate.summary}</p>
+            </span>
+          </button>
+        `).join("");
+
+        document.querySelectorAll(".gate-card[data-id]").forEach((button) => {
+          button.addEventListener("click", () => {
+            state.selectedId = button.dataset.id;
+            applyGate();
+            renderGates();
+          });
+        });
+      }
+
+      function renderControls() {
+        const controlList = document.getElementById("controlList");
+        controlList.innerHTML = controls.map(([id, label, description], index) => `
+          <label class="control-card active" for="control-${id}">
+            <input id="control-${id}" type="checkbox" data-control="${id}" checked>
+            <span class="control-check">${index + 1}</span>
+            <span>
+              <strong>${label}</strong>
+              <p>${description}</p>
+            </span>
+          </label>
+        `).join("");
+
+        document.querySelectorAll("[data-control]").forEach((input) => {
+          input.addEventListener("change", () => {
+            input.closest(".control-card").classList.toggle("active", input.checked);
+            renderScore();
+          });
+        });
+      }
+
+      function applyGate() {
+        const gate = selectedGate();
+        document.getElementById("gateTitle").textContent = gate.title;
+        document.getElementById("gateSummary").textContent = gate.detail;
+        document.getElementById("sourceCandidate").textContent = gate.source;
+        document.getElementById("sourceFamily").textContent = gate.family;
+        document.getElementById("governanceLevel").textContent = gate.level;
+        document.getElementById("sourceBoundary").textContent = gate.boundary;
+        document.getElementById("allowedUse").value = gate.allowed;
+        document.getElementById("notAllowed").value = gate.blocked;
+        document.getElementById("retentionNote").value = gate.retention;
+        document.getElementById("participantNote").value = gate.participant;
+        document.getElementById("recordName").value = `${gate.label} consent note`;
+        const nextRoom = document.getElementById("nextRoom");
+        nextRoom.href = gate.next;
+        nextRoom.textContent = gate.nextLabel;
+        renderScore();
+      }
+
+      function checkedControls() {
+        return [...document.querySelectorAll("[data-control]")].filter((input) => input.checked);
+      }
+
+      function renderScore() {
+        const total = controls.length;
+        const done = checkedControls().length;
+        const score = Math.round((done / total) * 100);
+        document.getElementById("consentScore").textContent = `${score}%`;
+        document.getElementById("scoreBar").style.width = `${score}%`;
+        return score;
+      }
+
+      function currentRecord() {
+        const gate = selectedGate();
+        const score = renderScore();
+        return {
+          id: Date.now(),
+          gate: gate.label,
+          source: gate.source,
+          family: gate.family,
+          level: gate.level,
+          boundary: gate.boundary,
+          score,
+          recordName: document.getElementById("recordName").value.trim() || `${gate.label} consent note`,
+          reviewOwner: document.getElementById("reviewOwner").value.trim() || "Human reviewer before shared storage",
+          allowed: document.getElementById("allowedUse").value.trim(),
+          blocked: document.getElementById("notAllowed").value.trim(),
+          retention: document.getElementById("retentionNote").value.trim(),
+          participant: document.getElementById("participantNote").value.trim(),
+          checks: checkedControls().map((input) => input.closest(".control-card").querySelector("strong").textContent),
+          createdAt: new Date().toISOString()
+        };
+      }
+
+      function renderMemory() {
+        const saved = state.saved;
+        document.getElementById("savedCount").textContent = saved.length;
+        document.getElementById("lastScore").textContent = saved[0] ? `${saved[0].score}%` : "0%";
+        document.getElementById("topGate").textContent = saved[0]?.gate || "None";
+        document.getElementById("lastSource").textContent = saved[0]?.source || "None";
+
+        const historyList = document.getElementById("historyList");
+        if (!saved.length) {
+          historyList.innerHTML = `
+            <div class="history-item">
+              <strong>No consent gates saved yet</strong>
+              <span>Save one gate and the local preview will show what production governance must protect.</span>
+            </div>
+          `;
+          return;
+        }
+
+        historyList.innerHTML = saved.slice(0, 5).map((record) => `
+          <div class="history-item">
+            <strong>${record.gate} - ${record.score}% ready</strong>
+            <span>${record.recordName}</span>
+            <span>${record.source}</span>
+          </div>
+        `).join("");
+      }
+
+      function buildExport(record = currentRecord()) {
+        return [
+          "VedaPath Consent Gate",
+          "Release: v0.4.8 consent gate",
+          `Record type: ${record.gate}`,
+          `Record name: ${record.recordName}`,
+          `Readiness: ${record.score}%`,
+          `Source: ${record.source}`,
+          `Text family: ${record.family}`,
+          `Governance level: ${record.level}`,
+          `Boundary: ${record.boundary}`,
+          `Review owner: ${record.reviewOwner}`,
+          `Checks: ${record.checks.join(", ") || "None"}`,
+          `Allowed use: ${record.allowed}`,
+          `Not allowed: ${record.blocked}`,
+          `Retention note: ${record.retention}`,
+          `Participant note: ${record.participant}`,
+          "Production rule: no shared or knowledge-changing record should become durable without visible consent, source trace, deletion controls, and human review where needed."
+        ].join("\n");
+      }
+
+      function copyText(text, button, copiedLabel) {
+        const output = document.getElementById("consentExport");
+        output.style.display = "block";
+        output.value = text;
+        output.select();
+
+        const done = () => {
+          const original = button.textContent;
+          button.textContent = copiedLabel;
+          setTimeout(() => {
+            button.textContent = original;
+          }, 1400);
+        };
+
+        if (navigator.clipboard?.writeText) {
+          navigator.clipboard.writeText(text).then(done).catch(done);
+        } else {
+          done();
+        }
+      }
+
+      document.getElementById("saveConsent").addEventListener("click", () => {
+        const record = currentRecord();
+        state.saved = [record, ...state.saved].slice(0, 12);
+        saveLocal();
+        renderMemory();
+      });
+
+      document.getElementById("copyConsent").addEventListener("click", () => {
+        copyText(buildExport(), document.getElementById("copyConsent"), "Copied Brief");
+      });
+
+      document.getElementById("copyPattern").addEventListener("click", () => {
+        const text = state.saved.length
+          ? state.saved.map((record) => `${record.gate}: ${record.score}% ready - ${record.source}`).join("\n")
+          : "No consent gates saved yet.";
+        copyText(text, document.getElementById("copyPattern"), "Copied Pattern");
+      });
+
+      document.getElementById("clearConsent").addEventListener("click", () => {
+        if (!state.saved.length || confirm("Clear local consent gate preview records?")) {
+          state.saved = [];
+          saveLocal();
+          renderMemory();
+        }
+      });
+
+      renderGates();
+      renderControls();
+      applyGate();
+      renderMemory();
+    </script>
+  </body>
+</html>
