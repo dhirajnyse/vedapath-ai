@@ -182,6 +182,10 @@ Let us look at the source first.
 - [Launch Control Center](launchcenter.html)
 - [Launch Control Center Notes](docs/LAUNCH_CONTROL_CENTER.md)
 <!-- VEDAPATH READINESS SPRINT LINKS END -->
+<!-- VEDAPATH PRODUCTION SPRINT LINKS START -->
+- [Production Architecture Map](architecture.html)
+- [Production Architecture Map Notes](docs/PRODUCTION_ARCHITECTURE_MAP.md)
+<!-- VEDAPATH PRODUCTION SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
 - [Calm Compass](compass.html)
@@ -212,7 +216,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v1.0.4` is a trusted MVP prototype plus Launch Control Center with:
+`v1.0.5` is a trusted MVP prototype plus Production Architecture Map with:
 
 - Ask workspace
 - Source Card
@@ -298,6 +302,9 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Return Rhythm Board: Return Rhythm Board shapes VedaPath retention around source curiosity, calm practice, and user-owned rhythm.
 - Launch Control Center: Launch Control Center completes the readiness sprint and gives VedaPath one calm founder launch decision surface.
 <!-- VEDAPATH READINESS SPRINT FEATURES END -->
+<!-- VEDAPATH PRODUCTION SPRINT FEATURES START -->
+- Production Architecture Map: Production Architecture Map turns VedaPath's prototype rooms into a clear service map for source trust, privacy, review, and launch operations.
+<!-- VEDAPATH PRODUCTION SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
 - Calm Card Studio with visual card preview, local saved cards, copy text, and PNG export

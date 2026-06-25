@@ -1,4 +1,4 @@
-# v1.0.4 Prototype Notes
+# v1.0.5 Prototype Notes
 
 The v0.7.4 release turns the VedaPath AI homepage into a trusted MVP prototype with calm, practice, source-library, source-seeds, retrieval, passage-review, evaluation, evaluation-dashboard, reviewer-queue, source-policy, trust-ledger, life-map, calm-circle, consent-gate, memory-gate, trust-model, calm-passport, backend-schema, schema-fixtures, evaluation-drill, learning-loop, sanskrit-lens, voice-boundary, scholar-review, launch-gate, production-bridge, source-storage, reviewer-access, public-feedback, launch-story, source-path, calm-compass, calm-card, source-bell, before-reply, samvada, sankalpa, seva, morning, evening, and rhythm surfaces.
 
@@ -90,6 +90,9 @@ The v0.7.4 release turns the VedaPath AI homepage into a trusted MVP prototype w
 - Return Rhythm Board: Return Rhythm Board shapes VedaPath retention around source curiosity, calm practice, and user-owned rhythm.
 - Launch Control Center: Launch Control Center completes the readiness sprint and gives VedaPath one calm founder launch decision surface.
 <!-- VEDAPATH READINESS SPRINT NOTES END -->
+<!-- VEDAPATH PRODUCTION SPRINT NOTES START -->
+- Production Architecture Map: Production Architecture Map turns VedaPath's prototype rooms into a clear service map for source trust, privacy, review, and launch operations.
+<!-- VEDAPATH PRODUCTION SPRINT NOTES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
 - Calm Card Studio with visual preview, local saved cards, copy text, and PNG export

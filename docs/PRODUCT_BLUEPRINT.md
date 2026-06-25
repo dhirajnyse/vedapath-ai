@@ -87,6 +87,9 @@ It helps users move from curiosity to understanding through:
 - Return Rhythm Board: Return Rhythm Board shapes VedaPath retention around source curiosity, calm practice, and user-owned rhythm.
 - Launch Control Center: Launch Control Center completes the readiness sprint and gives VedaPath one calm founder launch decision surface.
 <!-- VEDAPATH READINESS SPRINT SUMMARY END -->
+<!-- VEDAPATH PRODUCTION SPRINT SUMMARY START -->
+- Production Architecture Map: Production Architecture Map turns VedaPath's prototype rooms into a clear service map for source trust, privacy, review, and launch operations.
+<!-- VEDAPATH PRODUCTION SPRINT SUMMARY END -->
 
 ## What It Is
 
@@ -1436,6 +1439,22 @@ It should:
 
 Launch Control Center should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH READINESS SPRINT BLUEPRINT END -->
+<!-- VEDAPATH PRODUCTION SPRINT BLUEPRINT START -->
+### 88. Production Architecture Map
+
+Production Architecture Map turns VedaPath's prototype rooms into a clear service map for source trust, privacy, review, and launch operations.
+
+It should:
+
+- Source core: Source records, citations, translation rights, and review state.
+- User core: Account, consent, export, delete, and memory preferences.
+- Review core: Reviewer roles, scoped decisions, audit trail, and release gates.
+- Launch core: Pilot posture, feedback triage, analytics boundaries, and rollback.
+- preserve the boundary: Architecture map, not implemented backend.
+- produce a copyable production-readiness handoff
+
+Production Architecture Map should never claim production storage, verified answers, reviewer approval, authentication, analytics, therapy, ritual instruction, crisis support, or spiritual authority.
+<!-- VEDAPATH PRODUCTION SPRINT BLUEPRINT END -->
 
 ## Product Personality
 

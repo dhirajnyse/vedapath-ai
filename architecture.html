@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VedaPath Production Architecture Map</title>
+    <link rel="stylesheet" href="assets/vedapath-sprint.css">
+  </head>
+  <body>
+    <div class="shell" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top" aria-label="VedaPath AI home">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
+          <div>
+            <strong>VedaPath AI</strong>
+            <span>Production architecture</span>
+          </div>
+        </a>
+        <nav class="nav" aria-label="Project links">
+          <a class="link" href="build-status.html">Build</a>
+          <a class="link" href="brand/brand-board.html">Brand</a>
+          <a class="link" href="blueprint.html">Blueprint</a>
+          <a class="link" href="launchcenter.html">Launch Center</a>
+          <a class="link" href="command.html">Command</a>
+          <a class="link" href="calm.html">Calm</a>
+          <a class="link" href="practice.html">Practice</a>
+          <!-- VEDAPATH PRODUCTION SPRINT NAV START -->
+          <a class="link active" href="architecture.html">Arch</a>
+          <!-- VEDAPATH PRODUCTION SPRINT NAV END -->
+          <span class="version">v1.0.5 arch</span>
+        </nav>
+      </header>
+
+      <main class="workspace" aria-label="VedaPath Production Architecture Map workspace">
+        <aside class="panel">
+          <span class="eyebrow">Production readiness sprint</span>
+          <h2>Release Rooms</h2>
+          <p class="muted">Ten focused rooms turn launch readiness into architecture, consent, source services, review, and operations.</p>
+          <div class="room-list" id="roomList"></div>
+        </aside>
+
+        <section class="panel">
+          <div class="hero-grid">
+            <div>
+              <span class="eyebrow">Production foundation</span>
+              <h1>Design the system before storing trust.</h1>
+              <p class="muted">A production architecture room for source records, answer service, reviewer workflow, consent, audit, exports, and launch operations.</p>
+            </div>
+            <div class="mark-stage">
+              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Arch logo">
+            </div>
+          </div>
+
+          <div class="source-block" aria-label="Release source card">
+            <div>
+              <span class="source-meta">Release</span>
+              <span class="source-value">v1.0.5</span>
+            </div>
+            <div>
+              <span class="source-meta">Source candidate</span>
+              <span class="source-value">Mundaka Upanishad 1.1.4</span>
+            </div>
+            <div>
+              <span class="source-meta">Text family</span>
+              <span class="source-value">Upanishad | Shruti</span>
+            </div>
+            <div>
+              <span class="source-meta">Boundary</span>
+              <span class="source-value">Architecture map, not implemented backend.</span>
+            </div>
+          </div>
+
+          <h2>Decision Signals</h2>
+          <div class="item-list" id="itemList"></div>
+
+          <div class="tabs" role="tablist" aria-label="VedaPath Production Architecture Map layers">
+            <button class="tab active" type="button" data-mode="brief">Brief</button>
+            <button class="tab" type="button" data-mode="checklist">Checklist</button>
+            <button class="tab" type="button" data-mode="boundary">Boundary</button>
+          </div>
+
+          <div id="modePanel"></div>
+
+          <div class="button-row" style="margin-top: 14px;">
+            <button class="button primary" id="copyBrief" type="button">Copy Brief</button>
+            <button class="button safe" id="copyJson" type="button">Copy JSON</button>
+            <button class="button" id="copyBoundary" type="button">Copy Boundary</button>
+          </div>
+
+          <textarea id="output" readonly aria-label="VedaPath Production Architecture Map output"></textarea>
+        </section>
+
+        <aside class="panel tight" aria-label="VedaPath Production Architecture Map sprint rail">
+          <span class="badge green">Production readiness</span>
+          <h2 style="margin-top: 14px;">Arch Pulse</h2>
+          <p class="muted">Production Architecture Map turns VedaPath's prototype rooms into a clear service map for source trust, privacy, review, and launch operations.</p>
+          <div class="progress" aria-label="Sprint progress 91 percent">
+            <div class="bar" style="--score:91%"></div>
+          </div>
+          <div class="metric-grid">
+            <div class="metric">
+              <span>Current</span>
+              <strong>v1.0.5</strong>
+            </div>
+            <div class="metric">
+              <span>Sprint</span>
+              <strong>1/10</strong>
+            </div>
+            <div class="metric">
+              <span>Progress</span>
+              <strong>91%</strong>
+            </div>
+            <div class="metric">
+              <span>Next</span>
+              <strong>Account Consent Prototype</strong>
+            </div>
+          </div>
+
+          <div class="sprint-list">
+            <div class="sprint-step active">
+              <span class="step-index">1</span>
+              <div><strong>Design</strong><p>Name the production boundary.</p></div>
+            </div>
+            <div class="sprint-step">
+              <span class="step-index">2</span>
+              <div><strong>Protect</strong><p>Keep consent, review, and audit visible.</p></div>
+            </div>
+            <div class="sprint-step">
+              <span class="step-index">3</span>
+              <div><strong>Implement</strong><p>Choose one narrow lane.</p></div>
+            </div>
+            <div class="sprint-step">
+              <span class="step-index">4</span>
+              <div><strong>Verify</strong><p>Ship only after checks pass.</p></div>
+            </div>
+          </div>
+
+          <section class="panel tight boundary" style="margin-top: 16px;">
+            <h2>Release Boundary</h2>
+            <p class="muted">This is a production-readiness planning surface. It does not create production storage, verified answers, reviewer approval, authentication, analytics, therapy, ritual instruction, emergency support, or spiritual authority.</p>
+          </section>
+        </aside>
+      </main>
+    </div>
+
+    <script type="application/json" id="room-data">{
+  "version": "v1.0.5",
+  "badge": "v1.0.5 arch",
+  "slug": "architecture",
+  "nav": "Arch",
+  "title": "VedaPath Production Architecture Map",
+  "pageLabel": "Production architecture",
+  "eyebrow": "Production foundation",
+  "h1": "Design the system before storing trust.",
+  "lead": "A production architecture room for source records, answer service, reviewer workflow, consent, audit, exports, and launch operations.",
+  "source": "Mundaka Upanishad 1.1.4",
+  "family": "Upanishad | Shruti",
+  "stance": "Architecture map, not implemented backend.",
+  "progress": 91,
+  "next": "Account Consent Prototype",
+  "primaryAsk": "Choose the production system boundaries before any real user data is stored.",
+  "summary": "Production Architecture Map turns VedaPath's prototype rooms into a clear service map for source trust, privacy, review, and launch operations.",
+  "items": [
+    [
+      "Source core",
+      "Source records, citations, translation rights, and review state.",
+      "Powers answer confidence."
+    ],
+    [
+      "User core",
+      "Account, consent, export, delete, and memory preferences.",
+      "Protects personal data."
+    ],
+    [
+      "Review core",
+      "Reviewer roles, scoped decisions, audit trail, and release gates.",
+      "Makes trust inspectable."
+    ],
+    [
+      "Launch core",
+      "Pilot posture, feedback triage, analytics boundaries, and rollback.",
+      "Keeps launch controllable."
+    ]
+  ],
+  "modes": {
+    "brief": [
+      [
+        "Architecture promise",
+        "Production should make trust easier to inspect, not harder."
+      ],
+      [
+        "Product move",
+        "Separate source truth, user memory, reviewer decisions, and launch operations."
+      ],
+      [
+        "Engineering move",
+        "Do not add storage until consent, export, delete, and audit are designed together."
+      ]
+    ],
+    "checklist": [
+      [
+        "Bounded",
+        "Does each system own one kind of data?"
+      ],
+      [
+        "Auditable",
+        "Can source and review changes be traced?"
+      ],
+      [
+        "Private",
+        "Can user data be exported, deleted, and paused?"
+      ]
+    ],
+    "boundary": [
+      [
+        "No hidden backend",
+        "Do not imply production storage exists until it is implemented."
+      ],
+      [
+        "No mixed trust",
+        "Do not mix source review with personal memory records."
+      ],
+      [
+        "No launch shortcut",
+        "Do not launch production accounts without consent controls."
+      ]
+    ]
+  },
+  "rooms": [
+    {
+      "version": "v1.0.5",
+      "slug": "architecture",
+      "nav": "Arch"
+    }
+  ]
+}</script>
+    <script src="assets/vedapath-sprint.js"></script>
+  </body>
+</html>
