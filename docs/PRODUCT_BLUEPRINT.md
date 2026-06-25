@@ -63,6 +63,9 @@ It helps users move from curiosity to understanding through:
 - Launch Landing Kit: Launch Landing Kit creates clear launch copy that shows calm, source-first trust, prototype status, and boundaries.
 - Next Build Control Tower: Next Build Control Tower completes the personal calm sprint and frames the next real product decision.
 <!-- VEDAPATH PERSONAL SPRINT SUMMARY END -->
+<!-- VEDAPATH BETA SPRINT SUMMARY START -->
+- Beta Welcome Room: Beta Welcome Room turns the public entry into a simple, source-first doorway instead of a crowded product map.
+<!-- VEDAPATH BETA SPRINT SUMMARY END -->
 
 ## What It Is
 
@@ -1110,6 +1113,22 @@ It should:
 
 Next Build Control Tower should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH PERSONAL SPRINT BLUEPRINT END -->
+<!-- VEDAPATH BETA SPRINT BLUEPRINT START -->
+### 68. Beta Welcome Room
+
+Beta Welcome Room turns the public entry into a simple, source-first doorway instead of a crowded product map.
+
+It should:
+
+- One choice: A new visitor should not see the whole universe first.
+- Trust upfront: The source-first posture must be visible before any promise.
+- Human tone: The beta should feel warm without sounding like a guru.
+- Return path: A visitor who leaves should know the next room.
+- preserve the boundary: Beta invitation, not spiritual authority.
+- produce a copyable beta handoff
+
+Beta Welcome Room should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
+<!-- VEDAPATH BETA SPRINT BLUEPRINT END -->
 
 ## Product Personality
 

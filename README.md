@@ -138,6 +138,10 @@ Let us look at the source first.
 - [Next Build Control Tower](tower.html)
 - [Next Build Control Tower Notes](docs/NEXT_BUILD_CONTROL_TOWER.md)
 <!-- VEDAPATH PERSONAL SPRINT LINKS END -->
+<!-- VEDAPATH BETA SPRINT LINKS START -->
+- [Beta Welcome Room](beta.html)
+- [Beta Welcome Room Notes](docs/BETA_WELCOME_ROOM.md)
+<!-- VEDAPATH BETA SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
 - [Calm Compass](compass.html)
@@ -168,7 +172,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v0.8.4` is a trusted MVP prototype plus Next Build Control Tower with:
+`v0.8.5` is a trusted MVP prototype plus Beta Welcome Room with:
 
 - Ask workspace
 - Source Card
@@ -230,6 +234,9 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Launch Landing Kit: Launch Landing Kit creates clear launch copy that shows calm, source-first trust, prototype status, and boundaries.
 - Next Build Control Tower: Next Build Control Tower completes the personal calm sprint and frames the next real product decision.
 <!-- VEDAPATH PERSONAL SPRINT FEATURES END -->
+<!-- VEDAPATH BETA SPRINT FEATURES START -->
+- Beta Welcome Room: Beta Welcome Room turns the public entry into a simple, source-first doorway instead of a crowded product map.
+<!-- VEDAPATH BETA SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
 - Calm Card Studio with visual card preview, local saved cards, copy text, and PNG export
