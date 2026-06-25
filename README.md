@@ -363,6 +363,8 @@ Let us look at the source first.
 - [Beta Search Shell Notes](docs/BETA_SEARCH_SHELL.md)
 - [Source Filter Bar](sourcefilters.html)
 - [Source Filter Bar Notes](docs/SOURCE_FILTER_BAR.md)
+- [Result Reason Panel](resultreasons.html)
+- [Result Reason Panel Notes](docs/RESULT_REASON_PANEL.md)
 <!-- VEDAPATH INTERACTIVE SEARCH SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -394,7 +396,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v1.8.6` is a trusted MVP prototype plus Source Filter Bar with:
+`v1.8.7` is a trusted MVP prototype plus Result Reason Panel with:
 
 - Ask workspace
 - Source Card
@@ -579,6 +581,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 <!-- VEDAPATH INTERACTIVE SEARCH SPRINT FEATURES START -->
 - Beta Search Shell: Beta Search Shell turns the static seed into a usable beta surface without pretending retrieval or generation is live.
 - Source Filter Bar: Source Filter Bar makes search calmer by giving users visible constraints instead of a blank text box.
+- Result Reason Panel: Result Reason Panel makes search less magical by showing match fields, review state, and no-go boundaries beside each record.
 <!-- VEDAPATH INTERACTIVE SEARCH SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff

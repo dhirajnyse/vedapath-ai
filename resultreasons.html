@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>VedaPath Beta Search Shell</title>
+    <title>VedaPath Result Reason Panel</title>
     <link rel="stylesheet" href="assets/vedapath-sprint.css">
     <link rel="stylesheet" href="assets/vedapath-beta-search.css">
   </head>
@@ -14,7 +14,7 @@
           <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
           <div>
             <strong>VedaPath AI</strong>
-            <span>Beta search shell</span>
+            <span>Result reasons</span>
           </div>
         </a>
         <nav class="nav" aria-label="Project links">
@@ -23,15 +23,15 @@
           <a class="link" href="blueprint.html">Blueprint</a>
           <a class="link" href="datasetconsole.html">Dataset</a>
           <!-- VEDAPATH INTERACTIVE SEARCH SPRINT NAV START -->
-          <a class="link active" href="betasearchshell.html">Shell</a>
+          <a class="link" href="betasearchshell.html">Shell</a>
           <a class="link" href="sourcefilters.html">Filters</a>
-          <a class="link" href="resultreasons.html">Reasons</a>
+          <a class="link active" href="resultreasons.html">Reasons</a>
           <!-- VEDAPATH INTERACTIVE SEARCH SPRINT NAV END -->
           <span class="version">v1.8.7 reasons</span>
         </nav>
       </header>
 
-      <main class="workspace" aria-label="VedaPath Beta Search Shell workspace">
+      <main class="workspace" aria-label="VedaPath Result Reason Panel workspace">
         <aside class="panel">
           <span class="eyebrow">Interactive beta search sprint</span>
           <h2>Release Rooms</h2>
@@ -42,35 +42,35 @@
         <section class="panel">
           <div class="hero-grid">
             <div>
-              <span class="eyebrow">Interactive search</span>
-              <h1>Let users search the seed without mystery.</h1>
-              <p class="muted">A first browser-only search shell that reads the static beta seed and shows reviewed status, source family, blocked claims, and fallback boundaries.</p>
+              <span class="eyebrow">Match reasons</span>
+              <h1>Explain why a result appeared.</h1>
+              <p class="muted">A result reason panel that shows which field matched the query and why the record is not yet public-answer eligible.</p>
             </div>
             <div class="mark-stage">
-              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Shell logo">
+              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Reasons logo">
             </div>
           </div>
 
           <div class="source-block" aria-label="Release source card">
             <div>
               <span class="source-meta">Release</span>
-              <span class="source-value">v1.8.5</span>
+              <span class="source-value">v1.8.7</span>
             </div>
             <div>
               <span class="source-meta">Source candidate</span>
-              <span class="source-value">Bhagavad Gita 2.48</span>
+              <span class="source-value">Rigveda 1.164.46</span>
             </div>
             <div>
               <span class="source-meta">Text family</span>
-              <span class="source-value">Bhagavad Gita | Smriti</span>
+              <span class="source-value">Veda | Shruti</span>
             </div>
             <div>
               <span class="source-meta">Boundary</span>
-              <span class="source-value">Browser-only search shell, not live retrieval.</span>
+              <span class="source-value">Reason panel prototype, not semantic ranking.</span>
             </div>
           </div>
 
-          <section class="beta-search" id="betaSearch" data-default-query="steadiness" aria-label="Interactive beta search">
+          <section class="beta-search" id="betaSearch" data-default-query="category" aria-label="Interactive beta search">
             <div class="search-head">
               <div>
                 <span class="eyebrow">Browser-only seed search</span>
@@ -81,7 +81,7 @@
             </div>
             <label class="search-label" for="betaSearchInput">Search source, family, boundary, or blocked claim</label>
             <div class="search-row">
-              <input id="betaSearchInput" class="search-input" type="search" autocomplete="off" value="steadiness" placeholder="Try Gita, review, therapy, source">
+              <input id="betaSearchInput" class="search-input" type="search" autocomplete="off" value="category" placeholder="Try Gita, review, therapy, source">
               <button class="button primary" id="betaSearchButton" type="button">Search</button>
             </div>
             <div class="query-chips" id="betaSearchChips" aria-label="Quick searches"></div>
@@ -93,7 +93,7 @@
           <h2>Search Signals</h2>
           <div class="item-list" id="itemList"></div>
 
-          <div class="tabs" role="tablist" aria-label="VedaPath Beta Search Shell layers">
+          <div class="tabs" role="tablist" aria-label="VedaPath Result Reason Panel layers">
             <button class="tab active" type="button" data-mode="brief">Brief</button>
             <button class="tab" type="button" data-mode="checklist">Checklist</button>
             <button class="tab" type="button" data-mode="boundary">Boundary</button>
@@ -107,20 +107,20 @@
             <button class="button" id="copyBoundary" type="button">Copy Boundary</button>
           </div>
 
-          <textarea id="output" readonly aria-label="VedaPath Beta Search Shell output"></textarea>
+          <textarea id="output" readonly aria-label="VedaPath Result Reason Panel output"></textarea>
         </section>
 
-        <aside class="panel tight" aria-label="VedaPath Beta Search Shell sprint rail">
+        <aside class="panel tight" aria-label="VedaPath Result Reason Panel sprint rail">
           <span class="badge green">Browser-only search</span>
-          <h2 style="margin-top: 14px;">Shell Pulse</h2>
-          <p class="muted">Beta Search Shell turns the static seed into a usable beta surface without pretending retrieval or generation is live.</p>
-          <div class="progress" aria-label="Sprint progress 81 percent">
-            <div class="bar" style="--score:81%"></div>
+          <h2 style="margin-top: 14px;">Reasons Pulse</h2>
+          <p class="muted">Result Reason Panel makes search less magical by showing match fields, review state, and no-go boundaries beside each record.</p>
+          <div class="progress" aria-label="Sprint progress 83 percent">
+            <div class="bar" style="--score:83%"></div>
           </div>
           <div class="metric-grid">
             <div class="metric">
               <span>Current</span>
-              <strong>v1.8.5</strong>
+              <strong>v1.8.7</strong>
             </div>
             <div class="metric">
               <span>Sprint</span>
@@ -128,11 +128,11 @@
             </div>
             <div class="metric">
               <span>Progress</span>
-              <strong>81%</strong>
+              <strong>83%</strong>
             </div>
             <div class="metric">
               <span>Next</span>
-              <strong>Source Filter Bar</strong>
+              <strong>Question Match Preview</strong>
             </div>
           </div>
 
@@ -164,72 +164,72 @@
     </div>
 
     <script type="application/json" id="room-data">{
-  "version": "v1.8.5",
-  "badge": "v1.8.5 search shell",
-  "slug": "betasearchshell",
-  "nav": "Shell",
-  "title": "VedaPath Beta Search Shell",
-  "pageLabel": "Beta search shell",
-  "eyebrow": "Interactive search",
-  "h1": "Let users search the seed without mystery.",
-  "lead": "A first browser-only search shell that reads the static beta seed and shows reviewed status, source family, blocked claims, and fallback boundaries.",
-  "source": "Bhagavad Gita 2.48",
-  "family": "Bhagavad Gita | Smriti",
-  "stance": "Browser-only search shell, not live retrieval.",
-  "progress": 81,
-  "next": "Source Filter Bar",
-  "defaultQuery": "steadiness",
-  "primaryAsk": "Make static beta records searchable while keeping every result visibly prototype and review-needed.",
-  "summary": "Beta Search Shell turns the static seed into a usable beta surface without pretending retrieval or generation is live.",
+  "version": "v1.8.7",
+  "badge": "v1.8.7 reasons",
+  "slug": "resultreasons",
+  "nav": "Reasons",
+  "title": "VedaPath Result Reason Panel",
+  "pageLabel": "Result reasons",
+  "eyebrow": "Match reasons",
+  "h1": "Explain why a result appeared.",
+  "lead": "A result reason panel that shows which field matched the query and why the record is not yet public-answer eligible.",
+  "source": "Rigveda 1.164.46",
+  "family": "Veda | Shruti",
+  "stance": "Reason panel prototype, not semantic ranking.",
+  "progress": 83,
+  "next": "Question Match Preview",
+  "defaultQuery": "category",
+  "primaryAsk": "Make result selection inspectable enough that users can challenge it.",
+  "summary": "Result Reason Panel makes search less magical by showing match fields, review state, and no-go boundaries beside each record.",
   "items": [
     [
-      "Search input",
-      "Keyword search across title, citation, family, summary, and blocked claims.",
-      "Makes the seed usable."
+      "Match field",
+      "Title, source, family, summary, intent, or blocked claim can explain a hit.",
+      "Builds confidence."
     ],
     [
-      "Result cards",
-      "Every result shows source candidate, family, review state, and rights state.",
-      "Keeps trust visible."
+      "Review reason",
+      "Prototype-support and review-needed states are not hidden.",
+      "Keeps humility."
     ],
     [
-      "Prototype mark",
-      "Records remain non-public-answer-eligible until reviewed.",
-      "Prevents overclaim."
+      "Rights reason",
+      "Display-citation-only remains visible.",
+      "Protects text use."
     ],
     [
-      "Empty state",
-      "No result leads to a careful fallback rather than invention.",
-      "Protects the answer path."
+      "No-rank claim",
+      "The UI avoids claiming semantic ranking.",
+      "Keeps scope honest."
     ]
   ],
   "modes": {
     "brief": [
       [
         "Search promise",
-        "Beta Search Shell turns the static seed into a usable beta surface without pretending retrieval or generation is live."
+        "Result Reason Panel makes search less magical by showing match fields, review state, and no-go boundaries beside each record."
       ],
       [
         "Founder move",
-        "Make static beta records searchable while keeping every result visibly prototype and review-needed."
+        "Make result selection inspectable enough that users can challenge it."
       ],
       [
         "Trust move",
-        "Keep this boundary visible: Browser-only search shell, not live retrieval."
+        "Keep this boundary visible: Reason panel prototype, not semantic ranking."
       ]
     ],
     "checklist": [
       [
-        "Search input",
-        "Keyword search across title, citation, family, summary, and blocked claims."
+        "Match field",
+        "Title, source, family, summary, intent, or blocked claim can explain a hit."
       ],
       [
-        "Result cards",
-        "Every result shows source candidate, family, review state, and rights state."
+        "Review reason",
+        "Prototype-support and review-needed states are not hidden."
       ],
       [
-        "Prototype mark",
-        "Records remain non-public-answer-eligible until reviewed."
+        "Rights reason",
+        "Display-citation-only remains visible."
       ]
     ],
     "boundary": [

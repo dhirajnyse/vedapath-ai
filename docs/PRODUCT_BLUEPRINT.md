@@ -186,6 +186,7 @@ It helps users move from curiosity to understanding through:
 <!-- VEDAPATH INTERACTIVE SEARCH SPRINT SUMMARY START -->
 - Beta Search Shell: Beta Search Shell turns the static seed into a usable beta surface without pretending retrieval or generation is live.
 - Source Filter Bar: Source Filter Bar makes search calmer by giving users visible constraints instead of a blank text box.
+- Result Reason Panel: Result Reason Panel makes search less magical by showing match fields, review state, and no-go boundaries beside each record.
 <!-- VEDAPATH INTERACTIVE SEARCH SPRINT SUMMARY END -->
 
 ## What It Is
@@ -2774,6 +2775,21 @@ It should:
 - keep the search browser-only until a real backend is approved
 
 Source Filter Bar should never claim live semantic retrieval, backend storage, live AI generation, reviewed corpus coverage, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 170. Result Reason Panel
+
+Result Reason Panel makes search less magical by showing match fields, review state, and no-go boundaries beside each record.
+
+It should:
+
+- Match field: Title, source, family, summary, intent, or blocked claim can explain a hit.
+- Review reason: Prototype-support and review-needed states are not hidden.
+- Rights reason: Display-citation-only remains visible.
+- No-rank claim: The UI avoids claiming semantic ranking.
+- preserve the boundary: Reason panel prototype, not semantic ranking.
+- keep the search browser-only until a real backend is approved
+
+Result Reason Panel should never claim live semantic retrieval, backend storage, live AI generation, reviewed corpus coverage, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH INTERACTIVE SEARCH SPRINT BLUEPRINT END -->
 
 ## Product Personality
