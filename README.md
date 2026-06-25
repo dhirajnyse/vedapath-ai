@@ -336,6 +336,10 @@ Let us look at the source first.
 - [Beta Implementation Control Room](implementationconsole.html)
 - [Beta Implementation Control Room Notes](docs/BETA_IMPLEMENTATION_CONTROL_ROOM.md)
 <!-- VEDAPATH BETA IMPLEMENTATION SPRINT LINKS END -->
+<!-- VEDAPATH STATIC BETA DATA SPRINT LINKS START -->
+- [Beta Source Seed Pack](betasourcepack.html)
+- [Beta Source Seed Pack Notes](docs/BETA_SOURCE_SEED_PACK.md)
+<!-- VEDAPATH STATIC BETA DATA SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
 - [Calm Compass](compass.html)
@@ -366,7 +370,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v1.7.4` is a trusted MVP prototype plus Beta Implementation Control Room with:
+`v1.7.5` is a trusted MVP prototype plus Beta Source Seed Pack with:
 
 - Ask workspace
 - Source Card
@@ -536,6 +540,9 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Launch Readiness Checklist: Launch Readiness Checklist gives VedaPath a calm gate: no beta until data, trust, consent, and support boundaries are explainable.
 - Beta Implementation Control Room: Beta Implementation Control Room completes the implementation-path sprint and prepares VedaPath for a serious first beta build decision.
 <!-- VEDAPATH BETA IMPLEMENTATION SPRINT FEATURES END -->
+<!-- VEDAPATH STATIC BETA DATA SPRINT FEATURES START -->
+- Beta Source Seed Pack: Beta Source Seed Pack creates the first concrete source inventory for VedaPath's beta data path.
+<!-- VEDAPATH STATIC BETA DATA SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
 - Calm Card Studio with visual card preview, local saved cards, copy text, and PNG export

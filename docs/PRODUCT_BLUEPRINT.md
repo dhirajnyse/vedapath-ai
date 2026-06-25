@@ -171,6 +171,9 @@ It helps users move from curiosity to understanding through:
 - Launch Readiness Checklist: Launch Readiness Checklist gives VedaPath a calm gate: no beta until data, trust, consent, and support boundaries are explainable.
 - Beta Implementation Control Room: Beta Implementation Control Room completes the implementation-path sprint and prepares VedaPath for a serious first beta build decision.
 <!-- VEDAPATH BETA IMPLEMENTATION SPRINT SUMMARY END -->
+<!-- VEDAPATH STATIC BETA DATA SPRINT SUMMARY START -->
+- Beta Source Seed Pack: Beta Source Seed Pack creates the first concrete source inventory for VedaPath's beta data path.
+<!-- VEDAPATH STATIC BETA DATA SPRINT SUMMARY END -->
 
 ## What It Is
 
@@ -2577,6 +2580,22 @@ It should:
 
 Beta Implementation Control Room should never claim production storage, live AI generation, public launch approval, authentication, licensed source text, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH BETA IMPLEMENTATION SPRINT BLUEPRINT END -->
+<!-- VEDAPATH STATIC BETA DATA SPRINT BLUEPRINT START -->
+### 158. Beta Source Seed Pack
+
+Beta Source Seed Pack creates the first concrete source inventory for VedaPath's beta data path.
+
+It should:
+
+- Source record: Citation, family, title, topic tags, and source note.
+- Review state: Prototype, review-needed, rights-needed, or eligible-for-beta.
+- Allowed intents: Lookup, reflection, category check, comparison, or no-answer.
+- Blocked claims: Therapy, ritual authority, science proof, and broad tradition claims.
+- preserve the boundary: Static candidate seed, not verified public corpus coverage.
+- keep source records review-needed until explicitly approved
+
+Beta Source Seed Pack should never claim complete corpus coverage, production storage, live semantic search, live AI generation, public launch approval, therapy, ritual instruction, crisis support, or spiritual authority.
+<!-- VEDAPATH STATIC BETA DATA SPRINT BLUEPRINT END -->
 
 ## Product Personality
 

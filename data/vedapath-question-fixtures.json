@@ -1,0 +1,15 @@
+{
+  "product": "VedaPath AI",
+  "release": "v1.7.5",
+  "status": "question fixture prototype",
+  "fixtures": [
+    {
+      "id": "fixture-betasourcepack",
+      "question": "Start the beta dataset with records that have source identity, review state, allowed intents, and blocked claims.",
+      "expected_route": "source_first_preview",
+      "expected_source_candidate": "Bhagavad Gita 2.48",
+      "expected_boundary": "Static candidate seed, not verified public corpus coverage.",
+      "reviewer_needed": true
+    }
+  ]
+}
