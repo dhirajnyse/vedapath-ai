@@ -106,6 +106,7 @@ It helps users move from curiosity to understanding through:
 - Reviewer Operations Desk: Reviewer Operations Desk turns expert help into scoped tasks, visible decision states, and calm release lanes.
 - Public Trust Center: Public Trust Center gives users one plain place to inspect VedaPath's boundaries, source method, privacy posture, and correction path.
 - First Answer Flow: First Answer Flow makes VedaPath's public entry tangible: ask, see source, read clearly, notice boundary, and continue gently.
+- Return Rhythm Engine: Return Rhythm Engine turns retention into a respectful rhythm: source curiosity, small practice, and user-controlled reminders.
 <!-- VEDAPATH PRODUCTIZATION SPRINT SUMMARY END -->
 
 ## What It Is
@@ -1697,6 +1698,21 @@ It should:
 - produce a copyable public-productization handoff
 
 First Answer Flow should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 104. Return Rhythm Engine
+
+Return Rhythm Engine turns retention into a respectful rhythm: source curiosity, small practice, and user-controlled reminders.
+
+It should:
+
+- Open path: Resume a saved source, question, or reflection.
+- Daily source: One source-backed prompt with explicit category.
+- Frequency: User chooses daily, weekly, paused, or none.
+- No pressure: No guilt streaks, distress inference, or urgency copy.
+- preserve the boundary: Retention design, not behavioral profiling.
+- produce a copyable public-productization handoff
+
+Return Rhythm Engine should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH PRODUCTIZATION SPRINT BLUEPRINT END -->
 
 ## Product Personality

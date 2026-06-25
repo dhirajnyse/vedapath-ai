@@ -217,6 +217,8 @@ Let us look at the source first.
 - [Public Trust Center Notes](docs/PUBLIC_TRUST_CENTER.md)
 - [First Answer Flow](firstanswer.html)
 - [First Answer Flow Notes](docs/FIRST_ANSWER_FLOW.md)
+- [Return Rhythm Engine](returnengine.html)
+- [Return Rhythm Engine Notes](docs/RETURN_RHYTHM_ENGINE.md)
 <!-- VEDAPATH PRODUCTIZATION SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -248,7 +250,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v1.2.0` is a trusted MVP prototype plus First Answer Flow with:
+`v1.2.1` is a trusted MVP prototype plus Return Rhythm Engine with:
 
 - Ask workspace
 - Source Card
@@ -353,6 +355,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Reviewer Operations Desk: Reviewer Operations Desk turns expert help into scoped tasks, visible decision states, and calm release lanes.
 - Public Trust Center: Public Trust Center gives users one plain place to inspect VedaPath's boundaries, source method, privacy posture, and correction path.
 - First Answer Flow: First Answer Flow makes VedaPath's public entry tangible: ask, see source, read clearly, notice boundary, and continue gently.
+- Return Rhythm Engine: Return Rhythm Engine turns retention into a respectful rhythm: source curiosity, small practice, and user-controlled reminders.
 <!-- VEDAPATH PRODUCTIZATION SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
