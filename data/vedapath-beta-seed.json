@@ -1,6 +1,6 @@
 {
   "product": "VedaPath AI",
-  "release": "v1.8.3",
+  "release": "v1.8.4",
   "status": "static beta seed prototype",
   "warning": "Prototype data only. Records are not public answer eligible until reviewed.",
   "records": [
@@ -211,7 +211,7 @@
       "title": "Beta Seed Review Pack",
       "source_candidate": "Bhagavad Gita 4.34",
       "text_family": "Bhagavad Gita | Smriti",
-      "status": "active-prototype",
+      "status": "prototype-support",
       "public_answer_eligible": false,
       "review_state": "review-needed",
       "rights_state": "display-citation-only",
@@ -228,6 +228,31 @@
       ],
       "boundary": "Review handoff demo, not scholar endorsement.",
       "summary": "Beta Seed Review Pack turns the static beta dataset into a human-readable handoff for source, language, rights, and boundary review."
+    },
+    {
+      "id": "vp-v1-8-4-datasetconsole",
+      "release": "v1.8.4",
+      "slug": "datasetconsole",
+      "title": "Static Beta Dataset Control Room",
+      "source_candidate": "Bhagavad Gita 18.63",
+      "text_family": "Bhagavad Gita | Smriti",
+      "status": "active-prototype",
+      "public_answer_eligible": false,
+      "review_state": "review-needed",
+      "rights_state": "display-citation-only",
+      "allowed_intents": [
+        "source_lookup",
+        "category_check",
+        "reflection_preview"
+      ],
+      "blocked_claims": [
+        "therapy",
+        "ritual_authority",
+        "science_proof",
+        "complete_corpus_coverage"
+      ],
+      "boundary": "Static beta dataset control, not production corpus launch.",
+      "summary": "Static Beta Dataset Control Room completes the static beta data sprint and gives VedaPath a real seed-data path toward beta."
     }
   ]
 }

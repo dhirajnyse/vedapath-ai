@@ -355,6 +355,8 @@ Let us look at the source first.
 - [Beta Data Quality Console Notes](docs/BETA_DATA_QUALITY_CONSOLE.md)
 - [Beta Seed Review Pack](seedreview.html)
 - [Beta Seed Review Pack Notes](docs/BETA_SEED_REVIEW_PACK.md)
+- [Static Beta Dataset Control Room](datasetconsole.html)
+- [Static Beta Dataset Control Room Notes](docs/STATIC_BETA_DATASET_CONTROL_ROOM.md)
 <!-- VEDAPATH STATIC BETA DATA SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -386,7 +388,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v1.8.3` is a trusted MVP prototype plus Beta Seed Review Pack with:
+`v1.8.4` is a trusted MVP prototype plus Static Beta Dataset Control Room with:
 
 - Ask workspace
 - Source Card
@@ -566,6 +568,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Static Answer Preview Lab: Static Answer Preview Lab makes the beta answer path tangible without pretending generation or broad retrieval is live.
 - Beta Data Quality Console: Beta Data Quality Console turns invisible source-data risk into plain checks a founder or reviewer can inspect.
 - Beta Seed Review Pack: Beta Seed Review Pack turns the static beta dataset into a human-readable handoff for source, language, rights, and boundary review.
+- Static Beta Dataset Control Room: Static Beta Dataset Control Room completes the static beta data sprint and gives VedaPath a real seed-data path toward beta.
 <!-- VEDAPATH STATIC BETA DATA SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff

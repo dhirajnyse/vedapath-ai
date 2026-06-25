@@ -1,6 +1,6 @@
 {
   "product": "VedaPath AI",
-  "release": "v1.8.3",
+  "release": "v1.8.4",
   "status": "question fixture prototype",
   "fixtures": [
     {
@@ -73,6 +73,14 @@
       "expected_route": "source_first_preview",
       "expected_source_candidate": "Bhagavad Gita 4.34",
       "expected_boundary": "Review handoff demo, not scholar endorsement.",
+      "reviewer_needed": true
+    },
+    {
+      "id": "fixture-datasetconsole",
+      "question": "Choose whether the next sprint turns the static seed into an interactive beta search page, reviewer workflow, or hosted backend.",
+      "expected_route": "source_first_preview",
+      "expected_source_candidate": "Bhagavad Gita 18.63",
+      "expected_boundary": "Static beta dataset control, not production corpus launch.",
       "reviewer_needed": true
     }
   ]

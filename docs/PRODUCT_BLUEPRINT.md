@@ -181,6 +181,7 @@ It helps users move from curiosity to understanding through:
 - Static Answer Preview Lab: Static Answer Preview Lab makes the beta answer path tangible without pretending generation or broad retrieval is live.
 - Beta Data Quality Console: Beta Data Quality Console turns invisible source-data risk into plain checks a founder or reviewer can inspect.
 - Beta Seed Review Pack: Beta Seed Review Pack turns the static beta dataset into a human-readable handoff for source, language, rights, and boundary review.
+- Static Beta Dataset Control Room: Static Beta Dataset Control Room completes the static beta data sprint and gives VedaPath a real seed-data path toward beta.
 <!-- VEDAPATH STATIC BETA DATA SPRINT SUMMARY END -->
 
 ## What It Is
@@ -2723,6 +2724,21 @@ It should:
 - keep source records review-needed until explicitly approved
 
 Beta Seed Review Pack should never claim complete corpus coverage, production storage, live semantic search, live AI generation, public launch approval, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 167. Static Beta Dataset Control Room
+
+Static Beta Dataset Control Room completes the static beta data sprint and gives VedaPath a real seed-data path toward beta.
+
+It should:
+
+- Data path: Seed records, topic map, category matrix, and quality checks.
+- Question path: Fixtures, fallbacks, static search, and answer preview.
+- Review path: Seed review pack and open decisions.
+- Next path: Interactive search, reviewer workflow, or hosted backend.
+- preserve the boundary: Static beta dataset control, not production corpus launch.
+- keep source records review-needed until explicitly approved
+
+Static Beta Dataset Control Room should never claim complete corpus coverage, production storage, live semantic search, live AI generation, public launch approval, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH STATIC BETA DATA SPRINT BLUEPRINT END -->
 
 ## Product Personality
