@@ -102,6 +102,7 @@ It helps users move from curiosity to understanding through:
 <!-- VEDAPATH PRODUCTIZATION SPRINT SUMMARY START -->
 - Source Service Sandbox: Source Service Sandbox gives VedaPath a narrow first implementation lane: one query, one candidate set, one eligibility decision, and one safe fallback.
 - Answer Preview Workbench: Answer Preview Workbench turns VedaPath's source-first doctrine into a simple answer card users can scan without losing depth.
+- Consent Memory Vault: Consent Memory Vault makes future personalization explicit: remembered only with purpose, permission, export, delete, and pause.
 <!-- VEDAPATH PRODUCTIZATION SPRINT SUMMARY END -->
 
 ## What It Is
@@ -1633,6 +1634,21 @@ It should:
 - produce a copyable public-productization handoff
 
 Answer Preview Workbench should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 100. Consent Memory Vault
+
+Consent Memory Vault makes future personalization explicit: remembered only with purpose, permission, export, delete, and pause.
+
+It should:
+
+- Remember: Saved source paths, reading preferences, and consented learning goals.
+- Stay local: Private reflections, sensitive moments, and raw calm notes.
+- Control: Export, delete, pause sync, clear device, and revoke grant.
+- Blocked: No distress, identity, family conflict, or health inference.
+- preserve the boundary: Consent model, not production storage.
+- produce a copyable public-productization handoff
+
+Consent Memory Vault should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH PRODUCTIZATION SPRINT BLUEPRINT END -->
 
 ## Product Personality

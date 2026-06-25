@@ -1,4 +1,4 @@
-# v1.1.6 Prototype Notes
+# v1.1.7 Prototype Notes
 
 The v0.7.4 release turns the VedaPath AI homepage into a trusted MVP prototype with calm, practice, source-library, source-seeds, retrieval, passage-review, evaluation, evaluation-dashboard, reviewer-queue, source-policy, trust-ledger, life-map, calm-circle, consent-gate, memory-gate, trust-model, calm-passport, backend-schema, schema-fixtures, evaluation-drill, learning-loop, sanskrit-lens, voice-boundary, scholar-review, launch-gate, production-bridge, source-storage, reviewer-access, public-feedback, launch-story, source-path, calm-compass, calm-card, source-bell, before-reply, samvada, sankalpa, seva, morning, evening, and rhythm surfaces.
 
@@ -105,6 +105,7 @@ The v0.7.4 release turns the VedaPath AI homepage into a trusted MVP prototype w
 <!-- VEDAPATH PRODUCTIZATION SPRINT NOTES START -->
 - Source Service Sandbox: Source Service Sandbox gives VedaPath a narrow first implementation lane: one query, one candidate set, one eligibility decision, and one safe fallback.
 - Answer Preview Workbench: Answer Preview Workbench turns VedaPath's source-first doctrine into a simple answer card users can scan without losing depth.
+- Consent Memory Vault: Consent Memory Vault makes future personalization explicit: remembered only with purpose, permission, export, delete, and pause.
 <!-- VEDAPATH PRODUCTIZATION SPRINT NOTES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff

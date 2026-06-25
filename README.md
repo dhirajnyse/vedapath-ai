@@ -209,6 +209,8 @@ Let us look at the source first.
 - [Source Service Sandbox Notes](docs/SOURCE_SERVICE_SANDBOX.md)
 - [Answer Preview Workbench](answerpreview.html)
 - [Answer Preview Workbench Notes](docs/ANSWER_PREVIEW_WORKBENCH.md)
+- [Consent Memory Vault](memoryvault.html)
+- [Consent Memory Vault Notes](docs/CONSENT_MEMORY_VAULT.md)
 <!-- VEDAPATH PRODUCTIZATION SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -240,7 +242,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v1.1.6` is a trusted MVP prototype plus Answer Preview Workbench with:
+`v1.1.7` is a trusted MVP prototype plus Consent Memory Vault with:
 
 - Ask workspace
 - Source Card
@@ -341,6 +343,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 <!-- VEDAPATH PRODUCTIZATION SPRINT FEATURES START -->
 - Source Service Sandbox: Source Service Sandbox gives VedaPath a narrow first implementation lane: one query, one candidate set, one eligibility decision, and one safe fallback.
 - Answer Preview Workbench: Answer Preview Workbench turns VedaPath's source-first doctrine into a simple answer card users can scan without losing depth.
+- Consent Memory Vault: Consent Memory Vault makes future personalization explicit: remembered only with purpose, permission, export, delete, and pause.
 <!-- VEDAPATH PRODUCTIZATION SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
