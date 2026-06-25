@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>VedaPath Source Service Sandbox</title>
+    <title>VedaPath Reviewer Operations Desk</title>
     <link rel="stylesheet" href="assets/vedapath-sprint.css">
   </head>
   <body>
@@ -13,7 +13,7 @@
           <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
           <div>
             <strong>VedaPath AI</strong>
-            <span>Source service sandbox</span>
+            <span>Reviewer operations desk</span>
           </div>
         </a>
         <nav class="nav" aria-label="Project links">
@@ -24,16 +24,16 @@
           <a class="link" href="calm.html">Calm</a>
           <a class="link" href="practice.html">Practice</a>
           <!-- VEDAPATH PRODUCTIZATION SPRINT NAV START -->
-          <a class="link active" href="sourcesvc.html">Source Svc</a>
+          <a class="link" href="sourcesvc.html">Source Svc</a>
           <a class="link" href="answerpreview.html">Answer Lab</a>
           <a class="link" href="memoryvault.html">Memory</a>
-          <a class="link" href="reviewdesk.html">Review Desk</a>
+          <a class="link active" href="reviewdesk.html">Review Desk</a>
           <!-- VEDAPATH PRODUCTIZATION SPRINT NAV END -->
           <span class="version">v1.1.8 review desk</span>
         </nav>
       </header>
 
-      <main class="workspace" aria-label="VedaPath Source Service Sandbox workspace">
+      <main class="workspace" aria-label="VedaPath Reviewer Operations Desk workspace">
         <aside class="panel">
           <span class="eyebrow">Public productization sprint</span>
           <h2>Release Rooms</h2>
@@ -44,23 +44,23 @@
         <section class="panel">
           <div class="hero-grid">
             <div>
-              <span class="eyebrow">Backend lane preview</span>
-              <h1>Make the source service visible before it is live.</h1>
-              <p class="muted">A clickable sandbox for query shape, source eligibility, reviewer state, rights status, and no-source responses before production backend work begins.</p>
+              <span class="eyebrow">Human review operations</span>
+              <h1>Turn review into a daily operating desk.</h1>
+              <p class="muted">A reviewer operations surface for source checks, language notes, boundary decisions, rights holds, escalation, and release readiness.</p>
             </div>
             <div class="mark-stage">
-              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Source Svc logo">
+              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Review Desk logo">
             </div>
           </div>
 
           <div class="source-block" aria-label="Release source card">
             <div>
               <span class="source-meta">Release</span>
-              <span class="source-value">v1.1.5</span>
+              <span class="source-value">v1.1.8</span>
             </div>
             <div>
               <span class="source-meta">Source candidate</span>
-              <span class="source-value">Mundaka Upanishad 1.1.4</span>
+              <span class="source-value">Taittiriya Upanishad 1.11.1</span>
             </div>
             <div>
               <span class="source-meta">Text family</span>
@@ -68,14 +68,14 @@
             </div>
             <div>
               <span class="source-meta">Boundary</span>
-              <span class="source-value">Service sandbox, not a live API.</span>
+              <span class="source-value">Operations prototype, not reviewer endorsement.</span>
             </div>
           </div>
 
           <h2>Decision Signals</h2>
           <div class="item-list" id="itemList"></div>
 
-          <div class="tabs" role="tablist" aria-label="VedaPath Source Service Sandbox layers">
+          <div class="tabs" role="tablist" aria-label="VedaPath Reviewer Operations Desk layers">
             <button class="tab active" type="button" data-mode="brief">Brief</button>
             <button class="tab" type="button" data-mode="checklist">Checklist</button>
             <button class="tab" type="button" data-mode="boundary">Boundary</button>
@@ -89,20 +89,20 @@
             <button class="button" id="copyBoundary" type="button">Copy Boundary</button>
           </div>
 
-          <textarea id="output" readonly aria-label="VedaPath Source Service Sandbox output"></textarea>
+          <textarea id="output" readonly aria-label="VedaPath Reviewer Operations Desk output"></textarea>
         </section>
 
-        <aside class="panel tight" aria-label="VedaPath Source Service Sandbox sprint rail">
+        <aside class="panel tight" aria-label="VedaPath Reviewer Operations Desk sprint rail">
           <span class="badge green">Public productization</span>
-          <h2 style="margin-top: 14px;">Source Svc Pulse</h2>
-          <p class="muted">Source Service Sandbox gives VedaPath a narrow first implementation lane: one query, one candidate set, one eligibility decision, and one safe fallback.</p>
-          <div class="progress" aria-label="Sprint progress 91 percent">
-            <div class="bar" style="--score:91%"></div>
+          <h2 style="margin-top: 14px;">Review Desk Pulse</h2>
+          <p class="muted">Reviewer Operations Desk turns expert help into scoped tasks, visible decision states, and calm release lanes.</p>
+          <div class="progress" aria-label="Sprint progress 94 percent">
+            <div class="bar" style="--score:94%"></div>
           </div>
           <div class="metric-grid">
             <div class="metric">
               <span>Current</span>
-              <strong>v1.1.5</strong>
+              <strong>v1.1.8</strong>
             </div>
             <div class="metric">
               <span>Sprint</span>
@@ -110,11 +110,11 @@
             </div>
             <div class="metric">
               <span>Progress</span>
-              <strong>91%</strong>
+              <strong>94%</strong>
             </div>
             <div class="metric">
               <span>Next</span>
-              <strong>Answer Preview Workbench</strong>
+              <strong>Public Trust Center</strong>
             </div>
           </div>
 
@@ -146,85 +146,85 @@
     </div>
 
     <script type="application/json" id="room-data">{
-  "version": "v1.1.5",
-  "badge": "v1.1.5 source svc",
-  "slug": "sourcesvc",
-  "nav": "Source Svc",
-  "title": "VedaPath Source Service Sandbox",
-  "pageLabel": "Source service sandbox",
-  "eyebrow": "Backend lane preview",
-  "h1": "Make the source service visible before it is live.",
-  "lead": "A clickable sandbox for query shape, source eligibility, reviewer state, rights status, and no-source responses before production backend work begins.",
-  "source": "Mundaka Upanishad 1.1.4",
+  "version": "v1.1.8",
+  "badge": "v1.1.8 review desk",
+  "slug": "reviewdesk",
+  "nav": "Review Desk",
+  "title": "VedaPath Reviewer Operations Desk",
+  "pageLabel": "Reviewer operations desk",
+  "eyebrow": "Human review operations",
+  "h1": "Turn review into a daily operating desk.",
+  "lead": "A reviewer operations surface for source checks, language notes, boundary decisions, rights holds, escalation, and release readiness.",
+  "source": "Taittiriya Upanishad 1.11.1",
   "family": "Upanishad | Shruti",
-  "stance": "Service sandbox, not a live API.",
-  "progress": 91,
-  "next": "Answer Preview Workbench",
-  "primaryAsk": "Freeze the public source-service contract before writing production retrieval code.",
-  "summary": "Source Service Sandbox gives VedaPath a narrow first implementation lane: one query, one candidate set, one eligibility decision, and one safe fallback.",
+  "stance": "Operations prototype, not reviewer endorsement.",
+  "progress": 94,
+  "next": "Public Trust Center",
+  "primaryAsk": "Define the reviewer desk that keeps public answers release-ready.",
+  "summary": "Reviewer Operations Desk turns expert help into scoped tasks, visible decision states, and calm release lanes.",
   "items": [
     [
-      "Query contract",
-      "Question text, source family hint, depth, language, and safety context.",
-      "Keeps input shape small."
+      "Task lanes",
+      "Source, Sanskrit, translation, boundary, rights, and product review.",
+      "Separates responsibility."
     ],
     [
-      "Eligibility state",
-      "Ready, hold, blocked, rights-needed, reviewer-needed, or no-source.",
-      "Stops false confidence early."
+      "Decision states",
+      "Approve, hold, request evidence, block, retire, or escalate.",
+      "Keeps review precise."
     ],
     [
-      "Response reason",
-      "Match reason, missing fields, and public-display allowance.",
-      "Makes retrieval explainable."
+      "Daily rhythm",
+      "Triage new gaps, close safe records, and pause risky ones.",
+      "Makes review sustainable."
     ],
     [
-      "Fallback",
-      "No-source and analogy-only answers get careful boundaries.",
-      "Protects the user's trust."
+      "Audit note",
+      "Record what changed and why without public identity leakage.",
+      "Keeps trust traceable."
     ]
   ],
   "modes": {
     "brief": [
       [
-        "Build promise",
-        "The backend should first make source state visible, not clever."
+        "Review promise",
+        "Review should be work the team can operate, not a vague badge."
       ],
       [
-        "UX move",
-        "Show eligibility and match reason beside the answer."
+        "Ops move",
+        "Give each reviewer one lane and one decision shape."
       ],
       [
-        "Engineering move",
-        "Return no-source as a product state, not as an error."
+        "Trust move",
+        "Publish review state, not private reviewer details."
       ]
     ],
     "checklist": [
       [
-        "Small",
-        "Can one endpoint answer one source lookup clearly?"
+        "Scoped",
+        "Is the review lane narrow?"
       ],
       [
-        "Gated",
-        "Can it block hold and rights-needed records?"
+        "Audited",
+        "Can the decision be traced later?"
       ],
       [
-        "Readable",
-        "Can a non-engineer understand why the answer was allowed?"
+        "Respectful",
+        "Is reviewer identity protected unless consented?"
       ]
     ],
     "boundary": [
       [
-        "No live claim",
-        "Do not call this a deployed API."
+        "No blanket endorsement",
+        "Do not make one review imply all-tradition approval."
       ],
       [
-        "No hidden confidence",
-        "Do not let the answer layer invent confidence."
+        "No public pressure",
+        "Do not expose reviewers as marketing proof."
       ],
       [
-        "No rights bypass",
-        "Do not display restricted translation or audio fields."
+        "No ignored holds",
+        "Do not ship records with unresolved hold states."
       ]
     ]
   },

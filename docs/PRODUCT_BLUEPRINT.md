@@ -103,6 +103,7 @@ It helps users move from curiosity to understanding through:
 - Source Service Sandbox: Source Service Sandbox gives VedaPath a narrow first implementation lane: one query, one candidate set, one eligibility decision, and one safe fallback.
 - Answer Preview Workbench: Answer Preview Workbench turns VedaPath's source-first doctrine into a simple answer card users can scan without losing depth.
 - Consent Memory Vault: Consent Memory Vault makes future personalization explicit: remembered only with purpose, permission, export, delete, and pause.
+- Reviewer Operations Desk: Reviewer Operations Desk turns expert help into scoped tasks, visible decision states, and calm release lanes.
 <!-- VEDAPATH PRODUCTIZATION SPRINT SUMMARY END -->
 
 ## What It Is
@@ -1649,6 +1650,21 @@ It should:
 - produce a copyable public-productization handoff
 
 Consent Memory Vault should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 101. Reviewer Operations Desk
+
+Reviewer Operations Desk turns expert help into scoped tasks, visible decision states, and calm release lanes.
+
+It should:
+
+- Task lanes: Source, Sanskrit, translation, boundary, rights, and product review.
+- Decision states: Approve, hold, request evidence, block, retire, or escalate.
+- Daily rhythm: Triage new gaps, close safe records, and pause risky ones.
+- Audit note: Record what changed and why without public identity leakage.
+- preserve the boundary: Operations prototype, not reviewer endorsement.
+- produce a copyable public-productization handoff
+
+Reviewer Operations Desk should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH PRODUCTIZATION SPRINT BLUEPRINT END -->
 
 ## Product Personality
