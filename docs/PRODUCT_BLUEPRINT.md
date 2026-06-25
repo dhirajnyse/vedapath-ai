@@ -82,6 +82,7 @@ It helps users move from curiosity to understanding through:
 - Review Trail: Review Trail makes source and boundary decisions auditable without turning reviewer participation into broad endorsement.
 - Boundary Safety QA: Boundary Safety QA turns VedaPath's humility into testable refusal and caution checks.
 - Pilot Launch Room: Pilot Launch Room defines a small beta launch with audience, promise, source scope, feedback path, and stop conditions.
+- Feedback Triage Lab: Feedback Triage Lab turns beta reactions into actionable queues while blocking sensitive private intake.
 <!-- VEDAPATH READINESS SPRINT SUMMARY END -->
 
 ## What It Is
@@ -1371,6 +1372,21 @@ It should:
 - produce a copyable launch-readiness handoff
 
 Pilot Launch Room should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 84. Feedback Triage Lab
+
+Feedback Triage Lab turns beta reactions into actionable queues while blocking sensitive private intake.
+
+It should:
+
+- Source issue: Wrong source, vague citation, translation concern, or category confusion.
+- UX friction: Confusing path, too much text, unclear action, or mobile issue.
+- Privacy concern: Memory, account, export, delete, or student-use question.
+- Reviewer offer: Someone wants to help source or language review.
+- preserve the boundary: Feedback triage, not private counseling.
+- produce a copyable launch-readiness handoff
+
+Feedback Triage Lab should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH READINESS SPRINT BLUEPRINT END -->
 
 ## Product Personality

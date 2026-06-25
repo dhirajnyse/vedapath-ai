@@ -173,6 +173,8 @@ Let us look at the source first.
 - [Boundary Safety QA Notes](docs/BOUNDARY_SAFETY_QA.md)
 - [Pilot Launch Room](pilot.html)
 - [Pilot Launch Room Notes](docs/PILOT_LAUNCH_ROOM.md)
+- [Feedback Triage Lab](triage.html)
+- [Feedback Triage Lab Notes](docs/FEEDBACK_TRIAGE_LAB.md)
 <!-- VEDAPATH READINESS SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -204,7 +206,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v1.0.0` is a trusted MVP prototype plus Pilot Launch Room with:
+`v1.0.1` is a trusted MVP prototype plus Feedback Triage Lab with:
 
 - Ask workspace
 - Source Card
@@ -285,6 +287,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Review Trail: Review Trail makes source and boundary decisions auditable without turning reviewer participation into broad endorsement.
 - Boundary Safety QA: Boundary Safety QA turns VedaPath's humility into testable refusal and caution checks.
 - Pilot Launch Room: Pilot Launch Room defines a small beta launch with audience, promise, source scope, feedback path, and stop conditions.
+- Feedback Triage Lab: Feedback Triage Lab turns beta reactions into actionable queues while blocking sensitive private intake.
 <!-- VEDAPATH READINESS SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
