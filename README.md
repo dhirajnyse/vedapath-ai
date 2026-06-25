@@ -127,6 +127,8 @@ Let us look at the source first.
 - [Reflection Journal Prototype Notes](docs/REFLECTION_JOURNAL_PROTOTYPE.md)
 - [Family Calm Mode](family.html)
 - [Family Calm Mode Notes](docs/FAMILY_CALM_MODE.md)
+- [Workplace Steadiness Mode](work.html)
+- [Workplace Steadiness Mode Notes](docs/WORKPLACE_STEADINESS_MODE.md)
 <!-- VEDAPATH PERSONAL SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -158,7 +160,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v0.7.9` is a trusted MVP prototype plus Family Calm Mode with:
+`v0.8.0` is a trusted MVP prototype plus Workplace Steadiness Mode with:
 
 - Ask workspace
 - Source Card
@@ -214,6 +216,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Source Journey Map: Source Journey Map makes the learning path visible so users understand how VedaPath moves from curiosity to cited clarity.
 - Reflection Journal Prototype: Reflection Journal Prototype gives daily calm a private writing surface without turning personal notes into hidden product data.
 - Family Calm Mode: Family Calm Mode helps a household slow one conversation without storing private conflict or acting as a counselor.
+- Workplace Steadiness Mode: Workplace Steadiness Mode translates calm into practical work moments without pretending to manage careers or mental health.
 <!-- VEDAPATH PERSONAL SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff

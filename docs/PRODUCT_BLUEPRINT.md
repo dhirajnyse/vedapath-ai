@@ -57,6 +57,7 @@ It helps users move from curiosity to understanding through:
 - Source Journey Map: Source Journey Map makes the learning path visible so users understand how VedaPath moves from curiosity to cited clarity.
 - Reflection Journal Prototype: Reflection Journal Prototype gives daily calm a private writing surface without turning personal notes into hidden product data.
 - Family Calm Mode: Family Calm Mode helps a household slow one conversation without storing private conflict or acting as a counselor.
+- Workplace Steadiness Mode: Workplace Steadiness Mode translates calm into practical work moments without pretending to manage careers or mental health.
 <!-- VEDAPATH PERSONAL SPRINT SUMMARY END -->
 
 ## What It Is
@@ -1029,6 +1030,21 @@ It should:
 - produce a copyable founder handoff
 
 Family Calm Mode should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 63. Workplace Steadiness Mode
+
+Workplace Steadiness Mode translates calm into practical work moments without pretending to manage careers or mental health.
+
+It should:
+
+- Meeting: Prepare one clear intention.
+- Message: Pause before reply.
+- Deadline: Choose the next concrete action.
+- Conflict: Separate facts, meaning, and next step.
+- preserve the boundary: Work support, not performance coaching.
+- produce a copyable founder handoff
+
+Workplace Steadiness Mode should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH PERSONAL SPRINT BLUEPRINT END -->
 
 ## Product Personality
