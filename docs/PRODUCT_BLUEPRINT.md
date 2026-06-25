@@ -108,6 +108,7 @@ It helps users move from curiosity to understanding through:
 - First Answer Flow: First Answer Flow makes VedaPath's public entry tangible: ask, see source, read clearly, notice boundary, and continue gently.
 - Return Rhythm Engine: Return Rhythm Engine turns retention into a respectful rhythm: source curiosity, small practice, and user-controlled reminders.
 - Scholar Invitation Room: Scholar Invitation Room helps VedaPath ask for help with humility: clear scope, cited evidence, time respect, and consented public credit.
+- Founder Launch Pipeline: Founder Launch Pipeline gathers the practical public-launch lanes into one calm decision board for the founder.
 <!-- VEDAPATH PRODUCTIZATION SPRINT SUMMARY END -->
 
 ## What It Is
@@ -1729,6 +1730,21 @@ It should:
 - produce a copyable public-productization handoff
 
 Scholar Invitation Room should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 106. Founder Launch Pipeline
+
+Founder Launch Pipeline gathers the practical public-launch lanes into one calm decision board for the founder.
+
+It should:
+
+- Source pack: Which questions and passages are ready for public beta.
+- Quality gate: Eval pass, reviewer state, boundary checks, and no-go cases.
+- User controls: Consent, export, delete, pause, and feedback routes.
+- Launch hold: What blocks release and who can pause it.
+- preserve the boundary: Launch pipeline, not launch approval.
+- produce a copyable public-productization handoff
+
+Founder Launch Pipeline should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH PRODUCTIZATION SPRINT BLUEPRINT END -->
 
 ## Product Personality
