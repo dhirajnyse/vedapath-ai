@@ -197,6 +197,7 @@ It helps users move from curiosity to understanding through:
 <!-- VEDAPATH INTERACTIVE SEARCH SPRINT SUMMARY END -->
 <!-- VEDAPATH GUIDED READER SPRINT SUMMARY START -->
 - Source Reader Shell: Source Reader Shell gives VedaPath the first calm reading surface after beta search.
+- Passage Focus Lens: Passage Focus Lens makes the reader feel simple by anchoring every action to one chosen passage.
 <!-- VEDAPATH GUIDED READER SPRINT SUMMARY END -->
 
 ## What It Is
@@ -2921,6 +2922,21 @@ It should:
 - keep the reader prototype browser-only until reviewed content, accounts, or backend storage are approved
 
 Source Reader Shell should never claim final commentary, full scripture text, translation rights, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
+
+### 179. Passage Focus Lens
+
+Passage Focus Lens makes the reader feel simple by anchoring every action to one chosen passage.
+
+It should:
+
+- Stable selection: The selected passage remains visible across modes.
+- Category cue: The source family and category are never hidden.
+- Level cue: Beginner, learner, or decision-point mode is explicit.
+- Focus warning: The UI says what the lens cannot conclude.
+- preserve the boundary: Focus lens, not final interpretation.
+- keep the reader prototype browser-only until reviewed content, accounts, or backend storage are approved
+
+Passage Focus Lens should never claim final commentary, full scripture text, translation rights, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
 <!-- VEDAPATH GUIDED READER SPRINT BLUEPRINT END -->
 
 ## Product Personality
