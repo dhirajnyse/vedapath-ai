@@ -253,6 +253,8 @@ Let us look at the source first.
 - [Source JSON Contract Notes](docs/SOURCE_JSON_CONTRACT.md)
 - [Answer Renderer Shell](answerrenderer.html)
 - [Answer Renderer Shell Notes](docs/ANSWER_RENDERER_SHELL.md)
+- [Beta Waitlist Room](betawaitlist.html)
+- [Beta Waitlist Room Notes](docs/BETA_WAITLIST_ROOM.md)
 <!-- VEDAPATH IMPLEMENTATION SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -284,7 +286,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v1.3.6` is a trusted MVP prototype plus Answer Renderer Shell with:
+`v1.3.7` is a trusted MVP prototype plus Beta Waitlist Room with:
 
 - Ask workspace
 - Source Card
@@ -409,6 +411,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 <!-- VEDAPATH IMPLEMENTATION SPRINT FEATURES START -->
 - Source JSON Contract: Source JSON Contract gives VedaPath a stable source-record shape that future retrieval, review, and answer rendering can share.
 - Answer Renderer Shell: Answer Renderer Shell separates presentation from generation so every answer shows source, confidence, and boundary consistently.
+- Beta Waitlist Room: Beta Waitlist Room turns launch excitement into a careful intake path that respects user expectation and product limits.
 <!-- VEDAPATH IMPLEMENTATION SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff

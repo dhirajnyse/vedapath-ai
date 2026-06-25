@@ -126,6 +126,7 @@ It helps users move from curiosity to understanding through:
 <!-- VEDAPATH IMPLEMENTATION SPRINT SUMMARY START -->
 - Source JSON Contract: Source JSON Contract gives VedaPath a stable source-record shape that future retrieval, review, and answer rendering can share.
 - Answer Renderer Shell: Answer Renderer Shell separates presentation from generation so every answer shows source, confidence, and boundary consistently.
+- Beta Waitlist Room: Beta Waitlist Room turns launch excitement into a careful intake path that respects user expectation and product limits.
 <!-- VEDAPATH IMPLEMENTATION SPRINT SUMMARY END -->
 
 ## What It Is
@@ -1959,6 +1960,21 @@ It should:
 - produce a copyable implementation-readiness handoff
 
 Answer Renderer Shell should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 120. Beta Waitlist Room
+
+Beta Waitlist Room turns launch excitement into a careful intake path that respects user expectation and product limits.
+
+It should:
+
+- Audience: Learner, teacher, parent, reviewer, creator, or calm seeker.
+- Interest: Ask, learn, calm, teach, review, or build with sources.
+- Consent: Email permission, feedback permission, and privacy boundary.
+- Hold state: Beta access waits until source scope and support routes are ready.
+- preserve the boundary: Waitlist prototype, not live signup.
+- produce a copyable implementation-readiness handoff
+
+Beta Waitlist Room should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH IMPLEMENTATION SPRINT BLUEPRINT END -->
 
 ## Product Personality
