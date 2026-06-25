@@ -1,6 +1,6 @@
 {
   "product": "VedaPath AI",
-  "release": "v1.7.6",
+  "release": "v1.7.7",
   "status": "question fixture prototype",
   "fixtures": [
     {
@@ -17,6 +17,14 @@
       "expected_route": "source_first_preview",
       "expected_source_candidate": "Bhagavad Gita 2.47",
       "expected_boundary": "Question fixture demo, not production evaluation coverage.",
+      "reviewer_needed": true
+    },
+    {
+      "id": "fixture-topicmap",
+      "question": "Keep the beta narrow enough that source coverage, review, and user expectations stay aligned.",
+      "expected_route": "source_first_preview",
+      "expected_source_candidate": "Mundaka Upanishad 1.1.4",
+      "expected_boundary": "Topic map prototype, not full tradition taxonomy.",
       "reviewer_needed": true
     }
   ]

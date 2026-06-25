@@ -174,6 +174,7 @@ It helps users move from curiosity to understanding through:
 <!-- VEDAPATH STATIC BETA DATA SPRINT SUMMARY START -->
 - Beta Source Seed Pack: Beta Source Seed Pack creates the first concrete source inventory for VedaPath's beta data path.
 - Question Fixture Set: Question Fixture Set gives VedaPath a repeatable way to test whether source routing and answer boundaries are improving.
+- Beta Topic Map Board: Beta Topic Map Board prevents VedaPath from drifting into broad coverage before its first trusted lanes are ready.
 <!-- VEDAPATH STATIC BETA DATA SPRINT SUMMARY END -->
 
 ## What It Is
@@ -2611,6 +2612,21 @@ It should:
 - keep source records review-needed until explicitly approved
 
 Question Fixture Set should never claim complete corpus coverage, production storage, live semantic search, live AI generation, public launch approval, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 160. Beta Topic Map Board
+
+Beta Topic Map Board prevents VedaPath from drifting into broad coverage before its first trusted lanes are ready.
+
+It should:
+
+- Topic lane: Action, steadiness, source category, claim check, or reflection.
+- Source family: Gita, Veda, Upanishad, commentary, modern view, or uncertain.
+- Coverage state: Seeded, sparse, review-needed, or out of beta scope.
+- Next record: The source candidate that would improve the lane next.
+- preserve the boundary: Topic map prototype, not full tradition taxonomy.
+- keep source records review-needed until explicitly approved
+
+Beta Topic Map Board should never claim complete corpus coverage, production storage, live semantic search, live AI generation, public launch approval, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH STATIC BETA DATA SPRINT BLUEPRINT END -->
 
 ## Product Personality
