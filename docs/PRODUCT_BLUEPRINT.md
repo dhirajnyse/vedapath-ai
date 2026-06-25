@@ -131,6 +131,7 @@ It helps users move from curiosity to understanding through:
 - Reviewer Queue Mock: Reviewer Queue Mock makes scholar and careful-reader review practical by turning issues into scoped, evidence-backed decisions.
 - Source Import Checklist: Source Import Checklist turns dataset growth into a disciplined process with visible blockers and no-go fields.
 - Beta QA Matrix: Beta QA Matrix turns VedaPath's product values into release checks for trust, privacy, usability, and mobile simplicity.
+- Help Boundary Center: Help Boundary Center gives VedaPath a plain-language support surface that reduces confusion and protects users.
 <!-- VEDAPATH IMPLEMENTATION SPRINT SUMMARY END -->
 
 ## What It Is
@@ -2039,6 +2040,21 @@ It should:
 - produce a copyable implementation-readiness handoff
 
 Beta QA Matrix should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 125. Help Boundary Center
+
+Help Boundary Center gives VedaPath a plain-language support surface that reduces confusion and protects users.
+
+It should:
+
+- How to ask: Question types, source hints, and no-source cases.
+- What it is not: Not guru, therapy, ritual authority, or emergency support.
+- Privacy help: Local memory, export, delete, pause, and consent toggles.
+- Correction help: Report source, category, translation, boundary, or privacy issue.
+- preserve the boundary: Help prototype, not live support.
+- produce a copyable implementation-readiness handoff
+
+Help Boundary Center should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH IMPLEMENTATION SPRINT BLUEPRINT END -->
 
 ## Product Personality
