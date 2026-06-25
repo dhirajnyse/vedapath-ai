@@ -58,6 +58,7 @@ It helps users move from curiosity to understanding through:
 - Reflection Journal Prototype: Reflection Journal Prototype gives daily calm a private writing surface without turning personal notes into hidden product data.
 - Family Calm Mode: Family Calm Mode helps a household slow one conversation without storing private conflict or acting as a counselor.
 - Workplace Steadiness Mode: Workplace Steadiness Mode translates calm into practical work moments without pretending to manage careers or mental health.
+- Festival and Daily Calendar: Festival and Daily Calendar gives VedaPath a seasonal learning layer while keeping regional, ritual, and date boundaries explicit.
 <!-- VEDAPATH PERSONAL SPRINT SUMMARY END -->
 
 ## What It Is
@@ -1045,6 +1046,21 @@ It should:
 - produce a copyable founder handoff
 
 Workplace Steadiness Mode should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 64. Festival and Daily Calendar
+
+Festival and Daily Calendar gives VedaPath a seasonal learning layer while keeping regional, ritual, and date boundaries explicit.
+
+It should:
+
+- Daily source: One passage or concept for the day.
+- Festival note: Plain introduction plus source family.
+- Regional boundary: State where dates or customs vary.
+- Practice handoff: Route to Practice, Journal, or Family Mode.
+- preserve the boundary: Learning calendar, not panchang authority.
+- produce a copyable founder handoff
+
+Festival and Daily Calendar should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH PERSONAL SPRINT BLUEPRINT END -->
 
 ## Product Personality

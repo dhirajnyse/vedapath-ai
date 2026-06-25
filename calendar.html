@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>VedaPath Reflection Journal Prototype</title>
+    <title>VedaPath Festival and Daily Calendar</title>
     <link rel="stylesheet" href="assets/vedapath-sprint.css">
   </head>
   <body>
@@ -13,7 +13,7 @@
           <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
           <div>
             <strong>VedaPath AI</strong>
-            <span>Reflection journal</span>
+            <span>Festival calendar</span>
           </div>
         </a>
         <nav class="nav" aria-label="Project links">
@@ -27,15 +27,15 @@
           <a class="link" href="onboard.html">Onboard</a>
           <a class="link" href="profile.html">Profile</a>
           <a class="link" href="journey.html">Journey</a>
-          <a class="link active" href="journal.html">Journal</a>
+          <a class="link" href="journal.html">Journal</a>
           <a class="link" href="family.html">Family</a>
           <a class="link" href="work.html">Work</a>
-          <a class="link" href="calendar.html">Calendar</a>
-          <span class="version">v0.7.8 journal</span>
+          <a class="link active" href="calendar.html">Calendar</a>
+          <span class="version">v0.8.1 calendar</span>
         </nav>
       </header>
 
-      <main class="workspace" aria-label="VedaPath Reflection Journal Prototype workspace">
+      <main class="workspace" aria-label="VedaPath Festival and Daily Calendar workspace">
         <aside class="panel">
           <span class="eyebrow">Personal calm sprint</span>
           <h2>Release Rooms</h2>
@@ -46,38 +46,38 @@
         <section class="panel">
           <div class="hero-grid">
             <div>
-              <span class="eyebrow">Private reflection</span>
-              <h1>Write one honest line beside a source.</h1>
-              <p class="muted">A private journal preview that pairs a daily line with source candidate, boundary, carry action, and export controls.</p>
+              <span class="eyebrow">Calendar preview</span>
+              <h1>Let days carry meaning without false precision.</h1>
+              <p class="muted">A calendar concept for daily rhythm, festival learning, source notes, and careful regional boundaries.</p>
             </div>
             <div class="mark-stage">
-              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Journal logo">
+              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Calendar logo">
             </div>
           </div>
 
           <div class="source-block" aria-label="Release source card">
             <div>
               <span class="source-meta">Release</span>
-              <span class="source-value">v0.7.8</span>
+              <span class="source-value">v0.8.1</span>
             </div>
             <div>
               <span class="source-meta">Source candidate</span>
-              <span class="source-value">Bhagavad Gita 2.50</span>
+              <span class="source-value">Rigveda 10.85.1</span>
             </div>
             <div>
               <span class="source-meta">Text family</span>
-              <span class="source-value">Bhagavad Gita | Smriti</span>
+              <span class="source-value">Veda | Shruti</span>
             </div>
             <div>
               <span class="source-meta">Boundary</span>
-              <span class="source-value">Reflection, not therapy or confession.</span>
+              <span class="source-value">Learning calendar, not panchang authority.</span>
             </div>
           </div>
 
           <h2>Decision Signals</h2>
           <div class="item-list" id="itemList"></div>
 
-          <div class="tabs" role="tablist" aria-label="VedaPath Reflection Journal Prototype layers">
+          <div class="tabs" role="tablist" aria-label="VedaPath Festival and Daily Calendar layers">
             <button class="tab active" type="button" data-mode="brief">Brief</button>
             <button class="tab" type="button" data-mode="checklist">Checklist</button>
             <button class="tab" type="button" data-mode="boundary">Boundary</button>
@@ -91,20 +91,20 @@
             <button class="button" id="copyBoundary" type="button">Copy Boundary</button>
           </div>
 
-          <textarea id="output" readonly aria-label="VedaPath Reflection Journal Prototype output"></textarea>
+          <textarea id="output" readonly aria-label="VedaPath Festival and Daily Calendar output"></textarea>
         </section>
 
-        <aside class="panel tight" aria-label="VedaPath Reflection Journal Prototype sprint rail">
+        <aside class="panel tight" aria-label="VedaPath Festival and Daily Calendar sprint rail">
           <span class="badge green">Sprint progress</span>
-          <h2 style="margin-top: 14px;">Journal Pulse</h2>
-          <p class="muted">Reflection Journal Prototype gives daily calm a private writing surface without turning personal notes into hidden product data.</p>
-          <div class="progress" aria-label="Sprint progress 94 percent">
-            <div class="bar" style="--score:94%"></div>
+          <h2 style="margin-top: 14px;">Calendar Pulse</h2>
+          <p class="muted">Festival and Daily Calendar gives VedaPath a seasonal learning layer while keeping regional, ritual, and date boundaries explicit.</p>
+          <div class="progress" aria-label="Sprint progress 97 percent">
+            <div class="bar" style="--score:97%"></div>
           </div>
           <div class="metric-grid">
             <div class="metric">
               <span>Current</span>
-              <strong>v0.7.8</strong>
+              <strong>v0.8.1</strong>
             </div>
             <div class="metric">
               <span>Sprint</span>
@@ -112,11 +112,11 @@
             </div>
             <div class="metric">
               <span>Progress</span>
-              <strong>94%</strong>
+              <strong>97%</strong>
             </div>
             <div class="metric">
               <span>Next</span>
-              <strong>Family Calm Mode</strong>
+              <strong>Mantra Pronunciation Prep</strong>
             </div>
           </div>
 
@@ -148,85 +148,85 @@
     </div>
 
     <script type="application/json" id="room-data">{
-  "version": "v0.7.8",
-  "badge": "v0.7.8 journal",
-  "slug": "journal",
-  "nav": "Journal",
-  "title": "VedaPath Reflection Journal Prototype",
-  "pageLabel": "Reflection journal",
-  "eyebrow": "Private reflection",
-  "h1": "Write one honest line beside a source.",
-  "lead": "A private journal preview that pairs a daily line with source candidate, boundary, carry action, and export controls.",
-  "source": "Bhagavad Gita 2.50",
-  "family": "Bhagavad Gita | Smriti",
-  "stance": "Reflection, not therapy or confession.",
-  "progress": 94,
-  "next": "Family Calm Mode",
-  "primaryAsk": "Define the safest local journal entry shape.",
-  "summary": "Reflection Journal Prototype gives daily calm a private writing surface without turning personal notes into hidden product data.",
+  "version": "v0.8.1",
+  "badge": "v0.8.1 calendar",
+  "slug": "calendar",
+  "nav": "Calendar",
+  "title": "VedaPath Festival and Daily Calendar",
+  "pageLabel": "Festival calendar",
+  "eyebrow": "Calendar preview",
+  "h1": "Let days carry meaning without false precision.",
+  "lead": "A calendar concept for daily rhythm, festival learning, source notes, and careful regional boundaries.",
+  "source": "Rigveda 10.85.1",
+  "family": "Veda | Shruti",
+  "stance": "Learning calendar, not panchang authority.",
+  "progress": 97,
+  "next": "Mantra Pronunciation Prep",
+  "primaryAsk": "Define calendar content that teaches without claiming ritual authority.",
+  "summary": "Festival and Daily Calendar gives VedaPath a seasonal learning layer while keeping regional, ritual, and date boundaries explicit.",
   "items": [
     [
-      "One line",
-      "What is true right now?",
-      "Short enough to avoid emotional over-processing."
+      "Daily source",
+      "One passage or concept for the day.",
+      "Supports rhythm without obligation."
     ],
     [
-      "Source card",
-      "Which passage frames the day?",
-      "Keeps reflection grounded and cited."
+      "Festival note",
+      "Plain introduction plus source family.",
+      "Avoids flattening regional practice."
     ],
     [
-      "Carry action",
-      "What small action follows?",
-      "Moves reflection into agency."
+      "Regional boundary",
+      "State where dates or customs vary.",
+      "Prevents false universal claims."
     ],
     [
-      "Export",
-      "Copy or clear the local entry.",
-      "User remains in control."
+      "Practice handoff",
+      "Route to Practice, Journal, or Family Mode.",
+      "Turns learning into gentle action."
     ]
   ],
   "modes": {
     "brief": [
       [
-        "Journal promise",
-        "The product should help users write simply, not pressure them to disclose deeply."
+        "Calendar promise",
+        "A day can invite learning without becoming ritual instruction."
       ],
       [
-        "Design move",
-        "One source, one line, one action, one boundary."
+        "Product move",
+        "Separate fixed learning content from date-specific authority."
       ],
       [
         "Launch move",
-        "Keep journal storage device-local until account consent and deletion exist."
+        "Start with concept cards before publishing festival date claims."
       ]
     ],
     "checklist": [
       [
-        "Private",
-        "Does the entry stay local in prototype?"
+        "Source",
+        "Is the calendar entry tied to a cited concept or text?"
       ],
       [
-        "Small",
-        "Can it be completed in three minutes?"
+        "Variation",
+        "Does it mention regional or tradition variation when relevant?"
       ],
       [
-        "Exportable",
-        "Can the user copy the handoff?"
+        "Action",
+        "Does it offer one optional reflection or practice?"
       ]
     ],
     "boundary": [
       [
-        "No therapy claim",
-        "Do not frame journaling as treatment."
+        "No panchang claim",
+        "Do not present exact ritual timing."
       ],
       [
-        "No confession mode",
-        "Do not invite sensitive disclosure."
+        "No universal festival script",
+        "Do not erase regional and family differences."
       ],
       [
-        "No invisible memory",
-        "Do not train or persist from entries without explicit consent."
+        "No obligation",
+        "Do not make users feel spiritually behind."
       ]
     ]
   },

@@ -129,6 +129,8 @@ Let us look at the source first.
 - [Family Calm Mode Notes](docs/FAMILY_CALM_MODE.md)
 - [Workplace Steadiness Mode](work.html)
 - [Workplace Steadiness Mode Notes](docs/WORKPLACE_STEADINESS_MODE.md)
+- [Festival and Daily Calendar](calendar.html)
+- [Festival and Daily Calendar Notes](docs/FESTIVAL_AND_DAILY_CALENDAR.md)
 <!-- VEDAPATH PERSONAL SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -160,7 +162,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v0.8.0` is a trusted MVP prototype plus Workplace Steadiness Mode with:
+`v0.8.1` is a trusted MVP prototype plus Festival and Daily Calendar with:
 
 - Ask workspace
 - Source Card
@@ -217,6 +219,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Reflection Journal Prototype: Reflection Journal Prototype gives daily calm a private writing surface without turning personal notes into hidden product data.
 - Family Calm Mode: Family Calm Mode helps a household slow one conversation without storing private conflict or acting as a counselor.
 - Workplace Steadiness Mode: Workplace Steadiness Mode translates calm into practical work moments without pretending to manage careers or mental health.
+- Festival and Daily Calendar: Festival and Daily Calendar gives VedaPath a seasonal learning layer while keeping regional, ritual, and date boundaries explicit.
 <!-- VEDAPATH PERSONAL SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
