@@ -1,6 +1,6 @@
 {
   "product": "VedaPath AI",
-  "release": "v1.8.1",
+  "release": "v1.8.2",
   "status": "static beta seed prototype",
   "warning": "Prototype data only. Records are not public answer eligible until reviewed.",
   "records": [
@@ -161,7 +161,7 @@
       "title": "Static Answer Preview Lab",
       "source_candidate": "Bhagavad Gita 18.63",
       "text_family": "Bhagavad Gita | Smriti",
-      "status": "active-prototype",
+      "status": "prototype-support",
       "public_answer_eligible": false,
       "review_state": "review-needed",
       "rights_state": "display-citation-only",
@@ -178,6 +178,31 @@
       ],
       "boundary": "Static answer preview, not live model generation.",
       "summary": "Static Answer Preview Lab makes the beta answer path tangible without pretending generation or broad retrieval is live."
+    },
+    {
+      "id": "vp-v1-8-2-dataquality",
+      "release": "v1.8.2",
+      "slug": "dataquality",
+      "title": "Beta Data Quality Console",
+      "source_candidate": "Taittiriya Upanishad 1.11.1",
+      "text_family": "Upanishad | Shruti",
+      "status": "active-prototype",
+      "public_answer_eligible": false,
+      "review_state": "review-needed",
+      "rights_state": "display-citation-only",
+      "allowed_intents": [
+        "source_lookup",
+        "category_check",
+        "reflection_preview"
+      ],
+      "blocked_claims": [
+        "therapy",
+        "ritual_authority",
+        "science_proof",
+        "complete_corpus_coverage"
+      ],
+      "boundary": "Quality console demo, not complete data audit.",
+      "summary": "Beta Data Quality Console turns invisible source-data risk into plain checks a founder or reviewer can inspect."
     }
   ]
 }

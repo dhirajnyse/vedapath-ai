@@ -1,6 +1,6 @@
 {
   "product": "VedaPath AI",
-  "release": "v1.8.1",
+  "release": "v1.8.2",
   "status": "question fixture prototype",
   "fixtures": [
     {
@@ -57,6 +57,14 @@
       "expected_route": "source_first_preview",
       "expected_source_candidate": "Bhagavad Gita 18.63",
       "expected_boundary": "Static answer preview, not live model generation.",
+      "reviewer_needed": true
+    },
+    {
+      "id": "fixture-dataquality",
+      "question": "Create a visible QA board for every source record before public beta use.",
+      "expected_route": "source_first_preview",
+      "expected_source_candidate": "Taittiriya Upanishad 1.11.1",
+      "expected_boundary": "Quality console demo, not complete data audit.",
       "reviewer_needed": true
     }
   ]

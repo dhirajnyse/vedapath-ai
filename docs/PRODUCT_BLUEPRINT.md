@@ -179,6 +179,7 @@ It helps users move from curiosity to understanding through:
 - No-Answer Fallback Set: No-Answer Fallback Set makes VedaPath safer by treating refusal as a designed product moment, not an error.
 - Static Source Search Prototype: Static Source Search Prototype gives VedaPath a visible bridge from curated seed data to source-first answer retrieval.
 - Static Answer Preview Lab: Static Answer Preview Lab makes the beta answer path tangible without pretending generation or broad retrieval is live.
+- Beta Data Quality Console: Beta Data Quality Console turns invisible source-data risk into plain checks a founder or reviewer can inspect.
 <!-- VEDAPATH STATIC BETA DATA SPRINT SUMMARY END -->
 
 ## What It Is
@@ -2691,6 +2692,21 @@ It should:
 - keep source records review-needed until explicitly approved
 
 Static Answer Preview Lab should never claim complete corpus coverage, production storage, live semantic search, live AI generation, public launch approval, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 165. Beta Data Quality Console
+
+Beta Data Quality Console turns invisible source-data risk into plain checks a founder or reviewer can inspect.
+
+It should:
+
+- Required fields: Citation, family, intent, risk, review, rights, and fallback.
+- Quality flags: Missing note, weak category, no boundary, rights hold, or reviewer-needed.
+- Release state: Draft, held, beta-eligible, retired, or blocked.
+- Next fix: Each gap has one owner-friendly next action.
+- preserve the boundary: Quality console demo, not complete data audit.
+- keep source records review-needed until explicitly approved
+
+Beta Data Quality Console should never claim complete corpus coverage, production storage, live semantic search, live AI generation, public launch approval, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH STATIC BETA DATA SPRINT BLUEPRINT END -->
 
 ## Product Personality

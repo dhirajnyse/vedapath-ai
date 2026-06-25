@@ -351,6 +351,8 @@ Let us look at the source first.
 - [Static Source Search Prototype Notes](docs/STATIC_SOURCE_SEARCH_PROTOTYPE.md)
 - [Static Answer Preview Lab](answerpreview.html)
 - [Static Answer Preview Lab Notes](docs/STATIC_ANSWER_PREVIEW_LAB.md)
+- [Beta Data Quality Console](dataquality.html)
+- [Beta Data Quality Console Notes](docs/BETA_DATA_QUALITY_CONSOLE.md)
 <!-- VEDAPATH STATIC BETA DATA SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -382,7 +384,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v1.8.1` is a trusted MVP prototype plus Static Answer Preview Lab with:
+`v1.8.2` is a trusted MVP prototype plus Beta Data Quality Console with:
 
 - Ask workspace
 - Source Card
@@ -560,6 +562,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - No-Answer Fallback Set: No-Answer Fallback Set makes VedaPath safer by treating refusal as a designed product moment, not an error.
 - Static Source Search Prototype: Static Source Search Prototype gives VedaPath a visible bridge from curated seed data to source-first answer retrieval.
 - Static Answer Preview Lab: Static Answer Preview Lab makes the beta answer path tangible without pretending generation or broad retrieval is live.
+- Beta Data Quality Console: Beta Data Quality Console turns invisible source-data risk into plain checks a founder or reviewer can inspect.
 <!-- VEDAPATH STATIC BETA DATA SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
