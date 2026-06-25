@@ -1,6 +1,6 @@
 {
   "product": "VedaPath AI",
-  "release": "v1.7.8",
+  "release": "v1.7.9",
   "status": "question fixture prototype",
   "fixtures": [
     {
@@ -33,6 +33,14 @@
       "expected_route": "source_first_preview",
       "expected_source_candidate": "Rigveda 1.164.46",
       "expected_boundary": "Category matrix, not universal classification authority.",
+      "reviewer_needed": true
+    },
+    {
+      "id": "fixture-fallbackset",
+      "question": "Design refusals and fallback states that feel respectful, useful, and clearly bounded.",
+      "expected_route": "no_answer_fallback",
+      "expected_source_candidate": "Katha Upanishad 1.2.1",
+      "expected_boundary": "Fallback copy demo, not safety certification.",
       "reviewer_needed": true
     }
   ]

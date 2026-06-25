@@ -176,6 +176,7 @@ It helps users move from curiosity to understanding through:
 - Question Fixture Set: Question Fixture Set gives VedaPath a repeatable way to test whether source routing and answer boundaries are improving.
 - Beta Topic Map Board: Beta Topic Map Board prevents VedaPath from drifting into broad coverage before its first trusted lanes are ready.
 - Category Safety Matrix: Category Safety Matrix gives VedaPath a simple way to stop popular-culture shortcuts from becoming product truth.
+- No-Answer Fallback Set: No-Answer Fallback Set makes VedaPath safer by treating refusal as a designed product moment, not an error.
 <!-- VEDAPATH STATIC BETA DATA SPRINT SUMMARY END -->
 
 ## What It Is
@@ -2643,6 +2644,21 @@ It should:
 - keep source records review-needed until explicitly approved
 
 Category Safety Matrix should never claim complete corpus coverage, production storage, live semantic search, live AI generation, public launch approval, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 162. No-Answer Fallback Set
+
+No-Answer Fallback Set makes VedaPath safer by treating refusal as a designed product moment, not an error.
+
+It should:
+
+- No source: Say no eligible source is available and offer a narrow next question.
+- Uncertain category: Name uncertainty and route to review.
+- Sensitive context: Avoid therapy, crisis, legal, medical, or family advice.
+- Rights hold: Cite identity without showing restricted text.
+- preserve the boundary: Fallback copy demo, not safety certification.
+- keep source records review-needed until explicitly approved
+
+No-Answer Fallback Set should never claim complete corpus coverage, production storage, live semantic search, live AI generation, public launch approval, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH STATIC BETA DATA SPRINT BLUEPRINT END -->
 
 ## Product Personality
