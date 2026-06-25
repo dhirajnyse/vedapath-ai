@@ -223,6 +223,8 @@ Let us look at the source first.
 - [Scholar Invitation Room Notes](docs/SCHOLAR_INVITATION_ROOM.md)
 - [Founder Launch Pipeline](launchpipeline.html)
 - [Founder Launch Pipeline Notes](docs/FOUNDER_LAUNCH_PIPELINE.md)
+- [World Launch Beacon](launchbeacon.html)
+- [World Launch Beacon Notes](docs/WORLD_LAUNCH_BEACON.md)
 <!-- VEDAPATH PRODUCTIZATION SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -254,7 +256,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v1.2.3` is a trusted MVP prototype plus Founder Launch Pipeline with:
+`v1.2.4` is a trusted MVP prototype plus World Launch Beacon with:
 
 - Ask workspace
 - Source Card
@@ -362,6 +364,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Return Rhythm Engine: Return Rhythm Engine turns retention into a respectful rhythm: source curiosity, small practice, and user-controlled reminders.
 - Scholar Invitation Room: Scholar Invitation Room helps VedaPath ask for help with humility: clear scope, cited evidence, time respect, and consented public credit.
 - Founder Launch Pipeline: Founder Launch Pipeline gathers the practical public-launch lanes into one calm decision board for the founder.
+- World Launch Beacon: World Launch Beacon completes the productization sprint and frames VedaPath as calm, source-first, public-facing, and still honest about its limits.
 <!-- VEDAPATH PRODUCTIZATION SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff

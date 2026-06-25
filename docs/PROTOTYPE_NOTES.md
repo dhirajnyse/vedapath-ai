@@ -1,4 +1,4 @@
-# v1.2.3 Prototype Notes
+# v1.2.4 Prototype Notes
 
 The v0.7.4 release turns the VedaPath AI homepage into a trusted MVP prototype with calm, practice, source-library, source-seeds, retrieval, passage-review, evaluation, evaluation-dashboard, reviewer-queue, source-policy, trust-ledger, life-map, calm-circle, consent-gate, memory-gate, trust-model, calm-passport, backend-schema, schema-fixtures, evaluation-drill, learning-loop, sanskrit-lens, voice-boundary, scholar-review, launch-gate, production-bridge, source-storage, reviewer-access, public-feedback, launch-story, source-path, calm-compass, calm-card, source-bell, before-reply, samvada, sankalpa, seva, morning, evening, and rhythm surfaces.
 
@@ -112,6 +112,7 @@ The v0.7.4 release turns the VedaPath AI homepage into a trusted MVP prototype w
 - Return Rhythm Engine: Return Rhythm Engine turns retention into a respectful rhythm: source curiosity, small practice, and user-controlled reminders.
 - Scholar Invitation Room: Scholar Invitation Room helps VedaPath ask for help with humility: clear scope, cited evidence, time respect, and consented public credit.
 - Founder Launch Pipeline: Founder Launch Pipeline gathers the practical public-launch lanes into one calm decision board for the founder.
+- World Launch Beacon: World Launch Beacon completes the productization sprint and frames VedaPath as calm, source-first, public-facing, and still honest about its limits.
 <!-- VEDAPATH PRODUCTIZATION SPRINT NOTES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
