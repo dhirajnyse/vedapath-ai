@@ -101,6 +101,7 @@ It helps users move from curiosity to understanding through:
 <!-- VEDAPATH PRODUCTION SPRINT SUMMARY END -->
 <!-- VEDAPATH PRODUCTIZATION SPRINT SUMMARY START -->
 - Source Service Sandbox: Source Service Sandbox gives VedaPath a narrow first implementation lane: one query, one candidate set, one eligibility decision, and one safe fallback.
+- Answer Preview Workbench: Answer Preview Workbench turns VedaPath's source-first doctrine into a simple answer card users can scan without losing depth.
 <!-- VEDAPATH PRODUCTIZATION SPRINT SUMMARY END -->
 
 ## What It Is
@@ -1617,6 +1618,21 @@ It should:
 - produce a copyable public-productization handoff
 
 Source Service Sandbox should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 99. Answer Preview Workbench
+
+Answer Preview Workbench turns VedaPath's source-first doctrine into a simple answer card users can scan without losing depth.
+
+It should:
+
+- Direct answer: One clear response before layered detail.
+- Source card: Citation, family, confidence, review state, and rights note.
+- Deeper layer: Sanskrit, commentary, debate, and context on demand.
+- Boundary: What not to overclaim and when to ask a human.
+- preserve the boundary: Answer-format prototype, not verified answer generation.
+- produce a copyable public-productization handoff
+
+Answer Preview Workbench should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH PRODUCTIZATION SPRINT BLUEPRINT END -->
 
 ## Product Personality

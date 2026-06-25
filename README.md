@@ -207,6 +207,8 @@ Let us look at the source first.
 <!-- VEDAPATH PRODUCTIZATION SPRINT LINKS START -->
 - [Source Service Sandbox](sourcesvc.html)
 - [Source Service Sandbox Notes](docs/SOURCE_SERVICE_SANDBOX.md)
+- [Answer Preview Workbench](answerpreview.html)
+- [Answer Preview Workbench Notes](docs/ANSWER_PREVIEW_WORKBENCH.md)
 <!-- VEDAPATH PRODUCTIZATION SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -238,7 +240,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v1.1.5` is a trusted MVP prototype plus Source Service Sandbox with:
+`v1.1.6` is a trusted MVP prototype plus Answer Preview Workbench with:
 
 - Ask workspace
 - Source Card
@@ -338,6 +340,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 <!-- VEDAPATH PRODUCTION SPRINT FEATURES END -->
 <!-- VEDAPATH PRODUCTIZATION SPRINT FEATURES START -->
 - Source Service Sandbox: Source Service Sandbox gives VedaPath a narrow first implementation lane: one query, one candidate set, one eligibility decision, and one safe fallback.
+- Answer Preview Workbench: Answer Preview Workbench turns VedaPath's source-first doctrine into a simple answer card users can scan without losing depth.
 <!-- VEDAPATH PRODUCTIZATION SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
