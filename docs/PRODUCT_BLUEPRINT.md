@@ -166,6 +166,7 @@ It helps users move from curiosity to understanding through:
 - Answer Assembly Contract: Answer Assembly Contract gives VedaPath a repeatable output shape that can be tested before it becomes generative.
 - Evaluation Fixture Lab: Evaluation Fixture Lab turns product risk into repeatable checks, making trust measurable before launch.
 - Rights and Translation Gate: Rights and Translation Gate gives VedaPath a practical way to cite carefully while avoiding careless text display.
+- Reviewer Workflow Board: Reviewer Workflow Board makes human review operational: scoped decisions create visible product behavior.
 <!-- VEDAPATH BETA IMPLEMENTATION SPRINT SUMMARY END -->
 
 ## What It Is
@@ -2512,6 +2513,21 @@ It should:
 - produce a copyable beta-implementation handoff
 
 Rights and Translation Gate should never claim production storage, live AI generation, public launch approval, authentication, licensed source text, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 154. Reviewer Workflow Board
+
+Reviewer Workflow Board makes human review operational: scoped decisions create visible product behavior.
+
+It should:
+
+- Queue columns: New, triaged, reviewer-needed, held, approved, blocked, and released.
+- Decision scope: Source, language, boundary, rights, or answer release.
+- Public effect: Display, lower confidence, hide, fallback, or release.
+- Audit trail: Decision note, ticket link, reviewer lane, and date.
+- preserve the boundary: Workflow board demo, not actual reviewer approval.
+- produce a copyable beta-implementation handoff
+
+Reviewer Workflow Board should never claim production storage, live AI generation, public launch approval, authentication, licensed source text, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH BETA IMPLEMENTATION SPRINT BLUEPRINT END -->
 
 ## Product Personality
