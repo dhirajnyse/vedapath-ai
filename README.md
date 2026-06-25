@@ -358,6 +358,10 @@ Let us look at the source first.
 - [Static Beta Dataset Control Room](datasetconsole.html)
 - [Static Beta Dataset Control Room Notes](docs/STATIC_BETA_DATASET_CONTROL_ROOM.md)
 <!-- VEDAPATH STATIC BETA DATA SPRINT LINKS END -->
+<!-- VEDAPATH INTERACTIVE SEARCH SPRINT LINKS START -->
+- [Beta Search Shell](betasearchshell.html)
+- [Beta Search Shell Notes](docs/BETA_SEARCH_SHELL.md)
+<!-- VEDAPATH INTERACTIVE SEARCH SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
 - [Calm Compass](compass.html)
@@ -388,7 +392,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v1.8.4` is a trusted MVP prototype plus Static Beta Dataset Control Room with:
+`v1.8.5` is a trusted MVP prototype plus Beta Search Shell with:
 
 - Ask workspace
 - Source Card
@@ -570,6 +574,9 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Beta Seed Review Pack: Beta Seed Review Pack turns the static beta dataset into a human-readable handoff for source, language, rights, and boundary review.
 - Static Beta Dataset Control Room: Static Beta Dataset Control Room completes the static beta data sprint and gives VedaPath a real seed-data path toward beta.
 <!-- VEDAPATH STATIC BETA DATA SPRINT FEATURES END -->
+<!-- VEDAPATH INTERACTIVE SEARCH SPRINT FEATURES START -->
+- Beta Search Shell: Beta Search Shell turns the static seed into a usable beta surface without pretending retrieval or generation is live.
+<!-- VEDAPATH INTERACTIVE SEARCH SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
 - Calm Card Studio with visual card preview, local saved cards, copy text, and PNG export

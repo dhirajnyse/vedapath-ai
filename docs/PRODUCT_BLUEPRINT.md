@@ -183,6 +183,9 @@ It helps users move from curiosity to understanding through:
 - Beta Seed Review Pack: Beta Seed Review Pack turns the static beta dataset into a human-readable handoff for source, language, rights, and boundary review.
 - Static Beta Dataset Control Room: Static Beta Dataset Control Room completes the static beta data sprint and gives VedaPath a real seed-data path toward beta.
 <!-- VEDAPATH STATIC BETA DATA SPRINT SUMMARY END -->
+<!-- VEDAPATH INTERACTIVE SEARCH SPRINT SUMMARY START -->
+- Beta Search Shell: Beta Search Shell turns the static seed into a usable beta surface without pretending retrieval or generation is live.
+<!-- VEDAPATH INTERACTIVE SEARCH SPRINT SUMMARY END -->
 
 ## What It Is
 
@@ -2740,6 +2743,22 @@ It should:
 
 Static Beta Dataset Control Room should never claim complete corpus coverage, production storage, live semantic search, live AI generation, public launch approval, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH STATIC BETA DATA SPRINT BLUEPRINT END -->
+<!-- VEDAPATH INTERACTIVE SEARCH SPRINT BLUEPRINT START -->
+### 168. Beta Search Shell
+
+Beta Search Shell turns the static seed into a usable beta surface without pretending retrieval or generation is live.
+
+It should:
+
+- Search input: Keyword search across title, citation, family, summary, and blocked claims.
+- Result cards: Every result shows source candidate, family, review state, and rights state.
+- Prototype mark: Records remain non-public-answer-eligible until reviewed.
+- Empty state: No result leads to a careful fallback rather than invention.
+- preserve the boundary: Browser-only search shell, not live retrieval.
+- keep the search browser-only until a real backend is approved
+
+Beta Search Shell should never claim live semantic retrieval, backend storage, live AI generation, reviewed corpus coverage, therapy, ritual instruction, crisis support, or spiritual authority.
+<!-- VEDAPATH INTERACTIVE SEARCH SPRINT BLUEPRINT END -->
 
 ## Product Personality
 
