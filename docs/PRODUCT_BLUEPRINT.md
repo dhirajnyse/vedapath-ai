@@ -188,6 +188,7 @@ It helps users move from curiosity to understanding through:
 - Source Filter Bar: Source Filter Bar makes search calmer by giving users visible constraints instead of a blank text box.
 - Result Reason Panel: Result Reason Panel makes search less magical by showing match fields, review state, and no-go boundaries beside each record.
 - Question Match Preview: Question Match Preview connects seed records with expected beta questions so source routing can be tested before live AI.
+- Fallback Explorer: Fallback Explorer makes refusal and uncertainty part of the product experience rather than a dead end.
 <!-- VEDAPATH INTERACTIVE SEARCH SPRINT SUMMARY END -->
 
 ## What It Is
@@ -2806,6 +2807,21 @@ It should:
 - keep the search browser-only until a real backend is approved
 
 Question Match Preview should never claim live semantic retrieval, backend storage, live AI generation, reviewed corpus coverage, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 172. Fallback Explorer
+
+Fallback Explorer makes refusal and uncertainty part of the product experience rather than a dead end.
+
+It should:
+
+- No result: Invite a narrower source question.
+- No eligible record: Explain review-needed state before answer composition.
+- Sensitive context: Avoid therapy, crisis, medical, legal, and family advice.
+- Rights hold: Show citation identity without showing restricted text.
+- preserve the boundary: Fallback explorer, not safety certification.
+- keep the search browser-only until a real backend is approved
+
+Fallback Explorer should never claim live semantic retrieval, backend storage, live AI generation, reviewed corpus coverage, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH INTERACTIVE SEARCH SPRINT BLUEPRINT END -->
 
 ## Product Personality
