@@ -190,6 +190,7 @@ It helps users move from curiosity to understanding through:
 - Question Match Preview: Question Match Preview connects seed records with expected beta questions so source routing can be tested before live AI.
 - Fallback Explorer: Fallback Explorer makes refusal and uncertainty part of the product experience rather than a dead end.
 - Search Evidence Drawer: Search Evidence Drawer gives VedaPath a simple result-to-evidence interaction that preserves source boundaries.
+- Review State Filter: Review State Filter makes source status a first-class search control instead of buried metadata.
 <!-- VEDAPATH INTERACTIVE SEARCH SPRINT SUMMARY END -->
 
 ## What It Is
@@ -2838,6 +2839,21 @@ It should:
 - keep the search browser-only until a real backend is approved
 
 Search Evidence Drawer should never claim live semantic retrieval, backend storage, live AI generation, reviewed corpus coverage, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 174. Review State Filter
+
+Review State Filter makes source status a first-class search control instead of buried metadata.
+
+It should:
+
+- Status chip: Each result names active-prototype or prototype-support.
+- Eligibility flag: Public answer eligibility stays false until approved.
+- Reviewer route: Review-needed records can become handoff items.
+- Future states: The UI can later add beta-eligible without redesign.
+- preserve the boundary: Review filter prototype, not actual approval.
+- keep the search browser-only until a real backend is approved
+
+Review State Filter should never claim live semantic retrieval, backend storage, live AI generation, reviewed corpus coverage, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH INTERACTIVE SEARCH SPRINT BLUEPRINT END -->
 
 ## Product Personality
