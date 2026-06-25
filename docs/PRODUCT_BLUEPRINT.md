@@ -115,6 +115,7 @@ It helps users move from curiosity to understanding through:
 - Public Beta Welcome: Public Beta Welcome gives VedaPath a simple public doorway for curious visitors, calm seekers, students, and reviewers.
 - Question Studio: Question Studio improves the first ask by separating text lookup, concept explanation, claim check, calm reflection, and modern analogy.
 - Confidence Card: Confidence Card makes answer trust visible through source strength, review state, boundary risk, and missing evidence.
+- Learning Trail: Learning Trail lets VedaPath grow depth progressively while keeping the first answer calm and readable.
 <!-- VEDAPATH ACTIVATION SPRINT SUMMARY END -->
 
 ## What It Is
@@ -1812,6 +1813,21 @@ It should:
 - produce a copyable public beta activation handoff
 
 Confidence Card should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 111. Learning Trail
+
+Learning Trail lets VedaPath grow depth progressively while keeping the first answer calm and readable.
+
+It should:
+
+- Beginner step: Plain meaning and why the source matters.
+- Compare step: Related passage, commentary, or tradition-aware contrast.
+- Language step: Sanskrit term, transliteration, and translation caution.
+- Claim step: What can and cannot be concluded.
+- preserve the boundary: Learning path prototype, not curriculum certification.
+- produce a copyable public beta activation handoff
+
+Learning Trail should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH ACTIVATION SPRINT BLUEPRINT END -->
 
 ## Product Personality
