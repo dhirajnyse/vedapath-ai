@@ -69,6 +69,7 @@ It helps users move from curiosity to understanding through:
 - Source Dataset Studio: Source Dataset Studio narrows the product from many prototype ideas to a first reviewable beta dataset.
 - Answer Contract: Answer Contract turns VedaPath's trust philosophy into a repeatable response format for beta answers.
 - Reviewer Ops Board: Reviewer Ops Board turns scholar and careful-reader help into scoped tasks, decisions, and release gates.
+- Consent and Privacy Room: Consent and Privacy Room makes user trust visible before VedaPath moves from local prototype memory to real storage.
 <!-- VEDAPATH BETA SPRINT SUMMARY END -->
 
 ## What It Is
@@ -1192,6 +1193,21 @@ It should:
 - produce a copyable beta handoff
 
 Reviewer Ops Board should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 73. Consent and Privacy Room
+
+Consent and Privacy Room makes user trust visible before VedaPath moves from local prototype memory to real storage.
+
+It should:
+
+- May remember: User-chosen preferences, saved sources, and explicit practice completions.
+- Must not infer: Faith, distress, mental health, family conflict, or private identity.
+- Controls: Export, delete, pause memory, and local-only mode.
+- Data route: Local draft, account memory, review ticket, or blocked.
+- preserve the boundary: Consent design, not legal advice.
+- produce a copyable beta handoff
+
+Consent and Privacy Room should never claim production storage, verified answers, reviewer approval, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH BETA SPRINT BLUEPRINT END -->
 
 ## Product Personality
