@@ -229,6 +229,8 @@ Let us look at the source first.
 <!-- VEDAPATH ACTIVATION SPRINT LINKS START -->
 - [Public Beta Welcome](betawelcome.html)
 - [Public Beta Welcome Notes](docs/PUBLIC_BETA_WELCOME.md)
+- [Question Studio](questionstudio.html)
+- [Question Studio Notes](docs/QUESTION_STUDIO.md)
 <!-- VEDAPATH ACTIVATION SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -260,7 +262,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v1.2.5` is a trusted MVP prototype plus Public Beta Welcome with:
+`v1.2.6` is a trusted MVP prototype plus Question Studio with:
 
 - Ask workspace
 - Source Card
@@ -372,6 +374,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 <!-- VEDAPATH PRODUCTIZATION SPRINT FEATURES END -->
 <!-- VEDAPATH ACTIVATION SPRINT FEATURES START -->
 - Public Beta Welcome: Public Beta Welcome gives VedaPath a simple public doorway for curious visitors, calm seekers, students, and reviewers.
+- Question Studio: Question Studio improves the first ask by separating text lookup, concept explanation, claim check, calm reflection, and modern analogy.
 <!-- VEDAPATH ACTIVATION SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff

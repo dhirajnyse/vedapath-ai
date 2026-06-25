@@ -113,6 +113,7 @@ It helps users move from curiosity to understanding through:
 <!-- VEDAPATH PRODUCTIZATION SPRINT SUMMARY END -->
 <!-- VEDAPATH ACTIVATION SPRINT SUMMARY START -->
 - Public Beta Welcome: Public Beta Welcome gives VedaPath a simple public doorway for curious visitors, calm seekers, students, and reviewers.
+- Question Studio: Question Studio improves the first ask by separating text lookup, concept explanation, claim check, calm reflection, and modern analogy.
 <!-- VEDAPATH ACTIVATION SPRINT SUMMARY END -->
 
 ## What It Is
@@ -1780,6 +1781,21 @@ It should:
 - produce a copyable public beta activation handoff
 
 Public Beta Welcome should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 109. Question Studio
+
+Question Studio improves the first ask by separating text lookup, concept explanation, claim check, calm reflection, and modern analogy.
+
+It should:
+
+- Prompt type: Lookup, explain, compare, claim check, calm reflection, or analogy.
+- Source hint: Veda, Upanishad, Gita, Purana, commentary, modern view, or unsure.
+- Risk label: Science claim, ritual claim, distress claim, or tradition claim.
+- Fallback: If no source is available, say so directly.
+- preserve the boundary: Question-shaping prototype, not live retrieval.
+- produce a copyable public beta activation handoff
+
+Question Studio should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH ACTIVATION SPRINT BLUEPRINT END -->
 
 ## Product Personality
