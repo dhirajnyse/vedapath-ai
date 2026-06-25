@@ -195,6 +195,8 @@ Let us look at the source first.
 - [Retrieval Service Blueprint Notes](docs/RETRIEVAL_SERVICE_BLUEPRINT.md)
 - [Answer Evaluation Harness](evalharness.html)
 - [Answer Evaluation Harness Notes](docs/ANSWER_EVALUATION_HARNESS.md)
+- [Export and Delete Center](exportdelete.html)
+- [Export and Delete Center Notes](docs/EXPORT_AND_DELETE_CENTER.md)
 <!-- VEDAPATH PRODUCTION SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -226,7 +228,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v1.1.0` is a trusted MVP prototype plus Answer Evaluation Harness with:
+`v1.1.1` is a trusted MVP prototype plus Export and Delete Center with:
 
 - Ask workspace
 - Source Card
@@ -319,6 +321,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Reviewer Workflow Contract: Reviewer Workflow Contract turns review from a vague trust word into scoped decisions, states, and release gates.
 - Retrieval Service Blueprint: Retrieval Service Blueprint makes production answer generation depend on review state, source specificity, and visible match reasons.
 - Answer Evaluation Harness: Answer Evaluation Harness turns VedaPath's trust rules into repeatable checks before new answer behavior is shipped.
+- Export and Delete Center: Export and Delete Center makes user-owned memory practical by designing export, deletion, revocation, and local-clear controls.
 <!-- VEDAPATH PRODUCTION SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff

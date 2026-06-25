@@ -94,6 +94,7 @@ It helps users move from curiosity to understanding through:
 - Reviewer Workflow Contract: Reviewer Workflow Contract turns review from a vague trust word into scoped decisions, states, and release gates.
 - Retrieval Service Blueprint: Retrieval Service Blueprint makes production answer generation depend on review state, source specificity, and visible match reasons.
 - Answer Evaluation Harness: Answer Evaluation Harness turns VedaPath's trust rules into repeatable checks before new answer behavior is shipped.
+- Export and Delete Center: Export and Delete Center makes user-owned memory practical by designing export, deletion, revocation, and local-clear controls.
 <!-- VEDAPATH PRODUCTION SPRINT SUMMARY END -->
 
 ## What It Is
@@ -1534,6 +1535,21 @@ It should:
 - produce a copyable production-readiness handoff
 
 Answer Evaluation Harness should never claim production storage, verified answers, reviewer approval, authentication, analytics, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 94. Export and Delete Center
+
+Export and Delete Center makes user-owned memory practical by designing export, deletion, revocation, and local-clear controls.
+
+It should:
+
+- Export: Saved sources, preferences, review tickets, and consent grants.
+- Delete: Account data, synced preferences, and personal records.
+- Clear local: Device-only drafts, streaks, and prototypes.
+- Retention: What is kept for audit, why, and for how long.
+- preserve the boundary: Privacy control design, not legal advice.
+- produce a copyable production-readiness handoff
+
+Export and Delete Center should never claim production storage, verified answers, reviewer approval, authentication, analytics, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH PRODUCTION SPRINT BLUEPRINT END -->
 
 ## Product Personality
