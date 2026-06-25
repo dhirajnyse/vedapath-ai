@@ -153,6 +153,7 @@ It helps users move from curiosity to understanding through:
 - Local Retrieval Workspace: Local Retrieval Workspace gives VedaPath a practical search preview with eligible records, hold states, and visible match reasons.
 - Answer Composer Workspace: Answer Composer Workspace connects retrieval to the user-facing answer, preserving one calm structure across source, meaning, and boundary.
 - Citation Evidence Panel: Citation Evidence Panel gives VedaPath an evidence drawer that can support curiosity, correction, and scholar review while keeping the main surface calm.
+- Confidence Rulebook: Confidence Rulebook makes trust less magical: the product explains why it is confident, cautious, waiting for review, or refusing to answer.
 <!-- VEDAPATH WORKING DATA SPRINT SUMMARY END -->
 
 ## What It Is
@@ -2333,6 +2334,21 @@ It should:
 - produce a copyable working-data handoff
 
 Citation Evidence Panel should never claim production storage, live retrieval, live AI generation, authentication, licensed source text, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 143. Confidence Rulebook
+
+Confidence Rulebook makes trust less magical: the product explains why it is confident, cautious, waiting for review, or refusing to answer.
+
+It should:
+
+- Basis rule: Direct passage beats analogy; commentary and scholarly view must be labeled.
+- Review rule: Draft or specialist-needed records lower confidence or hold the answer.
+- Risk rule: Therapy, ritual, science, privacy, and identity-sensitive questions trigger extra boundaries.
+- Outcome rule: High, medium, low, review-needed, no-source, or no-answer.
+- preserve the boundary: Confidence rules demo, not automated certification.
+- produce a copyable working-data handoff
+
+Confidence Rulebook should never claim production storage, live retrieval, live AI generation, authentication, licensed source text, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH WORKING DATA SPRINT BLUEPRINT END -->
 
 ## Product Personality

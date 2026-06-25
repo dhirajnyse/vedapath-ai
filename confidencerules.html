@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>VedaPath Answer Composer Workspace</title>
+    <title>VedaPath Confidence Rulebook</title>
     <link rel="stylesheet" href="assets/vedapath-sprint.css">
   </head>
   <body>
@@ -13,7 +13,7 @@
           <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
           <div>
             <strong>VedaPath AI</strong>
-            <span>Answer composer</span>
+            <span>Confidence rulebook</span>
           </div>
         </a>
         <nav class="nav" aria-label="Project links">
@@ -27,15 +27,15 @@
           <a class="link" href="workingdata.html">Data</a>
           <a class="link" href="queryrouter.html">Router</a>
           <a class="link" href="retrievalworkspace.html">Retrieve</a>
-          <a class="link active" href="answercomposer.html">Compose</a>
+          <a class="link" href="answercomposer.html">Compose</a>
           <a class="link" href="evidencepanel.html">Evidence</a>
-          <a class="link" href="confidencerules.html">Rules</a>
+          <a class="link active" href="confidencerules.html">Rules</a>
           <!-- VEDAPATH WORKING DATA SPRINT NAV END -->
           <span class="version">v1.6.0 confidence</span>
         </nav>
       </header>
 
-      <main class="workspace" aria-label="VedaPath Answer Composer Workspace workspace">
+      <main class="workspace" aria-label="VedaPath Confidence Rulebook workspace">
         <aside class="panel">
           <span class="eyebrow">Working data demo sprint</span>
           <h2>Release Rooms</h2>
@@ -46,23 +46,23 @@
         <section class="panel">
           <div class="hero-grid">
             <div>
-              <span class="eyebrow">Answer composition</span>
-              <h1>Compose answers from source state, not confidence tone.</h1>
-              <p class="muted">An answer composer that assembles direct answer, source card, plain meaning, deeper layer, and boundary line from source fields.</p>
+              <span class="eyebrow">Trust rules</span>
+              <h1>Make confidence a rulebook, not a mood.</h1>
+              <p class="muted">A confidence rulebook that turns citation basis, review state, risk type, and answer scope into clear high, medium, low, hold, or no-answer outcomes.</p>
             </div>
             <div class="mark-stage">
-              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Compose logo">
+              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Rules logo">
             </div>
           </div>
 
           <div class="source-block" aria-label="Release source card">
             <div>
               <span class="source-meta">Release</span>
-              <span class="source-value">v1.5.8</span>
+              <span class="source-value">v1.6.0</span>
             </div>
             <div>
               <span class="source-meta">Source candidate</span>
-              <span class="source-value">Bhagavad Gita 2.47</span>
+              <span class="source-value">Bhagavad Gita 4.34</span>
             </div>
             <div>
               <span class="source-meta">Text family</span>
@@ -70,14 +70,14 @@
             </div>
             <div>
               <span class="source-meta">Boundary</span>
-              <span class="source-value">Answer composition demo, not live generation.</span>
+              <span class="source-value">Confidence rules demo, not automated certification.</span>
             </div>
           </div>
 
           <h2>Working Chain Signals</h2>
           <div class="item-list" id="itemList"></div>
 
-          <div class="tabs" role="tablist" aria-label="VedaPath Answer Composer Workspace layers">
+          <div class="tabs" role="tablist" aria-label="VedaPath Confidence Rulebook layers">
             <button class="tab active" type="button" data-mode="brief">Brief</button>
             <button class="tab" type="button" data-mode="checklist">Checklist</button>
             <button class="tab" type="button" data-mode="boundary">Boundary</button>
@@ -91,20 +91,20 @@
             <button class="button" id="copyBoundary" type="button">Copy Boundary</button>
           </div>
 
-          <textarea id="output" readonly aria-label="VedaPath Answer Composer Workspace output"></textarea>
+          <textarea id="output" readonly aria-label="VedaPath Confidence Rulebook output"></textarea>
         </section>
 
-        <aside class="panel tight" aria-label="VedaPath Answer Composer Workspace sprint rail">
+        <aside class="panel tight" aria-label="VedaPath Confidence Rulebook sprint rail">
           <span class="badge green">Working MVP chain</span>
-          <h2 style="margin-top: 14px;">Compose Pulse</h2>
-          <p class="muted">Answer Composer Workspace connects retrieval to the user-facing answer, preserving one calm structure across source, meaning, and boundary.</p>
-          <div class="progress" aria-label="Sprint progress 104 percent">
-            <div class="bar" style="--score:104%"></div>
+          <h2 style="margin-top: 14px;">Rules Pulse</h2>
+          <p class="muted">Confidence Rulebook makes trust less magical: the product explains why it is confident, cautious, waiting for review, or refusing to answer.</p>
+          <div class="progress" aria-label="Sprint progress 106 percent">
+            <div class="bar" style="--score:106%"></div>
           </div>
           <div class="metric-grid">
             <div class="metric">
               <span>Current</span>
-              <strong>v1.5.8</strong>
+              <strong>v1.6.0</strong>
             </div>
             <div class="metric">
               <span>Sprint</span>
@@ -112,11 +112,11 @@
             </div>
             <div class="metric">
               <span>Progress</span>
-              <strong>104%</strong>
+              <strong>106%</strong>
             </div>
             <div class="metric">
               <span>Next</span>
-              <strong>Citation Evidence Panel</strong>
+              <strong>Consent Memory Preview</strong>
             </div>
           </div>
 
@@ -148,71 +148,71 @@
     </div>
 
     <script type="application/json" id="room-data">{
-  "version": "v1.5.8",
-  "badge": "v1.5.8 composer",
-  "slug": "answercomposer",
-  "nav": "Compose",
-  "title": "VedaPath Answer Composer Workspace",
-  "pageLabel": "Answer composer",
-  "eyebrow": "Answer composition",
-  "h1": "Compose answers from source state, not confidence tone.",
-  "lead": "An answer composer that assembles direct answer, source card, plain meaning, deeper layer, and boundary line from source fields.",
-  "source": "Bhagavad Gita 2.47",
+  "version": "v1.6.0",
+  "badge": "v1.6.0 confidence",
+  "slug": "confidencerules",
+  "nav": "Rules",
+  "title": "VedaPath Confidence Rulebook",
+  "pageLabel": "Confidence rulebook",
+  "eyebrow": "Trust rules",
+  "h1": "Make confidence a rulebook, not a mood.",
+  "lead": "A confidence rulebook that turns citation basis, review state, risk type, and answer scope into clear high, medium, low, hold, or no-answer outcomes.",
+  "source": "Bhagavad Gita 4.34",
   "family": "Bhagavad Gita | Smriti",
-  "stance": "Answer composition demo, not live generation.",
-  "progress": 104,
-  "next": "Citation Evidence Panel",
-  "primaryAsk": "Turn the source record into a clean answer pattern before adding model generation.",
-  "summary": "Answer Composer Workspace connects retrieval to the user-facing answer, preserving one calm structure across source, meaning, and boundary.",
+  "stance": "Confidence rules demo, not automated certification.",
+  "progress": 106,
+  "next": "Consent Memory Preview",
+  "primaryAsk": "Define confidence from visible rules so users can understand and challenge it.",
+  "summary": "Confidence Rulebook makes trust less magical: the product explains why it is confident, cautious, waiting for review, or refusing to answer.",
   "items": [
     [
-      "Direct answer",
-      "One useful sentence first.",
-      "Serves beginners."
+      "Basis rule",
+      "Direct passage beats analogy; commentary and scholarly view must be labeled.",
+      "Reduces confusion."
     ],
     [
-      "Source card",
-      "Citation, family, basis, confidence, and review state stay near the answer.",
-      "Keeps grounding visible."
+      "Review rule",
+      "Draft or specialist-needed records lower confidence or hold the answer.",
+      "Protects quality."
     ],
     [
-      "Depth layers",
-      "Plain meaning appears first; Sanskrit and debate unfold on demand.",
-      "Protects simplicity."
+      "Risk rule",
+      "Therapy, ritual, science, privacy, and identity-sensitive questions trigger extra boundaries.",
+      "Adds care."
     ],
     [
-      "Boundary line",
-      "Every answer says what not to overclaim.",
-      "Keeps humility built in."
+      "Outcome rule",
+      "High, medium, low, review-needed, no-source, or no-answer.",
+      "Makes behavior predictable."
     ]
   ],
   "modes": {
     "brief": [
       [
         "Product promise",
-        "Answer Composer Workspace connects retrieval to the user-facing answer, preserving one calm structure across source, meaning, and boundary."
+        "Confidence Rulebook makes trust less magical: the product explains why it is confident, cautious, waiting for review, or refusing to answer."
       ],
       [
         "Founder move",
-        "Turn the source record into a clean answer pattern before adding model generation."
+        "Define confidence from visible rules so users can understand and challenge it."
       ],
       [
         "Trust move",
-        "Keep the visible boundary: Answer composition demo, not live generation."
+        "Keep the visible boundary: Confidence rules demo, not automated certification."
       ]
     ],
     "checklist": [
       [
-        "Direct answer",
-        "One useful sentence first."
+        "Basis rule",
+        "Direct passage beats analogy; commentary and scholarly view must be labeled."
       ],
       [
-        "Source card",
-        "Citation, family, basis, confidence, and review state stay near the answer."
+        "Review rule",
+        "Draft or specialist-needed records lower confidence or hold the answer."
       ],
       [
-        "Depth layers",
-        "Plain meaning appears first; Sanskrit and debate unfold on demand."
+        "Risk rule",
+        "Therapy, ritual, science, privacy, and identity-sensitive questions trigger extra boundaries."
       ]
     ],
     "boundary": [

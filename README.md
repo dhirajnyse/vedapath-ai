@@ -303,6 +303,8 @@ Let us look at the source first.
 - [Answer Composer Workspace Notes](docs/ANSWER_COMPOSER_WORKSPACE.md)
 - [Citation Evidence Panel](evidencepanel.html)
 - [Citation Evidence Panel Notes](docs/CITATION_EVIDENCE_PANEL.md)
+- [Confidence Rulebook](confidencerules.html)
+- [Confidence Rulebook Notes](docs/CONFIDENCE_RULEBOOK.md)
 <!-- VEDAPATH WORKING DATA SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -334,7 +336,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v1.5.9` is a trusted MVP prototype plus Citation Evidence Panel with:
+`v1.6.0` is a trusted MVP prototype plus Confidence Rulebook with:
 
 - Ask workspace
 - Source Card
@@ -486,6 +488,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Local Retrieval Workspace: Local Retrieval Workspace gives VedaPath a practical search preview with eligible records, hold states, and visible match reasons.
 - Answer Composer Workspace: Answer Composer Workspace connects retrieval to the user-facing answer, preserving one calm structure across source, meaning, and boundary.
 - Citation Evidence Panel: Citation Evidence Panel gives VedaPath an evidence drawer that can support curiosity, correction, and scholar review while keeping the main surface calm.
+- Confidence Rulebook: Confidence Rulebook makes trust less magical: the product explains why it is confident, cautious, waiting for review, or refusing to answer.
 <!-- VEDAPATH WORKING DATA SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
