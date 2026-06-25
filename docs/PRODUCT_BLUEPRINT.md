@@ -125,6 +125,7 @@ It helps users move from curiosity to understanding through:
 <!-- VEDAPATH ACTIVATION SPRINT SUMMARY END -->
 <!-- VEDAPATH IMPLEMENTATION SPRINT SUMMARY START -->
 - Source JSON Contract: Source JSON Contract gives VedaPath a stable source-record shape that future retrieval, review, and answer rendering can share.
+- Answer Renderer Shell: Answer Renderer Shell separates presentation from generation so every answer shows source, confidence, and boundary consistently.
 <!-- VEDAPATH IMPLEMENTATION SPRINT SUMMARY END -->
 
 ## What It Is
@@ -1943,6 +1944,21 @@ It should:
 - produce a copyable implementation-readiness handoff
 
 Source JSON Contract should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 119. Answer Renderer Shell
+
+Answer Renderer Shell separates presentation from generation so every answer shows source, confidence, and boundary consistently.
+
+It should:
+
+- Direct answer: One useful answer sentence before detail.
+- Source card: Citation, family, review state, rights note, and source id.
+- Confidence card: Basis, risk, missing field, and upgrade path.
+- Boundary line: What not to overclaim and when review is needed.
+- preserve the boundary: Renderer shell, not live AI generation.
+- produce a copyable implementation-readiness handoff
+
+Answer Renderer Shell should never claim production storage, live retrieval, authentication, licensed audio, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH IMPLEMENTATION SPRINT BLUEPRINT END -->
 
 ## Product Personality
