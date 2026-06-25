@@ -317,6 +317,8 @@ Let us look at the source first.
 <!-- VEDAPATH BETA IMPLEMENTATION SPRINT LINKS START -->
 - [Source Schema Contract](sourcecontract.html)
 - [Source Schema Contract Notes](docs/SOURCE_SCHEMA_CONTRACT.md)
+- [Static Dataset Loader](datasetloader.html)
+- [Static Dataset Loader Notes](docs/STATIC_DATASET_LOADER.md)
 <!-- VEDAPATH BETA IMPLEMENTATION SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -348,7 +350,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v1.6.5` is a trusted MVP prototype plus Source Schema Contract with:
+`v1.6.6` is a trusted MVP prototype plus Static Dataset Loader with:
 
 - Ask workspace
 - Source Card
@@ -508,6 +510,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 <!-- VEDAPATH WORKING DATA SPRINT FEATURES END -->
 <!-- VEDAPATH BETA IMPLEMENTATION SPRINT FEATURES START -->
 - Source Schema Contract: Source Schema Contract turns VedaPath's trust language into fields a real implementation can validate.
+- Static Dataset Loader: Static Dataset Loader gives VedaPath a safe first ingestion path before any backend or account system exists.
 <!-- VEDAPATH BETA IMPLEMENTATION SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff

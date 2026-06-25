@@ -161,6 +161,7 @@ It helps users move from curiosity to understanding through:
 <!-- VEDAPATH WORKING DATA SPRINT SUMMARY END -->
 <!-- VEDAPATH BETA IMPLEMENTATION SPRINT SUMMARY START -->
 - Source Schema Contract: Source Schema Contract turns VedaPath's trust language into fields a real implementation can validate.
+- Static Dataset Loader: Static Dataset Loader gives VedaPath a safe first ingestion path before any backend or account system exists.
 <!-- VEDAPATH BETA IMPLEMENTATION SPRINT SUMMARY END -->
 
 ## What It Is
@@ -2432,6 +2433,21 @@ It should:
 - produce a copyable beta-implementation handoff
 
 Source Schema Contract should never claim production storage, live AI generation, public launch approval, authentication, licensed source text, therapy, ritual instruction, crisis support, or spiritual authority.
+
+### 149. Static Dataset Loader
+
+Static Dataset Loader gives VedaPath a safe first ingestion path before any backend or account system exists.
+
+It should:
+
+- Validation: Required fields, allowed families, and citation format are checked.
+- Eligibility: Draft, blocked, rights-needed, and specialist-needed records stay out of public answers.
+- Import report: Accepted, held, blocked, and duplicate records are counted.
+- Fallback pack: No-source and reviewer-needed examples ship with the dataset.
+- preserve the boundary: Static loader demo, not production ingestion.
+- produce a copyable beta-implementation handoff
+
+Static Dataset Loader should never claim production storage, live AI generation, public launch approval, authentication, licensed source text, therapy, ritual instruction, crisis support, or spiritual authority.
 <!-- VEDAPATH BETA IMPLEMENTATION SPRINT BLUEPRINT END -->
 
 ## Product Personality

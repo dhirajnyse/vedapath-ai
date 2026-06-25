@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>VedaPath Source Schema Contract</title>
+    <title>VedaPath Static Dataset Loader</title>
     <link rel="stylesheet" href="assets/vedapath-sprint.css">
   </head>
   <body>
@@ -13,7 +13,7 @@
           <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
           <div>
             <strong>VedaPath AI</strong>
-            <span>Source schema contract</span>
+            <span>Static dataset loader</span>
           </div>
         </a>
         <nav class="nav" aria-label="Project links">
@@ -22,14 +22,14 @@
           <a class="link" href="blueprint.html">Blueprint</a>
           <a class="link" href="workingconsole.html">Working MVP</a>
           <!-- VEDAPATH BETA IMPLEMENTATION SPRINT NAV START -->
-          <a class="link active" href="sourcecontract.html">Schema</a>
-          <a class="link" href="datasetloader.html">Loader</a>
+          <a class="link" href="sourcecontract.html">Schema</a>
+          <a class="link active" href="datasetloader.html">Loader</a>
           <!-- VEDAPATH BETA IMPLEMENTATION SPRINT NAV END -->
           <span class="version">v1.6.6 loader</span>
         </nav>
       </header>
 
-      <main class="workspace" aria-label="VedaPath Source Schema Contract workspace">
+      <main class="workspace" aria-label="VedaPath Static Dataset Loader workspace">
         <aside class="panel">
           <span class="eyebrow">Beta implementation sprint</span>
           <h2>Release Rooms</h2>
@@ -40,38 +40,38 @@
         <section class="panel">
           <div class="hero-grid">
             <div>
-              <span class="eyebrow">Implementation contract</span>
-              <h1>Make source truth machine-readable.</h1>
-              <p class="muted">A source schema contract that names the minimum fields needed before a passage can support a beta answer.</p>
+              <span class="eyebrow">Data loading</span>
+              <h1>Load only records that pass the gate.</h1>
+              <p class="muted">A static dataset loader preview for importing reviewed source records while rejecting missing fields, blocked rights, or unsafe answer scopes.</p>
             </div>
             <div class="mark-stage">
-              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Schema logo">
+              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Loader logo">
             </div>
           </div>
 
           <div class="source-block" aria-label="Release source card">
             <div>
               <span class="source-meta">Release</span>
-              <span class="source-value">v1.6.5</span>
+              <span class="source-value">v1.6.6</span>
             </div>
             <div>
               <span class="source-meta">Source candidate</span>
-              <span class="source-value">Bhagavad Gita 2.48</span>
+              <span class="source-value">Mundaka Upanishad 1.1.4</span>
             </div>
             <div>
               <span class="source-meta">Text family</span>
-              <span class="source-value">Bhagavad Gita | Smriti</span>
+              <span class="source-value">Upanishad | Shruti</span>
             </div>
             <div>
               <span class="source-meta">Boundary</span>
-              <span class="source-value">Schema contract, not a complete source database.</span>
+              <span class="source-value">Static loader demo, not production ingestion.</span>
             </div>
           </div>
 
           <h2>Implementation Signals</h2>
           <div class="item-list" id="itemList"></div>
 
-          <div class="tabs" role="tablist" aria-label="VedaPath Source Schema Contract layers">
+          <div class="tabs" role="tablist" aria-label="VedaPath Static Dataset Loader layers">
             <button class="tab active" type="button" data-mode="brief">Brief</button>
             <button class="tab" type="button" data-mode="checklist">Checklist</button>
             <button class="tab" type="button" data-mode="boundary">Boundary</button>
@@ -85,20 +85,20 @@
             <button class="button" id="copyBoundary" type="button">Copy Boundary</button>
           </div>
 
-          <textarea id="output" readonly aria-label="VedaPath Source Schema Contract output"></textarea>
+          <textarea id="output" readonly aria-label="VedaPath Static Dataset Loader output"></textarea>
         </section>
 
-        <aside class="panel tight" aria-label="VedaPath Source Schema Contract sprint rail">
+        <aside class="panel tight" aria-label="VedaPath Static Dataset Loader sprint rail">
           <span class="badge green">Implementation path</span>
-          <h2 style="margin-top: 14px;">Schema Pulse</h2>
-          <p class="muted">Source Schema Contract turns VedaPath's trust language into fields a real implementation can validate.</p>
-          <div class="progress" aria-label="Sprint progress 61 percent">
-            <div class="bar" style="--score:61%"></div>
+          <h2 style="margin-top: 14px;">Loader Pulse</h2>
+          <p class="muted">Static Dataset Loader gives VedaPath a safe first ingestion path before any backend or account system exists.</p>
+          <div class="progress" aria-label="Sprint progress 62 percent">
+            <div class="bar" style="--score:62%"></div>
           </div>
           <div class="metric-grid">
             <div class="metric">
               <span>Current</span>
-              <strong>v1.6.5</strong>
+              <strong>v1.6.6</strong>
             </div>
             <div class="metric">
               <span>Sprint</span>
@@ -106,11 +106,11 @@
             </div>
             <div class="metric">
               <span>Progress</span>
-              <strong>61%</strong>
+              <strong>62%</strong>
             </div>
             <div class="metric">
               <span>Next</span>
-              <strong>Static Dataset Loader</strong>
+              <strong>Retrieval Scoring Harness</strong>
             </div>
           </div>
 
@@ -142,71 +142,71 @@
     </div>
 
     <script type="application/json" id="room-data">{
-  "version": "v1.6.5",
-  "badge": "v1.6.5 schema",
-  "slug": "sourcecontract",
-  "nav": "Schema",
-  "title": "VedaPath Source Schema Contract",
-  "pageLabel": "Source schema contract",
-  "eyebrow": "Implementation contract",
-  "h1": "Make source truth machine-readable.",
-  "lead": "A source schema contract that names the minimum fields needed before a passage can support a beta answer.",
-  "source": "Bhagavad Gita 2.48",
-  "family": "Bhagavad Gita | Smriti",
-  "stance": "Schema contract, not a complete source database.",
-  "progress": 61,
-  "next": "Static Dataset Loader",
-  "primaryAsk": "Approve the smallest source record shape that can survive beta scrutiny.",
-  "summary": "Source Schema Contract turns VedaPath's trust language into fields a real implementation can validate.",
+  "version": "v1.6.6",
+  "badge": "v1.6.6 loader",
+  "slug": "datasetloader",
+  "nav": "Loader",
+  "title": "VedaPath Static Dataset Loader",
+  "pageLabel": "Static dataset loader",
+  "eyebrow": "Data loading",
+  "h1": "Load only records that pass the gate.",
+  "lead": "A static dataset loader preview for importing reviewed source records while rejecting missing fields, blocked rights, or unsafe answer scopes.",
+  "source": "Mundaka Upanishad 1.1.4",
+  "family": "Upanishad | Shruti",
+  "stance": "Static loader demo, not production ingestion.",
+  "progress": 62,
+  "next": "Retrieval Scoring Harness",
+  "primaryAsk": "Prove that draft records cannot silently become public answer fuel.",
+  "summary": "Static Dataset Loader gives VedaPath a safe first ingestion path before any backend or account system exists.",
   "items": [
     [
-      "Identity fields",
-      "id, title, citation, family, section, and source note.",
-      "Makes every record traceable."
+      "Validation",
+      "Required fields, allowed families, and citation format are checked.",
+      "Prevents broken records."
     ],
     [
-      "Review fields",
-      "review state, reviewer lane, rights state, and confidence basis.",
-      "Makes trust inspectable."
+      "Eligibility",
+      "Draft, blocked, rights-needed, and specialist-needed records stay out of public answers.",
+      "Protects output."
     ],
     [
-      "Answer scope",
-      "allowed intents, blocked claims, fallback copy, and risk tags.",
-      "Keeps answers narrow."
+      "Import report",
+      "Accepted, held, blocked, and duplicate records are counted.",
+      "Makes QA visible."
     ],
     [
-      "Change log",
-      "created date, last review, decision note, and retired state.",
-      "Makes edits auditable."
+      "Fallback pack",
+      "No-source and reviewer-needed examples ship with the dataset.",
+      "Prevents invention."
     ]
   ],
   "modes": {
     "brief": [
       [
         "Implementation promise",
-        "Source Schema Contract turns VedaPath's trust language into fields a real implementation can validate."
+        "Static Dataset Loader gives VedaPath a safe first ingestion path before any backend or account system exists."
       ],
       [
         "Founder move",
-        "Approve the smallest source record shape that can survive beta scrutiny."
+        "Prove that draft records cannot silently become public answer fuel."
       ],
       [
         "Trust move",
-        "Keep this boundary visible: Schema contract, not a complete source database."
+        "Keep this boundary visible: Static loader demo, not production ingestion."
       ]
     ],
     "checklist": [
       [
-        "Identity fields",
-        "id, title, citation, family, section, and source note."
+        "Validation",
+        "Required fields, allowed families, and citation format are checked."
       ],
       [
-        "Review fields",
-        "review state, reviewer lane, rights state, and confidence basis."
+        "Eligibility",
+        "Draft, blocked, rights-needed, and specialist-needed records stay out of public answers."
       ],
       [
-        "Answer scope",
-        "allowed intents, blocked claims, fallback copy, and risk tags."
+        "Import report",
+        "Accepted, held, blocked, and duplicate records are counted."
       ]
     ],
     "boundary": [
