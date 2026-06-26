@@ -417,6 +417,8 @@ Let us look at the source first.
 - [Local Decision Memory Notes](docs/LOCAL_DECISION_MEMORY.md)
 - [Review Audit Trail](reviewaudit.html)
 - [Review Audit Trail Notes](docs/REVIEW_AUDIT_TRAIL.md)
+- [Public Effect Preview](publiceffect.html)
+- [Public Effect Preview Notes](docs/PUBLIC_EFFECT_PREVIEW.md)
 <!-- VEDAPATH REVIEWER STUDIO SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -448,7 +450,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v2.1.1` is a trusted MVP prototype plus Review Audit Trail with:
+`v2.1.2` is a trusted MVP prototype plus Public Effect Preview with:
 
 - Ask workspace
 - Source Card
@@ -662,6 +664,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Reviewer Decision Composer: Reviewer Decision Composer turns review intent into a readable, copyable decision packet.
 - Local Decision Memory: Local Decision Memory tests review workflow behavior while preserving the privacy and authority boundary.
 - Review Audit Trail: Review Audit Trail keeps product decisions accountable without pretending compliance infrastructure exists.
+- Public Effect Preview: Public Effect Preview helps VedaPath see how review choices should shape the learner experience.
 <!-- VEDAPATH REVIEWER STUDIO SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff

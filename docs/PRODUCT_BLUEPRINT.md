@@ -215,6 +215,7 @@ It helps users move from curiosity to understanding through:
 - Reviewer Decision Composer: Reviewer Decision Composer turns review intent into a readable, copyable decision packet.
 - Local Decision Memory: Local Decision Memory tests review workflow behavior while preserving the privacy and authority boundary.
 - Review Audit Trail: Review Audit Trail keeps product decisions accountable without pretending compliance infrastructure exists.
+- Public Effect Preview: Public Effect Preview helps VedaPath see how review choices should shape the learner experience.
 <!-- VEDAPATH REVIEWER STUDIO SPRINT SUMMARY END -->
 
 ## What It Is
@@ -3180,6 +3181,21 @@ It should:
 - keep review decisions browser-only until reviewer identity, consent, backend storage, and source policy are approved
 
 Review Audit Trail should never claim production approval, scholar endorsement, legal clearance, durable review storage, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
+
+### 195. Public Effect Preview
+
+Public Effect Preview helps VedaPath see how review choices should shape the learner experience.
+
+It should:
+
+- Display outcome: Decision maps to public preview behavior.
+- Hold outcome: Held items remain visible as held.
+- Block outcome: Overclaim blocks are explicit.
+- No release claim: The preview does not publish content.
+- preserve the boundary: Public effect preview, not production release.
+- keep review decisions browser-only until reviewer identity, consent, backend storage, and source policy are approved
+
+Public Effect Preview should never claim production approval, scholar endorsement, legal clearance, durable review storage, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
 <!-- VEDAPATH REVIEWER STUDIO SPRINT BLUEPRINT END -->
 
 ## Product Personality

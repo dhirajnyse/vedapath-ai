@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>VedaPath Review Audit Trail</title>
+    <title>VedaPath Public Effect Preview</title>
     <link rel="stylesheet" href="assets/vedapath-sprint.css">
     <link rel="stylesheet" href="assets/vedapath-reviewer-studio.css">
   </head>
@@ -14,7 +14,7 @@
           <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
           <div>
             <strong>VedaPath AI</strong>
-            <span>Review audit</span>
+            <span>Public effect</span>
           </div>
         </a>
         <nav class="nav" aria-label="Project links">
@@ -29,14 +29,14 @@
           <a class="link" href="boundaryboard.html">Boundary</a>
           <a class="link" href="decisioncomposer.html">Decision</a>
           <a class="link" href="decisionmemory.html">Memory</a>
-          <a class="link active" href="reviewaudit.html">Audit</a>
-          <a class="link" href="publiceffect.html">Effect</a>
+          <a class="link" href="reviewaudit.html">Audit</a>
+          <a class="link active" href="publiceffect.html">Effect</a>
           <!-- VEDAPATH REVIEWER STUDIO SPRINT NAV END -->
           <span class="version">v2.1.2 public effect</span>
         </nav>
       </header>
 
-      <main class="workspace" aria-label="VedaPath Review Audit Trail workspace">
+      <main class="workspace" aria-label="VedaPath Public Effect Preview workspace">
         <aside class="panel">
           <span class="eyebrow">Reviewer studio sprint</span>
           <h2>Release Rooms</h2>
@@ -47,35 +47,35 @@
         <section class="panel">
           <div class="hero-grid">
             <div>
-              <span class="eyebrow">Audit trail</span>
-              <h1>Keep the decision and the boundary together.</h1>
-              <p class="muted">An audit trail preview that shows saved decision, source candidate, no-go line, reviewer role, and public effect in one local record.</p>
+              <span class="eyebrow">Public effect</span>
+              <h1>Show what the user would see next.</h1>
+              <p class="muted">A public effect preview that translates reviewer decisions into display, hold, request-source, or block-overclaim outcomes without changing production content.</p>
             </div>
             <div class="mark-stage">
-              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Audit logo">
+              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Effect logo">
             </div>
           </div>
 
           <div class="source-block" aria-label="Release source card">
             <div>
               <span class="source-meta">Release</span>
-              <span class="source-value">v2.1.1</span>
+              <span class="source-value">v2.1.2</span>
             </div>
             <div>
               <span class="source-meta">Source candidate</span>
-              <span class="source-value">Taittiriya Upanishad 1.11.1</span>
+              <span class="source-value">Bhagavad Gita 18.63</span>
             </div>
             <div>
               <span class="source-meta">Text family</span>
-              <span class="source-value">Upanishad | Shruti</span>
+              <span class="source-value">Bhagavad Gita | Smriti</span>
             </div>
             <div>
               <span class="source-meta">Boundary</span>
-              <span class="source-value">Audit preview, not compliance log.</span>
+              <span class="source-value">Public effect preview, not production release.</span>
             </div>
           </div>
 
-          <section class="review-studio" id="reviewStudio" data-default-queue="authority" aria-label="Reviewer studio">
+          <section class="review-studio" id="reviewStudio" data-default-queue="source" aria-label="Reviewer studio">
             <div class="review-head">
               <div>
                 <span class="eyebrow">Browser-only review studio</span>
@@ -109,7 +109,7 @@
           <h2>Review Signals</h2>
           <div class="item-list" id="itemList"></div>
 
-          <div class="tabs" role="tablist" aria-label="VedaPath Review Audit Trail layers">
+          <div class="tabs" role="tablist" aria-label="VedaPath Public Effect Preview layers">
             <button class="tab active" type="button" data-mode="brief">Brief</button>
             <button class="tab" type="button" data-mode="checklist">Checklist</button>
             <button class="tab" type="button" data-mode="boundary">Boundary</button>
@@ -123,20 +123,20 @@
             <button class="button" id="copyBoundary" type="button">Copy Boundary</button>
           </div>
 
-          <textarea id="output" readonly aria-label="VedaPath Review Audit Trail output"></textarea>
+          <textarea id="output" readonly aria-label="VedaPath Public Effect Preview output"></textarea>
         </section>
 
-        <aside class="panel tight" aria-label="VedaPath Review Audit Trail sprint rail">
+        <aside class="panel tight" aria-label="VedaPath Public Effect Preview sprint rail">
           <span class="badge green">Reviewer studio</span>
-          <h2 style="margin-top: 14px;">Audit Pulse</h2>
-          <p class="muted">Review Audit Trail keeps product decisions accountable without pretending compliance infrastructure exists.</p>
-          <div class="progress" aria-label="Sprint progress 107 percent">
-            <div class="bar" style="--score:107%"></div>
+          <h2 style="margin-top: 14px;">Effect Pulse</h2>
+          <p class="muted">Public Effect Preview helps VedaPath see how review choices should shape the learner experience.</p>
+          <div class="progress" aria-label="Sprint progress 108 percent">
+            <div class="bar" style="--score:108%"></div>
           </div>
           <div class="metric-grid">
             <div class="metric">
               <span>Current</span>
-              <strong>v2.1.1</strong>
+              <strong>v2.1.2</strong>
             </div>
             <div class="metric">
               <span>Sprint</span>
@@ -144,11 +144,11 @@
             </div>
             <div class="metric">
               <span>Progress</span>
-              <strong>107%</strong>
+              <strong>108%</strong>
             </div>
             <div class="metric">
               <span>Next</span>
-              <strong>Public Effect Preview</strong>
+              <strong>Mobile Review Polish</strong>
             </div>
           </div>
 
@@ -180,72 +180,72 @@
     </div>
 
     <script type="application/json" id="room-data">{
-  "version": "v2.1.1",
-  "badge": "v2.1.1 audit",
-  "slug": "reviewaudit",
-  "nav": "Audit",
-  "title": "VedaPath Review Audit Trail",
-  "pageLabel": "Review audit",
-  "eyebrow": "Audit trail",
-  "h1": "Keep the decision and the boundary together.",
-  "lead": "An audit trail preview that shows saved decision, source candidate, no-go line, reviewer role, and public effect in one local record.",
-  "source": "Taittiriya Upanishad 1.11.1",
-  "family": "Upanishad | Shruti",
-  "stance": "Audit preview, not compliance log.",
-  "progress": 107,
-  "next": "Public Effect Preview",
-  "defaultQueue": "authority",
-  "primaryAsk": "Make every review decision explainable without turning it into a legal record.",
-  "summary": "Review Audit Trail keeps product decisions accountable without pretending compliance infrastructure exists.",
+  "version": "v2.1.2",
+  "badge": "v2.1.2 public effect",
+  "slug": "publiceffect",
+  "nav": "Effect",
+  "title": "VedaPath Public Effect Preview",
+  "pageLabel": "Public effect",
+  "eyebrow": "Public effect",
+  "h1": "Show what the user would see next.",
+  "lead": "A public effect preview that translates reviewer decisions into display, hold, request-source, or block-overclaim outcomes without changing production content.",
+  "source": "Bhagavad Gita 18.63",
+  "family": "Bhagavad Gita | Smriti",
+  "stance": "Public effect preview, not production release.",
+  "progress": 108,
+  "next": "Mobile Review Polish",
+  "defaultQueue": "source",
+  "primaryAsk": "Connect reviewer decisions to the user-facing answer state.",
+  "summary": "Public Effect Preview helps VedaPath see how review choices should shape the learner experience.",
   "items": [
     [
-      "Audit row",
-      "Decision, source, role, no-go, and effect stay together.",
-      "Prevents drift."
+      "Display outcome",
+      "Decision maps to public preview behavior.",
+      "Closes the review loop."
     ],
     [
-      "Local-only",
-      "Audit rows are preview state only.",
-      "Keeps honesty."
+      "Hold outcome",
+      "Held items remain visible as held.",
+      "Avoids silent changes."
     ],
     [
-      "Boundary reuse",
-      "The no-go line travels with the decision.",
-      "Prevents overclaim."
+      "Block outcome",
+      "Overclaim blocks are explicit.",
+      "Protects users."
     ],
     [
-      "Export posture",
-      "Copy, not sync, remains the handoff.",
-      "Keeps scope lean."
+      "No release claim",
+      "The preview does not publish content.",
+      "Keeps authority clear."
     ]
   ],
   "modes": {
     "brief": [
       [
         "Review promise",
-        "Review Audit Trail keeps product decisions accountable without pretending compliance infrastructure exists."
+        "Public Effect Preview helps VedaPath see how review choices should shape the learner experience."
       ],
       [
         "Founder move",
-        "Make every review decision explainable without turning it into a legal record."
+        "Connect reviewer decisions to the user-facing answer state."
       ],
       [
         "Trust move",
-        "Keep this boundary visible: Audit preview, not compliance log."
+        "Keep this boundary visible: Public effect preview, not production release."
       ]
     ],
     "checklist": [
       [
-        "Audit row",
-        "Decision, source, role, no-go, and effect stay together."
+        "Display outcome",
+        "Decision maps to public preview behavior."
       ],
       [
-        "Local-only",
-        "Audit rows are preview state only."
+        "Hold outcome",
+        "Held items remain visible as held."
       ],
       [
-        "Boundary reuse",
-        "The no-go line travels with the decision."
+        "Block outcome",
+        "Overclaim blocks are explicit."
       ]
     ],
     "boundary": [
