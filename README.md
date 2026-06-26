@@ -501,6 +501,8 @@ Let us look at the source first.
 - [Word Meaning Rail Notes](docs/WORD_MEANING_RAIL.md)
 - [Chant Boundary](chantboundary.html)
 - [Chant Boundary Notes](docs/CHANT_BOUNDARY.md)
+- [Meter Guide](meterguide.html)
+- [Meter Guide Notes](docs/METER_GUIDE.md)
 <!-- VEDAPATH MANTRA LENS SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -532,7 +534,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v2.4.9` is a trusted MVP prototype plus Chant Boundary with:
+`v2.5.0` is a trusted MVP prototype plus Meter Guide with:
 
 - Ask workspace
 - Source Card
@@ -792,6 +794,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Transliteration Lab: Transliteration Lab opens Sanskrit study while keeping pronunciation claims restrained.
 - Word Meaning Rail: Word Meaning Rail adds progressive depth without visual noise.
 - Chant Boundary: Chant Boundary keeps calm practice respectful and non-authoritative.
+- Meter Guide: Meter Guide prepares verse study for future licensed audio and scholar review.
 <!-- VEDAPATH MANTRA LENS SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff

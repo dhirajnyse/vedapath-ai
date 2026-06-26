@@ -261,6 +261,7 @@ It helps users move from curiosity to understanding through:
 - Transliteration Lab: Transliteration Lab opens Sanskrit study while keeping pronunciation claims restrained.
 - Word Meaning Rail: Word Meaning Rail adds progressive depth without visual noise.
 - Chant Boundary: Chant Boundary keeps calm practice respectful and non-authoritative.
+- Meter Guide: Meter Guide prepares verse study for future licensed audio and scholar review.
 <!-- VEDAPATH MANTRA LENS SPRINT SUMMARY END -->
 
 ## What It Is
@@ -3800,6 +3801,21 @@ It should:
 - keep verse study source-first, humble, and locally private
 
 Chant Boundary should never claim ritual authority, pronunciation certification, therapy, emergency support, or spiritual authority.
+
+### 233. Meter Guide
+
+Meter Guide prepares verse study for future licensed audio and scholar review.
+
+It should:
+
+- Source: Show source family, citation, and confidence before practice.
+- Words: Break the verse into learner-sized word cards.
+- Boundary: Separate study support from ritual or pronunciation authority.
+- Practice: Save local notes and completions only on the device.
+- preserve the boundary: Meter preview, not chanting certification.
+- keep verse study source-first, humble, and locally private
+
+Meter Guide should never claim ritual authority, pronunciation certification, therapy, emergency support, or spiritual authority.
 <!-- VEDAPATH MANTRA LENS SPRINT BLUEPRINT END -->
 
 ## Product Personality
