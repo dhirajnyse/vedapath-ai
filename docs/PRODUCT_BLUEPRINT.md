@@ -199,6 +199,7 @@ It helps users move from curiosity to understanding through:
 - Source Reader Shell: Source Reader Shell gives VedaPath the first calm reading surface after beta search.
 - Passage Focus Lens: Passage Focus Lens makes the reader feel simple by anchoring every action to one chosen passage.
 - Meaning Layer Stack: Meaning Layer Stack gives VedaPath a readable pattern for depth without overwhelming beginners.
+- Context Boundary Gate: Context Boundary Gate keeps personal calm work source-backed but carefully limited.
 <!-- VEDAPATH GUIDED READER SPRINT SUMMARY END -->
 
 ## What It Is
@@ -2953,6 +2954,21 @@ It should:
 - keep the reader prototype browser-only until reviewed content, accounts, or backend storage are approved
 
 Meaning Layer Stack should never claim final commentary, full scripture text, translation rights, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
+
+### 181. Context Boundary Gate
+
+Context Boundary Gate keeps personal calm work source-backed but carefully limited.
+
+It should:
+
+- Boundary card: The reader says what the source candidate cannot do.
+- No-go line: Misuse is visible in plain language.
+- Source context: Family and candidate citation remain present.
+- Refusal path: Sensitive overclaims lead to a careful stop.
+- preserve the boundary: Context gate, not safety certification.
+- keep the reader prototype browser-only until reviewed content, accounts, or backend storage are approved
+
+Context Boundary Gate should never claim final commentary, full scripture text, translation rights, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
 <!-- VEDAPATH GUIDED READER SPRINT BLUEPRINT END -->
 
 ## Product Personality
