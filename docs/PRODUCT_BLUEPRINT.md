@@ -228,6 +228,7 @@ It helps users move from curiosity to understanding through:
 - Concept Glossary Builder: Concept Glossary Builder connects source records to learning language while preserving depth.
 - Question Source Map: Question Source Map prepares retrieval while keeping source claims humble.
 - Readiness Scorecard: Readiness Scorecard turns source quality into a visible product signal.
+- Source Packet Export: Source Packet Export makes source review faster and less lossy.
 <!-- VEDAPATH SOURCE LIBRARY SPRINT SUMMARY END -->
 
 ## What It Is
@@ -3359,6 +3360,21 @@ It should:
 - keep source-library records as starter data until scholar review, rights policy, and retrieval evaluation are approved
 
 Readiness Scorecard should never claim canonical corpus coverage, scholar endorsement, legal clearance, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
+
+### 206. Source Packet Export
+
+Source Packet Export makes source review faster and less lossy.
+
+It should:
+
+- Copy packet: Selected source records generate review handoffs.
+- Pin memory: Local pins prove library behavior before accounts.
+- Question fit: Example questions travel with the source.
+- Public boundary: The packet says what not to overclaim.
+- preserve the boundary: Packet export preview, not reviewer approval.
+- keep source-library records as starter data until scholar review, rights policy, and retrieval evaluation are approved
+
+Source Packet Export should never claim canonical corpus coverage, scholar endorsement, legal clearance, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
 <!-- VEDAPATH SOURCE LIBRARY SPRINT BLUEPRINT END -->
 
 ## Product Personality
