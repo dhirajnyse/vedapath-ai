@@ -559,6 +559,8 @@ Let us look at the source first.
 <!-- VEDAPATH PATTERN COMPANION SPRINT LINKS START -->
 - [Pattern Arrival](patternarrival.html)
 - [Pattern Arrival Notes](docs/PATTERN_ARRIVAL.md)
+- [Local Signal Map](localsignalmap.html)
+- [Local Signal Map Notes](docs/LOCAL_SIGNAL_MAP.md)
 <!-- VEDAPATH PATTERN COMPANION SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -590,7 +592,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v2.7.5` is a trusted MVP prototype plus Pattern Arrival with:
+`v2.7.6` is a trusted MVP prototype plus Local Signal Map with:
 
 - Ask workspace
 - Source Card
@@ -882,6 +884,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 <!-- VEDAPATH CONVERSATION COMPANION SPRINT FEATURES END -->
 <!-- VEDAPATH PATTERN COMPANION SPRINT FEATURES START -->
 - Pattern Arrival: Pattern Arrival starts the learning layer while keeping identity and memory local.
+- Local Signal Map: Local Signal Map shows how VedaPath can learn from use without storing a user in the cloud.
 <!-- VEDAPATH PATTERN COMPANION SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
