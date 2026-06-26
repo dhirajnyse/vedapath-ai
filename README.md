@@ -567,6 +567,8 @@ Let us look at the source first.
 - [Situation Lens Notes](docs/SITUATION_LENS.md)
 - [Helpful Action Library](helpfulactionlibrary.html)
 - [Helpful Action Library Notes](docs/HELPFUL_ACTION_LIBRARY.md)
+- [Source Match Memory](sourcematchmemory.html)
+- [Source Match Memory Notes](docs/SOURCE_MATCH_MEMORY.md)
 <!-- VEDAPATH PATTERN COMPANION SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -598,7 +600,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v2.7.9` is a trusted MVP prototype plus Helpful Action Library with:
+`v2.8.0` is a trusted MVP prototype plus Source Match Memory with:
 
 - Ask workspace
 - Source Card
@@ -894,6 +896,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Calm Heatmap: Calm Heatmap makes repeated moments visible without turning life into a performance metric.
 - Situation Lens: Situation Lens protects dignity by describing conditions and actions instead of labeling the user.
 - Helpful Action Library: Helpful Action Library gives the product a memory of what actually helped, not just what was asked.
+- Source Match Memory: Source Match Memory makes citations feel alive while staying careful about overclaim.
 <!-- VEDAPATH PATTERN COMPANION SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff

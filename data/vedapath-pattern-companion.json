@@ -1,6 +1,6 @@
 {
   "product": "VedaPath AI",
-  "release": "v2.7.9",
+  "release": "v2.8.0",
   "status": "pattern companion prototype",
   "warning": "Prototype local pattern support only. Not diagnosis, therapy, legal advice, medical advice, surveillance, scoring, or spiritual authority.",
   "localStorageKeys": [
