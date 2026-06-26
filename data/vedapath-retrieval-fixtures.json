@@ -1,0 +1,69 @@
+{
+  "product": "VedaPath AI",
+  "release": "v2.2.5",
+  "status": "retrieval lab prototype",
+  "warning": "Prototype retrieval fixtures only. This is not production RAG, scholar approval, therapy, ritual instruction, or spiritual authority.",
+  "fixtures": [
+    {
+      "id": "steady-action",
+      "query": "How can I act calmly when results are uncertain?",
+      "intent": "steady action",
+      "expected_source_ids": [
+        "bg-2-48-steadiness",
+        "bg-18-63-agency"
+      ],
+      "boundary": "Reflection support only; do not promise peace or therapy.",
+      "safe_answer_frame": "Start with the source candidate, explain the action/result distinction gently, and name one small carry action."
+    },
+    {
+      "id": "discernment-choice",
+      "query": "How do I tell short term comfort from a deeper good?",
+      "intent": "discernment",
+      "expected_source_ids": [
+        "katha-1-2-1-discernment"
+      ],
+      "boundary": "Do not judge another person's life or turn the source into moral policing.",
+      "safe_answer_frame": "Offer a source-guided question about clarity, not a command."
+    },
+    {
+      "id": "knowledge-layers",
+      "query": "What does Hindu philosophy mean by different kinds of knowledge?",
+      "intent": "knowledge",
+      "expected_source_ids": [
+        "mundaka-1-1-4-knowledge"
+      ],
+      "boundary": "Do not frame the source as anti-science or anti-scholarship.",
+      "safe_answer_frame": "Separate source category, plain meaning, and commentary caution."
+    },
+    {
+      "id": "restraint-life",
+      "query": "How can I practice restraint without escaping responsibility?",
+      "intent": "restraint",
+      "expected_source_ids": [
+        "isha-1-restraint"
+      ],
+      "boundary": "Do not advise abandoning safety, shelter, responsibility, law, or family duties.",
+      "safe_answer_frame": "Keep it as a reflection prompt with a rights hold visible."
+    },
+    {
+      "id": "identity-context",
+      "query": "How should beginners approach Atman and Brahman carefully?",
+      "intent": "self inquiry",
+      "expected_source_ids": [
+        "chandogya-6-8-7-identity"
+      ],
+      "boundary": "Do not turn metaphysics into self-esteem slogans or psychological advice.",
+      "safe_answer_frame": "Invite context, commentary lanes, and humility."
+    },
+    {
+      "id": "plurality",
+      "query": "Does the Rigveda support religious pluralism?",
+      "intent": "plural expression",
+      "expected_source_ids": [
+        "rigveda-1-164-46-many-names"
+      ],
+      "boundary": "Do not claim all traditions say the same thing or erase debate.",
+      "safe_answer_frame": "Name the source as a Vedic hymn and separate text, interpretation, and modern analogy."
+    }
+  ]
+}

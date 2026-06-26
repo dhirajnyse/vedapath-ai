@@ -446,6 +446,10 @@ Let us look at the source first.
 - [Source Library Control Room](sourcelibrary.html)
 - [Source Library Control Room Notes](docs/SOURCE_LIBRARY_CONTROL_ROOM.md)
 <!-- VEDAPATH SOURCE LIBRARY SPRINT LINKS END -->
+<!-- VEDAPATH RETRIEVAL LAB SPRINT LINKS START -->
+- [Retrieval Query Desk](retrievalquery.html)
+- [Retrieval Query Desk Notes](docs/RETRIEVAL_QUERY_DESK.md)
+<!-- VEDAPATH RETRIEVAL LAB SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
 - [Calm Compass](compass.html)
@@ -476,7 +480,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v2.2.4` is a trusted MVP prototype plus Source Library Control Room with:
+`v2.2.5` is a trusted MVP prototype plus Retrieval Query Desk with:
 
 - Ask workspace
 - Source Card
@@ -706,6 +710,9 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Source Packet Export: Source Packet Export makes source review faster and less lossy.
 - Source Library Control Room: Source Library Control Room completes the curated-source sprint and gives VedaPath a concrete dataset foundation.
 <!-- VEDAPATH SOURCE LIBRARY SPRINT FEATURES END -->
+<!-- VEDAPATH RETRIEVAL LAB SPRINT FEATURES START -->
+- Retrieval Query Desk: Retrieval Query Desk starts the search layer over VedaPath's curated source records.
+<!-- VEDAPATH RETRIEVAL LAB SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
 - Calm Card Studio with visual card preview, local saved cards, copy text, and PNG export

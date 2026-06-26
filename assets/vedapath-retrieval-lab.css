@@ -1,0 +1,13 @@
+/* VedaPath retrieval lab */
+.retrieval-lab{margin:18px 0;padding:16px;border:1px solid var(--line);border-radius:8px;background:rgba(255,253,248,.88)}
+.retrieval-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(190px,280px);gap:14px;align-items:start}
+.retrieval-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.retrieval-stat,.candidate-card,.candidate-detail,.answer-draft,.history-card{border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+.retrieval-stat{padding:10px}.retrieval-stat span,.candidate-detail span,.history-card span,.retrieval-tools label{display:block;color:var(--muted);font-size:12px}.retrieval-stat strong{display:block;font-size:22px;line-height:1.1}
+.retrieval-tools textarea,.retrieval-tools input,#retrievalTrace{width:100%;border:1px solid #efc1aa;border-radius:8px;background:#fffaf4;color:var(--ink);padding:12px;font-weight:700}
+#retrievalQuery{min-height:92px;resize:vertical}.fixture-buttons,.retrieval-actions{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}.fixture-button{min-height:34px;border:1px solid #efb899;border-radius:8px;background:var(--surface);color:var(--ochre);padding:7px 10px;font-weight:850}
+.retrieval-layout{display:grid;grid-template-columns:minmax(230px,.9fr) minmax(0,1.1fr);gap:14px;align-items:start}.candidate-list{display:grid;gap:8px}.candidate-card{width:100%;padding:11px;color:inherit;text-align:left}.candidate-card.active,.candidate-card:hover,.candidate-card:focus-visible{border-color:#f09f79;background:#fff0e7;outline:none}.candidate-card strong,.candidate-card span{display:block}.candidate-card span{color:var(--muted);font-size:12px}
+.match-line{display:flex;align-items:center;gap:8px;margin-top:7px}.match-track{flex:1;height:8px;border-radius:999px;overflow:hidden;background:#f1dcd2}.match-fill{height:100%;width:var(--score);background:linear-gradient(90deg,var(--bhagwa),var(--gold))}
+.candidate-detail{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:12px;border-left:4px solid var(--green)}.candidate-detail .wide{grid-column:1/-1}.answer-draft{margin:12px 0;padding:12px;border-left:4px solid var(--bhagwa)}
+.retrieval-label{display:block;margin:14px 0 6px;color:var(--muted);font-size:13px;font-weight:850}#retrievalTrace{min-height:190px;resize:vertical}.retrieval-history{display:grid;gap:8px;margin-top:12px}.history-card{padding:12px}
+@media(max-width:860px){.retrieval-head,.retrieval-stats,.retrieval-layout,.candidate-detail{grid-template-columns:1fr}.retrieval-actions .button,.fixture-button{width:100%}}

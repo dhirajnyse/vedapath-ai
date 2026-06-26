@@ -231,6 +231,9 @@ It helps users move from curiosity to understanding through:
 - Source Packet Export: Source Packet Export makes source review faster and less lossy.
 - Source Library Control Room: Source Library Control Room completes the curated-source sprint and gives VedaPath a concrete dataset foundation.
 <!-- VEDAPATH SOURCE LIBRARY SPRINT SUMMARY END -->
+<!-- VEDAPATH RETRIEVAL LAB SPRINT SUMMARY START -->
+- Retrieval Query Desk: Retrieval Query Desk starts the search layer over VedaPath's curated source records.
+<!-- VEDAPATH RETRIEVAL LAB SPRINT SUMMARY END -->
 
 ## What It Is
 
@@ -3392,6 +3395,22 @@ It should:
 
 Source Library Control Room should never claim canonical corpus coverage, scholar endorsement, legal clearance, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
 <!-- VEDAPATH SOURCE LIBRARY SPRINT BLUEPRINT END -->
+<!-- VEDAPATH RETRIEVAL LAB SPRINT BLUEPRINT START -->
+### 208. Retrieval Query Desk
+
+Retrieval Query Desk starts the search layer over VedaPath's curated source records.
+
+It should:
+
+- Query path: User language is matched to curated source records.
+- Reason path: Ranking reasons and readiness stay visible.
+- Boundary path: No-go language travels with each candidate.
+- Trace path: The chosen source can be copied as a trace packet.
+- preserve the boundary: Retrieval query prototype, not an AI answer engine.
+- keep retrieval explainable, source-bound, and honest about fallback
+
+Retrieval Query Desk should never claim production RAG, model truth, scholar endorsement, legal clearance, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
+<!-- VEDAPATH RETRIEVAL LAB SPRINT BLUEPRINT END -->
 
 ## Product Personality
 
