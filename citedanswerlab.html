@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>VedaPath Feedback Capture Lab</title>
+    <title>VedaPath Cited Answer Control Room</title>
     <link rel="stylesheet" href="assets/vedapath-sprint.css">
     <link rel="stylesheet" href="assets/vedapath-cited-answer-lab.css">
   </head>
@@ -12,7 +12,7 @@
       <header class="topbar">
         <a class="brand" href="index.html#top" aria-label="VedaPath AI home">
           <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
-          <div><strong>VedaPath AI</strong><span>Feedback capture</span></div>
+          <div><strong>VedaPath AI</strong><span>Cited answer</span></div>
         </a>
         <nav class="nav" aria-label="Project links">
           <a class="link" href="build-status.html">Build</a>
@@ -29,7 +29,7 @@
         </nav>
       </header>
 
-      <main class="workspace" aria-label="VedaPath Feedback Capture Lab workspace">
+      <main class="workspace" aria-label="VedaPath Cited Answer Control Room workspace">
         <aside class="panel">
           <span class="eyebrow">Cited answer sprint</span>
           <h2>Release Rooms</h2>
@@ -40,21 +40,21 @@
         <section class="panel">
           <div class="hero-grid">
             <div>
-              <span class="eyebrow">Feedback capture</span>
-              <h1>Turn answer concerns into review tickets.</h1>
-              <p class="muted">A feedback capture room that converts answer concerns into local review tickets with source id, confidence, boundary, and user prompt.</p>
+              <span class="eyebrow">Cited answer control</span>
+              <h1>Answer with source, confidence, and restraint.</h1>
+              <p class="muted">A cited answer control room that turns retrieval candidates into source-carded answer drafts with confidence, boundaries, feedback capture, and copyable answer packets.</p>
             </div>
-            <div class="mark-stage"><img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Feedback logo"></div>
+            <div class="mark-stage"><img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Answer logo"></div>
           </div>
 
           <div class="source-block" aria-label="Release answer card">
-            <div><span class="source-meta">Release</span><span class="source-value">v2.4.2</span></div>
-            <div><span class="source-meta">Sample question</span><span class="source-value">How do I tell short term comfort from a deeper good?</span></div>
-            <div><span class="source-meta">Source lane</span><span class="source-value">Katha Upanishad 1.2.1</span></div>
-            <div><span class="source-meta">Boundary</span><span class="source-value">Feedback preview, not durable support queue.</span></div>
+            <div><span class="source-meta">Release</span><span class="source-value">v2.4.4</span></div>
+            <div><span class="source-meta">Sample question</span><span class="source-value">How can I act calmly when results are uncertain?</span></div>
+            <div><span class="source-meta">Source lane</span><span class="source-value">Bhagavad Gita 2.48</span></div>
+            <div><span class="source-meta">Boundary</span><span class="source-value">Cited answer lab prototype, not production AI authority.</span></div>
           </div>
 
-          <section class="answer-lab" id="citedAnswerLab" data-pattern="discernment-answer" aria-label="Cited answer lab">
+          <section class="answer-lab" id="citedAnswerLab" data-pattern="steady-action-answer" aria-label="Cited answer lab">
             <div class="answer-head">
               <div>
                 <span class="eyebrow">Source-carded answer draft</span>
@@ -98,7 +98,7 @@
 
           <h2>Answer Signals</h2>
           <div class="item-list" id="itemList"></div>
-          <div class="tabs" role="tablist" aria-label="VedaPath Feedback Capture Lab layers">
+          <div class="tabs" role="tablist" aria-label="VedaPath Cited Answer Control Room layers">
             <button class="tab active" type="button" data-mode="brief">Brief</button>
             <button class="tab" type="button" data-mode="checklist">Checklist</button>
             <button class="tab" type="button" data-mode="boundary">Boundary</button>
@@ -109,19 +109,19 @@
             <button class="button safe" id="copyJson" type="button">Copy JSON</button>
             <button class="button" id="copyBoundary" type="button">Copy Boundary</button>
           </div>
-          <textarea id="output" readonly aria-label="VedaPath Feedback Capture Lab output"></textarea>
+          <textarea id="output" readonly aria-label="VedaPath Cited Answer Control Room output"></textarea>
         </section>
 
-        <aside class="panel tight" aria-label="VedaPath Feedback Capture Lab sprint rail">
+        <aside class="panel tight" aria-label="VedaPath Cited Answer Control Room sprint rail">
           <span class="badge green">Cited answer</span>
-          <h2 style="margin-top: 14px;">Feedback Pulse</h2>
-          <p class="muted">Feedback Capture Lab closes the answer loop without silently rewriting knowledge.</p>
-          <div class="progress" aria-label="Sprint progress 80 percent"><div class="bar" style="--score:80%"></div></div>
+          <h2 style="margin-top: 14px;">Answer Pulse</h2>
+          <p class="muted">Cited Answer Control Room completes the retrieval-to-answer bridge with a source-first answer pattern.</p>
+          <div class="progress" aria-label="Sprint progress 100 percent"><div class="bar" style="--score:100%"></div></div>
           <div class="metric-grid">
-            <div class="metric"><span>Current</span><strong>v2.4.2</strong></div>
+            <div class="metric"><span>Current</span><strong>v2.4.4</strong></div>
             <div class="metric"><span>Sprint</span><strong>10/10</strong></div>
             <div class="metric"><span>Patterns</span><strong>4</strong></div>
-            <div class="metric"><span>Next</span><strong>Mobile Answer Polish</strong></div>
+            <div class="metric"><span>Next</span><strong>Founder instruction</strong></div>
           </div>
           <div class="sprint-list">
             <div class="sprint-step active"><span class="step-index">1</span><div><strong>Intent</strong><p>Read the question.</p></div></div>
@@ -137,23 +137,23 @@
       </main>
     </div>
     <script type="application/json" id="room-data">{
-  "version": "v2.4.2",
-  "badge": "v2.4.2 feedback capture",
-  "slug": "feedbackcapturelab",
-  "nav": "Feedback",
-  "title": "VedaPath Feedback Capture Lab",
-  "pageLabel": "Feedback capture",
-  "eyebrow": "Feedback capture",
-  "h1": "Turn answer concerns into review tickets.",
-  "lead": "A feedback capture room that converts answer concerns into local review tickets with source id, confidence, boundary, and user prompt.",
-  "source": "How do I tell short term comfort from a deeper good?",
-  "family": "Katha Upanishad 1.2.1",
-  "stance": "Feedback preview, not durable support queue.",
-  "sprintPercent": 80,
-  "defaultPattern": "discernment-answer",
-  "next": "Mobile Answer Polish",
-  "primaryAsk": "Make answer feedback reviewable instead of invisible.",
-  "summary": "Feedback Capture Lab closes the answer loop without silently rewriting knowledge.",
+  "version": "v2.4.4",
+  "badge": "v2.4.4 cited answer",
+  "slug": "citedanswerlab",
+  "nav": "Answer",
+  "title": "VedaPath Cited Answer Control Room",
+  "pageLabel": "Cited answer",
+  "eyebrow": "Cited answer control",
+  "h1": "Answer with source, confidence, and restraint.",
+  "lead": "A cited answer control room that turns retrieval candidates into source-carded answer drafts with confidence, boundaries, feedback capture, and copyable answer packets.",
+  "source": "How can I act calmly when results are uncertain?",
+  "family": "Bhagavad Gita 2.48",
+  "stance": "Cited answer lab prototype, not production AI authority.",
+  "sprintPercent": 100,
+  "defaultPattern": "steady-action-answer",
+  "next": "Founder instruction",
+  "primaryAsk": "Use this as the first answer-card standard for the trusted MVP.",
+  "summary": "Cited Answer Control Room completes the retrieval-to-answer bridge with a source-first answer pattern.",
   "items": [
     [
       "Intent",
@@ -180,15 +180,15 @@
     "brief": [
       [
         "Answer promise",
-        "Feedback Capture Lab closes the answer loop without silently rewriting knowledge."
+        "Cited Answer Control Room completes the retrieval-to-answer bridge with a source-first answer pattern."
       ],
       [
         "Founder move",
-        "Make answer feedback reviewable instead of invisible."
+        "Use this as the first answer-card standard for the trusted MVP."
       ],
       [
         "Trust move",
-        "Keep this boundary visible: Feedback preview, not durable support queue."
+        "Keep this boundary visible: Cited answer lab prototype, not production AI authority."
       ]
     ],
     "checklist": [

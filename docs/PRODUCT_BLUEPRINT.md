@@ -253,6 +253,7 @@ It helps users move from curiosity to understanding through:
 - Answer View Comparison Lab: Answer View Comparison Lab adds progressive depth without sacrificing simplicity.
 - Feedback Capture Lab: Feedback Capture Lab closes the answer loop without silently rewriting knowledge.
 - Mobile Answer Polish: Mobile Answer Polish keeps the calm answer format usable in real life.
+- Cited Answer Control Room: Cited Answer Control Room completes the retrieval-to-answer bridge with a source-first answer pattern.
 <!-- VEDAPATH CITED ANSWER SPRINT SUMMARY END -->
 
 ## What It Is
@@ -3701,6 +3702,21 @@ It should:
 - keep answer cards source-first, confidence-labeled, and feedback-reviewable
 
 Mobile Answer Polish should never claim production AI authority, guru voice, legal clearance, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
+
+### 227. Cited Answer Control Room
+
+Cited Answer Control Room completes the retrieval-to-answer bridge with a source-first answer pattern.
+
+It should:
+
+- Intent: Keep the user question and answer intent visible.
+- Source: Keep citation, family, and confidence near the answer.
+- Boundary: Show what the answer must not become.
+- Feedback: Turn concerns into reviewable local tickets.
+- preserve the boundary: Cited answer lab prototype, not production AI authority.
+- keep answer cards source-first, confidence-labeled, and feedback-reviewable
+
+Cited Answer Control Room should never claim production AI authority, guru voice, legal clearance, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
 <!-- VEDAPATH CITED ANSWER SPRINT BLUEPRINT END -->
 
 ## Product Personality
