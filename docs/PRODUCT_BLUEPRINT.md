@@ -296,6 +296,7 @@ It helps users move from curiosity to understanding through:
 - Local Signal Map: Local Signal Map shows how VedaPath can learn from use without storing a user in the cloud.
 - Calm Heatmap: Calm Heatmap makes repeated moments visible without turning life into a performance metric.
 - Situation Lens: Situation Lens protects dignity by describing conditions and actions instead of labeling the user.
+- Helpful Action Library: Helpful Action Library gives the product a memory of what actually helped, not just what was asked.
 <!-- VEDAPATH PATTERN COMPANION SPRINT SUMMARY END -->
 
 ## What It Is
@@ -4273,6 +4274,21 @@ It should:
 - keep pattern memory visible, copyable, and clearable
 
 Situation Lens should never claim diagnosis, therapy, legal advice, medical advice, surveillance, scoring, or spiritual authority.
+
+### 262. Helpful Action Library
+
+Helpful Action Library gives the product a memory of what actually helped, not just what was asked.
+
+It should:
+
+- Collect: Read local preview entries and sample signals.
+- Group: Show domains, sources, and helpful actions.
+- Reflect: Offer one weekly insight without judging.
+- Control: Let the user copy, export, or clear memory.
+- preserve the boundary: local pattern support only, not profiling
+- keep pattern memory visible, copyable, and clearable
+
+Helpful Action Library should never claim diagnosis, therapy, legal advice, medical advice, surveillance, scoring, or spiritual authority.
 <!-- VEDAPATH PATTERN COMPANION SPRINT BLUEPRINT END -->
 
 ## Product Personality
