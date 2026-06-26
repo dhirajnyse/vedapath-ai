@@ -222,6 +222,7 @@ It helps users move from curiosity to understanding through:
 <!-- VEDAPATH SOURCE LIBRARY SPRINT SUMMARY START -->
 - Source Shelf Intake: Source Shelf Intake starts the curated source layer that future retrieval can trust.
 - Citation Schema Desk: Citation Schema Desk turns source-first UX into a data contract.
+- Family Classifier: Family Classifier reduces category confusion, one of VedaPath's central trust promises.
 <!-- VEDAPATH SOURCE LIBRARY SPRINT SUMMARY END -->
 
 ## What It Is
@@ -3263,6 +3264,21 @@ It should:
 - keep source-library records as starter data until scholar review, rights policy, and retrieval evaluation are approved
 
 Citation Schema Desk should never claim canonical corpus coverage, scholar endorsement, legal clearance, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
+
+### 200. Family Classifier
+
+Family Classifier reduces category confusion, one of VedaPath's central trust promises.
+
+It should:
+
+- Family filters: Users can isolate source families instantly.
+- Layer labels: Tradition layer sits near the source family.
+- Overclaim guard: Family boundary appears in the source packet.
+- Calm correction: The UI corrects without shaming the user.
+- preserve the boundary: Family classification preview, not scholarly finality.
+- keep source-library records as starter data until scholar review, rights policy, and retrieval evaluation are approved
+
+Family Classifier should never claim canonical corpus coverage, scholar endorsement, legal clearance, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
 <!-- VEDAPATH SOURCE LIBRARY SPRINT BLUEPRINT END -->
 
 ## Product Personality
