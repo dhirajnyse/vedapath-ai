@@ -202,6 +202,7 @@ It helps users move from curiosity to understanding through:
 - Context Boundary Gate: Context Boundary Gate keeps personal calm work source-backed but carefully limited.
 - Reflection Prompt Rail: Reflection Prompt Rail turns calm into a product behavior: one question, one source, one boundary.
 - Carry Action Builder: Carry Action Builder gives VedaPath a signature calm handoff from reading to grounded action.
+- Reader Memory Preview: Reader Memory Preview lets VedaPath test habit loops without pretending to have durable user accounts.
 <!-- VEDAPATH GUIDED READER SPRINT SUMMARY END -->
 
 ## What It Is
@@ -3001,6 +3002,21 @@ It should:
 - keep the reader prototype browser-only until reviewed content, accounts, or backend storage are approved
 
 Carry Action Builder should never claim final commentary, full scripture text, translation rights, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
+
+### 184. Reader Memory Preview
+
+Reader Memory Preview lets VedaPath test habit loops without pretending to have durable user accounts.
+
+It should:
+
+- Local save: Reading sessions stay in this browser only.
+- Streak preview: Session count and last passage are visible.
+- Clear control: The user can clear preview memory.
+- No profile claim: The app does not infer identity or spirituality.
+- preserve the boundary: Local memory preview, not account history.
+- keep the reader prototype browser-only until reviewed content, accounts, or backend storage are approved
+
+Reader Memory Preview should never claim final commentary, full scripture text, translation rights, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
 <!-- VEDAPATH GUIDED READER SPRINT BLUEPRINT END -->
 
 ## Product Personality

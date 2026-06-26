@@ -393,6 +393,8 @@ Let us look at the source first.
 - [Reflection Prompt Rail Notes](docs/REFLECTION_PROMPT_RAIL.md)
 - [Carry Action Builder](carrybuilder.html)
 - [Carry Action Builder Notes](docs/CARRY_ACTION_BUILDER.md)
+- [Reader Memory Preview](readmemory.html)
+- [Reader Memory Preview Notes](docs/READER_MEMORY_PREVIEW.md)
 <!-- VEDAPATH GUIDED READER SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -424,7 +426,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v2.0.0` is a trusted MVP prototype plus Carry Action Builder with:
+`v2.0.1` is a trusted MVP prototype plus Reader Memory Preview with:
 
 - Ask workspace
 - Source Card
@@ -625,6 +627,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Context Boundary Gate: Context Boundary Gate keeps personal calm work source-backed but carefully limited.
 - Reflection Prompt Rail: Reflection Prompt Rail turns calm into a product behavior: one question, one source, one boundary.
 - Carry Action Builder: Carry Action Builder gives VedaPath a signature calm handoff from reading to grounded action.
+- Reader Memory Preview: Reader Memory Preview lets VedaPath test habit loops without pretending to have durable user accounts.
 <!-- VEDAPATH GUIDED READER SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
