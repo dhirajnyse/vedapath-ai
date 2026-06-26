@@ -490,6 +490,10 @@ Let us look at the source first.
 - [Cited Answer Control Room](citedanswerlab.html)
 - [Cited Answer Control Room Notes](docs/CITED_ANSWER_CONTROL_ROOM.md)
 <!-- VEDAPATH CITED ANSWER SPRINT LINKS END -->
+<!-- VEDAPATH MANTRA LENS SPRINT LINKS START -->
+- [Mantra Intake](mantraintake.html)
+- [Mantra Intake Notes](docs/MANTRA_INTAKE.md)
+<!-- VEDAPATH MANTRA LENS SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
 - [Calm Compass](compass.html)
@@ -520,7 +524,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v2.4.4` is a trusted MVP prototype plus Cited Answer Control Room with:
+`v2.4.5` is a trusted MVP prototype plus Mantra Intake with:
 
 - Ask workspace
 - Source Card
@@ -774,6 +778,9 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Mobile Answer Polish: Mobile Answer Polish keeps the calm answer format usable in real life.
 - Cited Answer Control Room: Cited Answer Control Room completes the retrieval-to-answer bridge with a source-first answer pattern.
 <!-- VEDAPATH CITED ANSWER SPRINT FEATURES END -->
+<!-- VEDAPATH MANTRA LENS SPRINT FEATURES START -->
+- Mantra Intake: Mantra Intake gives VedaPath a careful doorway into verse-level study.
+<!-- VEDAPATH MANTRA LENS SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
 - Calm Card Studio with visual card preview, local saved cards, copy text, and PNG export

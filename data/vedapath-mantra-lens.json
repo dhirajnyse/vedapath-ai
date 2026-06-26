@@ -1,0 +1,180 @@
+{
+  "product": "VedaPath AI",
+  "release": "v2.4.5",
+  "status": "mantra lens prototype",
+  "warning": "Prototype verse study only. Not ritual instruction, pronunciation certification, therapy, emergency support, or spiritual authority.",
+  "verses": [
+    {
+      "id": "bg-2-48-mantra-lens",
+      "source": "Bhagavad Gita 2.48",
+      "family": "Bhagavad Gita | Smriti",
+      "title": "Steady action",
+      "transliteration": "yogasthah kuru karmani sangam tyaktva dhananjaya",
+      "plain": "Stand in steadiness, act, and loosen the grip on result-attachment.",
+      "caution": "Use as a source candidate for reflection, not a command, diagnosis, or promise of peace.",
+      "words": [
+        [
+          "yogasthah",
+          "standing in yoga or steadiness"
+        ],
+        [
+          "kuru",
+          "do or act"
+        ],
+        [
+          "karmani",
+          "actions or duties"
+        ],
+        [
+          "sangam",
+          "attachment or clinging"
+        ],
+        [
+          "tyaktva",
+          "having released"
+        ],
+        [
+          "dhananjaya",
+          "address to Arjuna"
+        ]
+      ],
+      "chant": "Read slowly. Do not imitate ritual recitation or claim pronunciation authority.",
+      "interpretations": [
+        "Karma-yoga lane",
+        "Calm action lens",
+        "Do not turn this into productivity pressure."
+      ],
+      "carry": "Do one small duty slowly and clearly before checking the outcome.",
+      "confidence": 84
+    },
+    {
+      "id": "gayatri-3-62-10-lens",
+      "source": "Rigveda 3.62.10",
+      "family": "Veda | Shruti",
+      "title": "Illumined attention",
+      "transliteration": "tat savitur varenyam bhargo devasya dhimahi",
+      "plain": "A revered Vedic mantra often approached as a meditation on illumination and discernment.",
+      "caution": "Sacred mantra handling needs lineage humility, rights awareness for translations, and pronunciation care.",
+      "words": [
+        [
+          "tat",
+          "that"
+        ],
+        [
+          "savitur",
+          "of Savitr"
+        ],
+        [
+          "varenyam",
+          "worthy of choosing or revering"
+        ],
+        [
+          "bhargo",
+          "radiance or splendor"
+        ],
+        [
+          "devasya",
+          "of the divine"
+        ],
+        [
+          "dhimahi",
+          "we meditate upon"
+        ]
+      ],
+      "chant": "Show source and transliteration only. Avoid audio authority until licensed guidance exists.",
+      "interpretations": [
+        "Vedic hymn lane",
+        "Meditative attention lens",
+        "Do not flatten into generic positivity."
+      ],
+      "carry": "Pause once today and ask what deserves clear attention.",
+      "confidence": 72
+    },
+    {
+      "id": "katha-1-2-1-lens",
+      "source": "Katha Upanishad 1.2.1",
+      "family": "Upanishad | Shruti",
+      "title": "Pleasant and beneficial",
+      "transliteration": "anyac chreyo anyad utaiva preyah",
+      "plain": "A source candidate for distinguishing what is merely pleasant from what is deeply beneficial.",
+      "caution": "Do not use this to shame choices, judge another life, or create moral superiority.",
+      "words": [
+        [
+          "anyat",
+          "one thing or different"
+        ],
+        [
+          "shreyah",
+          "the beneficial or higher good"
+        ],
+        [
+          "anyat",
+          "another"
+        ],
+        [
+          "preyah",
+          "the pleasant or immediately liked"
+        ],
+        [
+          "uta",
+          "indeed or also"
+        ],
+        [
+          "eva",
+          "just or certainly"
+        ]
+      ],
+      "chant": "Use as study support, not recitation coaching.",
+      "interpretations": [
+        "Discernment lane",
+        "Ethical reflection lens",
+        "No moral policing."
+      ],
+      "carry": "Name one choice and ask whether it only comforts the moment or also serves clarity.",
+      "confidence": 68
+    },
+    {
+      "id": "isha-1-lens",
+      "source": "Isha Upanishad 1",
+      "family": "Upanishad | Shruti",
+      "title": "Restraint with responsibility",
+      "transliteration": "isha vasyam idam sarvam",
+      "plain": "A compact source often discussed around seeing the world with reverence and restraint.",
+      "caution": "Keep this in review before public guidance; do not advise abandoning duties, safety, shelter, or care.",
+      "words": [
+        [
+          "isha",
+          "by the Lord or the divine"
+        ],
+        [
+          "vasyam",
+          "to be enveloped or inhabited"
+        ],
+        [
+          "idam",
+          "this"
+        ],
+        [
+          "sarvam",
+          "all"
+        ],
+        [
+          "tena",
+          "by that"
+        ],
+        [
+          "tyaktena",
+          "through relinquishment or restraint"
+        ]
+      ],
+      "chant": "Mark as review-needed. No ritual, renunciation, or life-direction authority.",
+      "interpretations": [
+        "Renunciation debate lane",
+        "Responsibility boundary",
+        "Needs commentary review."
+      ],
+      "carry": "Soften one attachment without neglecting a real responsibility.",
+      "confidence": 54
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-# v2.4.4 Prototype Notes
+# v2.4.5 Prototype Notes
 
 The v0.7.4 release turns the VedaPath AI homepage into a trusted MVP prototype with calm, practice, source-library, source-seeds, retrieval, passage-review, evaluation, evaluation-dashboard, reviewer-queue, source-policy, trust-ledger, life-map, calm-circle, consent-gate, memory-gate, trust-model, calm-passport, backend-schema, schema-fixtures, evaluation-drill, learning-loop, sanskrit-lens, voice-boundary, scholar-review, launch-gate, production-bridge, source-storage, reviewer-access, public-feedback, launch-story, source-path, calm-compass, calm-card, source-bell, before-reply, samvada, sankalpa, seva, morning, evening, and rhythm surfaces.
 
@@ -258,6 +258,9 @@ The v0.7.4 release turns the VedaPath AI homepage into a trusted MVP prototype w
 - Mobile Answer Polish: Mobile Answer Polish keeps the calm answer format usable in real life.
 - Cited Answer Control Room: Cited Answer Control Room completes the retrieval-to-answer bridge with a source-first answer pattern.
 <!-- VEDAPATH CITED ANSWER SPRINT NOTES END -->
+<!-- VEDAPATH MANTRA LENS SPRINT NOTES START -->
+- Mantra Intake: Mantra Intake gives VedaPath a careful doorway into verse-level study.
+<!-- VEDAPATH MANTRA LENS SPRINT NOTES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
 - Calm Card Studio with visual preview, local saved cards, copy text, and PNG export

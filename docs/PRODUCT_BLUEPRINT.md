@@ -255,6 +255,9 @@ It helps users move from curiosity to understanding through:
 - Mobile Answer Polish: Mobile Answer Polish keeps the calm answer format usable in real life.
 - Cited Answer Control Room: Cited Answer Control Room completes the retrieval-to-answer bridge with a source-first answer pattern.
 <!-- VEDAPATH CITED ANSWER SPRINT SUMMARY END -->
+<!-- VEDAPATH MANTRA LENS SPRINT SUMMARY START -->
+- Mantra Intake: Mantra Intake gives VedaPath a careful doorway into verse-level study.
+<!-- VEDAPATH MANTRA LENS SPRINT SUMMARY END -->
 
 ## What It Is
 
@@ -3718,6 +3721,22 @@ It should:
 
 Cited Answer Control Room should never claim production AI authority, guru voice, legal clearance, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
 <!-- VEDAPATH CITED ANSWER SPRINT BLUEPRINT END -->
+<!-- VEDAPATH MANTRA LENS SPRINT BLUEPRINT START -->
+### 228. Mantra Intake
+
+Mantra Intake gives VedaPath a careful doorway into verse-level study.
+
+It should:
+
+- Source: Show source family, citation, and confidence before practice.
+- Words: Break the verse into learner-sized word cards.
+- Boundary: Separate study support from ritual or pronunciation authority.
+- Practice: Save local notes and completions only on the device.
+- preserve the boundary: Source intake prototype, not recitation authority.
+- keep verse study source-first, humble, and locally private
+
+Mantra Intake should never claim ritual authority, pronunciation certification, therapy, emergency support, or spiritual authority.
+<!-- VEDAPATH MANTRA LENS SPRINT BLUEPRINT END -->
 
 ## Product Personality
 
