@@ -271,6 +271,7 @@ It helps users move from curiosity to understanding through:
 - Life Arrival: Life Arrival makes calm personal without pretending VedaPath is a therapist or guru.
 - Life Domain Map: Life Domain Map keeps everyday calm grounded in context.
 - Steadiness Check: Steadiness Check gives users a practical source-backed pause.
+- Relationship Pause: Relationship Pause brings calm into speech without pretending to mediate conflict.
 <!-- VEDAPATH LIFE COMPANION SPRINT SUMMARY END -->
 
 ## What It Is
@@ -3931,6 +3932,21 @@ It should:
 - keep personal entries local until explicit accounts and consent exist
 
 Steadiness Check should never claim therapy, diagnosis, medical advice, legal advice, emergency support, ritual instruction, or spiritual authority.
+
+### 241. Relationship Pause
+
+Relationship Pause brings calm into speech without pretending to mediate conflict.
+
+It should:
+
+- Arrive: Name the moment without judging it.
+- Source: Keep citation, family, confidence, and boundary visible.
+- Carry: Leave with one small action.
+- Memory: Save entries only in this browser.
+- preserve the boundary: reflection support only, not authority
+- keep personal entries local until explicit accounts and consent exist
+
+Relationship Pause should never claim therapy, diagnosis, medical advice, legal advice, emergency support, ritual instruction, or spiritual authority.
 <!-- VEDAPATH LIFE COMPANION SPRINT BLUEPRINT END -->
 
 ## Product Personality

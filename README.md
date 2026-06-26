@@ -519,6 +519,8 @@ Let us look at the source first.
 - [Life Domain Map Notes](docs/LIFE_DOMAIN_MAP.md)
 - [Steadiness Check](steadinesscheck.html)
 - [Steadiness Check Notes](docs/STEADINESS_CHECK.md)
+- [Relationship Pause](relationshippause.html)
+- [Relationship Pause Notes](docs/RELATIONSHIP_PAUSE.md)
 <!-- VEDAPATH LIFE COMPANION SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -550,7 +552,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v2.5.7` is a trusted MVP prototype plus Steadiness Check with:
+`v2.5.8` is a trusted MVP prototype plus Relationship Pause with:
 
 - Ask workspace
 - Source Card
@@ -820,6 +822,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Life Arrival: Life Arrival makes calm personal without pretending VedaPath is a therapist or guru.
 - Life Domain Map: Life Domain Map keeps everyday calm grounded in context.
 - Steadiness Check: Steadiness Check gives users a practical source-backed pause.
+- Relationship Pause: Relationship Pause brings calm into speech without pretending to mediate conflict.
 <!-- VEDAPATH LIFE COMPANION SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
