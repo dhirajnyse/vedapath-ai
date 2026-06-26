@@ -507,6 +507,8 @@ Let us look at the source first.
 - [Interpretation Stack Notes](docs/INTERPRETATION_STACK.md)
 - [Recitation Loop Preview](recitationloop.html)
 - [Recitation Loop Preview Notes](docs/RECITATION_LOOP_PREVIEW.md)
+- [Mobile Mantra Lens](mobilemantralens.html)
+- [Mobile Mantra Lens Notes](docs/MOBILE_MANTRA_LENS.md)
 <!-- VEDAPATH MANTRA LENS SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -538,7 +540,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v2.5.2` is a trusted MVP prototype plus Recitation Loop Preview with:
+`v2.5.3` is a trusted MVP prototype plus Mobile Mantra Lens with:
 
 - Ask workspace
 - Source Card
@@ -801,6 +803,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Meter Guide: Meter Guide prepares verse study for future licensed audio and scholar review.
 - Interpretation Stack: Interpretation Stack protects plural readings without making every school sound identical.
 - Recitation Loop Preview: Recitation Loop Preview turns source study into a calm daily habit while preserving privacy.
+- Mobile Mantra Lens: Mobile Mantra Lens keeps sacred study usable in real life.
 <!-- VEDAPATH MANTRA LENS SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
