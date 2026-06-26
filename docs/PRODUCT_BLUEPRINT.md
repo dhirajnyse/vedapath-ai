@@ -245,6 +245,7 @@ It helps users move from curiosity to understanding through:
 <!-- VEDAPATH RETRIEVAL LAB SPRINT SUMMARY END -->
 <!-- VEDAPATH CITED ANSWER SPRINT SUMMARY START -->
 - Answer Intent Lab: Answer Intent Lab starts the answer layer by making intent and boundaries explicit.
+- Source Context Card: Source Context Card keeps VedaPath's answer surface source-first.
 <!-- VEDAPATH CITED ANSWER SPRINT SUMMARY END -->
 
 ## What It Is
@@ -3573,6 +3574,21 @@ It should:
 - keep answer cards source-first, confidence-labeled, and feedback-reviewable
 
 Answer Intent Lab should never claim production AI authority, guru voice, legal clearance, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
+
+### 219. Source Context Card
+
+Source Context Card keeps VedaPath's answer surface source-first.
+
+It should:
+
+- Intent: Keep the user question and answer intent visible.
+- Source: Keep citation, family, and confidence near the answer.
+- Boundary: Show what the answer must not become.
+- Feedback: Turn concerns into reviewable local tickets.
+- preserve the boundary: Source context preview, not commentary authority.
+- keep answer cards source-first, confidence-labeled, and feedback-reviewable
+
+Source Context Card should never claim production AI authority, guru voice, legal clearance, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
 <!-- VEDAPATH CITED ANSWER SPRINT BLUEPRINT END -->
 
 ## Product Personality

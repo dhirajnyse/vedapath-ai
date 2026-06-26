@@ -471,6 +471,8 @@ Let us look at the source first.
 <!-- VEDAPATH CITED ANSWER SPRINT LINKS START -->
 - [Answer Intent Lab](answerintentlab.html)
 - [Answer Intent Lab Notes](docs/ANSWER_INTENT_LAB.md)
+- [Source Context Card](sourcecontextcard.html)
+- [Source Context Card Notes](docs/SOURCE_CONTEXT_CARD.md)
 <!-- VEDAPATH CITED ANSWER SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -502,7 +504,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v2.3.5` is a trusted MVP prototype plus Answer Intent Lab with:
+`v2.3.6` is a trusted MVP prototype plus Source Context Card with:
 
 - Ask workspace
 - Source Card
@@ -746,6 +748,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 <!-- VEDAPATH RETRIEVAL LAB SPRINT FEATURES END -->
 <!-- VEDAPATH CITED ANSWER SPRINT FEATURES START -->
 - Answer Intent Lab: Answer Intent Lab starts the answer layer by making intent and boundaries explicit.
+- Source Context Card: Source Context Card keeps VedaPath's answer surface source-first.
 <!-- VEDAPATH CITED ANSWER SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
