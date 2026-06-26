@@ -257,6 +257,7 @@ It helps users move from curiosity to understanding through:
 <!-- VEDAPATH CITED ANSWER SPRINT SUMMARY END -->
 <!-- VEDAPATH MANTRA LENS SPRINT SUMMARY START -->
 - Mantra Intake: Mantra Intake gives VedaPath a careful doorway into verse-level study.
+- Verse Focus Room: Verse Focus Room keeps Mantra Lens simple enough for everyday study.
 <!-- VEDAPATH MANTRA LENS SPRINT SUMMARY END -->
 
 ## What It Is
@@ -3736,6 +3737,21 @@ It should:
 - keep verse study source-first, humble, and locally private
 
 Mantra Intake should never claim ritual authority, pronunciation certification, therapy, emergency support, or spiritual authority.
+
+### 229. Verse Focus Room
+
+Verse Focus Room keeps Mantra Lens simple enough for everyday study.
+
+It should:
+
+- Source: Show source family, citation, and confidence before practice.
+- Words: Break the verse into learner-sized word cards.
+- Boundary: Separate study support from ritual or pronunciation authority.
+- Practice: Save local notes and completions only on the device.
+- preserve the boundary: Verse focus preview, not commentary authority.
+- keep verse study source-first, humble, and locally private
+
+Verse Focus Room should never claim ritual authority, pronunciation certification, therapy, emergency support, or spiritual authority.
 <!-- VEDAPATH MANTRA LENS SPRINT BLUEPRINT END -->
 
 ## Product Personality
