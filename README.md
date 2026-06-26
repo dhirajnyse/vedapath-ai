@@ -419,6 +419,8 @@ Let us look at the source first.
 - [Review Audit Trail Notes](docs/REVIEW_AUDIT_TRAIL.md)
 - [Public Effect Preview](publiceffect.html)
 - [Public Effect Preview Notes](docs/PUBLIC_EFFECT_PREVIEW.md)
+- [Mobile Review Polish](reviewmobile.html)
+- [Mobile Review Polish Notes](docs/MOBILE_REVIEW_POLISH.md)
 <!-- VEDAPATH REVIEWER STUDIO SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -450,7 +452,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v2.1.2` is a trusted MVP prototype plus Public Effect Preview with:
+`v2.1.3` is a trusted MVP prototype plus Mobile Review Polish with:
 
 - Ask workspace
 - Source Card
@@ -665,6 +667,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Local Decision Memory: Local Decision Memory tests review workflow behavior while preserving the privacy and authority boundary.
 - Review Audit Trail: Review Audit Trail keeps product decisions accountable without pretending compliance infrastructure exists.
 - Public Effect Preview: Public Effect Preview helps VedaPath see how review choices should shape the learner experience.
+- Mobile Review Polish: Mobile Review Polish keeps VedaPath's trust workflow calm and usable on small screens.
 <!-- VEDAPATH REVIEWER STUDIO SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff

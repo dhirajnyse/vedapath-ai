@@ -216,6 +216,7 @@ It helps users move from curiosity to understanding through:
 - Local Decision Memory: Local Decision Memory tests review workflow behavior while preserving the privacy and authority boundary.
 - Review Audit Trail: Review Audit Trail keeps product decisions accountable without pretending compliance infrastructure exists.
 - Public Effect Preview: Public Effect Preview helps VedaPath see how review choices should shape the learner experience.
+- Mobile Review Polish: Mobile Review Polish keeps VedaPath's trust workflow calm and usable on small screens.
 <!-- VEDAPATH REVIEWER STUDIO SPRINT SUMMARY END -->
 
 ## What It Is
@@ -3196,6 +3197,21 @@ It should:
 - keep review decisions browser-only until reviewer identity, consent, backend storage, and source policy are approved
 
 Public Effect Preview should never claim production approval, scholar endorsement, legal clearance, durable review storage, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
+
+### 196. Mobile Review Polish
+
+Mobile Review Polish keeps VedaPath's trust workflow calm and usable on small screens.
+
+It should:
+
+- Single column: The queue, decision, and audit stack cleanly.
+- Stable controls: Decision buttons stay easy to tap.
+- Readable queue: Source and risk labels remain scannable.
+- No clutter: The page stays operational, not decorative.
+- preserve the boundary: Responsive review polish, not native reviewer app.
+- keep review decisions browser-only until reviewer identity, consent, backend storage, and source policy are approved
+
+Mobile Review Polish should never claim production approval, scholar endorsement, legal clearance, durable review storage, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
 <!-- VEDAPATH REVIEWER STUDIO SPRINT BLUEPRINT END -->
 
 ## Product Personality
