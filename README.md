@@ -575,6 +575,8 @@ Let us look at the source first.
 - [Privacy Export Notes](docs/PRIVACY_EXPORT.md)
 - [Mobile Pattern](mobilepattern.html)
 - [Mobile Pattern Notes](docs/MOBILE_PATTERN.md)
+- [Pattern Companion Control Room](patterncompanionlab.html)
+- [Pattern Companion Control Room Notes](docs/PATTERN_COMPANION_CONTROL_ROOM.md)
 <!-- VEDAPATH PATTERN COMPANION SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -606,7 +608,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v2.8.3` is a trusted MVP prototype plus Mobile Pattern with:
+`v2.8.4` is a trusted MVP prototype plus Pattern Companion Control Room with:
 
 - Ask workspace
 - Source Card
@@ -906,6 +908,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Weekly Reflection: Weekly Reflection turns product memory into one humane review instead of endless dashboards.
 - Privacy Export: Privacy Export makes trust tangible by giving the user control over local pattern memory.
 - Mobile Pattern: Mobile Pattern keeps the learning loop usable where calm moments actually happen.
+- Pattern Companion Control Room: Pattern Companion Control Room completes the private local learning layer for VedaPath AI.
 <!-- VEDAPATH PATTERN COMPANION SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
