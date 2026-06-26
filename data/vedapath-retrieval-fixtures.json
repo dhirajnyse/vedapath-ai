@@ -1,6 +1,6 @@
 {
   "product": "VedaPath AI",
-  "release": "v2.3.3",
+  "release": "v2.3.4",
   "status": "retrieval lab prototype",
   "warning": "Prototype retrieval fixtures only. This is not production RAG, scholar approval, therapy, ritual instruction, or spiritual authority.",
   "fixtures": [

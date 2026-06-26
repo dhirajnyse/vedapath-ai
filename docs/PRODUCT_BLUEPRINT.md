@@ -241,6 +241,7 @@ It helps users move from curiosity to understanding through:
 - Fallback Answer Guard: Fallback Answer Guard protects VedaPath from answer pressure when retrieval is uncertain.
 - Search History Preview: Search History Preview keeps iteration fast while preserving privacy boundaries.
 - Mobile Retrieval Polish: Mobile Retrieval Polish keeps source search usable without visual noise.
+- Retrieval Lab Control Room: Retrieval Lab Control Room completes the source-to-answer bridge for the trusted MVP.
 <!-- VEDAPATH RETRIEVAL LAB SPRINT SUMMARY END -->
 
 ## What It Is
@@ -3538,6 +3539,21 @@ It should:
 - keep retrieval explainable, source-bound, and honest about fallback
 
 Mobile Retrieval Polish should never claim production RAG, model truth, scholar endorsement, legal clearance, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
+
+### 217. Retrieval Lab Control Room
+
+Retrieval Lab Control Room completes the source-to-answer bridge for the trusted MVP.
+
+It should:
+
+- Query path: User language is matched to curated source records.
+- Reason path: Ranking reasons and readiness stay visible.
+- Boundary path: No-go language travels with each candidate.
+- Trace path: The chosen source can be copied as a trace packet.
+- preserve the boundary: Retrieval lab prototype, not production RAG or AI authority.
+- keep retrieval explainable, source-bound, and honest about fallback
+
+Retrieval Lab Control Room should never claim production RAG, model truth, scholar endorsement, legal clearance, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
 <!-- VEDAPATH RETRIEVAL LAB SPRINT BLUEPRINT END -->
 
 ## Product Personality

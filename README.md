@@ -465,6 +465,8 @@ Let us look at the source first.
 - [Search History Preview Notes](docs/SEARCH_HISTORY_PREVIEW.md)
 - [Mobile Retrieval Polish](retrievalmobile.html)
 - [Mobile Retrieval Polish Notes](docs/MOBILE_RETRIEVAL_POLISH.md)
+- [Retrieval Lab Control Room](retrievallab.html)
+- [Retrieval Lab Control Room Notes](docs/RETRIEVAL_LAB_CONTROL_ROOM.md)
 <!-- VEDAPATH RETRIEVAL LAB SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -496,7 +498,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v2.3.3` is a trusted MVP prototype plus Mobile Retrieval Polish with:
+`v2.3.4` is a trusted MVP prototype plus Retrieval Lab Control Room with:
 
 - Ask workspace
 - Source Card
@@ -736,6 +738,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Fallback Answer Guard: Fallback Answer Guard protects VedaPath from answer pressure when retrieval is uncertain.
 - Search History Preview: Search History Preview keeps iteration fast while preserving privacy boundaries.
 - Mobile Retrieval Polish: Mobile Retrieval Polish keeps source search usable without visual noise.
+- Retrieval Lab Control Room: Retrieval Lab Control Room completes the source-to-answer bridge for the trusted MVP.
 <!-- VEDAPATH RETRIEVAL LAB SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff

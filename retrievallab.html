@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>VedaPath Boundary-Aware Answer Draft</title>
+    <title>VedaPath Retrieval Lab Control Room</title>
     <link rel="stylesheet" href="assets/vedapath-sprint.css">
     <link rel="stylesheet" href="assets/vedapath-retrieval-lab.css">
   </head>
@@ -12,7 +12,7 @@
       <header class="topbar">
         <a class="brand" href="index.html#top" aria-label="VedaPath AI home">
           <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
-          <div><strong>VedaPath AI</strong><span>Answer draft</span></div>
+          <div><strong>VedaPath AI</strong><span>Retrieval lab</span></div>
         </a>
         <nav class="nav" aria-label="Project links">
           <a class="link" href="build-status.html">Build</a>
@@ -28,7 +28,7 @@
         </nav>
       </header>
 
-      <main class="workspace" aria-label="VedaPath Boundary-Aware Answer Draft workspace">
+      <main class="workspace" aria-label="VedaPath Retrieval Lab Control Room workspace">
         <aside class="panel">
           <span class="eyebrow">Retrieval lab sprint</span>
           <h2>Release Rooms</h2>
@@ -39,21 +39,21 @@
         <section class="panel">
           <div class="hero-grid">
             <div>
-              <span class="eyebrow">Answer draft</span>
-              <h1>Draft only inside the boundary.</h1>
-              <p class="muted">A draft preview that uses the top source candidate to assemble a careful, cited answer frame with no-go boundaries attached.</p>
+              <span class="eyebrow">Retrieval control</span>
+              <h1>Search sources. Show reasons. Keep boundaries.</h1>
+              <p class="muted">A retrieval control room that searches curated source records, ranks candidates, shows reason stacks, drafts a bounded answer frame, stores local search history, and exports trace packets.</p>
             </div>
-            <div class="mark-stage"><img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Draft logo"></div>
+            <div class="mark-stage"><img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Lab logo"></div>
           </div>
 
           <div class="source-block" aria-label="Release source card">
-            <div><span class="source-meta">Release</span><span class="source-value">v2.2.8</span></div>
-            <div><span class="source-meta">Sample query</span><span class="source-value">How can I practice restraint without escaping responsibility?</span></div>
-            <div><span class="source-meta">Intent lane</span><span class="source-value">restraint</span></div>
-            <div><span class="source-meta">Boundary</span><span class="source-value">Draft preview, not public answer generation.</span></div>
+            <div><span class="source-meta">Release</span><span class="source-value">v2.3.4</span></div>
+            <div><span class="source-meta">Sample query</span><span class="source-value">How can I act calmly when results are uncertain?</span></div>
+            <div><span class="source-meta">Intent lane</span><span class="source-value">calm action</span></div>
+            <div><span class="source-meta">Boundary</span><span class="source-value">Retrieval lab prototype, not production RAG or AI authority.</span></div>
           </div>
 
-          <section class="retrieval-lab" id="retrievalLab" data-query="restraint" aria-label="Retrieval lab">
+          <section class="retrieval-lab" id="retrievalLab" data-query="calm action" aria-label="Retrieval lab">
             <div class="retrieval-head">
               <div>
                 <span class="eyebrow">Source-backed retrieval</span>
@@ -89,7 +89,7 @@
           <h2>Retrieval Signals</h2>
           <div class="item-list" id="itemList"></div>
 
-          <div class="tabs" role="tablist" aria-label="VedaPath Boundary-Aware Answer Draft layers">
+          <div class="tabs" role="tablist" aria-label="VedaPath Retrieval Lab Control Room layers">
             <button class="tab active" type="button" data-mode="brief">Brief</button>
             <button class="tab" type="button" data-mode="checklist">Checklist</button>
             <button class="tab" type="button" data-mode="boundary">Boundary</button>
@@ -100,19 +100,19 @@
             <button class="button safe" id="copyJson" type="button">Copy JSON</button>
             <button class="button" id="copyBoundary" type="button">Copy Boundary</button>
           </div>
-          <textarea id="output" readonly aria-label="VedaPath Boundary-Aware Answer Draft output"></textarea>
+          <textarea id="output" readonly aria-label="VedaPath Retrieval Lab Control Room output"></textarea>
         </section>
 
-        <aside class="panel tight" aria-label="VedaPath Boundary-Aware Answer Draft sprint rail">
+        <aside class="panel tight" aria-label="VedaPath Retrieval Lab Control Room sprint rail">
           <span class="badge green">Retrieval lab</span>
-          <h2 style="margin-top: 14px;">Draft Pulse</h2>
-          <p class="muted">Boundary-Aware Answer Draft makes safe answer framing visible before any AI backend exists.</p>
-          <div class="progress" aria-label="Sprint progress 40 percent"><div class="bar" style="--score:40%"></div></div>
+          <h2 style="margin-top: 14px;">Lab Pulse</h2>
+          <p class="muted">Retrieval Lab Control Room completes the source-to-answer bridge for the trusted MVP.</p>
+          <div class="progress" aria-label="Sprint progress 100 percent"><div class="bar" style="--score:100%"></div></div>
           <div class="metric-grid">
-            <div class="metric"><span>Current</span><strong>v2.2.8</strong></div>
+            <div class="metric"><span>Current</span><strong>v2.3.4</strong></div>
             <div class="metric"><span>Sprint</span><strong>10/10</strong></div>
             <div class="metric"><span>Fixtures</span><strong>6</strong></div>
-            <div class="metric"><span>Next</span><strong>Citation Trace Panel</strong></div>
+            <div class="metric"><span>Next</span><strong>Founder instruction</strong></div>
           </div>
           <div class="sprint-list">
             <div class="sprint-step active"><span class="step-index">1</span><div><strong>Query</strong><p>Capture user language.</p></div></div>
@@ -128,23 +128,23 @@
       </main>
     </div>
     <script type="application/json" id="room-data">{
-  "version": "v2.2.8",
-  "badge": "v2.2.8 answer draft",
-  "slug": "answerdraft",
-  "nav": "Draft",
-  "title": "VedaPath Boundary-Aware Answer Draft",
-  "pageLabel": "Answer draft",
-  "eyebrow": "Answer draft",
-  "h1": "Draft only inside the boundary.",
-  "lead": "A draft preview that uses the top source candidate to assemble a careful, cited answer frame with no-go boundaries attached.",
-  "source": "How can I practice restraint without escaping responsibility?",
-  "family": "restraint",
-  "stance": "Draft preview, not public answer generation.",
-  "sprintPercent": 40,
-  "defaultQuery": "restraint",
-  "next": "Citation Trace Panel",
-  "primaryAsk": "Keep answer drafting subordinate to source limits.",
-  "summary": "Boundary-Aware Answer Draft makes safe answer framing visible before any AI backend exists.",
+  "version": "v2.3.4",
+  "badge": "v2.3.4 retrieval lab",
+  "slug": "retrievallab",
+  "nav": "Lab",
+  "title": "VedaPath Retrieval Lab Control Room",
+  "pageLabel": "Retrieval lab",
+  "eyebrow": "Retrieval control",
+  "h1": "Search sources. Show reasons. Keep boundaries.",
+  "lead": "A retrieval control room that searches curated source records, ranks candidates, shows reason stacks, drafts a bounded answer frame, stores local search history, and exports trace packets.",
+  "source": "How can I act calmly when results are uncertain?",
+  "family": "calm action",
+  "stance": "Retrieval lab prototype, not production RAG or AI authority.",
+  "sprintPercent": 100,
+  "defaultQuery": "calm action",
+  "next": "Founder instruction",
+  "primaryAsk": "Use the lab to plan the first real retrieval implementation.",
+  "summary": "Retrieval Lab Control Room completes the source-to-answer bridge for the trusted MVP.",
   "items": [
     [
       "Query path",
@@ -171,15 +171,15 @@
     "brief": [
       [
         "Retrieval promise",
-        "Boundary-Aware Answer Draft makes safe answer framing visible before any AI backend exists."
+        "Retrieval Lab Control Room completes the source-to-answer bridge for the trusted MVP."
       ],
       [
         "Founder move",
-        "Keep answer drafting subordinate to source limits."
+        "Use the lab to plan the first real retrieval implementation."
       ],
       [
         "Trust move",
-        "Keep this boundary visible: Draft preview, not public answer generation."
+        "Keep this boundary visible: Retrieval lab prototype, not production RAG or AI authority."
       ]
     ],
     "checklist": [
