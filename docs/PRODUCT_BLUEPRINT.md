@@ -224,6 +224,7 @@ It helps users move from curiosity to understanding through:
 - Citation Schema Desk: Citation Schema Desk turns source-first UX into a data contract.
 - Family Classifier: Family Classifier reduces category confusion, one of VedaPath's central trust promises.
 - Passage Rights Matrix: Passage Rights Matrix keeps source reverence practical and launch-safe.
+- Translation Note Gate: Translation Note Gate prevents the product from sliding into unreviewed text display.
 <!-- VEDAPATH SOURCE LIBRARY SPRINT SUMMARY END -->
 
 ## What It Is
@@ -3295,6 +3296,21 @@ It should:
 - keep source-library records as starter data until scholar review, rights policy, and retrieval evaluation are approved
 
 Passage Rights Matrix should never claim canonical corpus coverage, scholar endorsement, legal clearance, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
+
+### 202. Translation Note Gate
+
+Translation Note Gate prevents the product from sliding into unreviewed text display.
+
+It should:
+
+- Policy line: Each source packet includes a translation policy.
+- Summary lane: Summary remains separate from direct quotation.
+- Draft filter: Draft records can be studied without being shipped.
+- Public copy: Answer boundaries stay plain and readable.
+- preserve the boundary: Translation policy preview, not licensed text system.
+- keep source-library records as starter data until scholar review, rights policy, and retrieval evaluation are approved
+
+Translation Note Gate should never claim canonical corpus coverage, scholar endorsement, legal clearance, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
 <!-- VEDAPATH SOURCE LIBRARY SPRINT BLUEPRINT END -->
 
 ## Product Personality

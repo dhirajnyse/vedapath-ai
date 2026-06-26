@@ -433,6 +433,8 @@ Let us look at the source first.
 - [Family Classifier Notes](docs/FAMILY_CLASSIFIER.md)
 - [Passage Rights Matrix](rightsmatrix.html)
 - [Passage Rights Matrix Notes](docs/PASSAGE_RIGHTS_MATRIX.md)
+- [Translation Note Gate](translationgate.html)
+- [Translation Note Gate Notes](docs/TRANSLATION_NOTE_GATE.md)
 <!-- VEDAPATH SOURCE LIBRARY SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -464,7 +466,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v2.1.8` is a trusted MVP prototype plus Passage Rights Matrix with:
+`v2.1.9` is a trusted MVP prototype plus Translation Note Gate with:
 
 - Ask workspace
 - Source Card
@@ -687,6 +689,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Citation Schema Desk: Citation Schema Desk turns source-first UX into a data contract.
 - Family Classifier: Family Classifier reduces category confusion, one of VedaPath's central trust promises.
 - Passage Rights Matrix: Passage Rights Matrix keeps source reverence practical and launch-safe.
+- Translation Note Gate: Translation Note Gate prevents the product from sliding into unreviewed text display.
 <!-- VEDAPATH SOURCE LIBRARY SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>VedaPath Source Shelf Intake</title>
+    <title>VedaPath Translation Note Gate</title>
     <link rel="stylesheet" href="assets/vedapath-sprint.css">
     <link rel="stylesheet" href="assets/vedapath-source-library.css">
   </head>
@@ -14,7 +14,7 @@
           <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
           <div>
             <strong>VedaPath AI</strong>
-            <span>Source shelf</span>
+            <span>Translation gate</span>
           </div>
         </a>
         <nav class="nav" aria-label="Project links">
@@ -30,7 +30,7 @@
         </nav>
       </header>
 
-      <main class="workspace" aria-label="VedaPath Source Shelf Intake workspace">
+      <main class="workspace" aria-label="VedaPath Translation Note Gate workspace">
         <aside class="panel">
           <span class="eyebrow">Source library sprint</span>
           <h2>Release Rooms</h2>
@@ -41,35 +41,35 @@
         <section class="panel">
           <div class="hero-grid">
             <div>
-              <span class="eyebrow">Source shelf</span>
-              <h1>Give every answer a source shelf.</h1>
-              <p class="muted">A calm intake room for the first curated source records: citation, family, theme, rights state, readiness, and boundary in one place.</p>
+              <span class="eyebrow">Translation note gate</span>
+              <h1>Show the translation rule before the answer.</h1>
+              <p class="muted">A translation note gate that keeps citation, summary, paraphrase, and direct-text policy visible before any source-backed answer is assembled.</p>
             </div>
             <div class="mark-stage">
-              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Shelf logo">
+              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Translate logo">
             </div>
           </div>
 
           <div class="source-block" aria-label="Release source card">
             <div>
               <span class="source-meta">Release</span>
-              <span class="source-value">v2.1.5</span>
+              <span class="source-value">v2.1.9</span>
             </div>
             <div>
               <span class="source-meta">Focus source</span>
-              <span class="source-value">Bhagavad Gita 2.48</span>
+              <span class="source-value">Mundaka Upanishad 1.1.4</span>
             </div>
             <div>
               <span class="source-meta">Family lane</span>
-              <span class="source-value">Bhagavad Gita | Smriti</span>
+              <span class="source-value">Upanishad | Shruti</span>
             </div>
             <div>
               <span class="source-meta">Boundary</span>
-              <span class="source-value">Source shelf prototype, not canonical database.</span>
+              <span class="source-value">Translation policy preview, not licensed text system.</span>
             </div>
           </div>
 
-          <section class="source-library" id="sourceLibrary" data-family="all" data-readiness="all" aria-label="Curated source library">
+          <section class="source-library" id="sourceLibrary" data-family="Upanishad | Shruti" data-readiness="draft" aria-label="Curated source library">
             <div class="library-head">
               <div>
                 <span class="eyebrow">Curated source data</span>
@@ -113,7 +113,7 @@
           <h2>Source Signals</h2>
           <div class="item-list" id="itemList"></div>
 
-          <div class="tabs" role="tablist" aria-label="VedaPath Source Shelf Intake layers">
+          <div class="tabs" role="tablist" aria-label="VedaPath Translation Note Gate layers">
             <button class="tab active" type="button" data-mode="brief">Brief</button>
             <button class="tab" type="button" data-mode="checklist">Checklist</button>
             <button class="tab" type="button" data-mode="boundary">Boundary</button>
@@ -127,20 +127,20 @@
             <button class="button" id="copyBoundary" type="button">Copy Boundary</button>
           </div>
 
-          <textarea id="output" readonly aria-label="VedaPath Source Shelf Intake output"></textarea>
+          <textarea id="output" readonly aria-label="VedaPath Translation Note Gate output"></textarea>
         </section>
 
-        <aside class="panel tight" aria-label="VedaPath Source Shelf Intake sprint rail">
+        <aside class="panel tight" aria-label="VedaPath Translation Note Gate sprint rail">
           <span class="badge green">Source library</span>
-          <h2 style="margin-top: 14px;">Shelf Pulse</h2>
-          <p class="muted">Source Shelf Intake starts the curated source layer that future retrieval can trust.</p>
-          <div class="progress" aria-label="Sprint progress 10 percent">
-            <div class="bar" style="--score:10%"></div>
+          <h2 style="margin-top: 14px;">Translate Pulse</h2>
+          <p class="muted">Translation Note Gate prevents the product from sliding into unreviewed text display.</p>
+          <div class="progress" aria-label="Sprint progress 50 percent">
+            <div class="bar" style="--score:50%"></div>
           </div>
           <div class="metric-grid">
             <div class="metric">
               <span>Current</span>
-              <strong>v2.1.5</strong>
+              <strong>v2.1.9</strong>
             </div>
             <div class="metric">
               <span>Sprint</span>
@@ -152,7 +152,7 @@
             </div>
             <div class="metric">
               <span>Next</span>
-              <strong>Citation Schema Desk</strong>
+              <strong>Concept Glossary Builder</strong>
             </div>
           </div>
 
@@ -184,73 +184,73 @@
     </div>
 
     <script type="application/json" id="room-data">{
-  "version": "v2.1.5",
-  "badge": "v2.1.5 source shelf",
-  "slug": "sourceshelf",
-  "nav": "Shelf",
-  "title": "VedaPath Source Shelf Intake",
-  "pageLabel": "Source shelf",
-  "eyebrow": "Source shelf",
-  "h1": "Give every answer a source shelf.",
-  "lead": "A calm intake room for the first curated source records: citation, family, theme, rights state, readiness, and boundary in one place.",
-  "source": "Bhagavad Gita 2.48",
-  "family": "Bhagavad Gita | Smriti",
-  "stance": "Source shelf prototype, not canonical database.",
-  "sprintPercent": 10,
-  "defaultFamily": "all",
-  "defaultReadiness": "all",
-  "next": "Citation Schema Desk",
-  "primaryAsk": "Turn trusted answer ideas into structured source records.",
-  "summary": "Source Shelf Intake starts the curated source layer that future retrieval can trust.",
+  "version": "v2.1.9",
+  "badge": "v2.1.9 translation gate",
+  "slug": "translationgate",
+  "nav": "Translate",
+  "title": "VedaPath Translation Note Gate",
+  "pageLabel": "Translation gate",
+  "eyebrow": "Translation note gate",
+  "h1": "Show the translation rule before the answer.",
+  "lead": "A translation note gate that keeps citation, summary, paraphrase, and direct-text policy visible before any source-backed answer is assembled.",
+  "source": "Mundaka Upanishad 1.1.4",
+  "family": "Upanishad | Shruti",
+  "stance": "Translation policy preview, not licensed text system.",
+  "sprintPercent": 50,
+  "defaultFamily": "Upanishad | Shruti",
+  "defaultReadiness": "draft",
+  "next": "Concept Glossary Builder",
+  "primaryAsk": "Give each source record a safe display policy.",
+  "summary": "Translation Note Gate prevents the product from sliding into unreviewed text display.",
   "items": [
     [
-      "Source record",
-      "Each passage candidate gets a stable id, citation, family, theme, and readiness.",
-      "Prevents loose notes."
+      "Policy line",
+      "Each source packet includes a translation policy.",
+      "Keeps rights visible."
     ],
     [
-      "Boundary attached",
-      "Every record carries what the answer must not claim.",
-      "Protects user trust."
+      "Summary lane",
+      "Summary remains separate from direct quotation.",
+      "Protects integrity."
     ],
     [
-      "Rights state",
-      "Display limits are visible before the answer uses text.",
-      "Avoids accidental misuse."
+      "Draft filter",
+      "Draft records can be studied without being shipped.",
+      "Keeps pace safe."
     ],
     [
-      "Simple shelf",
-      "The UI stays scan-first and calm.",
-      "Keeps founder review fast."
+      "Public copy",
+      "Answer boundaries stay plain and readable.",
+      "Keeps UX simple."
     ]
   ],
   "modes": {
     "brief": [
       [
         "Source promise",
-        "Source Shelf Intake starts the curated source layer that future retrieval can trust."
+        "Translation Note Gate prevents the product from sliding into unreviewed text display."
       ],
       [
         "Founder move",
-        "Turn trusted answer ideas into structured source records."
+        "Give each source record a safe display policy."
       ],
       [
         "Trust move",
-        "Keep this boundary visible: Source shelf prototype, not canonical database."
+        "Keep this boundary visible: Translation policy preview, not licensed text system."
       ]
     ],
     "checklist": [
       [
-        "Source record",
-        "Each passage candidate gets a stable id, citation, family, theme, and readiness."
+        "Policy line",
+        "Each source packet includes a translation policy."
       ],
       [
-        "Boundary attached",
-        "Every record carries what the answer must not claim."
+        "Summary lane",
+        "Summary remains separate from direct quotation."
       ],
       [
-        "Rights state",
-        "Display limits are visible before the answer uses text."
+        "Draft filter",
+        "Draft records can be studied without being shipped."
       ]
     ],
     "boundary": [
