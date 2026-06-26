@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>VedaPath Source Candidate Ranker</title>
+    <title>VedaPath Search History Preview</title>
     <link rel="stylesheet" href="assets/vedapath-sprint.css">
     <link rel="stylesheet" href="assets/vedapath-retrieval-lab.css">
   </head>
@@ -12,7 +12,7 @@
       <header class="topbar">
         <a class="brand" href="index.html#top" aria-label="VedaPath AI home">
           <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
-          <div><strong>VedaPath AI</strong><span>Candidate ranker</span></div>
+          <div><strong>VedaPath AI</strong><span>Search history</span></div>
         </a>
         <nav class="nav" aria-label="Project links">
           <a class="link" href="build-status.html">Build</a>
@@ -28,7 +28,7 @@
         </nav>
       </header>
 
-      <main class="workspace" aria-label="VedaPath Source Candidate Ranker workspace">
+      <main class="workspace" aria-label="VedaPath Search History Preview workspace">
         <aside class="panel">
           <span class="eyebrow">Retrieval lab sprint</span>
           <h2>Release Rooms</h2>
@@ -39,21 +39,21 @@
         <section class="panel">
           <div class="hero-grid">
             <div>
-              <span class="eyebrow">Candidate ranker</span>
-              <h1>Rank candidates with visible reasons.</h1>
-              <p class="muted">A candidate ranker that scores source records using theme, tag, question, and citation matches while keeping readiness visible.</p>
+              <span class="eyebrow">Search history</span>
+              <h1>Remember searches only on this device.</h1>
+              <p class="muted">A device-local history preview that records query, top source, score, and trace text without claiming accounts or durable memory.</p>
             </div>
-            <div class="mark-stage"><img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Rank logo"></div>
+            <div class="mark-stage"><img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath History logo"></div>
           </div>
 
           <div class="source-block" aria-label="Release source card">
-            <div><span class="source-meta">Release</span><span class="source-value">v2.2.6</span></div>
-            <div><span class="source-meta">Sample query</span><span class="source-value">What does the Gita suggest about steady effort?</span></div>
-            <div><span class="source-meta">Intent lane</span><span class="source-value">action</span></div>
-            <div><span class="source-meta">Boundary</span><span class="source-value">Ranker prototype, not semantic retrieval.</span></div>
+            <div><span class="source-meta">Release</span><span class="source-value">v2.3.2</span></div>
+            <div><span class="source-meta">Sample query</span><span class="source-value">What does Hindu philosophy mean by different kinds of knowledge?</span></div>
+            <div><span class="source-meta">Intent lane</span><span class="source-value">knowledge</span></div>
+            <div><span class="source-meta">Boundary</span><span class="source-value">Browser-only history preview, not account storage.</span></div>
           </div>
 
-          <section class="retrieval-lab" id="retrievalLab" data-query="action" aria-label="Retrieval lab">
+          <section class="retrieval-lab" id="retrievalLab" data-query="knowledge" aria-label="Retrieval lab">
             <div class="retrieval-head">
               <div>
                 <span class="eyebrow">Source-backed retrieval</span>
@@ -89,7 +89,7 @@
           <h2>Retrieval Signals</h2>
           <div class="item-list" id="itemList"></div>
 
-          <div class="tabs" role="tablist" aria-label="VedaPath Source Candidate Ranker layers">
+          <div class="tabs" role="tablist" aria-label="VedaPath Search History Preview layers">
             <button class="tab active" type="button" data-mode="brief">Brief</button>
             <button class="tab" type="button" data-mode="checklist">Checklist</button>
             <button class="tab" type="button" data-mode="boundary">Boundary</button>
@@ -100,19 +100,19 @@
             <button class="button safe" id="copyJson" type="button">Copy JSON</button>
             <button class="button" id="copyBoundary" type="button">Copy Boundary</button>
           </div>
-          <textarea id="output" readonly aria-label="VedaPath Source Candidate Ranker output"></textarea>
+          <textarea id="output" readonly aria-label="VedaPath Search History Preview output"></textarea>
         </section>
 
-        <aside class="panel tight" aria-label="VedaPath Source Candidate Ranker sprint rail">
+        <aside class="panel tight" aria-label="VedaPath Search History Preview sprint rail">
           <span class="badge green">Retrieval lab</span>
-          <h2 style="margin-top: 14px;">Rank Pulse</h2>
-          <p class="muted">Source Candidate Ranker makes source selection inspectable instead of mysterious.</p>
-          <div class="progress" aria-label="Sprint progress 20 percent"><div class="bar" style="--score:20%"></div></div>
+          <h2 style="margin-top: 14px;">History Pulse</h2>
+          <p class="muted">Search History Preview keeps iteration fast while preserving privacy boundaries.</p>
+          <div class="progress" aria-label="Sprint progress 80 percent"><div class="bar" style="--score:80%"></div></div>
           <div class="metric-grid">
-            <div class="metric"><span>Current</span><strong>v2.2.6</strong></div>
+            <div class="metric"><span>Current</span><strong>v2.3.2</strong></div>
             <div class="metric"><span>Sprint</span><strong>8/10</strong></div>
             <div class="metric"><span>Fixtures</span><strong>6</strong></div>
-            <div class="metric"><span>Next</span><strong>Reason Stack Viewer</strong></div>
+            <div class="metric"><span>Next</span><strong>Mobile Retrieval Polish</strong></div>
           </div>
           <div class="sprint-list">
             <div class="sprint-step active"><span class="step-index">1</span><div><strong>Query</strong><p>Capture user language.</p></div></div>
@@ -128,23 +128,23 @@
       </main>
     </div>
     <script type="application/json" id="room-data">{
-  "version": "v2.2.6",
-  "badge": "v2.2.6 ranker",
-  "slug": "candidateranker",
-  "nav": "Rank",
-  "title": "VedaPath Source Candidate Ranker",
-  "pageLabel": "Candidate ranker",
-  "eyebrow": "Candidate ranker",
-  "h1": "Rank candidates with visible reasons.",
-  "lead": "A candidate ranker that scores source records using theme, tag, question, and citation matches while keeping readiness visible.",
-  "source": "What does the Gita suggest about steady effort?",
-  "family": "action",
-  "stance": "Ranker prototype, not semantic retrieval.",
-  "sprintPercent": 20,
-  "defaultQuery": "action",
-  "next": "Reason Stack Viewer",
-  "primaryAsk": "Make ranking explainable before answer drafting.",
-  "summary": "Source Candidate Ranker makes source selection inspectable instead of mysterious.",
+  "version": "v2.3.2",
+  "badge": "v2.3.2 search history",
+  "slug": "searchhistory",
+  "nav": "History",
+  "title": "VedaPath Search History Preview",
+  "pageLabel": "Search history",
+  "eyebrow": "Search history",
+  "h1": "Remember searches only on this device.",
+  "lead": "A device-local history preview that records query, top source, score, and trace text without claiming accounts or durable memory.",
+  "source": "What does Hindu philosophy mean by different kinds of knowledge?",
+  "family": "knowledge",
+  "stance": "Browser-only history preview, not account storage.",
+  "sprintPercent": 80,
+  "defaultQuery": "knowledge",
+  "next": "Mobile Retrieval Polish",
+  "primaryAsk": "Test retrieval habit before accounts and backend storage.",
+  "summary": "Search History Preview keeps iteration fast while preserving privacy boundaries.",
   "items": [
     [
       "Query path",
@@ -171,15 +171,15 @@
     "brief": [
       [
         "Retrieval promise",
-        "Source Candidate Ranker makes source selection inspectable instead of mysterious."
+        "Search History Preview keeps iteration fast while preserving privacy boundaries."
       ],
       [
         "Founder move",
-        "Make ranking explainable before answer drafting."
+        "Test retrieval habit before accounts and backend storage."
       ],
       [
         "Trust move",
-        "Keep this boundary visible: Ranker prototype, not semantic retrieval."
+        "Keep this boundary visible: Browser-only history preview, not account storage."
       ]
     ],
     "checklist": [
