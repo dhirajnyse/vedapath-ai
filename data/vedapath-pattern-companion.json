@@ -1,0 +1,111 @@
+{
+  "product": "VedaPath AI",
+  "release": "v2.7.5",
+  "status": "pattern companion prototype",
+  "warning": "Prototype local pattern support only. Not diagnosis, therapy, legal advice, medical advice, surveillance, scoring, or spiritual authority.",
+  "localStorageKeys": [
+    "vedapath-life-companion-entries",
+    "vedapath-conversation-companion-drafts",
+    "vedapath-pattern-companion-entries"
+  ],
+  "signals": [
+    {
+      "id": "work-pressure",
+      "label": "Work pressure",
+      "domain": "Work",
+      "source": "Bhagavad Gita 2.47",
+      "family": "Bhagavad Gita | Smriti",
+      "pattern": "Outcome worry appears before the next action is clear.",
+      "helpful": "Choose one owned task and one clean request.",
+      "reflection": "Which part is mine to do now, and which part needs a request?",
+      "boundary": "Not career advice, HR guidance, legal advice, or a success promise.",
+      "confidence": 78
+    },
+    {
+      "id": "reply-heat",
+      "label": "Reply heat",
+      "domain": "Conversation",
+      "source": "Bhagavad Gita 17.15",
+      "family": "Bhagavad Gita | Smriti",
+      "pattern": "The first reply is usually faster than the truest reply.",
+      "helpful": "Wait, remove one sharp line, then send only what is useful.",
+      "reflection": "Can this be truthful, useful, and less agitating?",
+      "boundary": "Not mediation, legal advice, safety planning, therapy, or spiritual authority.",
+      "confidence": 68
+    },
+    {
+      "id": "family-pull",
+      "label": "Family pull",
+      "domain": "Family",
+      "source": "Taittiriya Upanishad 1.11.2",
+      "family": "Upanishad | Shruti",
+      "pattern": "Care and control can become mixed when the stakes feel personal.",
+      "helpful": "Offer one concrete help and leave space for the other person.",
+      "reflection": "What is respectful care, and what is control wearing care's language?",
+      "boundary": "Not family therapy, medical advice, elder-care instruction, or legal advice.",
+      "confidence": 55
+    },
+    {
+      "id": "night-loop",
+      "label": "Night loop",
+      "domain": "Evening",
+      "source": "Bhagavad Gita 6.26",
+      "family": "Bhagavad Gita | Smriti",
+      "pattern": "The mind returns to unfinished loops when the day has no landing place.",
+      "helpful": "Write one tomorrow item and close the rest for tonight.",
+      "reflection": "What can be placed down for tonight without pretending it is solved?",
+      "boundary": "Not sleep treatment, clinical care, diagnosis, or emergency support.",
+      "confidence": 63
+    },
+    {
+      "id": "decision-fog",
+      "label": "Decision fog",
+      "domain": "Decision",
+      "source": "Katha Upanishad 1.2.1",
+      "family": "Upanishad | Shruti",
+      "pattern": "The pleasant and beneficial are hard to separate under pressure.",
+      "helpful": "Name one comfort, one cost, and one responsibility for each option.",
+      "reflection": "Which option only soothes the moment, and which also serves clarity?",
+      "boundary": "Not moral policing, financial advice, legal advice, or a command.",
+      "confidence": 70
+    },
+    {
+      "id": "gratitude-signal",
+      "label": "Gratitude signal",
+      "domain": "Thanks",
+      "source": "Taittiriya Upanishad 1.11.2",
+      "family": "Upanishad | Shruti",
+      "pattern": "Specific thanks makes helpfulness easier to notice and repeat.",
+      "helpful": "Name the concrete gift and why it mattered.",
+      "reflection": "Can gratitude name the gift without demanding anything back?",
+      "boundary": "Not ritual instruction, social scripting for every culture, or obligation.",
+      "confidence": 54
+    }
+  ],
+  "sampleEntries": [
+    {
+      "date": "2026-06-20",
+      "signal": "work-pressure",
+      "source": "Bhagavad Gita 2.47",
+      "note": "Next owned task before outcome worry."
+    },
+    {
+      "date": "2026-06-21",
+      "signal": "reply-heat",
+      "source": "Bhagavad Gita 17.15",
+      "note": "Removed one sharp sentence before sending."
+    },
+    {
+      "date": "2026-06-22",
+      "signal": "night-loop",
+      "source": "Bhagavad Gita 6.26",
+      "note": "Moved one item to tomorrow."
+    },
+    {
+      "date": "2026-06-23",
+      "signal": "gratitude-signal",
+      "source": "Taittiriya Upanishad 1.11.2",
+      "note": "Sent specific thanks."
+    }
+  ]
+}

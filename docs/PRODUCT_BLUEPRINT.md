@@ -291,6 +291,9 @@ It helps users move from curiosity to understanding through:
 - Mobile Conversation: Mobile Conversation makes the product feel useful in the place messages actually happen.
 - Conversation Companion Control Room: Conversation Companion Control Room completes the source-bounded speech layer for VedaPath AI.
 <!-- VEDAPATH CONVERSATION COMPANION SPRINT SUMMARY END -->
+<!-- VEDAPATH PATTERN COMPANION SPRINT SUMMARY START -->
+- Pattern Arrival: Pattern Arrival starts the learning layer while keeping identity and memory local.
+<!-- VEDAPATH PATTERN COMPANION SPRINT SUMMARY END -->
 
 ## What It Is
 
@@ -4207,6 +4210,22 @@ It should:
 
 Conversation Companion Control Room should never claim mediation, legal advice, safety planning, therapy, emergency support, ritual instruction, or spiritual authority.
 <!-- VEDAPATH CONVERSATION COMPANION SPRINT BLUEPRINT END -->
+<!-- VEDAPATH PATTERN COMPANION SPRINT BLUEPRINT START -->
+### 258. Pattern Arrival
+
+Pattern Arrival starts the learning layer while keeping identity and memory local.
+
+It should:
+
+- Collect: Read local preview entries and sample signals.
+- Group: Show domains, sources, and helpful actions.
+- Reflect: Offer one weekly insight without judging.
+- Control: Let the user copy, export, or clear memory.
+- preserve the boundary: local pattern support only, not profiling
+- keep pattern memory visible, copyable, and clearable
+
+Pattern Arrival should never claim diagnosis, therapy, legal advice, medical advice, surveillance, scoring, or spiritual authority.
+<!-- VEDAPATH PATTERN COMPANION SPRINT BLUEPRINT END -->
 
 ## Product Personality
 

@@ -556,6 +556,10 @@ Let us look at the source first.
 - [Conversation Companion Control Room](conversationcompanionlab.html)
 - [Conversation Companion Control Room Notes](docs/CONVERSATION_COMPANION_CONTROL_ROOM.md)
 <!-- VEDAPATH CONVERSATION COMPANION SPRINT LINKS END -->
+<!-- VEDAPATH PATTERN COMPANION SPRINT LINKS START -->
+- [Pattern Arrival](patternarrival.html)
+- [Pattern Arrival Notes](docs/PATTERN_ARRIVAL.md)
+<!-- VEDAPATH PATTERN COMPANION SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
 - [Calm Compass](compass.html)
@@ -586,7 +590,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v2.7.4` is a trusted MVP prototype plus Conversation Companion Control Room with:
+`v2.7.5` is a trusted MVP prototype plus Pattern Arrival with:
 
 - Ask workspace
 - Source Card
@@ -876,6 +880,9 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Mobile Conversation: Mobile Conversation makes the product feel useful in the place messages actually happen.
 - Conversation Companion Control Room: Conversation Companion Control Room completes the source-bounded speech layer for VedaPath AI.
 <!-- VEDAPATH CONVERSATION COMPANION SPRINT FEATURES END -->
+<!-- VEDAPATH PATTERN COMPANION SPRINT FEATURES START -->
+- Pattern Arrival: Pattern Arrival starts the learning layer while keeping identity and memory local.
+<!-- VEDAPATH PATTERN COMPANION SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
 - Calm Card Studio with visual card preview, local saved cards, copy text, and PNG export
