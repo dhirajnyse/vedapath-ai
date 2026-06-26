@@ -521,6 +521,8 @@ Let us look at the source first.
 - [Steadiness Check Notes](docs/STEADINESS_CHECK.md)
 - [Relationship Pause](relationshippause.html)
 - [Relationship Pause Notes](docs/RELATIONSHIP_PAUSE.md)
+- [Work Dharma Room](workdharma.html)
+- [Work Dharma Room Notes](docs/WORK_DHARMA_ROOM.md)
 <!-- VEDAPATH LIFE COMPANION SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -552,7 +554,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v2.5.8` is a trusted MVP prototype plus Relationship Pause with:
+`v2.5.9` is a trusted MVP prototype plus Work Dharma Room with:
 
 - Ask workspace
 - Source Card
@@ -823,6 +825,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Life Domain Map: Life Domain Map keeps everyday calm grounded in context.
 - Steadiness Check: Steadiness Check gives users a practical source-backed pause.
 - Relationship Pause: Relationship Pause brings calm into speech without pretending to mediate conflict.
+- Work Dharma Room: Work Dharma Room translates source-backed steadiness into a simple work surface.
 <!-- VEDAPATH LIFE COMPANION SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
