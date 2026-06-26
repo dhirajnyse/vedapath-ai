@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>VedaPath Review Intake Desk</title>
+    <title>VedaPath Review Audit Trail</title>
     <link rel="stylesheet" href="assets/vedapath-sprint.css">
     <link rel="stylesheet" href="assets/vedapath-reviewer-studio.css">
   </head>
@@ -14,7 +14,7 @@
           <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
           <div>
             <strong>VedaPath AI</strong>
-            <span>Reviewer studio</span>
+            <span>Review audit</span>
           </div>
         </a>
         <nav class="nav" aria-label="Project links">
@@ -23,19 +23,19 @@
           <a class="link" href="blueprint.html">Blueprint</a>
           <a class="link" href="sourcereader.html">Reader</a>
           <!-- VEDAPATH REVIEWER STUDIO SPRINT NAV START -->
-          <a class="link active" href="reviewintake.html">Intake</a>
+          <a class="link" href="reviewintake.html">Intake</a>
           <a class="link" href="sourcecheck.html">Source</a>
           <a class="link" href="rightsreview.html">Rights</a>
           <a class="link" href="boundaryboard.html">Boundary</a>
           <a class="link" href="decisioncomposer.html">Decision</a>
           <a class="link" href="decisionmemory.html">Memory</a>
-          <a class="link" href="reviewaudit.html">Audit</a>
+          <a class="link active" href="reviewaudit.html">Audit</a>
           <!-- VEDAPATH REVIEWER STUDIO SPRINT NAV END -->
           <span class="version">v2.1.1 audit</span>
         </nav>
       </header>
 
-      <main class="workspace" aria-label="VedaPath Review Intake Desk workspace">
+      <main class="workspace" aria-label="VedaPath Review Audit Trail workspace">
         <aside class="panel">
           <span class="eyebrow">Reviewer studio sprint</span>
           <h2>Release Rooms</h2>
@@ -46,35 +46,35 @@
         <section class="panel">
           <div class="hero-grid">
             <div>
-              <span class="eyebrow">Review intake</span>
-              <h1>Turn reader traces into review work.</h1>
-              <p class="muted">A browser-only review intake desk that turns source reader handoffs into visible review items with queue, severity, source, and no-go boundaries.</p>
+              <span class="eyebrow">Audit trail</span>
+              <h1>Keep the decision and the boundary together.</h1>
+              <p class="muted">An audit trail preview that shows saved decision, source candidate, no-go line, reviewer role, and public effect in one local record.</p>
             </div>
             <div class="mark-stage">
-              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Intake logo">
+              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Audit logo">
             </div>
           </div>
 
           <div class="source-block" aria-label="Release source card">
             <div>
               <span class="source-meta">Release</span>
-              <span class="source-value">v2.0.5</span>
+              <span class="source-value">v2.1.1</span>
             </div>
             <div>
               <span class="source-meta">Source candidate</span>
-              <span class="source-value">Bhagavad Gita 2.48</span>
+              <span class="source-value">Taittiriya Upanishad 1.11.1</span>
             </div>
             <div>
               <span class="source-meta">Text family</span>
-              <span class="source-value">Bhagavad Gita | Smriti</span>
+              <span class="source-value">Upanishad | Shruti</span>
             </div>
             <div>
               <span class="source-meta">Boundary</span>
-              <span class="source-value">Review intake prototype, not submitted workflow.</span>
+              <span class="source-value">Audit preview, not compliance log.</span>
             </div>
           </div>
 
-          <section class="review-studio" id="reviewStudio" data-default-queue="all" aria-label="Reviewer studio">
+          <section class="review-studio" id="reviewStudio" data-default-queue="authority" aria-label="Reviewer studio">
             <div class="review-head">
               <div>
                 <span class="eyebrow">Browser-only review studio</span>
@@ -108,7 +108,7 @@
           <h2>Review Signals</h2>
           <div class="item-list" id="itemList"></div>
 
-          <div class="tabs" role="tablist" aria-label="VedaPath Review Intake Desk layers">
+          <div class="tabs" role="tablist" aria-label="VedaPath Review Audit Trail layers">
             <button class="tab active" type="button" data-mode="brief">Brief</button>
             <button class="tab" type="button" data-mode="checklist">Checklist</button>
             <button class="tab" type="button" data-mode="boundary">Boundary</button>
@@ -122,20 +122,20 @@
             <button class="button" id="copyBoundary" type="button">Copy Boundary</button>
           </div>
 
-          <textarea id="output" readonly aria-label="VedaPath Review Intake Desk output"></textarea>
+          <textarea id="output" readonly aria-label="VedaPath Review Audit Trail output"></textarea>
         </section>
 
-        <aside class="panel tight" aria-label="VedaPath Review Intake Desk sprint rail">
+        <aside class="panel tight" aria-label="VedaPath Review Audit Trail sprint rail">
           <span class="badge green">Reviewer studio</span>
-          <h2 style="margin-top: 14px;">Intake Pulse</h2>
-          <p class="muted">Review Intake Desk creates the first visible bridge between guided reading and human review.</p>
-          <div class="progress" aria-label="Sprint progress 101 percent">
-            <div class="bar" style="--score:101%"></div>
+          <h2 style="margin-top: 14px;">Audit Pulse</h2>
+          <p class="muted">Review Audit Trail keeps product decisions accountable without pretending compliance infrastructure exists.</p>
+          <div class="progress" aria-label="Sprint progress 107 percent">
+            <div class="bar" style="--score:107%"></div>
           </div>
           <div class="metric-grid">
             <div class="metric">
               <span>Current</span>
-              <strong>v2.0.5</strong>
+              <strong>v2.1.1</strong>
             </div>
             <div class="metric">
               <span>Sprint</span>
@@ -143,11 +143,11 @@
             </div>
             <div class="metric">
               <span>Progress</span>
-              <strong>101%</strong>
+              <strong>107%</strong>
             </div>
             <div class="metric">
               <span>Next</span>
-              <strong>Source Evidence Checklist</strong>
+              <strong>Public Effect Preview</strong>
             </div>
           </div>
 
@@ -179,72 +179,72 @@
     </div>
 
     <script type="application/json" id="room-data">{
-  "version": "v2.0.5",
-  "badge": "v2.0.5 review intake",
-  "slug": "reviewintake",
-  "nav": "Intake",
-  "title": "VedaPath Review Intake Desk",
-  "pageLabel": "Reviewer studio",
-  "eyebrow": "Review intake",
-  "h1": "Turn reader traces into review work.",
-  "lead": "A browser-only review intake desk that turns source reader handoffs into visible review items with queue, severity, source, and no-go boundaries.",
-  "source": "Bhagavad Gita 2.48",
-  "family": "Bhagavad Gita | Smriti",
-  "stance": "Review intake prototype, not submitted workflow.",
-  "progress": 101,
-  "next": "Source Evidence Checklist",
-  "defaultQueue": "all",
-  "primaryAsk": "Start treating reader output as reviewable product evidence.",
-  "summary": "Review Intake Desk creates the first visible bridge between guided reading and human review.",
+  "version": "v2.1.1",
+  "badge": "v2.1.1 audit",
+  "slug": "reviewaudit",
+  "nav": "Audit",
+  "title": "VedaPath Review Audit Trail",
+  "pageLabel": "Review audit",
+  "eyebrow": "Audit trail",
+  "h1": "Keep the decision and the boundary together.",
+  "lead": "An audit trail preview that shows saved decision, source candidate, no-go line, reviewer role, and public effect in one local record.",
+  "source": "Taittiriya Upanishad 1.11.1",
+  "family": "Upanishad | Shruti",
+  "stance": "Audit preview, not compliance log.",
+  "progress": 107,
+  "next": "Public Effect Preview",
+  "defaultQueue": "authority",
+  "primaryAsk": "Make every review decision explainable without turning it into a legal record.",
+  "summary": "Review Audit Trail keeps product decisions accountable without pretending compliance infrastructure exists.",
   "items": [
     [
-      "Queue cards",
-      "Every trace becomes a scoped review item.",
-      "Makes review concrete."
+      "Audit row",
+      "Decision, source, role, no-go, and effect stay together.",
+      "Prevents drift."
     ],
     [
-      "Severity label",
-      "Medium and high risks are visible.",
-      "Helps prioritize."
+      "Local-only",
+      "Audit rows are preview state only.",
+      "Keeps honesty."
     ],
     [
-      "No-go line",
-      "Misuse stays attached to the item.",
-      "Prevents context loss."
+      "Boundary reuse",
+      "The no-go line travels with the decision.",
+      "Prevents overclaim."
     ],
     [
-      "Prototype boundary",
-      "The desk does not claim real approval.",
-      "Keeps scope honest."
+      "Export posture",
+      "Copy, not sync, remains the handoff.",
+      "Keeps scope lean."
     ]
   ],
   "modes": {
     "brief": [
       [
         "Review promise",
-        "Review Intake Desk creates the first visible bridge between guided reading and human review."
+        "Review Audit Trail keeps product decisions accountable without pretending compliance infrastructure exists."
       ],
       [
         "Founder move",
-        "Start treating reader output as reviewable product evidence."
+        "Make every review decision explainable without turning it into a legal record."
       ],
       [
         "Trust move",
-        "Keep this boundary visible: Review intake prototype, not submitted workflow."
+        "Keep this boundary visible: Audit preview, not compliance log."
       ]
     ],
     "checklist": [
       [
-        "Queue cards",
-        "Every trace becomes a scoped review item."
+        "Audit row",
+        "Decision, source, role, no-go, and effect stay together."
       ],
       [
-        "Severity label",
-        "Medium and high risks are visible."
+        "Local-only",
+        "Audit rows are preview state only."
       ],
       [
-        "No-go line",
-        "Misuse stays attached to the item."
+        "Boundary reuse",
+        "The no-go line travels with the decision."
       ]
     ],
     "boundary": [

@@ -214,6 +214,7 @@ It helps users move from curiosity to understanding through:
 - Boundary Decision Board: Boundary Decision Board makes restraint an active product decision.
 - Reviewer Decision Composer: Reviewer Decision Composer turns review intent into a readable, copyable decision packet.
 - Local Decision Memory: Local Decision Memory tests review workflow behavior while preserving the privacy and authority boundary.
+- Review Audit Trail: Review Audit Trail keeps product decisions accountable without pretending compliance infrastructure exists.
 <!-- VEDAPATH REVIEWER STUDIO SPRINT SUMMARY END -->
 
 ## What It Is
@@ -3164,6 +3165,21 @@ It should:
 - keep review decisions browser-only until reviewer identity, consent, backend storage, and source policy are approved
 
 Local Decision Memory should never claim production approval, scholar endorsement, legal clearance, durable review storage, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
+
+### 194. Review Audit Trail
+
+Review Audit Trail keeps product decisions accountable without pretending compliance infrastructure exists.
+
+It should:
+
+- Audit row: Decision, source, role, no-go, and effect stay together.
+- Local-only: Audit rows are preview state only.
+- Boundary reuse: The no-go line travels with the decision.
+- Export posture: Copy, not sync, remains the handoff.
+- preserve the boundary: Audit preview, not compliance log.
+- keep review decisions browser-only until reviewer identity, consent, backend storage, and source policy are approved
+
+Review Audit Trail should never claim production approval, scholar endorsement, legal clearance, durable review storage, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
 <!-- VEDAPATH REVIEWER STUDIO SPRINT BLUEPRINT END -->
 
 ## Product Personality
