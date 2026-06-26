@@ -953,6 +953,18 @@ Then open:
 http://127.0.0.1:8088/
 ```
 
+<!-- VEDAPATH RETRIEVAL EVALUATION START -->
+## v2.9.3 Retrieval Evaluation
+
+This release adds the first quality gate for source selection.
+
+- adds `data/vedapath-retrieval-eval-cases.json`
+- adds `retrievalevaluation.html` as a pass/fail evaluation runner
+- checks expected source slug, expected status, score boundaries, and no-source behavior
+- keeps unsupported modern claims below the review-needed threshold
+- prepares the reviewer ticket bridge for failed evals and source gaps
+<!-- VEDAPATH RETRIEVAL EVALUATION END -->
+
 <!-- VEDAPATH RETRIEVAL FOUNDATION START -->
 ## v2.9.2 Retrieval Foundation
 

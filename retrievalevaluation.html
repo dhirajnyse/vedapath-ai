@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VedaPath Retrieval Evaluation</title>
+    <link rel="stylesheet" href="assets/vedapath-sprint.css">
+    <link rel="stylesheet" href="assets/vedapath-retrieval-evaluation.css">
+    <link rel="stylesheet" href="assets/vedapath-cohesive.css">
+    <link rel="stylesheet" href="assets/vedapath-polish.css">
+    <link rel="stylesheet" href="assets/vedapath-focus.css">
+  </head>
+  <body>
+    <div class="shell" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top" aria-label="VedaPath AI home">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
+          <div>
+            <strong>VedaPath AI</strong>
+            <span>Retrieval evaluation</span>
+          </div>
+        </a>
+        <nav class="nav" aria-label="Project links">
+          <a class="link" href="index.html">Home</a>
+          <a class="link" href="build-status.html">Build</a>
+          <a class="link" href="brand/brand-board.html">Brand</a>
+          <a class="link" href="blueprint.html">Blueprint</a>
+          <a class="link" href="citedanswerlab.html">Answers</a>
+          <a class="link" href="mantralenslab.html">Mantra</a>
+          <a class="link" href="lifecompanionlab.html">Life</a>
+          <a class="link" href="conversationcompanionlab.html">Talk</a>
+          <a class="link" href="patterncompanionlab.html">Pattern</a>
+          <a class="link" href="daily.html">Daily</a>
+          <span class="version">v2.9.3 eval</span>
+        </nav>
+      </header>
+
+      <main class="workspace" aria-label="VedaPath Retrieval Evaluation workspace">
+        <aside class="panel">
+          <span class="eyebrow">Eval v1</span>
+          <h2>Trust by tests</h2>
+          <p class="muted">A retrieval answer should not merely sound right. It should pass expected-source checks before the corpus grows.</p>
+          <div class="sprint-list">
+            <div class="sprint-step active"><span class="step-index">1</span><div><strong>Case</strong><p>Define the query.</p></div></div>
+            <div class="sprint-step"><span class="step-index">2</span><div><strong>Expect</strong><p>Name source and status.</p></div></div>
+            <div class="sprint-step"><span class="step-index">3</span><div><strong>Run</strong><p>Score actual retrieval.</p></div></div>
+            <div class="sprint-step"><span class="step-index">4</span><div><strong>Gate</strong><p>Pass before expansion.</p></div></div>
+          </div>
+        </aside>
+
+        <section class="panel eval-workspace" id="retrievalEvaluation">
+          <div class="eval-head">
+            <div>
+              <span class="eyebrow">Retrieval evaluation</span>
+              <h1>Expected source. Actual source. Clear result.</h1>
+              <p class="muted">This page runs the starter retrieval questions against the source-answer records and flags whether the chosen source, readiness status, and score boundary match expectation.</p>
+            </div>
+            <div class="eval-mark"><img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath evaluation mark"></div>
+          </div>
+
+          <div class="eval-summary" id="evalSummary" aria-live="polite"></div>
+
+          <section class="eval-layout" aria-label="Retrieval evaluation cases">
+            <div class="eval-case-list" id="evalCaseList"></div>
+            <div class="eval-workspace">
+              <div class="eval-detail-grid" id="evalDetail"></div>
+              <div>
+                <h2>Evaluation Contract</h2>
+                <div class="eval-rules" id="evalRules"></div>
+              </div>
+              <div class="eval-actions">
+                <button class="button primary" id="copyEvalReport" type="button">Copy Eval Report</button>
+                <a class="button safe" href="data/vedapath-retrieval-eval-cases.json">Open Eval JSON</a>
+              </div>
+              <label class="eval-report-label" for="evalReport">Copyable evaluation report</label>
+              <textarea class="eval-report" id="evalReport" readonly></textarea>
+            </div>
+          </section>
+        </section>
+
+        <aside class="panel tight">
+          <span class="badge green">Quality phase</span>
+          <h2 style="margin-top: 14px;">Eval Boundary</h2>
+          <p class="muted">This is a static retrieval evaluation harness. It tests routing behavior, not scholarship completeness or production RAG quality.</p>
+          <div class="progress" aria-label="Retrieval evaluation progress 100 percent"><div class="bar" style="--score:100%"></div></div>
+          <div class="metric-grid">
+            <div class="metric"><span>Current</span><strong>v2.9.3</strong></div>
+            <div class="metric"><span>Cases</span><strong>10</strong></div>
+            <div class="metric"><span>Mode</span><strong>Static</strong></div>
+            <div class="metric"><span>Next</span><strong>Review</strong></div>
+          </div>
+          <section class="panel tight boundary" style="margin-top: 16px;">
+            <h2>Expansion Rule</h2>
+            <p class="muted">Add more source records only after the current expected-source tests keep passing.</p>
+          </section>
+        </aside>
+      </main>
+    </div>
+    <script src="assets/vedapath-retrieval-evaluation.js"></script>
+  </body>
+</html>

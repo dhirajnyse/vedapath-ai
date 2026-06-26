@@ -306,6 +306,20 @@ The v0.7.4 release turns the VedaPath AI homepage into a trusted MVP prototype w
 - Mobile Pattern: Mobile Pattern keeps the learning loop usable where calm moments actually happen.
 - Pattern Companion Control Room: Pattern Companion Control Room completes the private local learning layer for VedaPath AI.
 <!-- VEDAPATH PATTERN COMPANION SPRINT NOTES END -->
+<!-- VEDAPATH RETRIEVAL EVALUATION NOTES START -->
+## v2.9.3 Retrieval Evaluation
+
+This phase makes retrieval quality visible.
+
+Action taken:
+
+- Added expected-source eval cases for common starter queries.
+- Added an evaluation runner page with pass/fail cards.
+- Added score boundary checks for no-source cases.
+- Added a copyable evaluation report for review handoff.
+- Set the next phase as reviewer ticket bridge.
+<!-- VEDAPATH RETRIEVAL EVALUATION NOTES END -->
+
 <!-- VEDAPATH RETRIEVAL FOUNDATION NOTES START -->
 ## v2.9.2 Retrieval Foundation
 

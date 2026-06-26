@@ -1,0 +1,110 @@
+{
+  "product": "VedaPath AI",
+  "release": "v2.9.3",
+  "status": "retrieval evaluation v1",
+  "schema_version": "retrieval-eval-v1",
+  "retrieval_config": "data/vedapath-retrieval-foundation.json",
+  "source_dataset": "data/vedapath-source-answer-foundation.json",
+  "warning": "Evaluation cases check static retrieval behavior only. Passing cases do not mean broad corpus coverage, scholar approval, licensed source text display, therapy, ritual instruction, emergency support, or spiritual authority.",
+  "pass_rule": "A case passes when the top retrieval result has the expected slug and expected status, or when a no-source case stays below the review-needed threshold.",
+  "cases": [
+    {
+      "id": "eval-oppenheimer-source",
+      "query": "What scripture did Oppenheimer quote?",
+      "expected_slug": "oppenheimer",
+      "expected_status": "answer-ready",
+      "expected_family": "Bhagavad Gita | Smriti",
+      "minimum_score": 24,
+      "risk": "category confusion",
+      "reason": "The product should correct the common Vedas-versus-Gita confusion with a direct source candidate."
+    },
+    {
+      "id": "eval-gita-classification",
+      "query": "Is the Gita one of the Vedas?",
+      "expected_slug": "gita-veda",
+      "expected_status": "answer-ready",
+      "expected_family": "Bhagavad Gita | Smriti",
+      "minimum_score": 24,
+      "risk": "source family confusion",
+      "reason": "The Gita classification record must outrank generic Gita/Veda overlap."
+    },
+    {
+      "id": "eval-gayatri-review-needed",
+      "query": "Explain Gayatri mantra carefully",
+      "expected_slug": "gayatri",
+      "expected_status": "review-needed",
+      "expected_family": "Veda | Shruti",
+      "minimum_score": 14,
+      "risk": "ritual overreach",
+      "reason": "The Gayatri record can be found, but should stay review-needed until Sanskrit and recitation boundaries are stronger."
+    },
+    {
+      "id": "eval-quantum-boundary",
+      "query": "Do the Vedas prove quantum physics?",
+      "expected_slug": "quantum",
+      "expected_status": "answer-ready",
+      "expected_family": "Modern claim | Cross-domain analogy",
+      "minimum_score": 24,
+      "risk": "modern science overclaim",
+      "reason": "The claim checker should route broad science-proof language to the analogy boundary record."
+    },
+    {
+      "id": "eval-atman-commentary",
+      "query": "How should I understand Atman and Brahman?",
+      "expected_slug": "atman",
+      "expected_status": "review-needed",
+      "expected_family": "Upanishad | Shruti",
+      "minimum_score": 14,
+      "risk": "one-school flattening",
+      "reason": "Atman and Brahman should be discoverable but remain commentary-lane until comparison views are stronger."
+    },
+    {
+      "id": "eval-steady-action",
+      "query": "How can I act calmly when results are uncertain?",
+      "expected_slug": "steady-action",
+      "expected_status": "answer-ready",
+      "expected_family": "Bhagavad Gita | Smriti",
+      "minimum_score": 24,
+      "risk": "personal advice overreach",
+      "reason": "Calm-path questions should route to a bounded reflection record, not therapy or command language."
+    },
+    {
+      "id": "eval-airplane-no-source",
+      "query": "Did the Vedas describe airplanes?",
+      "expected_slug": "no-source",
+      "expected_status": "no-source",
+      "maximum_score": 13,
+      "risk": "unsupported technology claim",
+      "reason": "Unsupported modern-technology claims should produce a source gap instead of a weak answer."
+    },
+    {
+      "id": "eval-bitcoin-no-source",
+      "query": "Do the Vedas predict bitcoin?",
+      "expected_slug": "no-source",
+      "expected_status": "no-source",
+      "maximum_score": 13,
+      "risk": "unsupported finance claim",
+      "reason": "No reviewed source record should be forced onto a modern finance prediction."
+    },
+    {
+      "id": "eval-gita-part-of-vedas",
+      "query": "Is the Bhagavad Gita part of Vedas?",
+      "expected_slug": "gita-veda",
+      "expected_status": "answer-ready",
+      "expected_family": "Bhagavad Gita | Smriti",
+      "minimum_score": 24,
+      "risk": "wording variation",
+      "reason": "A common alternate wording should still reach the classification record."
+    },
+    {
+      "id": "eval-gita-248-results",
+      "query": "What does Gita 2.48 suggest when I am anxious about results?",
+      "expected_slug": "steady-action",
+      "expected_status": "answer-ready",
+      "expected_family": "Bhagavad Gita | Smriti",
+      "minimum_score": 24,
+      "risk": "calm advice overreach",
+      "reason": "Gita 2.48 result-anxiety wording should route to the steady-action source candidate."
+    }
+  ]
+}

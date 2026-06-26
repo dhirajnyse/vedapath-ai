@@ -4373,6 +4373,20 @@ It should:
 
 Pattern Companion Control Room should never claim diagnosis, therapy, legal advice, medical advice, surveillance, scoring, or spiritual authority.
 <!-- VEDAPATH PATTERN COMPANION SPRINT BLUEPRINT END -->
+<!-- VEDAPATH RETRIEVAL EVALUATION BLUEPRINT START -->
+### 276. Retrieval Evaluation
+
+VedaPath should not expand its corpus faster than it can test retrieval.
+
+Rules:
+
+- Every starter query needs an expected source or expected no-source state.
+- Review-needed records may be found but should not be treated as answer-ready.
+- Unsupported modern claims should remain below the review-needed threshold.
+- Failed evals become reviewer work, not silent tuning.
+- The next build should connect failures to reviewer queue cards.
+<!-- VEDAPATH RETRIEVAL EVALUATION BLUEPRINT END -->
+
 <!-- VEDAPATH RETRIEVAL FOUNDATION BLUEPRINT START -->
 ### 275. Retrieval Foundation
 

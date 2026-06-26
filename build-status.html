@@ -365,7 +365,7 @@
           <a class="link" href="conversationcompanionlab.html">Talk</a>
           <a class="link" href="patterncompanionlab.html">Pattern</a>
           <a class="link" href="daily.html">Daily</a>
-          <span class="version">v2.9.2 retrieval</span>
+          <span class="version">v2.9.3 eval</span>
         </nav>
       </header>
 
@@ -377,8 +377,8 @@
       <section class="summary" aria-label="Progress summary">
         <article class="tile">
           <span>Current version</span>
-          <strong>v2.9.2</strong>
-          <p>Retrieval Foundation: Ask now ranks source-answer records, shows match reasons, and has a no-source fallback.</p>
+          <strong>v2.9.3</strong>
+          <p>Retrieval Evaluation: expected-source cases now test source choice, status, score boundaries, and no-source behavior.</p>
         </article>
         <article class="tile">
           <span>MVP progress</span>
@@ -388,14 +388,14 @@
         </article>
         <article class="tile">
           <span>Full vision progress</span>
-          <strong>70%</strong>
-          <div class="progress" aria-hidden="true"><div class="bar" style="width:70%"></div></div>
-          <p>The first retrieval layer can choose answer records, explain ranking, and refuse unsupported questions.</p>
+          <strong>71%</strong>
+          <div class="progress" aria-hidden="true"><div class="bar" style="width:71%"></div></div>
+          <p>The retrieval layer now has a small quality gate before source expansion.</p>
         </article>
         <article class="tile">
           <span>Next release</span>
-          <strong>Retrieval evaluation</strong>
-          <p>Add expected-source eval cases and tune retrieval thresholds before expanding the corpus.</p>
+          <strong>Review ticket bridge</strong>
+          <p>Turn failed evals and no-source cases into visible reviewer queue cards.</p>
         </article>
       </section>
 
@@ -2506,9 +2506,17 @@
               <span class="percent">100%</span>
             </article>
             <article class="phase">
+              <span class="badge done">Done</span>
+              <div>
+                <strong>Phase 257: Retrieval Evaluation</strong>
+                <p>Adds expected-source eval cases, a pass/fail runner, score boundaries, and copyable evaluation reports.</p>
+              </div>
+              <span class="percent">100%</span>
+            </article>
+            <article class="phase">
               <span class="badge later">Later</span>
               <div>
-                <strong>Phase 257: Production Implementation and Licensed Audio</strong>
+                <strong>Phase 258: Production Implementation and Licensed Audio</strong>
                 <p>Backend storage, account consent, reviewed source records, reviewer operations, audio rights, and launch sequencing after founder direction.</p>
               </div>
               <div class="percent">0%</div>
@@ -2519,11 +2527,11 @@
         <aside class="panel version">
           <div>
             <h2>Version Notes</h2>
-            <div class="version-row"><span>Release</span><strong>v2.9.2 Retrieval Foundation</strong></div>
-            <div class="version-row"><span>Previous</span><strong>v2.9.1 Source Data Foundation</strong></div>
+            <div class="version-row"><span>Release</span><strong>v2.9.3 Retrieval Evaluation</strong></div>
+            <div class="version-row"><span>Previous</span><strong>v2.9.2 Retrieval Foundation</strong></div>
             <div class="version-row"><span>Commit</span><strong>See GitHub history</strong></div>
-            <div class="version-row"><span>Goal</span><strong>Make source selection visible before answer rendering.</strong></div>
-            <div class="version-row"><span>Status</span><strong>Ready for retrieval eval cases</strong></div>
+            <div class="version-row"><span>Goal</span><strong>Test source selection before growing the corpus.</strong></div>
+            <div class="version-row"><span>Status</span><strong>Ready for reviewer ticket bridge</strong></div>
           </div>
 
           <div class="panel note">
@@ -2534,10 +2542,10 @@
           <div>
             <h2>Next Build Checklist</h2>
             <ul class="checklist">
-              <li><span class="dot"></span><span>Add expected-source eval cases for every starter query.</span></li>
-              <li><span class="dot"></span><span>Tune thresholds for answer-ready versus review-needed.</span></li>
-              <li><span class="dot"></span><span>Connect retrieval traces to reviewer queue tickets.</span></li>
-              <li><span class="dot"></span><span>Expand records only after the eval loop is visible.</span></li>
+              <li><span class="dot"></span><span>Turn failed evals into reviewer queue cards.</span></li>
+              <li><span class="dot"></span><span>Add owner and severity fields to source gaps.</span></li>
+              <li><span class="dot"></span><span>Connect no-source cases to review intake.</span></li>
+              <li><span class="dot"></span><span>Keep the Ask surface simple while review work grows.</span></li>
             </ul>
           </div>
         </aside>
