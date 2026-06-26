@@ -578,6 +578,9 @@ Let us look at the source first.
 - [Pattern Companion Control Room](patterncompanionlab.html)
 - [Pattern Companion Control Room Notes](docs/PATTERN_COMPANION_CONTROL_ROOM.md)
 <!-- VEDAPATH PATTERN COMPANION SPRINT LINKS END -->
+<!-- VEDAPATH UX FLOW RESET LINKS START -->
+- [UX Flow Reset Notes](docs/UX_FLOW_RESET.md)
+<!-- VEDAPATH UX FLOW RESET LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
 - [Calm Compass](compass.html)
@@ -608,7 +611,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v2.8.4` is a trusted MVP prototype plus Pattern Companion Control Room with:
+`v2.8.5` is a trusted MVP prototype plus UX Flow Reset with:
 
 - Ask workspace
 - Source Card
@@ -910,6 +913,9 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Mobile Pattern: Mobile Pattern keeps the learning loop usable where calm moments actually happen.
 - Pattern Companion Control Room: Pattern Companion Control Room completes the private local learning layer for VedaPath AI.
 <!-- VEDAPATH PATTERN COMPANION SPRINT FEATURES END -->
+<!-- VEDAPATH UX FLOW RESET FEATURES START -->
+- UX Flow Reset: home page reorganized into Ask, Source, Practice, and Pattern lanes, with grouped room entry points and calmer shared release-room styling.
+<!-- VEDAPATH UX FLOW RESET FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
 - Calm Card Studio with visual card preview, local saved cards, copy text, and PNG export

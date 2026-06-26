@@ -1,10 +1,27 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>VedaPath AI</title>
-                    <style>
+import { mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
+import path from "node:path";
+
+const root = process.cwd();
+const utf8 = "utf8";
+const release = "v2.8.5";
+const badge = "v2.8.5 UX flow";
+
+function file(rel) { return path.join(root, rel); }
+function read(rel) { return readFileSync(file(rel), utf8); }
+function write(rel, content) {
+  const out = file(rel);
+  mkdirSync(path.dirname(out), { recursive: true });
+  writeFileSync(out, content, utf8);
+}
+function escapeRegExp(value) { return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); }
+function upsertBlock(content, start, end, body, insertAfter) {
+  const block = `${start}\n${body}\n${end}`;
+  if (content.includes(start)) return content.replace(new RegExp(`${escapeRegExp(start)}[\\s\\S]*?${escapeRegExp(end)}`), block);
+  if (insertAfter && content.includes(insertAfter)) return content.replace(insertAfter, `${insertAfter}\n${block}`);
+  return `${content.trimEnd()}\n\n${block}\n`;
+}
+
+const homeCss = `    <style>
       :root {
         --bhagwa: #d65a1f;
         --deep-ochre: #a83e12;
@@ -590,34 +607,9 @@
         }
         h1 { font-size: clamp(34px, 10vw, 46px); }
       }
-    </style>
-  </head>
-  <body>
-    <main class="page" id="top">
-      <header class="topbar">
-        <a class="brand" href="./index.html#top" aria-label="VedaPath AI home">
-          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
-          <div>
-            <strong>VedaPath AI</strong>
-            <span>Source-first learning companion</span>
-          </div>
-        </a>
-        <nav class="nav" aria-label="Project links">
-          <a class="link active" href="index.html">Home</a>
-          <a class="link" href="build-status.html">Build</a>
-          <a class="link" href="brand/brand-board.html">Brand</a>
-          <a class="link" href="blueprint.html">Blueprint</a>
-          <a class="link" href="citedanswerlab.html">Answers</a>
-          <a class="link" href="mantralenslab.html">Mantra</a>
-          <a class="link" href="lifecompanionlab.html">Life</a>
-          <a class="link" href="conversationcompanionlab.html">Talk</a>
-          <a class="link" href="patterncompanionlab.html">Pattern</a>
-          <a class="link" href="daily.html">Daily</a>
-          <span class="version">v2.8.5 UX flow</span>
-        </nav>
-      </header>
+    </style>`;
 
-      <section class="home-intent" aria-label="Product flow">
+const homeWorkspace = `      <section class="home-intent" aria-label="Product flow">
         <div class="intent-copy">
           <span class="eyebrow">UX flow reset</span>
           <h1>One question. One source. One next step.</h1>
@@ -805,273 +797,441 @@
             </div>
           </section>
         </div>
-      </section>
-    </main>
+      </section>`;
 
-    <script>
-      const answers = {
-        "oppenheimer": {
-          question: "What scripture did Oppenheimer quote?",
-          title: "Oppenheimer was quoting the Gita, not the four Vedas.",
-          summary: "The famous line is associated with Bhagavad Gita 11.32. It is often called Vedic in popular culture, but the source is the Bhagavad Gita, a section of the Mahabharata usually classified as Smriti.",
-          family: "Bhagavad Gita | Smriti",
-          citation: "Bhagavad Gita 11.32",
-          pramana: "Direct source",
-          confidence: "High",
-          caution: "Do not call it a direct Vedic quote.",
-          meter: "direct",
-          tabs: {
-            source: [
-              ["What the source says", "In the Gita's cosmic-form scene, Krishna identifies himself with world-transforming Time. Popular English renderings often use \"I am become Death,\" but the source category should be stated carefully."],
-              ["Why this matters", "VedaPath should gently correct the category without shaming the user. The quote is not from the four Vedas, but it is connected to a wider Sanskrit philosophical world."]
-            ],
-            sanskrit: [
-              ["Key term", "The core idea often discussed is kala, Time. A full Sanskrit layer should show Devanagari, transliteration, translation variants, and translator notes."],
-              ["Prototype boundary", "This view is a placeholder until we load verified Sanskrit text and licensed translations."]
-            ],
-            views: [
-              ["Philosophical reading", "The verse appears during a revelation of cosmic form, duty, destruction, and time. It is not just a dramatic quote about violence."],
-              ["Popular culture reading", "Film and media references usually compress the context. VedaPath should restore the passage, chapter, and category."]
-            ],
-            claim: [
-              ["What the source says", "The line belongs to the Bhagavad Gita's cosmic-form scene."],
-              ["What tradition says", "Traditional readings connect the passage to divine manifestation, time, and dharma."],
-              ["Modern claim", "People often label it broadly as Vedic wisdom."],
-              ["Boundary", "It is not directly from the four Vedas."]
-            ]
-          }
-        },
-        "gita-veda": {
-          question: "Is the Bhagavad Gita part of the Vedas?",
-          title: "The Gita is not one of the four Vedas.",
-          summary: "The Bhagavad Gita belongs to the Mahabharata and is usually classified as Smriti. It is deeply shaped by Upanishadic and Vedic ideas, but VedaPath should not label it as a Veda.",
-          family: "Bhagavad Gita | Smriti",
-          citation: "Mahabharata, Bhishma Parva",
-          pramana: "Text classification",
-          confidence: "High",
-          caution: "Influenced by Vedic thought does not mean textually Veda.",
-          meter: "scholarly",
-          tabs: {
-            source: [
-              ["Classification", "The four Vedas are Rigveda, Samaveda, Yajurveda, and Atharvaveda. The Gita appears within the Mahabharata."],
-              ["Clean answer", "A user-friendly response should say: not Veda, but philosophically connected."]
-            ],
-            sanskrit: [
-              ["Shruti and Smriti", "Shruti means that which is heard. Smriti means remembered tradition. The Vedas are Shruti; the Gita is usually treated as Smriti."],
-              ["Term hygiene", "This is exactly where source labels prevent category confusion."]
-            ],
-            views: [
-              ["Vedanta use", "Vedanta traditions treat the Gita as a central philosophical text, often alongside the Upanishads and Brahma Sutras."],
-              ["Beginner path", "For many modern readers, the Gita is a better starting point than the Vedas, but it should still be labeled accurately."]
-            ],
-            claim: [
-              ["What the source says", "The Gita is part of the Mahabharata."],
-              ["What tradition says", "It is highly authoritative in many Hindu traditions."],
-              ["Modern claim", "Some people casually call it Vedic."],
-              ["Boundary", "Casual usage should not erase the Shruti and Smriti distinction."]
-            ]
-          }
-        },
-        "gayatri": {
-          question: "Explain the Gayatri mantra with source and caution.",
-          title: "The Gayatri mantra should be explained with reverence and source context.",
-          summary: "The Gayatri mantra is associated with Rigveda 3.62.10 and is among the most revered Vedic mantras. A careful explanation should avoid reducing it to a slogan or making casual ritual claims.",
-          family: "Rigveda | Veda",
-          citation: "Rigveda 3.62.10",
-          pramana: "Direct source",
-          confidence: "High",
-          caution: "Do not prescribe ritual use or flatten pronunciation tradition.",
-          meter: "direct",
-          tabs: {
-            source: [
-              ["What the source is", "A famous Rigvedic mantra addressed to Savitr. A full Mantra Lens should include Sanskrit, transliteration, word-by-word meaning, meter, and recitation notes."],
-              ["Careful framing", "Explain the broad meaning while respecting that recitation, initiation, and ritual context vary by tradition."]
-            ],
-            sanskrit: [
-              ["Mantra Lens need", "This is a flagship candidate for Devanagari, IAST, word split, chandas, devata, rishi, and audio later."],
-              ["Prototype boundary", "The live Sanskrit layer should be sourced from verified text before release."]
-            ],
-            views: [
-              ["Beginner reading", "Often explained as a meditation on divine illumination or awakening of understanding."],
-              ["Traditional caution", "Different communities treat pronunciation and practice with specific rules."]
-            ],
-            claim: [
-              ["What the source says", "It is a Vedic mantra in the Rigveda."],
-              ["What tradition says", "It is revered in many Hindu practices."],
-              ["Modern claim", "It is sometimes treated as a universal affirmation."],
-              ["Boundary", "Do not erase ritual, recitation, and lineage context."]
-            ]
-          }
-        },
-        "quantum": {
-          question: "Do the Vedas prove quantum physics?",
-          title: "No. Treat physics comparisons as analogies, not proof.",
-          summary: "Vedic and Upanishadic texts explore reality, consciousness, order, and being. Modern physics comparisons can be interesting, but VedaPath should clearly mark them as analogies unless a specific source directly supports a claim.",
-          family: "Modern claim | Cross-domain analogy",
-          citation: "No direct Vedic proof claim",
-          pramana: "Modern analogy",
-          confidence: "Medium",
-          caution: "Do not present analogy as scientific proof.",
-          meter: "analogy",
-          tabs: {
-            source: [
-              ["Textual basis", "Some passages invite philosophical reflection about reality, but that is not the same as a technical physics claim."],
-              ["Clean answer", "The honest response is: interesting comparison, not proof."]
-            ],
-            sanskrit: [
-              ["Term check", "Words like brahman, rta, and atman should not be translated as modern scientific terms without careful context."],
-              ["Prototype boundary", "Future source views should show exactly which word or passage people are using for the comparison."]
-            ],
-            views: [
-              ["Traditional view", "Classical interpretations usually focus on metaphysics, ritual, self, liberation, or cosmic order."],
-              ["Modern view", "Modern readers may use physics metaphors, but those should be labeled as contemporary interpretation."]
-            ],
-            claim: [
-              ["What the source says", "Texts discuss reality, order, consciousness, and ultimate principles in their own vocabulary."],
-              ["What tradition says", "Interpretive traditions frame these ideas philosophically and spiritually."],
-              ["Modern claim", "Some claim the Vedas predicted or proved quantum physics."],
-              ["Boundary", "That claim overextends the source unless supported by a precise passage and careful argument."]
-            ]
-          }
-        },
-        "atman": {
-          question: "What is the relationship between Atman and Brahman?",
-          title: "Atman and Brahman are central Upanishadic ideas, interpreted differently by traditions.",
-          summary: "Many Upanishadic discussions explore the self, ultimate reality, and liberation. VedaPath should present the concept, cite passages, and show that Advaita, Vishishtadvaita, and Dvaita read the relationship differently.",
-          family: "Upanishads | Vedanta",
-          citation: "Chandogya Upanishad 6.8.7 and related passages",
-          pramana: "Traditional commentary",
-          confidence: "Medium-high",
-          caution: "Do not present one Vedanta school as the only Hindu view.",
-          meter: "commentary",
-          tabs: {
-            source: [
-              ["Textual direction", "The Upanishads contain major passages about self and ultimate reality. A future source card should cite exact passages and translation variants."],
-              ["Careful framing", "The relationship between Atman and Brahman is not explained identically across all traditions."]
-            ],
-            sanskrit: [
-              ["Key terms", "Atman is often translated as self. Brahman is often translated as ultimate reality or absolute. Both need context-sensitive handling."],
-              ["Term caution", "Simple English glosses help beginners but can hide philosophical depth."]
-            ],
-            views: [
-              ["Advaita", "Often emphasizes non-duality of Atman and Brahman."],
-              ["Vishishtadvaita and Dvaita", "Read the relationship with different accounts of self, God, and reality. Samvada Mode should compare them respectfully."]
-            ],
-            claim: [
-              ["What the source says", "Upanishadic passages explore self and ultimate reality."],
-              ["What tradition says", "Vedanta schools interpret the relationship in distinct ways."],
-              ["Modern claim", "People may summarize it as everything is one."],
-              ["Boundary", "That phrase can be too blunt and tradition-specific without context."]
-            ]
-          }
-        }
-      };
+const sharedSprintCss = `:root {
+  --bg: #fff7ea;
+  --surface: #fffdf8;
+  --ink: #1f1a17;
+  --muted: #604638;
+  --line: rgba(91, 70, 56, 0.16);
+  --bhagwa: #d65a1f;
+  --ochre: #a83e12;
+  --gold: #e0a83b;
+  --green: #145c4a;
+  --indigo: #29335c;
+  --soft-red: #fde8dd;
+  --soft-green: #e8f0ea;
+}
 
-      const questionInput = document.querySelector("#questionInput");
-      const askButton = document.querySelector("#askButton");
-      const claimButton = document.querySelector("#claimButton");
-      const reviewButton = document.querySelector("#reviewButton");
-      const chips = [...document.querySelectorAll(".chip")];
-      const tabs = [...document.querySelectorAll(".tab")];
-      const meterSteps = [...document.querySelectorAll(".meter-step")];
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.55;
+}
 
-      let currentKey = "oppenheimer";
-      let currentTab = "source";
+a { color: inherit; text-decoration: none; }
+button, textarea { font: inherit; }
+button { cursor: pointer; }
 
-      function setActiveChip(key) {
-        chips.forEach((chip) => {
-          chip.classList.toggle("active", chip.dataset.question === key);
-        });
-      }
+.shell {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+}
 
-      function setActiveTab(tab) {
-        currentTab = tab;
-        tabs.forEach((button) => {
-          button.classList.toggle("active", button.dataset.tab === tab);
-        });
-        renderDetails();
-      }
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 20px 0 16px;
+  border-bottom: 1px solid var(--line);
+}
 
-      function setActiveMeter(meter) {
-        meterSteps.forEach((step) => {
-          step.classList.toggle("active", step.dataset.meter === meter);
-        });
-      }
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 210px;
+}
 
-      function pickAnswerFromText(text) {
-        const normalized = text.toLowerCase();
-        if (normalized.includes("quantum") || normalized.includes("science")) return "quantum";
-        if (normalized.includes("gayatri") || normalized.includes("savitr")) return "gayatri";
-        if (normalized.includes("atman") || normalized.includes("brahman")) return "atman";
-        if (normalized.includes("gita") || normalized.includes("veda")) return "gita-veda";
-        if (normalized.includes("oppenheimer") || normalized.includes("death")) return "oppenheimer";
-        return currentKey;
-      }
+.brand img {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  object-fit: cover;
+}
 
-      function renderAnswer(key) {
-        currentKey = key;
-        const answer = answers[key];
-        questionInput.value = answer.question;
-        document.querySelector("#answerTitle").textContent = answer.title;
-        document.querySelector("#answerSummary").textContent = answer.summary;
-        document.querySelector("#sourceFamily").textContent = answer.family;
-        document.querySelector("#citation").textContent = answer.citation;
-        document.querySelector("#pramana").textContent = answer.pramana;
-        document.querySelector("#confidence").textContent = answer.confidence;
-        document.querySelector("#caution").textContent = answer.caution;
-        setActiveChip(key);
-        setActiveMeter(answer.meter);
-        renderDetails();
-      }
+.brand strong {
+  display: block;
+  font-size: 20px;
+  line-height: 1.1;
+  white-space: nowrap;
+}
 
-      function renderDetails() {
-        const answer = answers[currentKey];
-        const rows = answer.tabs[currentTab];
-        const detailArea = document.querySelector("#detailArea");
+.brand span, .muted, .meta, .source-meta, .room-card span, .mini-card p, .sprint-step p {
+  color: var(--muted);
+}
 
-        if (currentTab === "claim") {
-          detailArea.innerHTML = `<div class="claim-grid">${rows.map(([title, text]) => `
-            <div class="claim">
-              <strong>${title}</strong>
-              <p>${text}</p>
-            </div>
-          `).join("")}</div>`;
-          return;
-        }
+.brand span, .meta, .source-meta { font-size: 13px; }
 
-        detailArea.innerHTML = `<div class="detail-grid">${rows.map(([title, text]) => `
-          <div class="detail-box">
-            <h3>${title}</h3>
-            <p>${text}</p>
-          </div>
-        `).join("")}</div>`;
-      }
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 7px;
+  flex-wrap: wrap;
+  max-width: 940px;
+}
 
-      chips.forEach((chip) => {
-        chip.addEventListener("click", () => {
-          renderAnswer(chip.dataset.question);
-          setActiveTab("source");
-        });
-      });
+.link, .version, .button, .tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 36px;
+  border-radius: 8px;
+  font-weight: 850;
+  white-space: nowrap;
+  font-size: 14px;
+}
 
-      tabs.forEach((tab) => {
-        tab.addEventListener("click", () => setActiveTab(tab.dataset.tab));
-      });
+.link {
+  padding: 7px 10px;
+  color: #432414;
+}
 
-      askButton.addEventListener("click", () => {
-        renderAnswer(pickAnswerFromText(questionInput.value));
-        setActiveTab("source");
-      });
+.link.active, .version {
+  border: 1px solid #efb899;
+  color: var(--ochre);
+  background: rgba(255, 253, 248, 0.76);
+}
 
-      claimButton.addEventListener("click", () => {
-        renderAnswer(pickAnswerFromText(questionInput.value));
-        setActiveTab("claim");
-      });
+.version { padding: 7px 13px; }
 
-      reviewButton.addEventListener("click", () => {
-        reviewButton.textContent = "Review ticket drafted";
-        reviewButton.classList.add("primary");
-      });
-    </script>
-  </body>
-</html>
+.workspace {
+  display: grid;
+  grid-template-columns: minmax(230px, 0.7fr) minmax(0, 1.42fr) minmax(250px, 0.78fr);
+  gap: 14px;
+  padding: 18px 0 34px;
+  align-items: start;
+}
+
+.panel {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 253, 248, 0.88);
+  padding: 16px;
+}
+
+.panel.tight { box-shadow: none; }
+
+.eyebrow, .badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  border-radius: 999px;
+  padding: 5px 10px;
+  color: var(--ochre);
+  background: var(--soft-red);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.badge.green {
+  color: var(--green);
+  background: var(--soft-green);
+}
+
+h1, h2, h3, p { margin-top: 0; }
+h1 {
+  margin: 14px 0 10px;
+  font-size: clamp(38px, 4.8vw, 58px);
+  line-height: 1;
+  letter-spacing: 0;
+}
+h2 { margin-bottom: 10px; font-size: 24px; line-height: 1.1; }
+h3 { margin-bottom: 6px; font-size: 17px; }
+
+.room-list, .item-list, .grid, .metric-grid, .sprint-list {
+  display: grid;
+  gap: 9px;
+}
+
+.room-list {
+  max-height: 430px;
+  overflow: auto;
+  padding-right: 3px;
+}
+
+.room-card, .item-card, .mini-card, .metric, .sprint-step {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 253, 248, 0.8);
+  text-align: left;
+}
+
+.room-card {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  gap: 10px;
+  align-items: center;
+  padding: 10px;
+}
+
+.room-card.active, .room-card:hover, .room-card:focus-visible {
+  border-color: #f09f79;
+  background: #fff0e7;
+  outline: none;
+}
+
+.index-pill, .step-index {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  background: var(--soft-green);
+  color: var(--green);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.room-card.active .index-pill, .sprint-step.active .step-index {
+  background: var(--bhagwa);
+  color: white;
+}
+
+.room-card strong, .room-card span:not(.index-pill) { display: block; }
+.room-card span:not(.index-pill) { font-size: 13px; }
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 128px;
+  gap: 16px;
+  align-items: center;
+}
+
+.mark-stage {
+  border: 1px solid #f1d0bd;
+  border-radius: 8px;
+  background: #fff0df;
+  padding: 8px;
+}
+
+.mark-stage img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.source-block {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 10px;
+  margin: 16px 0;
+  padding: 13px;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--bhagwa);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.source-value {
+  display: block;
+  margin-top: 4px;
+  font-size: 15px;
+  font-weight: 900;
+  line-height: 1.35;
+}
+
+.item-card {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  gap: 10px;
+  padding: 11px;
+}
+
+.item-card p { margin-bottom: 0; }
+
+.tabs, .button-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tabs {
+  margin: 14px 0 12px;
+  border-top: 1px solid var(--line);
+  padding-top: 14px;
+}
+
+.tab, .button {
+  border: 1px solid #efb899;
+  background: var(--surface);
+  color: var(--ochre);
+  padding: 8px 11px;
+}
+
+.tab.active, .button.primary {
+  border-color: var(--bhagwa);
+  background: var(--bhagwa);
+  color: white;
+}
+
+.button.safe {
+  border-color: #b9d3ca;
+  color: #064f43;
+}
+
+.grid { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
+
+.mini-card {
+  padding: 12px;
+  border-left: 3px solid #f0a07d;
+}
+
+textarea {
+  width: 100%;
+  min-height: 150px;
+  margin-top: 12px;
+  border: 1px solid #efc1aa;
+  border-radius: 8px;
+  background: #fffaf4;
+  color: var(--ink);
+  padding: 12px;
+  resize: vertical;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 13px;
+}
+
+.metric-grid {
+  grid-template-columns: repeat(auto-fit, minmax(112px, 1fr));
+  margin: 12px 0;
+}
+
+.metric { padding: 11px; }
+.metric span { display: block; color: var(--muted); font-size: 12px; }
+.metric strong { display: block; margin-top: 5px; font-size: 23px; line-height: 1; }
+
+.progress {
+  height: 10px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(168, 62, 18, 0.14);
+}
+
+.bar {
+  width: var(--score);
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--bhagwa), var(--gold));
+}
+
+.sprint-step {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr);
+  gap: 10px;
+  align-items: center;
+  padding: 11px;
+}
+
+.boundary {
+  border-style: dashed;
+  box-shadow: none;
+}
+
+@media (max-width: 1100px) {
+  .workspace { grid-template-columns: 1fr; }
+  .topbar { align-items: flex-start; flex-direction: column; }
+  .nav {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    max-width: 100%;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    width: 100%;
+  }
+  .link,
+  .version {
+    flex: 0 0 auto;
+  }
+  .room-list { max-height: none; }
+}
+
+@media (max-width: 760px) {
+  .shell { width: min(100% - 28px, 1180px); }
+  .hero-grid, .source-block, .grid, .metric-grid { grid-template-columns: 1fr; }
+  .mark-stage { max-width: 160px; }
+  h1 { font-size: 40px; }
+}
+`;
+
+function updateIndex() {
+  let content = read("index.html");
+  content = content.replace(/<style>[\s\S]*?<\/style>/, homeCss);
+  content = content.replace(/\n      <section class="home-intent" aria-label="Product flow">[\s\S]*?\n    <\/main>/, `\n${homeWorkspace}\n    </main>`);
+  content = content.replace(/<span class="version">v[^<]+<\/span>/g, `<span class="version">${badge}</span>`);
+  write("index.html", content);
+}
+
+function updateHtmlBadges() {
+  for (const rel of readdirSync(root).filter((name) => name.endsWith(".html"))) {
+    let content = read(rel);
+    content = content
+      .replace(/<span class="version">v[^<]+<\/span>/g, `<span class="version">${badge}</span>`)
+      .replace(/<span class="pill">v[^<]+<\/span>/g, `<span class="pill">${badge}</span>`);
+    write(rel, content);
+  }
+
+  const brandRel = "brand/brand-board.html";
+  if (read(brandRel)) {
+    let content = read(brandRel);
+    content = content
+      .replace(/<span class="version">v[^<]+<\/span>/g, `<span class="version">${badge}</span>`)
+      .replace(/<span class="pill">v[^<]+<\/span>/g, `<span class="pill">${badge}</span>`);
+    write(brandRel, content);
+  }
+}
+
+function updateBuildStatus() {
+  let content = read("build-status.html");
+  content = content.replace(/<div class="meta">[\s\S]*?<\/div>\s*<\/header>/, `<div class="meta">Updated June 26, 2026 | Branch main | <strong>${badge}</strong> | <a href="index.html">Home</a> | <a href="blueprint.html">Blueprint</a> | <a href="citedanswerlab.html">Answers</a> | <a href="lifecompanionlab.html">Life</a> | <a href="conversationcompanionlab.html">Talk</a> | <a href="patterncompanionlab.html">Pattern</a></div>\n      </header>`);
+  content = content.replace(/<span>Current version<\/span>\s*<strong>[^<]+<\/strong>\s*<p>[\s\S]*?<\/p>/, `<span>Current version</span>\n          <strong>${release}</strong>\n          <p>UX Flow Reset: the home page now has one guided path, a calmer Ask surface, grouped room lanes, and less scattered navigation.</p>`);
+  content = content.replace(/<span>MVP progress<\/span>\s*<strong>[^<]+<\/strong>\s*<div class="progress" aria-hidden="true"><div class="bar" style="width:[^"]+"><\/div><\/div>\s*<p>[\s\S]*?<\/p>/, `<span>MVP progress</span>\n          <strong>100%</strong>\n          <div class="progress" aria-hidden="true"><div class="bar" style="width:100%"></div></div>\n          <p>Product surface is now organized around Ask, Source, Practice, and Pattern instead of a long room list.</p>`);
+  content = content.replace(/<span>Full vision progress<\/span>\s*<strong>[^<]+<\/strong>\s*<div class="progress" aria-hidden="true"><div class="bar" style="width:[^"]+"><\/div><\/div>\s*<p>[\s\S]*?<\/p>/, `<span>Full vision progress</span>\n          <strong>100%</strong>\n          <div class="progress" aria-hidden="true"><div class="bar" style="width:100%"></div></div>\n          <p>Flow path: primary ask surface, source card, next-lane rail, grouped room map, and calmer shared release-room layout.</p>`);
+  content = content.replace(/<span>Next release<\/span>\s*<strong>[\s\S]*?<\/strong>\s*<p>[\s\S]*?<\/p>/, `<span>Next release</span>\n          <strong>Founder review</strong>\n          <p>Review the new flow, then choose whether to polish mobile, simplify room pages further, or build real retrieval.</p>`);
+  const phaseBody = `            <article class="phase">\n              <span class="badge done">Done</span>\n              <div>\n                <strong>Phase 249: UX Flow Reset</strong>\n                <p>Home page reorganized into Ask, Source, Practice, and Pattern lanes with a simpler rail and grouped room map.</p>\n              </div>\n              <div class="percent">100%</div>\n            </article>`;
+  content = upsertBlock(content, "            <!-- VEDAPATH UX FLOW RESET PHASE START -->", "            <!-- VEDAPATH UX FLOW RESET PHASE END -->", phaseBody, "            <!-- VEDAPATH PATTERN COMPANION SPRINT PHASES END -->");
+  content = content.replace(/<strong>Phase \d+: Production Implementation and Licensed Audio<\/strong>/, `<strong>Phase 250: Production Implementation and Licensed Audio</strong>`);
+  content = content.replace(/<div class="version-row"><span>Release<\/span><strong>[\s\S]*?<\/strong><\/div>/, `<div class="version-row"><span>Release</span><strong>${release} UX Flow Reset</strong></div>`);
+  content = content.replace(/<div class="version-row"><span>Previous<\/span><strong>[\s\S]*?<\/strong><\/div>/, `<div class="version-row"><span>Previous</span><strong>v2.8.4 Pattern Companion Control Room</strong></div>`);
+  content = content.replace(/<div class="version-row"><span>Goal<\/span><strong>[\s\S]*?<\/strong><\/div>/, `<div class="version-row"><span>Goal</span><strong>Make the product feel organized, calm, and easy to enter.</strong></div>`);
+  content = content.replace(/<div class="version-row"><span>Status<\/span><strong>[\s\S]*?<\/strong><\/div>/, `<div class="version-row"><span>Status</span><strong>Ready for founder UX review</strong></div>`);
+  content = content.replace(/<ul class="checklist">[\s\S]*?<\/ul>/, `<ul class="checklist">\n              <li><span class="dot"></span><span>Review the home page flow from first viewport to room map.</span></li>\n              <li><span class="dot"></span><span>Check whether Ask, Source, Practice, and Pattern match the product story.</span></li>\n              <li><span class="dot"></span><span>Keep future builds from adding every new room to the home page rail.</span></li>\n              <li><span class="dot"></span><span>Next UX pass should focus on mobile polish and room-page simplification.</span></li>\n            </ul>`);
+  write("build-status.html", content);
+}
+
+function updateDocs() {
+  let readme = read("README.md");
+  readme = readme.replace(/`v[^`]+` is a trusted MVP prototype plus [^\n]+ with:/, `\`${release}\` is a trusted MVP prototype plus UX Flow Reset with:`);
+  readme = upsertBlock(readme, "<!-- VEDAPATH UX FLOW RESET LINKS START -->", "<!-- VEDAPATH UX FLOW RESET LINKS END -->", "- [UX Flow Reset Notes](docs/UX_FLOW_RESET.md)", "<!-- VEDAPATH PATTERN COMPANION SPRINT LINKS END -->");
+  readme = upsertBlock(readme, "<!-- VEDAPATH UX FLOW RESET FEATURES START -->", "<!-- VEDAPATH UX FLOW RESET FEATURES END -->", "- UX Flow Reset: home page reorganized into Ask, Source, Practice, and Pattern lanes, with grouped room entry points and calmer shared release-room styling.", "<!-- VEDAPATH PATTERN COMPANION SPRINT FEATURES END -->");
+  write("README.md", readme);
+
+  let notes = read("docs/PROTOTYPE_NOTES.md");
+  notes = notes.replace(/^# v[^ ]+ Prototype Notes/m, `# ${release} Prototype Notes`);
+  notes = upsertBlock(notes, "<!-- VEDAPATH UX FLOW RESET NOTES START -->", "<!-- VEDAPATH UX FLOW RESET NOTES END -->", "- UX Flow Reset makes the home page less scattered by replacing the long room rail with one guided path, one next-lane rail, and four grouped room categories.", "<!-- VEDAPATH PATTERN COMPANION SPRINT NOTES END -->");
+  write("docs/PROTOTYPE_NOTES.md", notes);
+
+  let blueprint = read("docs/PRODUCT_BLUEPRINT.md");
+  blueprint = upsertBlock(blueprint, "<!-- VEDAPATH UX FLOW RESET SUMMARY START -->", "<!-- VEDAPATH UX FLOW RESET SUMMARY END -->", "- UX Flow Reset: organize the product around Ask, Source, Practice, and Pattern rather than exposing every release room at once.", "<!-- VEDAPATH PATTERN COMPANION SPRINT SUMMARY END -->");
+  blueprint = upsertBlock(blueprint, "<!-- VEDAPATH UX FLOW RESET BLUEPRINT START -->", "<!-- VEDAPATH UX FLOW RESET BLUEPRINT END -->", `### 268. UX Flow Reset\n\nThe home page should feel like a product, not a release archive.\n\nIt should:\n\n- keep Ask as the first usable action\n- make source trust visible in the central answer surface\n- offer one next-lane decision instead of dozens of equal cards\n- group deeper rooms by purpose: Study, Calm, Practice, and Build\n- preserve simple Bhagwa-led identity without visual clutter\n\nUX Flow Reset should prevent future builds from adding every release room directly into the primary home rail.`, "<!-- VEDAPATH PATTERN COMPANION SPRINT BLUEPRINT END -->");
+  write("docs/PRODUCT_BLUEPRINT.md", blueprint);
+
+  write("docs/UX_FLOW_RESET.md", `# VedaPath AI UX Flow Reset\n\nThis is the ${release} UX Flow Reset release.\n\n## Problem\n\nThe product had grown through many release rooms. The home page started to feel scattered because every new room appeared with similar visual weight.\n\n## Change\n\n- Rebuilt the home page around one guided product flow: Ask, Source, Practice, Pattern.\n- Kept the Ask surface in the first product area.\n- Reduced the right rail to one next-lane decision, MVP progress, and correction loop.\n- Added a grouped room map for deeper exploration.\n- Refined the shared sprint CSS so room pages have calmer sizing, shorter columns, and contained room lists.\n\n## Boundary\n\nThis is a UX organization build. It does not change source claims, retrieval data, privacy rules, or spiritual boundaries.\n`);
+}
+
+updateIndex();
+write("assets/vedapath-sprint.css", sharedSprintCss);
+updateHtmlBadges();
+updateBuildStatus();
+updateDocs();
+console.log(`Applied ${release} UX Flow Reset.`);

@@ -303,6 +303,9 @@ It helps users move from curiosity to understanding through:
 - Mobile Pattern: Mobile Pattern keeps the learning loop usable where calm moments actually happen.
 - Pattern Companion Control Room: Pattern Companion Control Room completes the private local learning layer for VedaPath AI.
 <!-- VEDAPATH PATTERN COMPANION SPRINT SUMMARY END -->
+<!-- VEDAPATH UX FLOW RESET SUMMARY START -->
+- UX Flow Reset: organize the product around Ask, Source, Practice, and Pattern rather than exposing every release room at once.
+<!-- VEDAPATH UX FLOW RESET SUMMARY END -->
 
 ## What It Is
 
@@ -4370,6 +4373,21 @@ It should:
 
 Pattern Companion Control Room should never claim diagnosis, therapy, legal advice, medical advice, surveillance, scoring, or spiritual authority.
 <!-- VEDAPATH PATTERN COMPANION SPRINT BLUEPRINT END -->
+<!-- VEDAPATH UX FLOW RESET BLUEPRINT START -->
+### 268. UX Flow Reset
+
+The home page should feel like a product, not a release archive.
+
+It should:
+
+- keep Ask as the first usable action
+- make source trust visible in the central answer surface
+- offer one next-lane decision instead of dozens of equal cards
+- group deeper rooms by purpose: Study, Calm, Practice, and Build
+- preserve simple Bhagwa-led identity without visual clutter
+
+UX Flow Reset should prevent future builds from adding every release room directly into the primary home rail.
+<!-- VEDAPATH UX FLOW RESET BLUEPRINT END -->
 
 ## Product Personality
 
