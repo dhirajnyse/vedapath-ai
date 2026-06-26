@@ -276,6 +276,7 @@ It helps users move from curiosity to understanding through:
 - Family Care Room: Family Care Room brings humility into personal support.
 - Decision Pause: Decision Pause turns confusion into a small, reviewable reflection.
 - Night Release: Night Release makes the day easier to put down without pretending to solve sleep.
+- Mobile Life Companion: Mobile Life Companion keeps everyday reflection simple in real life.
 <!-- VEDAPATH LIFE COMPANION SPRINT SUMMARY END -->
 
 ## What It Is
@@ -4011,6 +4012,21 @@ It should:
 - keep personal entries local until explicit accounts and consent exist
 
 Night Release should never claim therapy, diagnosis, medical advice, legal advice, emergency support, ritual instruction, or spiritual authority.
+
+### 246. Mobile Life Companion
+
+Mobile Life Companion keeps everyday reflection simple in real life.
+
+It should:
+
+- Arrive: Name the moment without judging it.
+- Source: Keep citation, family, confidence, and boundary visible.
+- Carry: Leave with one small action.
+- Memory: Save entries only in this browser.
+- preserve the boundary: reflection support only, not authority
+- keep personal entries local until explicit accounts and consent exist
+
+Mobile Life Companion should never claim therapy, diagnosis, medical advice, legal advice, emergency support, ritual instruction, or spiritual authority.
 <!-- VEDAPATH LIFE COMPANION SPRINT BLUEPRINT END -->
 
 ## Product Personality

@@ -529,6 +529,8 @@ Let us look at the source first.
 - [Decision Pause Notes](docs/DECISION_PAUSE.md)
 - [Night Release](nightrelease.html)
 - [Night Release Notes](docs/NIGHT_RELEASE.md)
+- [Mobile Life Companion](mobilelifecompanion.html)
+- [Mobile Life Companion Notes](docs/MOBILE_LIFE_COMPANION.md)
 <!-- VEDAPATH LIFE COMPANION SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -560,7 +562,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v2.6.2` is a trusted MVP prototype plus Night Release with:
+`v2.6.3` is a trusted MVP prototype plus Mobile Life Companion with:
 
 - Ask workspace
 - Source Card
@@ -835,6 +837,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Family Care Room: Family Care Room brings humility into personal support.
 - Decision Pause: Decision Pause turns confusion into a small, reviewable reflection.
 - Night Release: Night Release makes the day easier to put down without pretending to solve sleep.
+- Mobile Life Companion: Mobile Life Companion keeps everyday reflection simple in real life.
 <!-- VEDAPATH LIFE COMPANION SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
