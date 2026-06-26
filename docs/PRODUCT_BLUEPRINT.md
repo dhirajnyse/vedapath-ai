@@ -221,6 +221,7 @@ It helps users move from curiosity to understanding through:
 <!-- VEDAPATH REVIEWER STUDIO SPRINT SUMMARY END -->
 <!-- VEDAPATH SOURCE LIBRARY SPRINT SUMMARY START -->
 - Source Shelf Intake: Source Shelf Intake starts the curated source layer that future retrieval can trust.
+- Citation Schema Desk: Citation Schema Desk turns source-first UX into a data contract.
 <!-- VEDAPATH SOURCE LIBRARY SPRINT SUMMARY END -->
 
 ## What It Is
@@ -3247,6 +3248,21 @@ It should:
 - keep source-library records as starter data until scholar review, rights policy, and retrieval evaluation are approved
 
 Source Shelf Intake should never claim canonical corpus coverage, scholar endorsement, legal clearance, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
+
+### 199. Citation Schema Desk
+
+Citation Schema Desk turns source-first UX into a data contract.
+
+It should:
+
+- Stable fields: Record fields make source provenance inspectable.
+- Question examples: Each source maps to likely user questions.
+- Readiness score: Records have cautious launch signals.
+- Review state: Source, rights, category, and authority review are separate.
+- preserve the boundary: Schema preview, not final data contract.
+- keep source-library records as starter data until scholar review, rights policy, and retrieval evaluation are approved
+
+Citation Schema Desk should never claim canonical corpus coverage, scholar endorsement, legal clearance, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
 <!-- VEDAPATH SOURCE LIBRARY SPRINT BLUEPRINT END -->
 
 ## Product Personality

@@ -1,4 +1,4 @@
-# v2.1.5 Prototype Notes
+# v2.1.6 Prototype Notes
 
 The v0.7.4 release turns the VedaPath AI homepage into a trusted MVP prototype with calm, practice, source-library, source-seeds, retrieval, passage-review, evaluation, evaluation-dashboard, reviewer-queue, source-policy, trust-ledger, life-map, calm-circle, consent-gate, memory-gate, trust-model, calm-passport, backend-schema, schema-fixtures, evaluation-drill, learning-loop, sanskrit-lens, voice-boundary, scholar-review, launch-gate, production-bridge, source-storage, reviewer-access, public-feedback, launch-story, source-path, calm-compass, calm-card, source-bell, before-reply, samvada, sankalpa, seva, morning, evening, and rhythm surfaces.
 
@@ -224,6 +224,7 @@ The v0.7.4 release turns the VedaPath AI homepage into a trusted MVP prototype w
 <!-- VEDAPATH REVIEWER STUDIO SPRINT NOTES END -->
 <!-- VEDAPATH SOURCE LIBRARY SPRINT NOTES START -->
 - Source Shelf Intake: Source Shelf Intake starts the curated source layer that future retrieval can trust.
+- Citation Schema Desk: Citation Schema Desk turns source-first UX into a data contract.
 <!-- VEDAPATH SOURCE LIBRARY SPRINT NOTES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff

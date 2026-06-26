@@ -427,6 +427,8 @@ Let us look at the source first.
 <!-- VEDAPATH SOURCE LIBRARY SPRINT LINKS START -->
 - [Source Shelf Intake](sourceshelf.html)
 - [Source Shelf Intake Notes](docs/SOURCE_SHELF_INTAKE.md)
+- [Citation Schema Desk](citationschema.html)
+- [Citation Schema Desk Notes](docs/CITATION_SCHEMA_DESK.md)
 <!-- VEDAPATH SOURCE LIBRARY SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -458,7 +460,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v2.1.5` is a trusted MVP prototype plus Source Shelf Intake with:
+`v2.1.6` is a trusted MVP prototype plus Citation Schema Desk with:
 
 - Ask workspace
 - Source Card
@@ -678,6 +680,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 <!-- VEDAPATH REVIEWER STUDIO SPRINT FEATURES END -->
 <!-- VEDAPATH SOURCE LIBRARY SPRINT FEATURES START -->
 - Source Shelf Intake: Source Shelf Intake starts the curated source layer that future retrieval can trust.
+- Citation Schema Desk: Citation Schema Desk turns source-first UX into a data contract.
 <!-- VEDAPATH SOURCE LIBRARY SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
