@@ -543,6 +543,8 @@ Let us look at the source first.
 - [Apology Draft Notes](docs/APOLOGY_DRAFT.md)
 - [Boundary Reply](boundaryreply.html)
 - [Boundary Reply Notes](docs/BOUNDARY_REPLY.md)
+- [Family Message](familymessage.html)
+- [Family Message Notes](docs/FAMILY_MESSAGE.md)
 <!-- VEDAPATH CONVERSATION COMPANION SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -574,7 +576,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v2.6.8` is a trusted MVP prototype plus Boundary Reply with:
+`v2.6.9` is a trusted MVP prototype plus Family Message with:
 
 - Ask workspace
 - Source Card
@@ -857,6 +859,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Speech Filter: Speech Filter turns the source card into a practical message lens.
 - Apology Draft: Apology Draft gives calm a repair voice while keeping serious human boundaries clear.
 - Boundary Reply: Boundary Reply protects personal agency without turning calm into coldness.
+- Family Message: Family Message brings the calm path into the hardest everyday relationships.
 <!-- VEDAPATH CONVERSATION COMPANION SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff

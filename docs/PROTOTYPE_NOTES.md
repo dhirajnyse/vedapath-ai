@@ -1,4 +1,4 @@
-# v2.6.8 Prototype Notes
+# v2.6.9 Prototype Notes
 
 The v0.7.4 release turns the VedaPath AI homepage into a trusted MVP prototype with calm, practice, source-library, source-seeds, retrieval, passage-review, evaluation, evaluation-dashboard, reviewer-queue, source-policy, trust-ledger, life-map, calm-circle, consent-gate, memory-gate, trust-model, calm-passport, backend-schema, schema-fixtures, evaluation-drill, learning-loop, sanskrit-lens, voice-boundary, scholar-review, launch-gate, production-bridge, source-storage, reviewer-access, public-feedback, launch-story, source-path, calm-compass, calm-card, source-bell, before-reply, samvada, sankalpa, seva, morning, evening, and rhythm surfaces.
 
@@ -287,6 +287,7 @@ The v0.7.4 release turns the VedaPath AI homepage into a trusted MVP prototype w
 - Speech Filter: Speech Filter turns the source card into a practical message lens.
 - Apology Draft: Apology Draft gives calm a repair voice while keeping serious human boundaries clear.
 - Boundary Reply: Boundary Reply protects personal agency without turning calm into coldness.
+- Family Message: Family Message brings the calm path into the hardest everyday relationships.
 <!-- VEDAPATH CONVERSATION COMPANION SPRINT NOTES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
