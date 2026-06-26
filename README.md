@@ -523,6 +523,8 @@ Let us look at the source first.
 - [Relationship Pause Notes](docs/RELATIONSHIP_PAUSE.md)
 - [Work Dharma Room](workdharma.html)
 - [Work Dharma Room Notes](docs/WORK_DHARMA_ROOM.md)
+- [Family Care Room](familycare.html)
+- [Family Care Room Notes](docs/FAMILY_CARE_ROOM.md)
 <!-- VEDAPATH LIFE COMPANION SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -554,7 +556,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v2.5.9` is a trusted MVP prototype plus Work Dharma Room with:
+`v2.6.0` is a trusted MVP prototype plus Family Care Room with:
 
 - Ask workspace
 - Source Card
@@ -826,6 +828,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Steadiness Check: Steadiness Check gives users a practical source-backed pause.
 - Relationship Pause: Relationship Pause brings calm into speech without pretending to mediate conflict.
 - Work Dharma Room: Work Dharma Room translates source-backed steadiness into a simple work surface.
+- Family Care Room: Family Care Room brings humility into personal support.
 <!-- VEDAPATH LIFE COMPANION SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff

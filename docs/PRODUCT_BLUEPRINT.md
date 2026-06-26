@@ -273,6 +273,7 @@ It helps users move from curiosity to understanding through:
 - Steadiness Check: Steadiness Check gives users a practical source-backed pause.
 - Relationship Pause: Relationship Pause brings calm into speech without pretending to mediate conflict.
 - Work Dharma Room: Work Dharma Room translates source-backed steadiness into a simple work surface.
+- Family Care Room: Family Care Room brings humility into personal support.
 <!-- VEDAPATH LIFE COMPANION SPRINT SUMMARY END -->
 
 ## What It Is
@@ -3963,6 +3964,21 @@ It should:
 - keep personal entries local until explicit accounts and consent exist
 
 Work Dharma Room should never claim therapy, diagnosis, medical advice, legal advice, emergency support, ritual instruction, or spiritual authority.
+
+### 243. Family Care Room
+
+Family Care Room brings humility into personal support.
+
+It should:
+
+- Arrive: Name the moment without judging it.
+- Source: Keep citation, family, confidence, and boundary visible.
+- Carry: Leave with one small action.
+- Memory: Save entries only in this browser.
+- preserve the boundary: reflection support only, not authority
+- keep personal entries local until explicit accounts and consent exist
+
+Family Care Room should never claim therapy, diagnosis, medical advice, legal advice, emergency support, ritual instruction, or spiritual authority.
 <!-- VEDAPATH LIFE COMPANION SPRINT BLUEPRINT END -->
 
 ## Product Personality
