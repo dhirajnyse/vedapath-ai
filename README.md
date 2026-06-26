@@ -459,6 +459,8 @@ Let us look at the source first.
 - [Citation Trace Panel Notes](docs/CITATION_TRACE_PANEL.md)
 - [Retrieval Eval Cases](retrievaleval.html)
 - [Retrieval Eval Cases Notes](docs/RETRIEVAL_EVAL_CASES.md)
+- [Fallback Answer Guard](fallbackguard.html)
+- [Fallback Answer Guard Notes](docs/FALLBACK_ANSWER_GUARD.md)
 <!-- VEDAPATH RETRIEVAL LAB SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -490,7 +492,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v2.3.0` is a trusted MVP prototype plus Retrieval Eval Cases with:
+`v2.3.1` is a trusted MVP prototype plus Fallback Answer Guard with:
 
 - Ask workspace
 - Source Card
@@ -727,6 +729,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Boundary-Aware Answer Draft: Boundary-Aware Answer Draft makes safe answer framing visible before any AI backend exists.
 - Citation Trace Panel: Citation Trace Panel makes retrieval accountable at the record level.
 - Retrieval Eval Cases: Retrieval Eval Cases gives VedaPath a simple quality loop for source selection.
+- Fallback Answer Guard: Fallback Answer Guard protects VedaPath from answer pressure when retrieval is uncertain.
 <!-- VEDAPATH RETRIEVAL LAB SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
