@@ -4373,6 +4373,21 @@ It should:
 
 Pattern Companion Control Room should never claim diagnosis, therapy, legal advice, medical advice, surveillance, scoring, or spiritual authority.
 <!-- VEDAPATH PATTERN COMPANION SPRINT BLUEPRINT END -->
+<!-- VEDAPATH FRAME POLISH BLUEPRINT START -->
+### 273. Frame Alignment Polish
+
+The product must feel like one place before deeper product work continues.
+
+Rules:
+
+- The top of every primary page begins at the same visual zero line.
+- The header has one desktop height across Home, Build, Brand, Blueprint, and rooms.
+- First content begins at one predictable distance after the header.
+- Hero copy aligns to the top rhythm, not the image centerline.
+- Active tabs do not change height, top offset, or page rhythm.
+- Mobile can wrap, but it should wrap from the same calm system.
+<!-- VEDAPATH FRAME POLISH BLUEPRINT END -->
+
 <!-- VEDAPATH NAV POLISH BLUEPRINT START -->
 ### 272. Header Alignment Polish
 

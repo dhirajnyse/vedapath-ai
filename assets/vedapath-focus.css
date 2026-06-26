@@ -421,3 +421,96 @@ body .nav .version {
   }
 }
 /* VEDAPATH NAV ALIGNMENT POLISH END */
+
+/* VEDAPATH FRAME ALIGNMENT POLISH START */
+:root {
+  --vp-frame-top: 16px;
+  --vp-header-height: 74px;
+  --vp-after-header: 28px;
+}
+
+body .page,
+body .shell,
+body > main {
+  padding-top: var(--vp-frame-top) !important;
+}
+
+body .topbar,
+body header.topbar {
+  box-sizing: border-box;
+  height: var(--vp-header-height);
+  min-height: var(--vp-header-height);
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+body .topbar + .home-intent,
+body header.topbar + .home-intent,
+body .topbar + .hero,
+body header.topbar + .hero {
+  margin-top: 0 !important;
+  padding-top: var(--vp-after-header) !important;
+}
+
+body .topbar + .home-intent,
+body header.topbar + .home-intent,
+body .topbar + .hero,
+body header.topbar + .hero {
+  align-items: start !important;
+}
+
+body .topbar + .home-intent .intent-copy,
+body header.topbar + .home-intent .intent-copy,
+body .topbar + .hero > div:first-child,
+body header.topbar + .hero > div:first-child {
+  align-self: start !important;
+  padding-top: 0 !important;
+}
+
+body .topbar + .hero h1:first-child,
+body header.topbar + .hero h1:first-child,
+body .topbar + .home-intent h1:first-child,
+body header.topbar + .home-intent h1:first-child {
+  margin-top: 0 !important;
+}
+
+body .topbar + section:not(.home-intent):not(.hero),
+body header.topbar + section:not(.home-intent):not(.hero) {
+  margin-top: 0 !important;
+  padding-top: var(--vp-after-header) !important;
+}
+
+body .topbar + section:not(.home-intent):not(.hero) h1:first-child,
+body header.topbar + section:not(.home-intent):not(.hero) h1:first-child {
+  margin-top: 0 !important;
+}
+
+body .topbar + main.workspace,
+body header.topbar + main.workspace {
+  margin-top: var(--vp-after-header) !important;
+  padding-top: 0 !important;
+  border-top: 0 !important;
+}
+
+@media (max-width: 900px) {
+  :root {
+    --vp-header-height: auto;
+    --vp-after-header: 22px;
+  }
+
+  body .topbar,
+  body header.topbar {
+    height: auto;
+    min-height: 0;
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+  }
+}
+
+@media (max-width: 560px) {
+  :root {
+    --vp-frame-top: 12px;
+    --vp-after-header: 18px;
+  }
+}
+/* VEDAPATH FRAME ALIGNMENT POLISH END */

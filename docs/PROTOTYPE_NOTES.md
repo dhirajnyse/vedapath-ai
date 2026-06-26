@@ -306,6 +306,21 @@ The v0.7.4 release turns the VedaPath AI homepage into a trusted MVP prototype w
 - Mobile Pattern: Mobile Pattern keeps the learning loop usable where calm moments actually happen.
 - Pattern Companion Control Room: Pattern Companion Control Room completes the private local learning layer for VedaPath AI.
 <!-- VEDAPATH PATTERN COMPANION SPRINT NOTES END -->
+<!-- VEDAPATH FRAME POLISH NOTES START -->
+## v2.9.0 Frame Alignment Polish
+
+Founder feedback: the primary nav looked closer, but each page still had uneven top empty areas and different tab heights relative to the hero bar.
+
+Action taken:
+
+- Added a final frame-alignment override to `assets/vedapath-focus.css`.
+- Standardized page top padding across root page wrappers.
+- Standardized desktop header height and removed page-specific header padding drift.
+- Standardized the gap from header to hero/content across Home, Build, Brand, Blueprint, and room pages.
+- Removed vertical-centering drift from Home, Brand, and Blueprint hero sections.
+- Kept mobile flexible, where nav wrapping requires natural height.
+<!-- VEDAPATH FRAME POLISH NOTES END -->
+
 <!-- VEDAPATH NAV POLISH NOTES START -->
 ## v2.8.9 Nav Alignment Polish
 

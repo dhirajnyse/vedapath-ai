@@ -953,6 +953,19 @@ Then open:
 http://127.0.0.1:8088/
 ```
 
+<!-- VEDAPATH FRAME POLISH START -->
+## v2.9.0 Frame Alignment Polish
+
+This design-only pass fixes the remaining top-frame drift called out in founder review.
+
+- normalizes top padding for `.page`, `.shell`, and direct page `main` wrappers
+- fixes desktop header height to one shared value
+- removes extra page-specific header top and bottom padding
+- gives Home, Build, Brand, Blueprint, and room pages the same first-content gap
+- aligns first visible hero content instead of allowing vertical-centering drift
+- keeps smaller screens flexible while preserving the same rhythm
+<!-- VEDAPATH FRAME POLISH END -->
+
 <!-- VEDAPATH NAV POLISH START -->
 ## v2.8.9 Nav Alignment Polish
 
