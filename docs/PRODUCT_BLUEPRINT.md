@@ -209,6 +209,7 @@ It helps users move from curiosity to understanding through:
 <!-- VEDAPATH GUIDED READER SPRINT SUMMARY END -->
 <!-- VEDAPATH REVIEWER STUDIO SPRINT SUMMARY START -->
 - Review Intake Desk: Review Intake Desk creates the first visible bridge between guided reading and human review.
+- Source Evidence Checklist: Source Evidence Checklist prevents review from becoming a vague thumbs-up.
 <!-- VEDAPATH REVIEWER STUDIO SPRINT SUMMARY END -->
 
 ## What It Is
@@ -3084,6 +3085,21 @@ It should:
 - keep review decisions browser-only until reviewer identity, consent, backend storage, and source policy are approved
 
 Review Intake Desk should never claim production approval, scholar endorsement, legal clearance, durable review storage, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
+
+### 189. Source Evidence Checklist
+
+Source Evidence Checklist prevents review from becoming a vague thumbs-up.
+
+It should:
+
+- Evidence needed: Each item names what is missing.
+- Role label: Source, boundary, rights, or authority reviewer is explicit.
+- Candidate source: Citation identity remains visible.
+- Decision hold: Items can stay held without shame.
+- preserve the boundary: Evidence checklist, not source approval.
+- keep review decisions browser-only until reviewer identity, consent, backend storage, and source policy are approved
+
+Source Evidence Checklist should never claim production approval, scholar endorsement, legal clearance, durable review storage, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
 <!-- VEDAPATH REVIEWER STUDIO SPRINT BLUEPRINT END -->
 
 ## Product Personality

@@ -405,6 +405,8 @@ Let us look at the source first.
 <!-- VEDAPATH REVIEWER STUDIO SPRINT LINKS START -->
 - [Review Intake Desk](reviewintake.html)
 - [Review Intake Desk Notes](docs/REVIEW_INTAKE_DESK.md)
+- [Source Evidence Checklist](sourcecheck.html)
+- [Source Evidence Checklist Notes](docs/SOURCE_EVIDENCE_CHECKLIST.md)
 <!-- VEDAPATH REVIEWER STUDIO SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -436,7 +438,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v2.0.5` is a trusted MVP prototype plus Review Intake Desk with:
+`v2.0.6` is a trusted MVP prototype plus Source Evidence Checklist with:
 
 - Ask workspace
 - Source Card
@@ -644,6 +646,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 <!-- VEDAPATH GUIDED READER SPRINT FEATURES END -->
 <!-- VEDAPATH REVIEWER STUDIO SPRINT FEATURES START -->
 - Review Intake Desk: Review Intake Desk creates the first visible bridge between guided reading and human review.
+- Source Evidence Checklist: Source Evidence Checklist prevents review from becoming a vague thumbs-up.
 <!-- VEDAPATH REVIEWER STUDIO SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
