@@ -479,6 +479,8 @@ Let us look at the source first.
 - [Answer Card Lab Notes](docs/ANSWER_CARD_LAB.md)
 - [Confidence Briefing](confidencebriefing.html)
 - [Confidence Briefing Notes](docs/CONFIDENCE_BRIEFING.md)
+- [Boundary Rewriter](boundaryrewriter.html)
+- [Boundary Rewriter Notes](docs/BOUNDARY_REWRITER.md)
 <!-- VEDAPATH CITED ANSWER SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -510,7 +512,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v2.3.9` is a trusted MVP prototype plus Confidence Briefing with:
+`v2.4.0` is a trusted MVP prototype plus Boundary Rewriter with:
 
 - Ask workspace
 - Source Card
@@ -758,6 +760,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Citation Ribbon Lab: Citation Ribbon Lab prevents answer prose from floating away from source identity.
 - Answer Card Lab: Answer Card Lab turns retrieval output into a humane answer format.
 - Confidence Briefing: Confidence Briefing makes uncertainty a product feature, not a footnote.
+- Boundary Rewriter: Boundary Rewriter keeps the product calm when a source is sensitive.
 <!-- VEDAPATH CITED ANSWER SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff

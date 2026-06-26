@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>VedaPath Answer Intent Lab</title>
+    <title>VedaPath Boundary Rewriter</title>
     <link rel="stylesheet" href="assets/vedapath-sprint.css">
     <link rel="stylesheet" href="assets/vedapath-cited-answer-lab.css">
   </head>
@@ -12,7 +12,7 @@
       <header class="topbar">
         <a class="brand" href="index.html#top" aria-label="VedaPath AI home">
           <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
-          <div><strong>VedaPath AI</strong><span>Answer intent</span></div>
+          <div><strong>VedaPath AI</strong><span>Boundary rewrite</span></div>
         </a>
         <nav class="nav" aria-label="Project links">
           <a class="link" href="build-status.html">Build</a>
@@ -29,7 +29,7 @@
         </nav>
       </header>
 
-      <main class="workspace" aria-label="VedaPath Answer Intent Lab workspace">
+      <main class="workspace" aria-label="VedaPath Boundary Rewriter workspace">
         <aside class="panel">
           <span class="eyebrow">Cited answer sprint</span>
           <h2>Release Rooms</h2>
@@ -40,21 +40,21 @@
         <section class="panel">
           <div class="hero-grid">
             <div>
-              <span class="eyebrow">Intent lab</span>
-              <h1>Start every answer with intent.</h1>
-              <p class="muted">A cited answer lab room that separates the user's question, intent, source candidate, and answer boundary before any prose is shown.</p>
+              <span class="eyebrow">Boundary rewrite</span>
+              <h1>Rewrite overclaims before they ship.</h1>
+              <p class="muted">A boundary rewriting room that transforms risky answer claims into careful answer language with source category, no-go line, and safer phrasing.</p>
             </div>
-            <div class="mark-stage"><img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Intent logo"></div>
+            <div class="mark-stage"><img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Rewrite logo"></div>
           </div>
 
           <div class="source-block" aria-label="Release answer card">
-            <div><span class="source-meta">Release</span><span class="source-value">v2.3.5</span></div>
-            <div><span class="source-meta">Sample question</span><span class="source-value">How can I act calmly when results are uncertain?</span></div>
-            <div><span class="source-meta">Source lane</span><span class="source-value">Bhagavad Gita 2.48</span></div>
-            <div><span class="source-meta">Boundary</span><span class="source-value">Answer intent prototype, not AI generation.</span></div>
+            <div><span class="source-meta">Release</span><span class="source-value">v2.4.0</span></div>
+            <div><span class="source-meta">Sample question</span><span class="source-value">How can I practice restraint without escaping responsibility?</span></div>
+            <div><span class="source-meta">Source lane</span><span class="source-value">Isha Upanishad 1</span></div>
+            <div><span class="source-meta">Boundary</span><span class="source-value">Boundary rewrite preview, not safety certification.</span></div>
           </div>
 
-          <section class="answer-lab" id="citedAnswerLab" data-pattern="steady-action-answer" aria-label="Cited answer lab">
+          <section class="answer-lab" id="citedAnswerLab" data-pattern="restraint-answer" aria-label="Cited answer lab">
             <div class="answer-head">
               <div>
                 <span class="eyebrow">Source-carded answer draft</span>
@@ -98,7 +98,7 @@
 
           <h2>Answer Signals</h2>
           <div class="item-list" id="itemList"></div>
-          <div class="tabs" role="tablist" aria-label="VedaPath Answer Intent Lab layers">
+          <div class="tabs" role="tablist" aria-label="VedaPath Boundary Rewriter layers">
             <button class="tab active" type="button" data-mode="brief">Brief</button>
             <button class="tab" type="button" data-mode="checklist">Checklist</button>
             <button class="tab" type="button" data-mode="boundary">Boundary</button>
@@ -109,19 +109,19 @@
             <button class="button safe" id="copyJson" type="button">Copy JSON</button>
             <button class="button" id="copyBoundary" type="button">Copy Boundary</button>
           </div>
-          <textarea id="output" readonly aria-label="VedaPath Answer Intent Lab output"></textarea>
+          <textarea id="output" readonly aria-label="VedaPath Boundary Rewriter output"></textarea>
         </section>
 
-        <aside class="panel tight" aria-label="VedaPath Answer Intent Lab sprint rail">
+        <aside class="panel tight" aria-label="VedaPath Boundary Rewriter sprint rail">
           <span class="badge green">Cited answer</span>
-          <h2 style="margin-top: 14px;">Intent Pulse</h2>
-          <p class="muted">Answer Intent Lab starts the answer layer by making intent and boundaries explicit.</p>
-          <div class="progress" aria-label="Sprint progress 10 percent"><div class="bar" style="--score:10%"></div></div>
+          <h2 style="margin-top: 14px;">Rewrite Pulse</h2>
+          <p class="muted">Boundary Rewriter keeps the product calm when a source is sensitive.</p>
+          <div class="progress" aria-label="Sprint progress 60 percent"><div class="bar" style="--score:60%"></div></div>
           <div class="metric-grid">
-            <div class="metric"><span>Current</span><strong>v2.3.5</strong></div>
+            <div class="metric"><span>Current</span><strong>v2.4.0</strong></div>
             <div class="metric"><span>Sprint</span><strong>6/10</strong></div>
             <div class="metric"><span>Patterns</span><strong>4</strong></div>
-            <div class="metric"><span>Next</span><strong>Source Context Card</strong></div>
+            <div class="metric"><span>Next</span><strong>View Comparison Lab</strong></div>
           </div>
           <div class="sprint-list">
             <div class="sprint-step active"><span class="step-index">1</span><div><strong>Intent</strong><p>Read the question.</p></div></div>
@@ -137,23 +137,23 @@
       </main>
     </div>
     <script type="application/json" id="room-data">{
-  "version": "v2.3.5",
-  "badge": "v2.3.5 answer intent",
-  "slug": "answerintentlab",
-  "nav": "Intent",
-  "title": "VedaPath Answer Intent Lab",
-  "pageLabel": "Answer intent",
-  "eyebrow": "Intent lab",
-  "h1": "Start every answer with intent.",
-  "lead": "A cited answer lab room that separates the user's question, intent, source candidate, and answer boundary before any prose is shown.",
-  "source": "How can I act calmly when results are uncertain?",
-  "family": "Bhagavad Gita 2.48",
-  "stance": "Answer intent prototype, not AI generation.",
-  "sprintPercent": 10,
-  "defaultPattern": "steady-action-answer",
-  "next": "Source Context Card",
-  "primaryAsk": "Separate question intent from answer prose.",
-  "summary": "Answer Intent Lab starts the answer layer by making intent and boundaries explicit.",
+  "version": "v2.4.0",
+  "badge": "v2.4.0 boundary rewrite",
+  "slug": "boundaryrewriter",
+  "nav": "Rewrite",
+  "title": "VedaPath Boundary Rewriter",
+  "pageLabel": "Boundary rewrite",
+  "eyebrow": "Boundary rewrite",
+  "h1": "Rewrite overclaims before they ship.",
+  "lead": "A boundary rewriting room that transforms risky answer claims into careful answer language with source category, no-go line, and safer phrasing.",
+  "source": "How can I practice restraint without escaping responsibility?",
+  "family": "Isha Upanishad 1",
+  "stance": "Boundary rewrite preview, not safety certification.",
+  "sprintPercent": 60,
+  "defaultPattern": "restraint-answer",
+  "next": "View Comparison Lab",
+  "primaryAsk": "Turn risky answer language into bounded language.",
+  "summary": "Boundary Rewriter keeps the product calm when a source is sensitive.",
   "items": [
     [
       "Intent",
@@ -180,15 +180,15 @@
     "brief": [
       [
         "Answer promise",
-        "Answer Intent Lab starts the answer layer by making intent and boundaries explicit."
+        "Boundary Rewriter keeps the product calm when a source is sensitive."
       ],
       [
         "Founder move",
-        "Separate question intent from answer prose."
+        "Turn risky answer language into bounded language."
       ],
       [
         "Trust move",
-        "Keep this boundary visible: Answer intent prototype, not AI generation."
+        "Keep this boundary visible: Boundary rewrite preview, not safety certification."
       ]
     ],
     "checklist": [
