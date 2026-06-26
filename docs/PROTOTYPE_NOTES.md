@@ -306,6 +306,20 @@ The v0.7.4 release turns the VedaPath AI homepage into a trusted MVP prototype w
 - Mobile Pattern: Mobile Pattern keeps the learning loop usable where calm moments actually happen.
 - Pattern Companion Control Room: Pattern Companion Control Room completes the private local learning layer for VedaPath AI.
 <!-- VEDAPATH PATTERN COMPANION SPRINT NOTES END -->
+<!-- VEDAPATH FOCUS POLISH NOTES START -->
+## v2.8.8 Interface Focus Polish
+
+Founder feedback: the UI improved, but one more effort was needed before adding the next functional build.
+
+Action taken:
+
+- Added `assets/vedapath-focus.css` as a focused app-shell layer.
+- Reduced heavy card feeling on Home, Build, and room pages.
+- Tightened the top app bar, version badge, and button rhythm.
+- Made long build-roadmap content easier to scan.
+- Kept behavior unchanged so future functional work starts from a stable shell.
+<!-- VEDAPATH FOCUS POLISH NOTES END -->
+
 <!-- VEDAPATH VISUAL RHYTHM NOTES START -->
 ## v2.8.7 Visual Rhythm Polish
 

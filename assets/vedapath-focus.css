@@ -1,0 +1,300 @@
+:root {
+  --vp-focus-shadow: 0 12px 34px rgba(87, 53, 25, 0.035);
+  --vp-focus-line: rgba(91, 70, 56, 0.12);
+  --vp-focus-panel: rgba(255, 253, 248, 0.74);
+  --vp-focus-panel-strong: rgba(255, 253, 248, 0.95);
+}
+
+body {
+  background:
+    linear-gradient(180deg, rgba(255, 247, 234, 0.98) 0%, rgba(255, 249, 239, 1) 42%, rgba(255, 247, 234, 1) 100%);
+}
+
+body .topbar,
+body header.topbar {
+  min-height: 70px;
+  padding: 12px 0 11px;
+  background: rgba(255, 248, 237, 0.96);
+  border-bottom-color: var(--vp-focus-line);
+}
+
+body .brand {
+  min-width: 214px;
+  gap: 10px;
+}
+
+body .brand img {
+  width: 44px;
+  height: 44px;
+  border-radius: 9px;
+  box-shadow: 0 8px 18px rgba(168, 62, 18, 0.075);
+}
+
+body .brand strong {
+  font-size: 18px;
+}
+
+body .brand span {
+  margin-top: 1px;
+  font-size: 12px;
+}
+
+body .nav {
+  gap: 4px;
+}
+
+body .nav a,
+body .nav .version {
+  min-height: 34px;
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 13px;
+}
+
+body .nav .version {
+  margin-left: 6px;
+  background: rgba(255, 251, 244, 0.9);
+}
+
+body .home-intent {
+  grid-template-columns: minmax(0, 1.08fr) minmax(360px, 0.92fr);
+  gap: clamp(20px, 3vw, 32px);
+  padding: clamp(26px, 5vw, 46px) 0 30px;
+}
+
+body .home-intent .intent-copy {
+  border-color: transparent;
+  background: transparent;
+  box-shadow: none;
+  padding: clamp(8px, 2vw, 18px) 0;
+}
+
+body .home-intent h1 {
+  max-width: 650px;
+  font-size: clamp(40px, 4.2vw, 54px);
+  line-height: 1.02;
+}
+
+body .home-intent .intent-copy .muted {
+  max-width: 610px;
+  font-size: 18px;
+}
+
+body .home-intent .flow-card {
+  align-self: center;
+  min-height: 0;
+  border-color: rgba(214, 90, 31, 0.13);
+  background: rgba(255, 253, 248, 0.62);
+  box-shadow: none;
+}
+
+body .flow-steps {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+body .flow-step {
+  min-height: 92px;
+  border-color: rgba(91, 70, 56, 0.11);
+  background: rgba(255, 253, 248, 0.68);
+}
+
+body .workspace {
+  grid-template-columns: minmax(248px, 0.72fr) minmax(0, 1.48fr) minmax(238px, 0.68fr);
+  gap: 16px;
+  padding-top: 22px;
+  border-top: 1px solid var(--vp-focus-line);
+}
+
+body .ask-panel,
+body .answer-shell,
+body .rail-panel,
+body .map-card,
+body .tile,
+body .phase,
+body .panel {
+  box-shadow: var(--vp-focus-shadow);
+}
+
+body .ask-panel,
+body .rail-panel {
+  background: var(--vp-focus-panel);
+}
+
+body .answer-shell {
+  border-color: rgba(20, 92, 74, 0.18);
+  background: var(--vp-focus-panel-strong);
+}
+
+body .ask-panel h2,
+body .answer-title,
+body .rail-panel h2 {
+  letter-spacing: 0;
+}
+
+body .source-block {
+  border-left-width: 4px;
+  background: rgba(255, 253, 248, 0.86);
+  box-shadow: none;
+}
+
+body .meter-step,
+body .path-step,
+body .footer-item,
+body .claim,
+body .map-list a,
+body .room-card,
+body .sprint-step,
+body .metric {
+  border-color: rgba(91, 70, 56, 0.12);
+  box-shadow: none;
+}
+
+body .button,
+body .chip,
+body .tab {
+  border-radius: 9px;
+}
+
+body .button.primary,
+body .chip.active,
+body .tab.active {
+  box-shadow: 0 8px 22px rgba(214, 90, 31, 0.16);
+}
+
+body .experience-map {
+  margin-top: 34px;
+  padding-top: 26px;
+}
+
+body .map-card {
+  background: rgba(255, 253, 248, 0.62);
+}
+
+body main.workspace {
+  grid-template-columns: 204px minmax(0, 1fr) 238px;
+  gap: 18px;
+}
+
+body main.workspace > section.panel {
+  background: var(--vp-focus-panel-strong);
+}
+
+body main.workspace > aside.panel:first-child,
+body main.workspace > aside.panel.tight {
+  background: rgba(255, 250, 243, 0.66);
+}
+
+body main.workspace h1 {
+  max-width: 590px;
+  font-size: clamp(34px, 3.25vw, 48px);
+}
+
+body main.workspace .hero-grid {
+  grid-template-columns: minmax(0, 1fr) 92px;
+}
+
+body main.workspace .mark-stage {
+  width: 92px;
+  padding: 7px;
+}
+
+body .room-list {
+  max-height: 270px;
+}
+
+body .room-card {
+  min-height: 52px;
+}
+
+body .summary {
+  margin: 24px 0;
+}
+
+body .tile {
+  min-height: 124px;
+  background: rgba(255, 253, 248, 0.72);
+}
+
+body .roadmap {
+  max-height: 680px;
+  overflow: auto;
+  padding-right: 4px;
+  scrollbar-width: thin;
+}
+
+body .phase {
+  grid-template-columns: 92px minmax(0, 1fr) 58px;
+  gap: 12px;
+  padding: 12px;
+}
+
+body .phase p {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+body .version-row strong {
+  max-width: 360px;
+}
+
+@media (max-width: 1120px) {
+  body .home-intent,
+  body .workspace,
+  body main.workspace {
+    grid-template-columns: 1fr;
+  }
+
+  body .home-intent .intent-copy {
+    padding-bottom: 4px;
+  }
+
+  body main.workspace .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body .roadmap {
+    max-height: none;
+  }
+}
+
+@media (max-width: 760px) {
+  body .topbar,
+  body header.topbar {
+    padding-top: 14px;
+  }
+
+  body .brand {
+    min-width: 0;
+  }
+
+  body .home-intent {
+    padding-top: 22px;
+    gap: 16px;
+  }
+
+  body .home-intent h1 {
+    font-size: clamp(34px, 10vw, 42px);
+  }
+
+  body .home-intent .intent-copy .muted {
+    font-size: 16px;
+  }
+
+  body .flow-steps {
+    grid-template-columns: 1fr;
+  }
+
+  body .workspace {
+    padding-top: 18px;
+  }
+
+  body .phase {
+    grid-template-columns: 1fr;
+  }
+
+  body .phase p {
+    -webkit-line-clamp: unset;
+  }
+}

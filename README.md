@@ -953,6 +953,18 @@ Then open:
 http://127.0.0.1:8088/
 ```
 
+<!-- VEDAPATH FOCUS POLISH START -->
+## v2.8.8 Interface Focus Polish
+
+This design-only release gives VedaPath one more calm UI pass before functional work resumes.
+
+- removes extra card weight from the first screen
+- makes the top app bar tighter and easier to scan
+- keeps the central answer/work surface visually dominant
+- softens room sidebars and build-roadmap density
+- prepares the shell for the next real retrieval or source-data build
+<!-- VEDAPATH FOCUS POLISH END -->
+
 <!-- VEDAPATH VISUAL RHYTHM START -->
 ## v2.8.7 Visual Rhythm Polish
 

@@ -4373,6 +4373,20 @@ It should:
 
 Pattern Companion Control Room should never claim diagnosis, therapy, legal advice, medical advice, surveillance, scoring, or spiritual authority.
 <!-- VEDAPATH PATTERN COMPANION SPRINT BLUEPRINT END -->
+<!-- VEDAPATH FOCUS POLISH BLUEPRINT START -->
+### 271. Interface Focus Polish
+
+The product should feel quieter than the amount of work behind it.
+
+Design rules:
+
+- The first viewport is a doorway, not a dashboard.
+- The central answer/work surface is the primary object.
+- Sidebars and rails support action but do not compete with it.
+- Build status can contain history, but it must scan like a progress surface.
+- New functional builds inherit the quiet shell instead of adding visual weight.
+<!-- VEDAPATH FOCUS POLISH BLUEPRINT END -->
+
 <!-- VEDAPATH VISUAL RHYTHM BLUEPRINT START -->
 ### 270. Visual Rhythm Polish
 
