@@ -201,6 +201,7 @@ It helps users move from curiosity to understanding through:
 - Meaning Layer Stack: Meaning Layer Stack gives VedaPath a readable pattern for depth without overwhelming beginners.
 - Context Boundary Gate: Context Boundary Gate keeps personal calm work source-backed but carefully limited.
 - Reflection Prompt Rail: Reflection Prompt Rail turns calm into a product behavior: one question, one source, one boundary.
+- Carry Action Builder: Carry Action Builder gives VedaPath a signature calm handoff from reading to grounded action.
 <!-- VEDAPATH GUIDED READER SPRINT SUMMARY END -->
 
 ## What It Is
@@ -2985,6 +2986,21 @@ It should:
 - keep the reader prototype browser-only until reviewed content, accounts, or backend storage are approved
 
 Reflection Prompt Rail should never claim final commentary, full scripture text, translation rights, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
+
+### 183. Carry Action Builder
+
+Carry Action Builder gives VedaPath a signature calm handoff from reading to grounded action.
+
+It should:
+
+- Small action: The action is intentionally modest.
+- Source tie: The action stays connected to the selected source candidate.
+- No command: The wording avoids pretending the app knows the user's life.
+- Copy handoff: The action can be copied with source and boundary.
+- preserve the boundary: Carry action, not life prescription.
+- keep the reader prototype browser-only until reviewed content, accounts, or backend storage are approved
+
+Carry Action Builder should never claim final commentary, full scripture text, translation rights, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
 <!-- VEDAPATH GUIDED READER SPRINT BLUEPRINT END -->
 
 ## Product Personality

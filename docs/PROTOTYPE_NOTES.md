@@ -1,4 +1,4 @@
-# v1.9.9 Prototype Notes
+# v2.0.0 Prototype Notes
 
 The v0.7.4 release turns the VedaPath AI homepage into a trusted MVP prototype with calm, practice, source-library, source-seeds, retrieval, passage-review, evaluation, evaluation-dashboard, reviewer-queue, source-policy, trust-ledger, life-map, calm-circle, consent-gate, memory-gate, trust-model, calm-passport, backend-schema, schema-fixtures, evaluation-drill, learning-loop, sanskrit-lens, voice-boundary, scholar-review, launch-gate, production-bridge, source-storage, reviewer-access, public-feedback, launch-story, source-path, calm-compass, calm-card, source-bell, before-reply, samvada, sankalpa, seva, morning, evening, and rhythm surfaces.
 
@@ -204,6 +204,7 @@ The v0.7.4 release turns the VedaPath AI homepage into a trusted MVP prototype w
 - Meaning Layer Stack: Meaning Layer Stack gives VedaPath a readable pattern for depth without overwhelming beginners.
 - Context Boundary Gate: Context Boundary Gate keeps personal calm work source-backed but carefully limited.
 - Reflection Prompt Rail: Reflection Prompt Rail turns calm into a product behavior: one question, one source, one boundary.
+- Carry Action Builder: Carry Action Builder gives VedaPath a signature calm handoff from reading to grounded action.
 <!-- VEDAPATH GUIDED READER SPRINT NOTES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
