@@ -953,6 +953,18 @@ Then open:
 http://127.0.0.1:8088/
 ```
 
+<!-- VEDAPATH VISUAL RHYTHM START -->
+## v2.8.7 Visual Rhythm Polish
+
+This design-only release gives the product one more UI/UX pass before the next functional build.
+
+- first screen now feels more guided and less like a release-room index
+- top navigation stays visible during scroll
+- room pages use quieter rails, calmer title scale, and softer panel weight
+- build status now reflects design readiness separately from full product completion
+- no source logic, safety boundary, or local-memory behavior changed
+<!-- VEDAPATH VISUAL RHYTHM END -->
+
 <!-- VEDAPATH COHESIVE UI START -->
 ## v2.8.6 Cohesive UI System
 

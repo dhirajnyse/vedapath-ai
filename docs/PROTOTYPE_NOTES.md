@@ -306,6 +306,20 @@ The v0.7.4 release turns the VedaPath AI homepage into a trusted MVP prototype w
 - Mobile Pattern: Mobile Pattern keeps the learning loop usable where calm moments actually happen.
 - Pattern Companion Control Room: Pattern Companion Control Room completes the private local learning layer for VedaPath AI.
 <!-- VEDAPATH PATTERN COMPANION SPRINT NOTES END -->
+<!-- VEDAPATH VISUAL RHYTHM NOTES START -->
+## v2.8.7 Visual Rhythm Polish
+
+Founder feedback: the interface improved, but more polish was needed before the next functional build.
+
+Action taken:
+
+- Added `assets/vedapath-polish.css` as a focused rhythm layer over the cohesive UI system.
+- Kept navigation visible while scrolling.
+- Reduced first-screen visual competition.
+- Softened room sidebars and right rails.
+- Updated Build Status so prototype completion and full product progress are not confused.
+<!-- VEDAPATH VISUAL RHYTHM NOTES END -->
+
 <!-- VEDAPATH COHESIVE UI NOTES START -->
 ## v2.8.6 Cohesive UI System
 

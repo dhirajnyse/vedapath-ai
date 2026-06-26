@@ -1,0 +1,275 @@
+:root {
+  --vp-shadow-soft: 0 18px 50px rgba(87, 53, 25, 0.055);
+  --vp-shadow-line: 0 1px 0 rgba(91, 70, 56, 0.08);
+  --vp-focus: rgba(214, 90, 31, 0.16);
+}
+
+body {
+  text-rendering: optimizeLegibility;
+}
+
+body .topbar,
+body header.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  background: rgba(255, 247, 234, 0.94);
+  backdrop-filter: blur(16px);
+  box-shadow: var(--vp-shadow-line);
+}
+
+body .nav {
+  gap: 6px;
+}
+
+body .nav a,
+body .nav .version,
+body .button,
+body .chip,
+body .tab,
+body .room-card,
+body .path-step,
+body .map-list a {
+  transition: border-color 150ms ease, background-color 150ms ease, color 150ms ease, transform 150ms ease, box-shadow 150ms ease;
+}
+
+body .nav a:hover,
+body .button:hover,
+body .chip:hover,
+body .tab:hover,
+body .room-card:hover,
+body .path-step:hover,
+body .map-list a:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 26px rgba(87, 53, 25, 0.06);
+}
+
+body .nav a:focus-visible,
+body .button:focus-visible,
+body .chip:focus-visible,
+body .tab:focus-visible,
+body textarea:focus-visible,
+body select:focus-visible {
+  outline: 3px solid var(--vp-focus);
+  outline-offset: 2px;
+}
+
+body h1,
+body main.workspace h1 {
+  font-weight: 860;
+  text-wrap: balance;
+}
+
+body h2,
+body h3,
+body p,
+body .lead,
+body .muted {
+  text-wrap: pretty;
+}
+
+body .panel,
+body .tile,
+body .phase,
+body .intent-copy,
+body .flow-card,
+body .map-card,
+body .rail-panel,
+body .answer-shell,
+body .ask-panel,
+body .metric,
+body .source-block {
+  box-shadow: var(--vp-shadow-soft);
+}
+
+body .home-intent {
+  gap: 22px;
+  padding: 34px 0 26px;
+  align-items: start;
+}
+
+body .home-intent .intent-copy {
+  border-color: rgba(214, 90, 31, 0.14);
+  background: linear-gradient(135deg, rgba(255, 253, 248, 0.96) 0%, rgba(255, 245, 234, 0.72) 100%);
+  padding: clamp(20px, 3vw, 30px);
+}
+
+body .home-intent .flow-card {
+  border-color: rgba(91, 70, 56, 0.12);
+  background: rgba(255, 253, 248, 0.72);
+  padding: clamp(18px, 2.5vw, 24px);
+}
+
+body .home-intent h1 {
+  max-width: 720px;
+  font-size: clamp(38px, 4.7vw, 58px);
+  margin-bottom: 14px;
+}
+
+body .intent-actions {
+  margin-top: 12px;
+}
+
+body .flow-steps {
+  gap: 10px;
+}
+
+body .flow-step {
+  position: relative;
+  min-height: 124px;
+  overflow: hidden;
+  background: rgba(255, 253, 248, 0.9);
+}
+
+body .flow-step::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--vp-bhagwa), var(--vp-gold));
+  opacity: 0.62;
+}
+
+body .workspace {
+  gap: 16px;
+}
+
+body .ask-panel {
+  border-color: rgba(214, 90, 31, 0.2);
+  background: rgba(255, 253, 248, 0.94);
+}
+
+body .answer-shell {
+  border-color: rgba(20, 92, 74, 0.14);
+}
+
+body .rail-panel {
+  background: rgba(255, 253, 248, 0.8);
+}
+
+body .experience-map {
+  margin-top: 28px;
+}
+
+body main.workspace {
+  grid-template-columns: 220px minmax(0, 1fr) 260px;
+  gap: 18px;
+}
+
+body main.workspace > section.panel {
+  padding: clamp(18px, 2.4vw, 26px);
+}
+
+body main.workspace > aside.panel:first-child,
+body main.workspace > aside.panel.tight {
+  position: sticky;
+  top: 100px;
+  max-height: calc(100vh - 120px);
+  overflow: auto;
+}
+
+body main.workspace > aside.panel:first-child {
+  border-color: rgba(91, 70, 56, 0.11);
+  background: rgba(255, 248, 239, 0.7);
+}
+
+body main.workspace > aside.panel:first-child h2,
+body main.workspace > aside.panel.tight h2 {
+  font-size: 22px;
+}
+
+body main.workspace > aside.panel:first-child p,
+body main.workspace > aside.panel.tight p {
+  font-size: 14px;
+}
+
+body main.workspace h1 {
+  max-width: 620px;
+  font-size: clamp(34px, 3.6vw, 52px);
+  line-height: 1.02;
+}
+
+body main.workspace .hero-grid {
+  grid-template-columns: minmax(0, 1fr) 104px;
+  gap: 18px;
+}
+
+body main.workspace .mark-stage {
+  width: 104px;
+  border-color: rgba(214, 90, 31, 0.16);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.54);
+}
+
+body .room-list {
+  max-height: 315px;
+  scrollbar-width: thin;
+}
+
+body .room-card,
+body .sprint-step,
+body .path-step {
+  background: rgba(255, 253, 248, 0.82);
+}
+
+body .source-block {
+  border-left-width: 5px;
+}
+
+body .summary {
+  gap: 16px;
+}
+
+body .layout {
+  gap: 18px;
+}
+
+body .phase {
+  background: rgba(255, 253, 248, 0.78);
+}
+
+body .version-row {
+  align-items: baseline;
+}
+
+@media (max-width: 1120px) {
+  body .topbar,
+  body header.topbar {
+    position: static;
+  }
+
+  body main.workspace > aside.panel:first-child,
+  body main.workspace > aside.panel.tight {
+    position: static;
+    max-height: none;
+  }
+
+  body main.workspace {
+    grid-template-columns: 1fr;
+  }
+
+  body main.workspace .hero-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  body .home-intent {
+    padding-top: 22px;
+  }
+
+  body .home-intent .intent-copy,
+  body .home-intent .flow-card,
+  body main.workspace > section.panel {
+    padding: 16px;
+  }
+
+  body .nav a,
+  body .nav .version {
+    min-height: 34px;
+    padding: 6px 10px;
+  }
+
+  body .flow-step {
+    min-height: 96px;
+  }
+}

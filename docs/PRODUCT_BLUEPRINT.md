@@ -4373,6 +4373,20 @@ It should:
 
 Pattern Companion Control Room should never claim diagnosis, therapy, legal advice, medical advice, surveillance, scoring, or spiritual authority.
 <!-- VEDAPATH PATTERN COMPANION SPRINT BLUEPRINT END -->
+<!-- VEDAPATH VISUAL RHYTHM BLUEPRINT START -->
+### 270. Visual Rhythm Polish
+
+Before the next functional build, the product should feel calmer than the complexity behind it.
+
+Design rules:
+
+- The first screen explains one path, not every room.
+- Top navigation remains stable and visible while scrolling.
+- Room sidebars are secondary controls, not competing hero areas.
+- Hero titles stay powerful but do not crowd the working surface.
+- Build status separates clickable prototype completion from full product readiness.
+<!-- VEDAPATH VISUAL RHYTHM BLUEPRINT END -->
+
 <!-- VEDAPATH COHESIVE UI BLUEPRINT START -->
 ### 269. Cohesive UI System
 
