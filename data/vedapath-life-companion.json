@@ -1,0 +1,80 @@
+{
+  "product": "VedaPath AI",
+  "release": "v2.5.5",
+  "status": "life companion prototype",
+  "warning": "Prototype reflection support only. Not therapy, diagnosis, medical advice, legal advice, emergency support, ritual instruction, or spiritual authority.",
+  "scenarios": [
+    {
+      "id": "arrival-restless",
+      "state": "Restless",
+      "domain": "Personal",
+      "source": "Bhagavad Gita 2.48",
+      "family": "Bhagavad Gita | Smriti",
+      "signal": "Too many thoughts, not enough stillness.",
+      "reflection": "What is the next honest action I can do without demanding a certain result?",
+      "carry": "Do one small duty slowly before opening the next tab, message, or worry.",
+      "boundary": "Reflection support only; not therapy, medical advice, emergency support, or spiritual authority.",
+      "confidence": 84
+    },
+    {
+      "id": "relationship-pause",
+      "state": "Tense conversation",
+      "domain": "Relationship",
+      "source": "Bhagavad Gita 17.15",
+      "family": "Bhagavad Gita | Smriti",
+      "signal": "You need to reply, but speed may create harm.",
+      "reflection": "Can I make this reply truthful, useful, and less sharp?",
+      "carry": "Write the reply, wait one minute, remove one sentence that only tries to win.",
+      "boundary": "Not conflict mediation, legal advice, safety planning, or a replacement for human help.",
+      "confidence": 66
+    },
+    {
+      "id": "work-pressure",
+      "state": "Work pressure",
+      "domain": "Work",
+      "source": "Bhagavad Gita 2.47",
+      "family": "Bhagavad Gita | Smriti",
+      "signal": "The outcome feels bigger than the next step.",
+      "reflection": "Which part of the work is mine to do now, and which part is not mine to control?",
+      "carry": "Choose the next 20-minute task and define a clean stopping point.",
+      "boundary": "Not productivity coaching, career advice, legal advice, or a promise of success.",
+      "confidence": 79
+    },
+    {
+      "id": "family-care",
+      "state": "Family care",
+      "domain": "Family",
+      "source": "Taittiriya Upanishad 1.11.2",
+      "family": "Upanishad | Shruti",
+      "signal": "Care is present, but pressure and expectation are tangled.",
+      "reflection": "What is one respectful action I can take without trying to control everyone?",
+      "carry": "Offer one specific help, then leave space for the other person to respond.",
+      "boundary": "Not family therapy, legal guidance, medical advice, or a rule for every household.",
+      "confidence": 58
+    },
+    {
+      "id": "decision-fog",
+      "state": "Decision fog",
+      "domain": "Decision",
+      "source": "Katha Upanishad 1.2.1",
+      "family": "Upanishad | Shruti",
+      "signal": "The pleasant and the beneficial are mixed together.",
+      "reflection": "Which option only soothes the moment, and which option also serves clarity?",
+      "carry": "Write the two options. Name one cost and one responsibility for each.",
+      "boundary": "Not moral policing, financial advice, legal advice, or a command.",
+      "confidence": 70
+    },
+    {
+      "id": "night-release",
+      "state": "Night release",
+      "domain": "Evening",
+      "source": "Bhagavad Gita 6.26",
+      "family": "Bhagavad Gita | Smriti",
+      "signal": "The mind keeps returning to unfinished loops.",
+      "reflection": "What can be placed down for tonight without pretending it no longer matters?",
+      "carry": "Write one unfinished item for tomorrow, then close the loop for tonight.",
+      "boundary": "Not sleep treatment, clinical care, diagnosis, or emergency support.",
+      "confidence": 63
+    }
+  ]
+}

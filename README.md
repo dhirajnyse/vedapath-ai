@@ -512,6 +512,10 @@ Let us look at the source first.
 - [Mantra Lens Control Room](mantralenslab.html)
 - [Mantra Lens Control Room Notes](docs/MANTRA_LENS_CONTROL_ROOM.md)
 <!-- VEDAPATH MANTRA LENS SPRINT LINKS END -->
+<!-- VEDAPATH LIFE COMPANION SPRINT LINKS START -->
+- [Life Arrival](lifearrival.html)
+- [Life Arrival Notes](docs/LIFE_ARRIVAL.md)
+<!-- VEDAPATH LIFE COMPANION SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
 - [Calm Compass](compass.html)
@@ -542,7 +546,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v2.5.4` is a trusted MVP prototype plus Mantra Lens Control Room with:
+`v2.5.5` is a trusted MVP prototype plus Life Arrival with:
 
 - Ask workspace
 - Source Card
@@ -808,6 +812,9 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Mobile Mantra Lens: Mobile Mantra Lens keeps sacred study usable in real life.
 - Mantra Lens Control Room: Mantra Lens Control Room completes the verse-level study layer for VedaPath AI.
 <!-- VEDAPATH MANTRA LENS SPRINT FEATURES END -->
+<!-- VEDAPATH LIFE COMPANION SPRINT FEATURES START -->
+- Life Arrival: Life Arrival makes calm personal without pretending VedaPath is a therapist or guru.
+<!-- VEDAPATH LIFE COMPANION SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
 - Calm Card Studio with visual card preview, local saved cards, copy text, and PNG export

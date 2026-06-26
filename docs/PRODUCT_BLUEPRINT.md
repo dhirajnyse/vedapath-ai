@@ -267,6 +267,9 @@ It helps users move from curiosity to understanding through:
 - Mobile Mantra Lens: Mobile Mantra Lens keeps sacred study usable in real life.
 - Mantra Lens Control Room: Mantra Lens Control Room completes the verse-level study layer for VedaPath AI.
 <!-- VEDAPATH MANTRA LENS SPRINT SUMMARY END -->
+<!-- VEDAPATH LIFE COMPANION SPRINT SUMMARY START -->
+- Life Arrival: Life Arrival makes calm personal without pretending VedaPath is a therapist or guru.
+<!-- VEDAPATH LIFE COMPANION SPRINT SUMMARY END -->
 
 ## What It Is
 
@@ -3881,6 +3884,22 @@ It should:
 
 Mantra Lens Control Room should never claim ritual authority, pronunciation certification, therapy, emergency support, or spiritual authority.
 <!-- VEDAPATH MANTRA LENS SPRINT BLUEPRINT END -->
+<!-- VEDAPATH LIFE COMPANION SPRINT BLUEPRINT START -->
+### 238. Life Arrival
+
+Life Arrival makes calm personal without pretending VedaPath is a therapist or guru.
+
+It should:
+
+- Arrive: Name the moment without judging it.
+- Source: Keep citation, family, confidence, and boundary visible.
+- Carry: Leave with one small action.
+- Memory: Save entries only in this browser.
+- preserve the boundary: reflection support only, not authority
+- keep personal entries local until explicit accounts and consent exist
+
+Life Arrival should never claim therapy, diagnosis, medical advice, legal advice, emergency support, ritual instruction, or spiritual authority.
+<!-- VEDAPATH LIFE COMPANION SPRINT BLUEPRINT END -->
 
 ## Product Personality
 
