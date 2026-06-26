@@ -298,3 +298,126 @@ body .version-row strong {
     -webkit-line-clamp: unset;
   }
 }
+
+/* VEDAPATH NAV ALIGNMENT POLISH START */
+:root {
+  --vp-nav-brand: 214px;
+  --vp-nav-control: 38px;
+  --vp-nav-gap: 6px;
+}
+
+body .topbar,
+body header.topbar {
+  display: grid;
+  grid-template-columns: minmax(var(--vp-nav-brand), auto) minmax(0, 1fr);
+  align-items: center;
+  gap: 18px;
+  min-height: 74px;
+  padding: 12px 0;
+}
+
+body .brand {
+  align-self: center;
+  min-width: var(--vp-nav-brand);
+  height: 48px;
+}
+
+body .brand img {
+  flex: 0 0 44px;
+}
+
+body .brand div {
+  min-width: 0;
+}
+
+body .nav {
+  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--vp-nav-gap);
+  max-width: none;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  flex-wrap: nowrap;
+  line-height: 1;
+  scrollbar-width: none;
+}
+
+body .nav::-webkit-scrollbar {
+  display: none;
+}
+
+body .nav .link,
+body .nav a,
+body .nav .version {
+  box-sizing: border-box;
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  height: var(--vp-nav-control);
+  min-height: var(--vp-nav-control);
+  margin: 0;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 0 11px;
+  font-size: 13px;
+  font-weight: 850;
+  line-height: 1;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+body .nav .link.active,
+body .nav a.active {
+  border-color: rgba(168, 62, 18, 0.3);
+  background: rgba(255, 253, 248, 0.84);
+  color: var(--vp-ochre, #a83e12);
+}
+
+body .nav .version {
+  margin-left: 8px;
+  border-color: rgba(168, 62, 18, 0.28);
+  background: rgba(255, 253, 248, 0.9);
+  color: var(--vp-ochre, #a83e12);
+  padding: 0 14px;
+}
+
+@media (max-width: 900px) {
+  body .topbar,
+  body header.topbar {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  body .brand {
+    min-width: 0;
+  }
+
+  body .nav {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    overflow: visible;
+  }
+
+  body .nav .version {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 560px) {
+  body .nav .link,
+  body .nav a,
+  body .nav .version {
+    height: 34px;
+    min-height: 34px;
+    padding: 0 10px;
+    font-size: 12px;
+  }
+}
+/* VEDAPATH NAV ALIGNMENT POLISH END */

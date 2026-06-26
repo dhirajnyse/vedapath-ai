@@ -4373,6 +4373,20 @@ It should:
 
 Pattern Companion Control Room should never claim diagnosis, therapy, legal advice, medical advice, surveillance, scoring, or spiritual authority.
 <!-- VEDAPATH PATTERN COMPANION SPRINT BLUEPRINT END -->
+<!-- VEDAPATH NAV POLISH BLUEPRINT START -->
+### 272. Header Alignment Polish
+
+The app bar is part of trust. Primary navigation must look like one system before VedaPath adds deeper functional surfaces.
+
+Rules:
+
+- The brand block and nav row share the same vertical center.
+- Home, Build, Brand, Blueprint, and product tabs use one control height.
+- Active states change color and border, not geometry.
+- The version badge is secondary and never changes the row baseline.
+- Mobile wrapping is deliberate and consistent across every page.
+<!-- VEDAPATH NAV POLISH BLUEPRINT END -->
+
 <!-- VEDAPATH FOCUS POLISH BLUEPRINT START -->
 ### 271. Interface Focus Polish
 

@@ -953,6 +953,18 @@ Then open:
 http://127.0.0.1:8088/
 ```
 
+<!-- VEDAPATH NAV POLISH START -->
+## v2.8.9 Nav Alignment Polish
+
+This design-only pass fixes the shared header rhythm before the next functional build.
+
+- aligns Home, Build, Brand, Blueprint, and product tabs on one baseline
+- gives every nav item the same height, border model, and line-height
+- keeps the version badge visually related without pulling the row off balance
+- lets smaller screens wrap as a complete row instead of breaking page by page
+- keeps the final override in `assets/vedapath-focus.css` so future pages inherit it
+<!-- VEDAPATH NAV POLISH END -->
+
 <!-- VEDAPATH FOCUS POLISH START -->
 ## v2.8.8 Interface Focus Polish
 
