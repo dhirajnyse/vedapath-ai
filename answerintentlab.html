@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VedaPath Answer Intent Lab</title>
+    <link rel="stylesheet" href="assets/vedapath-sprint.css">
+    <link rel="stylesheet" href="assets/vedapath-cited-answer-lab.css">
+  </head>
+  <body>
+    <div class="shell" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top" aria-label="VedaPath AI home">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
+          <div><strong>VedaPath AI</strong><span>Answer intent</span></div>
+        </a>
+        <nav class="nav" aria-label="Project links">
+          <a class="link" href="build-status.html">Build</a>
+          <a class="link" href="brand/brand-board.html">Brand</a>
+          <a class="link" href="blueprint.html">Blueprint</a>
+          <a class="link" href="sourcereader.html">Reader</a>
+          <a class="link" href="reviewerstudio.html">Reviewer</a>
+          <a class="link" href="sourcelibrary.html">Sources</a>
+          <a class="link" href="retrievallab.html">Retrieval</a>
+          <!-- VEDAPATH CITED ANSWER SPRINT NAV START -->
+          <a class="link active" href="answerintentlab.html">Answers</a>
+          <!-- VEDAPATH CITED ANSWER SPRINT NAV END -->
+          <span class="version">v2.3.5 answer intent</span>
+        </nav>
+      </header>
+
+      <main class="workspace" aria-label="VedaPath Answer Intent Lab workspace">
+        <aside class="panel">
+          <span class="eyebrow">Cited answer sprint</span>
+          <h2>Release Rooms</h2>
+          <p class="muted">Ten rooms turn retrieval traces into calm, cited, bounded answer cards.</p>
+          <div class="room-list" id="roomList"></div>
+        </aside>
+
+        <section class="panel">
+          <div class="hero-grid">
+            <div>
+              <span class="eyebrow">Intent lab</span>
+              <h1>Start every answer with intent.</h1>
+              <p class="muted">A cited answer lab room that separates the user's question, intent, source candidate, and answer boundary before any prose is shown.</p>
+            </div>
+            <div class="mark-stage"><img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Intent logo"></div>
+          </div>
+
+          <div class="source-block" aria-label="Release answer card">
+            <div><span class="source-meta">Release</span><span class="source-value">v2.3.5</span></div>
+            <div><span class="source-meta">Sample question</span><span class="source-value">How can I act calmly when results are uncertain?</span></div>
+            <div><span class="source-meta">Source lane</span><span class="source-value">Bhagavad Gita 2.48</span></div>
+            <div><span class="source-meta">Boundary</span><span class="source-value">Answer intent prototype, not AI generation.</span></div>
+          </div>
+
+          <section class="answer-lab" id="citedAnswerLab" data-pattern="steady-action-answer" aria-label="Cited answer lab">
+            <div class="answer-head">
+              <div>
+                <span class="eyebrow">Source-carded answer draft</span>
+                <h2>Cited Answer Lab</h2>
+                <p class="muted">Reads <strong>data/vedapath-answer-patterns.json</strong>. Answer cards are prototype patterns, not final AI output.</p>
+              </div>
+              <div id="answerStats" class="answer-stats" aria-live="polite"></div>
+            </div>
+
+            <div class="answer-tools">
+              <label for="patternSelect">Answer pattern</label>
+              <select id="patternSelect"></select>
+              <label for="viewSelect">View</label>
+              <select id="viewSelect">
+                <option value="full">Full card</option>
+                <option value="beginner">Beginner</option>
+                <option value="source">Source</option>
+                <option value="boundary">Boundary</option>
+              </select>
+            </div>
+
+            <div class="answer-layout">
+              <div>
+                <div id="answerCard" class="answer-card"></div>
+                <div class="answer-actions">
+                  <button class="button primary" id="saveFeedback" type="button">Save Feedback</button>
+                  <button class="button safe" id="copyAnswerPacket" type="button">Copy Packet</button>
+                  <button class="button" id="clearAnswerFeedback" type="button">Clear Feedback</button>
+                </div>
+              </div>
+              <div>
+                <div id="sourceContext" class="source-context"></div>
+                <label class="answer-label" for="feedbackText">Feedback note</label>
+                <textarea id="feedbackText" aria-label="Answer feedback note"></textarea>
+                <label class="answer-label" for="answerPacket">Answer packet</label>
+                <textarea id="answerPacket" readonly aria-label="Answer packet output"></textarea>
+                <div id="feedbackList" class="feedback-list" aria-label="Local feedback preview"></div>
+              </div>
+            </div>
+          </section>
+
+          <h2>Answer Signals</h2>
+          <div class="item-list" id="itemList"></div>
+          <div class="tabs" role="tablist" aria-label="VedaPath Answer Intent Lab layers">
+            <button class="tab active" type="button" data-mode="brief">Brief</button>
+            <button class="tab" type="button" data-mode="checklist">Checklist</button>
+            <button class="tab" type="button" data-mode="boundary">Boundary</button>
+          </div>
+          <div id="modePanel"></div>
+          <div class="button-row" style="margin-top: 14px;">
+            <button class="button primary" id="copyBrief" type="button">Copy Brief</button>
+            <button class="button safe" id="copyJson" type="button">Copy JSON</button>
+            <button class="button" id="copyBoundary" type="button">Copy Boundary</button>
+          </div>
+          <textarea id="output" readonly aria-label="VedaPath Answer Intent Lab output"></textarea>
+        </section>
+
+        <aside class="panel tight" aria-label="VedaPath Answer Intent Lab sprint rail">
+          <span class="badge green">Cited answer</span>
+          <h2 style="margin-top: 14px;">Intent Pulse</h2>
+          <p class="muted">Answer Intent Lab starts the answer layer by making intent and boundaries explicit.</p>
+          <div class="progress" aria-label="Sprint progress 10 percent"><div class="bar" style="--score:10%"></div></div>
+          <div class="metric-grid">
+            <div class="metric"><span>Current</span><strong>v2.3.5</strong></div>
+            <div class="metric"><span>Sprint</span><strong>1/10</strong></div>
+            <div class="metric"><span>Patterns</span><strong>4</strong></div>
+            <div class="metric"><span>Next</span><strong>Source Context Card</strong></div>
+          </div>
+          <div class="sprint-list">
+            <div class="sprint-step active"><span class="step-index">1</span><div><strong>Intent</strong><p>Read the question.</p></div></div>
+            <div class="sprint-step"><span class="step-index">2</span><div><strong>Source</strong><p>Show citation.</p></div></div>
+            <div class="sprint-step"><span class="step-index">3</span><div><strong>Answer</strong><p>Draft with restraint.</p></div></div>
+            <div class="sprint-step"><span class="step-index">4</span><div><strong>Feedback</strong><p>Capture concerns.</p></div></div>
+          </div>
+          <section class="panel tight boundary" style="margin-top: 16px;">
+            <h2>Answer Boundary</h2>
+            <p class="muted">This lab is not production AI, guru voice, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.</p>
+          </section>
+        </aside>
+      </main>
+    </div>
+    <script type="application/json" id="room-data">{
+  "version": "v2.3.5",
+  "badge": "v2.3.5 answer intent",
+  "slug": "answerintentlab",
+  "nav": "Intent",
+  "title": "VedaPath Answer Intent Lab",
+  "pageLabel": "Answer intent",
+  "eyebrow": "Intent lab",
+  "h1": "Start every answer with intent.",
+  "lead": "A cited answer lab room that separates the user's question, intent, source candidate, and answer boundary before any prose is shown.",
+  "source": "How can I act calmly when results are uncertain?",
+  "family": "Bhagavad Gita 2.48",
+  "stance": "Answer intent prototype, not AI generation.",
+  "sprintPercent": 10,
+  "defaultPattern": "steady-action-answer",
+  "next": "Source Context Card",
+  "primaryAsk": "Separate question intent from answer prose.",
+  "summary": "Answer Intent Lab starts the answer layer by making intent and boundaries explicit.",
+  "items": [
+    [
+      "Intent",
+      "Keep the user question and answer intent visible.",
+      "Prevents generic advice."
+    ],
+    [
+      "Source",
+      "Keep citation, family, and confidence near the answer.",
+      "Protects trust."
+    ],
+    [
+      "Boundary",
+      "Show what the answer must not become.",
+      "Prevents overclaim."
+    ],
+    [
+      "Feedback",
+      "Turn concerns into reviewable local tickets.",
+      "Keeps learning alive."
+    ]
+  ],
+  "modes": {
+    "brief": [
+      [
+        "Answer promise",
+        "Answer Intent Lab starts the answer layer by making intent and boundaries explicit."
+      ],
+      [
+        "Founder move",
+        "Separate question intent from answer prose."
+      ],
+      [
+        "Trust move",
+        "Keep this boundary visible: Answer intent prototype, not AI generation."
+      ]
+    ],
+    "checklist": [
+      [
+        "Intent",
+        "Keep the user question and answer intent visible."
+      ],
+      [
+        "Source",
+        "Keep citation, family, and confidence near the answer."
+      ],
+      [
+        "Boundary",
+        "Show what the answer must not become."
+      ]
+    ],
+    "boundary": [
+      [
+        "No authority claim",
+        "Do not imply answer cards are guru voice, therapy, diagnosis, ritual instruction, or emergency support."
+      ],
+      [
+        "No hidden source",
+        "Do not show answer prose without source family, confidence, and boundary nearby."
+      ],
+      [
+        "No silent rewrite",
+        "Feedback creates review tickets; it does not silently change accepted knowledge."
+      ]
+    ]
+  },
+  "rooms": [
+    {
+      "version": "v2.3.5",
+      "slug": "answerintentlab",
+      "nav": "Intent"
+    }
+  ]
+}</script>
+    <script src="assets/vedapath-sprint.js"></script>
+    <script src="assets/vedapath-cited-answer-lab.js"></script>
+  </body>
+</html>

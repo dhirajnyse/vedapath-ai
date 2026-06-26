@@ -468,6 +468,10 @@ Let us look at the source first.
 - [Retrieval Lab Control Room](retrievallab.html)
 - [Retrieval Lab Control Room Notes](docs/RETRIEVAL_LAB_CONTROL_ROOM.md)
 <!-- VEDAPATH RETRIEVAL LAB SPRINT LINKS END -->
+<!-- VEDAPATH CITED ANSWER SPRINT LINKS START -->
+- [Answer Intent Lab](answerintentlab.html)
+- [Answer Intent Lab Notes](docs/ANSWER_INTENT_LAB.md)
+<!-- VEDAPATH CITED ANSWER SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
 - [Calm Compass](compass.html)
@@ -498,7 +502,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v2.3.4` is a trusted MVP prototype plus Retrieval Lab Control Room with:
+`v2.3.5` is a trusted MVP prototype plus Answer Intent Lab with:
 
 - Ask workspace
 - Source Card
@@ -740,6 +744,9 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Mobile Retrieval Polish: Mobile Retrieval Polish keeps source search usable without visual noise.
 - Retrieval Lab Control Room: Retrieval Lab Control Room completes the source-to-answer bridge for the trusted MVP.
 <!-- VEDAPATH RETRIEVAL LAB SPRINT FEATURES END -->
+<!-- VEDAPATH CITED ANSWER SPRINT FEATURES START -->
+- Answer Intent Lab: Answer Intent Lab starts the answer layer by making intent and boundaries explicit.
+<!-- VEDAPATH CITED ANSWER SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
 - Calm Card Studio with visual card preview, local saved cards, copy text, and PNG export

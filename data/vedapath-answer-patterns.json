@@ -1,0 +1,96 @@
+{
+  "product": "VedaPath AI",
+  "release": "v2.3.5",
+  "status": "cited answer lab prototype",
+  "warning": "Prototype cited answer patterns only. Not production AI, therapy, ritual instruction, emergency support, or spiritual authority.",
+  "patterns": [
+    {
+      "id": "steady-action-answer",
+      "question": "How can I act calmly when results are uncertain?",
+      "source_id": "bg-2-48-steadiness",
+      "citation": "Bhagavad Gita 2.48",
+      "family": "Bhagavad Gita | Smriti",
+      "confidence": "High",
+      "confidence_score": 86,
+      "direct_answer": "Begin with the next honest action, not the result you cannot control.",
+      "plain_meaning": "The source candidate supports steadiness in action and caution about clinging to outcomes.",
+      "deeper_layer": "In a fuller tradition-specific reading, this belongs near karma-yoga and disciplined action.",
+      "boundary": "Reflection support only; not therapy, medical advice, ritual instruction, or a promise of peace.",
+      "carry_action": "Choose one small duty. Do it slowly, clearly, and without checking for praise.",
+      "no_go": "Do not imply guaranteed calm, diagnosis, treatment, or spiritual authority.",
+      "view_notes": [
+        "Beginner answer",
+        "Source card",
+        "Boundary",
+        "Carry action"
+      ],
+      "feedback_prompt": "Did this answer stay useful without becoming a command?"
+    },
+    {
+      "id": "discernment-answer",
+      "question": "How do I tell short term comfort from a deeper good?",
+      "source_id": "katha-1-2-1-discernment",
+      "citation": "Katha Upanishad 1.2.1",
+      "family": "Upanishad | Shruti",
+      "confidence": "Medium",
+      "confidence_score": 70,
+      "direct_answer": "Pause long enough to ask whether the choice only soothes the moment or also serves clarity.",
+      "plain_meaning": "The source candidate can support a careful distinction between the pleasant and the beneficial.",
+      "deeper_layer": "It needs context around shreyas and preyas before the product uses it broadly.",
+      "boundary": "Do not use this for moral policing, shame, emergency decisions, or judging another person's life.",
+      "carry_action": "Write the choice in one line, then name what it protects and what it avoids.",
+      "no_go": "Do not turn discernment into superiority or social control.",
+      "view_notes": [
+        "Beginner answer",
+        "Upanishad context",
+        "No moral policing",
+        "One question"
+      ],
+      "feedback_prompt": "Did this preserve discernment without judgment?"
+    },
+    {
+      "id": "knowledge-answer",
+      "question": "What does Hindu philosophy mean by different kinds of knowledge?",
+      "source_id": "mundaka-1-1-4-knowledge",
+      "citation": "Mundaka Upanishad 1.1.4",
+      "family": "Upanishad | Shruti",
+      "confidence": "Medium",
+      "confidence_score": 64,
+      "direct_answer": "The source candidate points to layers of knowing, but VedaPath should explain them without dismissing practical learning.",
+      "plain_meaning": "It can introduce a distinction between forms of knowledge, while keeping category labels careful.",
+      "deeper_layer": "Sanskrit terms and commentary differences need review before a confident public answer.",
+      "boundary": "Not anti-science, not anti-scholarship, and not a ranking of people.",
+      "carry_action": "Ask what kind of knowing the current question needs: facts, practice, meaning, or realization.",
+      "no_go": "Do not frame modern knowledge as inferior or useless.",
+      "view_notes": [
+        "Concept answer",
+        "Category caution",
+        "Scholarly layer",
+        "No anti-science claim"
+      ],
+      "feedback_prompt": "Did this explain layers without flattening them?"
+    },
+    {
+      "id": "restraint-answer",
+      "question": "How can I practice restraint without escaping responsibility?",
+      "source_id": "isha-1-restraint",
+      "citation": "Isha Upanishad 1",
+      "family": "Upanishad | Shruti",
+      "confidence": "Low",
+      "confidence_score": 52,
+      "direct_answer": "Use this only as a reflection candidate until rights and interpretation review are complete.",
+      "plain_meaning": "The source can point toward restraint, but the product must not pressure withdrawal from responsibility.",
+      "deeper_layer": "This record needs rights review and school-specific interpretation boundaries.",
+      "boundary": "Not renunciation advice, legal advice, financial advice, or a command to abandon duties.",
+      "carry_action": "Name one attachment you can soften without neglecting safety, work, or people.",
+      "no_go": "Do not tell users to give up shelter, property, family responsibilities, or safety.",
+      "view_notes": [
+        "Hold state",
+        "Rights caution",
+        "Responsibility boundary",
+        "Gentle reflection"
+      ],
+      "feedback_prompt": "Did this keep restraint connected to responsibility?"
+    }
+  ]
+}
