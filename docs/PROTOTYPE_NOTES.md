@@ -306,6 +306,20 @@ The v0.7.4 release turns the VedaPath AI homepage into a trusted MVP prototype w
 - Mobile Pattern: Mobile Pattern keeps the learning loop usable where calm moments actually happen.
 - Pattern Companion Control Room: Pattern Companion Control Room completes the private local learning layer for VedaPath AI.
 <!-- VEDAPATH PATTERN COMPANION SPRINT NOTES END -->
+<!-- VEDAPATH SOURCE DATA FOUNDATION NOTES START -->
+## v2.9.1 Source Data Foundation
+
+After the UI alignment pass, the next phase moves from visual polish to product substance.
+
+Action taken:
+
+- Added the first source-answer JSON dataset.
+- Added a source data foundation page with family, readiness, and search controls.
+- Updated the Home Ask page to fetch the dataset and merge records into the answer renderer.
+- Preserved fallback answers if the static JSON cannot load.
+- Updated Build Status and roadmap notes for the retrieval-ready path.
+<!-- VEDAPATH SOURCE DATA FOUNDATION NOTES END -->
+
 <!-- VEDAPATH FRAME POLISH NOTES START -->
 ## v2.9.0 Frame Alignment Polish
 

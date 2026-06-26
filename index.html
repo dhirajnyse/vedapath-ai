@@ -328,6 +328,17 @@
         font-size: 14px;
       }
 
+      .source-data-status {
+        margin-top: 12px;
+        border: 1px solid rgba(20, 92, 74, 0.18);
+        border-radius: 8px;
+        background: rgba(232, 240, 234, 0.52);
+        color: var(--peacock-green);
+        padding: 10px 12px;
+        font-size: 13px;
+        font-weight: 850;
+      }
+
       .answer-header {
         display: grid;
         grid-template-columns: minmax(0, 1fr) auto;
@@ -616,7 +627,7 @@
           <a class="link" href="conversationcompanionlab.html">Talk</a>
           <a class="link" href="patterncompanionlab.html">Pattern</a>
           <a class="link" href="daily.html">Daily</a>
-          <span class="version">v2.9.0 frame polish</span>
+          <span class="version">v2.9.1 source data</span>
         </nav>
       </header>
 
@@ -664,6 +675,7 @@
             <button class="chip" type="button" data-question="quantum">Quantum physics claim</button>
             <button class="chip" type="button" data-question="atman">Atman and Brahman</button>
           </div>
+          <div class="source-data-status" id="sourceDataStatus">Source data foundation loading...</div>
         </aside>
 
         <section class="answer-shell" aria-live="polite">
@@ -777,6 +789,7 @@
             <div class="map-list">
               <a href="blueprint.html">Blueprint <span>plan</span></a>
               <a href="sourcelibrary.html">Sources <span>library</span></a>
+              <a href="sourcefoundation.html">Source data <span>records</span></a>
               <a href="mantralenslab.html">Mantra <span>lens</span></a>
             </div>
           </section>
@@ -812,7 +825,7 @@
     </main>
 
     <script>
-      const answers = {
+      let answers = {
         "oppenheimer": {
           question: "What scripture did Oppenheimer quote?",
           title: "Oppenheimer was quoting the Gita, not the four Vedas.",
@@ -970,6 +983,46 @@
         }
       };
 
+      // VEDAPATH SOURCE DATA FOUNDATION START
+      let foundationRecords = [];
+
+      function answerFromFoundationRecord(record) {
+        return {
+          question: record.question,
+          title: record.title,
+          summary: record.summary,
+          family: record.source_family,
+          citation: record.source,
+          pramana: record.pramana,
+          confidence: record.confidence,
+          caution: record.caution,
+          meter: record.meter,
+          tabs: record.tabs
+        };
+      }
+
+      function updateSourceDataStatus(message) {
+        const status = document.querySelector("#sourceDataStatus");
+        if (status) status.textContent = message;
+      }
+
+      async function loadSourceFoundation() {
+        try {
+          const response = await fetch("data/vedapath-source-answer-foundation.json");
+          if (!response.ok) throw new Error("source data unavailable");
+          const dataset = await response.json();
+          foundationRecords = dataset.records || [];
+          foundationRecords.forEach((record) => {
+            answers[record.slug] = answerFromFoundationRecord(record);
+          });
+          updateSourceDataStatus("Source data foundation active: " + foundationRecords.length + " answer records loaded.");
+          renderAnswer(currentKey);
+        } catch (error) {
+          updateSourceDataStatus("Source data foundation offline; using bundled preview answers.");
+        }
+      }
+      // VEDAPATH SOURCE DATA FOUNDATION END
+
       const questionInput = document.querySelector("#questionInput");
       const askButton = document.querySelector("#askButton");
       const claimButton = document.querySelector("#claimButton");
@@ -1003,6 +1056,9 @@
 
       function pickAnswerFromText(text) {
         const normalized = text.toLowerCase();
+        const datasetMatch = foundationRecords.find((record) => [record.question, record.title, ...(record.aliases || []), ...(record.retrieval_terms || [])]
+          .some((term) => normalized.includes(String(term).toLowerCase())));
+        if (datasetMatch) return datasetMatch.slug;
         if (normalized.includes("quantum") || normalized.includes("science")) return "quantum";
         if (normalized.includes("gayatri") || normalized.includes("savitr")) return "gayatri";
         if (normalized.includes("atman") || normalized.includes("brahman")) return "atman";
@@ -1075,6 +1131,8 @@
         reviewButton.textContent = "Review ticket drafted";
         reviewButton.classList.add("primary");
       });
+
+      loadSourceFoundation();
     </script>
   </body>
 </html>

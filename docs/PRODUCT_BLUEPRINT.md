@@ -4373,6 +4373,20 @@ It should:
 
 Pattern Companion Control Room should never claim diagnosis, therapy, legal advice, medical advice, surveillance, scoring, or spiritual authority.
 <!-- VEDAPATH PATTERN COMPANION SPRINT BLUEPRINT END -->
+<!-- VEDAPATH SOURCE DATA FOUNDATION BLUEPRINT START -->
+### 274. Source Data Foundation
+
+VedaPath should answer from records before it answers from a model.
+
+Rules:
+
+- Every answer record starts with a user question and source candidate.
+- Citation, source family, pramana level, confidence, rights state, and review state stay together.
+- Boundaries and blocked claims are part of the answer packet, not afterthoughts.
+- The Ask page may render records, but it must fall back calmly if data is unavailable.
+- Next retrieval work should search records before composing answers.
+<!-- VEDAPATH SOURCE DATA FOUNDATION BLUEPRINT END -->
+
 <!-- VEDAPATH FRAME POLISH BLUEPRINT START -->
 ### 273. Frame Alignment Polish
 

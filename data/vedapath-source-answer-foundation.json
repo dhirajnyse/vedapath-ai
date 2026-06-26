@@ -1,0 +1,525 @@
+{
+  "product": "VedaPath AI",
+  "release": "v2.9.1",
+  "status": "source answer foundation v1",
+  "warning": "Starter answer-record data only. It is not a canonical corpus, scholar endorsement, licensed translation display, therapy, ritual instruction, emergency support, or spiritual authority.",
+  "schema_version": "answer-record-v1",
+  "records": [
+    {
+      "id": "answer-oppenheimer-gita-11-32",
+      "slug": "oppenheimer",
+      "question": "What scripture did Oppenheimer quote?",
+      "aliases": [
+        "oppenheimer quote",
+        "i am become death",
+        "death quote",
+        "gita 11.32"
+      ],
+      "source_record_id": "bg-11-32-time",
+      "source": "Bhagavad Gita 11.32",
+      "source_family": "Bhagavad Gita | Smriti",
+      "tradition_layer": "Mahabharata | Bhishma Parva",
+      "title": "Oppenheimer was quoting the Gita, not the four Vedas.",
+      "summary": "The famous line is associated with Bhagavad Gita 11.32. It is often called Vedic in popular culture, but the source is the Bhagavad Gita, a section of the Mahabharata usually classified as Smriti.",
+      "pramana": "Direct source",
+      "confidence": "High",
+      "meter": "direct",
+      "review_state": "preview-reviewed",
+      "rights_state": "citation-only plus paraphrase",
+      "readiness": "answer-preview-ready",
+      "caution": "Do not call it a direct Vedic quote.",
+      "source_note": "Useful for correcting category confusion with care.",
+      "boundary": "Do not flatten the Gita into the four Vedas, and do not turn a film reference into a full theological claim.",
+      "retrieval_terms": [
+        "oppenheimer",
+        "death",
+        "gita",
+        "11.32",
+        "veda"
+      ],
+      "blocked_claims": [
+        "Oppenheimer quoted the Rigveda directly.",
+        "The quote proves the Vedas predicted nuclear weapons."
+      ],
+      "tabs": {
+        "source": [
+          [
+            "What the source says",
+            "In the Gita's cosmic-form scene, Krishna identifies himself with world-transforming Time. Popular English renderings often use the famous death line, but the source category should be stated carefully."
+          ],
+          [
+            "Why this matters",
+            "VedaPath should gently correct the category without shaming the user. The quote is not from the four Vedas, but it is connected to a wider Sanskrit philosophical world."
+          ]
+        ],
+        "sanskrit": [
+          [
+            "Key term",
+            "The key term usually discussed is kala, Time. A full Sanskrit layer should show script, transliteration, translation variants, and translator notes after review."
+          ],
+          [
+            "Prototype boundary",
+            "This answer record is citation-and-paraphrase only until Sanskrit and translation display are reviewed."
+          ]
+        ],
+        "views": [
+          [
+            "Philosophical reading",
+            "The verse appears in a scene about cosmic form, duty, destruction, and time."
+          ],
+          [
+            "Popular culture reading",
+            "Film and media references compress the context. VedaPath restores passage, chapter, and source family."
+          ]
+        ],
+        "claim": [
+          [
+            "What the source says",
+            "The line belongs to the Bhagavad Gita's cosmic-form scene."
+          ],
+          [
+            "What tradition says",
+            "Traditional readings connect the passage to divine manifestation, time, and dharma."
+          ],
+          [
+            "Modern claim",
+            "People often label it broadly as Vedic wisdom."
+          ],
+          [
+            "Boundary",
+            "It is not directly from the four Vedas."
+          ]
+        ]
+      }
+    },
+    {
+      "id": "answer-gita-vs-veda",
+      "slug": "gita-veda",
+      "question": "Is the Bhagavad Gita part of the Vedas?",
+      "aliases": [
+        "gita vs vedas",
+        "is gita a veda",
+        "bhagavad gita veda",
+        "shruti smriti"
+      ],
+      "source_record_id": "gita-classification",
+      "source": "Mahabharata, Bhishma Parva",
+      "source_family": "Bhagavad Gita | Smriti",
+      "tradition_layer": "Itihasa context",
+      "title": "The Gita is not one of the four Vedas.",
+      "summary": "The Bhagavad Gita belongs to the Mahabharata and is usually classified as Smriti. It is deeply shaped by Upanishadic and Vedic ideas, but VedaPath should not label it as a Veda.",
+      "pramana": "Text classification",
+      "confidence": "High",
+      "meter": "scholarly",
+      "review_state": "preview-reviewed",
+      "rights_state": "classification-only",
+      "readiness": "answer-preview-ready",
+      "caution": "Influenced by Vedic thought does not mean textually Veda.",
+      "source_note": "High-value category correction for beginners.",
+      "boundary": "Do not erase the Shruti and Smriti distinction.",
+      "retrieval_terms": [
+        "gita",
+        "veda",
+        "smriti",
+        "shruti",
+        "mahabharata"
+      ],
+      "blocked_claims": [
+        "The Bhagavad Gita is the fifth Veda in the same textual sense as the four Vedas."
+      ],
+      "tabs": {
+        "source": [
+          [
+            "Classification",
+            "The four Vedas are Rigveda, Samaveda, Yajurveda, and Atharvaveda. The Gita appears within the Mahabharata."
+          ],
+          [
+            "Clean answer",
+            "A user-friendly response should say: not Veda, but philosophically connected."
+          ]
+        ],
+        "sanskrit": [
+          [
+            "Shruti and Smriti",
+            "Shruti means that which is heard. Smriti means remembered tradition. The Vedas are Shruti; the Gita is usually treated as Smriti."
+          ],
+          [
+            "Term hygiene",
+            "This is where source labels prevent category confusion."
+          ]
+        ],
+        "views": [
+          [
+            "Vedanta use",
+            "Vedanta traditions treat the Gita as a central philosophical text, often alongside the Upanishads and Brahma Sutras."
+          ],
+          [
+            "Beginner path",
+            "For many modern readers, the Gita is a better starting point than the Vedas, but it should still be labeled accurately."
+          ]
+        ],
+        "claim": [
+          [
+            "What the source says",
+            "The Gita is part of the Mahabharata."
+          ],
+          [
+            "What tradition says",
+            "It is highly authoritative in many Hindu traditions."
+          ],
+          [
+            "Modern claim",
+            "Some people casually call it Vedic."
+          ],
+          [
+            "Boundary",
+            "Casual usage should not erase the Shruti and Smriti distinction."
+          ]
+        ]
+      }
+    },
+    {
+      "id": "answer-gayatri-rigveda-3-62-10",
+      "slug": "gayatri",
+      "question": "Explain the Gayatri mantra with source and caution.",
+      "aliases": [
+        "gayatri mantra",
+        "savitr mantra",
+        "rigveda 3.62.10"
+      ],
+      "source_record_id": "rigveda-3-62-10-gayatri",
+      "source": "Rigveda 3.62.10",
+      "source_family": "Veda | Shruti",
+      "tradition_layer": "Vedic mantra",
+      "title": "The Gayatri mantra should be explained with reverence and source context.",
+      "summary": "The Gayatri mantra is associated with Rigveda 3.62.10 and is among the most revered Vedic mantras. A careful explanation should avoid reducing it to a slogan or making casual ritual claims.",
+      "pramana": "Direct source",
+      "confidence": "High",
+      "meter": "direct",
+      "review_state": "source-review",
+      "rights_state": "citation-only",
+      "readiness": "needs-mantra-review",
+      "caution": "Do not prescribe ritual use or flatten pronunciation tradition.",
+      "source_note": "Flagship Mantra Lens candidate after Sanskrit and recitation review.",
+      "boundary": "No ritual instruction, initiation advice, or pronunciation authority in this preview.",
+      "retrieval_terms": [
+        "gayatri",
+        "savitr",
+        "rigveda",
+        "mantra"
+      ],
+      "blocked_claims": [
+        "A simple English slogan is a complete meaning of the mantra."
+      ],
+      "tabs": {
+        "source": [
+          [
+            "What the source is",
+            "A famous Rigvedic mantra addressed to Savitr. A full Mantra Lens should include Sanskrit, transliteration, word-by-word meaning, meter, and recitation notes."
+          ],
+          [
+            "Careful framing",
+            "Explain the broad meaning while respecting that recitation, initiation, and ritual context vary by tradition."
+          ]
+        ],
+        "sanskrit": [
+          [
+            "Mantra Lens need",
+            "This is a candidate for script, IAST, word split, chandas, devata, rishi, and audio later."
+          ],
+          [
+            "Prototype boundary",
+            "The live Sanskrit layer should be sourced from verified text before release."
+          ]
+        ],
+        "views": [
+          [
+            "Beginner reading",
+            "Often explained as a meditation on divine illumination or awakening of understanding."
+          ],
+          [
+            "Traditional caution",
+            "Different communities treat pronunciation and practice with specific rules."
+          ]
+        ],
+        "claim": [
+          [
+            "What the source says",
+            "It is a Vedic mantra in the Rigveda."
+          ],
+          [
+            "What tradition says",
+            "It is revered in many Hindu practices."
+          ],
+          [
+            "Modern claim",
+            "It is sometimes treated as a universal affirmation."
+          ],
+          [
+            "Boundary",
+            "Do not erase ritual, recitation, and lineage context."
+          ]
+        ]
+      }
+    },
+    {
+      "id": "answer-quantum-claim-boundary",
+      "slug": "quantum",
+      "question": "Do the Vedas prove quantum physics?",
+      "aliases": [
+        "quantum physics",
+        "vedas prove science",
+        "vedic science proof",
+        "modern science claim"
+      ],
+      "source_record_id": "modern-claim-boundary",
+      "source": "No direct Vedic proof claim",
+      "source_family": "Modern claim | Cross-domain analogy",
+      "tradition_layer": "Claim checking",
+      "title": "No. Treat physics comparisons as analogies, not proof.",
+      "summary": "Vedic and Upanishadic texts explore reality, consciousness, order, and being. Modern physics comparisons can be interesting, but VedaPath should clearly mark them as analogies unless a specific source directly supports a claim.",
+      "pramana": "Modern analogy",
+      "confidence": "Medium",
+      "meter": "analogy",
+      "review_state": "boundary-reviewed",
+      "rights_state": "no-source-needed",
+      "readiness": "answer-preview-ready",
+      "caution": "Do not present analogy as scientific proof.",
+      "source_note": "Useful for preventing inflated claims.",
+      "boundary": "A comparison is not a proof. Require a precise passage and a precise modern claim.",
+      "retrieval_terms": [
+        "quantum",
+        "science",
+        "physics",
+        "proof",
+        "analogy"
+      ],
+      "blocked_claims": [
+        "The Vedas prove all modern science.",
+        "A philosophical term equals a technical physics concept."
+      ],
+      "tabs": {
+        "source": [
+          [
+            "Textual basis",
+            "Some passages invite philosophical reflection about reality, but that is not the same as a technical physics claim."
+          ],
+          [
+            "Clean answer",
+            "The honest response is: interesting comparison, not proof."
+          ]
+        ],
+        "sanskrit": [
+          [
+            "Term check",
+            "Words like brahman, rta, and atman should not be translated as modern scientific terms without careful context."
+          ],
+          [
+            "Prototype boundary",
+            "Future source views should show exactly which word or passage people are using for the comparison."
+          ]
+        ],
+        "views": [
+          [
+            "Traditional view",
+            "Classical interpretations usually focus on metaphysics, ritual, self, liberation, or cosmic order."
+          ],
+          [
+            "Modern view",
+            "Modern readers may use physics metaphors, but those should be labeled as contemporary interpretation."
+          ]
+        ],
+        "claim": [
+          [
+            "What the source says",
+            "Texts discuss reality, order, consciousness, and ultimate principles in their own vocabulary."
+          ],
+          [
+            "What tradition says",
+            "Interpretive traditions frame these ideas philosophically and spiritually."
+          ],
+          [
+            "Modern claim",
+            "Some claim the Vedas predicted or proved quantum physics."
+          ],
+          [
+            "Boundary",
+            "That claim overextends the source unless supported by a precise passage and careful argument."
+          ]
+        ]
+      }
+    },
+    {
+      "id": "answer-atman-brahman-context",
+      "slug": "atman",
+      "question": "What is the relationship between Atman and Brahman?",
+      "aliases": [
+        "atman and brahman",
+        "tat tvam asi",
+        "self and brahman",
+        "advaita dvaita"
+      ],
+      "source_record_id": "chandogya-6-8-7-identity",
+      "source": "Chandogya Upanishad 6.8.7 and related passages",
+      "source_family": "Upanishad | Shruti",
+      "tradition_layer": "Vedanta interpretation",
+      "title": "Atman and Brahman are central Upanishadic ideas, interpreted differently by traditions.",
+      "summary": "Many Upanishadic discussions explore the self, ultimate reality, and liberation. VedaPath should present the concept, cite passages, and show that Advaita, Vishishtadvaita, and Dvaita read the relationship differently.",
+      "pramana": "Traditional commentary",
+      "confidence": "Medium-high",
+      "meter": "commentary",
+      "review_state": "commentary-review",
+      "rights_state": "citation-only",
+      "readiness": "needs-commentary-lanes",
+      "caution": "Do not present one Vedanta school as the only Hindu view.",
+      "source_note": "Needs comparison lanes before simplified public use.",
+      "boundary": "Do not collapse complex metaphysics into self-help slogans.",
+      "retrieval_terms": [
+        "atman",
+        "brahman",
+        "chandogya",
+        "vedanta",
+        "self"
+      ],
+      "blocked_claims": [
+        "All Hindu schools explain Atman and Brahman identically."
+      ],
+      "tabs": {
+        "source": [
+          [
+            "Textual direction",
+            "The Upanishads contain major passages about self and ultimate reality. A future source card should cite exact passages and translation variants."
+          ],
+          [
+            "Careful framing",
+            "The relationship between Atman and Brahman is not explained identically across all traditions."
+          ]
+        ],
+        "sanskrit": [
+          [
+            "Key terms",
+            "Atman is often translated as self. Brahman is often translated as ultimate reality or absolute. Both need context-sensitive handling."
+          ],
+          [
+            "Term caution",
+            "Simple English glosses help beginners but can hide philosophical depth."
+          ]
+        ],
+        "views": [
+          [
+            "Advaita",
+            "Often emphasizes non-duality of Atman and Brahman."
+          ],
+          [
+            "Vishishtadvaita and Dvaita",
+            "Read the relationship with different accounts of self, God, and reality. Samvada Mode should compare them respectfully."
+          ]
+        ],
+        "claim": [
+          [
+            "What the source says",
+            "Upanishadic passages explore self and ultimate reality."
+          ],
+          [
+            "What tradition says",
+            "Vedanta schools interpret the relationship in distinct ways."
+          ],
+          [
+            "Modern claim",
+            "People may summarize it as everything is one."
+          ],
+          [
+            "Boundary",
+            "That phrase can be too blunt and tradition-specific without context."
+          ]
+        ]
+      }
+    },
+    {
+      "id": "answer-steady-action-bg-2-48",
+      "slug": "steady-action",
+      "question": "How can I act calmly when results are uncertain?",
+      "aliases": [
+        "steady action",
+        "calm action",
+        "results uncertain",
+        "bhagavad gita 2.48"
+      ],
+      "source_record_id": "bg-2-48-steadiness",
+      "source": "Bhagavad Gita 2.48",
+      "source_family": "Bhagavad Gita | Smriti",
+      "tradition_layer": "Karma-yoga context",
+      "title": "Steady action begins with the work in front of you.",
+      "summary": "This source candidate supports a practical reflection on steadiness in action. VedaPath should use it as a careful prompt, not as a promise that results or feelings will become easy.",
+      "pramana": "Direct source candidate",
+      "confidence": "Medium-high",
+      "meter": "direct",
+      "review_state": "reviewed-preview",
+      "rights_state": "citation-only plus paraphrase",
+      "readiness": "answer-preview-ready",
+      "caution": "Do not promise serenity or guaranteed outcomes.",
+      "source_note": "Useful for calm path and practice flows.",
+      "boundary": "Reflection support only; not therapy, medical advice, or command language.",
+      "retrieval_terms": [
+        "calm",
+        "steady",
+        "action",
+        "result",
+        "gita 2.48"
+      ],
+      "blocked_claims": [
+        "The Gita guarantees peace if you detach from results."
+      ],
+      "tabs": {
+        "source": [
+          [
+            "What the source supports",
+            "A careful reading can point toward steadiness in action and non-attachment to results."
+          ],
+          [
+            "Why this matters",
+            "The user leaves with one grounded action instead of pressure to feel spiritually perfect."
+          ]
+        ],
+        "sanskrit": [
+          [
+            "Future layer",
+            "A later Sanskrit Lens should show key terms and translation variants after review."
+          ],
+          [
+            "Prototype boundary",
+            "No direct translation display is included in this starter record."
+          ]
+        ],
+        "views": [
+          [
+            "Practice view",
+            "Choose one small duty and do it cleanly."
+          ],
+          [
+            "Boundary view",
+            "Do not use the passage to dismiss grief, anxiety, structural pressure, or care needs."
+          ]
+        ],
+        "claim": [
+          [
+            "What the source says",
+            "The record supports reflection on steady action."
+          ],
+          [
+            "What tradition says",
+            "Often connected with karma-yoga."
+          ],
+          [
+            "Modern claim",
+            "People may use it as productivity advice."
+          ],
+          [
+            "Boundary",
+            "It is not a productivity hack or clinical intervention."
+          ]
+        ]
+      }
+    }
+  ]
+}

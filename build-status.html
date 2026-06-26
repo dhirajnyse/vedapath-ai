@@ -365,7 +365,7 @@
           <a class="link" href="conversationcompanionlab.html">Talk</a>
           <a class="link" href="patterncompanionlab.html">Pattern</a>
           <a class="link" href="daily.html">Daily</a>
-          <span class="version">v2.9.0 frame polish</span>
+          <span class="version">v2.9.1 source data</span>
         </nav>
       </header>
 
@@ -377,8 +377,8 @@
       <section class="summary" aria-label="Progress summary">
         <article class="tile">
           <span>Current version</span>
-          <strong>v2.9.0</strong>
-          <p>Frame Polish: removes page-to-page top drift by normalizing root padding, header height, and first-content spacing.</p>
+          <strong>v2.9.1</strong>
+          <p>Source Data Foundation: first structured answer records now power the Ask examples and prepare real retrieval.</p>
         </article>
         <article class="tile">
           <span>MVP progress</span>
@@ -388,14 +388,14 @@
         </article>
         <article class="tile">
           <span>Full vision progress</span>
-          <strong>68%</strong>
-          <div class="progress" aria-hidden="true"><div class="bar" style="width:68%"></div></div>
-          <p>The shared frame now starts from one visual zero line across primary pages and room surfaces.</p>
+          <strong>69%</strong>
+          <div class="progress" aria-hidden="true"><div class="bar" style="width:69%"></div></div>
+          <p>The first question-to-source answer dataset is in place. Next: retrieval over records, review states, and no-source fallbacks.</p>
         </article>
         <article class="tile">
           <span>Next release</span>
-          <strong>Founder review</strong>
-          <p>Review the top frame alignment on Home, Build, Brand, Blueprint, and the main product rooms.</p>
+          <strong>Retrieval foundation</strong>
+          <p>Use these source-answer records to build static retrieval and no-result handling.</p>
         </article>
       </section>
 
@@ -2490,9 +2490,17 @@
               <span class="percent">100%</span>
             </article>
             <article class="phase">
+              <span class="badge done">Done</span>
+              <div>
+                <strong>Phase 255: Source Data Foundation</strong>
+                <p>Adds source-answer JSON records, a source data explorer, and an Ask-page loader so answers come from structured source packets.</p>
+              </div>
+              <span class="percent">100%</span>
+            </article>
+            <article class="phase">
               <span class="badge later">Later</span>
               <div>
-                <strong>Phase 255: Production Implementation and Licensed Audio</strong>
+                <strong>Phase 256: Production Implementation and Licensed Audio</strong>
                 <p>Backend storage, account consent, reviewed source records, reviewer operations, audio rights, and launch sequencing after founder direction.</p>
               </div>
               <div class="percent">0%</div>
@@ -2503,11 +2511,11 @@
         <aside class="panel version">
           <div>
             <h2>Version Notes</h2>
-            <div class="version-row"><span>Release</span><strong>v2.9.0 Frame Alignment Polish</strong></div>
-            <div class="version-row"><span>Previous</span><strong>v2.8.9 Nav Alignment Polish</strong></div>
+            <div class="version-row"><span>Release</span><strong>v2.9.1 Source Data Foundation</strong></div>
+            <div class="version-row"><span>Previous</span><strong>v2.9.0 Frame Alignment Polish</strong></div>
             <div class="version-row"><span>Commit</span><strong>See GitHub history</strong></div>
-            <div class="version-row"><span>Goal</span><strong>Make every primary page begin from the same visual zero line.</strong></div>
-            <div class="version-row"><span>Status</span><strong>Ready for visual founder review</strong></div>
+            <div class="version-row"><span>Goal</span><strong>Move from prototype answers to structured source-answer data.</strong></div>
+            <div class="version-row"><span>Status</span><strong>Ready for retrieval foundation</strong></div>
           </div>
 
           <div class="panel note">
@@ -2518,10 +2526,10 @@
           <div>
             <h2>Next Build Checklist</h2>
             <ul class="checklist">
-              <li><span class="dot"></span><span>Compare Home, Build, Brand, and Blueprint from the top of the viewport.</span></li>
-              <li><span class="dot"></span><span>Confirm the logo block and tab row sit on one horizontal level.</span></li>
-              <li><span class="dot"></span><span>Confirm the first hero/content block begins at the same distance after the header.</span></li>
-              <li><span class="dot"></span><span>Hold new functional work until this frame feels settled.</span></li>
+              <li><span class="dot"></span><span>Use answer records for the first static retrieval pass.</span></li>
+              <li><span class="dot"></span><span>Add no-source and reviewer-needed fallbacks.</span></li>
+              <li><span class="dot"></span><span>Connect source records to answer records by stable ids.</span></li>
+              <li><span class="dot"></span><span>Keep UI calm while the knowledge layer becomes real.</span></li>
             </ul>
           </div>
         </aside>

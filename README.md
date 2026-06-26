@@ -953,6 +953,18 @@ Then open:
 http://127.0.0.1:8088/
 ```
 
+<!-- VEDAPATH SOURCE DATA FOUNDATION START -->
+## v2.9.1 Source Data Foundation
+
+This functional release adds the first structured answer-record dataset.
+
+- adds `data/vedapath-source-answer-foundation.json`
+- adds `sourcefoundation.html` as a focused data explorer
+- lets the Home Ask flow load answer examples from JSON
+- keeps citations, source family, confidence, rights state, review state, and boundaries together
+- prepares the next retrieval build without disturbing the polished UI shell
+<!-- VEDAPATH SOURCE DATA FOUNDATION END -->
+
 <!-- VEDAPATH FRAME POLISH START -->
 ## v2.9.0 Frame Alignment Polish
 
