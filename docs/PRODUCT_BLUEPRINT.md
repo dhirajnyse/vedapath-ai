@@ -282,6 +282,7 @@ It helps users move from curiosity to understanding through:
 <!-- VEDAPATH CONVERSATION COMPANION SPRINT SUMMARY START -->
 - Reply Arrival: Reply Arrival makes VedaPath useful at the exact moment a person is about to send something.
 - Speech Filter: Speech Filter turns the source card into a practical message lens.
+- Apology Draft: Apology Draft gives calm a repair voice while keeping serious human boundaries clear.
 <!-- VEDAPATH CONVERSATION COMPANION SPRINT SUMMARY END -->
 
 ## What It Is
@@ -4078,6 +4079,21 @@ It should:
 - keep drafts local until explicit accounts and consent exist
 
 Speech Filter should never claim mediation, legal advice, safety planning, therapy, emergency support, ritual instruction, or spiritual authority.
+
+### 250. Apology Draft
+
+Apology Draft gives calm a repair voice while keeping serious human boundaries clear.
+
+It should:
+
+- Arrive: Name the message situation before drafting.
+- Source: Show citation, family, confidence, and boundary.
+- Draft: Offer one editable message, not a command.
+- Review: Save only local drafts until accounts and consent exist.
+- preserve the boundary: draft support only, not authority
+- keep drafts local until explicit accounts and consent exist
+
+Apology Draft should never claim mediation, legal advice, safety planning, therapy, emergency support, ritual instruction, or spiritual authority.
 <!-- VEDAPATH CONVERSATION COMPANION SPRINT BLUEPRINT END -->
 
 ## Product Personality

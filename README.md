@@ -539,6 +539,8 @@ Let us look at the source first.
 - [Reply Arrival Notes](docs/REPLY_ARRIVAL.md)
 - [Speech Filter](speechfilter.html)
 - [Speech Filter Notes](docs/SPEECH_FILTER.md)
+- [Apology Draft](apologydraft.html)
+- [Apology Draft Notes](docs/APOLOGY_DRAFT.md)
 <!-- VEDAPATH CONVERSATION COMPANION SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -570,7 +572,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v2.6.6` is a trusted MVP prototype plus Speech Filter with:
+`v2.6.7` is a trusted MVP prototype plus Apology Draft with:
 
 - Ask workspace
 - Source Card
@@ -851,6 +853,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 <!-- VEDAPATH CONVERSATION COMPANION SPRINT FEATURES START -->
 - Reply Arrival: Reply Arrival makes VedaPath useful at the exact moment a person is about to send something.
 - Speech Filter: Speech Filter turns the source card into a practical message lens.
+- Apology Draft: Apology Draft gives calm a repair voice while keeping serious human boundaries clear.
 <!-- VEDAPATH CONVERSATION COMPANION SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
