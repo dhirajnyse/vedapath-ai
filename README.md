@@ -553,6 +553,8 @@ Let us look at the source first.
 - [Repair Loop Notes](docs/REPAIR_LOOP.md)
 - [Mobile Conversation](mobileconversation.html)
 - [Mobile Conversation Notes](docs/MOBILE_CONVERSATION.md)
+- [Conversation Companion Control Room](conversationcompanionlab.html)
+- [Conversation Companion Control Room Notes](docs/CONVERSATION_COMPANION_CONTROL_ROOM.md)
 <!-- VEDAPATH CONVERSATION COMPANION SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -584,7 +586,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v2.7.3` is a trusted MVP prototype plus Mobile Conversation with:
+`v2.7.4` is a trusted MVP prototype plus Conversation Companion Control Room with:
 
 - Ask workspace
 - Source Card
@@ -872,6 +874,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Gratitude Note: Gratitude Note gives VedaPath a gentle outward-facing use case.
 - Repair Loop: Repair Loop keeps relationship calm practical without pretending to mediate.
 - Mobile Conversation: Mobile Conversation makes the product feel useful in the place messages actually happen.
+- Conversation Companion Control Room: Conversation Companion Control Room completes the source-bounded speech layer for VedaPath AI.
 <!-- VEDAPATH CONVERSATION COMPANION SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
