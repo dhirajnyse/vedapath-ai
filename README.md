@@ -952,3 +952,15 @@ Then open:
 ```text
 http://127.0.0.1:8088/
 ```
+
+<!-- VEDAPATH COHESIVE UI START -->
+## v2.8.6 Cohesive UI System
+
+This release responds to founder UX feedback that the product still felt visually scattered. It adds a shared cohesion layer across Home, Build, Brand, Blueprint, Daily, and the main control rooms.
+
+- one full top navigation pattern on every core page
+- one calmer title scale and font rhythm
+- one logo/image treatment for hero and room pages
+- clearer home language without internal build labels
+- build-status restored to the same menu system as the rest of the product
+<!-- VEDAPATH COHESIVE UI END -->

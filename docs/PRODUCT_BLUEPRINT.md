@@ -4373,6 +4373,20 @@ It should:
 
 Pattern Companion Control Room should never claim diagnosis, therapy, legal advice, medical advice, surveillance, scoring, or spiritual authority.
 <!-- VEDAPATH PATTERN COMPANION SPRINT BLUEPRINT END -->
+<!-- VEDAPATH COHESIVE UI BLUEPRINT START -->
+### 269. Cohesive UI System
+
+The product should feel like one calm companion across every route.
+
+Design rules:
+
+- Every core page uses the same header, brand mark, navigation, and version badge.
+- Page titles use one restrained scale instead of release-by-release typography.
+- Logo imagery keeps a consistent stage and crop treatment.
+- Build and roadmap pages are product pages, not separate admin documents.
+- Room pages keep power features but reduce sidebar dominance and visual noise.
+<!-- VEDAPATH COHESIVE UI BLUEPRINT END -->
+
 <!-- VEDAPATH UX FLOW RESET BLUEPRINT START -->
 ### 268. UX Flow Reset
 

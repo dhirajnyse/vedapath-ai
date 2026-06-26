@@ -306,6 +306,19 @@ The v0.7.4 release turns the VedaPath AI homepage into a trusted MVP prototype w
 - Mobile Pattern: Mobile Pattern keeps the learning loop usable where calm moments actually happen.
 - Pattern Companion Control Room: Pattern Companion Control Room completes the private local learning layer for VedaPath AI.
 <!-- VEDAPATH PATTERN COMPANION SPRINT NOTES END -->
+<!-- VEDAPATH COHESIVE UI NOTES START -->
+## v2.8.6 Cohesive UI System
+
+Founder feedback: the interface still looked scattered, with page-specific fonts, image sizes, and a build page header that did not match the rest of the app.
+
+Action taken:
+
+- Added `assets/vedapath-cohesive.css` as the shared visual cohesion layer.
+- Restored full top navigation on `build-status.html`.
+- Normalized header, title scale, panel radius, logo treatment, room sidebars, and mobile navigation.
+- Reworded home page labels so the product does not expose internal release language.
+<!-- VEDAPATH COHESIVE UI NOTES END -->
+
 <!-- VEDAPATH UX FLOW RESET NOTES START -->
 - UX Flow Reset makes the home page less scattered by replacing the long room rail with one guided path, one next-lane rail, and four grouped room categories.
 <!-- VEDAPATH UX FLOW RESET NOTES END -->
