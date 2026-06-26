@@ -250,6 +250,7 @@ It helps users move from curiosity to understanding through:
 - Answer Card Lab: Answer Card Lab turns retrieval output into a humane answer format.
 - Confidence Briefing: Confidence Briefing makes uncertainty a product feature, not a footnote.
 - Boundary Rewriter: Boundary Rewriter keeps the product calm when a source is sensitive.
+- Answer View Comparison Lab: Answer View Comparison Lab adds progressive depth without sacrificing simplicity.
 <!-- VEDAPATH CITED ANSWER SPRINT SUMMARY END -->
 
 ## What It Is
@@ -3653,6 +3654,21 @@ It should:
 - keep answer cards source-first, confidence-labeled, and feedback-reviewable
 
 Boundary Rewriter should never claim production AI authority, guru voice, legal clearance, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
+
+### 224. Answer View Comparison Lab
+
+Answer View Comparison Lab adds progressive depth without sacrificing simplicity.
+
+It should:
+
+- Intent: Keep the user question and answer intent visible.
+- Source: Keep citation, family, and confidence near the answer.
+- Boundary: Show what the answer must not become.
+- Feedback: Turn concerns into reviewable local tickets.
+- preserve the boundary: Comparison preview, not school-complete commentary.
+- keep answer cards source-first, confidence-labeled, and feedback-reviewable
+
+Answer View Comparison Lab should never claim production AI authority, guru voice, legal clearance, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
 <!-- VEDAPATH CITED ANSWER SPRINT BLUEPRINT END -->
 
 ## Product Personality
