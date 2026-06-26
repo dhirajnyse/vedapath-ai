@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>VedaPath Boundary Decision Board</title>
+    <title>VedaPath Reviewer Decision Composer</title>
     <link rel="stylesheet" href="assets/vedapath-sprint.css">
     <link rel="stylesheet" href="assets/vedapath-reviewer-studio.css">
   </head>
@@ -14,7 +14,7 @@
           <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
           <div>
             <strong>VedaPath AI</strong>
-            <span>Boundary board</span>
+            <span>Decision composer</span>
           </div>
         </a>
         <nav class="nav" aria-label="Project links">
@@ -26,14 +26,14 @@
           <a class="link" href="reviewintake.html">Intake</a>
           <a class="link" href="sourcecheck.html">Source</a>
           <a class="link" href="rightsreview.html">Rights</a>
-          <a class="link active" href="boundaryboard.html">Boundary</a>
-          <a class="link" href="decisioncomposer.html">Decision</a>
+          <a class="link" href="boundaryboard.html">Boundary</a>
+          <a class="link active" href="decisioncomposer.html">Decision</a>
           <!-- VEDAPATH REVIEWER STUDIO SPRINT NAV END -->
           <span class="version">v2.0.9 decision</span>
         </nav>
       </header>
 
-      <main class="workspace" aria-label="VedaPath Boundary Decision Board workspace">
+      <main class="workspace" aria-label="VedaPath Reviewer Decision Composer workspace">
         <aside class="panel">
           <span class="eyebrow">Reviewer studio sprint</span>
           <h2>Release Rooms</h2>
@@ -44,23 +44,23 @@
         <section class="panel">
           <div class="hero-grid">
             <div>
-              <span class="eyebrow">Boundary decisions</span>
-              <h1>Decide what the product must not say.</h1>
-              <p class="muted">A boundary board that makes therapy, authority, moral policing, anti-science, and life-command risks visible before a reader prompt ships.</p>
+              <span class="eyebrow">Review decision</span>
+              <h1>Write the decision in one clean line.</h1>
+              <p class="muted">A decision composer that lets a reviewer choose hold, request source, approve preview, or block overclaim and then copy a compact decision note.</p>
             </div>
             <div class="mark-stage">
-              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Boundary logo">
+              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Decision logo">
             </div>
           </div>
 
           <div class="source-block" aria-label="Release source card">
             <div>
               <span class="source-meta">Release</span>
-              <span class="source-value">v2.0.8</span>
+              <span class="source-value">v2.0.9</span>
             </div>
             <div>
               <span class="source-meta">Source candidate</span>
-              <span class="source-value">Katha Upanishad 1.2.1</span>
+              <span class="source-value">Mundaka Upanishad 1.1.4</span>
             </div>
             <div>
               <span class="source-meta">Text family</span>
@@ -68,11 +68,11 @@
             </div>
             <div>
               <span class="source-meta">Boundary</span>
-              <span class="source-value">Boundary board, not safety certification.</span>
+              <span class="source-value">Decision composer, not real approval.</span>
             </div>
           </div>
 
-          <section class="review-studio" id="reviewStudio" data-default-queue="boundary" aria-label="Reviewer studio">
+          <section class="review-studio" id="reviewStudio" data-default-queue="category" aria-label="Reviewer studio">
             <div class="review-head">
               <div>
                 <span class="eyebrow">Browser-only review studio</span>
@@ -106,7 +106,7 @@
           <h2>Review Signals</h2>
           <div class="item-list" id="itemList"></div>
 
-          <div class="tabs" role="tablist" aria-label="VedaPath Boundary Decision Board layers">
+          <div class="tabs" role="tablist" aria-label="VedaPath Reviewer Decision Composer layers">
             <button class="tab active" type="button" data-mode="brief">Brief</button>
             <button class="tab" type="button" data-mode="checklist">Checklist</button>
             <button class="tab" type="button" data-mode="boundary">Boundary</button>
@@ -120,20 +120,20 @@
             <button class="button" id="copyBoundary" type="button">Copy Boundary</button>
           </div>
 
-          <textarea id="output" readonly aria-label="VedaPath Boundary Decision Board output"></textarea>
+          <textarea id="output" readonly aria-label="VedaPath Reviewer Decision Composer output"></textarea>
         </section>
 
-        <aside class="panel tight" aria-label="VedaPath Boundary Decision Board sprint rail">
+        <aside class="panel tight" aria-label="VedaPath Reviewer Decision Composer sprint rail">
           <span class="badge green">Reviewer studio</span>
-          <h2 style="margin-top: 14px;">Boundary Pulse</h2>
-          <p class="muted">Boundary Decision Board makes restraint an active product decision.</p>
-          <div class="progress" aria-label="Sprint progress 104 percent">
-            <div class="bar" style="--score:104%"></div>
+          <h2 style="margin-top: 14px;">Decision Pulse</h2>
+          <p class="muted">Reviewer Decision Composer turns review intent into a readable, copyable decision packet.</p>
+          <div class="progress" aria-label="Sprint progress 105 percent">
+            <div class="bar" style="--score:105%"></div>
           </div>
           <div class="metric-grid">
             <div class="metric">
               <span>Current</span>
-              <strong>v2.0.8</strong>
+              <strong>v2.0.9</strong>
             </div>
             <div class="metric">
               <span>Sprint</span>
@@ -141,11 +141,11 @@
             </div>
             <div class="metric">
               <span>Progress</span>
-              <strong>104%</strong>
+              <strong>105%</strong>
             </div>
             <div class="metric">
               <span>Next</span>
-              <strong>Reviewer Decision Composer</strong>
+              <strong>Local Decision Memory</strong>
             </div>
           </div>
 
@@ -177,72 +177,72 @@
     </div>
 
     <script type="application/json" id="room-data">{
-  "version": "v2.0.8",
-  "badge": "v2.0.8 boundary board",
-  "slug": "boundaryboard",
-  "nav": "Boundary",
-  "title": "VedaPath Boundary Decision Board",
-  "pageLabel": "Boundary board",
-  "eyebrow": "Boundary decisions",
-  "h1": "Decide what the product must not say.",
-  "lead": "A boundary board that makes therapy, authority, moral policing, anti-science, and life-command risks visible before a reader prompt ships.",
-  "source": "Katha Upanishad 1.2.1",
+  "version": "v2.0.9",
+  "badge": "v2.0.9 decision",
+  "slug": "decisioncomposer",
+  "nav": "Decision",
+  "title": "VedaPath Reviewer Decision Composer",
+  "pageLabel": "Decision composer",
+  "eyebrow": "Review decision",
+  "h1": "Write the decision in one clean line.",
+  "lead": "A decision composer that lets a reviewer choose hold, request source, approve preview, or block overclaim and then copy a compact decision note.",
+  "source": "Mundaka Upanishad 1.1.4",
   "family": "Upanishad | Shruti",
-  "stance": "Boundary board, not safety certification.",
-  "progress": 104,
-  "next": "Reviewer Decision Composer",
-  "defaultQueue": "boundary",
-  "primaryAsk": "Turn no-go boundaries into review decisions, not footnotes.",
-  "summary": "Boundary Decision Board makes restraint an active product decision.",
+  "stance": "Decision composer, not real approval.",
+  "progress": 105,
+  "next": "Local Decision Memory",
+  "defaultQueue": "category",
+  "primaryAsk": "Make review decisions explicit enough to audit later.",
+  "summary": "Reviewer Decision Composer turns review intent into a readable, copyable decision packet.",
   "items": [
     [
-      "No-go filter",
-      "Boundary-heavy items can be inspected together.",
-      "Focuses risk work."
+      "Decision buttons",
+      "The reviewer chooses one clear state.",
+      "Avoids vague feedback."
     ],
     [
-      "User boundary",
-      "Public-facing boundary copy is visible.",
-      "Keeps wording practical."
+      "Decision note",
+      "The handoff includes source, role, queue, and boundary.",
+      "Keeps context."
     ],
     [
-      "Block option",
-      "Overclaims can be blocked explicitly.",
-      "Protects trust."
+      "Public effect",
+      "The intended product outcome is visible.",
+      "Links review to UX."
     ],
     [
-      "Calm tone",
-      "The board stays firm without becoming harsh.",
-      "Keeps UX humane."
+      "No approval claim",
+      "Preview approval is not production approval.",
+      "Keeps scope honest."
     ]
   ],
   "modes": {
     "brief": [
       [
         "Review promise",
-        "Boundary Decision Board makes restraint an active product decision."
+        "Reviewer Decision Composer turns review intent into a readable, copyable decision packet."
       ],
       [
         "Founder move",
-        "Turn no-go boundaries into review decisions, not footnotes."
+        "Make review decisions explicit enough to audit later."
       ],
       [
         "Trust move",
-        "Keep this boundary visible: Boundary board, not safety certification."
+        "Keep this boundary visible: Decision composer, not real approval."
       ]
     ],
     "checklist": [
       [
-        "No-go filter",
-        "Boundary-heavy items can be inspected together."
+        "Decision buttons",
+        "The reviewer chooses one clear state."
       ],
       [
-        "User boundary",
-        "Public-facing boundary copy is visible."
+        "Decision note",
+        "The handoff includes source, role, queue, and boundary."
       ],
       [
-        "Block option",
-        "Overclaims can be blocked explicitly."
+        "Public effect",
+        "The intended product outcome is visible."
       ]
     ],
     "boundary": [

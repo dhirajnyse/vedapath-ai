@@ -212,6 +212,7 @@ It helps users move from curiosity to understanding through:
 - Source Evidence Checklist: Source Evidence Checklist prevents review from becoming a vague thumbs-up.
 - Rights Review Gate: Rights Review Gate makes text-use caution part of the product workflow.
 - Boundary Decision Board: Boundary Decision Board makes restraint an active product decision.
+- Reviewer Decision Composer: Reviewer Decision Composer turns review intent into a readable, copyable decision packet.
 <!-- VEDAPATH REVIEWER STUDIO SPRINT SUMMARY END -->
 
 ## What It Is
@@ -3132,6 +3133,21 @@ It should:
 - keep review decisions browser-only until reviewer identity, consent, backend storage, and source policy are approved
 
 Boundary Decision Board should never claim production approval, scholar endorsement, legal clearance, durable review storage, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
+
+### 192. Reviewer Decision Composer
+
+Reviewer Decision Composer turns review intent into a readable, copyable decision packet.
+
+It should:
+
+- Decision buttons: The reviewer chooses one clear state.
+- Decision note: The handoff includes source, role, queue, and boundary.
+- Public effect: The intended product outcome is visible.
+- No approval claim: Preview approval is not production approval.
+- preserve the boundary: Decision composer, not real approval.
+- keep review decisions browser-only until reviewer identity, consent, backend storage, and source policy are approved
+
+Reviewer Decision Composer should never claim production approval, scholar endorsement, legal clearance, durable review storage, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
 <!-- VEDAPATH REVIEWER STUDIO SPRINT BLUEPRINT END -->
 
 ## Product Personality
