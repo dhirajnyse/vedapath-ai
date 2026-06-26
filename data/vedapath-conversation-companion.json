@@ -1,0 +1,139 @@
+{
+  "product": "VedaPath AI",
+  "release": "v2.6.5",
+  "status": "conversation companion prototype",
+  "warning": "Prototype conversation support only. Not mediation, legal advice, safety planning, therapy, emergency support, ritual instruction, or spiritual authority.",
+  "tones": [
+    [
+      "steady",
+      "Steady",
+      "Slower, calmer, and less reactive."
+    ],
+    [
+      "direct",
+      "Direct",
+      "Clear truth without unnecessary heat."
+    ],
+    [
+      "warm",
+      "Warm",
+      "Careful, humane, and relational."
+    ],
+    [
+      "firm",
+      "Firm",
+      "Respectful boundary with fewer explanations."
+    ],
+    [
+      "humble",
+      "Humble",
+      "Owns your part without self-erasing."
+    ]
+  ],
+  "situations": [
+    {
+      "id": "reply-pause",
+      "state": "Reply pause",
+      "relation": "Any message",
+      "source": "Bhagavad Gita 17.15",
+      "family": "Bhagavad Gita | Smriti",
+      "signal": "You need to respond, but the first reply may be sharper than the real need.",
+      "draft": "I want to answer carefully, not react quickly. Give me a little time and I will come back with a clearer response.",
+      "reflection": "Can this reply be truthful, useful, and less agitating?",
+      "boundary": "Reflection support only. Not mediation, legal advice, safety planning, therapy, or spiritual authority.",
+      "tone": "steady",
+      "confidence": 68
+    },
+    {
+      "id": "truth-kindness",
+      "state": "Truth with care",
+      "relation": "Difficult truth",
+      "source": "Bhagavad Gita 17.15",
+      "family": "Bhagavad Gita | Smriti",
+      "signal": "Something true needs to be said without turning truth into a weapon.",
+      "draft": "I want to be honest and respectful. Here is what I am seeing, and I am open to hearing what I may be missing.",
+      "reflection": "Is the message true, timely, and useful, or only emotionally satisfying?",
+      "boundary": "Not a command to speak in every situation. Safety and context matter.",
+      "tone": "direct",
+      "confidence": 70
+    },
+    {
+      "id": "apology-repair",
+      "state": "Apology draft",
+      "relation": "Repair",
+      "source": "Bhagavad Gita 16.2",
+      "family": "Bhagavad Gita | Smriti",
+      "signal": "You see your part and want to repair without performing guilt.",
+      "draft": "I am sorry for my part in this. I can see how it affected you. I will be more careful with this specific action next time.",
+      "reflection": "What part is mine to own clearly, without explaining it away?",
+      "boundary": "Not legal advice, confession handling, clinical repair, or pressure for forgiveness.",
+      "tone": "humble",
+      "confidence": 56
+    },
+    {
+      "id": "boundary-no",
+      "state": "Boundary reply",
+      "relation": "No with respect",
+      "source": "Bhagavad Gita 2.48",
+      "family": "Bhagavad Gita | Smriti",
+      "signal": "You need to say no without becoming cold or overexplaining.",
+      "draft": "I cannot take this on right now. I respect the need, but I need to keep my boundary clear.",
+      "reflection": "Can the no be clear, kind, and free from unnecessary defense?",
+      "boundary": "Not safety planning, legal advice, workplace HR guidance, or family mediation.",
+      "tone": "firm",
+      "confidence": 66
+    },
+    {
+      "id": "family-message",
+      "state": "Family message",
+      "relation": "Family",
+      "source": "Taittiriya Upanishad 1.11.2",
+      "family": "Upanishad | Shruti",
+      "signal": "Care, expectation, and old patterns are mixed together.",
+      "draft": "I care about this relationship, and I want to speak with respect. I can help with one concrete thing, but I cannot carry the whole situation.",
+      "reflection": "What is respectful care, and what is control wearing the language of care?",
+      "boundary": "Not family therapy, medical advice, elder-care instruction, legal advice, or a rule for every household.",
+      "tone": "warm",
+      "confidence": 55
+    },
+    {
+      "id": "work-message",
+      "state": "Work message",
+      "relation": "Work",
+      "source": "Bhagavad Gita 2.47",
+      "family": "Bhagavad Gita | Smriti",
+      "signal": "Work pressure is making the message either defensive or vague.",
+      "draft": "Here is what I can own, here is the next step, and here is what I need from the team to move cleanly.",
+      "reflection": "Which part of this work is mine to do, and which part needs a clear request?",
+      "boundary": "Not employment advice, HR guidance, legal advice, or a promise of success.",
+      "tone": "clear",
+      "confidence": 78
+    },
+    {
+      "id": "gratitude-note",
+      "state": "Gratitude note",
+      "relation": "Thanks",
+      "source": "Taittiriya Upanishad 1.11.2",
+      "family": "Upanishad | Shruti",
+      "signal": "You want to thank someone without making it dramatic or transactional.",
+      "draft": "Thank you for what you did. It mattered to me because it made this specific part of life easier.",
+      "reflection": "Can gratitude name the concrete gift without demanding anything back?",
+      "boundary": "Not ritual instruction, social scripting for every culture, or emotional obligation.",
+      "tone": "grateful",
+      "confidence": 54
+    },
+    {
+      "id": "repair-followup",
+      "state": "Repair loop",
+      "relation": "After conflict",
+      "source": "Bhagavad Gita 6.26",
+      "family": "Bhagavad Gita | Smriti",
+      "signal": "The mind keeps replaying the conversation and needs a clean next step.",
+      "draft": "I have thought about our conversation. One thing I want to repair is this: I should have listened before responding.",
+      "reflection": "What one repair action can I take without trying to control the outcome?",
+      "boundary": "Not mediation, safety planning, therapy, legal advice, or pressure to reconnect.",
+      "tone": "repair",
+      "confidence": 62
+    }
+  ]
+}

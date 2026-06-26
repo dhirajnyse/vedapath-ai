@@ -534,6 +534,10 @@ Let us look at the source first.
 - [Life Companion Control Room](lifecompanionlab.html)
 - [Life Companion Control Room Notes](docs/LIFE_COMPANION_CONTROL_ROOM.md)
 <!-- VEDAPATH LIFE COMPANION SPRINT LINKS END -->
+<!-- VEDAPATH CONVERSATION COMPANION SPRINT LINKS START -->
+- [Reply Arrival](replyarrival.html)
+- [Reply Arrival Notes](docs/REPLY_ARRIVAL.md)
+<!-- VEDAPATH CONVERSATION COMPANION SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
 - [Calm Compass](compass.html)
@@ -564,7 +568,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v2.6.4` is a trusted MVP prototype plus Life Companion Control Room with:
+`v2.6.5` is a trusted MVP prototype plus Reply Arrival with:
 
 - Ask workspace
 - Source Card
@@ -842,6 +846,9 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Mobile Life Companion: Mobile Life Companion keeps everyday reflection simple in real life.
 - Life Companion Control Room: Life Companion Control Room completes the personal-life calm layer for VedaPath AI.
 <!-- VEDAPATH LIFE COMPANION SPRINT FEATURES END -->
+<!-- VEDAPATH CONVERSATION COMPANION SPRINT FEATURES START -->
+- Reply Arrival: Reply Arrival makes VedaPath useful at the exact moment a person is about to send something.
+<!-- VEDAPATH CONVERSATION COMPANION SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
 - Calm Card Studio with visual card preview, local saved cards, copy text, and PNG export
