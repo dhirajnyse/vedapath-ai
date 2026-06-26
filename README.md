@@ -402,6 +402,10 @@ Let us look at the source first.
 - [Guided Source Reader Control Room](sourcereader.html)
 - [Guided Source Reader Control Room Notes](docs/GUIDED_SOURCE_READER_CONTROL_ROOM.md)
 <!-- VEDAPATH GUIDED READER SPRINT LINKS END -->
+<!-- VEDAPATH REVIEWER STUDIO SPRINT LINKS START -->
+- [Review Intake Desk](reviewintake.html)
+- [Review Intake Desk Notes](docs/REVIEW_INTAKE_DESK.md)
+<!-- VEDAPATH REVIEWER STUDIO SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
 - [Calm Compass](compass.html)
@@ -432,7 +436,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v2.0.4` is a trusted MVP prototype plus Guided Source Reader Control Room with:
+`v2.0.5` is a trusted MVP prototype plus Review Intake Desk with:
 
 - Ask workspace
 - Source Card
@@ -638,6 +642,9 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Mobile Reader Polish: Mobile Reader Polish keeps VedaPath's most personal reading flow clean on small screens.
 - Guided Source Reader Control Room: Guided Source Reader Control Room completes the reader sprint and makes VedaPath feel like a real source-first learning companion.
 <!-- VEDAPATH GUIDED READER SPRINT FEATURES END -->
+<!-- VEDAPATH REVIEWER STUDIO SPRINT FEATURES START -->
+- Review Intake Desk: Review Intake Desk creates the first visible bridge between guided reading and human review.
+<!-- VEDAPATH REVIEWER STUDIO SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
 - Calm Card Studio with visual card preview, local saved cards, copy text, and PNG export

@@ -1,0 +1,198 @@
+/* VedaPath reviewer studio */
+.review-studio {
+  margin: 18px 0;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 253, 248, 0.88);
+}
+
+.review-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(180px, 260px);
+  gap: 14px;
+  align-items: start;
+}
+
+.review-stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.review-stat,
+.review-card,
+.review-detail,
+.audit-card {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.review-stat {
+  padding: 10px;
+}
+
+.review-stat span,
+.review-detail span,
+.audit-card span {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.review-stat strong {
+  display: block;
+  font-size: 22px;
+  line-height: 1.1;
+}
+
+.review-layout {
+  display: grid;
+  grid-template-columns: minmax(230px, 0.86fr) minmax(0, 1.14fr);
+  gap: 14px;
+  align-items: start;
+}
+
+.review-label {
+  display: block;
+  margin: 14px 0 6px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 850;
+}
+
+.review-select {
+  width: 100%;
+  min-height: 42px;
+  border: 1px solid #efc1aa;
+  border-radius: 8px;
+  background: #fffaf4;
+  color: var(--ink);
+  padding: 10px 12px;
+  font-weight: 800;
+}
+
+.review-chips,
+.decision-row,
+.review-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.review-chips {
+  margin: 10px 0;
+}
+
+.review-chip,
+.decision-button {
+  min-height: 34px;
+  border: 1px solid #efb899;
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--ochre);
+  padding: 7px 10px;
+  font-weight: 850;
+}
+
+.review-chip.active,
+.decision-button.active {
+  background: var(--bhagwa);
+  border-color: var(--bhagwa);
+  color: white;
+}
+
+.review-list {
+  display: grid;
+  gap: 8px;
+}
+
+.review-card {
+  width: 100%;
+  padding: 11px;
+  text-align: left;
+  color: inherit;
+}
+
+.review-card.active,
+.review-card:hover,
+.review-card:focus-visible {
+  border-color: #f09f79;
+  background: #fff0e7;
+  outline: none;
+}
+
+.review-card strong,
+.review-card span {
+  display: block;
+}
+
+.review-card span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.review-card.high {
+  border-left: 4px solid var(--bhagwa);
+}
+
+.review-card.medium {
+  border-left: 4px solid var(--gold);
+}
+
+.review-detail {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  padding: 12px;
+  border-left: 4px solid var(--green);
+}
+
+.review-detail .wide {
+  grid-column: 1 / -1;
+}
+
+.decision-row {
+  margin: 12px 0;
+}
+
+.review-actions {
+  margin: 12px 0;
+}
+
+#reviewHandoff {
+  width: 100%;
+  min-height: 168px;
+  resize: vertical;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fffaf4;
+  color: var(--ink);
+  padding: 12px;
+}
+
+.audit-trail {
+  display: grid;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.audit-card {
+  padding: 12px;
+}
+
+@media (max-width: 860px) {
+  .review-head,
+  .review-layout,
+  .review-detail,
+  .review-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .review-actions .button,
+  .decision-button,
+  .review-chip {
+    width: 100%;
+  }
+}

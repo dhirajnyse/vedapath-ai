@@ -207,6 +207,9 @@ It helps users move from curiosity to understanding through:
 - Mobile Reader Polish: Mobile Reader Polish keeps VedaPath's most personal reading flow clean on small screens.
 - Guided Source Reader Control Room: Guided Source Reader Control Room completes the reader sprint and makes VedaPath feel like a real source-first learning companion.
 <!-- VEDAPATH GUIDED READER SPRINT SUMMARY END -->
+<!-- VEDAPATH REVIEWER STUDIO SPRINT SUMMARY START -->
+- Review Intake Desk: Review Intake Desk creates the first visible bridge between guided reading and human review.
+<!-- VEDAPATH REVIEWER STUDIO SPRINT SUMMARY END -->
 
 ## What It Is
 
@@ -3066,6 +3069,22 @@ It should:
 
 Guided Source Reader Control Room should never claim final commentary, full scripture text, translation rights, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
 <!-- VEDAPATH GUIDED READER SPRINT BLUEPRINT END -->
+<!-- VEDAPATH REVIEWER STUDIO SPRINT BLUEPRINT START -->
+### 188. Review Intake Desk
+
+Review Intake Desk creates the first visible bridge between guided reading and human review.
+
+It should:
+
+- Queue cards: Every trace becomes a scoped review item.
+- Severity label: Medium and high risks are visible.
+- No-go line: Misuse stays attached to the item.
+- Prototype boundary: The desk does not claim real approval.
+- preserve the boundary: Review intake prototype, not submitted workflow.
+- keep review decisions browser-only until reviewer identity, consent, backend storage, and source policy are approved
+
+Review Intake Desk should never claim production approval, scholar endorsement, legal clearance, durable review storage, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
+<!-- VEDAPATH REVIEWER STUDIO SPRINT BLUEPRINT END -->
 
 ## Product Personality
 

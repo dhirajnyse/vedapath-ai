@@ -1,0 +1,146 @@
+{
+  "product": "VedaPath AI",
+  "release": "v2.0.5",
+  "status": "reviewer studio prototype",
+  "warning": "Prototype review data only. Local decisions are not scholar approval, legal clearance, production storage, or public answer release.",
+  "items": [
+    {
+      "id": "review-bg-2-48-steadiness",
+      "title": "Steadiness in Action Reader Trace",
+      "source_candidate": "Bhagavad Gita 2.48",
+      "text_family": "Bhagavad Gita | Smriti",
+      "queue": "source",
+      "severity": "medium",
+      "status": "needs-review",
+      "rights_state": "display-citation-only",
+      "reviewer_role": "source reviewer",
+      "claim_under_review": "Can this passage support a calm carry-action prompt without sounding like therapy?",
+      "evidence_needed": "Translation edition, commentary lane, source-rights decision, and no-go wording review.",
+      "proposed_public_effect": "Display as reflection preview only after review.",
+      "no_go": "Do not imply therapy, diagnosis, emergency support, ritual authority, or guaranteed peace.",
+      "user_facing_boundary": "Reflection candidate, not medical advice or spiritual authority.",
+      "decision_options": [
+        "hold",
+        "request-source",
+        "approve-preview",
+        "block-overclaim"
+      ],
+      "suggested_decision": "request-source"
+    },
+    {
+      "id": "review-katha-choice",
+      "title": "Good vs Pleasant Context Gate",
+      "source_candidate": "Katha Upanishad 1.2.1",
+      "text_family": "Upanishad | Shruti",
+      "queue": "boundary",
+      "severity": "high",
+      "status": "needs-review",
+      "rights_state": "display-citation-only",
+      "reviewer_role": "boundary reviewer",
+      "claim_under_review": "Can the reader use this source for discernment without judging another person's life?",
+      "evidence_needed": "Upanishad context, translation rights, and social/ethical overextension check.",
+      "proposed_public_effect": "Keep reflection prompt, strengthen no-go copy.",
+      "no_go": "Do not use for moral policing, relationship advice, health decisions, or emergency choices.",
+      "user_facing_boundary": "Source-guided reflection, not moral command.",
+      "decision_options": [
+        "hold",
+        "request-source",
+        "approve-preview",
+        "block-overclaim"
+      ],
+      "suggested_decision": "hold"
+    },
+    {
+      "id": "review-mundaka-knowledge",
+      "title": "Two Kinds of Knowing Category Check",
+      "source_candidate": "Mundaka Upanishad 1.1.4",
+      "text_family": "Upanishad | Shruti",
+      "queue": "category",
+      "severity": "medium",
+      "status": "needs-review",
+      "rights_state": "display-citation-only",
+      "reviewer_role": "category reviewer",
+      "claim_under_review": "Does the explanation avoid dismissing science, scholarship, and practical skill?",
+      "evidence_needed": "Sanskrit term review, commentary variants, and category labels.",
+      "proposed_public_effect": "Allow beginner concept explanation after category review.",
+      "no_go": "Do not frame higher/lower knowledge as anti-science or anti-scholarship.",
+      "user_facing_boundary": "Educational layer, not a ranking of people or disciplines.",
+      "decision_options": [
+        "hold",
+        "request-source",
+        "approve-preview",
+        "block-overclaim"
+      ],
+      "suggested_decision": "request-source"
+    },
+    {
+      "id": "review-isha-restraint",
+      "title": "Restraint Reflection Rights Check",
+      "source_candidate": "Isha Upanishad 1",
+      "text_family": "Upanishad | Shruti",
+      "queue": "rights",
+      "severity": "high",
+      "status": "needs-review",
+      "rights_state": "display-citation-only",
+      "reviewer_role": "rights reviewer",
+      "claim_under_review": "Can the product show a paraphrase-level reflection without exposing restricted text?",
+      "evidence_needed": "Translation rights, paraphrase policy, and school-specific interpretation boundary.",
+      "proposed_public_effect": "Display citation and reflection only, no full text.",
+      "no_go": "Do not pressure users to give up safety, property, shelter, or responsibility.",
+      "user_facing_boundary": "Reflection support, not economic, legal, or renunciation advice.",
+      "decision_options": [
+        "hold",
+        "request-source",
+        "approve-preview",
+        "block-overclaim"
+      ],
+      "suggested_decision": "hold"
+    },
+    {
+      "id": "review-taittiriya-conduct",
+      "title": "Conduct After Learning Authority Check",
+      "source_candidate": "Taittiriya Upanishad 1.11.1",
+      "text_family": "Upanishad | Shruti",
+      "queue": "authority",
+      "severity": "high",
+      "status": "needs-review",
+      "rights_state": "display-citation-only",
+      "reviewer_role": "authority reviewer",
+      "claim_under_review": "Does conduct guidance avoid becoming command, policy, or social control?",
+      "evidence_needed": "Contextual source note, translation review, and consent/safety no-go copy.",
+      "proposed_public_effect": "Hold until authority boundary is reviewed.",
+      "no_go": "Do not override consent, law, safety, or personal boundaries.",
+      "user_facing_boundary": "Educational reflection, not social command.",
+      "decision_options": [
+        "hold",
+        "request-source",
+        "approve-preview",
+        "block-overclaim"
+      ],
+      "suggested_decision": "block-overclaim"
+    },
+    {
+      "id": "review-bg-18-63-agency",
+      "title": "Reflect and Choose Agency Check",
+      "source_candidate": "Bhagavad Gita 18.63",
+      "text_family": "Bhagavad Gita | Smriti",
+      "queue": "source",
+      "severity": "medium",
+      "status": "needs-review",
+      "rights_state": "display-citation-only",
+      "reviewer_role": "source reviewer",
+      "claim_under_review": "Can the product support personal agency without pretending choices are easy or isolated?",
+      "evidence_needed": "Speaker/context note, theological frame, and modern decision boundary.",
+      "proposed_public_effect": "Display with agency boundary and reviewer note.",
+      "no_go": "Do not pretend every decision is easy, isolated, or free of real constraints.",
+      "user_facing_boundary": "Reflection candidate, not command or oracle.",
+      "decision_options": [
+        "hold",
+        "request-source",
+        "approve-preview",
+        "block-overclaim"
+      ],
+      "suggested_decision": "request-source"
+    }
+  ]
+}
