@@ -235,6 +235,7 @@ It helps users move from curiosity to understanding through:
 - Retrieval Query Desk: Retrieval Query Desk starts the search layer over VedaPath's curated source records.
 - Source Candidate Ranker: Source Candidate Ranker makes source selection inspectable instead of mysterious.
 - Reason Stack Viewer: Reason Stack Viewer builds trust by making retrieval evidence visible.
+- Boundary-Aware Answer Draft: Boundary-Aware Answer Draft makes safe answer framing visible before any AI backend exists.
 <!-- VEDAPATH RETRIEVAL LAB SPRINT SUMMARY END -->
 
 ## What It Is
@@ -3442,6 +3443,21 @@ It should:
 - keep retrieval explainable, source-bound, and honest about fallback
 
 Reason Stack Viewer should never claim production RAG, model truth, scholar endorsement, legal clearance, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
+
+### 211. Boundary-Aware Answer Draft
+
+Boundary-Aware Answer Draft makes safe answer framing visible before any AI backend exists.
+
+It should:
+
+- Query path: User language is matched to curated source records.
+- Reason path: Ranking reasons and readiness stay visible.
+- Boundary path: No-go language travels with each candidate.
+- Trace path: The chosen source can be copied as a trace packet.
+- preserve the boundary: Draft preview, not public answer generation.
+- keep retrieval explainable, source-bound, and honest about fallback
+
+Boundary-Aware Answer Draft should never claim production RAG, model truth, scholar endorsement, legal clearance, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
 <!-- VEDAPATH RETRIEVAL LAB SPRINT BLUEPRINT END -->
 
 ## Product Personality

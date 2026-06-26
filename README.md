@@ -453,6 +453,8 @@ Let us look at the source first.
 - [Source Candidate Ranker Notes](docs/SOURCE_CANDIDATE_RANKER.md)
 - [Reason Stack Viewer](reasonstack.html)
 - [Reason Stack Viewer Notes](docs/REASON_STACK_VIEWER.md)
+- [Boundary-Aware Answer Draft](answerdraft.html)
+- [Boundary-Aware Answer Draft Notes](docs/BOUNDARY_AWARE_ANSWER_DRAFT.md)
 <!-- VEDAPATH RETRIEVAL LAB SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -484,7 +486,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v2.2.7` is a trusted MVP prototype plus Reason Stack Viewer with:
+`v2.2.8` is a trusted MVP prototype plus Boundary-Aware Answer Draft with:
 
 - Ask workspace
 - Source Card
@@ -718,6 +720,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Retrieval Query Desk: Retrieval Query Desk starts the search layer over VedaPath's curated source records.
 - Source Candidate Ranker: Source Candidate Ranker makes source selection inspectable instead of mysterious.
 - Reason Stack Viewer: Reason Stack Viewer builds trust by making retrieval evidence visible.
+- Boundary-Aware Answer Draft: Boundary-Aware Answer Draft makes safe answer framing visible before any AI backend exists.
 <!-- VEDAPATH RETRIEVAL LAB SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff

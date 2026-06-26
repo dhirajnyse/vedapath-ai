@@ -1,4 +1,4 @@
-# v2.2.7 Prototype Notes
+# v2.2.8 Prototype Notes
 
 The v0.7.4 release turns the VedaPath AI homepage into a trusted MVP prototype with calm, practice, source-library, source-seeds, retrieval, passage-review, evaluation, evaluation-dashboard, reviewer-queue, source-policy, trust-ledger, life-map, calm-circle, consent-gate, memory-gate, trust-model, calm-passport, backend-schema, schema-fixtures, evaluation-drill, learning-loop, sanskrit-lens, voice-boundary, scholar-review, launch-gate, production-bridge, source-storage, reviewer-access, public-feedback, launch-story, source-path, calm-compass, calm-card, source-bell, before-reply, samvada, sankalpa, seva, morning, evening, and rhythm surfaces.
 
@@ -238,6 +238,7 @@ The v0.7.4 release turns the VedaPath AI homepage into a trusted MVP prototype w
 - Retrieval Query Desk: Retrieval Query Desk starts the search layer over VedaPath's curated source records.
 - Source Candidate Ranker: Source Candidate Ranker makes source selection inspectable instead of mysterious.
 - Reason Stack Viewer: Reason Stack Viewer builds trust by making retrieval evidence visible.
+- Boundary-Aware Answer Draft: Boundary-Aware Answer Draft makes safe answer framing visible before any AI backend exists.
 <!-- VEDAPATH RETRIEVAL LAB SPRINT NOTES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
