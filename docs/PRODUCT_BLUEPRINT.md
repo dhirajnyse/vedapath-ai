@@ -223,6 +223,7 @@ It helps users move from curiosity to understanding through:
 - Source Shelf Intake: Source Shelf Intake starts the curated source layer that future retrieval can trust.
 - Citation Schema Desk: Citation Schema Desk turns source-first UX into a data contract.
 - Family Classifier: Family Classifier reduces category confusion, one of VedaPath's central trust promises.
+- Passage Rights Matrix: Passage Rights Matrix keeps source reverence practical and launch-safe.
 <!-- VEDAPATH SOURCE LIBRARY SPRINT SUMMARY END -->
 
 ## What It Is
@@ -3279,6 +3280,21 @@ It should:
 - keep source-library records as starter data until scholar review, rights policy, and retrieval evaluation are approved
 
 Family Classifier should never claim canonical corpus coverage, scholar endorsement, legal clearance, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
+
+### 201. Passage Rights Matrix
+
+Passage Rights Matrix keeps source reverence practical and launch-safe.
+
+It should:
+
+- Rights hold: Restricted text records are separated from ready previews.
+- Translation policy: Every record says how text may be shown.
+- Citation-only path: Source identity can be useful without full text.
+- No legal claim: The product never pretends legal clearance exists.
+- preserve the boundary: Rights matrix prototype, not legal clearance.
+- keep source-library records as starter data until scholar review, rights policy, and retrieval evaluation are approved
+
+Passage Rights Matrix should never claim canonical corpus coverage, scholar endorsement, legal clearance, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
 <!-- VEDAPATH SOURCE LIBRARY SPRINT BLUEPRINT END -->
 
 ## Product Personality
