@@ -515,6 +515,8 @@ Let us look at the source first.
 <!-- VEDAPATH LIFE COMPANION SPRINT LINKS START -->
 - [Life Arrival](lifearrival.html)
 - [Life Arrival Notes](docs/LIFE_ARRIVAL.md)
+- [Life Domain Map](lifedomainmap.html)
+- [Life Domain Map Notes](docs/LIFE_DOMAIN_MAP.md)
 <!-- VEDAPATH LIFE COMPANION SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -546,7 +548,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v2.5.5` is a trusted MVP prototype plus Life Arrival with:
+`v2.5.6` is a trusted MVP prototype plus Life Domain Map with:
 
 - Ask workspace
 - Source Card
@@ -814,6 +816,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 <!-- VEDAPATH MANTRA LENS SPRINT FEATURES END -->
 <!-- VEDAPATH LIFE COMPANION SPRINT FEATURES START -->
 - Life Arrival: Life Arrival makes calm personal without pretending VedaPath is a therapist or guru.
+- Life Domain Map: Life Domain Map keeps everyday calm grounded in context.
 <!-- VEDAPATH LIFE COMPANION SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
