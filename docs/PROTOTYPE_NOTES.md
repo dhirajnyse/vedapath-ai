@@ -1,4 +1,4 @@
-# v2.1.3 Prototype Notes
+# v2.1.4 Prototype Notes
 
 The v0.7.4 release turns the VedaPath AI homepage into a trusted MVP prototype with calm, practice, source-library, source-seeds, retrieval, passage-review, evaluation, evaluation-dashboard, reviewer-queue, source-policy, trust-ledger, life-map, calm-circle, consent-gate, memory-gate, trust-model, calm-passport, backend-schema, schema-fixtures, evaluation-drill, learning-loop, sanskrit-lens, voice-boundary, scholar-review, launch-gate, production-bridge, source-storage, reviewer-access, public-feedback, launch-story, source-path, calm-compass, calm-card, source-bell, before-reply, samvada, sankalpa, seva, morning, evening, and rhythm surfaces.
 
@@ -220,6 +220,7 @@ The v0.7.4 release turns the VedaPath AI homepage into a trusted MVP prototype w
 - Review Audit Trail: Review Audit Trail keeps product decisions accountable without pretending compliance infrastructure exists.
 - Public Effect Preview: Public Effect Preview helps VedaPath see how review choices should shape the learner experience.
 - Mobile Review Polish: Mobile Review Polish keeps VedaPath's trust workflow calm and usable on small screens.
+- Reviewer Studio Control Room: Reviewer Studio Control Room completes the review sprint and gives VedaPath a concrete trust workflow after source reading.
 <!-- VEDAPATH REVIEWER STUDIO SPRINT NOTES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff

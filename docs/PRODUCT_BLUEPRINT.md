@@ -217,6 +217,7 @@ It helps users move from curiosity to understanding through:
 - Review Audit Trail: Review Audit Trail keeps product decisions accountable without pretending compliance infrastructure exists.
 - Public Effect Preview: Public Effect Preview helps VedaPath see how review choices should shape the learner experience.
 - Mobile Review Polish: Mobile Review Polish keeps VedaPath's trust workflow calm and usable on small screens.
+- Reviewer Studio Control Room: Reviewer Studio Control Room completes the review sprint and gives VedaPath a concrete trust workflow after source reading.
 <!-- VEDAPATH REVIEWER STUDIO SPRINT SUMMARY END -->
 
 ## What It Is
@@ -3212,6 +3213,21 @@ It should:
 - keep review decisions browser-only until reviewer identity, consent, backend storage, and source policy are approved
 
 Mobile Review Polish should never claim production approval, scholar endorsement, legal clearance, durable review storage, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
+
+### 197. Reviewer Studio Control Room
+
+Reviewer Studio Control Room completes the review sprint and gives VedaPath a concrete trust workflow after source reading.
+
+It should:
+
+- Review path: Queue, filters, decision, and audit are in one workspace.
+- Source path: Evidence needed and source candidate remain visible.
+- Boundary path: No-go and public boundary copy stay close to every decision.
+- Next path: The studio prepares reviewed content, accounts, or backend work.
+- preserve the boundary: Reviewer studio prototype, not real approval workflow.
+- keep review decisions browser-only until reviewer identity, consent, backend storage, and source policy are approved
+
+Reviewer Studio Control Room should never claim production approval, scholar endorsement, legal clearance, durable review storage, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
 <!-- VEDAPATH REVIEWER STUDIO SPRINT BLUEPRINT END -->
 
 ## Product Personality
