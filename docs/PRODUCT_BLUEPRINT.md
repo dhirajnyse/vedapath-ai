@@ -210,6 +210,7 @@ It helps users move from curiosity to understanding through:
 <!-- VEDAPATH REVIEWER STUDIO SPRINT SUMMARY START -->
 - Review Intake Desk: Review Intake Desk creates the first visible bridge between guided reading and human review.
 - Source Evidence Checklist: Source Evidence Checklist prevents review from becoming a vague thumbs-up.
+- Rights Review Gate: Rights Review Gate makes text-use caution part of the product workflow.
 <!-- VEDAPATH REVIEWER STUDIO SPRINT SUMMARY END -->
 
 ## What It Is
@@ -3100,6 +3101,21 @@ It should:
 - keep review decisions browser-only until reviewer identity, consent, backend storage, and source policy are approved
 
 Source Evidence Checklist should never claim production approval, scholar endorsement, legal clearance, durable review storage, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
+
+### 190. Rights Review Gate
+
+Rights Review Gate makes text-use caution part of the product workflow.
+
+It should:
+
+- Rights state: Display-citation-only remains prominent.
+- Public effect: The proposed user-facing change is named.
+- Legal boundary: The page does not claim clearance.
+- Reviewer action: Rights decisions can stay held.
+- preserve the boundary: Rights gate prototype, not legal clearance.
+- keep review decisions browser-only until reviewer identity, consent, backend storage, and source policy are approved
+
+Rights Review Gate should never claim production approval, scholar endorsement, legal clearance, durable review storage, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
 <!-- VEDAPATH REVIEWER STUDIO SPRINT BLUEPRINT END -->
 
 ## Product Personality
