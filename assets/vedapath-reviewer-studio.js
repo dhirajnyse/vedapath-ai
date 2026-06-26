@@ -237,9 +237,29 @@ async function initReviewStudio() {
   });
 
   reviewStudioRoot.querySelector("#copyReviewHandoff").addEventListener("click", () => {
+    handoff.focus();
+    handoff.select();
+    const button = reviewStudioRoot.querySelector("#copyReviewHandoff");
+    const originalText = button.textContent;
+    const showCopied = () => {
+      button.textContent = "Copied Handoff";
+      window.setTimeout(() => {
+        button.textContent = originalText;
+      }, 1400);
+    };
+    const fallbackCopy = () => {
+      try {
+        document.execCommand("copy");
+      } catch (error) {
+        return;
+      }
+      showCopied();
+    };
     if (navigator.clipboard && window.isSecureContext) {
-      navigator.clipboard.writeText(handoff.value).catch(() => {});
+      navigator.clipboard.writeText(handoff.value).then(showCopied).catch(fallbackCopy);
+      return;
     }
+    fallbackCopy();
   });
 
   render();
