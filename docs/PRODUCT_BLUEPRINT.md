@@ -205,6 +205,7 @@ It helps users move from curiosity to understanding through:
 - Reader Memory Preview: Reader Memory Preview lets VedaPath test habit loops without pretending to have durable user accounts.
 - Reviewer Trace Handoff: Reviewer Trace Handoff connects the reader experience to future human review without claiming workflow automation.
 - Mobile Reader Polish: Mobile Reader Polish keeps VedaPath's most personal reading flow clean on small screens.
+- Guided Source Reader Control Room: Guided Source Reader Control Room completes the reader sprint and makes VedaPath feel like a real source-first learning companion.
 <!-- VEDAPATH GUIDED READER SPRINT SUMMARY END -->
 
 ## What It Is
@@ -3049,6 +3050,21 @@ It should:
 - keep the reader prototype browser-only until reviewed content, accounts, or backend storage are approved
 
 Mobile Reader Polish should never claim final commentary, full scripture text, translation rights, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
+
+### 187. Guided Source Reader Control Room
+
+Guided Source Reader Control Room completes the reader sprint and makes VedaPath feel like a real source-first learning companion.
+
+It should:
+
+- Reader path: Choose a passage, read layers, reflect, and carry one action.
+- Trust path: Source family, boundary, reviewer note, and no-go line stay visible.
+- Rhythm path: Device-local saved sessions test habit value without accounts.
+- Review path: Copyable trace handoff prepares the next human review loop.
+- preserve the boundary: Guided reader control, not final commentary or personal authority.
+- keep the reader prototype browser-only until reviewed content, accounts, or backend storage are approved
+
+Guided Source Reader Control Room should never claim final commentary, full scripture text, translation rights, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
 <!-- VEDAPATH GUIDED READER SPRINT BLUEPRINT END -->
 
 ## Product Personality
