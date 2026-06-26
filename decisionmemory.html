@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>VedaPath Source Evidence Checklist</title>
+    <title>VedaPath Local Decision Memory</title>
     <link rel="stylesheet" href="assets/vedapath-sprint.css">
     <link rel="stylesheet" href="assets/vedapath-reviewer-studio.css">
   </head>
@@ -14,7 +14,7 @@
           <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
           <div>
             <strong>VedaPath AI</strong>
-            <span>Source evidence</span>
+            <span>Decision memory</span>
           </div>
         </a>
         <nav class="nav" aria-label="Project links">
@@ -24,17 +24,17 @@
           <a class="link" href="sourcereader.html">Reader</a>
           <!-- VEDAPATH REVIEWER STUDIO SPRINT NAV START -->
           <a class="link" href="reviewintake.html">Intake</a>
-          <a class="link active" href="sourcecheck.html">Source</a>
+          <a class="link" href="sourcecheck.html">Source</a>
           <a class="link" href="rightsreview.html">Rights</a>
           <a class="link" href="boundaryboard.html">Boundary</a>
           <a class="link" href="decisioncomposer.html">Decision</a>
-          <a class="link" href="decisionmemory.html">Memory</a>
+          <a class="link active" href="decisionmemory.html">Memory</a>
           <!-- VEDAPATH REVIEWER STUDIO SPRINT NAV END -->
           <span class="version">v2.1.0 decision memory</span>
         </nav>
       </header>
 
-      <main class="workspace" aria-label="VedaPath Source Evidence Checklist workspace">
+      <main class="workspace" aria-label="VedaPath Local Decision Memory workspace">
         <aside class="panel">
           <span class="eyebrow">Reviewer studio sprint</span>
           <h2>Release Rooms</h2>
@@ -45,23 +45,23 @@
         <section class="panel">
           <div class="hero-grid">
             <div>
-              <span class="eyebrow">Source checklist</span>
-              <h1>Review the source before the answer.</h1>
-              <p class="muted">A source evidence checklist that keeps citation, family, evidence needed, and reviewer role visible before any public answer state changes.</p>
+              <span class="eyebrow">Local memory</span>
+              <h1>Remember decisions only on this device.</h1>
+              <p class="muted">A local decision memory preview that saves reviewer choices in the browser so workflow value can be tested before accounts, sync, or real approval.</p>
             </div>
             <div class="mark-stage">
-              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Source logo">
+              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Memory logo">
             </div>
           </div>
 
           <div class="source-block" aria-label="Release source card">
             <div>
               <span class="source-meta">Release</span>
-              <span class="source-value">v2.0.6</span>
+              <span class="source-value">v2.1.0</span>
             </div>
             <div>
               <span class="source-meta">Source candidate</span>
-              <span class="source-value">Bhagavad Gita 18.63</span>
+              <span class="source-value">Bhagavad Gita 2.48</span>
             </div>
             <div>
               <span class="source-meta">Text family</span>
@@ -69,11 +69,11 @@
             </div>
             <div>
               <span class="source-meta">Boundary</span>
-              <span class="source-value">Evidence checklist, not source approval.</span>
+              <span class="source-value">Local decision memory, not durable review history.</span>
             </div>
           </div>
 
-          <section class="review-studio" id="reviewStudio" data-default-queue="source" aria-label="Reviewer studio">
+          <section class="review-studio" id="reviewStudio" data-default-queue="all" aria-label="Reviewer studio">
             <div class="review-head">
               <div>
                 <span class="eyebrow">Browser-only review studio</span>
@@ -107,7 +107,7 @@
           <h2>Review Signals</h2>
           <div class="item-list" id="itemList"></div>
 
-          <div class="tabs" role="tablist" aria-label="VedaPath Source Evidence Checklist layers">
+          <div class="tabs" role="tablist" aria-label="VedaPath Local Decision Memory layers">
             <button class="tab active" type="button" data-mode="brief">Brief</button>
             <button class="tab" type="button" data-mode="checklist">Checklist</button>
             <button class="tab" type="button" data-mode="boundary">Boundary</button>
@@ -121,20 +121,20 @@
             <button class="button" id="copyBoundary" type="button">Copy Boundary</button>
           </div>
 
-          <textarea id="output" readonly aria-label="VedaPath Source Evidence Checklist output"></textarea>
+          <textarea id="output" readonly aria-label="VedaPath Local Decision Memory output"></textarea>
         </section>
 
-        <aside class="panel tight" aria-label="VedaPath Source Evidence Checklist sprint rail">
+        <aside class="panel tight" aria-label="VedaPath Local Decision Memory sprint rail">
           <span class="badge green">Reviewer studio</span>
-          <h2 style="margin-top: 14px;">Source Pulse</h2>
-          <p class="muted">Source Evidence Checklist prevents review from becoming a vague thumbs-up.</p>
-          <div class="progress" aria-label="Sprint progress 102 percent">
-            <div class="bar" style="--score:102%"></div>
+          <h2 style="margin-top: 14px;">Memory Pulse</h2>
+          <p class="muted">Local Decision Memory tests review workflow behavior while preserving the privacy and authority boundary.</p>
+          <div class="progress" aria-label="Sprint progress 106 percent">
+            <div class="bar" style="--score:106%"></div>
           </div>
           <div class="metric-grid">
             <div class="metric">
               <span>Current</span>
-              <strong>v2.0.6</strong>
+              <strong>v2.1.0</strong>
             </div>
             <div class="metric">
               <span>Sprint</span>
@@ -142,11 +142,11 @@
             </div>
             <div class="metric">
               <span>Progress</span>
-              <strong>102%</strong>
+              <strong>106%</strong>
             </div>
             <div class="metric">
               <span>Next</span>
-              <strong>Rights Review Gate</strong>
+              <strong>Review Audit Trail</strong>
             </div>
           </div>
 
@@ -178,72 +178,72 @@
     </div>
 
     <script type="application/json" id="room-data">{
-  "version": "v2.0.6",
-  "badge": "v2.0.6 source check",
-  "slug": "sourcecheck",
-  "nav": "Source",
-  "title": "VedaPath Source Evidence Checklist",
-  "pageLabel": "Source evidence",
-  "eyebrow": "Source checklist",
-  "h1": "Review the source before the answer.",
-  "lead": "A source evidence checklist that keeps citation, family, evidence needed, and reviewer role visible before any public answer state changes.",
-  "source": "Bhagavad Gita 18.63",
+  "version": "v2.1.0",
+  "badge": "v2.1.0 decision memory",
+  "slug": "decisionmemory",
+  "nav": "Memory",
+  "title": "VedaPath Local Decision Memory",
+  "pageLabel": "Decision memory",
+  "eyebrow": "Local memory",
+  "h1": "Remember decisions only on this device.",
+  "lead": "A local decision memory preview that saves reviewer choices in the browser so workflow value can be tested before accounts, sync, or real approval.",
+  "source": "Bhagavad Gita 2.48",
   "family": "Bhagavad Gita | Smriti",
-  "stance": "Evidence checklist, not source approval.",
-  "progress": 102,
-  "next": "Rights Review Gate",
-  "defaultQueue": "source",
-  "primaryAsk": "Make source evidence the first review gate.",
-  "summary": "Source Evidence Checklist prevents review from becoming a vague thumbs-up.",
+  "stance": "Local decision memory, not durable review history.",
+  "progress": 106,
+  "next": "Review Audit Trail",
+  "defaultQueue": "all",
+  "primaryAsk": "Test reviewer rhythm without claiming durable workflow storage.",
+  "summary": "Local Decision Memory tests review workflow behavior while preserving the privacy and authority boundary.",
   "items": [
     [
-      "Evidence needed",
-      "Each item names what is missing.",
-      "Guides reviewer action."
+      "Local save",
+      "Decisions stay in the browser preview.",
+      "Protects scope."
     ],
     [
-      "Role label",
-      "Source, boundary, rights, or authority reviewer is explicit.",
-      "Keeps scope clear."
+      "Decision count",
+      "Saved decision count is visible.",
+      "Shows workflow value."
     ],
     [
-      "Candidate source",
-      "Citation identity remains visible.",
-      "Prevents category blur."
+      "Clear control",
+      "Preview memory can be cleared.",
+      "Keeps user control."
     ],
     [
-      "Decision hold",
-      "Items can stay held without shame.",
-      "Protects accuracy."
+      "No account claim",
+      "The app does not imply reviewer identity.",
+      "Avoids false workflow."
     ]
   ],
   "modes": {
     "brief": [
       [
         "Review promise",
-        "Source Evidence Checklist prevents review from becoming a vague thumbs-up."
+        "Local Decision Memory tests review workflow behavior while preserving the privacy and authority boundary."
       ],
       [
         "Founder move",
-        "Make source evidence the first review gate."
+        "Test reviewer rhythm without claiming durable workflow storage."
       ],
       [
         "Trust move",
-        "Keep this boundary visible: Evidence checklist, not source approval."
+        "Keep this boundary visible: Local decision memory, not durable review history."
       ]
     ],
     "checklist": [
       [
-        "Evidence needed",
-        "Each item names what is missing."
+        "Local save",
+        "Decisions stay in the browser preview."
       ],
       [
-        "Role label",
-        "Source, boundary, rights, or authority reviewer is explicit."
+        "Decision count",
+        "Saved decision count is visible."
       ],
       [
-        "Candidate source",
-        "Citation identity remains visible."
+        "Clear control",
+        "Preview memory can be cleared."
       ]
     ],
     "boundary": [

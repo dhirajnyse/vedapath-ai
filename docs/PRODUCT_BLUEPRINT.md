@@ -213,6 +213,7 @@ It helps users move from curiosity to understanding through:
 - Rights Review Gate: Rights Review Gate makes text-use caution part of the product workflow.
 - Boundary Decision Board: Boundary Decision Board makes restraint an active product decision.
 - Reviewer Decision Composer: Reviewer Decision Composer turns review intent into a readable, copyable decision packet.
+- Local Decision Memory: Local Decision Memory tests review workflow behavior while preserving the privacy and authority boundary.
 <!-- VEDAPATH REVIEWER STUDIO SPRINT SUMMARY END -->
 
 ## What It Is
@@ -3148,6 +3149,21 @@ It should:
 - keep review decisions browser-only until reviewer identity, consent, backend storage, and source policy are approved
 
 Reviewer Decision Composer should never claim production approval, scholar endorsement, legal clearance, durable review storage, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
+
+### 193. Local Decision Memory
+
+Local Decision Memory tests review workflow behavior while preserving the privacy and authority boundary.
+
+It should:
+
+- Local save: Decisions stay in the browser preview.
+- Decision count: Saved decision count is visible.
+- Clear control: Preview memory can be cleared.
+- No account claim: The app does not imply reviewer identity.
+- preserve the boundary: Local decision memory, not durable review history.
+- keep review decisions browser-only until reviewer identity, consent, backend storage, and source policy are approved
+
+Local Decision Memory should never claim production approval, scholar endorsement, legal clearance, durable review storage, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
 <!-- VEDAPATH REVIEWER STUDIO SPRINT BLUEPRINT END -->
 
 ## Product Personality

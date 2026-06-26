@@ -413,6 +413,8 @@ Let us look at the source first.
 - [Boundary Decision Board Notes](docs/BOUNDARY_DECISION_BOARD.md)
 - [Reviewer Decision Composer](decisioncomposer.html)
 - [Reviewer Decision Composer Notes](docs/REVIEWER_DECISION_COMPOSER.md)
+- [Local Decision Memory](decisionmemory.html)
+- [Local Decision Memory Notes](docs/LOCAL_DECISION_MEMORY.md)
 <!-- VEDAPATH REVIEWER STUDIO SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -444,7 +446,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v2.0.9` is a trusted MVP prototype plus Reviewer Decision Composer with:
+`v2.1.0` is a trusted MVP prototype plus Local Decision Memory with:
 
 - Ask workspace
 - Source Card
@@ -656,6 +658,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Rights Review Gate: Rights Review Gate makes text-use caution part of the product workflow.
 - Boundary Decision Board: Boundary Decision Board makes restraint an active product decision.
 - Reviewer Decision Composer: Reviewer Decision Composer turns review intent into a readable, copyable decision packet.
+- Local Decision Memory: Local Decision Memory tests review workflow behavior while preserving the privacy and authority boundary.
 <!-- VEDAPATH REVIEWER STUDIO SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
