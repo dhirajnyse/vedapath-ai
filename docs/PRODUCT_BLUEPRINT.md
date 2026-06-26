@@ -247,6 +247,7 @@ It helps users move from curiosity to understanding through:
 - Answer Intent Lab: Answer Intent Lab starts the answer layer by making intent and boundaries explicit.
 - Source Context Card: Source Context Card keeps VedaPath's answer surface source-first.
 - Citation Ribbon Lab: Citation Ribbon Lab prevents answer prose from floating away from source identity.
+- Answer Card Lab: Answer Card Lab turns retrieval output into a humane answer format.
 <!-- VEDAPATH CITED ANSWER SPRINT SUMMARY END -->
 
 ## What It Is
@@ -3605,6 +3606,21 @@ It should:
 - keep answer cards source-first, confidence-labeled, and feedback-reviewable
 
 Citation Ribbon Lab should never claim production AI authority, guru voice, legal clearance, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
+
+### 221. Answer Card Lab
+
+Answer Card Lab turns retrieval output into a humane answer format.
+
+It should:
+
+- Intent: Keep the user question and answer intent visible.
+- Source: Keep citation, family, and confidence near the answer.
+- Boundary: Show what the answer must not become.
+- Feedback: Turn concerns into reviewable local tickets.
+- preserve the boundary: Answer card preview, not public AI response.
+- keep answer cards source-first, confidence-labeled, and feedback-reviewable
+
+Answer Card Lab should never claim production AI authority, guru voice, legal clearance, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
 <!-- VEDAPATH CITED ANSWER SPRINT BLUEPRINT END -->
 
 ## Product Personality
