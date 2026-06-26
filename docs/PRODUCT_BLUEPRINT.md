@@ -299,6 +299,7 @@ It helps users move from curiosity to understanding through:
 - Helpful Action Library: Helpful Action Library gives the product a memory of what actually helped, not just what was asked.
 - Source Match Memory: Source Match Memory makes citations feel alive while staying careful about overclaim.
 - Weekly Reflection: Weekly Reflection turns product memory into one humane review instead of endless dashboards.
+- Privacy Export: Privacy Export makes trust tangible by giving the user control over local pattern memory.
 <!-- VEDAPATH PATTERN COMPANION SPRINT SUMMARY END -->
 
 ## What It Is
@@ -4321,6 +4322,21 @@ It should:
 - keep pattern memory visible, copyable, and clearable
 
 Weekly Reflection should never claim diagnosis, therapy, legal advice, medical advice, surveillance, scoring, or spiritual authority.
+
+### 265. Privacy Export
+
+Privacy Export makes trust tangible by giving the user control over local pattern memory.
+
+It should:
+
+- Collect: Read local preview entries and sample signals.
+- Group: Show domains, sources, and helpful actions.
+- Reflect: Offer one weekly insight without judging.
+- Control: Let the user copy, export, or clear memory.
+- preserve the boundary: local pattern support only, not profiling
+- keep pattern memory visible, copyable, and clearable
+
+Privacy Export should never claim diagnosis, therapy, legal advice, medical advice, surveillance, scoring, or spiritual authority.
 <!-- VEDAPATH PATTERN COMPANION SPRINT BLUEPRINT END -->
 
 ## Product Personality
