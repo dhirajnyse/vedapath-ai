@@ -485,6 +485,8 @@ Let us look at the source first.
 - [Answer View Comparison Lab Notes](docs/ANSWER_VIEW_COMPARISON_LAB.md)
 - [Feedback Capture Lab](feedbackcapturelab.html)
 - [Feedback Capture Lab Notes](docs/FEEDBACK_CAPTURE_LAB.md)
+- [Mobile Answer Polish](answermobilelab.html)
+- [Mobile Answer Polish Notes](docs/MOBILE_ANSWER_POLISH.md)
 <!-- VEDAPATH CITED ANSWER SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -516,7 +518,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v2.4.2` is a trusted MVP prototype plus Feedback Capture Lab with:
+`v2.4.3` is a trusted MVP prototype plus Mobile Answer Polish with:
 
 - Ask workspace
 - Source Card
@@ -767,6 +769,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Boundary Rewriter: Boundary Rewriter keeps the product calm when a source is sensitive.
 - Answer View Comparison Lab: Answer View Comparison Lab adds progressive depth without sacrificing simplicity.
 - Feedback Capture Lab: Feedback Capture Lab closes the answer loop without silently rewriting knowledge.
+- Mobile Answer Polish: Mobile Answer Polish keeps the calm answer format usable in real life.
 <!-- VEDAPATH CITED ANSWER SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
