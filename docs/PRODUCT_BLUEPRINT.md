@@ -260,6 +260,7 @@ It helps users move from curiosity to understanding through:
 - Verse Focus Room: Verse Focus Room keeps Mantra Lens simple enough for everyday study.
 - Transliteration Lab: Transliteration Lab opens Sanskrit study while keeping pronunciation claims restrained.
 - Word Meaning Rail: Word Meaning Rail adds progressive depth without visual noise.
+- Chant Boundary: Chant Boundary keeps calm practice respectful and non-authoritative.
 <!-- VEDAPATH MANTRA LENS SPRINT SUMMARY END -->
 
 ## What It Is
@@ -3784,6 +3785,21 @@ It should:
 - keep verse study source-first, humble, and locally private
 
 Word Meaning Rail should never claim ritual authority, pronunciation certification, therapy, emergency support, or spiritual authority.
+
+### 232. Chant Boundary
+
+Chant Boundary keeps calm practice respectful and non-authoritative.
+
+It should:
+
+- Source: Show source family, citation, and confidence before practice.
+- Words: Break the verse into learner-sized word cards.
+- Boundary: Separate study support from ritual or pronunciation authority.
+- Practice: Save local notes and completions only on the device.
+- preserve the boundary: Chant boundary prototype, not ritual instruction.
+- keep verse study source-first, humble, and locally private
+
+Chant Boundary should never claim ritual authority, pronunciation certification, therapy, emergency support, or spiritual authority.
 <!-- VEDAPATH MANTRA LENS SPRINT BLUEPRINT END -->
 
 ## Product Personality

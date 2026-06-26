@@ -499,6 +499,8 @@ Let us look at the source first.
 - [Transliteration Lab Notes](docs/TRANSLITERATION_LAB.md)
 - [Word Meaning Rail](wordmeaningrail.html)
 - [Word Meaning Rail Notes](docs/WORD_MEANING_RAIL.md)
+- [Chant Boundary](chantboundary.html)
+- [Chant Boundary Notes](docs/CHANT_BOUNDARY.md)
 <!-- VEDAPATH MANTRA LENS SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -530,7 +532,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v2.4.8` is a trusted MVP prototype plus Word Meaning Rail with:
+`v2.4.9` is a trusted MVP prototype plus Chant Boundary with:
 
 - Ask workspace
 - Source Card
@@ -789,6 +791,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Verse Focus Room: Verse Focus Room keeps Mantra Lens simple enough for everyday study.
 - Transliteration Lab: Transliteration Lab opens Sanskrit study while keeping pronunciation claims restrained.
 - Word Meaning Rail: Word Meaning Rail adds progressive depth without visual noise.
+- Chant Boundary: Chant Boundary keeps calm practice respectful and non-authoritative.
 <!-- VEDAPATH MANTRA LENS SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
