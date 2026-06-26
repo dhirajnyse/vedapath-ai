@@ -200,6 +200,7 @@ It helps users move from curiosity to understanding through:
 - Passage Focus Lens: Passage Focus Lens makes the reader feel simple by anchoring every action to one chosen passage.
 - Meaning Layer Stack: Meaning Layer Stack gives VedaPath a readable pattern for depth without overwhelming beginners.
 - Context Boundary Gate: Context Boundary Gate keeps personal calm work source-backed but carefully limited.
+- Reflection Prompt Rail: Reflection Prompt Rail turns calm into a product behavior: one question, one source, one boundary.
 <!-- VEDAPATH GUIDED READER SPRINT SUMMARY END -->
 
 ## What It Is
@@ -2969,6 +2970,21 @@ It should:
 - keep the reader prototype browser-only until reviewed content, accounts, or backend storage are approved
 
 Context Boundary Gate should never claim final commentary, full scripture text, translation rights, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
+
+### 182. Reflection Prompt Rail
+
+Reflection Prompt Rail turns calm into a product behavior: one question, one source, one boundary.
+
+It should:
+
+- One question: The reader avoids a crowded self-help worksheet.
+- Reflection label: The prompt is marked as reflection, not scripture meaning.
+- User agency: The question invites choice rather than command.
+- Review need: Complex interpretation is not hidden.
+- preserve the boundary: Reflection rail, not therapy or diagnosis.
+- keep the reader prototype browser-only until reviewed content, accounts, or backend storage are approved
+
+Reflection Prompt Rail should never claim final commentary, full scripture text, translation rights, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
 <!-- VEDAPATH GUIDED READER SPRINT BLUEPRINT END -->
 
 ## Product Personality
