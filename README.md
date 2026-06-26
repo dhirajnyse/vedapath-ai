@@ -443,6 +443,8 @@ Let us look at the source first.
 - [Readiness Scorecard Notes](docs/READINESS_SCORECARD.md)
 - [Source Packet Export](sourcepacketexport.html)
 - [Source Packet Export Notes](docs/SOURCE_PACKET_EXPORT.md)
+- [Source Library Control Room](sourcelibrary.html)
+- [Source Library Control Room Notes](docs/SOURCE_LIBRARY_CONTROL_ROOM.md)
 <!-- VEDAPATH SOURCE LIBRARY SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -474,7 +476,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v2.2.3` is a trusted MVP prototype plus Source Packet Export with:
+`v2.2.4` is a trusted MVP prototype plus Source Library Control Room with:
 
 - Ask workspace
 - Source Card
@@ -702,6 +704,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Question Source Map: Question Source Map prepares retrieval while keeping source claims humble.
 - Readiness Scorecard: Readiness Scorecard turns source quality into a visible product signal.
 - Source Packet Export: Source Packet Export makes source review faster and less lossy.
+- Source Library Control Room: Source Library Control Room completes the curated-source sprint and gives VedaPath a concrete dataset foundation.
 <!-- VEDAPATH SOURCE LIBRARY SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff

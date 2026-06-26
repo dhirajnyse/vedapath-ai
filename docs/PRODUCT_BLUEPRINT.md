@@ -229,6 +229,7 @@ It helps users move from curiosity to understanding through:
 - Question Source Map: Question Source Map prepares retrieval while keeping source claims humble.
 - Readiness Scorecard: Readiness Scorecard turns source quality into a visible product signal.
 - Source Packet Export: Source Packet Export makes source review faster and less lossy.
+- Source Library Control Room: Source Library Control Room completes the curated-source sprint and gives VedaPath a concrete dataset foundation.
 <!-- VEDAPATH SOURCE LIBRARY SPRINT SUMMARY END -->
 
 ## What It Is
@@ -3375,6 +3376,21 @@ It should:
 - keep source-library records as starter data until scholar review, rights policy, and retrieval evaluation are approved
 
 Source Packet Export should never claim canonical corpus coverage, scholar endorsement, legal clearance, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
+
+### 207. Source Library Control Room
+
+Source Library Control Room completes the curated-source sprint and gives VedaPath a concrete dataset foundation.
+
+It should:
+
+- Curated dataset: Eight starter records are structured and inspectable.
+- Filterable library: Family, readiness, and search work in one calm page.
+- Packet handoff: Every record can become a review packet.
+- Retrieval foundation: The next engineering step can use source records instead of loose page copy.
+- preserve the boundary: Curated source library prototype, not canonical corpus.
+- keep source-library records as starter data until scholar review, rights policy, and retrieval evaluation are approved
+
+Source Library Control Room should never claim canonical corpus coverage, scholar endorsement, legal clearance, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
 <!-- VEDAPATH SOURCE LIBRARY SPRINT BLUEPRINT END -->
 
 ## Product Personality
