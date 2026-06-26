@@ -503,6 +503,8 @@ Let us look at the source first.
 - [Chant Boundary Notes](docs/CHANT_BOUNDARY.md)
 - [Meter Guide](meterguide.html)
 - [Meter Guide Notes](docs/METER_GUIDE.md)
+- [Interpretation Stack](interpretationstack.html)
+- [Interpretation Stack Notes](docs/INTERPRETATION_STACK.md)
 <!-- VEDAPATH MANTRA LENS SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -534,7 +536,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v2.5.0` is a trusted MVP prototype plus Meter Guide with:
+`v2.5.1` is a trusted MVP prototype plus Interpretation Stack with:
 
 - Ask workspace
 - Source Card
@@ -795,6 +797,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Word Meaning Rail: Word Meaning Rail adds progressive depth without visual noise.
 - Chant Boundary: Chant Boundary keeps calm practice respectful and non-authoritative.
 - Meter Guide: Meter Guide prepares verse study for future licensed audio and scholar review.
+- Interpretation Stack: Interpretation Stack protects plural readings without making every school sound identical.
 <!-- VEDAPATH MANTRA LENS SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff

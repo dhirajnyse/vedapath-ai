@@ -262,6 +262,7 @@ It helps users move from curiosity to understanding through:
 - Word Meaning Rail: Word Meaning Rail adds progressive depth without visual noise.
 - Chant Boundary: Chant Boundary keeps calm practice respectful and non-authoritative.
 - Meter Guide: Meter Guide prepares verse study for future licensed audio and scholar review.
+- Interpretation Stack: Interpretation Stack protects plural readings without making every school sound identical.
 <!-- VEDAPATH MANTRA LENS SPRINT SUMMARY END -->
 
 ## What It Is
@@ -3816,6 +3817,21 @@ It should:
 - keep verse study source-first, humble, and locally private
 
 Meter Guide should never claim ritual authority, pronunciation certification, therapy, emergency support, or spiritual authority.
+
+### 234. Interpretation Stack
+
+Interpretation Stack protects plural readings without making every school sound identical.
+
+It should:
+
+- Source: Show source family, citation, and confidence before practice.
+- Words: Break the verse into learner-sized word cards.
+- Boundary: Separate study support from ritual or pronunciation authority.
+- Practice: Save local notes and completions only on the device.
+- preserve the boundary: Interpretation stack preview, not school-complete commentary.
+- keep verse study source-first, humble, and locally private
+
+Interpretation Stack should never claim ritual authority, pronunciation certification, therapy, emergency support, or spiritual authority.
 <!-- VEDAPATH MANTRA LENS SPRINT BLUEPRINT END -->
 
 ## Product Personality
