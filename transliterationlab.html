@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>VedaPath Verse Focus Room</title>
+    <title>VedaPath Transliteration Lab</title>
     <link rel="stylesheet" href="assets/vedapath-sprint.css">
     <link rel="stylesheet" href="assets/vedapath-mantra-lens.css">
   </head>
@@ -12,7 +12,7 @@
       <header class="topbar">
         <a class="brand" href="index.html#top" aria-label="VedaPath AI home">
           <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
-          <div><strong>VedaPath AI</strong><span>Verse focus</span></div>
+          <div><strong>VedaPath AI</strong><span>Transliteration</span></div>
         </a>
         <nav class="nav" aria-label="Project links">
           <a class="link" href="build-status.html">Build</a>
@@ -30,7 +30,7 @@
         </nav>
       </header>
 
-      <main class="workspace" aria-label="VedaPath Verse Focus Room workspace">
+      <main class="workspace" aria-label="VedaPath Transliteration Lab workspace">
         <aside class="panel">
           <span class="eyebrow">Mantra Lens sprint</span>
           <h2>Release Rooms</h2>
@@ -41,21 +41,21 @@
         <section class="panel">
           <div class="hero-grid">
             <div>
-              <span class="eyebrow">Verse focus</span>
-              <h1>Hold one verse in clean focus.</h1>
-              <p class="muted">A verse focus room that shows one source candidate, transliteration, plain sense, confidence, and caution without crowding the learner.</p>
+              <span class="eyebrow">Transliteration lab</span>
+              <h1>Read the sound layer with humility.</h1>
+              <p class="muted">A transliteration lab that separates source text handling, pronunciation humility, and learner-friendly reading support.</p>
             </div>
-            <div class="mark-stage"><img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Focus logo"></div>
+            <div class="mark-stage"><img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Translit logo"></div>
           </div>
 
           <div class="source-block" aria-label="Release mantra card">
-            <div><span class="source-meta">Release</span><span class="source-value">v2.4.6</span></div>
-            <div><span class="source-meta">Source candidate</span><span class="source-value">Bhagavad Gita 2.48</span></div>
-            <div><span class="source-meta">Practice state</span><span class="source-value">Make the verse card quiet and readable.</span></div>
-            <div><span class="source-meta">Boundary</span><span class="source-value">Verse focus preview, not commentary authority.</span></div>
+            <div><span class="source-meta">Release</span><span class="source-value">v2.4.7</span></div>
+            <div><span class="source-meta">Source candidate</span><span class="source-value">Rigveda 3.62.10</span></div>
+            <div><span class="source-meta">Practice state</span><span class="source-value">Add transliteration without pretending audio mastery.</span></div>
+            <div><span class="source-meta">Boundary</span><span class="source-value">Transliteration support, not pronunciation certification.</span></div>
           </div>
 
-          <section class="mantra-lens" id="mantraLens" data-verse="bg-2-48-mantra-lens" aria-label="Mantra Lens">
+          <section class="mantra-lens" id="mantraLens" data-verse="gayatri-3-62-10-lens" aria-label="Mantra Lens">
             <div class="mantra-head">
               <div>
                 <span class="eyebrow">Verse-level source practice</span>
@@ -103,7 +103,7 @@
           <h2>Mantra Signals</h2>
           <div class="item-list" id="itemList"></div>
 
-          <div class="tabs" role="tablist" aria-label="VedaPath Verse Focus Room layers">
+          <div class="tabs" role="tablist" aria-label="VedaPath Transliteration Lab layers">
             <button class="tab active" type="button" data-mode="brief">Brief</button>
             <button class="tab" type="button" data-mode="checklist">Checklist</button>
             <button class="tab" type="button" data-mode="boundary">Boundary</button>
@@ -114,19 +114,19 @@
             <button class="button safe" id="copyJson" type="button">Copy JSON</button>
             <button class="button" id="copyBoundary" type="button">Copy Boundary</button>
           </div>
-          <textarea id="output" readonly aria-label="VedaPath Verse Focus Room output"></textarea>
+          <textarea id="output" readonly aria-label="VedaPath Transliteration Lab output"></textarea>
         </section>
 
-        <aside class="panel tight" aria-label="VedaPath Verse Focus Room sprint rail">
+        <aside class="panel tight" aria-label="VedaPath Transliteration Lab sprint rail">
           <span class="badge green">Mantra Lens</span>
-          <h2 style="margin-top: 14px;">Focus Pulse</h2>
-          <p class="muted">Verse Focus Room keeps Mantra Lens simple enough for everyday study.</p>
-          <div class="progress" aria-label="Sprint progress 20 percent"><div class="bar" style="--score:20%"></div></div>
+          <h2 style="margin-top: 14px;">Translit Pulse</h2>
+          <p class="muted">Transliteration Lab opens Sanskrit study while keeping pronunciation claims restrained.</p>
+          <div class="progress" aria-label="Sprint progress 30 percent"><div class="bar" style="--score:30%"></div></div>
           <div class="metric-grid">
-            <div class="metric"><span>Current</span><strong>v2.4.6</strong></div>
+            <div class="metric"><span>Current</span><strong>v2.4.7</strong></div>
             <div class="metric"><span>Sprint</span><strong>3/10</strong></div>
             <div class="metric"><span>Verses</span><strong>4</strong></div>
-            <div class="metric"><span>Next</span><strong>Transliteration Lab</strong></div>
+            <div class="metric"><span>Next</span><strong>Word Meaning Rail</strong></div>
           </div>
           <div class="sprint-list">
             <div class="sprint-step active"><span class="step-index">1</span><div><strong>Source</strong><p>Show citation.</p></div></div>
@@ -142,22 +142,22 @@
       </main>
     </div>
     <script type="application/json" id="room-data">{
-  "version": "v2.4.6",
-  "badge": "v2.4.6 verse focus",
-  "slug": "versefocus",
-  "nav": "Focus",
-  "title": "VedaPath Verse Focus Room",
-  "pageLabel": "Verse focus",
-  "eyebrow": "Verse focus",
-  "h1": "Hold one verse in clean focus.",
-  "lead": "A verse focus room that shows one source candidate, transliteration, plain sense, confidence, and caution without crowding the learner.",
-  "source": "Bhagavad Gita 2.48",
-  "stance": "Verse focus preview, not commentary authority.",
-  "sprintPercent": 20,
-  "defaultVerse": "bg-2-48-mantra-lens",
-  "next": "Transliteration Lab",
-  "primaryAsk": "Make the verse card quiet and readable.",
-  "summary": "Verse Focus Room keeps Mantra Lens simple enough for everyday study.",
+  "version": "v2.4.7",
+  "badge": "v2.4.7 transliteration",
+  "slug": "transliterationlab",
+  "nav": "Translit",
+  "title": "VedaPath Transliteration Lab",
+  "pageLabel": "Transliteration",
+  "eyebrow": "Transliteration lab",
+  "h1": "Read the sound layer with humility.",
+  "lead": "A transliteration lab that separates source text handling, pronunciation humility, and learner-friendly reading support.",
+  "source": "Rigveda 3.62.10",
+  "stance": "Transliteration support, not pronunciation certification.",
+  "sprintPercent": 30,
+  "defaultVerse": "gayatri-3-62-10-lens",
+  "next": "Word Meaning Rail",
+  "primaryAsk": "Add transliteration without pretending audio mastery.",
+  "summary": "Transliteration Lab opens Sanskrit study while keeping pronunciation claims restrained.",
   "items": [
     [
       "Source",
@@ -184,15 +184,15 @@
     "brief": [
       [
         "Mantra promise",
-        "Verse Focus Room keeps Mantra Lens simple enough for everyday study."
+        "Transliteration Lab opens Sanskrit study while keeping pronunciation claims restrained."
       ],
       [
         "Founder move",
-        "Make the verse card quiet and readable."
+        "Add transliteration without pretending audio mastery."
       ],
       [
         "Trust move",
-        "Keep this boundary visible: Verse focus preview, not commentary authority."
+        "Keep this boundary visible: Transliteration support, not pronunciation certification."
       ]
     ],
     "checklist": [

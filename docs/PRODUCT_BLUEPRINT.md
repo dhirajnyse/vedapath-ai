@@ -258,6 +258,7 @@ It helps users move from curiosity to understanding through:
 <!-- VEDAPATH MANTRA LENS SPRINT SUMMARY START -->
 - Mantra Intake: Mantra Intake gives VedaPath a careful doorway into verse-level study.
 - Verse Focus Room: Verse Focus Room keeps Mantra Lens simple enough for everyday study.
+- Transliteration Lab: Transliteration Lab opens Sanskrit study while keeping pronunciation claims restrained.
 <!-- VEDAPATH MANTRA LENS SPRINT SUMMARY END -->
 
 ## What It Is
@@ -3752,6 +3753,21 @@ It should:
 - keep verse study source-first, humble, and locally private
 
 Verse Focus Room should never claim ritual authority, pronunciation certification, therapy, emergency support, or spiritual authority.
+
+### 230. Transliteration Lab
+
+Transliteration Lab opens Sanskrit study while keeping pronunciation claims restrained.
+
+It should:
+
+- Source: Show source family, citation, and confidence before practice.
+- Words: Break the verse into learner-sized word cards.
+- Boundary: Separate study support from ritual or pronunciation authority.
+- Practice: Save local notes and completions only on the device.
+- preserve the boundary: Transliteration support, not pronunciation certification.
+- keep verse study source-first, humble, and locally private
+
+Transliteration Lab should never claim ritual authority, pronunciation certification, therapy, emergency support, or spiritual authority.
 <!-- VEDAPATH MANTRA LENS SPRINT BLUEPRINT END -->
 
 ## Product Personality

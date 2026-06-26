@@ -495,6 +495,8 @@ Let us look at the source first.
 - [Mantra Intake Notes](docs/MANTRA_INTAKE.md)
 - [Verse Focus Room](versefocus.html)
 - [Verse Focus Room Notes](docs/VERSE_FOCUS_ROOM.md)
+- [Transliteration Lab](transliterationlab.html)
+- [Transliteration Lab Notes](docs/TRANSLITERATION_LAB.md)
 <!-- VEDAPATH MANTRA LENS SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -526,7 +528,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v2.4.6` is a trusted MVP prototype plus Verse Focus Room with:
+`v2.4.7` is a trusted MVP prototype plus Transliteration Lab with:
 
 - Ask workspace
 - Source Card
@@ -783,6 +785,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 <!-- VEDAPATH MANTRA LENS SPRINT FEATURES START -->
 - Mantra Intake: Mantra Intake gives VedaPath a careful doorway into verse-level study.
 - Verse Focus Room: Verse Focus Room keeps Mantra Lens simple enough for everyday study.
+- Transliteration Lab: Transliteration Lab opens Sanskrit study while keeping pronunciation claims restrained.
 <!-- VEDAPATH MANTRA LENS SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
