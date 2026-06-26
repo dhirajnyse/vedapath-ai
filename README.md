@@ -563,6 +563,8 @@ Let us look at the source first.
 - [Local Signal Map Notes](docs/LOCAL_SIGNAL_MAP.md)
 - [Calm Heatmap](calmheatmap.html)
 - [Calm Heatmap Notes](docs/CALM_HEATMAP.md)
+- [Situation Lens](situationlens.html)
+- [Situation Lens Notes](docs/SITUATION_LENS.md)
 <!-- VEDAPATH PATTERN COMPANION SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -594,7 +596,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v2.7.7` is a trusted MVP prototype plus Calm Heatmap with:
+`v2.7.8` is a trusted MVP prototype plus Situation Lens with:
 
 - Ask workspace
 - Source Card
@@ -888,6 +890,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Pattern Arrival: Pattern Arrival starts the learning layer while keeping identity and memory local.
 - Local Signal Map: Local Signal Map shows how VedaPath can learn from use without storing a user in the cloud.
 - Calm Heatmap: Calm Heatmap makes repeated moments visible without turning life into a performance metric.
+- Situation Lens: Situation Lens protects dignity by describing conditions and actions instead of labeling the user.
 <!-- VEDAPATH PATTERN COMPANION SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
