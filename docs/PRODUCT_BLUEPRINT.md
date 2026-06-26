@@ -240,6 +240,7 @@ It helps users move from curiosity to understanding through:
 - Retrieval Eval Cases: Retrieval Eval Cases gives VedaPath a simple quality loop for source selection.
 - Fallback Answer Guard: Fallback Answer Guard protects VedaPath from answer pressure when retrieval is uncertain.
 - Search History Preview: Search History Preview keeps iteration fast while preserving privacy boundaries.
+- Mobile Retrieval Polish: Mobile Retrieval Polish keeps source search usable without visual noise.
 <!-- VEDAPATH RETRIEVAL LAB SPRINT SUMMARY END -->
 
 ## What It Is
@@ -3522,6 +3523,21 @@ It should:
 - keep retrieval explainable, source-bound, and honest about fallback
 
 Search History Preview should never claim production RAG, model truth, scholar endorsement, legal clearance, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
+
+### 216. Mobile Retrieval Polish
+
+Mobile Retrieval Polish keeps source search usable without visual noise.
+
+It should:
+
+- Query path: User language is matched to curated source records.
+- Reason path: Ranking reasons and readiness stay visible.
+- Boundary path: No-go language travels with each candidate.
+- Trace path: The chosen source can be copied as a trace packet.
+- preserve the boundary: Mobile retrieval preview, not final app shell.
+- keep retrieval explainable, source-bound, and honest about fallback
+
+Mobile Retrieval Polish should never claim production RAG, model truth, scholar endorsement, legal clearance, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
 <!-- VEDAPATH RETRIEVAL LAB SPRINT BLUEPRINT END -->
 
 ## Product Personality
