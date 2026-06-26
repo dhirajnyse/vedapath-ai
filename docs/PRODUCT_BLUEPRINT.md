@@ -265,6 +265,7 @@ It helps users move from curiosity to understanding through:
 - Interpretation Stack: Interpretation Stack protects plural readings without making every school sound identical.
 - Recitation Loop Preview: Recitation Loop Preview turns source study into a calm daily habit while preserving privacy.
 - Mobile Mantra Lens: Mobile Mantra Lens keeps sacred study usable in real life.
+- Mantra Lens Control Room: Mantra Lens Control Room completes the verse-level study layer for VedaPath AI.
 <!-- VEDAPATH MANTRA LENS SPRINT SUMMARY END -->
 
 ## What It Is
@@ -3864,6 +3865,21 @@ It should:
 - keep verse study source-first, humble, and locally private
 
 Mobile Mantra Lens should never claim ritual authority, pronunciation certification, therapy, emergency support, or spiritual authority.
+
+### 237. Mantra Lens Control Room
+
+Mantra Lens Control Room completes the verse-level study layer for VedaPath AI.
+
+It should:
+
+- Source: Show source family, citation, and confidence before practice.
+- Words: Break the verse into learner-sized word cards.
+- Boundary: Separate study support from ritual or pronunciation authority.
+- Practice: Save local notes and completions only on the device.
+- preserve the boundary: Mantra Lens prototype, not recitation authority or spiritual instruction.
+- keep verse study source-first, humble, and locally private
+
+Mantra Lens Control Room should never claim ritual authority, pronunciation certification, therapy, emergency support, or spiritual authority.
 <!-- VEDAPATH MANTRA LENS SPRINT BLUEPRINT END -->
 
 ## Product Personality
