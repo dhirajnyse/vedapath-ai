@@ -1,0 +1,79 @@
+{
+  "product": "VedaPath AI",
+  "release": "v2.9.5",
+  "status": "review queue persistence v1",
+  "schema_version": "review-queue-persistence-v1",
+  "ticket_bridge_dataset": "data/vedapath-review-ticket-bridge.json",
+  "evaluation_dataset": "data/vedapath-retrieval-eval-cases.json",
+  "retrieval_config": "data/vedapath-retrieval-foundation.json",
+  "source_dataset": "data/vedapath-source-answer-foundation.json",
+  "local_queue_store": "vedapath-review-queue-records-v1",
+  "local_audit_store": "vedapath-review-queue-audit-v1",
+  "local_snapshot_store": "vedapath-review-queue-export-v1",
+  "warning": "Browser-local queue persistence only. This is not production storage, reviewer authentication, scholar approval, canonical source validation, therapy, ritual instruction, emergency support, or spiritual authority.",
+  "persistence_policy": "Review records may be created from generated review tickets, saved locally, exported, imported, and audited in this browser. Production must add accounts, reviewer identity, durable storage, permissions, and immutable audit history.",
+  "status_options": [
+    "Open",
+    "In review",
+    "Blocked",
+    "Ready after review",
+    "Accepted",
+    "Closed"
+  ],
+  "owner_options": [
+    "Retrieval reviewer",
+    "Source reviewer",
+    "Mantra reviewer",
+    "Interpretation reviewer",
+    "Source intake",
+    "Founder review"
+  ],
+  "queue_columns": [
+    {
+      "id": "open",
+      "label": "Open",
+      "status": "Open",
+      "meaning": "Known work that has not been claimed."
+    },
+    {
+      "id": "in-review",
+      "label": "In review",
+      "status": "In review",
+      "meaning": "A reviewer is actively checking source, boundary, or wording."
+    },
+    {
+      "id": "blocked",
+      "label": "Blocked",
+      "status": "Blocked",
+      "meaning": "Cannot move until a source, rights, Sanskrit, or interpretation gap is resolved."
+    },
+    {
+      "id": "accepted",
+      "label": "Accepted",
+      "status": "Accepted",
+      "meaning": "Reviewed enough to inform the next source record update."
+    },
+    {
+      "id": "closed",
+      "label": "Closed",
+      "status": "Closed",
+      "meaning": "No active product work remains for this ticket."
+    }
+  ],
+  "audit_actions": [
+    "created",
+    "claimed",
+    "updated",
+    "blocked",
+    "accepted",
+    "closed",
+    "imported",
+    "cleared"
+  ],
+  "export_contract": [
+    "schema_version",
+    "exported_at",
+    "records",
+    "audit"
+  ]
+}

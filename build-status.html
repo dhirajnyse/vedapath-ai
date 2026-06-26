@@ -360,13 +360,13 @@
           <a class="link" href="brand/brand-board.html">Brand</a>
           <a class="link" href="blueprint.html">Blueprint</a>
           <a class="link" href="citedanswerlab.html">Answers</a>
-          <a class="link" href="reviewticketbridge.html">Review</a>
+          <a class="link" href="reviewqueuepersistence.html">Review</a>
           <a class="link" href="mantralenslab.html">Mantra</a>
           <a class="link" href="lifecompanionlab.html">Life</a>
           <a class="link" href="conversationcompanionlab.html">Talk</a>
           <a class="link" href="patterncompanionlab.html">Pattern</a>
           <a class="link" href="daily.html">Daily</a>
-          <span class="version">v2.9.4 review</span>
+          <span class="version">v2.9.5 queue</span>
         </nav>
       </header>
 
@@ -378,8 +378,8 @@
       <section class="summary" aria-label="Progress summary">
         <article class="tile">
           <span>Current version</span>
-          <strong>v2.9.4</strong>
-          <p>Reviewer Ticket Bridge: eval gaps, review-needed matches, and no-source cases now become visible reviewer work.</p>
+          <strong>v2.9.5</strong>
+          <p>Reviewer Queue Persistence: review records now keep local state, owner, notes, audit events, and export snapshots.</p>
         </article>
         <article class="tile">
           <span>MVP progress</span>
@@ -389,14 +389,14 @@
         </article>
         <article class="tile">
           <span>Full vision progress</span>
-          <strong>72%</strong>
-          <div class="progress" aria-hidden="true"><div class="bar" style="width:72%"></div></div>
-          <p>The trust loop now has a bridge from retrieval checks to human review packets.</p>
+          <strong>73%</strong>
+          <div class="progress" aria-hidden="true"><div class="bar" style="width:73%"></div></div>
+          <p>The trust loop now has local queue persistence and an audit-shaped export contract.</p>
         </article>
         <article class="tile">
           <span>Next release</span>
-          <strong>Reviewer queue persistence</strong>
-          <p>Move local review decisions toward durable queue records and accountable history.</p>
+          <strong>Reviewer identity and audit gate</strong>
+          <p>Add reviewer roles, decision authority, and immutable-audit requirements for production.</p>
         </article>
       </section>
 
@@ -2523,9 +2523,17 @@
               <span class="percent">100%</span>
             </article>
             <article class="phase">
+              <span class="badge done">Done</span>
+              <div>
+                <strong>Phase 259: Reviewer Queue Persistence</strong>
+                <p>Adds local queue records, state changes, owner notes, audit events, reset, import, and export snapshots.</p>
+              </div>
+              <span class="percent">100%</span>
+            </article>
+            <article class="phase">
               <span class="badge later">Later</span>
               <div>
-                <strong>Phase 259: Production Implementation and Licensed Audio</strong>
+                <strong>Phase 260: Production Implementation and Licensed Audio</strong>
                 <p>Backend storage, account consent, reviewed source records, reviewer operations, audio rights, and launch sequencing after founder direction.</p>
               </div>
               <div class="percent">0%</div>
@@ -2536,11 +2544,11 @@
         <aside class="panel version">
           <div>
             <h2>Version Notes</h2>
-            <div class="version-row"><span>Release</span><strong>v2.9.4 Reviewer Ticket Bridge</strong></div>
-            <div class="version-row"><span>Previous</span><strong>v2.9.3 Retrieval Evaluation</strong></div>
+            <div class="version-row"><span>Release</span><strong>v2.9.5 Reviewer Queue Persistence</strong></div>
+            <div class="version-row"><span>Previous</span><strong>v2.9.4 Reviewer Ticket Bridge</strong></div>
             <div class="version-row"><span>Commit</span><strong>See GitHub history</strong></div>
-            <div class="version-row"><span>Goal</span><strong>Make trust failures become visible work.</strong></div>
-            <div class="version-row"><span>Status</span><strong>Ready for reviewer queue persistence</strong></div>
+            <div class="version-row"><span>Goal</span><strong>Make reviewer decisions persist with history.</strong></div>
+            <div class="version-row"><span>Status</span><strong>Ready for reviewer identity and audit gate</strong></div>
           </div>
 
           <div class="panel note">
@@ -2551,10 +2559,10 @@
           <div>
             <h2>Next Build Checklist</h2>
             <ul class="checklist">
-              <li><span class="dot"></span><span>Persist review decisions beyond browser storage.</span></li>
-              <li><span class="dot"></span><span>Add reviewer identity and audit history.</span></li>
-              <li><span class="dot"></span><span>Connect accepted tickets to source record updates.</span></li>
-              <li><span class="dot"></span><span>Keep review work separate from user-facing answers.</span></li>
+              <li><span class="dot"></span><span>Add reviewer identity and role boundaries.</span></li>
+              <li><span class="dot"></span><span>Define immutable production audit requirements.</span></li>
+              <li><span class="dot"></span><span>Require two-step approval for accepted source updates.</span></li>
+              <li><span class="dot"></span><span>Keep queue records separate from answer rendering.</span></li>
             </ul>
           </div>
         </aside>

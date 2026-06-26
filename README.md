@@ -953,6 +953,18 @@ Then open:
 http://127.0.0.1:8088/
 ```
 
+<!-- VEDAPATH REVIEW QUEUE PERSISTENCE START -->
+## v2.9.5 Reviewer Queue Persistence
+
+This release gives reviewer work a browser-local lifecycle.
+
+- adds `data/vedapath-review-queue-persistence.json`
+- adds `reviewqueuepersistence.html` as the main Review lane
+- hydrates queue records from review-ticket bridge output
+- persists status, owner, notes, and audit events in local storage
+- adds copyable export and import-from-box queue snapshots
+<!-- VEDAPATH REVIEW QUEUE PERSISTENCE END -->
+
 <!-- VEDAPATH REVIEW TICKET BRIDGE START -->
 ## v2.9.4 Reviewer Ticket Bridge
 

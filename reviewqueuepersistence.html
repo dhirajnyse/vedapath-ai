@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VedaPath Reviewer Queue Persistence</title>
+    <link rel="stylesheet" href="assets/vedapath-sprint.css">
+    <link rel="stylesheet" href="assets/vedapath-review-queue-persistence.css">
+    <link rel="stylesheet" href="assets/vedapath-cohesive.css">
+    <link rel="stylesheet" href="assets/vedapath-polish.css">
+    <link rel="stylesheet" href="assets/vedapath-focus.css">
+  </head>
+  <body>
+    <div class="shell" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top" aria-label="VedaPath AI home">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
+          <div>
+            <strong>VedaPath AI</strong>
+            <span>Reviewer queue</span>
+          </div>
+        </a>
+        <nav class="nav" aria-label="Project links">
+          <a class="link" href="index.html">Home</a>
+          <a class="link" href="build-status.html">Build</a>
+          <a class="link" href="brand/brand-board.html">Brand</a>
+          <a class="link" href="blueprint.html">Blueprint</a>
+          <a class="link" href="citedanswerlab.html">Answers</a>
+          <a class="link active" href="reviewqueuepersistence.html">Review</a>
+          <a class="link" href="mantralenslab.html">Mantra</a>
+          <a class="link" href="lifecompanionlab.html">Life</a>
+          <a class="link" href="conversationcompanionlab.html">Talk</a>
+          <a class="link" href="patterncompanionlab.html">Pattern</a>
+          <a class="link" href="daily.html">Daily</a>
+          <span class="version">v2.9.5 queue</span>
+        </nav>
+      </header>
+
+      <main class="workspace" aria-label="VedaPath Reviewer Queue Persistence workspace">
+        <aside class="panel">
+          <span class="eyebrow">Queue memory</span>
+          <h2>Review work should have history</h2>
+          <p class="muted">The bridge creates tickets. This queue keeps their state, owner, notes, and audit events visible in this browser.</p>
+          <div class="sprint-list">
+            <div class="sprint-step active"><span class="step-index">1</span><div><strong>Hydrate</strong><p>Create records from tickets.</p></div></div>
+            <div class="sprint-step"><span class="step-index">2</span><div><strong>Persist</strong><p>Save queue state locally.</p></div></div>
+            <div class="sprint-step"><span class="step-index">3</span><div><strong>Audit</strong><p>Record each decision.</p></div></div>
+            <div class="sprint-step"><span class="step-index">4</span><div><strong>Export</strong><p>Copy a queue snapshot.</p></div></div>
+          </div>
+          <div class="button-row" style="margin-top: 16px;">
+            <a class="button safe" href="reviewticketbridge.html">Open Ticket Bridge</a>
+          </div>
+        </aside>
+
+        <section class="panel queue-app" id="reviewQueuePersistence">
+          <div class="queue-head">
+            <div>
+              <span class="eyebrow">Reviewer queue persistence</span>
+              <h1>Local review memory before production storage.</h1>
+              <p class="muted">This queue makes reviewer work survive page refreshes, records an audit trail, and exports a snapshot that can later become a production queue contract.</p>
+            </div>
+            <div class="queue-mark"><img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath queue mark"></div>
+          </div>
+
+          <div class="queue-summary" id="queueSummary" aria-live="polite"></div>
+
+          <section class="queue-layout" aria-label="Reviewer queue">
+            <div class="queue-list" id="queueList"></div>
+            <div class="queue-detail">
+              <div class="queue-grid" id="queueDetail"></div>
+              <section class="queue-controls">
+                <h2>Queue Decision</h2>
+                <div class="queue-control-grid">
+                  <label for="queueStatus">Status<select id="queueStatus"></select></label>
+                  <label for="queueOwner">Owner<select id="queueOwner"></select></label>
+                </div>
+                <label class="queue-export-label" for="queueNote">Reviewer note</label>
+                <textarea id="queueNote" placeholder="Add a short audit note."></textarea>
+                <div class="queue-actions">
+                  <button class="button primary" id="saveQueueRecord" type="button">Save Update</button>
+                  <button class="button safe" id="claimQueueRecord" type="button">Claim</button>
+                  <button class="button" id="acceptQueueRecord" type="button">Accept</button>
+                  <button class="button" id="clearQueueLocal" type="button">Reset Local</button>
+                </div>
+              </section>
+              <section>
+                <h2>Audit Trail</h2>
+                <div class="audit-list" id="queueAudit"></div>
+              </section>
+              <section>
+                <h2>Persistence Contract</h2>
+                <div class="queue-rules" id="queueRules"></div>
+              </section>
+              <section class="queue-export-wrap">
+                <div class="queue-actions">
+                  <button class="button safe" id="copyQueueExport" type="button">Copy Export</button>
+                  <button class="button" id="importQueueExport" type="button">Import From Box</button>
+                  <a class="button" href="data/vedapath-review-queue-persistence.json">Open JSON</a>
+                </div>
+                <label class="queue-export-label" for="queueExport">Queue snapshot JSON</label>
+                <textarea class="queue-export" id="queueExport"></textarea>
+              </section>
+            </div>
+          </section>
+        </section>
+
+        <aside class="panel tight">
+          <span class="badge green">Persistence phase</span>
+          <h2 style="margin-top: 14px;">Queue Boundary</h2>
+          <p class="muted">This is still browser-local. The real product must add reviewer accounts, server storage, permissions, and immutable audit history.</p>
+          <div class="progress" aria-label="Reviewer queue persistence progress 100 percent"><div class="bar" style="--score:100%"></div></div>
+          <div class="metric-grid">
+            <div class="metric"><span>Current</span><strong>v2.9.5</strong></div>
+            <div class="metric"><span>Source</span><strong>Tickets</strong></div>
+            <div class="metric"><span>Store</span><strong>Local</strong></div>
+            <div class="metric"><span>Next</span><strong>Audit</strong></div>
+          </div>
+          <section class="panel tight boundary" style="margin-top: 16px;">
+            <h2>Production Rule</h2>
+            <p class="muted">A reviewed answer should have a ticket, a decision, an owner, and a traceable history before it affects source records.</p>
+          </section>
+        </aside>
+      </main>
+    </div>
+    <script src="assets/vedapath-review-ticket-bridge.js"></script>
+    <script src="assets/vedapath-review-queue-persistence.js"></script>
+  </body>
+</html>

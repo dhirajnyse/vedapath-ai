@@ -4373,6 +4373,20 @@ It should:
 
 Pattern Companion Control Room should never claim diagnosis, therapy, legal advice, medical advice, surveillance, scoring, or spiritual authority.
 <!-- VEDAPATH PATTERN COMPANION SPRINT BLUEPRINT END -->
+<!-- VEDAPATH REVIEW QUEUE PERSISTENCE BLUEPRINT START -->
+### 278. Reviewer Queue Persistence
+
+VedaPath should treat review as a lifecycle, not a loose note.
+
+Rules:
+
+- Tickets become queue records with status, owner, note, and audit events.
+- Browser-local storage is a prototype only.
+- Export JSON becomes the first contract for production queue migration.
+- Accepted tickets should not automatically rewrite answer records.
+- The next build should define reviewer identity, roles, and immutable audit gates.
+<!-- VEDAPATH REVIEW QUEUE PERSISTENCE BLUEPRINT END -->
+
 <!-- VEDAPATH REVIEW TICKET BRIDGE BLUEPRINT START -->
 ### 277. Reviewer Ticket Bridge
 

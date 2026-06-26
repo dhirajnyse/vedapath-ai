@@ -306,6 +306,20 @@ The v0.7.4 release turns the VedaPath AI homepage into a trusted MVP prototype w
 - Mobile Pattern: Mobile Pattern keeps the learning loop usable where calm moments actually happen.
 - Pattern Companion Control Room: Pattern Companion Control Room completes the private local learning layer for VedaPath AI.
 <!-- VEDAPATH PATTERN COMPANION SPRINT NOTES END -->
+<!-- VEDAPATH REVIEW QUEUE PERSISTENCE NOTES START -->
+## v2.9.5 Reviewer Queue Persistence
+
+This phase makes review work survive beyond one page interaction.
+
+Action taken:
+
+- Added local queue persistence schema.
+- Added queue records hydrated from review bridge tickets.
+- Added local status, owner, note, claim, accept, reset, import, and export controls.
+- Added audit event history for review actions.
+- Set the next phase as reviewer identity and audit gate.
+<!-- VEDAPATH REVIEW QUEUE PERSISTENCE NOTES END -->
+
 <!-- VEDAPATH REVIEW TICKET BRIDGE NOTES START -->
 ## v2.9.4 Reviewer Ticket Bridge
 
