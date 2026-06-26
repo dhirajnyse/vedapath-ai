@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>VedaPath Source Shelf Intake</title>
+    <title>VedaPath Readiness Scorecard</title>
     <link rel="stylesheet" href="assets/vedapath-sprint.css">
     <link rel="stylesheet" href="assets/vedapath-source-library.css">
   </head>
@@ -14,7 +14,7 @@
           <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
           <div>
             <strong>VedaPath AI</strong>
-            <span>Source shelf</span>
+            <span>Readiness score</span>
           </div>
         </a>
         <nav class="nav" aria-label="Project links">
@@ -30,7 +30,7 @@
         </nav>
       </header>
 
-      <main class="workspace" aria-label="VedaPath Source Shelf Intake workspace">
+      <main class="workspace" aria-label="VedaPath Readiness Scorecard workspace">
         <aside class="panel">
           <span class="eyebrow">Source library sprint</span>
           <h2>Release Rooms</h2>
@@ -41,35 +41,35 @@
         <section class="panel">
           <div class="hero-grid">
             <div>
-              <span class="eyebrow">Source shelf</span>
-              <h1>Give every answer a source shelf.</h1>
-              <p class="muted">A calm intake room for the first curated source records: citation, family, theme, rights state, readiness, and boundary in one place.</p>
+              <span class="eyebrow">Readiness scorecard</span>
+              <h1>Let readiness be visible, not implied.</h1>
+              <p class="muted">A readiness scorecard that makes preview-ready, needs-review, draft, and rights-hold source states visible before search uses the library.</p>
             </div>
             <div class="mark-stage">
-              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Shelf logo">
+              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Score logo">
             </div>
           </div>
 
           <div class="source-block" aria-label="Release source card">
             <div>
               <span class="source-meta">Release</span>
-              <span class="source-value">v2.1.5</span>
+              <span class="source-value">v2.2.2</span>
             </div>
             <div>
               <span class="source-meta">Focus source</span>
-              <span class="source-value">Bhagavad Gita 2.48</span>
+              <span class="source-value">Taittiriya Upanishad 1.11.1</span>
             </div>
             <div>
               <span class="source-meta">Family lane</span>
-              <span class="source-value">Bhagavad Gita | Smriti</span>
+              <span class="source-value">Upanishad | Shruti</span>
             </div>
             <div>
               <span class="source-meta">Boundary</span>
-              <span class="source-value">Source shelf prototype, not canonical database.</span>
+              <span class="source-value">Readiness score preview, not production QA.</span>
             </div>
           </div>
 
-          <section class="source-library" id="sourceLibrary" data-family="all" data-readiness="all" aria-label="Curated source library">
+          <section class="source-library" id="sourceLibrary" data-family="all" data-readiness="preview-ready" aria-label="Curated source library">
             <div class="library-head">
               <div>
                 <span class="eyebrow">Curated source data</span>
@@ -113,7 +113,7 @@
           <h2>Source Signals</h2>
           <div class="item-list" id="itemList"></div>
 
-          <div class="tabs" role="tablist" aria-label="VedaPath Source Shelf Intake layers">
+          <div class="tabs" role="tablist" aria-label="VedaPath Readiness Scorecard layers">
             <button class="tab active" type="button" data-mode="brief">Brief</button>
             <button class="tab" type="button" data-mode="checklist">Checklist</button>
             <button class="tab" type="button" data-mode="boundary">Boundary</button>
@@ -127,20 +127,20 @@
             <button class="button" id="copyBoundary" type="button">Copy Boundary</button>
           </div>
 
-          <textarea id="output" readonly aria-label="VedaPath Source Shelf Intake output"></textarea>
+          <textarea id="output" readonly aria-label="VedaPath Readiness Scorecard output"></textarea>
         </section>
 
-        <aside class="panel tight" aria-label="VedaPath Source Shelf Intake sprint rail">
+        <aside class="panel tight" aria-label="VedaPath Readiness Scorecard sprint rail">
           <span class="badge green">Source library</span>
-          <h2 style="margin-top: 14px;">Shelf Pulse</h2>
-          <p class="muted">Source Shelf Intake starts the curated source layer that future retrieval can trust.</p>
-          <div class="progress" aria-label="Sprint progress 10 percent">
-            <div class="bar" style="--score:10%"></div>
+          <h2 style="margin-top: 14px;">Score Pulse</h2>
+          <p class="muted">Readiness Scorecard turns source quality into a visible product signal.</p>
+          <div class="progress" aria-label="Sprint progress 80 percent">
+            <div class="bar" style="--score:80%"></div>
           </div>
           <div class="metric-grid">
             <div class="metric">
               <span>Current</span>
-              <strong>v2.1.5</strong>
+              <strong>v2.2.2</strong>
             </div>
             <div class="metric">
               <span>Sprint</span>
@@ -152,7 +152,7 @@
             </div>
             <div class="metric">
               <span>Next</span>
-              <strong>Citation Schema Desk</strong>
+              <strong>Source Packet Export</strong>
             </div>
           </div>
 
@@ -184,73 +184,73 @@
     </div>
 
     <script type="application/json" id="room-data">{
-  "version": "v2.1.5",
-  "badge": "v2.1.5 source shelf",
-  "slug": "sourceshelf",
-  "nav": "Shelf",
-  "title": "VedaPath Source Shelf Intake",
-  "pageLabel": "Source shelf",
-  "eyebrow": "Source shelf",
-  "h1": "Give every answer a source shelf.",
-  "lead": "A calm intake room for the first curated source records: citation, family, theme, rights state, readiness, and boundary in one place.",
-  "source": "Bhagavad Gita 2.48",
-  "family": "Bhagavad Gita | Smriti",
-  "stance": "Source shelf prototype, not canonical database.",
-  "sprintPercent": 10,
+  "version": "v2.2.2",
+  "badge": "v2.2.2 readiness score",
+  "slug": "readinessscore",
+  "nav": "Score",
+  "title": "VedaPath Readiness Scorecard",
+  "pageLabel": "Readiness score",
+  "eyebrow": "Readiness scorecard",
+  "h1": "Let readiness be visible, not implied.",
+  "lead": "A readiness scorecard that makes preview-ready, needs-review, draft, and rights-hold source states visible before search uses the library.",
+  "source": "Taittiriya Upanishad 1.11.1",
+  "family": "Upanishad | Shruti",
+  "stance": "Readiness score preview, not production QA.",
+  "sprintPercent": 80,
   "defaultFamily": "all",
-  "defaultReadiness": "all",
-  "next": "Citation Schema Desk",
-  "primaryAsk": "Turn trusted answer ideas into structured source records.",
-  "summary": "Source Shelf Intake starts the curated source layer that future retrieval can trust.",
+  "defaultReadiness": "preview-ready",
+  "next": "Source Packet Export",
+  "primaryAsk": "Use score and state to decide what retrieval may touch first.",
+  "summary": "Readiness Scorecard turns source quality into a visible product signal.",
   "items": [
     [
-      "Source record",
-      "Each passage candidate gets a stable id, citation, family, theme, and readiness.",
-      "Prevents loose notes."
+      "Score cards",
+      "Records show readiness score and state.",
+      "Makes uncertainty clear."
     ],
     [
-      "Boundary attached",
-      "Every record carries what the answer must not claim.",
-      "Protects user trust."
+      "Preview-ready filter",
+      "Only strong candidates are easy to isolate.",
+      "Supports beta launch."
     ],
     [
-      "Rights state",
-      "Display limits are visible before the answer uses text.",
-      "Avoids accidental misuse."
+      "Risk contrast",
+      "Draft and holds remain visible but not hidden.",
+      "Keeps learning honest."
     ],
     [
-      "Simple shelf",
-      "The UI stays scan-first and calm.",
-      "Keeps founder review fast."
+      "Next sprint signal",
+      "Scores identify which records need review.",
+      "Guides work."
     ]
   ],
   "modes": {
     "brief": [
       [
         "Source promise",
-        "Source Shelf Intake starts the curated source layer that future retrieval can trust."
+        "Readiness Scorecard turns source quality into a visible product signal."
       ],
       [
         "Founder move",
-        "Turn trusted answer ideas into structured source records."
+        "Use score and state to decide what retrieval may touch first."
       ],
       [
         "Trust move",
-        "Keep this boundary visible: Source shelf prototype, not canonical database."
+        "Keep this boundary visible: Readiness score preview, not production QA."
       ]
     ],
     "checklist": [
       [
-        "Source record",
-        "Each passage candidate gets a stable id, citation, family, theme, and readiness."
+        "Score cards",
+        "Records show readiness score and state."
       ],
       [
-        "Boundary attached",
-        "Every record carries what the answer must not claim."
+        "Preview-ready filter",
+        "Only strong candidates are easy to isolate."
       ],
       [
-        "Rights state",
-        "Display limits are visible before the answer uses text."
+        "Risk contrast",
+        "Draft and holds remain visible but not hidden."
       ]
     ],
     "boundary": [

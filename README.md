@@ -439,6 +439,8 @@ Let us look at the source first.
 - [Concept Glossary Builder Notes](docs/CONCEPT_GLOSSARY_BUILDER.md)
 - [Question Source Map](questionmap.html)
 - [Question Source Map Notes](docs/QUESTION_SOURCE_MAP.md)
+- [Readiness Scorecard](readinessscore.html)
+- [Readiness Scorecard Notes](docs/READINESS_SCORECARD.md)
 <!-- VEDAPATH SOURCE LIBRARY SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -470,7 +472,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v2.2.1` is a trusted MVP prototype plus Question Source Map with:
+`v2.2.2` is a trusted MVP prototype plus Readiness Scorecard with:
 
 - Ask workspace
 - Source Card
@@ -696,6 +698,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Translation Note Gate: Translation Note Gate prevents the product from sliding into unreviewed text display.
 - Concept Glossary Builder: Concept Glossary Builder connects source records to learning language while preserving depth.
 - Question Source Map: Question Source Map prepares retrieval while keeping source claims humble.
+- Readiness Scorecard: Readiness Scorecard turns source quality into a visible product signal.
 <!-- VEDAPATH SOURCE LIBRARY SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff

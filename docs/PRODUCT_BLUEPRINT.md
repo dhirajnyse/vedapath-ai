@@ -227,6 +227,7 @@ It helps users move from curiosity to understanding through:
 - Translation Note Gate: Translation Note Gate prevents the product from sliding into unreviewed text display.
 - Concept Glossary Builder: Concept Glossary Builder connects source records to learning language while preserving depth.
 - Question Source Map: Question Source Map prepares retrieval while keeping source claims humble.
+- Readiness Scorecard: Readiness Scorecard turns source quality into a visible product signal.
 <!-- VEDAPATH SOURCE LIBRARY SPRINT SUMMARY END -->
 
 ## What It Is
@@ -3343,6 +3344,21 @@ It should:
 - keep source-library records as starter data until scholar review, rights policy, and retrieval evaluation are approved
 
 Question Source Map should never claim canonical corpus coverage, scholar endorsement, legal clearance, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
+
+### 205. Readiness Scorecard
+
+Readiness Scorecard turns source quality into a visible product signal.
+
+It should:
+
+- Score cards: Records show readiness score and state.
+- Preview-ready filter: Only strong candidates are easy to isolate.
+- Risk contrast: Draft and holds remain visible but not hidden.
+- Next sprint signal: Scores identify which records need review.
+- preserve the boundary: Readiness score preview, not production QA.
+- keep source-library records as starter data until scholar review, rights policy, and retrieval evaluation are approved
+
+Readiness Scorecard should never claim canonical corpus coverage, scholar endorsement, legal clearance, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
 <!-- VEDAPATH SOURCE LIBRARY SPRINT BLUEPRINT END -->
 
 ## Product Personality
