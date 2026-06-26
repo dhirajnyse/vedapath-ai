@@ -409,6 +409,8 @@ Let us look at the source first.
 - [Source Evidence Checklist Notes](docs/SOURCE_EVIDENCE_CHECKLIST.md)
 - [Rights Review Gate](rightsreview.html)
 - [Rights Review Gate Notes](docs/RIGHTS_REVIEW_GATE.md)
+- [Boundary Decision Board](boundaryboard.html)
+- [Boundary Decision Board Notes](docs/BOUNDARY_DECISION_BOARD.md)
 <!-- VEDAPATH REVIEWER STUDIO SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -440,7 +442,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v2.0.7` is a trusted MVP prototype plus Rights Review Gate with:
+`v2.0.8` is a trusted MVP prototype plus Boundary Decision Board with:
 
 - Ask workspace
 - Source Card
@@ -650,6 +652,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Review Intake Desk: Review Intake Desk creates the first visible bridge between guided reading and human review.
 - Source Evidence Checklist: Source Evidence Checklist prevents review from becoming a vague thumbs-up.
 - Rights Review Gate: Rights Review Gate makes text-use caution part of the product workflow.
+- Boundary Decision Board: Boundary Decision Board makes restraint an active product decision.
 <!-- VEDAPATH REVIEWER STUDIO SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff

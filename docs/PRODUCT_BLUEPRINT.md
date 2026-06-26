@@ -211,6 +211,7 @@ It helps users move from curiosity to understanding through:
 - Review Intake Desk: Review Intake Desk creates the first visible bridge between guided reading and human review.
 - Source Evidence Checklist: Source Evidence Checklist prevents review from becoming a vague thumbs-up.
 - Rights Review Gate: Rights Review Gate makes text-use caution part of the product workflow.
+- Boundary Decision Board: Boundary Decision Board makes restraint an active product decision.
 <!-- VEDAPATH REVIEWER STUDIO SPRINT SUMMARY END -->
 
 ## What It Is
@@ -3116,6 +3117,21 @@ It should:
 - keep review decisions browser-only until reviewer identity, consent, backend storage, and source policy are approved
 
 Rights Review Gate should never claim production approval, scholar endorsement, legal clearance, durable review storage, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
+
+### 191. Boundary Decision Board
+
+Boundary Decision Board makes restraint an active product decision.
+
+It should:
+
+- No-go filter: Boundary-heavy items can be inspected together.
+- User boundary: Public-facing boundary copy is visible.
+- Block option: Overclaims can be blocked explicitly.
+- Calm tone: The board stays firm without becoming harsh.
+- preserve the boundary: Boundary board, not safety certification.
+- keep review decisions browser-only until reviewer identity, consent, backend storage, and source policy are approved
+
+Boundary Decision Board should never claim production approval, scholar endorsement, legal clearance, durable review storage, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
 <!-- VEDAPATH REVIEWER STUDIO SPRINT BLUEPRINT END -->
 
 ## Product Personality
