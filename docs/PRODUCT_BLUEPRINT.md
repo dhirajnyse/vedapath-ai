@@ -237,6 +237,7 @@ It helps users move from curiosity to understanding through:
 - Reason Stack Viewer: Reason Stack Viewer builds trust by making retrieval evidence visible.
 - Boundary-Aware Answer Draft: Boundary-Aware Answer Draft makes safe answer framing visible before any AI backend exists.
 - Citation Trace Panel: Citation Trace Panel makes retrieval accountable at the record level.
+- Retrieval Eval Cases: Retrieval Eval Cases gives VedaPath a simple quality loop for source selection.
 <!-- VEDAPATH RETRIEVAL LAB SPRINT SUMMARY END -->
 
 ## What It Is
@@ -3474,6 +3475,21 @@ It should:
 - keep retrieval explainable, source-bound, and honest about fallback
 
 Citation Trace Panel should never claim production RAG, model truth, scholar endorsement, legal clearance, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
+
+### 213. Retrieval Eval Cases
+
+Retrieval Eval Cases gives VedaPath a simple quality loop for source selection.
+
+It should:
+
+- Query path: User language is matched to curated source records.
+- Reason path: Ranking reasons and readiness stay visible.
+- Boundary path: No-go language travels with each candidate.
+- Trace path: The chosen source can be copied as a trace packet.
+- preserve the boundary: Eval preview, not formal benchmark.
+- keep retrieval explainable, source-bound, and honest about fallback
+
+Retrieval Eval Cases should never claim production RAG, model truth, scholar endorsement, legal clearance, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
 <!-- VEDAPATH RETRIEVAL LAB SPRINT BLUEPRINT END -->
 
 ## Product Personality

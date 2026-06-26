@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>VedaPath Reason Stack Viewer</title>
+    <title>VedaPath Retrieval Eval Cases</title>
     <link rel="stylesheet" href="assets/vedapath-sprint.css">
     <link rel="stylesheet" href="assets/vedapath-retrieval-lab.css">
   </head>
@@ -12,7 +12,7 @@
       <header class="topbar">
         <a class="brand" href="index.html#top" aria-label="VedaPath AI home">
           <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
-          <div><strong>VedaPath AI</strong><span>Reason stack</span></div>
+          <div><strong>VedaPath AI</strong><span>Retrieval eval</span></div>
         </a>
         <nav class="nav" aria-label="Project links">
           <a class="link" href="build-status.html">Build</a>
@@ -28,7 +28,7 @@
         </nav>
       </header>
 
-      <main class="workspace" aria-label="VedaPath Reason Stack Viewer workspace">
+      <main class="workspace" aria-label="VedaPath Retrieval Eval Cases workspace">
         <aside class="panel">
           <span class="eyebrow">Retrieval lab sprint</span>
           <h2>Release Rooms</h2>
@@ -39,21 +39,21 @@
         <section class="panel">
           <div class="hero-grid">
             <div>
-              <span class="eyebrow">Reason stack</span>
-              <h1>Show why a source was selected.</h1>
-              <p class="muted">A reason stack that explains query matches, readiness state, rights state, and boundary warnings for every selected source.</p>
+              <span class="eyebrow">Eval cases</span>
+              <h1>Test retrieval before trusting it.</h1>
+              <p class="muted">An eval case room with expected source ids, visible matches, and mismatch boundaries for the starter source library.</p>
             </div>
-            <div class="mark-stage"><img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Reasons logo"></div>
+            <div class="mark-stage"><img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Eval logo"></div>
           </div>
 
           <div class="source-block" aria-label="Release source card">
-            <div><span class="source-meta">Release</span><span class="source-value">v2.2.7</span></div>
-            <div><span class="source-meta">Sample query</span><span class="source-value">How do I tell short term comfort from a deeper good?</span></div>
-            <div><span class="source-meta">Intent lane</span><span class="source-value">discernment</span></div>
-            <div><span class="source-meta">Boundary</span><span class="source-value">Reason stack preview, not evaluation proof.</span></div>
+            <div><span class="source-meta">Release</span><span class="source-value">v2.3.0</span></div>
+            <div><span class="source-meta">Sample query</span><span class="source-value">Does the Rigveda support religious pluralism?</span></div>
+            <div><span class="source-meta">Intent lane</span><span class="source-value">plural</span></div>
+            <div><span class="source-meta">Boundary</span><span class="source-value">Eval preview, not formal benchmark.</span></div>
           </div>
 
-          <section class="retrieval-lab" id="retrievalLab" data-query="discernment" aria-label="Retrieval lab">
+          <section class="retrieval-lab" id="retrievalLab" data-query="plural" aria-label="Retrieval lab">
             <div class="retrieval-head">
               <div>
                 <span class="eyebrow">Source-backed retrieval</span>
@@ -89,7 +89,7 @@
           <h2>Retrieval Signals</h2>
           <div class="item-list" id="itemList"></div>
 
-          <div class="tabs" role="tablist" aria-label="VedaPath Reason Stack Viewer layers">
+          <div class="tabs" role="tablist" aria-label="VedaPath Retrieval Eval Cases layers">
             <button class="tab active" type="button" data-mode="brief">Brief</button>
             <button class="tab" type="button" data-mode="checklist">Checklist</button>
             <button class="tab" type="button" data-mode="boundary">Boundary</button>
@@ -100,19 +100,19 @@
             <button class="button safe" id="copyJson" type="button">Copy JSON</button>
             <button class="button" id="copyBoundary" type="button">Copy Boundary</button>
           </div>
-          <textarea id="output" readonly aria-label="VedaPath Reason Stack Viewer output"></textarea>
+          <textarea id="output" readonly aria-label="VedaPath Retrieval Eval Cases output"></textarea>
         </section>
 
-        <aside class="panel tight" aria-label="VedaPath Reason Stack Viewer sprint rail">
+        <aside class="panel tight" aria-label="VedaPath Retrieval Eval Cases sprint rail">
           <span class="badge green">Retrieval lab</span>
-          <h2 style="margin-top: 14px;">Reasons Pulse</h2>
-          <p class="muted">Reason Stack Viewer builds trust by making retrieval evidence visible.</p>
-          <div class="progress" aria-label="Sprint progress 30 percent"><div class="bar" style="--score:30%"></div></div>
+          <h2 style="margin-top: 14px;">Eval Pulse</h2>
+          <p class="muted">Retrieval Eval Cases gives VedaPath a simple quality loop for source selection.</p>
+          <div class="progress" aria-label="Sprint progress 60 percent"><div class="bar" style="--score:60%"></div></div>
           <div class="metric-grid">
-            <div class="metric"><span>Current</span><strong>v2.2.7</strong></div>
+            <div class="metric"><span>Current</span><strong>v2.3.0</strong></div>
             <div class="metric"><span>Sprint</span><strong>6/10</strong></div>
             <div class="metric"><span>Fixtures</span><strong>6</strong></div>
-            <div class="metric"><span>Next</span><strong>Boundary-Aware Answer Draft</strong></div>
+            <div class="metric"><span>Next</span><strong>Fallback Answer Guard</strong></div>
           </div>
           <div class="sprint-list">
             <div class="sprint-step active"><span class="step-index">1</span><div><strong>Query</strong><p>Capture user language.</p></div></div>
@@ -128,23 +128,23 @@
       </main>
     </div>
     <script type="application/json" id="room-data">{
-  "version": "v2.2.7",
-  "badge": "v2.2.7 reasons",
-  "slug": "reasonstack",
-  "nav": "Reasons",
-  "title": "VedaPath Reason Stack Viewer",
-  "pageLabel": "Reason stack",
-  "eyebrow": "Reason stack",
-  "h1": "Show why a source was selected.",
-  "lead": "A reason stack that explains query matches, readiness state, rights state, and boundary warnings for every selected source.",
-  "source": "How do I tell short term comfort from a deeper good?",
-  "family": "discernment",
-  "stance": "Reason stack preview, not evaluation proof.",
-  "sprintPercent": 30,
-  "defaultQuery": "discernment",
-  "next": "Boundary-Aware Answer Draft",
-  "primaryAsk": "Show source-selection reasons in plain language.",
-  "summary": "Reason Stack Viewer builds trust by making retrieval evidence visible.",
+  "version": "v2.3.0",
+  "badge": "v2.3.0 eval cases",
+  "slug": "retrievaleval",
+  "nav": "Eval",
+  "title": "VedaPath Retrieval Eval Cases",
+  "pageLabel": "Retrieval eval",
+  "eyebrow": "Eval cases",
+  "h1": "Test retrieval before trusting it.",
+  "lead": "An eval case room with expected source ids, visible matches, and mismatch boundaries for the starter source library.",
+  "source": "Does the Rigveda support religious pluralism?",
+  "family": "plural",
+  "stance": "Eval preview, not formal benchmark.",
+  "sprintPercent": 60,
+  "defaultQuery": "plural",
+  "next": "Fallback Answer Guard",
+  "primaryAsk": "Create starter retrieval test cases before backend work.",
+  "summary": "Retrieval Eval Cases gives VedaPath a simple quality loop for source selection.",
   "items": [
     [
       "Query path",
@@ -171,15 +171,15 @@
     "brief": [
       [
         "Retrieval promise",
-        "Reason Stack Viewer builds trust by making retrieval evidence visible."
+        "Retrieval Eval Cases gives VedaPath a simple quality loop for source selection."
       ],
       [
         "Founder move",
-        "Show source-selection reasons in plain language."
+        "Create starter retrieval test cases before backend work."
       ],
       [
         "Trust move",
-        "Keep this boundary visible: Reason stack preview, not evaluation proof."
+        "Keep this boundary visible: Eval preview, not formal benchmark."
       ]
     ],
     "checklist": [
