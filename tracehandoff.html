@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>VedaPath Passage Focus Lens</title>
+    <title>VedaPath Reviewer Trace Handoff</title>
     <link rel="stylesheet" href="assets/vedapath-sprint.css">
     <link rel="stylesheet" href="assets/vedapath-source-reader.css">
   </head>
@@ -14,7 +14,7 @@
           <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
           <div>
             <strong>VedaPath AI</strong>
-            <span>Passage focus</span>
+            <span>Reviewer trace</span>
           </div>
         </a>
         <nav class="nav" aria-label="Project links">
@@ -24,19 +24,19 @@
           <a class="link" href="searchconsole.html">Search</a>
           <!-- VEDAPATH GUIDED READER SPRINT NAV START -->
           <a class="link" href="readerstart.html">Reader</a>
-          <a class="link active" href="passagefocus.html">Focus</a>
+          <a class="link" href="passagefocus.html">Focus</a>
           <a class="link" href="meaninglayers.html">Meaning</a>
           <a class="link" href="contextgate.html">Context</a>
           <a class="link" href="reflectionrail.html">Reflect</a>
           <a class="link" href="carrybuilder.html">Carry</a>
           <a class="link" href="readmemory.html">Memory</a>
-          <a class="link" href="tracehandoff.html">Trace</a>
+          <a class="link active" href="tracehandoff.html">Trace</a>
           <!-- VEDAPATH GUIDED READER SPRINT NAV END -->
           <span class="version">v2.0.2 trace</span>
         </nav>
       </header>
 
-      <main class="workspace" aria-label="VedaPath Passage Focus Lens workspace">
+      <main class="workspace" aria-label="VedaPath Reviewer Trace Handoff workspace">
         <aside class="panel">
           <span class="eyebrow">Guided source reader sprint</span>
           <h2>Release Rooms</h2>
@@ -47,19 +47,19 @@
         <section class="panel">
           <div class="hero-grid">
             <div>
-              <span class="eyebrow">Focus lens</span>
-              <h1>Let one passage hold the room.</h1>
-              <p class="muted">A focus lens that keeps the selected source, family, level, and category stable while the user moves through reading layers.</p>
+              <span class="eyebrow">Reviewer trace</span>
+              <h1>Make every reading reviewable.</h1>
+              <p class="muted">A trace handoff that copies source candidate, layer, prompt, carry action, no-go boundary, and reviewer note into one compact review packet.</p>
             </div>
             <div class="mark-stage">
-              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Focus logo">
+              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Trace logo">
             </div>
           </div>
 
           <div class="source-block" aria-label="Release source card">
             <div>
               <span class="source-meta">Release</span>
-              <span class="source-value">v1.9.6</span>
+              <span class="source-value">v2.0.2</span>
             </div>
             <div>
               <span class="source-meta">Source candidate</span>
@@ -71,7 +71,7 @@
             </div>
             <div>
               <span class="source-meta">Boundary</span>
-              <span class="source-value">Focus lens, not final interpretation.</span>
+              <span class="source-value">Trace handoff, not submitted ticket.</span>
             </div>
           </div>
 
@@ -108,7 +108,7 @@
           <h2>Reader Signals</h2>
           <div class="item-list" id="itemList"></div>
 
-          <div class="tabs" role="tablist" aria-label="VedaPath Passage Focus Lens layers">
+          <div class="tabs" role="tablist" aria-label="VedaPath Reviewer Trace Handoff layers">
             <button class="tab active" type="button" data-mode="brief">Brief</button>
             <button class="tab" type="button" data-mode="checklist">Checklist</button>
             <button class="tab" type="button" data-mode="boundary">Boundary</button>
@@ -122,20 +122,20 @@
             <button class="button" id="copyBoundary" type="button">Copy Boundary</button>
           </div>
 
-          <textarea id="output" readonly aria-label="VedaPath Passage Focus Lens output"></textarea>
+          <textarea id="output" readonly aria-label="VedaPath Reviewer Trace Handoff output"></textarea>
         </section>
 
-        <aside class="panel tight" aria-label="VedaPath Passage Focus Lens sprint rail">
+        <aside class="panel tight" aria-label="VedaPath Reviewer Trace Handoff sprint rail">
           <span class="badge green">Guided reader</span>
-          <h2 style="margin-top: 14px;">Focus Pulse</h2>
-          <p class="muted">Passage Focus Lens makes the reader feel simple by anchoring every action to one chosen passage.</p>
-          <div class="progress" aria-label="Sprint progress 92 percent">
-            <div class="bar" style="--score:92%"></div>
+          <h2 style="margin-top: 14px;">Trace Pulse</h2>
+          <p class="muted">Reviewer Trace Handoff connects the reader experience to future human review without claiming workflow automation.</p>
+          <div class="progress" aria-label="Sprint progress 98 percent">
+            <div class="bar" style="--score:98%"></div>
           </div>
           <div class="metric-grid">
             <div class="metric">
               <span>Current</span>
-              <strong>v1.9.6</strong>
+              <strong>v2.0.2</strong>
             </div>
             <div class="metric">
               <span>Sprint</span>
@@ -143,11 +143,11 @@
             </div>
             <div class="metric">
               <span>Progress</span>
-              <strong>92%</strong>
+              <strong>98%</strong>
             </div>
             <div class="metric">
               <span>Next</span>
-              <strong>Meaning Layer Stack</strong>
+              <strong>Mobile Reader Polish</strong>
             </div>
           </div>
 
@@ -179,72 +179,72 @@
     </div>
 
     <script type="application/json" id="room-data">{
-  "version": "v1.9.6",
-  "badge": "v1.9.6 focus lens",
-  "slug": "passagefocus",
-  "nav": "Focus",
-  "title": "VedaPath Passage Focus Lens",
-  "pageLabel": "Passage focus",
-  "eyebrow": "Focus lens",
-  "h1": "Let one passage hold the room.",
-  "lead": "A focus lens that keeps the selected source, family, level, and category stable while the user moves through reading layers.",
+  "version": "v2.0.2",
+  "badge": "v2.0.2 trace",
+  "slug": "tracehandoff",
+  "nav": "Trace",
+  "title": "VedaPath Reviewer Trace Handoff",
+  "pageLabel": "Reviewer trace",
+  "eyebrow": "Reviewer trace",
+  "h1": "Make every reading reviewable.",
+  "lead": "A trace handoff that copies source candidate, layer, prompt, carry action, no-go boundary, and reviewer note into one compact review packet.",
   "source": "Katha Upanishad 1.2.1",
   "family": "Upanishad | Shruti",
-  "stance": "Focus lens, not final interpretation.",
-  "progress": 92,
-  "next": "Meaning Layer Stack",
+  "stance": "Trace handoff, not submitted ticket.",
+  "progress": 98,
+  "next": "Mobile Reader Polish",
   "defaultPassage": "katha-1-2-1",
-  "primaryAsk": "Keep source focus stable so the user does not get lost in features.",
-  "summary": "Passage Focus Lens makes the reader feel simple by anchoring every action to one chosen passage.",
+  "primaryAsk": "Turn reader behavior into reviewable product evidence.",
+  "summary": "Reviewer Trace Handoff connects the reader experience to future human review without claiming workflow automation.",
   "items": [
     [
-      "Stable selection",
-      "The selected passage remains visible across modes.",
-      "Reduces cognitive load."
+      "Trace packet",
+      "Source, prompt, action, and no-go line copy together.",
+      "Makes review easier."
     ],
     [
-      "Category cue",
-      "The source family and category are never hidden.",
-      "Prevents category confusion."
+      "Reviewer note",
+      "Open review needs are not hidden.",
+      "Protects accuracy."
     ],
     [
-      "Level cue",
-      "Beginner, learner, or decision-point mode is explicit.",
-      "Supports progressive depth."
+      "No ticket claim",
+      "Copying is not a submitted workflow.",
+      "Keeps scope honest."
     ],
     [
-      "Focus warning",
-      "The UI says what the lens cannot conclude.",
-      "Prevents overclaim."
+      "Boundary reuse",
+      "The no-go line travels with the packet.",
+      "Prevents context loss."
     ]
   ],
   "modes": {
     "brief": [
       [
         "Reader promise",
-        "Passage Focus Lens makes the reader feel simple by anchoring every action to one chosen passage."
+        "Reviewer Trace Handoff connects the reader experience to future human review without claiming workflow automation."
       ],
       [
         "Founder move",
-        "Keep source focus stable so the user does not get lost in features."
+        "Turn reader behavior into reviewable product evidence."
       ],
       [
         "Trust move",
-        "Keep this boundary visible: Focus lens, not final interpretation."
+        "Keep this boundary visible: Trace handoff, not submitted ticket."
       ]
     ],
     "checklist": [
       [
-        "Stable selection",
-        "The selected passage remains visible across modes."
+        "Trace packet",
+        "Source, prompt, action, and no-go line copy together."
       ],
       [
-        "Category cue",
-        "The source family and category are never hidden."
+        "Reviewer note",
+        "Open review needs are not hidden."
       ],
       [
-        "Level cue",
-        "Beginner, learner, or decision-point mode is explicit."
+        "No ticket claim",
+        "Copying is not a submitted workflow."
       ]
     ],
     "boundary": [
