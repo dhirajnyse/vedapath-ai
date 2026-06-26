@@ -449,6 +449,8 @@ Let us look at the source first.
 <!-- VEDAPATH RETRIEVAL LAB SPRINT LINKS START -->
 - [Retrieval Query Desk](retrievalquery.html)
 - [Retrieval Query Desk Notes](docs/RETRIEVAL_QUERY_DESK.md)
+- [Source Candidate Ranker](candidateranker.html)
+- [Source Candidate Ranker Notes](docs/SOURCE_CANDIDATE_RANKER.md)
 <!-- VEDAPATH RETRIEVAL LAB SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -480,7 +482,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v2.2.5` is a trusted MVP prototype plus Retrieval Query Desk with:
+`v2.2.6` is a trusted MVP prototype plus Source Candidate Ranker with:
 
 - Ask workspace
 - Source Card
@@ -712,6 +714,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 <!-- VEDAPATH SOURCE LIBRARY SPRINT FEATURES END -->
 <!-- VEDAPATH RETRIEVAL LAB SPRINT FEATURES START -->
 - Retrieval Query Desk: Retrieval Query Desk starts the search layer over VedaPath's curated source records.
+- Source Candidate Ranker: Source Candidate Ranker makes source selection inspectable instead of mysterious.
 <!-- VEDAPATH RETRIEVAL LAB SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
