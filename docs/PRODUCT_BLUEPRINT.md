@@ -288,6 +288,7 @@ It helps users move from curiosity to understanding through:
 - Work Message: Work Message keeps pressure from turning into vague or defensive speech.
 - Gratitude Note: Gratitude Note gives VedaPath a gentle outward-facing use case.
 - Repair Loop: Repair Loop keeps relationship calm practical without pretending to mediate.
+- Mobile Conversation: Mobile Conversation makes the product feel useful in the place messages actually happen.
 <!-- VEDAPATH CONVERSATION COMPANION SPRINT SUMMARY END -->
 
 ## What It Is
@@ -4174,6 +4175,21 @@ It should:
 - keep drafts local until explicit accounts and consent exist
 
 Repair Loop should never claim mediation, legal advice, safety planning, therapy, emergency support, ritual instruction, or spiritual authority.
+
+### 256. Mobile Conversation
+
+Mobile Conversation makes the product feel useful in the place messages actually happen.
+
+It should:
+
+- Arrive: Name the message situation before drafting.
+- Source: Show citation, family, confidence, and boundary.
+- Draft: Offer one editable message, not a command.
+- Review: Save only local drafts until accounts and consent exist.
+- preserve the boundary: draft support only, not authority
+- keep drafts local until explicit accounts and consent exist
+
+Mobile Conversation should never claim mediation, legal advice, safety planning, therapy, emergency support, ritual instruction, or spiritual authority.
 <!-- VEDAPATH CONVERSATION COMPANION SPRINT BLUEPRINT END -->
 
 ## Product Personality
