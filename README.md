@@ -385,6 +385,8 @@ Let us look at the source first.
 - [Source Reader Shell Notes](docs/SOURCE_READER_SHELL.md)
 - [Passage Focus Lens](passagefocus.html)
 - [Passage Focus Lens Notes](docs/PASSAGE_FOCUS_LENS.md)
+- [Meaning Layer Stack](meaninglayers.html)
+- [Meaning Layer Stack Notes](docs/MEANING_LAYER_STACK.md)
 <!-- VEDAPATH GUIDED READER SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -416,7 +418,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v1.9.6` is a trusted MVP prototype plus Passage Focus Lens with:
+`v1.9.7` is a trusted MVP prototype plus Meaning Layer Stack with:
 
 - Ask workspace
 - Source Card
@@ -613,6 +615,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 <!-- VEDAPATH GUIDED READER SPRINT FEATURES START -->
 - Source Reader Shell: Source Reader Shell gives VedaPath the first calm reading surface after beta search.
 - Passage Focus Lens: Passage Focus Lens makes the reader feel simple by anchoring every action to one chosen passage.
+- Meaning Layer Stack: Meaning Layer Stack gives VedaPath a readable pattern for depth without overwhelming beginners.
 <!-- VEDAPATH GUIDED READER SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff

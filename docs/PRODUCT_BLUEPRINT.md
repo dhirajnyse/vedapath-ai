@@ -198,6 +198,7 @@ It helps users move from curiosity to understanding through:
 <!-- VEDAPATH GUIDED READER SPRINT SUMMARY START -->
 - Source Reader Shell: Source Reader Shell gives VedaPath the first calm reading surface after beta search.
 - Passage Focus Lens: Passage Focus Lens makes the reader feel simple by anchoring every action to one chosen passage.
+- Meaning Layer Stack: Meaning Layer Stack gives VedaPath a readable pattern for depth without overwhelming beginners.
 <!-- VEDAPATH GUIDED READER SPRINT SUMMARY END -->
 
 ## What It Is
@@ -2937,6 +2938,21 @@ It should:
 - keep the reader prototype browser-only until reviewed content, accounts, or backend storage are approved
 
 Passage Focus Lens should never claim final commentary, full scripture text, translation rights, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
+
+### 180. Meaning Layer Stack
+
+Meaning Layer Stack gives VedaPath a readable pattern for depth without overwhelming beginners.
+
+It should:
+
+- Plain meaning: A short paraphrase comes first.
+- Beginner note: Modern personal language is clearly marked.
+- Reviewer note: Deeper claims are deferred to review.
+- No-go caution: Misuse is named near the meaning.
+- preserve the boundary: Meaning stack, not Sanskrit commentary replacement.
+- keep the reader prototype browser-only until reviewed content, accounts, or backend storage are approved
+
+Meaning Layer Stack should never claim final commentary, full scripture text, translation rights, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
 <!-- VEDAPATH GUIDED READER SPRINT BLUEPRINT END -->
 
 ## Product Personality
