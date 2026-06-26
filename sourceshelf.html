@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VedaPath Source Shelf Intake</title>
+    <link rel="stylesheet" href="assets/vedapath-sprint.css">
+    <link rel="stylesheet" href="assets/vedapath-source-library.css">
+  </head>
+  <body>
+    <div class="shell" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top" aria-label="VedaPath AI home">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
+          <div>
+            <strong>VedaPath AI</strong>
+            <span>Source shelf</span>
+          </div>
+        </a>
+        <nav class="nav" aria-label="Project links">
+          <a class="link" href="build-status.html">Build</a>
+          <a class="link" href="brand/brand-board.html">Brand</a>
+          <a class="link" href="blueprint.html">Blueprint</a>
+          <a class="link" href="sourcereader.html">Reader</a>
+          <a class="link" href="reviewerstudio.html">Reviewer</a>
+          <!-- VEDAPATH SOURCE LIBRARY SPRINT NAV START -->
+          <a class="link active" href="sourceshelf.html">Sources</a>
+          <!-- VEDAPATH SOURCE LIBRARY SPRINT NAV END -->
+          <span class="version">v2.1.5 source shelf</span>
+        </nav>
+      </header>
+
+      <main class="workspace" aria-label="VedaPath Source Shelf Intake workspace">
+        <aside class="panel">
+          <span class="eyebrow">Source library sprint</span>
+          <h2>Release Rooms</h2>
+          <p class="muted">Ten source-data rooms turn citation-first thinking into a retrieval-ready foundation.</p>
+          <div class="room-list" id="roomList"></div>
+        </aside>
+
+        <section class="panel">
+          <div class="hero-grid">
+            <div>
+              <span class="eyebrow">Source shelf</span>
+              <h1>Give every answer a source shelf.</h1>
+              <p class="muted">A calm intake room for the first curated source records: citation, family, theme, rights state, readiness, and boundary in one place.</p>
+            </div>
+            <div class="mark-stage">
+              <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath Shelf logo">
+            </div>
+          </div>
+
+          <div class="source-block" aria-label="Release source card">
+            <div>
+              <span class="source-meta">Release</span>
+              <span class="source-value">v2.1.5</span>
+            </div>
+            <div>
+              <span class="source-meta">Focus source</span>
+              <span class="source-value">Bhagavad Gita 2.48</span>
+            </div>
+            <div>
+              <span class="source-meta">Family lane</span>
+              <span class="source-value">Bhagavad Gita | Smriti</span>
+            </div>
+            <div>
+              <span class="source-meta">Boundary</span>
+              <span class="source-value">Source shelf prototype, not canonical database.</span>
+            </div>
+          </div>
+
+          <section class="source-library" id="sourceLibrary" data-family="all" data-readiness="all" aria-label="Curated source library">
+            <div class="library-head">
+              <div>
+                <span class="eyebrow">Curated source data</span>
+                <h2>Source Library</h2>
+                <p class="muted">Reads <strong>data/vedapath-source-library.json</strong>. Records are starter data for retrieval planning, not a canonical corpus.</p>
+              </div>
+              <div id="sourceStats" class="source-stats" aria-live="polite"></div>
+            </div>
+
+            <div class="library-tools">
+              <label>
+                <span>Family</span>
+                <select id="familyFilter"></select>
+              </label>
+              <label>
+                <span>Readiness</span>
+                <select id="readinessFilter"></select>
+              </label>
+              <label>
+                <span>Search</span>
+                <input id="sourceSearch" type="search" placeholder="source, theme, tag">
+              </label>
+            </div>
+
+            <div class="library-layout">
+              <div id="sourceList" class="source-list" aria-label="Source records"></div>
+              <div>
+                <div id="sourceDetail" class="source-detail"></div>
+                <div class="library-actions">
+                  <button class="button primary" id="pinSource" type="button">Pin Source</button>
+                  <button class="button safe" id="copySourcePacket" type="button">Copy Packet</button>
+                  <button class="button" id="clearSourcePins" type="button">Clear Pins</button>
+                </div>
+                <label class="library-label" for="sourcePacket">Source packet preview</label>
+                <textarea id="sourcePacket" readonly aria-label="Source packet output"></textarea>
+                <div id="pinnedSources" class="pinned-sources" aria-label="Pinned source preview"></div>
+              </div>
+            </div>
+          </section>
+
+          <h2>Source Signals</h2>
+          <div class="item-list" id="itemList"></div>
+
+          <div class="tabs" role="tablist" aria-label="VedaPath Source Shelf Intake layers">
+            <button class="tab active" type="button" data-mode="brief">Brief</button>
+            <button class="tab" type="button" data-mode="checklist">Checklist</button>
+            <button class="tab" type="button" data-mode="boundary">Boundary</button>
+          </div>
+
+          <div id="modePanel"></div>
+
+          <div class="button-row" style="margin-top: 14px;">
+            <button class="button primary" id="copyBrief" type="button">Copy Brief</button>
+            <button class="button safe" id="copyJson" type="button">Copy JSON</button>
+            <button class="button" id="copyBoundary" type="button">Copy Boundary</button>
+          </div>
+
+          <textarea id="output" readonly aria-label="VedaPath Source Shelf Intake output"></textarea>
+        </section>
+
+        <aside class="panel tight" aria-label="VedaPath Source Shelf Intake sprint rail">
+          <span class="badge green">Source library</span>
+          <h2 style="margin-top: 14px;">Shelf Pulse</h2>
+          <p class="muted">Source Shelf Intake starts the curated source layer that future retrieval can trust.</p>
+          <div class="progress" aria-label="Sprint progress 10 percent">
+            <div class="bar" style="--score:10%"></div>
+          </div>
+          <div class="metric-grid">
+            <div class="metric">
+              <span>Current</span>
+              <strong>v2.1.5</strong>
+            </div>
+            <div class="metric">
+              <span>Sprint</span>
+              <strong>1/10</strong>
+            </div>
+            <div class="metric">
+              <span>Source records</span>
+              <strong>8</strong>
+            </div>
+            <div class="metric">
+              <span>Next</span>
+              <strong>Citation Schema Desk</strong>
+            </div>
+          </div>
+
+          <div class="sprint-list">
+            <div class="sprint-step active">
+              <span class="step-index">1</span>
+              <div><strong>Record</strong><p>Capture citation and family.</p></div>
+            </div>
+            <div class="sprint-step">
+              <span class="step-index">2</span>
+              <div><strong>Guard</strong><p>Attach rights and boundaries.</p></div>
+            </div>
+            <div class="sprint-step">
+              <span class="step-index">3</span>
+              <div><strong>Map</strong><p>Connect modern questions.</p></div>
+            </div>
+            <div class="sprint-step">
+              <span class="step-index">4</span>
+              <div><strong>Packet</strong><p>Export review context.</p></div>
+            </div>
+          </div>
+
+          <section class="panel tight boundary" style="margin-top: 16px;">
+            <h2>Library Boundary</h2>
+            <p class="muted">This starter set is not a canonical corpus, scholar endorsement, legal clearance, therapy, ritual instruction, emergency support, or spiritual authority.</p>
+          </section>
+        </aside>
+      </main>
+    </div>
+
+    <script type="application/json" id="room-data">{
+  "version": "v2.1.5",
+  "badge": "v2.1.5 source shelf",
+  "slug": "sourceshelf",
+  "nav": "Shelf",
+  "title": "VedaPath Source Shelf Intake",
+  "pageLabel": "Source shelf",
+  "eyebrow": "Source shelf",
+  "h1": "Give every answer a source shelf.",
+  "lead": "A calm intake room for the first curated source records: citation, family, theme, rights state, readiness, and boundary in one place.",
+  "source": "Bhagavad Gita 2.48",
+  "family": "Bhagavad Gita | Smriti",
+  "stance": "Source shelf prototype, not canonical database.",
+  "sprintPercent": 10,
+  "defaultFamily": "all",
+  "defaultReadiness": "all",
+  "next": "Citation Schema Desk",
+  "primaryAsk": "Turn trusted answer ideas into structured source records.",
+  "summary": "Source Shelf Intake starts the curated source layer that future retrieval can trust.",
+  "items": [
+    [
+      "Source record",
+      "Each passage candidate gets a stable id, citation, family, theme, and readiness.",
+      "Prevents loose notes."
+    ],
+    [
+      "Boundary attached",
+      "Every record carries what the answer must not claim.",
+      "Protects user trust."
+    ],
+    [
+      "Rights state",
+      "Display limits are visible before the answer uses text.",
+      "Avoids accidental misuse."
+    ],
+    [
+      "Simple shelf",
+      "The UI stays scan-first and calm.",
+      "Keeps founder review fast."
+    ]
+  ],
+  "modes": {
+    "brief": [
+      [
+        "Source promise",
+        "Source Shelf Intake starts the curated source layer that future retrieval can trust."
+      ],
+      [
+        "Founder move",
+        "Turn trusted answer ideas into structured source records."
+      ],
+      [
+        "Trust move",
+        "Keep this boundary visible: Source shelf prototype, not canonical database."
+      ]
+    ],
+    "checklist": [
+      [
+        "Source record",
+        "Each passage candidate gets a stable id, citation, family, theme, and readiness."
+      ],
+      [
+        "Boundary attached",
+        "Every record carries what the answer must not claim."
+      ],
+      [
+        "Rights state",
+        "Display limits are visible before the answer uses text."
+      ]
+    ],
+    "boundary": [
+      [
+        "No corpus claim",
+        "Do not imply this starter set is the whole Vedic or Hindu source landscape."
+      ],
+      [
+        "No authority claim",
+        "Do not let source records become guru voice, ritual instruction, therapy, diagnosis, or emergency support."
+      ],
+      [
+        "No rights claim",
+        "Citation, paraphrase, and translation display remain governed by rights and review policy."
+      ]
+    ]
+  },
+  "rooms": [
+    {
+      "version": "v2.1.5",
+      "slug": "sourceshelf",
+      "nav": "Shelf"
+    }
+  ]
+}</script>
+    <script src="assets/vedapath-sprint.js"></script>
+    <script src="assets/vedapath-source-library.js"></script>
+  </body>
+</html>

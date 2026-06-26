@@ -1,0 +1,208 @@
+{
+  "product": "VedaPath AI",
+  "release": "v2.1.5",
+  "status": "curated source library prototype",
+  "warning": "Starter source-library data only. It is not a canonical corpus, scholar endorsement, legal clearance, therapy, ritual instruction, or spiritual authority.",
+  "records": [
+    {
+      "id": "bg-2-48-steadiness",
+      "title": "Steadiness In Action",
+      "source": "Bhagavad Gita 2.48",
+      "source_family": "Bhagavad Gita | Smriti",
+      "tradition_layer": "Itihasa context",
+      "theme": "steady action",
+      "readiness": "preview-ready",
+      "review_state": "reviewed-preview",
+      "rights_state": "citation-only plus paraphrase",
+      "score": 84,
+      "source_note": "Useful for calm action language when the product keeps it as reflection support, not therapy or guaranteed peace.",
+      "answer_boundary": "Do not promise serenity, diagnosis, treatment, ritual authority, or guaranteed results.",
+      "translation_policy": "Show citation and summary; keep direct translation text out until rights are approved.",
+      "review_notes": "Connects to karma-yoga and non-attachment to results, but the answer must avoid flattening the tradition.",
+      "question_examples": [
+        "How can I act calmly when results feel uncertain?",
+        "What does the Gita suggest about steady effort?"
+      ],
+      "tags": [
+        "calm",
+        "action",
+        "agency"
+      ]
+    },
+    {
+      "id": "bg-18-63-agency",
+      "title": "Reflect And Choose",
+      "source": "Bhagavad Gita 18.63",
+      "source_family": "Bhagavad Gita | Smriti",
+      "tradition_layer": "Itihasa context",
+      "theme": "agency",
+      "readiness": "needs-review",
+      "review_state": "source-review",
+      "rights_state": "citation-only",
+      "score": 72,
+      "source_note": "Strong for agency language, but it needs speaker and battlefield-context notes before public use.",
+      "answer_boundary": "Do not imply every life choice is simple, isolated, or free from real constraints.",
+      "translation_policy": "Use citation, context note, and paraphrase-level summary only.",
+      "review_notes": "Needs theological context and a boundary against oracle-like decision making.",
+      "question_examples": [
+        "How do I make a difficult decision without outsourcing it?",
+        "Can scripture help me choose without telling me what to do?"
+      ],
+      "tags": [
+        "agency",
+        "choice",
+        "responsibility"
+      ]
+    },
+    {
+      "id": "katha-1-2-1-discernment",
+      "title": "Good And Pleasant Gate",
+      "source": "Katha Upanishad 1.2.1",
+      "source_family": "Upanishad | Shruti",
+      "tradition_layer": "Upanishadic teaching",
+      "theme": "discernment",
+      "readiness": "needs-review",
+      "review_state": "boundary-review",
+      "rights_state": "citation-only",
+      "score": 69,
+      "source_note": "Good candidate for discernment, but it can become judgmental if the product overreaches.",
+      "answer_boundary": "Do not use for moral policing, relationship advice, emergency decisions, or shame.",
+      "translation_policy": "Keep citation and concept summary until translation-rights and commentary lane are reviewed.",
+      "review_notes": "Needs gentle explanation of shreyas and preyas without turning them into labels for people.",
+      "question_examples": [
+        "How do I tell short-term comfort from a deeper good?",
+        "What is a calm way to think about discernment?"
+      ],
+      "tags": [
+        "discernment",
+        "choice",
+        "upanishad"
+      ]
+    },
+    {
+      "id": "mundaka-1-1-4-knowledge",
+      "title": "Two Kinds Of Knowing",
+      "source": "Mundaka Upanishad 1.1.4",
+      "source_family": "Upanishad | Shruti",
+      "tradition_layer": "Upanishadic teaching",
+      "theme": "knowledge",
+      "readiness": "draft",
+      "review_state": "category-review",
+      "rights_state": "citation-only",
+      "score": 63,
+      "source_note": "Useful for explaining layers of knowledge, but easy to misuse as anti-science or anti-scholarship.",
+      "answer_boundary": "Do not frame higher and lower knowledge as a ranking of people, disciplines, or modern science.",
+      "translation_policy": "Use source label and concept summary; no direct quotation until rights review is complete.",
+      "review_notes": "Needs Sanskrit term review and commentary differences before broad public answers.",
+      "question_examples": [
+        "What does Hindu philosophy mean by different kinds of knowledge?",
+        "How can I study deeply without dismissing practical knowledge?"
+      ],
+      "tags": [
+        "knowledge",
+        "study",
+        "category"
+      ]
+    },
+    {
+      "id": "isha-1-restraint",
+      "title": "Restraint Without Withdrawal",
+      "source": "Isha Upanishad 1",
+      "source_family": "Upanishad | Shruti",
+      "tradition_layer": "Upanishadic teaching",
+      "theme": "restraint",
+      "readiness": "rights-hold",
+      "review_state": "rights-review",
+      "rights_state": "restricted-text-hold",
+      "score": 58,
+      "source_note": "High-value source, but public display needs careful rights and interpretation handling.",
+      "answer_boundary": "Do not pressure users to abandon safety, property, shelter, responsibility, or family duties.",
+      "translation_policy": "Citation-only until an approved translation and paraphrase policy are selected.",
+      "review_notes": "Needs rights gate and school-specific interpretation boundary.",
+      "question_examples": [
+        "How can I practice restraint without escaping responsibility?",
+        "What does non-possessiveness mean in daily life?"
+      ],
+      "tags": [
+        "restraint",
+        "rights",
+        "responsibility"
+      ]
+    },
+    {
+      "id": "taittiriya-1-11-1-conduct",
+      "title": "Conduct After Learning",
+      "source": "Taittiriya Upanishad 1.11.1",
+      "source_family": "Upanishad | Shruti",
+      "tradition_layer": "Upanishadic instruction",
+      "theme": "conduct",
+      "readiness": "needs-review",
+      "review_state": "authority-review",
+      "rights_state": "citation-only",
+      "score": 61,
+      "source_note": "Useful for duty and conduct, but it must not become command language in the product.",
+      "answer_boundary": "Do not override consent, law, safety, personal boundaries, or local professional guidance.",
+      "translation_policy": "Use citation and educational summary only until authority boundary is approved.",
+      "review_notes": "Needs careful voice rules so it remains learning support, not social control.",
+      "question_examples": [
+        "What does tradition say about conduct after learning?",
+        "How do I carry learning into daily behavior without becoming rigid?"
+      ],
+      "tags": [
+        "conduct",
+        "duty",
+        "authority"
+      ]
+    },
+    {
+      "id": "chandogya-6-8-7-identity",
+      "title": "Self And Being Context",
+      "source": "Chandogya Upanishad 6.8.7",
+      "source_family": "Upanishad | Shruti",
+      "tradition_layer": "Upanishadic teaching",
+      "theme": "self inquiry",
+      "readiness": "draft",
+      "review_state": "commentary-review",
+      "rights_state": "citation-only",
+      "score": 57,
+      "source_note": "Important identity teaching, but it needs commentary lanes before simplified answer use.",
+      "answer_boundary": "Do not collapse complex metaphysics into self-esteem slogans or psychological advice.",
+      "translation_policy": "Citation and topic map only until translation and commentary view are approved.",
+      "review_notes": "Needs Advaita and other interpretation lanes before public comparison.",
+      "question_examples": [
+        "What is the context of the famous self-teaching in the Upanishads?",
+        "How should beginners approach Atman and Brahman carefully?"
+      ],
+      "tags": [
+        "self",
+        "being",
+        "commentary"
+      ]
+    },
+    {
+      "id": "rigveda-1-164-46-many-names",
+      "title": "Many Names Context",
+      "source": "Rigveda 1.164.46",
+      "source_family": "Veda | Shruti",
+      "tradition_layer": "Vedic hymn",
+      "theme": "plural expression",
+      "readiness": "needs-review",
+      "review_state": "source-review",
+      "rights_state": "citation-only",
+      "score": 66,
+      "source_note": "Often used in modern pluralism discussions, but the product should avoid oversimplified slogans.",
+      "answer_boundary": "Do not use as proof that every tradition says the same thing or that debate does not matter.",
+      "translation_policy": "Citation-only until translation rights and scholarly context are selected.",
+      "review_notes": "Needs Vedic hymn context and careful separation from modern analogy.",
+      "question_examples": [
+        "Does the Rigveda support religious pluralism?",
+        "How should I understand many names without flattening difference?"
+      ],
+      "tags": [
+        "veda",
+        "plurality",
+        "context"
+      ]
+    }
+  ]
+}

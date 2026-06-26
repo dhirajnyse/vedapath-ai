@@ -219,6 +219,9 @@ It helps users move from curiosity to understanding through:
 - Mobile Review Polish: Mobile Review Polish keeps VedaPath's trust workflow calm and usable on small screens.
 - Reviewer Studio Control Room: Reviewer Studio Control Room completes the review sprint and gives VedaPath a concrete trust workflow after source reading.
 <!-- VEDAPATH REVIEWER STUDIO SPRINT SUMMARY END -->
+<!-- VEDAPATH SOURCE LIBRARY SPRINT SUMMARY START -->
+- Source Shelf Intake: Source Shelf Intake starts the curated source layer that future retrieval can trust.
+<!-- VEDAPATH SOURCE LIBRARY SPRINT SUMMARY END -->
 
 ## What It Is
 
@@ -3229,6 +3232,22 @@ It should:
 
 Reviewer Studio Control Room should never claim production approval, scholar endorsement, legal clearance, durable review storage, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
 <!-- VEDAPATH REVIEWER STUDIO SPRINT BLUEPRINT END -->
+<!-- VEDAPATH SOURCE LIBRARY SPRINT BLUEPRINT START -->
+### 198. Source Shelf Intake
+
+Source Shelf Intake starts the curated source layer that future retrieval can trust.
+
+It should:
+
+- Source record: Each passage candidate gets a stable id, citation, family, theme, and readiness.
+- Boundary attached: Every record carries what the answer must not claim.
+- Rights state: Display limits are visible before the answer uses text.
+- Simple shelf: The UI stays scan-first and calm.
+- preserve the boundary: Source shelf prototype, not canonical database.
+- keep source-library records as starter data until scholar review, rights policy, and retrieval evaluation are approved
+
+Source Shelf Intake should never claim canonical corpus coverage, scholar endorsement, legal clearance, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
+<!-- VEDAPATH SOURCE LIBRARY SPRINT BLUEPRINT END -->
 
 ## Product Personality
 

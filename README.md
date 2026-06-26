@@ -424,6 +424,10 @@ Let us look at the source first.
 - [Reviewer Studio Control Room](reviewerstudio.html)
 - [Reviewer Studio Control Room Notes](docs/REVIEWER_STUDIO_CONTROL_ROOM.md)
 <!-- VEDAPATH REVIEWER STUDIO SPRINT LINKS END -->
+<!-- VEDAPATH SOURCE LIBRARY SPRINT LINKS START -->
+- [Source Shelf Intake](sourceshelf.html)
+- [Source Shelf Intake Notes](docs/SOURCE_SHELF_INTAKE.md)
+<!-- VEDAPATH SOURCE LIBRARY SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
 - [Calm Compass](compass.html)
@@ -454,7 +458,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v2.1.4` is a trusted MVP prototype plus Reviewer Studio Control Room with:
+`v2.1.5` is a trusted MVP prototype plus Source Shelf Intake with:
 
 - Ask workspace
 - Source Card
@@ -672,6 +676,9 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Mobile Review Polish: Mobile Review Polish keeps VedaPath's trust workflow calm and usable on small screens.
 - Reviewer Studio Control Room: Reviewer Studio Control Room completes the review sprint and gives VedaPath a concrete trust workflow after source reading.
 <!-- VEDAPATH REVIEWER STUDIO SPRINT FEATURES END -->
+<!-- VEDAPATH SOURCE LIBRARY SPRINT FEATURES START -->
+- Source Shelf Intake: Source Shelf Intake starts the curated source layer that future retrieval can trust.
+<!-- VEDAPATH SOURCE LIBRARY SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
 - Calm Card Studio with visual card preview, local saved cards, copy text, and PNG export
