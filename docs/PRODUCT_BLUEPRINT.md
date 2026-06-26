@@ -286,6 +286,7 @@ It helps users move from curiosity to understanding through:
 - Boundary Reply: Boundary Reply protects personal agency without turning calm into coldness.
 - Family Message: Family Message brings the calm path into the hardest everyday relationships.
 - Work Message: Work Message keeps pressure from turning into vague or defensive speech.
+- Gratitude Note: Gratitude Note gives VedaPath a gentle outward-facing use case.
 <!-- VEDAPATH CONVERSATION COMPANION SPRINT SUMMARY END -->
 
 ## What It Is
@@ -4142,6 +4143,21 @@ It should:
 - keep drafts local until explicit accounts and consent exist
 
 Work Message should never claim mediation, legal advice, safety planning, therapy, emergency support, ritual instruction, or spiritual authority.
+
+### 254. Gratitude Note
+
+Gratitude Note gives VedaPath a gentle outward-facing use case.
+
+It should:
+
+- Arrive: Name the message situation before drafting.
+- Source: Show citation, family, confidence, and boundary.
+- Draft: Offer one editable message, not a command.
+- Review: Save only local drafts until accounts and consent exist.
+- preserve the boundary: draft support only, not authority
+- keep drafts local until explicit accounts and consent exist
+
+Gratitude Note should never claim mediation, legal advice, safety planning, therapy, emergency support, ritual instruction, or spiritual authority.
 <!-- VEDAPATH CONVERSATION COMPANION SPRINT BLUEPRINT END -->
 
 ## Product Personality

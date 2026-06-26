@@ -547,6 +547,8 @@ Let us look at the source first.
 - [Family Message Notes](docs/FAMILY_MESSAGE.md)
 - [Work Message](workmessage.html)
 - [Work Message Notes](docs/WORK_MESSAGE.md)
+- [Gratitude Note](gratitudenote.html)
+- [Gratitude Note Notes](docs/GRATITUDE_NOTE.md)
 <!-- VEDAPATH CONVERSATION COMPANION SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -578,7 +580,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v2.7.0` is a trusted MVP prototype plus Work Message with:
+`v2.7.1` is a trusted MVP prototype plus Gratitude Note with:
 
 - Ask workspace
 - Source Card
@@ -863,6 +865,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Boundary Reply: Boundary Reply protects personal agency without turning calm into coldness.
 - Family Message: Family Message brings the calm path into the hardest everyday relationships.
 - Work Message: Work Message keeps pressure from turning into vague or defensive speech.
+- Gratitude Note: Gratitude Note gives VedaPath a gentle outward-facing use case.
 <!-- VEDAPATH CONVERSATION COMPANION SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
