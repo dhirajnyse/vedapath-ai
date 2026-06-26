@@ -16,7 +16,7 @@ async function readerLoadJson(url) {
 }
 
 function readerText(value) {
-  return String(value || "");
+  return value === 0 ? "0" : String(value || "");
 }
 
 function readerSafe(value) {
