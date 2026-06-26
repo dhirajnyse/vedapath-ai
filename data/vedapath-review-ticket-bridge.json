@@ -1,0 +1,78 @@
+{
+  "product": "VedaPath AI",
+  "release": "v2.9.4",
+  "status": "review ticket bridge v1",
+  "schema_version": "review-ticket-bridge-v1",
+  "evaluation_dataset": "data/vedapath-retrieval-eval-cases.json",
+  "retrieval_config": "data/vedapath-retrieval-foundation.json",
+  "source_dataset": "data/vedapath-source-answer-foundation.json",
+  "local_decision_store": "vedapath-review-ticket-decisions-v1",
+  "warning": "Prototype review bridge only. Tickets are browser-side review aids, not scholar approval, canonical source validation, production workflow, therapy, ritual instruction, emergency support, or spiritual authority.",
+  "ticket_policy": "Create visible review tickets for failed evals, review-needed source matches, and no-source gaps. Passing answer-ready cases are monitored but do not become open review work.",
+  "lanes": [
+    {
+      "id": "eval-failure",
+      "label": "Eval failure",
+      "owner": "Retrieval reviewer",
+      "severity": "High",
+      "next_action": "Compare expected and actual source, then decide whether the data, scoring rule, or expectation should change."
+    },
+    {
+      "id": "source-review",
+      "label": "Source review",
+      "owner": "Source reviewer",
+      "severity": "Medium",
+      "next_action": "Confirm citation, source family, rights state, and whether the answer can move from review-needed to answer-ready."
+    },
+    {
+      "id": "mantra-review",
+      "label": "Mantra review",
+      "owner": "Mantra reviewer",
+      "severity": "High",
+      "next_action": "Review Sanskrit, recitation boundary, ritual caution, and citation-only wording before public answer use."
+    },
+    {
+      "id": "commentary-review",
+      "label": "Commentary review",
+      "owner": "Interpretation reviewer",
+      "severity": "High",
+      "next_action": "Add comparison lanes so one tradition is not flattened into the only reading."
+    },
+    {
+      "id": "source-gap",
+      "label": "Source gap",
+      "owner": "Source intake",
+      "severity": "High",
+      "next_action": "Record the user question, likely claim family, and missing evidence without forcing an answer."
+    }
+  ],
+  "decision_options": [
+    "Open",
+    "Needs source",
+    "Needs Sanskrit",
+    "Needs commentary",
+    "Ready after review",
+    "Closed"
+  ],
+  "owner_options": [
+    "Retrieval reviewer",
+    "Source reviewer",
+    "Mantra reviewer",
+    "Interpretation reviewer",
+    "Source intake",
+    "Founder review"
+  ],
+  "copy_packet_fields": [
+    "ticket_id",
+    "lane",
+    "severity",
+    "owner",
+    "question",
+    "source",
+    "risk",
+    "expected",
+    "actual",
+    "next_action",
+    "boundary"
+  ]
+}

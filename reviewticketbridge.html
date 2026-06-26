@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VedaPath Review Ticket Bridge</title>
+    <link rel="stylesheet" href="assets/vedapath-sprint.css">
+    <link rel="stylesheet" href="assets/vedapath-review-ticket-bridge.css">
+    <link rel="stylesheet" href="assets/vedapath-cohesive.css">
+    <link rel="stylesheet" href="assets/vedapath-polish.css">
+    <link rel="stylesheet" href="assets/vedapath-focus.css">
+  </head>
+  <body>
+    <div class="shell" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top" aria-label="VedaPath AI home">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
+          <div>
+            <strong>VedaPath AI</strong>
+            <span>Review ticket bridge</span>
+          </div>
+        </a>
+        <nav class="nav" aria-label="Project links">
+          <a class="link" href="index.html">Home</a>
+          <a class="link" href="build-status.html">Build</a>
+          <a class="link" href="brand/brand-board.html">Brand</a>
+          <a class="link" href="blueprint.html">Blueprint</a>
+          <a class="link" href="citedanswerlab.html">Answers</a>
+          <a class="link active" href="reviewticketbridge.html">Review</a>
+          <a class="link" href="mantralenslab.html">Mantra</a>
+          <a class="link" href="lifecompanionlab.html">Life</a>
+          <a class="link" href="conversationcompanionlab.html">Talk</a>
+          <a class="link" href="patterncompanionlab.html">Pattern</a>
+          <a class="link" href="daily.html">Daily</a>
+          <span class="version">v2.9.4 review</span>
+        </nav>
+      </header>
+
+      <main class="workspace" aria-label="VedaPath Review Ticket Bridge workspace">
+        <aside class="panel">
+          <span class="eyebrow">Review bridge</span>
+          <h2>Do not hide uncertainty</h2>
+          <p class="muted">When a source needs review or a question has no verified record, VedaPath should create visible work instead of inventing certainty.</p>
+          <div class="sprint-list">
+            <div class="sprint-step active"><span class="step-index">1</span><div><strong>Detect</strong><p>Read eval outcome.</p></div></div>
+            <div class="sprint-step"><span class="step-index">2</span><div><strong>Classify</strong><p>Choose review lane.</p></div></div>
+            <div class="sprint-step"><span class="step-index">3</span><div><strong>Assign</strong><p>Name owner and severity.</p></div></div>
+            <div class="sprint-step"><span class="step-index">4</span><div><strong>Decide</strong><p>Save local review state.</p></div></div>
+          </div>
+        </aside>
+
+        <section class="panel review-bridge" id="reviewTicketBridge">
+          <div class="review-head">
+            <div>
+              <span class="eyebrow">Human review loop</span>
+              <h1>Failed trust becomes visible work.</h1>
+              <p class="muted">This bridge turns retrieval eval results into reviewer tickets with lane, owner, severity, boundary, and copyable handoff packets.</p>
+            </div>
+            <div class="review-mark"><img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath review mark"></div>
+          </div>
+
+          <div class="ticket-summary" id="ticketSummary" aria-live="polite"></div>
+
+          <section class="ticket-shell" aria-label="Review tickets">
+            <div class="ticket-list" id="ticketList"></div>
+            <div class="review-bridge">
+              <div class="ticket-detail-grid" id="ticketDetail"></div>
+              <div class="decision-panel">
+                <h2>Reviewer Decision</h2>
+                <div class="decision-grid">
+                  <label for="ticketState">State<select id="ticketState"></select></label>
+                  <label for="ticketOwner">Owner<select id="ticketOwner"></select></label>
+                </div>
+                <label for="ticketNote" class="ticket-packet-label">Reviewer note</label>
+                <textarea id="ticketNote" placeholder="Add a short review note."></textarea>
+                <div class="ticket-actions">
+                  <button class="button primary" id="saveTicketDecision" type="button">Save Local Decision</button>
+                  <button class="button safe" id="copyTicketPacket" type="button">Copy Ticket</button>
+                  <button class="button" id="copyAllTickets" type="button">Copy All</button>
+                </div>
+              </div>
+              <div>
+                <h2>Bridge Contract</h2>
+                <div class="bridge-rules" id="bridgeRules"></div>
+              </div>
+              <div class="ticket-packet-wrap">
+                <label class="ticket-packet-label" for="ticketPacket">Copyable ticket packet</label>
+                <textarea class="ticket-packet" id="ticketPacket" readonly></textarea>
+              </div>
+            </div>
+          </section>
+        </section>
+
+        <aside class="panel tight">
+          <span class="badge green">Quality phase</span>
+          <h2 style="margin-top: 14px;">Review Boundary</h2>
+          <p class="muted">This is local prototype workflow. A future product needs accounts, permissions, reviewer identity, audit history, and source governance.</p>
+          <div class="progress" aria-label="Review ticket bridge progress 100 percent"><div class="bar" style="--score:100%"></div></div>
+          <div class="metric-grid">
+            <div class="metric"><span>Current</span><strong>v2.9.4</strong></div>
+            <div class="metric"><span>Inputs</span><strong>Eval</strong></div>
+            <div class="metric"><span>Memory</span><strong>Local</strong></div>
+            <div class="metric"><span>Next</span><strong>Queue</strong></div>
+          </div>
+          <section class="panel tight boundary" style="margin-top: 16px;">
+            <h2>Release Rule</h2>
+            <p class="muted">No source expansion should ship without a visible path for review-needed and no-source cases.</p>
+          </section>
+          <div class="button-row" style="margin-top: 16px;">
+            <a class="button safe" href="retrievalevaluation.html">Open Eval</a>
+            <a class="button" href="data/vedapath-review-ticket-bridge.json">Open JSON</a>
+          </div>
+        </aside>
+      </main>
+    </div>
+    <script src="assets/vedapath-review-ticket-bridge.js"></script>
+  </body>
+</html>

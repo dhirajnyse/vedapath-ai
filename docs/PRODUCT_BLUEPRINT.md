@@ -4373,6 +4373,20 @@ It should:
 
 Pattern Companion Control Room should never claim diagnosis, therapy, legal advice, medical advice, surveillance, scoring, or spiritual authority.
 <!-- VEDAPATH PATTERN COMPANION SPRINT BLUEPRINT END -->
+<!-- VEDAPATH REVIEW TICKET BRIDGE BLUEPRINT START -->
+### 277. Reviewer Ticket Bridge
+
+VedaPath should make uncertainty operational.
+
+Rules:
+
+- Failed eval cases become review tickets.
+- Review-needed source matches get an owner and next action.
+- No-source questions become source gaps, not weak answers.
+- Local decisions are prototype memory only.
+- The production version needs reviewer identity, audit history, and durable queue storage.
+<!-- VEDAPATH REVIEW TICKET BRIDGE BLUEPRINT END -->
+
 <!-- VEDAPATH RETRIEVAL EVALUATION BLUEPRINT START -->
 ### 276. Retrieval Evaluation
 

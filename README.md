@@ -953,6 +953,18 @@ Then open:
 http://127.0.0.1:8088/
 ```
 
+<!-- VEDAPATH REVIEW TICKET BRIDGE START -->
+## v2.9.4 Reviewer Ticket Bridge
+
+This release connects retrieval evaluation to human review work.
+
+- adds `data/vedapath-review-ticket-bridge.json`
+- adds `reviewticketbridge.html` as a browser-side reviewer ticket bridge
+- generates tickets for eval failures, review-needed matches, and no-source gaps
+- adds local reviewer decisions for state, owner, and note
+- keeps uncertainty visible instead of silently changing answers
+<!-- VEDAPATH REVIEW TICKET BRIDGE END -->
+
 <!-- VEDAPATH RETRIEVAL EVALUATION START -->
 ## v2.9.3 Retrieval Evaluation
 

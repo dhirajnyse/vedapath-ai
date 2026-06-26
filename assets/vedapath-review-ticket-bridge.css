@@ -1,0 +1,223 @@
+/* VedaPath review ticket bridge */
+.review-bridge {
+  display: grid;
+  gap: 16px;
+}
+
+.review-head,
+.ticket-shell,
+.ticket-detail-grid,
+.ticket-summary,
+.decision-grid,
+.ticket-actions,
+.bridge-rules {
+  display: grid;
+  gap: 10px;
+}
+
+.review-head {
+  grid-template-columns: minmax(0, 1fr) 130px;
+  align-items: center;
+}
+
+.review-mark {
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff3e4;
+  padding: 10px;
+}
+
+.review-mark img {
+  width: 100%;
+  display: block;
+}
+
+.ticket-summary {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.ticket-shell {
+  grid-template-columns: minmax(250px, 0.86fr) minmax(0, 1.14fr);
+  align-items: start;
+}
+
+.ticket-list {
+  display: grid;
+  gap: 10px;
+  max-height: 620px;
+  overflow: auto;
+  padding-right: 3px;
+}
+
+.ticket-card,
+.ticket-stat,
+.ticket-detail-grid > div,
+.decision-panel,
+.bridge-rule,
+.ticket-packet {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.ticket-card,
+.ticket-stat,
+.ticket-detail-grid > div,
+.decision-panel,
+.bridge-rule {
+  padding: 12px;
+}
+
+.ticket-card {
+  width: 100%;
+  color: inherit;
+  text-align: left;
+  border-left: 4px solid var(--bhagwa);
+}
+
+.ticket-card.source-review,
+.ticket-card.commentary-review,
+.ticket-card.mantra-review {
+  border-left-color: var(--gold);
+}
+
+.ticket-card.source-gap,
+.ticket-card.eval-failure {
+  border-left-color: var(--bhagwa);
+}
+
+.ticket-card.active {
+  background: #fff0e7;
+  border-color: #f09f79;
+}
+
+.ticket-card strong,
+.ticket-card span,
+.ticket-stat span,
+.ticket-stat strong,
+.ticket-detail-grid span,
+.ticket-detail-grid strong,
+.bridge-rule span,
+.bridge-rule strong {
+  display: block;
+}
+
+.ticket-card span,
+.ticket-stat span,
+.ticket-detail-grid span,
+.bridge-rule span,
+.ticket-packet-label {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.ticket-stat strong {
+  margin-top: 4px;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.ticket-chip {
+  display: inline-flex;
+  width: fit-content;
+  min-height: 26px;
+  align-items: center;
+  border-radius: 999px;
+  padding: 3px 9px;
+  background: var(--soft-red);
+  color: var(--ochre);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.ticket-chip.green {
+  background: var(--soft-green);
+  color: var(--green);
+}
+
+.ticket-detail-grid,
+.decision-grid,
+.bridge-rules {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.ticket-detail-grid .wide,
+.decision-panel,
+.ticket-packet-wrap {
+  grid-column: 1 / -1;
+}
+
+.decision-panel {
+  display: grid;
+  gap: 10px;
+}
+
+.decision-grid label {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.decision-grid select,
+.decision-panel textarea {
+  width: 100%;
+  border: 1px solid #efc1aa;
+  border-radius: 8px;
+  background: #fffaf4;
+  color: var(--ink);
+  padding: 10px;
+}
+
+.decision-panel textarea {
+  min-height: 92px;
+  margin-top: 0;
+  resize: vertical;
+}
+
+.ticket-actions {
+  grid-template-columns: repeat(3, minmax(0, max-content));
+  align-items: center;
+}
+
+.ticket-packet {
+  width: 100%;
+  min-height: 210px;
+  resize: vertical;
+  border-color: var(--line);
+  background: #fffaf4;
+  color: var(--ink);
+  padding: 12px;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 13px;
+}
+
+@media (max-width: 980px) {
+  .review-head,
+  .ticket-summary,
+  .ticket-shell,
+  .ticket-detail-grid,
+  .decision-grid,
+  .bridge-rules {
+    grid-template-columns: 1fr;
+  }
+
+  .review-mark {
+    max-width: 150px;
+  }
+
+  .ticket-list {
+    max-height: none;
+  }
+}
+
+@media (max-width: 680px) {
+  .ticket-actions,
+  .ticket-actions .button {
+    width: 100%;
+    grid-template-columns: 1fr;
+  }
+}
