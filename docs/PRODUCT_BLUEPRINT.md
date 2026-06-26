@@ -204,6 +204,7 @@ It helps users move from curiosity to understanding through:
 - Carry Action Builder: Carry Action Builder gives VedaPath a signature calm handoff from reading to grounded action.
 - Reader Memory Preview: Reader Memory Preview lets VedaPath test habit loops without pretending to have durable user accounts.
 - Reviewer Trace Handoff: Reviewer Trace Handoff connects the reader experience to future human review without claiming workflow automation.
+- Mobile Reader Polish: Mobile Reader Polish keeps VedaPath's most personal reading flow clean on small screens.
 <!-- VEDAPATH GUIDED READER SPRINT SUMMARY END -->
 
 ## What It Is
@@ -3033,6 +3034,21 @@ It should:
 - keep the reader prototype browser-only until reviewed content, accounts, or backend storage are approved
 
 Reviewer Trace Handoff should never claim final commentary, full scripture text, translation rights, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
+
+### 186. Mobile Reader Polish
+
+Mobile Reader Polish keeps VedaPath's most personal reading flow clean on small screens.
+
+It should:
+
+- Single column: The reader stacks without horizontal overflow.
+- Stable actions: Save, copy, and clear controls remain obvious.
+- Readable layers: Meaning, boundary, reflection, and carry cards are scannable.
+- No crowding: The logo and cards support focus rather than decoration.
+- preserve the boundary: Responsive reader polish, not native app release.
+- keep the reader prototype browser-only until reviewed content, accounts, or backend storage are approved
+
+Mobile Reader Polish should never claim final commentary, full scripture text, translation rights, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
 <!-- VEDAPATH GUIDED READER SPRINT BLUEPRINT END -->
 
 ## Product Personality

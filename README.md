@@ -397,6 +397,8 @@ Let us look at the source first.
 - [Reader Memory Preview Notes](docs/READER_MEMORY_PREVIEW.md)
 - [Reviewer Trace Handoff](tracehandoff.html)
 - [Reviewer Trace Handoff Notes](docs/REVIEWER_TRACE_HANDOFF.md)
+- [Mobile Reader Polish](readermobile.html)
+- [Mobile Reader Polish Notes](docs/MOBILE_READER_POLISH.md)
 <!-- VEDAPATH GUIDED READER SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -428,7 +430,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v2.0.2` is a trusted MVP prototype plus Reviewer Trace Handoff with:
+`v2.0.3` is a trusted MVP prototype plus Mobile Reader Polish with:
 
 - Ask workspace
 - Source Card
@@ -631,6 +633,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Carry Action Builder: Carry Action Builder gives VedaPath a signature calm handoff from reading to grounded action.
 - Reader Memory Preview: Reader Memory Preview lets VedaPath test habit loops without pretending to have durable user accounts.
 - Reviewer Trace Handoff: Reviewer Trace Handoff connects the reader experience to future human review without claiming workflow automation.
+- Mobile Reader Polish: Mobile Reader Polish keeps VedaPath's most personal reading flow clean on small screens.
 <!-- VEDAPATH GUIDED READER SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
