@@ -248,6 +248,7 @@ It helps users move from curiosity to understanding through:
 - Source Context Card: Source Context Card keeps VedaPath's answer surface source-first.
 - Citation Ribbon Lab: Citation Ribbon Lab prevents answer prose from floating away from source identity.
 - Answer Card Lab: Answer Card Lab turns retrieval output into a humane answer format.
+- Confidence Briefing: Confidence Briefing makes uncertainty a product feature, not a footnote.
 <!-- VEDAPATH CITED ANSWER SPRINT SUMMARY END -->
 
 ## What It Is
@@ -3621,6 +3622,21 @@ It should:
 - keep answer cards source-first, confidence-labeled, and feedback-reviewable
 
 Answer Card Lab should never claim production AI authority, guru voice, legal clearance, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
+
+### 222. Confidence Briefing
+
+Confidence Briefing makes uncertainty a product feature, not a footnote.
+
+It should:
+
+- Intent: Keep the user question and answer intent visible.
+- Source: Keep citation, family, and confidence near the answer.
+- Boundary: Show what the answer must not become.
+- Feedback: Turn concerns into reviewable local tickets.
+- preserve the boundary: Confidence preview, not quality certification.
+- keep answer cards source-first, confidence-labeled, and feedback-reviewable
+
+Confidence Briefing should never claim production AI authority, guru voice, legal clearance, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
 <!-- VEDAPATH CITED ANSWER SPRINT BLUEPRINT END -->
 
 ## Product Personality
