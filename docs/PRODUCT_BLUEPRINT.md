@@ -4373,6 +4373,20 @@ It should:
 
 Pattern Companion Control Room should never claim diagnosis, therapy, legal advice, medical advice, surveillance, scoring, or spiritual authority.
 <!-- VEDAPATH PATTERN COMPANION SPRINT BLUEPRINT END -->
+<!-- VEDAPATH RETRIEVAL FOUNDATION BLUEPRINT START -->
+### 275. Retrieval Foundation
+
+VedaPath should search before it speaks.
+
+Rules:
+
+- Rank reviewed source-answer records before rendering an answer.
+- Show match reasons in plain language.
+- Treat low scores as review work, not answer pressure.
+- Keep no-source fallback calm and helpful.
+- Next build should add expected-source eval cases before expanding the corpus.
+<!-- VEDAPATH RETRIEVAL FOUNDATION BLUEPRINT END -->
+
 <!-- VEDAPATH SOURCE DATA FOUNDATION BLUEPRINT START -->
 ### 274. Source Data Foundation
 

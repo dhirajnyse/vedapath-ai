@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VedaPath Retrieval Foundation</title>
+    <link rel="stylesheet" href="assets/vedapath-sprint.css">
+    <link rel="stylesheet" href="assets/vedapath-retrieval-foundation.css">
+    <link rel="stylesheet" href="assets/vedapath-cohesive.css">
+    <link rel="stylesheet" href="assets/vedapath-polish.css">
+    <link rel="stylesheet" href="assets/vedapath-focus.css">
+  </head>
+  <body>
+    <div class="shell" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top" aria-label="VedaPath AI home">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
+          <div>
+            <strong>VedaPath AI</strong>
+            <span>Retrieval foundation</span>
+          </div>
+        </a>
+        <nav class="nav" aria-label="Project links">
+          <a class="link" href="index.html">Home</a>
+          <a class="link" href="build-status.html">Build</a>
+          <a class="link" href="brand/brand-board.html">Brand</a>
+          <a class="link" href="blueprint.html">Blueprint</a>
+          <a class="link" href="citedanswerlab.html">Answers</a>
+          <a class="link" href="mantralenslab.html">Mantra</a>
+          <a class="link" href="lifecompanionlab.html">Life</a>
+          <a class="link" href="conversationcompanionlab.html">Talk</a>
+          <a class="link" href="patterncompanionlab.html">Pattern</a>
+          <a class="link" href="daily.html">Daily</a>
+          <span class="version">v2.9.2 retrieval</span>
+        </nav>
+      </header>
+
+      <main class="workspace" aria-label="VedaPath Retrieval Foundation workspace">
+        <aside class="panel">
+          <span class="eyebrow">Retrieval v1</span>
+          <h2>Search before answer</h2>
+          <p class="muted">A calm static retrieval layer over the first answer records. It shows why a source was selected and when VedaPath should pause.</p>
+          <div class="sprint-list">
+            <div class="sprint-step active"><span class="step-index">1</span><div><strong>Ask</strong><p>Read the user question.</p></div></div>
+            <div class="sprint-step"><span class="step-index">2</span><div><strong>Rank</strong><p>Score source-answer records.</p></div></div>
+            <div class="sprint-step"><span class="step-index">3</span><div><strong>Explain</strong><p>Show match reasons.</p></div></div>
+            <div class="sprint-step"><span class="step-index">4</span><div><strong>Pause</strong><p>Use no-source fallback.</p></div></div>
+          </div>
+        </aside>
+
+        <section class="panel retrieval-foundation" id="retrievalFoundation">
+          <div class="retrieval-head">
+            <div>
+              <span class="eyebrow">Static retrieval foundation</span>
+              <h1>Find the source. Show the reason.</h1>
+              <p class="muted">This build ranks the first source-answer records by aliases, curated terms, source family, readiness, and pramana. It is transparent by design.</p>
+            </div>
+            <div class="retrieval-mark"><img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath source mark"></div>
+          </div>
+
+          <section class="retrieval-search" aria-label="Retrieval query">
+            <label for="retrievalQuery">Question</label>
+            <textarea id="retrievalQuery"></textarea>
+            <div class="retrieval-actions">
+              <button class="button primary" id="runRetrieval" type="button">Search Records</button>
+              <button class="button safe" id="copyRetrievalTrace" type="button">Copy Trace</button>
+            </div>
+            <div class="retrieval-samples" id="retrievalSamples" aria-label="Sample retrieval questions"></div>
+          </section>
+
+          <div class="retrieval-stats" id="retrievalStats" aria-live="polite"></div>
+          <div class="retrieval-match-status" id="retrievalStatus" aria-live="polite"></div>
+
+          <section class="retrieval-grid" aria-label="Retrieval candidates">
+            <div class="retrieval-card-list" id="retrievalCandidates"></div>
+            <div class="retrieval-detail">
+              <div class="retrieval-trace">
+                <label for="retrievalTrace">Visible retrieval trace</label>
+                <textarea id="retrievalTrace" readonly></textarea>
+              </div>
+              <div>
+                <h2>Scoring Rules</h2>
+                <div class="retrieval-rules" id="retrievalRules"></div>
+              </div>
+            </div>
+          </section>
+        </section>
+
+        <aside class="panel tight">
+          <span class="badge green">Functional phase</span>
+          <h2 style="margin-top: 14px;">Retrieval Boundary</h2>
+          <p class="muted">This is static record ranking, not production semantic search. It protects the product from confident answers when the source set is not ready.</p>
+          <div class="progress" aria-label="Retrieval foundation progress 100 percent"><div class="bar" style="--score:100%"></div></div>
+          <div class="metric-grid">
+            <div class="metric"><span>Current</span><strong>v2.9.2</strong></div>
+            <div class="metric"><span>Dataset</span><strong>6</strong></div>
+            <div class="metric"><span>Mode</span><strong>Static</strong></div>
+            <div class="metric"><span>Next</span><strong>Evals</strong></div>
+          </div>
+          <section class="panel tight boundary" style="margin-top: 16px;">
+            <h2>No-Source Rule</h2>
+            <p class="muted">If the score is too low, VedaPath should create a review path instead of inventing confidence.</p>
+          </section>
+        </aside>
+      </main>
+    </div>
+    <script src="assets/vedapath-retrieval-foundation.js"></script>
+  </body>
+</html>

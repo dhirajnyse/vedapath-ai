@@ -1,7 +1,7 @@
 {
   "product": "VedaPath AI",
   "release": "v2.9.1",
-  "status": "source answer foundation v1",
+  "status": "source answer foundation v1 with retrieval aliases",
   "warning": "Starter answer-record data only. It is not a canonical corpus, scholar endorsement, licensed translation display, therapy, ritual instruction, emergency support, or spiritual authority.",
   "schema_version": "answer-record-v1",
   "records": [
@@ -100,7 +100,11 @@
         "gita vs vedas",
         "is gita a veda",
         "bhagavad gita veda",
-        "shruti smriti"
+        "shruti smriti",
+        "is the gita one of the vedas",
+        "gita one of the vedas",
+        "part of the vedas",
+        "is bhagavad gita part of vedas"
       ],
       "source_record_id": "gita-classification",
       "source": "Mahabharata, Bhishma Parva",
@@ -122,7 +126,10 @@
         "veda",
         "smriti",
         "shruti",
-        "mahabharata"
+        "mahabharata",
+        "gita one of vedas",
+        "part of vedas",
+        "text classification"
       ],
       "blocked_claims": [
         "The Bhagavad Gita is the fifth Veda in the same textual sense as the four Vedas."
@@ -521,5 +528,6 @@
         ]
       }
     }
-  ]
+  ],
+  "last_updated_release": "v2.9.2"
 }

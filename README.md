@@ -953,6 +953,18 @@ Then open:
 http://127.0.0.1:8088/
 ```
 
+<!-- VEDAPATH RETRIEVAL FOUNDATION START -->
+## v2.9.2 Retrieval Foundation
+
+This release turns the source-answer dataset into a visible static retrieval layer.
+
+- adds `data/vedapath-retrieval-foundation.json`
+- adds `retrievalfoundation.html` for ranking, reasons, and traces
+- updates Home Ask to rank records before answering
+- adds a no-source fallback instead of forcing weak answers
+- keeps retrieval transparent: score, reason, readiness, confidence, boundary
+<!-- VEDAPATH RETRIEVAL FOUNDATION END -->
+
 <!-- VEDAPATH SOURCE DATA FOUNDATION START -->
 ## v2.9.1 Source Data Foundation
 

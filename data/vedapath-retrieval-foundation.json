@@ -1,0 +1,77 @@
+{
+  "product": "VedaPath AI",
+  "release": "v2.9.2",
+  "status": "retrieval foundation v1",
+  "source_dataset": "data/vedapath-source-answer-foundation.json",
+  "schema_version": "retrieval-foundation-v1",
+  "threshold": {
+    "answer_ready": 24,
+    "review_needed": 14
+  },
+  "warning": "Static retrieval scoring over starter records only. This is not semantic search, live RAG, scholar approval, licensed text display, therapy, ritual instruction, emergency support, or spiritual authority.",
+  "no_source_signals": [
+    "airplane",
+    "airplanes",
+    "aircraft",
+    "vimana",
+    "spaceship",
+    "internet",
+    "wifi",
+    "stock market",
+    "bitcoin",
+    "lottery",
+    "medical cure",
+    "cancer cure"
+  ],
+  "sample_queries": [
+    "What scripture did Oppenheimer quote?",
+    "Is the Gita one of the Vedas?",
+    "Explain Gayatri mantra carefully",
+    "Do the Vedas prove quantum physics?",
+    "How should I understand Atman and Brahman?",
+    "How can I act calmly when results are uncertain?",
+    "Did the Vedas describe airplanes?"
+  ],
+  "scoring_rules": [
+    [
+      "Exact alias",
+      60,
+      "Strong match to a reviewed question wording."
+    ],
+    [
+      "Question or title phrase",
+      44,
+      "User language resembles a record question or answer title."
+    ],
+    [
+      "Retrieval term",
+      14,
+      "Curated term appears in the query."
+    ],
+    [
+      "Source or family term",
+      8,
+      "Citation or source family appears in the query."
+    ],
+    [
+      "Summary or boundary term",
+      3,
+      "Supporting language appears in the record body."
+    ],
+    [
+      "Preview-ready bonus",
+      12,
+      "Record can currently render an answer preview."
+    ],
+    [
+      "Review-needed bonus",
+      4,
+      "Record exists but needs a stronger review lane."
+    ]
+  ],
+  "no_source_policy": {
+    "title": "No verified source record yet.",
+    "summary": "When the starter dataset cannot support a question, VedaPath should pause instead of forcing a weak answer.",
+    "next_action": "Create a review ticket with the user question, likely source family, and missing evidence."
+  }
+}

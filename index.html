@@ -339,6 +339,17 @@
         font-weight: 850;
       }
 
+      .retrieval-home-status {
+        margin-top: 12px;
+        border: 1px solid rgba(224, 168, 59, 0.34);
+        border-radius: 8px;
+        background: rgba(224, 168, 59, 0.12);
+        color: var(--deep-ochre);
+        padding: 10px 12px;
+        font-size: 13px;
+        font-weight: 850;
+      }
+
       .answer-header {
         display: grid;
         grid-template-columns: minmax(0, 1fr) auto;
@@ -627,7 +638,7 @@
           <a class="link" href="conversationcompanionlab.html">Talk</a>
           <a class="link" href="patterncompanionlab.html">Pattern</a>
           <a class="link" href="daily.html">Daily</a>
-          <span class="version">v2.9.1 source data</span>
+          <span class="version">v2.9.2 retrieval</span>
         </nav>
       </header>
 
@@ -676,6 +687,7 @@
             <button class="chip" type="button" data-question="atman">Atman and Brahman</button>
           </div>
           <div class="source-data-status" id="sourceDataStatus">Source data foundation loading...</div>
+          <div class="retrieval-home-status" id="retrievalMatchStatus">Retrieval reasons will appear after you ask.</div>
         </aside>
 
         <section class="answer-shell" aria-live="polite">
@@ -790,6 +802,7 @@
               <a href="blueprint.html">Blueprint <span>plan</span></a>
               <a href="sourcelibrary.html">Sources <span>library</span></a>
               <a href="sourcefoundation.html">Source data <span>records</span></a>
+              <a href="retrievalfoundation.html">Retrieval <span>reasons</span></a>
               <a href="mantralenslab.html">Mantra <span>lens</span></a>
             </div>
           </section>
@@ -983,8 +996,45 @@
         }
       };
 
+      // VEDAPATH NO SOURCE ANSWER START
+      answers["no-source"] = {
+        question: "No verified source record yet.",
+        title: "No verified source record yet.",
+        summary: "The starter source set does not yet support this question. VedaPath should pause, preserve the question, and ask for source review instead of forcing an answer.",
+        family: "Unverified | Review needed",
+        citation: "No matching source record",
+        pramana: "No source yet",
+        confidence: "Low",
+        caution: "Do not answer beyond the reviewed source set.",
+        meter: "speculative",
+        tabs: {
+          source: [
+            ["What happened", "The current source-answer foundation could not find a strong enough record for this question."],
+            ["Next honest step", "Create a review ticket with likely source family, missing evidence, and the exact user question."]
+          ],
+          sanskrit: [
+            ["No Sanskrit layer yet", "Do not invent Sanskrit terms or citations for an unsupported question."],
+            ["Review need", "A reviewer can decide whether the question belongs to Veda, Upanishad, Gita, Itihasa, Purana, commentary, or modern interpretation."]
+          ],
+          views: [
+            ["Product stance", "A calm product can say not yet without disappointing the user."],
+            ["Trust stance", "Source gaps should become visible review work, not hidden hallucination risk."]
+          ],
+          claim: [
+            ["What the source says", "No reviewed source record has been selected."],
+            ["What tradition says", "Unknown from the current dataset."],
+            ["Modern claim", "The user may be asking a valid question, but this build cannot support it yet."],
+            ["Boundary", "Do not force an answer."]
+          ]
+        }
+      };
+      // VEDAPATH NO SOURCE ANSWER END
+
       // VEDAPATH SOURCE DATA FOUNDATION START
       let foundationRecords = [];
+      let lastRetrievalMatch = null;
+      const retrievalStopWords = new Set(["a", "an", "and", "are", "as", "at", "be", "by", "can", "did", "do", "does", "for", "from", "how", "i", "in", "is", "it", "me", "my", "of", "on", "or", "should", "that", "the", "to", "was", "what", "when", "where", "which", "with", "you"]);
+      const retrievalNoSourceSignals = ["airplane", "airplanes", "aircraft", "vimana", "spaceship", "internet", "wifi", "stock market", "bitcoin", "lottery", "medical cure", "cancer cure"];
 
       function answerFromFoundationRecord(record) {
         return {
@@ -1006,6 +1056,113 @@
         if (status) status.textContent = message;
       }
 
+      function updateRetrievalMatchStatus(message) {
+        const status = document.querySelector("#retrievalMatchStatus");
+        if (status) status.textContent = message;
+      }
+
+      function retrievalNormalize(value) {
+        return String(value || "").toLowerCase().replace(/[^a-z0-9.]+/g, " ").trim();
+      }
+
+      function retrievalTokens(value) {
+        return retrievalNormalize(value)
+          .split(/\s+/)
+          .filter((token) => token && token.length > 1 && !retrievalStopWords.has(token));
+      }
+
+      function scoreFoundationRecord(query, record) {
+        const normalizedQuery = retrievalNormalize(query);
+        const queryTokens = retrievalTokens(query);
+        const reasons = [];
+        let score = 0;
+        const noSourceHits = retrievalNoSourceSignals.filter((term) => normalizedQuery.includes(term));
+
+        for (const alias of record.aliases || []) {
+          if (normalizedQuery.includes(retrievalNormalize(alias))) {
+            score += 60;
+            reasons.push("alias " + alias);
+            break;
+          }
+        }
+
+        for (const phrase of [record.question, record.title]) {
+          const normalizedPhrase = retrievalNormalize(phrase);
+          if (normalizedPhrase && (normalizedQuery.includes(normalizedPhrase) || normalizedPhrase.includes(normalizedQuery))) {
+            score += 44;
+            reasons.push("question/title phrase");
+            break;
+          }
+        }
+
+        for (const term of record.retrieval_terms || []) {
+          const normalizedTerm = retrievalNormalize(term);
+          const termTokens = retrievalTokens(term);
+          if (normalizedTerm && normalizedQuery.includes(normalizedTerm)) {
+            score += 14;
+            reasons.push("term " + term);
+          } else if (termTokens.some((token) => queryTokens.includes(token))) {
+            score += 9;
+            reasons.push("related " + term);
+          }
+        }
+
+        const sourceHits = retrievalTokens([record.source, record.source_family, record.tradition_layer].join(" "))
+          .filter((token, index, list) => queryTokens.includes(token) && list.indexOf(token) === index);
+        if (sourceHits.length) {
+          score += Math.min(24, sourceHits.length * 8);
+          reasons.push("source terms " + sourceHits.slice(0, 3).join(", "));
+        }
+
+        const bodyHits = retrievalTokens([record.summary, record.boundary, record.caution, ...(record.blocked_claims || [])].join(" "))
+          .filter((token, index, list) => queryTokens.includes(token) && list.indexOf(token) === index);
+        if (bodyHits.length) {
+          score += Math.min(18, bodyHits.length * 3);
+          reasons.push("body terms " + bodyHits.slice(0, 3).join(", "));
+        }
+
+        if (record.readiness === "answer-preview-ready") {
+          score += 12;
+          reasons.push("preview-ready");
+        } else if (record.readiness) {
+          score += 4;
+          reasons.push("review-needed");
+        }
+
+        if (String(record.pramana || "").toLowerCase().includes("direct")) {
+          score += 8;
+          reasons.push("direct lane");
+        }
+
+        if (noSourceHits.length) {
+          score -= 48;
+          reasons.unshift("no-source signal " + noSourceHits.join(", "));
+        }
+
+        return { record, score, reasons };
+      }
+
+      function rankFoundationRecords(query) {
+        return foundationRecords
+          .map((record) => scoreFoundationRecord(query, record))
+          .sort((a, b) => b.score - a.score);
+      }
+
+      function selectAnswerFromText(text) {
+        if (!foundationRecords.length) return pickLegacyAnswerFromText(text);
+        const ranked = rankFoundationRecords(text);
+        const top = ranked[0];
+        if (top && top.score >= 24) {
+          lastRetrievalMatch = top;
+          const matchKind = top.record.readiness === "answer-preview-ready" ? "Matched" : "Review-needed match";
+          updateRetrievalMatchStatus(matchKind + " " + top.record.source + " with score " + top.score + ": " + top.reasons.slice(0, 3).join(", ") + ".");
+          return top.record.slug;
+        }
+        lastRetrievalMatch = null;
+        updateRetrievalMatchStatus("No strong source record yet. VedaPath should create a review ticket instead of forcing an answer.");
+        return "no-source";
+      }
+
       async function loadSourceFoundation() {
         try {
           const response = await fetch("data/vedapath-source-answer-foundation.json");
@@ -1015,10 +1172,10 @@
           foundationRecords.forEach((record) => {
             answers[record.slug] = answerFromFoundationRecord(record);
           });
-          updateSourceDataStatus("Source data foundation active: " + foundationRecords.length + " answer records loaded.");
+          updateSourceDataStatus("Retrieval foundation active: " + foundationRecords.length + " source-answer records loaded.");
           renderAnswer(currentKey);
         } catch (error) {
-          updateSourceDataStatus("Source data foundation offline; using bundled preview answers.");
+          updateSourceDataStatus("Retrieval foundation offline; using bundled preview answers.");
         }
       }
       // VEDAPATH SOURCE DATA FOUNDATION END
@@ -1054,17 +1211,18 @@
         });
       }
 
-      function pickAnswerFromText(text) {
+      function pickLegacyAnswerFromText(text) {
         const normalized = text.toLowerCase();
-        const datasetMatch = foundationRecords.find((record) => [record.question, record.title, ...(record.aliases || []), ...(record.retrieval_terms || [])]
-          .some((term) => normalized.includes(String(term).toLowerCase())));
-        if (datasetMatch) return datasetMatch.slug;
         if (normalized.includes("quantum") || normalized.includes("science")) return "quantum";
         if (normalized.includes("gayatri") || normalized.includes("savitr")) return "gayatri";
         if (normalized.includes("atman") || normalized.includes("brahman")) return "atman";
         if (normalized.includes("gita") || normalized.includes("veda")) return "gita-veda";
         if (normalized.includes("oppenheimer") || normalized.includes("death")) return "oppenheimer";
         return currentKey;
+      }
+
+      function pickAnswerFromText(text) {
+        return selectAnswerFromText(text);
       }
 
       function renderAnswer(key) {

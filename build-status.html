@@ -365,7 +365,7 @@
           <a class="link" href="conversationcompanionlab.html">Talk</a>
           <a class="link" href="patterncompanionlab.html">Pattern</a>
           <a class="link" href="daily.html">Daily</a>
-          <span class="version">v2.9.1 source data</span>
+          <span class="version">v2.9.2 retrieval</span>
         </nav>
       </header>
 
@@ -377,8 +377,8 @@
       <section class="summary" aria-label="Progress summary">
         <article class="tile">
           <span>Current version</span>
-          <strong>v2.9.1</strong>
-          <p>Source Data Foundation: first structured answer records now power the Ask examples and prepare real retrieval.</p>
+          <strong>v2.9.2</strong>
+          <p>Retrieval Foundation: Ask now ranks source-answer records, shows match reasons, and has a no-source fallback.</p>
         </article>
         <article class="tile">
           <span>MVP progress</span>
@@ -388,14 +388,14 @@
         </article>
         <article class="tile">
           <span>Full vision progress</span>
-          <strong>69%</strong>
-          <div class="progress" aria-hidden="true"><div class="bar" style="width:69%"></div></div>
-          <p>The first question-to-source answer dataset is in place. Next: retrieval over records, review states, and no-source fallbacks.</p>
+          <strong>70%</strong>
+          <div class="progress" aria-hidden="true"><div class="bar" style="width:70%"></div></div>
+          <p>The first retrieval layer can choose answer records, explain ranking, and refuse unsupported questions.</p>
         </article>
         <article class="tile">
           <span>Next release</span>
-          <strong>Retrieval foundation</strong>
-          <p>Use these source-answer records to build static retrieval and no-result handling.</p>
+          <strong>Retrieval evaluation</strong>
+          <p>Add expected-source eval cases and tune retrieval thresholds before expanding the corpus.</p>
         </article>
       </section>
 
@@ -2498,9 +2498,17 @@
               <span class="percent">100%</span>
             </article>
             <article class="phase">
+              <span class="badge done">Done</span>
+              <div>
+                <strong>Phase 256: Retrieval Foundation</strong>
+                <p>Adds static ranking over source-answer records, visible match reasons, and a no-source answer fallback on the Ask surface.</p>
+              </div>
+              <span class="percent">100%</span>
+            </article>
+            <article class="phase">
               <span class="badge later">Later</span>
               <div>
-                <strong>Phase 256: Production Implementation and Licensed Audio</strong>
+                <strong>Phase 257: Production Implementation and Licensed Audio</strong>
                 <p>Backend storage, account consent, reviewed source records, reviewer operations, audio rights, and launch sequencing after founder direction.</p>
               </div>
               <div class="percent">0%</div>
@@ -2511,11 +2519,11 @@
         <aside class="panel version">
           <div>
             <h2>Version Notes</h2>
-            <div class="version-row"><span>Release</span><strong>v2.9.1 Source Data Foundation</strong></div>
-            <div class="version-row"><span>Previous</span><strong>v2.9.0 Frame Alignment Polish</strong></div>
+            <div class="version-row"><span>Release</span><strong>v2.9.2 Retrieval Foundation</strong></div>
+            <div class="version-row"><span>Previous</span><strong>v2.9.1 Source Data Foundation</strong></div>
             <div class="version-row"><span>Commit</span><strong>See GitHub history</strong></div>
-            <div class="version-row"><span>Goal</span><strong>Move from prototype answers to structured source-answer data.</strong></div>
-            <div class="version-row"><span>Status</span><strong>Ready for retrieval foundation</strong></div>
+            <div class="version-row"><span>Goal</span><strong>Make source selection visible before answer rendering.</strong></div>
+            <div class="version-row"><span>Status</span><strong>Ready for retrieval eval cases</strong></div>
           </div>
 
           <div class="panel note">
@@ -2526,10 +2534,10 @@
           <div>
             <h2>Next Build Checklist</h2>
             <ul class="checklist">
-              <li><span class="dot"></span><span>Use answer records for the first static retrieval pass.</span></li>
-              <li><span class="dot"></span><span>Add no-source and reviewer-needed fallbacks.</span></li>
-              <li><span class="dot"></span><span>Connect source records to answer records by stable ids.</span></li>
-              <li><span class="dot"></span><span>Keep UI calm while the knowledge layer becomes real.</span></li>
+              <li><span class="dot"></span><span>Add expected-source eval cases for every starter query.</span></li>
+              <li><span class="dot"></span><span>Tune thresholds for answer-ready versus review-needed.</span></li>
+              <li><span class="dot"></span><span>Connect retrieval traces to reviewer queue tickets.</span></li>
+              <li><span class="dot"></span><span>Expand records only after the eval loop is visible.</span></li>
             </ul>
           </div>
         </aside>
