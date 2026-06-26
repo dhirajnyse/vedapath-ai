@@ -277,6 +277,7 @@ It helps users move from curiosity to understanding through:
 - Decision Pause: Decision Pause turns confusion into a small, reviewable reflection.
 - Night Release: Night Release makes the day easier to put down without pretending to solve sleep.
 - Mobile Life Companion: Mobile Life Companion keeps everyday reflection simple in real life.
+- Life Companion Control Room: Life Companion Control Room completes the personal-life calm layer for VedaPath AI.
 <!-- VEDAPATH LIFE COMPANION SPRINT SUMMARY END -->
 
 ## What It Is
@@ -4027,6 +4028,21 @@ It should:
 - keep personal entries local until explicit accounts and consent exist
 
 Mobile Life Companion should never claim therapy, diagnosis, medical advice, legal advice, emergency support, ritual instruction, or spiritual authority.
+
+### 247. Life Companion Control Room
+
+Life Companion Control Room completes the personal-life calm layer for VedaPath AI.
+
+It should:
+
+- Arrive: Name the moment without judging it.
+- Source: Keep citation, family, confidence, and boundary visible.
+- Carry: Leave with one small action.
+- Memory: Save entries only in this browser.
+- preserve the boundary: reflection support only, not authority
+- keep personal entries local until explicit accounts and consent exist
+
+Life Companion Control Room should never claim therapy, diagnosis, medical advice, legal advice, emergency support, ritual instruction, or spiritual authority.
 <!-- VEDAPATH LIFE COMPANION SPRINT BLUEPRINT END -->
 
 ## Product Personality

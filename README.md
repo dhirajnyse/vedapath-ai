@@ -531,6 +531,8 @@ Let us look at the source first.
 - [Night Release Notes](docs/NIGHT_RELEASE.md)
 - [Mobile Life Companion](mobilelifecompanion.html)
 - [Mobile Life Companion Notes](docs/MOBILE_LIFE_COMPANION.md)
+- [Life Companion Control Room](lifecompanionlab.html)
+- [Life Companion Control Room Notes](docs/LIFE_COMPANION_CONTROL_ROOM.md)
 <!-- VEDAPATH LIFE COMPANION SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -562,7 +564,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v2.6.3` is a trusted MVP prototype plus Mobile Life Companion with:
+`v2.6.4` is a trusted MVP prototype plus Life Companion Control Room with:
 
 - Ask workspace
 - Source Card
@@ -838,6 +840,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Decision Pause: Decision Pause turns confusion into a small, reviewable reflection.
 - Night Release: Night Release makes the day easier to put down without pretending to solve sleep.
 - Mobile Life Companion: Mobile Life Companion keeps everyday reflection simple in real life.
+- Life Companion Control Room: Life Companion Control Room completes the personal-life calm layer for VedaPath AI.
 <!-- VEDAPATH LIFE COMPANION SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
