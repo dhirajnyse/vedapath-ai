@@ -435,6 +435,8 @@ Let us look at the source first.
 - [Passage Rights Matrix Notes](docs/PASSAGE_RIGHTS_MATRIX.md)
 - [Translation Note Gate](translationgate.html)
 - [Translation Note Gate Notes](docs/TRANSLATION_NOTE_GATE.md)
+- [Concept Glossary Builder](glossarybuilder.html)
+- [Concept Glossary Builder Notes](docs/CONCEPT_GLOSSARY_BUILDER.md)
 <!-- VEDAPATH SOURCE LIBRARY SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -466,7 +468,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v2.1.9` is a trusted MVP prototype plus Translation Note Gate with:
+`v2.2.0` is a trusted MVP prototype plus Concept Glossary Builder with:
 
 - Ask workspace
 - Source Card
@@ -690,6 +692,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Family Classifier: Family Classifier reduces category confusion, one of VedaPath's central trust promises.
 - Passage Rights Matrix: Passage Rights Matrix keeps source reverence practical and launch-safe.
 - Translation Note Gate: Translation Note Gate prevents the product from sliding into unreviewed text display.
+- Concept Glossary Builder: Concept Glossary Builder connects source records to learning language while preserving depth.
 <!-- VEDAPATH SOURCE LIBRARY SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff

@@ -225,6 +225,7 @@ It helps users move from curiosity to understanding through:
 - Family Classifier: Family Classifier reduces category confusion, one of VedaPath's central trust promises.
 - Passage Rights Matrix: Passage Rights Matrix keeps source reverence practical and launch-safe.
 - Translation Note Gate: Translation Note Gate prevents the product from sliding into unreviewed text display.
+- Concept Glossary Builder: Concept Glossary Builder connects source records to learning language while preserving depth.
 <!-- VEDAPATH SOURCE LIBRARY SPRINT SUMMARY END -->
 
 ## What It Is
@@ -3311,6 +3312,21 @@ It should:
 - keep source-library records as starter data until scholar review, rights policy, and retrieval evaluation are approved
 
 Translation Note Gate should never claim canonical corpus coverage, scholar endorsement, legal clearance, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
+
+### 203. Concept Glossary Builder
+
+Concept Glossary Builder connects source records to learning language while preserving depth.
+
+It should:
+
+- Theme field: Records expose concept themes for learner pathways.
+- Tag clusters: Simple tags connect related records.
+- Boundary notes: Concept explanations carry no-go lines.
+- Commentary caution: Complex topics stay in review until lanes exist.
+- preserve the boundary: Glossary preview, not commentary authority.
+- keep source-library records as starter data until scholar review, rights policy, and retrieval evaluation are approved
+
+Concept Glossary Builder should never claim canonical corpus coverage, scholar endorsement, legal clearance, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
 <!-- VEDAPATH SOURCE LIBRARY SPRINT BLUEPRINT END -->
 
 ## Product Personality
