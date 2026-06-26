@@ -455,6 +455,8 @@ Let us look at the source first.
 - [Reason Stack Viewer Notes](docs/REASON_STACK_VIEWER.md)
 - [Boundary-Aware Answer Draft](answerdraft.html)
 - [Boundary-Aware Answer Draft Notes](docs/BOUNDARY_AWARE_ANSWER_DRAFT.md)
+- [Citation Trace Panel](citationtrace.html)
+- [Citation Trace Panel Notes](docs/CITATION_TRACE_PANEL.md)
 <!-- VEDAPATH RETRIEVAL LAB SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -486,7 +488,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v2.2.8` is a trusted MVP prototype plus Boundary-Aware Answer Draft with:
+`v2.2.9` is a trusted MVP prototype plus Citation Trace Panel with:
 
 - Ask workspace
 - Source Card
@@ -721,6 +723,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Source Candidate Ranker: Source Candidate Ranker makes source selection inspectable instead of mysterious.
 - Reason Stack Viewer: Reason Stack Viewer builds trust by making retrieval evidence visible.
 - Boundary-Aware Answer Draft: Boundary-Aware Answer Draft makes safe answer framing visible before any AI backend exists.
+- Citation Trace Panel: Citation Trace Panel makes retrieval accountable at the record level.
 <!-- VEDAPATH RETRIEVAL LAB SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff

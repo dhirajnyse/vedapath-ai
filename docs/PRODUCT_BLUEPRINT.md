@@ -236,6 +236,7 @@ It helps users move from curiosity to understanding through:
 - Source Candidate Ranker: Source Candidate Ranker makes source selection inspectable instead of mysterious.
 - Reason Stack Viewer: Reason Stack Viewer builds trust by making retrieval evidence visible.
 - Boundary-Aware Answer Draft: Boundary-Aware Answer Draft makes safe answer framing visible before any AI backend exists.
+- Citation Trace Panel: Citation Trace Panel makes retrieval accountable at the record level.
 <!-- VEDAPATH RETRIEVAL LAB SPRINT SUMMARY END -->
 
 ## What It Is
@@ -3458,6 +3459,21 @@ It should:
 - keep retrieval explainable, source-bound, and honest about fallback
 
 Boundary-Aware Answer Draft should never claim production RAG, model truth, scholar endorsement, legal clearance, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
+
+### 212. Citation Trace Panel
+
+Citation Trace Panel makes retrieval accountable at the record level.
+
+It should:
+
+- Query path: User language is matched to curated source records.
+- Reason path: Ranking reasons and readiness stay visible.
+- Boundary path: No-go language travels with each candidate.
+- Trace path: The chosen source can be copied as a trace packet.
+- preserve the boundary: Trace panel preview, not audit log.
+- keep retrieval explainable, source-bound, and honest about fallback
+
+Citation Trace Panel should never claim production RAG, model truth, scholar endorsement, legal clearance, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
 <!-- VEDAPATH RETRIEVAL LAB SPRINT BLUEPRINT END -->
 
 ## Product Personality
