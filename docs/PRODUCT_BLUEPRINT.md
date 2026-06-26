@@ -226,6 +226,7 @@ It helps users move from curiosity to understanding through:
 - Passage Rights Matrix: Passage Rights Matrix keeps source reverence practical and launch-safe.
 - Translation Note Gate: Translation Note Gate prevents the product from sliding into unreviewed text display.
 - Concept Glossary Builder: Concept Glossary Builder connects source records to learning language while preserving depth.
+- Question Source Map: Question Source Map prepares retrieval while keeping source claims humble.
 <!-- VEDAPATH SOURCE LIBRARY SPRINT SUMMARY END -->
 
 ## What It Is
@@ -3327,6 +3328,21 @@ It should:
 - keep source-library records as starter data until scholar review, rights policy, and retrieval evaluation are approved
 
 Concept Glossary Builder should never claim canonical corpus coverage, scholar endorsement, legal clearance, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
+
+### 204. Question Source Map
+
+Question Source Map prepares retrieval while keeping source claims humble.
+
+It should:
+
+- Question examples: Each record has real user-question seeds.
+- Candidate language: The map suggests sources, not final answers.
+- Review status: Question fit inherits review state.
+- Source packet: The selected record can be copied for review.
+- preserve the boundary: Question map prototype, not retrieval ranking.
+- keep source-library records as starter data until scholar review, rights policy, and retrieval evaluation are approved
+
+Question Source Map should never claim canonical corpus coverage, scholar endorsement, legal clearance, therapy, diagnosis, emergency support, ritual instruction, or spiritual authority.
 <!-- VEDAPATH SOURCE LIBRARY SPRINT BLUEPRINT END -->
 
 ## Product Personality

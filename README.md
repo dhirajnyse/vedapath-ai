@@ -437,6 +437,8 @@ Let us look at the source first.
 - [Translation Note Gate Notes](docs/TRANSLATION_NOTE_GATE.md)
 - [Concept Glossary Builder](glossarybuilder.html)
 - [Concept Glossary Builder Notes](docs/CONCEPT_GLOSSARY_BUILDER.md)
+- [Question Source Map](questionmap.html)
+- [Question Source Map Notes](docs/QUESTION_SOURCE_MAP.md)
 <!-- VEDAPATH SOURCE LIBRARY SPRINT LINKS END -->
 - [Source Path Builder](path.html)
 - [Source Path Builder Notes](docs/SOURCE_PATH_BUILDER.md)
@@ -468,7 +470,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 
 ## Current Release
 
-`v2.2.0` is a trusted MVP prototype plus Concept Glossary Builder with:
+`v2.2.1` is a trusted MVP prototype plus Question Source Map with:
 
 - Ask workspace
 - Source Card
@@ -693,6 +695,7 @@ Make sacred and philosophical knowledge easier to approach without flattening it
 - Passage Rights Matrix: Passage Rights Matrix keeps source reverence practical and launch-safe.
 - Translation Note Gate: Translation Note Gate prevents the product from sliding into unreviewed text display.
 - Concept Glossary Builder: Concept Glossary Builder connects source records to learning language while preserving depth.
+- Question Source Map: Question Source Map prepares retrieval while keeping source claims humble.
 <!-- VEDAPATH SOURCE LIBRARY SPRINT FEATURES END -->
 - Source Path Builder with intention, local progress, source mix, and practice handoff
 - Calm Compass with present-state routing, local signal, and practice handoff
