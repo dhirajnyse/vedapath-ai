@@ -1,0 +1,187 @@
+/* VedaPath controlled permission execution authorization review gate */
+body.authorization-review-page .topbar,
+body.authorization-review-page header.topbar {
+  height: auto !important;
+  min-height: var(--vp-header-height, 74px);
+  padding: 0 !important;
+}
+
+body.authorization-review-page .nav {
+  gap: 5px;
+  overflow: visible;
+  flex-wrap: nowrap;
+}
+
+body.authorization-review-page .nav .link,
+body.authorization-review-page .nav a {
+  padding-left: 9px;
+  padding-right: 9px;
+}
+
+body.authorization-review-page .nav .version {
+  margin-left: 6px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+body.authorization-review-page main.workspace {
+  grid-template-columns: minmax(210px, 0.72fr) minmax(0, 1.7fr) minmax(230px, 0.8fr);
+  gap: 18px;
+}
+
+body.authorization-review-page main.workspace > aside.panel:first-child,
+body.authorization-review-page main.workspace > aside.panel.tight {
+  position: static;
+  max-height: none;
+  overflow: visible;
+}
+
+.authorization-review,
+.authorization-review-head,
+.authorization-review-layout,
+.authorization-review-form,
+.authorization-review-grid,
+.authorization-review-list,
+.authorization-review-actions,
+.authorization-review-rules {
+  display: grid;
+  gap: 10px;
+}
+
+.authorization-review { gap: 16px; }
+
+.authorization-review-head {
+  grid-template-columns: minmax(0, 1fr) 126px;
+  align-items: center;
+}
+
+.authorization-review-mark {
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff3e4;
+  padding: 10px;
+}
+
+.authorization-review-mark img {
+  display: block;
+  width: 100%;
+}
+
+.authorization-review-layout {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: start;
+}
+
+.authorization-review-form,
+.authorization-review-card,
+.authorization-review-result,
+.authorization-review-output,
+.authorization-review-rule {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.authorization-review-form,
+.authorization-review-card,
+.authorization-review-result,
+.authorization-review-rule {
+  padding: 12px;
+}
+
+.authorization-review-form label {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.authorization-review-form input,
+.authorization-review-form select,
+.authorization-review-form textarea,
+.authorization-review-output {
+  width: 100%;
+  border: 1px solid #efc1aa;
+  border-radius: 8px;
+  background: #fffaf4;
+  color: var(--ink);
+  padding: 10px;
+}
+
+.authorization-review-form textarea,
+.authorization-review-output {
+  min-height: 92px;
+  resize: vertical;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 13px;
+}
+
+.authorization-review-actions {
+  grid-template-columns: repeat(4, minmax(0, max-content));
+  align-items: center;
+}
+
+.authorization-review-grid,
+.authorization-review-rules {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.authorization-review-card.ready,
+.authorization-review-result[data-state="Preflight ready for authorization review"] {
+  border-color: #b7d5ca;
+  background: #f6fffb;
+}
+
+.authorization-review-card.blocked,
+.authorization-review-result[data-state^="Blocked"] {
+  border-color: #efb39a;
+  background: #fff1ea;
+}
+
+.authorization-review-card span,
+.authorization-review-rule span {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.authorization-review-card strong,
+.authorization-review-rule strong {
+  display: block;
+  margin-top: 4px;
+}
+
+.authorization-review-boundary {
+  border-left: 4px solid var(--bhagwa);
+  padding-left: 12px;
+}
+
+@media (max-width: 1050px) {
+  body.authorization-review-page main.workspace,
+  .authorization-review-layout,
+  .authorization-review-grid,
+  .authorization-review-rules {
+    grid-template-columns: 1fr;
+  }
+
+  .authorization-review-head {
+    grid-template-columns: 1fr;
+  }
+
+  .authorization-review-mark {
+    max-width: 160px;
+  }
+}
+
+@media (max-width: 760px) {
+  body.authorization-review-page .nav {
+    flex-wrap: wrap;
+  }
+
+  .authorization-review-actions {
+    grid-template-columns: 1fr 1fr;
+  }
+}
