@@ -954,6 +954,14 @@ http://127.0.0.1:8088/
 ```
 
 <!-- VEDAPATH FOUNDER AUTHORIZATION DECISION GATE START -->
+## v3.1.8 Controlled Execution Packet Authorization Draft
+
+Controlled execution packet authorization draft turns founder decision posture into a reviewable draft packet while keeping authorization, execution, storage writes, canonical writes, public release, and production disabled.
+
+- [Controlled Execution Packet Authorization Draft](controlledexecutionpacketauthorizationdraft.html)
+- [Controlled Execution Packet Authorization Draft Notes](docs/CONTROLLED_EXECUTION_PACKET_AUTHORIZATION_DRAFT.md)
+- [Controlled Execution Packet Authorization Draft Data](data/vedapath-controlled-execution-packet-authorization-draft.json)
+
 ## v3.1.7 Founder Authorization Decision Gate
 
 This release records founder decision posture on held authorization language while all authorization, execution, promotion, storage, canonical-write, migration, account, secret, public-release, and production flags stay false.

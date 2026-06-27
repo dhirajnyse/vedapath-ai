@@ -1,0 +1,239 @@
+/* VedaPath controlled execution packet authorization draft */
+body.auth-draft-page .topbar,
+body.auth-draft-page header.topbar {
+  height: auto !important;
+  min-height: var(--vp-header-height, 74px);
+  padding: 0 !important;
+}
+
+body.auth-draft-page .nav {
+  gap: 5px;
+  overflow: visible;
+  flex-wrap: nowrap;
+}
+
+body.auth-draft-page .nav .link,
+body.auth-draft-page .nav a {
+  padding-left: 9px;
+  padding-right: 9px;
+}
+
+body.auth-draft-page .nav .version {
+  margin-left: 6px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+body.auth-draft-page main.workspace {
+  grid-template-columns: minmax(210px, 0.72fr) minmax(0, 1.7fr) minmax(230px, 0.8fr);
+  gap: 18px;
+}
+
+body.auth-draft-page main.workspace > aside.panel:first-child,
+body.auth-draft-page main.workspace > aside.panel.tight {
+  position: static;
+  max-height: none;
+  overflow: visible;
+}
+
+.auth-draft,
+.auth-draft-head,
+.auth-draft-layout,
+.auth-draft-form,
+.auth-draft-grid,
+.auth-draft-list,
+.auth-draft-actions,
+.auth-draft-rules {
+  display: grid;
+  gap: 10px;
+}
+
+.auth-draft { gap: 16px; }
+
+.auth-draft-head {
+  grid-template-columns: minmax(0, 1fr) 126px;
+  align-items: center;
+}
+
+.auth-draft-mark {
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff3e4;
+  padding: 10px;
+}
+
+.auth-draft-mark img {
+  display: block;
+  width: 100%;
+}
+
+.auth-draft-layout {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: start;
+}
+
+.auth-draft-form,
+.auth-draft-card,
+.auth-draft-result,
+.auth-draft-output,
+.auth-draft-rule {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.auth-draft-form,
+.auth-draft-card,
+.auth-draft-result,
+.auth-draft-rule {
+  padding: 12px;
+}
+
+.auth-draft-form label {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.auth-draft-form input,
+.auth-draft-form select,
+.auth-draft-form textarea,
+.auth-draft-output {
+  width: 100%;
+  border: 1px solid #efc1aa;
+  border-radius: 8px;
+  background: #fffaf4;
+  color: var(--ink);
+  padding: 10px;
+}
+
+.auth-draft-form textarea,
+.auth-draft-output {
+  min-height: 96px;
+  resize: vertical;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 13px;
+}
+
+.auth-draft-grid,
+.auth-draft-rules {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.auth-draft-card,
+.auth-draft-result {
+  border-left: 4px solid var(--gold);
+}
+
+.auth-draft-card.ready,
+.auth-draft-result[data-state="Authorization draft ready"] {
+  border-left-color: var(--green);
+}
+
+.auth-draft-card.blocked,
+.auth-draft-result[data-state^="Blocked"],
+.auth-draft-result[data-state="Return to founder decision"],
+.auth-draft-result[data-state="Draft hold"],
+.auth-draft-result[data-state="Authorization blocked"],
+.auth-draft-result[data-state="Execution blocked"],
+.auth-draft-result[data-state="Production forbidden"],
+.auth-draft-result[data-state="Draft expired"] {
+  border-left-color: var(--ochre);
+}
+
+.auth-draft-card span,
+.auth-draft-card strong,
+.auth-draft-rule span,
+.auth-draft-rule strong {
+  display: block;
+}
+
+.auth-draft-card strong {
+  font-size: 18px;
+  line-height: 1.18;
+  overflow-wrap: anywhere;
+}
+
+.auth-draft-card span,
+.auth-draft-rule span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.auth-draft-result strong {
+  display: block;
+  font-size: 24px;
+}
+
+.auth-draft-result ul {
+  margin: 10px 0 0;
+  padding-left: 18px;
+}
+
+.auth-draft-actions {
+  grid-template-columns: repeat(2, minmax(0, max-content));
+  justify-content: start;
+}
+
+.auth-draft-list {
+  max-height: 320px;
+  overflow: auto;
+}
+
+.auth-draft-output {
+  min-height: 260px;
+}
+
+.auth-draft-boundary {
+  border: 1px dashed rgba(168, 62, 18, 0.38);
+  border-radius: 8px;
+  background: #fff7ea;
+  padding: 12px;
+  font-weight: 850;
+}
+
+@media (max-width: 980px) {
+  body.auth-draft-page .topbar,
+  body.auth-draft-page header.topbar {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 12px 0 !important;
+  }
+
+  body.auth-draft-page .nav {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  body.auth-draft-page main.workspace {
+    grid-template-columns: 1fr;
+  }
+
+  body.auth-draft-page main.workspace > section.auth-draft {
+    order: 1;
+  }
+
+  body.auth-draft-page main.workspace > aside.panel:first-child {
+    order: 2;
+  }
+
+  body.auth-draft-page main.workspace > aside.panel.tight {
+    order: 3;
+  }
+
+  .auth-draft-layout,
+  .auth-draft-head,
+  .auth-draft-grid,
+  .auth-draft-rules {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .auth-draft-actions { grid-template-columns: 1fr; }
+}
