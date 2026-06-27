@@ -4373,6 +4373,20 @@ It should:
 
 Pattern Companion Control Room should never claim diagnosis, therapy, legal advice, medical advice, surveillance, scoring, or spiritual authority.
 <!-- VEDAPATH PATTERN COMPANION SPRINT BLUEPRINT END -->
+<!-- VEDAPATH ROLLBACK RECEIPT DRY RUN BLUEPRINT START -->
+### 288. Rollback Receipt Dry Run
+
+VedaPath should prove reversibility before it stores anything.
+
+Rules:
+
+- Rollback receipt dry run can start only from a ready audit receipt.
+- A ready rollback must include restore action, discard action, reason, verification, replay key, and boundary.
+- Rollback readiness is not production readiness.
+- Source writes, storage writes, and canonical writes remain false in preview.
+- The next build should dry-run replay receipts from audit and rollback packets.
+<!-- VEDAPATH ROLLBACK RECEIPT DRY RUN BLUEPRINT END -->
+
 <!-- VEDAPATH AUDIT RECEIPT DRY RUN BLUEPRINT START -->
 ### 287. Audit Receipt Dry Run
 

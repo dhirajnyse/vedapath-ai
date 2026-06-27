@@ -953,6 +953,18 @@ Then open:
 http://127.0.0.1:8088/
 ```
 
+<!-- VEDAPATH ROLLBACK RECEIPT DRY RUN START -->
+## v3.0.5 Rollback Receipt Dry Run
+
+This release adds the rollback receipt dry-run layer after audit receipts.
+
+- adds rollbackreceiptdryrun.html
+- adds data/vedapath-rollback-receipt-dry-run.json
+- records restore action, discard action, rollback reason, verification step, replay key, and rollback boundary
+- keeps source_write_executed false, storage_write_enabled false, production_ready false, and canonical_write_allowed false
+- sets the next release as replay receipt dry run
+<!-- VEDAPATH ROLLBACK RECEIPT DRY RUN END -->
+
 <!-- VEDAPATH AUDIT RECEIPT DRY RUN START -->
 ## v3.0.4 Audit Receipt Dry Run
 

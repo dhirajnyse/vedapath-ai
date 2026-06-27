@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VedaPath Rollback Receipt Dry Run</title>
+    <link rel="stylesheet" href="assets/vedapath-sprint.css">
+    <link rel="stylesheet" href="assets/vedapath-rollback-receipt-dry-run.css">
+    <link rel="stylesheet" href="assets/vedapath-cohesive.css">
+    <link rel="stylesheet" href="assets/vedapath-polish.css">
+    <link rel="stylesheet" href="assets/vedapath-focus.css">
+  </head>
+  <body>
+    <div class="shell" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top" aria-label="VedaPath AI home">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
+          <div>
+            <strong>VedaPath AI</strong>
+            <span>Rollback receipt dry run</span>
+          </div>
+        </a>
+        <nav class="nav" aria-label="Project links">
+          <a class="link" href="index.html">Home</a>
+          <a class="link" href="build-status.html">Build</a>
+          <a class="link" href="brand/brand-board.html">Brand</a>
+          <a class="link" href="blueprint.html">Blueprint</a>
+          <a class="link" href="citedanswerlab.html">Answers</a>
+          <a class="link active" href="reviewqueuepersistence.html">Review</a>
+          <a class="link" href="mantralenslab.html">Mantra</a>
+          <a class="link" href="lifecompanionlab.html">Life</a>
+          <a class="link" href="conversationcompanionlab.html">Talk</a>
+          <a class="link" href="patterncompanionlab.html">Pattern</a>
+          <a class="link" href="daily.html">Daily</a>
+          <span class="version">v3.0.5 rollback receipt</span>
+        </nav>
+      </header>
+
+      <main class="workspace" aria-label="VedaPath Rollback Receipt Dry Run workspace">
+        <aside class="panel">
+          <span class="eyebrow">Rollback restraint</span>
+          <h2>Prove the undo path first</h2>
+          <p class="muted">A rollback receipt dry run links to the audit receipt and proves restore, discard, verification, replay, and boundary before storage writes exist.</p>
+          <div class="sprint-list">
+            <div class="sprint-step active"><span class="step-index">1</span><div><strong>Audit</strong><p>Read receipt.</p></div></div>
+            <div class="sprint-step"><span class="step-index">2</span><div><strong>Restore</strong><p>Name before state.</p></div></div>
+            <div class="sprint-step"><span class="step-index">3</span><div><strong>Discard</strong><p>Drop after packet.</p></div></div>
+            <div class="sprint-step"><span class="step-index">4</span><div><strong>Replay</strong><p>Keep proof repeatable.</p></div></div>
+          </div>
+          <div class="button-row" style="margin-top: 16px;">
+            <a class="button primary" href="auditreceiptdryrun.html">Open Audit Receipt</a>
+            <a class="button safe" href="storagedesigngate.html">Open Storage Design</a>
+          </div>
+        </aside>
+
+        <section class="panel rollback-app" id="rollbackReceiptDryRun">
+          <div class="rollback-head">
+            <div>
+              <span class="eyebrow">Rollback receipt</span>
+              <h1>Restore before write. Discard without damage.</h1>
+              <p class="muted">This room proves the rollback receipt shape for a future source-answer write without executing that write.</p>
+            </div>
+            <div class="rollback-mark"><img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath rollback receipt mark"></div>
+          </div>
+
+          <section class="rollback-layout">
+            <div class="rollback-form">
+              <h2>Rollback Receipt Dry Run</h2>
+              <label>Audit receipt packet<textarea id="rollbackAuditReceipt"></textarea></label>
+              <label>Rollback state<select id="rollbackState"></select></label>
+              <label>Rollback actor<input id="rollbackActor" type="text" placeholder="Rollback dry-run reviewer"></label>
+              <label>Rollback note<textarea id="rollbackNote"></textarea></label>
+              <label>Audit receipt id<input id="rollbackAuditId" type="text"></label>
+              <label>Source answer id<input id="rollbackSourceAnswer" type="text"></label>
+              <label>Source record id<input id="rollbackSourceRecord" type="text"></label>
+              <label>Before hash<input id="rollbackBeforeHash" type="text"></label>
+              <label>After hash<input id="rollbackAfterHash" type="text"></label>
+              <label>Restore action<textarea id="rollbackRestoreAction"></textarea></label>
+              <label>Discard action<textarea id="rollbackDiscardAction"></textarea></label>
+              <label>Rollback reason<textarea id="rollbackReason"></textarea></label>
+              <label>Verification step<textarea id="rollbackVerification"></textarea></label>
+              <label>Replay key<input id="rollbackReplayKey" type="text"></label>
+              <label>Rollback boundary<textarea id="rollbackBoundary"></textarea></label>
+              <label>Review question<textarea id="rollbackReviewQuestion"></textarea></label>
+              <label>Return reason<textarea id="rollbackReturnReason"></textarea></label>
+              <label>Block reason<textarea id="rollbackBlockReason"></textarea></label>
+              <div class="rollback-actions">
+                <button class="button primary" id="runRollbackDryRun" type="button">Run Rollback</button>
+                <button class="button safe" id="loadRollbackSample" type="button">Load Sample</button>
+                <button class="button" id="saveRollbackDryRun" type="button">Save Local</button>
+                <button class="button" id="clearRollbackDryRuns" type="button">Clear Local</button>
+              </div>
+            </div>
+            <div>
+              <section class="rollback-result" id="rollbackResultCard" data-state="Blocked"></section>
+              <section style="margin-top: 10px;">
+                <h2>Audit Receipt Scope</h2>
+                <div class="rollback-list" id="rollbackAuditScope"></div>
+              </section>
+            </div>
+          </section>
+
+          <section>
+            <h2>Rollback Checks</h2>
+            <div class="rollback-rules" id="rollbackChecks"></div>
+          </section>
+
+          <section class="rollback-layout">
+            <div>
+              <div class="rollback-actions">
+                <button class="button safe" id="copyRollbackPacket" type="button">Copy Rollback Packet</button>
+                <a class="button" href="data/vedapath-rollback-receipt-dry-run.json">Open JSON</a>
+              </div>
+              <textarea class="rollback-packet" id="rollbackPacket" aria-label="Rollback receipt dry-run packet"></textarea>
+            </div>
+            <div>
+              <h2>Saved Local Rollbacks</h2>
+              <div class="rollback-list" id="rollbackSaved"></div>
+            </div>
+          </section>
+        </section>
+
+        <aside class="panel tight">
+          <span class="badge green">Rollback proof</span>
+          <h2 style="margin-top: 14px;">Undo Before Write</h2>
+          <p class="muted">The rollback receipt proves the restore and discard path while source_write_executed stays false.</p>
+          <div class="progress" aria-label="Rollback receipt dry run progress 100 percent"><div class="bar" style="--score:100%"></div></div>
+          <div class="metric-grid">
+            <div class="metric"><span>Current</span><strong>v3.0.5</strong></div>
+            <div class="metric"><span>States</span><strong>5</strong></div>
+            <div class="metric"><span>Writes</span><strong>False</strong></div>
+            <div class="metric"><span>Next</span><strong>Replay</strong></div>
+          </div>
+          <section class="panel tight boundary" style="margin-top: 16px;">
+            <h2>Rollback Rule</h2>
+            <p class="muted">No source write is executed. The next release should prove replay receipts from audit plus rollback packets.</p>
+          </section>
+        </aside>
+      </main>
+    </div>
+    <script src="assets/vedapath-rollback-receipt-dry-run.js"></script>
+  </body>
+</html>

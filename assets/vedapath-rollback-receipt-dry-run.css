@@ -1,0 +1,159 @@
+/* VedaPath rollback receipt dry run */
+.rollback-app,
+.rollback-head,
+.rollback-layout,
+.rollback-form,
+.rollback-grid,
+.rollback-list,
+.rollback-actions,
+.rollback-rules {
+  display: grid;
+  gap: 10px;
+}
+
+.rollback-app {
+  gap: 16px;
+}
+
+.rollback-head {
+  grid-template-columns: minmax(0, 1fr) 126px;
+  align-items: center;
+}
+
+.rollback-mark {
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff3e4;
+  padding: 10px;
+}
+
+.rollback-mark img {
+  display: block;
+  width: 100%;
+}
+
+.rollback-layout {
+  grid-template-columns: minmax(0, 0.96fr) minmax(0, 1.04fr);
+  align-items: start;
+}
+
+.rollback-form,
+.rollback-card,
+.rollback-result,
+.rollback-packet,
+.rollback-rule {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.rollback-form,
+.rollback-card,
+.rollback-result,
+.rollback-rule {
+  padding: 12px;
+}
+
+.rollback-form label {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.rollback-form input,
+.rollback-form select,
+.rollback-form textarea,
+.rollback-packet {
+  width: 100%;
+  border: 1px solid #efc1aa;
+  border-radius: 8px;
+  background: #fffaf4;
+  color: var(--ink);
+  padding: 10px;
+}
+
+.rollback-form textarea,
+.rollback-packet {
+  min-height: 112px;
+  resize: vertical;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 13px;
+}
+
+.rollback-grid,
+.rollback-rules {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.rollback-card,
+.rollback-result {
+  border-left: 4px solid var(--gold);
+}
+
+.rollback-card.ready,
+.rollback-result[data-state="Rollback receipt ready"] {
+  border-left-color: var(--green);
+}
+
+.rollback-card.blocked,
+.rollback-result[data-state="Blocked"],
+.rollback-result[data-state="Return to audit receipt"],
+.rollback-result[data-state="Rollback receipt blocked"] {
+  border-left-color: var(--ochre);
+}
+
+.rollback-card span,
+.rollback-card strong,
+.rollback-rule span,
+.rollback-rule strong {
+  display: block;
+}
+
+.rollback-card span,
+.rollback-rule span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.rollback-result strong {
+  display: block;
+  font-size: 24px;
+}
+
+.rollback-result ul {
+  margin: 10px 0 0;
+  padding-left: 18px;
+}
+
+.rollback-actions {
+  grid-template-columns: repeat(2, minmax(0, max-content));
+  justify-content: start;
+}
+
+.rollback-list {
+  max-height: 320px;
+  overflow: auto;
+}
+
+.rollback-packet {
+  min-height: 260px;
+}
+
+@media (max-width: 980px) {
+  .rollback-layout,
+  .rollback-head,
+  .rollback-grid,
+  .rollback-rules {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .rollback-actions {
+    grid-template-columns: 1fr;
+  }
+}
