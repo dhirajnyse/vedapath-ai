@@ -953,6 +953,17 @@ Then open:
 http://127.0.0.1:8088/
 ```
 
+<!-- VEDAPATH SOURCE PROMOTION HOLD REVIEW START -->
+## v3.1.1 Source Promotion Hold Review
+
+This release reviews promotion hold conditions after implementation authorization dry run while all promotion, execution, storage, canonical-write, and production flags stay false.
+
+- [Source Promotion Hold Review](sourcepromotionholdreview.html)
+- [Source Promotion Hold Review Notes](docs/SOURCE_PROMOTION_HOLD_REVIEW.md)
+- [Source Promotion Hold Review Data](data/vedapath-source-promotion-hold-review.json)
+
+<!-- VEDAPATH SOURCE PROMOTION HOLD REVIEW END -->
+
 <!-- VEDAPATH IMPLEMENTATION AUTHORIZATION DRY RUN START -->
 ## v3.1.0 Implementation Authorization Dry Run
 

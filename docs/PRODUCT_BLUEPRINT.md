@@ -4373,6 +4373,23 @@ It should:
 
 Pattern Companion Control Room should never claim diagnosis, therapy, legal advice, medical advice, surveillance, scoring, or spiritual authority.
 <!-- VEDAPATH PATTERN COMPANION SPRINT BLUEPRINT END -->
+<!-- VEDAPATH SOURCE PROMOTION HOLD REVIEW BLUEPRINT START -->
+### 294. Source Promotion Hold Review
+
+VedaPath should treat a ready implementation dry run as a review condition, not permission to promote. The source promotion hold review keeps the named source-answer packet on hold until source integrity, rights, translation, reviewer evidence, rollback, and founder recheck are visible.
+
+Core requirements:
+
+- start from an implementation authorization dry-run ready packet
+- keep the source-answer packet on a promotion hold lane
+- verify source answer, source record, source family, citation route, and no-content-mutation boundary
+- require rights and translation review before any public or stored source text promotion
+- require reviewer evidence, receipt chain, rollback reference, source-owner scope, and founder recheck
+- keep promotion, execution, storage writes, canonical writes, source writes, and production false
+
+Source Promotion Hold Review should never claim source promotion, execution approval, canonical source update, production storage, migration execution, account creation, secret handling, launch approval, therapy, ritual instruction, crisis support, or spiritual authority.
+<!-- VEDAPATH SOURCE PROMOTION HOLD REVIEW BLUEPRINT END -->
+
 <!-- VEDAPATH IMPLEMENTATION AUTHORIZATION DRY RUN BLUEPRINT START -->
 ### 293. Implementation Authorization Dry Run
 

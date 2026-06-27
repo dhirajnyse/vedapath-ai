@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VedaPath Source Promotion Hold Review</title>
+    <link rel="stylesheet" href="assets/vedapath-sprint.css">
+    <link rel="stylesheet" href="assets/vedapath-source-promotion-hold-review.css">
+    <link rel="stylesheet" href="assets/vedapath-cohesive.css">
+    <link rel="stylesheet" href="assets/vedapath-polish.css">
+    <link rel="stylesheet" href="assets/vedapath-focus.css">
+  </head>
+  <body>
+    <div class="shell" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top" aria-label="VedaPath AI home">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
+          <div>
+            <strong>VedaPath AI</strong>
+            <span>Source promotion hold review</span>
+          </div>
+        </a>
+        <nav class="nav" aria-label="Project links">
+          <a class="link" href="index.html">Home</a>
+          <a class="link" href="build-status.html">Build</a>
+          <a class="link" href="brand/brand-board.html">Brand</a>
+          <a class="link" href="blueprint.html">Blueprint</a>
+          <a class="link" href="citedanswerlab.html">Answers</a>
+          <a class="link active" href="reviewqueuepersistence.html">Review</a>
+          <a class="link" href="mantralenslab.html">Mantra</a>
+          <a class="link" href="lifecompanionlab.html">Life</a>
+          <a class="link" href="conversationcompanionlab.html">Talk</a>
+          <a class="link" href="patterncompanionlab.html">Pattern</a>
+          <a class="link" href="daily.html">Daily</a>
+          <span class="version">v3.1.1 promotion hold</span>
+        </nav>
+      </header>
+
+      <main class="workspace" aria-label="VedaPath Source Promotion Hold Review workspace">
+        <aside class="panel">
+          <span class="eyebrow">Promotion stays closed</span>
+          <h2>Review the hold before the next step</h2>
+          <p class="muted">This room keeps a source-answer packet on a promotion hold lane after authorization dry run. It cannot promote, store, or execute.</p>
+          <div class="sprint-list">
+            <div class="sprint-step active"><span class="step-index">1</span><div><strong>Authorization</strong><p>Load dry run.</p></div></div>
+            <div class="sprint-step"><span class="step-index">2</span><div><strong>Evidence</strong><p>Check receipts.</p></div></div>
+            <div class="sprint-step"><span class="step-index">3</span><div><strong>Rights</strong><p>Keep missing review on hold.</p></div></div>
+            <div class="sprint-step"><span class="step-index">4</span><div><strong>Boundary</strong><p>Block execution.</p></div></div>
+          </div>
+          <div class="button-row" style="margin-top: 16px;">
+            <a class="button primary" href="implementationauthorizationdryrun.html">Open Authorization</a>
+            <a class="button safe" href="founderstorageinstructiongate.html">Open Founder Gate</a>
+          </div>
+        </aside>
+
+        <section class="panel promotion-app" id="sourcePromotionHoldReview">
+          <div class="promotion-head">
+            <div>
+              <span class="eyebrow">Promotion hold review</span>
+              <h1>Hold promotion. Protect the source.</h1>
+              <p class="muted">A ready packet here means promotion hold conditions are reviewed. It still cannot promote source data, execute implementation, write storage, update canonical records, or launch production.</p>
+            </div>
+            <div class="promotion-mark"><img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath source promotion hold mark"></div>
+          </div>
+
+          <section class="promotion-layout">
+            <div class="promotion-form">
+              <h2>Promotion Hold Packet</h2>
+              <label>Authorization dry-run packet<textarea id="promotionAuthorizationPacket"></textarea></label>
+              <label>Promotion state<select id="promotionState"></select></label>
+              <label>Promotion actor<input id="promotionActor" type="text" placeholder="Source promotion reviewer"></label>
+              <label>Promotion note<textarea id="promotionNote"></textarea></label>
+              <label>Authorization dry-run id<input id="promotionAuthId" type="text"></label>
+              <label>Founder gate id<input id="promotionGateId" type="text"></label>
+              <label>Entry dry-run id<input id="promotionEntryId" type="text"></label>
+              <label>Criteria packet id<input id="promotionCriteriaId" type="text"></label>
+              <label>Replay receipt id<input id="promotionReplayId" type="text"></label>
+              <label>Rollback receipt id<input id="promotionRollbackId" type="text"></label>
+              <label>Audit receipt id<input id="promotionAuditId" type="text"></label>
+              <label>Source answer id<input id="promotionSourceAnswer" type="text"></label>
+              <label>Source record id<input id="promotionSourceRecord" type="text"></label>
+              <label>Source family<input id="promotionSourceFamily" type="text"></label>
+              <label>Promotion scope<textarea id="promotionScopeText"></textarea></label>
+              <label>Hold conditions<textarea id="promotionHoldConditions"></textarea></label>
+              <label>Source integrity check<textarea id="promotionSourceIntegrity"></textarea></label>
+              <label>Rights and translation check<textarea id="promotionRightsTranslation"></textarea></label>
+              <label>Reviewer evidence required<textarea id="promotionReviewerEvidence"></textarea></label>
+              <label>Promotion boundary<textarea id="promotionBoundary"></textarea></label>
+              <label>Rollback reference<textarea id="promotionRollbackReference"></textarea></label>
+              <label>Founder recheck<textarea id="promotionFounderRecheck"></textarea></label>
+              <label>Review question<textarea id="promotionReviewQuestion"></textarea></label>
+              <label>Return reason<textarea id="promotionReturnReason"></textarea></label>
+              <label>Hold reason<textarea id="promotionHoldReason"></textarea></label>
+              <label>Block reason<textarea id="promotionBlockReason"></textarea></label>
+              <div class="promotion-actions">
+                <button class="button primary" id="runPromotionHold" type="button">Run Hold Review</button>
+                <button class="button safe" id="loadPromotionSample" type="button">Load Sample</button>
+                <button class="button" id="savePromotionHold" type="button">Save Local</button>
+                <button class="button" id="clearPromotionHolds" type="button">Clear Local</button>
+              </div>
+            </div>
+            <div>
+              <section class="promotion-result" id="promotionResultCard" data-state="Blocked"></section>
+              <section style="margin-top: 10px;">
+                <h2>Promotion Scope</h2>
+                <div class="promotion-list" id="promotionScope"></div>
+              </section>
+            </div>
+          </section>
+
+          <section>
+            <h2>Promotion Hold Checks</h2>
+            <div class="promotion-rules" id="promotionChecks"></div>
+          </section>
+
+          <section class="promotion-layout">
+            <div>
+              <div class="promotion-actions">
+                <button class="button safe" id="copyPromotionPacket" type="button">Copy Hold Packet</button>
+                <a class="button" href="data/vedapath-source-promotion-hold-review.json">Open JSON</a>
+              </div>
+              <textarea class="promotion-packet" id="promotionPacket" aria-label="Source promotion hold review packet"></textarea>
+            </div>
+            <div>
+              <h2>Saved Local Holds</h2>
+              <div class="promotion-list" id="promotionSaved"></div>
+            </div>
+          </section>
+        </section>
+
+        <aside class="panel tight">
+          <span class="badge green">Hold is not promotion</span>
+          <h2 style="margin-top: 14px;">No Promotion Can Sneak In</h2>
+          <p class="muted">The source packet can be reviewed for a future preflight, but it cannot promote, execute, store, update canonical records, or launch production.</p>
+          <div class="progress" aria-label="Source promotion hold review progress 100 percent"><div class="bar" style="--score:100%"></div></div>
+          <div class="metric-grid">
+            <div class="metric"><span>Current</span><strong>v3.1.1</strong></div>
+            <div class="metric"><span>States</span><strong>7</strong></div>
+            <div class="metric"><span>Promotion</span><strong>False</strong></div>
+            <div class="metric"><span>Next</span><strong>Preflight</strong></div>
+          </div>
+          <section class="panel tight boundary" style="margin-top: 16px;">
+            <h2>Promotion Boundary</h2>
+            <p class="promotion-boundary">Promotion hold only. Source promotion, promotion execution, storage writes, canonical writes, source writes, and production launch remain false.</p>
+            <p class="muted">This release prepares the next preflight review. It does not open execution.</p>
+          </section>
+        </aside>
+      </main>
+    </div>
+    <script src="assets/vedapath-source-promotion-hold-review.js"></script>
+  </body>
+</html>

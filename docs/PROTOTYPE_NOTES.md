@@ -306,6 +306,18 @@ The v0.7.4 release turns the VedaPath AI homepage into a trusted MVP prototype w
 - Mobile Pattern: Mobile Pattern keeps the learning loop usable where calm moments actually happen.
 - Pattern Companion Control Room: Pattern Companion Control Room completes the private local learning layer for VedaPath AI.
 <!-- VEDAPATH PATTERN COMPANION SPRINT NOTES END -->
+<!-- VEDAPATH SOURCE PROMOTION HOLD REVIEW NOTES START -->
+## v3.1.1 Source Promotion Hold Review
+
+This phase reviews promotion hold conditions before any source packet can approach an execution preflight.
+
+- Adds a source promotion hold review room.
+- Reads an implementation authorization dry-run ready packet.
+- Requires promotion scope, hold conditions, source integrity, rights, translation, reviewer evidence, rollback reference, and founder recheck.
+- Keeps source_promotion_allowed, promotion_execution_allowed, implementation_authorized, implementation_execution_allowed, founder_instruction_granted, controlled_storage_entry_allowed, storage_write_enabled, canonical_write_allowed, source_write_executed, actual_storage_write_executed, and production_ready false.
+
+<!-- VEDAPATH SOURCE PROMOTION HOLD REVIEW NOTES END -->
+
 <!-- VEDAPATH IMPLEMENTATION AUTHORIZATION DRY RUN NOTES START -->
 ## v3.1.0 Implementation Authorization Dry Run
 

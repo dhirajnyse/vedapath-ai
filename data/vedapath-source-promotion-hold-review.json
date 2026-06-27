@@ -1,0 +1,168 @@
+{
+  "schema_version": "source-promotion-hold-review-v1",
+  "release": "v3.1.1",
+  "generated_at": "2026-06-27T00:00:00.000Z",
+  "title": "Source Promotion Hold Review",
+  "summary": "Reviews promotion hold conditions after implementation authorization dry run while keeping source promotion, promotion execution, storage writes, canonical writes, and production launch disabled.",
+  "previous_release": "v3.1.0 Implementation Authorization Dry Run",
+  "source": {
+    "implementation_authorization_release": "v3.1.0",
+    "implementation_authorization_schema": "implementation-authorization-dry-run-v1",
+    "implementation_authorization_dry_run_id": "implementation-authorization-dry-run-sample-steady-action-bg-2-48",
+    "source_answer_id": "answer-steady-action-bg-2-48",
+    "source_record_id": "bg-2-48-steadiness",
+    "source_family": "Bhagavad Gita | Smriti",
+    "entry_dry_run_id": "storage-entry-dry-run-sample-steady-action-bg-2-48",
+    "criteria_packet_id": "criteria-packet-sample-entry-dry-run",
+    "entry_schema_route": "Draft packet to audit receipt to rollback receipt to replay receipt to criteria packet to founder instruction gate; canonical records stay unchanged."
+  },
+  "promotion_states": [
+    "Draft promotion hold",
+    "Needs source promotion review",
+    "Promotion hold review ready",
+    "Return to authorization dry run",
+    "Promotion hold",
+    "Promotion blocked",
+    "Execution path forbidden"
+  ],
+  "required_by_state": {
+    "Draft promotion hold": [
+      "implementation_authorization_dry_run_id",
+      "source_answer_id",
+      "promotion_scope"
+    ],
+    "Needs source promotion review": [
+      "review_question",
+      "promotion_scope",
+      "hold_conditions"
+    ],
+    "Promotion hold review ready": [
+      "hold_conditions",
+      "source_integrity_check",
+      "rights_and_translation_check",
+      "reviewer_evidence_required",
+      "promotion_boundary",
+      "rollback_reference",
+      "founder_recheck"
+    ],
+    "Return to authorization dry run": [
+      "return_reason"
+    ],
+    "Promotion hold": [
+      "hold_reason"
+    ],
+    "Promotion blocked": [
+      "block_reason"
+    ],
+    "Execution path forbidden": [
+      "block_reason",
+      "promotion_boundary"
+    ]
+  },
+  "promotion_checks": [
+    {
+      "check": "Authorization dry run ready",
+      "rule": "Promotion hold review can only start from an implementation authorization dry-run packet whose next gate is source promotion hold review."
+    },
+    {
+      "check": "Promotion scope",
+      "rule": "Scope must name one source-answer packet, keep it on hold, and explicitly avoid execution, storage, production, and canonical updates."
+    },
+    {
+      "check": "Source integrity",
+      "rule": "Source answer, source record, source family, citation route, and no-content-mutation boundary must remain visible."
+    },
+    {
+      "check": "Rights and translation",
+      "rule": "Missing public rights or translation review keeps the packet on hold."
+    },
+    {
+      "check": "Reviewer evidence",
+      "rule": "Implementation authorization, founder gate, receipt chain, rollback reference, reviewer evidence, and source-owner scope must be present."
+    },
+    {
+      "check": "Promotion boundary",
+      "rule": "Promotion hold review never enables source promotion, promotion execution, implementation execution, storage, canonical writes, or production."
+    }
+  ],
+  "sample_authorization_dry_run": {
+    "schema_version": "implementation-authorization-dry-run-v1",
+    "release": "v3.1.0",
+    "implementation_authorization_dry_run_id": "implementation-authorization-dry-run-sample-steady-action-bg-2-48",
+    "authorization_status": "Authorization dry run ready",
+    "implementation_authorization_dry_run_ready": true,
+    "implementation_authorized": false,
+    "implementation_execution_allowed": false,
+    "founder_instruction_granted": false,
+    "production_ready": false,
+    "controlled_storage_entry_allowed": false,
+    "canonical_write_allowed": false,
+    "storage_write_enabled": false,
+    "source_write_executed": false,
+    "actual_storage_write_executed": false,
+    "next_gate_required": "Source promotion hold review",
+    "founder_instruction_gate_id": "founder-storage-instruction-gate-sample-steady-action-bg-2-48",
+    "entry_dry_run_id": "storage-entry-dry-run-sample-steady-action-bg-2-48",
+    "criteria_packet_id": "criteria-packet-sample-entry-dry-run",
+    "replay_receipt_id": "replay-receipt-sample-storage-entry",
+    "rollback_receipt_id": "rollback-receipt-sample-replay",
+    "audit_receipt_id": "audit-receipt-sample-rollback",
+    "source_answer_id": "answer-steady-action-bg-2-48",
+    "source_record_id": "bg-2-48-steadiness",
+    "source_family": "Bhagavad Gita | Smriti",
+    "authorization_actor": "Implementation reviewer",
+    "authorization_note": "Prepare an implementation authorization dry run after founder instruction gate; do not execute storage.",
+    "implementation_scope": "Prepare a future implementation packet for the named source-answer controlled storage entry review; no canonical write, no storage write, and no production release.",
+    "operator_scope": "Single named packet, preview environment only, no shared credentials, no account creation, and no durable production execution.",
+    "allowed_actions": "Plan implementation steps, confirm schema route, prepare rollback checklist, prepare monitoring checklist, and produce a review handoff packet.",
+    "forbidden_actions": "No storage write, no migration run, no account creation, no canonical source edit, no production flag change, and no secret use.",
+    "runtime_boundary": "Authorization dry run only; implementation_execution_allowed remains false, controlled_storage_entry_allowed remains false, storage_write_enabled remains false, canonical_write_allowed remains false, source_write_executed remains false, actual_storage_write_executed remains false, and production_ready remains false.",
+    "rollback_required": "Rollback receipt must remain present; before_hash restore path must be verified before any future execution packet can be considered.",
+    "monitoring_required": "Audit receipt, failure review path, reviewer handoff, and execution stop condition must be visible before any future execution packet.",
+    "founder_recheck": "Founder gate must be rechecked before execution; this dry run does not convert founder review into storage authority.",
+    "execution_hold": "Do not execute storage writes, production writes, migrations, account creation, or canonical source changes in this release.",
+    "created_at": "2026-06-27T00:00:00.000Z"
+  },
+  "sample_hold": {
+    "promotion_state": "Promotion hold review ready",
+    "promotion_actor": "Source promotion reviewer",
+    "promotion_note": "Review promotion hold conditions after implementation authorization dry run; do not promote or execute.",
+    "implementation_authorization_dry_run_id": "implementation-authorization-dry-run-sample-steady-action-bg-2-48",
+    "founder_instruction_gate_id": "founder-storage-instruction-gate-sample-steady-action-bg-2-48",
+    "entry_dry_run_id": "storage-entry-dry-run-sample-steady-action-bg-2-48",
+    "criteria_packet_id": "criteria-packet-sample-entry-dry-run",
+    "replay_receipt_id": "replay-receipt-sample-storage-entry",
+    "rollback_receipt_id": "rollback-receipt-sample-replay",
+    "audit_receipt_id": "audit-receipt-sample-rollback",
+    "source_answer_id": "answer-steady-action-bg-2-48",
+    "source_record_id": "bg-2-48-steadiness",
+    "source_family": "Bhagavad Gita | Smriti",
+    "promotion_scope": "Review whether the named source-answer packet can remain on the promotion hold lane; do not promote to execution, storage, production, or canonical source update.",
+    "hold_conditions": "Hold until source text, source family, citation, reviewer evidence, rights and translation status, rollback reference, and founder recheck are all present.",
+    "source_integrity_check": "Source answer id, source record id, source family, citation, and source text route must match the reviewed packet; no content mutation is allowed.",
+    "rights_and_translation_check": "Rights and translation status must be reviewed before any public or stored source text promotion; missing rights keeps the packet on hold.",
+    "reviewer_evidence_required": "Implementation authorization dry run ready, founder gate ready, receipt chain present, rollback reference present, reviewer evidence present, and source-owner scope present.",
+    "promotion_boundary": "Promotion hold only; source_promotion_allowed remains false, promotion_execution_allowed remains false, implementation_execution_allowed remains false, controlled_storage_entry_allowed remains false, storage_write_enabled remains false, canonical_write_allowed remains false, source_write_executed remains false, actual_storage_write_executed remains false, and production_ready remains false.",
+    "rollback_reference": "Rollback receipt and replay receipt remain the rollback reference; no new source state is written and the source packet is not written in this review.",
+    "founder_recheck": "Founder gate and implementation authorization dry run must be rechecked before any future promotion execution packet.",
+    "next_gate": "Promotion execution preflight",
+    "review_question": "",
+    "return_reason": "",
+    "hold_reason": "",
+    "block_reason": ""
+  },
+  "boundary": {
+    "source_promotion_allowed": false,
+    "promotion_execution_allowed": false,
+    "implementation_authorized": false,
+    "implementation_execution_allowed": false,
+    "founder_instruction_granted": false,
+    "controlled_storage_entry_allowed": false,
+    "storage_write_enabled": false,
+    "canonical_write_allowed": false,
+    "source_write_executed": false,
+    "actual_storage_write_executed": false,
+    "production_ready": false,
+    "next_gate_required": "Promotion execution preflight"
+  }
+}

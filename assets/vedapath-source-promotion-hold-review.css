@@ -1,0 +1,165 @@
+/* VedaPath source promotion hold review */
+.promotion-app,
+.promotion-head,
+.promotion-layout,
+.promotion-form,
+.promotion-grid,
+.promotion-list,
+.promotion-actions,
+.promotion-rules {
+  display: grid;
+  gap: 10px;
+}
+
+.promotion-app { gap: 16px; }
+
+.promotion-head {
+  grid-template-columns: minmax(0, 1fr) 126px;
+  align-items: center;
+}
+
+.promotion-mark {
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff3e4;
+  padding: 10px;
+}
+
+.promotion-mark img {
+  display: block;
+  width: 100%;
+}
+
+.promotion-layout {
+  grid-template-columns: minmax(0, 0.98fr) minmax(0, 1.02fr);
+  align-items: start;
+}
+
+.promotion-form,
+.promotion-card,
+.promotion-result,
+.promotion-packet,
+.promotion-rule {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.promotion-form,
+.promotion-card,
+.promotion-result,
+.promotion-rule {
+  padding: 12px;
+}
+
+.promotion-form label {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.promotion-form input,
+.promotion-form select,
+.promotion-form textarea,
+.promotion-packet {
+  width: 100%;
+  border: 1px solid #efc1aa;
+  border-radius: 8px;
+  background: #fffaf4;
+  color: var(--ink);
+  padding: 10px;
+}
+
+.promotion-form textarea,
+.promotion-packet {
+  min-height: 104px;
+  resize: vertical;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 13px;
+}
+
+.promotion-grid,
+.promotion-rules {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.promotion-card,
+.promotion-result {
+  border-left: 4px solid var(--gold);
+}
+
+.promotion-card.ready,
+.promotion-result[data-state="Promotion hold review ready"] {
+  border-left-color: var(--green);
+}
+
+.promotion-card.blocked,
+.promotion-result[data-state="Blocked"],
+.promotion-result[data-state="Return to authorization dry run"],
+.promotion-result[data-state="Promotion hold"],
+.promotion-result[data-state="Promotion blocked"],
+.promotion-result[data-state="Execution path forbidden"] {
+  border-left-color: var(--ochre);
+}
+
+.promotion-card span,
+.promotion-card strong,
+.promotion-rule span,
+.promotion-rule strong {
+  display: block;
+}
+
+.promotion-card span,
+.promotion-rule span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.promotion-result strong {
+  display: block;
+  font-size: 24px;
+}
+
+.promotion-result ul {
+  margin: 10px 0 0;
+  padding-left: 18px;
+}
+
+.promotion-actions {
+  grid-template-columns: repeat(2, minmax(0, max-content));
+  justify-content: start;
+}
+
+.promotion-list {
+  max-height: 320px;
+  overflow: auto;
+}
+
+.promotion-packet {
+  min-height: 260px;
+}
+
+.promotion-boundary {
+  border: 1px dashed rgba(168, 62, 18, 0.38);
+  border-radius: 8px;
+  background: #fff7ea;
+  padding: 12px;
+  font-weight: 850;
+}
+
+@media (max-width: 980px) {
+  .promotion-layout,
+  .promotion-head,
+  .promotion-grid,
+  .promotion-rules {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .promotion-actions { grid-template-columns: 1fr; }
+}
