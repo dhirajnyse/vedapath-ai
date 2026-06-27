@@ -4373,6 +4373,20 @@ It should:
 
 Pattern Companion Control Room should never claim diagnosis, therapy, legal advice, medical advice, surveillance, scoring, or spiritual authority.
 <!-- VEDAPATH PATTERN COMPANION SPRINT BLUEPRINT END -->
+<!-- VEDAPATH SOURCE OWNER APPROVAL LANE BLUEPRINT START -->
+### 282. Source Owner Approval Lane
+
+VedaPath should separate source-owner approval from production data mutation.
+
+Rules:
+
+- Source owners approve implementation scope, not canonical source records.
+- Blocked fields must be explicitly excluded from approval.
+- Approval requires rollback instructions and implementation guards.
+- Production readiness remains false in preview.
+- The next build should create an implementation queue handoff.
+<!-- VEDAPATH SOURCE OWNER APPROVAL LANE BLUEPRINT END -->
+
 <!-- VEDAPATH PROPOSAL DIFF REVIEW ROOM BLUEPRINT START -->
 ### 281. Proposal Diff Review Room
 

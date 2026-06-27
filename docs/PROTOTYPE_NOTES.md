@@ -306,6 +306,20 @@ The v0.7.4 release turns the VedaPath AI homepage into a trusted MVP prototype w
 - Mobile Pattern: Mobile Pattern keeps the learning loop usable where calm moments actually happen.
 - Pattern Companion Control Room: Pattern Companion Control Room completes the private local learning layer for VedaPath AI.
 <!-- VEDAPATH PATTERN COMPANION SPRINT NOTES END -->
+<!-- VEDAPATH SOURCE OWNER APPROVAL LANE NOTES START -->
+## v2.9.9 Source Owner Approval Lane
+
+This phase adds a local owner lane between diff review and implementation queue.
+
+Action taken:
+
+- Added source-owner approval schema.
+- Added owner approval, return, rejection, and blocked states.
+- Required approval scope, blocked-field disposition, rollback instruction, and implementation guard.
+- Added copyable owner decision packets.
+- Preserved canonical source data.
+<!-- VEDAPATH SOURCE OWNER APPROVAL LANE NOTES END -->
+
 <!-- VEDAPATH PROPOSAL DIFF REVIEW ROOM NOTES START -->
 ## v2.9.8 Proposal Diff Review Room
 

@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VedaPath Source Owner Approval Lane</title>
+    <link rel="stylesheet" href="assets/vedapath-sprint.css">
+    <link rel="stylesheet" href="assets/vedapath-source-owner-approval-lane.css">
+    <link rel="stylesheet" href="assets/vedapath-cohesive.css">
+    <link rel="stylesheet" href="assets/vedapath-polish.css">
+    <link rel="stylesheet" href="assets/vedapath-focus.css">
+  </head>
+  <body>
+    <div class="shell" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top" aria-label="VedaPath AI home">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
+          <div>
+            <strong>VedaPath AI</strong>
+            <span>Source owner lane</span>
+          </div>
+        </a>
+        <nav class="nav" aria-label="Project links">
+          <a class="link" href="index.html">Home</a>
+          <a class="link" href="build-status.html">Build</a>
+          <a class="link" href="brand/brand-board.html">Brand</a>
+          <a class="link" href="blueprint.html">Blueprint</a>
+          <a class="link" href="citedanswerlab.html">Answers</a>
+          <a class="link active" href="reviewqueuepersistence.html">Review</a>
+          <a class="link" href="mantralenslab.html">Mantra</a>
+          <a class="link" href="lifecompanionlab.html">Life</a>
+          <a class="link" href="conversationcompanionlab.html">Talk</a>
+          <a class="link" href="patterncompanionlab.html">Pattern</a>
+          <a class="link" href="daily.html">Daily</a>
+          <span class="version">v2.9.9 owner lane</span>
+        </nav>
+      </header>
+
+      <main class="workspace" aria-label="VedaPath Source Owner Approval workspace">
+        <aside class="panel">
+          <span class="eyebrow">Owner control</span>
+          <h2>Approve scope before implementation</h2>
+          <p class="muted">A source owner can approve a reviewed proposal for implementation queue, return it, or reject it. Canonical records remain untouched.</p>
+          <div class="sprint-list">
+            <div class="sprint-step active"><span class="step-index">1</span><div><strong>Receive</strong><p>Read the review packet.</p></div></div>
+            <div class="sprint-step"><span class="step-index">2</span><div><strong>Scope</strong><p>Separate editable fields from blocked fields.</p></div></div>
+            <div class="sprint-step"><span class="step-index">3</span><div><strong>Decide</strong><p>Approve, return, or reject.</p></div></div>
+            <div class="sprint-step"><span class="step-index">4</span><div><strong>Handoff</strong><p>Export owner packet.</p></div></div>
+          </div>
+          <div class="button-row" style="margin-top: 16px;">
+            <a class="button safe" href="proposaldiffreview.html">Open Diff Review</a>
+            <a class="button" href="sourceupdateproposalbridge.html">Open Proposal Bridge</a>
+          </div>
+        </aside>
+
+        <section class="panel owner-app" id="sourceOwnerApprovalLane">
+          <div class="owner-head">
+            <div>
+              <span class="eyebrow">Source owner approval lane</span>
+              <h1>Approve implementation scope, not scripture data.</h1>
+              <p class="muted">This room turns a reviewed source proposal into an owner decision packet. Approval means the implementation queue may prepare a bounded change packet, not that source data is already changed.</p>
+            </div>
+            <div class="owner-mark"><img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath source owner mark"></div>
+          </div>
+
+          <section class="owner-layout">
+            <div class="owner-form">
+              <h2>Owner Decision</h2>
+              <label>Review packet<textarea id="ownerReviewPacket"></textarea></label>
+              <label>Decision state<select id="ownerDecisionState"></select></label>
+              <label>Owner name<input id="ownerName" type="text" placeholder="Source reviewer"></label>
+              <label>Owner note<textarea id="ownerNote"></textarea></label>
+              <label>Approval scope<textarea id="ownerScope"></textarea></label>
+              <label>Blocked field disposition<textarea id="ownerBlockedDisposition"></textarea></label>
+              <label>Return reason<textarea id="ownerReturnReason"></textarea></label>
+              <label>Rejection reason<textarea id="ownerRejectionReason"></textarea></label>
+              <label>Rollback instruction<textarea id="ownerRollback"></textarea></label>
+              <label>Implementation guard<textarea id="ownerGuard"></textarea></label>
+              <div class="owner-actions">
+                <button class="button primary" id="reviewOwnerLane" type="button">Review Owner Lane</button>
+                <button class="button safe" id="loadOwnerSample" type="button">Load Sample</button>
+                <button class="button" id="saveOwnerDecision" type="button">Save Local</button>
+                <button class="button" id="clearOwnerDecisions" type="button">Clear Local</button>
+              </div>
+            </div>
+            <div>
+              <section class="owner-result" id="ownerResult" data-state="Blocked"></section>
+              <section style="margin-top: 10px;">
+                <h2>Scope and Blocks</h2>
+                <div class="owner-list" id="ownerScopeList"></div>
+              </section>
+            </div>
+          </section>
+
+          <section>
+            <h2>Owner Rules</h2>
+            <div class="owner-rules" id="ownerRules"></div>
+          </section>
+
+          <section class="owner-layout">
+            <div>
+              <div class="owner-actions">
+                <button class="button safe" id="copyOwnerPacket" type="button">Copy Owner Packet</button>
+                <a class="button" href="data/vedapath-source-owner-approval-lane.json">Open JSON</a>
+              </div>
+              <textarea class="owner-packet" id="ownerPacket" aria-label="Source owner approval packet"></textarea>
+            </div>
+            <div>
+              <h2>Saved Local Owner Decisions</h2>
+              <div class="owner-list" id="ownerSaved"></div>
+            </div>
+          </section>
+        </section>
+
+        <aside class="panel tight">
+          <span class="badge green">Owner lane</span>
+          <h2 style="margin-top: 14px;">Canonical Boundary</h2>
+          <p class="muted">This room can approve implementation scope. It cannot publish source records or rewrite canonical citation fields.</p>
+          <div class="progress" aria-label="Source owner approval lane progress 100 percent"><div class="bar" style="--score:100%"></div></div>
+          <div class="metric-grid">
+            <div class="metric"><span>Current</span><strong>v2.9.9</strong></div>
+            <div class="metric"><span>States</span><strong>4</strong></div>
+            <div class="metric"><span>Production</span><strong>False</strong></div>
+            <div class="metric"><span>Store</span><strong>Local</strong></div>
+          </div>
+          <section class="panel tight boundary" style="margin-top: 16px;">
+            <h2>Owner Rule</h2>
+            <p class="muted">Owner approval creates an implementation-queue packet only. Production still needs durable storage, immutable audit, and rollback controls.</p>
+          </section>
+        </aside>
+      </main>
+    </div>
+    <script src="assets/vedapath-source-owner-approval-lane.js"></script>
+  </body>
+</html>

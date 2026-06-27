@@ -953,6 +953,18 @@ Then open:
 http://127.0.0.1:8088/
 ```
 
+<!-- VEDAPATH SOURCE OWNER APPROVAL LANE START -->
+## v2.9.9 Source Owner Approval Lane
+
+This release adds the owner step after proposal diff review.
+
+- adds `sourceownerapproval.html`
+- adds `data/vedapath-source-owner-approval-lane.json`
+- adds owner decision states for approve, return, reject, and blocked
+- requires approval scope, blocked-field disposition, rollback instruction, and implementation guard before owner approval
+- keeps production readiness false and canonical source records unchanged
+<!-- VEDAPATH SOURCE OWNER APPROVAL LANE END -->
+
 <!-- VEDAPATH PROPOSAL DIFF REVIEW ROOM START -->
 ## v2.9.8 Proposal Diff Review Room
 

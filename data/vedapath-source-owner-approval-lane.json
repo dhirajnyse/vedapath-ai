@@ -1,0 +1,156 @@
+{
+  "product": "VedaPath AI",
+  "release": "v2.9.9",
+  "status": "source owner approval lane v1",
+  "schema_version": "source-owner-approval-lane-v1",
+  "diff_review_dataset": "data/vedapath-proposal-diff-review-room.json",
+  "source_dataset": "data/vedapath-source-answer-foundation.json",
+  "local_owner_store": "vedapath-source-owner-approvals-v1",
+  "warning": "This room records source-owner approval scope only. It does not edit canonical records, publish source data, verify rights, certify scholarship, provide therapy, give ritual instruction, or become spiritual authority.",
+  "approval_policy": "A source owner may approve a reviewed proposal for implementation queue only when the scope excludes blocked fields, rollback is explicit, and production storage remains separate.",
+  "decision_states": [
+    "Needs owner review",
+    "Return to reviewer",
+    "Owner rejected",
+    "Owner approved for implementation queue"
+  ],
+  "required_by_state": {
+    "Needs owner review": [
+      "owner_name",
+      "owner_note"
+    ],
+    "Return to reviewer": [
+      "owner_name",
+      "owner_note",
+      "return_reason"
+    ],
+    "Owner rejected": [
+      "owner_name",
+      "owner_note",
+      "rejection_reason"
+    ],
+    "Owner approved for implementation queue": [
+      "owner_name",
+      "owner_note",
+      "approval_scope",
+      "blocked_field_disposition",
+      "rollback_instruction",
+      "implementation_guard"
+    ]
+  },
+  "blocked_owner_conditions": [
+    "review packet is not ready for source owner",
+    "blocked field disposition does not exclude canonical edits",
+    "owner name is blank",
+    "rollback instruction is blank",
+    "implementation guard is blank"
+  ],
+  "sample_review_packet": {
+    "schema_version": "proposal-diff-review-room-v1",
+    "release": "v2.9.8",
+    "review_id": "proposal-review-sample-owner-lane",
+    "local_status": "Ready for source owner",
+    "production_ready": false,
+    "proposal_id": "source-proposal-sample-diff-review",
+    "source_answer_id": "answer-steady-action-bg-2-48",
+    "source_record_id": "bg-2-48-steadiness",
+    "source": "Bhagavad Gita 2.48",
+    "source_family": "Bhagavad Gita | Smriti",
+    "decision_state": "Ready for source owner",
+    "reviewer_name": "Founder review",
+    "source_owner": "Source reviewer",
+    "second_reviewer": "",
+    "review_note": "Diff is clear enough for source-owner review, but blocked source field must remain out of scope.",
+    "revision_reason": "",
+    "rejection_reason": "",
+    "rollback_note": "Rollback by discarding this proposal packet; canonical source record remains unchanged in preview.",
+    "missing": [],
+    "blocked": [],
+    "warnings": [
+      "Proposal contains blocked fields; keep them out of owner approval scope.",
+      "A source proposal can move through local review states, but production still requires source-owner approval, durable identity, immutable audit, rollback readiness, and controlled storage before canonical records change."
+    ],
+    "reviewed_diff_count": 3,
+    "blocked_field_count": 1,
+    "proposal": {
+      "schema_version": "source-update-proposal-bridge-v1",
+      "release": "v2.9.7",
+      "proposal_id": "source-proposal-sample-diff-review",
+      "status": "Draft proposal only",
+      "source_answer_id": "answer-steady-action-bg-2-48",
+      "source_record_id": "bg-2-48-steadiness",
+      "source": "Bhagavad Gita 2.48",
+      "source_family": "Bhagavad Gita | Smriti",
+      "audit_packet": {
+        "schema_version": "review-identity-gate-v1",
+        "release": "v2.9.6",
+        "decision_id": "identity-gate-sample-source-update",
+        "queue_id": "queue-direct-source-candidate",
+        "ticket_id": "ticket-direct-source-candidate",
+        "action_id": "accept",
+        "role_id": "founder-review",
+        "reviewer_name": "Founder review",
+        "second_reviewer": "Source reviewer",
+        "decision_note": "Accept as a proposal for source-record update review, not as a canonical change.",
+        "evidence_note": "Bhagavad Gita 2.48 record supports calm reflection with a boundary against therapy or guaranteed outcomes.",
+        "boundary_note": "Keep the result as source-backed reflection support only.",
+        "gate_status": "Proposal only",
+        "production_ready": false,
+        "missing": [],
+        "warnings": [
+          "Accepted local decision remains proposal-only until production storage and identity exist."
+        ],
+        "created_at": "2026-06-27T00:00:00.000Z"
+      },
+      "diffs": [
+        {
+          "field": "review_state",
+          "current_value": "reviewed-preview",
+          "proposed_value": "source-update-proposed"
+        },
+        {
+          "field": "readiness",
+          "current_value": "answer-preview-ready",
+          "proposed_value": "needs-source-owner-review"
+        },
+        {
+          "field": "boundary",
+          "current_value": "Reflection support only; not therapy, medical advice, or command language.",
+          "proposed_value": "Reflection support only; not therapy, medical advice, ritual instruction, or spiritual authority."
+        }
+      ],
+      "blocked_fields": [
+        {
+          "field": "source",
+          "attempted_value": "Bhagavad Gita 2.48 - edited directly",
+          "reason": "Canonical or rights-sensitive field requires a separate source-owner process."
+        }
+      ],
+      "missing": [],
+      "warnings": [
+        "Accepted or recommended review packets may create source-update proposals. Production must require durable identity, immutable audit, diff review, source-owner approval, and rollback before any canonical record changes."
+      ],
+      "production_requirements": [
+        "durable reviewer identity",
+        "immutable audit packet",
+        "source record diff preview",
+        "second reviewer for acceptance",
+        "source owner approval",
+        "rollback note"
+      ],
+      "created_at": "2026-06-27T00:00:00.000Z"
+    },
+    "created_at": "2026-06-27T00:00:00.000Z"
+  },
+  "sample_owner_decision": {
+    "decision_state": "Owner approved for implementation queue",
+    "owner_name": "Source reviewer",
+    "owner_note": "Approve only the editable boundary and readiness path. Canonical citation fields remain unchanged.",
+    "approval_scope": "Approve review_state, readiness, and boundary language only.",
+    "blocked_field_disposition": "Exclude the source field from scope; do not edit canonical citation or rights-sensitive text.",
+    "return_reason": "",
+    "rejection_reason": "",
+    "rollback_instruction": "Rollback by discarding this owner approval packet and keeping the existing source-answer record unchanged.",
+    "implementation_guard": "Implementation queue may draft a non-canonical change packet only; production storage and immutable audit remain required."
+  }
+}
