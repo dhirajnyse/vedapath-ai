@@ -4374,6 +4374,20 @@ It should:
 Pattern Companion Control Room should never claim diagnosis, therapy, legal advice, medical advice, surveillance, scoring, or spiritual authority.
 <!-- VEDAPATH PATTERN COMPANION SPRINT BLUEPRINT END -->
 <!-- VEDAPATH FOUNDER AUTHORIZATION DECISION GATE BLUEPRINT START -->
+### 303. Founder Authorization Instruction Gate
+
+Founder Authorization Instruction Gate records founder instruction intent after authorization review readiness.
+
+It must:
+
+- start from an authorization review ready object
+- preserve authorization review, authorization draft, founder decision, source answer, source record, and source family ids
+- make founder instruction readiness visible
+- block founder grant, actual authorization, execution, storage writes, canonical writes, public release, and production
+- move only to a controlled authorization permission preflight
+
+Founder Authorization Instruction Gate should never claim authorization approval, founder grant, execution approval, storage permission, canonical source authority, migration authority, production authority, therapy, ritual instruction, crisis support, or spiritual authority.
+
 ### 302. Controlled Authorization Review Gate
 
 Controlled Authorization Review Gate reviews authorization draft packet language for founder-instruction readiness.

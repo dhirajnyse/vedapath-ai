@@ -954,6 +954,14 @@ http://127.0.0.1:8088/
 ```
 
 <!-- VEDAPATH FOUNDER AUTHORIZATION DECISION GATE START -->
+## v3.2.0 Founder Authorization Instruction Gate
+
+Founder Authorization Instruction Gate records founder instruction intent after authorization review readiness while keeping founder grant, authorization, execution, storage writes, canonical writes, public release, and production false.
+
+- [Founder Authorization Instruction Gate](founderauthorizationinstructiongate.html)
+- [Founder Authorization Instruction Gate Notes](docs/FOUNDER_AUTHORIZATION_INSTRUCTION_GATE.md)
+- [Founder Authorization Instruction Gate Data](data/vedapath-founder-authorization-instruction-gate.json)
+
 ## v3.1.9 Controlled Authorization Review Gate
 
 Controlled Authorization Review Gate reviews the authorization draft packet for founder-instruction readiness while keeping authorization, execution, storage writes, canonical writes, public release, and production false.

@@ -1,0 +1,239 @@
+/* VedaPath founder authorization instruction gate */
+body.auth-instruction-page .topbar,
+body.auth-instruction-page header.topbar {
+  height: auto !important;
+  min-height: var(--vp-header-height, 74px);
+  padding: 0 !important;
+}
+
+body.auth-instruction-page .nav {
+  gap: 5px;
+  overflow: visible;
+  flex-wrap: nowrap;
+}
+
+body.auth-instruction-page .nav .link,
+body.auth-instruction-page .nav a {
+  padding-left: 9px;
+  padding-right: 9px;
+}
+
+body.auth-instruction-page .nav .version {
+  margin-left: 6px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+body.auth-instruction-page main.workspace {
+  grid-template-columns: minmax(210px, 0.72fr) minmax(0, 1.7fr) minmax(230px, 0.8fr);
+  gap: 18px;
+}
+
+body.auth-instruction-page main.workspace > aside.panel:first-child,
+body.auth-instruction-page main.workspace > aside.panel.tight {
+  position: static;
+  max-height: none;
+  overflow: visible;
+}
+
+.auth-instruction,
+.auth-instruction-head,
+.auth-instruction-layout,
+.auth-instruction-form,
+.auth-instruction-grid,
+.auth-instruction-list,
+.auth-instruction-actions,
+.auth-instruction-rules {
+  display: grid;
+  gap: 10px;
+}
+
+.auth-instruction { gap: 16px; }
+
+.auth-instruction-head {
+  grid-template-columns: minmax(0, 1fr) 126px;
+  align-items: center;
+}
+
+.auth-instruction-mark {
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff3e4;
+  padding: 10px;
+}
+
+.auth-instruction-mark img {
+  display: block;
+  width: 100%;
+}
+
+.auth-instruction-layout {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: start;
+}
+
+.auth-instruction-form,
+.auth-instruction-card,
+.auth-instruction-result,
+.auth-instruction-output,
+.auth-instruction-rule {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.auth-instruction-form,
+.auth-instruction-card,
+.auth-instruction-result,
+.auth-instruction-rule {
+  padding: 12px;
+}
+
+.auth-instruction-form label {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.auth-instruction-form input,
+.auth-instruction-form select,
+.auth-instruction-form textarea,
+.auth-instruction-output {
+  width: 100%;
+  border: 1px solid #efc1aa;
+  border-radius: 8px;
+  background: #fffaf4;
+  color: var(--ink);
+  padding: 10px;
+}
+
+.auth-instruction-form textarea,
+.auth-instruction-output {
+  min-height: 96px;
+  resize: vertical;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 13px;
+}
+
+.auth-instruction-grid,
+.auth-instruction-rules {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.auth-instruction-card,
+.auth-instruction-result {
+  border-left: 4px solid var(--gold);
+}
+
+.auth-instruction-card.ready,
+.auth-instruction-result[data-state="Founder instruction ready"] {
+  border-left-color: var(--green);
+}
+
+.auth-instruction-card.blocked,
+.auth-instruction-result[data-state^="Blocked"],
+.auth-instruction-result[data-state="Return to authorization review"],
+.auth-instruction-result[data-state="Instruction hold"],
+.auth-instruction-result[data-state="Authorization still blocked"],
+.auth-instruction-result[data-state="Execution blocked"],
+.auth-instruction-result[data-state="Production forbidden"],
+.auth-instruction-result[data-state="Instruction expired"] {
+  border-left-color: var(--ochre);
+}
+
+.auth-instruction-card span,
+.auth-instruction-card strong,
+.auth-instruction-rule span,
+.auth-instruction-rule strong {
+  display: block;
+}
+
+.auth-instruction-card strong {
+  font-size: 18px;
+  line-height: 1.18;
+  overflow-wrap: anywhere;
+}
+
+.auth-instruction-card span,
+.auth-instruction-rule span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.auth-instruction-result strong {
+  display: block;
+  font-size: 24px;
+}
+
+.auth-instruction-result ul {
+  margin: 10px 0 0;
+  padding-left: 18px;
+}
+
+.auth-instruction-actions {
+  grid-template-columns: repeat(2, minmax(0, max-content));
+  justify-content: start;
+}
+
+.auth-instruction-list {
+  max-height: 320px;
+  overflow: auto;
+}
+
+.auth-instruction-output {
+  min-height: 260px;
+}
+
+.auth-instruction-boundary {
+  border: 1px dashed rgba(168, 62, 18, 0.38);
+  border-radius: 8px;
+  background: #fff7ea;
+  padding: 12px;
+  font-weight: 850;
+}
+
+@media (max-width: 980px) {
+  body.auth-instruction-page .topbar,
+  body.auth-instruction-page header.topbar {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 12px 0 !important;
+  }
+
+  body.auth-instruction-page .nav {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  body.auth-instruction-page main.workspace {
+    grid-template-columns: 1fr;
+  }
+
+  body.auth-instruction-page main.workspace > section.auth-instruction {
+    order: 1;
+  }
+
+  body.auth-instruction-page main.workspace > aside.panel:first-child {
+    order: 2;
+  }
+
+  body.auth-instruction-page main.workspace > aside.panel.tight {
+    order: 3;
+  }
+
+  .auth-instruction-layout,
+  .auth-instruction-head,
+  .auth-instruction-grid,
+  .auth-instruction-rules {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .auth-instruction-actions { grid-template-columns: 1fr; }
+}
