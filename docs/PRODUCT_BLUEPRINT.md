@@ -4373,6 +4373,23 @@ It should:
 
 Pattern Companion Control Room should never claim diagnosis, therapy, legal advice, medical advice, surveillance, scoring, or spiritual authority.
 <!-- VEDAPATH PATTERN COMPANION SPRINT BLUEPRINT END -->
+<!-- VEDAPATH FOUNDER STORAGE INSTRUCTION GATE BLUEPRINT START -->
+### 292. Founder Storage Instruction Gate
+
+VedaPath should never let founder approval become ambiguous. The founder storage instruction gate defines the exact instruction packet required before controlled storage can move beyond dry run.
+
+Core requirements:
+
+- start from a passed controlled storage entry dry run
+- keep every storage, source-write, and production flag false
+- require named packet scope and founder-only authority
+- separate preparation for review from execution
+- require an exact phrase and revocation rule
+- preserve return, hold, and block states
+
+Founder Storage Instruction Gate should never claim production storage, canonical source writes, account creation, migration execution, rights-sensitive text changes, launch approval, therapy, ritual instruction, crisis support, or spiritual authority.
+<!-- VEDAPATH FOUNDER STORAGE INSTRUCTION GATE BLUEPRINT END -->
+
 <!-- VEDAPATH CONTROLLED STORAGE ENTRY DRY RUN BLUEPRINT START -->
 ### 291. Controlled Storage Entry Dry Run
 

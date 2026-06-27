@@ -953,6 +953,17 @@ Then open:
 http://127.0.0.1:8088/
 ```
 
+<!-- VEDAPATH FOUNDER STORAGE INSTRUCTION GATE START -->
+## v3.0.9 Founder Storage Instruction Gate
+
+This release defines the founder-only instruction gate after controlled storage entry dry run.
+
+- [Founder Storage Instruction Gate](founderstorageinstructiongate.html)
+- [Founder Storage Instruction Gate Notes](docs/FOUNDER_STORAGE_INSTRUCTION_GATE.md)
+- [Founder Storage Instruction Gate Data](data/vedapath-founder-storage-instruction-gate.json)
+
+<!-- VEDAPATH FOUNDER STORAGE INSTRUCTION GATE END -->
+
 <!-- VEDAPATH CONTROLLED STORAGE ENTRY DRY RUN START -->
 ## v3.0.8 Controlled Storage Entry Dry Run
 

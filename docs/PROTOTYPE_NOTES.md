@@ -306,6 +306,18 @@ The v0.7.4 release turns the VedaPath AI homepage into a trusted MVP prototype w
 - Mobile Pattern: Mobile Pattern keeps the learning loop usable where calm moments actually happen.
 - Pattern Companion Control Room: Pattern Companion Control Room completes the private local learning layer for VedaPath AI.
 <!-- VEDAPATH PATTERN COMPANION SPRINT NOTES END -->
+<!-- VEDAPATH FOUNDER STORAGE INSTRUCTION GATE NOTES START -->
+## v3.0.9 Founder Storage Instruction Gate
+
+This phase defines the exact founder instruction shape before storage can move beyond dry run.
+
+- Adds a founder instruction gate room.
+- Reads a passed entry dry-run packet.
+- Requires scoped founder language, evidence, revocation, and a no-write boundary.
+- Keeps founder_instruction_granted, controlled_storage_entry_allowed, storage_write_enabled, canonical_write_allowed, source_write_executed, actual_storage_write_executed, and production_ready false.
+
+<!-- VEDAPATH FOUNDER STORAGE INSTRUCTION GATE NOTES END -->
+
 <!-- VEDAPATH CONTROLLED STORAGE ENTRY DRY RUN NOTES START -->
 ## v3.0.8 Controlled Storage Entry Dry Run
 

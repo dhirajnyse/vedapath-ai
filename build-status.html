@@ -366,7 +366,7 @@
           <a class="link" href="conversationcompanionlab.html">Talk</a>
           <a class="link" href="patterncompanionlab.html">Pattern</a>
           <a class="link" href="daily.html">Daily</a>
-          <span class="version">v3.0.8 entry dry run</span>
+          <span class="version">v3.0.9 founder gate</span>
         </nav>
       </header>
 
@@ -378,8 +378,8 @@
       <section class="summary" aria-label="Progress summary">
         <article class="tile">
           <span>Current version</span>
-          <strong>v3.0.8</strong>
-          <p>Controlled Storage Entry Dry Run: ready criteria packets now run through a no-write entry simulation with schema route, rollback rehearsal, promotion blockers, founder hold, and every real write flag false.</p>
+          <strong>v3.0.9</strong>
+          <p>Founder Storage Instruction Gate: the exact founder-only instruction packet is now visible before controlled storage can move beyond dry run, while every real write flag stays false.</p>
         </article>
         <article class="tile">
           <span>MVP progress</span>
@@ -389,14 +389,14 @@
         </article>
         <article class="tile">
           <span>Full vision progress</span>
-          <strong>90%</strong>
-          <div class="progress" aria-hidden="true"><div class="bar" style="width:90%"></div></div>
-          <p>The trust loop now dry-runs controlled storage entry while keeping the real gate closed.</p>
+          <strong>91%</strong>
+          <div class="progress" aria-hidden="true"><div class="bar" style="width:91%"></div></div>
+          <p>The trust loop now defines founder instruction before any storage move can be interpreted as allowed.</p>
         </article>
         <article class="tile">
           <span>Next release</span>
-          <strong>Founder storage instruction gate</strong>
-          <p>Define the explicit founder-only instruction that would be required before controlled storage can open.</p>
+          <strong>Implementation authorization dry run</strong>
+          <p>Dry-run the next implementation authorization packet without enabling storage or canonical writes.</p>
         </article>
       </section>
 
@@ -2635,9 +2635,17 @@
               <span class="percent">100%</span>
             </article>
             <article class="phase">
+              <span class="badge done">Done</span>
+              <div>
+                <strong>Phase 273: Founder Storage Instruction Gate</strong>
+                <p>Defines the exact founder-only instruction packet required before controlled storage can move beyond dry run while every write flag remains false.</p>
+              </div>
+              <span class="percent">100%</span>
+            </article>
+            <article class="phase">
               <span class="badge later">Later</span>
               <div>
-                <strong>Phase 273: Production Implementation and Licensed Audio</strong>
+                <strong>Phase 274: Production Implementation and Licensed Audio</strong>
                 <p>Backend storage, account consent, reviewed source records, reviewer operations, audio rights, and launch sequencing after founder direction.</p>
               </div>
               <div class="percent">0%</div>
@@ -2648,11 +2656,11 @@
         <aside class="panel version">
           <div>
             <h2>Version Notes</h2>
-            <div class="version-row"><span>Release</span><strong>v3.0.8 Controlled Storage Entry Dry Run</strong></div>
-            <div class="version-row"><span>Previous</span><strong>v3.0.7 Controlled Storage Entry Criteria</strong></div>
+            <div class="version-row"><span>Release</span><strong>v3.0.9 Founder Storage Instruction Gate</strong></div>
+            <div class="version-row"><span>Previous</span><strong>v3.0.8 Controlled Storage Entry Dry Run</strong></div>
             <div class="version-row"><span>Commit</span><strong>See GitHub history</strong></div>
-            <div class="version-row"><span>Goal</span><strong>Dry-run controlled storage entry before any source storage write.</strong></div>
-            <div class="version-row"><span>Status</span><strong>Ready for founder storage instruction gate</strong></div>
+            <div class="version-row"><span>Goal</span><strong>Define founder-only storage instruction before any source storage write.</strong></div>
+            <div class="version-row"><span>Status</span><strong>Ready for implementation authorization dry run</strong></div>
           </div>
 
           <div class="panel note">
@@ -2663,10 +2671,10 @@
           <div>
             <h2>Next Build Checklist</h2>
             <ul class="checklist">
-              <li><span class="dot"></span><span>Define founder storage instruction language.</span></li>
-              <li><span class="dot"></span><span>Separate founder approval from storage execution.</span></li>
-              <li><span class="dot"></span><span>Keep pass, return, hold, and block outcomes visible.</span></li>
-              <li><span class="dot"></span><span>Keep canonical writes blocked until final founder instruction.</span></li>
+              <li><span class="dot"></span><span>Dry-run implementation authorization from the founder gate.</span></li>
+              <li><span class="dot"></span><span>Keep storage execution disabled.</span></li>
+              <li><span class="dot"></span><span>Show return, hold, and block outcomes before implementation.</span></li>
+              <li><span class="dot"></span><span>Keep canonical writes blocked until explicit execution approval.</span></li>
             </ul>
           </div>
         </aside>

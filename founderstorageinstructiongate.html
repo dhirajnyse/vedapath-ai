@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VedaPath Founder Storage Instruction Gate</title>
+    <link rel="stylesheet" href="assets/vedapath-sprint.css">
+    <link rel="stylesheet" href="assets/vedapath-founder-storage-instruction-gate.css">
+    <link rel="stylesheet" href="assets/vedapath-cohesive.css">
+    <link rel="stylesheet" href="assets/vedapath-polish.css">
+    <link rel="stylesheet" href="assets/vedapath-focus.css">
+  </head>
+  <body>
+    <div class="shell" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top" aria-label="VedaPath AI home">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
+          <div>
+            <strong>VedaPath AI</strong>
+            <span>Founder storage instruction gate</span>
+          </div>
+        </a>
+        <nav class="nav" aria-label="Project links">
+          <a class="link" href="index.html">Home</a>
+          <a class="link" href="build-status.html">Build</a>
+          <a class="link" href="brand/brand-board.html">Brand</a>
+          <a class="link" href="blueprint.html">Blueprint</a>
+          <a class="link" href="citedanswerlab.html">Answers</a>
+          <a class="link active" href="reviewqueuepersistence.html">Review</a>
+          <a class="link" href="mantralenslab.html">Mantra</a>
+          <a class="link" href="lifecompanionlab.html">Life</a>
+          <a class="link" href="conversationcompanionlab.html">Talk</a>
+          <a class="link" href="patterncompanionlab.html">Pattern</a>
+          <a class="link" href="daily.html">Daily</a>
+          <span class="version">v3.0.9 founder gate</span>
+        </nav>
+      </header>
+
+      <main class="workspace" aria-label="VedaPath Founder Storage Instruction Gate workspace">
+        <aside class="panel">
+          <span class="eyebrow">Founder-only gate</span>
+          <h2>Say exactly what is allowed</h2>
+          <p class="muted">This room defines the founder instruction shape before any implementation can claim storage permission.</p>
+          <div class="sprint-list">
+            <div class="sprint-step active"><span class="step-index">1</span><div><strong>Entry</strong><p>Start from dry run.</p></div></div>
+            <div class="sprint-step"><span class="step-index">2</span><div><strong>Scope</strong><p>Name the packet.</p></div></div>
+            <div class="sprint-step"><span class="step-index">3</span><div><strong>Instruction</strong><p>Use exact words.</p></div></div>
+            <div class="sprint-step"><span class="step-index">4</span><div><strong>Hold</strong><p>Keep writes false.</p></div></div>
+          </div>
+          <div class="button-row" style="margin-top: 16px;">
+            <a class="button primary" href="controlledstorageentrydryrun.html">Open Entry Dry Run</a>
+            <a class="button safe" href="controlledstoragecriteria.html">Open Criteria</a>
+          </div>
+        </aside>
+
+        <section class="panel founder-app" id="founderStorageInstructionGate">
+          <div class="founder-head">
+            <div>
+              <span class="eyebrow">Instruction gate</span>
+              <h1>Name the founder instruction. Keep storage closed.</h1>
+              <p class="muted">The product can prepare a review packet, but this page still grants no storage entry, no canonical write, and no production launch.</p>
+            </div>
+            <div class="founder-mark"><img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath founder gate mark"></div>
+          </div>
+
+          <section class="founder-layout">
+            <div class="founder-form">
+              <h2>Founder Instruction Packet</h2>
+              <label>Entry dry-run packet<textarea id="founderEntryPacket"></textarea></label>
+              <label>Instruction state<select id="founderState"></select></label>
+              <label>Instruction actor<input id="founderActor" type="text" placeholder="Founder review"></label>
+              <label>Instruction note<textarea id="founderNote"></textarea></label>
+              <label>Entry dry-run id<input id="founderEntryId" type="text"></label>
+              <label>Criteria packet id<input id="founderCriteriaId" type="text"></label>
+              <label>Replay receipt id<input id="founderReplayId" type="text"></label>
+              <label>Rollback receipt id<input id="founderRollbackId" type="text"></label>
+              <label>Audit receipt id<input id="founderAuditId" type="text"></label>
+              <label>Source answer id<input id="founderSourceAnswer" type="text"></label>
+              <label>Source record id<input id="founderSourceRecord" type="text"></label>
+              <label>Source family<input id="founderSourceFamily" type="text"></label>
+              <label>Instruction scope<textarea id="founderScopeText"></textarea></label>
+              <label>Allowed action<textarea id="founderAllowedAction"></textarea></label>
+              <label>Forbidden actions<textarea id="founderForbiddenActions"></textarea></label>
+              <label>Required founder phrase<textarea id="founderRequiredPhrase"></textarea></label>
+              <label>Evidence required<textarea id="founderEvidenceRequired"></textarea></label>
+              <label>Execution boundary<textarea id="founderExecutionBoundary"></textarea></label>
+              <label>Revocation rule<textarea id="founderRevocationRule"></textarea></label>
+              <label>Review question<textarea id="founderReviewQuestion"></textarea></label>
+              <label>Return reason<textarea id="founderReturnReason"></textarea></label>
+              <label>Hold reason<textarea id="founderHoldReason"></textarea></label>
+              <label>Block reason<textarea id="founderBlockReason"></textarea></label>
+              <div class="founder-actions">
+                <button class="button primary" id="runFounderGate" type="button">Run Gate</button>
+                <button class="button safe" id="loadFounderSample" type="button">Load Sample</button>
+                <button class="button" id="saveFounderGate" type="button">Save Local</button>
+                <button class="button" id="clearFounderGates" type="button">Clear Local</button>
+              </div>
+            </div>
+            <div>
+              <section class="founder-result" id="founderResultCard" data-state="Blocked"></section>
+              <section style="margin-top: 10px;">
+                <h2>Gate Scope</h2>
+                <div class="founder-list" id="founderScope"></div>
+              </section>
+            </div>
+          </section>
+
+          <section>
+            <h2>Instruction Checks</h2>
+            <div class="founder-rules" id="founderChecks"></div>
+          </section>
+
+          <section class="founder-layout">
+            <div>
+              <div class="founder-actions">
+                <button class="button safe" id="copyFounderPacket" type="button">Copy Gate Packet</button>
+                <a class="button" href="data/vedapath-founder-storage-instruction-gate.json">Open JSON</a>
+              </div>
+              <textarea class="founder-packet" id="founderPacket" aria-label="Founder storage instruction gate packet"></textarea>
+            </div>
+            <div>
+              <h2>Saved Local Gate Runs</h2>
+              <div class="founder-list" id="founderSaved"></div>
+            </div>
+          </section>
+        </section>
+
+        <aside class="panel tight">
+          <span class="badge green">Instruction is not execution</span>
+          <h2 style="margin-top: 14px;">Permission Cannot Hide</h2>
+          <p class="muted">The exact phrase can be prepared and reviewed, but this preview does not grant storage entry.</p>
+          <div class="progress" aria-label="Founder storage instruction gate progress 100 percent"><div class="bar" style="--score:100%"></div></div>
+          <div class="metric-grid">
+            <div class="metric"><span>Current</span><strong>v3.0.9</strong></div>
+            <div class="metric"><span>States</span><strong>6</strong></div>
+            <div class="metric"><span>Writes</span><strong>False</strong></div>
+            <div class="metric"><span>Next</span><strong>Implementation dry run</strong></div>
+          </div>
+          <section class="panel tight boundary" style="margin-top: 16px;">
+            <h2>Founder Phrase</h2>
+            <p class="founder-phrase">I authorize VedaPath to prepare the named source-answer packet for controlled storage entry review; do not execute production writes yet.</p>
+            <p class="muted">Even this phrase only opens the next review gate, not storage itself.</p>
+          </section>
+        </aside>
+      </main>
+    </div>
+    <script src="assets/vedapath-founder-storage-instruction-gate.js"></script>
+  </body>
+</html>
