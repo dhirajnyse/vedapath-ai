@@ -4373,6 +4373,20 @@ It should:
 
 Pattern Companion Control Room should never claim diagnosis, therapy, legal advice, medical advice, surveillance, scoring, or spiritual authority.
 <!-- VEDAPATH PATTERN COMPANION SPRINT BLUEPRINT END -->
+<!-- VEDAPATH PROPOSAL DIFF REVIEW ROOM BLUEPRINT START -->
+### 281. Proposal Diff Review Room
+
+VedaPath should make source proposal review explicit before owner approval.
+
+Rules:
+
+- A proposal review can request revision, reject, move to source owner, or mark for production backlog.
+- Production readiness remains false in preview.
+- Approval-path states require source owner and rollback note.
+- Production-backlog state also requires a second reviewer.
+- The next build should create a dedicated source-owner approval lane.
+<!-- VEDAPATH PROPOSAL DIFF REVIEW ROOM BLUEPRINT END -->
+
 <!-- VEDAPATH SOURCE UPDATE PROPOSAL BRIDGE BLUEPRINT START -->
 ### 280. Source Update Proposal Bridge
 

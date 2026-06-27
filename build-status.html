@@ -366,7 +366,7 @@
           <a class="link" href="conversationcompanionlab.html">Talk</a>
           <a class="link" href="patterncompanionlab.html">Pattern</a>
           <a class="link" href="daily.html">Daily</a>
-          <span class="version">v2.9.7 proposal</span>
+          <span class="version">v2.9.8 diff review</span>
         </nav>
       </header>
 
@@ -378,8 +378,8 @@
       <section class="summary" aria-label="Progress summary">
         <article class="tile">
           <span>Current version</span>
-          <strong>v2.9.7</strong>
-          <p>Source Update Proposal Bridge: accepted review packets can now become draft source-record diffs without changing canonical data.</p>
+          <strong>v2.9.8</strong>
+          <p>Proposal Diff Review Room: draft source proposals now get decision states, rejection paths, rollback notes, and local review packets.</p>
         </article>
         <article class="tile">
           <span>MVP progress</span>
@@ -389,14 +389,14 @@
         </article>
         <article class="tile">
           <span>Full vision progress</span>
-          <strong>77%</strong>
-          <div class="progress" aria-hidden="true"><div class="bar" style="width:77%"></div></div>
-          <p>The trust loop now reaches draft source updates while protecting canonical source records.</p>
+          <strong>79%</strong>
+          <div class="progress" aria-hidden="true"><div class="bar" style="width:79%"></div></div>
+          <p>The trust loop now has draft proposal review states before any production storage plan.</p>
         </article>
         <article class="tile">
           <span>Next release</span>
-          <strong>Proposal diff review room</strong>
-          <p>Add reviewer-facing approval states for draft source proposals before production storage.</p>
+          <strong>Source owner approval lane</strong>
+          <p>Add a dedicated owner-review lane that accepts, rejects, or returns proposal packets.</p>
         </article>
       </section>
 
@@ -2547,9 +2547,17 @@
               <span class="percent">100%</span>
             </article>
             <article class="phase">
+              <span class="badge done">Done</span>
+              <div>
+                <strong>Phase 262: Proposal Diff Review Room</strong>
+                <p>Adds local decision states, source-owner path, revision and rejection reasons, rollback note, and copyable review packets.</p>
+              </div>
+              <span class="percent">100%</span>
+            </article>
+            <article class="phase">
               <span class="badge later">Later</span>
               <div>
-                <strong>Phase 262: Production Implementation and Licensed Audio</strong>
+                <strong>Phase 263: Production Implementation and Licensed Audio</strong>
                 <p>Backend storage, account consent, reviewed source records, reviewer operations, audio rights, and launch sequencing after founder direction.</p>
               </div>
               <div class="percent">0%</div>
@@ -2560,11 +2568,11 @@
         <aside class="panel version">
           <div>
             <h2>Version Notes</h2>
-            <div class="version-row"><span>Release</span><strong>v2.9.7 Source Update Proposal Bridge</strong></div>
-            <div class="version-row"><span>Previous</span><strong>v2.9.6 Reviewer Identity and Audit Gate</strong></div>
+            <div class="version-row"><span>Release</span><strong>v2.9.8 Proposal Diff Review Room</strong></div>
+            <div class="version-row"><span>Previous</span><strong>v2.9.7 Source Update Proposal Bridge</strong></div>
             <div class="version-row"><span>Commit</span><strong>See GitHub history</strong></div>
-            <div class="version-row"><span>Goal</span><strong>Convert accepted audit packets into draft source diffs.</strong></div>
-            <div class="version-row"><span>Status</span><strong>Ready for proposal diff review room</strong></div>
+            <div class="version-row"><span>Goal</span><strong>Review draft source diffs before owner approval.</strong></div>
+            <div class="version-row"><span>Status</span><strong>Ready for source owner approval lane</strong></div>
           </div>
 
           <div class="panel note">
@@ -2575,10 +2583,10 @@
           <div>
             <h2>Next Build Checklist</h2>
             <ul class="checklist">
-              <li><span class="dot"></span><span>Add approval states for draft source proposals.</span></li>
-              <li><span class="dot"></span><span>Require source-owner review before production.</span></li>
-              <li><span class="dot"></span><span>Add rollback note and rejection reason fields.</span></li>
-              <li><span class="dot"></span><span>Keep canonical source records unchanged in preview.</span></li>
+              <li><span class="dot"></span><span>Create a source-owner approval lane.</span></li>
+              <li><span class="dot"></span><span>Separate returned, rejected, and accepted proposals.</span></li>
+              <li><span class="dot"></span><span>Add owner handoff packet export.</span></li>
+              <li><span class="dot"></span><span>Keep canonical records untouched until production storage.</span></li>
             </ul>
           </div>
         </aside>

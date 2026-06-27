@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VedaPath Proposal Diff Review Room</title>
+    <link rel="stylesheet" href="assets/vedapath-sprint.css">
+    <link rel="stylesheet" href="assets/vedapath-proposal-diff-review-room.css">
+    <link rel="stylesheet" href="assets/vedapath-cohesive.css">
+    <link rel="stylesheet" href="assets/vedapath-polish.css">
+    <link rel="stylesheet" href="assets/vedapath-focus.css">
+  </head>
+  <body>
+    <div class="shell" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top" aria-label="VedaPath AI home">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
+          <div>
+            <strong>VedaPath AI</strong>
+            <span>Proposal diff review</span>
+          </div>
+        </a>
+        <nav class="nav" aria-label="Project links">
+          <a class="link" href="index.html">Home</a>
+          <a class="link" href="build-status.html">Build</a>
+          <a class="link" href="brand/brand-board.html">Brand</a>
+          <a class="link" href="blueprint.html">Blueprint</a>
+          <a class="link" href="citedanswerlab.html">Answers</a>
+          <a class="link active" href="reviewqueuepersistence.html">Review</a>
+          <a class="link" href="mantralenslab.html">Mantra</a>
+          <a class="link" href="lifecompanionlab.html">Life</a>
+          <a class="link" href="conversationcompanionlab.html">Talk</a>
+          <a class="link" href="patterncompanionlab.html">Pattern</a>
+          <a class="link" href="daily.html">Daily</a>
+          <span class="version">v2.9.8 diff review</span>
+        </nav>
+      </header>
+
+      <main class="workspace" aria-label="VedaPath Proposal Diff Review workspace">
+        <aside class="panel">
+          <span class="eyebrow">Proposal control</span>
+          <h2>Review the diff before approval</h2>
+          <p class="muted">A draft source proposal needs a decision state, source-owner path, rejection option, and rollback note before it can move forward.</p>
+          <div class="sprint-list">
+            <div class="sprint-step active"><span class="step-index">1</span><div><strong>Read</strong><p>Inspect the proposal packet.</p></div></div>
+            <div class="sprint-step"><span class="step-index">2</span><div><strong>Decide</strong><p>Choose a review state.</p></div></div>
+            <div class="sprint-step"><span class="step-index">3</span><div><strong>Explain</strong><p>Add reason and rollback.</p></div></div>
+            <div class="sprint-step"><span class="step-index">4</span><div><strong>Save</strong><p>Keep local review history.</p></div></div>
+          </div>
+          <div class="button-row" style="margin-top: 16px;">
+            <a class="button safe" href="sourceupdateproposalbridge.html">Open Proposal Bridge</a>
+            <a class="button" href="reviewidentitygate.html">Open Identity Gate</a>
+          </div>
+        </aside>
+
+        <section class="panel diff-app" id="proposalDiffReviewRoom">
+          <div class="diff-head">
+            <div>
+              <span class="eyebrow">Proposal diff review room</span>
+              <h1>Approve the path, not the source record.</h1>
+              <p class="muted">This room reviews draft source proposals. It can move a proposal toward source-owner review, request revision, reject it, or keep it blocked, while production readiness stays false.</p>
+            </div>
+            <div class="diff-mark"><img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath diff review mark"></div>
+          </div>
+
+          <section class="diff-layout">
+            <div class="diff-form">
+              <h2>Review Decision</h2>
+              <label>Proposal packet<textarea id="diffProposalPacket"></textarea></label>
+              <label>Decision state<select id="diffDecisionState"></select></label>
+              <label>Reviewer name<input id="diffReviewer" type="text" placeholder="Founder review"></label>
+              <label>Source owner<input id="diffSourceOwner" type="text" placeholder="Source reviewer"></label>
+              <label>Second reviewer<input id="diffSecondReviewer" type="text" placeholder="Required for production backlog"></label>
+              <label>Review note<textarea id="diffReviewNote"></textarea></label>
+              <label>Revision reason<textarea id="diffRevisionReason"></textarea></label>
+              <label>Rejection reason<textarea id="diffRejectionReason"></textarea></label>
+              <label>Rollback note<textarea id="diffRollbackNote"></textarea></label>
+              <div class="diff-actions">
+                <button class="button primary" id="reviewDiff" type="button">Review Diff</button>
+                <button class="button safe" id="loadDiffSample" type="button">Load Sample</button>
+                <button class="button" id="saveDiffReview" type="button">Save Local</button>
+                <button class="button" id="clearDiffReviews" type="button">Clear Local</button>
+              </div>
+            </div>
+            <div>
+              <section class="diff-result" id="diffResult" data-state="Blocked"></section>
+              <section style="margin-top: 10px;">
+                <h2>Diffs and Blocks</h2>
+                <div class="diff-list" id="diffList"></div>
+              </section>
+            </div>
+          </section>
+
+          <section>
+            <h2>Review Rules</h2>
+            <div class="diff-rules" id="diffRules"></div>
+          </section>
+
+          <section class="diff-layout">
+            <div>
+              <div class="diff-actions">
+                <button class="button safe" id="copyDiffReview" type="button">Copy Review Packet</button>
+                <a class="button" href="data/vedapath-proposal-diff-review-room.json">Open JSON</a>
+              </div>
+              <textarea class="diff-packet" id="diffPacket" aria-label="Proposal diff review packet"></textarea>
+            </div>
+            <div>
+              <h2>Saved Local Reviews</h2>
+              <div class="diff-list" id="diffSaved"></div>
+            </div>
+          </section>
+        </section>
+
+        <aside class="panel tight">
+          <span class="badge green">Review phase</span>
+          <h2 style="margin-top: 14px;">Production Boundary</h2>
+          <p class="muted">This room never makes a source record production-ready. It only clarifies the next review state and what must be true before production storage.</p>
+          <div class="progress" aria-label="Proposal diff review progress 100 percent"><div class="bar" style="--score:100%"></div></div>
+          <div class="metric-grid">
+            <div class="metric"><span>Current</span><strong>v2.9.8</strong></div>
+            <div class="metric"><span>States</span><strong>5</strong></div>
+            <div class="metric"><span>Ready</span><strong>False</strong></div>
+            <div class="metric"><span>Store</span><strong>Local</strong></div>
+          </div>
+          <section class="panel tight boundary" style="margin-top: 16px;">
+            <h2>Source Rule</h2>
+            <p class="muted">Approving a review path is not approving the source record. Canonical changes still require durable identity, audit, owner review, and rollback readiness.</p>
+          </section>
+        </aside>
+      </main>
+    </div>
+    <script src="assets/vedapath-proposal-diff-review-room.js"></script>
+  </body>
+</html>

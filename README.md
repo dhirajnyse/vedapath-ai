@@ -953,6 +953,19 @@ Then open:
 http://127.0.0.1:8088/
 ```
 
+<!-- VEDAPATH PROPOSAL DIFF REVIEW ROOM START -->
+## v2.9.8 Proposal Diff Review Room
+
+This release adds a review layer for draft source-update proposals.
+
+- adds `data/vedapath-proposal-diff-review-room.json`
+- adds `proposaldiffreview.html`
+- adds local decision states for draft source proposals
+- requires reviewer notes, source-owner path, rollback note, and rejection or revision reasons where needed
+- keeps production readiness false in preview
+- keeps canonical source records unchanged
+<!-- VEDAPATH PROPOSAL DIFF REVIEW ROOM END -->
+
 <!-- VEDAPATH SOURCE UPDATE PROPOSAL BRIDGE START -->
 ## v2.9.7 Source Update Proposal Bridge
 
