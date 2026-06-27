@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VedaPath Storage Design Gate</title>
+    <link rel="stylesheet" href="assets/vedapath-sprint.css">
+    <link rel="stylesheet" href="assets/vedapath-storage-design-gate.css">
+    <link rel="stylesheet" href="assets/vedapath-cohesive.css">
+    <link rel="stylesheet" href="assets/vedapath-polish.css">
+    <link rel="stylesheet" href="assets/vedapath-focus.css">
+  </head>
+  <body>
+    <div class="shell" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top" aria-label="VedaPath AI home">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
+          <div>
+            <strong>VedaPath AI</strong>
+            <span>Storage design gate</span>
+          </div>
+        </a>
+        <nav class="nav" aria-label="Project links">
+          <a class="link" href="index.html">Home</a>
+          <a class="link" href="build-status.html">Build</a>
+          <a class="link" href="brand/brand-board.html">Brand</a>
+          <a class="link" href="blueprint.html">Blueprint</a>
+          <a class="link" href="citedanswerlab.html">Answers</a>
+          <a class="link active" href="reviewqueuepersistence.html">Review</a>
+          <a class="link" href="mantralenslab.html">Mantra</a>
+          <a class="link" href="lifecompanionlab.html">Life</a>
+          <a class="link" href="conversationcompanionlab.html">Talk</a>
+          <a class="link" href="patterncompanionlab.html">Pattern</a>
+          <a class="link" href="daily.html">Daily</a>
+          <span class="version">v3.0.3 storage gate</span>
+        </nav>
+      </header>
+
+      <main class="workspace" aria-label="VedaPath Storage Design Gate workspace">
+        <aside class="panel">
+          <span class="eyebrow">Storage restraint</span>
+          <h2>Design storage without writes</h2>
+          <p class="muted">A reviewed packet can define schema, receipts, rollback, and replay rules. It still cannot write source records.</p>
+          <div class="sprint-list">
+            <div class="sprint-step active"><span class="step-index">1</span><div><strong>Receive</strong><p>Read release review.</p></div></div>
+            <div class="sprint-step"><span class="step-index">2</span><div><strong>Model</strong><p>Define storage shape.</p></div></div>
+            <div class="sprint-step"><span class="step-index">3</span><div><strong>Receipt</strong><p>Require audit and rollback.</p></div></div>
+            <div class="sprint-step"><span class="step-index">4</span><div><strong>Gate</strong><p>Keep writes closed.</p></div></div>
+          </div>
+          <div class="button-row" style="margin-top: 16px;">
+            <a class="button primary" href="releasereviewgate.html">Open Release Review</a>
+            <a class="button safe" href="productiondryrunaudit.html">Open Dry Run</a>
+          </div>
+        </aside>
+
+        <section class="panel storage-app" id="storageDesignGate">
+          <div class="storage-head">
+            <div>
+              <span class="eyebrow">Storage design gate</span>
+              <h1>Design the storage. Keep writes closed.</h1>
+              <p class="muted">This room turns an approved release-review packet into a storage design contract: schema, immutable audit receipt, rollback receipt, replay rule, and write boundary.</p>
+            </div>
+            <div class="storage-mark"><img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath storage design mark"></div>
+          </div>
+
+          <section class="storage-layout">
+            <div class="storage-form">
+              <h2>Storage Design</h2>
+              <label>Release review packet<textarea id="storageReleaseReview"></textarea></label>
+              <label>Design state<select id="storageDesignState"></select></label>
+              <label>Architect name<input id="storageArchitect" type="text" placeholder="Storage architect"></label>
+              <label>Design note<textarea id="storageNote"></textarea></label>
+              <label>Schema summary<textarea id="storageSchema"></textarea></label>
+              <label>Architecture question<textarea id="storageQuestion"></textarea></label>
+              <label>Audit receipt rule<textarea id="storageAuditRule"></textarea></label>
+              <label>Rollback receipt rule<textarea id="storageRollbackRule"></textarea></label>
+              <label>Replay rule<textarea id="storageReplayRule"></textarea></label>
+              <label>Write boundary<textarea id="storageBoundary"></textarea></label>
+              <label>Return reason<textarea id="storageReturnReason"></textarea></label>
+              <label>Block reason<textarea id="storageBlockReason"></textarea></label>
+              <div class="storage-actions">
+                <button class="button primary" id="runStorageDesign" type="button">Design Gate</button>
+                <button class="button safe" id="loadStorageSample" type="button">Load Sample</button>
+                <button class="button" id="saveStorageDesign" type="button">Save Local</button>
+                <button class="button" id="clearStorageDesigns" type="button">Clear Local</button>
+              </div>
+            </div>
+            <div>
+              <section class="storage-result" id="storageResultCard" data-state="Blocked"></section>
+              <section style="margin-top: 10px;">
+                <h2>Release Review Scope</h2>
+                <div class="storage-list" id="storageReviewScope"></div>
+              </section>
+            </div>
+          </section>
+
+          <section>
+            <h2>Storage Checks</h2>
+            <div class="storage-rules" id="storageChecks"></div>
+          </section>
+
+          <section class="storage-layout">
+            <div>
+              <div class="storage-actions">
+                <button class="button safe" id="copyStoragePacket" type="button">Copy Storage Packet</button>
+                <a class="button" href="data/vedapath-storage-design-gate.json">Open JSON</a>
+              </div>
+              <textarea class="storage-packet" id="storagePacket" aria-label="Storage design packet"></textarea>
+            </div>
+            <div>
+              <h2>Saved Local Designs</h2>
+              <div class="storage-list" id="storageSaved"></div>
+            </div>
+          </section>
+        </section>
+
+        <aside class="panel tight">
+          <span class="badge green">Storage gate</span>
+          <h2 style="margin-top: 14px;">Write Boundary</h2>
+          <p class="muted">Storage design is a contract, not a launch. Production source writes remain false until immutable audit, rollback proof, and final founder instruction exist.</p>
+          <div class="progress" aria-label="Storage design gate progress 100 percent"><div class="bar" style="--score:100%"></div></div>
+          <div class="metric-grid">
+            <div class="metric"><span>Current</span><strong>v3.0.3</strong></div>
+            <div class="metric"><span>States</span><strong>5</strong></div>
+            <div class="metric"><span>Writes</span><strong>False</strong></div>
+            <div class="metric"><span>Store</span><strong>Local</strong></div>
+          </div>
+          <section class="panel tight boundary" style="margin-top: 16px;">
+            <h2>Storage Rule</h2>
+            <p class="muted">No canonical source-answer data changes in this release. The product gains a storage plan, not production memory.</p>
+          </section>
+        </aside>
+      </main>
+    </div>
+    <script src="assets/vedapath-storage-design-gate.js"></script>
+  </body>
+</html>

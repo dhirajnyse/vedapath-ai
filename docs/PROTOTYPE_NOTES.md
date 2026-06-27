@@ -306,6 +306,20 @@ The v0.7.4 release turns the VedaPath AI homepage into a trusted MVP prototype w
 - Mobile Pattern: Mobile Pattern keeps the learning loop usable where calm moments actually happen.
 - Pattern Companion Control Room: Pattern Companion Control Room completes the private local learning layer for VedaPath AI.
 <!-- VEDAPATH PATTERN COMPANION SPRINT NOTES END -->
+<!-- VEDAPATH STORAGE DESIGN GATE NOTES START -->
+## v3.0.3 Storage Design Gate
+
+This phase converts an approved release-review packet into a storage design contract.
+
+Action taken:
+
+- Added storage design gate schema.
+- Added design states for draft, architecture review, ready, return, and blocked.
+- Required schema summary, audit receipt rule, rollback receipt rule, replay rule, and write boundary before ready.
+- Added copyable storage design packets and local design memory.
+- Preserved canonical source data.
+<!-- VEDAPATH STORAGE DESIGN GATE NOTES END -->
+
 <!-- VEDAPATH RELEASE REVIEW GATE NOTES START -->
 ## v3.0.2 Release Review Gate
 

@@ -4373,6 +4373,20 @@ It should:
 
 Pattern Companion Control Room should never claim diagnosis, therapy, legal advice, medical advice, surveillance, scoring, or spiritual authority.
 <!-- VEDAPATH PATTERN COMPANION SPRINT BLUEPRINT END -->
+<!-- VEDAPATH STORAGE DESIGN GATE BLUEPRINT START -->
+### 286. Storage Design Gate
+
+VedaPath should design storage before it writes anything.
+
+Rules:
+
+- Storage design can start only from a release-review packet approved for storage design.
+- A ready design must include schema, immutable audit receipt rule, rollback receipt rule, replay rule, and write boundary.
+- Storage design readiness is not production readiness.
+- Canonical writes remain false in preview.
+- The next build should dry-run immutable audit receipts before any production storage work.
+<!-- VEDAPATH STORAGE DESIGN GATE BLUEPRINT END -->
+
 <!-- VEDAPATH RELEASE REVIEW GATE BLUEPRINT START -->
 ### 285. Release Review Gate
 

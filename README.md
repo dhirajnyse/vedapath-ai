@@ -953,6 +953,18 @@ Then open:
 http://127.0.0.1:8088/
 ```
 
+<!-- VEDAPATH STORAGE DESIGN GATE START -->
+## v3.0.3 Storage Design Gate
+
+This release adds the storage design layer after release review.
+
+- adds storagedesigngate.html
+- adds data/vedapath-storage-design-gate.json
+- defines source-answer draft tables, review receipts, audit receipts, rollback receipts, and replay queue
+- keeps storage_write_enabled false, production_ready false, and canonical_write_allowed false
+- sets the next release as immutable audit receipt dry run
+<!-- VEDAPATH STORAGE DESIGN GATE END -->
+
 <!-- VEDAPATH RELEASE REVIEW GATE START -->
 ## v3.0.2 Release Review Gate
 

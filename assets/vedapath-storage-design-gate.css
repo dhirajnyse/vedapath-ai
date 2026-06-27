@@ -1,0 +1,152 @@
+/* VedaPath storage design gate */
+.storage-app,
+.storage-head,
+.storage-layout,
+.storage-form,
+.storage-grid,
+.storage-list,
+.storage-actions,
+.storage-rules {
+  display: grid;
+  gap: 10px;
+}
+
+.storage-app {
+  gap: 16px;
+}
+
+.storage-head {
+  grid-template-columns: minmax(0, 1fr) 126px;
+  align-items: center;
+}
+
+.storage-mark {
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff3e4;
+  padding: 10px;
+}
+
+.storage-mark img {
+  display: block;
+  width: 100%;
+}
+
+.storage-layout {
+  grid-template-columns: minmax(0, 0.96fr) minmax(0, 1.04fr);
+  align-items: start;
+}
+
+.storage-form,
+.storage-card,
+.storage-result,
+.storage-packet,
+.storage-rule {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.storage-form,
+.storage-card,
+.storage-result,
+.storage-rule {
+  padding: 12px;
+}
+
+.storage-form label {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.storage-form input,
+.storage-form select,
+.storage-form textarea,
+.storage-packet {
+  width: 100%;
+  border: 1px solid #efc1aa;
+  border-radius: 8px;
+  background: #fffaf4;
+  color: var(--ink);
+  padding: 10px;
+}
+
+.storage-form textarea,
+.storage-packet {
+  min-height: 112px;
+  resize: vertical;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 13px;
+}
+
+.storage-grid,
+.storage-rules {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.storage-card,
+.storage-result {
+  border-left: 4px solid var(--gold);
+}
+
+.storage-card.ready,
+.storage-result[data-state="Storage design ready"] {
+  border-left-color: var(--green);
+}
+
+.storage-card.blocked,
+.storage-result[data-state="Blocked"],
+.storage-result[data-state="Return to release review"],
+.storage-result[data-state="Storage design blocked"] {
+  border-left-color: var(--ochre);
+}
+
+.storage-card span,
+.storage-card strong,
+.storage-rule span,
+.storage-rule strong {
+  display: block;
+}
+
+.storage-card span,
+.storage-rule span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.storage-actions {
+  grid-template-columns: repeat(4, minmax(0, max-content));
+  align-items: center;
+}
+
+.storage-list {
+  max-height: 290px;
+  overflow: auto;
+  padding-right: 3px;
+}
+
+@media (max-width: 980px) {
+  .storage-head,
+  .storage-layout,
+  .storage-grid,
+  .storage-rules {
+    grid-template-columns: 1fr;
+  }
+
+  .storage-mark {
+    max-width: 150px;
+  }
+}
+
+@media (max-width: 680px) {
+  .storage-actions,
+  .storage-actions .button {
+    width: 100%;
+    grid-template-columns: 1fr;
+  }
+}
