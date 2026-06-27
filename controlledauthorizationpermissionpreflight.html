@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VedaPath Controlled Authorization Permission Preflight</title>
+    <link rel="stylesheet" href="assets/vedapath-sprint.css">
+    <link rel="stylesheet" href="assets/vedapath-cohesive.css">
+    <link rel="stylesheet" href="assets/vedapath-polish.css">
+    <link rel="stylesheet" href="assets/vedapath-focus.css">
+    <link rel="stylesheet" href="assets/vedapath-controlled-authorization-permission-preflight.css">
+  </head>
+  <body class="permission-preflight-page">
+    <div class="shell" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top" aria-label="VedaPath AI home">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
+          <div>
+            <strong>VedaPath AI</strong>
+            <span>Permission preflight</span>
+          </div>
+        </a>
+        <nav class="nav" aria-label="Project links">
+          <a class="link" href="index.html">Home</a>
+          <a class="link" href="build-status.html">Build</a>
+          <a class="link" href="brand/brand-board.html">Brand</a>
+          <a class="link" href="blueprint.html">Blueprint</a>
+          <a class="link" href="citedanswerlab.html">Answers</a>
+          <a class="link active" href="reviewqueuepersistence.html">Review</a>
+          <a class="link" href="mantralenslab.html">Mantra</a>
+          <a class="link" href="lifecompanionlab.html">Life</a>
+          <a class="link" href="conversationcompanionlab.html">Talk</a>
+          <a class="link" href="patterncompanionlab.html">Pattern</a>
+          <a class="link" href="daily.html">Daily</a>
+          <span class="version">v3.2.1 permission preflight</span>
+        </nav>
+      </header>
+
+      <main class="workspace" aria-label="VedaPath Controlled Authorization Permission Preflight workspace">
+        <aside class="panel">
+          <span class="eyebrow">Preflight is not permission</span>
+          <h2>Check eligibility. Grant nothing.</h2>
+          <p class="muted">This room checks whether a founder instruction signal is complete enough for permission review. It cannot grant permission, authorize, execute, store, publish, or launch.</p>
+          <div class="sprint-list">
+            <div class="sprint-step active"><span class="step-index">1</span><div><strong>Signal</strong><p>Load instruction.</p></div></div>
+            <div class="sprint-step"><span class="step-index">2</span><div><strong>Evidence</strong><p>Lock source.</p></div></div>
+            <div class="sprint-step"><span class="step-index">3</span><div><strong>Boundary</strong><p>Keep grant false.</p></div></div>
+            <div class="sprint-step"><span class="step-index">4</span><div><strong>Review</strong><p>Prepare only.</p></div></div>
+          </div>
+          <div class="button-row" style="margin-top: 16px;">
+            <a class="button primary" href="founderauthorizationinstructiongate.html">Open Founder Instruction</a>
+            <a class="button safe" href="controlledauthorizationreviewgate.html">Open Review Gate</a>
+          </div>
+        </aside>
+
+        <section class="panel permission-preflight" id="controlledAuthorizationPermissionPreflight">
+          <div class="permission-preflight-head">
+            <div>
+              <span class="eyebrow">Permission preflight</span>
+              <h1>Check permission readiness. Grant nothing.</h1>
+              <p class="muted">A ready preflight here means the packet can move to controlled permission review. It still cannot grant permission, authorize execution, run code, promote sources, store data, update canonical records, use secrets, publish public release, or launch production.</p>
+            </div>
+            <div class="permission-preflight-mark"><img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath permission preflight mark"></div>
+          </div>
+
+          <section class="permission-preflight-layout">
+            <div class="permission-preflight-form">
+              <h2>Controlled Permission Preflight</h2>
+              <label>Founder instruction packet<textarea id="permissionPreflightFounderInstruction"></textarea></label>
+              <label>Preflight state<select id="permissionPreflightState"></select></label>
+              <label>Preflight actor<input id="permissionPreflightActor" type="text" placeholder="Controlled permission preflight reviewer"></label>
+              <label>Reviewer name<input id="permissionPreflightReviewer" type="text" placeholder="Reviewer sample"></label>
+              <label>Permission preflight id<input id="permissionPreflightId" type="text"></label>
+              <label>Founder instruction gate id<input id="permissionPreflightInstructionGateId" type="text"></label>
+              <label>Authorization review gate id<input id="permissionPreflightReviewGateId" type="text"></label>
+              <label>Authorization draft id<input id="permissionPreflightDraftId" type="text"></label>
+              <label>Founder decision gate id<input id="permissionPreflightDecisionGateId" type="text"></label>
+              <label>Source answer id<input id="permissionPreflightSourceAnswer" type="text"></label>
+              <label>Source record id<input id="permissionPreflightSourceRecord" type="text"></label>
+              <label>Source family<input id="permissionPreflightSourceFamily" type="text"></label>
+              <label>Preflight scope<textarea id="permissionPreflightScopeText"></textarea></label>
+              <label>Permission question<textarea id="permissionPreflightQuestion"></textarea></label>
+              <label>Eligibility summary<textarea id="permissionPreflightSummary"></textarea></label>
+              <label>Evidence lock<textarea id="permissionPreflightEvidence"></textarea></label>
+              <label>Non-permission clause<textarea id="permissionPreflightBoundary"></textarea></label>
+              <label>Risk acknowledgment<textarea id="permissionPreflightRisk"></textarea></label>
+              <label>Rollback condition<textarea id="permissionPreflightRollback"></textarea></label>
+              <label>Monitoring condition<textarea id="permissionPreflightMonitoring"></textarea></label>
+              <label>Stop condition<textarea id="permissionPreflightStopCondition"></textarea></label>
+              <label>Expiry check<textarea id="permissionPreflightExpiry"></textarea></label>
+              <label>Production boundary<textarea id="permissionPreflightProductionBoundary"></textarea></label>
+              <label>Clarification question<textarea id="permissionPreflightQuestionForFounder"></textarea></label>
+              <label>Return reason<textarea id="permissionPreflightReturnReason"></textarea></label>
+              <label>Hold reason<textarea id="permissionPreflightHoldReason"></textarea></label>
+              <label>Block reason<textarea id="permissionPreflightBlockReason"></textarea></label>
+              <div class="permission-preflight-actions">
+                <button class="button primary" id="runPermissionPreflight" type="button">Run Preflight</button>
+                <button class="button safe" id="loadPermissionPreflightSample" type="button">Load Sample</button>
+                <button class="button" id="savePermissionPreflight" type="button">Save Local</button>
+                <button class="button" id="clearPermissionPreflights" type="button">Clear Local</button>
+              </div>
+            </div>
+            <div>
+              <section class="permission-preflight-result" id="permissionPreflightResultCard" data-state="Blocked"></section>
+              <section style="margin-top: 10px;">
+                <h2>Preflight Scope</h2>
+                <div class="permission-preflight-list" id="permissionPreflightScope"></div>
+              </section>
+            </div>
+          </section>
+
+          <section>
+            <h2>Preflight Checks</h2>
+            <div class="permission-preflight-rules" id="permissionPreflightChecks"></div>
+          </section>
+
+          <section class="permission-preflight-layout">
+            <div>
+              <div class="permission-preflight-actions">
+                <button class="button safe" id="copyPermissionPreflight" type="button">Copy Preflight Packet</button>
+                <a class="button" href="data/vedapath-controlled-authorization-permission-preflight.json">Open JSON</a>
+              </div>
+              <textarea class="permission-preflight-output" id="permissionPreflightOutput" aria-label="Controlled authorization permission preflight"></textarea>
+            </div>
+            <div>
+              <h2>Saved Local Preflights</h2>
+              <div class="permission-preflight-list" id="permissionPreflightSaved"></div>
+            </div>
+          </section>
+        </section>
+
+        <aside class="panel tight">
+          <span class="badge green">Candidate is not permission</span>
+          <h2 style="margin-top: 14px;">Permission Candidate, Not Permission</h2>
+          <p class="muted">The preflight can prepare a permission review while every operational path stays locked.</p>
+          <div class="progress" aria-label="Permission preflight progress 100 percent"><div class="bar" style="--score:100%"></div></div>
+          <div class="metric-grid">
+            <div class="metric"><span>Current</span><strong>v3.2.1</strong></div>
+            <div class="metric"><span>States</span><strong>9</strong></div>
+            <div class="metric"><span>Permission</span><strong>False</strong></div>
+            <div class="metric"><span>Next</span><strong>Review</strong></div>
+          </div>
+          <section class="panel tight boundary" style="margin-top: 16px;">
+            <h2>Preflight Boundary</h2>
+            <p class="permission-preflight-boundary">Permission candidate only. Permission grant, authorization, execution, source promotion, storage writes, canonical writes, migrations, accounts, secrets, public release, and production launch remain false.</p>
+            <p class="muted">This release prepares a controlled authorization permission review gate. It does not authorize anything.</p>
+          </section>
+        </aside>
+      </main>
+    </div>
+    <script src="assets/vedapath-controlled-authorization-permission-preflight.js"></script>
+  </body>
+</html>

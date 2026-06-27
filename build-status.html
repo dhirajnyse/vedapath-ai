@@ -366,7 +366,7 @@
           <a class="link" href="conversationcompanionlab.html">Talk</a>
           <a class="link" href="patterncompanionlab.html">Pattern</a>
           <a class="link" href="daily.html">Daily</a>
-          <span class="version">v3.2.0 founder instruction</span>
+          <span class="version">v3.2.1 permission preflight</span>
         </nav>
       </header>
 
@@ -378,8 +378,8 @@
       <section class="summary" aria-label="Progress summary">
         <article class="tile">
           <span>Current version</span>
-          <strong>v3.2.0</strong>
-          <p>Founder Authorization Instruction Gate: founder instruction intent is now recorded while founder grant, authorization, execution, storage, public release, and production remain false.</p>
+          <strong>v3.2.1</strong>
+          <p>Controlled Authorization Permission Preflight: founder instruction intent is now checked for permission-review eligibility while permission, authorization, execution, storage, public release, and production remain false.</p>
         </article>
         <article class="tile">
           <span>MVP progress</span>
@@ -391,12 +391,12 @@
           <span>Full vision progress</span>
           <strong>99%</strong>
           <div class="progress" aria-hidden="true"><div class="bar" style="width:99%"></div></div>
-          <p>The trust loop now records founder instruction intent separately from founder grant while every real write path remains closed.</p>
+          <p>The trust loop now separates permission-review eligibility from permission grant while every real write path remains closed.</p>
         </article>
         <article class="tile">
           <span>Next release</span>
-          <strong>Controlled authorization permission preflight</strong>
-          <p>Evaluate permission preflight while still blocking execution.</p>
+          <strong>Controlled authorization permission review gate</strong>
+          <p>Review permission language while still blocking execution.</p>
         </article>
       </section>
 
@@ -2731,9 +2731,17 @@
               <span class="percent">100%</span>
             </article>
             <article class="phase">
+              <span class="badge done">Done</span>
+              <div>
+                <strong>Phase 285: Controlled Authorization Permission Preflight</strong>
+                <p>Checks founder instruction intent for permission-review eligibility while permission grant, authorization, execution, storage writes, canonical writes, public release, and production remain false.</p>
+              </div>
+              <span class="percent">100%</span>
+            </article>
+            <article class="phase">
               <span class="badge later">Later</span>
               <div>
-                <strong>Phase 285: Production Implementation and Licensed Audio</strong>
+                <strong>Phase 286: Production Implementation and Licensed Audio</strong>
                 <p>Backend storage, account consent, reviewed source records, reviewer operations, audio rights, and launch sequencing after founder direction.</p>
               </div>
               <div class="percent">0%</div>
@@ -2744,11 +2752,11 @@
         <aside class="panel version">
           <div>
             <h2>Version Notes</h2>
-            <div class="version-row"><span>Release</span><strong>v3.2.0 Founder Authorization Instruction Gate</strong></div>
-            <div class="version-row"><span>Previous</span><strong>v3.1.9 Controlled Authorization Review Gate</strong></div>
+            <div class="version-row"><span>Release</span><strong>v3.2.1 Controlled Authorization Permission Preflight</strong></div>
+            <div class="version-row"><span>Previous</span><strong>v3.2.0 Founder Authorization Instruction Gate</strong></div>
             <div class="version-row"><span>Commit</span><strong>See GitHub history</strong></div>
-            <div class="version-row"><span>Goal</span><strong>Record founder instruction intent without granting authorization or execution.</strong></div>
-            <div class="version-row"><span>Status</span><strong>Ready for controlled authorization permission preflight</strong></div>
+            <div class="version-row"><span>Goal</span><strong>Check permission-review eligibility without granting permission, authorization, or execution.</strong></div>
+            <div class="version-row"><span>Status</span><strong>Ready for controlled authorization permission review gate</strong></div>
           </div>
 
           <div class="panel note">
@@ -2759,10 +2767,10 @@
           <div>
             <h2>Next Build Checklist</h2>
             <ul class="checklist">
-              <li><span class="dot"></span><span>Build controlled authorization permission preflight.</span></li>
-              <li><span class="dot"></span><span>Compare founder instruction signal against review readiness.</span></li>
-              <li><span class="dot"></span><span>Keep execution, storage, canonical writes, public release, and production disabled.</span></li>
-              <li><span class="dot"></span><span>Separate permission preflight from actual execution.</span></li>
+              <li><span class="dot"></span><span>Build controlled authorization permission review gate.</span></li>
+              <li><span class="dot"></span><span>Compare permission candidate language against preflight readiness.</span></li>
+              <li><span class="dot"></span><span>Keep permission grant, authorization, execution, storage, canonical writes, public release, and production disabled.</span></li>
+              <li><span class="dot"></span><span>Separate permission review from actual permission grant.</span></li>
             </ul>
           </div>
         </aside>
