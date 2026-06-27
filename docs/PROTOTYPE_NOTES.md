@@ -307,6 +307,13 @@ The v0.7.4 release turns the VedaPath AI homepage into a trusted MVP prototype w
 - Pattern Companion Control Room: Pattern Companion Control Room completes the private local learning layer for VedaPath AI.
 <!-- VEDAPATH PATTERN COMPANION SPRINT NOTES END -->
 <!-- VEDAPATH FOUNDER AUTHORIZATION DECISION GATE NOTES START -->
+## v3.2.7 Founder Permission Execution Authorization Decision Gate
+
+- Adds founderpermissionexecutionauthorizationdecisiongate.html as the founder decision gate after authorization review.
+- Adds a decision-gate data contract and API with draft-only, hold, and reject outcomes.
+- Keeps permission grant, authorization approval, execution, storage writes, canonical writes, public release, and production false.
+- Updates Home, Build, and the authorization review room so the next route stays visible without expanding primary navigation.
+
 ## v3.2.6 Controlled Permission Execution Authorization Review Gate
 
 - Adds controlledpermissionexecutionauthorizationreviewgate.html as the review gate after authorization preflight.
