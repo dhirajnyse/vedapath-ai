@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VedaPath Controlled Execution Packet Draft</title>
+    <link rel="stylesheet" href="assets/vedapath-sprint.css">
+    <link rel="stylesheet" href="assets/vedapath-controlled-execution-packet-draft.css">
+    <link rel="stylesheet" href="assets/vedapath-cohesive.css">
+    <link rel="stylesheet" href="assets/vedapath-polish.css">
+    <link rel="stylesheet" href="assets/vedapath-focus.css">
+  </head>
+  <body>
+    <div class="shell" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top" aria-label="VedaPath AI home">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
+          <div>
+            <strong>VedaPath AI</strong>
+            <span>Controlled execution packet draft</span>
+          </div>
+        </a>
+        <nav class="nav" aria-label="Project links">
+          <a class="link" href="index.html">Home</a>
+          <a class="link" href="build-status.html">Build</a>
+          <a class="link" href="brand/brand-board.html">Brand</a>
+          <a class="link" href="blueprint.html">Blueprint</a>
+          <a class="link" href="citedanswerlab.html">Answers</a>
+          <a class="link active" href="reviewqueuepersistence.html">Review</a>
+          <a class="link" href="mantralenslab.html">Mantra</a>
+          <a class="link" href="lifecompanionlab.html">Life</a>
+          <a class="link" href="conversationcompanionlab.html">Talk</a>
+          <a class="link" href="patterncompanionlab.html">Pattern</a>
+          <a class="link" href="daily.html">Daily</a>
+          <span class="version">v3.1.4 packet draft</span>
+        </nav>
+      </header>
+
+      <main class="workspace" aria-label="VedaPath Controlled Execution Packet Draft workspace">
+        <aside class="panel">
+          <span class="eyebrow">Draft is not authority</span>
+          <h2>Shape the packet before review</h2>
+          <p class="muted">This room turns founder instruction into a draft packet. It cannot authorize, execute, promote, store, migrate, use secrets, publish, or launch.</p>
+          <div class="sprint-list">
+            <div class="sprint-step active"><span class="step-index">1</span><div><strong>Founder</strong><p>Load instruction.</p></div></div>
+            <div class="sprint-step"><span class="step-index">2</span><div><strong>Packet</strong><p>Name the fields.</p></div></div>
+            <div class="sprint-step"><span class="step-index">3</span><div><strong>Review</strong><p>Require gates.</p></div></div>
+            <div class="sprint-step"><span class="step-index">4</span><div><strong>Stop</strong><p>Hold all writes.</p></div></div>
+          </div>
+          <div class="button-row" style="margin-top: 16px;">
+            <a class="button primary" href="founderexecutioninstructiongate.html">Open Founder Gate</a>
+            <a class="button safe" href="promotionexecutionpreflight.html">Open Preflight</a>
+          </div>
+        </aside>
+
+        <section class="panel packet-draft" id="controlledExecutionPacketDraft">
+          <div class="packet-head">
+            <div>
+              <span class="eyebrow">Packet draft</span>
+              <h1>Draft the route. Keep the door closed.</h1>
+              <p class="muted">A ready packet here means the controlled execution packet shape can be reviewed next. It still cannot authorize, execute, promote, store, update canonical records, run migrations, create accounts, use secrets, publish public release, or launch production.</p>
+            </div>
+            <div class="packet-mark"><img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath controlled execution packet mark"></div>
+          </div>
+
+          <section class="packet-layout">
+            <div class="packet-form">
+              <h2>Controlled Execution Packet</h2>
+              <label>Founder instruction packet<textarea id="packetFounderPacket"></textarea></label>
+              <label>Packet state<select id="packetState"></select></label>
+              <label>Packet actor<input id="packetActor" type="text" placeholder="Controlled execution packet drafter"></label>
+              <label>Founder gate id<input id="packetFounderGateId" type="text"></label>
+              <label>Preflight id<input id="packetPreflightId" type="text"></label>
+              <label>Source answer id<input id="packetSourceAnswer" type="text"></label>
+              <label>Source record id<input id="packetSourceRecord" type="text"></label>
+              <label>Source family<input id="packetSourceFamily" type="text"></label>
+              <label>Source context<textarea id="packetSourceContext"></textarea></label>
+              <label>Execution intent<textarea id="packetExecutionIntent"></textarea></label>
+              <label>Readonly execution plan<textarea id="packetReadonlyPlan"></textarea></label>
+              <label>Preconditions<textarea id="packetPreconditions"></textarea></label>
+              <label>Reviewer gates<textarea id="packetReviewerGates"></textarea></label>
+              <label>Rollback plan<textarea id="packetRollbackPlan"></textarea></label>
+              <label>Monitoring plan<textarea id="packetMonitoringPlan"></textarea></label>
+              <label>Stop condition<textarea id="packetStopCondition"></textarea></label>
+              <label>No-write boundary<textarea id="packetNoWriteBoundary"></textarea></label>
+              <label>Production boundary<textarea id="packetProductionBoundary"></textarea></label>
+              <label>Expiry check<textarea id="packetExpiryCheck"></textarea></label>
+              <label>Review question<textarea id="packetReviewQuestion"></textarea></label>
+              <label>Return reason<textarea id="packetReturnReason"></textarea></label>
+              <label>Hold reason<textarea id="packetHoldReason"></textarea></label>
+              <label>Block reason<textarea id="packetBlockReason"></textarea></label>
+              <div class="packet-actions">
+                <button class="button primary" id="runPacketDraft" type="button">Run Draft</button>
+                <button class="button safe" id="loadPacketSample" type="button">Load Sample</button>
+                <button class="button" id="savePacketDraft" type="button">Save Local</button>
+                <button class="button" id="clearPacketDrafts" type="button">Clear Local</button>
+              </div>
+            </div>
+            <div>
+              <section class="packet-result" id="packetResultCard" data-state="Blocked"></section>
+              <section style="margin-top: 10px;">
+                <h2>Packet Scope</h2>
+                <div class="packet-list" id="packetScope"></div>
+              </section>
+            </div>
+          </section>
+
+          <section>
+            <h2>Draft Checks</h2>
+            <div class="packet-rules" id="packetChecks"></div>
+          </section>
+
+          <section class="packet-layout">
+            <div>
+              <div class="packet-actions">
+                <button class="button safe" id="copyPacketDraft" type="button">Copy Draft Packet</button>
+                <a class="button" href="data/vedapath-controlled-execution-packet-draft.json">Open JSON</a>
+              </div>
+              <textarea class="packet-output" id="packetOutput" aria-label="Controlled execution packet draft"></textarea>
+            </div>
+            <div>
+              <h2>Saved Local Drafts</h2>
+              <div class="packet-list" id="packetSaved"></div>
+            </div>
+          </section>
+        </section>
+
+        <aside class="panel tight">
+          <span class="badge green">Packet draft is not execution</span>
+          <h2 style="margin-top: 14px;">Ready to Review, Not Run</h2>
+          <p class="muted">The packet shape becomes visible for review while every operational path stays locked.</p>
+          <div class="progress" aria-label="Controlled execution packet draft progress 100 percent"><div class="bar" style="--score:100%"></div></div>
+          <div class="metric-grid">
+            <div class="metric"><span>Current</span><strong>v3.1.4</strong></div>
+            <div class="metric"><span>States</span><strong>8</strong></div>
+            <div class="metric"><span>Authorized</span><strong>False</strong></div>
+            <div class="metric"><span>Next</span><strong>Review gate</strong></div>
+          </div>
+          <section class="panel tight boundary" style="margin-top: 16px;">
+            <h2>Draft Boundary</h2>
+            <p class="packet-boundary">Draft only. Authorization, execution, founder grant, source promotion, storage writes, canonical writes, migrations, accounts, secrets, public release, and production launch remain false.</p>
+            <p class="muted">This release prepares the controlled execution review gate. It does not execute anything.</p>
+          </section>
+        </aside>
+      </main>
+    </div>
+    <script src="assets/vedapath-controlled-execution-packet-draft.js"></script>
+  </body>
+</html>

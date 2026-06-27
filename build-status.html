@@ -366,7 +366,7 @@
           <a class="link" href="conversationcompanionlab.html">Talk</a>
           <a class="link" href="patterncompanionlab.html">Pattern</a>
           <a class="link" href="daily.html">Daily</a>
-          <span class="version">v3.1.3 founder gate</span>
+          <span class="version">v3.1.4 packet draft</span>
         </nav>
       </header>
 
@@ -378,8 +378,8 @@
       <section class="summary" aria-label="Progress summary">
         <article class="tile">
           <span>Current version</span>
-          <strong>v3.1.3</strong>
-          <p>Founder Execution Instruction Gate: execution preflight packets now require explicit source-specific founder instruction before any controlled execution packet can be drafted.</p>
+          <strong>v3.1.4</strong>
+          <p>Controlled Execution Packet Draft: founder instruction now produces a reviewable packet shape while authorization, execution, storage, public release, and production remain false.</p>
         </article>
         <article class="tile">
           <span>MVP progress</span>
@@ -389,14 +389,14 @@
         </article>
         <article class="tile">
           <span>Full vision progress</span>
-          <strong>95%</strong>
-          <div class="progress" aria-hidden="true"><div class="bar" style="width:95%"></div></div>
-          <p>The trust loop now asks for explicit founder intent while every real write path remains closed.</p>
+          <strong>96%</strong>
+          <div class="progress" aria-hidden="true"><div class="bar" style="width:96%"></div></div>
+          <p>The trust loop now shapes the first execution packet draft while every real write path remains closed.</p>
         </article>
         <article class="tile">
           <span>Next release</span>
-          <strong>Controlled execution packet draft</strong>
-          <p>Draft the first execution packet shape while writes and production stay blocked.</p>
+          <strong>Controlled execution review gate</strong>
+          <p>Review the draft packet before any authorization can be considered.</p>
         </article>
       </section>
 
@@ -2675,9 +2675,17 @@
               <span class="percent">100%</span>
             </article>
             <article class="phase">
+              <span class="badge done">Done</span>
+              <div>
+                <strong>Phase 278: Controlled Execution Packet Draft</strong>
+                <p>Drafts a reviewable controlled execution packet from founder instruction while authorization, execution, storage writes, canonical writes, public release, and production remain false.</p>
+              </div>
+              <span class="percent">100%</span>
+            </article>
+            <article class="phase">
               <span class="badge later">Later</span>
               <div>
-                <strong>Phase 278: Production Implementation and Licensed Audio</strong>
+                <strong>Phase 279: Production Implementation and Licensed Audio</strong>
                 <p>Backend storage, account consent, reviewed source records, reviewer operations, audio rights, and launch sequencing after founder direction.</p>
               </div>
               <div class="percent">0%</div>
@@ -2688,11 +2696,11 @@
         <aside class="panel version">
           <div>
             <h2>Version Notes</h2>
-            <div class="version-row"><span>Release</span><strong>v3.1.3 Founder Execution Instruction Gate</strong></div>
-            <div class="version-row"><span>Previous</span><strong>v3.1.2 Promotion Execution Preflight</strong></div>
+            <div class="version-row"><span>Release</span><strong>v3.1.4 Controlled Execution Packet Draft</strong></div>
+            <div class="version-row"><span>Previous</span><strong>v3.1.3 Founder Execution Instruction Gate</strong></div>
             <div class="version-row"><span>Commit</span><strong>See GitHub history</strong></div>
-            <div class="version-row"><span>Goal</span><strong>Make founder instruction explicit before controlled execution packet drafting.</strong></div>
-            <div class="version-row"><span>Status</span><strong>Ready for controlled execution packet draft</strong></div>
+            <div class="version-row"><span>Goal</span><strong>Draft the first controlled execution packet without enabling execution.</strong></div>
+            <div class="version-row"><span>Status</span><strong>Ready for controlled execution review gate</strong></div>
           </div>
 
           <div class="panel note">
@@ -2703,9 +2711,9 @@
           <div>
             <h2>Next Build Checklist</h2>
             <ul class="checklist">
-              <li><span class="dot"></span><span>Draft controlled execution packet fields.</span></li>
-              <li><span class="dot"></span><span>Keep founder grant and execution disabled.</span></li>
-              <li><span class="dot"></span><span>Require reviewer, rollback, and monitoring evidence.</span></li>
+              <li><span class="dot"></span><span>Build controlled execution review gate.</span></li>
+              <li><span class="dot"></span><span>Keep authorization and execution disabled.</span></li>
+              <li><span class="dot"></span><span>Inspect reviewer, rollback, monitoring, and stop conditions.</span></li>
               <li><span class="dot"></span><span>Preserve storage, canonical, public release, and production blocks.</span></li>
             </ul>
           </div>

@@ -953,6 +953,17 @@ Then open:
 http://127.0.0.1:8088/
 ```
 
+<!-- VEDAPATH CONTROLLED EXECUTION PACKET DRAFT START -->
+## v3.1.4 Controlled Execution Packet Draft
+
+This release drafts the first controlled execution packet from founder instruction while all authorization, execution, promotion, storage, canonical-write, migration, account, secret, public-release, and production flags stay false.
+
+- [Controlled Execution Packet Draft](controlledexecutionpacketdraft.html)
+- [Controlled Execution Packet Draft Notes](docs/CONTROLLED_EXECUTION_PACKET_DRAFT.md)
+- [Controlled Execution Packet Draft Data](data/vedapath-controlled-execution-packet-draft.json)
+
+<!-- VEDAPATH CONTROLLED EXECUTION PACKET DRAFT END -->
+
 <!-- VEDAPATH FOUNDER EXECUTION INSTRUCTION GATE START -->
 ## v3.1.3 Founder Execution Instruction Gate
 

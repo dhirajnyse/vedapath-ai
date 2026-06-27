@@ -4373,6 +4373,22 @@ It should:
 
 Pattern Companion Control Room should never claim diagnosis, therapy, legal advice, medical advice, surveillance, scoring, or spiritual authority.
 <!-- VEDAPATH PATTERN COMPANION SPRINT BLUEPRINT END -->
+<!-- VEDAPATH CONTROLLED EXECUTION PACKET DRAFT BLUEPRINT START -->
+### 297. Controlled Execution Packet Draft
+
+VedaPath should make the first execution packet inspectable before any execution authority exists. The controlled execution packet draft defines the future route while every operational flag remains false.
+
+Core requirements:
+
+- start from a founder instruction ready packet
+- name exact source answer, source record, source family, and founder gate packet
+- define source context, execution intent, readonly plan, preconditions, reviewer gates, rollback, monitoring, stop condition, no-write boundary, production boundary, and expiry
+- permit only a future controlled execution review gate
+- block authorization, execution, source promotion, storage writes, canonical writes, migrations, accounts, secrets, public release, and production
+
+Controlled Execution Packet Draft should never claim execution approval, storage permission, canonical source authority, migration authority, production authority, therapy, ritual instruction, crisis support, or spiritual authority.
+<!-- VEDAPATH CONTROLLED EXECUTION PACKET DRAFT BLUEPRINT END -->
+
 <!-- VEDAPATH FOUNDER EXECUTION INSTRUCTION GATE BLUEPRINT START -->
 ### 296. Founder Execution Instruction Gate
 
