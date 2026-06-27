@@ -1,0 +1,152 @@
+/* VedaPath audit receipt dry run */
+.receipt-app,
+.receipt-head,
+.receipt-layout,
+.receipt-form,
+.receipt-grid,
+.receipt-list,
+.receipt-actions,
+.receipt-rules {
+  display: grid;
+  gap: 10px;
+}
+
+.receipt-app {
+  gap: 16px;
+}
+
+.receipt-head {
+  grid-template-columns: minmax(0, 1fr) 126px;
+  align-items: center;
+}
+
+.receipt-mark {
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff3e4;
+  padding: 10px;
+}
+
+.receipt-mark img {
+  display: block;
+  width: 100%;
+}
+
+.receipt-layout {
+  grid-template-columns: minmax(0, 0.96fr) minmax(0, 1.04fr);
+  align-items: start;
+}
+
+.receipt-form,
+.receipt-card,
+.receipt-result,
+.receipt-packet,
+.receipt-rule {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.receipt-form,
+.receipt-card,
+.receipt-result,
+.receipt-rule {
+  padding: 12px;
+}
+
+.receipt-form label {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.receipt-form input,
+.receipt-form select,
+.receipt-form textarea,
+.receipt-packet {
+  width: 100%;
+  border: 1px solid #efc1aa;
+  border-radius: 8px;
+  background: #fffaf4;
+  color: var(--ink);
+  padding: 10px;
+}
+
+.receipt-form textarea,
+.receipt-packet {
+  min-height: 112px;
+  resize: vertical;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 13px;
+}
+
+.receipt-grid,
+.receipt-rules {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.receipt-card,
+.receipt-result {
+  border-left: 4px solid var(--gold);
+}
+
+.receipt-card.ready,
+.receipt-result[data-state="Audit receipt ready"] {
+  border-left-color: var(--green);
+}
+
+.receipt-card.blocked,
+.receipt-result[data-state="Blocked"],
+.receipt-result[data-state="Return to storage design"],
+.receipt-result[data-state="Audit receipt blocked"] {
+  border-left-color: var(--ochre);
+}
+
+.receipt-card span,
+.receipt-card strong,
+.receipt-rule span,
+.receipt-rule strong {
+  display: block;
+}
+
+.receipt-card span,
+.receipt-rule span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.receipt-actions {
+  grid-template-columns: repeat(4, minmax(0, max-content));
+  align-items: center;
+}
+
+.receipt-list {
+  max-height: 290px;
+  overflow: auto;
+  padding-right: 3px;
+}
+
+@media (max-width: 980px) {
+  .receipt-head,
+  .receipt-layout,
+  .receipt-grid,
+  .receipt-rules {
+    grid-template-columns: 1fr;
+  }
+
+  .receipt-mark {
+    max-width: 150px;
+  }
+}
+
+@media (max-width: 680px) {
+  .receipt-actions,
+  .receipt-actions .button {
+    width: 100%;
+    grid-template-columns: 1fr;
+  }
+}

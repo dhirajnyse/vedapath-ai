@@ -4373,6 +4373,20 @@ It should:
 
 Pattern Companion Control Room should never claim diagnosis, therapy, legal advice, medical advice, surveillance, scoring, or spiritual authority.
 <!-- VEDAPATH PATTERN COMPANION SPRINT BLUEPRINT END -->
+<!-- VEDAPATH AUDIT RECEIPT DRY RUN BLUEPRINT START -->
+### 287. Audit Receipt Dry Run
+
+VedaPath should prove auditability before it stores anything.
+
+Rules:
+
+- Audit receipt dry run can start only from a ready storage design.
+- A ready receipt must include actor, packet id, source answer id, before hash, after hash, reason, rollback plan, replay key, and write boundary.
+- Receipt readiness is not production readiness.
+- Source writes, storage writes, and canonical writes remain false in preview.
+- The next build should dry-run rollback receipts against audit receipts.
+<!-- VEDAPATH AUDIT RECEIPT DRY RUN BLUEPRINT END -->
+
 <!-- VEDAPATH STORAGE DESIGN GATE BLUEPRINT START -->
 ### 286. Storage Design Gate
 

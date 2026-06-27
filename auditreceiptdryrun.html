@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VedaPath Audit Receipt Dry Run</title>
+    <link rel="stylesheet" href="assets/vedapath-sprint.css">
+    <link rel="stylesheet" href="assets/vedapath-audit-receipt-dry-run.css">
+    <link rel="stylesheet" href="assets/vedapath-cohesive.css">
+    <link rel="stylesheet" href="assets/vedapath-polish.css">
+    <link rel="stylesheet" href="assets/vedapath-focus.css">
+  </head>
+  <body>
+    <div class="shell" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top" aria-label="VedaPath AI home">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
+          <div>
+            <strong>VedaPath AI</strong>
+            <span>Audit receipt dry run</span>
+          </div>
+        </a>
+        <nav class="nav" aria-label="Project links">
+          <a class="link" href="index.html">Home</a>
+          <a class="link" href="build-status.html">Build</a>
+          <a class="link" href="brand/brand-board.html">Brand</a>
+          <a class="link" href="blueprint.html">Blueprint</a>
+          <a class="link" href="citedanswerlab.html">Answers</a>
+          <a class="link active" href="reviewqueuepersistence.html">Review</a>
+          <a class="link" href="mantralenslab.html">Mantra</a>
+          <a class="link" href="lifecompanionlab.html">Life</a>
+          <a class="link" href="conversationcompanionlab.html">Talk</a>
+          <a class="link" href="patterncompanionlab.html">Pattern</a>
+          <a class="link" href="daily.html">Daily</a>
+          <span class="version">v3.0.4 audit receipt</span>
+        </nav>
+      </header>
+
+      <main class="workspace" aria-label="VedaPath Audit Receipt Dry Run workspace">
+        <aside class="panel">
+          <span class="eyebrow">Receipt restraint</span>
+          <h2>Prove the receipt before the write</h2>
+          <p class="muted">A storage design can create an audit receipt dry run. The receipt names the future packet, hashes, reason, rollback plan, and replay key while source data remains still.</p>
+          <div class="sprint-list">
+            <div class="sprint-step active"><span class="step-index">1</span><div><strong>Design</strong><p>Read storage gate.</p></div></div>
+            <div class="sprint-step"><span class="step-index">2</span><div><strong>Draft</strong><p>Name packet and hashes.</p></div></div>
+            <div class="sprint-step"><span class="step-index">3</span><div><strong>Check</strong><p>Confirm no write.</p></div></div>
+            <div class="sprint-step"><span class="step-index">4</span><div><strong>Export</strong><p>Copy receipt packet.</p></div></div>
+          </div>
+          <div class="button-row" style="margin-top: 16px;">
+            <a class="button primary" href="storagedesigngate.html">Open Storage Design</a>
+            <a class="button safe" href="releasereviewgate.html">Open Release Review</a>
+          </div>
+        </aside>
+
+        <section class="panel receipt-app" id="auditReceiptDryRun">
+          <div class="receipt-head">
+            <div>
+              <span class="eyebrow">Immutable audit receipt</span>
+              <h1>Dry-run the receipt. Keep the data still.</h1>
+              <p class="muted">This room proves the audit receipt shape for a future source-answer write without executing that write.</p>
+            </div>
+            <div class="receipt-mark"><img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath audit receipt mark"></div>
+          </div>
+
+          <section class="receipt-layout">
+            <div class="receipt-form">
+              <h2>Audit Receipt Dry Run</h2>
+              <label>Storage design packet<textarea id="receiptStorageDesign"></textarea></label>
+              <label>Audit state<select id="receiptAuditState"></select></label>
+              <label>Receipt actor<input id="receiptActor" type="text" placeholder="Audit dry-run reviewer"></label>
+              <label>Receipt note<textarea id="receiptNote"></textarea></label>
+              <label>Future packet id<input id="receiptPacketId" type="text"></label>
+              <label>Source answer id<input id="receiptSourceAnswer" type="text"></label>
+              <label>Source record id<input id="receiptSourceRecord" type="text"></label>
+              <label>Before hash<input id="receiptBeforeHash" type="text"></label>
+              <label>After hash<input id="receiptAfterHash" type="text"></label>
+              <label>Reason<textarea id="receiptReason"></textarea></label>
+              <label>Rollback receipt plan<textarea id="receiptRollbackPlan"></textarea></label>
+              <label>Replay key<input id="receiptReplayKey" type="text"></label>
+              <label>Write boundary<textarea id="receiptBoundary"></textarea></label>
+              <label>Review question<textarea id="receiptReviewQuestion"></textarea></label>
+              <label>Return reason<textarea id="receiptReturnReason"></textarea></label>
+              <label>Block reason<textarea id="receiptBlockReason"></textarea></label>
+              <div class="receipt-actions">
+                <button class="button primary" id="runReceiptDryRun" type="button">Run Receipt</button>
+                <button class="button safe" id="loadReceiptSample" type="button">Load Sample</button>
+                <button class="button" id="saveReceiptDryRun" type="button">Save Local</button>
+                <button class="button" id="clearReceiptDryRuns" type="button">Clear Local</button>
+              </div>
+            </div>
+            <div>
+              <section class="receipt-result" id="receiptResultCard" data-state="Blocked"></section>
+              <section style="margin-top: 10px;">
+                <h2>Storage Design Scope</h2>
+                <div class="receipt-list" id="receiptDesignScope"></div>
+              </section>
+            </div>
+          </section>
+
+          <section>
+            <h2>Receipt Checks</h2>
+            <div class="receipt-rules" id="receiptChecks"></div>
+          </section>
+
+          <section class="receipt-layout">
+            <div>
+              <div class="receipt-actions">
+                <button class="button safe" id="copyReceiptPacket" type="button">Copy Receipt Packet</button>
+                <a class="button" href="data/vedapath-audit-receipt-dry-run.json">Open JSON</a>
+              </div>
+              <textarea class="receipt-packet" id="receiptPacket" aria-label="Audit receipt dry-run packet"></textarea>
+            </div>
+            <div>
+              <h2>Saved Local Receipts</h2>
+              <div class="receipt-list" id="receiptSaved"></div>
+            </div>
+          </section>
+        </section>
+
+        <aside class="panel tight">
+          <span class="badge green">Audit receipt</span>
+          <h2 style="margin-top: 14px;">No-Write Proof</h2>
+          <p class="muted">The receipt is immutable in shape but not a production event. It proves actor, reason, hash placeholders, rollback plan, replay key, and boundary.</p>
+          <div class="progress" aria-label="Audit receipt dry run progress 100 percent"><div class="bar" style="--score:100%"></div></div>
+          <div class="metric-grid">
+            <div class="metric"><span>Current</span><strong>v3.0.4</strong></div>
+            <div class="metric"><span>States</span><strong>5</strong></div>
+            <div class="metric"><span>Writes</span><strong>False</strong></div>
+            <div class="metric"><span>Store</span><strong>Local</strong></div>
+          </div>
+          <section class="panel tight boundary" style="margin-top: 16px;">
+            <h2>Receipt Rule</h2>
+            <p class="muted">No source write is executed. The next release should prove rollback receipts against this dry-run receipt.</p>
+          </section>
+        </aside>
+      </main>
+    </div>
+    <script src="assets/vedapath-audit-receipt-dry-run.js"></script>
+  </body>
+</html>

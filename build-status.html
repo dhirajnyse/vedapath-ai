@@ -366,7 +366,7 @@
           <a class="link" href="conversationcompanionlab.html">Talk</a>
           <a class="link" href="patterncompanionlab.html">Pattern</a>
           <a class="link" href="daily.html">Daily</a>
-          <span class="version">v3.0.3 storage gate</span>
+          <span class="version">v3.0.4 audit receipt</span>
         </nav>
       </header>
 
@@ -378,8 +378,8 @@
       <section class="summary" aria-label="Progress summary">
         <article class="tile">
           <span>Current version</span>
-          <strong>v3.0.3</strong>
-          <p>Storage Design Gate: release-approved packets now define storage schema, immutable audit receipt, rollback receipt, replay rules, and write boundaries.</p>
+          <strong>v3.0.4</strong>
+          <p>Audit Receipt Dry Run: ready storage designs now produce immutable receipt packets with before and after hashes, reason, rollback plan, replay key, and write boundary.</p>
         </article>
         <article class="tile">
           <span>MVP progress</span>
@@ -389,14 +389,14 @@
         </article>
         <article class="tile">
           <span>Full vision progress</span>
-          <strong>85%</strong>
-          <div class="progress" aria-hidden="true"><div class="bar" style="width:85%"></div></div>
-          <p>The trust loop now has a storage design contract before any production write exists.</p>
+          <strong>86%</strong>
+          <div class="progress" aria-hidden="true"><div class="bar" style="width:86%"></div></div>
+          <p>The trust loop now proves the audit receipt shape before any production write exists.</p>
         </article>
         <article class="tile">
           <span>Next release</span>
-          <strong>Immutable audit receipt</strong>
-          <p>Create local audit receipt dry runs for future storage writes while canonical writes remain blocked.</p>
+          <strong>Rollback receipt dry run</strong>
+          <p>Prove restore and discard behavior from audit receipts while canonical writes remain blocked.</p>
         </article>
       </section>
 
@@ -426,7 +426,7 @@
                 <strong>Phase 2: Curated Source Set</strong>
                 <p>First 12 structured source seeds plus passage dossiers with meaning capsules, allowed use, missing fields, review decisions, evaluation checks, release-gate dashboard, reviewer queue cards, source policy routes, and trust ledger records.</p>
               </div>
-              <div class="percent">85%</div>
+              <div class="percent">86%</div>
             </article>
             <article class="phase">
               <span class="badge done">Done</span>
@@ -2595,9 +2595,17 @@
               <span class="percent">100%</span>
             </article>
             <article class="phase">
+              <span class="badge done">Done</span>
+              <div>
+                <strong>Phase 268: Audit Receipt Dry Run</strong>
+                <p>Creates immutable receipt dry-run packets with actor, future packet id, before and after hashes, reason, rollback plan, replay key, and no-write boundary.</p>
+              </div>
+              <span class="percent">100%</span>
+            </article>
+            <article class="phase">
               <span class="badge later">Later</span>
               <div>
-                <strong>Phase 268: Production Implementation and Licensed Audio</strong>
+                <strong>Phase 269: Production Implementation and Licensed Audio</strong>
                 <p>Backend storage, account consent, reviewed source records, reviewer operations, audio rights, and launch sequencing after founder direction.</p>
               </div>
               <div class="percent">0%</div>
@@ -2608,11 +2616,11 @@
         <aside class="panel version">
           <div>
             <h2>Version Notes</h2>
-            <div class="version-row"><span>Release</span><strong>v3.0.3 Storage Design Gate</strong></div>
-            <div class="version-row"><span>Previous</span><strong>v3.0.2 Release Review Gate</strong></div>
+            <div class="version-row"><span>Release</span><strong>v3.0.4 Audit Receipt Dry Run</strong></div>
+            <div class="version-row"><span>Previous</span><strong>v3.0.3 Storage Design Gate</strong></div>
             <div class="version-row"><span>Commit</span><strong>See GitHub history</strong></div>
-            <div class="version-row"><span>Goal</span><strong>Define storage controls before any canonical source write.</strong></div>
-            <div class="version-row"><span>Status</span><strong>Ready for immutable audit receipt dry run</strong></div>
+            <div class="version-row"><span>Goal</span><strong>Prove immutable receipt behavior before any source storage write.</strong></div>
+            <div class="version-row"><span>Status</span><strong>Ready for rollback receipt dry run</strong></div>
           </div>
 
           <div class="panel note">
@@ -2623,9 +2631,9 @@
           <div>
             <h2>Next Build Checklist</h2>
             <ul class="checklist">
-              <li><span class="dot"></span><span>Create audit receipt dry run packets.</span></li>
-              <li><span class="dot"></span><span>Add before and after hash placeholders.</span></li>
-              <li><span class="dot"></span><span>Define receipt replay and rollback proof.</span></li>
+              <li><span class="dot"></span><span>Create rollback receipt dry-run packets.</span></li>
+              <li><span class="dot"></span><span>Link rollback receipt to audit receipt id.</span></li>
+              <li><span class="dot"></span><span>Verify restore and discard proof shape.</span></li>
               <li><span class="dot"></span><span>Keep canonical writes blocked until final founder instruction.</span></li>
             </ul>
           </div>

@@ -953,6 +953,18 @@ Then open:
 http://127.0.0.1:8088/
 ```
 
+<!-- VEDAPATH AUDIT RECEIPT DRY RUN START -->
+## v3.0.4 Audit Receipt Dry Run
+
+This release adds the immutable audit receipt dry-run layer after storage design.
+
+- adds auditreceiptdryrun.html
+- adds data/vedapath-audit-receipt-dry-run.json
+- records actor, future packet id, before hash, after hash, reason, rollback plan, replay key, and write boundary
+- keeps source_write_executed false, storage_write_enabled false, production_ready false, and canonical_write_allowed false
+- sets the next release as rollback receipt dry run
+<!-- VEDAPATH AUDIT RECEIPT DRY RUN END -->
+
 <!-- VEDAPATH STORAGE DESIGN GATE START -->
 ## v3.0.3 Storage Design Gate
 
