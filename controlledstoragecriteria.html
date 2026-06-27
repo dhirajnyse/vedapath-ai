@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VedaPath Controlled Storage Entry Criteria</title>
+    <link rel="stylesheet" href="assets/vedapath-sprint.css">
+    <link rel="stylesheet" href="assets/vedapath-controlled-storage-entry-criteria.css">
+    <link rel="stylesheet" href="assets/vedapath-cohesive.css">
+    <link rel="stylesheet" href="assets/vedapath-polish.css">
+    <link rel="stylesheet" href="assets/vedapath-focus.css">
+  </head>
+  <body>
+    <div class="shell" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top" aria-label="VedaPath AI home">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
+          <div>
+            <strong>VedaPath AI</strong>
+            <span>Controlled storage criteria</span>
+          </div>
+        </a>
+        <nav class="nav" aria-label="Project links">
+          <a class="link" href="index.html">Home</a>
+          <a class="link" href="build-status.html">Build</a>
+          <a class="link" href="brand/brand-board.html">Brand</a>
+          <a class="link" href="blueprint.html">Blueprint</a>
+          <a class="link" href="citedanswerlab.html">Answers</a>
+          <a class="link active" href="reviewqueuepersistence.html">Review</a>
+          <a class="link" href="mantralenslab.html">Mantra</a>
+          <a class="link" href="lifecompanionlab.html">Life</a>
+          <a class="link" href="conversationcompanionlab.html">Talk</a>
+          <a class="link" href="patterncompanionlab.html">Pattern</a>
+          <a class="link" href="daily.html">Daily</a>
+          <span class="version">v3.0.7 storage criteria</span>
+        </nav>
+      </header>
+
+      <main class="workspace" aria-label="VedaPath Controlled Storage Entry Criteria workspace">
+        <aside class="panel">
+          <span class="eyebrow">Storage restraint</span>
+          <h2>Define the gate before touching storage</h2>
+          <p class="muted">This room converts replay proof into explicit entry criteria while every write flag remains false.</p>
+          <div class="sprint-list">
+            <div class="sprint-step active"><span class="step-index">1</span><div><strong>Receipt chain</strong><p>Audit, rollback, replay.</p></div></div>
+            <div class="sprint-step"><span class="step-index">2</span><div><strong>Authority</strong><p>Owner and reviewer rules.</p></div></div>
+            <div class="sprint-step"><span class="step-index">3</span><div><strong>Storage contract</strong><p>Schema and failure states.</p></div></div>
+            <div class="sprint-step"><span class="step-index">4</span><div><strong>Boundary</strong><p>No write yet.</p></div></div>
+          </div>
+          <div class="button-row" style="margin-top: 16px;">
+            <a class="button primary" href="replayreceiptdryrun.html">Open Replay Receipt</a>
+            <a class="button safe" href="storagedesigngate.html">Open Storage Design</a>
+          </div>
+        </aside>
+
+        <section class="panel criteria-app" id="controlledStorageEntryCriteria">
+          <div class="criteria-head">
+            <div>
+              <span class="eyebrow">Entry criteria</span>
+              <h1>Name every gate. Keep every write off.</h1>
+              <p class="muted">The product can become stronger only when storage entry has a visible checklist, visible blockers, and a founder boundary.</p>
+            </div>
+            <div class="criteria-mark"><img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath controlled storage mark"></div>
+          </div>
+
+          <section class="criteria-layout">
+            <div class="criteria-form">
+              <h2>Criteria Packet</h2>
+              <label>Replay receipt packet<textarea id="criteriaReplayReceipt"></textarea></label>
+              <label>Criteria state<select id="criteriaState"></select></label>
+              <label>Criteria actor<input id="criteriaActor" type="text" placeholder="Storage criteria reviewer"></label>
+              <label>Criteria note<textarea id="criteriaNote"></textarea></label>
+              <label>Replay receipt id<input id="criteriaReplayId" type="text"></label>
+              <label>Rollback receipt id<input id="criteriaRollbackId" type="text"></label>
+              <label>Audit receipt id<input id="criteriaAuditId" type="text"></label>
+              <label>Source answer id<input id="criteriaSourceAnswer" type="text"></label>
+              <label>Source record id<input id="criteriaSourceRecord" type="text"></label>
+              <label>Source family<input id="criteriaSourceFamily" type="text"></label>
+              <label>Immutable audit receipt rule<textarea id="criteriaAuditRule"></textarea></label>
+              <label>Rollback receipt rule<textarea id="criteriaRollbackRule"></textarea></label>
+              <label>Replay receipt rule<textarea id="criteriaReplayRule"></textarea></label>
+              <label>Source owner scope<textarea id="criteriaOwnerScope"></textarea></label>
+              <label>Reviewer identity rule<textarea id="criteriaReviewerIdentity"></textarea></label>
+              <label>Schema contract rule<textarea id="criteriaSchemaContract"></textarea></label>
+              <label>Consent and deletion rule<textarea id="criteriaConsentDelete"></textarea></label>
+              <label>Failure-state rule<textarea id="criteriaFailureStates"></textarea></label>
+              <label>Rollback rehearsal rule<textarea id="criteriaRollbackRehearsal"></textarea></label>
+              <label>Founder instruction rule<textarea id="criteriaFounderInstruction"></textarea></label>
+              <label>Entry boundary<textarea id="criteriaEntryBoundary"></textarea></label>
+              <label>Review question<textarea id="criteriaReviewQuestion"></textarea></label>
+              <label>Return reason<textarea id="criteriaReturnReason"></textarea></label>
+              <label>Block reason<textarea id="criteriaBlockReason"></textarea></label>
+              <div class="criteria-actions">
+                <button class="button primary" id="runCriteriaCheck" type="button">Run Criteria</button>
+                <button class="button safe" id="loadCriteriaSample" type="button">Load Sample</button>
+                <button class="button" id="saveCriteriaPacket" type="button">Save Local</button>
+                <button class="button" id="clearCriteriaPackets" type="button">Clear Local</button>
+              </div>
+            </div>
+            <div>
+              <section class="criteria-result" id="criteriaResultCard" data-state="Blocked"></section>
+              <section style="margin-top: 10px;">
+                <h2>Replay Proof Scope</h2>
+                <div class="criteria-list" id="criteriaReplayScope"></div>
+              </section>
+            </div>
+          </section>
+
+          <section>
+            <h2>Entry Checks</h2>
+            <div class="criteria-rules" id="criteriaChecks"></div>
+          </section>
+
+          <section class="criteria-layout">
+            <div>
+              <div class="criteria-actions">
+                <button class="button safe" id="copyCriteriaPacket" type="button">Copy Criteria Packet</button>
+                <a class="button" href="data/vedapath-controlled-storage-entry-criteria.json">Open JSON</a>
+              </div>
+              <textarea class="criteria-packet" id="criteriaPacket" aria-label="Controlled storage entry criteria packet"></textarea>
+            </div>
+            <div>
+              <h2>Saved Local Criteria</h2>
+              <div class="criteria-list" id="criteriaSaved"></div>
+            </div>
+          </section>
+        </section>
+
+        <aside class="panel tight">
+          <span class="badge green">No-write gate</span>
+          <h2 style="margin-top: 14px;">Storage Entry Is Still Closed</h2>
+          <p class="muted">This release defines the criteria. It does not grant controlled storage entry or execute a write.</p>
+          <div class="progress" aria-label="Controlled storage criteria progress 100 percent"><div class="bar" style="--score:100%"></div></div>
+          <div class="metric-grid">
+            <div class="metric"><span>Current</span><strong>v3.0.7</strong></div>
+            <div class="metric"><span>Criteria</span><strong>10</strong></div>
+            <div class="metric"><span>Writes</span><strong>False</strong></div>
+            <div class="metric"><span>Next</span><strong>Entry dry run</strong></div>
+          </div>
+          <section class="panel tight boundary" style="margin-top: 16px;">
+            <h2>Founder Boundary</h2>
+            <p class="muted">Final founder instruction is required before any real storage entry. This preview deliberately does not grant it.</p>
+          </section>
+        </aside>
+      </main>
+    </div>
+    <script src="assets/vedapath-controlled-storage-entry-criteria.js"></script>
+  </body>
+</html>

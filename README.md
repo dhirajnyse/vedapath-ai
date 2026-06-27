@@ -953,6 +953,19 @@ Then open:
 http://127.0.0.1:8088/
 ```
 
+<!-- VEDAPATH CONTROLLED STORAGE ENTRY CRITERIA START -->
+## v3.0.7 Controlled Storage Entry Criteria
+
+This release adds the controlled storage entry criteria layer after replay receipts.
+
+- adds controlledstoragecriteria.html
+- adds data/vedapath-controlled-storage-entry-criteria.json
+- requires audit, rollback, and replay receipt chain
+- defines source-owner scope, reviewer identity, schema contract, consent and deletion rules, failure states, rollback rehearsal, founder instruction rule, and entry boundary
+- keeps controlled_storage_entry_allowed false, source_write_executed false, storage_write_enabled false, production_ready false, and canonical_write_allowed false
+- sets the next release as controlled storage entry dry run
+<!-- VEDAPATH CONTROLLED STORAGE ENTRY CRITERIA END -->
+
 <!-- VEDAPATH REPLAY RECEIPT DRY RUN START -->
 ## v3.0.6 Replay Receipt Dry Run
 

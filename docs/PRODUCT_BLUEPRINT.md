@@ -4373,6 +4373,20 @@ It should:
 
 Pattern Companion Control Room should never claim diagnosis, therapy, legal advice, medical advice, surveillance, scoring, or spiritual authority.
 <!-- VEDAPATH PATTERN COMPANION SPRINT BLUEPRINT END -->
+<!-- VEDAPATH CONTROLLED STORAGE ENTRY CRITERIA BLUEPRINT START -->
+### 290. Controlled Storage Entry Criteria
+
+VedaPath should define the gate before it attempts any storage entry.
+
+Rules:
+
+- Entry criteria can start only from a ready replay receipt.
+- A ready criteria packet must include receipt chain, owner scope, reviewer identity, schema contract, consent and deletion rules, failure states, rollback rehearsal, founder instruction, and no-write entry boundary.
+- Criteria readiness is not controlled storage entry.
+- Source writes, storage writes, and canonical writes remain false in preview.
+- The next build should run a no-write storage-entry dry run from this criteria packet.
+<!-- VEDAPATH CONTROLLED STORAGE ENTRY CRITERIA BLUEPRINT END -->
+
 <!-- VEDAPATH REPLAY RECEIPT DRY RUN BLUEPRINT START -->
 ### 289. Replay Receipt Dry Run
 

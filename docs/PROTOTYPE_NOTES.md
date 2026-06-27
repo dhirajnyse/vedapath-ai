@@ -306,6 +306,20 @@ The v0.7.4 release turns the VedaPath AI homepage into a trusted MVP prototype w
 - Mobile Pattern: Mobile Pattern keeps the learning loop usable where calm moments actually happen.
 - Pattern Companion Control Room: Pattern Companion Control Room completes the private local learning layer for VedaPath AI.
 <!-- VEDAPATH PATTERN COMPANION SPRINT NOTES END -->
+<!-- VEDAPATH CONTROLLED STORAGE ENTRY CRITERIA NOTES START -->
+## v3.0.7 Controlled Storage Entry Criteria
+
+This phase turns replay proof into a visible storage-entry checklist.
+
+Action taken:
+
+- Added controlled storage entry criteria schema.
+- Added criteria states for draft, review, ready, return, and blocked.
+- Required receipt chain, no-write proof, source-owner scope, reviewer identity, schema contract, consent, deletion, failure states, rollback rehearsal, founder instruction, and entry boundary.
+- Added copyable criteria packets and local criteria history.
+- Preserved canonical source data and kept all write flags false.
+<!-- VEDAPATH CONTROLLED STORAGE ENTRY CRITERIA NOTES END -->
+
 <!-- VEDAPATH REPLAY RECEIPT DRY RUN NOTES START -->
 ## v3.0.6 Replay Receipt Dry Run
 
