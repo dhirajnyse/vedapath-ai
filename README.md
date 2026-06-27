@@ -954,6 +954,14 @@ http://127.0.0.1:8088/
 ```
 
 <!-- VEDAPATH FOUNDER AUTHORIZATION DECISION GATE START -->
+## v3.1.9 Controlled Authorization Review Gate
+
+Controlled Authorization Review Gate reviews the authorization draft packet for founder-instruction readiness while keeping authorization, execution, storage writes, canonical writes, public release, and production false.
+
+- [Controlled Authorization Review Gate](controlledauthorizationreviewgate.html)
+- [Controlled Authorization Review Gate Notes](docs/CONTROLLED_AUTHORIZATION_REVIEW_GATE.md)
+- [Controlled Authorization Review Gate Data](data/vedapath-controlled-authorization-review-gate.json)
+
 ## v3.1.8 Controlled Execution Packet Authorization Draft
 
 Controlled execution packet authorization draft turns founder decision posture into a reviewable draft packet while keeping authorization, execution, storage writes, canonical writes, public release, and production disabled.

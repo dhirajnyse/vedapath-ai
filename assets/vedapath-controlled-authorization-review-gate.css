@@ -1,0 +1,239 @@
+/* VedaPath controlled authorization review gate */
+body.auth-review-page .topbar,
+body.auth-review-page header.topbar {
+  height: auto !important;
+  min-height: var(--vp-header-height, 74px);
+  padding: 0 !important;
+}
+
+body.auth-review-page .nav {
+  gap: 5px;
+  overflow: visible;
+  flex-wrap: nowrap;
+}
+
+body.auth-review-page .nav .link,
+body.auth-review-page .nav a {
+  padding-left: 9px;
+  padding-right: 9px;
+}
+
+body.auth-review-page .nav .version {
+  margin-left: 6px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+body.auth-review-page main.workspace {
+  grid-template-columns: minmax(210px, 0.72fr) minmax(0, 1.7fr) minmax(230px, 0.8fr);
+  gap: 18px;
+}
+
+body.auth-review-page main.workspace > aside.panel:first-child,
+body.auth-review-page main.workspace > aside.panel.tight {
+  position: static;
+  max-height: none;
+  overflow: visible;
+}
+
+.auth-review,
+.auth-review-head,
+.auth-review-layout,
+.auth-review-form,
+.auth-review-grid,
+.auth-review-list,
+.auth-review-actions,
+.auth-review-rules {
+  display: grid;
+  gap: 10px;
+}
+
+.auth-review { gap: 16px; }
+
+.auth-review-head {
+  grid-template-columns: minmax(0, 1fr) 126px;
+  align-items: center;
+}
+
+.auth-review-mark {
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff3e4;
+  padding: 10px;
+}
+
+.auth-review-mark img {
+  display: block;
+  width: 100%;
+}
+
+.auth-review-layout {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: start;
+}
+
+.auth-review-form,
+.auth-review-card,
+.auth-review-result,
+.auth-review-output,
+.auth-review-rule {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.auth-review-form,
+.auth-review-card,
+.auth-review-result,
+.auth-review-rule {
+  padding: 12px;
+}
+
+.auth-review-form label {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.auth-review-form input,
+.auth-review-form select,
+.auth-review-form textarea,
+.auth-review-output {
+  width: 100%;
+  border: 1px solid #efc1aa;
+  border-radius: 8px;
+  background: #fffaf4;
+  color: var(--ink);
+  padding: 10px;
+}
+
+.auth-review-form textarea,
+.auth-review-output {
+  min-height: 96px;
+  resize: vertical;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 13px;
+}
+
+.auth-review-grid,
+.auth-review-rules {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.auth-review-card,
+.auth-review-result {
+  border-left: 4px solid var(--gold);
+}
+
+.auth-review-card.ready,
+.auth-review-result[data-state="Authorization review ready"] {
+  border-left-color: var(--green);
+}
+
+.auth-review-card.blocked,
+.auth-review-result[data-state^="Blocked"],
+.auth-review-result[data-state="Return to authorization draft"],
+.auth-review-result[data-state="Review hold"],
+.auth-review-result[data-state="Authorization still blocked"],
+.auth-review-result[data-state="Execution blocked"],
+.auth-review-result[data-state="Production forbidden"],
+.auth-review-result[data-state="Review expired"] {
+  border-left-color: var(--ochre);
+}
+
+.auth-review-card span,
+.auth-review-card strong,
+.auth-review-rule span,
+.auth-review-rule strong {
+  display: block;
+}
+
+.auth-review-card strong {
+  font-size: 18px;
+  line-height: 1.18;
+  overflow-wrap: anywhere;
+}
+
+.auth-review-card span,
+.auth-review-rule span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.auth-review-result strong {
+  display: block;
+  font-size: 24px;
+}
+
+.auth-review-result ul {
+  margin: 10px 0 0;
+  padding-left: 18px;
+}
+
+.auth-review-actions {
+  grid-template-columns: repeat(2, minmax(0, max-content));
+  justify-content: start;
+}
+
+.auth-review-list {
+  max-height: 320px;
+  overflow: auto;
+}
+
+.auth-review-output {
+  min-height: 260px;
+}
+
+.auth-review-boundary {
+  border: 1px dashed rgba(168, 62, 18, 0.38);
+  border-radius: 8px;
+  background: #fff7ea;
+  padding: 12px;
+  font-weight: 850;
+}
+
+@media (max-width: 980px) {
+  body.auth-review-page .topbar,
+  body.auth-review-page header.topbar {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 12px 0 !important;
+  }
+
+  body.auth-review-page .nav {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  body.auth-review-page main.workspace {
+    grid-template-columns: 1fr;
+  }
+
+  body.auth-review-page main.workspace > section.auth-review {
+    order: 1;
+  }
+
+  body.auth-review-page main.workspace > aside.panel:first-child {
+    order: 2;
+  }
+
+  body.auth-review-page main.workspace > aside.panel.tight {
+    order: 3;
+  }
+
+  .auth-review-layout,
+  .auth-review-head,
+  .auth-review-grid,
+  .auth-review-rules {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .auth-review-actions { grid-template-columns: 1fr; }
+}
