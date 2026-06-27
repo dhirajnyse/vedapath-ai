@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VedaPath Implementation Authorization Dry Run</title>
+    <link rel="stylesheet" href="assets/vedapath-sprint.css">
+    <link rel="stylesheet" href="assets/vedapath-implementation-authorization-dry-run.css">
+    <link rel="stylesheet" href="assets/vedapath-cohesive.css">
+    <link rel="stylesheet" href="assets/vedapath-polish.css">
+    <link rel="stylesheet" href="assets/vedapath-focus.css">
+  </head>
+  <body>
+    <div class="shell" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top" aria-label="VedaPath AI home">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
+          <div>
+            <strong>VedaPath AI</strong>
+            <span>Implementation authorization dry run</span>
+          </div>
+        </a>
+        <nav class="nav" aria-label="Project links">
+          <a class="link" href="index.html">Home</a>
+          <a class="link" href="build-status.html">Build</a>
+          <a class="link" href="brand/brand-board.html">Brand</a>
+          <a class="link" href="blueprint.html">Blueprint</a>
+          <a class="link" href="citedanswerlab.html">Answers</a>
+          <a class="link active" href="reviewqueuepersistence.html">Review</a>
+          <a class="link" href="mantralenslab.html">Mantra</a>
+          <a class="link" href="lifecompanionlab.html">Life</a>
+          <a class="link" href="conversationcompanionlab.html">Talk</a>
+          <a class="link" href="patterncompanionlab.html">Pattern</a>
+          <a class="link" href="daily.html">Daily</a>
+          <span class="version">v3.1.0 auth dry run</span>
+        </nav>
+      </header>
+
+      <main class="workspace" aria-label="VedaPath Implementation Authorization Dry Run workspace">
+        <aside class="panel">
+          <span class="eyebrow">Execution stays closed</span>
+          <h2>Dry-run the implementation path</h2>
+          <p class="muted">This room turns the founder gate into a review-only implementation packet. It cannot execute storage.</p>
+          <div class="sprint-list">
+            <div class="sprint-step active"><span class="step-index">1</span><div><strong>Gate</strong><p>Load founder gate.</p></div></div>
+            <div class="sprint-step"><span class="step-index">2</span><div><strong>Scope</strong><p>Name operator limits.</p></div></div>
+            <div class="sprint-step"><span class="step-index">3</span><div><strong>Runbook</strong><p>Plan only.</p></div></div>
+            <div class="sprint-step"><span class="step-index">4</span><div><strong>Hold</strong><p>Block execution.</p></div></div>
+          </div>
+          <div class="button-row" style="margin-top: 16px;">
+            <a class="button primary" href="founderstorageinstructiongate.html">Open Founder Gate</a>
+            <a class="button safe" href="controlledstorageentrydryrun.html">Open Entry Dry Run</a>
+          </div>
+        </aside>
+
+        <section class="panel auth-app" id="implementationAuthorizationDryRun">
+          <div class="auth-head">
+            <div>
+              <span class="eyebrow">Authorization dry run</span>
+              <h1>Prepare implementation. Forbid execution.</h1>
+              <p class="muted">A ready packet here means implementation can be reviewed. It still cannot write storage, run migrations, create accounts, or touch canonical source data.</p>
+            </div>
+            <div class="auth-mark"><img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath implementation authorization mark"></div>
+          </div>
+
+          <section class="auth-layout">
+            <div class="auth-form">
+              <h2>Authorization Dry Run Packet</h2>
+              <label>Founder gate packet<textarea id="authFounderPacket"></textarea></label>
+              <label>Authorization state<select id="authState"></select></label>
+              <label>Authorization actor<input id="authActor" type="text" placeholder="Implementation reviewer"></label>
+              <label>Authorization note<textarea id="authNote"></textarea></label>
+              <label>Founder gate id<input id="authGateId" type="text"></label>
+              <label>Entry dry-run id<input id="authEntryId" type="text"></label>
+              <label>Criteria packet id<input id="authCriteriaId" type="text"></label>
+              <label>Replay receipt id<input id="authReplayId" type="text"></label>
+              <label>Rollback receipt id<input id="authRollbackId" type="text"></label>
+              <label>Audit receipt id<input id="authAuditId" type="text"></label>
+              <label>Source answer id<input id="authSourceAnswer" type="text"></label>
+              <label>Source record id<input id="authSourceRecord" type="text"></label>
+              <label>Source family<input id="authSourceFamily" type="text"></label>
+              <label>Implementation scope<textarea id="authImplementationScope"></textarea></label>
+              <label>Operator scope<textarea id="authOperatorScope"></textarea></label>
+              <label>Allowed actions<textarea id="authAllowedActions"></textarea></label>
+              <label>Forbidden actions<textarea id="authForbiddenActions"></textarea></label>
+              <label>Runtime boundary<textarea id="authRuntimeBoundary"></textarea></label>
+              <label>Rollback required<textarea id="authRollbackRequired"></textarea></label>
+              <label>Monitoring required<textarea id="authMonitoringRequired"></textarea></label>
+              <label>Founder recheck<textarea id="authFounderRecheck"></textarea></label>
+              <label>Execution hold<textarea id="authExecutionHold"></textarea></label>
+              <label>Review question<textarea id="authReviewQuestion"></textarea></label>
+              <label>Return reason<textarea id="authReturnReason"></textarea></label>
+              <label>Hold reason<textarea id="authHoldReason"></textarea></label>
+              <label>Block reason<textarea id="authBlockReason"></textarea></label>
+              <div class="auth-actions">
+                <button class="button primary" id="runAuthDryRun" type="button">Run Dry Run</button>
+                <button class="button safe" id="loadAuthSample" type="button">Load Sample</button>
+                <button class="button" id="saveAuthDryRun" type="button">Save Local</button>
+                <button class="button" id="clearAuthDryRuns" type="button">Clear Local</button>
+              </div>
+            </div>
+            <div>
+              <section class="auth-result" id="authResultCard" data-state="Blocked"></section>
+              <section style="margin-top: 10px;">
+                <h2>Authorization Scope</h2>
+                <div class="auth-list" id="authScope"></div>
+              </section>
+            </div>
+          </section>
+
+          <section>
+            <h2>Authorization Checks</h2>
+            <div class="auth-rules" id="authChecks"></div>
+          </section>
+
+          <section class="auth-layout">
+            <div>
+              <div class="auth-actions">
+                <button class="button safe" id="copyAuthPacket" type="button">Copy Dry Run Packet</button>
+                <a class="button" href="data/vedapath-implementation-authorization-dry-run.json">Open JSON</a>
+              </div>
+              <textarea class="auth-packet" id="authPacket" aria-label="Implementation authorization dry-run packet"></textarea>
+            </div>
+            <div>
+              <h2>Saved Local Dry Runs</h2>
+              <div class="auth-list" id="authSaved"></div>
+            </div>
+          </section>
+        </section>
+
+        <aside class="panel tight">
+          <span class="badge green">Dry run is not authorization</span>
+          <h2 style="margin-top: 14px;">Execution Cannot Sneak In</h2>
+          <p class="muted">The implementation route can be prepared for review, but it cannot run, migrate, create accounts, use secrets, or write source data.</p>
+          <div class="progress" aria-label="Implementation authorization dry run progress 100 percent"><div class="bar" style="--score:100%"></div></div>
+          <div class="metric-grid">
+            <div class="metric"><span>Current</span><strong>v3.1.0</strong></div>
+            <div class="metric"><span>States</span><strong>7</strong></div>
+            <div class="metric"><span>Execution</span><strong>False</strong></div>
+            <div class="metric"><span>Next</span><strong>Promotion hold</strong></div>
+          </div>
+          <section class="panel tight boundary" style="margin-top: 16px;">
+            <h2>Execution Hold</h2>
+            <p class="auth-boundary">Do not execute storage writes, production writes, migrations, account creation, or canonical source changes in this release.</p>
+            <p class="muted">This release prepares the next review lane. It does not open the lane.</p>
+          </section>
+        </aside>
+      </main>
+    </div>
+    <script src="assets/vedapath-implementation-authorization-dry-run.js"></script>
+  </body>
+</html>

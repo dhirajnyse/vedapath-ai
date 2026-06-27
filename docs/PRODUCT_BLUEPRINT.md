@@ -4373,6 +4373,23 @@ It should:
 
 Pattern Companion Control Room should never claim diagnosis, therapy, legal advice, medical advice, surveillance, scoring, or spiritual authority.
 <!-- VEDAPATH PATTERN COMPANION SPRINT BLUEPRINT END -->
+<!-- VEDAPATH IMPLEMENTATION AUTHORIZATION DRY RUN BLUEPRINT START -->
+### 293. Implementation Authorization Dry Run
+
+VedaPath should prove implementation can be prepared without being allowed to execute. The implementation authorization dry run turns founder instruction into a review-only packet.
+
+Core requirements:
+
+- start from a founder instruction gate ready packet
+- keep founder review separate from execution authority
+- define implementation scope and operator scope
+- permit planning, schema confirmation, rollback checklist, monitoring checklist, and review handoff only
+- forbid storage writes, migrations, account creation, canonical source edits, production flags, and secret use
+- require rollback, monitoring, founder recheck, and execution hold text
+
+Implementation Authorization Dry Run should never claim production storage, implementation execution, canonical source writes, migration execution, account creation, secret handling, launch approval, therapy, ritual instruction, crisis support, or spiritual authority.
+<!-- VEDAPATH IMPLEMENTATION AUTHORIZATION DRY RUN BLUEPRINT END -->
+
 <!-- VEDAPATH FOUNDER STORAGE INSTRUCTION GATE BLUEPRINT START -->
 ### 292. Founder Storage Instruction Gate
 

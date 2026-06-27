@@ -953,6 +953,17 @@ Then open:
 http://127.0.0.1:8088/
 ```
 
+<!-- VEDAPATH IMPLEMENTATION AUTHORIZATION DRY RUN START -->
+## v3.1.0 Implementation Authorization Dry Run
+
+This release dry-runs the implementation authorization packet after founder instruction gate.
+
+- [Implementation Authorization Dry Run](implementationauthorizationdryrun.html)
+- [Implementation Authorization Dry Run Notes](docs/IMPLEMENTATION_AUTHORIZATION_DRY_RUN.md)
+- [Implementation Authorization Dry Run Data](data/vedapath-implementation-authorization-dry-run.json)
+
+<!-- VEDAPATH IMPLEMENTATION AUTHORIZATION DRY RUN END -->
+
 <!-- VEDAPATH FOUNDER STORAGE INSTRUCTION GATE START -->
 ## v3.0.9 Founder Storage Instruction Gate
 

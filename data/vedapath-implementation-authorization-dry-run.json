@@ -1,0 +1,169 @@
+{
+  "schema_version": "implementation-authorization-dry-run-v1",
+  "release": "v3.1.0",
+  "generated_at": "2026-06-27T00:00:00.000Z",
+  "title": "Implementation Authorization Dry Run",
+  "summary": "Dry-runs the implementation authorization packet after founder instruction gate while keeping execution, storage writes, canonical writes, migrations, accounts, and production launch disabled.",
+  "previous_release": "v3.0.9 Founder Storage Instruction Gate",
+  "source": {
+    "founder_gate_release": "v3.0.9",
+    "founder_gate_schema": "founder-storage-instruction-gate-v1",
+    "entry_dry_run_id": "storage-entry-dry-run-sample-steady-action-bg-2-48",
+    "criteria_packet_id": "criteria-packet-sample-entry-dry-run",
+    "source_answer_id": "answer-steady-action-bg-2-48",
+    "source_record_id": "bg-2-48-steadiness",
+    "source_family": "Bhagavad Gita | Smriti",
+    "entry_storage_target": "Controlled source-answer storage preview.",
+    "entry_schema_route": "Draft packet to audit receipt to rollback receipt to replay receipt to criteria packet to founder instruction gate; canonical records stay unchanged."
+  },
+  "authorization_states": [
+    "Draft authorization",
+    "Needs implementation review",
+    "Authorization dry run ready",
+    "Return to founder gate",
+    "Implementation hold",
+    "Implementation blocked",
+    "Execution forbidden"
+  ],
+  "required_by_state": {
+    "Draft authorization": [
+      "founder_instruction_gate_id",
+      "source_answer_id",
+      "implementation_scope"
+    ],
+    "Needs implementation review": [
+      "review_question",
+      "implementation_scope",
+      "operator_scope"
+    ],
+    "Authorization dry run ready": [
+      "allowed_actions",
+      "forbidden_actions",
+      "runtime_boundary",
+      "rollback_required",
+      "monitoring_required",
+      "founder_recheck",
+      "execution_hold"
+    ],
+    "Return to founder gate": [
+      "return_reason"
+    ],
+    "Implementation hold": [
+      "hold_reason"
+    ],
+    "Implementation blocked": [
+      "block_reason"
+    ],
+    "Execution forbidden": [
+      "block_reason",
+      "execution_hold"
+    ]
+  },
+  "authorization_checks": [
+    {
+      "check": "Founder gate ready",
+      "rule": "Authorization dry run can only start from a founder instruction gate ready packet whose next gate is implementation authorization dry run."
+    },
+    {
+      "check": "No founder execution grant",
+      "rule": "Founder instruction remains a review gate; founder_instruction_granted stays false and cannot be treated as execution authority."
+    },
+    {
+      "check": "Implementation scope",
+      "rule": "Scope must name the future implementation packet, named source-answer record, review-only path, and no production or canonical write."
+    },
+    {
+      "check": "Operator scope",
+      "rule": "Operator scope must stay single-packet, preview-only, and without shared credentials or account creation."
+    },
+    {
+      "check": "Allowed actions",
+      "rule": "Allowed actions are planning, schema confirmation, rollback checklist, monitoring checklist, and review handoff only."
+    },
+    {
+      "check": "Forbidden actions",
+      "rule": "No storage writes, migration runs, account creation, canonical source edits, production flag changes, or secret use."
+    },
+    {
+      "check": "Runtime boundary",
+      "rule": "All write, production, and implementation execution flags remain false."
+    },
+    {
+      "check": "Rollback and monitoring",
+      "rule": "Rollback receipt, before_hash restore path, audit receipt, failure review, and founder recheck must be explicit."
+    }
+  ],
+  "sample_founder_gate": {
+    "schema_version": "founder-storage-instruction-gate-v1",
+    "release": "v3.0.9",
+    "founder_instruction_gate_id": "founder-storage-instruction-gate-sample-steady-action-bg-2-48",
+    "instruction_status": "Founder instruction gate ready",
+    "founder_instruction_gate_ready": true,
+    "founder_instruction_granted": false,
+    "production_ready": false,
+    "controlled_storage_entry_allowed": false,
+    "canonical_write_allowed": false,
+    "storage_write_enabled": false,
+    "source_write_executed": false,
+    "actual_storage_write_executed": false,
+    "next_gate_required": "Implementation authorization dry run",
+    "entry_dry_run_id": "storage-entry-dry-run-sample-steady-action-bg-2-48",
+    "criteria_packet_id": "criteria-packet-sample-entry-dry-run",
+    "replay_receipt_id": "replay-receipt-sample-storage-entry",
+    "rollback_receipt_id": "rollback-receipt-sample-replay",
+    "audit_receipt_id": "audit-receipt-sample-rollback",
+    "source_answer_id": "answer-steady-action-bg-2-48",
+    "source_record_id": "bg-2-48-steadiness",
+    "source_family": "Bhagavad Gita | Smriti",
+    "instruction_actor": "Founder review",
+    "instruction_note": "Define founder instruction requirements without granting storage entry.",
+    "instruction_scope": "Founder may authorize only preparation of controlled storage entry review for the named source-answer packet; this is not broad production release.",
+    "allowed_action": "Allow a future storage-entry implementation packet to be prepared for review; do not execute writes in this preview.",
+    "forbidden_actions": "No canonical source edits, no account creation, no migration execution, no rights-sensitive text changes, and no production launch.",
+    "required_phrase": "I authorize VedaPath to prepare the named source-answer packet for controlled storage entry review; do not execute production writes yet.",
+    "evidence_required": "Entry dry run passed, criteria packet ready, receipt chain present, rollback simulation present, and source-owner scope present.",
+    "execution_boundary": "Instruction gate only; controlled_storage_entry_allowed remains false, storage_write_enabled remains false, canonical_write_allowed remains false, source_write_executed remains false, actual_storage_write_executed remains false, and production_ready remains false.",
+    "revocation_rule": "Founder can revoke before storage execution; revocation returns the packet to entry dry run.",
+    "created_at": "2026-06-27T00:00:00.000Z"
+  },
+  "sample_authorization": {
+    "authorization_state": "Authorization dry run ready",
+    "authorization_actor": "Implementation reviewer",
+    "authorization_note": "Prepare an implementation authorization dry run after founder instruction gate; do not execute storage.",
+    "founder_instruction_gate_id": "founder-storage-instruction-gate-sample-steady-action-bg-2-48",
+    "entry_dry_run_id": "storage-entry-dry-run-sample-steady-action-bg-2-48",
+    "criteria_packet_id": "criteria-packet-sample-entry-dry-run",
+    "replay_receipt_id": "replay-receipt-sample-storage-entry",
+    "rollback_receipt_id": "rollback-receipt-sample-replay",
+    "audit_receipt_id": "audit-receipt-sample-rollback",
+    "source_answer_id": "answer-steady-action-bg-2-48",
+    "source_record_id": "bg-2-48-steadiness",
+    "source_family": "Bhagavad Gita | Smriti",
+    "implementation_scope": "Prepare a future implementation packet for the named source-answer controlled storage entry review; no canonical write, no storage write, and no production release.",
+    "operator_scope": "Single named packet, preview environment only, no shared credentials, no account creation, and no durable production execution.",
+    "allowed_actions": "Plan implementation steps, confirm schema route, prepare rollback checklist, prepare monitoring checklist, and produce a review handoff packet.",
+    "forbidden_actions": "No storage write, no migration run, no account creation, no canonical source edit, no production flag change, and no secret use.",
+    "runtime_boundary": "Authorization dry run only; implementation_execution_allowed remains false, controlled_storage_entry_allowed remains false, storage_write_enabled remains false, canonical_write_allowed remains false, source_write_executed remains false, actual_storage_write_executed remains false, and production_ready remains false.",
+    "rollback_required": "Rollback receipt must remain present; before_hash restore path must be verified before any future execution packet can be considered.",
+    "monitoring_required": "Audit receipt, failure review path, reviewer handoff, and execution stop condition must be visible before any future execution packet.",
+    "founder_recheck": "Founder gate must be rechecked before execution; this dry run does not convert founder review into storage authority.",
+    "execution_hold": "Do not execute storage writes, production writes, migrations, account creation, or canonical source changes in this release.",
+    "next_gate": "Source promotion hold review",
+    "review_question": "",
+    "return_reason": "",
+    "hold_reason": "",
+    "block_reason": ""
+  },
+  "boundary": {
+    "implementation_authorized": false,
+    "implementation_execution_allowed": false,
+    "founder_instruction_granted": false,
+    "controlled_storage_entry_allowed": false,
+    "storage_write_enabled": false,
+    "canonical_write_allowed": false,
+    "source_write_executed": false,
+    "actual_storage_write_executed": false,
+    "production_ready": false,
+    "next_gate_required": "Source promotion hold review"
+  }
+}
