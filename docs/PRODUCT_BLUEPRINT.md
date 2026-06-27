@@ -4373,6 +4373,20 @@ It should:
 
 Pattern Companion Control Room should never claim diagnosis, therapy, legal advice, medical advice, surveillance, scoring, or spiritual authority.
 <!-- VEDAPATH PATTERN COMPANION SPRINT BLUEPRINT END -->
+<!-- VEDAPATH REVIEW IDENTITY GATE BLUEPRINT START -->
+### 279. Reviewer Identity and Audit Gate
+
+VedaPath should never treat review as anonymous authority.
+
+Rules:
+
+- Every review action needs a role and named reviewer.
+- Accepting a local review decision remains proposal-only.
+- Production source updates need durable identity, permission, audit history, and second review where required.
+- Specialist reviewers can recommend; founder review can decide product readiness.
+- The next build should convert accepted audit packets into draft source update proposals, not automatic changes.
+<!-- VEDAPATH REVIEW IDENTITY GATE BLUEPRINT END -->
+
 <!-- VEDAPATH REVIEW QUEUE PERSISTENCE BLUEPRINT START -->
 ### 278. Reviewer Queue Persistence
 

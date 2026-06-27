@@ -1,0 +1,197 @@
+/* VedaPath reviewer identity gate */
+.identity-app,
+.identity-head,
+.identity-layout,
+.identity-roles,
+.identity-form,
+.identity-grid,
+.identity-result,
+.identity-rules,
+.identity-audit,
+.identity-actions {
+  display: grid;
+  gap: 10px;
+}
+
+.identity-app {
+  gap: 16px;
+}
+
+.identity-head {
+  grid-template-columns: minmax(0, 1fr) 126px;
+  align-items: center;
+}
+
+.identity-mark {
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff3e4;
+  padding: 10px;
+}
+
+.identity-mark img {
+  display: block;
+  width: 100%;
+}
+
+.identity-layout {
+  grid-template-columns: minmax(220px, 0.76fr) minmax(0, 1.24fr);
+  align-items: start;
+}
+
+.identity-roles {
+  max-height: 680px;
+  overflow: auto;
+  padding-right: 3px;
+}
+
+.identity-role,
+.identity-field,
+.identity-result,
+.identity-rule,
+.identity-audit,
+.identity-packet {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.identity-role,
+.identity-field,
+.identity-result,
+.identity-rule,
+.identity-audit {
+  padding: 12px;
+}
+
+.identity-role {
+  border-left: 4px solid var(--gold);
+}
+
+.identity-role.active {
+  border-color: #f09f79;
+  border-left-color: var(--bhagwa);
+  background: #fff0e7;
+}
+
+.identity-role span,
+.identity-role strong,
+.identity-field span,
+.identity-field strong,
+.identity-rule span,
+.identity-rule strong,
+.identity-audit span,
+.identity-audit strong {
+  display: block;
+}
+
+.identity-role span,
+.identity-field span,
+.identity-rule span,
+.identity-audit span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.identity-role strong,
+.identity-field strong,
+.identity-rule strong,
+.identity-audit strong {
+  margin-top: 4px;
+}
+
+.identity-form {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 253, 248, 0.82);
+  padding: 12px;
+}
+
+.identity-form label {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.identity-form input,
+.identity-form select,
+.identity-form textarea,
+.identity-packet {
+  width: 100%;
+  border: 1px solid #efc1aa;
+  border-radius: 8px;
+  background: #fffaf4;
+  color: var(--ink);
+  padding: 10px;
+}
+
+.identity-form textarea {
+  min-height: 82px;
+  margin-top: 0;
+}
+
+.identity-grid,
+.identity-rules {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.identity-grid .wide {
+  grid-column: 1 / -1;
+}
+
+.identity-actions {
+  grid-template-columns: repeat(3, minmax(0, max-content));
+  align-items: center;
+}
+
+.identity-result {
+  border-left: 4px solid var(--gold);
+}
+
+.identity-result[data-gate="Blocked"] {
+  border-left-color: var(--ochre);
+}
+
+.identity-result[data-gate="Proposal only"] {
+  border-left-color: var(--bhagwa);
+}
+
+.identity-result[data-gate="Allowed"] {
+  border-left-color: var(--green);
+}
+
+.identity-packet {
+  min-height: 220px;
+  resize: vertical;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 13px;
+}
+
+@media (max-width: 980px) {
+  .identity-head,
+  .identity-layout,
+  .identity-grid,
+  .identity-rules {
+    grid-template-columns: 1fr;
+  }
+
+  .identity-mark {
+    max-width: 150px;
+  }
+
+  .identity-roles {
+    max-height: none;
+  }
+}
+
+@media (max-width: 680px) {
+  .identity-actions,
+  .identity-actions .button {
+    width: 100%;
+    grid-template-columns: 1fr;
+  }
+}

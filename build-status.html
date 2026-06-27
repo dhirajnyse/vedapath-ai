@@ -366,7 +366,7 @@
           <a class="link" href="conversationcompanionlab.html">Talk</a>
           <a class="link" href="patterncompanionlab.html">Pattern</a>
           <a class="link" href="daily.html">Daily</a>
-          <span class="version">v2.9.5 queue</span>
+          <span class="version">v2.9.6 identity</span>
         </nav>
       </header>
 
@@ -378,8 +378,8 @@
       <section class="summary" aria-label="Progress summary">
         <article class="tile">
           <span>Current version</span>
-          <strong>v2.9.5</strong>
-          <p>Reviewer Queue Persistence: review records now keep local state, owner, notes, audit events, and export snapshots.</p>
+          <strong>v2.9.6</strong>
+          <p>Reviewer Identity Gate: roles, action authority, second-review rules, and copyable audit packets now sit beside the review queue.</p>
         </article>
         <article class="tile">
           <span>MVP progress</span>
@@ -389,14 +389,14 @@
         </article>
         <article class="tile">
           <span>Full vision progress</span>
-          <strong>73%</strong>
-          <div class="progress" aria-hidden="true"><div class="bar" style="width:73%"></div></div>
-          <p>The trust loop now has local queue persistence and an audit-shaped export contract.</p>
+          <strong>75%</strong>
+          <div class="progress" aria-hidden="true"><div class="bar" style="width:75%"></div></div>
+          <p>The trust loop now has queue persistence plus reviewer identity and audit gates.</p>
         </article>
         <article class="tile">
           <span>Next release</span>
-          <strong>Reviewer identity and audit gate</strong>
-          <p>Add reviewer roles, decision authority, and immutable-audit requirements for production.</p>
+          <strong>Source update proposal bridge</strong>
+          <p>Connect accepted review packets to draft source-record updates without publishing automatically.</p>
         </article>
       </section>
 
@@ -2531,9 +2531,17 @@
               <span class="percent">100%</span>
             </article>
             <article class="phase">
+              <span class="badge done">Done</span>
+              <div>
+                <strong>Phase 260: Reviewer Identity and Audit Gate</strong>
+                <p>Adds reviewer roles, action authority, second-review requirements, and copyable audit packets for queue decisions.</p>
+              </div>
+              <span class="percent">100%</span>
+            </article>
+            <article class="phase">
               <span class="badge later">Later</span>
               <div>
-                <strong>Phase 260: Production Implementation and Licensed Audio</strong>
+                <strong>Phase 261: Production Implementation and Licensed Audio</strong>
                 <p>Backend storage, account consent, reviewed source records, reviewer operations, audio rights, and launch sequencing after founder direction.</p>
               </div>
               <div class="percent">0%</div>
@@ -2544,11 +2552,11 @@
         <aside class="panel version">
           <div>
             <h2>Version Notes</h2>
-            <div class="version-row"><span>Release</span><strong>v2.9.5 Reviewer Queue Persistence</strong></div>
-            <div class="version-row"><span>Previous</span><strong>v2.9.4 Reviewer Ticket Bridge</strong></div>
+            <div class="version-row"><span>Release</span><strong>v2.9.6 Reviewer Identity and Audit Gate</strong></div>
+            <div class="version-row"><span>Previous</span><strong>v2.9.5 Reviewer Queue Persistence</strong></div>
             <div class="version-row"><span>Commit</span><strong>See GitHub history</strong></div>
-            <div class="version-row"><span>Goal</span><strong>Make reviewer decisions persist with history.</strong></div>
-            <div class="version-row"><span>Status</span><strong>Ready for reviewer identity and audit gate</strong></div>
+            <div class="version-row"><span>Goal</span><strong>Define who can approve review work and what evidence is required.</strong></div>
+            <div class="version-row"><span>Status</span><strong>Ready for source update proposal bridge</strong></div>
           </div>
 
           <div class="panel note">
@@ -2559,10 +2567,10 @@
           <div>
             <h2>Next Build Checklist</h2>
             <ul class="checklist">
-              <li><span class="dot"></span><span>Add reviewer identity and role boundaries.</span></li>
-              <li><span class="dot"></span><span>Define immutable production audit requirements.</span></li>
-              <li><span class="dot"></span><span>Require two-step approval for accepted source updates.</span></li>
-              <li><span class="dot"></span><span>Keep queue records separate from answer rendering.</span></li>
+              <li><span class="dot"></span><span>Turn accepted audit packets into draft source updates.</span></li>
+              <li><span class="dot"></span><span>Require source diff preview before save.</span></li>
+              <li><span class="dot"></span><span>Keep source proposals separate from canonical records.</span></li>
+              <li><span class="dot"></span><span>Preserve the simple review queue as the entry point.</span></li>
             </ul>
           </div>
         </aside>

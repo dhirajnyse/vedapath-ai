@@ -1,0 +1,236 @@
+{
+  "product": "VedaPath AI",
+  "release": "v2.9.6",
+  "status": "reviewer identity and audit gate v1",
+  "schema_version": "review-identity-gate-v1",
+  "queue_dataset": "data/vedapath-review-queue-persistence.json",
+  "ticket_bridge_dataset": "data/vedapath-review-ticket-bridge.json",
+  "local_identity_store": "vedapath-review-identity-profile-v1",
+  "warning": "This is a reviewer identity and audit prototype only. It is not production authentication, scholar approval, canonical source validation, therapy, ritual instruction, emergency support, or spiritual authority.",
+  "production_boundary": "A local review decision can be allowed, but an accepted source update remains proposal-only until production identity, permissions, second review, durable storage, and immutable audit history exist.",
+  "roles": [
+    {
+      "id": "founder-review",
+      "label": "Founder review",
+      "purpose": "Final product judgment before a reviewed change affects the trusted MVP.",
+      "authority": [
+        "claim",
+        "block",
+        "accept",
+        "close",
+        "request-second-review"
+      ],
+      "cannot": [
+        "silently-rewrite-source",
+        "override-rights-gap"
+      ],
+      "evidence_focus": [
+        "decision note",
+        "source trace",
+        "boundary note",
+        "second reviewer when accepting"
+      ]
+    },
+    {
+      "id": "source-reviewer",
+      "label": "Source reviewer",
+      "purpose": "Checks citation, source family, rights, and whether the passage supports the answer.",
+      "authority": [
+        "claim",
+        "block",
+        "recommend-accept",
+        "request-second-review"
+      ],
+      "cannot": [
+        "approve-interpretation-alone",
+        "publish-final-answer"
+      ],
+      "evidence_focus": [
+        "citation",
+        "source family",
+        "rights state",
+        "passage fit"
+      ]
+    },
+    {
+      "id": "retrieval-reviewer",
+      "label": "Retrieval reviewer",
+      "purpose": "Checks whether retrieval found the right record and ranked it for the right reason.",
+      "authority": [
+        "claim",
+        "block",
+        "recommend-accept"
+      ],
+      "cannot": [
+        "approve-source-record",
+        "rewrite-boundary"
+      ],
+      "evidence_focus": [
+        "query intent",
+        "candidate id",
+        "retrieval reason",
+        "miss pattern"
+      ]
+    },
+    {
+      "id": "mantra-reviewer",
+      "label": "Mantra reviewer",
+      "purpose": "Checks Sanskrit, transliteration, verse boundaries, and recitation caution.",
+      "authority": [
+        "claim",
+        "block",
+        "recommend-accept"
+      ],
+      "cannot": [
+        "give-ritual-instruction",
+        "approve-modern-claim"
+      ],
+      "evidence_focus": [
+        "verse line",
+        "transliteration",
+        "word boundary",
+        "chant caution"
+      ]
+    },
+    {
+      "id": "interpretation-reviewer",
+      "label": "Interpretation reviewer",
+      "purpose": "Checks commentary boundaries and whether multiple views are separated honestly.",
+      "authority": [
+        "claim",
+        "block",
+        "recommend-accept"
+      ],
+      "cannot": [
+        "flatten-schools",
+        "claim-unanimity"
+      ],
+      "evidence_focus": [
+        "interpretation layer",
+        "tradition note",
+        "disagreement note",
+        "overclaim boundary"
+      ]
+    },
+    {
+      "id": "source-intake",
+      "label": "Source intake",
+      "purpose": "Prepares candidate records before they enter review.",
+      "authority": [
+        "claim",
+        "block"
+      ],
+      "cannot": [
+        "accept",
+        "close",
+        "publish-final-answer"
+      ],
+      "evidence_focus": [
+        "record completeness",
+        "missing fields",
+        "rights note",
+        "source owner"
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "id": "claim",
+      "label": "Claim review",
+      "meaning": "A reviewer takes responsibility for checking a record.",
+      "required_fields": [
+        "reviewer_name",
+        "role_id"
+      ],
+      "requires_second_review": false,
+      "production_status": "allowed-local-action"
+    },
+    {
+      "id": "block",
+      "label": "Block change",
+      "meaning": "The reviewer stops progress until a gap is resolved.",
+      "required_fields": [
+        "reviewer_name",
+        "role_id",
+        "decision_note"
+      ],
+      "requires_second_review": false,
+      "production_status": "allowed-local-action"
+    },
+    {
+      "id": "recommend-accept",
+      "label": "Recommend accept",
+      "meaning": "A specialist says the record is ready for founder or second review.",
+      "required_fields": [
+        "reviewer_name",
+        "role_id",
+        "evidence_note",
+        "boundary_note"
+      ],
+      "requires_second_review": true,
+      "production_status": "proposal-only"
+    },
+    {
+      "id": "accept",
+      "label": "Accept update",
+      "meaning": "The decision may inform a source record update after production gates exist.",
+      "required_fields": [
+        "reviewer_name",
+        "role_id",
+        "decision_note",
+        "evidence_note",
+        "boundary_note"
+      ],
+      "requires_second_review": true,
+      "production_status": "proposal-only"
+    },
+    {
+      "id": "close",
+      "label": "Close ticket",
+      "meaning": "No active work remains, with a visible closure reason.",
+      "required_fields": [
+        "reviewer_name",
+        "role_id",
+        "decision_note"
+      ],
+      "requires_second_review": false,
+      "production_status": "allowed-local-action"
+    }
+  ],
+  "audit_packet_fields": [
+    "schema_version",
+    "release",
+    "decision_id",
+    "queue_id",
+    "ticket_id",
+    "action_id",
+    "role_id",
+    "reviewer_name",
+    "second_reviewer",
+    "decision_note",
+    "evidence_note",
+    "boundary_note",
+    "gate_status",
+    "missing",
+    "warnings",
+    "created_at"
+  ],
+  "production_rules": {
+    "two_reviewer_acceptance": true,
+    "immutable_audit_required": true,
+    "durable_identity_required": true,
+    "source_update_requires_ticket": true,
+    "accepted_local_decision_is_proposal": true
+  },
+  "sample_decision": {
+    "queue_id": "queue-direct-source-candidate",
+    "ticket_id": "ticket-direct-source-candidate",
+    "action_id": "accept",
+    "role_id": "founder-review",
+    "reviewer_name": "Founder review",
+    "second_reviewer": "",
+    "decision_note": "Accept only as a proposal until the second reviewer and durable audit exist.",
+    "evidence_note": "Bhagavad Gita 2.48 is cited as the source candidate and the boundary is reflection support, not authority.",
+    "boundary_note": "Do not turn local review into final source truth."
+  }
+}

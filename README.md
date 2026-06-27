@@ -953,6 +953,19 @@ Then open:
 http://127.0.0.1:8088/
 ```
 
+<!-- VEDAPATH REVIEW IDENTITY GATE START -->
+## v2.9.6 Reviewer Identity and Audit Gate
+
+This release adds a governance layer beside the review queue.
+
+- adds `data/vedapath-review-identity-gate.json`
+- adds `reviewidentitygate.html`
+- defines reviewer roles and action authority
+- validates required decision, evidence, and boundary fields
+- keeps accepted local decisions proposal-only until production identity, second review, durable storage, and immutable audit history exist
+- exports copyable audit packets for future source-update proposals
+<!-- VEDAPATH REVIEW IDENTITY GATE END -->
+
 <!-- VEDAPATH REVIEW QUEUE PERSISTENCE START -->
 ## v2.9.5 Reviewer Queue Persistence
 

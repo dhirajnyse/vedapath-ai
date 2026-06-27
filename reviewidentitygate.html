@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VedaPath Reviewer Identity Gate</title>
+    <link rel="stylesheet" href="assets/vedapath-sprint.css">
+    <link rel="stylesheet" href="assets/vedapath-review-identity-gate.css">
+    <link rel="stylesheet" href="assets/vedapath-cohesive.css">
+    <link rel="stylesheet" href="assets/vedapath-polish.css">
+    <link rel="stylesheet" href="assets/vedapath-focus.css">
+  </head>
+  <body>
+    <div class="shell" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top" aria-label="VedaPath AI home">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
+          <div>
+            <strong>VedaPath AI</strong>
+            <span>Reviewer identity</span>
+          </div>
+        </a>
+        <nav class="nav" aria-label="Project links">
+          <a class="link" href="index.html">Home</a>
+          <a class="link" href="build-status.html">Build</a>
+          <a class="link" href="brand/brand-board.html">Brand</a>
+          <a class="link" href="blueprint.html">Blueprint</a>
+          <a class="link" href="citedanswerlab.html">Answers</a>
+          <a class="link active" href="reviewqueuepersistence.html">Review</a>
+          <a class="link" href="mantralenslab.html">Mantra</a>
+          <a class="link" href="lifecompanionlab.html">Life</a>
+          <a class="link" href="conversationcompanionlab.html">Talk</a>
+          <a class="link" href="patterncompanionlab.html">Pattern</a>
+          <a class="link" href="daily.html">Daily</a>
+          <span class="version">v2.9.6 identity</span>
+        </nav>
+      </header>
+
+      <main class="workspace" aria-label="VedaPath Reviewer Identity Gate workspace">
+        <aside class="panel">
+          <span class="eyebrow">Review authority</span>
+          <h2>Identity before approval</h2>
+          <p class="muted">The queue stores review work. This gate asks whether a decision has the right role, evidence, boundary, and production caution.</p>
+          <div class="sprint-list">
+            <div class="sprint-step active"><span class="step-index">1</span><div><strong>Role</strong><p>Name who is reviewing.</p></div></div>
+            <div class="sprint-step"><span class="step-index">2</span><div><strong>Action</strong><p>Choose the decision type.</p></div></div>
+            <div class="sprint-step"><span class="step-index">3</span><div><strong>Evidence</strong><p>Keep the source visible.</p></div></div>
+            <div class="sprint-step"><span class="step-index">4</span><div><strong>Audit</strong><p>Copy a decision packet.</p></div></div>
+          </div>
+          <div class="button-row" style="margin-top: 16px;">
+            <a class="button safe" href="reviewqueuepersistence.html">Open Queue</a>
+            <a class="button" href="data/vedapath-review-identity-gate.json">Open JSON</a>
+          </div>
+        </aside>
+
+        <section class="panel identity-app" id="reviewIdentityGate">
+          <div class="identity-head">
+            <div>
+              <span class="eyebrow">Reviewer identity gate</span>
+              <h1>Approval needs a named boundary.</h1>
+              <p class="muted">This prototype turns local queue decisions into audit-shaped packets. It allows some actions locally, but keeps accepted updates proposal-only until production identity and second review exist.</p>
+            </div>
+            <div class="identity-mark"><img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath identity mark"></div>
+          </div>
+
+          <section class="identity-layout">
+            <div>
+              <h2>Reviewer Roles</h2>
+              <div class="identity-roles" id="identityRoles"></div>
+            </div>
+            <div class="identity-form">
+              <h2>Decision Gate</h2>
+              <div class="identity-grid">
+                <label>Reviewer name<input id="gateReviewer" type="text" placeholder="Founder review"></label>
+                <label>Reviewer role<select id="gateRole"></select></label>
+                <label>Action<select id="gateAction"></select></label>
+                <label>Second reviewer<input id="gateSecondReviewer" type="text" placeholder="Required before production accept"></label>
+                <label class="wide">Decision note<textarea id="gateDecisionNote"></textarea></label>
+                <label class="wide">Evidence note<textarea id="gateEvidenceNote"></textarea></label>
+                <label class="wide">Boundary note<textarea id="gateBoundaryNote"></textarea></label>
+              </div>
+              <div class="identity-actions">
+                <button class="button primary" id="validateGate" type="button">Validate Gate</button>
+                <button class="button safe" id="saveGateProfile" type="button">Save Identity</button>
+                <button class="button" id="loadGateSample" type="button">Load Sample</button>
+              </div>
+              <section class="identity-result" id="gateResult" data-gate="Blocked"></section>
+              <div class="identity-actions">
+                <button class="button safe" id="copyGatePacket" type="button">Copy Audit Packet</button>
+              </div>
+              <textarea class="identity-packet" id="gatePacket" aria-label="Identity gate audit packet"></textarea>
+            </div>
+          </section>
+
+          <section>
+            <h2>Production Rules</h2>
+            <div class="identity-rules" id="gateRules"></div>
+          </section>
+        </section>
+
+        <aside class="panel tight">
+          <span class="badge green">Governance phase</span>
+          <h2 style="margin-top: 14px;">Audit Boundary</h2>
+          <p class="muted">Local identity is useful for product learning, but it is not authentication. Production must know who acted, what they saw, and why the decision changed state.</p>
+          <div class="progress" aria-label="Reviewer identity gate progress 100 percent"><div class="bar" style="--score:100%"></div></div>
+          <div class="metric-grid">
+            <div class="metric"><span>Current</span><strong>v2.9.6</strong></div>
+            <div class="metric"><span>Roles</span><strong>6</strong></div>
+            <div class="metric"><span>Actions</span><strong>5</strong></div>
+            <div class="metric"><span>Accept</span><strong>2-step</strong></div>
+          </div>
+          <section class="panel tight boundary" style="margin-top: 16px;">
+            <h2>Production Rule</h2>
+            <p class="muted">No accepted local review should rewrite a source record until it has durable identity, second review when needed, and immutable audit history.</p>
+          </section>
+        </aside>
+      </main>
+    </div>
+    <script src="assets/vedapath-review-identity-gate.js"></script>
+  </body>
+</html>

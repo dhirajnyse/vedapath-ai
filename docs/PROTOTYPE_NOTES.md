@@ -306,6 +306,20 @@ The v0.7.4 release turns the VedaPath AI homepage into a trusted MVP prototype w
 - Mobile Pattern: Mobile Pattern keeps the learning loop usable where calm moments actually happen.
 - Pattern Companion Control Room: Pattern Companion Control Room completes the private local learning layer for VedaPath AI.
 <!-- VEDAPATH PATTERN COMPANION SPRINT NOTES END -->
+<!-- VEDAPATH REVIEW IDENTITY GATE NOTES START -->
+## v2.9.6 Reviewer Identity and Audit Gate
+
+This phase makes review decisions more accountable without adding production authentication yet.
+
+Action taken:
+
+- Added reviewer role and authority schema.
+- Added a focused identity gate room.
+- Added a browser validator for claim, block, recommend, accept, and close decisions.
+- Added copyable audit packets.
+- Preserved Review navigation on the queue so the main workflow stays simple.
+<!-- VEDAPATH REVIEW IDENTITY GATE NOTES END -->
+
 <!-- VEDAPATH REVIEW QUEUE PERSISTENCE NOTES START -->
 ## v2.9.5 Reviewer Queue Persistence
 
