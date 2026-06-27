@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VedaPath Controlled Authorization Permission Review Gate</title>
+    <link rel="stylesheet" href="assets/vedapath-sprint.css">
+    <link rel="stylesheet" href="assets/vedapath-cohesive.css">
+    <link rel="stylesheet" href="assets/vedapath-polish.css">
+    <link rel="stylesheet" href="assets/vedapath-focus.css">
+    <link rel="stylesheet" href="assets/vedapath-controlled-authorization-permission-review-gate.css">
+  </head>
+  <body class="permission-review-page">
+    <div class="shell" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top" aria-label="VedaPath AI home">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
+          <div>
+            <strong>VedaPath AI</strong>
+            <span>Permission review</span>
+          </div>
+        </a>
+        <nav class="nav" aria-label="Project links">
+          <a class="link" href="index.html">Home</a>
+          <a class="link" href="build-status.html">Build</a>
+          <a class="link" href="brand/brand-board.html">Brand</a>
+          <a class="link" href="blueprint.html">Blueprint</a>
+          <a class="link" href="citedanswerlab.html">Answers</a>
+          <a class="link active" href="reviewqueuepersistence.html">Review</a>
+          <a class="link" href="mantralenslab.html">Mantra</a>
+          <a class="link" href="lifecompanionlab.html">Life</a>
+          <a class="link" href="conversationcompanionlab.html">Talk</a>
+          <a class="link" href="patterncompanionlab.html">Pattern</a>
+          <a class="link" href="daily.html">Daily</a>
+          <span class="version">v3.2.2 permission review</span>
+        </nav>
+      </header>
+
+      <main class="workspace" aria-label="VedaPath Controlled Authorization Permission Review Gate workspace">
+        <aside class="panel">
+          <span class="eyebrow">Review is not permission</span>
+          <h2>Review the words. Grant nothing.</h2>
+          <p class="muted">This room reviews permission-candidate language from preflight. It cannot grant permission, authorize, execute, store, publish, or launch.</p>
+          <div class="sprint-list">
+            <div class="sprint-step active"><span class="step-index">1</span><div><strong>Preflight</strong><p>Load candidate.</p></div></div>
+            <div class="sprint-step"><span class="step-index">2</span><div><strong>Review</strong><p>Check words.</p></div></div>
+            <div class="sprint-step"><span class="step-index">3</span><div><strong>Boundary</strong><p>Keep grant false.</p></div></div>
+            <div class="sprint-step"><span class="step-index">4</span><div><strong>Founder</strong><p>Prepare only.</p></div></div>
+          </div>
+          <div class="button-row" style="margin-top: 16px;">
+            <a class="button primary" href="controlledauthorizationpermissionpreflight.html">Open Permission Preflight</a>
+            <a class="button safe" href="founderauthorizationinstructiongate.html">Open Founder Instruction</a>
+          </div>
+        </aside>
+
+        <section class="panel permission-review" id="controlledAuthorizationPermissionReviewGate">
+          <div class="permission-review-head">
+            <div>
+              <span class="eyebrow">Permission review gate</span>
+              <h1>Review permission language. Grant nothing.</h1>
+              <p class="muted">A ready review here means the packet can move to a founder permission decision gate. It still cannot grant permission, authorize execution, run code, promote sources, store data, update canonical records, use secrets, publish public release, or launch production.</p>
+            </div>
+            <div class="permission-review-mark"><img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath permission review mark"></div>
+          </div>
+
+          <section class="permission-review-layout">
+            <div class="permission-review-form">
+              <h2>Controlled Permission Review</h2>
+              <label>Permission preflight packet<textarea id="permissionReviewPreflightPacket"></textarea></label>
+              <label>Review state<select id="permissionReviewState"></select></label>
+              <label>Review actor<input id="permissionReviewActor" type="text" placeholder="Controlled permission reviewer"></label>
+              <label>Reviewer name<input id="permissionReviewReviewer" type="text" placeholder="Reviewer sample"></label>
+              <label>Permission review gate id<input id="permissionReviewId" type="text"></label>
+              <label>Permission preflight id<input id="permissionReviewPreflightId" type="text"></label>
+              <label>Founder instruction gate id<input id="permissionReviewInstructionGateId" type="text"></label>
+              <label>Authorization review gate id<input id="permissionReviewAuthorizationReviewGateId" type="text"></label>
+              <label>Authorization draft id<input id="permissionReviewDraftId" type="text"></label>
+              <label>Founder decision gate id<input id="permissionReviewDecisionGateId" type="text"></label>
+              <label>Source answer id<input id="permissionReviewSourceAnswer" type="text"></label>
+              <label>Source record id<input id="permissionReviewSourceRecord" type="text"></label>
+              <label>Source family<input id="permissionReviewSourceFamily" type="text"></label>
+              <label>Review scope<textarea id="permissionReviewScopeText"></textarea></label>
+              <label>Permission review language<textarea id="permissionReviewLanguage"></textarea></label>
+              <label>Review rationale<textarea id="permissionReviewRationale"></textarea></label>
+              <label>Review evidence summary<textarea id="permissionReviewSummary"></textarea></label>
+              <label>Source lock<textarea id="permissionReviewSourceLock"></textarea></label>
+              <label>Non-permission review clause<textarea id="permissionReviewBoundary"></textarea></label>
+              <label>Risk acknowledgment<textarea id="permissionReviewRisk"></textarea></label>
+              <label>Rollback condition<textarea id="permissionReviewRollback"></textarea></label>
+              <label>Monitoring condition<textarea id="permissionReviewMonitoring"></textarea></label>
+              <label>Stop condition<textarea id="permissionReviewStopCondition"></textarea></label>
+              <label>Expiry check<textarea id="permissionReviewExpiry"></textarea></label>
+              <label>Production boundary<textarea id="permissionReviewProductionBoundary"></textarea></label>
+              <label>Clarification question<textarea id="permissionReviewClarification"></textarea></label>
+              <label>Return reason<textarea id="permissionReviewReturnReason"></textarea></label>
+              <label>Hold reason<textarea id="permissionReviewHoldReason"></textarea></label>
+              <label>Block reason<textarea id="permissionReviewBlockReason"></textarea></label>
+              <div class="permission-review-actions">
+                <button class="button primary" id="runPermissionReview" type="button">Run Review</button>
+                <button class="button safe" id="loadPermissionReviewSample" type="button">Load Sample</button>
+                <button class="button" id="savePermissionReview" type="button">Save Local</button>
+                <button class="button" id="clearPermissionReviews" type="button">Clear Local</button>
+              </div>
+            </div>
+            <div>
+              <section class="permission-review-result" id="permissionReviewResultCard" data-state="Blocked"></section>
+              <section style="margin-top: 10px;">
+                <h2>Review Scope</h2>
+                <div class="permission-review-list" id="permissionReviewScope"></div>
+              </section>
+            </div>
+          </section>
+
+          <section>
+            <h2>Review Checks</h2>
+            <div class="permission-review-rules" id="permissionReviewChecks"></div>
+          </section>
+
+          <section class="permission-review-layout">
+            <div>
+              <div class="permission-review-actions">
+                <button class="button safe" id="copyPermissionReview" type="button">Copy Review Packet</button>
+                <a class="button" href="data/vedapath-controlled-authorization-permission-review-gate.json">Open JSON</a>
+              </div>
+              <textarea class="permission-review-output" id="permissionReviewOutput" aria-label="Controlled authorization permission review gate"></textarea>
+            </div>
+            <div>
+              <h2>Saved Local Reviews</h2>
+              <div class="permission-review-list" id="permissionReviewSaved"></div>
+            </div>
+          </section>
+        </section>
+
+        <aside class="panel tight">
+          <span class="badge green">Review is not grant</span>
+          <h2 style="margin-top: 14px;">Review Ready, Permission False</h2>
+          <p class="muted">The review can prepare a founder permission decision while every operational path stays locked.</p>
+          <div class="progress" aria-label="Permission review gate progress 100 percent"><div class="bar" style="--score:100%"></div></div>
+          <div class="metric-grid">
+            <div class="metric"><span>Current</span><strong>v3.2.2</strong></div>
+            <div class="metric"><span>States</span><strong>9</strong></div>
+            <div class="metric"><span>Permission</span><strong>False</strong></div>
+            <div class="metric"><span>Next</span><strong>Founder</strong></div>
+          </div>
+          <section class="panel tight boundary" style="margin-top: 16px;">
+            <h2>Review Boundary</h2>
+            <p class="permission-review-boundary">Permission review signal only. Permission grant, authorization, execution, source promotion, storage writes, canonical writes, migrations, accounts, secrets, public release, and production launch remain false.</p>
+            <p class="muted">This release prepares a founder permission decision gate. It does not authorize anything.</p>
+          </section>
+        </aside>
+      </main>
+    </div>
+    <script src="assets/vedapath-controlled-authorization-permission-review-gate.js"></script>
+  </body>
+</html>

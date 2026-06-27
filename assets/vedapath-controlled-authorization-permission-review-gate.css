@@ -1,0 +1,187 @@
+/* VedaPath controlled authorization permission review gate */
+body.permission-review-page .topbar,
+body.permission-review-page header.topbar {
+  height: auto !important;
+  min-height: var(--vp-header-height, 74px);
+  padding: 0 !important;
+}
+
+body.permission-review-page .nav {
+  gap: 5px;
+  overflow: visible;
+  flex-wrap: nowrap;
+}
+
+body.permission-review-page .nav .link,
+body.permission-review-page .nav a {
+  padding-left: 9px;
+  padding-right: 9px;
+}
+
+body.permission-review-page .nav .version {
+  margin-left: 6px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+body.permission-review-page main.workspace {
+  grid-template-columns: minmax(210px, 0.72fr) minmax(0, 1.7fr) minmax(230px, 0.8fr);
+  gap: 18px;
+}
+
+body.permission-review-page main.workspace > aside.panel:first-child,
+body.permission-review-page main.workspace > aside.panel.tight {
+  position: static;
+  max-height: none;
+  overflow: visible;
+}
+
+.permission-review,
+.permission-review-head,
+.permission-review-layout,
+.permission-review-form,
+.permission-review-grid,
+.permission-review-list,
+.permission-review-actions,
+.permission-review-rules {
+  display: grid;
+  gap: 10px;
+}
+
+.permission-review { gap: 16px; }
+
+.permission-review-head {
+  grid-template-columns: minmax(0, 1fr) 126px;
+  align-items: center;
+}
+
+.permission-review-mark {
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff3e4;
+  padding: 10px;
+}
+
+.permission-review-mark img {
+  display: block;
+  width: 100%;
+}
+
+.permission-review-layout {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: start;
+}
+
+.permission-review-form,
+.permission-review-card,
+.permission-review-result,
+.permission-review-output,
+.permission-review-rule {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.permission-review-form,
+.permission-review-card,
+.permission-review-result,
+.permission-review-rule {
+  padding: 12px;
+}
+
+.permission-review-form label {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.permission-review-form input,
+.permission-review-form select,
+.permission-review-form textarea,
+.permission-review-output {
+  width: 100%;
+  border: 1px solid #efc1aa;
+  border-radius: 8px;
+  background: #fffaf4;
+  color: var(--ink);
+  padding: 10px;
+}
+
+.permission-review-form textarea,
+.permission-review-output {
+  min-height: 92px;
+  resize: vertical;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 13px;
+}
+
+.permission-review-actions {
+  grid-template-columns: repeat(4, minmax(0, max-content));
+  align-items: center;
+}
+
+.permission-review-grid,
+.permission-review-rules {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.permission-review-card.ready,
+.permission-review-result[data-state="Permission review ready"] {
+  border-color: #b7d5ca;
+  background: #f6fffb;
+}
+
+.permission-review-card.blocked,
+.permission-review-result[data-state^="Blocked"] {
+  border-color: #efb39a;
+  background: #fff1ea;
+}
+
+.permission-review-card span,
+.permission-review-rule span {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.permission-review-card strong,
+.permission-review-rule strong {
+  display: block;
+  margin-top: 4px;
+}
+
+.permission-review-boundary {
+  border-left: 4px solid var(--bhagwa);
+  padding-left: 12px;
+}
+
+@media (max-width: 1050px) {
+  body.permission-review-page main.workspace,
+  .permission-review-layout,
+  .permission-review-grid,
+  .permission-review-rules {
+    grid-template-columns: 1fr;
+  }
+
+  .permission-review-head {
+    grid-template-columns: 1fr;
+  }
+
+  .permission-review-mark {
+    max-width: 160px;
+  }
+}
+
+@media (max-width: 760px) {
+  body.permission-review-page .nav {
+    flex-wrap: wrap;
+  }
+
+  .permission-review-actions {
+    grid-template-columns: 1fr 1fr;
+  }
+}

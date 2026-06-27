@@ -1,0 +1,229 @@
+{
+  "schema_version": "controlled-authorization-permission-review-gate-v1",
+  "release": "v3.2.2",
+  "generated_at": "2026-06-28T00:00:00.000Z",
+  "title": "Controlled Authorization Permission Review Gate",
+  "summary": "Reviews permission-candidate language after preflight eligibility while keeping permission, authorization, execution, storage writes, canonical writes, public release, and production disabled.",
+  "previous_release": "v3.2.1 Controlled Authorization Permission Preflight",
+  "source": {
+    "permission_preflight_release": "v3.2.1",
+    "permission_preflight_schema": "controlled-authorization-permission-preflight-v1",
+    "controlled_authorization_permission_preflight_id": "controlled-authorization-permission-preflight-sample-steady-action-bg-2-48",
+    "founder_authorization_instruction_gate_id": "founder-authorization-instruction-gate-sample-steady-action-bg-2-48",
+    "controlled_authorization_review_gate_id": "controlled-authorization-review-gate-sample-steady-action-bg-2-48",
+    "controlled_execution_packet_authorization_draft_id": "controlled-execution-packet-authorization-draft-sample-steady-action-bg-2-48",
+    "founder_authorization_decision_gate_id": "founder-authorization-decision-gate-sample-steady-action-bg-2-48",
+    "source_answer_id": "answer-steady-action-bg-2-48",
+    "source_record_id": "bg-2-48-steadiness",
+    "source_family": "Bhagavad Gita | Smriti"
+  },
+  "review_states": [
+    "Draft review",
+    "Needs reviewer clarification",
+    "Permission review ready",
+    "Return to preflight",
+    "Permission still blocked",
+    "Execution blocked",
+    "Production forbidden",
+    "Review hold",
+    "Review expired"
+  ],
+  "required_by_state": {
+    "Draft review": [
+      "controlled_authorization_permission_preflight_id",
+      "source_answer_id",
+      "review_scope"
+    ],
+    "Needs reviewer clarification": [
+      "clarification_question",
+      "permission_review_language"
+    ],
+    "Permission review ready": [
+      "review_actor",
+      "reviewer_name",
+      "controlled_authorization_permission_review_gate_id",
+      "controlled_authorization_permission_preflight_id",
+      "founder_authorization_instruction_gate_id",
+      "controlled_authorization_review_gate_id",
+      "controlled_execution_packet_authorization_draft_id",
+      "source_answer_id",
+      "source_record_id",
+      "source_family",
+      "review_scope",
+      "permission_review_language",
+      "review_rationale",
+      "review_evidence_summary",
+      "source_lock",
+      "non_permission_review_clause",
+      "risk_acknowledgment",
+      "rollback_condition",
+      "monitoring_condition",
+      "stop_condition",
+      "expiry_check",
+      "production_boundary"
+    ],
+    "Return to preflight": [
+      "return_reason"
+    ],
+    "Permission still blocked": [
+      "block_reason"
+    ],
+    "Execution blocked": [
+      "block_reason"
+    ],
+    "Production forbidden": [
+      "block_reason",
+      "production_boundary"
+    ],
+    "Review hold": [
+      "hold_reason"
+    ],
+    "Review expired": [
+      "expiry_check",
+      "hold_reason"
+    ]
+  },
+  "review_checks": [
+    {
+      "check": "Preflight eligible",
+      "rule": "Starts only from a ready permission preflight whose next gate is controlled permission review."
+    },
+    {
+      "check": "Review only",
+      "rule": "May mark permission review readiness, but cannot grant permission, approve permission, or authorize execution."
+    },
+    {
+      "check": "Evidence lock",
+      "rule": "Keeps preflight, instruction gate, review gate, authorization draft, founder decision, source answer, source record, and family locked."
+    },
+    {
+      "check": "No operation",
+      "rule": "Execution, storage, canonical writes, public release, production, accounts, secrets, and migrations remain blocked."
+    },
+    {
+      "check": "Founder next",
+      "rule": "Moves only to a founder permission decision gate, never to execution."
+    },
+    {
+      "check": "Expiry",
+      "rule": "Expires on preflight, instruction, review, draft, source, rights, reviewer, rollback, monitoring, packet, or code change."
+    }
+  ],
+  "sample_permission_preflight_packet": {
+    "schema_version": "controlled-authorization-permission-preflight-v1",
+    "release": "v3.2.1",
+    "controlled_authorization_permission_preflight_id": "controlled-authorization-permission-preflight-sample-steady-action-bg-2-48",
+    "preflight_status": "Preflight eligible",
+    "founder_authorization_instruction_ready": true,
+    "founder_instruction_signal_recorded": true,
+    "controlled_founder_authorization_instruction_gate_ready": true,
+    "controlled_authorization_permission_preflight_ready": true,
+    "permission_preflight_signal_recorded": true,
+    "permission_review_candidate_ready": true,
+    "permission_granted": false,
+    "authorization_permission_granted": false,
+    "permission_review_approved": false,
+    "founder_permission_granted": false,
+    "execution_packet_authorized": false,
+    "execution_authorized": false,
+    "execution_allowed": false,
+    "founder_instruction_granted": false,
+    "source_promotion_allowed": false,
+    "promotion_execution_allowed": false,
+    "implementation_authorized": false,
+    "implementation_execution_allowed": false,
+    "controlled_storage_entry_allowed": false,
+    "storage_write_enabled": false,
+    "canonical_write_allowed": false,
+    "source_write_executed": false,
+    "actual_storage_write_executed": false,
+    "production_ready": false,
+    "production_launch_allowed": false,
+    "public_release_allowed": false,
+    "next_gate_required": "Controlled authorization permission review gate",
+    "founder_authorization_instruction_gate_id": "founder-authorization-instruction-gate-sample-steady-action-bg-2-48",
+    "controlled_authorization_review_gate_id": "controlled-authorization-review-gate-sample-steady-action-bg-2-48",
+    "controlled_execution_packet_authorization_draft_id": "controlled-execution-packet-authorization-draft-sample-steady-action-bg-2-48",
+    "founder_authorization_decision_gate_id": "founder-authorization-decision-gate-sample-steady-action-bg-2-48",
+    "controlled_execution_authorization_hold_id": "controlled-execution-authorization-hold-sample-steady-action-bg-2-48",
+    "controlled_execution_review_gate_id": "controlled-execution-review-gate-sample-steady-action-bg-2-48",
+    "controlled_execution_packet_draft_id": "controlled-execution-packet-draft-sample-steady-action-bg-2-48",
+    "source_answer_id": "answer-steady-action-bg-2-48",
+    "source_record_id": "bg-2-48-steadiness",
+    "source_family": "Bhagavad Gita | Smriti",
+    "preflight_actor": "Controlled permission preflight reviewer",
+    "reviewer_name": "Reviewer sample",
+    "preflight_scope": "Evaluate whether this founder instruction signal is complete enough for a controlled permission review only. This preflight is not permission, not authorization, and cannot execute, promote, store, update canonical records, migrate, create accounts, use secrets, publish public release, or launch production.",
+    "permission_question": "Should a reviewer prepare controlled permission review language for this exact source packet, without granting permission, authorization, execution, storage writes, canonical writes, public release, or production?",
+    "eligibility_summary": "Founder instruction signal is ready, source ids are locked, review evidence is visible, rollback and monitoring remain present, and every real authority flag remains false.",
+    "evidence_lock": "Locked to founder_authorization_instruction_gate_id founder-authorization-instruction-gate-sample-steady-action-bg-2-48, controlled_authorization_review_gate_id controlled-authorization-review-gate-sample-steady-action-bg-2-48, controlled_execution_packet_authorization_draft_id controlled-execution-packet-authorization-draft-sample-steady-action-bg-2-48, founder_authorization_decision_gate_id founder-authorization-decision-gate-sample-steady-action-bg-2-48, source_answer_id answer-steady-action-bg-2-48, source_record_id bg-2-48-steadiness, and source family Bhagavad Gita | Smriti.",
+    "non_permission_clause": "Controlled authorization permission preflight only; founder_authorization_instruction_ready may be true, founder_instruction_signal_recorded may be true, controlled_founder_authorization_instruction_gate_ready may be true, controlled_authorization_permission_preflight_ready may be true, permission_preflight_signal_recorded may be true, permission_review_candidate_ready may be true, but permission_granted remains false, authorization_permission_granted remains false, permission_review_approved remains false, founder_instruction_granted remains false, execution_packet_authorized remains false, execution_authorized remains false, execution_allowed remains false, source_promotion_allowed remains false, promotion_execution_allowed remains false, implementation_authorized remains false, implementation_execution_allowed remains false, controlled_storage_entry_allowed remains false, storage_write_enabled remains false, canonical_write_allowed remains false, source_write_executed remains false, actual_storage_write_executed remains false, production_ready remains false, production_launch_allowed remains false, and public_release_allowed remains false.",
+    "risk_acknowledgment": "Risk remains: founder instruction mismatch, review mismatch, draft mismatch, source mismatch, rights change, reviewer change, permission wording ambiguity, rollback missing, monitoring missing, packet mutation, code change, or any true permission, authorization, execution, storage, canonical, public release, or production flag must block movement.",
+    "rollback_condition": "Rollback, replay, before_hash, failure review, stop condition, and reviewer handoff must remain present before any controlled authorization permission review gate; no source state is written.",
+    "monitoring_condition": "Audit receipt, stop condition, failure review, reviewer handoff, post-execution verification, and before-write check must remain visible before any controlled authorization permission review gate.",
+    "stop_condition": "Stop if founder instruction id mismatches, review id mismatches, draft id mismatches, source ids mismatch, rights change, reviewer evidence is missing, permission wording is ambiguous, rollback is missing, monitoring is missing, code changes, packet text mutates, or any permission, authorization, execution, storage, canonical, public release, or production flag is true.",
+    "expiry_check": "Permission preflight expires at the next material founder instruction, authorization review, authorization draft, source, rights, reviewer, founder decision, rollback, monitoring, packet draft, or code change and must be rechecked; not permission.",
+    "production_boundary": "Production remains unavailable; production_ready remains false, production_launch_allowed remains false, public_release_allowed remains false, and no production migration, account, secret, durable storage, public release, or launch path is opened.",
+    "created_at": "2026-06-28T00:00:00.000Z"
+  },
+  "sample_review": {
+    "review_state": "Permission review ready",
+    "review_actor": "Controlled permission reviewer",
+    "reviewer_name": "Reviewer sample",
+    "controlled_authorization_permission_review_gate_id": "controlled-authorization-permission-review-gate-sample-steady-action-bg-2-48",
+    "controlled_authorization_permission_preflight_id": "controlled-authorization-permission-preflight-sample-steady-action-bg-2-48",
+    "founder_authorization_instruction_gate_id": "founder-authorization-instruction-gate-sample-steady-action-bg-2-48",
+    "controlled_authorization_review_gate_id": "controlled-authorization-review-gate-sample-steady-action-bg-2-48",
+    "controlled_execution_packet_authorization_draft_id": "controlled-execution-packet-authorization-draft-sample-steady-action-bg-2-48",
+    "founder_authorization_decision_gate_id": "founder-authorization-decision-gate-sample-steady-action-bg-2-48",
+    "source_answer_id": "answer-steady-action-bg-2-48",
+    "source_record_id": "bg-2-48-steadiness",
+    "source_family": "Bhagavad Gita | Smriti",
+    "review_scope": "Review this exact permission candidate from the controlled permission preflight only. This review is not permission, not authorization, and cannot execute, promote, store, update canonical records, migrate, create accounts, use secrets, publish public release, or launch production.",
+    "permission_review_language": "Review result for later founder permission decision: this permission candidate is coherent enough to ask for an explicit founder permission decision. This is review readiness only; permission is not granted, authorization is not granted, execution is not allowed, and no system may run from it.",
+    "review_rationale": "The permission preflight is eligible and source-locked. The permission review signal only prepares a founder permission decision question; it does not open any operational authority.",
+    "review_evidence_summary": "Permission preflight eligible; founder instruction, authorization review, authorization draft, founder decision, source ids, source family, citation, rights, translation, reviewer evidence, source-owner scope, rollback, monitoring, stop condition, expiry, and production boundary remain visible.",
+    "source_lock": "Locked to controlled_authorization_permission_preflight_id controlled-authorization-permission-preflight-sample-steady-action-bg-2-48, founder_authorization_instruction_gate_id founder-authorization-instruction-gate-sample-steady-action-bg-2-48, controlled_authorization_review_gate_id controlled-authorization-review-gate-sample-steady-action-bg-2-48, controlled_execution_packet_authorization_draft_id controlled-execution-packet-authorization-draft-sample-steady-action-bg-2-48, founder_authorization_decision_gate_id founder-authorization-decision-gate-sample-steady-action-bg-2-48, source_answer_id answer-steady-action-bg-2-48, source_record_id bg-2-48-steadiness, and source family Bhagavad Gita | Smriti.",
+    "non_permission_review_clause": "Controlled authorization permission review gate only; controlled_authorization_permission_preflight_ready may be true, permission_preflight_signal_recorded may be true, permission_review_candidate_ready may be true, controlled_authorization_permission_review_ready may be true, permission_review_signal_recorded may be true, founder_permission_decision_candidate_ready may be true, but permission_granted remains false, authorization_permission_granted remains false, permission_review_approved remains false, founder_permission_granted remains false, founder_instruction_granted remains false, execution_packet_authorized remains false, execution_authorized remains false, execution_allowed remains false, source_promotion_allowed remains false, promotion_execution_allowed remains false, implementation_authorized remains false, implementation_execution_allowed remains false, controlled_storage_entry_allowed remains false, storage_write_enabled remains false, canonical_write_allowed remains false, source_write_executed remains false, actual_storage_write_executed remains false, production_ready remains false, production_launch_allowed remains false, and public_release_allowed remains false.",
+    "risk_acknowledgment": "Risk remains: preflight mismatch, founder instruction mismatch, review mismatch, draft mismatch, source mismatch, rights change, reviewer change, permission review ambiguity, rollback missing, monitoring missing, packet mutation, code change, or any true permission, authorization, execution, storage, canonical, public release, or production flag must block movement.",
+    "rollback_condition": "Rollback, replay, before_hash, failure review, stop condition, and reviewer handoff must remain present before any founder permission decision gate; no source state is written.",
+    "monitoring_condition": "Audit receipt, stop condition, failure review, reviewer handoff, post-execution verification, and before-write check must remain visible before any founder permission decision gate.",
+    "stop_condition": "Stop if preflight id mismatches, founder instruction id mismatches, review id mismatches, draft id mismatches, source ids mismatch, rights change, reviewer evidence is missing, permission review is ambiguous, rollback is missing, monitoring is missing, code changes, packet text mutates, or any permission, authorization, execution, storage, canonical, public release, or production flag is true.",
+    "expiry_check": "Permission review expires at the next material permission preflight, founder instruction, authorization review, authorization draft, source, rights, reviewer, founder decision, rollback, monitoring, packet draft, or code change and must be rechecked; not permission.",
+    "production_boundary": "Production remains unavailable; production_ready remains false, production_launch_allowed remains false, public_release_allowed remains false, and no production migration, account, secret, durable storage, public release, or launch path is opened.",
+    "next_gate": "Founder permission decision gate",
+    "clarification_question": "",
+    "return_reason": "",
+    "hold_reason": "",
+    "block_reason": ""
+  },
+  "boundary": {
+    "controlled_authorization_permission_preflight_ready": false,
+    "permission_preflight_signal_recorded": false,
+    "permission_review_candidate_ready": false,
+    "controlled_authorization_permission_review_ready": false,
+    "permission_review_signal_recorded": false,
+    "founder_permission_decision_candidate_ready": false,
+    "permission_granted": false,
+    "authorization_permission_granted": false,
+    "permission_review_approved": false,
+    "founder_permission_granted": false,
+    "execution_packet_authorized": false,
+    "execution_authorized": false,
+    "execution_allowed": false,
+    "founder_instruction_granted": false,
+    "source_promotion_allowed": false,
+    "promotion_execution_allowed": false,
+    "implementation_authorized": false,
+    "implementation_execution_allowed": false,
+    "controlled_storage_entry_allowed": false,
+    "storage_write_enabled": false,
+    "canonical_write_allowed": false,
+    "source_write_executed": false,
+    "actual_storage_write_executed": false,
+    "production_ready": false,
+    "production_launch_allowed": false,
+    "public_release_allowed": false,
+    "next_gate_required": "Founder permission decision gate"
+  }
+}

@@ -954,6 +954,14 @@ http://127.0.0.1:8088/
 ```
 
 <!-- VEDAPATH FOUNDER AUTHORIZATION DECISION GATE START -->
+## v3.2.2 Controlled Authorization Permission Review Gate
+
+Controlled Authorization Permission Review Gate reviews permission-candidate language after preflight eligibility while keeping permission grant, authorization, execution, storage writes, canonical writes, public release, and production false.
+
+- [Controlled Authorization Permission Review Gate](controlledauthorizationpermissionreviewgate.html)
+- [Controlled Authorization Permission Review Gate Notes](docs/CONTROLLED_AUTHORIZATION_PERMISSION_REVIEW_GATE.md)
+- [Controlled Authorization Permission Review Gate Data](data/vedapath-controlled-authorization-permission-review-gate.json)
+
 ## v3.2.1 Controlled Authorization Permission Preflight
 
 Controlled Authorization Permission Preflight checks whether founder instruction intent is eligible for controlled permission review while keeping permission, authorization, execution, storage writes, canonical writes, public release, and production false.
