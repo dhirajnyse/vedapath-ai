@@ -1,0 +1,187 @@
+/* VedaPath controlled permission execution hold */
+body.execution-hold-page .topbar,
+body.execution-hold-page header.topbar {
+  height: auto !important;
+  min-height: var(--vp-header-height, 74px);
+  padding: 0 !important;
+}
+
+body.execution-hold-page .nav {
+  gap: 5px;
+  overflow: visible;
+  flex-wrap: nowrap;
+}
+
+body.execution-hold-page .nav .link,
+body.execution-hold-page .nav a {
+  padding-left: 9px;
+  padding-right: 9px;
+}
+
+body.execution-hold-page .nav .version {
+  margin-left: 6px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+body.execution-hold-page main.workspace {
+  grid-template-columns: minmax(210px, 0.72fr) minmax(0, 1.7fr) minmax(230px, 0.8fr);
+  gap: 18px;
+}
+
+body.execution-hold-page main.workspace > aside.panel:first-child,
+body.execution-hold-page main.workspace > aside.panel.tight {
+  position: static;
+  max-height: none;
+  overflow: visible;
+}
+
+.execution-hold,
+.execution-hold-head,
+.execution-hold-layout,
+.execution-hold-form,
+.execution-hold-grid,
+.execution-hold-list,
+.execution-hold-actions,
+.execution-hold-rules {
+  display: grid;
+  gap: 10px;
+}
+
+.execution-hold { gap: 16px; }
+
+.execution-hold-head {
+  grid-template-columns: minmax(0, 1fr) 126px;
+  align-items: center;
+}
+
+.execution-hold-mark {
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff3e4;
+  padding: 10px;
+}
+
+.execution-hold-mark img {
+  display: block;
+  width: 100%;
+}
+
+.execution-hold-layout {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: start;
+}
+
+.execution-hold-form,
+.execution-hold-card,
+.execution-hold-result,
+.execution-hold-output,
+.execution-hold-rule {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.execution-hold-form,
+.execution-hold-card,
+.execution-hold-result,
+.execution-hold-rule {
+  padding: 12px;
+}
+
+.execution-hold-form label {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.execution-hold-form input,
+.execution-hold-form select,
+.execution-hold-form textarea,
+.execution-hold-output {
+  width: 100%;
+  border: 1px solid #efc1aa;
+  border-radius: 8px;
+  background: #fffaf4;
+  color: var(--ink);
+  padding: 10px;
+}
+
+.execution-hold-form textarea,
+.execution-hold-output {
+  min-height: 92px;
+  resize: vertical;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 13px;
+}
+
+.execution-hold-actions {
+  grid-template-columns: repeat(4, minmax(0, max-content));
+  align-items: center;
+}
+
+.execution-hold-grid,
+.execution-hold-rules {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.execution-hold-card.ready,
+.execution-hold-result[data-state="Hold ready for preflight"] {
+  border-color: #b7d5ca;
+  background: #f6fffb;
+}
+
+.execution-hold-card.blocked,
+.execution-hold-result[data-state^="Blocked"] {
+  border-color: #efb39a;
+  background: #fff1ea;
+}
+
+.execution-hold-card span,
+.execution-hold-rule span {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.execution-hold-card strong,
+.execution-hold-rule strong {
+  display: block;
+  margin-top: 4px;
+}
+
+.execution-hold-boundary {
+  border-left: 4px solid var(--bhagwa);
+  padding-left: 12px;
+}
+
+@media (max-width: 1050px) {
+  body.execution-hold-page main.workspace,
+  .execution-hold-layout,
+  .execution-hold-grid,
+  .execution-hold-rules {
+    grid-template-columns: 1fr;
+  }
+
+  .execution-hold-head {
+    grid-template-columns: 1fr;
+  }
+
+  .execution-hold-mark {
+    max-width: 160px;
+  }
+}
+
+@media (max-width: 760px) {
+  body.execution-hold-page .nav {
+    flex-wrap: wrap;
+  }
+
+  .execution-hold-actions {
+    grid-template-columns: 1fr 1fr;
+  }
+}

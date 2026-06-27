@@ -954,6 +954,14 @@ http://127.0.0.1:8088/
 ```
 
 <!-- VEDAPATH FOUNDER AUTHORIZATION DECISION GATE START -->
+## v3.2.4 Controlled Permission Execution Hold
+
+Controlled Permission Execution Hold holds founder decision language after founder permission decision readiness while keeping permission grant, authorization, execution, storage writes, canonical writes, public release, and production false.
+
+- [Controlled Permission Execution Hold](controlledpermissionexecutionhold.html)
+- [Controlled Permission Execution Hold Notes](docs/CONTROLLED_PERMISSION_EXECUTION_HOLD.md)
+- [Controlled Permission Execution Hold Data](data/vedapath-controlled-permission-execution-hold.json)
+
 ## v3.2.3 Founder Permission Decision Gate
 
 Founder Permission Decision Gate records founder decision language after permission review readiness while keeping permission grant, authorization, execution, storage writes, canonical writes, public release, and production false.

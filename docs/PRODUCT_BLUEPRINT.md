@@ -4374,6 +4374,20 @@ It should:
 Pattern Companion Control Room should never claim diagnosis, therapy, legal advice, medical advice, surveillance, scoring, or spiritual authority.
 <!-- VEDAPATH PATTERN COMPANION SPRINT BLUEPRINT END -->
 <!-- VEDAPATH FOUNDER AUTHORIZATION DECISION GATE BLUEPRINT START -->
+### 307. Controlled Permission Execution Hold
+
+Controlled Permission Execution Hold holds founder decision language after founder permission decision readiness.
+
+It must:
+
+- start from a founder permission decision ready object
+- preserve founder decision, review, preflight, instruction gate, authorization review, authorization draft, source answer, source record, and source family ids
+- make execution hold readiness visible
+- block permission grant, actual authorization, execution, storage writes, canonical writes, public release, and production
+- move only to permission execution authorization preflight
+
+Controlled Permission Execution Hold should never claim permission grant, authorization approval, execution approval, storage permission, canonical source authority, migration authority, production authority, therapy, ritual instruction, crisis support, or spiritual authority.
+
 ### 306. Founder Permission Decision Gate
 
 Founder Permission Decision Gate records founder decision language after permission review readiness.
