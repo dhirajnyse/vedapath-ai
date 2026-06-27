@@ -1,0 +1,183 @@
+{
+  "schema_version": "founder-execution-instruction-gate-v1",
+  "release": "v3.1.3",
+  "generated_at": "2026-06-27T00:00:00.000Z",
+  "title": "Founder Execution Instruction Gate",
+  "summary": "Records a founder instruction review after execution preflight while keeping instruction, execution, storage, canonical writes, migrations, accounts, secrets, public release, and production disabled.",
+  "previous_release": "v3.1.2 Promotion Execution Preflight",
+  "source": {
+    "promotion_execution_preflight_release": "v3.1.2",
+    "promotion_execution_preflight_schema": "promotion-execution-preflight-v1",
+    "promotion_execution_preflight_id": "promotion-execution-preflight-sample-steady-action-bg-2-48",
+    "source_answer_id": "answer-steady-action-bg-2-48",
+    "source_record_id": "bg-2-48-steadiness",
+    "source_family": "Bhagavad Gita | Smriti",
+    "source_promotion_hold_review_id": "source-promotion-hold-review-sample-steady-action-bg-2-48",
+    "implementation_authorization_dry_run_id": "implementation-authorization-dry-run-sample-steady-action-bg-2-48"
+  },
+  "instruction_states": [
+    "Draft founder instruction",
+    "Needs founder clarification",
+    "Founder instruction ready",
+    "Return to preflight",
+    "Founder hold",
+    "Execution blocked",
+    "Production forbidden",
+    "Instruction expired"
+  ],
+  "required_by_state": {
+    "Draft founder instruction": [
+      "promotion_execution_preflight_id",
+      "source_answer_id",
+      "founder_instruction_text"
+    ],
+    "Needs founder clarification": [
+      "clarification_question",
+      "source_specific_scope"
+    ],
+    "Founder instruction ready": [
+      "founder_name",
+      "founder_instruction_text",
+      "source_specific_scope",
+      "allowed_next_step",
+      "prohibited_actions",
+      "reviewer_requirement",
+      "rollback_acceptance",
+      "monitoring_acceptance",
+      "expiry_check",
+      "boundary_statement",
+      "production_boundary"
+    ],
+    "Return to preflight": [
+      "return_reason"
+    ],
+    "Founder hold": [
+      "hold_reason"
+    ],
+    "Execution blocked": [
+      "block_reason"
+    ],
+    "Production forbidden": [
+      "block_reason",
+      "production_boundary"
+    ],
+    "Instruction expired": [
+      "expiry_check",
+      "hold_reason"
+    ]
+  },
+  "instruction_checks": [
+    {
+      "check": "Preflight ready",
+      "rule": "Founder instruction can only begin from an execution preflight ready packet whose next gate is founder execution instruction gate."
+    },
+    {
+      "check": "Instruction is scoped",
+      "rule": "The instruction must name the exact source answer and permit only a future controlled execution packet draft."
+    },
+    {
+      "check": "No authority leap",
+      "rule": "Founder instruction review does not grant execution, storage writes, canonical writes, migration, secrets, public release, or production."
+    },
+    {
+      "check": "Reviewer separation",
+      "rule": "Founder instruction and source-specific human review remain separate checks."
+    },
+    {
+      "check": "Rollback and monitoring",
+      "rule": "Rollback, replay, before_hash, stop condition, audit receipt, and post-execution verification must remain visible before any future write request."
+    },
+    {
+      "check": "Expiry",
+      "rule": "Founder instruction is not permanent; material source, rights, reviewer, or code changes require recheck."
+    }
+  ],
+  "sample_preflight_packet": {
+    "schema_version": "promotion-execution-preflight-v1",
+    "release": "v3.1.2",
+    "promotion_execution_preflight_id": "promotion-execution-preflight-sample-steady-action-bg-2-48",
+    "preflight_status": "Execution preflight ready",
+    "execution_preflight_review_ready": true,
+    "execution_preflight_passed": false,
+    "execution_authorized": false,
+    "execution_allowed": false,
+    "source_promotion_allowed": false,
+    "promotion_execution_allowed": false,
+    "implementation_authorized": false,
+    "implementation_execution_allowed": false,
+    "founder_instruction_granted": false,
+    "production_ready": false,
+    "production_launch_allowed": false,
+    "public_release_allowed": false,
+    "controlled_storage_entry_allowed": false,
+    "canonical_write_allowed": false,
+    "storage_write_enabled": false,
+    "source_write_executed": false,
+    "actual_storage_write_executed": false,
+    "next_gate_required": "Founder execution instruction gate",
+    "source_promotion_hold_review_id": "source-promotion-hold-review-sample-steady-action-bg-2-48",
+    "implementation_authorization_dry_run_id": "implementation-authorization-dry-run-sample-steady-action-bg-2-48",
+    "founder_instruction_gate_id": "founder-storage-instruction-gate-sample-steady-action-bg-2-48",
+    "entry_dry_run_id": "storage-entry-dry-run-sample-steady-action-bg-2-48",
+    "criteria_packet_id": "criteria-packet-sample-entry-dry-run",
+    "replay_receipt_id": "replay-receipt-sample-storage-entry",
+    "rollback_receipt_id": "rollback-receipt-sample-replay",
+    "audit_receipt_id": "audit-receipt-sample-rollback",
+    "source_answer_id": "answer-steady-action-bg-2-48",
+    "source_record_id": "bg-2-48-steadiness",
+    "source_family": "Bhagavad Gita | Smriti",
+    "preflight_scope": "Dry-run whether the named source-answer packet has enough evidence to enter a future execution packet; do not execute, promote, store, write canonical source, run migration, create account, use secrets, or launch production.",
+    "execution_conditions": "All prerequisites are review-only: promotion hold ready, source integrity visible, rights and translation reviewed, reviewer evidence present, rollback plan present, monitoring plan present, human approval check present, and founder recheck present.",
+    "readonly_rehearsal": "Run a dry rehearsal only; produce an execution plan and failure path without touching storage, canonical source, accounts, secrets, migrations, or production.",
+    "final_blockers": "Block execution when rights review is missing, source owner scope is missing, reviewer evidence is missing, rollback plan is missing, monitoring plan is missing, founder recheck is missing, or any write flag would become true.",
+    "rollback_plan": "Rollback and replay receipts remain the restore reference; before_hash restore path and failure review are documented, but no source state is written.",
+    "monitoring_plan": "If a future execution packet exists, it must expose audit receipt, stop condition, failure review, reviewer handoff, and post-execution verification before any write is allowed.",
+    "human_approval_check": "Human approval must be explicit, named, source-specific, and separate from founder review; this preflight is not approval.",
+    "execution_boundary": "Execution preflight only; execution_preflight_passed remains false, execution_authorized remains false, execution_allowed remains false, source_promotion_allowed remains false, promotion_execution_allowed remains false, implementation_execution_allowed remains false, controlled_storage_entry_allowed remains false, storage_write_enabled remains false, canonical_write_allowed remains false, source_write_executed remains false, actual_storage_write_executed remains false, and production_ready remains false.",
+    "production_boundary": "Production remains unavailable; production_ready remains false, production_launch_allowed remains false, public_release_allowed remains false, and no production migration, account, secret, or durable storage path is opened.",
+    "created_at": "2026-06-27T00:00:00.000Z"
+  },
+  "sample_instruction": {
+    "instruction_state": "Founder instruction ready",
+    "instruction_actor": "Founder execution instruction reviewer",
+    "founder_name": "Founder review sample",
+    "founder_instruction_text": "Founder instruction sample: prepare a controlled execution packet for source answer answer-steady-action-bg-2-48. Do not execute, promote, store, write canonical source, run migration, create account, use secrets, or launch production.",
+    "promotion_execution_preflight_id": "promotion-execution-preflight-sample-steady-action-bg-2-48",
+    "source_answer_id": "answer-steady-action-bg-2-48",
+    "source_record_id": "bg-2-48-steadiness",
+    "source_family": "Bhagavad Gita | Smriti",
+    "source_specific_scope": "Use only source_answer_id answer-steady-action-bg-2-48, source_record_id bg-2-48-steadiness, and source family Bhagavad Gita | Smriti. No scope creep; rights, translation, reviewer evidence, and source-owner scope must be present.",
+    "allowed_next_step": "Draft a controlled execution packet only; no write, no source promotion, no storage, no canonical update, and no production launch.",
+    "prohibited_actions": "Do not execute, promote, store, write canonical source, run migration, create account, use secrets, enable durable storage, public release, or launch production.",
+    "reviewer_requirement": "A named human reviewer must confirm source-owner scope, rights and translation status, citation, reviewer evidence, and source-specific human approval separate from founder review.",
+    "rollback_acceptance": "Rollback and replay receipts, before_hash restore path, failure review, and stop condition must be visible before any future write request.",
+    "monitoring_acceptance": "Future execution packet must expose audit receipt, stop condition, reviewer handoff, post-execution verification, and failure review before any write.",
+    "expiry_check": "This founder instruction sample expires at the next material source, rights, reviewer, or code change and must be rechecked; it is not permanent approval.",
+    "boundary_statement": "Founder instruction gate only; founder_instruction_granted remains false, execution_authorized remains false, execution_allowed remains false, source_promotion_allowed remains false, promotion_execution_allowed remains false, implementation_authorized remains false, implementation_execution_allowed remains false, controlled_storage_entry_allowed remains false, storage_write_enabled remains false, canonical_write_allowed remains false, source_write_executed remains false, actual_storage_write_executed remains false, production_ready remains false, production_launch_allowed remains false, and public_release_allowed remains false.",
+    "production_boundary": "Production remains unavailable; production_ready remains false, production_launch_allowed remains false, public_release_allowed remains false, and no production migration, account, secret, durable storage, or public release path is opened.",
+    "next_gate": "Controlled execution packet draft",
+    "clarification_question": "",
+    "return_reason": "",
+    "hold_reason": "",
+    "block_reason": ""
+  },
+  "boundary": {
+    "founder_execution_instruction_packet_ready": false,
+    "founder_instruction_granted": false,
+    "execution_authorized": false,
+    "execution_allowed": false,
+    "source_promotion_allowed": false,
+    "promotion_execution_allowed": false,
+    "implementation_authorized": false,
+    "implementation_execution_allowed": false,
+    "controlled_storage_entry_allowed": false,
+    "storage_write_enabled": false,
+    "canonical_write_allowed": false,
+    "source_write_executed": false,
+    "actual_storage_write_executed": false,
+    "production_ready": false,
+    "production_launch_allowed": false,
+    "public_release_allowed": false,
+    "next_gate_required": "Controlled execution packet draft"
+  }
+}

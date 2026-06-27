@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VedaPath Founder Execution Instruction Gate</title>
+    <link rel="stylesheet" href="assets/vedapath-sprint.css">
+    <link rel="stylesheet" href="assets/vedapath-founder-execution-instruction-gate.css">
+    <link rel="stylesheet" href="assets/vedapath-cohesive.css">
+    <link rel="stylesheet" href="assets/vedapath-polish.css">
+    <link rel="stylesheet" href="assets/vedapath-focus.css">
+  </head>
+  <body>
+    <div class="shell" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top" aria-label="VedaPath AI home">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
+          <div>
+            <strong>VedaPath AI</strong>
+            <span>Founder execution instruction gate</span>
+          </div>
+        </a>
+        <nav class="nav" aria-label="Project links">
+          <a class="link" href="index.html">Home</a>
+          <a class="link" href="build-status.html">Build</a>
+          <a class="link" href="brand/brand-board.html">Brand</a>
+          <a class="link" href="blueprint.html">Blueprint</a>
+          <a class="link" href="citedanswerlab.html">Answers</a>
+          <a class="link active" href="reviewqueuepersistence.html">Review</a>
+          <a class="link" href="mantralenslab.html">Mantra</a>
+          <a class="link" href="lifecompanionlab.html">Life</a>
+          <a class="link" href="conversationcompanionlab.html">Talk</a>
+          <a class="link" href="patterncompanionlab.html">Pattern</a>
+          <a class="link" href="daily.html">Daily</a>
+          <span class="version">v3.1.3 founder gate</span>
+        </nav>
+      </header>
+
+      <main class="workspace" aria-label="VedaPath Founder Execution Instruction Gate workspace">
+        <aside class="panel">
+          <span class="eyebrow">Instruction is not execution</span>
+          <h2>Make founder intent explicit</h2>
+          <p class="muted">This room records a source-specific founder instruction for the next draft packet. It cannot execute, promote, store, migrate, use secrets, or launch.</p>
+          <div class="sprint-list">
+            <div class="sprint-step active"><span class="step-index">1</span><div><strong>Preflight</strong><p>Load ready packet.</p></div></div>
+            <div class="sprint-step"><span class="step-index">2</span><div><strong>Instruction</strong><p>Name the scope.</p></div></div>
+            <div class="sprint-step"><span class="step-index">3</span><div><strong>Reviewer</strong><p>Keep checks separate.</p></div></div>
+            <div class="sprint-step"><span class="step-index">4</span><div><strong>Boundary</strong><p>Forbid writes.</p></div></div>
+          </div>
+          <div class="button-row" style="margin-top: 16px;">
+            <a class="button primary" href="promotionexecutionpreflight.html">Open Preflight</a>
+            <a class="button safe" href="build-status.html">Open Build</a>
+          </div>
+        </aside>
+
+        <section class="panel founder-gate" id="founderExecutionInstructionGate">
+          <div class="founder-head">
+            <div>
+              <span class="eyebrow">Founder gate</span>
+              <h1>Instruction with boundaries. No hidden authority.</h1>
+              <p class="muted">A ready packet here means founder intent is explicit enough to draft a controlled execution packet later. It still cannot execute, promote, store, update canonical records, run migrations, create accounts, use secrets, or launch production.</p>
+            </div>
+            <div class="founder-mark"><img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath founder execution instruction mark"></div>
+          </div>
+
+          <section class="founder-layout">
+            <div class="founder-form">
+              <h2>Founder Instruction Packet</h2>
+              <label>Execution preflight packet<textarea id="founderPreflightPacket"></textarea></label>
+              <label>Instruction state<select id="founderState"></select></label>
+              <label>Instruction actor<input id="founderActor" type="text" placeholder="Founder execution instruction reviewer"></label>
+              <label>Founder name<input id="founderName" type="text" placeholder="Founder review sample"></label>
+              <label>Founder instruction<textarea id="founderInstructionText"></textarea></label>
+              <label>Preflight id<input id="founderPreflightId" type="text"></label>
+              <label>Source answer id<input id="founderSourceAnswer" type="text"></label>
+              <label>Source record id<input id="founderSourceRecord" type="text"></label>
+              <label>Source family<input id="founderSourceFamily" type="text"></label>
+              <label>Source-specific scope<textarea id="founderScopeText"></textarea></label>
+              <label>Allowed next step<textarea id="founderAllowedNextStep"></textarea></label>
+              <label>Prohibited actions<textarea id="founderProhibitedActions"></textarea></label>
+              <label>Reviewer requirement<textarea id="founderReviewerRequirement"></textarea></label>
+              <label>Rollback acceptance<textarea id="founderRollbackAcceptance"></textarea></label>
+              <label>Monitoring acceptance<textarea id="founderMonitoringAcceptance"></textarea></label>
+              <label>Expiry check<textarea id="founderExpiryCheck"></textarea></label>
+              <label>Boundary statement<textarea id="founderBoundaryStatement"></textarea></label>
+              <label>Production boundary<textarea id="founderProductionBoundary"></textarea></label>
+              <label>Clarification question<textarea id="founderClarificationQuestion"></textarea></label>
+              <label>Return reason<textarea id="founderReturnReason"></textarea></label>
+              <label>Hold reason<textarea id="founderHoldReason"></textarea></label>
+              <label>Block reason<textarea id="founderBlockReason"></textarea></label>
+              <div class="founder-actions">
+                <button class="button primary" id="runFounderGate" type="button">Run Gate</button>
+                <button class="button safe" id="loadFounderSample" type="button">Load Sample</button>
+                <button class="button" id="saveFounderGate" type="button">Save Local</button>
+                <button class="button" id="clearFounderGates" type="button">Clear Local</button>
+              </div>
+            </div>
+            <div>
+              <section class="founder-result" id="founderResultCard" data-state="Blocked"></section>
+              <section style="margin-top: 10px;">
+                <h2>Instruction Scope</h2>
+                <div class="founder-list" id="founderScope"></div>
+              </section>
+            </div>
+          </section>
+
+          <section>
+            <h2>Founder Gate Checks</h2>
+            <div class="founder-rules" id="founderChecks"></div>
+          </section>
+
+          <section class="founder-layout">
+            <div>
+              <div class="founder-actions">
+                <button class="button safe" id="copyFounderPacket" type="button">Copy Founder Packet</button>
+                <a class="button" href="data/vedapath-founder-execution-instruction-gate.json">Open JSON</a>
+              </div>
+              <textarea class="founder-packet" id="founderPacket" aria-label="Founder execution instruction packet"></textarea>
+            </div>
+            <div>
+              <h2>Saved Local Founder Gates</h2>
+              <div class="founder-list" id="founderSaved"></div>
+            </div>
+          </section>
+        </section>
+
+        <aside class="panel tight">
+          <span class="badge green">Founder gate is not approval</span>
+          <h2 style="margin-top: 14px;">Explicit Intent, Closed Execution</h2>
+          <p class="muted">The gate asks what may be drafted next. It does not let any execution, storage, canonical, public release, or production path open silently.</p>
+          <div class="progress" aria-label="Founder execution instruction gate progress 100 percent"><div class="bar" style="--score:100%"></div></div>
+          <div class="metric-grid">
+            <div class="metric"><span>Current</span><strong>v3.1.3</strong></div>
+            <div class="metric"><span>States</span><strong>8</strong></div>
+            <div class="metric"><span>Execution</span><strong>False</strong></div>
+            <div class="metric"><span>Next</span><strong>Packet draft</strong></div>
+          </div>
+          <section class="panel tight boundary" style="margin-top: 16px;">
+            <h2>Founder Boundary</h2>
+            <p class="founder-boundary">Founder instruction review only. Founder grant, execution, source promotion, storage writes, canonical writes, migrations, accounts, secrets, public release, and production launch remain false.</p>
+            <p class="muted">This release prepares a controlled execution packet draft. It does not grant execution.</p>
+          </section>
+        </aside>
+      </main>
+    </div>
+    <script src="assets/vedapath-founder-execution-instruction-gate.js"></script>
+  </body>
+</html>

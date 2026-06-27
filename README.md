@@ -953,6 +953,17 @@ Then open:
 http://127.0.0.1:8088/
 ```
 
+<!-- VEDAPATH FOUNDER EXECUTION INSTRUCTION GATE START -->
+## v3.1.3 Founder Execution Instruction Gate
+
+This release records a source-specific founder instruction review after execution preflight while all execution, promotion, storage, canonical-write, migration, account, secret, public-release, and production flags stay false.
+
+- [Founder Execution Instruction Gate](founderexecutioninstructiongate.html)
+- [Founder Execution Instruction Gate Notes](docs/FOUNDER_EXECUTION_INSTRUCTION_GATE.md)
+- [Founder Execution Instruction Gate Data](data/vedapath-founder-execution-instruction-gate.json)
+
+<!-- VEDAPATH FOUNDER EXECUTION INSTRUCTION GATE END -->
+
 <!-- VEDAPATH PROMOTION EXECUTION PREFLIGHT START -->
 ## v3.1.2 Promotion Execution Preflight
 

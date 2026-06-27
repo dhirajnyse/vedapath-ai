@@ -1,0 +1,166 @@
+/* VedaPath founder execution instruction gate */
+.founder-gate,
+.founder-head,
+.founder-layout,
+.founder-form,
+.founder-grid,
+.founder-list,
+.founder-actions,
+.founder-rules {
+  display: grid;
+  gap: 10px;
+}
+
+.founder-gate { gap: 16px; }
+
+.founder-head {
+  grid-template-columns: minmax(0, 1fr) 126px;
+  align-items: center;
+}
+
+.founder-mark {
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff3e4;
+  padding: 10px;
+}
+
+.founder-mark img {
+  display: block;
+  width: 100%;
+}
+
+.founder-layout {
+  grid-template-columns: minmax(0, 0.98fr) minmax(0, 1.02fr);
+  align-items: start;
+}
+
+.founder-form,
+.founder-card,
+.founder-result,
+.founder-packet,
+.founder-rule {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.founder-form,
+.founder-card,
+.founder-result,
+.founder-rule {
+  padding: 12px;
+}
+
+.founder-form label {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.founder-form input,
+.founder-form select,
+.founder-form textarea,
+.founder-packet {
+  width: 100%;
+  border: 1px solid #efc1aa;
+  border-radius: 8px;
+  background: #fffaf4;
+  color: var(--ink);
+  padding: 10px;
+}
+
+.founder-form textarea,
+.founder-packet {
+  min-height: 100px;
+  resize: vertical;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 13px;
+}
+
+.founder-grid,
+.founder-rules {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.founder-card,
+.founder-result {
+  border-left: 4px solid var(--gold);
+}
+
+.founder-card.ready,
+.founder-result[data-state="Founder instruction ready"] {
+  border-left-color: var(--green);
+}
+
+.founder-card.blocked,
+.founder-result[data-state="Blocked"],
+.founder-result[data-state="Return to preflight"],
+.founder-result[data-state="Founder hold"],
+.founder-result[data-state="Execution blocked"],
+.founder-result[data-state="Production forbidden"],
+.founder-result[data-state="Instruction expired"] {
+  border-left-color: var(--ochre);
+}
+
+.founder-card span,
+.founder-card strong,
+.founder-rule span,
+.founder-rule strong {
+  display: block;
+}
+
+.founder-card span,
+.founder-rule span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.founder-result strong {
+  display: block;
+  font-size: 24px;
+}
+
+.founder-result ul {
+  margin: 10px 0 0;
+  padding-left: 18px;
+}
+
+.founder-actions {
+  grid-template-columns: repeat(2, minmax(0, max-content));
+  justify-content: start;
+}
+
+.founder-list {
+  max-height: 320px;
+  overflow: auto;
+}
+
+.founder-packet {
+  min-height: 260px;
+}
+
+.founder-boundary {
+  border: 1px dashed rgba(168, 62, 18, 0.38);
+  border-radius: 8px;
+  background: #fff7ea;
+  padding: 12px;
+  font-weight: 850;
+}
+
+@media (max-width: 980px) {
+  .founder-layout,
+  .founder-head,
+  .founder-grid,
+  .founder-rules {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .founder-actions { grid-template-columns: 1fr; }
+}

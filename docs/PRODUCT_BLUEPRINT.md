@@ -4373,6 +4373,24 @@ It should:
 
 Pattern Companion Control Room should never claim diagnosis, therapy, legal advice, medical advice, surveillance, scoring, or spiritual authority.
 <!-- VEDAPATH PATTERN COMPANION SPRINT BLUEPRINT END -->
+<!-- VEDAPATH FOUNDER EXECUTION INSTRUCTION GATE BLUEPRINT START -->
+### 296. Founder Execution Instruction Gate
+
+VedaPath should never infer founder authority from product momentum. The founder execution instruction gate asks for a source-specific instruction before any controlled execution packet can even be drafted.
+
+Core requirements:
+
+- start from a promotion execution preflight ready packet
+- name the exact source answer, source record, and source family
+- permit only a future controlled execution packet draft
+- keep founder instruction separate from named human review
+- require rollback, replay, before_hash, monitoring, stop condition, and expiry checks
+- block execution, source promotion, storage writes, canonical writes, migrations, accounts, secrets, public release, and production
+- route next to a controlled execution packet draft
+
+Founder Execution Instruction Gate should never claim execution approval, storage permission, canonical source authority, migration authority, production authority, therapy, ritual instruction, crisis support, or spiritual authority.
+<!-- VEDAPATH FOUNDER EXECUTION INSTRUCTION GATE BLUEPRINT END -->
+
 <!-- VEDAPATH PROMOTION EXECUTION PREFLIGHT BLUEPRINT START -->
 ### 295. Promotion Execution Preflight
 

@@ -306,6 +306,18 @@ The v0.7.4 release turns the VedaPath AI homepage into a trusted MVP prototype w
 - Mobile Pattern: Mobile Pattern keeps the learning loop usable where calm moments actually happen.
 - Pattern Companion Control Room: Pattern Companion Control Room completes the private local learning layer for VedaPath AI.
 <!-- VEDAPATH PATTERN COMPANION SPRINT NOTES END -->
+<!-- VEDAPATH FOUNDER EXECUTION INSTRUCTION GATE NOTES START -->
+## v3.1.3 Founder Execution Instruction Gate
+
+This phase captures founder instruction boundaries without enabling execution.
+
+- Adds a founder execution instruction gate room.
+- Reads a promotion execution preflight ready packet.
+- Requires source-specific founder instruction, allowed next step, prohibited actions, reviewer separation, rollback, monitoring, expiry, boundary, and production boundary.
+- Keeps founder_instruction_granted, execution_authorized, execution_allowed, source_promotion_allowed, promotion_execution_allowed, implementation_authorized, implementation_execution_allowed, controlled_storage_entry_allowed, storage_write_enabled, canonical_write_allowed, source_write_executed, actual_storage_write_executed, production_ready, production_launch_allowed, and public_release_allowed false.
+
+<!-- VEDAPATH FOUNDER EXECUTION INSTRUCTION GATE NOTES END -->
+
 <!-- VEDAPATH PROMOTION EXECUTION PREFLIGHT NOTES START -->
 ## v3.1.2 Promotion Execution Preflight
 
