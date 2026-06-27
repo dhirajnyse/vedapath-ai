@@ -954,6 +954,14 @@ http://127.0.0.1:8088/
 ```
 
 <!-- VEDAPATH FOUNDER AUTHORIZATION DECISION GATE START -->
+## v3.2.5 Permission Execution Authorization Preflight
+
+Permission Execution Authorization Preflight tests a controlled execution hold for authorization-review readiness while keeping permission grant, authorization approval, execution, storage writes, canonical writes, public release, and production false.
+
+- [Permission Execution Authorization Preflight](permissionexecutionauthorizationpreflight.html)
+- [Permission Execution Authorization Preflight Notes](docs/PERMISSION_EXECUTION_AUTHORIZATION_PREFLIGHT.md)
+- [Permission Execution Authorization Preflight Data](data/vedapath-permission-execution-authorization-preflight.json)
+
 ## v3.2.4 Controlled Permission Execution Hold
 
 Controlled Permission Execution Hold holds founder decision language after founder permission decision readiness while keeping permission grant, authorization, execution, storage writes, canonical writes, public release, and production false.

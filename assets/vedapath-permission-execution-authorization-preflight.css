@@ -1,0 +1,187 @@
+/* VedaPath permission execution authorization preflight */
+body.permission-preflight-page .topbar,
+body.permission-preflight-page header.topbar {
+  height: auto !important;
+  min-height: var(--vp-header-height, 74px);
+  padding: 0 !important;
+}
+
+body.permission-preflight-page .nav {
+  gap: 5px;
+  overflow: visible;
+  flex-wrap: nowrap;
+}
+
+body.permission-preflight-page .nav .link,
+body.permission-preflight-page .nav a {
+  padding-left: 9px;
+  padding-right: 9px;
+}
+
+body.permission-preflight-page .nav .version {
+  margin-left: 6px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+body.permission-preflight-page main.workspace {
+  grid-template-columns: minmax(210px, 0.72fr) minmax(0, 1.7fr) minmax(230px, 0.8fr);
+  gap: 18px;
+}
+
+body.permission-preflight-page main.workspace > aside.panel:first-child,
+body.permission-preflight-page main.workspace > aside.panel.tight {
+  position: static;
+  max-height: none;
+  overflow: visible;
+}
+
+.permission-preflight,
+.permission-preflight-head,
+.permission-preflight-layout,
+.permission-preflight-form,
+.permission-preflight-grid,
+.permission-preflight-list,
+.permission-preflight-actions,
+.permission-preflight-rules {
+  display: grid;
+  gap: 10px;
+}
+
+.permission-preflight { gap: 16px; }
+
+.permission-preflight-head {
+  grid-template-columns: minmax(0, 1fr) 126px;
+  align-items: center;
+}
+
+.permission-preflight-mark {
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff3e4;
+  padding: 10px;
+}
+
+.permission-preflight-mark img {
+  display: block;
+  width: 100%;
+}
+
+.permission-preflight-layout {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: start;
+}
+
+.permission-preflight-form,
+.permission-preflight-card,
+.permission-preflight-result,
+.permission-preflight-output,
+.permission-preflight-rule {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.permission-preflight-form,
+.permission-preflight-card,
+.permission-preflight-result,
+.permission-preflight-rule {
+  padding: 12px;
+}
+
+.permission-preflight-form label {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.permission-preflight-form input,
+.permission-preflight-form select,
+.permission-preflight-form textarea,
+.permission-preflight-output {
+  width: 100%;
+  border: 1px solid #efc1aa;
+  border-radius: 8px;
+  background: #fffaf4;
+  color: var(--ink);
+  padding: 10px;
+}
+
+.permission-preflight-form textarea,
+.permission-preflight-output {
+  min-height: 92px;
+  resize: vertical;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 13px;
+}
+
+.permission-preflight-actions {
+  grid-template-columns: repeat(4, minmax(0, max-content));
+  align-items: center;
+}
+
+.permission-preflight-grid,
+.permission-preflight-rules {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.permission-preflight-card.ready,
+.permission-preflight-result[data-state="Preflight ready for authorization review"] {
+  border-color: #b7d5ca;
+  background: #f6fffb;
+}
+
+.permission-preflight-card.blocked,
+.permission-preflight-result[data-state^="Blocked"] {
+  border-color: #efb39a;
+  background: #fff1ea;
+}
+
+.permission-preflight-card span,
+.permission-preflight-rule span {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.permission-preflight-card strong,
+.permission-preflight-rule strong {
+  display: block;
+  margin-top: 4px;
+}
+
+.permission-preflight-boundary {
+  border-left: 4px solid var(--bhagwa);
+  padding-left: 12px;
+}
+
+@media (max-width: 1050px) {
+  body.permission-preflight-page main.workspace,
+  .permission-preflight-layout,
+  .permission-preflight-grid,
+  .permission-preflight-rules {
+    grid-template-columns: 1fr;
+  }
+
+  .permission-preflight-head {
+    grid-template-columns: 1fr;
+  }
+
+  .permission-preflight-mark {
+    max-width: 160px;
+  }
+}
+
+@media (max-width: 760px) {
+  body.permission-preflight-page .nav {
+    flex-wrap: wrap;
+  }
+
+  .permission-preflight-actions {
+    grid-template-columns: 1fr 1fr;
+  }
+}
