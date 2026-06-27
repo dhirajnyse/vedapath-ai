@@ -1,0 +1,165 @@
+/* VedaPath promotion execution preflight */
+.preflight-app,
+.preflight-head,
+.preflight-layout,
+.preflight-form,
+.preflight-grid,
+.preflight-list,
+.preflight-actions,
+.preflight-rules {
+  display: grid;
+  gap: 10px;
+}
+
+.preflight-app { gap: 16px; }
+
+.preflight-head {
+  grid-template-columns: minmax(0, 1fr) 126px;
+  align-items: center;
+}
+
+.preflight-mark {
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff3e4;
+  padding: 10px;
+}
+
+.preflight-mark img {
+  display: block;
+  width: 100%;
+}
+
+.preflight-layout {
+  grid-template-columns: minmax(0, 0.98fr) minmax(0, 1.02fr);
+  align-items: start;
+}
+
+.preflight-form,
+.preflight-card,
+.preflight-result,
+.preflight-packet,
+.preflight-rule {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.preflight-form,
+.preflight-card,
+.preflight-result,
+.preflight-rule {
+  padding: 12px;
+}
+
+.preflight-form label {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.preflight-form input,
+.preflight-form select,
+.preflight-form textarea,
+.preflight-packet {
+  width: 100%;
+  border: 1px solid #efc1aa;
+  border-radius: 8px;
+  background: #fffaf4;
+  color: var(--ink);
+  padding: 10px;
+}
+
+.preflight-form textarea,
+.preflight-packet {
+  min-height: 104px;
+  resize: vertical;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 13px;
+}
+
+.preflight-grid,
+.preflight-rules {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.preflight-card,
+.preflight-result {
+  border-left: 4px solid var(--gold);
+}
+
+.preflight-card.ready,
+.preflight-result[data-state="Execution preflight ready"] {
+  border-left-color: var(--green);
+}
+
+.preflight-card.blocked,
+.preflight-result[data-state="Blocked"],
+.preflight-result[data-state="Return to promotion hold"],
+.preflight-result[data-state="Execution hold"],
+.preflight-result[data-state="Execution blocked"],
+.preflight-result[data-state="Production forbidden"] {
+  border-left-color: var(--ochre);
+}
+
+.preflight-card span,
+.preflight-card strong,
+.preflight-rule span,
+.preflight-rule strong {
+  display: block;
+}
+
+.preflight-card span,
+.preflight-rule span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.preflight-result strong {
+  display: block;
+  font-size: 24px;
+}
+
+.preflight-result ul {
+  margin: 10px 0 0;
+  padding-left: 18px;
+}
+
+.preflight-actions {
+  grid-template-columns: repeat(2, minmax(0, max-content));
+  justify-content: start;
+}
+
+.preflight-list {
+  max-height: 320px;
+  overflow: auto;
+}
+
+.preflight-packet {
+  min-height: 260px;
+}
+
+.preflight-boundary {
+  border: 1px dashed rgba(168, 62, 18, 0.38);
+  border-radius: 8px;
+  background: #fff7ea;
+  padding: 12px;
+  font-weight: 850;
+}
+
+@media (max-width: 980px) {
+  .preflight-layout,
+  .preflight-head,
+  .preflight-grid,
+  .preflight-rules {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .preflight-actions { grid-template-columns: 1fr; }
+}

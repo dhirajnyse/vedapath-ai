@@ -953,6 +953,17 @@ Then open:
 http://127.0.0.1:8088/
 ```
 
+<!-- VEDAPATH PROMOTION EXECUTION PREFLIGHT START -->
+## v3.1.2 Promotion Execution Preflight
+
+This release dry-runs final execution readiness after source promotion hold review while all execution, promotion, storage, canonical-write, migration, account, secret, and production flags stay false.
+
+- [Promotion Execution Preflight](promotionexecutionpreflight.html)
+- [Promotion Execution Preflight Notes](docs/PROMOTION_EXECUTION_PREFLIGHT.md)
+- [Promotion Execution Preflight Data](data/vedapath-promotion-execution-preflight.json)
+
+<!-- VEDAPATH PROMOTION EXECUTION PREFLIGHT END -->
+
 <!-- VEDAPATH SOURCE PROMOTION HOLD REVIEW START -->
 ## v3.1.1 Source Promotion Hold Review
 

@@ -4373,6 +4373,23 @@ It should:
 
 Pattern Companion Control Room should never claim diagnosis, therapy, legal advice, medical advice, surveillance, scoring, or spiritual authority.
 <!-- VEDAPATH PATTERN COMPANION SPRINT BLUEPRINT END -->
+<!-- VEDAPATH PROMOTION EXECUTION PREFLIGHT BLUEPRINT START -->
+### 295. Promotion Execution Preflight
+
+VedaPath should never let a reviewed promotion hold look like execution authority. The promotion execution preflight proves the final readiness checklist can be assembled while execution remains closed.
+
+Core requirements:
+
+- start from a source promotion hold review ready packet
+- define the future execution packet scope without executing it
+- rehearse readonly execution planning and failure paths only
+- require rights, source-owner scope, reviewer evidence, rollback, monitoring, founder recheck, and source-specific human approval
+- block all write flags, storage writes, canonical writes, migrations, accounts, secrets, public release, and production
+- route next to a founder execution instruction gate
+
+Promotion Execution Preflight should never claim execution approval, source promotion, production storage, migration execution, account creation, secret handling, launch approval, therapy, ritual instruction, crisis support, or spiritual authority.
+<!-- VEDAPATH PROMOTION EXECUTION PREFLIGHT BLUEPRINT END -->
+
 <!-- VEDAPATH SOURCE PROMOTION HOLD REVIEW BLUEPRINT START -->
 ### 294. Source Promotion Hold Review
 

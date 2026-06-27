@@ -366,7 +366,7 @@
           <a class="link" href="conversationcompanionlab.html">Talk</a>
           <a class="link" href="patterncompanionlab.html">Pattern</a>
           <a class="link" href="daily.html">Daily</a>
-          <span class="version">v3.1.1 promotion hold</span>
+          <span class="version">v3.1.2 preflight</span>
         </nav>
       </header>
 
@@ -378,8 +378,8 @@
       <section class="summary" aria-label="Progress summary">
         <article class="tile">
           <span>Current version</span>
-          <strong>v3.1.1</strong>
-          <p>Source Promotion Hold Review: authorization dry-run packets now move into a review-only promotion hold while promotion, execution, storage, canonical writes, and production remain false.</p>
+          <strong>v3.1.2</strong>
+          <p>Promotion Execution Preflight: promotion hold packets now dry-run final execution readiness while execution, promotion, storage, migrations, secrets, canonical writes, and production remain false.</p>
         </article>
         <article class="tile">
           <span>MVP progress</span>
@@ -389,14 +389,14 @@
         </article>
         <article class="tile">
           <span>Full vision progress</span>
-          <strong>93%</strong>
-          <div class="progress" aria-hidden="true"><div class="bar" style="width:93%"></div></div>
-          <p>The trust loop now reviews promotion hold conditions before a source packet can approach any execution preflight.</p>
+          <strong>94%</strong>
+          <div class="progress" aria-hidden="true"><div class="bar" style="width:94%"></div></div>
+          <p>The trust loop now dry-runs final execution readiness while every real write path remains closed.</p>
         </article>
         <article class="tile">
           <span>Next release</span>
-          <strong>Promotion execution preflight</strong>
-          <p>Dry-run the final execution preflight while writes and production stay blocked.</p>
+          <strong>Founder execution instruction gate</strong>
+          <p>Define explicit founder instruction required after preflight before any real write path.</p>
         </article>
       </section>
 
@@ -2659,9 +2659,17 @@
               <span class="percent">100%</span>
             </article>
             <article class="phase">
+              <span class="badge done">Done</span>
+              <div>
+                <strong>Phase 276: Promotion Execution Preflight</strong>
+                <p>Dry-runs final execution readiness after source promotion hold review while execution, promotion, storage writes, migrations, secrets, canonical writes, and production remain false.</p>
+              </div>
+              <span class="percent">100%</span>
+            </article>
+            <article class="phase">
               <span class="badge later">Later</span>
               <div>
-                <strong>Phase 276: Production Implementation and Licensed Audio</strong>
+                <strong>Phase 277: Production Implementation and Licensed Audio</strong>
                 <p>Backend storage, account consent, reviewed source records, reviewer operations, audio rights, and launch sequencing after founder direction.</p>
               </div>
               <div class="percent">0%</div>
@@ -2672,11 +2680,11 @@
         <aside class="panel version">
           <div>
             <h2>Version Notes</h2>
-            <div class="version-row"><span>Release</span><strong>v3.1.1 Source Promotion Hold Review</strong></div>
-            <div class="version-row"><span>Previous</span><strong>v3.1.0 Implementation Authorization Dry Run</strong></div>
+            <div class="version-row"><span>Release</span><strong>v3.1.2 Promotion Execution Preflight</strong></div>
+            <div class="version-row"><span>Previous</span><strong>v3.1.1 Source Promotion Hold Review</strong></div>
             <div class="version-row"><span>Commit</span><strong>See GitHub history</strong></div>
-            <div class="version-row"><span>Goal</span><strong>Review source promotion hold conditions before any execution path.</strong></div>
-            <div class="version-row"><span>Status</span><strong>Ready for promotion execution preflight</strong></div>
+            <div class="version-row"><span>Goal</span><strong>Dry-run execution preflight without enabling execution.</strong></div>
+            <div class="version-row"><span>Status</span><strong>Ready for founder execution instruction gate</strong></div>
           </div>
 
           <div class="panel note">
@@ -2687,10 +2695,10 @@
           <div>
             <h2>Next Build Checklist</h2>
             <ul class="checklist">
-              <li><span class="dot"></span><span>Dry-run promotion execution preflight.</span></li>
-              <li><span class="dot"></span><span>Keep source promotion and storage writes disabled.</span></li>
-              <li><span class="dot"></span><span>Confirm rollback, reviewer evidence, and founder recheck.</span></li>
-              <li><span class="dot"></span><span>Preserve production and canonical source blocks.</span></li>
+              <li><span class="dot"></span><span>Define founder execution instruction requirements.</span></li>
+              <li><span class="dot"></span><span>Keep execution and production writes disabled.</span></li>
+              <li><span class="dot"></span><span>Confirm human approval is source-specific.</span></li>
+              <li><span class="dot"></span><span>Preserve rollback, monitoring, and source-owner evidence.</span></li>
             </ul>
           </div>
         </aside>
