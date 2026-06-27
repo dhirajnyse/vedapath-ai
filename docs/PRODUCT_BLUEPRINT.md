@@ -4373,6 +4373,20 @@ It should:
 
 Pattern Companion Control Room should never claim diagnosis, therapy, legal advice, medical advice, surveillance, scoring, or spiritual authority.
 <!-- VEDAPATH PATTERN COMPANION SPRINT BLUEPRINT END -->
+<!-- VEDAPATH RELEASE REVIEW GATE BLUEPRINT START -->
+### 285. Release Review Gate
+
+VedaPath should require a human release decision before storage design begins.
+
+Rules:
+
+- Release review can start only from dry-run audits ready for release review.
+- Approval means storage design only, not production writes.
+- Reviewers can return to dry run, block the release, or place founder hold.
+- Canonical writes remain false in preview.
+- The next build should design storage controls without enabling canonical writes.
+<!-- VEDAPATH RELEASE REVIEW GATE BLUEPRINT END -->
+
 <!-- VEDAPATH PRODUCTION DRY RUN AUDIT BLUEPRINT START -->
 ### 284. Production Dry-Run Audit
 

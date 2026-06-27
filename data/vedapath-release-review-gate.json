@@ -1,0 +1,272 @@
+{
+  "product": "VedaPath AI",
+  "release": "v3.0.2",
+  "status": "release review gate v1",
+  "schema_version": "release-review-gate-v1",
+  "dry_run_dataset": "data/vedapath-production-dry-run-audit.json",
+  "source_dataset": "data/vedapath-source-answer-foundation.json",
+  "local_review_store": "vedapath-release-review-gate-v1",
+  "warning": "This gate records release-review decisions only. It does not write canonical source records, publish production data, bypass source owner approval, certify scholarship, provide therapy, give ritual instruction, or become spiritual authority.",
+  "review_policy": "A release reviewer may approve the next storage-design step only after a dry-run audit is ready for release review. Production readiness and canonical writes remain false until storage controls, immutable audit, rollback receipts, and final founder instruction exist.",
+  "review_states": [
+    "Not reviewed",
+    "Approved for storage design",
+    "Return to dry run",
+    "Release blocked",
+    "Founder hold"
+  ],
+  "required_by_state": {
+    "Not reviewed": [
+      "reviewer_name",
+      "review_note"
+    ],
+    "Approved for storage design": [
+      "reviewer_name",
+      "review_note",
+      "signoff_summary",
+      "storage_boundary",
+      "rollback_confirmed",
+      "canonical_diff_confirmed"
+    ],
+    "Return to dry run": [
+      "reviewer_name",
+      "review_note",
+      "return_reason"
+    ],
+    "Release blocked": [
+      "reviewer_name",
+      "review_note",
+      "block_reason"
+    ],
+    "Founder hold": [
+      "reviewer_name",
+      "review_note",
+      "hold_reason"
+    ]
+  },
+  "gate_checks": [
+    {
+      "check": "Dry-run readiness",
+      "rule": "The incoming audit must be ready for release review."
+    },
+    {
+      "check": "No source write",
+      "rule": "Canonical write permission must remain false."
+    },
+    {
+      "check": "Rollback evidence",
+      "rule": "Reviewer confirms the rollback evidence is clear."
+    },
+    {
+      "check": "Canonical diff evidence",
+      "rule": "Reviewer confirms the source-answer dataset stayed unchanged."
+    },
+    {
+      "check": "Storage boundary",
+      "rule": "Approval can only move the work into storage design."
+    }
+  ],
+  "sample_dry_run_audit": {
+    "schema_version": "production-dry-run-audit-v1",
+    "release": "v3.0.1",
+    "dry_run_audit_id": "dry-run-audit-sample-release-review",
+    "audit_status": "Ready for release review",
+    "production_ready": false,
+    "canonical_write_allowed": false,
+    "release_review_ready": true,
+    "implementation_task_id": "implementation-task-sample-dry-run",
+    "source_answer_id": "answer-steady-action-bg-2-48",
+    "source_record_id": "bg-2-48-steadiness",
+    "source_family": "Bhagavad Gita | Smriti",
+    "owner_decision_id": "source-owner-decision-sample-implementation-queue",
+    "audit_state": "Ready for release review",
+    "auditor_name": "Dry-run reviewer",
+    "audit_note": "Dry run is ready for release review because source writes remain blocked and rollback is clear.",
+    "dry_run_result": "No production write executed; task packet can be discarded cleanly.",
+    "fix_request": "",
+    "block_reason": "",
+    "rollback_evidence": "Rollback is deletion of the dry-run packet; canonical source-answer data remains unchanged.",
+    "canonical_diff_evidence": "No canonical source diff; source-answer dataset unchanged.",
+    "release_reviewer": "Release reviewer",
+    "missing": [],
+    "blocked": [],
+    "warnings": [
+      "Release review can approve storage design only, not production writes.",
+      "A queued implementation task may enter release review only after dry-run evidence proves canonical writes stayed blocked, rollback is clear, and the source-answer dataset remains unchanged."
+    ],
+    "implementation_task": {
+      "schema_version": "implementation-queue-handoff-v1",
+      "release": "v3.0.0",
+      "implementation_task_id": "implementation-task-sample-dry-run",
+      "task_status": "Ready for production dry run",
+      "production_ready": false,
+      "canonical_write_allowed": false,
+      "dry_run_ready": true,
+      "proposal_id": "source-proposal-sample-diff-review",
+      "source_answer_id": "answer-steady-action-bg-2-48",
+      "source_record_id": "bg-2-48-steadiness",
+      "source_family": "Bhagavad Gita | Smriti",
+      "source_owner": "Source reviewer",
+      "task_state": "Ready for production dry run",
+      "implementer_name": "Implementation lead",
+      "task_note": "Prepare a dry-run task for the approved boundary/readiness fields only.",
+      "implementation_plan": "Create a non-canonical patch packet for review_state, readiness, and boundary copy only.",
+      "engineering_question": "",
+      "test_plan": "Check that source, citation, and canonical text fields remain unchanged; verify generated packet can be discarded cleanly.",
+      "rollback_plan": "Rollback by deleting the implementation task and keeping source-answer records unchanged.",
+      "canonical_write_guard": "Canonical writes blocked",
+      "return_reason": "",
+      "block_reason": "",
+      "missing": [],
+      "blocked": [],
+      "warnings": [
+        "Dry-run task only; not a release.",
+        "Canonical source-answer data remains untouched."
+      ],
+      "owner_status": "Owner approved for implementation queue",
+      "owner_decision_id": "source-owner-decision-sample-implementation-queue",
+      "owner_packet": {
+        "schema_version": "source-owner-approval-lane-v1",
+        "release": "v2.9.9",
+        "owner_decision_id": "source-owner-decision-sample-implementation-queue",
+        "owner_status": "Owner approved for implementation queue",
+        "production_ready": false,
+        "implementation_queue_ready": true,
+        "proposal_id": "source-proposal-sample-diff-review",
+        "source_answer_id": "answer-steady-action-bg-2-48",
+        "source_record_id": "bg-2-48-steadiness",
+        "source_family": "Bhagavad Gita | Smriti",
+        "source_owner": "Source reviewer",
+        "decision_state": "Owner approved for implementation queue",
+        "owner_note": "Approve only the editable boundary and readiness path. Canonical citation fields remain unchanged.",
+        "approval_scope": "Approve review_state, readiness, and boundary language only.",
+        "blocked_field_disposition": "Exclude the source field from scope; do not edit canonical citation or rights-sensitive text.",
+        "return_reason": "",
+        "rejection_reason": "",
+        "rollback_instruction": "Rollback by discarding this owner approval packet and keeping the existing source-answer record unchanged.",
+        "implementation_guard": "Implementation queue may draft a non-canonical change packet only; production storage and immutable audit remain required.",
+        "missing": [],
+        "blocked": [],
+        "warnings": [
+          "Blocked fields remain outside owner approval scope.",
+          "A source owner may approve a reviewed proposal for implementation queue only when the scope excludes blocked fields, rollback is explicit, and production storage remains separate."
+        ],
+        "review_packet_status": "Ready for source owner",
+        "reviewed_diff_count": 3,
+        "blocked_field_count": 1,
+        "review_packet": {
+          "schema_version": "proposal-diff-review-room-v1",
+          "release": "v2.9.8",
+          "review_id": "proposal-review-sample-owner-lane",
+          "local_status": "Ready for source owner",
+          "production_ready": false,
+          "proposal_id": "source-proposal-sample-diff-review",
+          "source_answer_id": "answer-steady-action-bg-2-48",
+          "source_record_id": "bg-2-48-steadiness",
+          "source": "Bhagavad Gita 2.48",
+          "source_family": "Bhagavad Gita | Smriti",
+          "decision_state": "Ready for source owner",
+          "reviewer_name": "Founder review",
+          "source_owner": "Source reviewer",
+          "second_reviewer": "",
+          "review_note": "Diff is clear enough for source-owner review, but blocked source field must remain out of scope.",
+          "revision_reason": "",
+          "rejection_reason": "",
+          "rollback_note": "Rollback by discarding this proposal packet; canonical source record remains unchanged in preview.",
+          "missing": [],
+          "blocked": [],
+          "warnings": [
+            "Proposal contains blocked fields; keep them out of owner approval scope.",
+            "A source proposal can move through local review states, but production still requires source-owner approval, durable identity, immutable audit, rollback readiness, and controlled storage before canonical records change."
+          ],
+          "reviewed_diff_count": 3,
+          "blocked_field_count": 1,
+          "proposal": {
+            "schema_version": "source-update-proposal-bridge-v1",
+            "release": "v2.9.7",
+            "proposal_id": "source-proposal-sample-diff-review",
+            "status": "Draft proposal only",
+            "source_answer_id": "answer-steady-action-bg-2-48",
+            "source_record_id": "bg-2-48-steadiness",
+            "source": "Bhagavad Gita 2.48",
+            "source_family": "Bhagavad Gita | Smriti",
+            "audit_packet": {
+              "schema_version": "review-identity-gate-v1",
+              "release": "v2.9.6",
+              "decision_id": "identity-gate-sample-source-update",
+              "queue_id": "queue-direct-source-candidate",
+              "ticket_id": "ticket-direct-source-candidate",
+              "action_id": "accept",
+              "role_id": "founder-review",
+              "reviewer_name": "Founder review",
+              "second_reviewer": "Source reviewer",
+              "decision_note": "Accept as a proposal for source-record update review, not as a canonical change.",
+              "evidence_note": "Bhagavad Gita 2.48 record supports calm reflection with a boundary against therapy or guaranteed outcomes.",
+              "boundary_note": "Keep the result as source-backed reflection support only.",
+              "gate_status": "Proposal only",
+              "production_ready": false,
+              "missing": [],
+              "warnings": [
+                "Accepted local decision remains proposal-only until production storage and identity exist."
+              ],
+              "created_at": "2026-06-27T00:00:00.000Z"
+            },
+            "diffs": [
+              {
+                "field": "review_state",
+                "current_value": "reviewed-preview",
+                "proposed_value": "source-update-proposed"
+              },
+              {
+                "field": "readiness",
+                "current_value": "answer-preview-ready",
+                "proposed_value": "needs-source-owner-review"
+              },
+              {
+                "field": "boundary",
+                "current_value": "Reflection support only; not therapy, medical advice, or command language.",
+                "proposed_value": "Reflection support only; not therapy, medical advice, ritual instruction, or spiritual authority."
+              }
+            ],
+            "blocked_fields": [
+              {
+                "field": "source",
+                "attempted_value": "Bhagavad Gita 2.48 - edited directly",
+                "reason": "Canonical or rights-sensitive field requires a separate source-owner process."
+              }
+            ],
+            "missing": [],
+            "warnings": [
+              "Accepted or recommended review packets may create source-update proposals. Production must require durable identity, immutable audit, diff review, source-owner approval, and rollback before any canonical record changes."
+            ],
+            "production_requirements": [
+              "durable reviewer identity",
+              "immutable audit packet",
+              "source record diff preview",
+              "second reviewer for acceptance",
+              "source owner approval",
+              "rollback note"
+            ],
+            "created_at": "2026-06-27T00:00:00.000Z"
+          },
+          "created_at": "2026-06-27T00:00:00.000Z"
+        },
+        "created_at": "2026-06-27T00:00:00.000Z"
+      },
+      "created_at": "2026-06-27T00:00:00.000Z"
+    },
+    "created_at": "2026-06-27T00:00:00.000Z"
+  },
+  "sample_review": {
+    "review_state": "Approved for storage design",
+    "reviewer_name": "Release reviewer",
+    "review_note": "Dry-run evidence is clear enough to design storage controls without approving production writes.",
+    "signoff_summary": "Approve storage-design planning only; canonical source-answer data remains untouched.",
+    "storage_boundary": "Storage design only; no canonical writes, no production publish, and no final release.",
+    "rollback_confirmed": "Confirmed: rollback is deletion of the dry-run packet and no source-answer data changed.",
+    "canonical_diff_confirmed": "Confirmed: no canonical source diff and source-answer dataset unchanged.",
+    "return_reason": "",
+    "block_reason": "",
+    "hold_reason": ""
+  }
+}

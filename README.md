@@ -953,6 +953,18 @@ Then open:
 http://127.0.0.1:8088/
 ```
 
+<!-- VEDAPATH RELEASE REVIEW GATE START -->
+## v3.0.2 Release Review Gate
+
+This release adds the final human review step before storage design.
+
+- adds releasereviewgate.html
+- adds data/vedapath-release-review-gate.json
+- records approve-for-storage-design, return, block, and founder-hold decisions
+- keeps production readiness false and canonical source writes blocked
+- sets the next release as storage design gate
+<!-- VEDAPATH RELEASE REVIEW GATE END -->
+
 <!-- VEDAPATH PRODUCTION DRY RUN AUDIT START -->
 ## v3.0.1 Production Dry-Run Audit
 

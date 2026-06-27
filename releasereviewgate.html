@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VedaPath Release Review Gate</title>
+    <link rel="stylesheet" href="assets/vedapath-sprint.css">
+    <link rel="stylesheet" href="assets/vedapath-release-review-gate.css">
+    <link rel="stylesheet" href="assets/vedapath-cohesive.css">
+    <link rel="stylesheet" href="assets/vedapath-polish.css">
+    <link rel="stylesheet" href="assets/vedapath-focus.css">
+  </head>
+  <body>
+    <div class="shell" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top" aria-label="VedaPath AI home">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
+          <div>
+            <strong>VedaPath AI</strong>
+            <span>Release review gate</span>
+          </div>
+        </a>
+        <nav class="nav" aria-label="Project links">
+          <a class="link" href="index.html">Home</a>
+          <a class="link" href="build-status.html">Build</a>
+          <a class="link" href="brand/brand-board.html">Brand</a>
+          <a class="link" href="blueprint.html">Blueprint</a>
+          <a class="link" href="citedanswerlab.html">Answers</a>
+          <a class="link active" href="reviewqueuepersistence.html">Review</a>
+          <a class="link" href="mantralenslab.html">Mantra</a>
+          <a class="link" href="lifecompanionlab.html">Life</a>
+          <a class="link" href="conversationcompanionlab.html">Talk</a>
+          <a class="link" href="patterncompanionlab.html">Pattern</a>
+          <a class="link" href="daily.html">Daily</a>
+          <span class="version">v3.0.2 review gate</span>
+        </nav>
+      </header>
+
+      <main class="workspace" aria-label="VedaPath Release Review Gate workspace">
+        <aside class="panel">
+          <span class="eyebrow">Release restraint</span>
+          <h2>Approve the next step, not production</h2>
+          <p class="muted">A reviewer can approve storage design, return the packet to dry run, block it, or place it on founder hold.</p>
+          <div class="sprint-list">
+            <div class="sprint-step active"><span class="step-index">1</span><div><strong>Receive</strong><p>Read dry-run evidence.</p></div></div>
+            <div class="sprint-step"><span class="step-index">2</span><div><strong>Check</strong><p>Confirm no source diff.</p></div></div>
+            <div class="sprint-step"><span class="step-index">3</span><div><strong>Decide</strong><p>Approve, return, block, or hold.</p></div></div>
+            <div class="sprint-step"><span class="step-index">4</span><div><strong>Record</strong><p>Copy review packet.</p></div></div>
+          </div>
+          <div class="button-row" style="margin-top: 16px;">
+            <a class="button safe" href="productiondryrunaudit.html">Open Dry Run</a>
+            <a class="button" href="implementationqueue.html">Open Queue</a>
+          </div>
+        </aside>
+
+        <section class="panel gate-app" id="releaseReviewGate">
+          <div class="gate-head">
+            <div>
+              <span class="eyebrow">Release review gate</span>
+              <h1>Review the evidence. Keep the door narrow.</h1>
+              <p class="muted">This room turns a ready dry-run audit into a release-review decision. Approval means storage design can begin, not production writes.</p>
+            </div>
+            <div class="gate-mark"><img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath release review mark"></div>
+          </div>
+
+          <section class="gate-layout">
+            <div class="gate-form">
+              <h2>Release Review</h2>
+              <label>Dry-run audit packet<textarea id="gateDryRunAudit"></textarea></label>
+              <label>Review state<select id="gateReviewState"></select></label>
+              <label>Reviewer name<input id="gateReviewer" type="text" placeholder="Release reviewer"></label>
+              <label>Review note<textarea id="gateNote"></textarea></label>
+              <label>Signoff summary<textarea id="gateSignoff"></textarea></label>
+              <label>Storage boundary<textarea id="gateStorageBoundary"></textarea></label>
+              <label>Rollback confirmed<textarea id="gateRollbackConfirmed"></textarea></label>
+              <label>Canonical diff confirmed<textarea id="gateDiffConfirmed"></textarea></label>
+              <label>Return reason<textarea id="gateReturnReason"></textarea></label>
+              <label>Block reason<textarea id="gateBlockReason"></textarea></label>
+              <label>Founder hold reason<textarea id="gateHoldReason"></textarea></label>
+              <div class="gate-actions">
+                <button class="button primary" id="runReleaseReview" type="button">Review Gate</button>
+                <button class="button safe" id="loadReleaseReviewSample" type="button">Load Sample</button>
+                <button class="button" id="saveReleaseReview" type="button">Save Local</button>
+                <button class="button" id="clearReleaseReviews" type="button">Clear Local</button>
+              </div>
+            </div>
+            <div>
+              <section class="gate-result" id="gateResultCard" data-state="Blocked"></section>
+              <section style="margin-top: 10px;">
+                <h2>Dry-Run Evidence</h2>
+                <div class="gate-list" id="gateAuditScope"></div>
+              </section>
+            </div>
+          </section>
+
+          <section>
+            <h2>Gate Checks</h2>
+            <div class="gate-rules" id="gateChecks"></div>
+          </section>
+
+          <section class="gate-layout">
+            <div>
+              <div class="gate-actions">
+                <button class="button safe" id="copyReleaseReviewPacket" type="button">Copy Review Packet</button>
+                <a class="button" href="data/vedapath-release-review-gate.json">Open JSON</a>
+              </div>
+              <textarea class="gate-packet" id="gatePacket" aria-label="Release review packet"></textarea>
+            </div>
+            <div>
+              <h2>Saved Local Reviews</h2>
+              <div class="gate-list" id="gateSaved"></div>
+            </div>
+          </section>
+        </section>
+
+        <aside class="panel tight">
+          <span class="badge green">Review gate</span>
+          <h2 style="margin-top: 14px;">Storage Boundary</h2>
+          <p class="muted">This page can approve storage design only. Production source writes remain false until a later storage and founder-release gate exists.</p>
+          <div class="progress" aria-label="Release review gate progress 100 percent"><div class="bar" style="--score:100%"></div></div>
+          <div class="metric-grid">
+            <div class="metric"><span>Current</span><strong>v3.0.2</strong></div>
+            <div class="metric"><span>States</span><strong>5</strong></div>
+            <div class="metric"><span>Writes</span><strong>False</strong></div>
+            <div class="metric"><span>Store</span><strong>Local</strong></div>
+          </div>
+          <section class="panel tight boundary" style="margin-top: 16px;">
+            <h2>Gate Rule</h2>
+            <p class="muted">Release review is not launch approval. It is the last review checkpoint before storage design begins.</p>
+          </section>
+        </aside>
+      </main>
+    </div>
+    <script src="assets/vedapath-release-review-gate.js"></script>
+  </body>
+</html>
