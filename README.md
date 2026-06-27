@@ -954,6 +954,14 @@ http://127.0.0.1:8088/
 ```
 
 <!-- VEDAPATH FOUNDER AUTHORIZATION DECISION GATE START -->
+## v3.2.3 Founder Permission Decision Gate
+
+Founder Permission Decision Gate records founder decision language after permission review readiness while keeping permission grant, authorization, execution, storage writes, canonical writes, public release, and production false.
+
+- [Founder Permission Decision Gate](founderpermissiondecisiongate.html)
+- [Founder Permission Decision Gate Notes](docs/FOUNDER_PERMISSION_DECISION_GATE.md)
+- [Founder Permission Decision Gate Data](data/vedapath-founder-permission-decision-gate.json)
+
 ## v3.2.2 Controlled Authorization Permission Review Gate
 
 Controlled Authorization Permission Review Gate reviews permission-candidate language after preflight eligibility while keeping permission grant, authorization, execution, storage writes, canonical writes, public release, and production false.

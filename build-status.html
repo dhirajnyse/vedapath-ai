@@ -366,7 +366,7 @@
           <a class="link" href="conversationcompanionlab.html">Talk</a>
           <a class="link" href="patterncompanionlab.html">Pattern</a>
           <a class="link" href="daily.html">Daily</a>
-          <span class="version">v3.2.2 permission review</span>
+          <span class="version">v3.2.3 founder decision</span>
         </nav>
       </header>
 
@@ -378,8 +378,8 @@
       <section class="summary" aria-label="Progress summary">
         <article class="tile">
           <span>Current version</span>
-          <strong>v3.2.2</strong>
-          <p>Controlled Authorization Permission Review Gate: permission-candidate language is now reviewed while permission grant, authorization, execution, storage, public release, and production remain false.</p>
+          <strong>v3.2.3</strong>
+          <p>Founder Permission Decision Gate: founder decision language is now recorded while permission grant, authorization, execution, storage, public release, and production remain false.</p>
         </article>
         <article class="tile">
           <span>MVP progress</span>
@@ -391,12 +391,12 @@
           <span>Full vision progress</span>
           <strong>99%</strong>
           <div class="progress" aria-hidden="true"><div class="bar" style="width:99%"></div></div>
-          <p>The trust loop now separates permission review readiness from permission grant while every real write path remains closed.</p>
+          <p>The trust loop now separates founder decision readiness from actual permission grant while every real write path remains closed.</p>
         </article>
         <article class="tile">
           <span>Next release</span>
-          <strong>Founder permission decision gate</strong>
-          <p>Ask for founder decision while still blocking execution.</p>
+          <strong>Controlled permission execution hold</strong>
+          <p>Hold the founder decision behind one more no-execution gate.</p>
         </article>
       </section>
 
@@ -2747,9 +2747,17 @@
               <span class="percent">100%</span>
             </article>
             <article class="phase">
+              <span class="badge done">Done</span>
+              <div>
+                <strong>Phase 287: Founder Permission Decision Gate</strong>
+                <p>Records founder decision language after permission review readiness while permission grant, authorization, execution, storage writes, canonical writes, public release, and production remain false.</p>
+              </div>
+              <span class="percent">100%</span>
+            </article>
+            <article class="phase">
               <span class="badge later">Later</span>
               <div>
-                <strong>Phase 287: Production Implementation and Licensed Audio</strong>
+                <strong>Phase 288: Production Implementation and Licensed Audio</strong>
                 <p>Backend storage, account consent, reviewed source records, reviewer operations, audio rights, and launch sequencing after founder direction.</p>
               </div>
               <div class="percent">0%</div>
@@ -2760,11 +2768,11 @@
         <aside class="panel version">
           <div>
             <h2>Version Notes</h2>
-            <div class="version-row"><span>Release</span><strong>v3.2.2 Controlled Authorization Permission Review Gate</strong></div>
-            <div class="version-row"><span>Previous</span><strong>v3.2.1 Controlled Authorization Permission Preflight</strong></div>
+            <div class="version-row"><span>Release</span><strong>v3.2.3 Founder Permission Decision Gate</strong></div>
+            <div class="version-row"><span>Previous</span><strong>v3.2.2 Controlled Authorization Permission Review Gate</strong></div>
             <div class="version-row"><span>Commit</span><strong>See GitHub history</strong></div>
-            <div class="version-row"><span>Goal</span><strong>Review permission-candidate language without granting permission, authorization, or execution.</strong></div>
-            <div class="version-row"><span>Status</span><strong>Ready for founder permission decision gate</strong></div>
+            <div class="version-row"><span>Goal</span><strong>Record founder decision language without granting permission, authorization, or execution.</strong></div>
+            <div class="version-row"><span>Status</span><strong>Ready for controlled permission execution hold</strong></div>
           </div>
 
           <div class="panel note">
@@ -2775,10 +2783,10 @@
           <div>
             <h2>Next Build Checklist</h2>
             <ul class="checklist">
-              <li><span class="dot"></span><span>Build founder permission decision gate.</span></li>
-              <li><span class="dot"></span><span>Ask for founder decision after permission review readiness.</span></li>
+              <li><span class="dot"></span><span>Build controlled permission execution hold.</span></li>
+              <li><span class="dot"></span><span>Keep founder decision behind a no-execution handoff.</span></li>
               <li><span class="dot"></span><span>Keep permission grant, authorization, execution, storage, canonical writes, public release, and production disabled.</span></li>
-              <li><span class="dot"></span><span>Separate founder decision from actual execution permission.</span></li>
+              <li><span class="dot"></span><span>Separate controlled hold readiness from any runnable operation.</span></li>
             </ul>
           </div>
         </aside>

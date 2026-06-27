@@ -1,0 +1,187 @@
+/* VedaPath founder permission decision gate */
+body.founder-permission-page .topbar,
+body.founder-permission-page header.topbar {
+  height: auto !important;
+  min-height: var(--vp-header-height, 74px);
+  padding: 0 !important;
+}
+
+body.founder-permission-page .nav {
+  gap: 5px;
+  overflow: visible;
+  flex-wrap: nowrap;
+}
+
+body.founder-permission-page .nav .link,
+body.founder-permission-page .nav a {
+  padding-left: 9px;
+  padding-right: 9px;
+}
+
+body.founder-permission-page .nav .version {
+  margin-left: 6px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+body.founder-permission-page main.workspace {
+  grid-template-columns: minmax(210px, 0.72fr) minmax(0, 1.7fr) minmax(230px, 0.8fr);
+  gap: 18px;
+}
+
+body.founder-permission-page main.workspace > aside.panel:first-child,
+body.founder-permission-page main.workspace > aside.panel.tight {
+  position: static;
+  max-height: none;
+  overflow: visible;
+}
+
+.founder-permission,
+.founder-permission-head,
+.founder-permission-layout,
+.founder-permission-form,
+.founder-permission-grid,
+.founder-permission-list,
+.founder-permission-actions,
+.founder-permission-rules {
+  display: grid;
+  gap: 10px;
+}
+
+.founder-permission { gap: 16px; }
+
+.founder-permission-head {
+  grid-template-columns: minmax(0, 1fr) 126px;
+  align-items: center;
+}
+
+.founder-permission-mark {
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff3e4;
+  padding: 10px;
+}
+
+.founder-permission-mark img {
+  display: block;
+  width: 100%;
+}
+
+.founder-permission-layout {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: start;
+}
+
+.founder-permission-form,
+.founder-permission-card,
+.founder-permission-result,
+.founder-permission-output,
+.founder-permission-rule {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.founder-permission-form,
+.founder-permission-card,
+.founder-permission-result,
+.founder-permission-rule {
+  padding: 12px;
+}
+
+.founder-permission-form label {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.founder-permission-form input,
+.founder-permission-form select,
+.founder-permission-form textarea,
+.founder-permission-output {
+  width: 100%;
+  border: 1px solid #efc1aa;
+  border-radius: 8px;
+  background: #fffaf4;
+  color: var(--ink);
+  padding: 10px;
+}
+
+.founder-permission-form textarea,
+.founder-permission-output {
+  min-height: 92px;
+  resize: vertical;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 13px;
+}
+
+.founder-permission-actions {
+  grid-template-columns: repeat(4, minmax(0, max-content));
+  align-items: center;
+}
+
+.founder-permission-grid,
+.founder-permission-rules {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.founder-permission-card.ready,
+.founder-permission-result[data-state="Decision ready for controlled hold"] {
+  border-color: #b7d5ca;
+  background: #f6fffb;
+}
+
+.founder-permission-card.blocked,
+.founder-permission-result[data-state^="Blocked"] {
+  border-color: #efb39a;
+  background: #fff1ea;
+}
+
+.founder-permission-card span,
+.founder-permission-rule span {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.founder-permission-card strong,
+.founder-permission-rule strong {
+  display: block;
+  margin-top: 4px;
+}
+
+.founder-permission-boundary {
+  border-left: 4px solid var(--bhagwa);
+  padding-left: 12px;
+}
+
+@media (max-width: 1050px) {
+  body.founder-permission-page main.workspace,
+  .founder-permission-layout,
+  .founder-permission-grid,
+  .founder-permission-rules {
+    grid-template-columns: 1fr;
+  }
+
+  .founder-permission-head {
+    grid-template-columns: 1fr;
+  }
+
+  .founder-permission-mark {
+    max-width: 160px;
+  }
+}
+
+@media (max-width: 760px) {
+  body.founder-permission-page .nav {
+    flex-wrap: wrap;
+  }
+
+  .founder-permission-actions {
+    grid-template-columns: 1fr 1fr;
+  }
+}
