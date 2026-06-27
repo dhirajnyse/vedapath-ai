@@ -953,6 +953,17 @@ Then open:
 http://127.0.0.1:8088/
 ```
 
+<!-- VEDAPATH FOUNDER AUTHORIZATION DECISION GATE START -->
+## v3.1.7 Founder Authorization Decision Gate
+
+This release records founder decision posture on held authorization language while all authorization, execution, promotion, storage, canonical-write, migration, account, secret, public-release, and production flags stay false.
+
+- [Founder Authorization Decision Gate](founderauthorizationdecisiongate.html)
+- [Founder Authorization Decision Gate Notes](docs/FOUNDER_AUTHORIZATION_DECISION_GATE.md)
+- [Founder Authorization Decision Gate Data](data/vedapath-founder-authorization-decision-gate.json)
+
+<!-- VEDAPATH FOUNDER AUTHORIZATION DECISION GATE END -->
+
 <!-- VEDAPATH CONTROLLED EXECUTION AUTHORIZATION HOLD START -->
 ## v3.1.6 Controlled Execution Authorization Hold
 

@@ -4373,6 +4373,22 @@ It should:
 
 Pattern Companion Control Room should never claim diagnosis, therapy, legal advice, medical advice, surveillance, scoring, or spiritual authority.
 <!-- VEDAPATH PATTERN COMPANION SPRINT BLUEPRINT END -->
+<!-- VEDAPATH FOUNDER AUTHORIZATION DECISION GATE BLUEPRINT START -->
+### 300. Founder Authorization Decision Gate
+
+VedaPath should separate a founder decision posture from execution authorization. The founder can record that exact language may move to the next draft, but the system still cannot authorize or execute.
+
+Core requirements:
+
+- start from a controlled authorization hold ready object
+- record one exact source-specific founder decision posture
+- preserve evidence, source lock, risk, rollback, monitoring, stop condition, production boundary, and expiry
+- permit only a future controlled execution packet authorization draft
+- block authorization, execution, source promotion, storage writes, canonical writes, migrations, accounts, secrets, public release, and production
+
+Founder Authorization Decision Gate should never claim execution approval, storage permission, canonical source authority, migration authority, production authority, therapy, ritual instruction, crisis support, or spiritual authority.
+<!-- VEDAPATH FOUNDER AUTHORIZATION DECISION GATE BLUEPRINT END -->
+
 <!-- VEDAPATH CONTROLLED EXECUTION AUTHORIZATION HOLD BLUEPRINT START -->
 ### 299. Controlled Execution Authorization Hold
 

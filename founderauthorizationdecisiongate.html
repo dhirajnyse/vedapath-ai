@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VedaPath Founder Authorization Decision Gate</title>
+    <link rel="stylesheet" href="assets/vedapath-sprint.css">
+    <link rel="stylesheet" href="assets/vedapath-cohesive.css">
+    <link rel="stylesheet" href="assets/vedapath-polish.css">
+    <link rel="stylesheet" href="assets/vedapath-focus.css">
+    <link rel="stylesheet" href="assets/vedapath-founder-authorization-decision-gate.css">
+  </head>
+  <body class="decision-page">
+    <div class="shell" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top" aria-label="VedaPath AI home">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
+          <div>
+            <strong>VedaPath AI</strong>
+            <span>Founder authorization decision gate</span>
+          </div>
+        </a>
+        <nav class="nav" aria-label="Project links">
+          <a class="link" href="index.html">Home</a>
+          <a class="link" href="build-status.html">Build</a>
+          <a class="link" href="brand/brand-board.html">Brand</a>
+          <a class="link" href="blueprint.html">Blueprint</a>
+          <a class="link" href="citedanswerlab.html">Answers</a>
+          <a class="link active" href="reviewqueuepersistence.html">Review</a>
+          <a class="link" href="mantralenslab.html">Mantra</a>
+          <a class="link" href="lifecompanionlab.html">Life</a>
+          <a class="link" href="conversationcompanionlab.html">Talk</a>
+          <a class="link" href="patterncompanionlab.html">Pattern</a>
+          <a class="link" href="daily.html">Daily</a>
+          <span class="version">v3.1.7 decision gate</span>
+        </nav>
+      </header>
+
+      <main class="workspace" aria-label="VedaPath Founder Authorization Decision Gate workspace">
+        <aside class="panel">
+          <span class="eyebrow">Decision is not execution</span>
+          <h2>Record founder posture before any packet draft</h2>
+          <p class="muted">This room records whether held language may move to a later authorization draft. It cannot authorize, execute, promote, store, migrate, use secrets, publish, or launch.</p>
+          <div class="sprint-list">
+            <div class="sprint-step active"><span class="step-index">1</span><div><strong>Hold</strong><p>Load language.</p></div></div>
+            <div class="sprint-step"><span class="step-index">2</span><div><strong>Decision</strong><p>Record posture.</p></div></div>
+            <div class="sprint-step"><span class="step-index">3</span><div><strong>Boundary</strong><p>Keep flags false.</p></div></div>
+            <div class="sprint-step"><span class="step-index">4</span><div><strong>Draft</strong><p>Move to next draft only.</p></div></div>
+          </div>
+          <div class="button-row" style="margin-top: 16px;">
+            <a class="button primary" href="controlledexecutionauthorizationhold.html">Open Authorization Hold</a>
+            <a class="button safe" href="controlledexecutionreviewgate.html">Open Review Gate</a>
+          </div>
+        </aside>
+
+        <section class="panel decision-gate" id="founderAuthorizationDecisionGate">
+          <div class="decision-head">
+            <div>
+              <span class="eyebrow">Founder decision gate</span>
+              <h1>Record the decision. Keep authority closed.</h1>
+              <p class="muted">A ready decision here means the language can move to a controlled execution packet authorization draft. It still cannot authorize, execute, promote, store, update canonical records, run migrations, create accounts, use secrets, publish public release, or launch production.</p>
+            </div>
+            <div class="decision-mark"><img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath founder authorization decision mark"></div>
+          </div>
+
+          <section class="decision-layout">
+            <div class="decision-form">
+              <h2>Founder Authorization Decision</h2>
+              <label>Authorization hold packet<textarea id="decisionAuthorizationHold"></textarea></label>
+              <label>Decision state<select id="decisionState"></select></label>
+              <label>Decision actor<input id="decisionActor" type="text" placeholder="Founder authorization decision reviewer"></label>
+              <label>Founder name<input id="decisionFounderName" type="text" placeholder="Founder sample"></label>
+              <label>Authorization hold id<input id="decisionAuthorizationHoldId" type="text"></label>
+              <label>Review gate id<input id="decisionReviewGateId" type="text"></label>
+              <label>Packet draft id<input id="decisionPacketDraftId" type="text"></label>
+              <label>Founder gate id<input id="decisionFounderGateId" type="text"></label>
+              <label>Preflight id<input id="decisionPreflightId" type="text"></label>
+              <label>Source answer id<input id="decisionSourceAnswer" type="text"></label>
+              <label>Source record id<input id="decisionSourceRecord" type="text"></label>
+              <label>Source family<input id="decisionSourceFamily" type="text"></label>
+              <label>Decision scope<textarea id="decisionScopeText"></textarea></label>
+              <label>Founder decision language<textarea id="decisionFounderLanguage"></textarea></label>
+              <label>Decision rationale<textarea id="decisionRationale"></textarea></label>
+              <label>Evidence summary<textarea id="decisionEvidence"></textarea></label>
+              <label>Source lock<textarea id="decisionSourceLock"></textarea></label>
+              <label>Risk acknowledgment<textarea id="decisionRisk"></textarea></label>
+              <label>Boundary statement<textarea id="decisionBoundary"></textarea></label>
+              <label>Rollback condition<textarea id="decisionRollback"></textarea></label>
+              <label>Monitoring condition<textarea id="decisionMonitoring"></textarea></label>
+              <label>Stop condition<textarea id="decisionStopCondition"></textarea></label>
+              <label>Expiry check<textarea id="decisionExpiry"></textarea></label>
+              <label>Production boundary<textarea id="decisionProductionBoundary"></textarea></label>
+              <label>Review question<textarea id="decisionQuestion"></textarea></label>
+              <label>Return reason<textarea id="decisionReturnReason"></textarea></label>
+              <label>Hold reason<textarea id="decisionHoldReason"></textarea></label>
+              <label>Block reason<textarea id="decisionBlockReason"></textarea></label>
+              <div class="decision-actions">
+                <button class="button primary" id="runDecisionGate" type="button">Run Decision</button>
+                <button class="button safe" id="loadDecisionSample" type="button">Load Sample</button>
+                <button class="button" id="saveDecisionGate" type="button">Save Local</button>
+                <button class="button" id="clearDecisionGates" type="button">Clear Local</button>
+              </div>
+            </div>
+            <div>
+              <section class="decision-result" id="decisionResultCard" data-state="Blocked"></section>
+              <section style="margin-top: 10px;">
+                <h2>Decision Scope</h2>
+                <div class="decision-list" id="decisionScope"></div>
+              </section>
+            </div>
+          </section>
+
+          <section>
+            <h2>Decision Checks</h2>
+            <div class="decision-rules" id="decisionChecks"></div>
+          </section>
+
+          <section class="decision-layout">
+            <div>
+              <div class="decision-actions">
+                <button class="button safe" id="copyDecisionGate" type="button">Copy Decision Gate</button>
+                <a class="button" href="data/vedapath-founder-authorization-decision-gate.json">Open JSON</a>
+              </div>
+              <textarea class="decision-output" id="decisionOutput" aria-label="Founder authorization decision gate"></textarea>
+            </div>
+            <div>
+              <h2>Saved Local Decisions</h2>
+              <div class="decision-list" id="decisionSaved"></div>
+            </div>
+          </section>
+        </section>
+
+        <aside class="panel tight">
+          <span class="badge green">Decision is not authorization</span>
+          <h2 style="margin-top: 14px;">Ready to Draft, Not Run</h2>
+          <p class="muted">The decision moves language to the next draft only while every operational path stays locked.</p>
+          <div class="progress" aria-label="Founder authorization decision gate progress 100 percent"><div class="bar" style="--score:100%"></div></div>
+          <div class="metric-grid">
+            <div class="metric"><span>Current</span><strong>v3.1.7</strong></div>
+            <div class="metric"><span>States</span><strong>8</strong></div>
+            <div class="metric"><span>Authorized</span><strong>False</strong></div>
+            <div class="metric"><span>Next</span><strong>Authorization draft</strong></div>
+          </div>
+          <section class="panel tight boundary" style="margin-top: 16px;">
+            <h2>Decision Boundary</h2>
+            <p class="decision-boundary">Decision only. Authorization, execution, founder grant, source promotion, storage writes, canonical writes, migrations, accounts, secrets, public release, and production launch remain false.</p>
+            <p class="muted">This release prepares the controlled execution packet authorization draft. It does not execute anything.</p>
+          </section>
+        </aside>
+      </main>
+    </div>
+    <script src="assets/vedapath-founder-authorization-decision-gate.js"></script>
+  </body>
+</html>
