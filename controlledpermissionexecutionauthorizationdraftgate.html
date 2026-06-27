@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VedaPath Controlled Permission Execution Authorization Draft Gate</title>
+    <link rel="stylesheet" href="assets/vedapath-sprint.css">
+    <link rel="stylesheet" href="assets/vedapath-cohesive.css">
+    <link rel="stylesheet" href="assets/vedapath-polish.css">
+    <link rel="stylesheet" href="assets/vedapath-focus.css">
+    <link rel="stylesheet" href="assets/vedapath-controlled-permission-execution-authorization-draft-gate.css">
+  </head>
+  <body class="permission-execution-draft-page">
+    <div class="shell" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top" aria-label="VedaPath AI home">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
+          <div>
+            <strong>VedaPath AI</strong>
+            <span>Controlled draft gate</span>
+          </div>
+        </a>
+        <nav class="nav" aria-label="Project links">
+          <a class="link" href="index.html">Home</a>
+          <a class="link" href="build-status.html">Build</a>
+          <a class="link" href="brand/brand-board.html">Brand</a>
+          <a class="link" href="blueprint.html">Blueprint</a>
+          <a class="link" href="citedanswerlab.html">Answers</a>
+          <a class="link active" href="reviewqueuepersistence.html">Review</a>
+          <a class="link" href="mantralenslab.html">Mantra</a>
+          <a class="link" href="lifecompanionlab.html">Life</a>
+          <a class="link" href="conversationcompanionlab.html">Talk</a>
+          <a class="link" href="patterncompanionlab.html">Pattern</a>
+          <a class="link" href="daily.html">Daily</a>
+          <span class="version">v3.2.8 draft gate</span>
+        </nav>
+      </header>
+
+      <main class="workspace" aria-label="VedaPath Controlled Permission Execution Authorization Draft Gate workspace">
+        <aside class="panel">
+          <span class="eyebrow">Draft is not authorization</span>
+          <h2>Write the packet. Run nothing.</h2>
+          <p class="muted">This gate turns a founder draft-only decision into reviewable draft language. It cannot grant permission, approve authorization, execute, store, publish, or launch.</p>
+          <div class="sprint-list">
+            <div class="sprint-step active"><span class="step-index">1</span><div><strong>Decision</strong><p>Load draft-only.</p></div></div>
+            <div class="sprint-step"><span class="step-index">2</span><div><strong>Draft</strong><p>Prepare wording.</p></div></div>
+            <div class="sprint-step"><span class="step-index">3</span><div><strong>Boundary</strong><p>Keep flags false.</p></div></div>
+            <div class="sprint-step"><span class="step-index">4</span><div><strong>Review</strong><p>Move only to review.</p></div></div>
+          </div>
+          <div class="button-row" style="margin-top: 16px;">
+            <a class="button primary" href="founderpermissionexecutionauthorizationdecisiongate.html">Open Founder Decision</a>
+            <a class="button safe" href="controlledpermissionexecutionauthorizationreviewgate.html">Open Authorization Review</a>
+          </div>
+        </aside>
+
+        <section class="panel draft-gate" id="controlledPermissionExecutionAuthorizationDraftGate">
+          <div class="draft-gate-head">
+            <div>
+              <span class="eyebrow">Controlled permission execution authorization draft gate</span>
+              <h1>Draft the packet. Keep authority closed.</h1>
+              <p class="muted">This gate prepares a reviewable authorization draft from a founder draft-only decision. It cannot approve authorization, grant permission, execute, store, update canonical records, publish, or launch production.</p>
+            </div>
+            <div class="draft-gate-mark"><img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath controlled draft mark"></div>
+          </div>
+
+          <section class="draft-step-grid" aria-label="Draft gate flow">
+            <div class="draft-step"><span>1</span><strong>Founder decision</strong><p>Draft-only input.</p></div>
+            <div class="draft-step"><span>2</span><strong>Draft packet</strong><p>Reviewable wording.</p></div>
+            <div class="draft-step"><span>3</span><strong>Boundary</strong><p>All authority false.</p></div>
+            <div class="draft-step"><span>4</span><strong>Review next</strong><p>No runnable path.</p></div>
+          </section>
+
+          <section class="draft-gate-grid">
+            <div class="draft-gate-form">
+              <h2>Controlled Draft Packet</h2>
+              <label>Founder decision packet<textarea id="draftDecisionPacket"></textarea></label>
+              <label>Draft state<select id="draftState"></select></label>
+              <label>Draft actor<input id="draftActor" type="text" placeholder="Controlled draft gate"></label>
+              <label>Drafter name<input id="draftName" type="text" placeholder="Draft reviewer sample"></label>
+              <label>Draft gate id<input id="draftGateId" type="text"></label>
+              <label>Founder decision gate id<input id="draftDecisionId" type="text"></label>
+              <label>Authorization review gate id<input id="draftReviewId" type="text"></label>
+              <label>Authorization preflight id<input id="draftPreflightId" type="text"></label>
+              <label>Execution hold id<input id="draftHoldId" type="text"></label>
+              <label>Source answer id<input id="draftSourceAnswer" type="text"></label>
+              <label>Source record id<input id="draftSourceRecord" type="text"></label>
+              <label>Source family<input id="draftSourceFamily" type="text"></label>
+              <label>Draft scope<textarea id="draftScopeText"></textarea></label>
+              <label>Draft language<textarea id="draftLanguage"></textarea></label>
+              <label>Draft rationale<textarea id="draftRationale"></textarea></label>
+              <label>Draft evidence summary<textarea id="draftSummary"></textarea></label>
+              <label>Non-execution draft clause<textarea id="draftBoundary"></textarea></label>
+              <label>Risk acknowledgment<textarea id="draftRisk"></textarea></label>
+              <label>Rollback condition<textarea id="draftRollback"></textarea></label>
+              <label>Monitoring condition<textarea id="draftMonitoring"></textarea></label>
+              <label>Stop condition<textarea id="draftStopCondition"></textarea></label>
+              <label>Expiry check<textarea id="draftExpiry"></textarea></label>
+              <label>Production boundary<textarea id="draftProductionBoundary"></textarea></label>
+              <label>Clarification question<textarea id="draftClarification"></textarea></label>
+              <label>Return reason<textarea id="draftReturnReason"></textarea></label>
+              <label>Hold reason<textarea id="draftHoldReason"></textarea></label>
+              <label>Block reason<textarea id="draftBlockReason"></textarea></label>
+              <div class="draft-gate-actions">
+                <button class="button primary" id="runDraftGate" type="button">Run Draft</button>
+                <button class="button safe" id="loadDraftSample" type="button">Load Sample</button>
+                <button class="button" id="saveDraftGate" type="button">Save Local</button>
+                <button class="button" id="clearDraftGates" type="button">Clear Local</button>
+              </div>
+            </div>
+            <div>
+              <section class="draft-gate-result" id="draftGateResultCard" data-state="Blocked"></section>
+              <section style="margin-top: 10px;">
+                <h2>Draft Scope</h2>
+                <div class="draft-gate-list" id="draftGateScope"></div>
+              </section>
+              <section style="margin-top: 10px;">
+                <h2>Draft Checks</h2>
+                <div class="draft-gate-rules" id="draftGateChecks"></div>
+              </section>
+            </div>
+          </section>
+
+          <section class="draft-gate-grid">
+            <div>
+              <div class="draft-gate-actions">
+                <button class="button safe" id="copyDraftGate" type="button">Copy Draft Packet</button>
+                <a class="button" href="data/vedapath-controlled-permission-execution-authorization-draft-gate.json">Open JSON</a>
+              </div>
+              <textarea class="draft-gate-output" id="draftOutput" aria-label="Controlled permission execution authorization draft gate"></textarea>
+            </div>
+            <div>
+              <h2>Saved Local Drafts</h2>
+              <div class="draft-gate-list" id="draftGateSaved"></div>
+            </div>
+          </section>
+        </section>
+
+        <aside class="panel tight">
+          <span class="badge green">Draft is not authority</span>
+          <h2 style="margin-top: 14px;">Review Candidate Only</h2>
+          <p class="muted">A ready draft creates one later review candidate. It still does not grant permission or approve execution.</p>
+          <div class="progress" aria-label="Draft gate progress 100 percent"><div class="bar" style="--score:100%"></div></div>
+          <div class="metric-grid">
+            <div class="metric"><span>Current</span><strong>v3.2.8</strong></div>
+            <div class="metric"><span>Input</span><strong>Decision</strong></div>
+            <div class="metric"><span>Execution</span><strong>False</strong></div>
+            <div class="metric"><span>Next</span><strong>Review</strong></div>
+          </div>
+          <section class="panel tight boundary" style="margin-top: 16px;">
+            <h2>Draft Boundary</h2>
+            <p class="draft-gate-boundary">Draft signal only. Permission grant, authorization approval, execution, source promotion, storage writes, canonical writes, migrations, accounts, secrets, public release, and production launch remain false.</p>
+            <p class="muted">This release prepares a controlled draft review gate. It does not authorize or execute anything.</p>
+          </section>
+        </aside>
+      </main>
+    </div>
+    <script src="assets/vedapath-controlled-permission-execution-authorization-draft-gate.js"></script>
+  </body>
+</html>

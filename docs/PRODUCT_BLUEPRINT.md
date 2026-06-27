@@ -4374,6 +4374,14 @@ It should:
 Pattern Companion Control Room should never claim diagnosis, therapy, legal advice, medical advice, surveillance, scoring, or spiritual authority.
 <!-- VEDAPATH PATTERN COMPANION SPRINT BLUEPRINT END -->
 <!-- VEDAPATH FOUNDER AUTHORIZATION DECISION GATE BLUEPRINT START -->
+### 311. Controlled Permission Execution Authorization Draft Gate
+
+Controlled Permission Execution Authorization Draft Gate drafts reviewable authorization packet language after a founder draft-only decision.
+
+It may mark draft readiness and draft-review candidate readiness. It must not grant permission, approve authorization, execute, store, update canonical records, publish, or launch.
+
+This gate makes the authorization path legible without making the product operationally powerful before review.
+
 ### 310. Founder Permission Execution Authorization Decision Gate
 
 Founder Permission Execution Authorization Decision Gate records founder posture after authorization review readiness.

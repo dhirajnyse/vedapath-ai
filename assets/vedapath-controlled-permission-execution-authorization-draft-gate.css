@@ -1,0 +1,204 @@
+/* VedaPath controlled permission execution authorization draft gate */
+body.permission-execution-draft-page .topbar,
+body.permission-execution-draft-page header.topbar {
+  height: auto !important;
+  min-height: var(--vp-header-height, 74px);
+  padding: 0 !important;
+}
+
+body.permission-execution-draft-page .nav {
+  gap: 5px;
+  overflow: visible;
+  flex-wrap: nowrap;
+}
+
+body.permission-execution-draft-page .nav .link,
+body.permission-execution-draft-page .nav a {
+  padding-left: 9px;
+  padding-right: 9px;
+}
+
+body.permission-execution-draft-page .nav .version {
+  margin-left: 6px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+body.permission-execution-draft-page main.workspace {
+  grid-template-columns: minmax(230px, 0.74fr) minmax(0, 1.72fr) minmax(240px, 0.82fr);
+  gap: 18px;
+}
+
+body.permission-execution-draft-page main.workspace > aside.panel:first-child,
+body.permission-execution-draft-page main.workspace > aside.panel.tight {
+  position: static;
+  max-height: none;
+  overflow: visible;
+}
+
+.draft-gate,
+.draft-gate-head,
+.draft-gate-grid,
+.draft-gate-form,
+.draft-gate-actions,
+.draft-gate-list,
+.draft-gate-rules,
+.draft-gate-result {
+  display: grid;
+  gap: 12px;
+}
+
+.draft-gate {
+  gap: 18px;
+}
+
+.draft-gate-head {
+  grid-template-columns: minmax(0, 1fr) 126px;
+  align-items: center;
+}
+
+.draft-gate-mark {
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff3e4;
+  padding: 10px;
+}
+
+.draft-gate-mark img {
+  display: block;
+  width: 100%;
+}
+
+.draft-gate-grid {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: start;
+}
+
+.draft-step-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.draft-step,
+.draft-gate-card,
+.draft-gate-result,
+.draft-gate-rule,
+.draft-gate-form,
+.draft-gate-output {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.draft-step,
+.draft-gate-card,
+.draft-gate-result,
+.draft-gate-rule,
+.draft-gate-form {
+  padding: 12px;
+}
+
+.draft-step:first-child {
+  border-color: #e46a3b;
+  background: #fff1e9;
+}
+
+.draft-gate-result[data-state="Controlled authorization draft prepared"] {
+  border-color: #b7d5ca;
+  background: #f6fffb;
+}
+
+.draft-gate-result[data-state^="Blocked"],
+.draft-gate-result[data-state^="Draft rejected"] {
+  border-color: #efb39a;
+  background: #fff1ea;
+}
+
+.draft-gate-form label {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.draft-gate-form input,
+.draft-gate-form select,
+.draft-gate-form textarea,
+.draft-gate-output {
+  width: 100%;
+  border: 1px solid #efc1aa;
+  border-radius: 8px;
+  background: #fffaf4;
+  color: var(--ink);
+  padding: 10px;
+}
+
+.draft-gate-form textarea,
+.draft-gate-output {
+  min-height: 96px;
+  resize: vertical;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 13px;
+}
+
+.draft-gate-actions {
+  grid-template-columns: repeat(4, minmax(0, max-content));
+  align-items: center;
+}
+
+.draft-gate-list,
+.draft-gate-rules {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.draft-gate-card span,
+.draft-gate-rule span,
+.draft-step span {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.draft-gate-card strong,
+.draft-gate-rule strong,
+.draft-step strong {
+  display: block;
+  margin-top: 4px;
+}
+
+.draft-gate-boundary {
+  border-left: 4px solid var(--bhagwa);
+  padding-left: 12px;
+}
+
+@media (max-width: 1080px) {
+  body.permission-execution-draft-page main.workspace,
+  .draft-gate-grid,
+  .draft-gate-list,
+  .draft-gate-rules {
+    grid-template-columns: 1fr;
+  }
+
+  .draft-gate-head {
+    grid-template-columns: 1fr;
+  }
+
+  .draft-gate-mark {
+    max-width: 160px;
+  }
+}
+
+@media (max-width: 760px) {
+  body.permission-execution-draft-page .nav {
+    flex-wrap: wrap;
+  }
+
+  .draft-step-grid,
+  .draft-gate-actions {
+    grid-template-columns: 1fr;
+  }
+}
