@@ -32,7 +32,7 @@
           <a class="link" href="conversationcompanionlab.html">Talk</a>
           <a class="link" href="patterncompanionlab.html">Pattern</a>
           <a class="link" href="daily.html">Daily</a>
-          <span class="version">v3.0.7 storage criteria</span>
+          <span class="version">v3.0.8 entry dry run</span>
         </nav>
       </header>
 
@@ -48,8 +48,9 @@
             <div class="sprint-step"><span class="step-index">4</span><div><strong>Boundary</strong><p>No write yet.</p></div></div>
           </div>
           <div class="button-row" style="margin-top: 16px;">
-            <a class="button primary" href="replayreceiptdryrun.html">Open Replay Receipt</a>
-            <a class="button safe" href="storagedesigngate.html">Open Storage Design</a>
+            <a class="button primary" href="controlledstorageentrydryrun.html">Open Entry Dry Run</a>
+            <a class="button safe" href="replayreceiptdryrun.html">Open Replay Receipt</a>
+            <a class="button" href="storagedesigngate.html">Open Storage Design</a>
           </div>
         </aside>
 
@@ -129,7 +130,7 @@
         <aside class="panel tight">
           <span class="badge green">No-write gate</span>
           <h2 style="margin-top: 14px;">Storage Entry Is Still Closed</h2>
-          <p class="muted">This release defines the criteria. It does not grant controlled storage entry or execute a write.</p>
+          <p class="muted">The entry dry run now tests these criteria while still blocking every real write.</p>
           <div class="progress" aria-label="Controlled storage criteria progress 100 percent"><div class="bar" style="--score:100%"></div></div>
           <div class="metric-grid">
             <div class="metric"><span>Current</span><strong>v3.0.7</strong></div>
@@ -139,7 +140,7 @@
           </div>
           <section class="panel tight boundary" style="margin-top: 16px;">
             <h2>Founder Boundary</h2>
-            <p class="muted">Final founder instruction is required before any real storage entry. This preview deliberately does not grant it.</p>
+            <p class="muted">Entry dry run can pass, but final founder instruction still remains required before any real storage entry.</p>
           </section>
         </aside>
       </main>

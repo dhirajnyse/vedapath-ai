@@ -4373,6 +4373,20 @@ It should:
 
 Pattern Companion Control Room should never claim diagnosis, therapy, legal advice, medical advice, surveillance, scoring, or spiritual authority.
 <!-- VEDAPATH PATTERN COMPANION SPRINT BLUEPRINT END -->
+<!-- VEDAPATH CONTROLLED STORAGE ENTRY DRY RUN BLUEPRINT START -->
+### 291. Controlled Storage Entry Dry Run
+
+VedaPath should prove the entry gate can be tested without opening it.
+
+Rules:
+
+- Entry dry run can start only from a ready criteria packet.
+- A passed entry dry run must include schema route, receipt chain, no-write check, rollback simulation, promotion blockers, founder instruction check, simulated result, and entry boundary.
+- Passing the dry run is not controlled storage permission.
+- Source writes, storage writes, controlled storage entry, and canonical writes remain false in preview.
+- The next build should define the founder storage instruction gate before any real entry could be considered.
+<!-- VEDAPATH CONTROLLED STORAGE ENTRY DRY RUN BLUEPRINT END -->
+
 <!-- VEDAPATH CONTROLLED STORAGE ENTRY CRITERIA BLUEPRINT START -->
 ### 290. Controlled Storage Entry Criteria
 

@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VedaPath Controlled Storage Entry Dry Run</title>
+    <link rel="stylesheet" href="assets/vedapath-sprint.css">
+    <link rel="stylesheet" href="assets/vedapath-controlled-storage-entry-dry-run.css">
+    <link rel="stylesheet" href="assets/vedapath-cohesive.css">
+    <link rel="stylesheet" href="assets/vedapath-polish.css">
+    <link rel="stylesheet" href="assets/vedapath-focus.css">
+  </head>
+  <body>
+    <div class="shell" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top" aria-label="VedaPath AI home">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
+          <div>
+            <strong>VedaPath AI</strong>
+            <span>Controlled storage entry dry run</span>
+          </div>
+        </a>
+        <nav class="nav" aria-label="Project links">
+          <a class="link" href="index.html">Home</a>
+          <a class="link" href="build-status.html">Build</a>
+          <a class="link" href="brand/brand-board.html">Brand</a>
+          <a class="link" href="blueprint.html">Blueprint</a>
+          <a class="link" href="citedanswerlab.html">Answers</a>
+          <a class="link active" href="reviewqueuepersistence.html">Review</a>
+          <a class="link" href="mantralenslab.html">Mantra</a>
+          <a class="link" href="lifecompanionlab.html">Life</a>
+          <a class="link" href="conversationcompanionlab.html">Talk</a>
+          <a class="link" href="patterncompanionlab.html">Pattern</a>
+          <a class="link" href="daily.html">Daily</a>
+          <span class="version">v3.0.8 entry dry run</span>
+        </nav>
+      </header>
+
+      <main class="workspace" aria-label="VedaPath Controlled Storage Entry Dry Run workspace">
+        <aside class="panel">
+          <span class="eyebrow">Dry-run only</span>
+          <h2>Test the gate without opening it</h2>
+          <p class="muted">This room simulates controlled storage entry from the criteria packet while keeping storage, canonical, and source writes false.</p>
+          <div class="sprint-list">
+            <div class="sprint-step active"><span class="step-index">1</span><div><strong>Criteria</strong><p>Load ready packet.</p></div></div>
+            <div class="sprint-step"><span class="step-index">2</span><div><strong>Route</strong><p>Trace schema path.</p></div></div>
+            <div class="sprint-step"><span class="step-index">3</span><div><strong>Simulate</strong><p>Run no-write gate.</p></div></div>
+            <div class="sprint-step"><span class="step-index">4</span><div><strong>Hold</strong><p>Founder gate remains.</p></div></div>
+          </div>
+          <div class="button-row" style="margin-top: 16px;">
+            <a class="button primary" href="controlledstoragecriteria.html">Open Criteria</a>
+            <a class="button safe" href="replayreceiptdryrun.html">Open Replay Receipt</a>
+          </div>
+        </aside>
+
+        <section class="panel entry-app" id="controlledStorageEntryDryRun">
+          <div class="entry-head">
+            <div>
+              <span class="eyebrow">Entry simulation</span>
+              <h1>Pass the dry run. Keep storage closed.</h1>
+              <p class="muted">A pass here means the gate shape is coherent. It still does not grant controlled storage entry.</p>
+            </div>
+            <div class="entry-mark"><img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath controlled storage entry mark"></div>
+          </div>
+
+          <section class="entry-layout">
+            <div class="entry-form">
+              <h2>Entry Dry Run Packet</h2>
+              <label>Criteria packet<textarea id="entryCriteriaPacket"></textarea></label>
+              <label>Entry state<select id="entryState"></select></label>
+              <label>Entry actor<input id="entryActor" type="text" placeholder="Storage entry dry-run reviewer"></label>
+              <label>Entry note<textarea id="entryNote"></textarea></label>
+              <label>Criteria packet id<input id="entryCriteriaId" type="text"></label>
+              <label>Replay receipt id<input id="entryReplayId" type="text"></label>
+              <label>Rollback receipt id<input id="entryRollbackId" type="text"></label>
+              <label>Audit receipt id<input id="entryAuditId" type="text"></label>
+              <label>Source answer id<input id="entrySourceAnswer" type="text"></label>
+              <label>Source record id<input id="entrySourceRecord" type="text"></label>
+              <label>Source family<input id="entrySourceFamily" type="text"></label>
+              <label>Storage target<textarea id="entryStorageTarget"></textarea></label>
+              <label>Schema route<textarea id="entrySchemaRoute"></textarea></label>
+              <label>Dry-run plan<textarea id="entryDryRunPlan"></textarea></label>
+              <label>Receipt chain check<textarea id="entryReceiptChain"></textarea></label>
+              <label>No-write check<textarea id="entryNoWriteCheck"></textarea></label>
+              <label>Rollback simulation<textarea id="entryRollbackSimulation"></textarea></label>
+              <label>Promotion blockers<textarea id="entryPromotionBlockers"></textarea></label>
+              <label>Founder instruction check<textarea id="entryFounderInstruction"></textarea></label>
+              <label>Simulated result<textarea id="entrySimulatedResult"></textarea></label>
+              <label>Entry boundary<textarea id="entryBoundary"></textarea></label>
+              <label>Review question<textarea id="entryReviewQuestion"></textarea></label>
+              <label>Return reason<textarea id="entryReturnReason"></textarea></label>
+              <label>Hold reason<textarea id="entryHoldReason"></textarea></label>
+              <label>Block reason<textarea id="entryBlockReason"></textarea></label>
+              <div class="entry-actions">
+                <button class="button primary" id="runEntryDryRun" type="button">Run Entry</button>
+                <button class="button safe" id="loadEntrySample" type="button">Load Sample</button>
+                <button class="button" id="saveEntryDryRun" type="button">Save Local</button>
+                <button class="button" id="clearEntryDryRuns" type="button">Clear Local</button>
+              </div>
+            </div>
+            <div>
+              <section class="entry-result" id="entryResultCard" data-state="Blocked"></section>
+              <section style="margin-top: 10px;">
+                <h2>Criteria Scope</h2>
+                <div class="entry-list" id="entryCriteriaScope"></div>
+              </section>
+            </div>
+          </section>
+
+          <section>
+            <h2>Entry Checks</h2>
+            <div class="entry-rules" id="entryChecks"></div>
+          </section>
+
+          <section class="entry-layout">
+            <div>
+              <div class="entry-actions">
+                <button class="button safe" id="copyEntryPacket" type="button">Copy Entry Packet</button>
+                <a class="button" href="data/vedapath-controlled-storage-entry-dry-run.json">Open JSON</a>
+              </div>
+              <textarea class="entry-packet" id="entryPacket" aria-label="Controlled storage entry dry-run packet"></textarea>
+            </div>
+            <div>
+              <h2>Saved Local Entry Runs</h2>
+              <div class="entry-list" id="entrySaved"></div>
+            </div>
+          </section>
+        </section>
+
+        <aside class="panel tight">
+          <span class="badge green">Simulation pass</span>
+          <h2 style="margin-top: 14px;">Passing Is Not Permission</h2>
+          <p class="muted">The dry run can pass while real storage remains closed and final founder instruction remains absent.</p>
+          <div class="progress" aria-label="Controlled storage entry dry run progress 100 percent"><div class="bar" style="--score:100%"></div></div>
+          <div class="metric-grid">
+            <div class="metric"><span>Current</span><strong>v3.0.8</strong></div>
+            <div class="metric"><span>States</span><strong>6</strong></div>
+            <div class="metric"><span>Writes</span><strong>False</strong></div>
+            <div class="metric"><span>Next</span><strong>Founder gate</strong></div>
+          </div>
+          <section class="panel tight boundary" style="margin-top: 16px;">
+            <h2>Founder Boundary</h2>
+            <p class="muted">Final founder instruction remains required and not granted. No production storage, account, or canonical source write occurs.</p>
+          </section>
+        </aside>
+      </main>
+    </div>
+    <script src="assets/vedapath-controlled-storage-entry-dry-run.js"></script>
+  </body>
+</html>

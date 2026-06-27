@@ -953,6 +953,19 @@ Then open:
 http://127.0.0.1:8088/
 ```
 
+<!-- VEDAPATH CONTROLLED STORAGE ENTRY DRY RUN START -->
+## v3.0.8 Controlled Storage Entry Dry Run
+
+This release adds the controlled storage entry dry-run layer after storage criteria.
+
+- adds controlledstorageentrydryrun.html
+- adds data/vedapath-controlled-storage-entry-dry-run.json
+- runs ready criteria packets through a no-write storage-entry simulation
+- proves schema route, receipt chain, dry-run plan, no-write check, rollback simulation, promotion blockers, founder instruction check, simulated result, and entry boundary
+- keeps controlled_storage_entry_allowed false, source_write_executed false, storage_write_enabled false, production_ready false, and canonical_write_allowed false
+- sets the next release as founder storage instruction gate
+<!-- VEDAPATH CONTROLLED STORAGE ENTRY DRY RUN END -->
+
 <!-- VEDAPATH CONTROLLED STORAGE ENTRY CRITERIA START -->
 ## v3.0.7 Controlled Storage Entry Criteria
 

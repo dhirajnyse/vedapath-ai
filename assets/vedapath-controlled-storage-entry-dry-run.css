@@ -1,0 +1,160 @@
+/* VedaPath controlled storage entry dry run */
+.entry-app,
+.entry-head,
+.entry-layout,
+.entry-form,
+.entry-grid,
+.entry-list,
+.entry-actions,
+.entry-rules {
+  display: grid;
+  gap: 10px;
+}
+
+.entry-app {
+  gap: 16px;
+}
+
+.entry-head {
+  grid-template-columns: minmax(0, 1fr) 126px;
+  align-items: center;
+}
+
+.entry-mark {
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff3e4;
+  padding: 10px;
+}
+
+.entry-mark img {
+  display: block;
+  width: 100%;
+}
+
+.entry-layout {
+  grid-template-columns: minmax(0, 0.98fr) minmax(0, 1.02fr);
+  align-items: start;
+}
+
+.entry-form,
+.entry-card,
+.entry-result,
+.entry-packet,
+.entry-rule {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.entry-form,
+.entry-card,
+.entry-result,
+.entry-rule {
+  padding: 12px;
+}
+
+.entry-form label {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.entry-form input,
+.entry-form select,
+.entry-form textarea,
+.entry-packet {
+  width: 100%;
+  border: 1px solid #efc1aa;
+  border-radius: 8px;
+  background: #fffaf4;
+  color: var(--ink);
+  padding: 10px;
+}
+
+.entry-form textarea,
+.entry-packet {
+  min-height: 104px;
+  resize: vertical;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 13px;
+}
+
+.entry-grid,
+.entry-rules {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.entry-card,
+.entry-result {
+  border-left: 4px solid var(--gold);
+}
+
+.entry-card.ready,
+.entry-result[data-state="Entry dry run passed"] {
+  border-left-color: var(--green);
+}
+
+.entry-card.blocked,
+.entry-result[data-state="Blocked"],
+.entry-result[data-state="Return to criteria"],
+.entry-result[data-state="Founder hold"],
+.entry-result[data-state="Entry dry run blocked"] {
+  border-left-color: var(--ochre);
+}
+
+.entry-card span,
+.entry-card strong,
+.entry-rule span,
+.entry-rule strong {
+  display: block;
+}
+
+.entry-card span,
+.entry-rule span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.entry-result strong {
+  display: block;
+  font-size: 24px;
+}
+
+.entry-result ul {
+  margin: 10px 0 0;
+  padding-left: 18px;
+}
+
+.entry-actions {
+  grid-template-columns: repeat(2, minmax(0, max-content));
+  justify-content: start;
+}
+
+.entry-list {
+  max-height: 320px;
+  overflow: auto;
+}
+
+.entry-packet {
+  min-height: 260px;
+}
+
+@media (max-width: 980px) {
+  .entry-layout,
+  .entry-head,
+  .entry-grid,
+  .entry-rules {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .entry-actions {
+    grid-template-columns: 1fr;
+  }
+}
