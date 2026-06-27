@@ -4373,6 +4373,22 @@ It should:
 
 Pattern Companion Control Room should never claim diagnosis, therapy, legal advice, medical advice, surveillance, scoring, or spiritual authority.
 <!-- VEDAPATH PATTERN COMPANION SPRINT BLUEPRINT END -->
+<!-- VEDAPATH CONTROLLED EXECUTION REVIEW GATE BLUEPRINT START -->
+### 298. Controlled Execution Review Gate
+
+VedaPath should make every controlled execution packet pass a review gate before authorization is even considered. The review gate can mark review readiness, but it cannot authorize or execute.
+
+Core requirements:
+
+- start from a controlled packet draft ready object
+- confirm exact packet draft id, source answer, source record, source family, founder gate, and preflight context
+- review source integrity, evidence, rollback, monitoring, stop condition, reviewer decision, production boundary, and expiry
+- permit only a future controlled execution authorization hold
+- block authorization, execution, source promotion, storage writes, canonical writes, migrations, accounts, secrets, public release, and production
+
+Controlled Execution Review Gate should never claim execution approval, storage permission, canonical source authority, migration authority, production authority, therapy, ritual instruction, crisis support, or spiritual authority.
+<!-- VEDAPATH CONTROLLED EXECUTION REVIEW GATE BLUEPRINT END -->
+
 <!-- VEDAPATH CONTROLLED EXECUTION PACKET DRAFT BLUEPRINT START -->
 ### 297. Controlled Execution Packet Draft
 

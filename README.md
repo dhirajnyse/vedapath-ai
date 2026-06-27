@@ -953,6 +953,17 @@ Then open:
 http://127.0.0.1:8088/
 ```
 
+<!-- VEDAPATH CONTROLLED EXECUTION REVIEW GATE START -->
+## v3.1.5 Controlled Execution Review Gate
+
+This release reviews the controlled execution packet draft for source integrity, evidence, rollback, monitoring, stop conditions, expiry, and production boundary while all authorization, execution, promotion, storage, canonical-write, migration, account, secret, public-release, and production flags stay false.
+
+- [Controlled Execution Review Gate](controlledexecutionreviewgate.html)
+- [Controlled Execution Review Gate Notes](docs/CONTROLLED_EXECUTION_REVIEW_GATE.md)
+- [Controlled Execution Review Gate Data](data/vedapath-controlled-execution-review-gate.json)
+
+<!-- VEDAPATH CONTROLLED EXECUTION REVIEW GATE END -->
+
 <!-- VEDAPATH CONTROLLED EXECUTION PACKET DRAFT START -->
 ## v3.1.4 Controlled Execution Packet Draft
 

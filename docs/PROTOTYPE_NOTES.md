@@ -306,6 +306,18 @@ The v0.7.4 release turns the VedaPath AI homepage into a trusted MVP prototype w
 - Mobile Pattern: Mobile Pattern keeps the learning loop usable where calm moments actually happen.
 - Pattern Companion Control Room: Pattern Companion Control Room completes the private local learning layer for VedaPath AI.
 <!-- VEDAPATH PATTERN COMPANION SPRINT NOTES END -->
+<!-- VEDAPATH CONTROLLED EXECUTION REVIEW GATE NOTES START -->
+## v3.1.5 Controlled Execution Review Gate
+
+This phase reviews a controlled execution packet draft without authorizing execution.
+
+- Adds a controlled execution review gate room.
+- Reads a controlled packet draft ready object.
+- Requires source integrity, evidence, boundary, rollback, monitoring, stop condition, reviewer decision, production boundary, and expiry review.
+- Keeps execution_packet_authorized, execution_authorized, execution_allowed, founder_instruction_granted, source_promotion_allowed, promotion_execution_allowed, implementation_authorized, implementation_execution_allowed, controlled_storage_entry_allowed, storage_write_enabled, canonical_write_allowed, source_write_executed, actual_storage_write_executed, production_ready, production_launch_allowed, and public_release_allowed false.
+
+<!-- VEDAPATH CONTROLLED EXECUTION REVIEW GATE NOTES END -->
+
 <!-- VEDAPATH CONTROLLED EXECUTION PACKET DRAFT NOTES START -->
 ## v3.1.4 Controlled Execution Packet Draft
 

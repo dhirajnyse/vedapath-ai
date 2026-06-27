@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VedaPath Controlled Execution Review Gate</title>
+    <link rel="stylesheet" href="assets/vedapath-sprint.css">
+    <link rel="stylesheet" href="assets/vedapath-controlled-execution-review-gate.css">
+    <link rel="stylesheet" href="assets/vedapath-cohesive.css">
+    <link rel="stylesheet" href="assets/vedapath-polish.css">
+    <link rel="stylesheet" href="assets/vedapath-focus.css">
+  </head>
+  <body>
+    <div class="shell" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top" aria-label="VedaPath AI home">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
+          <div>
+            <strong>VedaPath AI</strong>
+            <span>Controlled execution review gate</span>
+          </div>
+        </a>
+        <nav class="nav" aria-label="Project links">
+          <a class="link" href="index.html">Home</a>
+          <a class="link" href="build-status.html">Build</a>
+          <a class="link" href="brand/brand-board.html">Brand</a>
+          <a class="link" href="blueprint.html">Blueprint</a>
+          <a class="link" href="citedanswerlab.html">Answers</a>
+          <a class="link active" href="reviewqueuepersistence.html">Review</a>
+          <a class="link" href="mantralenslab.html">Mantra</a>
+          <a class="link" href="lifecompanionlab.html">Life</a>
+          <a class="link" href="conversationcompanionlab.html">Talk</a>
+          <a class="link" href="patterncompanionlab.html">Pattern</a>
+          <a class="link" href="daily.html">Daily</a>
+          <span class="version">v3.1.5 review gate</span>
+        </nav>
+      </header>
+
+      <main class="workspace" aria-label="VedaPath Controlled Execution Review Gate workspace">
+        <aside class="panel">
+          <span class="eyebrow">Review is not authority</span>
+          <h2>Inspect the packet before authorization</h2>
+          <p class="muted">This room reviews the controlled execution packet draft. It can mark review readiness only; it cannot authorize, execute, promote, store, migrate, use secrets, publish, or launch.</p>
+          <div class="sprint-list">
+            <div class="sprint-step active"><span class="step-index">1</span><div><strong>Packet</strong><p>Load draft.</p></div></div>
+            <div class="sprint-step"><span class="step-index">2</span><div><strong>Evidence</strong><p>Confirm context.</p></div></div>
+            <div class="sprint-step"><span class="step-index">3</span><div><strong>Boundary</strong><p>Repeat false flags.</p></div></div>
+            <div class="sprint-step"><span class="step-index">4</span><div><strong>Hold</strong><p>Move to authorization hold.</p></div></div>
+          </div>
+          <div class="button-row" style="margin-top: 16px;">
+            <a class="button primary" href="controlledexecutionpacketdraft.html">Open Packet Draft</a>
+            <a class="button safe" href="founderexecutioninstructiongate.html">Open Founder Gate</a>
+          </div>
+        </aside>
+
+        <section class="panel review-gate" id="controlledExecutionReviewGate">
+          <div class="review-head">
+            <div>
+              <span class="eyebrow">Review gate</span>
+              <h1>Review the packet. Keep authority closed.</h1>
+              <p class="muted">A ready review here means the packet can move to an authorization hold next. It still cannot authorize, execute, promote, store, update canonical records, run migrations, create accounts, use secrets, publish public release, or launch production.</p>
+            </div>
+            <div class="review-mark"><img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath controlled execution review mark"></div>
+          </div>
+
+          <section class="review-layout">
+            <div class="review-form">
+              <h2>Controlled Execution Review</h2>
+              <label>Packet draft<textarea id="reviewPacketDraft"></textarea></label>
+              <label>Review state<select id="reviewState"></select></label>
+              <label>Review actor<input id="reviewActor" type="text" placeholder="Controlled execution reviewer"></label>
+              <label>Reviewer name<input id="reviewerName" type="text" placeholder="Reviewer sample"></label>
+              <label>Packet draft id<input id="reviewPacketDraftId" type="text"></label>
+              <label>Founder gate id<input id="reviewFounderGateId" type="text"></label>
+              <label>Preflight id<input id="reviewPreflightId" type="text"></label>
+              <label>Source answer id<input id="reviewSourceAnswer" type="text"></label>
+              <label>Source record id<input id="reviewSourceRecord" type="text"></label>
+              <label>Source family<input id="reviewSourceFamily" type="text"></label>
+              <label>Review scope<textarea id="reviewScopeText"></textarea></label>
+              <label>Evidence review<textarea id="reviewEvidence"></textarea></label>
+              <label>Boundary review<textarea id="reviewBoundary"></textarea></label>
+              <label>Rollback review<textarea id="reviewRollback"></textarea></label>
+              <label>Monitoring review<textarea id="reviewMonitoring"></textarea></label>
+              <label>Stop condition review<textarea id="reviewStopCondition"></textarea></label>
+              <label>Reviewer decision<textarea id="reviewDecision"></textarea></label>
+              <label>Expiry check<textarea id="reviewExpiry"></textarea></label>
+              <label>Production boundary<textarea id="reviewProductionBoundary"></textarea></label>
+              <label>Review question<textarea id="reviewQuestion"></textarea></label>
+              <label>Return reason<textarea id="reviewReturnReason"></textarea></label>
+              <label>Hold reason<textarea id="reviewHoldReason"></textarea></label>
+              <label>Block reason<textarea id="reviewBlockReason"></textarea></label>
+              <div class="review-actions">
+                <button class="button primary" id="runReviewGate" type="button">Run Review</button>
+                <button class="button safe" id="loadReviewSample" type="button">Load Sample</button>
+                <button class="button" id="saveReviewGate" type="button">Save Local</button>
+                <button class="button" id="clearReviewGates" type="button">Clear Local</button>
+              </div>
+            </div>
+            <div>
+              <section class="review-result" id="reviewResultCard" data-state="Blocked"></section>
+              <section style="margin-top: 10px;">
+                <h2>Review Scope</h2>
+                <div class="review-list" id="reviewScope"></div>
+              </section>
+            </div>
+          </section>
+
+          <section>
+            <h2>Review Checks</h2>
+            <div class="review-rules" id="reviewChecks"></div>
+          </section>
+
+          <section class="review-layout">
+            <div>
+              <div class="review-actions">
+                <button class="button safe" id="copyReviewGate" type="button">Copy Review Gate</button>
+                <a class="button" href="data/vedapath-controlled-execution-review-gate.json">Open JSON</a>
+              </div>
+              <textarea class="review-output" id="reviewOutput" aria-label="Controlled execution review gate"></textarea>
+            </div>
+            <div>
+              <h2>Saved Local Reviews</h2>
+              <div class="review-list" id="reviewSaved"></div>
+            </div>
+          </section>
+        </section>
+
+        <aside class="panel tight">
+          <span class="badge green">Review is not authorization</span>
+          <h2 style="margin-top: 14px;">Ready to Hold, Not Run</h2>
+          <p class="muted">The review can say the packet is coherent enough for an authorization hold while every operational path stays locked.</p>
+          <div class="progress" aria-label="Controlled execution review gate progress 100 percent"><div class="bar" style="--score:100%"></div></div>
+          <div class="metric-grid">
+            <div class="metric"><span>Current</span><strong>v3.1.5</strong></div>
+            <div class="metric"><span>States</span><strong>8</strong></div>
+            <div class="metric"><span>Authorized</span><strong>False</strong></div>
+            <div class="metric"><span>Next</span><strong>Authorization hold</strong></div>
+          </div>
+          <section class="panel tight boundary" style="margin-top: 16px;">
+            <h2>Review Boundary</h2>
+            <p class="review-boundary">Review only. Authorization, execution, founder grant, source promotion, storage writes, canonical writes, migrations, accounts, secrets, public release, and production launch remain false.</p>
+            <p class="muted">This release prepares the controlled execution authorization hold. It does not execute anything.</p>
+          </section>
+        </aside>
+      </main>
+    </div>
+    <script src="assets/vedapath-controlled-execution-review-gate.js"></script>
+  </body>
+</html>
