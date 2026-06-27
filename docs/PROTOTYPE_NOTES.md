@@ -306,6 +306,20 @@ The v0.7.4 release turns the VedaPath AI homepage into a trusted MVP prototype w
 - Mobile Pattern: Mobile Pattern keeps the learning loop usable where calm moments actually happen.
 - Pattern Companion Control Room: Pattern Companion Control Room completes the private local learning layer for VedaPath AI.
 <!-- VEDAPATH PATTERN COMPANION SPRINT NOTES END -->
+<!-- VEDAPATH IMPLEMENTATION QUEUE HANDOFF NOTES START -->
+## v3.0.0 Implementation Queue Handoff
+
+This phase adds a local queue between owner approval and production dry run.
+
+Action taken:
+
+- Added implementation queue schema.
+- Added task states, engineering review, returned, blocked, and dry-run-ready paths.
+- Required implementation, test, rollback, and canonical-write guard fields.
+- Added copyable implementation task packets.
+- Preserved canonical source data.
+<!-- VEDAPATH IMPLEMENTATION QUEUE HANDOFF NOTES END -->
+
 <!-- VEDAPATH SOURCE OWNER APPROVAL LANE NOTES START -->
 ## v2.9.9 Source Owner Approval Lane
 

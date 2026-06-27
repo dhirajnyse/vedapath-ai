@@ -366,7 +366,7 @@
           <a class="link" href="conversationcompanionlab.html">Talk</a>
           <a class="link" href="patterncompanionlab.html">Pattern</a>
           <a class="link" href="daily.html">Daily</a>
-          <span class="version">v2.9.9 owner lane</span>
+          <span class="version">v3.0.0 queue</span>
         </nav>
       </header>
 
@@ -378,8 +378,8 @@
       <section class="summary" aria-label="Progress summary">
         <article class="tile">
           <span>Current version</span>
-          <strong>v2.9.9</strong>
-          <p>Source Owner Approval Lane: reviewed source proposals now get owner scope, return/reject paths, rollback instructions, and implementation-queue packets.</p>
+          <strong>v3.0.0</strong>
+          <p>Implementation Queue Handoff: owner-approved packets now become scoped dry-run tasks with canonical writes blocked.</p>
         </article>
         <article class="tile">
           <span>MVP progress</span>
@@ -389,14 +389,14 @@
         </article>
         <article class="tile">
           <span>Full vision progress</span>
-          <strong>80%</strong>
-          <div class="progress" aria-hidden="true"><div class="bar" style="width:80%"></div></div>
-          <p>The trust loop now has owner approval scope before implementation queue handoff.</p>
+          <strong>82%</strong>
+          <div class="progress" aria-hidden="true"><div class="bar" style="width:82%"></div></div>
+          <p>The trust loop now carries owner approval into implementation tasks without touching canonical data.</p>
         </article>
         <article class="tile">
           <span>Next release</span>
-          <strong>Implementation queue handoff</strong>
-          <p>Turn owner-approved packets into implementation tasks without touching canonical source data.</p>
+          <strong>Production dry-run audit</strong>
+          <p>Add immutable task IDs, dry-run results, and release-review gates before storage work.</p>
         </article>
       </section>
 
@@ -2563,9 +2563,17 @@
               <span class="percent">100%</span>
             </article>
             <article class="phase">
+              <span class="badge done">Done</span>
+              <div>
+                <strong>Phase 264: Implementation Queue Handoff</strong>
+                <p>Turns owner-approved packets into scoped dry-run implementation tasks while canonical writes stay blocked.</p>
+              </div>
+              <span class="percent">100%</span>
+            </article>
+            <article class="phase">
               <span class="badge later">Later</span>
               <div>
-                <strong>Phase 264: Production Implementation and Licensed Audio</strong>
+                <strong>Phase 265: Production Implementation and Licensed Audio</strong>
                 <p>Backend storage, account consent, reviewed source records, reviewer operations, audio rights, and launch sequencing after founder direction.</p>
               </div>
               <div class="percent">0%</div>
@@ -2576,11 +2584,11 @@
         <aside class="panel version">
           <div>
             <h2>Version Notes</h2>
-            <div class="version-row"><span>Release</span><strong>v2.9.9 Source Owner Approval Lane</strong></div>
-            <div class="version-row"><span>Previous</span><strong>v2.9.8 Proposal Diff Review Room</strong></div>
+            <div class="version-row"><span>Release</span><strong>v3.0.0 Implementation Queue Handoff</strong></div>
+            <div class="version-row"><span>Previous</span><strong>v2.9.9 Source Owner Approval Lane</strong></div>
             <div class="version-row"><span>Commit</span><strong>See GitHub history</strong></div>
-            <div class="version-row"><span>Goal</span><strong>Let source owners approve implementation scope without editing canonical records.</strong></div>
-            <div class="version-row"><span>Status</span><strong>Ready for implementation queue handoff</strong></div>
+            <div class="version-row"><span>Goal</span><strong>Turn owner-approved packets into dry-run tasks without canonical writes.</strong></div>
+            <div class="version-row"><span>Status</span><strong>Ready for production dry-run audit</strong></div>
           </div>
 
           <div class="panel note">
@@ -2591,9 +2599,9 @@
           <div>
             <h2>Next Build Checklist</h2>
             <ul class="checklist">
-              <li><span class="dot"></span><span>Build implementation queue handoff.</span></li>
-              <li><span class="dot"></span><span>Add accepted, returned, and rejected owner lanes to review dashboard.</span></li>
-              <li><span class="dot"></span><span>Export owner approval packets with immutable IDs.</span></li>
+              <li><span class="dot"></span><span>Add immutable task IDs and dry-run result history.</span></li>
+              <li><span class="dot"></span><span>Create release-review gates for queued tasks.</span></li>
+              <li><span class="dot"></span><span>Separate completed dry runs from production storage.</span></li>
               <li><span class="dot"></span><span>Keep canonical source records untouched until production storage.</span></li>
             </ul>
           </div>

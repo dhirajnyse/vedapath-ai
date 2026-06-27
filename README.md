@@ -953,6 +953,18 @@ Then open:
 http://127.0.0.1:8088/
 ```
 
+<!-- VEDAPATH IMPLEMENTATION QUEUE HANDOFF START -->
+## v3.0.0 Implementation Queue Handoff
+
+This release turns source-owner approval into dry-run implementation tasks.
+
+- adds `implementationqueue.html`
+- adds `data/vedapath-implementation-queue-handoff.json`
+- creates task states for draft, engineering review, dry run, returned, and blocked
+- requires implementation plan, test plan, rollback plan, and canonical-write guard before dry run
+- keeps production readiness false and canonical source writes blocked
+<!-- VEDAPATH IMPLEMENTATION QUEUE HANDOFF END -->
+
 <!-- VEDAPATH SOURCE OWNER APPROVAL LANE START -->
 ## v2.9.9 Source Owner Approval Lane
 

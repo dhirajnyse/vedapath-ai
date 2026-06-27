@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VedaPath Implementation Queue Handoff</title>
+    <link rel="stylesheet" href="assets/vedapath-sprint.css">
+    <link rel="stylesheet" href="assets/vedapath-implementation-queue-handoff.css">
+    <link rel="stylesheet" href="assets/vedapath-cohesive.css">
+    <link rel="stylesheet" href="assets/vedapath-polish.css">
+    <link rel="stylesheet" href="assets/vedapath-focus.css">
+  </head>
+  <body>
+    <div class="shell" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top" aria-label="VedaPath AI home">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
+          <div>
+            <strong>VedaPath AI</strong>
+            <span>Implementation queue</span>
+          </div>
+        </a>
+        <nav class="nav" aria-label="Project links">
+          <a class="link" href="index.html">Home</a>
+          <a class="link" href="build-status.html">Build</a>
+          <a class="link" href="brand/brand-board.html">Brand</a>
+          <a class="link" href="blueprint.html">Blueprint</a>
+          <a class="link" href="citedanswerlab.html">Answers</a>
+          <a class="link active" href="reviewqueuepersistence.html">Review</a>
+          <a class="link" href="mantralenslab.html">Mantra</a>
+          <a class="link" href="lifecompanionlab.html">Life</a>
+          <a class="link" href="conversationcompanionlab.html">Talk</a>
+          <a class="link" href="patterncompanionlab.html">Pattern</a>
+          <a class="link" href="daily.html">Daily</a>
+          <span class="version">v3.0.0 queue</span>
+        </nav>
+      </header>
+
+      <main class="workspace" aria-label="VedaPath Implementation Queue workspace">
+        <aside class="panel">
+          <span class="eyebrow">Implementation control</span>
+          <h2>Turn approval into a task</h2>
+          <p class="muted">Owner approval can become an implementation task only when canonical writes remain blocked and rollback stays clear.</p>
+          <div class="sprint-list">
+            <div class="sprint-step active"><span class="step-index">1</span><div><strong>Receive</strong><p>Read the owner packet.</p></div></div>
+            <div class="sprint-step"><span class="step-index">2</span><div><strong>Draft</strong><p>Create a bounded task.</p></div></div>
+            <div class="sprint-step"><span class="step-index">3</span><div><strong>Guard</strong><p>Block canonical writes.</p></div></div>
+            <div class="sprint-step"><span class="step-index">4</span><div><strong>Queue</strong><p>Save dry-run handoff.</p></div></div>
+          </div>
+          <div class="button-row" style="margin-top: 16px;">
+            <a class="button safe" href="sourceownerapproval.html">Open Owner Lane</a>
+            <a class="button" href="proposaldiffreview.html">Open Diff Review</a>
+          </div>
+        </aside>
+
+        <section class="panel queue-app" id="implementationQueueHandoff">
+          <div class="queue-head">
+            <div>
+              <span class="eyebrow">Implementation queue handoff</span>
+              <h1>Queue the task. Keep source data still.</h1>
+              <p class="muted">This room converts owner-approved packets into local implementation tasks. It can prepare a production dry run, but it cannot write canonical records.</p>
+            </div>
+            <div class="queue-mark"><img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath implementation queue mark"></div>
+          </div>
+
+          <section class="queue-layout">
+            <div class="queue-form">
+              <h2>Implementation Task</h2>
+              <label>Owner packet<textarea id="queueOwnerPacket"></textarea></label>
+              <label>Task state<select id="queueTaskState"></select></label>
+              <label>Implementer name<input id="queueImplementer" type="text" placeholder="Implementation lead"></label>
+              <label>Task note<textarea id="queueNote"></textarea></label>
+              <label>Implementation plan<textarea id="queuePlan"></textarea></label>
+              <label>Engineering question<textarea id="queueQuestion"></textarea></label>
+              <label>Test plan<textarea id="queueTestPlan"></textarea></label>
+              <label>Rollback plan<textarea id="queueRollback"></textarea></label>
+              <label>Canonical write guard<input id="queueGuard" type="text" placeholder="Canonical writes blocked"></label>
+              <label>Return reason<textarea id="queueReturnReason"></textarea></label>
+              <label>Block reason<textarea id="queueBlockReason"></textarea></label>
+              <div class="queue-actions">
+                <button class="button primary" id="reviewQueueTask" type="button">Review Task</button>
+                <button class="button safe" id="loadQueueSample" type="button">Load Sample</button>
+                <button class="button" id="saveQueueTask" type="button">Save Local</button>
+                <button class="button" id="clearQueueTasks" type="button">Clear Local</button>
+              </div>
+            </div>
+            <div>
+              <section class="queue-result" id="queueResult" data-state="Blocked"></section>
+              <section style="margin-top: 10px;">
+                <h2>Allowed Scope</h2>
+                <div class="queue-list" id="queueScope"></div>
+              </section>
+            </div>
+          </section>
+
+          <section>
+            <h2>Queue Rules</h2>
+            <div class="queue-rules" id="queueRules"></div>
+          </section>
+
+          <section class="queue-layout">
+            <div>
+              <div class="queue-actions">
+                <button class="button safe" id="copyQueuePacket" type="button">Copy Task Packet</button>
+                <a class="button" href="data/vedapath-implementation-queue-handoff.json">Open JSON</a>
+              </div>
+              <textarea class="queue-packet" id="queuePacket" aria-label="Implementation task packet"></textarea>
+            </div>
+            <div>
+              <h2>Saved Local Tasks</h2>
+              <div class="queue-list" id="queueSaved"></div>
+            </div>
+          </section>
+        </section>
+
+        <aside class="panel tight">
+          <span class="badge green">Queue handoff</span>
+          <h2 style="margin-top: 14px;">Production Boundary</h2>
+          <p class="muted">This page creates dry-run tasks only. Production source writes remain false until storage, audit, rollback, and final approval exist.</p>
+          <div class="progress" aria-label="Implementation queue progress 100 percent"><div class="bar" style="--score:100%"></div></div>
+          <div class="metric-grid">
+            <div class="metric"><span>Current</span><strong>v3.0.0</strong></div>
+            <div class="metric"><span>States</span><strong>5</strong></div>
+            <div class="metric"><span>Writes</span><strong>False</strong></div>
+            <div class="metric"><span>Store</span><strong>Local</strong></div>
+          </div>
+          <section class="panel tight boundary" style="margin-top: 16px;">
+            <h2>Queue Rule</h2>
+            <p class="muted">A queued implementation task is not a release. It is a dry-run packet that can be reviewed, returned, blocked, or discarded.</p>
+          </section>
+        </aside>
+      </main>
+    </div>
+    <script src="assets/vedapath-implementation-queue-handoff.js"></script>
+  </body>
+</html>

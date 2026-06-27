@@ -1,0 +1,151 @@
+/* VedaPath implementation queue handoff */
+.queue-app,
+.queue-head,
+.queue-layout,
+.queue-form,
+.queue-grid,
+.queue-list,
+.queue-actions,
+.queue-rules {
+  display: grid;
+  gap: 10px;
+}
+
+.queue-app {
+  gap: 16px;
+}
+
+.queue-head {
+  grid-template-columns: minmax(0, 1fr) 126px;
+  align-items: center;
+}
+
+.queue-mark {
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff3e4;
+  padding: 10px;
+}
+
+.queue-mark img {
+  display: block;
+  width: 100%;
+}
+
+.queue-layout {
+  grid-template-columns: minmax(0, 0.96fr) minmax(0, 1.04fr);
+  align-items: start;
+}
+
+.queue-form,
+.queue-card,
+.queue-result,
+.queue-packet,
+.queue-rule {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.queue-form,
+.queue-card,
+.queue-result,
+.queue-rule {
+  padding: 12px;
+}
+
+.queue-form label {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.queue-form input,
+.queue-form select,
+.queue-form textarea,
+.queue-packet {
+  width: 100%;
+  border: 1px solid #efc1aa;
+  border-radius: 8px;
+  background: #fffaf4;
+  color: var(--ink);
+  padding: 10px;
+}
+
+.queue-form textarea,
+.queue-packet {
+  min-height: 116px;
+  resize: vertical;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 13px;
+}
+
+.queue-grid,
+.queue-rules {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.queue-card,
+.queue-result {
+  border-left: 4px solid var(--gold);
+}
+
+.queue-card.ready,
+.queue-result[data-state="Ready for production dry run"] {
+  border-left-color: var(--green);
+}
+
+.queue-card.blocked,
+.queue-result[data-state="Blocked"],
+.queue-result[data-state="Returned to owner"] {
+  border-left-color: var(--ochre);
+}
+
+.queue-card span,
+.queue-card strong,
+.queue-rule span,
+.queue-rule strong {
+  display: block;
+}
+
+.queue-card span,
+.queue-rule span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.queue-actions {
+  grid-template-columns: repeat(4, minmax(0, max-content));
+  align-items: center;
+}
+
+.queue-list {
+  max-height: 290px;
+  overflow: auto;
+  padding-right: 3px;
+}
+
+@media (max-width: 980px) {
+  .queue-head,
+  .queue-layout,
+  .queue-grid,
+  .queue-rules {
+    grid-template-columns: 1fr;
+  }
+
+  .queue-mark {
+    max-width: 150px;
+  }
+}
+
+@media (max-width: 680px) {
+  .queue-actions,
+  .queue-actions .button {
+    width: 100%;
+    grid-template-columns: 1fr;
+  }
+}

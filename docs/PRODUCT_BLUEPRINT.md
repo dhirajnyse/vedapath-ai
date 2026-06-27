@@ -4373,6 +4373,20 @@ It should:
 
 Pattern Companion Control Room should never claim diagnosis, therapy, legal advice, medical advice, surveillance, scoring, or spiritual authority.
 <!-- VEDAPATH PATTERN COMPANION SPRINT BLUEPRINT END -->
+<!-- VEDAPATH IMPLEMENTATION QUEUE HANDOFF BLUEPRINT START -->
+### 283. Implementation Queue Handoff
+
+VedaPath should convert source-owner approval into scoped engineering work without mutating source records.
+
+Rules:
+
+- Queue tasks can come only from owner-approved packets.
+- Canonical writes remain false in preview.
+- Dry-run readiness requires implementation, test, rollback, and guard fields.
+- Returned or blocked tasks remain visible instead of disappearing.
+- The next build should add production dry-run audit history.
+<!-- VEDAPATH IMPLEMENTATION QUEUE HANDOFF BLUEPRINT END -->
+
 <!-- VEDAPATH SOURCE OWNER APPROVAL LANE BLUEPRINT START -->
 ### 282. Source Owner Approval Lane
 
