@@ -4373,6 +4373,20 @@ It should:
 
 Pattern Companion Control Room should never claim diagnosis, therapy, legal advice, medical advice, surveillance, scoring, or spiritual authority.
 <!-- VEDAPATH PATTERN COMPANION SPRINT BLUEPRINT END -->
+<!-- VEDAPATH PRODUCTION DRY RUN AUDIT BLUEPRINT START -->
+### 284. Production Dry-Run Audit
+
+VedaPath should prove implementation behavior before any release review or storage work begins.
+
+Rules:
+
+- Dry-run audits can start only from queued implementation tasks.
+- Canonical writes remain false in preview.
+- Passed dry runs must show result evidence, rollback evidence, and no canonical source diff.
+- Ready-for-release-review audits require a named reviewer.
+- The next build should create a release-review gate with return and sign-off paths.
+<!-- VEDAPATH PRODUCTION DRY RUN AUDIT BLUEPRINT END -->
+
 <!-- VEDAPATH IMPLEMENTATION QUEUE HANDOFF BLUEPRINT START -->
 ### 283. Implementation Queue Handoff
 

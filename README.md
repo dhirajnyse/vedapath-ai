@@ -953,6 +953,18 @@ Then open:
 http://127.0.0.1:8088/
 ```
 
+<!-- VEDAPATH PRODUCTION DRY RUN AUDIT START -->
+## v3.0.1 Production Dry-Run Audit
+
+This release turns queued implementation work into dry-run evidence before release review.
+
+- adds productiondryrunaudit.html
+- adds data/vedapath-production-dry-run-audit.json
+- records dry-run result, rollback evidence, canonical-diff evidence, and release reviewer
+- keeps production readiness false and canonical source writes blocked
+- sets the next release as release review gate
+<!-- VEDAPATH PRODUCTION DRY RUN AUDIT END -->
+
 <!-- VEDAPATH IMPLEMENTATION QUEUE HANDOFF START -->
 ## v3.0.0 Implementation Queue Handoff
 

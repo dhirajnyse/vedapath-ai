@@ -1,0 +1,153 @@
+/* VedaPath production dry-run audit */
+.audit-app,
+.audit-head,
+.audit-layout,
+.audit-form,
+.audit-grid,
+.audit-list,
+.audit-actions,
+.audit-rules {
+  display: grid;
+  gap: 10px;
+}
+
+.audit-app {
+  gap: 16px;
+}
+
+.audit-head {
+  grid-template-columns: minmax(0, 1fr) 126px;
+  align-items: center;
+}
+
+.audit-mark {
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff3e4;
+  padding: 10px;
+}
+
+.audit-mark img {
+  display: block;
+  width: 100%;
+}
+
+.audit-layout {
+  grid-template-columns: minmax(0, 0.96fr) minmax(0, 1.04fr);
+  align-items: start;
+}
+
+.audit-form,
+.audit-card,
+.audit-result,
+.audit-packet,
+.audit-rule {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.audit-form,
+.audit-card,
+.audit-result,
+.audit-rule {
+  padding: 12px;
+}
+
+.audit-form label {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.audit-form input,
+.audit-form select,
+.audit-form textarea,
+.audit-packet {
+  width: 100%;
+  border: 1px solid #efc1aa;
+  border-radius: 8px;
+  background: #fffaf4;
+  color: var(--ink);
+  padding: 10px;
+}
+
+.audit-form textarea,
+.audit-packet {
+  min-height: 112px;
+  resize: vertical;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 13px;
+}
+
+.audit-grid,
+.audit-rules {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.audit-card,
+.audit-result {
+  border-left: 4px solid var(--gold);
+}
+
+.audit-card.ready,
+.audit-result[data-state="Ready for release review"],
+.audit-result[data-state="Dry run passed"] {
+  border-left-color: var(--green);
+}
+
+.audit-card.blocked,
+.audit-result[data-state="Blocked"],
+.audit-result[data-state="Release review blocked"],
+.audit-result[data-state="Dry run needs fixes"] {
+  border-left-color: var(--ochre);
+}
+
+.audit-card span,
+.audit-card strong,
+.audit-rule span,
+.audit-rule strong {
+  display: block;
+}
+
+.audit-card span,
+.audit-rule span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.audit-actions {
+  grid-template-columns: repeat(4, minmax(0, max-content));
+  align-items: center;
+}
+
+.audit-list {
+  max-height: 290px;
+  overflow: auto;
+  padding-right: 3px;
+}
+
+@media (max-width: 980px) {
+  .audit-head,
+  .audit-layout,
+  .audit-grid,
+  .audit-rules {
+    grid-template-columns: 1fr;
+  }
+
+  .audit-mark {
+    max-width: 150px;
+  }
+}
+
+@media (max-width: 680px) {
+  .audit-actions,
+  .audit-actions .button {
+    width: 100%;
+    grid-template-columns: 1fr;
+  }
+}
