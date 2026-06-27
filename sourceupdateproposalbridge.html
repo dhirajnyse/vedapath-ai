@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VedaPath Source Update Proposal Bridge</title>
+    <link rel="stylesheet" href="assets/vedapath-sprint.css">
+    <link rel="stylesheet" href="assets/vedapath-source-update-proposal-bridge.css">
+    <link rel="stylesheet" href="assets/vedapath-cohesive.css">
+    <link rel="stylesheet" href="assets/vedapath-polish.css">
+    <link rel="stylesheet" href="assets/vedapath-focus.css">
+  </head>
+  <body>
+    <div class="shell" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top" aria-label="VedaPath AI home">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
+          <div>
+            <strong>VedaPath AI</strong>
+            <span>Source proposal bridge</span>
+          </div>
+        </a>
+        <nav class="nav" aria-label="Project links">
+          <a class="link" href="index.html">Home</a>
+          <a class="link" href="build-status.html">Build</a>
+          <a class="link" href="brand/brand-board.html">Brand</a>
+          <a class="link" href="blueprint.html">Blueprint</a>
+          <a class="link" href="citedanswerlab.html">Answers</a>
+          <a class="link active" href="reviewqueuepersistence.html">Review</a>
+          <a class="link" href="mantralenslab.html">Mantra</a>
+          <a class="link" href="lifecompanionlab.html">Life</a>
+          <a class="link" href="conversationcompanionlab.html">Talk</a>
+          <a class="link" href="patterncompanionlab.html">Pattern</a>
+          <a class="link" href="daily.html">Daily</a>
+          <span class="version">v2.9.7 proposal</span>
+        </nav>
+      </header>
+
+      <main class="workspace" aria-label="VedaPath Source Update Proposal Bridge workspace">
+        <aside class="panel">
+          <span class="eyebrow">Review to source</span>
+          <h2>Propose, do not rewrite</h2>
+          <p class="muted">Accepted review packets can suggest source-record changes. This bridge keeps every change draft-only until production review exists.</p>
+          <div class="sprint-list">
+            <div class="sprint-step active"><span class="step-index">1</span><div><strong>Packet</strong><p>Start from reviewed evidence.</p></div></div>
+            <div class="sprint-step"><span class="step-index">2</span><div><strong>Diff</strong><p>Compare editable fields.</p></div></div>
+            <div class="sprint-step"><span class="step-index">3</span><div><strong>Block</strong><p>Protect canonical fields.</p></div></div>
+            <div class="sprint-step"><span class="step-index">4</span><div><strong>Export</strong><p>Copy proposal packet.</p></div></div>
+          </div>
+          <div class="button-row" style="margin-top: 16px;">
+            <a class="button safe" href="reviewidentitygate.html">Open Identity Gate</a>
+            <a class="button" href="sourcefoundation.html">Open Source Data</a>
+          </div>
+        </aside>
+
+        <section class="panel proposal-app" id="sourceUpdateProposalBridge">
+          <div class="proposal-head">
+            <div>
+              <span class="eyebrow">Source update proposal bridge</span>
+              <h1>Review becomes a draft, not a silent edit.</h1>
+              <p class="muted">The bridge reads a reviewed audit packet, compares it with a source answer record, and produces a copyable proposal with blocked fields clearly separated.</p>
+            </div>
+            <div class="proposal-mark"><img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath source proposal mark"></div>
+          </div>
+
+          <section class="proposal-layout">
+            <div class="proposal-form">
+              <h2>Proposal Builder</h2>
+              <label>Source answer record<select id="proposalRecord"></select></label>
+              <label>Audit packet<textarea id="proposalAuditPacket"></textarea></label>
+              <label>Proposed editable updates<textarea id="proposalUpdates"></textarea></label>
+              <label>Blocked-field attempt<textarea id="proposalBlockedAttempt"></textarea></label>
+              <div class="proposal-actions">
+                <button class="button primary" id="buildProposal" type="button">Build Proposal</button>
+                <button class="button safe" id="loadProposalSample" type="button">Load Sample</button>
+                <button class="button" id="saveProposal" type="button">Save Local</button>
+                <button class="button" id="clearProposalStore" type="button">Clear Local</button>
+              </div>
+            </div>
+            <div>
+              <section class="proposal-source-card">
+                <span class="badge green">Current source record</span>
+                <div class="proposal-grid" id="proposalSource" style="margin-top: 10px;"></div>
+              </section>
+              <section class="proposal-result" id="proposalResult" data-status="Blocked" style="margin-top: 10px;"></section>
+              <section style="margin-top: 10px;">
+                <h2>Diff Preview</h2>
+                <div class="proposal-diffs" id="proposalDiffs"></div>
+              </section>
+            </div>
+          </section>
+
+          <section>
+            <h2>Bridge Rules</h2>
+            <div class="proposal-rules" id="proposalRules"></div>
+          </section>
+
+          <section class="proposal-layout">
+            <div>
+              <div class="proposal-actions">
+                <button class="button safe" id="copyProposalPacket" type="button">Copy Proposal</button>
+                <a class="button" href="data/vedapath-source-update-proposal-bridge.json">Open JSON</a>
+              </div>
+              <textarea class="proposal-packet" id="proposalPacket" aria-label="Source update proposal packet"></textarea>
+            </div>
+            <div>
+              <h2>Saved Local Proposals</h2>
+              <div class="proposal-list" id="proposalSaved"></div>
+            </div>
+          </section>
+        </section>
+
+        <aside class="panel tight">
+          <span class="badge green">Proposal phase</span>
+          <h2 style="margin-top: 14px;">Source Boundary</h2>
+          <p class="muted">This room does not mutate source records. It creates a diff packet so a future source owner can review, approve, reject, or roll back.</p>
+          <div class="progress" aria-label="Source proposal bridge progress 100 percent"><div class="bar" style="--score:100%"></div></div>
+          <div class="metric-grid">
+            <div class="metric"><span>Current</span><strong>v2.9.7</strong></div>
+            <div class="metric"><span>Editable</span><strong>5</strong></div>
+            <div class="metric"><span>Blocked</span><strong>7</strong></div>
+            <div class="metric"><span>Status</span><strong>Draft</strong></div>
+          </div>
+          <section class="panel tight boundary" style="margin-top: 16px;">
+            <h2>Production Rule</h2>
+            <p class="muted">A source record should change only after durable identity, immutable audit, source-owner approval, diff review, and rollback readiness exist.</p>
+          </section>
+        </aside>
+      </main>
+    </div>
+    <script src="assets/vedapath-source-update-proposal-bridge.js"></script>
+  </body>
+</html>

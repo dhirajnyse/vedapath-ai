@@ -4373,6 +4373,20 @@ It should:
 
 Pattern Companion Control Room should never claim diagnosis, therapy, legal advice, medical advice, surveillance, scoring, or spiritual authority.
 <!-- VEDAPATH PATTERN COMPANION SPRINT BLUEPRINT END -->
+<!-- VEDAPATH SOURCE UPDATE PROPOSAL BRIDGE BLUEPRINT START -->
+### 280. Source Update Proposal Bridge
+
+VedaPath should treat accepted review as a proposal, not a source rewrite.
+
+Rules:
+
+- Accepted or recommended review packets may create source-update proposals.
+- Canonical and rights-sensitive fields remain blocked in this bridge.
+- A proposal must show current value, proposed value, audit packet, warnings, and production requirements.
+- Browser-local saved proposals are preview memory only.
+- The next build should add proposal approval states, rejection reasons, rollback notes, and source-owner review.
+<!-- VEDAPATH SOURCE UPDATE PROPOSAL BRIDGE BLUEPRINT END -->
+
 <!-- VEDAPATH REVIEW IDENTITY GATE BLUEPRINT START -->
 ### 279. Reviewer Identity and Audit Gate
 

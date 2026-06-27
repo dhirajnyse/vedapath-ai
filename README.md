@@ -953,6 +953,19 @@ Then open:
 http://127.0.0.1:8088/
 ```
 
+<!-- VEDAPATH SOURCE UPDATE PROPOSAL BRIDGE START -->
+## v2.9.7 Source Update Proposal Bridge
+
+This release connects review decisions to source data without silently changing source records.
+
+- adds `data/vedapath-source-update-proposal-bridge.json`
+- adds `sourceupdateproposalbridge.html`
+- turns accepted or recommended audit packets into draft source diffs
+- separates editable fields from blocked canonical and rights-sensitive fields
+- stores draft proposals only in browser-local preview memory
+- keeps canonical `data/vedapath-source-answer-foundation.json` unchanged
+<!-- VEDAPATH SOURCE UPDATE PROPOSAL BRIDGE END -->
+
 <!-- VEDAPATH REVIEW IDENTITY GATE START -->
 ## v2.9.6 Reviewer Identity and Audit Gate
 

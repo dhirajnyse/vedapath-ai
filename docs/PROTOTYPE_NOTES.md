@@ -306,6 +306,20 @@ The v0.7.4 release turns the VedaPath AI homepage into a trusted MVP prototype w
 - Mobile Pattern: Mobile Pattern keeps the learning loop usable where calm moments actually happen.
 - Pattern Companion Control Room: Pattern Companion Control Room completes the private local learning layer for VedaPath AI.
 <!-- VEDAPATH PATTERN COMPANION SPRINT NOTES END -->
+<!-- VEDAPATH SOURCE UPDATE PROPOSAL BRIDGE NOTES START -->
+## v2.9.7 Source Update Proposal Bridge
+
+This phase makes the review-to-source handoff explicit.
+
+Action taken:
+
+- Added source update proposal bridge schema.
+- Added a focused proposal room linked from Review Queue and Identity Gate.
+- Added draft diff generation for editable fields.
+- Added blocked-field visibility for canonical and rights-sensitive fields.
+- Set the next phase as proposal diff review room.
+<!-- VEDAPATH SOURCE UPDATE PROPOSAL BRIDGE NOTES END -->
+
 <!-- VEDAPATH REVIEW IDENTITY GATE NOTES START -->
 ## v2.9.6 Reviewer Identity and Audit Gate
 
