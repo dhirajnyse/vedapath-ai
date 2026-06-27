@@ -1,0 +1,159 @@
+/* VedaPath replay receipt dry run */
+.replay-app,
+.replay-head,
+.replay-layout,
+.replay-form,
+.replay-grid,
+.replay-list,
+.replay-actions,
+.replay-rules {
+  display: grid;
+  gap: 10px;
+}
+
+.replay-app {
+  gap: 16px;
+}
+
+.replay-head {
+  grid-template-columns: minmax(0, 1fr) 126px;
+  align-items: center;
+}
+
+.replay-mark {
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff3e4;
+  padding: 10px;
+}
+
+.replay-mark img {
+  display: block;
+  width: 100%;
+}
+
+.replay-layout {
+  grid-template-columns: minmax(0, 0.96fr) minmax(0, 1.04fr);
+  align-items: start;
+}
+
+.replay-form,
+.replay-card,
+.replay-result,
+.replay-packet,
+.replay-rule {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.replay-form,
+.replay-card,
+.replay-result,
+.replay-rule {
+  padding: 12px;
+}
+
+.replay-form label {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.replay-form input,
+.replay-form select,
+.replay-form textarea,
+.replay-packet {
+  width: 100%;
+  border: 1px solid #efc1aa;
+  border-radius: 8px;
+  background: #fffaf4;
+  color: var(--ink);
+  padding: 10px;
+}
+
+.replay-form textarea,
+.replay-packet {
+  min-height: 112px;
+  resize: vertical;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 13px;
+}
+
+.replay-grid,
+.replay-rules {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.replay-card,
+.replay-result {
+  border-left: 4px solid var(--gold);
+}
+
+.replay-card.ready,
+.replay-result[data-state="Replay receipt ready"] {
+  border-left-color: var(--green);
+}
+
+.replay-card.blocked,
+.replay-result[data-state="Blocked"],
+.replay-result[data-state="Return to rollback receipt"],
+.replay-result[data-state="Replay receipt blocked"] {
+  border-left-color: var(--ochre);
+}
+
+.replay-card span,
+.replay-card strong,
+.replay-rule span,
+.replay-rule strong {
+  display: block;
+}
+
+.replay-card span,
+.replay-rule span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.replay-result strong {
+  display: block;
+  font-size: 24px;
+}
+
+.replay-result ul {
+  margin: 10px 0 0;
+  padding-left: 18px;
+}
+
+.replay-actions {
+  grid-template-columns: repeat(2, minmax(0, max-content));
+  justify-content: start;
+}
+
+.replay-list {
+  max-height: 320px;
+  overflow: auto;
+}
+
+.replay-packet {
+  min-height: 260px;
+}
+
+@media (max-width: 980px) {
+  .replay-layout,
+  .replay-head,
+  .replay-grid,
+  .replay-rules {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .replay-actions {
+    grid-template-columns: 1fr;
+  }
+}

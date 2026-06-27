@@ -306,6 +306,20 @@ The v0.7.4 release turns the VedaPath AI homepage into a trusted MVP prototype w
 - Mobile Pattern: Mobile Pattern keeps the learning loop usable where calm moments actually happen.
 - Pattern Companion Control Room: Pattern Companion Control Room completes the private local learning layer for VedaPath AI.
 <!-- VEDAPATH PATTERN COMPANION SPRINT NOTES END -->
+<!-- VEDAPATH REPLAY RECEIPT DRY RUN NOTES START -->
+## v3.0.6 Replay Receipt Dry Run
+
+This phase converts a ready rollback receipt into a replay receipt dry run.
+
+Action taken:
+
+- Added replay receipt dry-run schema.
+- Added receipt states for draft, review, ready, return, and blocked.
+- Required chain ids, source snapshot, deterministic sequence, expected result, verification, replay key, and boundary before ready.
+- Added copyable replay receipt packets and local replay memory.
+- Preserved canonical source data.
+<!-- VEDAPATH REPLAY RECEIPT DRY RUN NOTES END -->
+
 <!-- VEDAPATH ROLLBACK RECEIPT DRY RUN NOTES START -->
 ## v3.0.5 Rollback Receipt Dry Run
 

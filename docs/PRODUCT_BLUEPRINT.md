@@ -4373,6 +4373,20 @@ It should:
 
 Pattern Companion Control Room should never claim diagnosis, therapy, legal advice, medical advice, surveillance, scoring, or spiritual authority.
 <!-- VEDAPATH PATTERN COMPANION SPRINT BLUEPRINT END -->
+<!-- VEDAPATH REPLAY RECEIPT DRY RUN BLUEPRINT START -->
+### 289. Replay Receipt Dry Run
+
+VedaPath should prove repeatability before it stores anything.
+
+Rules:
+
+- Replay receipt dry run can start only from a ready rollback receipt.
+- A ready replay must include chain ids, source snapshot, deterministic sequence, expected result, verification, replay key, and boundary.
+- Replay readiness is not production readiness.
+- Source writes, storage writes, and canonical writes remain false in preview.
+- The next build should define controlled storage entry criteria from the full receipt chain.
+<!-- VEDAPATH REPLAY RECEIPT DRY RUN BLUEPRINT END -->
+
 <!-- VEDAPATH ROLLBACK RECEIPT DRY RUN BLUEPRINT START -->
 ### 288. Rollback Receipt Dry Run
 

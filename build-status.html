@@ -366,7 +366,7 @@
           <a class="link" href="conversationcompanionlab.html">Talk</a>
           <a class="link" href="patterncompanionlab.html">Pattern</a>
           <a class="link" href="daily.html">Daily</a>
-          <span class="version">v3.0.5 rollback receipt</span>
+          <span class="version">v3.0.6 replay receipt</span>
         </nav>
       </header>
 
@@ -378,8 +378,8 @@
       <section class="summary" aria-label="Progress summary">
         <article class="tile">
           <span>Current version</span>
-          <strong>v3.0.5</strong>
-          <p>Rollback Receipt Dry Run: audit-ready receipts now prove restore action, discard action, verification, replay key, and rollback boundary before any source write.</p>
+          <strong>v3.0.6</strong>
+          <p>Replay Receipt Dry Run: rollback-ready receipts now prove deterministic chain replay, source snapshot, expected result, verification, replay key, and no-write boundary.</p>
         </article>
         <article class="tile">
           <span>MVP progress</span>
@@ -389,14 +389,14 @@
         </article>
         <article class="tile">
           <span>Full vision progress</span>
-          <strong>87%</strong>
-          <div class="progress" aria-hidden="true"><div class="bar" style="width:87%"></div></div>
-          <p>The trust loop now proves rollback behavior before any production write exists.</p>
+          <strong>88%</strong>
+          <div class="progress" aria-hidden="true"><div class="bar" style="width:88%"></div></div>
+          <p>The trust loop now proves repeatable replay before any production write exists.</p>
         </article>
         <article class="tile">
           <span>Next release</span>
-          <strong>Replay receipt dry run</strong>
-          <p>Prove repeatable replay from audit and rollback receipts while canonical writes remain blocked.</p>
+          <strong>Controlled storage entry criteria</strong>
+          <p>Define the final entry checklist for controlled storage while canonical writes remain blocked.</p>
         </article>
       </section>
 
@@ -426,7 +426,7 @@
                 <strong>Phase 2: Curated Source Set</strong>
                 <p>First 12 structured source seeds plus passage dossiers with meaning capsules, allowed use, missing fields, review decisions, evaluation checks, release-gate dashboard, reviewer queue cards, source policy routes, and trust ledger records.</p>
               </div>
-              <div class="percent">87%</div>
+              <div class="percent">88%</div>
             </article>
             <article class="phase">
               <span class="badge done">Done</span>
@@ -2611,9 +2611,17 @@
               <span class="percent">100%</span>
             </article>
             <article class="phase">
+              <span class="badge done">Done</span>
+              <div>
+                <strong>Phase 270: Replay Receipt Dry Run</strong>
+                <p>Proves deterministic replay from audit and rollback packets with source snapshot, expected result, verification, replay key, and no-write boundary.</p>
+              </div>
+              <span class="percent">100%</span>
+            </article>
+            <article class="phase">
               <span class="badge later">Later</span>
               <div>
-                <strong>Phase 270: Production Implementation and Licensed Audio</strong>
+                <strong>Phase 271: Production Implementation and Licensed Audio</strong>
                 <p>Backend storage, account consent, reviewed source records, reviewer operations, audio rights, and launch sequencing after founder direction.</p>
               </div>
               <div class="percent">0%</div>
@@ -2624,11 +2632,11 @@
         <aside class="panel version">
           <div>
             <h2>Version Notes</h2>
-            <div class="version-row"><span>Release</span><strong>v3.0.5 Rollback Receipt Dry Run</strong></div>
-            <div class="version-row"><span>Previous</span><strong>v3.0.4 Audit Receipt Dry Run</strong></div>
+            <div class="version-row"><span>Release</span><strong>v3.0.6 Replay Receipt Dry Run</strong></div>
+            <div class="version-row"><span>Previous</span><strong>v3.0.5 Rollback Receipt Dry Run</strong></div>
             <div class="version-row"><span>Commit</span><strong>See GitHub history</strong></div>
-            <div class="version-row"><span>Goal</span><strong>Prove rollback behavior before any source storage write.</strong></div>
-            <div class="version-row"><span>Status</span><strong>Ready for replay receipt dry run</strong></div>
+            <div class="version-row"><span>Goal</span><strong>Prove repeatable replay before any source storage write.</strong></div>
+            <div class="version-row"><span>Status</span><strong>Ready for controlled storage entry criteria</strong></div>
           </div>
 
           <div class="panel note">
@@ -2639,9 +2647,9 @@
           <div>
             <h2>Next Build Checklist</h2>
             <ul class="checklist">
-              <li><span class="dot"></span><span>Create replay receipt dry-run packets.</span></li>
-              <li><span class="dot"></span><span>Link replay to audit and rollback receipt ids.</span></li>
-              <li><span class="dot"></span><span>Verify deterministic replay proof shape.</span></li>
+              <li><span class="dot"></span><span>Define controlled storage entry criteria.</span></li>
+              <li><span class="dot"></span><span>Require audit, rollback, and replay receipts.</span></li>
+              <li><span class="dot"></span><span>Define promotion-blocking failure states.</span></li>
               <li><span class="dot"></span><span>Keep canonical writes blocked until final founder instruction.</span></li>
             </ul>
           </div>

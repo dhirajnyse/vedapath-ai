@@ -953,6 +953,18 @@ Then open:
 http://127.0.0.1:8088/
 ```
 
+<!-- VEDAPATH REPLAY RECEIPT DRY RUN START -->
+## v3.0.6 Replay Receipt Dry Run
+
+This release adds the replay receipt dry-run layer after rollback receipts.
+
+- adds replayreceiptdryrun.html
+- adds data/vedapath-replay-receipt-dry-run.json
+- records chain ids, source snapshot ref, replay sequence, deterministic check, expected result, verification, replay key, and boundary
+- keeps source_write_executed false, storage_write_enabled false, production_ready false, and canonical_write_allowed false
+- sets the next release as controlled storage entry criteria
+<!-- VEDAPATH REPLAY RECEIPT DRY RUN END -->
+
 <!-- VEDAPATH ROLLBACK RECEIPT DRY RUN START -->
 ## v3.0.5 Rollback Receipt Dry Run
 

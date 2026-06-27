@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VedaPath Replay Receipt Dry Run</title>
+    <link rel="stylesheet" href="assets/vedapath-sprint.css">
+    <link rel="stylesheet" href="assets/vedapath-replay-receipt-dry-run.css">
+    <link rel="stylesheet" href="assets/vedapath-cohesive.css">
+    <link rel="stylesheet" href="assets/vedapath-polish.css">
+    <link rel="stylesheet" href="assets/vedapath-focus.css">
+  </head>
+  <body>
+    <div class="shell" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top" aria-label="VedaPath AI home">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
+          <div>
+            <strong>VedaPath AI</strong>
+            <span>Replay receipt dry run</span>
+          </div>
+        </a>
+        <nav class="nav" aria-label="Project links">
+          <a class="link" href="index.html">Home</a>
+          <a class="link" href="build-status.html">Build</a>
+          <a class="link" href="brand/brand-board.html">Brand</a>
+          <a class="link" href="blueprint.html">Blueprint</a>
+          <a class="link" href="citedanswerlab.html">Answers</a>
+          <a class="link active" href="reviewqueuepersistence.html">Review</a>
+          <a class="link" href="mantralenslab.html">Mantra</a>
+          <a class="link" href="lifecompanionlab.html">Life</a>
+          <a class="link" href="conversationcompanionlab.html">Talk</a>
+          <a class="link" href="patterncompanionlab.html">Pattern</a>
+          <a class="link" href="daily.html">Daily</a>
+          <span class="version">v3.0.6 replay receipt</span>
+        </nav>
+      </header>
+
+      <main class="workspace" aria-label="VedaPath Replay Receipt Dry Run workspace">
+        <aside class="panel">
+          <span class="eyebrow">Replay restraint</span>
+          <h2>Repeat the proof without changing the source</h2>
+          <p class="muted">A replay receipt dry run proves the audit and rollback chain can be repeated from stable ids, hashes, source snapshot, expected result, and boundary.</p>
+          <div class="sprint-list">
+            <div class="sprint-step active"><span class="step-index">1</span><div><strong>Chain</strong><p>Read rollback.</p></div></div>
+            <div class="sprint-step"><span class="step-index">2</span><div><strong>Snapshot</strong><p>Name source state.</p></div></div>
+            <div class="sprint-step"><span class="step-index">3</span><div><strong>Replay</strong><p>Repeat proof.</p></div></div>
+            <div class="sprint-step"><span class="step-index">4</span><div><strong>Verify</strong><p>Confirm no write.</p></div></div>
+          </div>
+          <div class="button-row" style="margin-top: 16px;">
+            <a class="button primary" href="rollbackreceiptdryrun.html">Open Rollback Receipt</a>
+            <a class="button safe" href="auditreceiptdryrun.html">Open Audit Receipt</a>
+          </div>
+        </aside>
+
+        <section class="panel replay-app" id="replayReceiptDryRun">
+          <div class="replay-head">
+            <div>
+              <span class="eyebrow">Replay receipt</span>
+              <h1>Replay the proof. Keep the source still.</h1>
+              <p class="muted">This room proves repeatability from audit plus rollback receipts without executing a source write.</p>
+            </div>
+            <div class="replay-mark"><img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath replay receipt mark"></div>
+          </div>
+
+          <section class="replay-layout">
+            <div class="replay-form">
+              <h2>Replay Receipt Dry Run</h2>
+              <label>Rollback receipt packet<textarea id="replayRollbackReceipt"></textarea></label>
+              <label>Replay state<select id="replayState"></select></label>
+              <label>Replay actor<input id="replayActor" type="text" placeholder="Replay dry-run reviewer"></label>
+              <label>Replay note<textarea id="replayNote"></textarea></label>
+              <label>Rollback receipt id<input id="replayRollbackId" type="text"></label>
+              <label>Audit receipt id<input id="replayAuditId" type="text"></label>
+              <label>Source answer id<input id="replaySourceAnswer" type="text"></label>
+              <label>Source record id<input id="replaySourceRecord" type="text"></label>
+              <label>Before hash<input id="replayBeforeHash" type="text"></label>
+              <label>After hash<input id="replayAfterHash" type="text"></label>
+              <label>Source snapshot ref<input id="replaySnapshotRef" type="text"></label>
+              <label>Replay sequence<textarea id="replaySequence"></textarea></label>
+              <label>Deterministic check<textarea id="replayDeterministic"></textarea></label>
+              <label>Expected result<textarea id="replayExpectedResult"></textarea></label>
+              <label>Verification step<textarea id="replayVerification"></textarea></label>
+              <label>Replay key<input id="replayKey" type="text"></label>
+              <label>Replay boundary<textarea id="replayBoundary"></textarea></label>
+              <label>Review question<textarea id="replayReviewQuestion"></textarea></label>
+              <label>Return reason<textarea id="replayReturnReason"></textarea></label>
+              <label>Block reason<textarea id="replayBlockReason"></textarea></label>
+              <div class="replay-actions">
+                <button class="button primary" id="runReplayDryRun" type="button">Run Replay</button>
+                <button class="button safe" id="loadReplaySample" type="button">Load Sample</button>
+                <button class="button" id="saveReplayDryRun" type="button">Save Local</button>
+                <button class="button" id="clearReplayDryRuns" type="button">Clear Local</button>
+              </div>
+            </div>
+            <div>
+              <section class="replay-result" id="replayResultCard" data-state="Blocked"></section>
+              <section style="margin-top: 10px;">
+                <h2>Rollback Receipt Scope</h2>
+                <div class="replay-list" id="replayRollbackScope"></div>
+              </section>
+            </div>
+          </section>
+
+          <section>
+            <h2>Replay Checks</h2>
+            <div class="replay-rules" id="replayChecks"></div>
+          </section>
+
+          <section class="replay-layout">
+            <div>
+              <div class="replay-actions">
+                <button class="button safe" id="copyReplayPacket" type="button">Copy Replay Packet</button>
+                <a class="button" href="data/vedapath-replay-receipt-dry-run.json">Open JSON</a>
+              </div>
+              <textarea class="replay-packet" id="replayPacket" aria-label="Replay receipt dry-run packet"></textarea>
+            </div>
+            <div>
+              <h2>Saved Local Replays</h2>
+              <div class="replay-list" id="replaySaved"></div>
+            </div>
+          </section>
+        </section>
+
+        <aside class="panel tight">
+          <span class="badge green">Replay proof</span>
+          <h2 style="margin-top: 14px;">Repeatable Trust</h2>
+          <p class="muted">The replay receipt proves the same chain produces the same no-write result.</p>
+          <div class="progress" aria-label="Replay receipt dry run progress 100 percent"><div class="bar" style="--score:100%"></div></div>
+          <div class="metric-grid">
+            <div class="metric"><span>Current</span><strong>v3.0.6</strong></div>
+            <div class="metric"><span>States</span><strong>5</strong></div>
+            <div class="metric"><span>Writes</span><strong>False</strong></div>
+            <div class="metric"><span>Next</span><strong>Storage</strong></div>
+          </div>
+          <section class="panel tight boundary" style="margin-top: 16px;">
+            <h2>Replay Rule</h2>
+            <p class="muted">No source write is executed. The next release should define controlled storage entry criteria from replay proof.</p>
+          </section>
+        </aside>
+      </main>
+    </div>
+    <script src="assets/vedapath-replay-receipt-dry-run.js"></script>
+  </body>
+</html>
