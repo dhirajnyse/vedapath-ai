@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VedaPath Controlled Execution Authorization Hold</title>
+    <link rel="stylesheet" href="assets/vedapath-sprint.css">
+    <link rel="stylesheet" href="assets/vedapath-controlled-execution-authorization-hold.css">
+    <link rel="stylesheet" href="assets/vedapath-cohesive.css">
+    <link rel="stylesheet" href="assets/vedapath-polish.css">
+    <link rel="stylesheet" href="assets/vedapath-focus.css">
+  </head>
+  <body>
+    <div class="shell" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top" aria-label="VedaPath AI home">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
+          <div>
+            <strong>VedaPath AI</strong>
+            <span>Controlled execution authorization hold</span>
+          </div>
+        </a>
+        <nav class="nav" aria-label="Project links">
+          <a class="link" href="index.html">Home</a>
+          <a class="link" href="build-status.html">Build</a>
+          <a class="link" href="brand/brand-board.html">Brand</a>
+          <a class="link" href="blueprint.html">Blueprint</a>
+          <a class="link" href="citedanswerlab.html">Answers</a>
+          <a class="link active" href="reviewqueuepersistence.html">Review</a>
+          <a class="link" href="mantralenslab.html">Mantra</a>
+          <a class="link" href="lifecompanionlab.html">Life</a>
+          <a class="link" href="conversationcompanionlab.html">Talk</a>
+          <a class="link" href="patterncompanionlab.html">Pattern</a>
+          <a class="link" href="daily.html">Daily</a>
+          <span class="version">v3.1.6 authorization hold</span>
+        </nav>
+      </header>
+
+      <main class="workspace" aria-label="VedaPath Controlled Execution Authorization Hold workspace">
+        <aside class="panel">
+          <span class="eyebrow">Hold is not authority</span>
+          <h2>Prepare language before any decision</h2>
+          <p class="muted">This room holds authorization language after review. It can say the language is ready for a later founder decision, but it cannot authorize, execute, promote, store, migrate, use secrets, publish, or launch.</p>
+          <div class="sprint-list">
+            <div class="sprint-step active"><span class="step-index">1</span><div><strong>Review</strong><p>Load gate.</p></div></div>
+            <div class="sprint-step"><span class="step-index">2</span><div><strong>Language</strong><p>Constrain wording.</p></div></div>
+            <div class="sprint-step"><span class="step-index">3</span><div><strong>Boundary</strong><p>Keep flags false.</p></div></div>
+            <div class="sprint-step"><span class="step-index">4</span><div><strong>Decision</strong><p>Wait for founder.</p></div></div>
+          </div>
+          <div class="button-row" style="margin-top: 16px;">
+            <a class="button primary" href="controlledexecutionreviewgate.html">Open Review Gate</a>
+            <a class="button safe" href="controlledexecutionpacketdraft.html">Open Packet Draft</a>
+          </div>
+        </aside>
+
+        <section class="panel auth-hold" id="controlledExecutionAuthorizationHold">
+          <div class="auth-head">
+            <div>
+              <span class="eyebrow">Authorization hold</span>
+              <h1>Hold the language. Keep execution closed.</h1>
+              <p class="muted">A ready hold here means the authorization language can go to a founder decision gate next. It still cannot authorize, execute, promote, store, update canonical records, run migrations, create accounts, use secrets, publish public release, or launch production.</p>
+            </div>
+            <div class="auth-mark"><img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath controlled execution authorization hold mark"></div>
+          </div>
+
+          <section class="auth-layout">
+            <div class="auth-form">
+              <h2>Controlled Authorization Hold</h2>
+              <label>Review gate packet<textarea id="authReviewGate"></textarea></label>
+              <label>Hold state<select id="authState"></select></label>
+              <label>Hold actor<input id="authActor" type="text" placeholder="Controlled authorization holder"></label>
+              <label>Holder name<input id="authHolderName" type="text" placeholder="Authorization hold sample"></label>
+              <label>Review gate id<input id="authReviewGateId" type="text"></label>
+              <label>Packet draft id<input id="authPacketDraftId" type="text"></label>
+              <label>Founder gate id<input id="authFounderGateId" type="text"></label>
+              <label>Preflight id<input id="authPreflightId" type="text"></label>
+              <label>Source answer id<input id="authSourceAnswer" type="text"></label>
+              <label>Source record id<input id="authSourceRecord" type="text"></label>
+              <label>Source family<input id="authSourceFamily" type="text"></label>
+              <label>Authorization scope<textarea id="authScopeText"></textarea></label>
+              <label>Founder authorization language<textarea id="authFounderLanguage"></textarea></label>
+              <label>Review evidence summary<textarea id="authEvidence"></textarea></label>
+              <label>Source lock<textarea id="authSourceLock"></textarea></label>
+              <label>Risk acknowledgment<textarea id="authRisk"></textarea></label>
+              <label>Boundary statement<textarea id="authBoundary"></textarea></label>
+              <label>Rollback condition<textarea id="authRollback"></textarea></label>
+              <label>Monitoring condition<textarea id="authMonitoring"></textarea></label>
+              <label>Stop condition<textarea id="authStopCondition"></textarea></label>
+              <label>Expiry check<textarea id="authExpiry"></textarea></label>
+              <label>Production boundary<textarea id="authProductionBoundary"></textarea></label>
+              <label>Review question<textarea id="authQuestion"></textarea></label>
+              <label>Return reason<textarea id="authReturnReason"></textarea></label>
+              <label>Hold reason<textarea id="authHoldReason"></textarea></label>
+              <label>Block reason<textarea id="authBlockReason"></textarea></label>
+              <div class="auth-actions">
+                <button class="button primary" id="runAuthHold" type="button">Run Hold</button>
+                <button class="button safe" id="loadAuthSample" type="button">Load Sample</button>
+                <button class="button" id="saveAuthHold" type="button">Save Local</button>
+                <button class="button" id="clearAuthHolds" type="button">Clear Local</button>
+              </div>
+            </div>
+            <div>
+              <section class="auth-result" id="authResultCard" data-state="Blocked"></section>
+              <section style="margin-top: 10px;">
+                <h2>Hold Scope</h2>
+                <div class="auth-list" id="authScope"></div>
+              </section>
+            </div>
+          </section>
+
+          <section>
+            <h2>Hold Checks</h2>
+            <div class="auth-rules" id="authChecks"></div>
+          </section>
+
+          <section class="auth-layout">
+            <div>
+              <div class="auth-actions">
+                <button class="button safe" id="copyAuthHold" type="button">Copy Authorization Hold</button>
+                <a class="button" href="data/vedapath-controlled-execution-authorization-hold.json">Open JSON</a>
+              </div>
+              <textarea class="auth-output" id="authOutput" aria-label="Controlled execution authorization hold"></textarea>
+            </div>
+            <div>
+              <h2>Saved Local Holds</h2>
+              <div class="auth-list" id="authSaved"></div>
+            </div>
+          </section>
+        </section>
+
+        <aside class="panel tight">
+          <span class="badge green">Hold is not execution</span>
+          <h2 style="margin-top: 14px;">Ready to Decide, Not Run</h2>
+          <p class="muted">The hold prepares exact language for a later founder decision while every operational path stays locked.</p>
+          <div class="progress" aria-label="Controlled execution authorization hold progress 100 percent"><div class="bar" style="--score:100%"></div></div>
+          <div class="metric-grid">
+            <div class="metric"><span>Current</span><strong>v3.1.6</strong></div>
+            <div class="metric"><span>States</span><strong>8</strong></div>
+            <div class="metric"><span>Authorized</span><strong>False</strong></div>
+            <div class="metric"><span>Next</span><strong>Founder decision</strong></div>
+          </div>
+          <section class="panel tight boundary" style="margin-top: 16px;">
+            <h2>Authorization Boundary</h2>
+            <p class="auth-boundary">Hold only. Authorization, execution, founder grant, source promotion, storage writes, canonical writes, migrations, accounts, secrets, public release, and production launch remain false.</p>
+            <p class="muted">This release prepares the founder authorization decision gate. It does not execute anything.</p>
+          </section>
+        </aside>
+      </main>
+    </div>
+    <script src="assets/vedapath-controlled-execution-authorization-hold.js"></script>
+  </body>
+</html>

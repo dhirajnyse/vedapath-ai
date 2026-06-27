@@ -4373,6 +4373,22 @@ It should:
 
 Pattern Companion Control Room should never claim diagnosis, therapy, legal advice, medical advice, surveillance, scoring, or spiritual authority.
 <!-- VEDAPATH PATTERN COMPANION SPRINT BLUEPRINT END -->
+<!-- VEDAPATH CONTROLLED EXECUTION AUTHORIZATION HOLD BLUEPRINT START -->
+### 299. Controlled Execution Authorization Hold
+
+VedaPath should distinguish authorization language from authorization itself. The authorization hold can prepare founder-facing wording, but it cannot authorize or execute.
+
+Core requirements:
+
+- start from a controlled review ready object
+- hold exact source-specific authorization language for later founder decision
+- keep review evidence, source lock, risk, rollback, monitoring, stop condition, production boundary, and expiry visible
+- permit only a future founder authorization decision gate
+- block authorization, execution, source promotion, storage writes, canonical writes, migrations, accounts, secrets, public release, and production
+
+Controlled Execution Authorization Hold should never claim execution approval, storage permission, canonical source authority, migration authority, production authority, therapy, ritual instruction, crisis support, or spiritual authority.
+<!-- VEDAPATH CONTROLLED EXECUTION AUTHORIZATION HOLD BLUEPRINT END -->
+
 <!-- VEDAPATH CONTROLLED EXECUTION REVIEW GATE BLUEPRINT START -->
 ### 298. Controlled Execution Review Gate
 

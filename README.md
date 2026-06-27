@@ -953,6 +953,17 @@ Then open:
 http://127.0.0.1:8088/
 ```
 
+<!-- VEDAPATH CONTROLLED EXECUTION AUTHORIZATION HOLD START -->
+## v3.1.6 Controlled Execution Authorization Hold
+
+This release holds authorization language behind the review gate while all authorization, execution, promotion, storage, canonical-write, migration, account, secret, public-release, and production flags stay false.
+
+- [Controlled Execution Authorization Hold](controlledexecutionauthorizationhold.html)
+- [Controlled Execution Authorization Hold Notes](docs/CONTROLLED_EXECUTION_AUTHORIZATION_HOLD.md)
+- [Controlled Execution Authorization Hold Data](data/vedapath-controlled-execution-authorization-hold.json)
+
+<!-- VEDAPATH CONTROLLED EXECUTION AUTHORIZATION HOLD END -->
+
 <!-- VEDAPATH CONTROLLED EXECUTION REVIEW GATE START -->
 ## v3.1.5 Controlled Execution Review Gate
 

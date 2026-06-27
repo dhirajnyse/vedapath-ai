@@ -1,0 +1,199 @@
+{
+  "schema_version": "controlled-execution-authorization-hold-v1",
+  "release": "v3.1.6",
+  "generated_at": "2026-06-27T00:00:00.000Z",
+  "title": "Controlled Execution Authorization Hold",
+  "summary": "Holds authorization language behind a passed review gate while keeping execution packet authorization, execution, storage writes, canonical writes, migrations, accounts, secrets, public release, and production disabled.",
+  "previous_release": "v3.1.5 Controlled Execution Review Gate",
+  "source": {
+    "controlled_execution_review_gate_release": "v3.1.5",
+    "controlled_execution_review_gate_schema": "controlled-execution-review-gate-v1",
+    "controlled_execution_review_gate_id": "controlled-execution-review-gate-sample-steady-action-bg-2-48",
+    "controlled_execution_packet_draft_id": "controlled-execution-packet-draft-sample-steady-action-bg-2-48",
+    "founder_execution_instruction_gate_id": "founder-execution-instruction-gate-sample-steady-action-bg-2-48",
+    "promotion_execution_preflight_id": "promotion-execution-preflight-sample-steady-action-bg-2-48",
+    "source_answer_id": "answer-steady-action-bg-2-48",
+    "source_record_id": "bg-2-48-steadiness",
+    "source_family": "Bhagavad Gita | Smriti"
+  },
+  "hold_states": [
+    "Draft authorization hold",
+    "Needs founder authorization language",
+    "Controlled authorization hold ready",
+    "Return to review gate",
+    "Authorization hold",
+    "Execution blocked",
+    "Production forbidden",
+    "Hold expired"
+  ],
+  "required_by_state": {
+    "Draft authorization hold": [
+      "controlled_execution_review_gate_id",
+      "source_answer_id",
+      "authorization_scope"
+    ],
+    "Needs founder authorization language": [
+      "review_question",
+      "founder_authorization_language"
+    ],
+    "Controlled authorization hold ready": [
+      "hold_actor",
+      "holder_name",
+      "controlled_execution_review_gate_id",
+      "controlled_execution_packet_draft_id",
+      "source_answer_id",
+      "source_record_id",
+      "source_family",
+      "authorization_scope",
+      "founder_authorization_language",
+      "review_evidence_summary",
+      "source_lock",
+      "risk_acknowledgment",
+      "boundary_statement",
+      "rollback_condition",
+      "monitoring_condition",
+      "stop_condition",
+      "expiry_check",
+      "production_boundary"
+    ],
+    "Return to review gate": [
+      "return_reason"
+    ],
+    "Authorization hold": [
+      "hold_reason"
+    ],
+    "Execution blocked": [
+      "block_reason"
+    ],
+    "Production forbidden": [
+      "block_reason",
+      "production_boundary"
+    ],
+    "Hold expired": [
+      "expiry_check",
+      "hold_reason"
+    ]
+  },
+  "hold_checks": [
+    {
+      "check": "Review gate ready",
+      "rule": "Authorization hold can start only from a controlled review ready object whose next gate is controlled execution authorization hold."
+    },
+    {
+      "check": "Hold only",
+      "rule": "The hold can prepare authorization language for a later founder decision gate; it cannot authorize or execute."
+    },
+    {
+      "check": "Founder language constrained",
+      "rule": "Founder-facing authorization language must say no authorization is granted in this release."
+    },
+    {
+      "check": "Source locked",
+      "rule": "The hold must name the exact review gate, packet draft, source answer, source record, and source family."
+    },
+    {
+      "check": "Operational blocks",
+      "rule": "Execution packet authorization, execution, storage, canonical writes, public release, and production stay false."
+    },
+    {
+      "check": "Expiry",
+      "rule": "The hold expires on material source, rights, reviewer, founder instruction, review gate, rollback, monitoring, packet draft, or code change."
+    }
+  ],
+  "sample_review_gate": {
+    "schema_version": "controlled-execution-review-gate-v1",
+    "release": "v3.1.5",
+    "controlled_execution_review_gate_id": "controlled-execution-review-gate-sample-steady-action-bg-2-48",
+    "review_status": "Controlled review ready",
+    "controlled_execution_review_ready": true,
+    "execution_packet_authorized": false,
+    "execution_authorized": false,
+    "execution_allowed": false,
+    "founder_instruction_granted": false,
+    "source_promotion_allowed": false,
+    "promotion_execution_allowed": false,
+    "implementation_authorized": false,
+    "implementation_execution_allowed": false,
+    "controlled_storage_entry_allowed": false,
+    "storage_write_enabled": false,
+    "canonical_write_allowed": false,
+    "source_write_executed": false,
+    "actual_storage_write_executed": false,
+    "production_ready": false,
+    "production_launch_allowed": false,
+    "public_release_allowed": false,
+    "next_gate_required": "Controlled execution authorization hold",
+    "review_state": "Controlled review ready",
+    "review_actor": "Controlled execution reviewer",
+    "reviewer_name": "Reviewer sample",
+    "controlled_execution_packet_draft_id": "controlled-execution-packet-draft-sample-steady-action-bg-2-48",
+    "founder_execution_instruction_gate_id": "founder-execution-instruction-gate-sample-steady-action-bg-2-48",
+    "promotion_execution_preflight_id": "promotion-execution-preflight-sample-steady-action-bg-2-48",
+    "source_answer_id": "answer-steady-action-bg-2-48",
+    "source_record_id": "bg-2-48-steadiness",
+    "source_family": "Bhagavad Gita | Smriti",
+    "review_scope": "Review the draft only for source integrity, evidence, boundaries, rollback, monitoring, stop condition, and expiry. Do not authorize, execute, promote, store, write canonical source, run migration, create account, use secrets, publish public release, or launch production.",
+    "evidence_review": "Confirm source ids, source family, citation, rights, translation, reviewer evidence, source-owner scope, founder instruction, preflight, and packet draft are visible.",
+    "boundary_review": "Controlled execution review gate only; controlled_execution_review_ready may be true, but execution_packet_authorized remains false, execution_authorized remains false, execution_allowed remains false, founder_instruction_granted remains false, source_promotion_allowed remains false, promotion_execution_allowed remains false, implementation_authorized remains false, implementation_execution_allowed remains false, controlled_storage_entry_allowed remains false, storage_write_enabled remains false, canonical_write_allowed remains false, source_write_executed remains false, actual_storage_write_executed remains false, production_ready remains false, production_launch_allowed remains false, and public_release_allowed remains false.",
+    "rollback_review": "Confirm rollback, replay, before_hash, failure review, stop condition, and reviewer handoff are present; no source state is written.",
+    "monitoring_review": "Confirm audit receipt, stop condition, failure review, reviewer handoff, post-execution verification, and before-write check are present.",
+    "stop_condition_review": "Stop if source ids mismatch, rights change, reviewer evidence is missing, source-owner scope is missing, founder instruction expires, rollback is missing, monitoring is missing, code changes, or any authorization, execution, storage, canonical, public release, or production flag is true.",
+    "reviewer_decision": "Review ready for authorization hold only; no authorization granted.",
+    "expiry_check": "Review expires at the next material source, rights, reviewer, founder instruction, rollback, monitoring, packet draft, or code change and must be rechecked; not permanent approval.",
+    "production_boundary": "Production remains unavailable; production_ready remains false, production_launch_allowed remains false, public_release_allowed remains false, and no production migration, account, secret, durable storage, public release, or launch path is opened.",
+    "next_gate": "Controlled execution authorization hold",
+    "review_question": "",
+    "return_reason": "",
+    "hold_reason": "",
+    "block_reason": "",
+    "created_at": "2026-06-27T00:00:00.000Z"
+  },
+  "sample_hold": {
+    "hold_state": "Controlled authorization hold ready",
+    "hold_actor": "Controlled authorization holder",
+    "holder_name": "Authorization hold sample",
+    "controlled_execution_review_gate_id": "controlled-execution-review-gate-sample-steady-action-bg-2-48",
+    "controlled_execution_packet_draft_id": "controlled-execution-packet-draft-sample-steady-action-bg-2-48",
+    "founder_execution_instruction_gate_id": "founder-execution-instruction-gate-sample-steady-action-bg-2-48",
+    "promotion_execution_preflight_id": "promotion-execution-preflight-sample-steady-action-bg-2-48",
+    "source_answer_id": "answer-steady-action-bg-2-48",
+    "source_record_id": "bg-2-48-steadiness",
+    "source_family": "Bhagavad Gita | Smriti",
+    "authorization_scope": "Hold authorization language only for source answer answer-steady-action-bg-2-48 after controlled review readiness. Do not authorize execution, source promotion, storage, canonical writes, migration, account creation, secret use, public release, or production launch.",
+    "founder_authorization_language": "Founder may later review authorization language for this exact source packet. This hold is not authorization, no authorization granted, and no execution may run from it.",
+    "review_evidence_summary": "Review gate ready; source ids, source family, citation, rights, translation, reviewer evidence, source-owner scope, founder instruction, rollback, monitoring, stop condition, expiry, and production boundary are visible.",
+    "source_lock": "Locked to controlled_execution_review_gate_id controlled-execution-review-gate-sample-steady-action-bg-2-48, controlled_execution_packet_draft_id controlled-execution-packet-draft-sample-steady-action-bg-2-48, source_answer_id answer-steady-action-bg-2-48, source_record_id bg-2-48-steadiness, and source family Bhagavad Gita | Smriti.",
+    "risk_acknowledgment": "Risk remains: source mismatch, rights change, reviewer change, founder instruction expiry, rollback missing, monitoring missing, code change, or any true authorization, execution, storage, canonical, public release, or production flag must block movement.",
+    "boundary_statement": "Controlled execution authorization hold only; controlled_authorization_hold_ready may be true, but execution_packet_authorized remains false, execution_authorized remains false, execution_allowed remains false, founder_instruction_granted remains false, source_promotion_allowed remains false, promotion_execution_allowed remains false, implementation_authorized remains false, implementation_execution_allowed remains false, controlled_storage_entry_allowed remains false, storage_write_enabled remains false, canonical_write_allowed remains false, source_write_executed remains false, actual_storage_write_executed remains false, production_ready remains false, production_launch_allowed remains false, and public_release_allowed remains false.",
+    "rollback_condition": "Rollback, replay, before_hash, failure review, stop condition, and reviewer handoff must remain present before any future founder authorization decision; no source state is written.",
+    "monitoring_condition": "Audit receipt, stop condition, failure review, reviewer handoff, post-execution verification, and before-write check must remain visible before any future authorization decision.",
+    "stop_condition": "Stop if source ids mismatch, rights change, reviewer evidence is missing, source-owner scope is missing, founder instruction expires, review gate expires, rollback is missing, monitoring is missing, code changes, or any authorization, execution, storage, canonical, public release, or production flag is true.",
+    "expiry_check": "Authorization hold expires at the next material source, rights, reviewer, founder instruction, review gate, rollback, monitoring, packet draft, or code change and must be rechecked; not permanent approval.",
+    "production_boundary": "Production remains unavailable; production_ready remains false, production_launch_allowed remains false, public_release_allowed remains false, and no production migration, account, secret, durable storage, public release, or launch path is opened.",
+    "next_gate": "Founder authorization decision gate",
+    "review_question": "",
+    "return_reason": "",
+    "hold_reason": "",
+    "block_reason": ""
+  },
+  "boundary": {
+    "controlled_authorization_hold_ready": false,
+    "execution_packet_authorized": false,
+    "execution_authorized": false,
+    "execution_allowed": false,
+    "founder_instruction_granted": false,
+    "source_promotion_allowed": false,
+    "promotion_execution_allowed": false,
+    "implementation_authorized": false,
+    "implementation_execution_allowed": false,
+    "controlled_storage_entry_allowed": false,
+    "storage_write_enabled": false,
+    "canonical_write_allowed": false,
+    "source_write_executed": false,
+    "actual_storage_write_executed": false,
+    "production_ready": false,
+    "production_launch_allowed": false,
+    "public_release_allowed": false,
+    "next_gate_required": "Founder authorization decision gate"
+  }
+}
