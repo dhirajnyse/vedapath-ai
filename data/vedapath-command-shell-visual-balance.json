@@ -1,0 +1,24 @@
+{
+  "schema_version": "vedapath-command-shell-visual-balance-v1",
+  "release": "v3.3.3",
+  "title": "Command Shell Visual System Balance",
+  "generated_at": "2026-06-28T00:00:00.000Z",
+  "founder_feedback": "Improve design, aesthetics, coherence, and color scheme after v3.3.2.",
+  "design_intent": "Keep the command-center UX while making the shell feel more balanced, less one-note, more legible, and calmer.",
+  "changes": [
+    "quieter side-rail section labels",
+    "stronger active navigation contrast",
+    "less brown-heavy rail with green, ink, and indigo depth",
+    "balanced Bhagwa, peacock green, and sacred gold accents",
+    "calmer top command bar surface",
+    "softer panel shadows and cleaner border color",
+    "green source emphasis on answer and note blocks",
+    "more consistent active, safe, and primary control treatment"
+  ],
+  "boundaries": [
+    "Visual-system polish only.",
+    "No source data, retrieval, account, storage, authorization, execution, audio, or production behavior changed.",
+    "The interface remains source-first, calm, and simple by default."
+  ],
+  "next_release": "Controlled permission execution authorization review decision gate"
+}

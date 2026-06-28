@@ -954,6 +954,13 @@ http://127.0.0.1:8088/
 ```
 
 <!-- VEDAPATH FOUNDER AUTHORIZATION DECISION GATE START -->
+## v3.3.3 Command Shell Visual System Balance
+
+Command Shell Visual System Balance balances the command shell visual system: quieter rail headings, stronger active navigation contrast, less brown-heavy depth, cleaner panels, and Bhagwa accents supported by peacock green, sacred gold, and restrained indigo.
+
+- [Command Shell Visual System Balance Notes](docs/COMMAND_SHELL_VISUAL_SYSTEM_BALANCE.md)
+- [Command Shell Visual System Balance Config](data/vedapath-command-shell-visual-balance.json)
+
 ## v3.3.2 Command Shell Aesthetic Harmony
 
 Command Shell Aesthetic Harmony adds a warmer, more premium aesthetic layer to the Hyrvia-inspired command shell: refined rail depth, calmer cards, better controls, softer shadows, and balanced Bhagwa, gold, and peacock-green accents.

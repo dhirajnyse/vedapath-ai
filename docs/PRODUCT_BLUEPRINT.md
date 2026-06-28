@@ -4374,6 +4374,19 @@ It should:
 Pattern Companion Control Room should never claim diagnosis, therapy, legal advice, medical advice, surveillance, scoring, or spiritual authority.
 <!-- VEDAPATH PATTERN COMPANION SPRINT BLUEPRINT END -->
 <!-- VEDAPATH FOUNDER AUTHORIZATION DECISION GATE BLUEPRINT START -->
+### 316. Command Shell Visual System Balance
+
+Command Shell Visual System Balance makes VedaPath feel more visually balanced without changing the product structure.
+
+Design rules:
+
+- Bhagwa remains the identity color, not the only organizing color.
+- Green should signal source, safety, and calm confidence.
+- Gold should highlight progress and warmth.
+- The side rail should feel grounded, but not heavy or brown-only.
+- Section labels in the rail must stay small, structural, and quiet.
+- Active navigation must be readable at a glance.
+
 ### 315. Command Shell Aesthetic Harmony
 
 Command Shell Aesthetic Harmony makes the product feel more mature without adding visual noise.
