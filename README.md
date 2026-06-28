@@ -954,6 +954,13 @@ http://127.0.0.1:8088/
 ```
 
 <!-- VEDAPATH FOUNDER AUTHORIZATION DECISION GATE START -->
+## v3.3.0 Command Center Side Rail UX
+
+Command Center Side Rail UX gives VedaPath a Hyrvia-inspired command-center shell with persistent side navigation, top path/view/side controls, and browser-local left/right rail preference while preserving the Bhagwa source-first identity.
+
+- [Command Center Side Rail UX Notes](docs/COMMAND_CENTER_SIDE_RAIL_UX.md)
+- [Command Center Side Rail UX Config](data/vedapath-command-shell-ux.json)
+
 ## v3.2.9 Controlled Permission Execution Authorization Draft Review Gate
 
 Controlled Permission Execution Authorization Draft Review Gate reviews controlled packet language after the draft gate while keeping permission grant, authorization approval, execution, storage writes, canonical writes, public release, and production false.

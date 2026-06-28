@@ -1,0 +1,47 @@
+{
+  "schema_version": "vedapath-command-shell-ux-v1",
+  "release": "v3.3.0",
+  "title": "Command Center Side Rail UX",
+  "generated_at": "2026-06-28T00:00:00.000Z",
+  "inspiration": "Hyrvia command-center shell: persistent side rail, compact top command controls, saved left-right navigation side preference, and wide calm work surface.",
+  "vedapath_direction": "Keep Bhagwa warmth, source-first tone, and simple reading surfaces while making navigation feel less scattered.",
+  "shell_sections": [
+    {
+      "section": "Start",
+      "links": [
+        "Home",
+        "Build",
+        "Brand",
+        "Blueprint"
+      ]
+    },
+    {
+      "section": "Source",
+      "links": [
+        "Answers",
+        "Review",
+        "Mantra"
+      ]
+    },
+    {
+      "section": "Practice",
+      "links": [
+        "Life",
+        "Talk",
+        "Pattern",
+        "Daily"
+      ]
+    }
+  ],
+  "local_preferences": [
+    "path mode",
+    "role view",
+    "left/right side rail"
+  ],
+  "boundaries": [
+    "UI shell only; no new authority, execution, storage write, account, public release, or production capability.",
+    "Local preference memory stays in this browser only.",
+    "Primary content remains simple and source-first."
+  ],
+  "next_release": "Founder permission execution authorization review decision gate"
+}

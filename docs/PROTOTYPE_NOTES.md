@@ -307,6 +307,13 @@ The v0.7.4 release turns the VedaPath AI homepage into a trusted MVP prototype w
 - Pattern Companion Control Room: Pattern Companion Control Room completes the private local learning layer for VedaPath AI.
 <!-- VEDAPATH PATTERN COMPANION SPRINT NOTES END -->
 <!-- VEDAPATH FOUNDER AUTHORIZATION DECISION GATE NOTES START -->
+## v3.3.0 Command Center Side Rail UX
+
+- Adds a global command-shell CSS and JS layer across VedaPath pages.
+- Moves primary navigation into a grouped side rail inspired by the Hyrvia HRMS workspace.
+- Adds top command controls for Path, View, and left/right Side with browser-local preference memory.
+- Keeps VedaPath's Bhagwa identity, source-first tone, and simple reading surfaces.
+
 ## v3.2.9 Controlled Permission Execution Authorization Draft Review Gate
 
 - Adds controlledpermissionexecutionauthorizationdraftreviewgate.html as the review gate after controlled permission execution authorization draft.

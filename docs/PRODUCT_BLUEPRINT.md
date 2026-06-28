@@ -4374,6 +4374,14 @@ It should:
 Pattern Companion Control Room should never claim diagnosis, therapy, legal advice, medical advice, surveillance, scoring, or spiritual authority.
 <!-- VEDAPATH PATTERN COMPANION SPRINT BLUEPRINT END -->
 <!-- VEDAPATH FOUNDER AUTHORIZATION DECISION GATE BLUEPRINT START -->
+### 313. Command Center Side Rail UX
+
+Command Center Side Rail UX makes VedaPath feel like a calmer command center.
+
+It borrows the useful structure from Hyrvia: side navigation, top context controls, and a user-selectable left or right navigation rail. It does not copy Hyrvia's corporate tone; VedaPath keeps Bhagwa warmth, source-first reading, and quiet spiritual restraint.
+
+The command shell should reduce scattered navigation, keep rooms easy to reach, and preserve the first job of the product: ask clearly, read the source, carry one step.
+
 ### 312. Controlled Permission Execution Authorization Draft Review Gate
 
 Controlled Permission Execution Authorization Draft Review Gate reviews controlled authorization packet language after draft readiness.
