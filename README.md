@@ -954,6 +954,14 @@ http://127.0.0.1:8088/
 ```
 
 <!-- VEDAPATH FOUNDER AUTHORIZATION DECISION GATE START -->
+## v3.4.3 Founder Permission Decision Gate Re-entry
+
+Founder Permission Decision Gate Re-entry turns the v3.4.2 reviewed permission question into founder decision language while keeping permission, authorization, execution, storage writes, canonical writes, public release, and production false.
+
+- [Founder Permission Decision Gate](founderpermissiondecisiongate.html)
+- [Founder Permission Decision Gate Notes](docs/FOUNDER_PERMISSION_DECISION_GATE.md)
+- [Founder Permission Decision Gate Data](data/vedapath-founder-permission-decision-gate.json)
+
 ## v3.4.2 Controlled Authorization Permission Review Gate Re-entry
 
 Controlled Authorization Permission Review Gate Re-entry turns the v3.4.1 permission preflight candidate into reviewed permission language while keeping permission, authorization, execution, storage writes, canonical writes, public release, and production false.

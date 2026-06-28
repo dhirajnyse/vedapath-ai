@@ -4570,6 +4570,20 @@ It must:
 
 Controlled Permission Execution Hold should never claim permission grant, authorization approval, execution approval, storage permission, canonical source authority, migration authority, production authority, therapy, ritual instruction, crisis support, or spiritual authority.
 
+### 308. Founder Permission Decision Gate Re-entry
+
+Founder Permission Decision Gate Re-entry turns the v3.4.2 reviewed permission question into founder decision language.
+
+It must:
+
+- start from a controlled authorization permission review gate v2 object
+- preserve review route, founder question, permission question, authority flag audit, review gate, preflight, instruction gate, authorization review, authorization draft, founder decision, source answer, source record, and source family ids
+- make founder decision readiness visible
+- block permission grant, actual authorization, execution, storage writes, canonical writes, public release, and production
+- move only to a controlled permission execution hold
+
+Founder Permission Decision Gate Re-entry should never claim permission grant, authorization approval, execution approval, storage permission, canonical source authority, migration authority, production authority, therapy, ritual instruction, crisis support, or spiritual authority.
+
 ### 307. Controlled Authorization Permission Review Gate Re-entry
 
 Controlled Authorization Permission Review Gate Re-entry turns the v3.4.1 preflight candidate into reviewed permission language.

@@ -1,11 +1,15 @@
-# VedaPath AI Founder Permission Decision Gate
+# VedaPath AI Founder Permission Decision Gate Re-entry
 
-Release: v3.2.3
+Release: v3.4.3
 
-This room records founder decision language after controlled permission review readiness.
+This room records founder decision language after the v3.4.2 controlled authorization permission review gate.
 
-It can record:
+It carries:
 
+- review_route
+- founder_question
+- permission_question
+- authority_flag_audit
 - controlled_founder_permission_decision_gate_ready
 - founder_permission_decision_recorded
 - controlled_permission_execution_hold_candidate_ready

@@ -43,7 +43,9 @@ body.founder-permission-page main.workspace > aside.panel.tight {
 .founder-permission-grid,
 .founder-permission-list,
 .founder-permission-actions,
-.founder-permission-rules {
+.founder-permission-rules,
+.founder-decision-handoff,
+.founder-decision-flags {
   display: grid;
   gap: 10px;
 }
@@ -78,7 +80,9 @@ body.founder-permission-page main.workspace > aside.panel.tight {
 .founder-permission-card,
 .founder-permission-result,
 .founder-permission-output,
-.founder-permission-rule {
+.founder-permission-rule,
+.founder-decision-question,
+.founder-decision-flag {
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--surface);
@@ -87,7 +91,9 @@ body.founder-permission-page main.workspace > aside.panel.tight {
 .founder-permission-form,
 .founder-permission-card,
 .founder-permission-result,
-.founder-permission-rule {
+.founder-permission-rule,
+.founder-decision-question,
+.founder-decision-flag {
   padding: 12px;
 }
 
@@ -125,8 +131,25 @@ body.founder-permission-page main.workspace > aside.panel.tight {
 }
 
 .founder-permission-grid,
-.founder-permission-rules {
+.founder-permission-rules,
+.founder-decision-handoff {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.founder-decision-flags {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.founder-decision-question {
+  border-left: 3px solid var(--gold);
+}
+
+.founder-decision-flag {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 250, 244, 0.92));
+}
+
+.founder-decision-flag strong {
+  color: var(--green);
 }
 
 .founder-permission-card.ready,
@@ -142,17 +165,32 @@ body.founder-permission-page main.workspace > aside.panel.tight {
 }
 
 .founder-permission-card span,
-.founder-permission-rule span {
+.founder-permission-rule span,
+.founder-decision-question span,
+.founder-decision-flag span {
   display: block;
   color: var(--muted);
   font-size: 12px;
 }
 
 .founder-permission-card strong,
-.founder-permission-rule strong {
+.founder-permission-rule strong,
+.founder-decision-question strong,
+.founder-decision-flag strong {
   display: block;
   margin-top: 4px;
 }
+
+/* VEDAPATH FOUNDER DECISION REENTRY START */
+.founder-permission-result {
+  box-shadow: 0 16px 40px rgba(66, 34, 20, 0.08);
+}
+
+.founder-decision-handoff p,
+.founder-decision-flags p {
+  margin: 6px 0 0;
+}
+/* VEDAPATH FOUNDER DECISION REENTRY END */
 
 .founder-permission-boundary {
   border-left: 4px solid var(--bhagwa);
@@ -163,7 +201,9 @@ body.founder-permission-page main.workspace > aside.panel.tight {
   body.founder-permission-page main.workspace,
   .founder-permission-layout,
   .founder-permission-grid,
-  .founder-permission-rules {
+  .founder-permission-rules,
+  .founder-decision-handoff,
+  .founder-decision-flags {
     grid-template-columns: 1fr;
   }
 

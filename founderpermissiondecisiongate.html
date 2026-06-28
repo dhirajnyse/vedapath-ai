@@ -33,15 +33,15 @@
           <a class="link" href="conversationcompanionlab.html">Talk</a>
           <a class="link" href="patterncompanionlab.html">Pattern</a>
           <a class="link" href="daily.html">Daily</a>
-          <span class="version">v3.4.2 review</span>
+          <span class="version">v3.4.3 decision</span>
         </nav>
       </header>
 
       <main class="workspace" aria-label="VedaPath Founder Permission Decision Gate workspace">
         <aside class="panel">
           <span class="eyebrow">Decision is not execution</span>
-          <h2>Founder chooses. System stays closed.</h2>
-          <p class="muted">This room records founder decision language after permission review readiness. It cannot grant permission, authorize, execute, store, publish, or launch.</p>
+          <h2>Founder reviews the exact question.</h2>
+          <p class="muted">This room records founder decision language after the v3.4.2 permission review. It carries the founder question and permission question forward, but cannot grant permission, authorize, execute, store, publish, or launch.</p>
           <div class="sprint-list">
             <div class="sprint-step active"><span class="step-index">1</span><div><strong>Review</strong><p>Load ready packet.</p></div></div>
             <div class="sprint-step"><span class="step-index">2</span><div><strong>Decide</strong><p>Record signal.</p></div></div>
@@ -59,8 +59,8 @@
           <div class="founder-permission-head">
             <div>
               <span class="eyebrow">Founder permission decision gate</span>
-              <h1>Record the decision. Execute nothing.</h1>
-              <p class="muted">A ready decision here means the packet can move to a controlled permission execution hold. It still cannot grant permission, authorize execution, run code, promote sources, store data, update canonical records, use secrets, publish public release, or launch production.</p>
+              <h1>Decide the route. Keep authority closed.</h1>
+              <p class="muted">A ready decision here means the reviewed question can move to a controlled permission execution hold. It still cannot grant permission, authorize execution, run code, promote sources, store data, update canonical records, use secrets, publish public release, or launch production.</p>
             </div>
             <div class="founder-permission-mark"><img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath founder decision mark"></div>
           </div>
@@ -69,6 +69,10 @@
             <div class="founder-permission-form">
               <h2>Controlled Founder Decision</h2>
               <label>Permission review packet<textarea id="founderDecisionReviewPacket"></textarea></label>
+              <label>Review route<input id="founderDecisionReviewRoute" type="text"></label>
+              <label>Founder question<textarea id="founderDecisionFounderQuestion"></textarea></label>
+              <label>Permission question<textarea id="founderDecisionPermissionQuestion"></textarea></label>
+              <label>Authority flag audit<textarea id="founderDecisionAuthorityAudit"></textarea></label>
               <label>Decision state<select id="founderDecisionState"></select></label>
               <label>Decision actor<input id="founderDecisionActor" type="text" placeholder="Founder"></label>
               <label>Founder name<input id="founderDecisionName" type="text" placeholder="Founder sample"></label>
@@ -111,12 +115,21 @@
                 <h2>Decision Scope</h2>
                 <div class="founder-permission-list" id="founderDecisionScope"></div>
               </section>
+              <section style="margin-top: 10px;">
+                <h2>Question Handoff</h2>
+                <div class="founder-decision-handoff" id="founderDecisionQuestionHandoff"></div>
+              </section>
             </div>
           </section>
 
           <section>
             <h2>Decision Checks</h2>
             <div class="founder-permission-rules" id="founderDecisionChecks"></div>
+          </section>
+
+          <section>
+            <h2>Authority Locks</h2>
+            <div class="founder-decision-flags" id="founderDecisionAuthorityFlags"></div>
           </section>
 
           <section class="founder-permission-layout">
@@ -136,11 +149,11 @@
 
         <aside class="panel tight">
           <span class="badge green">Decision is not grant</span>
-          <h2 style="margin-top: 14px;">Founder Ready, Execution False</h2>
-          <p class="muted">The founder decision can prepare a controlled hold while every operational path stays locked.</p>
+          <h2 style="margin-top: 14px;">Question Ready, Authority False</h2>
+          <p class="muted">The founder can decide whether this reviewed question moves to a controlled hold while every operational path stays locked.</p>
           <div class="progress" aria-label="Founder decision gate progress 100 percent"><div class="bar" style="--score:100%"></div></div>
           <div class="metric-grid">
-            <div class="metric"><span>Current</span><strong>v3.2.3</strong></div>
+            <div class="metric"><span>Current</span><strong>v3.4.3</strong></div>
             <div class="metric"><span>States</span><strong>9</strong></div>
             <div class="metric"><span>Execution</span><strong>False</strong></div>
             <div class="metric"><span>Next</span><strong>Hold</strong></div>

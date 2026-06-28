@@ -7,6 +7,8 @@
   const output = pageDocument ? pageDocument.getElementById("founderDecisionOutput") : null;
   const checksRoot = pageDocument ? pageDocument.getElementById("founderDecisionChecks") : null;
   const scopeRoot = pageDocument ? pageDocument.getElementById("founderDecisionScope") : null;
+  const handoffRoot = pageDocument ? pageDocument.getElementById("founderDecisionQuestionHandoff") : null;
+  const flagsRoot = pageDocument ? pageDocument.getElementById("founderDecisionAuthorityFlags") : null;
 
   const safe = (value) => String(value ?? "").replace(/[&<>"']/g, (char) => ({
     "&": "&amp;",
@@ -23,11 +25,15 @@
 
   function permissionReviewReady(packet) {
     return Boolean(packet) &&
-      packet.schema_version === "controlled-authorization-permission-review-gate-v1" &&
+      packet.schema_version === "controlled-authorization-permission-review-gate-v2" &&
       packet.review_status === "Permission review ready" &&
       packet.controlled_authorization_permission_review_ready === true &&
       packet.permission_review_signal_recorded === true &&
       packet.founder_permission_decision_candidate_ready === true &&
+      packet.review_route === "Ready for founder instruction" &&
+      String(packet.founder_question || "").includes("Founder question:") &&
+      String(packet.permission_question || "").includes("without granting permission") &&
+      keepsAuthorityFlagAudit(packet.authority_flag_audit) &&
       packet.permission_granted === false &&
       packet.authorization_permission_granted === false &&
       packet.permission_review_approved === false &&
@@ -49,6 +55,29 @@
       packet.production_launch_allowed === false &&
       packet.public_release_allowed === false &&
       packet.next_gate_required === "Founder permission decision gate";
+  }
+
+  function keepsAuthorityFlagAudit(value) {
+    const text = String(value || "");
+    const required = [
+      /execution_packet_authorized=false/i,
+      /execution_authorized=false/i,
+      /execution_allowed=false/i,
+      /founder_instruction_granted=false/i,
+      /source_promotion_allowed=false/i,
+      /promotion_execution_allowed=false/i,
+      /implementation_authorized=false/i,
+      /implementation_execution_allowed=false/i,
+      /controlled_storage_entry_allowed=false/i,
+      /storage_write_enabled=false/i,
+      /canonical_write_allowed=false/i,
+      /source_write_executed=false/i,
+      /actual_storage_write_executed=false/i,
+      /production_ready=false/i,
+      /production_launch_allowed=false/i,
+      /public_release_allowed=false/i
+    ].every((pattern) => pattern.test(text));
+    return required && !hasUnsafeAuthority(text);
   }
 
   function hasUnsafeAuthority(value) {
@@ -109,34 +138,37 @@
       blocked.push("permission review must be ready while permission, authorization, execution, storage, canonical, public release, and production flags remain false");
     }
 
-    ["controlled_authorization_permission_review_gate_id", "controlled_authorization_permission_preflight_id", "founder_authorization_instruction_gate_id", "controlled_authorization_review_gate_id", "controlled_execution_packet_authorization_draft_id", "founder_authorization_decision_gate_id", "source_answer_id", "source_record_id", "source_family"].forEach((key) => {
+    ["controlled_authorization_permission_review_gate_id", "controlled_authorization_permission_preflight_id", "founder_authorization_instruction_gate_id", "controlled_authorization_review_gate_id", "controlled_execution_packet_authorization_draft_id", "founder_authorization_decision_gate_id", "source_answer_id", "source_record_id", "source_family", "review_route", "founder_question", "permission_question"].forEach((key) => {
       if (!idMatches(decision, reviewPacket, key)) blocked.push(key + " must match the permission review packet");
     });
 
     const readyCandidate = state === "Decision ready for controlled hold";
-    if (readyCandidate && !hasText(decision.decision_scope, [["founder decision"], ["reviewed permission candidate"], ["controlled permission execution hold"], ["not permission grant"], ["not authorization"], ["not execution"], ["cannot", "promote"], ["store"], ["canonical"], ["migrate"], ["account"], ["secret"], ["public release"], ["production"]])) {
-      blocked.push("decision scope must be founder-decision only and explicitly block permission grant, authorization, execution, promotion, storage, canonical writes, migration, accounts, secrets, public release, and production");
+    if (readyCandidate && !keepsAuthorityFlagAudit(decision.authority_flag_audit || reviewPacket.authority_flag_audit)) {
+      blocked.push("authority flag audit must preserve false execution, storage, canonical write, public release, and production flags");
+    }
+    if (readyCandidate && !hasText(decision.decision_scope, [["founder decision"], ["v3.4.2 permission review"], ["reviewed permission candidate"], ["founder question"], ["permission question"], ["controlled permission execution hold"], ["not permission grant"], ["not authorization"], ["not execution"], ["cannot", "promote"], ["store"], ["canonical"], ["migrate"], ["account"], ["secret"], ["public release"], ["production"]])) {
+      blocked.push("decision scope must be founder-decision only, preserve the v3.4.3 decision questions, and explicitly block permission grant, authorization, execution, promotion, storage, canonical writes, migration, accounts, secrets, public release, and production");
     }
     if (readyCandidate && hasUnsafeAuthority(decision.founder_decision_language)) {
       blocked.push("founder decision language must not grant permission, approve authorization, or open execution");
     }
-    if (readyCandidate && !hasText(decision.founder_decision_language, [["founder decision signal"], ["next controlled permission execution hold"], ["not permission grant"], ["authorization is not granted"], ["execution is not allowed"], ["no system may run"]])) {
-      blocked.push("founder decision language must move only to a controlled hold and state permission grant is absent, authorization is not granted, execution is not allowed, and no system may run");
+    if (readyCandidate && !hasText(decision.founder_decision_language, [["founder decision signal"], ["reviewed founder question"], ["permission question"], ["next controlled permission execution hold"], ["not permission grant"], ["authorization is not granted"], ["execution is not allowed"], ["no system may run"]])) {
+      blocked.push("founder decision language must move only the reviewed question to a controlled hold and state permission grant is absent, authorization is not granted, execution is not allowed, and no system may run");
     }
-    if (readyCandidate && !hasText(decision.decision_rationale, [["permission review is ready"], ["source-locked"], ["founder decision signal"], ["controlled hold"], ["does not open"], ["operational authority"]])) {
-      blocked.push("decision rationale must keep the review source-locked and separate founder decision from authority");
+    if (readyCandidate && !hasText(decision.decision_rationale, [["v3.4.2 permission review is ready"], ["source-locked"], ["founder question"], ["permission question"], ["founder decision signal"], ["controlled hold"], ["does not open"], ["operational authority"]])) {
+      blocked.push("decision rationale must keep the v3.4.3 decision source-locked, preserve questions, and separate founder decision from authority");
     }
-    if (readyCandidate && !hasText(decision.decision_evidence_summary, [["permission review ready"], ["permission preflight"], ["founder instruction"], ["authorization review"], ["authorization draft"], ["founder decision"], ["source ids"], ["source family"], ["citation"], ["rights"], ["translation"], ["reviewer evidence"], ["source-owner"], ["rollback"], ["monitoring"], ["stop condition"], ["expiry"], ["production boundary"]])) {
-      blocked.push("decision evidence summary must keep source and review evidence visible");
+    if (readyCandidate && !hasText(decision.decision_evidence_summary, [["permission review ready"], ["v3.4.2"], ["review route"], ["founder question"], ["permission question"], ["authority flag audit"], ["permission preflight"], ["founder instruction"], ["authorization review"], ["authorization draft"], ["founder decision"], ["source ids"], ["source family"], ["citation"], ["rights"], ["translation"], ["reviewer evidence"], ["source-owner"], ["rollback"], ["monitoring"], ["stop condition"], ["expiry"], ["production boundary"]])) {
+      blocked.push("decision evidence summary must keep source, review route, questions, authority audit, and review evidence visible");
     }
-    if (readyCandidate && !hasText(decision.evidence_lock, [["controlled_authorization_permission_review_gate_id"], ["controlled_authorization_permission_preflight_id"], ["founder_authorization_instruction_gate_id"], ["controlled_authorization_review_gate_id"], ["controlled_execution_packet_authorization_draft_id"], ["founder_authorization_decision_gate_id"], ["source_answer_id"], ["source_record_id"], ["source family"]])) {
-      blocked.push("evidence lock must name review, preflight, instruction gate, review gate, authorization draft, founder decision, source answer, source record, and source family");
+    if (readyCandidate && !hasText(decision.evidence_lock, [["controlled_authorization_permission_review_gate_id"], ["controlled_authorization_permission_preflight_id"], ["founder_authorization_instruction_gate_id"], ["controlled_authorization_review_gate_id"], ["controlled_execution_packet_authorization_draft_id"], ["founder_authorization_decision_gate_id"], ["source_answer_id"], ["source_record_id"], ["source family"], ["review route"], ["founder question"], ["permission question"]])) {
+      blocked.push("evidence lock must name review, preflight, instruction gate, review gate, authorization draft, founder decision, source answer, source record, source family, route, and questions");
     }
     if (readyCandidate && !keepsNonExecutionDecisionBoundary(decision.non_execution_decision_clause)) {
       blocked.push("non-execution decision clause must keep founder decision as non-permission and all grant, authority, write, public release, and production flags false");
     }
-    if (readyCandidate && !hasText(decision.risk_acknowledgment, [["risk remains"], ["permission review mismatch"], ["preflight mismatch"], ["founder instruction mismatch"], ["review mismatch"], ["draft mismatch"], ["source mismatch"], ["rights change"], ["reviewer change"], ["founder language ambiguity"], ["rollback missing"], ["monitoring missing"], ["packet mutation"], ["code change"], ["permission"], ["authorization"], ["execution"], ["storage"], ["canonical"], ["public release"], ["production"], ["true"], ["block"]])) {
-      blocked.push("risk acknowledgment must block on mismatches, rights changes, ambiguity, missing rollback/monitoring, packet/code changes, or true authority flags");
+    if (readyCandidate && !hasText(decision.risk_acknowledgment, [["risk remains"], ["permission review mismatch"], ["preflight mismatch"], ["founder question mismatch"], ["permission question mismatch"], ["authority flag audit mismatch"], ["founder instruction mismatch"], ["review mismatch"], ["draft mismatch"], ["source mismatch"], ["rights change"], ["reviewer change"], ["founder language ambiguity"], ["rollback missing"], ["monitoring missing"], ["packet mutation"], ["code change"], ["permission"], ["authorization"], ["execution"], ["storage"], ["canonical"], ["public release"], ["production"], ["true"], ["block"]])) {
+      blocked.push("risk acknowledgment must block on question/audit mismatches, rights changes, ambiguity, missing rollback/monitoring, packet/code changes, or true authority flags");
     }
     if (readyCandidate && !hasText(decision.rollback_condition, [["rollback"], ["replay"], ["before_hash"], ["failure review"], ["stop condition"], ["reviewer handoff"], ["founder decision audit"], ["controlled permission execution hold"], ["no source state"], ["written"]])) {
       blocked.push("rollback condition must include rollback, replay, before_hash, failure review, stop condition, reviewer handoff, founder decision audit, controlled hold, and no source state write");
@@ -144,8 +176,8 @@
     if (readyCandidate && !hasText(decision.monitoring_condition, [["audit receipt"], ["stop condition"], ["failure review"], ["reviewer handoff"], ["post-execution verification"], ["before-write"], ["controlled permission execution hold"]])) {
       blocked.push("monitoring condition must include audit receipt, stop condition, failure review, reviewer handoff, post-execution verification, before-write check, and controlled hold");
     }
-    if (readyCandidate && !hasText(decision.stop_condition, [["stop"], ["permission review id mismatches"], ["preflight id mismatches"], ["founder instruction id mismatches"], ["review id mismatches"], ["draft id mismatches"], ["source ids mismatch"], ["rights change"], ["reviewer evidence"], ["founder decision language is ambiguous"], ["rollback"], ["monitoring"], ["code changes"], ["packet text mutates"], ["permission"], ["authorization"], ["execution"], ["storage"], ["canonical"], ["public release"], ["production"], ["true"]])) {
-      blocked.push("stop condition must stop on review/preflight/instruction/source mismatches, rights changes, missing evidence, ambiguity, missing rollback/monitoring, code changes, packet mutation, or any true authority flag");
+    if (readyCandidate && !hasText(decision.stop_condition, [["stop"], ["permission review id mismatches"], ["preflight id mismatches"], ["founder question mismatches"], ["permission question mismatches"], ["authority flag audit mismatches"], ["founder instruction id mismatches"], ["review id mismatches"], ["draft id mismatches"], ["source ids mismatch"], ["rights change"], ["reviewer evidence"], ["founder decision language is ambiguous"], ["rollback"], ["monitoring"], ["code changes"], ["packet text mutates"], ["permission"], ["authorization"], ["execution"], ["storage"], ["canonical"], ["public release"], ["production"], ["true"]])) {
+      blocked.push("stop condition must stop on review/preflight/question/audit/source mismatches, rights changes, missing evidence, ambiguity, missing rollback/monitoring, code changes, packet mutation, or any true authority flag");
     }
     if (readyCandidate && !hasText(decision.expiry_check, [["expires"], ["material permission review"], ["preflight"], ["founder instruction"], ["authorization review"], ["authorization draft"], ["source"], ["rights"], ["reviewer"], ["rollback"], ["monitoring"], ["packet"], ["code change"], ["rechecked"], ["not permission"], ["not execution"]])) {
       blocked.push("expiry check must state that founder permission decision expires and is not permission or execution");
@@ -209,6 +241,10 @@
       source_answer_id: decision.source_answer_id || reviewPacket.source_answer_id || "",
       source_record_id: decision.source_record_id || reviewPacket.source_record_id || "",
       source_family: decision.source_family || reviewPacket.source_family || "",
+      review_route: decision.review_route || reviewPacket.review_route || "",
+      founder_question: decision.founder_question || reviewPacket.founder_question || "",
+      permission_question: decision.permission_question || reviewPacket.permission_question || "",
+      authority_flag_audit: decision.authority_flag_audit || reviewPacket.authority_flag_audit || "",
       decision_actor: decision.decision_actor || "",
       founder_name: decision.founder_name || "",
       decision_scope: decision.decision_scope || "",
@@ -256,7 +292,7 @@
   }
 
   function card(label, value, tone = "") {
-    return '<article class="founder-permission-card ' + safe(tone) + '"><span>' + safe(label) + '</span><strong>' + safe(value || "None") + '</strong></article>';
+    return '<article class="founder-permission-card ' + safe(tone) + '"><span>' + safe(label) + '</span><strong>' + safe(value ?? "None") + '</strong></article>';
   }
 
   function renderResult(decision) {
@@ -267,6 +303,7 @@
       '<p class="muted">Decision ready: ' + safe(decision.controlled_founder_permission_decision_gate_ready) + ' | Permission: ' + safe(decision.permission_granted) + ' | Execution: ' + safe(decision.execution_allowed) + '</p>' +
       '<div class="founder-permission-grid">' +
         card("Review gate", decision.controlled_authorization_permission_review_gate_id, decision.controlled_founder_permission_decision_gate_ready ? "ready" : "") +
+        card("Route", decision.review_route) +
         card("Source answer", decision.source_answer_id) +
         card("Next gate", decision.next_gate_required) +
         card("Production", decision.production_ready ? "open" : "false", decision.production_ready ? "blocked" : "ready") +
@@ -287,6 +324,39 @@
       card("Source answer", config.source.source_answer_id) +
       card("Permission review", config.source.controlled_authorization_permission_review_gate_id) +
       card("Next gate", config.boundary.next_gate_required);
+  }
+
+  function renderQuestionHandoff(config) {
+    if (!handoffRoot) return;
+    const packet = config.sample_permission_review_packet || {};
+    handoffRoot.innerHTML =
+      '<article class="founder-decision-question"><span>Review route</span><strong>' + safe(packet.review_route) + '</strong><p class="muted">This route must match before the founder decision can be ready.</p></article>' +
+      '<article class="founder-decision-question"><span>Founder question</span><strong>' + safe(packet.founder_question) + '</strong></article>' +
+      '<article class="founder-decision-question"><span>Permission question</span><strong>' + safe(packet.permission_question) + '</strong></article>' +
+      '<article class="founder-decision-question"><span>Next gate</span><strong>' + safe(config.boundary.next_gate_required) + '</strong><p class="muted">Decision readiness moves only to hold, never to execution.</p></article>';
+  }
+
+  function renderAuthorityFlags(config) {
+    if (!flagsRoot) return;
+    const audit = String((config.sample_permission_review_packet || {}).authority_flag_audit || "");
+    const flags = [
+      "execution_packet_authorized",
+      "execution_authorized",
+      "execution_allowed",
+      "founder_instruction_granted",
+      "source_promotion_allowed",
+      "implementation_authorized",
+      "storage_write_enabled",
+      "canonical_write_allowed",
+      "source_write_executed",
+      "actual_storage_write_executed",
+      "production_ready",
+      "public_release_allowed"
+    ];
+    flagsRoot.innerHTML = flags.map((flag) => {
+      const isFalse = new RegExp(flag + "=false", "i").test(audit);
+      return '<article class="founder-decision-flag"><span>' + safe(flag) + '</span><strong>' + safe(isFalse ? "false" : "missing") + '</strong></article>';
+    }).join("");
   }
 
   function readSaved() {
@@ -320,6 +390,7 @@
     founderDecisionSnapshot,
     permissionReviewReady,
     hasUnsafeAuthority,
+    keepsAuthorityFlagAudit,
     keepsNonExecutionDecisionBoundary
   };
 
@@ -330,6 +401,10 @@
     .then((config) => {
       const fields = {
         packet: pageDocument.getElementById("founderDecisionReviewPacket"),
+        route: pageDocument.getElementById("founderDecisionReviewRoute"),
+        founderQuestion: pageDocument.getElementById("founderDecisionFounderQuestion"),
+        permissionQuestion: pageDocument.getElementById("founderDecisionPermissionQuestion"),
+        authorityAudit: pageDocument.getElementById("founderDecisionAuthorityAudit"),
         state: pageDocument.getElementById("founderDecisionState"),
         actor: pageDocument.getElementById("founderDecisionActor"),
         founder: pageDocument.getElementById("founderDecisionName"),
@@ -365,6 +440,10 @@
 
       function setFields(sample = config.sample_decision) {
         fields.packet.value = JSON.stringify(config.sample_permission_review_packet, null, 2);
+        fields.route.value = sample.review_route;
+        fields.founderQuestion.value = sample.founder_question;
+        fields.permissionQuestion.value = sample.permission_question;
+        fields.authorityAudit.value = sample.authority_flag_audit;
         fields.state.value = sample.decision_state;
         fields.actor.value = sample.decision_actor;
         fields.founder.value = sample.founder_name;
@@ -399,6 +478,10 @@
       function buildDecision() {
         return {
           decision_state: fields.state.value,
+          review_route: fields.route.value,
+          founder_question: fields.founderQuestion.value,
+          permission_question: fields.permissionQuestion.value,
+          authority_flag_audit: fields.authorityAudit.value,
           decision_actor: fields.actor.value,
           founder_name: fields.founder.value,
           controlled_founder_permission_decision_gate_id: fields.decisionId.value,
@@ -458,6 +541,8 @@
 
       renderChecks(config);
       renderScope(config);
+      renderQuestionHandoff(config);
+      renderAuthorityFlags(config);
       setFields();
       renderSaved(config);
       run();
