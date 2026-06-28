@@ -954,6 +954,14 @@ http://127.0.0.1:8088/
 ```
 
 <!-- VEDAPATH FOUNDER AUTHORIZATION DECISION GATE START -->
+## v3.3.5 Controlled Permission Execution Authorization Review Decision Gate
+
+Controlled Permission Execution Authorization Review Decision Gate routes a ready authorization review packet to founder decision, hold, return, or block while keeping permission grant, authorization approval, execution, storage writes, canonical writes, public release, and production false.
+
+- [Controlled Permission Execution Authorization Review Decision Gate](controlledpermissionexecutionauthorizationreviewdecisiongate.html)
+- [Controlled Permission Execution Authorization Review Decision Gate Notes](docs/CONTROLLED_PERMISSION_EXECUTION_AUTHORIZATION_REVIEW_DECISION_GATE.md)
+- [Controlled Permission Execution Authorization Review Decision Gate Data](data/vedapath-controlled-permission-execution-authorization-review-decision-gate.json)
+
 ## v3.3.4 Command Shell Calm Contrast Refinement
 
 Command Shell Calm Contrast Refinement gives the command shell a calmer contrast system: narrower rail, softer surfaces, tighter type rhythm, stronger active navigation, and a better-balanced Bhagwa, peacock green, sacred gold, indigo, and ivory palette.

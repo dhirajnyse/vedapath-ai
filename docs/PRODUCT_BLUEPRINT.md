@@ -4374,6 +4374,14 @@ It should:
 Pattern Companion Control Room should never claim diagnosis, therapy, legal advice, medical advice, surveillance, scoring, or spiritual authority.
 <!-- VEDAPATH PATTERN COMPANION SPRINT BLUEPRINT END -->
 <!-- VEDAPATH FOUNDER AUTHORIZATION DECISION GATE BLUEPRINT START -->
+### 318. Controlled Permission Execution Authorization Review Decision Gate
+
+Controlled Permission Execution Authorization Review Decision Gate adds a review-decision bridge between controlled authorization review and founder decision.
+
+It may route a packet forward, hold for evidence, return to authorization review, or block the packet path. It must not grant permission, approve authorization, execute, store, update canonical records, publish, or launch production.
+
+This creates a calmer trust lane: reviewer route first, founder posture next, execution never implied.
+
 ### 317. Command Shell Calm Contrast Refinement
 
 Command Shell Calm Contrast Refinement makes the command shell feel calmer and more coherent after the visual-system balance release.

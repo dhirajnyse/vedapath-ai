@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VedaPath Controlled Permission Execution Authorization Review Decision Gate</title>
+    <link rel="stylesheet" href="assets/vedapath-sprint.css">
+    <link rel="stylesheet" href="assets/vedapath-cohesive.css">
+    <link rel="stylesheet" href="assets/vedapath-polish.css">
+    <link rel="stylesheet" href="assets/vedapath-focus.css">
+    <link rel="stylesheet" href="assets/vedapath-controlled-permission-execution-authorization-review-decision-gate.css">
+    <link rel="stylesheet" href="assets/vedapath-command-shell.css">
+  </head>
+  <body class="review-decision-page">
+    <div class="shell" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top" aria-label="VedaPath AI home">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
+          <div>
+            <strong>VedaPath AI</strong>
+            <span>Review decision gate</span>
+          </div>
+        </a>
+        <nav class="nav" aria-label="Project links">
+          <a class="link" href="index.html">Home</a>
+          <a class="link" href="build-status.html">Build</a>
+          <a class="link" href="brand/brand-board.html">Brand</a>
+          <a class="link" href="blueprint.html">Blueprint</a>
+          <a class="link" href="citedanswerlab.html">Answers</a>
+          <a class="link active" href="reviewqueuepersistence.html">Review</a>
+          <a class="link" href="mantralenslab.html">Mantra</a>
+          <a class="link" href="lifecompanionlab.html">Life</a>
+          <a class="link" href="conversationcompanionlab.html">Talk</a>
+          <a class="link" href="patterncompanionlab.html">Pattern</a>
+          <a class="link" href="daily.html">Daily</a>
+          <span class="version">v3.3.5 review decision</span>
+        </nav>
+      </header>
+
+      <main class="workspace" aria-label="VedaPath Controlled Permission Execution Authorization Review Decision Gate workspace">
+        <aside class="panel">
+          <span class="eyebrow">Route, hold, return, or block</span>
+          <h2>Review decision before founder decision.</h2>
+          <p class="muted">This gate turns a ready authorization review into one safe route. It cannot grant permission, approve authorization, execute, store, publish, or launch.</p>
+          <div class="sprint-list">
+            <div class="sprint-step active"><span class="step-index">1</span><div><strong>Review</strong><p>Load ready packet.</p></div></div>
+            <div class="sprint-step"><span class="step-index">2</span><div><strong>Decide</strong><p>Choose one route.</p></div></div>
+            <div class="sprint-step"><span class="step-index">3</span><div><strong>Boundary</strong><p>Authority stays false.</p></div></div>
+            <div class="sprint-step"><span class="step-index">4</span><div><strong>Next</strong><p>Founder only if ready.</p></div></div>
+          </div>
+          <div class="button-row" style="margin-top: 16px;">
+            <a class="button primary" href="founderpermissionexecutionauthorizationdecisiongate.html">Open Founder Decision</a>
+            <a class="button" href="controlledpermissionexecutionauthorizationreviewgate.html">Open Authorization Review</a>
+            <a class="button safe" href="permissionexecutionauthorizationpreflight.html">Open Preflight</a>
+          </div>
+        </aside>
+
+        <section class="panel review-decision" id="controlledPermissionExecutionAuthorizationReviewDecisionGate">
+          <div class="review-decision-head">
+            <div>
+              <span class="eyebrow">Controlled review decision gate</span>
+              <h1>Route the review. Authorize nothing.</h1>
+              <p class="muted">A ready route can move to founder decision only. Hold, return, and block remain first-class outcomes. Permission grant, authorization approval, execution, storage writes, canonical writes, public release, and production remain false.</p>
+            </div>
+            <div class="review-decision-mark"><img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath review decision mark"></div>
+          </div>
+
+          <section class="review-decision-choice-grid" aria-label="Review decision choices">
+            <button class="review-decision-choice" type="button" data-decision-state="Ready for founder decision" aria-pressed="true"><span>Route</span><strong>Founder</strong><p>Move to founder decision only.</p></button>
+            <button class="review-decision-choice" type="button" data-decision-state="Hold for evidence" aria-pressed="false"><span>Route</span><strong>Hold</strong><p>Wait for clearer evidence.</p></button>
+            <button class="review-decision-choice" type="button" data-decision-state="Return to authorization review" aria-pressed="false"><span>Route</span><strong>Return</strong><p>Send back for review edits.</p></button>
+            <button class="review-decision-choice" type="button" data-decision-state="Block packet" aria-pressed="false"><span>Route</span><strong>Block</strong><p>Close this packet route.</p></button>
+          </section>
+
+          <section class="review-decision-grid">
+            <div class="review-decision-form">
+              <h2>Review Decision Packet</h2>
+              <label>Authorization review packet<textarea id="reviewDecisionPacket"></textarea></label>
+              <label>Decision state<select id="reviewDecisionState"></select></label>
+              <label>Decision actor<input id="reviewDecisionActor" type="text" placeholder="Controlled review decision gate"></label>
+              <label>Reviewer name<input id="reviewDecisionReviewer" type="text" placeholder="Reviewer sample"></label>
+              <label>Review decision gate id<input id="reviewDecisionId" type="text"></label>
+              <label>Authorization review gate id<input id="reviewDecisionReviewId" type="text"></label>
+              <label>Authorization preflight id<input id="reviewDecisionPreflightId" type="text"></label>
+              <label>Execution hold id<input id="reviewDecisionHoldId" type="text"></label>
+              <label>Source answer id<input id="reviewDecisionSourceAnswer" type="text"></label>
+              <label>Source record id<input id="reviewDecisionSourceRecord" type="text"></label>
+              <label>Source family<input id="reviewDecisionSourceFamily" type="text"></label>
+              <label>Decision scope<textarea id="reviewDecisionScopeText"></textarea></label>
+              <label>Decision language<textarea id="reviewDecisionLanguage"></textarea></label>
+              <label>Decision rationale<textarea id="reviewDecisionRationale"></textarea></label>
+              <label>Decision evidence summary<textarea id="reviewDecisionSummary"></textarea></label>
+              <label>Non-execution decision clause<textarea id="reviewDecisionBoundary"></textarea></label>
+              <label>Risk acknowledgment<textarea id="reviewDecisionRisk"></textarea></label>
+              <label>Rollback condition<textarea id="reviewDecisionRollback"></textarea></label>
+              <label>Monitoring condition<textarea id="reviewDecisionMonitoring"></textarea></label>
+              <label>Stop condition<textarea id="reviewDecisionStopCondition"></textarea></label>
+              <label>Expiry check<textarea id="reviewDecisionExpiry"></textarea></label>
+              <label>Production boundary<textarea id="reviewDecisionProductionBoundary"></textarea></label>
+              <label>Return reason<textarea id="reviewDecisionReturnReason"></textarea></label>
+              <label>Hold reason<textarea id="reviewDecisionHoldReason"></textarea></label>
+              <label>Block reason<textarea id="reviewDecisionBlockReason"></textarea></label>
+              <div class="review-decision-actions">
+                <button class="button primary" id="runReviewDecision" type="button">Run Decision</button>
+                <button class="button safe" id="loadReviewDecisionSample" type="button">Load Sample</button>
+                <button class="button" id="saveReviewDecision" type="button">Save Local</button>
+                <button class="button" id="clearReviewDecisions" type="button">Clear Local</button>
+              </div>
+            </div>
+            <div>
+              <section class="review-decision-result" id="reviewDecisionResultCard" data-state="Blocked"></section>
+              <section style="margin-top: 10px;">
+                <h2>Decision Scope</h2>
+                <div class="review-decision-list" id="reviewDecisionScope"></div>
+              </section>
+              <section style="margin-top: 10px;">
+                <h2>Decision Checks</h2>
+                <div class="review-decision-rules" id="reviewDecisionChecks"></div>
+              </section>
+            </div>
+          </section>
+
+          <section class="review-decision-grid">
+            <div>
+              <div class="review-decision-actions">
+                <button class="button safe" id="copyReviewDecision" type="button">Copy Decision Packet</button>
+                <a class="button" href="data/vedapath-controlled-permission-execution-authorization-review-decision-gate.json">Open JSON</a>
+              </div>
+              <textarea class="review-decision-output" id="reviewDecisionOutput" aria-label="Controlled permission execution authorization review decision gate"></textarea>
+            </div>
+            <div>
+              <h2>Saved Local Review Decisions</h2>
+              <div class="review-decision-list" id="reviewDecisionSaved"></div>
+            </div>
+          </section>
+        </section>
+
+        <aside class="panel tight">
+          <span class="badge green">Decision is not authority</span>
+          <h2 style="margin-top: 14px;">Founder Route Only</h2>
+          <p class="muted">A positive decision prepares a founder decision gate. It still does not grant permission or approve execution.</p>
+          <div class="progress" aria-label="Review decision gate progress 100 percent"><div class="bar" style="--score:100%"></div></div>
+          <div class="metric-grid">
+            <div class="metric"><span>Current</span><strong>v3.3.5</strong></div>
+            <div class="metric"><span>Routes</span><strong>4</strong></div>
+            <div class="metric"><span>Execution</span><strong>False</strong></div>
+            <div class="metric"><span>Next</span><strong>Founder</strong></div>
+          </div>
+          <section class="panel tight boundary" style="margin-top: 16px;">
+            <h2>Review Decision Boundary</h2>
+            <p class="review-decision-boundary">Review decision signal only. Permission grant, authorization approval, execution, source promotion, storage writes, canonical writes, migrations, accounts, secrets, public release, and production launch remain false.</p>
+            <p class="muted">This release prepares founder decision routing. It does not authorize or execute anything.</p>
+          </section>
+        </aside>
+      </main>
+    </div>
+    <script src="assets/vedapath-controlled-permission-execution-authorization-review-decision-gate.js"></script>
+    <script src="assets/vedapath-command-shell.js" defer></script>
+  </body>
+</html>
