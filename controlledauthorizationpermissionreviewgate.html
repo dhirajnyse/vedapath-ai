@@ -33,15 +33,15 @@
           <a class="link" href="conversationcompanionlab.html">Talk</a>
           <a class="link" href="patterncompanionlab.html">Pattern</a>
           <a class="link" href="daily.html">Daily</a>
-          <span class="version">v3.4.1 preflight</span>
+          <span class="version">v3.4.2 review</span>
         </nav>
       </header>
 
       <main class="workspace" aria-label="VedaPath Controlled Authorization Permission Review Gate workspace">
         <aside class="panel">
           <span class="eyebrow">Review is not permission</span>
-          <h2>Review the words. Grant nothing.</h2>
-          <p class="muted">This room reviews permission-candidate language from preflight. It cannot grant permission, authorize, execute, store, publish, or launch.</p>
+          <h2>Review the question. Grant nothing.</h2>
+          <p class="muted">This room reviews permission-candidate language from the v3.4.1 preflight. It carries the founder question forward, but cannot grant permission, authorize, execute, store, publish, or launch.</p>
           <div class="sprint-list">
             <div class="sprint-step active"><span class="step-index">1</span><div><strong>Preflight</strong><p>Load candidate.</p></div></div>
             <div class="sprint-step"><span class="step-index">2</span><div><strong>Review</strong><p>Check words.</p></div></div>
@@ -59,8 +59,8 @@
           <div class="permission-review-head">
             <div>
               <span class="eyebrow">Permission review gate</span>
-              <h1>Review permission language. Grant nothing.</h1>
-              <p class="muted">A ready review here means the packet can move to a founder permission decision gate. It still cannot grant permission, authorize execution, run code, promote sources, store data, update canonical records, use secrets, publish public release, or launch production.</p>
+              <h1>Review permission language. Keep grants false.</h1>
+              <p class="muted">A ready review here means the packet, route, and founder question can move to a founder permission decision gate. It still cannot grant permission, authorize execution, run code, promote sources, store data, update canonical records, use secrets, publish public release, or launch production.</p>
             </div>
             <div class="permission-review-mark"><img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath permission review mark"></div>
           </div>
@@ -81,12 +81,16 @@
               <label>Source answer id<input id="permissionReviewSourceAnswer" type="text"></label>
               <label>Source record id<input id="permissionReviewSourceRecord" type="text"></label>
               <label>Source family<input id="permissionReviewSourceFamily" type="text"></label>
+              <label>Review route<input id="permissionReviewRoute" type="text"></label>
+              <label>Founder question<textarea id="permissionReviewFounderQuestion"></textarea></label>
+              <label>Permission question<textarea id="permissionReviewPermissionQuestion"></textarea></label>
               <label>Review scope<textarea id="permissionReviewScopeText"></textarea></label>
               <label>Permission review language<textarea id="permissionReviewLanguage"></textarea></label>
               <label>Review rationale<textarea id="permissionReviewRationale"></textarea></label>
               <label>Review evidence summary<textarea id="permissionReviewSummary"></textarea></label>
               <label>Source lock<textarea id="permissionReviewSourceLock"></textarea></label>
               <label>Non-permission review clause<textarea id="permissionReviewBoundary"></textarea></label>
+              <label>Authority flag audit<textarea id="permissionReviewFlagAudit"></textarea></label>
               <label>Risk acknowledgment<textarea id="permissionReviewRisk"></textarea></label>
               <label>Rollback condition<textarea id="permissionReviewRollback"></textarea></label>
               <label>Monitoring condition<textarea id="permissionReviewMonitoring"></textarea></label>
@@ -110,12 +114,21 @@
                 <h2>Review Scope</h2>
                 <div class="permission-review-list" id="permissionReviewScope"></div>
               </section>
+              <section style="margin-top: 10px;">
+                <h2>Question Handoff</h2>
+                <div class="permission-review-rules" id="permissionReviewQuestionHandoff"></div>
+              </section>
             </div>
           </section>
 
           <section>
             <h2>Review Checks</h2>
             <div class="permission-review-rules" id="permissionReviewChecks"></div>
+          </section>
+
+          <section>
+            <h2>Authority Flags</h2>
+            <div class="permission-review-flags" id="permissionReviewAuthorityFlags"></div>
           </section>
 
           <section class="permission-review-layout">
@@ -135,11 +148,11 @@
 
         <aside class="panel tight">
           <span class="badge green">Review is not grant</span>
-          <h2 style="margin-top: 14px;">Review Ready, Permission False</h2>
-          <p class="muted">The review can prepare a founder permission decision while every operational path stays locked.</p>
+          <h2 style="margin-top: 14px;">Review Candidate, Not Permission</h2>
+          <p class="muted">The review can prepare a founder permission decision while every operational path stays locked and visible.</p>
           <div class="progress" aria-label="Permission review gate progress 100 percent"><div class="bar" style="--score:100%"></div></div>
           <div class="metric-grid">
-            <div class="metric"><span>Current</span><strong>v3.2.2</strong></div>
+            <div class="metric"><span>Current</span><strong>v3.4.2</strong></div>
             <div class="metric"><span>States</span><strong>9</strong></div>
             <div class="metric"><span>Permission</span><strong>False</strong></div>
             <div class="metric"><span>Next</span><strong>Founder</strong></div>

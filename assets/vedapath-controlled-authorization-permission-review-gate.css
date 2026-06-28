@@ -43,7 +43,8 @@ body.permission-review-page main.workspace > aside.panel.tight {
 .permission-review-grid,
 .permission-review-list,
 .permission-review-actions,
-.permission-review-rules {
+.permission-review-rules,
+.permission-review-flags {
   display: grid;
   gap: 10px;
 }
@@ -78,7 +79,8 @@ body.permission-review-page main.workspace > aside.panel.tight {
 .permission-review-card,
 .permission-review-result,
 .permission-review-output,
-.permission-review-rule {
+.permission-review-rule,
+.permission-review-flag {
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--surface);
@@ -87,7 +89,8 @@ body.permission-review-page main.workspace > aside.panel.tight {
 .permission-review-form,
 .permission-review-card,
 .permission-review-result,
-.permission-review-rule {
+.permission-review-rule,
+.permission-review-flag {
   padding: 12px;
 }
 
@@ -129,30 +132,62 @@ body.permission-review-page main.workspace > aside.panel.tight {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.permission-review-flags {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
 .permission-review-card.ready,
+.permission-review-flag.ready,
 .permission-review-result[data-state="Permission review ready"] {
   border-color: #b7d5ca;
   background: #f6fffb;
 }
 
 .permission-review-card.blocked,
+.permission-review-flag.blocked,
 .permission-review-result[data-state^="Blocked"] {
   border-color: #efb39a;
   background: #fff1ea;
 }
 
 .permission-review-card span,
-.permission-review-rule span {
+.permission-review-rule span,
+.permission-review-flag span {
   display: block;
   color: var(--muted);
   font-size: 12px;
 }
 
 .permission-review-card strong,
-.permission-review-rule strong {
+.permission-review-rule strong,
+.permission-review-flag strong {
   display: block;
   margin-top: 4px;
 }
+
+/* VEDAPATH PERMISSION REVIEW REENTRY START */
+.permission-review-result {
+  box-shadow: 0 18px 50px rgba(75, 43, 24, 0.06);
+}
+
+.permission-review-rules .permission-review-card strong,
+.permission-review-rules .permission-review-rule strong {
+  line-height: 1.28;
+}
+
+.permission-review-flag {
+  min-height: 74px;
+  border-left: 4px solid #b7d5ca;
+}
+
+.permission-review-flag.blocked {
+  border-left-color: #d65a1f;
+}
+
+.permission-review-output {
+  min-height: 210px;
+}
+/* VEDAPATH PERMISSION REVIEW REENTRY END */
 
 .permission-review-boundary {
   border-left: 4px solid var(--bhagwa);
@@ -163,7 +198,8 @@ body.permission-review-page main.workspace > aside.panel.tight {
   body.permission-review-page main.workspace,
   .permission-review-layout,
   .permission-review-grid,
-  .permission-review-rules {
+  .permission-review-rules,
+  .permission-review-flags {
     grid-template-columns: 1fr;
   }
 

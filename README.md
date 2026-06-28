@@ -954,6 +954,14 @@ http://127.0.0.1:8088/
 ```
 
 <!-- VEDAPATH FOUNDER AUTHORIZATION DECISION GATE START -->
+## v3.4.2 Controlled Authorization Permission Review Gate Re-entry
+
+Controlled Authorization Permission Review Gate Re-entry turns the v3.4.1 permission preflight candidate into reviewed permission language while keeping permission, authorization, execution, storage writes, canonical writes, public release, and production false.
+
+- [Controlled Authorization Permission Review Gate](controlledauthorizationpermissionreviewgate.html)
+- [Controlled Authorization Permission Review Gate Notes](docs/CONTROLLED_AUTHORIZATION_PERMISSION_REVIEW_GATE.md)
+- [Controlled Authorization Permission Review Gate Data](data/vedapath-controlled-authorization-permission-review-gate.json)
+
 ## v3.4.1 Controlled Authorization Permission Preflight Re-entry
 
 Controlled Authorization Permission Preflight Re-entry carries the v3.4.0 founder question into a review candidate while keeping permission, authorization, execution, storage writes, canonical writes, public release, and production false.
