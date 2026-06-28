@@ -1,0 +1,204 @@
+/* VedaPath controlled permission execution authorization draft review gate */
+body.permission-execution-draft-review-page .topbar,
+body.permission-execution-draft-review-page header.topbar {
+  height: auto !important;
+  min-height: var(--vp-header-height, 74px);
+  padding: 0 !important;
+}
+
+body.permission-execution-draft-review-page .nav {
+  gap: 5px;
+  overflow: visible;
+  flex-wrap: nowrap;
+}
+
+body.permission-execution-draft-review-page .nav .link,
+body.permission-execution-draft-review-page .nav a {
+  padding-left: 9px;
+  padding-right: 9px;
+}
+
+body.permission-execution-draft-review-page .nav .version {
+  margin-left: 6px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+body.permission-execution-draft-review-page main.workspace {
+  grid-template-columns: minmax(230px, 0.74fr) minmax(0, 1.72fr) minmax(240px, 0.82fr);
+  gap: 18px;
+}
+
+body.permission-execution-draft-review-page main.workspace > aside.panel:first-child,
+body.permission-execution-draft-review-page main.workspace > aside.panel.tight {
+  position: static;
+  max-height: none;
+  overflow: visible;
+}
+
+.draft-review-gate,
+.draft-review-head,
+.draft-review-grid,
+.draft-review-form,
+.draft-review-actions,
+.draft-review-list,
+.draft-review-rules,
+.draft-review-result {
+  display: grid;
+  gap: 12px;
+}
+
+.draft-review-gate {
+  gap: 18px;
+}
+
+.draft-review-head {
+  grid-template-columns: minmax(0, 1fr) 126px;
+  align-items: center;
+}
+
+.draft-review-mark {
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff3e4;
+  padding: 10px;
+}
+
+.draft-review-mark img {
+  display: block;
+  width: 100%;
+}
+
+.draft-review-grid {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: start;
+}
+
+.draft-review-step-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.draft-review-step,
+.draft-review-card,
+.draft-review-result,
+.draft-review-rule,
+.draft-review-form,
+.draft-review-output {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.draft-review-step,
+.draft-review-card,
+.draft-review-result,
+.draft-review-rule,
+.draft-review-form {
+  padding: 12px;
+}
+
+.draft-review-step:first-child {
+  border-color: #e46a3b;
+  background: #fff1e9;
+}
+
+.draft-review-result[data-state="Draft review ready for founder decision; execution remains false."] {
+  border-color: #b7d5ca;
+  background: #f6fffb;
+}
+
+.draft-review-result[data-state^="Blocked"],
+.draft-review-result[data-state^="Draft review rejected"] {
+  border-color: #efb39a;
+  background: #fff1ea;
+}
+
+.draft-review-form label {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.draft-review-form input,
+.draft-review-form select,
+.draft-review-form textarea,
+.draft-review-output {
+  width: 100%;
+  border: 1px solid #efc1aa;
+  border-radius: 8px;
+  background: #fffaf4;
+  color: var(--ink);
+  padding: 10px;
+}
+
+.draft-review-form textarea,
+.draft-review-output {
+  min-height: 96px;
+  resize: vertical;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 13px;
+}
+
+.draft-review-actions {
+  grid-template-columns: repeat(4, minmax(0, max-content));
+  align-items: center;
+}
+
+.draft-review-list,
+.draft-review-rules {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.draft-review-card span,
+.draft-review-rule span,
+.draft-review-step span {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.draft-review-card strong,
+.draft-review-rule strong,
+.draft-review-step strong {
+  display: block;
+  margin-top: 4px;
+}
+
+.draft-review-boundary {
+  border-left: 4px solid var(--bhagwa);
+  padding-left: 12px;
+}
+
+@media (max-width: 1080px) {
+  body.permission-execution-draft-review-page main.workspace,
+  .draft-review-grid,
+  .draft-review-list,
+  .draft-review-rules {
+    grid-template-columns: 1fr;
+  }
+
+  .draft-review-head {
+    grid-template-columns: 1fr;
+  }
+
+  .draft-review-mark {
+    max-width: 160px;
+  }
+}
+
+@media (max-width: 760px) {
+  body.permission-execution-draft-review-page .nav {
+    flex-wrap: wrap;
+  }
+
+  .draft-review-step-grid,
+  .draft-review-actions {
+    grid-template-columns: 1fr;
+  }
+}

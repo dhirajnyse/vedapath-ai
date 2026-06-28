@@ -954,6 +954,14 @@ http://127.0.0.1:8088/
 ```
 
 <!-- VEDAPATH FOUNDER AUTHORIZATION DECISION GATE START -->
+## v3.2.9 Controlled Permission Execution Authorization Draft Review Gate
+
+Controlled Permission Execution Authorization Draft Review Gate reviews controlled packet language after the draft gate while keeping permission grant, authorization approval, execution, storage writes, canonical writes, public release, and production false.
+
+- [Controlled Permission Execution Authorization Draft Review Gate](controlledpermissionexecutionauthorizationdraftreviewgate.html)
+- [Controlled Permission Execution Authorization Draft Review Gate Notes](docs/CONTROLLED_PERMISSION_EXECUTION_AUTHORIZATION_DRAFT_REVIEW_GATE.md)
+- [Controlled Permission Execution Authorization Draft Review Gate Data](data/vedapath-controlled-permission-execution-authorization-draft-review-gate.json)
+
 ## v3.2.8 Controlled Permission Execution Authorization Draft Gate
 
 Controlled Permission Execution Authorization Draft Gate drafts reviewable packet language after a founder draft-only decision while keeping permission grant, authorization approval, execution, storage writes, canonical writes, public release, and production false.

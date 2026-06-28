@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VedaPath Controlled Permission Execution Authorization Draft Review Gate</title>
+    <link rel="stylesheet" href="assets/vedapath-sprint.css">
+    <link rel="stylesheet" href="assets/vedapath-cohesive.css">
+    <link rel="stylesheet" href="assets/vedapath-polish.css">
+    <link rel="stylesheet" href="assets/vedapath-focus.css">
+    <link rel="stylesheet" href="assets/vedapath-controlled-permission-execution-authorization-draft-review-gate.css">
+  </head>
+  <body class="permission-execution-draft-review-page">
+    <div class="shell" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top" aria-label="VedaPath AI home">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
+          <div>
+            <strong>VedaPath AI</strong>
+            <span>Controlled draft review</span>
+          </div>
+        </a>
+        <nav class="nav" aria-label="Project links">
+          <a class="link" href="index.html">Home</a>
+          <a class="link" href="build-status.html">Build</a>
+          <a class="link" href="brand/brand-board.html">Brand</a>
+          <a class="link" href="blueprint.html">Blueprint</a>
+          <a class="link" href="citedanswerlab.html">Answers</a>
+          <a class="link active" href="reviewqueuepersistence.html">Review</a>
+          <a class="link" href="mantralenslab.html">Mantra</a>
+          <a class="link" href="lifecompanionlab.html">Life</a>
+          <a class="link" href="conversationcompanionlab.html">Talk</a>
+          <a class="link" href="patterncompanionlab.html">Pattern</a>
+          <a class="link" href="daily.html">Daily</a>
+          <span class="version">v3.2.9 draft review</span>
+        </nav>
+      </header>
+
+      <main class="workspace" aria-label="VedaPath Controlled Permission Execution Authorization Draft Review Gate workspace">
+        <aside class="panel">
+          <span class="eyebrow">Review is not authorization</span>
+          <h2>Review the draft. Approve nothing.</h2>
+          <p class="muted">This gate checks the draft packet for clarity and boundary strength. It cannot grant permission, approve authorization, execute, store, publish, or launch.</p>
+          <div class="sprint-list">
+            <div class="sprint-step active"><span class="step-index">1</span><div><strong>Draft</strong><p>Load packet.</p></div></div>
+            <div class="sprint-step"><span class="step-index">2</span><div><strong>Review</strong><p>Check wording.</p></div></div>
+            <div class="sprint-step"><span class="step-index">3</span><div><strong>Boundary</strong><p>Keep flags false.</p></div></div>
+            <div class="sprint-step"><span class="step-index">4</span><div><strong>Decision</strong><p>Founder next.</p></div></div>
+          </div>
+          <div class="button-row" style="margin-top: 16px;">
+            <a class="button primary" href="controlledpermissionexecutionauthorizationdraftgate.html">Open Draft Gate</a>
+            <a class="button safe" href="founderpermissionexecutionauthorizationdecisiongate.html">Open Founder Decision</a>
+          </div>
+        </aside>
+
+        <section class="panel draft-review-gate" id="controlledPermissionExecutionAuthorizationDraftReviewGate">
+          <div class="draft-review-head">
+            <div>
+              <span class="eyebrow">Controlled permission execution authorization draft review gate</span>
+              <h1>Review the packet. Keep authority closed.</h1>
+              <p class="muted">This gate checks the draft packet before founder review decision. It can mark review readiness, but it cannot approve authorization, grant permission, execute, store, update canonical records, publish, or launch production.</p>
+            </div>
+            <div class="draft-review-mark"><img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath controlled draft review mark"></div>
+          </div>
+
+          <section class="draft-review-step-grid" aria-label="Draft review gate flow">
+            <div class="draft-review-step"><span>1</span><strong>Draft packet</strong><p>Ready input.</p></div>
+            <div class="draft-review-step"><span>2</span><strong>Review language</strong><p>Clear and bounded.</p></div>
+            <div class="draft-review-step"><span>3</span><strong>Evidence</strong><p>Ids stay visible.</p></div>
+            <div class="draft-review-step"><span>4</span><strong>Founder next</strong><p>No runnable path.</p></div>
+          </section>
+
+          <section class="draft-review-grid">
+            <div class="draft-review-form">
+              <h2>Controlled Draft Review</h2>
+              <label>Controlled draft packet<textarea id="draftReviewPacket"></textarea></label>
+              <label>Review state<select id="draftReviewState"></select></label>
+              <label>Review actor<input id="draftReviewActor" type="text" placeholder="Controlled draft review gate"></label>
+              <label>Reviewer name<input id="draftReviewName" type="text" placeholder="Draft review sample"></label>
+              <label>Draft review gate id<input id="draftReviewGateId" type="text"></label>
+              <label>Draft gate id<input id="draftReviewDraftGateId" type="text"></label>
+              <label>Founder decision gate id<input id="draftReviewDecisionId" type="text"></label>
+              <label>Authorization review gate id<input id="draftReviewReviewId" type="text"></label>
+              <label>Authorization preflight id<input id="draftReviewPreflightId" type="text"></label>
+              <label>Execution hold id<input id="draftReviewHoldId" type="text"></label>
+              <label>Source answer id<input id="draftReviewSourceAnswer" type="text"></label>
+              <label>Source record id<input id="draftReviewSourceRecord" type="text"></label>
+              <label>Source family<input id="draftReviewSourceFamily" type="text"></label>
+              <label>Review scope<textarea id="draftReviewScopeText"></textarea></label>
+              <label>Review language<textarea id="draftReviewLanguage"></textarea></label>
+              <label>Review notes<textarea id="draftReviewNotes"></textarea></label>
+              <label>Review evidence summary<textarea id="draftReviewSummary"></textarea></label>
+              <label>Non-execution review clause<textarea id="draftReviewBoundary"></textarea></label>
+              <label>Risk review<textarea id="draftReviewRisk"></textarea></label>
+              <label>Rollback review<textarea id="draftReviewRollback"></textarea></label>
+              <label>Monitoring review<textarea id="draftReviewMonitoring"></textarea></label>
+              <label>Stop condition<textarea id="draftReviewStopCondition"></textarea></label>
+              <label>Expiry check<textarea id="draftReviewExpiry"></textarea></label>
+              <label>Production boundary<textarea id="draftReviewProductionBoundary"></textarea></label>
+              <label>Clarification question<textarea id="draftReviewClarification"></textarea></label>
+              <label>Return reason<textarea id="draftReviewReturnReason"></textarea></label>
+              <label>Hold reason<textarea id="draftReviewHoldReason"></textarea></label>
+              <label>Block reason<textarea id="draftReviewBlockReason"></textarea></label>
+              <div class="draft-review-actions">
+                <button class="button primary" id="runDraftReviewGate" type="button">Run Review</button>
+                <button class="button safe" id="loadDraftReviewSample" type="button">Load Sample</button>
+                <button class="button" id="saveDraftReviewGate" type="button">Save Local</button>
+                <button class="button" id="clearDraftReviews" type="button">Clear Local</button>
+              </div>
+            </div>
+            <div>
+              <section class="draft-review-result" id="draftReviewResultCard" data-state="Blocked"></section>
+              <section style="margin-top: 10px;">
+                <h2>Review Scope</h2>
+                <div class="draft-review-list" id="draftReviewScope"></div>
+              </section>
+              <section style="margin-top: 10px;">
+                <h2>Review Checks</h2>
+                <div class="draft-review-rules" id="draftReviewChecks"></div>
+              </section>
+            </div>
+          </section>
+
+          <section class="draft-review-grid">
+            <div>
+              <div class="draft-review-actions">
+                <button class="button safe" id="copyDraftReviewGate" type="button">Copy Review Packet</button>
+                <a class="button" href="data/vedapath-controlled-permission-execution-authorization-draft-review-gate.json">Open JSON</a>
+              </div>
+              <textarea class="draft-review-output" id="draftReviewOutput" aria-label="Controlled permission execution authorization draft review gate"></textarea>
+            </div>
+            <div>
+              <h2>Saved Local Reviews</h2>
+              <div class="draft-review-list" id="draftReviewSaved"></div>
+            </div>
+          </section>
+        </section>
+
+        <aside class="panel tight">
+          <span class="badge green">Review is not authority</span>
+          <h2 style="margin-top: 14px;">Founder Decision Candidate</h2>
+          <p class="muted">A ready review creates one later founder review decision candidate. It still does not grant permission or approve execution.</p>
+          <div class="progress" aria-label="Draft review gate progress 100 percent"><div class="bar" style="--score:100%"></div></div>
+          <div class="metric-grid">
+            <div class="metric"><span>Current</span><strong>v3.2.9</strong></div>
+            <div class="metric"><span>Input</span><strong>Draft</strong></div>
+            <div class="metric"><span>Execution</span><strong>False</strong></div>
+            <div class="metric"><span>Next</span><strong>Founder</strong></div>
+          </div>
+          <section class="panel tight boundary" style="margin-top: 16px;">
+            <h2>Review Boundary</h2>
+            <p class="draft-review-boundary">Review signal only. Permission grant, authorization approval, execution, source promotion, storage writes, canonical writes, migrations, accounts, secrets, public release, and production launch remain false.</p>
+            <p class="muted">This release prepares a founder review decision gate. It does not authorize or execute anything.</p>
+          </section>
+        </aside>
+      </main>
+    </div>
+    <script src="assets/vedapath-controlled-permission-execution-authorization-draft-review-gate.js"></script>
+  </body>
+</html>
