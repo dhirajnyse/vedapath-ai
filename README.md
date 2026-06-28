@@ -954,6 +954,13 @@ http://127.0.0.1:8088/
 ```
 
 <!-- VEDAPATH FOUNDER AUTHORIZATION DECISION GATE START -->
+## v3.3.6 Command Shell Immersive Visual Polish
+
+Command Shell Immersive Visual Polish makes the shared VedaPath shell feel calmer, more premium, and more coherent through disciplined typography, deeper rail rhythm, warmer surfaces, restrained Bhagwa action cues, peacock green trust cues, and sacred gold warmth.
+
+- [Command Shell Immersive Visual Polish Notes](docs/COMMAND_SHELL_IMMERSIVE_VISUAL_POLISH.md)
+- [Command Shell Immersive Visual Polish Config](data/vedapath-command-shell-immersive-polish.json)
+
 ## v3.3.5 Controlled Permission Execution Authorization Review Decision Gate
 
 Controlled Permission Execution Authorization Review Decision Gate routes a ready authorization review packet to founder decision, hold, return, or block while keeping permission grant, authorization approval, execution, storage writes, canonical writes, public release, and production false.

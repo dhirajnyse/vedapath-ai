@@ -4374,6 +4374,22 @@ It should:
 Pattern Companion Control Room should never claim diagnosis, therapy, legal advice, medical advice, surveillance, scoring, or spiritual authority.
 <!-- VEDAPATH PATTERN COMPANION SPRINT BLUEPRINT END -->
 <!-- VEDAPATH FOUNDER AUTHORIZATION DECISION GATE BLUEPRINT START -->
+### 319. Command Shell Immersive Visual Polish
+
+Command Shell Immersive Visual Polish makes VedaPath feel more like an intentional product world than a collection of rooms.
+
+It tightens the visual system around:
+
+- disciplined typography
+- deep but calm side navigation
+- warm ivory surfaces
+- restrained Bhagwa action color
+- peacock green source-trust cues
+- sacred gold warmth and progress
+- 8px product corners
+
+The design should feel distinctive and premium without becoming decorative, noisy, or spiritually overclaiming.
+
 ### 318. Controlled Permission Execution Authorization Review Decision Gate
 
 Controlled Permission Execution Authorization Review Decision Gate adds a review-decision bridge between controlled authorization review and founder decision.

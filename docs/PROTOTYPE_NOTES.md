@@ -307,6 +307,14 @@ The v0.7.4 release turns the VedaPath AI homepage into a trusted MVP prototype w
 - Pattern Companion Control Room: Pattern Companion Control Room completes the private local learning layer for VedaPath AI.
 <!-- VEDAPATH PATTERN COMPANION SPRINT NOTES END -->
 <!-- VEDAPATH FOUNDER AUTHORIZATION DECISION GATE NOTES START -->
+## v3.3.6 Command Shell Immersive Visual Polish
+
+- Adds a final immersive polish layer to the shared command shell.
+- Refines type scale so hero and room titles feel powerful but less oversized.
+- Deepens the rail with green, warm brown, and restrained indigo instead of a flat brown-heavy feel.
+- Improves panels, controls, buttons, focus states, and logo stages with calmer depth and 8px corners.
+- Keeps the interface source-first, simple, and non-decorative.
+
 ## v3.3.5 Controlled Permission Execution Authorization Review Decision Gate
 
 - Adds controlledpermissionexecutionauthorizationreviewdecisiongate.html as the review-decision bridge after controlled authorization review readiness.

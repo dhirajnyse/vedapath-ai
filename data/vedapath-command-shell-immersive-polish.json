@@ -1,0 +1,30 @@
+{
+  "schema_version": "vedapath-command-shell-immersive-polish-v1",
+  "release": "v3.3.6",
+  "title": "Command Shell Immersive Visual Polish",
+  "purpose": "Make VedaPath feel like a premium, calm, source-first product world without adding clutter or reducing usability.",
+  "visual_principles": [
+    "Bhagwa remains the primary action signal, used with restraint.",
+    "Peacock green signals source trust, safety, and steadiness.",
+    "Sacred gold supports warmth, progress, and quiet emphasis.",
+    "The side rail should feel grounded and premium, not heavy.",
+    "Typography should feel powerful but disciplined, with fewer oversized headings.",
+    "Cards and panels should feel calm, tactile, and readable.",
+    "The product should feel distinctive without becoming decorative."
+  ],
+  "surface_rules": {
+    "corner_radius": "8px maximum for shell cards and controls",
+    "background": "warm ivory with subtle woven texture and green-ivory wash",
+    "rail": "deep green, warm brown, and restrained indigo",
+    "buttons": "Bhagwa primary, green safe, ivory default",
+    "motion": "small lift on hover only",
+    "copy": "source-first, calm, boundary-aware"
+  },
+  "guardrails": [
+    "Do not make the palette one-note saffron.",
+    "Do not add decorative orbs, blobs, or bokeh.",
+    "Do not hide the source-first product flow behind visual drama.",
+    "Do not imply spiritual authority, permission, authorization, or execution."
+  ],
+  "next_release": "Controlled permission execution authorization draft gate"
+}
