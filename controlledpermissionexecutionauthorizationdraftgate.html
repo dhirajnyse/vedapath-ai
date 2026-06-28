@@ -33,20 +33,20 @@
           <a class="link" href="conversationcompanionlab.html">Talk</a>
           <a class="link" href="patterncompanionlab.html">Pattern</a>
           <a class="link" href="daily.html">Daily</a>
-          <span class="version">v3.4.7 founder</span>
+          <span class="version">v3.4.8 draft</span>
         </nav>
       </header>
 
       <main class="workspace" aria-label="VedaPath Controlled Permission Execution Authorization Draft Gate workspace">
         <aside class="panel">
           <span class="eyebrow">Draft is not authorization</span>
-          <h2>Write the packet. Run nothing.</h2>
-          <p class="muted">This gate turns a founder draft-only decision into reviewable draft language. It cannot grant permission, approve authorization, execute, store, publish, or launch.</p>
+          <h2>One packet enters. One draft leaves.</h2>
+          <p class="muted">This gate receives the v3.4.7 founder decision, preserves the questions and authority audit, then prepares only a review candidate.</p>
           <div class="sprint-list">
-            <div class="sprint-step active"><span class="step-index">1</span><div><strong>Decision</strong><p>Load draft-only.</p></div></div>
-            <div class="sprint-step"><span class="step-index">2</span><div><strong>Draft</strong><p>Prepare wording.</p></div></div>
-            <div class="sprint-step"><span class="step-index">3</span><div><strong>Boundary</strong><p>Keep flags false.</p></div></div>
-            <div class="sprint-step"><span class="step-index">4</span><div><strong>Review</strong><p>Move only to review.</p></div></div>
+            <div class="sprint-step active"><span class="step-index">1</span><div><strong>Receive</strong><p>v3.4.7 founder packet.</p></div></div>
+            <div class="sprint-step"><span class="step-index">2</span><div><strong>Preserve</strong><p>Questions and audit.</p></div></div>
+            <div class="sprint-step"><span class="step-index">3</span><div><strong>Draft</strong><p>Reviewable language.</p></div></div>
+            <div class="sprint-step"><span class="step-index">4</span><div><strong>Lock</strong><p>No authority opens.</p></div></div>
           </div>
           <div class="button-row" style="margin-top: 16px;">
             <a class="button primary" href="controlledpermissionexecutionauthorizationdraftreviewgate.html">Open Draft Review</a>
@@ -58,18 +58,36 @@
         <section class="panel draft-gate" id="controlledPermissionExecutionAuthorizationDraftGate">
           <div class="draft-gate-head">
             <div>
-              <span class="eyebrow">Controlled permission execution authorization draft gate</span>
-              <h1>Draft the packet. Keep authority closed.</h1>
-              <p class="muted">This gate prepares a reviewable authorization draft from a founder draft-only decision. It cannot approve authorization, grant permission, execute, store, update canonical records, publish, or launch production.</p>
+              <span class="eyebrow">Controlled draft re-entry</span>
+              <h1>Write review language. Grant nothing.</h1>
+              <p class="muted">VedaPath now carries the founder decision into a draft review candidate while preserving the exact route, questions, and false authority audit.</p>
             </div>
             <div class="draft-gate-mark"><img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath controlled draft mark"></div>
           </div>
 
           <section class="draft-step-grid" aria-label="Draft gate flow">
-            <div class="draft-step"><span>1</span><strong>Founder decision</strong><p>Draft-only input.</p></div>
-            <div class="draft-step"><span>2</span><strong>Draft packet</strong><p>Reviewable wording.</p></div>
-            <div class="draft-step"><span>3</span><strong>Boundary</strong><p>All authority false.</p></div>
-            <div class="draft-step"><span>4</span><strong>Review next</strong><p>No runnable path.</p></div>
+            <div class="draft-step"><span>1</span><strong>Founder packet</strong><p>Draft-only input.</p></div>
+            <div class="draft-step"><span>2</span><strong>Question handoff</strong><p>No wording drift.</p></div>
+            <div class="draft-step"><span>3</span><strong>Draft review</strong><p>Candidate only.</p></div>
+            <div class="draft-step"><span>4</span><strong>Authority locks</strong><p>Still false.</p></div>
+          </section>
+
+          <section class="draft-relay" aria-label="Controlled draft relay">
+            <div>
+              <span>Incoming</span>
+              <strong>v3.4.7 founder decision</strong>
+              <p>Draft-only, source-locked, non-authorizing.</p>
+            </div>
+            <div>
+              <span>Carried forward</span>
+              <strong>Route, questions, audit</strong>
+              <p>Exact handoff must remain intact.</p>
+            </div>
+            <div>
+              <span>Outgoing</span>
+              <strong>Draft review candidate</strong>
+              <p>No execution, storage, release, or production.</p>
+            </div>
           </section>
 
           <section class="draft-gate-grid">
@@ -87,6 +105,10 @@
               <label>Source answer id<input id="draftSourceAnswer" type="text"></label>
               <label>Source record id<input id="draftSourceRecord" type="text"></label>
               <label>Source family<input id="draftSourceFamily" type="text"></label>
+              <label>Review route<input id="draftReviewRoute" type="text"></label>
+              <label>Founder question<textarea id="draftFounderQuestion"></textarea></label>
+              <label>Permission question<textarea id="draftPermissionQuestion"></textarea></label>
+              <label>Authority flag audit<textarea id="draftAuthorityAudit"></textarea></label>
               <label>Draft scope<textarea id="draftScopeText"></textarea></label>
               <label>Draft language<textarea id="draftLanguage"></textarea></label>
               <label>Draft rationale<textarea id="draftRationale"></textarea></label>
@@ -140,11 +162,11 @@
         <aside class="panel tight">
           <span class="badge green">Draft is not authority</span>
           <h2 style="margin-top: 14px;">Review Candidate Only</h2>
-          <p class="muted">A ready draft creates one later review candidate. It still does not grant permission or approve execution.</p>
+          <p class="muted">A ready draft creates one later review candidate. The locks stay visible and closed.</p>
           <div class="progress" aria-label="Draft gate progress 100 percent"><div class="bar" style="--score:100%"></div></div>
           <div class="metric-grid">
-            <div class="metric"><span>Current</span><strong>v3.2.8</strong></div>
-            <div class="metric"><span>Input</span><strong>Decision</strong></div>
+            <div class="metric"><span>Current</span><strong>v3.4.8</strong></div>
+            <div class="metric"><span>Input</span><strong>Founder</strong></div>
             <div class="metric"><span>Execution</span><strong>False</strong></div>
             <div class="metric"><span>Next</span><strong>Review</strong></div>
           </div>

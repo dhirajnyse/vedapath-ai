@@ -5229,6 +5229,19 @@ Calm. Reverent. Precise. Beginner-friendly. Never flashy about sacred material.
 
 The app should feel like a patient guide opening a text beside the user.
 
+### 325. Controlled Permission Execution Authorization Draft Gate Re-entry
+
+The draft gate should convert founder posture into reviewable wording, not authority.
+
+It should:
+
+- accept only the v3.4.7 founder draft-only packet
+- preserve review route, founder question, permission question, and authority flag audit
+- block when question handoff or authority audit drifts
+- create only a controlled draft-review candidate
+- keep permission, authorization approval, execution, storage, public release, and production false
+- use a calmer relay UI so the user sees incoming packet, preserved handoff, and outgoing review candidate before dense controls
+
 ## Strategic Difference
 
 Most religious AI products try to answer as a spiritual authority.
