@@ -954,6 +954,13 @@ http://127.0.0.1:8088/
 ```
 
 <!-- VEDAPATH FOUNDER AUTHORIZATION DECISION GATE START -->
+## v3.3.4 Command Shell Calm Contrast Refinement
+
+Command Shell Calm Contrast Refinement gives the command shell a calmer contrast system: narrower rail, softer surfaces, tighter type rhythm, stronger active navigation, and a better-balanced Bhagwa, peacock green, sacred gold, indigo, and ivory palette.
+
+- [Command Shell Calm Contrast Refinement Notes](docs/COMMAND_SHELL_CALM_CONTRAST_REFINEMENT.md)
+- [Command Shell Calm Contrast Refinement Config](data/vedapath-command-shell-calm-contrast.json)
+
 ## v3.3.3 Command Shell Visual System Balance
 
 Command Shell Visual System Balance balances the command shell visual system: quieter rail headings, stronger active navigation contrast, less brown-heavy depth, cleaner panels, and Bhagwa accents supported by peacock green, sacred gold, and restrained indigo.

@@ -307,6 +307,13 @@ The v0.7.4 release turns the VedaPath AI homepage into a trusted MVP prototype w
 - Pattern Companion Control Room: Pattern Companion Control Room completes the private local learning layer for VedaPath AI.
 <!-- VEDAPATH PATTERN COMPANION SPRINT NOTES END -->
 <!-- VEDAPATH FOUNDER AUTHORIZATION DECISION GATE NOTES START -->
+## v3.3.4 Command Shell Calm Contrast Refinement
+
+- Narrows and cools the side rail so the shell feels more premium and less heavy.
+- Tightens hero, room, card, body, and control type scale for better cross-page coherence.
+- Keeps Bhagwa as the active identity accent while using peacock green for source trust and sacred gold for progress.
+- Softens panels, cards, and command controls without changing product behavior.
+
 ## v3.3.3 Command Shell Visual System Balance
 
 - Keeps the Hyrvia-inspired side rail, but makes START, SOURCE, and PRACTICE small structural labels instead of large headings.

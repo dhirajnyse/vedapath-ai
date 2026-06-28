@@ -1,0 +1,30 @@
+{
+  "schema_version": "vedapath-command-shell-calm-contrast-v1",
+  "release": "v3.3.4",
+  "title": "Command Shell Calm Contrast Refinement",
+  "generated_at": "2026-06-28T00:00:00.000Z",
+  "founder_feedback": "Continue improving design, aesthetics, coherence, and color scheme.",
+  "design_intent": "Make the Hyrvia-inspired command shell calmer, less brown-heavy, more readable, and more coherent without changing product behavior.",
+  "palette_balance": {
+    "identity": "Bhagwa saffron for active intent and primary action",
+    "trust": "Peacock green for source, safety, and calm confidence",
+    "warmth": "Sacred gold for progress and gentle emphasis",
+    "depth": "Restrained indigo and warm ink for rail depth",
+    "surface": "Ivory and soft green wash for reading calm"
+  },
+  "changes": [
+    "narrower, cooler side rail",
+    "smaller rail brand and structural labels",
+    "clearer active navigation contrast",
+    "tighter hero and room heading scale",
+    "cooler card borders and quieter shadows",
+    "more consistent primary and safe action treatments",
+    "source-green emphasis on source and note blocks"
+  ],
+  "boundaries": [
+    "Visual-system polish only.",
+    "No retrieval, account, storage, authorization, execution, source data, audio, or production behavior changed.",
+    "The interface remains source-first and calm by default."
+  ],
+  "next_release": "Controlled permission execution authorization review decision gate"
+}
