@@ -307,6 +307,14 @@ The v0.7.4 release turns the VedaPath AI homepage into a trusted MVP prototype w
 - Pattern Companion Control Room: Pattern Companion Control Room completes the private local learning layer for VedaPath AI.
 <!-- VEDAPATH PATTERN COMPANION SPRINT NOTES END -->
 <!-- VEDAPATH FOUNDER AUTHORIZATION DECISION GATE NOTES START -->
+## v3.3.7 Command Shell Typography Cohesion
+
+- Adds a final typography-cohesion layer to the shared command shell.
+- Reduces hero and room title spread so practical pages feel calmer.
+- Protects side-rail section labels from global h2 styling.
+- Unifies card headings, metrics, forms, buttons, step labels, and body copy.
+- Keeps fixed font sizes and zero letter spacing across the product shell.
+
 ## v3.3.6 Command Shell Immersive Visual Polish
 
 - Adds a final immersive polish layer to the shared command shell.

@@ -1992,3 +1992,290 @@ body.vp-command-shell-ready ::-webkit-scrollbar-thumb {
   }
 }
 /* VEDAPATH COMMAND SHELL IMMERSIVE POLISH END */
+
+/* VEDAPATH COMMAND SHELL TYPOGRAPHY COHESION START */
+:root {
+  --vp-type-shell-title: 23px;
+  --vp-type-hero-title: 38px;
+  --vp-type-room-title: 31px;
+  --vp-type-section-title: 19px;
+  --vp-type-card-title: 15.5px;
+  --vp-type-body: 14.75px;
+  --vp-type-lead: 15.75px;
+  --vp-type-small: 10.5px;
+  --vp-type-control: 13.5px;
+  --vp-type-metric: 23px;
+}
+
+body.vp-command-shell-ready,
+body.vp-command-shell-ready * {
+  letter-spacing: 0 !important;
+}
+
+body.vp-command-shell-ready {
+  font-size: var(--vp-type-body) !important;
+  line-height: 1.5 !important;
+}
+
+body.vp-command-shell-ready .vp-command-title h1 {
+  margin-top: 3px !important;
+  font-size: var(--vp-type-shell-title) !important;
+  line-height: 1.08 !important;
+  font-weight: 820 !important;
+}
+
+body.vp-command-shell-ready .vp-command-title p,
+body.vp-command-shell-ready .vp-rail-note,
+body.vp-command-shell-ready .vp-rail-note strong {
+  font-size: 11px !important;
+  line-height: 1.35 !important;
+}
+
+body.vp-command-shell-ready .vp-rail-section-title {
+  margin: 0 0 6px !important;
+  color: #f0b776 !important;
+  font-size: 10.25px !important;
+  line-height: 1.1 !important;
+  font-weight: 860 !important;
+  text-transform: uppercase !important;
+}
+
+body.vp-command-shell-ready .vp-rail-link {
+  min-height: 36px !important;
+  padding: 7px 10px !important;
+  font-size: 12.25px !important;
+  line-height: 1.15 !important;
+  font-weight: 760 !important;
+}
+
+body.vp-command-shell-ready .vp-rail-glyph {
+  width: 24px !important;
+  height: 24px !important;
+  min-width: 24px !important;
+  font-size: 10.5px !important;
+  font-weight: 830 !important;
+}
+
+body.vp-command-shell-ready .vp-command-eyebrow,
+body.vp-command-shell-ready .vp-command-badge,
+body.vp-command-shell-ready .vp-command-memory,
+body.vp-command-shell-ready .eyebrow,
+body.vp-command-shell-ready .badge,
+body.vp-command-shell-ready .tag,
+body.vp-command-shell-ready .pill,
+body.vp-command-shell-ready .source-pill {
+  min-height: 20px !important;
+  padding: 0 8px !important;
+  font-size: var(--vp-type-small) !important;
+  line-height: 1.15 !important;
+  font-weight: 800 !important;
+}
+
+body.vp-command-shell-ready .vp-control,
+body.vp-command-shell-ready .vp-control label {
+  font-size: 9.5px !important;
+  line-height: 1.1 !important;
+  font-weight: 820 !important;
+}
+
+body.vp-command-shell-ready .vp-control select,
+body.vp-command-shell-ready .vp-control button,
+body.vp-command-shell-ready .button,
+body.vp-command-shell-ready button,
+body.vp-command-shell-ready input,
+body.vp-command-shell-ready textarea,
+body.vp-command-shell-ready select {
+  font-size: var(--vp-type-control) !important;
+  line-height: 1.35 !important;
+}
+
+body.vp-command-shell-ready main > section:first-of-type h1,
+body.vp-command-shell-ready .home-intent h1,
+body.vp-command-shell-ready .hero h1,
+body.vp-command-shell-ready .hero-grid h1,
+body.vp-command-shell-ready .brand-hero h1,
+body.vp-command-shell-ready .blueprint-hero h1,
+body.vp-command-shell-ready .intent-copy h1 {
+  max-width: 780px !important;
+  margin-bottom: 10px !important;
+  font-size: var(--vp-type-hero-title) !important;
+  line-height: 1.07 !important;
+  font-weight: 820 !important;
+}
+
+body.vp-command-shell-ready .workspace > .panel h1,
+body.vp-command-shell-ready .workspace > article h1,
+body.vp-command-shell-ready .answer-shell h1,
+body.vp-command-shell-ready .ask-panel h1,
+body.vp-command-shell-ready .draft-gate h1,
+body.vp-command-shell-ready .draft-review-gate h1,
+body.vp-command-shell-ready .room-hero h1,
+body.vp-command-shell-ready .lab-hero h1,
+body.vp-command-shell-ready .main-panel h1 {
+  max-width: 800px !important;
+  font-size: var(--vp-type-room-title) !important;
+  line-height: 1.1 !important;
+  font-weight: 820 !important;
+}
+
+body.vp-command-shell-ready h2,
+body.vp-command-shell-ready .panel > h2:first-child,
+body.vp-command-shell-ready .tile > h2:first-child,
+body.vp-command-shell-ready aside.panel h2,
+body.vp-command-shell-ready .pulse-panel h2,
+body.vp-command-shell-ready .rail-panel h2 {
+  font-size: var(--vp-type-section-title) !important;
+  line-height: 1.18 !important;
+  font-weight: 790 !important;
+}
+
+body.vp-command-shell-ready .vp-rail-section-title {
+  margin: 0 0 6px !important;
+  color: #f0b776 !important;
+  font-size: 10.25px !important;
+  line-height: 1.1 !important;
+  font-weight: 860 !important;
+  text-transform: uppercase !important;
+}
+
+body.vp-command-shell-ready h3,
+body.vp-command-shell-ready h4,
+body.vp-command-shell-ready .card h3,
+body.vp-command-shell-ready .tile h3,
+body.vp-command-shell-ready .flow-card h3,
+body.vp-command-shell-ready .answer-title,
+body.vp-command-shell-ready .rail-card strong,
+body.vp-command-shell-ready .step-card strong,
+body.vp-command-shell-ready .room-card strong,
+body.vp-command-shell-ready .path-step strong,
+body.vp-command-shell-ready .sprint-step strong,
+body.vp-command-shell-ready .review-decision-choice strong,
+body.vp-command-shell-ready .review-decision-list strong {
+  font-size: var(--vp-type-card-title) !important;
+  line-height: 1.22 !important;
+  font-weight: 780 !important;
+}
+
+body.vp-command-shell-ready p,
+body.vp-command-shell-ready li,
+body.vp-command-shell-ready label,
+body.vp-command-shell-ready td,
+body.vp-command-shell-ready th {
+  font-size: var(--vp-type-body) !important;
+  line-height: 1.5 !important;
+}
+
+body.vp-command-shell-ready .lead,
+body.vp-command-shell-ready .muted,
+body.vp-command-shell-ready .hero p,
+body.vp-command-shell-ready .brand-hero p,
+body.vp-command-shell-ready .blueprint-hero p,
+body.vp-command-shell-ready .intent-copy p,
+body.vp-command-shell-ready main > section:first-of-type p {
+  max-width: 700px !important;
+  font-size: var(--vp-type-lead) !important;
+  line-height: 1.5 !important;
+}
+
+body.vp-command-shell-ready .summary .tile strong,
+body.vp-command-shell-ready .metric strong,
+body.vp-command-shell-ready .stat strong,
+body.vp-command-shell-ready .pulse strong,
+body.vp-command-shell-ready .percent,
+body.vp-command-shell-ready .version strong,
+body.vp-command-shell-ready .version-row strong {
+  font-size: var(--vp-type-metric) !important;
+  line-height: 1.05 !important;
+  font-weight: 820 !important;
+}
+
+body.vp-command-shell-ready .version-row strong {
+  font-size: 14.75px !important;
+  line-height: 1.35 !important;
+}
+
+body.vp-command-shell-ready .panel,
+body.vp-command-shell-ready .tile,
+body.vp-command-shell-ready .phase,
+body.vp-command-shell-ready .answer-shell,
+body.vp-command-shell-ready .flow-card,
+body.vp-command-shell-ready .ask-panel,
+body.vp-command-shell-ready .map-card,
+body.vp-command-shell-ready .source-block,
+body.vp-command-shell-ready .answer-card,
+body.vp-command-shell-ready .queue-detail,
+body.vp-command-shell-ready .queue-list,
+body.vp-command-shell-ready .metric,
+body.vp-command-shell-ready .sprint-step,
+body.vp-command-shell-ready .room-list > *,
+body.vp-command-shell-ready .item-list > *,
+body.vp-command-shell-ready .source-context,
+body.vp-command-shell-ready .note,
+body.vp-command-shell-ready .boundary,
+body.vp-command-shell-ready .review-decision-choice,
+body.vp-command-shell-ready .review-decision-result,
+body.vp-command-shell-ready .review-decision-list > *,
+body.vp-command-shell-ready .review-decision-rules > * {
+  padding: 16px !important;
+}
+
+body.vp-command-shell-ready .workspace > .panel,
+body.vp-command-shell-ready .layout > .panel,
+body.vp-command-shell-ready main > section > .panel {
+  padding: 18px !important;
+}
+
+body.vp-command-shell-ready .button,
+body.vp-command-shell-ready button,
+body.vp-command-shell-ready input[type="button"],
+body.vp-command-shell-ready input[type="submit"] {
+  min-height: 32px !important;
+  padding: 7px 12px !important;
+}
+
+@media (max-width: 1200px) {
+  :root {
+    --vp-type-hero-title: 35px;
+    --vp-type-room-title: 29px;
+    --vp-type-section-title: 18.5px;
+  }
+}
+
+@media (max-width: 720px) {
+  :root {
+    --vp-type-shell-title: 21px;
+    --vp-type-hero-title: 29px;
+    --vp-type-room-title: 27px;
+    --vp-type-section-title: 18px;
+    --vp-type-card-title: 15px;
+    --vp-type-body: 14.5px;
+    --vp-type-lead: 15px;
+    --vp-type-metric: 22px;
+  }
+
+  body.vp-command-shell-ready .panel,
+  body.vp-command-shell-ready .tile,
+  body.vp-command-shell-ready .phase,
+  body.vp-command-shell-ready .answer-shell,
+  body.vp-command-shell-ready .flow-card,
+  body.vp-command-shell-ready .ask-panel,
+  body.vp-command-shell-ready .map-card,
+  body.vp-command-shell-ready .source-block,
+  body.vp-command-shell-ready .answer-card,
+  body.vp-command-shell-ready .queue-detail,
+  body.vp-command-shell-ready .queue-list,
+  body.vp-command-shell-ready .metric,
+  body.vp-command-shell-ready .sprint-step,
+  body.vp-command-shell-ready .room-list > *,
+  body.vp-command-shell-ready .item-list > *,
+  body.vp-command-shell-ready .source-context,
+  body.vp-command-shell-ready .note,
+  body.vp-command-shell-ready .boundary,
+  body.vp-command-shell-ready .review-decision-choice,
+  body.vp-command-shell-ready .review-decision-result,
+  body.vp-command-shell-ready .review-decision-list > *,
+  body.vp-command-shell-ready .review-decision-rules > * {
+    padding: 14px !important;
+  }
+}
+/* VEDAPATH COMMAND SHELL TYPOGRAPHY COHESION END */

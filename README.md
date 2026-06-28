@@ -954,6 +954,13 @@ http://127.0.0.1:8088/
 ```
 
 <!-- VEDAPATH FOUNDER AUTHORIZATION DECISION GATE START -->
+## v3.3.7 Command Shell Typography Cohesion
+
+Command Shell Typography Cohesion makes the shared VedaPath shell feel more cohesive by tightening hero, room, section, card, rail, metric, form, and control type scales into one calm system.
+
+- [Command Shell Typography Cohesion Notes](docs/COMMAND_SHELL_TYPOGRAPHY_COHESION.md)
+- [Command Shell Typography Cohesion Config](data/vedapath-command-shell-typography-cohesion.json)
+
 ## v3.3.6 Command Shell Immersive Visual Polish
 
 Command Shell Immersive Visual Polish makes the shared VedaPath shell feel calmer, more premium, and more coherent through disciplined typography, deeper rail rhythm, warmer surfaces, restrained Bhagwa action cues, peacock green trust cues, and sacred gold warmth.

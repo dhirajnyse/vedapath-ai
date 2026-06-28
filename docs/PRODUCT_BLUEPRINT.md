@@ -4374,6 +4374,18 @@ It should:
 Pattern Companion Control Room should never claim diagnosis, therapy, legal advice, medical advice, surveillance, scoring, or spiritual authority.
 <!-- VEDAPATH PATTERN COMPANION SPRINT BLUEPRINT END -->
 <!-- VEDAPATH FOUNDER AUTHORIZATION DECISION GATE BLUEPRINT START -->
+### 320. Command Shell Typography Cohesion
+
+Command Shell Typography Cohesion makes the command shell feel designed from one calm hand.
+
+Design rules:
+
+- Utility labels such as rail section names must stay compact and structural.
+- Hero scale is reserved for true doorway moments, not repeated work surfaces.
+- Room titles should be strong, but calm enough to leave space for source content.
+- Card headings, metrics, forms, buttons, and body copy should follow one shared ladder.
+- Future functional builds should preserve this typography contract before adding new controls.
+
 ### 319. Command Shell Immersive Visual Polish
 
 Command Shell Immersive Visual Polish makes VedaPath feel more like an intentional product world than a collection of rooms.

@@ -1,0 +1,32 @@
+{
+  "schema_version": "vedapath-command-shell-typography-cohesion-v1",
+  "release": "v3.3.7",
+  "title": "Command Shell Typography Cohesion",
+  "purpose": "Make VedaPath typography feel calm, cohesive, and product-grade across every room.",
+  "type_scale": {
+    "shell_title": "23px",
+    "hero_title": "38px",
+    "room_title": "31px",
+    "section_title": "19px",
+    "card_title": "15.5px",
+    "body": "14.75px",
+    "lead": "15.75px",
+    "control": "13.5px",
+    "small_label": "10.5px",
+    "metric": "23px"
+  },
+  "rules": [
+    "Use fixed type sizes with breakpoint overrides, not viewport-width font scaling.",
+    "Keep letter spacing at 0.",
+    "Reserve hero scale for true heroes only.",
+    "Keep cards, rails, forms, and metrics compact enough for repeated product use.",
+    "Let source content remain readable before decorative drama."
+  ],
+  "key_changes": [
+    "Reduced hero and room title spread so work surfaces feel calmer.",
+    "Protected rail group labels from global h2 styling.",
+    "Unified card, step, path, metric, form, and control text sizes.",
+    "Kept Bhagwa action cues, peacock green trust cues, sacred gold progress, and ivory surfaces consistent."
+  ],
+  "next_release": "Controlled permission execution authorization draft gate"
+}
