@@ -33,15 +33,15 @@
           <a class="link" href="conversationcompanionlab.html">Talk</a>
           <a class="link" href="patterncompanionlab.html">Pattern</a>
           <a class="link" href="daily.html">Daily</a>
-          <span class="version">v3.4.4 hold</span>
+          <span class="version">v3.4.5 preflight</span>
         </nav>
       </header>
 
       <main class="workspace" aria-label="VedaPath Permission Execution Authorization Preflight workspace">
         <aside class="panel">
           <span class="eyebrow">Preflight is not approval</span>
-          <h2>Check readiness. Approve nothing.</h2>
-          <p class="muted">This room checks whether the held decision can enter a later authorization review. It cannot grant permission, approve authorization, execute, store, publish, or launch.</p>
+          <h2>One calm gate. Zero authority.</h2>
+          <p class="muted">This room accepts the v3.4.4 execution hold and prepares only one thing: a later authorization review candidate. Permission, authorization, execution, storage, public release, and production stay closed.</p>
           <div class="sprint-list">
             <div class="sprint-step active"><span class="step-index">1</span><div><strong>Hold</strong><p>Load locked hold.</p></div></div>
             <div class="sprint-step"><span class="step-index">2</span><div><strong>Evidence</strong><p>Check ids.</p></div></div>
@@ -59,8 +59,8 @@
           <div class="permission-preflight-head">
             <div>
               <span class="eyebrow">Permission execution authorization preflight</span>
-              <h1>Ready for review. Not ready to run.</h1>
-              <p class="muted">A ready preflight here means the packet can move to a controlled permission execution authorization review gate. It still cannot grant permission, approve authorization, run code, promote sources, store data, update canonical records, use secrets, publish public release, or launch production.</p>
+              <h1>Preflight the hold. Grant nothing.</h1>
+              <p class="muted">A ready preflight here means the held question, route, source lock, and authority audit can move to a controlled authorization review. It still cannot grant permission, approve authorization, run code, promote sources, store data, update canonical records, use secrets, publish public release, or launch production.</p>
             </div>
             <div class="permission-preflight-mark"><img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath authorization preflight mark"></div>
           </div>
@@ -69,6 +69,10 @@
             <div class="permission-preflight-form">
               <h2>Authorization Preflight</h2>
               <label>Execution hold packet<textarea id="permissionPreflightHoldPacket"></textarea></label>
+              <label>Review route<input id="permissionPreflightReviewRoute" type="text"></label>
+              <label>Founder question<textarea id="permissionPreflightFounderQuestion"></textarea></label>
+              <label>Permission question<textarea id="permissionPreflightPermissionQuestion"></textarea></label>
+              <label>Authority flag audit<textarea id="permissionPreflightAuthorityAudit"></textarea></label>
               <label>Preflight state<select id="permissionPreflightState"></select></label>
               <label>Preflight actor<input id="permissionPreflightActor" type="text" placeholder="Controlled preflight reviewer"></label>
               <label>Reviewer name<input id="permissionPreflightReviewer" type="text" placeholder="Reviewer sample"></label>
@@ -80,6 +84,7 @@
               <label>Founder instruction gate id<input id="permissionPreflightInstructionGateId" type="text"></label>
               <label>Authorization review gate id<input id="permissionPreflightAuthorizationReviewGateId" type="text"></label>
               <label>Authorization draft id<input id="permissionPreflightDraftId" type="text"></label>
+              <label>Prior founder authorization decision id<input id="permissionPreflightPriorDecisionGateId" type="text"></label>
               <label>Source answer id<input id="permissionPreflightSourceAnswer" type="text"></label>
               <label>Source record id<input id="permissionPreflightSourceRecord" type="text"></label>
               <label>Source family<input id="permissionPreflightSourceFamily" type="text"></label>
@@ -107,6 +112,14 @@
             </div>
             <div>
               <section class="permission-preflight-result" id="permissionPreflightResultCard" data-state="Blocked"></section>
+              <section style="margin-top: 10px;">
+                <h2>Question Handoff</h2>
+                <div class="permission-preflight-handoff" id="permissionPreflightQuestionHandoff"></div>
+              </section>
+              <section style="margin-top: 10px;">
+                <h2>Authority Locks</h2>
+                <div class="permission-preflight-flags" id="permissionPreflightAuthorityFlags"></div>
+              </section>
               <section style="margin-top: 10px;">
                 <h2>Preflight Scope</h2>
                 <div class="permission-preflight-list" id="permissionPreflightScope"></div>
@@ -136,11 +149,11 @@
 
         <aside class="panel tight">
           <span class="badge green">Review ready is not authority</span>
-          <h2 style="margin-top: 14px;">Preflight Ready, Execution False</h2>
+          <h2 style="margin-top: 14px;">Preflight Ready, Everything Locked</h2>
           <p class="muted">The preflight can prepare authorization review while every operational path stays locked.</p>
           <div class="progress" aria-label="Authorization preflight progress 100 percent"><div class="bar" style="--score:100%"></div></div>
           <div class="metric-grid">
-            <div class="metric"><span>Current</span><strong>v3.2.5</strong></div>
+            <div class="metric"><span>Current</span><strong>v3.4.5</strong></div>
             <div class="metric"><span>States</span><strong>10</strong></div>
             <div class="metric"><span>Execution</span><strong>False</strong></div>
             <div class="metric"><span>Next</span><strong>Review</strong></div>

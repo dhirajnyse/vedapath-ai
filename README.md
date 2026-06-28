@@ -954,6 +954,14 @@ http://127.0.0.1:8088/
 ```
 
 <!-- VEDAPATH FOUNDER AUTHORIZATION DECISION GATE START -->
+## v3.4.5 Permission Execution Authorization Preflight Re-entry
+
+Permission Execution Authorization Preflight Re-entry accepts the v3.4.4 controlled execution hold packet, preserves review route, founder question, permission question, and authority-flag audit, and prepares a controlled authorization review candidate without granting permission, approving authorization, executing, storing, writing canonical records, publishing, or launching production.
+
+- [Permission Execution Authorization Preflight](permissionexecutionauthorizationpreflight.html)
+- [Permission Execution Authorization Preflight Notes](docs/PERMISSION_EXECUTION_AUTHORIZATION_PREFLIGHT.md)
+- [Permission Execution Authorization Preflight Data](data/vedapath-permission-execution-authorization-preflight.json)
+
 ## v3.4.4 Controlled Permission Execution Hold Re-entry
 
 Controlled Permission Execution Hold Re-entry holds the v3.4.3 founder decision packet while preserving review route, founder question, permission question, and false authority audit. It can prepare permission execution authorization preflight, but grants no permission, authorization, execution, storage write, canonical write, public release, or production.
