@@ -4374,6 +4374,18 @@ It should:
 Pattern Companion Control Room should never claim diagnosis, therapy, legal advice, medical advice, surveillance, scoring, or spiritual authority.
 <!-- VEDAPATH PATTERN COMPANION SPRINT BLUEPRINT END -->
 <!-- VEDAPATH FOUNDER AUTHORIZATION DECISION GATE BLUEPRINT START -->
+### 315. Command Shell Aesthetic Harmony
+
+Command Shell Aesthetic Harmony makes the product feel more mature without adding visual noise.
+
+Design rules:
+
+- Warm surfaces should support reading, not decorate the page.
+- The side rail should feel solid and calm, not heavy.
+- Cards and panels should have depth but avoid floating-card clutter.
+- Buttons and form controls should feel deliberate and consistent.
+- Bhagwa remains the identity color, balanced with green and gold for trust and calm.
+
 ### 314. Command Shell Typography Coherence
 
 Command Shell Typography Coherence keeps VedaPath from becoming visually loud as the command center grows.

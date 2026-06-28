@@ -1,0 +1,24 @@
+{
+  "schema_version": "vedapath-command-shell-aesthetic-v1",
+  "release": "v3.3.2",
+  "title": "Command Shell Aesthetic Harmony",
+  "generated_at": "2026-06-28T00:00:00.000Z",
+  "founder_feedback": "UI aesthetics need more refinement after the typography polish.",
+  "design_intent": "Keep the command center structure while making the product feel warmer, more premium, calmer, and more cohesive.",
+  "changes": [
+    "warmer page background",
+    "more refined side rail depth",
+    "calmer panel surfaces",
+    "softer card shadows",
+    "clearer form and button states",
+    "quieter progress bars",
+    "more consistent focus states",
+    "subtle green and gold balance against Bhagwa"
+  ],
+  "boundaries": [
+    "Design polish only.",
+    "No source data, retrieval, account, storage, authorization, execution, audio, or production behavior changed.",
+    "The interface remains simple and source-first."
+  ],
+  "next_release": "Controlled permission execution authorization review decision gate"
+}

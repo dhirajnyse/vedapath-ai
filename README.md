@@ -954,6 +954,13 @@ http://127.0.0.1:8088/
 ```
 
 <!-- VEDAPATH FOUNDER AUTHORIZATION DECISION GATE START -->
+## v3.3.2 Command Shell Aesthetic Harmony
+
+Command Shell Aesthetic Harmony adds a warmer, more premium aesthetic layer to the Hyrvia-inspired command shell: refined rail depth, calmer cards, better controls, softer shadows, and balanced Bhagwa, gold, and peacock-green accents.
+
+- [Command Shell Aesthetic Harmony Notes](docs/COMMAND_SHELL_AESTHETIC_HARMONY.md)
+- [Command Shell Aesthetic Harmony Config](data/vedapath-command-shell-aesthetic.json)
+
 ## v3.3.1 Command Shell Typography Coherence
 
 Command Shell Typography Coherence keeps the Hyrvia-inspired command shell but reduces oversized typography and aligns page, hero, room, card, metric, and small-label scale across the product.
