@@ -954,6 +954,14 @@ http://127.0.0.1:8088/
 ```
 
 <!-- VEDAPATH FOUNDER AUTHORIZATION DECISION GATE START -->
+## v3.3.9 Controlled Authorization Review Re-entry
+
+Controlled Authorization Review Re-entry upgrades the authorization review gate with route decisions, founder-instruction handoff language, and an authority-flag audit while keeping authorization, execution, storage writes, canonical writes, public release, and production false.
+
+- [Controlled Authorization Review Gate](controlledauthorizationreviewgate.html)
+- [Controlled Authorization Review Gate Notes](docs/CONTROLLED_AUTHORIZATION_REVIEW_GATE.md)
+- [Controlled Authorization Review Gate Data](data/vedapath-controlled-authorization-review-gate.json)
+
 ## v3.3.8 Command Shell Font Rhythm Refinement
 
 Command Shell Font Rhythm Refinement makes the shared VedaPath shell feel more cohesive by reducing type spread, calming font weights, giving answer titles a clear middle tier, and tightening metrics, rail labels, controls, cards, and body copy into one reading rhythm.

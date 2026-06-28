@@ -4374,6 +4374,18 @@ It should:
 Pattern Companion Control Room should never claim diagnosis, therapy, legal advice, medical advice, surveillance, scoring, or spiritual authority.
 <!-- VEDAPATH PATTERN COMPANION SPRINT BLUEPRINT END -->
 <!-- VEDAPATH FOUNDER AUTHORIZATION DECISION GATE BLUEPRINT START -->
+### 322. Controlled Authorization Review Re-entry
+
+Controlled Authorization Review Re-entry makes the existing authorization review gate useful again inside the calmer v3.3 command shell.
+
+Product rules:
+
+- Route decisions must clearly separate ready, return, hold, and block.
+- Founder handoff is a question for the next gate, not permission.
+- Every authority, write, release, and production flag must remain visibly false.
+- The existing review gate route stays canonical; do not create duplicate rooms.
+- Functional builds must preserve the calmer v3.3 font rhythm before adding more fields.
+
 ### 321. Command Shell Font Rhythm Refinement
 
 Command Shell Font Rhythm Refinement keeps the command center from feeling like stacked release typography.

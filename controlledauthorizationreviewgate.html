@@ -33,15 +33,15 @@
           <a class="link" href="conversationcompanionlab.html">Talk</a>
           <a class="link" href="patterncompanionlab.html">Pattern</a>
           <a class="link" href="daily.html">Daily</a>
-          <span class="version">v3.3.8 font rhythm</span>
+          <span class="version">v3.3.9 auth review</span>
         </nav>
       </header>
 
       <main class="workspace" aria-label="VedaPath Controlled Authorization Review Gate workspace">
         <aside class="panel">
           <span class="eyebrow">Review is not permission</span>
-          <h2>Check the draft before any founder instruction</h2>
-          <p class="muted">This room reviews the controlled authorization draft. It can mark review readiness only; it cannot authorize, execute, promote, store, migrate, use secrets, publish, or launch.</p>
+          <h2>Choose the review route before founder instruction</h2>
+          <p class="muted">This room reviews the controlled authorization draft. It can produce a route and handoff question only; it cannot authorize, execute, promote, store, migrate, use secrets, publish, or launch.</p>
           <div class="sprint-list">
             <div class="sprint-step active"><span class="step-index">1</span><div><strong>Draft</strong><p>Load packet.</p></div></div>
             <div class="sprint-step"><span class="step-index">2</span><div><strong>Compare</strong><p>Check source lock.</p></div></div>
@@ -70,6 +70,7 @@
               <h2>Controlled Authorization Review</h2>
               <label>Authorization draft packet<textarea id="authReviewAuthorizationDraft"></textarea></label>
               <label>Review state<select id="authReviewState"></select></label>
+              <label>Route decision<select id="authReviewRouteDecision"></select></label>
               <label>Review actor<input id="authReviewActor" type="text" placeholder="Controlled authorization reviewer"></label>
               <label>Reviewer name<input id="authReviewerName" type="text" placeholder="Reviewer sample"></label>
               <label>Authorization review gate id<input id="authReviewGateId" type="text"></label>
@@ -96,6 +97,8 @@
               <label>Stop condition<textarea id="authReviewStopCondition"></textarea></label>
               <label>Expiry check<textarea id="authReviewExpiry"></textarea></label>
               <label>Production boundary<textarea id="authReviewProductionBoundary"></textarea></label>
+              <label>Founder instruction handoff<textarea id="authReviewFounderHandoff"></textarea></label>
+              <label>Authority flag audit<textarea id="authReviewFlagAudit"></textarea></label>
               <label>Review question<textarea id="authReviewQuestion"></textarea></label>
               <label>Return reason<textarea id="authReviewReturnReason"></textarea></label>
               <label>Hold reason<textarea id="authReviewHoldReason"></textarea></label>
@@ -113,12 +116,21 @@
                 <h2>Review Scope</h2>
                 <div class="auth-review-list" id="authReviewScope"></div>
               </section>
+              <section style="margin-top: 10px;">
+                <h2>Route Map</h2>
+                <div class="auth-review-routes" id="authReviewRoutes"></div>
+              </section>
             </div>
           </section>
 
           <section>
             <h2>Review Checks</h2>
             <div class="auth-review-rules" id="authReviewChecks"></div>
+          </section>
+
+          <section>
+            <h2>Authority Flag Audit</h2>
+            <div class="auth-review-flags" id="authReviewFlags"></div>
           </section>
 
           <section class="auth-review-layout">
@@ -142,10 +154,10 @@
           <p class="muted">The review can say the draft is coherent enough for a founder instruction gate while every operational path stays locked.</p>
           <div class="progress" aria-label="Controlled authorization review gate progress 100 percent"><div class="bar" style="--score:100%"></div></div>
           <div class="metric-grid">
-            <div class="metric"><span>Current</span><strong>v3.1.9</strong></div>
+            <div class="metric"><span>Current</span><strong>v3.3.9</strong></div>
             <div class="metric"><span>States</span><strong>9</strong></div>
             <div class="metric"><span>Authorized</span><strong>False</strong></div>
-            <div class="metric"><span>Next</span><strong>Founder gate</strong></div>
+            <div class="metric"><span>Next</span><strong>Founder instruction</strong></div>
           </div>
           <section class="panel tight boundary" style="margin-top: 16px;">
             <h2>Review Boundary</h2>

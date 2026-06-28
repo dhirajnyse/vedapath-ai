@@ -307,6 +307,14 @@ The v0.7.4 release turns the VedaPath AI homepage into a trusted MVP prototype w
 - Pattern Companion Control Room: Pattern Companion Control Room completes the private local learning layer for VedaPath AI.
 <!-- VEDAPATH PATTERN COMPANION SPRINT NOTES END -->
 <!-- VEDAPATH FOUNDER AUTHORIZATION DECISION GATE NOTES START -->
+## v3.3.9 Controlled Authorization Review Re-entry
+
+- Upgrades the existing controlled authorization review gate instead of adding a duplicate room.
+- Adds route decisions for ready, return, hold, and block.
+- Adds founder-instruction handoff text as a question only.
+- Adds an authority-flag audit with every operational flag false.
+- Keeps authorization, execution, storage, canonical writes, public release, and production closed.
+
 ## v3.3.8 Command Shell Font Rhythm Refinement
 
 - Adds a font-rhythm refinement layer to the shared command shell.

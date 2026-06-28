@@ -43,7 +43,9 @@ body.auth-review-page main.workspace > aside.panel.tight {
 .auth-review-grid,
 .auth-review-list,
 .auth-review-actions,
-.auth-review-rules {
+.auth-review-rules,
+.auth-review-routes,
+.auth-review-flags {
   display: grid;
   gap: 10px;
 }
@@ -78,7 +80,9 @@ body.auth-review-page main.workspace > aside.panel.tight {
 .auth-review-card,
 .auth-review-result,
 .auth-review-output,
-.auth-review-rule {
+.auth-review-rule,
+.auth-review-route,
+.auth-review-flag {
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--surface);
@@ -87,7 +91,9 @@ body.auth-review-page main.workspace > aside.panel.tight {
 .auth-review-form,
 .auth-review-card,
 .auth-review-result,
-.auth-review-rule {
+.auth-review-rule,
+.auth-review-route,
+.auth-review-flag {
   padding: 12px;
 }
 
@@ -120,8 +126,30 @@ body.auth-review-page main.workspace > aside.panel.tight {
 }
 
 .auth-review-grid,
-.auth-review-rules {
+.auth-review-rules,
+.auth-review-flags {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.auth-review-routes {
+  grid-template-columns: 1fr;
+}
+
+.auth-review-route {
+  display: grid;
+  grid-template-columns: 32px minmax(0, 1fr);
+  align-items: start;
+  border-left: 4px solid var(--gold);
+}
+
+.auth-review-route p {
+  margin: 4px 0;
+}
+
+.auth-review-flag {
+  display: grid;
+  gap: 4px;
+  border-left: 4px solid var(--green);
 }
 
 .auth-review-card,
@@ -148,7 +176,11 @@ body.auth-review-page main.workspace > aside.panel.tight {
 .auth-review-card span,
 .auth-review-card strong,
 .auth-review-rule span,
-.auth-review-rule strong {
+.auth-review-rule strong,
+.auth-review-route span,
+.auth-review-route strong,
+.auth-review-flag span,
+.auth-review-flag strong {
   display: block;
 }
 
@@ -159,9 +191,17 @@ body.auth-review-page main.workspace > aside.panel.tight {
 }
 
 .auth-review-card span,
-.auth-review-rule span {
+.auth-review-rule span,
+.auth-review-route span,
+.auth-review-flag span {
   color: var(--muted);
   font-size: 12px;
+}
+
+.auth-review-flag strong {
+  color: var(--green);
+  font-size: 15px;
+  text-transform: capitalize;
 }
 
 .auth-review-result strong {
@@ -229,10 +269,29 @@ body.auth-review-page main.workspace > aside.panel.tight {
   .auth-review-layout,
   .auth-review-head,
   .auth-review-grid,
-  .auth-review-rules {
+  .auth-review-rules,
+  .auth-review-flags {
     grid-template-columns: 1fr;
   }
 }
+
+/* VEDAPATH CONTROLLED AUTHORIZATION REVIEW REENTRY START */
+body.auth-review-page .auth-review-head h1 {
+  max-width: 760px;
+}
+
+body.auth-review-page .auth-review-route,
+body.auth-review-page .auth-review-flag,
+body.auth-review-page .auth-review-rule,
+body.auth-review-page .auth-review-card {
+  box-shadow: 0 10px 28px rgba(78, 44, 18, 0.06);
+}
+
+body.auth-review-page .auth-review-output,
+body.auth-review-page .auth-review-form textarea {
+  line-height: 1.45;
+}
+/* VEDAPATH CONTROLLED AUTHORIZATION REVIEW REENTRY END */
 
 @media (max-width: 640px) {
   .auth-review-actions { grid-template-columns: 1fr; }

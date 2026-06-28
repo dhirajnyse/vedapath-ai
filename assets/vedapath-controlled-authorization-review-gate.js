@@ -7,6 +7,8 @@
   const reviewOutput = pageDocument ? pageDocument.getElementById("authReviewOutput") : null;
   const checksRoot = pageDocument ? pageDocument.getElementById("authReviewChecks") : null;
   const scopeRoot = pageDocument ? pageDocument.getElementById("authReviewScope") : null;
+  const routesRoot = pageDocument ? pageDocument.getElementById("authReviewRoutes") : null;
+  const flagsRoot = pageDocument ? pageDocument.getElementById("authReviewFlags") : null;
 
   const safe = (value) => String(value ?? "").replace(/[&<>"']/g, (char) => ({
     "&": "&amp;",
@@ -82,6 +84,29 @@
     return hasText(value, [["production_ready remains false"], ["production_launch_allowed remains false"], ["public_release_allowed remains false"], ["no", "production", "migration"], ["account"], ["secret"], ["durable", "storage"], ["public release"], ["launch"], ["opened"]]);
   }
 
+  function keepsAuthorityFlagAudit(value) {
+    const text = String(value || "");
+    const required = [
+      "execution_packet_authorized=false",
+      "execution_authorized=false",
+      "execution_allowed=false",
+      "founder_instruction_granted=false",
+      "source_promotion_allowed=false",
+      "promotion_execution_allowed=false",
+      "implementation_authorized=false",
+      "implementation_execution_allowed=false",
+      "controlled_storage_entry_allowed=false",
+      "storage_write_enabled=false",
+      "canonical_write_allowed=false",
+      "source_write_executed=false",
+      "actual_storage_write_executed=false",
+      "production_ready=false",
+      "production_launch_allowed=false",
+      "public_release_allowed=false"
+    ].every((term) => text.includes(term));
+    return required && !hasUnsafeAuthority(text);
+  }
+
   function reviewMissingForState(config, state, review = {}) {
     return (config.required_by_state[state] || []).filter((field) => !String(review[field] || "").trim());
   }
@@ -102,7 +127,15 @@
       if (!idMatches(review, authorizationDraftPacket, key)) blocked.push(key + " must match the authorization draft packet");
     });
 
+    const selectedRoute = (config.decision_routes || []).find((route) => route.route === review.route_decision);
+    if (selectedRoute && selectedRoute.state !== state) {
+      blocked.push("route decision must match the selected review state");
+    }
+
     const readyCandidate = state === "Authorization review ready";
+    if (readyCandidate && review.route_decision !== "Ready for founder instruction") {
+      blocked.push("route decision must be Ready for founder instruction before the packet can move forward");
+    }
     if (readyCandidate && !hasText(review.review_scope, [["review this exact authorization draft"], ["founder authorization instruction readiness"], ["review is not authorization"], ["cannot", "execute"], ["promote"], ["store"], ["canonical"], ["migrate"], ["account"], ["secret"], ["public release"], ["production"]])) {
       blocked.push("review scope must be exact-draft only and explicitly block authorization, execution, promotion, storage, canonical writes, migration, accounts, secrets, public release, and production");
     }
@@ -144,6 +177,12 @@
     }
     if (readyCandidate && !keepsProductionBoundary(review.production_boundary)) {
       blocked.push("production boundary must keep production, launch, public release, migration, account, secret, durable storage, and launch paths closed");
+    }
+    if (readyCandidate && !hasText(review.founder_instruction_handoff, [["founder authorization instruction gate"], ["question"], ["not authorization"], ["execution is not allowed"], ["no system may run"]])) {
+      blocked.push("founder instruction handoff must be a question for the next gate, not authorization or execution");
+    }
+    if (readyCandidate && !keepsAuthorityFlagAudit(review.authority_flag_audit)) {
+      blocked.push("authority flag audit must list every execution, storage, canonical, public release, and production flag as false");
     }
     if (state === "Needs review evidence" && !review.review_question) blocked.push("review question is required");
     if (state === "Return to authorization draft" && !review.return_reason) blocked.push("return reason is required");
@@ -197,6 +236,7 @@
       source_family: review.source_family || authorizationDraftPacket.source_family || "",
       review_actor: review.review_actor || "",
       reviewer_name: review.reviewer_name || "",
+      route_decision: review.route_decision || "",
       review_scope: review.review_scope || "",
       draft_comparison: review.draft_comparison || "",
       authorization_review_language: review.authorization_review_language || "",
@@ -210,6 +250,8 @@
       stop_condition: review.stop_condition || "",
       expiry_check: review.expiry_check || "",
       production_boundary: review.production_boundary || "",
+      founder_instruction_handoff: review.founder_instruction_handoff || "",
+      authority_flag_audit: review.authority_flag_audit || "",
       review_question: review.review_question || "",
       return_reason: review.return_reason || "",
       hold_reason: review.hold_reason || "",
@@ -230,6 +272,7 @@
       release: config.release,
       saved_reviews: reviews.length,
       ready: byStatus["Authorization review ready"] || 0,
+      ready_for_founder_instruction: reviews.filter((review) => review.route_decision === "Ready for founder instruction").length,
       blocked: reviews.filter((review) => String(review.review_status || "").startsWith("Blocked")).length,
       holds: byStatus["Review hold"] || 0,
       expired: byStatus["Review expired"] || 0,
@@ -258,6 +301,7 @@
       '<div class="auth-review-grid">' +
         card("Authorization draft", review.controlled_execution_packet_authorization_draft_id, review.authorization_review_ready ? "ready" : "") +
         card("Source answer", review.source_answer_id) +
+        card("Route", review.route_decision || "Unset") +
         card("Next gate", review.next_gate_required) +
         card("Execution", review.execution_allowed ? "enabled" : "false", review.execution_allowed ? "blocked" : "ready") +
       '</div>' +
@@ -277,6 +321,23 @@
       card("Source answer", config.source.source_answer_id) +
       card("Authorization draft", config.source.controlled_execution_packet_authorization_draft_id) +
       card("Next gate", config.boundary.next_gate_required);
+  }
+
+  function renderRoutes(config) {
+    if (!routesRoot) return;
+    routesRoot.innerHTML = (config.decision_routes || []).map((route, index) =>
+      '<article class="auth-review-route">' +
+      '<span class="step-index">' + safe(index + 1) + '</span>' +
+      '<div><strong>' + safe(route.route) + '</strong><p>' + safe(route.meaning) + '</p><span>' + safe(route.state) + '</span></div>' +
+      '</article>'
+    ).join("");
+  }
+
+  function renderFlags(config) {
+    if (!flagsRoot) return;
+    flagsRoot.innerHTML = Object.entries(config.authority_flags || {}).map(([key, value]) =>
+      '<article class="auth-review-flag"><span>' + safe(key) + '</span><strong>' + safe(value) + '</strong></article>'
+    ).join("");
   }
 
   function readSaved() {
@@ -311,6 +372,7 @@
     reviewMissingForState,
     keepsReviewBoundary,
     hasUnsafeAuthority,
+    keepsAuthorityFlagAudit,
     keepsProductionBoundary,
     parseReviewJson,
     authorizationDraftReady
@@ -324,6 +386,7 @@
       const fields = {
         authorizationDraft: root.querySelector("#authReviewAuthorizationDraft"),
         state: root.querySelector("#authReviewState"),
+        route: root.querySelector("#authReviewRouteDecision"),
         actor: root.querySelector("#authReviewActor"),
         reviewer: root.querySelector("#authReviewerName"),
         reviewGateId: root.querySelector("#authReviewGateId"),
@@ -350,6 +413,8 @@
         stop: root.querySelector("#authReviewStopCondition"),
         expiry: root.querySelector("#authReviewExpiry"),
         production: root.querySelector("#authReviewProductionBoundary"),
+        founderHandoff: root.querySelector("#authReviewFounderHandoff"),
+        flagAudit: root.querySelector("#authReviewFlagAudit"),
         question: root.querySelector("#authReviewQuestion"),
         returnReason: root.querySelector("#authReviewReturnReason"),
         holdReason: root.querySelector("#authReviewHoldReason"),
@@ -357,11 +422,13 @@
       };
 
       config.review_states.forEach((state) => fields.state.add(new Option(state, state)));
+      (config.decision_routes || []).forEach((route) => fields.route.add(new Option(route.route, route.route)));
 
       function loadSample() {
         const sample = config.sample_review;
         fields.authorizationDraft.value = JSON.stringify(config.sample_authorization_draft, null, 2);
         fields.state.value = sample.review_state;
+        fields.route.value = sample.route_decision;
         fields.actor.value = sample.review_actor;
         fields.reviewer.value = sample.reviewer_name;
         fields.reviewGateId.value = sample.controlled_authorization_review_gate_id;
@@ -388,6 +455,8 @@
         fields.stop.value = sample.stop_condition;
         fields.expiry.value = sample.expiry_check;
         fields.production.value = sample.production_boundary;
+        fields.founderHandoff.value = sample.founder_instruction_handoff;
+        fields.flagAudit.value = sample.authority_flag_audit;
         fields.question.value = sample.review_question;
         fields.returnReason.value = sample.return_reason;
         fields.holdReason.value = sample.hold_reason;
@@ -397,6 +466,7 @@
       function buildReview() {
         return {
           review_state: fields.state.value,
+          route_decision: fields.route.value,
           review_actor: fields.actor.value,
           reviewer_name: fields.reviewer.value,
           controlled_authorization_review_gate_id: fields.reviewGateId.value,
@@ -423,6 +493,8 @@
           stop_condition: fields.stop.value,
           expiry_check: fields.expiry.value,
           production_boundary: fields.production.value,
+          founder_instruction_handoff: fields.founderHandoff.value,
+          authority_flag_audit: fields.flagAudit.value,
           review_question: fields.question.value,
           return_reason: fields.returnReason.value,
           hold_reason: fields.holdReason.value,
@@ -460,6 +532,8 @@
       loadSample();
       renderChecks(config);
       renderScope(config);
+      renderRoutes(config);
+      renderFlags(config);
       run();
       renderSaved(config);
     });

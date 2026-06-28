@@ -1,10 +1,10 @@
 {
-  "schema_version": "controlled-authorization-review-gate-v1",
-  "release": "v3.1.9",
+  "schema_version": "controlled-authorization-review-gate-v2",
+  "release": "v3.3.9",
   "generated_at": "2026-06-28T00:00:00.000Z",
   "title": "Controlled Authorization Review Gate",
-  "summary": "Reviews an authorization draft packet for readiness while keeping authorization, execution, storage writes, canonical writes, public release, and production disabled.",
-  "previous_release": "v3.1.8 Controlled Execution Packet Authorization Draft",
+  "summary": "Re-enters the controlled authorization review chain with route decisions, founder-instruction handoff text, and visible authority-flag audit while keeping authorization, execution, storage writes, canonical writes, public release, and production disabled.",
+  "previous_release": "v3.3.8 Command Shell Font Rhythm Refinement",
   "source": {
     "authorization_draft_release": "v3.1.8",
     "authorization_draft_schema": "controlled-execution-packet-authorization-draft-v1",
@@ -43,6 +43,7 @@
     "Authorization review ready": [
       "review_actor",
       "reviewer_name",
+      "route_decision",
       "controlled_authorization_review_gate_id",
       "controlled_execution_packet_authorization_draft_id",
       "founder_authorization_decision_gate_id",
@@ -64,7 +65,9 @@
       "monitoring_condition",
       "stop_condition",
       "expiry_check",
-      "production_boundary"
+      "production_boundary",
+      "founder_instruction_handoff",
+      "authority_flag_audit"
     ],
     "Return to authorization draft": [
       "return_reason"
@@ -113,6 +116,46 @@
       "rule": "The review expires on draft, source, rights, reviewer, founder decision, hold, rollback, monitoring, packet, or code change."
     }
   ],
+  "decision_routes": [
+    {
+      "route": "Ready for founder instruction",
+      "state": "Authorization review ready",
+      "meaning": "The review may move to a founder authorization instruction question, but it grants nothing."
+    },
+    {
+      "route": "Return to draft",
+      "state": "Return to authorization draft",
+      "meaning": "The draft language is unclear, incomplete, mismatched, or too close to authorization."
+    },
+    {
+      "route": "Hold",
+      "state": "Review hold",
+      "meaning": "The packet needs evidence, source-owner review, rights check, or reviewer clarification."
+    },
+    {
+      "route": "Block",
+      "state": "Authorization still blocked",
+      "meaning": "The packet attempts to grant authority, execute, store, publish, or enter production."
+    }
+  ],
+  "authority_flags": {
+    "execution_packet_authorized": false,
+    "execution_authorized": false,
+    "execution_allowed": false,
+    "founder_instruction_granted": false,
+    "source_promotion_allowed": false,
+    "promotion_execution_allowed": false,
+    "implementation_authorized": false,
+    "implementation_execution_allowed": false,
+    "controlled_storage_entry_allowed": false,
+    "storage_write_enabled": false,
+    "canonical_write_allowed": false,
+    "source_write_executed": false,
+    "actual_storage_write_executed": false,
+    "production_ready": false,
+    "production_launch_allowed": false,
+    "public_release_allowed": false
+  },
   "sample_authorization_draft": {
     "schema_version": "controlled-execution-packet-authorization-draft-v1",
     "release": "v3.1.8",
@@ -170,6 +213,7 @@
   },
   "sample_review": {
     "review_state": "Authorization review ready",
+    "route_decision": "Ready for founder instruction",
     "review_actor": "Controlled authorization reviewer",
     "reviewer_name": "Reviewer sample",
     "controlled_authorization_review_gate_id": "controlled-authorization-review-gate-sample-steady-action-bg-2-48",
@@ -196,6 +240,8 @@
     "stop_condition": "Stop if draft id mismatches, source ids mismatch, rights change, reviewer evidence is missing, source-owner scope is missing, founder decision expires, authorization hold expires, review gate expires, rollback is missing, monitoring is missing, code changes, packet text mutates, or any authorization, execution, storage, canonical, public release, or production flag is true.",
     "expiry_check": "Authorization review expires at the next material authorization draft, source, rights, reviewer, founder decision, authorization hold, review gate, rollback, monitoring, packet draft, or code change and must be rechecked; not approval.",
     "production_boundary": "Production remains unavailable; production_ready remains false, production_launch_allowed remains false, public_release_allowed remains false, and no production migration, account, secret, durable storage, public release, or launch path is opened.",
+    "founder_instruction_handoff": "Question for later founder authorization instruction gate: should this exact reviewed draft be considered for a founder instruction step? This is a question only; it is not authorization, execution is not allowed, and no system may run from it.",
+    "authority_flag_audit": "execution_packet_authorized=false; execution_authorized=false; execution_allowed=false; founder_instruction_granted=false; source_promotion_allowed=false; promotion_execution_allowed=false; implementation_authorized=false; implementation_execution_allowed=false; controlled_storage_entry_allowed=false; storage_write_enabled=false; canonical_write_allowed=false; source_write_executed=false; actual_storage_write_executed=false; production_ready=false; production_launch_allowed=false; public_release_allowed=false.",
     "next_gate": "Founder authorization instruction gate",
     "review_question": "",
     "return_reason": "",
