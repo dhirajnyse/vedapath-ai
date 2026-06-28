@@ -147,7 +147,7 @@
       blocked.push("authority flag audit must preserve false execution, storage, canonical write, public release, and production flags");
     }
     if (readyCandidate && !hasText(decision.decision_scope, [["founder decision"], ["v3.4.2 permission review"], ["reviewed permission candidate"], ["founder question"], ["permission question"], ["controlled permission execution hold"], ["not permission grant"], ["not authorization"], ["not execution"], ["cannot", "promote"], ["store"], ["canonical"], ["migrate"], ["account"], ["secret"], ["public release"], ["production"]])) {
-      blocked.push("decision scope must be founder-decision only, preserve the v3.4.3 decision questions, and explicitly block permission grant, authorization, execution, promotion, storage, canonical writes, migration, accounts, secrets, public release, and production");
+      blocked.push("decision scope must be founder-decision only, preserve the v3.4.2 review questions, and explicitly block permission grant, authorization, execution, promotion, storage, canonical writes, migration, accounts, secrets, public release, and production");
     }
     if (readyCandidate && hasUnsafeAuthority(decision.founder_decision_language)) {
       blocked.push("founder decision language must not grant permission, approve authorization, or open execution");
@@ -156,7 +156,7 @@
       blocked.push("founder decision language must move only the reviewed question to a controlled hold and state permission grant is absent, authorization is not granted, execution is not allowed, and no system may run");
     }
     if (readyCandidate && !hasText(decision.decision_rationale, [["v3.4.2 permission review is ready"], ["source-locked"], ["founder question"], ["permission question"], ["founder decision signal"], ["controlled hold"], ["does not open"], ["operational authority"]])) {
-      blocked.push("decision rationale must keep the v3.4.3 decision source-locked, preserve questions, and separate founder decision from authority");
+      blocked.push("decision rationale must keep the v3.4.2 review source-locked, preserve questions, and separate founder decision from authority");
     }
     if (readyCandidate && !hasText(decision.decision_evidence_summary, [["permission review ready"], ["v3.4.2"], ["review route"], ["founder question"], ["permission question"], ["authority flag audit"], ["permission preflight"], ["founder instruction"], ["authorization review"], ["authorization draft"], ["founder decision"], ["source ids"], ["source family"], ["citation"], ["rights"], ["translation"], ["reviewer evidence"], ["source-owner"], ["rollback"], ["monitoring"], ["stop condition"], ["expiry"], ["production boundary"]])) {
       blocked.push("decision evidence summary must keep source, review route, questions, authority audit, and review evidence visible");

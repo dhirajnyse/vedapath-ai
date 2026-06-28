@@ -954,6 +954,14 @@ http://127.0.0.1:8088/
 ```
 
 <!-- VEDAPATH FOUNDER AUTHORIZATION DECISION GATE START -->
+## v3.4.4 Controlled Permission Execution Hold Re-entry
+
+Controlled Permission Execution Hold Re-entry holds the v3.4.3 founder decision packet while preserving review route, founder question, permission question, and false authority audit. It can prepare permission execution authorization preflight, but grants no permission, authorization, execution, storage write, canonical write, public release, or production.
+
+- [Controlled Permission Execution Hold](controlledpermissionexecutionhold.html)
+- [Controlled Permission Execution Hold Notes](docs/CONTROLLED_PERMISSION_EXECUTION_HOLD.md)
+- [Controlled Permission Execution Hold Data](data/vedapath-controlled-permission-execution-hold.json)
+
 ## v3.4.3 Founder Permission Decision Gate Re-entry
 
 Founder Permission Decision Gate Re-entry turns the v3.4.2 reviewed permission question into founder decision language while keeping permission, authorization, execution, storage writes, canonical writes, public release, and production false.

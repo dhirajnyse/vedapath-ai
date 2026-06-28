@@ -33,7 +33,7 @@
           <a class="link" href="conversationcompanionlab.html">Talk</a>
           <a class="link" href="patterncompanionlab.html">Pattern</a>
           <a class="link" href="daily.html">Daily</a>
-          <span class="version">v3.4.3 decision</span>
+          <span class="version">v3.4.4 hold</span>
         </nav>
       </header>
 
@@ -41,7 +41,7 @@
         <aside class="panel">
           <span class="eyebrow">Hold is not execution</span>
           <h2>Hold the decision. Run nothing.</h2>
-          <p class="muted">This room holds founder decision language for a later preflight. It cannot grant permission, authorize, execute, store, publish, or launch.</p>
+          <p class="muted">This room holds the v3.4.3 founder decision, question handoff, and authority audit for a later preflight. It cannot grant permission, authorize, execute, store, publish, or launch.</p>
           <div class="sprint-list">
             <div class="sprint-step active"><span class="step-index">1</span><div><strong>Decision</strong><p>Load founder signal.</p></div></div>
             <div class="sprint-step"><span class="step-index">2</span><div><strong>Hold</strong><p>Freeze boundary.</p></div></div>
@@ -60,7 +60,7 @@
             <div>
               <span class="eyebrow">Controlled permission execution hold</span>
               <h1>Hold the decision. Execute nothing.</h1>
-              <p class="muted">A ready hold here means the packet can move to permission execution authorization preflight. It still cannot grant permission, authorize execution, run code, promote sources, store data, update canonical records, use secrets, publish public release, or launch production.</p>
+              <p class="muted">A ready hold here means the v3.4.3 founder decision packet, reviewed founder question, permission question, review route, and false authority audit can move to permission execution authorization preflight. It still cannot grant permission, authorize execution, run code, promote sources, store data, update canonical records, use secrets, publish public release, or launch production.</p>
             </div>
             <div class="execution-hold-mark"><img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath execution hold mark"></div>
           </div>
@@ -69,6 +69,10 @@
             <div class="execution-hold-form">
               <h2>Controlled Execution Hold</h2>
               <label>Founder decision packet<textarea id="executionHoldDecisionPacket"></textarea></label>
+              <label>Review route<input id="executionHoldReviewRoute" type="text"></label>
+              <label>Founder question<textarea id="executionHoldFounderQuestion"></textarea></label>
+              <label>Permission question<textarea id="executionHoldPermissionQuestion"></textarea></label>
+              <label>Authority flag audit<textarea id="executionHoldAuthorityAudit"></textarea></label>
               <label>Hold state<select id="executionHoldState"></select></label>
               <label>Hold actor<input id="executionHoldActor" type="text" placeholder="Controlled execution hold reviewer"></label>
               <label>Holder name<input id="executionHoldName" type="text" placeholder="Holder sample"></label>
@@ -109,6 +113,14 @@
             <div>
               <section class="execution-hold-result" id="executionHoldResultCard" data-state="Blocked"></section>
               <section style="margin-top: 10px;">
+                <h2>Question Handoff</h2>
+                <div class="execution-hold-handoff" id="executionHoldQuestionHandoff"></div>
+              </section>
+              <section style="margin-top: 10px;">
+                <h2>Authority Locks</h2>
+                <div class="execution-hold-flags" id="executionHoldAuthorityFlags"></div>
+              </section>
+              <section style="margin-top: 10px;">
                 <h2>Hold Scope</h2>
                 <div class="execution-hold-list" id="executionHoldScope"></div>
               </section>
@@ -141,7 +153,7 @@
           <p class="muted">The hold can prepare preflight while every operational path stays locked.</p>
           <div class="progress" aria-label="Execution hold progress 100 percent"><div class="bar" style="--score:100%"></div></div>
           <div class="metric-grid">
-            <div class="metric"><span>Current</span><strong>v3.2.4</strong></div>
+            <div class="metric"><span>Current</span><strong>v3.4.4</strong></div>
             <div class="metric"><span>States</span><strong>9</strong></div>
             <div class="metric"><span>Execution</span><strong>False</strong></div>
             <div class="metric"><span>Next</span><strong>Preflight</strong></div>

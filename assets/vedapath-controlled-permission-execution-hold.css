@@ -129,6 +129,46 @@ body.execution-hold-page main.workspace > aside.panel.tight {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+/* VEDAPATH CONTROLLED HOLD REENTRY START */
+.execution-hold-handoff,
+.execution-hold-flags {
+  display: grid;
+  gap: 8px;
+}
+
+.execution-hold-question,
+.execution-hold-flag {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: linear-gradient(180deg, #fffdf8 0%, #fff8ef 100%);
+  padding: 10px;
+}
+
+.execution-hold-question strong,
+.execution-hold-flag strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.execution-hold-question span,
+.execution-hold-flag span {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.execution-hold-flag.locked {
+  border-color: #b7d5ca;
+  background: #f5fffb;
+}
+
+.execution-hold-flag.open {
+  border-color: #efb39a;
+  background: #fff1ea;
+}
+/* VEDAPATH CONTROLLED HOLD REENTRY END */
+
 .execution-hold-card.ready,
 .execution-hold-result[data-state="Hold ready for preflight"] {
   border-color: #b7d5ca;
