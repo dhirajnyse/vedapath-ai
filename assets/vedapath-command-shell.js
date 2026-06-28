@@ -1,5 +1,5 @@
 (function () {
-  const releaseBadge = "v3.3.7 type cohesion";
+  const releaseBadge = "v3.3.8 font rhythm";
   const prefKey = "vedapathCommandShellPrefs";
   const groups = [
     { title: "Start", labels: ["Home", "Build", "Brand", "Blueprint"] },

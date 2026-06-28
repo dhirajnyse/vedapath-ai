@@ -307,6 +307,14 @@ The v0.7.4 release turns the VedaPath AI homepage into a trusted MVP prototype w
 - Pattern Companion Control Room: Pattern Companion Control Room completes the private local learning layer for VedaPath AI.
 <!-- VEDAPATH PATTERN COMPANION SPRINT NOTES END -->
 <!-- VEDAPATH FOUNDER AUTHORIZATION DECISION GATE NOTES START -->
+## v3.3.8 Command Shell Font Rhythm Refinement
+
+- Adds a font-rhythm refinement layer to the shared command shell.
+- Reduces title and metric intensity while preserving confident hierarchy.
+- Gives answer titles a dedicated middle tier instead of card-heading scale.
+- Harmonizes rail labels, controls, badges, body copy, and supporting cards.
+- Keeps fixed font sizes and zero letter spacing across the product shell.
+
 ## v3.3.7 Command Shell Typography Cohesion
 
 - Adds a final typography-cohesion layer to the shared command shell.

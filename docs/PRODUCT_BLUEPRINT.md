@@ -4374,6 +4374,18 @@ It should:
 Pattern Companion Control Room should never claim diagnosis, therapy, legal advice, medical advice, surveillance, scoring, or spiritual authority.
 <!-- VEDAPATH PATTERN COMPANION SPRINT BLUEPRINT END -->
 <!-- VEDAPATH FOUNDER AUTHORIZATION DECISION GATE BLUEPRINT START -->
+### 321. Command Shell Font Rhythm Refinement
+
+Command Shell Font Rhythm Refinement keeps the command center from feeling like stacked release typography.
+
+Design rules:
+
+- Answer titles need their own middle tier between room heroes and card headings.
+- Metrics should prove status without overpowering the page.
+- Side-rail labels and badges should support navigation, not become decoration.
+- Body, lead, card, form, and control copy should feel like one reading system.
+- Future builds should add function without widening the type scale again.
+
 ### 320. Command Shell Typography Cohesion
 
 Command Shell Typography Cohesion makes the command shell feel designed from one calm hand.

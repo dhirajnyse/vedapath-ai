@@ -1,0 +1,32 @@
+{
+  "schema_version": "vedapath-command-shell-font-rhythm-v1",
+  "release": "v3.3.8",
+  "title": "Command Shell Font Rhythm Refinement",
+  "purpose": "Make VedaPath feel more cohesive by reducing type spread, weight contrast, and repeated surface noise across the command shell.",
+  "type_scale": {
+    "shell_title": "22px",
+    "hero_title": "36px",
+    "room_title": "29px",
+    "important_answer_title": "21px",
+    "section_title": "18px",
+    "card_title": "15px",
+    "body": "14.5px",
+    "lead": "15.25px",
+    "control": "13.25px",
+    "metric": "22px",
+    "small_label": "10.25px"
+  },
+  "rules": [
+    "Keep release-room heroes below the old oversized display tier.",
+    "Give answer titles their own middle tier instead of card-title sizing.",
+    "Reduce metric and badge weight so they support the reading path.",
+    "Keep rail labels compact and repeatable across all rooms.",
+    "Use fixed font sizes rather than viewport-width scaling.",
+    "Keep letter spacing at zero for calmer reading."
+  ],
+  "acceptance_notes": [
+    "Home and room pages should feel related without identical scale.",
+    "Cards should read as supporting surfaces, not competing headlines.",
+    "Answer, source, practice, and review pages should share one typographic rhythm."
+  ]
+}

@@ -954,6 +954,13 @@ http://127.0.0.1:8088/
 ```
 
 <!-- VEDAPATH FOUNDER AUTHORIZATION DECISION GATE START -->
+## v3.3.8 Command Shell Font Rhythm Refinement
+
+Command Shell Font Rhythm Refinement makes the shared VedaPath shell feel more cohesive by reducing type spread, calming font weights, giving answer titles a clear middle tier, and tightening metrics, rail labels, controls, cards, and body copy into one reading rhythm.
+
+- [Command Shell Font Rhythm Refinement Notes](docs/COMMAND_SHELL_FONT_RHYTHM_REFINEMENT.md)
+- [Command Shell Font Rhythm Refinement Config](data/vedapath-command-shell-font-rhythm.json)
+
 ## v3.3.7 Command Shell Typography Cohesion
 
 Command Shell Typography Cohesion makes the shared VedaPath shell feel more cohesive by tightening hero, room, section, card, rail, metric, form, and control type scales into one calm system.
