@@ -43,7 +43,8 @@ body.permission-preflight-page main.workspace > aside.panel.tight {
 .permission-preflight-grid,
 .permission-preflight-list,
 .permission-preflight-actions,
-.permission-preflight-rules {
+.permission-preflight-rules,
+.permission-preflight-flags {
   display: grid;
   gap: 10px;
 }
@@ -78,7 +79,8 @@ body.permission-preflight-page main.workspace > aside.panel.tight {
 .permission-preflight-card,
 .permission-preflight-result,
 .permission-preflight-output,
-.permission-preflight-rule {
+.permission-preflight-rule,
+.permission-preflight-flag {
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--surface);
@@ -87,7 +89,8 @@ body.permission-preflight-page main.workspace > aside.panel.tight {
 .permission-preflight-form,
 .permission-preflight-card,
 .permission-preflight-result,
-.permission-preflight-rule {
+.permission-preflight-rule,
+.permission-preflight-flag {
   padding: 12px;
 }
 
@@ -125,9 +128,41 @@ body.permission-preflight-page main.workspace > aside.panel.tight {
 }
 
 .permission-preflight-grid,
-.permission-preflight-rules {
+.permission-preflight-rules,
+.permission-preflight-flags {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
+
+/* VEDAPATH PERMISSION PREFLIGHT REENTRY START */
+.permission-preflight-flags {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.permission-preflight-flag {
+  min-height: 72px;
+  border-color: #dce9e2;
+  background: linear-gradient(180deg, #fffdf8 0%, #f7fffb 100%);
+}
+
+.permission-preflight-flag span {
+  display: block;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+.permission-preflight-flag strong {
+  display: block;
+  margin-top: 8px;
+  color: var(--peacock);
+  font-size: 15px;
+}
+
+.permission-preflight-result .permission-preflight-card {
+  background: #fffdf8;
+}
+/* VEDAPATH PERMISSION PREFLIGHT REENTRY END */
 
 .permission-preflight-card.ready,
 .permission-preflight-result[data-state="Preflight eligible"] {
@@ -163,7 +198,8 @@ body.permission-preflight-page main.workspace > aside.panel.tight {
   body.permission-preflight-page main.workspace,
   .permission-preflight-layout,
   .permission-preflight-grid,
-  .permission-preflight-rules {
+  .permission-preflight-rules,
+  .permission-preflight-flags {
     grid-template-columns: 1fr;
   }
 

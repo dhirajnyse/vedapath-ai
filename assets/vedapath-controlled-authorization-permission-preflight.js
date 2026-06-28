@@ -7,6 +7,8 @@
   const output = pageDocument ? pageDocument.getElementById("permissionPreflightOutput") : null;
   const checksRoot = pageDocument ? pageDocument.getElementById("permissionPreflightChecks") : null;
   const scopeRoot = pageDocument ? pageDocument.getElementById("permissionPreflightScope") : null;
+  const handoffRoot = pageDocument ? pageDocument.getElementById("permissionPreflightQuestionHandoff") : null;
+  const flagsRoot = pageDocument ? pageDocument.getElementById("permissionPreflightAuthorityFlags") : null;
 
   const safe = (value) => String(value ?? "").replace(/[&<>"']/g, (char) => ({
     "&": "&amp;",
@@ -23,13 +25,16 @@
 
   function founderInstructionReady(packet) {
     return Boolean(packet) &&
-      packet.schema_version === "founder-authorization-instruction-gate-v1" &&
+      packet.schema_version === "founder-authorization-instruction-gate-v2" &&
       packet.instruction_status === "Founder instruction ready" &&
+      packet.review_route === "Ready for founder instruction" &&
       packet.authorization_review_ready === true &&
       packet.controlled_authorization_review_gate_ready === true &&
       packet.founder_authorization_instruction_ready === true &&
       packet.founder_instruction_signal_recorded === true &&
       packet.controlled_founder_authorization_instruction_gate_ready === true &&
+      hasText(packet.founder_question, [["founder question"], ["exact reviewed"], ["source-locked"], ["controlled authorization permission preflight"], ["authorization"], ["execution"], ["storage"], ["public release"], ["production"], ["false"]]) &&
+      keepsAuthorityFlagAudit(packet.authority_flag_audit) &&
       packet.permission_granted !== true &&
       packet.authorization_permission_granted !== true &&
       packet.permission_review_approved !== true &&
@@ -88,6 +93,29 @@
     return required && !hasUnsafeAuthority(text);
   }
 
+  function keepsAuthorityFlagAudit(value) {
+    const text = String(value || "");
+    const required = [
+      /execution_packet_authorized=false/i,
+      /execution_authorized=false/i,
+      /execution_allowed=false/i,
+      /founder_instruction_granted=false/i,
+      /source_promotion_allowed=false/i,
+      /promotion_execution_allowed=false/i,
+      /implementation_authorized=false/i,
+      /implementation_execution_allowed=false/i,
+      /controlled_storage_entry_allowed=false/i,
+      /storage_write_enabled=false/i,
+      /canonical_write_allowed=false/i,
+      /source_write_executed=false/i,
+      /actual_storage_write_executed=false/i,
+      /production_ready=false/i,
+      /production_launch_allowed=false/i,
+      /public_release_allowed=false/i
+    ].every((pattern) => pattern.test(text));
+    return required && !hasUnsafeAuthority(text);
+  }
+
   function keepsProductionBoundary(value) {
     return hasText(value, [["production_ready remains false"], ["production_launch_allowed remains false"], ["public_release_allowed remains false"], ["no", "production", "migration"], ["account"], ["secret"], ["durable", "storage"], ["public release"], ["launch"], ["opened"]]);
   }
@@ -112,25 +140,34 @@
     ["founder_authorization_instruction_gate_id", "controlled_authorization_review_gate_id", "controlled_execution_packet_authorization_draft_id", "founder_authorization_decision_gate_id", "source_answer_id", "source_record_id", "source_family"].forEach((key) => {
       if (!idMatches(preflight, founderInstructionPacket, key)) blocked.push(key + " must match the founder instruction packet");
     });
+    if (preflight.review_route && preflight.review_route !== founderInstructionPacket.review_route) {
+      blocked.push("review route must carry the founder instruction packet route");
+    }
+    if (preflight.founder_question && preflight.founder_question !== founderInstructionPacket.founder_question) {
+      blocked.push("founder question must match the founder instruction packet");
+    }
 
     const eligibleCandidate = state === "Preflight eligible";
-    if (eligibleCandidate && !hasText(preflight.preflight_scope, [["evaluate"], ["founder instruction signal"], ["controlled permission review"], ["not permission"], ["not authorization"], ["cannot", "execute"], ["promote"], ["store"], ["canonical"], ["migrate"], ["account"], ["secret"], ["public release"], ["production"]])) {
+    if (eligibleCandidate && !hasText(preflight.preflight_scope, [["evaluate"], ["v3.4.0"], ["founder question"], ["founder instruction signal"], ["controlled authorization permission review"], ["not permission"], ["not authorization"], ["cannot", "execute"], ["promote"], ["store"], ["canonical"], ["migrate"], ["account"], ["secret"], ["public release"], ["production"]])) {
       blocked.push("preflight scope must be permission-review only and explicitly block permission, authorization, execution, promotion, storage, canonical writes, migration, accounts, secrets, public release, and production");
     }
     if (eligibleCandidate && hasUnsafeAuthority(preflight.permission_question)) {
       blocked.push("permission question must not grant permission, approve authorization, or open execution");
     }
-    if (eligibleCandidate && !hasText(preflight.permission_question, [["controlled permission review"], ["exact source packet"], ["without granting permission"], ["authorization"], ["execution"], ["storage writes"], ["canonical writes"], ["public release"], ["production"]])) {
+    if (eligibleCandidate && !hasText(preflight.permission_question, [["controlled authorization permission review"], ["exact source packet"], ["founder question"], ["without granting permission"], ["authorization"], ["execution"], ["storage writes"], ["canonical writes"], ["public release"], ["production"]])) {
       blocked.push("permission question must ask for review language only and state that permission, authorization, execution, storage, canonical writes, public release, and production are not granted");
     }
-    if (eligibleCandidate && !hasText(preflight.eligibility_summary, [["founder instruction signal"], ["source ids"], ["locked"], ["review evidence"], ["rollback"], ["monitoring"], ["authority flag"], ["false"]])) {
+    if (eligibleCandidate && !hasText(preflight.eligibility_summary, [["v3.4.0"], ["founder question"], ["founder instruction signal"], ["source ids"], ["locked"], ["review evidence"], ["rollback"], ["monitoring"], ["authority flag"], ["false"]])) {
       blocked.push("eligibility summary must keep source ids, review evidence, rollback, monitoring, and false authority flags visible");
     }
-    if (eligibleCandidate && !hasText(preflight.evidence_lock, [["founder_authorization_instruction_gate_id"], ["controlled_authorization_review_gate_id"], ["controlled_execution_packet_authorization_draft_id"], ["founder_authorization_decision_gate_id"], ["source_answer_id"], ["source_record_id"], ["source family"]])) {
-      blocked.push("evidence lock must name instruction gate, review gate, authorization draft, founder decision, source answer, source record, and source family");
+    if (eligibleCandidate && !hasText(preflight.evidence_lock, [["founder_authorization_instruction_gate_id"], ["controlled_authorization_review_gate_id"], ["controlled_execution_packet_authorization_draft_id"], ["founder_authorization_decision_gate_id"], ["source_answer_id"], ["source_record_id"], ["source family"], ["review route"], ["founder question"]])) {
+      blocked.push("evidence lock must name instruction gate, review gate, authorization draft, founder decision, source answer, source record, source family, route, and founder question");
     }
     if (eligibleCandidate && !keepsNonPermissionBoundary(preflight.non_permission_clause)) {
       blocked.push("non-permission clause must keep preflight readiness as non-permission and all grant, authority, write, public release, and production flags false");
+    }
+    if (eligibleCandidate && !keepsAuthorityFlagAudit(preflight.authority_flag_audit)) {
+      blocked.push("authority flag audit must carry every operational authority flag as false");
     }
     if (eligibleCandidate && !hasText(preflight.risk_acknowledgment, [["risk remains"], ["founder instruction mismatch"], ["review mismatch"], ["draft mismatch"], ["source mismatch"], ["rights change"], ["reviewer change"], ["permission wording ambiguity"], ["rollback missing"], ["monitoring missing"], ["packet mutation"], ["code change"], ["permission"], ["authorization"], ["execution"], ["storage"], ["canonical"], ["public release"], ["production"], ["true"], ["block"]])) {
       blocked.push("risk acknowledgment must block on mismatches, rights changes, ambiguity, missing rollback/monitoring, packet/code changes, or true authority flags");
@@ -206,6 +243,8 @@
       source_answer_id: preflight.source_answer_id || founderInstructionPacket.source_answer_id || "",
       source_record_id: preflight.source_record_id || founderInstructionPacket.source_record_id || "",
       source_family: preflight.source_family || founderInstructionPacket.source_family || "",
+      review_route: preflight.review_route || founderInstructionPacket.review_route || "",
+      founder_question: preflight.founder_question || founderInstructionPacket.founder_question || "",
       preflight_actor: preflight.preflight_actor || "",
       reviewer_name: preflight.reviewer_name || "",
       preflight_scope: preflight.preflight_scope || "",
@@ -213,6 +252,7 @@
       eligibility_summary: preflight.eligibility_summary || "",
       evidence_lock: preflight.evidence_lock || "",
       non_permission_clause: preflight.non_permission_clause || "",
+      authority_flag_audit: preflight.authority_flag_audit || founderInstructionPacket.authority_flag_audit || "",
       risk_acknowledgment: preflight.risk_acknowledgment || "",
       rollback_condition: preflight.rollback_condition || "",
       monitoring_condition: preflight.monitoring_condition || "",
@@ -242,6 +282,7 @@
       blocked: preflights.filter((preflight) => String(preflight.preflight_status || "").startsWith("Blocked")).length,
       holds: byStatus["Preflight hold"] || 0,
       expired: byStatus["Preflight expired"] || 0,
+      ready_questions: preflights.filter((preflight) => preflight.founder_question && preflight.controlled_authorization_permission_preflight_ready).length,
       permission_granted: preflights.filter((preflight) => preflight.permission_granted || preflight.authorization_permission_granted || preflight.permission_review_approved).length,
       execution_enabled: preflights.filter((preflight) => preflight.execution_allowed || preflight.execution_authorized || preflight.execution_packet_authorized || preflight.storage_write_enabled || preflight.source_write_executed || preflight.production_ready || preflight.public_release_allowed).length
     };
@@ -263,6 +304,8 @@
       '<p class="muted">Preflight ready: ' + safe(preflight.controlled_authorization_permission_preflight_ready) + ' | Permission: ' + safe(preflight.permission_granted) + ' | Execution: ' + safe(preflight.execution_allowed) + '</p>' +
       '<div class="permission-preflight-grid">' +
         card("Instruction gate", preflight.founder_authorization_instruction_gate_id, preflight.controlled_authorization_permission_preflight_ready ? "ready" : "") +
+        card("Founder question", preflight.founder_question ? "carried" : "missing", preflight.founder_question ? "ready" : "blocked") +
+        card("Review route", preflight.review_route) +
         card("Source answer", preflight.source_answer_id) +
         card("Next gate", preflight.next_gate_required) +
         card("Production", preflight.production_ready ? "open" : "false", preflight.production_ready ? "blocked" : "ready") +
@@ -283,6 +326,23 @@
       card("Source answer", config.source.source_answer_id) +
       card("Instruction gate", config.source.founder_authorization_instruction_gate_id) +
       card("Next gate", config.boundary.next_gate_required);
+  }
+
+  function renderQuestionHandoff(config) {
+    if (!handoffRoot) return;
+    const sample = config.sample_preflight || {};
+    handoffRoot.innerHTML = card("Route", sample.review_route || "Missing", sample.review_route ? "ready" : "blocked") +
+      card("Founder question", sample.founder_question ? "carried into preflight" : "missing", sample.founder_question ? "ready" : "blocked") +
+      card("Preflight asks", "review language only") +
+      card("Permission grant", "false", "ready");
+  }
+
+  function renderAuthorityFlags(config) {
+    if (!flagsRoot) return;
+    const flags = Object.entries(config.boundary || {}).filter(([key]) => key !== "next_gate_required");
+    flagsRoot.innerHTML = flags.map(([key, value]) =>
+      '<article class="permission-preflight-flag"><span>' + safe(key) + '</span><strong>' + safe(value) + '</strong></article>'
+    ).join("");
   }
 
   function readSaved() {
@@ -316,7 +376,8 @@
     permissionPreflightSnapshot,
     founderInstructionReady,
     hasUnsafeAuthority,
-    keepsNonPermissionBoundary
+    keepsNonPermissionBoundary,
+    keepsAuthorityFlagAudit
   };
 
   if (!root || !pageDocument) return;
@@ -337,11 +398,14 @@
         sourceAnswer: pageDocument.getElementById("permissionPreflightSourceAnswer"),
         sourceRecord: pageDocument.getElementById("permissionPreflightSourceRecord"),
         sourceFamily: pageDocument.getElementById("permissionPreflightSourceFamily"),
+        reviewRoute: pageDocument.getElementById("permissionPreflightReviewRoute"),
+        founderQuestion: pageDocument.getElementById("permissionPreflightFounderQuestion"),
         scope: pageDocument.getElementById("permissionPreflightScopeText"),
         question: pageDocument.getElementById("permissionPreflightQuestion"),
         summary: pageDocument.getElementById("permissionPreflightSummary"),
         evidence: pageDocument.getElementById("permissionPreflightEvidence"),
         boundary: pageDocument.getElementById("permissionPreflightBoundary"),
+        flagAudit: pageDocument.getElementById("permissionPreflightFlagAudit"),
         risk: pageDocument.getElementById("permissionPreflightRisk"),
         rollback: pageDocument.getElementById("permissionPreflightRollback"),
         monitoring: pageDocument.getElementById("permissionPreflightMonitoring"),
@@ -369,11 +433,14 @@
         fields.sourceAnswer.value = sample.source_answer_id;
         fields.sourceRecord.value = sample.source_record_id;
         fields.sourceFamily.value = sample.source_family;
+        fields.reviewRoute.value = sample.review_route || "";
+        fields.founderQuestion.value = sample.founder_question || "";
         fields.scope.value = sample.preflight_scope;
         fields.question.value = sample.permission_question;
         fields.summary.value = sample.eligibility_summary;
         fields.evidence.value = sample.evidence_lock;
         fields.boundary.value = sample.non_permission_clause;
+        fields.flagAudit.value = sample.authority_flag_audit || config.sample_founder_instruction_signal.authority_flag_audit || "";
         fields.risk.value = sample.risk_acknowledgment;
         fields.rollback.value = sample.rollback_condition;
         fields.monitoring.value = sample.monitoring_condition;
@@ -399,11 +466,14 @@
           source_answer_id: fields.sourceAnswer.value,
           source_record_id: fields.sourceRecord.value,
           source_family: fields.sourceFamily.value,
+          review_route: fields.reviewRoute.value,
+          founder_question: fields.founderQuestion.value,
           preflight_scope: fields.scope.value,
           permission_question: fields.question.value,
           eligibility_summary: fields.summary.value,
           evidence_lock: fields.evidence.value,
           non_permission_clause: fields.boundary.value,
+          authority_flag_audit: fields.flagAudit.value,
           risk_acknowledgment: fields.risk.value,
           rollback_condition: fields.rollback.value,
           monitoring_condition: fields.monitoring.value,
@@ -445,6 +515,8 @@
 
       renderChecks(config);
       renderScope(config);
+      renderQuestionHandoff(config);
+      renderAuthorityFlags(config);
       setFields();
       renderSaved(config);
       run();

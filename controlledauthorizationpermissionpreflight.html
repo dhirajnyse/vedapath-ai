@@ -33,15 +33,15 @@
           <a class="link" href="conversationcompanionlab.html">Talk</a>
           <a class="link" href="patterncompanionlab.html">Pattern</a>
           <a class="link" href="daily.html">Daily</a>
-          <span class="version">v3.4.0 founder gate</span>
+          <span class="version">v3.4.1 preflight</span>
         </nav>
       </header>
 
       <main class="workspace" aria-label="VedaPath Controlled Authorization Permission Preflight workspace">
         <aside class="panel">
           <span class="eyebrow">Preflight is not permission</span>
-          <h2>Check eligibility. Grant nothing.</h2>
-          <p class="muted">This room checks whether a founder instruction signal is complete enough for permission review. It cannot grant permission, authorize, execute, store, publish, or launch.</p>
+          <h2>Carry the founder question. Grant nothing.</h2>
+          <p class="muted">This room checks whether the v3.4.0 founder question is complete enough for permission review language. It cannot grant permission, authorize, execute, store, publish, or launch.</p>
           <div class="sprint-list">
             <div class="sprint-step active"><span class="step-index">1</span><div><strong>Signal</strong><p>Load instruction.</p></div></div>
             <div class="sprint-step"><span class="step-index">2</span><div><strong>Evidence</strong><p>Lock source.</p></div></div>
@@ -58,9 +58,9 @@
         <section class="panel permission-preflight" id="controlledAuthorizationPermissionPreflight">
           <div class="permission-preflight-head">
             <div>
-              <span class="eyebrow">Permission preflight</span>
-              <h1>Check permission readiness. Grant nothing.</h1>
-              <p class="muted">A ready preflight here means the packet can move to controlled permission review. It still cannot grant permission, authorize execution, run code, promote sources, store data, update canonical records, use secrets, publish public release, or launch production.</p>
+              <span class="eyebrow">Permission candidate gate</span>
+              <h1>Review the question. Keep authority closed.</h1>
+              <p class="muted">A ready preflight here means the v3.4.0 founder question can move to controlled permission review. It still cannot grant permission, authorize execution, run code, promote sources, store data, update canonical records, use secrets, publish public release, or launch production.</p>
             </div>
             <div class="permission-preflight-mark"><img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath permission preflight mark"></div>
           </div>
@@ -80,11 +80,14 @@
               <label>Source answer id<input id="permissionPreflightSourceAnswer" type="text"></label>
               <label>Source record id<input id="permissionPreflightSourceRecord" type="text"></label>
               <label>Source family<input id="permissionPreflightSourceFamily" type="text"></label>
+              <label>Review route<input id="permissionPreflightReviewRoute" type="text"></label>
+              <label>Founder question<textarea id="permissionPreflightFounderQuestion"></textarea></label>
               <label>Preflight scope<textarea id="permissionPreflightScopeText"></textarea></label>
               <label>Permission question<textarea id="permissionPreflightQuestion"></textarea></label>
               <label>Eligibility summary<textarea id="permissionPreflightSummary"></textarea></label>
               <label>Evidence lock<textarea id="permissionPreflightEvidence"></textarea></label>
               <label>Non-permission clause<textarea id="permissionPreflightBoundary"></textarea></label>
+              <label>Authority flag audit<textarea id="permissionPreflightFlagAudit"></textarea></label>
               <label>Risk acknowledgment<textarea id="permissionPreflightRisk"></textarea></label>
               <label>Rollback condition<textarea id="permissionPreflightRollback"></textarea></label>
               <label>Monitoring condition<textarea id="permissionPreflightMonitoring"></textarea></label>
@@ -108,12 +111,21 @@
                 <h2>Preflight Scope</h2>
                 <div class="permission-preflight-list" id="permissionPreflightScope"></div>
               </section>
+              <section style="margin-top: 10px;">
+                <h2>Question Handoff</h2>
+                <div class="permission-preflight-rules" id="permissionPreflightQuestionHandoff"></div>
+              </section>
             </div>
           </section>
 
           <section>
             <h2>Preflight Checks</h2>
             <div class="permission-preflight-rules" id="permissionPreflightChecks"></div>
+          </section>
+
+          <section>
+            <h2>Authority Flags</h2>
+            <div class="permission-preflight-flags" id="permissionPreflightAuthorityFlags"></div>
           </section>
 
           <section class="permission-preflight-layout">
@@ -133,11 +145,11 @@
 
         <aside class="panel tight">
           <span class="badge green">Candidate is not permission</span>
-          <h2 style="margin-top: 14px;">Permission Candidate, Not Permission</h2>
-          <p class="muted">The preflight can prepare a permission review while every operational path stays locked.</p>
+          <h2 style="margin-top: 14px;">Founder Question Candidate, Not Permission</h2>
+          <p class="muted">The preflight can carry a founder question toward review language while every operational path stays locked.</p>
           <div class="progress" aria-label="Permission preflight progress 100 percent"><div class="bar" style="--score:100%"></div></div>
           <div class="metric-grid">
-            <div class="metric"><span>Current</span><strong>v3.2.1</strong></div>
+            <div class="metric"><span>Current</span><strong>v3.4.1</strong></div>
             <div class="metric"><span>States</span><strong>9</strong></div>
             <div class="metric"><span>Permission</span><strong>False</strong></div>
             <div class="metric"><span>Next</span><strong>Review</strong></div>
