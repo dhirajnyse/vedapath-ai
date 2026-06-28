@@ -954,6 +954,14 @@ http://127.0.0.1:8088/
 ```
 
 <!-- VEDAPATH FOUNDER AUTHORIZATION DECISION GATE START -->
+## v3.4.0 Founder Authorization Instruction Re-entry
+
+Founder Authorization Instruction Re-entry turns the v3.3.9 review-ready packet into one controlled founder question while keeping founder grant, authorization, execution, storage writes, canonical writes, public release, and production false.
+
+- [Founder Authorization Instruction Gate](founderauthorizationinstructiongate.html)
+- [Founder Authorization Instruction Gate Notes](docs/FOUNDER_AUTHORIZATION_INSTRUCTION_GATE.md)
+- [Founder Authorization Instruction Gate Data](data/vedapath-founder-authorization-instruction-gate.json)
+
 ## v3.3.9 Controlled Authorization Review Re-entry
 
 Controlled Authorization Review Re-entry upgrades the authorization review gate with route decisions, founder-instruction handoff language, and an authority-flag audit while keeping authorization, execution, storage writes, canonical writes, public release, and production false.

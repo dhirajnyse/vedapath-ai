@@ -4374,6 +4374,18 @@ It should:
 Pattern Companion Control Room should never claim diagnosis, therapy, legal advice, medical advice, surveillance, scoring, or spiritual authority.
 <!-- VEDAPATH PATTERN COMPANION SPRINT BLUEPRINT END -->
 <!-- VEDAPATH FOUNDER AUTHORIZATION DECISION GATE BLUEPRINT START -->
+### 323. Founder Authorization Instruction Re-entry
+
+Founder Authorization Instruction Re-entry turns review readiness into one founder question without turning the question into authority.
+
+Product rules:
+
+- The gate must accept only the v3.3.9 Ready for founder instruction route.
+- The founder question must be explicit, narrow, and source-locked.
+- Founder instruction text may prepare a permission preflight only.
+- Founder grant, authorization, execution, storage, canonical writes, public release, and production must remain false.
+- The question contract and false authority flags must be visible before any next gate.
+
 ### 322. Controlled Authorization Review Re-entry
 
 Controlled Authorization Review Re-entry makes the existing authorization review gate useful again inside the calmer v3.3 command shell.

@@ -7,6 +7,8 @@
   const instructionOutput = pageDocument ? pageDocument.getElementById("authInstructionOutput") : null;
   const checksRoot = pageDocument ? pageDocument.getElementById("authInstructionChecks") : null;
   const scopeRoot = pageDocument ? pageDocument.getElementById("authInstructionScope") : null;
+  const questionRoot = pageDocument ? pageDocument.getElementById("authInstructionQuestionContract") : null;
+  const flagsRoot = pageDocument ? pageDocument.getElementById("authInstructionFlags") : null;
 
   const safe = (value) => String(value ?? "").replace(/[&<>"']/g, (char) => ({
     "&": "&amp;",
@@ -23,8 +25,9 @@
 
   function authorizationReviewReady(packet) {
     return Boolean(packet) &&
-      packet.schema_version === "controlled-authorization-review-gate-v1" &&
+      packet.schema_version === "controlled-authorization-review-gate-v2" &&
       packet.review_status === "Authorization review ready" &&
+      packet.route_decision === "Ready for founder instruction" &&
       packet.authorization_review_ready === true &&
       packet.controlled_authorization_review_gate_ready === true &&
       packet.execution_packet_authorized === false &&
@@ -43,6 +46,7 @@
       packet.production_ready === false &&
       packet.production_launch_allowed === false &&
       packet.public_release_allowed === false &&
+      keepsAuthorityFlagAudit(packet.authority_flag_audit) &&
       packet.next_gate_required === "Founder authorization instruction gate";
   }
 
@@ -78,6 +82,29 @@
     return required && !hasUnsafeAuthority(text);
   }
 
+  function keepsAuthorityFlagAudit(value) {
+    const text = String(value || "");
+    const required = [
+      "execution_packet_authorized=false",
+      "execution_authorized=false",
+      "execution_allowed=false",
+      "founder_instruction_granted=false",
+      "source_promotion_allowed=false",
+      "promotion_execution_allowed=false",
+      "implementation_authorized=false",
+      "implementation_execution_allowed=false",
+      "controlled_storage_entry_allowed=false",
+      "storage_write_enabled=false",
+      "canonical_write_allowed=false",
+      "source_write_executed=false",
+      "actual_storage_write_executed=false",
+      "production_ready=false",
+      "production_launch_allowed=false",
+      "public_release_allowed=false"
+    ].every((term) => text.includes(term));
+    return required && !hasUnsafeAuthority(text);
+  }
+
   function keepsProductionBoundary(value) {
     return hasText(value, [["production_ready remains false"], ["production_launch_allowed remains false"], ["public_release_allowed remains false"], ["no", "production", "migration"], ["account"], ["secret"], ["durable", "storage"], ["public release"], ["launch"], ["opened"]]);
   }
@@ -103,8 +130,17 @@
     });
 
     const readyCandidate = state === "Founder instruction ready";
+    if (readyCandidate && instruction.review_route !== authorizationReviewPacket.route_decision) {
+      blocked.push("review route must match the authorization review packet route");
+    }
     if (readyCandidate && !hasText(instruction.instruction_scope, [["record founder instruction intent"], ["exact reviewed authorization packet"], ["not authorization"], ["cannot", "execute"], ["promote"], ["store"], ["canonical"], ["migrate"], ["account"], ["secret"], ["public release"], ["production"]])) {
       blocked.push("instruction scope must be exact-review only and explicitly block authorization, execution, promotion, storage, canonical writes, migration, accounts, secrets, public release, and production");
+    }
+    if (readyCandidate && hasUnsafeAuthority(instruction.founder_question)) {
+      blocked.push("founder question must not grant authorization, approve execution, or open production");
+    }
+    if (readyCandidate && !hasText(instruction.founder_question, [["founder question"], ["exact reviewed"], ["source-locked"], ["controlled authorization permission preflight"], ["authorization"], ["execution"], ["storage"], ["public release"], ["production"], ["false"]])) {
+      blocked.push("founder question must ask one controlled preflight question and keep authorization, execution, storage, public release, and production false");
     }
     if (readyCandidate && hasUnsafeAuthority(instruction.founder_instruction_text)) {
       blocked.push("founder instruction text must not grant authorization, approve execution, or open production");
@@ -123,6 +159,9 @@
     }
     if (readyCandidate && !keepsInstructionBoundary(instruction.non_authority_clause)) {
       blocked.push("non-authority clause must keep instruction readiness as non-authority and all grant, authority, write, public release, and production flags false");
+    }
+    if (readyCandidate && !keepsAuthorityFlagAudit(instruction.authority_flag_audit)) {
+      blocked.push("authority flag audit must list every execution, storage, canonical, public release, and production flag as false");
     }
     if (readyCandidate && !hasText(instruction.risk_acknowledgment, [["risk remains"], ["review mismatch"], ["draft mismatch"], ["source mismatch"], ["rights change"], ["reviewer change"], ["founder instruction ambiguity"], ["rollback missing"], ["monitoring missing"], ["packet mutation"], ["code change"], ["founder grant"], ["authorization"], ["execution"], ["storage"], ["canonical"], ["public release"], ["production"], ["true"], ["block"]])) {
       blocked.push("risk acknowledgment must block on review, draft, source, rights, reviewer, ambiguity, rollback, monitoring, packet, code, or true authority flags");
@@ -196,12 +235,15 @@
       source_family: instruction.source_family || authorizationReviewPacket.source_family || "",
       instruction_actor: instruction.instruction_actor || "",
       founder_name: instruction.founder_name || "",
+      review_route: instruction.review_route || "",
       instruction_scope: instruction.instruction_scope || "",
+      founder_question: instruction.founder_question || "",
       founder_instruction_text: instruction.founder_instruction_text || "",
       instruction_rationale: instruction.instruction_rationale || "",
       review_evidence_summary: instruction.review_evidence_summary || "",
       source_lock: instruction.source_lock || "",
       non_authority_clause: instruction.non_authority_clause || "",
+      authority_flag_audit: instruction.authority_flag_audit || "",
       risk_acknowledgment: instruction.risk_acknowledgment || "",
       rollback_condition: instruction.rollback_condition || "",
       monitoring_condition: instruction.monitoring_condition || "",
@@ -228,6 +270,7 @@
       release: config.release,
       saved_instructions: instructions.length,
       ready: byStatus["Founder instruction ready"] || 0,
+      ready_questions: instructions.filter((instruction) => instruction.founder_question && instruction.founder_authorization_instruction_ready).length,
       blocked: instructions.filter((instruction) => String(instruction.instruction_status || "").startsWith("Blocked")).length,
       holds: byStatus["Instruction hold"] || 0,
       expired: byStatus["Instruction expired"] || 0,
@@ -256,6 +299,7 @@
       '<div class="auth-instruction-grid">' +
         card("Review gate", instruction.controlled_authorization_review_gate_id, instruction.founder_authorization_instruction_ready ? "ready" : "") +
         card("Source answer", instruction.source_answer_id) +
+        card("Founder question", instruction.founder_question ? "ready" : "missing") +
         card("Next gate", instruction.next_gate_required) +
         card("Production", instruction.production_ready ? "open" : "false", instruction.production_ready ? "blocked" : "ready") +
       '</div>' +
@@ -266,6 +310,20 @@
     if (!checksRoot) return;
     checksRoot.innerHTML = config.instruction_checks.map((check) =>
       '<article class="auth-instruction-rule"><strong>' + safe(check.check) + '</strong><span>' + safe(check.rule) + '</span></article>'
+    ).join("");
+  }
+
+  function renderQuestionContract(config) {
+    if (!questionRoot) return;
+    questionRoot.innerHTML = (config.question_contract || []).map((item) =>
+      '<article class="auth-instruction-rule"><strong>' + safe(item.label) + '</strong><span>' + safe(item.rule) + '</span></article>'
+    ).join("");
+  }
+
+  function renderFlags(config) {
+    if (!flagsRoot) return;
+    flagsRoot.innerHTML = Object.entries(config.authority_flags || {}).map(([key, value]) =>
+      '<article class="auth-instruction-flag"><span>' + safe(key) + '</span><strong>' + safe(value) + '</strong></article>'
     ).join("");
   }
 
@@ -308,6 +366,7 @@
     founderInstructionSnapshot,
     instructionMissingForState,
     keepsInstructionBoundary,
+    keepsAuthorityFlagAudit,
     keepsProductionBoundary,
     hasUnsafeAuthority,
     parseInstructionJson,
@@ -336,12 +395,15 @@
         sourceAnswer: root.querySelector("#authInstructionSourceAnswer"),
         sourceRecord: root.querySelector("#authInstructionSourceRecord"),
         sourceFamily: root.querySelector("#authInstructionSourceFamily"),
+        reviewRoute: root.querySelector("#authInstructionReviewRoute"),
         scope: root.querySelector("#authInstructionScopeText"),
+        founderQuestion: root.querySelector("#authInstructionFounderQuestion"),
         instruction: root.querySelector("#authInstructionText"),
         rationale: root.querySelector("#authInstructionRationale"),
         evidence: root.querySelector("#authInstructionEvidence"),
         sourceLock: root.querySelector("#authInstructionSourceLock"),
         boundary: root.querySelector("#authInstructionBoundary"),
+        flagAudit: root.querySelector("#authInstructionFlagAudit"),
         risk: root.querySelector("#authInstructionRisk"),
         rollback: root.querySelector("#authInstructionRollback"),
         monitoring: root.querySelector("#authInstructionMonitoring"),
@@ -374,12 +436,15 @@
         fields.sourceAnswer.value = sample.source_answer_id;
         fields.sourceRecord.value = sample.source_record_id;
         fields.sourceFamily.value = sample.source_family;
+        fields.reviewRoute.value = sample.review_route;
         fields.scope.value = sample.instruction_scope;
+        fields.founderQuestion.value = sample.founder_question;
         fields.instruction.value = sample.founder_instruction_text;
         fields.rationale.value = sample.instruction_rationale;
         fields.evidence.value = sample.review_evidence_summary;
         fields.sourceLock.value = sample.source_lock;
         fields.boundary.value = sample.non_authority_clause;
+        fields.flagAudit.value = sample.authority_flag_audit;
         fields.risk.value = sample.risk_acknowledgment;
         fields.rollback.value = sample.rollback_condition;
         fields.monitoring.value = sample.monitoring_condition;
@@ -409,12 +474,15 @@
           source_answer_id: fields.sourceAnswer.value,
           source_record_id: fields.sourceRecord.value,
           source_family: fields.sourceFamily.value,
+          review_route: fields.reviewRoute.value,
           instruction_scope: fields.scope.value,
+          founder_question: fields.founderQuestion.value,
           founder_instruction_text: fields.instruction.value,
           instruction_rationale: fields.rationale.value,
           review_evidence_summary: fields.evidence.value,
           source_lock: fields.sourceLock.value,
           non_authority_clause: fields.boundary.value,
+          authority_flag_audit: fields.flagAudit.value,
           risk_acknowledgment: fields.risk.value,
           rollback_condition: fields.rollback.value,
           monitoring_condition: fields.monitoring.value,
@@ -458,6 +526,8 @@
       loadSample();
       renderChecks(config);
       renderScope(config);
+      renderQuestionContract(config);
+      renderFlags(config);
       run();
       renderSaved(config);
     });

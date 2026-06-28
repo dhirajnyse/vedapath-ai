@@ -43,7 +43,8 @@ body.auth-instruction-page main.workspace > aside.panel.tight {
 .auth-instruction-grid,
 .auth-instruction-list,
 .auth-instruction-actions,
-.auth-instruction-rules {
+.auth-instruction-rules,
+.auth-instruction-flags {
   display: grid;
   gap: 10px;
 }
@@ -78,7 +79,8 @@ body.auth-instruction-page main.workspace > aside.panel.tight {
 .auth-instruction-card,
 .auth-instruction-result,
 .auth-instruction-output,
-.auth-instruction-rule {
+.auth-instruction-rule,
+.auth-instruction-flag {
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--surface);
@@ -87,7 +89,8 @@ body.auth-instruction-page main.workspace > aside.panel.tight {
 .auth-instruction-form,
 .auth-instruction-card,
 .auth-instruction-result,
-.auth-instruction-rule {
+.auth-instruction-rule,
+.auth-instruction-flag {
   padding: 12px;
 }
 
@@ -120,13 +123,21 @@ body.auth-instruction-page main.workspace > aside.panel.tight {
 }
 
 .auth-instruction-grid,
-.auth-instruction-rules {
+.auth-instruction-rules,
+.auth-instruction-flags {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .auth-instruction-card,
-.auth-instruction-result {
+.auth-instruction-result,
+.auth-instruction-flag {
   border-left: 4px solid var(--gold);
+}
+
+.auth-instruction-flag {
+  display: grid;
+  gap: 4px;
+  border-left-color: var(--green);
 }
 
 .auth-instruction-card.ready,
@@ -148,7 +159,9 @@ body.auth-instruction-page main.workspace > aside.panel.tight {
 .auth-instruction-card span,
 .auth-instruction-card strong,
 .auth-instruction-rule span,
-.auth-instruction-rule strong {
+.auth-instruction-rule strong,
+.auth-instruction-flag span,
+.auth-instruction-flag strong {
   display: block;
 }
 
@@ -159,9 +172,16 @@ body.auth-instruction-page main.workspace > aside.panel.tight {
 }
 
 .auth-instruction-card span,
-.auth-instruction-rule span {
+.auth-instruction-rule span,
+.auth-instruction-flag span {
   color: var(--muted);
   font-size: 12px;
+}
+
+.auth-instruction-flag strong {
+  color: var(--green);
+  font-size: 15px;
+  text-transform: capitalize;
 }
 
 .auth-instruction-result strong {
@@ -229,10 +249,28 @@ body.auth-instruction-page main.workspace > aside.panel.tight {
   .auth-instruction-layout,
   .auth-instruction-head,
   .auth-instruction-grid,
-  .auth-instruction-rules {
+  .auth-instruction-rules,
+  .auth-instruction-flags {
     grid-template-columns: 1fr;
   }
 }
+
+/* VEDAPATH FOUNDER AUTHORIZATION INSTRUCTION REENTRY START */
+body.auth-instruction-page .auth-instruction-head h1 {
+  max-width: 720px;
+}
+
+body.auth-instruction-page .auth-instruction-rule,
+body.auth-instruction-page .auth-instruction-flag,
+body.auth-instruction-page .auth-instruction-card {
+  box-shadow: 0 10px 28px rgba(78, 44, 18, 0.06);
+}
+
+body.auth-instruction-page .auth-instruction-output,
+body.auth-instruction-page .auth-instruction-form textarea {
+  line-height: 1.45;
+}
+/* VEDAPATH FOUNDER AUTHORIZATION INSTRUCTION REENTRY END */
 
 @media (max-width: 640px) {
   .auth-instruction-actions { grid-template-columns: 1fr; }

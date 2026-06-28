@@ -18,7 +18,7 @@
           <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
           <div>
             <strong>VedaPath AI</strong>
-            <span>Founder authorization instruction</span>
+            <span>Founder instruction gate</span>
           </div>
         </a>
         <nav class="nav" aria-label="Project links">
@@ -33,15 +33,15 @@
           <a class="link" href="conversationcompanionlab.html">Talk</a>
           <a class="link" href="patterncompanionlab.html">Pattern</a>
           <a class="link" href="daily.html">Daily</a>
-          <span class="version">v3.3.9 auth review</span>
+          <span class="version">v3.4.0 founder gate</span>
         </nav>
       </header>
 
       <main class="workspace" aria-label="VedaPath Founder Authorization Instruction Gate workspace">
         <aside class="panel">
           <span class="eyebrow">Instruction is not permission</span>
-          <h2>Let founder intent become explicit, not powerful</h2>
-          <p class="muted">This room records an exact founder instruction signal after review readiness. It cannot authorize, execute, store, migrate, publish, or launch.</p>
+          <h2>Ask one founder question without opening authority</h2>
+          <p class="muted">This room turns a review-ready packet into one controlled founder question. It cannot authorize, execute, store, migrate, publish, or launch.</p>
           <div class="sprint-list">
             <div class="sprint-step active"><span class="step-index">1</span><div><strong>Review</strong><p>Load readiness.</p></div></div>
             <div class="sprint-step"><span class="step-index">2</span><div><strong>Intent</strong><p>Name the signal.</p></div></div>
@@ -58,9 +58,9 @@
         <section class="panel auth-instruction" id="founderAuthorizationInstructionGate">
           <div class="auth-instruction-head">
             <div>
-              <span class="eyebrow">Founder instruction signal</span>
-              <h1>Record intent. Keep authority closed.</h1>
-              <p class="muted">A ready instruction here means the reviewed packet can move to a controlled authorization permission preflight. It still cannot authorize execution, run code, promote sources, store data, update canonical records, use secrets, publish public release, or launch production.</p>
+              <span class="eyebrow">Founder question gate</span>
+              <h1>Ask clearly. Keep every gate closed.</h1>
+              <p class="muted">A ready instruction here means the reviewed packet can be carried to one controlled authorization permission preflight question. It still cannot authorize execution, run code, promote sources, store data, update canonical records, use secrets, publish public release, or launch production.</p>
             </div>
             <div class="auth-instruction-mark"><img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath founder authorization instruction mark"></div>
           </div>
@@ -84,12 +84,15 @@
               <label>Source answer id<input id="authInstructionSourceAnswer" type="text"></label>
               <label>Source record id<input id="authInstructionSourceRecord" type="text"></label>
               <label>Source family<input id="authInstructionSourceFamily" type="text"></label>
+              <label>Review route<input id="authInstructionReviewRoute" type="text"></label>
               <label>Instruction scope<textarea id="authInstructionScopeText"></textarea></label>
+              <label>Founder question<textarea id="authInstructionFounderQuestion"></textarea></label>
               <label>Founder instruction text<textarea id="authInstructionText"></textarea></label>
               <label>Instruction rationale<textarea id="authInstructionRationale"></textarea></label>
               <label>Review evidence summary<textarea id="authInstructionEvidence"></textarea></label>
               <label>Source lock<textarea id="authInstructionSourceLock"></textarea></label>
               <label>Non-authority clause<textarea id="authInstructionBoundary"></textarea></label>
+              <label>Authority flag audit<textarea id="authInstructionFlagAudit"></textarea></label>
               <label>Risk acknowledgment<textarea id="authInstructionRisk"></textarea></label>
               <label>Rollback condition<textarea id="authInstructionRollback"></textarea></label>
               <label>Monitoring condition<textarea id="authInstructionMonitoring"></textarea></label>
@@ -113,12 +116,21 @@
                 <h2>Instruction Scope</h2>
                 <div class="auth-instruction-list" id="authInstructionScope"></div>
               </section>
+              <section style="margin-top: 10px;">
+                <h2>Question Contract</h2>
+                <div class="auth-instruction-rules" id="authInstructionQuestionContract"></div>
+              </section>
             </div>
           </section>
 
           <section>
             <h2>Instruction Checks</h2>
             <div class="auth-instruction-rules" id="authInstructionChecks"></div>
+          </section>
+
+          <section>
+            <h2>Authority Flag Audit</h2>
+            <div class="auth-instruction-flags" id="authInstructionFlags"></div>
           </section>
 
           <section class="auth-instruction-layout">
@@ -142,7 +154,7 @@
           <p class="muted">The signal can prepare a permission preflight while every operational path stays locked.</p>
           <div class="progress" aria-label="Founder authorization instruction gate progress 100 percent"><div class="bar" style="--score:100%"></div></div>
           <div class="metric-grid">
-            <div class="metric"><span>Current</span><strong>v3.2.0</strong></div>
+            <div class="metric"><span>Current</span><strong>v3.4.0</strong></div>
             <div class="metric"><span>States</span><strong>9</strong></div>
             <div class="metric"><span>Grant</span><strong>False</strong></div>
             <div class="metric"><span>Next</span><strong>Preflight</strong></div>
