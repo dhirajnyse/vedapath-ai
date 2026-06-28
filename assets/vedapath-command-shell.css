@@ -415,3 +415,214 @@ body.vp-command-shell-ready.vp-mode-study {
     min-width: 0;
   }
 }
+
+/* VEDAPATH COMMAND SHELL TYPE COHERENCE START */
+:root {
+  --vp-type-page-title: 30px;
+  --vp-type-hero-title: 48px;
+  --vp-type-room-title: 42px;
+  --vp-type-section-title: 24px;
+  --vp-type-card-title: 20px;
+  --vp-type-body: 16px;
+  --vp-type-small: 12px;
+  --vp-type-metric: 26px;
+  --vp-type-tight: 1.05;
+  --vp-type-normal: 1.42;
+}
+
+body.vp-command-shell-ready {
+  font-size: var(--vp-type-body);
+  line-height: var(--vp-type-normal);
+}
+
+body.vp-command-shell-ready .topbar,
+body.vp-command-shell-ready header.topbar {
+  min-height: 64px !important;
+  margin-bottom: 16px !important;
+  padding-top: 8px !important;
+  padding-bottom: 11px !important;
+}
+
+body.vp-command-shell-ready .vp-command-top {
+  gap: 16px;
+}
+
+body.vp-command-shell-ready .vp-command-title h1 {
+  margin-top: 4px;
+  font-size: var(--vp-type-page-title) !important;
+  line-height: 1.08 !important;
+}
+
+body.vp-command-shell-ready .vp-command-meta {
+  gap: 6px;
+}
+
+body.vp-command-shell-ready .vp-command-eyebrow,
+body.vp-command-shell-ready .vp-command-badge,
+body.vp-command-shell-ready .vp-command-memory,
+body.vp-command-shell-ready .eyebrow,
+body.vp-command-shell-ready .badge,
+body.vp-command-shell-ready .version,
+body.vp-command-shell-ready .tag,
+body.vp-command-shell-ready .pill {
+  font-size: var(--vp-type-small) !important;
+  letter-spacing: 0 !important;
+}
+
+body.vp-command-shell-ready .vp-control {
+  min-width: 108px;
+  font-size: 10px;
+}
+
+body.vp-command-shell-ready .vp-control select,
+body.vp-command-shell-ready .vp-control button {
+  min-height: 32px;
+  font-size: 12px !important;
+}
+
+body.vp-command-shell-ready main > section:first-of-type h1,
+body.vp-command-shell-ready .home-intent h1,
+body.vp-command-shell-ready .hero h1,
+body.vp-command-shell-ready .hero-grid h1,
+body.vp-command-shell-ready .brand-hero h1,
+body.vp-command-shell-ready .blueprint-hero h1,
+body.vp-command-shell-ready .intent-copy h1 {
+  max-width: 860px;
+  margin-top: 22px !important;
+  font-size: var(--vp-type-hero-title) !important;
+  line-height: var(--vp-type-tight) !important;
+  letter-spacing: 0 !important;
+}
+
+body.vp-command-shell-ready .workspace > .panel h1,
+body.vp-command-shell-ready .workspace > article h1,
+body.vp-command-shell-ready .answer-shell h1,
+body.vp-command-shell-ready .ask-panel h1,
+body.vp-command-shell-ready .draft-gate h1,
+body.vp-command-shell-ready .draft-review-gate h1,
+body.vp-command-shell-ready .room-hero h1,
+body.vp-command-shell-ready .lab-hero h1,
+body.vp-command-shell-ready .main-panel h1 {
+  max-width: 900px;
+  font-size: var(--vp-type-room-title) !important;
+  line-height: 1.08 !important;
+  letter-spacing: 0 !important;
+}
+
+body.vp-command-shell-ready h2,
+body.vp-command-shell-ready .panel > h2:first-child,
+body.vp-command-shell-ready .tile > h2:first-child {
+  font-size: var(--vp-type-section-title) !important;
+  line-height: 1.14 !important;
+  letter-spacing: 0 !important;
+}
+
+body.vp-command-shell-ready h3,
+body.vp-command-shell-ready .card h3,
+body.vp-command-shell-ready .tile h3,
+body.vp-command-shell-ready .flow-card h3,
+body.vp-command-shell-ready .answer-title,
+body.vp-command-shell-ready .rail-card strong,
+body.vp-command-shell-ready .step-card strong {
+  font-size: var(--vp-type-card-title) !important;
+  line-height: 1.18 !important;
+  letter-spacing: 0 !important;
+}
+
+body.vp-command-shell-ready p,
+body.vp-command-shell-ready li,
+body.vp-command-shell-ready label,
+body.vp-command-shell-ready textarea,
+body.vp-command-shell-ready input,
+body.vp-command-shell-ready select,
+body.vp-command-shell-ready button {
+  font-size: var(--vp-type-body);
+  line-height: var(--vp-type-normal);
+}
+
+body.vp-command-shell-ready .lead,
+body.vp-command-shell-ready .muted,
+body.vp-command-shell-ready .hero p,
+body.vp-command-shell-ready .brand-hero p,
+body.vp-command-shell-ready .blueprint-hero p,
+body.vp-command-shell-ready .intent-copy p,
+body.vp-command-shell-ready main > section:first-of-type p {
+  max-width: 760px;
+  font-size: 18px !important;
+  line-height: 1.42 !important;
+}
+
+body.vp-command-shell-ready .summary .tile strong,
+body.vp-command-shell-ready .metric strong,
+body.vp-command-shell-ready .stat strong,
+body.vp-command-shell-ready .pulse strong,
+body.vp-command-shell-ready .percent {
+  font-size: var(--vp-type-metric) !important;
+  line-height: 1.05 !important;
+}
+
+body.vp-command-shell-ready .panel,
+body.vp-command-shell-ready .tile,
+body.vp-command-shell-ready .answer-shell,
+body.vp-command-shell-ready .flow-card,
+body.vp-command-shell-ready .ask-panel,
+body.vp-command-shell-ready .map-card {
+  padding: 18px !important;
+}
+
+body.vp-command-shell-ready .hero,
+body.vp-command-shell-ready .brand-hero,
+body.vp-command-shell-ready .blueprint-hero,
+body.vp-command-shell-ready .home-intent,
+body.vp-command-shell-ready .room-hero,
+body.vp-command-shell-ready .lab-hero {
+  row-gap: 22px !important;
+}
+
+body.vp-command-shell-ready .hero img,
+body.vp-command-shell-ready .brand-hero img,
+body.vp-command-shell-ready .blueprint-hero img,
+body.vp-command-shell-ready .mark-stage img,
+body.vp-command-shell-ready .logo-card img {
+  max-height: 420px;
+  object-fit: contain;
+}
+
+body.vp-command-shell-ready .release-list,
+body.vp-command-shell-ready .side-panel,
+body.vp-command-shell-ready .pulse-panel {
+  font-size: 15px;
+}
+
+@media (max-width: 1100px) {
+  :root {
+    --vp-type-page-title: 28px;
+    --vp-type-hero-title: 42px;
+    --vp-type-room-title: 38px;
+    --vp-type-section-title: 22px;
+    --vp-type-card-title: 19px;
+  }
+}
+
+@media (max-width: 720px) {
+  :root {
+    --vp-type-page-title: 24px;
+    --vp-type-hero-title: 34px;
+    --vp-type-room-title: 32px;
+    --vp-type-section-title: 21px;
+    --vp-type-card-title: 18px;
+    --vp-type-body: 15px;
+    --vp-type-metric: 24px;
+  }
+
+  body.vp-command-shell-ready main > section:first-of-type h1,
+  body.vp-command-shell-ready .home-intent h1,
+  body.vp-command-shell-ready .hero h1,
+  body.vp-command-shell-ready .hero-grid h1,
+  body.vp-command-shell-ready .brand-hero h1,
+  body.vp-command-shell-ready .blueprint-hero h1,
+  body.vp-command-shell-ready .intent-copy h1 {
+    margin-top: 16px !important;
+  }
+}
+/* VEDAPATH COMMAND SHELL TYPE COHERENCE END */

@@ -4374,6 +4374,18 @@ It should:
 Pattern Companion Control Room should never claim diagnosis, therapy, legal advice, medical advice, surveillance, scoring, or spiritual authority.
 <!-- VEDAPATH PATTERN COMPANION SPRINT BLUEPRINT END -->
 <!-- VEDAPATH FOUNDER AUTHORIZATION DECISION GATE BLUEPRINT START -->
+### 314. Command Shell Typography Coherence
+
+Command Shell Typography Coherence keeps VedaPath from becoming visually loud as the command center grows.
+
+Design rules:
+
+- Page titles identify the room; they should not compete with the room content.
+- Hero titles stay strong, but they should not consume the whole workspace.
+- Room titles, card titles, metrics, and side panels use one shared ladder.
+- The top command bar is a control surface, not a second hero.
+- Every future functional build should inherit this quieter scale before adding new UI.
+
 ### 313. Command Center Side Rail UX
 
 Command Center Side Rail UX makes VedaPath feel like a calmer command center.

@@ -954,6 +954,13 @@ http://127.0.0.1:8088/
 ```
 
 <!-- VEDAPATH FOUNDER AUTHORIZATION DECISION GATE START -->
+## v3.3.1 Command Shell Typography Coherence
+
+Command Shell Typography Coherence keeps the Hyrvia-inspired command shell but reduces oversized typography and aligns page, hero, room, card, metric, and small-label scale across the product.
+
+- [Command Shell Typography Coherence Notes](docs/COMMAND_SHELL_TYPOGRAPHY_COHERENCE.md)
+- [Command Shell Typography Coherence Config](data/vedapath-command-shell-typography.json)
+
 ## v3.3.0 Command Center Side Rail UX
 
 Command Center Side Rail UX gives VedaPath a Hyrvia-inspired command-center shell with persistent side navigation, top path/view/side controls, and browser-local left/right rail preference while preserving the Bhagwa source-first identity.

@@ -1,0 +1,36 @@
+{
+  "schema_version": "vedapath-command-shell-typography-v1",
+  "release": "v3.3.1",
+  "title": "Command Shell Typography Coherence",
+  "generated_at": "2026-06-28T00:00:00.000Z",
+  "founder_feedback": "Fonts feel too big in places and the overall command shell needs more coherence.",
+  "design_intent": "Keep the Hyrvia-inspired side rail while making VedaPath feel calmer, easier to scan, and less poster-like.",
+  "scale": {
+    "page_title": "30px",
+    "hero_title": "48px",
+    "room_title": "42px",
+    "section_title": "24px",
+    "card_title": "20px",
+    "body": "16px",
+    "small": "12px"
+  },
+  "affected_surfaces": [
+    "top command bar",
+    "home hero",
+    "build status",
+    "brand board",
+    "product blueprint",
+    "cited answer room",
+    "review queue",
+    "mantra lens",
+    "life companion",
+    "pattern companion",
+    "daily loop"
+  ],
+  "boundaries": [
+    "UI polish only; no source data, storage, account, authorization, execution, audio, or production behavior changed.",
+    "The command shell remains browser-local.",
+    "The source-first answer flow remains unchanged."
+  ],
+  "next_release": "Controlled permission execution authorization review decision gate"
+}
