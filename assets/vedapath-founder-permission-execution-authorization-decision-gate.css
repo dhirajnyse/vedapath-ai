@@ -1,4 +1,4 @@
-/* VedaPath founder permission execution authorization decision gate */
+/* VEDAPATH FOUNDER DECISION REENTRY */
 body.permission-execution-decision-page .topbar,
 body.permission-execution-decision-page header.topbar {
   height: auto !important;
@@ -52,6 +52,16 @@ body.permission-execution-decision-page main.workspace > aside.panel.tight {
   gap: 18px;
 }
 
+.founder-decision h1 {
+  max-width: 760px;
+  font-size: clamp(2.2rem, 4vw, 4.6rem);
+  line-height: 0.95;
+}
+
+.founder-decision h2 {
+  line-height: 1.08;
+}
+
 .founder-decision-head {
   grid-template-columns: minmax(0, 1fr) 126px;
   align-items: center;
@@ -76,10 +86,44 @@ body.permission-execution-decision-page main.workspace > aside.panel.tight {
   align-items: start;
 }
 
-.founder-decision-choice-grid {
+.founder-decision-choice-grid,
+.founder-decision-meridian {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 10px;
+}
+
+.founder-decision-choice-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.founder-decision-meridian {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.founder-decision-meridian article {
+  border: 1px solid rgba(224, 168, 59, 0.38);
+  border-radius: 8px;
+  background:
+    linear-gradient(140deg, rgba(255, 246, 232, 0.88), rgba(255, 252, 246, 0.96));
+  box-shadow: 0 18px 50px rgba(82, 44, 18, 0.05);
+  padding: 14px;
+}
+
+.founder-decision-meridian span {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.founder-decision-meridian strong {
+  display: block;
+  margin-top: 6px;
+  font-size: 18px;
+}
+
+.founder-decision-meridian p {
+  margin-bottom: 0;
 }
 
 .founder-decision-choice,
@@ -90,7 +134,8 @@ body.permission-execution-decision-page main.workspace > aside.panel.tight {
 .founder-decision-output {
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: var(--surface);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 252, 0.96), rgba(255, 250, 243, 0.92));
 }
 
 .founder-decision-choice,
@@ -105,6 +150,13 @@ body.permission-execution-decision-page main.workspace > aside.panel.tight {
   min-height: 118px;
   text-align: left;
   cursor: pointer;
+  transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.founder-decision-choice:hover {
+  border-color: rgba(214, 90, 31, 0.58);
+  box-shadow: 0 16px 34px rgba(132, 62, 22, 0.09);
+  transform: translateY(-1px);
 }
 
 .founder-decision-choice[aria-pressed="true"],
@@ -162,6 +214,28 @@ body.permission-execution-decision-page main.workspace > aside.panel.tight {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.handoff-quiet {
+  border: 1px solid rgba(224, 168, 59, 0.34);
+  border-radius: 8px;
+  background: rgba(255, 251, 244, 0.72);
+  padding: 12px;
+}
+
+.handoff-grid {
+  grid-template-columns: 1fr;
+}
+
+.lock-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-height: 220px;
+  overflow: auto;
+  padding-right: 4px;
+}
+
+.lock-grid .founder-decision-card strong {
+  color: #0a5f4d;
+}
+
 .founder-decision-card span,
 .founder-decision-rule span,
 .founder-decision-choice span {
@@ -187,6 +261,11 @@ body.permission-execution-decision-page main.workspace > aside.panel.tight {
   .founder-decision-grid,
   .founder-decision-list,
   .founder-decision-rules {
+    grid-template-columns: 1fr;
+  }
+
+  .founder-decision-meridian,
+  .lock-grid {
     grid-template-columns: 1fr;
   }
 

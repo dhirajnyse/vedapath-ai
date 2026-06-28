@@ -954,6 +954,14 @@ http://127.0.0.1:8088/
 ```
 
 <!-- VEDAPATH FOUNDER AUTHORIZATION DECISION GATE START -->
+## v3.4.7 Founder Permission Execution Authorization Decision Gate Re-entry
+
+Founder Permission Execution Authorization Decision Gate Re-entry accepts the v3.4.6 review packet, preserves review route, founder question, permission question, and authority-flag audit, and records founder posture without granting permission, approving authorization, executing, storing, writing canonical records, publishing, or launching production.
+
+- [Founder Permission Execution Authorization Decision Gate](founderpermissionexecutionauthorizationdecisiongate.html)
+- [Founder Permission Execution Authorization Decision Gate Notes](docs/FOUNDER_PERMISSION_EXECUTION_AUTHORIZATION_DECISION_GATE.md)
+- [Founder Permission Execution Authorization Decision Gate Data](data/vedapath-founder-permission-execution-authorization-decision-gate.json)
+
 ## v3.4.6 Controlled Permission Execution Authorization Review Gate Re-entry
 
 Controlled Permission Execution Authorization Review Gate Re-entry accepts the v3.4.5 preflight packet, preserves review route, founder question, permission question, and authority-flag audit, and prepares founder-decision candidacy without granting permission, approving authorization, executing, storing, writing canonical records, publishing, or launching production.

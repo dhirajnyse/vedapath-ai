@@ -4398,6 +4398,19 @@ Product rules:
 - Founder grant, authorization, execution, storage, canonical writes, public release, and production must remain false.
 - The question contract and false authority flags must be visible before any next gate.
 
+### 324. Founder Permission Execution Authorization Decision Gate Re-entry
+
+Founder Permission Execution Authorization Decision Gate Re-entry makes the existing founder decision gate accept the v3.4.6 review packet without widening the product journey.
+
+Product rules:
+
+- Accept only the v3.4.6 controlled-permission-execution-authorization-review-gate-v2 packet.
+- Preserve review route, founder question, permission question, and authority-flag audit into the founder decision result.
+- Show decision handoff and authority locks as readable panels, not hidden JSON.
+- Allow draft-only, hold, or reject founder posture.
+- Treat draft-only as a controlled draft candidate only, never as permission grant, authorization approval, execution, storage write, public release, or production.
+- Block if handoff values drift or any authority flag becomes true.
+
 ### 323. Controlled Permission Execution Authorization Review Gate Re-entry
 
 Controlled Permission Execution Authorization Review Gate Re-entry makes the existing permission execution authorization review gate accept the v3.4.5 preflight packet without widening the user journey.
