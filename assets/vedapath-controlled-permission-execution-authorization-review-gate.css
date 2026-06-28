@@ -1,4 +1,22 @@
 /* VedaPath controlled permission execution authorization review gate */
+/* VEDAPATH AUTHORIZATION REVIEW REENTRY */
+body.authorization-review-page {
+  background:
+    linear-gradient(90deg, rgba(20, 92, 74, 0.028) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(214, 90, 31, 0.024) 1px, transparent 1px),
+    var(--wash, #fff7ec);
+  background-size: 22px 22px;
+}
+
+body.authorization-review-page .panel,
+body.authorization-review-page .authorization-review {
+  box-shadow: 0 18px 50px rgba(77, 43, 21, 0.075);
+}
+
+body.authorization-review-page .workspace h1 {
+  max-width: 760px;
+  letter-spacing: 0;
+}
 body.authorization-review-page .topbar,
 body.authorization-review-page header.topbar {
   height: auto !important;
@@ -48,7 +66,10 @@ body.authorization-review-page main.workspace > aside.panel.tight {
   gap: 10px;
 }
 
-.authorization-review { gap: 16px; }
+.authorization-review {
+  gap: 16px;
+  background: rgba(255, 253, 248, 0.92);
+}
 
 .authorization-review-head {
   grid-template-columns: minmax(0, 1fr) 126px;
@@ -81,7 +102,7 @@ body.authorization-review-page main.workspace > aside.panel.tight {
 .authorization-review-rule {
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: var(--surface);
+  background: rgba(255, 253, 248, 0.9);
 }
 
 .authorization-review-form,
@@ -111,6 +132,11 @@ body.authorization-review-page main.workspace > aside.panel.tight {
   padding: 10px;
 }
 
+.authorization-review-form label:nth-of-type(n+15) {
+  border-top: 1px solid rgba(120, 72, 39, 0.08);
+  padding-top: 8px;
+}
+
 .authorization-review-form textarea,
 .authorization-review-output {
   min-height: 92px;
@@ -130,7 +156,7 @@ body.authorization-review-page main.workspace > aside.panel.tight {
 }
 
 .authorization-review-card.ready,
-.authorization-review-result[data-state="Preflight ready for authorization review"] {
+.authorization-review-result[data-state="Review ready for founder authorization decision"] {
   border-color: #b7d5ca;
   background: #f6fffb;
 }
@@ -154,6 +180,33 @@ body.authorization-review-page main.workspace > aside.panel.tight {
   margin-top: 4px;
 }
 
+.handoff-quiet {
+  border: 1px solid rgba(20, 92, 74, 0.16);
+  border-radius: 8px;
+  background: linear-gradient(180deg, rgba(246, 255, 251, 0.82), rgba(255, 253, 248, 0.9));
+  padding: 12px;
+}
+
+.handoff-grid .authorization-review-card {
+  border-left: 4px solid #145c4a;
+}
+
+.lock-section {
+  border-color: rgba(214, 90, 31, 0.2);
+}
+
+.lock-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.lock-grid .authorization-review-card {
+  min-height: 58px;
+}
+
+.lock-grid .authorization-review-card strong {
+  color: #145c4a;
+}
+
 .authorization-review-boundary {
   border-left: 4px solid var(--bhagwa);
   padding-left: 12px;
@@ -163,7 +216,8 @@ body.authorization-review-page main.workspace > aside.panel.tight {
   body.authorization-review-page main.workspace,
   .authorization-review-layout,
   .authorization-review-grid,
-  .authorization-review-rules {
+  .authorization-review-rules,
+  .lock-grid {
     grid-template-columns: 1fr;
   }
 

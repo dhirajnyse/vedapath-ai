@@ -1,6 +1,15 @@
 # Controlled Permission Execution Authorization Review Gate
 
-Controlled Permission Execution Authorization Review Gate reviews the authorization preflight for founder-decision readiness.
+Release: v3.4.6
+
+Controlled Permission Execution Authorization Review Gate Re-entry reviews the v3.4.5 permission execution authorization preflight for founder-decision readiness.
+
+It preserves:
+- review route
+- founder question
+- permission question
+- authority-flag audit
+- source and hold ids
 
 It can mark:
 - controlled authorization review readiness

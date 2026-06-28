@@ -22,6 +22,24 @@
   "production_launch_allowed",
   "public_release_allowed"
 ];
+  const authorityAuditFlags = [
+    "execution_packet_authorized",
+    "execution_authorized",
+    "execution_allowed",
+    "founder_instruction_granted",
+    "source_promotion_allowed",
+    "promotion_execution_allowed",
+    "implementation_authorized",
+    "implementation_execution_allowed",
+    "controlled_storage_entry_allowed",
+    "storage_write_enabled",
+    "canonical_write_allowed",
+    "source_write_executed",
+    "actual_storage_write_executed",
+    "production_ready",
+    "production_launch_allowed",
+    "public_release_allowed"
+  ];
   const preflightReadyFlags = [
     "permission_execution_authorization_preflight_ready",
     "permission_execution_authorization_preflight_recorded",
@@ -49,14 +67,36 @@
     return flags.every((flag) => get(packet, flag) === true);
   }
 
+  function hasText(value, groups) {
+    const text = compact(value).toLowerCase();
+    return groups.every((group) => group.some((item) => text.includes(String(item).toLowerCase())));
+  }
+
+  function keepsQuestionHandoff(packet) {
+    return Boolean(
+      packet &&
+      hasText(packet.review_route, [["ready"], ["founder"]]) &&
+      hasText(packet.founder_question, [["founder question"], ["source-locked"], ["authorization"], ["execution"], ["storage"], ["production"], ["remain false"]]) &&
+      hasText(packet.permission_question, [["reviewer"], ["permission"], ["authorization"], ["execution"], ["storage"], ["canonical"], ["public release"], ["production"]])
+    );
+  }
+
+  function keepsAuthorityFlagAudit(value) {
+    const text = compact(value).toLowerCase();
+    return Boolean(text) && authorityAuditFlags.every((flag) => text.includes(flag.toLowerCase() + "=false"));
+  }
+
   function preflightPacketReady(packet) {
     return Boolean(
       packet &&
-      packet.schema_version === "permission-execution-authorization-preflight-v1" &&
+      packet.schema_version === "permission-execution-authorization-preflight-v2" &&
+      packet.release === "v3.4.5" &&
       packet.preflight_status === "Preflight ready for authorization review" &&
       packet.next_gate_required === "Controlled permission execution authorization review gate" &&
       allFlagsTrue(packet, preflightReadyFlags) &&
-      allFlagsFalse(packet, falseAuthorityFlags)
+      allFlagsFalse(packet, falseAuthorityFlags) &&
+      keepsQuestionHandoff(packet) &&
+      keepsAuthorityFlagAudit(packet.authority_flag_audit)
     );
   }
 
@@ -71,6 +111,16 @@
     const mustMentionFalse = falseAuthorityFlags.map((flag) => flag + " remains false");
     return mustMentionTrue.every((phrase) => text.includes(phrase)) &&
       mustMentionFalse.every((phrase) => text.includes(phrase));
+  }
+
+  function matchesPreflightCarry(preflightPacket, review) {
+    const keys = [
+      "review_route",
+      "founder_question",
+      "permission_question",
+      "authority_flag_audit"
+    ];
+    return keys.every((key) => compact(preflightPacket[key]) === compact(review[key]));
   }
 
   function requiredMissing(config, state, review) {
@@ -128,6 +178,19 @@
       return blocked("Blocked: production boundary must stay closed.", {});
     }
 
+    if (!matchesPreflightCarry(preflightPacket, review)) {
+      return blocked("Blocked: question handoff and authority audit must match the v3.4.5 preflight packet.", {
+        review_route: "must match",
+        founder_question: "must match",
+        permission_question: "must match",
+        authority_flag_audit: "must match"
+      });
+    }
+
+    if (!hasText(review.review_rationale, [["v3.4.5"], ["question handoff"], ["authority"], ["review"], ["not approval"]])) {
+      return blocked("Blocked: review rationale must explain the v3.4.5 question handoff and non-approval boundary.", {});
+    }
+
     if (state === "Needs review clarification") {
       return blocked("Needs clarification: answer the review question before founder-decision readiness.", {
         clarification_question: review.clarification_question
@@ -170,6 +233,10 @@
       source_answer_id: review.source_answer_id,
       source_record_id: review.source_record_id,
       source_family: review.source_family,
+      review_route: review.review_route,
+      founder_question: review.founder_question,
+      permission_question: review.permission_question,
+      authority_flag_audit: review.authority_flag_audit,
       controlled_permission_execution_authorization_review_ready: true,
       permission_execution_authorization_review_recorded: true,
       founder_permission_execution_authorization_decision_candidate_ready: true,
@@ -259,6 +326,10 @@
     setValue("authorizationReviewSourceAnswer", review.source_answer_id);
     setValue("authorizationReviewSourceRecord", review.source_record_id);
     setValue("authorizationReviewSourceFamily", review.source_family);
+    setValue("authorizationReviewRoute", review.review_route);
+    setValue("authorizationReviewFounderQuestion", review.founder_question);
+    setValue("authorizationReviewPermissionQuestion", review.permission_question);
+    setValue("authorizationReviewAuthorityAudit", review.authority_flag_audit);
     setValue("authorizationReviewScopeText", review.review_scope);
     setValue("authorizationReviewLanguage", review.review_language);
     setValue("authorizationReviewRationale", review.review_rationale);
@@ -280,6 +351,15 @@
       { label: "Authorization", value: "False" },
       { label: "Execution", value: "False" }
     ]);
+    renderList("authorizationReviewQuestionHandoff", [
+      { label: "Route", value: review.review_route },
+      { label: "Founder question", value: review.founder_question },
+      { label: "Permission question", value: review.permission_question }
+    ]);
+    renderList("authorizationReviewAuthorityFlags", authorityAuditFlags.map((flag) => ({
+      label: flag,
+      value: "false"
+    })));
     renderList("authorizationReviewChecks", config.review_checks.map((item) => ({ label: item.check, value: item.rule })));
   }
 
@@ -300,6 +380,10 @@
       source_answer_id: readValue("authorizationReviewSourceAnswer"),
       source_record_id: readValue("authorizationReviewSourceRecord"),
       source_family: readValue("authorizationReviewSourceFamily"),
+      review_route: readValue("authorizationReviewRoute"),
+      founder_question: readValue("authorizationReviewFounderQuestion"),
+      permission_question: readValue("authorizationReviewPermissionQuestion"),
+      authority_flag_audit: readValue("authorizationReviewAuthorityAudit"),
       review_scope: readValue("authorizationReviewScopeText"),
       review_language: readValue("authorizationReviewLanguage"),
       review_rationale: readValue("authorizationReviewRationale"),
@@ -374,6 +458,8 @@
   window.vedapathControlledPermissionExecutionAuthorizationReviewGate = {
     preflightPacketReady,
     hasUnsafeAuthority,
+    keepsQuestionHandoff,
+    keepsAuthorityFlagAudit,
     keepsNonExecutionReviewBoundary,
     controlledPermissionExecutionAuthorizationReviewGate,
     reviewSnapshot

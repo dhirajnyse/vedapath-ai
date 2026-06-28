@@ -4398,6 +4398,18 @@ Product rules:
 - Founder grant, authorization, execution, storage, canonical writes, public release, and production must remain false.
 - The question contract and false authority flags must be visible before any next gate.
 
+### 323. Controlled Permission Execution Authorization Review Gate Re-entry
+
+Controlled Permission Execution Authorization Review Gate Re-entry makes the existing permission execution authorization review gate accept the v3.4.5 preflight packet without widening the user journey.
+
+Product rules:
+
+- Accept only the v3.4.5 permission-execution-authorization-preflight-v2 packet.
+- Carry review route, founder question, permission question, and authority-flag audit into the review result.
+- Show question handoff and authority locks as readable panels, not hidden JSON.
+- Treat review readiness as founder-decision candidacy only.
+- Permission grant, authorization approval, execution, storage, canonical writes, public release, and production must remain false.
+
 ### 322. Controlled Authorization Review Re-entry
 
 Controlled Authorization Review Re-entry makes the existing authorization review gate useful again inside the calmer v3.3 command shell.
