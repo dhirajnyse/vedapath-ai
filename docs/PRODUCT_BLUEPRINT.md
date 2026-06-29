@@ -5242,6 +5242,19 @@ It should:
 - keep permission, authorization approval, execution, storage, public release, and production false
 - use a calmer relay UI so the user sees incoming packet, preserved handoff, and outgoing review candidate before dense controls
 
+### 326. Controlled Permission Execution Authorization Draft Review Gate Re-entry
+
+The draft review gate should convert draft-review readiness into founder decision candidate language, not authority.
+
+It should:
+
+- accept only the v3.4.8 controlled draft packet
+- preserve review route, founder question, permission question, and authority flag audit
+- block when source identity, question handoff, or authority audit drifts
+- create only a founder review decision candidate
+- keep permission, authorization approval, execution, storage, public release, and production false
+- use a calm review relay so the user sees incoming draft, verified handoff, and outgoing founder decision before dense controls
+
 ## Strategic Difference
 
 Most religious AI products try to answer as a spiritual authority.

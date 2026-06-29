@@ -30,6 +30,22 @@
     "permission_execution_authorization_draft_recorded",
     "controlled_permission_execution_authorization_draft_review_candidate_ready"
   ];
+  const handoffFields = [
+    "review_route",
+    "founder_question",
+    "permission_question",
+    "authority_flag_audit"
+  ];
+  const sourceIdentityFields = [
+    "controlled_permission_execution_authorization_draft_gate_id",
+    "founder_decision_gate_id",
+    "authorization_review_gate_id",
+    "permission_execution_authorization_preflight_id",
+    "controlled_permission_execution_hold_id",
+    "source_answer_id",
+    "source_record_id",
+    "source_family"
+  ];
   const blockedWords = /\b(permission granted|permission approved|review approved|authorization granted|authorization approved|approval granted|execution approved|execution authorized|authorize execution|execute now|run now|storage enabled|canonical update|canonical write allowed|migration run|secret use|account creation allowed|public release allowed|launch production now|launch production allowed|production launch allowed|permission_granted true|authorization_permission_granted true|permission_review_approved true|founder_permission_granted true|founder_instruction_granted true|execution_allowed true|execution_authorized true|execution_packet_authorized true|storage_write_enabled true|canonical_write_allowed true|production_ready true|public_release_allowed true)\b/i;
 
   function compact(value) {
@@ -52,12 +68,33 @@
     return flags.every((flag) => get(packet, flag) === true);
   }
 
-  function draftPacketReady(packet) {
+  function matchesSourceHandoff(packet, config) {
+    if (!packet || !config || !config.source) return false;
+    return handoffFields.every((field) => compact(packet[field]) === compact(config.source[field]));
+  }
+
+  function matchesSourceIdentity(packet, config) {
+    if (!packet || !config || !config.source) return false;
+    return sourceIdentityFields.every((field) => compact(packet[field]) === compact(config.source[field]));
+  }
+
+  function reviewPreservesHandoff(review, draftPacket, config) {
+    if (!review || !draftPacket || !config || !config.source) return false;
+    return handoffFields.every((field) => {
+      const value = compact(review[field]);
+      return value && value === compact(draftPacket[field]) && value === compact(config.source[field]);
+    });
+  }
+
+  function draftPacketReady(packet, config) {
     return Boolean(
       packet &&
-      packet.schema_version === "controlled-permission-execution-authorization-draft-gate-v1" &&
+      packet.schema_version === "controlled-permission-execution-authorization-draft-gate-v2" &&
+      packet.release === "v3.4.8" &&
       packet.draft_status === "Controlled authorization draft prepared; execution remains false." &&
       packet.next_gate_required === "Controlled permission execution authorization draft review gate" &&
+      matchesSourceIdentity(packet, config) &&
+      matchesSourceHandoff(packet, config) &&
       allFlagsTrue(packet, draftPacketReadyFlags) &&
       allFlagsFalse(packet, falseAuthorityFlags)
     );
@@ -94,8 +131,8 @@
   }
 
   function controlledPermissionExecutionAuthorizationDraftReviewGate(config, draftPacket, review) {
-    if (!draftPacketReady(draftPacket)) {
-      return blocked("Blocked: controlled draft packet must be ready and non-authorizing.", {
+    if (!draftPacketReady(draftPacket, config)) {
+      return blocked("Blocked: controlled draft packet must be the v3.4.8 non-authorizing draft packet.", {
         next_gate_required: "Controlled permission execution authorization draft review gate"
       });
     }
@@ -104,6 +141,12 @@
     const missing = requiredMissing(config, state, review || {});
     if (missing.length) {
       return blocked("Blocked: missing required fields for " + state + ".", { missing });
+    }
+
+    if (!reviewPreservesHandoff(review, draftPacket, config)) {
+      return blocked("Blocked: review must preserve the v3.4.8 route, questions, and authority audit.", {
+        required_handoff: handoffFields
+      });
     }
 
     const textFields = [
@@ -125,6 +168,12 @@
 
     if (!keepsNonExecutionReviewBoundary(review.non_execution_review_clause)) {
       return blocked("Blocked: non-execution review clause must keep authority false.", {});
+    }
+
+    if (!compact(review.review_scope).includes("v3.4.8") ||
+        !compact(review.review_notes).includes("question handoff") ||
+        !compact(review.review_evidence_summary).includes("authority flag audit")) {
+      return blocked("Blocked: review text must name the v3.4.8 handoff and authority audit.", {});
     }
 
     if (hasUnsafeAuthority(review.production_boundary) || !compact(review.production_boundary).includes("Production remains unavailable")) {
@@ -170,6 +219,10 @@
       source_answer_id: review.source_answer_id,
       source_record_id: review.source_record_id,
       source_family: review.source_family,
+      review_route: review.review_route,
+      founder_question: review.founder_question,
+      permission_question: review.permission_question,
+      authority_flag_audit: review.authority_flag_audit,
       founder_permission_execution_authorization_decision_ready: draftPacket.founder_permission_execution_authorization_decision_ready === true,
       founder_permission_execution_authorization_decision_recorded: draftPacket.founder_permission_execution_authorization_decision_recorded === true,
       controlled_permission_execution_authorization_draft_candidate_ready: draftPacket.controlled_permission_execution_authorization_draft_candidate_ready === true,
@@ -191,6 +244,10 @@
       stop_condition: review.stop_condition,
       expiry_check: review.expiry_check,
       production_boundary: review.production_boundary,
+      preserves_review_route: compact(review.review_route) === compact(config.source.review_route),
+      preserves_founder_question: compact(review.founder_question) === compact(config.source.founder_question),
+      preserves_permission_question: compact(review.permission_question) === compact(config.source.permission_question),
+      preserves_authority_flag_audit: compact(review.authority_flag_audit) === compact(config.source.authority_flag_audit),
       next_gate_required: "Founder permission execution authorization review decision gate",
       created_at: new Date().toISOString()
     };
@@ -262,6 +319,10 @@
     setValue("draftReviewSourceAnswer", review.source_answer_id);
     setValue("draftReviewSourceRecord", review.source_record_id);
     setValue("draftReviewSourceFamily", review.source_family);
+    setValue("draftReviewRoute", review.review_route);
+    setValue("draftReviewFounderQuestion", review.founder_question);
+    setValue("draftReviewPermissionQuestion", review.permission_question);
+    setValue("draftReviewAuthorityAudit", review.authority_flag_audit);
     setValue("draftReviewScopeText", review.review_scope);
     setValue("draftReviewLanguage", review.review_language);
     setValue("draftReviewNotes", review.review_notes);
@@ -278,10 +339,10 @@
     setValue("draftReviewHoldReason", review.hold_reason);
     setValue("draftReviewBlockReason", review.block_reason);
     renderList("draftReviewScope", [
-      { label: "Input", value: "Controlled draft packet" },
+      { label: "Input", value: "v3.4.8 draft packet" },
       { label: "Output", value: "Founder review decision candidate" },
-      { label: "Authorization", value: "False" },
-      { label: "Execution", value: "False" }
+      { label: "Question handoff", value: "Preserved" },
+      { label: "Authority", value: "Closed" }
     ]);
     renderList("draftReviewChecks", config.review_checks.map((item) => ({ label: item.check, value: item.rule })));
   }
@@ -300,6 +361,10 @@
       source_answer_id: readValue("draftReviewSourceAnswer"),
       source_record_id: readValue("draftReviewSourceRecord"),
       source_family: readValue("draftReviewSourceFamily"),
+      review_route: readValue("draftReviewRoute"),
+      founder_question: readValue("draftReviewFounderQuestion"),
+      permission_question: readValue("draftReviewPermissionQuestion"),
+      authority_flag_audit: readValue("draftReviewAuthorityAudit"),
       review_scope: readValue("draftReviewScopeText"),
       review_language: readValue("draftReviewLanguage"),
       review_notes: readValue("draftReviewNotes"),
@@ -373,6 +438,9 @@
 
   window.vedapathControlledPermissionExecutionAuthorizationDraftReviewGate = {
     draftPacketReady,
+    matchesSourceHandoff,
+    matchesSourceIdentity,
+    reviewPreservesHandoff,
     hasUnsafeAuthority,
     keepsNonExecutionReviewBoundary,
     controlledPermissionExecutionAuthorizationDraftReviewGate,

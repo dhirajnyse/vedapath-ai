@@ -10,6 +10,13 @@ It is not a guru, oracle, priest, or ritual authority. It helps users ask better
 
 Let us look at the source first.
 
+## v3.4.9 Controlled Permission Execution Authorization Draft Review Gate Re-entry
+
+- Re-enters the controlled draft review gate from the v3.4.8 draft packet.
+- Preserves review route, founder question, permission question, and authority flag audit before founder decision candidate readiness.
+- Reviews draft language only; permission, authorization, execution, storage, public release, and production remain false.
+- Updates [Controlled Draft Review Gate](controlledpermissionexecutionauthorizationdraftreviewgate.html), [Build Status](build-status.html), and [Prototype Notes](docs/PROTOTYPE_NOTES.md).
+
 ## v3.4.8 Controlled Permission Execution Authorization Draft Gate Re-entry
 
 - Re-enters the controlled draft gate from the v3.4.7 founder decision packet.
