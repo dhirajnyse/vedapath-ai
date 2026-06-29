@@ -5229,9 +5229,9 @@ Calm. Reverent. Precise. Beginner-friendly. Never flashy about sacred material.
 
 The app should feel like a patient guide opening a text beside the user.
 
-### 325. Controlled Permission Execution Authorization Draft Gate Re-entry
+### 325. Controlled Permission Execution Authorization Draft Gate Baseline
 
-The draft gate should convert founder posture into reviewable wording, not authority.
+The initial draft gate baseline converted founder posture into reviewable wording, not authority.
 
 It should:
 
@@ -5280,6 +5280,19 @@ It should:
 - block when source identity, handoff questions, route, or authority audit drift
 - keep permission grant, authorization approval, execution, storage writes, canonical writes, public release, and production unavailable
 - make the founder posture legible before dense controls
+
+### 329. Controlled Permission Execution Authorization Draft Gate Re-entry
+
+Controlled Permission Execution Authorization Draft Gate Re-entry should receive the v3.5.1 founder posture packet and prepare draft-review candidate language while every authority flag remains false.
+
+It should:
+
+- accept only the v3.5.1 founder-permission execution authorization decision packet
+- preserve review decision id, draft review id, draft gate id, founder decision id, authorization review id, preflight id, hold id, source ids, route, questions, and authority audit
+- output only controlled draft-review candidate language
+- keep permission grant, authorization approval, execution, storage writes, canonical writes, public release, and production unavailable
+- move only to controlled draft review gate re-entry
+- make the draft handoff feel calm, readable, and narrower than the full release history
 
 ## Strategic Difference
 
