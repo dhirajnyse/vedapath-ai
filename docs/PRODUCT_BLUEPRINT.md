@@ -5242,9 +5242,9 @@ It should:
 - keep permission, authorization approval, execution, storage, public release, and production false
 - use a calmer relay UI so the user sees incoming packet, preserved handoff, and outgoing review candidate before dense controls
 
-### 326. Controlled Permission Execution Authorization Draft Review Gate Re-entry
+### 326. Controlled Permission Execution Authorization Draft Review Gate Baseline
 
-The draft review gate should convert draft-review readiness into founder decision candidate language, not authority.
+The initial draft review gate baseline converted draft-review readiness into founder decision candidate language, not authority.
 
 It should:
 
@@ -5293,6 +5293,19 @@ It should:
 - keep permission grant, authorization approval, execution, storage writes, canonical writes, public release, and production unavailable
 - move only to controlled draft review gate re-entry
 - make the draft handoff feel calm, readable, and narrower than the full release history
+
+### 330. Controlled Permission Execution Authorization Draft Review Gate Re-entry
+
+Controlled Permission Execution Authorization Draft Review Gate Re-entry should receive the v3.5.2 draft candidate and prepare founder review-decision candidate language while every authority flag remains false.
+
+It should:
+
+- accept only the v3.5.2 controlled draft candidate packet
+- preserve review decision id, draft review id, draft gate id, founder decision id, authorization review id, preflight id, hold id, source ids, route, questions, and authority audit
+- output only founder review-decision candidate language
+- keep permission grant, authorization approval, execution, storage writes, canonical writes, public release, and production unavailable
+- move only to the review-decision gate re-entry
+- make the review handoff calm, source-identifiable, and narrower than the release history
 
 ## Strategic Difference
 

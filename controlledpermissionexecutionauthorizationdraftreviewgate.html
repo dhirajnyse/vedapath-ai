@@ -33,7 +33,7 @@
           <a class="link" href="conversationcompanionlab.html">Talk</a>
           <a class="link" href="patterncompanionlab.html">Pattern</a>
           <a class="link" href="daily.html">Daily</a>
-          <span class="version">v3.5.2 draft</span>
+          <span class="version">v3.5.3 review</span>
         </nav>
       </header>
 
@@ -41,12 +41,12 @@
         <aside class="panel">
           <span class="eyebrow">Review is not authorization</span>
           <h2>Review the handoff. Approve nothing.</h2>
-          <p class="muted">This gate receives the v3.4.8 draft packet, checks the route and questions, then prepares only a founder decision candidate.</p>
+          <p class="muted">This gate receives the v3.5.2 draft candidate, checks source identity and questions, then prepares only a founder review-decision candidate.</p>
           <div class="sprint-list">
-            <div class="sprint-step active"><span class="step-index">1</span><div><strong>Draft</strong><p>v3.4.8 input.</p></div></div>
-            <div class="sprint-step"><span class="step-index">2</span><div><strong>Handoff</strong><p>Route and questions.</p></div></div>
+            <div class="sprint-step active"><span class="step-index">1</span><div><strong>Draft</strong><p>v3.5.2 input.</p></div></div>
+            <div class="sprint-step"><span class="step-index">2</span><div><strong>Identity</strong><p>Source ids intact.</p></div></div>
             <div class="sprint-step"><span class="step-index">3</span><div><strong>Boundary</strong><p>Authority closed.</p></div></div>
-            <div class="sprint-step"><span class="step-index">4</span><div><strong>Decision</strong><p>Founder next.</p></div></div>
+            <div class="sprint-step"><span class="step-index">4</span><div><strong>Decision</strong><p>Founder review next.</p></div></div>
           </div>
           <div class="button-row" style="margin-top: 16px;">
             <a class="button primary" href="controlledpermissionexecutionauthorizationdraftgate.html">Open Draft Gate</a>
@@ -58,29 +58,29 @@
           <div class="draft-review-head">
             <div>
               <span class="eyebrow">Controlled draft review re-entry</span>
-              <h1>Review the packet. Keep authority closed.</h1>
-              <p class="muted">VedaPath now reviews the v3.4.8 draft packet as a handoff, not a permission. The output can only be a founder review decision candidate.</p>
+              <h1>Review the draft. Preserve the chain. Grant nothing.</h1>
+              <p class="muted">VedaPath now reviews the v3.5.2 draft candidate as a source-identity handoff, not a permission. The output can only be a founder review-decision candidate.</p>
             </div>
             <div class="draft-review-mark"><img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath controlled draft review mark"></div>
           </div>
 
           <section class="draft-review-step-grid" aria-label="Draft review gate flow">
-            <div class="draft-review-step"><span>1</span><strong>Draft packet</strong><p>v3.4.8 only.</p></div>
-            <div class="draft-review-step"><span>2</span><strong>Question handoff</strong><p>No wording drift.</p></div>
-            <div class="draft-review-step"><span>3</span><strong>Authority audit</strong><p>Still false.</p></div>
+            <div class="draft-review-step"><span>1</span><strong>Draft candidate</strong><p>v3.5.2 only.</p></div>
+            <div class="draft-review-step"><span>2</span><strong>Source identity</strong><p>No id drift.</p></div>
+            <div class="draft-review-step"><span>3</span><strong>Question handoff</strong><p>Still exact.</p></div>
             <div class="draft-review-step"><span>4</span><strong>Founder next</strong><p>No runnable path.</p></div>
           </section>
 
           <section class="draft-review-relay" aria-label="Controlled draft review relay">
             <div>
               <span>Incoming</span>
-              <strong>v3.4.8 draft packet</strong>
+              <strong>v3.5.2 draft candidate</strong>
               <p>Review candidate, not approval.</p>
             </div>
             <div>
               <span>Verified</span>
-              <strong>Route, questions, audit</strong>
-              <p>Exact handoff remains intact.</p>
+              <strong>Ids, route, questions, audit</strong>
+              <p>Source identity remains intact.</p>
             </div>
             <div>
               <span>Outgoing</span>
@@ -96,6 +96,7 @@
               <label>Review state<select id="draftReviewState"></select></label>
               <label>Review actor<input id="draftReviewActor" type="text" placeholder="Controlled draft review gate"></label>
               <label>Reviewer name<input id="draftReviewName" type="text" placeholder="Draft review sample"></label>
+              <label>Review decision gate id<input id="draftReviewReviewDecisionId" type="text"></label>
               <label>Draft review gate id<input id="draftReviewGateId" type="text"></label>
               <label>Draft gate id<input id="draftReviewDraftGateId" type="text"></label>
               <label>Founder decision gate id<input id="draftReviewDecisionId" type="text"></label>
@@ -165,8 +166,8 @@
           <p class="muted">A ready review creates one founder review decision candidate. The route, questions, and authority locks stay visible.</p>
           <div class="progress" aria-label="Draft review gate progress 100 percent"><div class="bar" style="--score:100%"></div></div>
           <div class="metric-grid">
-            <div class="metric"><span>Current</span><strong>v3.4.9</strong></div>
-            <div class="metric"><span>Input</span><strong>v3.4.8</strong></div>
+            <div class="metric"><span>Current</span><strong>v3.5.3</strong></div>
+            <div class="metric"><span>Input</span><strong>v3.5.2</strong></div>
             <div class="metric"><span>Execution</span><strong>False</strong></div>
             <div class="metric"><span>Next</span><strong>Founder</strong></div>
           </div>

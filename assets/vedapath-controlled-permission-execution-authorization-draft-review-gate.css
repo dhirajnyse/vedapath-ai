@@ -50,11 +50,23 @@ body.permission-execution-draft-review-page main.workspace > aside.panel.tight {
 
 .draft-review-gate {
   gap: 18px;
+  background:
+    linear-gradient(180deg, rgba(255, 253, 248, 0.97), rgba(255, 250, 242, 0.92)),
+    radial-gradient(circle at 88% 8%, rgba(20, 92, 74, 0.08), transparent 30%);
+  box-shadow: 0 24px 60px rgba(68, 37, 24, 0.07);
+}
+
+.draft-review-gate h1 {
+  max-width: 860px;
+  font-size: clamp(30px, 3vw, 46px);
+  line-height: 1.03;
+  letter-spacing: 0;
 }
 
 .draft-review-head {
   grid-template-columns: minmax(0, 1fr) 126px;
   align-items: center;
+  min-height: 166px;
 }
 
 .draft-review-mark {
@@ -62,8 +74,9 @@ body.permission-execution-draft-review-page main.workspace > aside.panel.tight {
   place-items: center;
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: #fff3e4;
+  background: linear-gradient(145deg, rgba(255, 248, 237, 0.9), rgba(255, 232, 208, 0.82));
   padding: 10px;
+  box-shadow: 0 18px 44px rgba(91, 45, 24, 0.08);
 }
 
 .draft-review-mark img {
@@ -110,13 +123,14 @@ body.permission-execution-draft-review-page main.workspace > aside.panel.tight {
 }
 
 .draft-review-step:first-child {
-  border-color: #e46a3b;
-  background: #fff1e9;
+  border-color: rgba(214, 90, 31, 0.45);
+  background: linear-gradient(180deg, #fff5ef, #fffaf5);
 }
 
 .draft-review-relay > div {
-  border-left: 3px solid #e0a83b;
-  box-shadow: 0 18px 36px rgba(91, 70, 56, 0.07);
+  border-left: 3px solid rgba(224, 168, 59, 0.72);
+  background: rgba(255, 253, 248, 0.84);
+  box-shadow: 0 18px 36px rgba(91, 70, 56, 0.06);
 }
 
 .draft-review-relay > div:first-child {
@@ -151,11 +165,20 @@ body.permission-execution-draft-review-page main.workspace > aside.panel.tight {
 .draft-review-form textarea,
 .draft-review-output {
   width: 100%;
-  border: 1px solid #efc1aa;
+  border: 1px solid rgba(168, 63, 18, 0.28);
   border-radius: 8px;
-  background: #fffaf4;
+  background: rgba(255, 250, 244, 0.9);
   color: var(--ink);
   padding: 10px;
+}
+
+.draft-review-form input:focus,
+.draft-review-form select:focus,
+.draft-review-form textarea:focus,
+.draft-review-output:focus {
+  border-color: rgba(214, 90, 31, 0.68);
+  box-shadow: 0 0 0 3px rgba(224, 168, 59, 0.14);
+  outline: none;
 }
 
 .draft-review-form textarea,
@@ -163,7 +186,8 @@ body.permission-execution-draft-review-page main.workspace > aside.panel.tight {
   min-height: 96px;
   resize: vertical;
   font-family: Consolas, "Courier New", monospace;
-  font-size: 13px;
+  font-size: 12px;
+  line-height: 1.5;
 }
 
 .draft-review-actions {
@@ -191,6 +215,7 @@ body.permission-execution-draft-review-page main.workspace > aside.panel.tight {
 .draft-review-relay strong {
   display: block;
   margin-top: 4px;
+  line-height: 1.25;
 }
 
 .draft-review-relay p {

@@ -37,6 +37,8 @@
     "authority_flag_audit"
   ];
   const sourceIdentityFields = [
+    "review_decision_gate_id",
+    "controlled_permission_execution_authorization_draft_review_gate_id",
     "controlled_permission_execution_authorization_draft_gate_id",
     "founder_decision_gate_id",
     "authorization_review_gate_id",
@@ -80,18 +82,23 @@
 
   function reviewPreservesHandoff(review, draftPacket, config) {
     if (!review || !draftPacket || !config || !config.source) return false;
-    return handoffFields.every((field) => {
+    const sourceOk = sourceIdentityFields.every((field) => {
       const value = compact(review[field]);
       return value && value === compact(draftPacket[field]) && value === compact(config.source[field]);
     });
+    const handoffOk = handoffFields.every((field) => {
+      const value = compact(review[field]);
+      return value && value === compact(draftPacket[field]) && value === compact(config.source[field]);
+    });
+    return sourceOk && handoffOk;
   }
 
   function draftPacketReady(packet, config) {
     return Boolean(
       packet &&
-      packet.schema_version === "controlled-permission-execution-authorization-draft-gate-v2" &&
-      packet.release === "v3.4.8" &&
-      packet.draft_status === "Controlled authorization draft prepared; execution remains false." &&
+      packet.schema_version === "controlled-permission-execution-authorization-draft-gate-v3" &&
+      packet.release === "v3.5.2" &&
+      packet.draft_status === "Controlled draft review candidate prepared; execution remains false." &&
       packet.next_gate_required === "Controlled permission execution authorization draft review gate" &&
       matchesSourceIdentity(packet, config) &&
       matchesSourceHandoff(packet, config) &&
@@ -132,7 +139,7 @@
 
   function controlledPermissionExecutionAuthorizationDraftReviewGate(config, draftPacket, review) {
     if (!draftPacketReady(draftPacket, config)) {
-      return blocked("Blocked: controlled draft packet must be the v3.4.8 non-authorizing draft packet.", {
+      return blocked("Blocked: controlled draft packet must be the v3.5.2 non-authorizing draft candidate.", {
         next_gate_required: "Controlled permission execution authorization draft review gate"
       });
     }
@@ -144,7 +151,8 @@
     }
 
     if (!reviewPreservesHandoff(review, draftPacket, config)) {
-      return blocked("Blocked: review must preserve the v3.4.8 route, questions, and authority audit.", {
+      return blocked("Blocked: review must preserve the v3.5.2 source identity, route, questions, and authority audit.", {
+        required_source_identity: sourceIdentityFields,
         required_handoff: handoffFields
       });
     }
@@ -170,10 +178,11 @@
       return blocked("Blocked: non-execution review clause must keep authority false.", {});
     }
 
-    if (!compact(review.review_scope).includes("v3.4.8") ||
+    if (!compact(review.review_scope).includes("v3.5.2") ||
         !compact(review.review_notes).includes("question handoff") ||
+        !compact(review.review_notes).includes("source identity") ||
         !compact(review.review_evidence_summary).includes("authority flag audit")) {
-      return blocked("Blocked: review text must name the v3.4.8 handoff and authority audit.", {});
+      return blocked("Blocked: review text must name the v3.5.2 handoff, source identity, and authority audit.", {});
     }
 
     if (hasUnsafeAuthority(review.production_boundary) || !compact(review.production_boundary).includes("Production remains unavailable")) {
@@ -210,6 +219,7 @@
       schema_version: config.schema_version,
       release: config.release,
       draft_review_status: "Draft review ready for founder decision; execution remains false.",
+      review_decision_gate_id: review.review_decision_gate_id,
       controlled_permission_execution_authorization_draft_review_gate_id: review.controlled_permission_execution_authorization_draft_review_gate_id,
       controlled_permission_execution_authorization_draft_gate_id: review.controlled_permission_execution_authorization_draft_gate_id,
       founder_decision_gate_id: review.founder_decision_gate_id,
@@ -244,6 +254,7 @@
       stop_condition: review.stop_condition,
       expiry_check: review.expiry_check,
       production_boundary: review.production_boundary,
+      preserves_source_identity: sourceIdentityFields.every((field) => compact(review[field]) === compact(config.source[field])),
       preserves_review_route: compact(review.review_route) === compact(config.source.review_route),
       preserves_founder_question: compact(review.founder_question) === compact(config.source.founder_question),
       preserves_permission_question: compact(review.permission_question) === compact(config.source.permission_question),
@@ -310,6 +321,7 @@
     setValue("draftReviewState", review.review_state);
     setValue("draftReviewActor", review.review_actor);
     setValue("draftReviewName", review.reviewer_name);
+    setValue("draftReviewReviewDecisionId", review.review_decision_gate_id);
     setValue("draftReviewGateId", review.controlled_permission_execution_authorization_draft_review_gate_id);
     setValue("draftReviewDraftGateId", review.controlled_permission_execution_authorization_draft_gate_id);
     setValue("draftReviewDecisionId", review.founder_decision_gate_id);
@@ -339,8 +351,9 @@
     setValue("draftReviewHoldReason", review.hold_reason);
     setValue("draftReviewBlockReason", review.block_reason);
     renderList("draftReviewScope", [
-      { label: "Input", value: "v3.4.8 draft packet" },
+      { label: "Input", value: "v3.5.2 draft candidate" },
       { label: "Output", value: "Founder review decision candidate" },
+      { label: "Source identity", value: "Preserved" },
       { label: "Question handoff", value: "Preserved" },
       { label: "Authority", value: "Closed" }
     ]);
@@ -352,6 +365,7 @@
       review_state: readValue("draftReviewState"),
       review_actor: readValue("draftReviewActor"),
       reviewer_name: readValue("draftReviewName"),
+      review_decision_gate_id: readValue("draftReviewReviewDecisionId"),
       controlled_permission_execution_authorization_draft_review_gate_id: readValue("draftReviewGateId"),
       controlled_permission_execution_authorization_draft_gate_id: readValue("draftReviewDraftGateId"),
       founder_decision_gate_id: readValue("draftReviewDecisionId"),
