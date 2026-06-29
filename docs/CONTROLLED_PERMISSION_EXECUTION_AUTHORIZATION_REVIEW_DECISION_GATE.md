@@ -1,14 +1,26 @@
-# Controlled Permission Execution Authorization Review Decision Gate
+# Controlled Permission Execution Authorization Review Decision Gate Re-entry
 
-Controlled Permission Execution Authorization Review Decision Gate adds a controlled review-decision bridge after authorization review readiness.
+Controlled Permission Execution Authorization Review Decision Gate Re-entry receives the v3.4.9 controlled draft-review packet and turns it into a founder decision candidate route, hold, return, or block.
+
+Version: v3.5.0
+
+Input: v3.4.9 Controlled Permission Execution Authorization Draft Review Gate output
+
+Next gate: Founder permission execution authorization decision gate.
 
 It can route a packet to:
 
 - founder decision
 - hold for more evidence
-- return to authorization review
+- return to draft review
 - block the packet path
 
-It must not grant permission, approve authorization, execute, store, update canonical records, publish, or launch production.
+Every accepted decision must preserve:
 
-Next gate: Controlled permission execution authorization draft gate.
+- review route
+- founder question
+- permission question
+- source ids
+- authority flag audit
+
+It must not grant permission, approve authorization, execute, store, update canonical records, publish, or launch production.

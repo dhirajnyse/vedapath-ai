@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>VedaPath Controlled Permission Execution Authorization Review Decision Gate</title>
+    <title>VedaPath Controlled Permission Execution Authorization Review Decision Gate Re-entry</title>
     <link rel="stylesheet" href="assets/vedapath-sprint.css">
     <link rel="stylesheet" href="assets/vedapath-cohesive.css">
     <link rel="stylesheet" href="assets/vedapath-polish.css">
@@ -33,24 +33,24 @@
           <a class="link" href="conversationcompanionlab.html">Talk</a>
           <a class="link" href="patterncompanionlab.html">Pattern</a>
           <a class="link" href="daily.html">Daily</a>
-          <span class="version">v3.4.9 review</span>
+          <span class="version">v3.5.0 decision</span>
         </nav>
       </header>
 
       <main class="workspace" aria-label="VedaPath Controlled Permission Execution Authorization Review Decision Gate workspace">
         <aside class="panel">
-          <span class="eyebrow">Route, hold, return, or block</span>
-          <h2>Review decision before founder decision.</h2>
-          <p class="muted">This gate turns a ready authorization review into one safe route. It cannot grant permission, approve authorization, execute, store, publish, or launch.</p>
+          <span class="eyebrow">Decision is still not authority</span>
+          <h2>Route the handoff. Approve nothing.</h2>
+          <p class="muted">This gate receives the v3.4.9 draft-review packet, checks the route, questions, source ids, and authority audit, then chooses one safe next path.</p>
           <div class="sprint-list">
-            <div class="sprint-step active"><span class="step-index">1</span><div><strong>Review</strong><p>Load ready packet.</p></div></div>
-            <div class="sprint-step"><span class="step-index">2</span><div><strong>Decide</strong><p>Choose one route.</p></div></div>
-            <div class="sprint-step"><span class="step-index">3</span><div><strong>Boundary</strong><p>Authority stays false.</p></div></div>
-            <div class="sprint-step"><span class="step-index">4</span><div><strong>Next</strong><p>Founder only if ready.</p></div></div>
+            <div class="sprint-step active"><span class="step-index">1</span><div><strong>Review</strong><p>Load v3.4.9 packet.</p></div></div>
+            <div class="sprint-step"><span class="step-index">2</span><div><strong>Handoff</strong><p>Preserve questions.</p></div></div>
+            <div class="sprint-step"><span class="step-index">3</span><div><strong>Route</strong><p>Founder, hold, return, block.</p></div></div>
+            <div class="sprint-step"><span class="step-index">4</span><div><strong>Boundary</strong><p>No grant, no execution.</p></div></div>
           </div>
           <div class="button-row" style="margin-top: 16px;">
             <a class="button primary" href="founderpermissionexecutionauthorizationdecisiongate.html">Open Founder Decision</a>
-            <a class="button" href="controlledpermissionexecutionauthorizationreviewgate.html">Open Authorization Review</a>
+            <a class="button" href="controlledpermissionexecutionauthorizationdraftreviewgate.html">Open Draft Review</a>
             <a class="button safe" href="permissionexecutionauthorizationpreflight.html">Open Preflight</a>
           </div>
         </aside>
@@ -58,9 +58,9 @@
         <section class="panel review-decision" id="controlledPermissionExecutionAuthorizationReviewDecisionGate">
           <div class="review-decision-head">
             <div>
-              <span class="eyebrow">Controlled review decision gate</span>
-              <h1>Route the review. Authorize nothing.</h1>
-              <p class="muted">A ready route can move to founder decision only. Hold, return, and block remain first-class outcomes. Permission grant, authorization approval, execution, storage writes, canonical writes, public release, and production remain false.</p>
+              <span class="eyebrow">Controlled review decision re-entry</span>
+              <h1>Choose the next gate. Keep authority closed.</h1>
+              <p class="muted">A positive result prepares a founder decision candidate only. Permission grant, authorization approval, execution, storage writes, canonical writes, public release, and production remain false.</p>
             </div>
             <div class="review-decision-mark"><img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath review decision mark"></div>
           </div>
@@ -68,24 +68,37 @@
           <section class="review-decision-choice-grid" aria-label="Review decision choices">
             <button class="review-decision-choice" type="button" data-decision-state="Ready for founder decision" aria-pressed="true"><span>Route</span><strong>Founder</strong><p>Move to founder decision only.</p></button>
             <button class="review-decision-choice" type="button" data-decision-state="Hold for evidence" aria-pressed="false"><span>Route</span><strong>Hold</strong><p>Wait for clearer evidence.</p></button>
-            <button class="review-decision-choice" type="button" data-decision-state="Return to authorization review" aria-pressed="false"><span>Route</span><strong>Return</strong><p>Send back for review edits.</p></button>
+            <button class="review-decision-choice" type="button" data-decision-state="Return to draft review" aria-pressed="false"><span>Route</span><strong>Return</strong><p>Send back for review edits.</p></button>
             <button class="review-decision-choice" type="button" data-decision-state="Block packet" aria-pressed="false"><span>Route</span><strong>Block</strong><p>Close this packet route.</p></button>
+          </section>
+
+          <section class="review-decision-relay" aria-label="Review decision relay">
+            <div><span>Incoming</span><strong>v3.4.9 review packet</strong><p>Draft review ready, execution false.</p></div>
+            <div><span>Preserve</span><strong>Route, questions, audit</strong><p>No wording drift before decision.</p></div>
+            <div><span>Outgoing</span><strong>Founder decision candidate</strong><p>Only if every authority flag stays false.</p></div>
           </section>
 
           <section class="review-decision-grid">
             <div class="review-decision-form">
               <h2>Review Decision Packet</h2>
-              <label>Authorization review packet<textarea id="reviewDecisionPacket"></textarea></label>
+              <label>Draft-review packet<textarea id="reviewDecisionPacket"></textarea></label>
               <label>Decision state<select id="reviewDecisionState"></select></label>
               <label>Decision actor<input id="reviewDecisionActor" type="text" placeholder="Controlled review decision gate"></label>
               <label>Reviewer name<input id="reviewDecisionReviewer" type="text" placeholder="Reviewer sample"></label>
               <label>Review decision gate id<input id="reviewDecisionId" type="text"></label>
+              <label>Draft review gate id<input id="reviewDecisionDraftReviewId" type="text"></label>
+              <label>Draft gate id<input id="reviewDecisionDraftGateId" type="text"></label>
+              <label>Founder decision gate id<input id="reviewDecisionFounderDecisionId" type="text"></label>
               <label>Authorization review gate id<input id="reviewDecisionReviewId" type="text"></label>
               <label>Authorization preflight id<input id="reviewDecisionPreflightId" type="text"></label>
               <label>Execution hold id<input id="reviewDecisionHoldId" type="text"></label>
               <label>Source answer id<input id="reviewDecisionSourceAnswer" type="text"></label>
               <label>Source record id<input id="reviewDecisionSourceRecord" type="text"></label>
               <label>Source family<input id="reviewDecisionSourceFamily" type="text"></label>
+              <label>Review route<input id="reviewDecisionRoute" type="text"></label>
+              <label>Founder question<textarea id="reviewDecisionFounderQuestion"></textarea></label>
+              <label>Permission question<textarea id="reviewDecisionPermissionQuestion"></textarea></label>
+              <label>Authority flag audit<textarea id="reviewDecisionAuthorityAudit"></textarea></label>
               <label>Decision scope<textarea id="reviewDecisionScopeText"></textarea></label>
               <label>Decision language<textarea id="reviewDecisionLanguage"></textarea></label>
               <label>Decision rationale<textarea id="reviewDecisionRationale"></textarea></label>
@@ -141,9 +154,9 @@
           <p class="muted">A positive decision prepares a founder decision gate. It still does not grant permission or approve execution.</p>
           <div class="progress" aria-label="Review decision gate progress 100 percent"><div class="bar" style="--score:100%"></div></div>
           <div class="metric-grid">
-            <div class="metric"><span>Current</span><strong>v3.3.5</strong></div>
+            <div class="metric"><span>Current</span><strong>v3.5.0</strong></div>
+            <div class="metric"><span>Input</span><strong>v3.4.9</strong></div>
             <div class="metric"><span>Routes</span><strong>4</strong></div>
-            <div class="metric"><span>Execution</span><strong>False</strong></div>
             <div class="metric"><span>Next</span><strong>Founder</strong></div>
           </div>
           <section class="panel tight boundary" style="margin-top: 16px;">

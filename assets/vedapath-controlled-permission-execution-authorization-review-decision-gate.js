@@ -1,31 +1,48 @@
 (function () {
   const configUrl = "data/vedapath-controlled-permission-execution-authorization-review-decision-gate.json";
   const falseAuthorityFlags = [
-  "permission_granted",
-  "authorization_permission_granted",
-  "permission_review_approved",
-  "founder_permission_granted",
-  "execution_packet_authorized",
-  "execution_authorized",
-  "execution_allowed",
-  "founder_instruction_granted",
-  "source_promotion_allowed",
-  "promotion_execution_allowed",
-  "implementation_authorized",
-  "implementation_execution_allowed",
-  "controlled_storage_entry_allowed",
-  "storage_write_enabled",
-  "canonical_write_allowed",
-  "source_write_executed",
-  "actual_storage_write_executed",
-  "production_ready",
-  "production_launch_allowed",
-  "public_release_allowed"
-];
+    "permission_granted",
+    "authorization_permission_granted",
+    "permission_review_approved",
+    "founder_permission_granted",
+    "execution_packet_authorized",
+    "execution_authorized",
+    "execution_allowed",
+    "founder_instruction_granted",
+    "source_promotion_allowed",
+    "promotion_execution_allowed",
+    "implementation_authorized",
+    "implementation_execution_allowed",
+    "controlled_storage_entry_allowed",
+    "storage_write_enabled",
+    "canonical_write_allowed",
+    "source_write_executed",
+    "actual_storage_write_executed",
+    "production_ready",
+    "production_launch_allowed",
+    "public_release_allowed"
+  ];
   const reviewReadyFlags = [
-    "controlled_permission_execution_authorization_review_ready",
-    "permission_execution_authorization_review_recorded",
-    "founder_permission_execution_authorization_decision_candidate_ready"
+    "controlled_permission_execution_authorization_draft_review_ready",
+    "permission_execution_authorization_draft_review_recorded",
+    "founder_permission_execution_authorization_review_decision_candidate_ready"
+  ];
+  const sourceIdentityFields = [
+    "controlled_permission_execution_authorization_draft_review_gate_id",
+    "controlled_permission_execution_authorization_draft_gate_id",
+    "founder_decision_gate_id",
+    "authorization_review_gate_id",
+    "permission_execution_authorization_preflight_id",
+    "controlled_permission_execution_hold_id",
+    "source_answer_id",
+    "source_record_id",
+    "source_family"
+  ];
+  const handoffFields = [
+    "review_route",
+    "founder_question",
+    "permission_question",
+    "authority_flag_audit"
   ];
   const blockedWords = /\b(permission granted|permission approved|review approved|authorization granted|authorization approved|approval granted|execution approved|execution authorized|authorize execution|execute now|run now|storage enabled|canonical update|canonical write allowed|migration run|secret use|account creation allowed|public release allowed|launch production now|launch production allowed|production launch allowed|permission_granted true|authorization_permission_granted true|permission_review_approved true|founder_permission_granted true|founder_instruction_granted true|execution_allowed true|execution_authorized true|execution_packet_authorized true|storage_write_enabled true|canonical_write_allowed true|production_ready true|public_release_allowed true)\b/i;
 
@@ -49,12 +66,38 @@
     return flags.every((flag) => get(packet, flag) === true);
   }
 
-  function authorizationReviewPacketReady(packet) {
+  function matchesSourceIdentity(packet, config) {
+    if (!packet || !config || !config.source) return false;
+    return sourceIdentityFields.every((field) => compact(packet[field]) === compact(config.source[field]));
+  }
+
+  function matchesSourceHandoff(packet, config) {
+    if (!packet || !config || !config.source) return false;
+    return handoffFields.every((field) => compact(packet[field]) === compact(config.source[field]));
+  }
+
+  function decisionPreservesHandoff(decision, reviewPacket, config) {
+    if (!decision || !reviewPacket || !config || !config.source) return false;
+    const sameIdentity = sourceIdentityFields.every((field) => {
+      const value = compact(decision[field]);
+      return value && value === compact(reviewPacket[field]) && value === compact(config.source[field]);
+    });
+    const sameHandoff = handoffFields.every((field) => {
+      const value = compact(decision[field]);
+      return value && value === compact(reviewPacket[field]) && value === compact(config.source[field]);
+    });
+    return sameIdentity && sameHandoff;
+  }
+
+  function draftReviewPacketReady(packet, config) {
     return Boolean(
       packet &&
-      packet.schema_version === "controlled-permission-execution-authorization-review-gate-v1" &&
-      packet.review_status === "Review ready for founder authorization decision" &&
-      packet.next_gate_required === "Founder permission execution authorization decision gate" &&
+      packet.schema_version === "controlled-permission-execution-authorization-draft-review-gate-v2" &&
+      packet.release === "v3.4.9" &&
+      packet.draft_review_status === "Draft review ready for founder decision; execution remains false." &&
+      packet.next_gate_required === "Founder permission execution authorization review decision gate" &&
+      matchesSourceIdentity(packet, config) &&
+      matchesSourceHandoff(packet, config) &&
       allFlagsTrue(packet, reviewReadyFlags) &&
       allFlagsFalse(packet, falseAuthorityFlags)
     );
@@ -97,14 +140,22 @@
       decision_status: status,
       review_decision_outcome: outcome,
       review_decision_gate_id: decision.review_decision_gate_id,
+      controlled_permission_execution_authorization_draft_review_gate_id: decision.controlled_permission_execution_authorization_draft_review_gate_id,
+      controlled_permission_execution_authorization_draft_gate_id: decision.controlled_permission_execution_authorization_draft_gate_id,
+      founder_decision_gate_id: decision.founder_decision_gate_id,
       authorization_review_gate_id: decision.authorization_review_gate_id,
       permission_execution_authorization_preflight_id: decision.permission_execution_authorization_preflight_id,
       controlled_permission_execution_hold_id: decision.controlled_permission_execution_hold_id,
       source_answer_id: decision.source_answer_id,
       source_record_id: decision.source_record_id,
       source_family: decision.source_family,
-      controlled_permission_execution_authorization_review_ready: reviewPacket.controlled_permission_execution_authorization_review_ready === true,
-      permission_execution_authorization_review_recorded: reviewPacket.permission_execution_authorization_review_recorded === true,
+      review_route: decision.review_route,
+      founder_question: decision.founder_question,
+      permission_question: decision.permission_question,
+      authority_flag_audit: decision.authority_flag_audit,
+      controlled_permission_execution_authorization_draft_review_ready: reviewPacket.controlled_permission_execution_authorization_draft_review_ready === true,
+      permission_execution_authorization_draft_review_recorded: reviewPacket.permission_execution_authorization_draft_review_recorded === true,
+      founder_permission_execution_authorization_review_decision_candidate_ready: reviewPacket.founder_permission_execution_authorization_review_decision_candidate_ready === true,
       review_decision_ready: forwardReady === true,
       review_decision_recorded: true,
       founder_permission_execution_authorization_decision_candidate_ready: forwardReady === true,
@@ -123,15 +174,19 @@
       return_reason: decision.return_reason || "",
       hold_reason: decision.hold_reason || "",
       block_reason: decision.block_reason || "",
+      preserves_review_route: compact(decision.review_route) === compact(config.source.review_route),
+      preserves_founder_question: compact(decision.founder_question) === compact(config.source.founder_question),
+      preserves_permission_question: compact(decision.permission_question) === compact(config.source.permission_question),
+      preserves_authority_flag_audit: compact(decision.authority_flag_audit) === compact(config.source.authority_flag_audit),
       next_gate_required: forwardReady ? "Founder permission execution authorization decision gate" : null,
       created_at: new Date().toISOString()
     };
   }
 
   function controlledPermissionExecutionAuthorizationReviewDecisionGate(config, reviewPacket, decision) {
-    if (!authorizationReviewPacketReady(reviewPacket)) {
-      return blocked("Blocked: authorization review packet must be ready and non-authorizing.", {
-        next_gate_required: "Founder permission execution authorization decision gate"
+    if (!draftReviewPacketReady(reviewPacket, config)) {
+      return blocked("Blocked: draft-review packet must be the v3.4.9 non-authorizing review packet.", {
+        next_gate_required: "Founder permission execution authorization review decision gate"
       });
     }
 
@@ -139,6 +194,13 @@
     const missing = requiredMissing(config, state, decision || {});
     if (missing.length) {
       return blocked("Blocked: missing required fields for " + state + ".", { missing });
+    }
+
+    if (!decisionPreservesHandoff(decision, reviewPacket, config)) {
+      return blocked("Blocked: decision must preserve the v3.4.9 route, questions, source ids, and authority audit.", {
+        required_identity: sourceIdentityFields,
+        required_handoff: handoffFields
+      });
     }
 
     const textFields = [
@@ -163,6 +225,12 @@
       return blocked("Blocked: non-execution decision clause must keep authority false.", {});
     }
 
+    if (!compact(decision.decision_scope).includes("v3.4.9") ||
+        !compact(decision.decision_rationale).includes("question handoff") ||
+        !compact(decision.decision_evidence_summary).includes("authority flag audit")) {
+      return blocked("Blocked: decision text must name the v3.4.9 handoff and authority audit.", {});
+    }
+
     if (hasUnsafeAuthority(decision.production_boundary) || !compact(decision.production_boundary).includes("Production remains unavailable")) {
       return blocked("Blocked: production boundary must stay closed.", {});
     }
@@ -171,8 +239,8 @@
       return baseDecision(config, reviewPacket, decision, "Held for more evidence; founder route closed.", "Hold", false);
     }
 
-    if (state === "Return to authorization review") {
-      return baseDecision(config, reviewPacket, decision, "Returned to authorization review; founder route closed.", "Return", false);
+    if (state === "Return to draft review") {
+      return baseDecision(config, reviewPacket, decision, "Returned to draft review; founder route closed.", "Return", false);
     }
 
     if (state === "Block packet") {
@@ -252,17 +320,24 @@
 
   function loadConfig(config) {
     const decision = config.sample_decision;
-    setValue("reviewDecisionPacket", JSON.stringify(config.sample_authorization_review_packet, null, 2));
+    setValue("reviewDecisionPacket", JSON.stringify(config.sample_draft_review_packet, null, 2));
     setValue("reviewDecisionState", decision.decision_state);
     setValue("reviewDecisionActor", decision.decision_actor);
     setValue("reviewDecisionReviewer", decision.reviewer_name);
     setValue("reviewDecisionId", decision.review_decision_gate_id);
+    setValue("reviewDecisionDraftReviewId", decision.controlled_permission_execution_authorization_draft_review_gate_id);
+    setValue("reviewDecisionDraftGateId", decision.controlled_permission_execution_authorization_draft_gate_id);
+    setValue("reviewDecisionFounderDecisionId", decision.founder_decision_gate_id);
     setValue("reviewDecisionReviewId", decision.authorization_review_gate_id);
     setValue("reviewDecisionPreflightId", decision.permission_execution_authorization_preflight_id);
     setValue("reviewDecisionHoldId", decision.controlled_permission_execution_hold_id);
     setValue("reviewDecisionSourceAnswer", decision.source_answer_id);
     setValue("reviewDecisionSourceRecord", decision.source_record_id);
     setValue("reviewDecisionSourceFamily", decision.source_family);
+    setValue("reviewDecisionRoute", decision.review_route);
+    setValue("reviewDecisionFounderQuestion", decision.founder_question);
+    setValue("reviewDecisionPermissionQuestion", decision.permission_question);
+    setValue("reviewDecisionAuthorityAudit", decision.authority_flag_audit);
     setValue("reviewDecisionScopeText", decision.decision_scope);
     setValue("reviewDecisionLanguage", decision.decision_language);
     setValue("reviewDecisionRationale", decision.decision_rationale);
@@ -279,10 +354,10 @@
     setValue("reviewDecisionBlockReason", decision.block_reason);
     selectChoice(decision.decision_state);
     renderList("reviewDecisionScope", [
-      { label: "Forward path", value: "Founder decision only" },
-      { label: "Hold path", value: "More evidence" },
-      { label: "Return path", value: "Authorization review" },
-      { label: "Execution", value: "False" }
+      { label: "Input", value: "v3.4.9 review packet" },
+      { label: "Output", value: "Founder decision candidate" },
+      { label: "Question handoff", value: "Preserved" },
+      { label: "Authority", value: "Closed" }
     ]);
     renderList("reviewDecisionChecks", config.decision_checks.map((item) => ({ label: item.check, value: item.rule })));
   }
@@ -293,12 +368,19 @@
       decision_actor: readValue("reviewDecisionActor"),
       reviewer_name: readValue("reviewDecisionReviewer"),
       review_decision_gate_id: readValue("reviewDecisionId"),
+      controlled_permission_execution_authorization_draft_review_gate_id: readValue("reviewDecisionDraftReviewId"),
+      controlled_permission_execution_authorization_draft_gate_id: readValue("reviewDecisionDraftGateId"),
+      founder_decision_gate_id: readValue("reviewDecisionFounderDecisionId"),
       authorization_review_gate_id: readValue("reviewDecisionReviewId"),
       permission_execution_authorization_preflight_id: readValue("reviewDecisionPreflightId"),
       controlled_permission_execution_hold_id: readValue("reviewDecisionHoldId"),
       source_answer_id: readValue("reviewDecisionSourceAnswer"),
       source_record_id: readValue("reviewDecisionSourceRecord"),
       source_family: readValue("reviewDecisionSourceFamily"),
+      review_route: readValue("reviewDecisionRoute"),
+      founder_question: readValue("reviewDecisionFounderQuestion"),
+      permission_question: readValue("reviewDecisionPermissionQuestion"),
+      authority_flag_audit: readValue("reviewDecisionAuthorityAudit"),
       decision_scope: readValue("reviewDecisionScopeText"),
       decision_language: readValue("reviewDecisionLanguage"),
       decision_rationale: readValue("reviewDecisionRationale"),
@@ -374,7 +456,11 @@
   }
 
   window.vedapathControlledPermissionExecutionAuthorizationReviewDecisionGate = {
-    authorizationReviewPacketReady,
+    draftReviewPacketReady,
+    authorizationReviewPacketReady: draftReviewPacketReady,
+    matchesSourceHandoff,
+    matchesSourceIdentity,
+    decisionPreservesHandoff,
     hasUnsafeAuthority,
     keepsNonExecutionDecisionBoundary,
     controlledPermissionExecutionAuthorizationReviewDecisionGate,

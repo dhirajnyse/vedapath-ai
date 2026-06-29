@@ -10,6 +10,13 @@ It is not a guru, oracle, priest, or ritual authority. It helps users ask better
 
 Let us look at the source first.
 
+## v3.5.0 Controlled Permission Execution Authorization Review Decision Gate Re-entry
+
+- Re-enters the review decision gate from the v3.4.9 draft-review packet.
+- Preserves review route, founder question, permission question, source ids, and authority flag audit before founder decision candidate readiness.
+- Routes founder, hold, return, or block without granting permission, authorization, execution, storage writes, canonical writes, public release, or production.
+- Updates [Controlled Permission Execution Authorization Review Decision Gate](controlledpermissionexecutionauthorizationreviewdecisiongate.html), [Controlled Permission Execution Authorization Review Decision Gate Data](data/vedapath-controlled-permission-execution-authorization-review-decision-gate.json), and [Controlled Permission Execution Authorization Review Decision Gate Notes](docs/CONTROLLED_PERMISSION_EXECUTION_AUTHORIZATION_REVIEW_DECISION_GATE.md).
+
 ## v3.4.9 Controlled Permission Execution Authorization Draft Review Gate Re-entry
 
 - Re-enters the controlled draft review gate from the v3.4.8 draft packet.

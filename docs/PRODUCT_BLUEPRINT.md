@@ -5255,6 +5255,19 @@ It should:
 - keep permission, authorization approval, execution, storage, public release, and production false
 - use a calm review relay so the user sees incoming draft, verified handoff, and outgoing founder decision before dense controls
 
+### 327. Controlled Permission Execution Authorization Review Decision Gate Re-entry
+
+Controlled Permission Execution Authorization Review Decision Gate Re-entry should receive the v3.4.9 draft-review packet and route it to founder decision, hold, return, or block while every authority flag remains false.
+
+It should:
+
+- accept only the v3.4.9 draft-review packet output
+- preserve review route, founder question, permission question, source ids, and authority flag audit
+- emit review decision readiness only for the forward founder-decision candidate route
+- block when the source identity, handoff questions, route, or authority audit drift
+- keep permission grant, authorization approval, execution, storage writes, canonical writes, public release, and production unavailable
+- make the decision relay visible before controls so the user understands this is still a boundary gate, not authority
+
 ## Strategic Difference
 
 Most religious AI products try to answer as a spiritual authority.

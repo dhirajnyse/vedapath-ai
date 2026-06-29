@@ -51,6 +51,33 @@ body.review-decision-page main.workspace > aside.panel.tight {
   align-items: start;
 }
 
+.review-decision-relay {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  padding: 10px;
+  border: 1px solid rgba(168, 62, 18, 0.14);
+  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(255, 250, 244, 0.92), rgba(237, 248, 243, 0.58));
+}
+
+.review-decision-relay div {
+  min-height: 104px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--sacred-gold);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.58);
+}
+
+.review-decision-relay div:first-child {
+  border-left-color: var(--bhagwa);
+}
+
+.review-decision-relay div:last-child {
+  border-left-color: var(--peacock-green);
+}
+
 .review-decision-choice-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -80,6 +107,12 @@ body.review-decision-page main.workspace > aside.panel.tight {
   min-height: 112px;
   text-align: left;
   cursor: pointer;
+  transition: border-color 160ms ease, background 160ms ease, transform 160ms ease;
+}
+
+.review-decision-choice:hover {
+  transform: translateY(-1px);
+  border-color: rgba(214, 90, 31, 0.36);
 }
 
 .review-decision-choice[aria-pressed="true"],
@@ -144,7 +177,8 @@ body.review-decision-page main.workspace > aside.panel.tight {
 
 .review-decision-card span,
 .review-decision-rule span,
-.review-decision-choice span {
+.review-decision-choice span,
+.review-decision-relay span {
   display: block;
   color: var(--muted);
   font-size: 12px;
@@ -152,9 +186,17 @@ body.review-decision-page main.workspace > aside.panel.tight {
 
 .review-decision-card strong,
 .review-decision-rule strong,
-.review-decision-choice strong {
+.review-decision-choice strong,
+.review-decision-relay strong {
   display: block;
   margin-top: 4px;
+}
+
+.review-decision-relay p {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.45;
 }
 
 .review-decision-boundary {
@@ -166,7 +208,8 @@ body.review-decision-page main.workspace > aside.panel.tight {
   body.review-decision-page main.workspace,
   .review-decision-grid,
   .review-decision-list,
-  .review-decision-rules {
+  .review-decision-rules,
+  .review-decision-relay {
     grid-template-columns: 1fr;
   }
 
