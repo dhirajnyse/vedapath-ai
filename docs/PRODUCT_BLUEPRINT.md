@@ -5268,6 +5268,19 @@ It should:
 - keep permission grant, authorization approval, execution, storage writes, canonical writes, public release, and production unavailable
 - make the decision relay visible before controls so the user understands this is still a boundary gate, not authority
 
+### 328. Founder Permission Execution Authorization Decision Gate Re-entry
+
+Founder Permission Execution Authorization Decision Gate Re-entry should receive the v3.5.0 review-decision packet and record founder posture as draft-only, hold, or reject while every authority flag remains false.
+
+It should:
+
+- accept only the v3.5.0 review-decision packet output
+- preserve review route, founder question, permission question, source ids, and authority flag audit
+- emit founder decision readiness only for the draft-only route
+- block when source identity, handoff questions, route, or authority audit drift
+- keep permission grant, authorization approval, execution, storage writes, canonical writes, public release, and production unavailable
+- make the founder posture legible before dense controls
+
 ## Strategic Difference
 
 Most religious AI products try to answer as a spiritual authority.

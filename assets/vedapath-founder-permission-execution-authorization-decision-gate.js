@@ -41,9 +41,27 @@
     "public_release_allowed"
   ];
   const reviewReadyFlags = [
-    "controlled_permission_execution_authorization_review_ready",
-    "permission_execution_authorization_review_recorded",
+    "review_decision_ready",
+    "review_decision_recorded",
     "founder_permission_execution_authorization_decision_candidate_ready"
+  ];
+  const sourceIdentityFields = [
+    "review_decision_gate_id",
+    "controlled_permission_execution_authorization_draft_review_gate_id",
+    "controlled_permission_execution_authorization_draft_gate_id",
+    "founder_decision_gate_id",
+    "authorization_review_gate_id",
+    "permission_execution_authorization_preflight_id",
+    "controlled_permission_execution_hold_id",
+    "source_answer_id",
+    "source_record_id",
+    "source_family"
+  ];
+  const handoffFields = [
+    "review_route",
+    "founder_question",
+    "permission_question",
+    "authority_flag_audit"
   ];
   const blockedWords = /\b(permission granted|permission approved|review approved|authorization granted|authorization approved|approval granted|execution approved|execution authorized|authorize execution|execute now|run now|storage enabled|canonical update|canonical write allowed|migration run|secret use|account creation allowed|public release allowed|launch production now|launch production allowed|production launch allowed|permission_granted true|authorization_permission_granted true|permission_review_approved true|founder_permission_granted true|founder_instruction_granted true|execution_allowed true|execution_authorized true|execution_packet_authorized true|storage_write_enabled true|canonical_write_allowed true|production_ready true|public_release_allowed true)\b/i;
 
@@ -86,24 +104,38 @@
     return Boolean(text) && authorityAuditFlags.every((flag) => text.includes(flag.toLowerCase() + "=false"));
   }
 
-  function authorizationReviewPacketReady(packet) {
+  function matchesSourceIdentity(packet, decision) {
+    return sourceIdentityFields.every((key) => compact(packet[key]) === compact(decision[key]));
+  }
+
+  function reviewDecisionPacketReady(packet) {
     return Boolean(
       packet &&
-      packet.schema_version === "controlled-permission-execution-authorization-review-gate-v2" &&
-      packet.release === "v3.4.6" &&
-      packet.review_status === "Review ready for founder authorization decision" &&
+      packet.schema_version === "controlled-permission-execution-authorization-review-decision-gate-v2" &&
+      packet.release === "v3.5.0" &&
+      packet.decision_status === "Ready for founder decision; no authority granted." &&
       packet.next_gate_required === "Founder permission execution authorization decision gate" &&
       allFlagsTrue(packet, reviewReadyFlags) &&
       allFlagsFalse(packet, falseAuthorityFlags) &&
+      packet.review_decision_outcome === "Ready" &&
+      packet.preserves_review_route === true &&
+      packet.preserves_founder_question === true &&
+      packet.preserves_permission_question === true &&
+      packet.preserves_authority_flag_audit === true &&
       keepsQuestionHandoff(packet) &&
       keepsAuthorityFlagAudit(packet.authority_flag_audit)
     );
   }
 
+  const authorizationReviewPacketReady = reviewDecisionPacketReady;
+
   function keepsNonExecutionDecisionBoundary(value, allowDraftCandidate) {
     const text = compact(value);
     if (!text || hasUnsafeAuthority(text)) return false;
     const mustMentionTrue = [
+      "review_decision_ready may be true",
+      "review_decision_recorded may be true",
+      "founder_permission_execution_authorization_decision_candidate_ready may be true",
       "founder_permission_execution_authorization_decision_ready may be true",
       "founder_permission_execution_authorization_decision_recorded may be true"
     ];
@@ -116,13 +148,8 @@
   }
 
   function matchesReviewCarry(reviewPacket, decision) {
-    const keys = [
-      "review_route",
-      "founder_question",
-      "permission_question",
-      "authority_flag_audit"
-    ];
-    return keys.every((key) => compact(reviewPacket[key]) === compact(decision[key]));
+    return matchesSourceIdentity(reviewPacket, decision) &&
+      handoffFields.every((key) => compact(reviewPacket[key]) === compact(decision[key]));
   }
 
   function requiredMissing(config, state, decision) {
@@ -134,6 +161,9 @@
     return {
       decision_status: status,
       blocked: true,
+      review_decision_ready: false,
+      review_decision_recorded: false,
+      founder_permission_execution_authorization_decision_candidate_ready: false,
       founder_permission_execution_authorization_decision_ready: false,
       founder_permission_execution_authorization_decision_recorded: false,
       controlled_permission_execution_authorization_draft_candidate_ready: false,
@@ -149,15 +179,13 @@
       decision_status: status,
       founder_decision_outcome: outcome,
       founder_permission_execution_authorization_decision_gate_id: decision.founder_permission_execution_authorization_decision_gate_id,
+      review_decision_gate_id: decision.review_decision_gate_id,
+      controlled_permission_execution_authorization_draft_review_gate_id: decision.controlled_permission_execution_authorization_draft_review_gate_id,
+      controlled_permission_execution_authorization_draft_gate_id: decision.controlled_permission_execution_authorization_draft_gate_id,
+      founder_decision_gate_id: decision.founder_decision_gate_id,
       authorization_review_gate_id: decision.authorization_review_gate_id,
       permission_execution_authorization_preflight_id: decision.permission_execution_authorization_preflight_id,
       controlled_permission_execution_hold_id: decision.controlled_permission_execution_hold_id,
-      controlled_founder_permission_decision_gate_id: reviewPacket.controlled_founder_permission_decision_gate_id,
-      controlled_authorization_permission_review_gate_id: reviewPacket.controlled_authorization_permission_review_gate_id,
-      controlled_authorization_permission_preflight_id: reviewPacket.controlled_authorization_permission_preflight_id,
-      founder_authorization_instruction_gate_id: reviewPacket.founder_authorization_instruction_gate_id,
-      controlled_authorization_review_gate_id: reviewPacket.controlled_authorization_review_gate_id,
-      controlled_execution_packet_authorization_draft_id: reviewPacket.controlled_execution_packet_authorization_draft_id,
       source_answer_id: decision.source_answer_id,
       source_record_id: decision.source_record_id,
       source_family: decision.source_family,
@@ -165,8 +193,9 @@
       founder_question: decision.founder_question,
       permission_question: decision.permission_question,
       authority_flag_audit: decision.authority_flag_audit,
-      controlled_permission_execution_authorization_review_ready: reviewPacket.controlled_permission_execution_authorization_review_ready === true,
-      permission_execution_authorization_review_recorded: reviewPacket.permission_execution_authorization_review_recorded === true,
+      review_decision_ready: reviewPacket.review_decision_ready === true,
+      review_decision_recorded: reviewPacket.review_decision_recorded === true,
+      founder_permission_execution_authorization_decision_candidate_ready: reviewPacket.founder_permission_execution_authorization_decision_candidate_ready === true,
       founder_permission_execution_authorization_decision_ready: outcome === "Draft-only",
       founder_permission_execution_authorization_decision_recorded: true,
       controlled_permission_execution_authorization_draft_candidate_ready: draftCandidate === true,
@@ -190,8 +219,8 @@
   }
 
   function founderPermissionExecutionAuthorizationDecisionGate(config, reviewPacket, decision) {
-    if (!authorizationReviewPacketReady(reviewPacket)) {
-      return blocked("Blocked: authorization review packet must be ready and non-authorizing.", {
+    if (!reviewDecisionPacketReady(reviewPacket)) {
+      return blocked("Blocked: review decision packet must be the v3.5.0 non-authorizing decision packet.", {
         next_gate_required: "Founder permission execution authorization decision gate"
       });
     }
@@ -229,7 +258,8 @@
     }
 
     if (!matchesReviewCarry(reviewPacket, decision)) {
-      return blocked("Blocked: founder decision must preserve the v3.4.6 review route, questions, and authority audit.", {
+      return blocked("Blocked: founder decision must preserve the v3.5.0 route, questions, source ids, and authority audit.", {
+        source_identity: "must match",
         review_route: "must match",
         founder_question: "must match",
         permission_question: "must match",
@@ -237,8 +267,8 @@
       });
     }
 
-    if (!hasText(decision.decision_rationale, [["v3.4.6"], ["question handoff"], ["authority"], ["draft gate"], ["not a live authorization"]])) {
-      return blocked("Blocked: decision rationale must explain the v3.4.6 handoff and non-authorization boundary.", {});
+    if (!hasText(decision.decision_rationale, [["v3.5.0"], ["question handoff"], ["authority flag audit"], ["source ids"], ["draft gate"], ["not a live authorization"]])) {
+      return blocked("Blocked: decision rationale must explain the v3.5.0 handoff, source ids, authority audit, and non-authorization boundary.", {});
     }
 
     if (state === "Needs founder clarification") {
@@ -247,8 +277,8 @@
       });
     }
 
-    if (state === "Return to authorization review") {
-      return blocked("Return: send packet back to authorization review.", { return_reason: decision.return_reason });
+    if (state === "Return to review decision") {
+      return blocked("Return: send packet back to review decision.", { return_reason: decision.return_reason });
     }
 
     if (state === "Permission grant blocked" || state === "Authorization approval blocked" || state === "Execution blocked" || state === "Production forbidden") {
@@ -337,11 +367,15 @@
 
   function loadConfig(config) {
     const decision = config.sample_decision;
-    setValue("founderReviewPacket", JSON.stringify(config.sample_authorization_review_packet, null, 2));
+    setValue("founderReviewPacket", JSON.stringify(config.sample_review_decision_packet || config.sample_authorization_review_packet, null, 2));
     setValue("founderDecisionState", decision.decision_state);
     setValue("founderDecisionActor", decision.decision_actor);
     setValue("founderDecisionName", decision.founder_name);
     setValue("founderDecisionId", decision.founder_permission_execution_authorization_decision_gate_id);
+    setValue("founderDecisionReviewDecisionId", decision.review_decision_gate_id);
+    setValue("founderDecisionDraftReviewId", decision.controlled_permission_execution_authorization_draft_review_gate_id);
+    setValue("founderDecisionDraftGateId", decision.controlled_permission_execution_authorization_draft_gate_id);
+    setValue("founderDecisionSourceFounderId", decision.founder_decision_gate_id);
     setValue("founderDecisionReviewId", decision.authorization_review_gate_id);
     setValue("founderDecisionPreflightId", decision.permission_execution_authorization_preflight_id);
     setValue("founderDecisionHoldId", decision.controlled_permission_execution_hold_id);
@@ -375,9 +409,11 @@
       { label: "Execution", value: "False" }
     ]);
     renderList("founderDecisionQuestionHandoff", [
+      { label: "Review decision", value: decision.review_decision_gate_id },
       { label: "Route", value: decision.review_route },
       { label: "Founder question", value: decision.founder_question },
-      { label: "Permission question", value: decision.permission_question }
+      { label: "Permission question", value: decision.permission_question },
+      { label: "Source", value: decision.source_record_id }
     ]);
     renderList("founderDecisionAuthorityFlags", authorityAuditFlags.map((flag) => ({
       label: flag,
@@ -392,6 +428,10 @@
       decision_actor: readValue("founderDecisionActor"),
       founder_name: readValue("founderDecisionName"),
       founder_permission_execution_authorization_decision_gate_id: readValue("founderDecisionId"),
+      review_decision_gate_id: readValue("founderDecisionReviewDecisionId"),
+      controlled_permission_execution_authorization_draft_review_gate_id: readValue("founderDecisionDraftReviewId"),
+      controlled_permission_execution_authorization_draft_gate_id: readValue("founderDecisionDraftGateId"),
+      founder_decision_gate_id: readValue("founderDecisionSourceFounderId"),
       authorization_review_gate_id: readValue("founderDecisionReviewId"),
       permission_execution_authorization_preflight_id: readValue("founderDecisionPreflightId"),
       controlled_permission_execution_hold_id: readValue("founderDecisionHoldId"),
@@ -478,6 +518,7 @@
   }
 
   window.vedapathFounderPermissionExecutionAuthorizationDecisionGate = {
+    reviewDecisionPacketReady,
     authorizationReviewPacketReady,
     hasUnsafeAuthority,
     keepsQuestionHandoff,

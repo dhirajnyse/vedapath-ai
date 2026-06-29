@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -33,15 +33,15 @@
           <a class="link" href="conversationcompanionlab.html">Talk</a>
           <a class="link" href="patterncompanionlab.html">Pattern</a>
           <a class="link" href="daily.html">Daily</a>
-          <span class="version">v3.5.0 decision</span>
+          <span class="version">v3.5.1 founder</span>
         </nav>
       </header>
 
       <main class="workspace" aria-label="VedaPath Founder Permission Execution Authorization Decision Gate workspace">
         <aside class="panel">
-          <span class="eyebrow">Founder posture, not execution</span>
-          <h2>One decision. Every lock still closed.</h2>
-          <p class="muted">This gate receives the v3.4.6 review packet and records founder posture only. It cannot grant permission, approve authorization, execute, store, publish, or launch.</p>
+          <span class="eyebrow">Founder posture, not authority</span>
+          <h2>Receive the route. Choose posture. Keep locks closed.</h2>
+          <p class="muted">This gate receives the v3.5.0 review-decision packet and records founder posture only. It cannot grant permission, approve authorization, execute, store, publish, or launch.</p>
           <div class="sprint-list">
             <div class="sprint-step active"><span class="step-index">1</span><div><strong>Review</strong><p>Load ready packet.</p></div></div>
             <div class="sprint-step"><span class="step-index">2</span><div><strong>Handoff</strong><p>Preserve questions.</p></div></div>
@@ -49,8 +49,8 @@
             <div class="sprint-step"><span class="step-index">4</span><div><strong>Boundary</strong><p>Grant nothing.</p></div></div>
           </div>
           <div class="button-row" style="margin-top: 16px;">
-            <a class="button primary" href="controlledpermissionexecutionauthorizationdraftgate.html">Open Draft Gate</a>
-            <a class="button" href="controlledpermissionexecutionauthorizationreviewdecisiongate.html">Open Review Decision</a>
+            <a class="button primary" href="controlledpermissionexecutionauthorizationreviewdecisiongate.html">Open Review Decision</a>
+            <a class="button" href="controlledpermissionexecutionauthorizationdraftgate.html">Open Draft Gate</a>
             <a class="button" href="controlledpermissionexecutionauthorizationreviewgate.html">Open Authorization Review</a>
             <a class="button safe" href="permissionexecutionauthorizationpreflight.html">Open Preflight</a>
           </div>
@@ -60,8 +60,8 @@
           <div class="founder-decision-head">
             <div>
               <span class="eyebrow">Founder decision re-entry</span>
-              <h1>Decide the route. Grant nothing.</h1>
-              <p class="muted">A draft-only outcome can prepare the next controlled draft gate. Hold and reject stay first-class. Permission grant, authorization approval, execution, storage writes, canonical writes, public release, and production remain false.</p>
+              <h1>Choose posture. Preserve the handoff. Grant nothing.</h1>
+              <p class="muted">A draft-only outcome can prepare the next controlled draft gate from the v3.5.0 review-decision packet. Hold and reject stay first-class. Permission grant, authorization approval, execution, storage writes, canonical writes, public release, and production remain false.</p>
             </div>
             <div class="founder-decision-mark"><img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath founder decision mark"></div>
           </div>
@@ -75,13 +75,13 @@
           <section class="founder-decision-meridian" aria-label="Founder decision handoff summary">
             <article>
               <span>Incoming packet</span>
-              <strong>v3.4.6 review</strong>
-              <p>Source-locked review readiness only.</p>
+              <strong>v3.5.0 review decision</strong>
+              <p>Route, questions, source ids, and audit preserved.</p>
             </article>
             <article>
               <span>Founder action</span>
-              <strong>Choose posture</strong>
-              <p>Draft-only, hold, or reject.</p>
+              <strong>Record posture</strong>
+              <p>Draft-only, hold, or reject without authority.</p>
             </article>
             <article>
               <span>Operational state</span>
@@ -93,11 +93,15 @@
           <section class="founder-decision-grid">
             <div class="founder-decision-form">
               <h2>Founder Decision Packet</h2>
-              <label>Authorization review packet<textarea id="founderReviewPacket"></textarea></label>
+              <label>Review decision packet<textarea id="founderReviewPacket"></textarea></label>
               <label>Decision state<select id="founderDecisionState"></select></label>
               <label>Decision actor<input id="founderDecisionActor" type="text" placeholder="Founder"></label>
               <label>Founder name<input id="founderDecisionName" type="text" placeholder="Founder sample"></label>
               <label>Founder decision gate id<input id="founderDecisionId" type="text"></label>
+              <label>Review decision gate id<input id="founderDecisionReviewDecisionId" type="text"></label>
+              <label>Draft review gate id<input id="founderDecisionDraftReviewId" type="text"></label>
+              <label>Draft gate id<input id="founderDecisionDraftGateId" type="text"></label>
+              <label>Incoming founder gate id<input id="founderDecisionSourceFounderId" type="text"></label>
               <label>Authorization review gate id<input id="founderDecisionReviewId" type="text"></label>
               <label>Authorization preflight id<input id="founderDecisionPreflightId" type="text"></label>
               <label>Execution hold id<input id="founderDecisionHoldId" type="text"></label>
@@ -172,9 +176,9 @@
           <p class="muted">A positive decision prepares one later draft gate. It still does not grant permission or approve execution.</p>
           <div class="progress" aria-label="Founder decision gate progress 100 percent"><div class="bar" style="--score:100%"></div></div>
           <div class="metric-grid">
-            <div class="metric"><span>Current</span><strong>v3.4.7</strong></div>
+            <div class="metric"><span>Current</span><strong>v3.5.1</strong></div>
+            <div class="metric"><span>Input</span><strong>v3.5.0</strong></div>
             <div class="metric"><span>Choices</span><strong>3</strong></div>
-            <div class="metric"><span>Execution</span><strong>False</strong></div>
             <div class="metric"><span>Next</span><strong>Draft gate</strong></div>
           </div>
           <section class="panel tight boundary" style="margin-top: 16px;">
