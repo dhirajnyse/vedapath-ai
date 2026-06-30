@@ -1,10 +1,10 @@
 # Controlled Permission Execution Authorization Review Decision Gate Re-entry
 
-Controlled Permission Execution Authorization Review Decision Gate Re-entry receives the v3.5.7 controlled draft-review packet and turns it into a founder decision candidate route, hold, return, or block.
+Controlled Permission Execution Authorization Review Decision Gate Re-entry receives the v3.6.1 controlled draft-review packet and turns it into a founder decision candidate route, hold, return, or block.
 
-Version: v3.5.8
+Version: v3.6.2
 
-Input: v3.5.7 Controlled Permission Execution Authorization Draft Review Gate output
+Input: v3.6.1 Controlled Permission Execution Authorization Draft Review Gate output
 
 Next gate: Founder permission execution authorization decision gate.
 
