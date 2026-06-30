@@ -25,8 +25,31 @@ body.permission-execution-draft-review-page .nav .version {
 }
 
 body.permission-execution-draft-review-page main.workspace {
-  grid-template-columns: minmax(230px, 0.74fr) minmax(0, 1.72fr) minmax(240px, 0.82fr);
-  gap: 18px;
+  grid-template-columns: minmax(210px, 0.62fr) minmax(0, 2.1fr) minmax(216px, 0.58fr);
+  gap: 16px;
+  align-items: start;
+}
+
+body.permission-execution-draft-review-page.vp-command-shell-ready main.workspace {
+  margin-top: 28px;
+  grid-template-columns: minmax(190px, 0.55fr) minmax(0, 2.35fr) minmax(210px, 0.56fr);
+}
+
+body.permission-execution-draft-review-page .panel {
+  background:
+    linear-gradient(180deg, rgba(255, 254, 249, 0.94), rgba(255, 251, 243, 0.9)),
+    radial-gradient(circle at 100% 0%, rgba(224, 168, 59, 0.08), transparent 34%);
+  box-shadow: 0 18px 46px rgba(49, 34, 22, 0.045);
+}
+
+body.permission-execution-draft-review-page .panel h2 {
+  font-size: clamp(20px, 1.4vw, 27px);
+  line-height: 1.12;
+}
+
+body.permission-execution-draft-review-page aside.panel > h2 {
+  font-size: clamp(21px, 1.35vw, 28px);
+  max-width: 12ch;
 }
 
 body.permission-execution-draft-review-page main.workspace > aside.panel:first-child,
@@ -49,24 +72,25 @@ body.permission-execution-draft-review-page main.workspace > aside.panel.tight {
 }
 
 .draft-review-gate {
-  gap: 18px;
+  gap: 16px;
   background:
     linear-gradient(180deg, rgba(255, 253, 248, 0.97), rgba(255, 250, 242, 0.92)),
     radial-gradient(circle at 88% 8%, rgba(20, 92, 74, 0.08), transparent 30%);
-  box-shadow: 0 24px 60px rgba(68, 37, 24, 0.07);
+  border-color: rgba(20, 92, 74, 0.14);
+  box-shadow: 0 24px 64px rgba(44, 36, 24, 0.055);
 }
 
 .draft-review-gate h1 {
-  max-width: 860px;
-  font-size: clamp(30px, 3vw, 46px);
-  line-height: 1.03;
+  max-width: 920px;
+  font-size: clamp(30px, 2.62vw, 42px);
+  line-height: 1.05;
   letter-spacing: 0;
 }
 
 .draft-review-head {
-  grid-template-columns: minmax(0, 1fr) 126px;
+  grid-template-columns: minmax(0, 1fr) 116px;
   align-items: center;
-  min-height: 166px;
+  min-height: 150px;
 }
 
 .draft-review-mark {
@@ -75,7 +99,7 @@ body.permission-execution-draft-review-page main.workspace > aside.panel.tight {
   border: 1px solid var(--line);
   border-radius: 8px;
   background: linear-gradient(145deg, rgba(255, 248, 237, 0.9), rgba(255, 232, 208, 0.82));
-  padding: 10px;
+  padding: 9px;
   box-shadow: 0 18px 44px rgba(91, 45, 24, 0.08);
 }
 
@@ -120,6 +144,19 @@ body.permission-execution-draft-review-page main.workspace > aside.panel.tight {
 .draft-review-rule,
 .draft-review-form {
   padding: 12px;
+  max-height: 940px;
+  overflow: auto;
+  scrollbar-gutter: stable;
+}
+
+.draft-review-form h2 {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  margin: -12px -12px 2px;
+  padding: 12px;
+  background: linear-gradient(180deg, rgba(255, 254, 249, 0.98), rgba(255, 254, 249, 0.9));
+  border-bottom: 1px solid rgba(123, 92, 72, 0.12);
 }
 
 .draft-review-step:first-child {
@@ -183,11 +220,16 @@ body.permission-execution-draft-review-page main.workspace > aside.panel.tight {
 
 .draft-review-form textarea,
 .draft-review-output {
-  min-height: 96px;
+  min-height: 84px;
   resize: vertical;
   font-family: Consolas, "Courier New", monospace;
   font-size: 12px;
   line-height: 1.5;
+}
+
+.draft-review-form textarea:first-of-type,
+.draft-review-output {
+  min-height: 180px;
 }
 
 .draft-review-actions {
@@ -198,6 +240,7 @@ body.permission-execution-draft-review-page main.workspace > aside.panel.tight {
 .draft-review-list,
 .draft-review-rules {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
 }
 
 .draft-review-card span,
@@ -215,7 +258,7 @@ body.permission-execution-draft-review-page main.workspace > aside.panel.tight {
 .draft-review-relay strong {
   display: block;
   margin-top: 4px;
-  line-height: 1.25;
+  line-height: 1.22;
 }
 
 .draft-review-relay p {
