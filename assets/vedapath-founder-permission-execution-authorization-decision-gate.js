@@ -111,8 +111,8 @@
   function reviewDecisionPacketReady(packet) {
     return Boolean(
       packet &&
-      packet.schema_version === "controlled-permission-execution-authorization-review-decision-gate-v2" &&
-      packet.release === "v3.5.0" &&
+      packet.schema_version === "controlled-permission-execution-authorization-review-decision-gate-v3" &&
+      packet.release === "v3.5.4" &&
       packet.decision_status === "Ready for founder decision; no authority granted." &&
       packet.next_gate_required === "Founder permission execution authorization decision gate" &&
       allFlagsTrue(packet, reviewReadyFlags) &&
@@ -122,6 +122,7 @@
       packet.preserves_founder_question === true &&
       packet.preserves_permission_question === true &&
       packet.preserves_authority_flag_audit === true &&
+      packet.preserves_source_identity === true &&
       keepsQuestionHandoff(packet) &&
       keepsAuthorityFlagAudit(packet.authority_flag_audit)
     );
@@ -220,7 +221,7 @@
 
   function founderPermissionExecutionAuthorizationDecisionGate(config, reviewPacket, decision) {
     if (!reviewDecisionPacketReady(reviewPacket)) {
-      return blocked("Blocked: review decision packet must be the v3.5.0 non-authorizing decision packet.", {
+      return blocked("Blocked: review decision packet must be the v3.5.4 non-authorizing decision packet.", {
         next_gate_required: "Founder permission execution authorization decision gate"
       });
     }
@@ -258,7 +259,7 @@
     }
 
     if (!matchesReviewCarry(reviewPacket, decision)) {
-      return blocked("Blocked: founder decision must preserve the v3.5.0 route, questions, source ids, and authority audit.", {
+      return blocked("Blocked: founder decision must preserve the v3.5.4 route, questions, source ids, and authority audit.", {
         source_identity: "must match",
         review_route: "must match",
         founder_question: "must match",
@@ -267,8 +268,8 @@
       });
     }
 
-    if (!hasText(decision.decision_rationale, [["v3.5.0"], ["question handoff"], ["authority flag audit"], ["source ids"], ["draft gate"], ["not a live authorization"]])) {
-      return blocked("Blocked: decision rationale must explain the v3.5.0 handoff, source ids, authority audit, and non-authorization boundary.", {});
+    if (!hasText(decision.decision_rationale, [["v3.5.4"], ["question handoff"], ["authority flag audit"], ["source ids"], ["draft gate"], ["not a live authorization"]])) {
+      return blocked("Blocked: decision rationale must explain the v3.5.4 handoff, source ids, authority audit, and non-authorization boundary.", {});
     }
 
     if (state === "Needs founder clarification") {
@@ -403,10 +404,10 @@
     setValue("founderDecisionBlockReason", decision.block_reason);
     selectChoice(decision.decision_state);
     renderList("founderDecisionScope", [
-      { label: "Positive path", value: "Draft-only gate" },
-      { label: "Hold path", value: "More evidence" },
-      { label: "Reject path", value: "Close packet" },
-      { label: "Execution", value: "False" }
+      { label: "Input", value: "v3.5.4 review decision" },
+      { label: "Positive path", value: "Draft-only candidate" },
+      { label: "Hold/reject path", value: "First-class stop" },
+      { label: "Authority", value: "All false" }
     ]);
     renderList("founderDecisionQuestionHandoff", [
       { label: "Review decision", value: decision.review_decision_gate_id },

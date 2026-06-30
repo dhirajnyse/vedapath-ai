@@ -5320,6 +5320,19 @@ It should:
 - move only to the founder permission execution authorization decision gate re-entry
 - make the decision path feel narrower, calmer, and easier to audit than the release history
 
+### 332. Founder Permission Execution Authorization Decision Gate Re-entry
+
+Founder Permission Execution Authorization Decision Gate Re-entry should receive the v3.5.4 review-decision packet and record founder posture as draft-only, hold, return, or reject while every authority flag remains false.
+
+It should:
+
+- accept only the v3.5.4 controlled review-decision packet
+- preserve review decision id, draft review id, draft gate id, founder decision id, authorization review id, preflight id, hold id, source ids, route, questions, and authority audit
+- output founder posture only, with draft candidate readiness only for the draft-only route
+- keep permission grant, authorization approval, execution, storage writes, canonical writes, public release, and production unavailable
+- move only to the controlled permission execution authorization draft gate re-entry
+- make the founder posture feel calm, narrow, and legible before dense controls
+
 ## Strategic Difference
 
 Most religious AI products try to answer as a spiritual authority.

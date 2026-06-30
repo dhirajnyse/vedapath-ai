@@ -1,8 +1,8 @@
 # Founder Permission Execution Authorization Decision Gate Re-entry
 
-Version: v3.5.1
+Version: v3.5.5
 
-Founder Permission Execution Authorization Decision Gate Re-entry receives the v3.5.0 controlled review-decision packet and records founder posture after review-decision readiness.
+Founder Permission Execution Authorization Decision Gate Re-entry receives the v3.5.4 controlled review-decision packet and records founder posture after review-decision readiness.
 
 It can record three outcomes:
 
@@ -10,7 +10,7 @@ It can record three outcomes:
 - Hold for more evidence
 - Reject packet path
 
-It may mark a controlled draft candidate only when the founder chooses the draft-only path.
+It may mark a controlled draft candidate only when the founder chooses the draft-only path. This is a posture record, not a permission grant or execution approval.
 
 It must preserve:
 

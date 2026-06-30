@@ -298,3 +298,91 @@ body.permission-execution-decision-page main.workspace > aside.panel.tight {
     grid-template-columns: 1fr;
   }
 }
+
+/* VEDAPATH v3.5.5 FOUNDER DECISION RHYTHM */
+body.permission-execution-decision-page {
+  --founder-quiet: rgba(255, 253, 248, 0.86);
+  --founder-cream: rgba(255, 249, 239, 0.84);
+  --founder-line: rgba(116, 73, 44, 0.16);
+}
+
+body.permission-execution-decision-page main.workspace {
+  align-items: start;
+}
+
+body.permission-execution-decision-page .panel {
+  background:
+    linear-gradient(180deg, var(--founder-quiet), var(--founder-cream));
+}
+
+.founder-decision {
+  border-color: var(--founder-line);
+  background:
+    radial-gradient(circle at 92% 8%, rgba(224, 168, 59, 0.1), transparent 28%),
+    linear-gradient(145deg, rgba(255, 255, 252, 0.98), rgba(255, 249, 239, 0.92));
+}
+
+.founder-decision h1 {
+  max-width: 720px;
+  font-size: clamp(2rem, 2.42vw, 3rem);
+  letter-spacing: 0;
+}
+
+.founder-decision-head {
+  gap: 18px;
+}
+
+.founder-decision-head .muted {
+  max-width: 780px;
+}
+
+.founder-decision-choice {
+  min-height: 104px;
+  padding: 14px;
+}
+
+.founder-decision-choice strong {
+  font-size: 17px;
+}
+
+.founder-decision-choice p,
+.founder-decision-meridian p,
+.founder-decision-card strong,
+.founder-decision-rule strong {
+  overflow-wrap: anywhere;
+}
+
+.founder-decision-meridian article,
+.founder-decision-card,
+.founder-decision-rule,
+.founder-decision-form {
+  border-color: var(--founder-line);
+}
+
+.founder-decision-form {
+  max-height: 760px;
+  overflow: auto;
+  padding-right: 14px;
+}
+
+.founder-decision-form h2,
+.handoff-quiet h2,
+.founder-decision-grid h2 {
+  font-size: 1.15rem;
+}
+
+.founder-decision-form textarea {
+  min-height: 76px;
+}
+
+.founder-decision-result h2 {
+  font-size: clamp(1.12rem, 1.45vw, 1.55rem);
+}
+
+.founder-decision-output {
+  min-height: 320px;
+}
+
+body.permission-execution-decision-page aside.panel:first-child .button-row {
+  grid-template-columns: 1fr;
+}
