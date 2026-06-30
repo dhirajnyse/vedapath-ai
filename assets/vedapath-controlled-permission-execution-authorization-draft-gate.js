@@ -28,6 +28,7 @@
     "controlled_permission_execution_authorization_draft_candidate_ready"
   ];
   const sourceIdentityFields = [
+    "founder_permission_execution_authorization_decision_gate_id",
     "review_decision_gate_id",
     "controlled_permission_execution_authorization_draft_review_gate_id",
     "controlled_permission_execution_authorization_draft_gate_id",
@@ -98,12 +99,12 @@
   function founderDecisionPacketReady(packet, config) {
     return Boolean(
       packet &&
-      packet.schema_version === "founder-permission-execution-authorization-decision-gate-v3" &&
-      packet.release === "v3.5.1" &&
+      packet.schema_version === "founder-permission-execution-authorization-decision-gate-v4" &&
+      packet.release === "v3.5.5" &&
       packet.decision_status === "Draft-only founder decision recorded; execution remains false." &&
       packet.founder_decision_outcome === "Draft-only" &&
       packet.next_gate_required === "Controlled permission execution authorization draft gate" &&
-      compact(packet.founder_permission_execution_authorization_decision_gate_id) === compact(config.source.founder_decision_gate_id) &&
+      compact(packet.founder_permission_execution_authorization_decision_gate_id) === compact(config.source.founder_permission_execution_authorization_decision_gate_id) &&
       matchesSourceIdentity(packet, config) &&
       matchesSourceHandoff(packet, config) &&
       allFlagsTrue(packet, decisionReadyFlags) &&
@@ -146,7 +147,7 @@
 
   function controlledPermissionExecutionAuthorizationDraftGate(config, decisionPacket, draft) {
     if (!founderDecisionPacketReady(decisionPacket, config)) {
-      return blocked("Blocked: founder decision packet must be the v3.5.1 draft-only, non-authorizing posture packet.", {
+      return blocked("Blocked: founder decision packet must be the v3.5.5 draft-only, non-authorizing posture packet.", {
         next_gate_required: "Controlled permission execution authorization draft gate"
       });
     }
@@ -158,7 +159,7 @@
     }
 
     if (!draftPreservesCarry(draft, decisionPacket, config)) {
-      return blocked("Blocked: draft must preserve the v3.5.1 source ids, review route, questions, and authority audit.", {
+      return blocked("Blocked: draft must preserve the v3.5.5 source ids, review route, questions, and authority audit.", {
         required_identity: sourceIdentityFields,
         required_handoff: handoffFields
       });
@@ -185,10 +186,10 @@
       return blocked("Blocked: non-execution draft clause must keep authority false.", {});
     }
 
-    if (!compact(draft.draft_scope).includes("v3.5.1") ||
-        !hasText(draft.draft_rationale, [["v3.5.1"], ["question handoff"], ["authority flag audit"], ["source ids"], ["draft review gate"], ["not a live authorization"]]) ||
+    if (!compact(draft.draft_scope).includes("v3.5.5") ||
+        !hasText(draft.draft_rationale, [["v3.5.5"], ["question handoff"], ["authority flag audit"], ["source ids"], ["draft review gate"], ["not a live authorization"]]) ||
         !compact(draft.draft_evidence_summary).includes("authority flag audit")) {
-      return blocked("Blocked: draft text must name the v3.5.1 handoff, source ids, draft review gate, and authority audit.", {});
+      return blocked("Blocked: draft text must name the v3.5.5 handoff, source ids, draft review gate, and authority audit.", {});
     }
 
     if (hasUnsafeAuthority(draft.production_boundary) || !compact(draft.production_boundary).includes("Production remains unavailable")) {
@@ -226,6 +227,7 @@
       release: config.release,
       draft_status: "Controlled draft review candidate prepared; execution remains false.",
       controlled_permission_execution_authorization_draft_gate_id: draft.controlled_permission_execution_authorization_draft_gate_id,
+      founder_permission_execution_authorization_decision_gate_id: draft.founder_permission_execution_authorization_decision_gate_id,
       review_decision_gate_id: draft.review_decision_gate_id,
       controlled_permission_execution_authorization_draft_review_gate_id: draft.controlled_permission_execution_authorization_draft_review_gate_id,
       founder_decision_gate_id: draft.founder_decision_gate_id,
@@ -325,6 +327,7 @@
     setValue("draftActor", draft.draft_actor);
     setValue("draftName", draft.drafter_name);
     setValue("draftGateId", draft.controlled_permission_execution_authorization_draft_gate_id);
+    setValue("draftFounderPostureId", draft.founder_permission_execution_authorization_decision_gate_id);
     setValue("draftReviewDecisionId", draft.review_decision_gate_id);
     setValue("draftDraftReviewId", draft.controlled_permission_execution_authorization_draft_review_gate_id);
     setValue("draftDecisionId", draft.founder_decision_gate_id);
@@ -354,7 +357,7 @@
     setValue("draftHoldReason", draft.hold_reason);
     setValue("draftBlockReason", draft.block_reason);
     renderList("draftGateScope", [
-      { label: "Input", value: "v3.5.1 founder posture" },
+      { label: "Input", value: "v3.5.5 founder posture" },
       { label: "Output", value: "Review candidate" },
       { label: "Source identity", value: "Preserved" },
       { label: "Authority", value: "Closed" }
@@ -368,6 +371,7 @@
       draft_actor: readValue("draftActor"),
       drafter_name: readValue("draftName"),
       controlled_permission_execution_authorization_draft_gate_id: readValue("draftGateId"),
+      founder_permission_execution_authorization_decision_gate_id: readValue("draftFounderPostureId"),
       review_decision_gate_id: readValue("draftReviewDecisionId"),
       controlled_permission_execution_authorization_draft_review_gate_id: readValue("draftDraftReviewId"),
       founder_decision_gate_id: readValue("draftDecisionId"),
