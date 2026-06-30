@@ -327,3 +327,152 @@ body.permission-execution-draft-page .draft-gate p {
     grid-template-columns: 1fr;
   }
 }
+
+/* v3.6.0 controlled draft gate re-entry */
+body.permission-execution-draft-page {
+  --draft-surface: rgba(255, 254, 250, 0.92);
+  --draft-soft: rgba(255, 248, 238, 0.74);
+  --draft-green: rgba(20, 92, 74, 0.12);
+  --draft-shadow: 0 26px 70px rgba(39, 25, 17, 0.07);
+}
+
+body.permission-execution-draft-page.vp-command-shell-ready .shell {
+  background:
+    linear-gradient(90deg, rgba(20, 92, 74, 0.035) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(214, 90, 31, 0.032) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(255, 253, 248, 0.95), rgba(255, 248, 238, 0.84));
+  background-size: 24px 24px, 24px 24px, auto;
+}
+
+body.permission-execution-draft-page.vp-command-shell-ready main.workspace {
+  grid-template-columns: minmax(210px, 0.66fr) minmax(680px, 1.72fr) minmax(220px, 0.72fr);
+  gap: 20px;
+  align-items: start;
+}
+
+body.permission-execution-draft-page .panel,
+body.permission-execution-draft-page .draft-gate {
+  border-color: rgba(91, 45, 24, 0.13);
+  background: var(--draft-surface);
+  box-shadow: var(--draft-shadow);
+}
+
+body.permission-execution-draft-page main.workspace > aside.panel:first-child {
+  background:
+    linear-gradient(180deg, rgba(255, 253, 248, 0.95), rgba(255, 250, 242, 0.9)),
+    radial-gradient(circle at 10% 8%, rgba(20, 92, 74, 0.08), transparent 34%);
+}
+
+body.permission-execution-draft-page aside.panel h2,
+body.permission-execution-draft-page .draft-gate h2 {
+  font-size: clamp(17px, 1.08vw, 22px);
+  letter-spacing: 0;
+}
+
+body.permission-execution-draft-page aside.panel .muted,
+body.permission-execution-draft-page .draft-gate .muted,
+body.permission-execution-draft-page .draft-step p,
+body.permission-execution-draft-page .draft-relay p,
+body.permission-execution-draft-page .draft-gate-card {
+  color: color-mix(in srgb, var(--ink) 72%, #6f5a4a);
+  font-size: 14px;
+}
+
+body.permission-execution-draft-page .draft-gate h1 {
+  max-width: 760px;
+  font-size: clamp(30px, 2.35vw, 42px);
+  line-height: 1.04;
+}
+
+body.permission-execution-draft-page .draft-gate-head {
+  grid-template-columns: minmax(0, 1fr) 104px;
+  min-height: 132px;
+}
+
+body.permission-execution-draft-page .draft-gate-mark {
+  border-color: rgba(224, 168, 59, 0.28);
+  background:
+    linear-gradient(145deg, rgba(255, 250, 241, 0.98), rgba(255, 235, 211, 0.72));
+}
+
+body.permission-execution-draft-page .draft-step-grid {
+  gap: 12px;
+}
+
+body.permission-execution-draft-page .draft-step {
+  min-height: 104px;
+  padding: 14px;
+  background:
+    linear-gradient(180deg, rgba(255, 253, 248, 0.94), rgba(255, 250, 244, 0.88));
+}
+
+body.permission-execution-draft-page .draft-step span,
+body.permission-execution-draft-page .sprint-step .step-index {
+  display: inline-grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background: var(--draft-green);
+  color: var(--peacock, #145c4a);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+body.permission-execution-draft-page .draft-step:first-child,
+body.permission-execution-draft-page .sprint-step.active,
+body.permission-execution-draft-page .draft-gate-result[data-state^="Controlled draft review candidate"] {
+  border-color: rgba(214, 90, 31, 0.36);
+  background: linear-gradient(180deg, rgba(255, 244, 236, 0.9), rgba(255, 253, 248, 0.94));
+}
+
+body.permission-execution-draft-page .draft-relay {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  background:
+    linear-gradient(135deg, rgba(255, 253, 248, 0.96), rgba(244, 249, 246, 0.72));
+  padding: 10px;
+}
+
+body.permission-execution-draft-page .draft-relay div {
+  min-height: 104px;
+  border-left-color: rgba(20, 92, 74, 0.4);
+}
+
+body.permission-execution-draft-page .draft-gate-form {
+  max-height: 720px;
+}
+
+body.permission-execution-draft-page .draft-gate-form h2 {
+  font-size: 20px;
+}
+
+body.permission-execution-draft-page .draft-gate-form input,
+body.permission-execution-draft-page .draft-gate-form select,
+body.permission-execution-draft-page .draft-gate-form textarea,
+body.permission-execution-draft-page .draft-gate-output {
+  background: rgba(255, 253, 248, 0.92);
+  border-color: rgba(91, 45, 24, 0.16);
+}
+
+body.permission-execution-draft-page .draft-gate-form textarea {
+  min-height: 76px;
+}
+
+body.permission-execution-draft-page .draft-gate-output {
+  min-height: 280px;
+}
+
+body.permission-execution-draft-page .metric {
+  min-height: 86px;
+  background: rgba(255, 253, 248, 0.86);
+}
+
+@media (max-width: 1320px) {
+  body.permission-execution-draft-page.vp-command-shell-ready main.workspace {
+    grid-template-columns: 1fr;
+  }
+
+  body.permission-execution-draft-page .draft-gate-head {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

@@ -1,5 +1,5 @@
 (function () {
-  const releaseBadge = "v3.5.9 founder";
+  const releaseBadge = "v3.6.0 draft";
   const prefKey = "vedapathCommandShellPrefs";
   const groups = [
     { title: "Start", labels: ["Home", "Build", "Brand", "Blueprint"] },
@@ -18,6 +18,9 @@
     Talk: "Conversation companion",
     Pattern: "Pattern companion",
     Daily: "Daily calm loop"
+  };
+  const bodyPageTitles = {
+    "permission-execution-draft-page": "Controlled draft gate"
   };
 
   function safeParse(value, fallback) {
@@ -112,7 +115,8 @@
   }
 
   function topHtml(active, settings) {
-    const title = pageTitles[active.label] || document.title.replace(/^VedaPath\s*/i, "").trim() || "VedaPath room";
+    const bodyTitle = Object.keys(bodyPageTitles).find((name) => document.body.classList.contains(name));
+    const title = bodyPageTitles[bodyTitle] || pageTitles[active.label] || document.title.replace(/^VedaPath\s*/i, "").trim() || "VedaPath room";
     return '<div class="vp-command-title">' +
       '<div class="vp-command-meta">' +
         '<span class="vp-command-eyebrow">Source-first companion</span>' +
