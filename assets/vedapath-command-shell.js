@@ -1,5 +1,5 @@
 (function () {
-  const releaseBadge = "v3.6.0 draft";
+  const releaseBadge = "v3.6.1 review";
   const prefKey = "vedapathCommandShellPrefs";
   const groups = [
     { title: "Start", labels: ["Home", "Build", "Brand", "Blueprint"] },
@@ -20,7 +20,8 @@
     Daily: "Daily calm loop"
   };
   const bodyPageTitles = {
-    "permission-execution-draft-page": "Controlled draft gate"
+    "permission-execution-draft-page": "Controlled draft gate",
+    "permission-execution-draft-review-page": "Controlled draft review gate"
   };
 
   function safeParse(value, fallback) {
