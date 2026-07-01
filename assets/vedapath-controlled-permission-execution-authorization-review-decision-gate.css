@@ -31,9 +31,10 @@ body.review-decision-page main.workspace > aside.panel.tight {
 .review-decision {
   gap: 13px;
   background:
-    radial-gradient(circle at 94% 2%, rgba(20, 92, 74, 0.055), transparent 32%),
+    radial-gradient(circle at 94% 2%, rgba(20, 92, 74, 0.05), transparent 32%),
+    linear-gradient(180deg, rgba(255, 255, 251, 0.82), rgba(255, 250, 242, 0.52)),
     linear-gradient(145deg, rgba(255, 253, 248, 0.99), rgba(253, 252, 247, 0.94)) !important;
-  box-shadow: 0 16px 38px rgba(49, 30, 22, 0.055);
+  box-shadow: 0 18px 44px rgba(49, 30, 22, 0.058);
 }
 
 .review-decision-head {
@@ -81,7 +82,7 @@ body.review-decision-page .workspace > .panel.review-decision h1 {
   padding: 7px;
   border: 1px solid rgba(168, 62, 18, 0.14);
   border-radius: 8px;
-  background: linear-gradient(135deg, rgba(255, 250, 244, 0.92), rgba(237, 248, 243, 0.58));
+  background: linear-gradient(135deg, rgba(255, 250, 244, 0.84), rgba(237, 248, 243, 0.5));
 }
 
 .review-decision-relay div {
@@ -90,7 +91,8 @@ body.review-decision-page .workspace > .panel.review-decision h1 {
   border: 1px solid var(--line);
   border-left: 3px solid var(--sacred-gold);
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.58);
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.84);
 }
 
 .review-decision-relay div:first-child {
@@ -124,6 +126,7 @@ body.review-decision-page .workspace > .panel.review-decision h1 {
 .review-decision-rule,
 .review-decision-form {
   padding: 11px;
+  box-shadow: 0 10px 24px rgba(49, 30, 22, 0.035);
 }
 
 .review-decision-choice {
@@ -131,6 +134,11 @@ body.review-decision-page .workspace > .panel.review-decision h1 {
   text-align: left;
   cursor: pointer;
   transition: border-color 160ms ease, background 160ms ease, transform 160ms ease;
+}
+
+.review-decision-choice strong,
+.review-decision-result h2 {
+  letter-spacing: 0 !important;
 }
 
 .review-decision-choice:hover {
@@ -192,7 +200,7 @@ body.review-decision-page .workspace > .panel.review-decision h1 {
   width: 100%;
   border: 1px solid #efc1aa;
   border-radius: 8px;
-  background: #fffaf4;
+  background: rgba(255, 252, 247, 0.92);
   color: var(--ink);
   padding: 9px 10px;
 }
@@ -258,6 +266,7 @@ body.review-decision-page .workspace > .panel.review-decision h1 {
 .review-decision-boundary {
   border-left: 4px solid var(--bhagwa);
   padding-left: 12px;
+  color: rgba(49, 30, 22, 0.86);
 }
 
 body.review-decision-page .review-decision-grid + .review-decision-grid {
