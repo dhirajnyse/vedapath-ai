@@ -483,3 +483,135 @@ body.permission-execution-draft-page .metric {
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+/* v3.6.8 draft-gate re-entry polish */
+body.permission-execution-draft-page {
+  --draft-cream: rgba(255, 253, 248, 0.96);
+  --draft-line: rgba(81, 54, 37, 0.12);
+  --draft-ink-soft: color-mix(in srgb, var(--ink) 76%, #725946);
+}
+
+body.permission-execution-draft-page.vp-command-shell-ready .shell {
+  background:
+    linear-gradient(90deg, rgba(20, 92, 74, 0.026) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(214, 90, 31, 0.024) 1px, transparent 1px),
+    radial-gradient(circle at 72% 16%, rgba(224, 168, 59, 0.08), transparent 26%),
+    linear-gradient(180deg, rgba(255, 253, 248, 0.98), rgba(255, 249, 239, 0.88));
+  background-size: 24px 24px, 24px 24px, auto, auto;
+}
+
+body.permission-execution-draft-page.vp-command-shell-ready main.workspace {
+  grid-template-columns: minmax(210px, 0.62fr) minmax(720px, 1.9fr) minmax(220px, 0.66fr);
+  gap: 18px;
+}
+
+body.permission-execution-draft-page .panel,
+body.permission-execution-draft-page .draft-gate,
+body.permission-execution-draft-page .draft-step,
+body.permission-execution-draft-page .draft-relay,
+body.permission-execution-draft-page .draft-gate-card,
+body.permission-execution-draft-page .draft-gate-result,
+body.permission-execution-draft-page .draft-gate-rule,
+body.permission-execution-draft-page .draft-gate-form {
+  border-color: var(--draft-line);
+  background: var(--draft-cream);
+  box-shadow: 0 18px 52px rgba(34, 24, 18, 0.045);
+}
+
+body.permission-execution-draft-page .draft-gate {
+  gap: 14px;
+  padding: clamp(18px, 1.8vw, 28px);
+}
+
+body.permission-execution-draft-page .draft-gate h1 {
+  max-width: 820px;
+  font-size: clamp(27px, 2.05vw, 38px);
+  line-height: 1.08;
+}
+
+body.permission-execution-draft-page .draft-gate-head {
+  min-height: 112px;
+  grid-template-columns: minmax(0, 1fr) 92px;
+}
+
+body.permission-execution-draft-page .draft-gate-head .muted {
+  max-width: 920px;
+}
+
+body.permission-execution-draft-page .draft-gate-mark {
+  border-radius: 8px;
+  padding: 9px;
+}
+
+body.permission-execution-draft-page .draft-step-grid,
+body.permission-execution-draft-page .draft-relay,
+body.permission-execution-draft-page .draft-gate-grid {
+  gap: 10px;
+}
+
+body.permission-execution-draft-page .draft-step {
+  min-height: 88px;
+  padding: 12px;
+}
+
+body.permission-execution-draft-page .draft-step p,
+body.permission-execution-draft-page .draft-relay p,
+body.permission-execution-draft-page .draft-gate-card,
+body.permission-execution-draft-page .draft-gate-form label {
+  color: var(--draft-ink-soft);
+}
+
+body.permission-execution-draft-page .draft-relay {
+  padding: 8px;
+  background: rgba(255, 254, 250, 0.74);
+}
+
+body.permission-execution-draft-page .draft-relay div {
+  min-height: 90px;
+  box-shadow: none;
+}
+
+body.permission-execution-draft-page .draft-gate-form {
+  max-height: 690px;
+  padding: 14px;
+}
+
+body.permission-execution-draft-page .draft-gate-form h2 {
+  margin: -14px -14px 4px;
+  padding: 12px 14px;
+}
+
+body.permission-execution-draft-page .draft-gate-form input,
+body.permission-execution-draft-page .draft-gate-form select,
+body.permission-execution-draft-page .draft-gate-form textarea,
+body.permission-execution-draft-page .draft-gate-output {
+  border-color: rgba(81, 54, 37, 0.16);
+  background: rgba(255, 254, 250, 0.88);
+}
+
+body.permission-execution-draft-page .draft-gate-form textarea {
+  min-height: 70px;
+}
+
+body.permission-execution-draft-page .draft-gate-result h2 {
+  font-size: clamp(20px, 1.4vw, 26px);
+}
+
+body.permission-execution-draft-page .metric-grid {
+  gap: 10px;
+}
+
+body.permission-execution-draft-page .metric {
+  min-height: 78px;
+  box-shadow: none;
+}
+
+@media (max-width: 1320px) {
+  body.permission-execution-draft-page.vp-command-shell-ready main.workspace {
+    grid-template-columns: 1fr;
+  }
+
+  body.permission-execution-draft-page .draft-gate-head {
+    grid-template-columns: 1fr;
+  }
+}
