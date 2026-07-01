@@ -658,3 +658,58 @@ body.permission-execution-decision-page aside.panel.tight .boundary {
   border-color: rgba(95, 77, 55, 0.13);
   background: rgba(255, 255, 252, 0.62);
 }
+
+/* VEDAPATH v3.7.1 FOUNDER DECISION CALM */
+body.vp-command-shell-ready.permission-execution-decision-page main.workspace {
+  grid-template-columns: minmax(204px, 0.52fr) minmax(0, 2.24fr) minmax(214px, 0.58fr);
+}
+
+body.permission-execution-decision-page .founder-decision {
+  border-color: rgba(20, 92, 74, 0.14);
+  background:
+    radial-gradient(circle at 92% 4%, rgba(20, 92, 74, 0.075), transparent 24%),
+    linear-gradient(135deg, rgba(255, 255, 252, 0.985), rgba(255, 249, 240, 0.92));
+}
+
+body.permission-execution-decision-page .founder-decision h1 {
+  max-width: 780px;
+  font-size: clamp(1.74rem, 1.55vw, 2.26rem);
+  line-height: 1.08;
+}
+
+body.permission-execution-decision-page .founder-decision-head .muted {
+  font-size: 0.93rem;
+  max-width: 920px;
+}
+
+body.permission-execution-decision-page .founder-decision-choice-grid,
+body.permission-execution-decision-page .founder-decision-meridian {
+  gap: 14px;
+}
+
+body.permission-execution-decision-page .founder-decision-choice,
+body.permission-execution-decision-page .founder-decision-meridian article,
+body.permission-execution-decision-page .founder-decision-card,
+body.permission-execution-decision-page .founder-decision-result,
+body.permission-execution-decision-page .handoff-quiet {
+  border-radius: 8px;
+  box-shadow: 0 10px 28px rgba(42, 38, 28, 0.045);
+}
+
+body.permission-execution-decision-page .founder-decision-choice {
+  min-height: 82px;
+}
+
+body.permission-execution-decision-page .founder-decision-choice span,
+body.permission-execution-decision-page .founder-decision-card span,
+body.permission-execution-decision-page .founder-decision-rule span {
+  color: rgba(20, 92, 74, 0.78);
+}
+
+body.permission-execution-decision-page .founder-decision-form {
+  max-height: 680px;
+}
+
+body.permission-execution-decision-page .founder-decision-output {
+  min-height: 280px;
+}
