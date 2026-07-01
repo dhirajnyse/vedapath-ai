@@ -98,7 +98,7 @@
     return Boolean(
       packet &&
       packet.schema_version === "controlled-permission-execution-authorization-draft-gate-v5" &&
-      packet.release === "v3.6.8" &&
+      packet.release === "v3.7.2" &&
       packet.draft_status === "Controlled draft review candidate prepared; execution remains false." &&
       packet.next_gate_required === "Controlled permission execution authorization draft review gate" &&
       matchesSourceIdentity(packet, config) &&
@@ -140,7 +140,7 @@
 
   function controlledPermissionExecutionAuthorizationDraftReviewGate(config, draftPacket, review) {
     if (!draftPacketReady(draftPacket, config)) {
-      return blocked("Blocked: controlled draft packet must be the v3.6.8 non-authorizing draft candidate.", {
+      return blocked("Blocked: controlled draft packet must be the v3.7.2 non-authorizing draft candidate.", {
         next_gate_required: "Controlled permission execution authorization draft review gate"
       });
     }
@@ -152,7 +152,7 @@
     }
 
     if (!reviewPreservesHandoff(review, draftPacket, config)) {
-      return blocked("Blocked: review must preserve the v3.6.8 source identity, founder posture id, route, questions, and authority audit.", {
+      return blocked("Blocked: review must preserve the v3.7.2 source identity, founder posture id, route, questions, and authority audit.", {
         required_source_identity: sourceIdentityFields,
         required_handoff: handoffFields
       });
@@ -179,11 +179,11 @@
       return blocked("Blocked: non-execution review clause must keep authority false.", {});
     }
 
-    if (!compact(review.review_scope).includes("v3.6.8") ||
+    if (!compact(review.review_scope).includes("v3.7.2") ||
         !compact(review.review_notes).includes("question handoff") ||
         !compact(review.review_notes).includes("source identity") ||
         !compact(review.review_evidence_summary).includes("authority flag audit")) {
-      return blocked("Blocked: review text must name the v3.6.8 handoff, source identity, and authority audit.", {});
+      return blocked("Blocked: review text must name the v3.7.2 handoff, source identity, and authority audit.", {});
     }
 
     if (hasUnsafeAuthority(review.production_boundary) || !compact(review.production_boundary).includes("Production remains unavailable")) {
@@ -213,7 +213,7 @@
     }
 
     if (state !== "Draft review ready for founder decision") {
-      return blocked("Draft review: packet is not ready for founder review decision.", { state });
+      return blocked("Draft review: packet is not ready for controlled review decision.", { state });
     }
 
     return {
@@ -261,7 +261,7 @@
       preserves_founder_question: compact(review.founder_question) === compact(config.source.founder_question),
       preserves_permission_question: compact(review.permission_question) === compact(config.source.permission_question),
       preserves_authority_flag_audit: compact(review.authority_flag_audit) === compact(config.source.authority_flag_audit),
-      next_gate_required: "Founder permission execution authorization review decision gate",
+      next_gate_required: "Controlled permission execution authorization review decision gate",
       created_at: new Date().toISOString()
     };
   }
@@ -354,8 +354,8 @@
     setValue("draftReviewHoldReason", review.hold_reason);
     setValue("draftReviewBlockReason", review.block_reason);
     renderList("draftReviewScope", [
-      { label: "Input", value: "v3.6.8 draft candidate" },
-      { label: "Output", value: "Founder review decision candidate" },
+      { label: "Input", value: "v3.7.2 draft packet" },
+      { label: "Output", value: "Controlled review decision candidate" },
       { label: "Founder posture", value: "Preserved" },
       { label: "Source identity", value: "Preserved" },
       { label: "Question handoff", value: "Preserved" },

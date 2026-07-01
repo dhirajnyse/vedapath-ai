@@ -5542,6 +5542,16 @@ It should:
 
 ### 349. Controlled Permission Execution Authorization Draft Gate Re-entry
 
+### 350. Controlled Permission Execution Authorization Draft Review Gate Re-entry
+
+Controlled Permission Execution Authorization Draft Review Gate Re-entry should receive the v3.7.2 controlled draft packet and prepare only controlled review-decision candidate language while every authority flag remains false.
+
+- accept only the v3.7.2 controlled permission execution authorization draft output
+- preserve founder posture id, review decision id, draft review id, draft gate id, founder decision id, authorization review id, preflight id, hold id, source ids, route, questions, and authority audit
+- output draft-review readiness and review-decision candidate readiness only after the handoff stays intact
+- move only to the controlled permission execution authorization review decision gate re-entry
+- keep permission grant, authorization approval, execution, storage writes, canonical writes, public release, and production false
+
 Controlled Permission Execution Authorization Draft Gate Re-entry should receive the v3.7.1 founder posture packet and prepare only controlled draft-review candidate language while every authority flag remains false.
 
 It should:

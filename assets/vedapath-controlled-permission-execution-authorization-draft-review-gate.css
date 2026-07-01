@@ -365,3 +365,65 @@ body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review
   color: var(--muted);
   font-weight: 760;
 }
+
+
+/* v3.7.3 draft-review re-entry polish */
+body.permission-execution-draft-review-page.vp-command-shell-ready main.workspace {
+  grid-template-columns: minmax(180px, 0.46fr) minmax(0, 2.85fr) minmax(200px, 0.48fr);
+  gap: 20px;
+}
+
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-gate {
+  gap: 16px;
+  border-color: rgba(20, 92, 74, 0.16);
+}
+
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-gate h1 {
+  max-width: 720px;
+  font-size: clamp(23px, 1.42vw, 29px);
+  line-height: 1.12;
+}
+
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-head {
+  grid-template-columns: minmax(0, 1fr) 82px;
+  min-height: 82px;
+}
+
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-step-grid {
+  grid-template-columns: repeat(4, minmax(110px, 1fr));
+}
+
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-step,
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-relay > div,
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-card,
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-result,
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-rule,
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-form {
+  border-radius: 8px;
+  box-shadow: none;
+}
+
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-form {
+  max-height: 620px;
+}
+
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-form textarea,
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-output {
+  font-size: 11px;
+  line-height: 1.48;
+}
+
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-list,
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-rules {
+  gap: 10px;
+}
+
+body.permission-execution-draft-review-page.vp-command-shell-ready .metric-grid {
+  grid-template-columns: 1fr;
+}
+
+@media (max-width: 1180px) {
+  body.permission-execution-draft-review-page.vp-command-shell-ready main.workspace {
+    grid-template-columns: 1fr;
+  }
+}
