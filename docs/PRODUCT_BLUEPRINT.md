@@ -5437,6 +5437,19 @@ It should:
 - move only to the controlled permission execution authorization draft gate re-entry
 - make the founder decision room feel calm, compact, and unmistakably non-executing
 
+### 341. Controlled Permission Execution Authorization Draft Gate Re-entry
+
+Controlled Permission Execution Authorization Draft Gate Re-entry should receive the v3.6.3 founder posture packet and prepare only controlled draft-review candidate language while every authority flag remains false.
+
+It should:
+
+- accept only the v3.6.3 founder permission execution authorization decision output
+- preserve founder posture id, review decision id, draft review id, draft gate id, founder decision id, authorization review id, preflight id, hold id, source ids, route, questions, and authority audit
+- output controlled draft readiness and draft-review candidate readiness only after the handoff stays intact
+- keep permission grant, authorization approval, execution, storage writes, canonical writes, public release, and production unavailable
+- move only to the controlled permission execution authorization draft review gate re-entry
+- make the draft gate feel like a calm review room where drafted language cannot become authority
+
 ## Strategic Difference
 
 Most religious AI products try to answer as a spiritual authority.
