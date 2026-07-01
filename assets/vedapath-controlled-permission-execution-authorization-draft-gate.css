@@ -615,3 +615,81 @@ body.permission-execution-draft-page .metric {
     grid-template-columns: 1fr;
   }
 }
+
+/* v3.7.2 controlled draft gate re-entry */
+body.permission-execution-draft-page {
+  --draft-paper: rgba(255, 254, 250, 0.97);
+  --draft-wash: rgba(248, 244, 235, 0.74);
+  --draft-green-line: rgba(20, 92, 74, 0.18);
+}
+
+body.permission-execution-draft-page.vp-command-shell-ready main.workspace {
+  grid-template-columns: minmax(206px, 0.58fr) minmax(700px, 1.92fr) minmax(218px, 0.62fr);
+  gap: 16px;
+}
+
+body.permission-execution-draft-page .draft-gate {
+  background:
+    linear-gradient(180deg, rgba(255, 254, 250, 0.98), rgba(255, 251, 245, 0.94)),
+    radial-gradient(circle at 92% 12%, rgba(20, 92, 74, 0.055), transparent 28%);
+  border-color: rgba(20, 92, 74, 0.13);
+  box-shadow: 0 20px 58px rgba(27, 24, 20, 0.05);
+}
+
+body.permission-execution-draft-page .draft-gate h1 {
+  max-width: 760px;
+  font-size: clamp(25px, 1.72vw, 34px);
+  line-height: 1.12;
+}
+
+body.permission-execution-draft-page .draft-gate-head {
+  min-height: 98px;
+  grid-template-columns: minmax(0, 1fr) 86px;
+}
+
+body.permission-execution-draft-page .draft-gate-mark {
+  box-shadow: 0 14px 34px rgba(91, 45, 24, 0.06);
+}
+
+body.permission-execution-draft-page .draft-step,
+body.permission-execution-draft-page .draft-relay div,
+body.permission-execution-draft-page .draft-gate-card,
+body.permission-execution-draft-page .draft-gate-form,
+body.permission-execution-draft-page .draft-gate-result {
+  background: var(--draft-paper);
+}
+
+body.permission-execution-draft-page .draft-relay {
+  border-color: var(--draft-green-line);
+  background: linear-gradient(135deg, rgba(255, 254, 250, 0.92), rgba(242, 248, 245, 0.68));
+}
+
+body.permission-execution-draft-page .draft-relay div {
+  border-left-color: rgba(224, 168, 59, 0.58);
+  min-height: 86px;
+}
+
+body.permission-execution-draft-page .draft-gate-form {
+  max-height: 650px;
+}
+
+body.permission-execution-draft-page .draft-gate-form h2 {
+  color: var(--ink);
+  font-size: 19px;
+}
+
+body.permission-execution-draft-page .draft-gate-form textarea,
+body.permission-execution-draft-page .draft-gate-output {
+  min-height: 66px;
+}
+
+body.permission-execution-draft-page .draft-gate-result .draft-gate-list {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+@media (max-width: 1320px) {
+  body.permission-execution-draft-page.vp-command-shell-ready main.workspace,
+  body.permission-execution-draft-page .draft-gate-result .draft-gate-list {
+    grid-template-columns: 1fr;
+  }
+}
