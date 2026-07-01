@@ -1,14 +1,14 @@
 {
   "schema_version": "controlled-permission-execution-authorization-draft-review-gate-v5",
-  "release": "v3.6.5",
+  "release": "v3.6.9",
   "generated_at": "2026-07-01T00:00:00.000Z",
   "title": "Controlled Permission Execution Authorization Draft Review Gate Re-entry",
-  "summary": "Re-enters the controlled draft review gate from the v3.6.4 controlled draft candidate, verifies source identity, founder posture id, route, questions, and authority audit, and prepares founder review-decision candidate language while permission, authorization, execution, storage, public release, and production remain disabled.",
-  "previous_release": "v3.6.4 Controlled Permission Execution Authorization Draft Gate Re-entry",
-  "source_release": "v3.6.4 Controlled Permission Execution Authorization Draft Gate Re-entry",
+  "summary": "Re-enters the controlled draft review gate from the v3.6.8 controlled draft candidate, verifies source identity, founder posture id, route, questions, and authority audit, and prepares founder review-decision candidate language while permission, authorization, execution, storage, public release, and production remain disabled.",
+  "previous_release": "v3.6.8 Controlled Permission Execution Authorization Draft Gate Re-entry",
+  "source_release": "v3.6.8 Controlled Permission Execution Authorization Draft Gate Re-entry",
   "next_gate": "Controlled Permission Execution Authorization Review Decision Gate Re-entry",
   "source": {
-    "draft_gate_release": "v3.6.4",
+    "draft_gate_release": "v3.6.8",
     "draft_gate_schema": "controlled-permission-execution-authorization-draft-gate-v5",
     "review_decision_gate_id": "controlled-permission-execution-authorization-review-decision-gate-sample-bg-2-48",
     "controlled_permission_execution_authorization_draft_review_gate_id": "controlled-permission-execution-authorization-draft-review-gate-sample-steady-action-bg-2-48",
@@ -106,11 +106,11 @@
   "review_checks": [
     {
       "check": "Draft candidate ready",
-      "rule": "Starts only from the v3.6.4 controlled draft candidate output."
+      "rule": "Starts only from the v3.6.8 controlled draft candidate output."
     },
     {
       "check": "Founder posture id",
-      "rule": "Preserves the founder posture id carried by the v3.6.4 draft candidate."
+      "rule": "Preserves the founder posture id carried by the v3.6.8 draft candidate."
     },
     {
       "check": "Source identity",
@@ -126,7 +126,7 @@
     },
     {
       "check": "Evidence preserved",
-      "rule": "Keeps draft, founder posture, founder decision, authorization review, preflight, hold, source ids, questions, and audit visible."
+      "rule": "Keeps the v3.6.8 draft packet, v3.6.7 founder posture, founder decision, authorization review, preflight, hold, source ids, questions, and audit visible."
     },
     {
       "check": "Founder decision next",
@@ -139,7 +139,7 @@
   ],
   "sample_draft_packet": {
     "schema_version": "controlled-permission-execution-authorization-draft-gate-v5",
-    "release": "v3.6.4",
+    "release": "v3.6.8",
     "draft_status": "Controlled draft review candidate prepared; execution remains false.",
     "controlled_permission_execution_authorization_draft_gate_id": "controlled-permission-execution-authorization-draft-gate-sample-steady-action-bg-2-48",
     "founder_permission_execution_authorization_decision_gate_id": "founder-permission-execution-authorization-decision-gate-reentry-v355-bg-2-48",
@@ -182,16 +182,16 @@
     "production_ready": false,
     "production_launch_allowed": false,
     "public_release_allowed": false,
-    "draft_scope": "Draft controlled permission execution authorization review-candidate language from the v3.6.3 founder posture packet while preserving review route, founder question, permission question, source ids, founder posture id, and authority flag audit. This draft is not a permission grant, not authorization approval, not execution, and cannot promote, store, update canonical records, migrate, create accounts, use secrets, publish public release, or launch production.",
-    "draft_language": "Controlled draft result: the v3.6.3 founder posture may become a controlled permission execution authorization draft review candidate only. Permission grant remains closed, authorization approval remains closed, execution remains closed, and no system may run from this draft.",
-    "draft_rationale": "The v3.6.3 founder posture is draft-only, the question handoff and authority flag audit match, source ids remain visible, and the next step is a draft review gate only; it is not a live authorization.",
+    "draft_scope": "Draft controlled permission execution authorization review-candidate language from the v3.6.7 founder posture packet while preserving review route, founder question, permission question, source ids, founder posture id, and authority flag audit. This draft is not a permission grant, not authorization approval, not execution, and cannot promote, store, update canonical records, migrate, create accounts, use secrets, publish public release, or launch production.",
+    "draft_language": "Controlled draft result: the v3.6.7 founder posture may become a controlled permission execution authorization draft review candidate only. Permission grant remains closed, authorization approval remains closed, execution remains closed, and no system may run from this draft.",
+    "draft_rationale": "The v3.6.7 founder posture is draft-only, the question handoff and authority flag audit match, source ids remain visible, and the next step is a draft review gate only; it is not a live authorization.",
     "draft_evidence_summary": "Founder posture id, founder decision id, review decision gate id, draft review gate id, draft gate id, authorization review id, preflight id, execution hold id, source answer id, source record id, source family, review route, founder question, permission question, authority flag audit, rollback, monitoring, stop condition, expiry, and production boundary are visible.",
     "non_execution_draft_clause": "Controlled permission execution authorization draft gate only; founder_permission_execution_authorization_decision_ready may be true, founder_permission_execution_authorization_decision_recorded may be true, controlled_permission_execution_authorization_draft_candidate_ready may be true, controlled_permission_execution_authorization_draft_ready may be true, permission_execution_authorization_draft_recorded may be true, and controlled_permission_execution_authorization_draft_review_candidate_ready may be true, but permission_granted remains false, authorization_permission_granted remains false, permission_review_approved remains false, founder_permission_granted remains false, execution_packet_authorized remains false, execution_authorized remains false, execution_allowed remains false, founder_instruction_granted remains false, source_promotion_allowed remains false, promotion_execution_allowed remains false, implementation_authorized remains false, implementation_execution_allowed remains false, controlled_storage_entry_allowed remains false, storage_write_enabled remains false, canonical_write_allowed remains false, source_write_executed remains false, actual_storage_write_executed remains false, production_ready remains false, production_launch_allowed remains false, public_release_allowed remains false.",
-    "risk_acknowledgment": "Risk remains: v3.6.3 founder posture mismatch, founder posture id mismatch, review decision id mismatch, draft review id mismatch, draft gate id mismatch, review route mismatch, founder question mismatch, permission question mismatch, authority flag audit mismatch, source id mismatch, rights change, ambiguous draft language, rollback missing, monitoring missing, packet mutation, code change, or any true permission, authorization, execution, storage, canonical, public release, or production flag must block movement.",
-    "rollback_condition": "Rollback, before_hash, failure review, stop condition, review decision audit, founder posture audit, draft review audit, question handoff audit, source identity audit, and draft audit must remain present before any draft review gate; no source state is written.",
-    "monitoring_condition": "Audit receipt, stop condition, failure review, reviewer handoff, founder posture id, authority flag audit, source identity, post-execution verification, and before-write check must remain visible before any controlled draft review gate.",
-    "stop_condition": "Stop if the v3.6.3 founder posture id, founder decision id, review decision gate id, draft review gate id, draft gate id, review route, founder question, permission question, authority flag audit, source ids, rights, rollback, monitoring, packet text, or code changes, or if any permission, authorization, execution, storage, canonical, public release, or production flag is true.",
-    "expiry_check": "Controlled permission execution authorization draft gate expires at the next material v3.6.3 founder posture, review decision, draft review, draft, source, rights, rollback, monitoring, packet, or code change and must be rechecked; not permission, not authorization, and not execution.",
+    "risk_acknowledgment": "Risk remains: v3.6.7 founder posture mismatch, founder posture id mismatch, review decision id mismatch, draft review id mismatch, draft gate id mismatch, review route mismatch, founder question mismatch, permission question mismatch, authority flag audit mismatch, source id mismatch, rights change, ambiguous draft language, rollback missing, monitoring missing, packet mutation, code change, or any true permission, authorization, execution, storage, canonical, public release, or production flag must block movement.",
+    "rollback_condition": "Rollback by returning to the v3.6.7 founder decision gate and requiring a fresh non-authorizing founder posture before any draft-review candidate is prepared again.",
+    "monitoring_condition": "Monitor only the frozen founder posture id, route, questions, source ids, authority audit, and false authority flags before preparing the controlled draft review candidate.",
+    "stop_condition": "Stop if the v3.6.7 founder posture id, founder decision id, review decision gate id, draft review gate id, draft gate id, review route, founder question, permission question, authority flag audit, source ids, rights, rollback, monitoring, packet text, or code changes, or if any permission, authorization, execution, storage, canonical, public release, or production flag is true.",
+    "expiry_check": "Controlled permission execution authorization draft gate expires at the next material v3.6.7 founder posture, review decision, draft review, draft, source, rights, rollback, monitoring, packet, or code change and must be rechecked; not permission, not authorization, and not execution.",
     "production_boundary": "Production remains unavailable; production_ready remains false, production_launch_allowed remains false, public_release_allowed remains false, and no production migration, account, secret, durable storage, public release, or launch path is opened.",
     "preserves_source_identity": true,
     "preserves_review_route": true,
@@ -199,7 +199,7 @@
     "preserves_permission_question": true,
     "preserves_authority_flag_audit": true,
     "next_gate_required": "Controlled permission execution authorization draft review gate",
-    "created_at": "2026-07-01T17:00:13.654Z"
+    "created_at": "2026-07-01T19:25:25.100Z"
   },
   "sample_review": {
     "review_state": "Draft review ready for founder decision",
@@ -220,21 +220,21 @@
     "founder_question": "Founder question: should this exact reviewed, source-locked packet move into controlled authorization permission preflight while authorization, execution, storage, public release, and production remain false?",
     "permission_question": "Should a reviewer prepare controlled authorization permission review language for this exact source packet and founder question, without granting permission, authorization, execution, storage writes, canonical writes, public release, or production?",
     "authority_flag_audit": "execution_packet_authorized=false; execution_authorized=false; execution_allowed=false; founder_instruction_granted=false; source_promotion_allowed=false; promotion_execution_allowed=false; implementation_authorized=false; implementation_execution_allowed=false; controlled_storage_entry_allowed=false; storage_write_enabled=false; canonical_write_allowed=false; source_write_executed=false; actual_storage_write_executed=false; production_ready=false; production_launch_allowed=false; public_release_allowed=false.",
-    "review_scope": "Review the v3.6.4 controlled permission execution authorization draft candidate for clarity, source identity preservation, founder posture id preservation, question handoff integrity, and boundary strength. This review is not permission grant, not authorization approval, not execution, and cannot promote, store, change canonical records, migrate, create accounts, use secrets, publish public release, or launch production.",
-    "review_language": "Review result: the v3.6.4 controlled draft candidate can move to a founder review-decision gate only. Permission grant remains closed, authorization approval remains closed, execution remains closed, and no system may run from this review.",
-    "review_notes": "The question handoff and source identity stay intact: founder posture id, review decision id, draft review id, draft gate id, review route, founder question, permission question, source ids, and authority flag audit match the v3.6.4 draft candidate. Rollback, monitoring, stop condition, expiry, and production boundary remain visible.",
-    "review_evidence_summary": "The v3.6.4 draft candidate exposes founder posture id, review decision id, draft review id, draft gate id, authorization review id, preflight id, hold id, source answer id, source record id, source family, review route, founder question, permission question, authority flag audit, rollback, monitoring, stop condition, expiry, and production boundary before founder decision readiness.",
+    "review_scope": "Review the v3.6.8 controlled permission execution authorization draft candidate for clarity, source identity preservation, founder posture id preservation, question handoff integrity, and boundary strength. This review is not permission grant, not authorization approval, not execution, and cannot promote, store, change canonical records, migrate, create accounts, use secrets, publish public release, or launch production.",
+    "review_language": "Review result: the v3.6.8 controlled draft candidate can move to a founder review-decision gate only. Permission grant remains closed, authorization approval remains closed, execution remains closed, and no system may run from this review.",
+    "review_notes": "The question handoff and source identity stay intact: founder posture id, review decision id, draft review id, draft gate id, review route, founder question, permission question, source ids, and authority flag audit match the v3.6.8 draft candidate. Rollback, monitoring, stop condition, expiry, and production boundary remain visible.",
+    "review_evidence_summary": "The v3.6.8 draft candidate exposes the v3.6.7 founder posture id, review decision id, draft review id, draft gate id, authorization review id, preflight id, hold id, source answer id, source record id, source family, review route, founder question, permission question, authority flag audit, rollback, monitoring, stop condition, expiry, and production boundary before founder decision readiness.",
     "non_execution_review_clause": "Controlled permission execution authorization draft review gate only; controlled_permission_execution_authorization_draft_review_ready may be true, permission_execution_authorization_draft_review_recorded may be true, and founder_permission_execution_authorization_review_decision_candidate_ready may be true, but permission_granted remains false, authorization_permission_granted remains false, permission_review_approved remains false, founder_permission_granted remains false, execution_packet_authorized remains false, execution_authorized remains false, execution_allowed remains false, founder_instruction_granted remains false, source_promotion_allowed remains false, promotion_execution_allowed remains false, implementation_authorized remains false, implementation_execution_allowed remains false, controlled_storage_entry_allowed remains false, storage_write_enabled remains false, canonical_write_allowed remains false, source_write_executed remains false, actual_storage_write_executed remains false, production_ready remains false, production_launch_allowed remains false, public_release_allowed remains false.",
-    "risk_review": "Risk remains: v3.6.4 draft candidate mismatch, founder posture id mismatch, review decision id mismatch, draft review gate id mismatch, draft gate id mismatch, review route mismatch, founder question mismatch, permission question mismatch, authority flag audit mismatch, founder decision mismatch, authorization review mismatch, preflight mismatch, hold mismatch, source mismatch, rights change, ambiguous review language, rollback missing, monitoring missing, packet mutation, code change, or any true permission, authorization, execution, storage, canonical, public release, or production flag must block movement.",
-    "rollback_review": "Rollback review passes only when before_hash, draft audit, founder posture audit, draft-review audit, question handoff audit, source identity audit, and failure review remain visible and no source state is written.",
-    "monitoring_review": "Monitoring review keeps audit receipt, stop condition, failure review, reviewer handoff, founder posture id, source identity, authority flag audit, and before-write check visible before any founder review decision gate.",
-    "stop_condition": "Stop if the v3.6.4 draft gate id mismatches, founder posture id mismatches, review decision id mismatches, draft review gate id mismatches, review route mismatches, founder question mismatches, permission question mismatches, authority flag audit mismatches, founder decision id mismatches, authorization review id mismatches, preflight id mismatches, hold id mismatches, source ids mismatch, rights change, review language is ambiguous, rollback is missing, monitoring is missing, code changes, packet text mutates, or any permission, authorization, execution, storage, canonical, public release, or production flag is true.",
-    "expiry_check": "Controlled permission execution authorization draft review gate expires at the next material v3.6.4 draft candidate, founder posture, review decision, draft, source, rights, rollback, monitoring, packet, or code change and must be rechecked; not permission, not authorization, and not execution.",
+    "risk_review": "Risk remains: v3.6.8 draft candidate mismatch, v3.6.7 founder posture id mismatch, review decision id mismatch, draft review gate id mismatch, draft gate id mismatch, review route mismatch, founder question mismatch, permission question mismatch, authority flag audit mismatch, founder decision mismatch, authorization review mismatch, preflight mismatch, hold mismatch, source mismatch, rights change, ambiguous review language, rollback missing, monitoring missing, packet mutation, code change, or any true permission, authorization, execution, storage, canonical, public release, or production flag must block movement.",
+    "rollback_review": "Rollback review passes only when before_hash, v3.6.8 draft audit, v3.6.7 founder posture audit, draft-review audit, question handoff audit, source identity audit, and failure review remain visible and no source state is written.",
+    "monitoring_review": "Monitoring review keeps audit receipt, stop condition, failure review, reviewer handoff, v3.6.7 founder posture id, source identity, authority flag audit, and before-write check visible before any founder review decision gate.",
+    "stop_condition": "Stop if the v3.6.8 draft gate id mismatches, v3.6.7 founder posture id mismatches, review decision id mismatches, draft review gate id mismatches, review route mismatches, founder question mismatches, permission question mismatches, authority flag audit mismatches, founder decision id mismatches, authorization review id mismatches, preflight id mismatches, hold id mismatches, source ids mismatch, rights change, review language is ambiguous, rollback is missing, monitoring is missing, code changes, packet text mutates, or any permission, authorization, execution, storage, canonical, public release, or production flag is true.",
+    "expiry_check": "Controlled permission execution authorization draft review gate expires at the next material v3.6.8 draft candidate, v3.6.7 founder posture, review decision, draft, source, rights, rollback, monitoring, packet, or code change and must be rechecked; not permission, not authorization, and not execution.",
     "production_boundary": "Production remains unavailable; production_ready remains false, production_launch_allowed remains false, public_release_allowed remains false, and no production migration, account, secret, durable storage, public release, or launch path is opened.",
     "clarification_question": "",
-    "return_reason": "Return if the v3.6.4 draft candidate loses route, question, audit, founder posture id, or source identity clarity.",
-    "hold_reason": "Hold until the reviewer can see the exact v3.6.4 draft candidate, source ids, route, questions, founder posture id, and authority audit.",
-    "block_reason": "Block if any authority flag becomes true or the v3.6.4 handoff is changed.",
+    "return_reason": "Return if the v3.6.8 draft candidate loses route, question, audit, founder posture id, or source identity clarity.",
+    "hold_reason": "Hold until the reviewer can see the exact v3.6.8 draft candidate, source ids, route, questions, founder posture id, and authority audit.",
+    "block_reason": "Block if any authority flag becomes true or the v3.6.8 handoff is changed.",
     "controlled_permission_execution_authorization_draft_review_ready": false,
     "permission_execution_authorization_draft_review_recorded": false,
     "founder_permission_execution_authorization_review_decision_candidate_ready": false,

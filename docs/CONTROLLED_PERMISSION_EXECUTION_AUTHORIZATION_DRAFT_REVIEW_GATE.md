@@ -1,14 +1,21 @@
 # Controlled Permission Execution Authorization Draft Review Gate Re-entry
 
-Controlled Permission Execution Authorization Draft Review Gate Re-entry accepts the v3.6.4 controlled draft candidate and turns it into founder review-decision candidate language only.
+Controlled Permission Execution Authorization Draft Review Gate Re-entry accepts the v3.6.8 controlled draft candidate and turns it into founder review-decision candidate language only.
 
 ## What This Release Does
 
 - Requires schema `controlled-permission-execution-authorization-draft-gate-v5`.
-- Requires release `v3.6.4`.
+- Requires release `v3.6.8`.
 - Preserves founder posture id, review decision id, draft review id, draft gate id, founder decision id, authorization review id, preflight id, hold id, source answer id, source record id, source family, review route, founder question, permission question, and authority flag audit.
 - Emits `controlled_permission_execution_authorization_draft_review_ready`, `permission_execution_authorization_draft_review_recorded`, and `founder_permission_execution_authorization_review_decision_candidate_ready` as true only after all checks pass.
 - Keeps permission, authorization, execution, storage, canonical, public release, and production flags false.
+
+## v3.6.9 Re-entry
+
+- Receives the v3.6.8 controlled draft packet produced from the v3.6.7 founder posture.
+- Blocks older draft packets, unsafe review language, changed source ids, changed questions, changed authority audit, or any true authority flag.
+- Produces only a founder review-decision candidate; it does not grant permission, approve authorization, or enable execution.
+- Keeps the draft-review room visually calmer with softer form surfaces, tighter relay density, and current v3.6.8 input language.
 
 ## Boundary
 
