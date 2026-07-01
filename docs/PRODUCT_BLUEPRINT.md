@@ -5476,6 +5476,18 @@ It should:
 - move only to the founder permission execution authorization decision gate re-entry when the route is forward
 - make the review decision room feel like a calm routing desk: one packet, one route, zero authority leakage
 
+### 344. Founder Permission Execution Authorization Decision Gate Re-entry
+
+Founder Permission Execution Authorization Decision Gate Re-entry should receive the v3.6.6 review-decision packet and record founder posture without turning readiness into authority.
+
+It should:
+
+- accept only the v3.6.6 controlled permission execution authorization review-decision output
+- preserve founder posture id, review decision id, draft review id, draft gate id, founder decision id, authorization review id, preflight id, hold id, source ids, route, questions, and authority audit
+- record draft-only, hold, return, or reject as posture only
+- allow draft-only to prepare one controlled draft candidate, not permission grant, authorization approval, execution, storage writes, canonical writes, public release, or production
+- make the founder decision room feel calm enough to read: compact type, clear handoff, visible locks, and no hidden authority drift
+
 ## Strategic Difference
 
 Most religious AI products try to answer as a spiritual authority.

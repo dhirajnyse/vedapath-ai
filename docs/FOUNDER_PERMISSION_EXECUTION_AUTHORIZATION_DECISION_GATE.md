@@ -1,8 +1,8 @@
 # Founder Permission Execution Authorization Decision Gate Re-entry
 
-Version: v3.6.3
+Version: v3.6.7
 
-Founder Permission Execution Authorization Decision Gate Re-entry receives the v3.6.2 controlled review-decision packet and records founder posture after review-decision readiness.
+Founder Permission Execution Authorization Decision Gate Re-entry receives the v3.6.6 controlled review-decision packet and records founder posture after review-decision readiness.
 
 It can record four outcomes:
 
