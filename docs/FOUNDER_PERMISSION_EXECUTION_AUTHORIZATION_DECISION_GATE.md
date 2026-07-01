@@ -1,8 +1,8 @@
 # Founder Permission Execution Authorization Decision Gate Re-entry
 
-Version: v3.5.9
+Version: v3.6.3
 
-Founder Permission Execution Authorization Decision Gate Re-entry receives the v3.5.8 controlled review-decision packet and records founder posture after review-decision readiness.
+Founder Permission Execution Authorization Decision Gate Re-entry receives the v3.6.2 controlled review-decision packet and records founder posture after review-decision readiness.
 
 It can record four outcomes:
 
@@ -35,4 +35,4 @@ It must not grant permission, approve authorization, execute, store, update cano
 
 If route, questions, source identity, founder posture id, or authority audit drift, the decision blocks.
 
-Next gate: Controlled permission execution authorization draft gate.
+Next gate: Controlled permission execution authorization draft gate re-entry.
