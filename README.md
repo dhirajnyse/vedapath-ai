@@ -10,6 +10,14 @@ It is not a guru, oracle, priest, or ritual authority. It helps users ask better
 
 Let us look at the source first.
 
+## v3.7.5 Founder Permission Execution Authorization Decision Gate Re-entry
+
+- Re-enters the founder decision gate from the v3.7.4 review-decision packet.
+- Preserves founder posture id, review decision id, draft review id, draft gate id, founder decision id, authorization review id, preflight id, hold id, source ids, route, questions, and authority audit.
+- Records draft-only, hold, return, or reject posture while permission, authorization, execution, storage writes, canonical writes, public release, and production remain false.
+- Refines the founder decision UI with current v3.7.4 input language, clearer four-choice posture controls, tighter title rhythm, and a clearer v3.7.5 command-shell badge.
+- Updates [Founder Permission Execution Authorization Decision Gate](founderpermissionexecutionauthorizationdecisiongate.html), [Founder Permission Execution Authorization Decision Gate Data](data/vedapath-founder-permission-execution-authorization-decision-gate.json), and [Founder Permission Execution Authorization Decision Gate Notes](docs/FOUNDER_PERMISSION_EXECUTION_AUTHORIZATION_DECISION_GATE.md).
+
 ## v3.7.4 Controlled Permission Execution Authorization Review Decision Gate Re-entry
 
 - Re-enters the controlled review decision gate from the v3.7.3 draft-review packet.

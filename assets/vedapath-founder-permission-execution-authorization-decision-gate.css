@@ -713,3 +713,79 @@ body.permission-execution-decision-page .founder-decision-form {
 body.permission-execution-decision-page .founder-decision-output {
   min-height: 280px;
 }
+
+
+/* VEDAPATH v3.7.5 FOUNDER DECISION RE-ENTRY */
+body.vp-command-shell-ready.permission-execution-decision-page main.workspace {
+  grid-template-columns: minmax(208px, 0.52fr) minmax(0, 2.28fr) minmax(214px, 0.58fr);
+}
+
+body.permission-execution-decision-page .founder-decision {
+  gap: 15px;
+  border-color: rgba(20, 92, 74, 0.16);
+  background:
+    radial-gradient(circle at 94% 6%, rgba(224, 168, 59, 0.08), transparent 24%),
+    linear-gradient(135deg, rgba(255, 255, 252, 0.99), rgba(255, 249, 241, 0.93));
+}
+
+body.permission-execution-decision-page .founder-decision-head {
+  min-height: 104px;
+}
+
+body.permission-execution-decision-page .founder-decision h1 {
+  max-width: 760px;
+  font-size: clamp(1.64rem, 1.42vw, 2.12rem);
+  line-height: 1.1;
+}
+
+body.permission-execution-decision-page .founder-decision-head .muted {
+  max-width: 900px;
+  font-size: 0.92rem;
+}
+
+body.permission-execution-decision-page .founder-decision-choice-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+body.permission-execution-decision-page .founder-decision-choice {
+  min-height: 78px;
+  padding: 12px;
+}
+
+body.permission-execution-decision-page .founder-decision-choice strong {
+  font-size: 0.96rem;
+}
+
+body.permission-execution-decision-page .founder-decision-choice p {
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
+body.permission-execution-decision-page .founder-decision-meridian article {
+  padding: 12px;
+}
+
+body.permission-execution-decision-page .founder-decision-form {
+  max-height: 650px;
+}
+
+body.permission-execution-decision-page .founder-decision-form textarea {
+  min-height: 70px;
+}
+
+body.permission-execution-decision-page .founder-decision-output {
+  min-height: 260px;
+}
+
+@media (max-width: 1280px) {
+  body.permission-execution-decision-page .founder-decision-choice-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  body.permission-execution-decision-page .founder-decision-choice-grid {
+    grid-template-columns: 1fr;
+  }
+}
