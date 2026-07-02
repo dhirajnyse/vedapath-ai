@@ -99,8 +99,8 @@
   function founderDecisionPacketReady(packet, config) {
     return Boolean(
       packet &&
-      packet.schema_version === "founder-permission-execution-authorization-decision-gate-v5" &&
-      packet.release === "v3.7.5" &&
+      packet.schema_version === "founder-permission-execution-authorization-decision-gate-v6" &&
+      packet.release === "v3.7.9" &&
       packet.decision_status === "Draft-only founder decision recorded; execution remains false." &&
       packet.founder_decision_outcome === "Draft-only" &&
       packet.next_gate_required === "Controlled permission execution authorization draft gate re-entry" &&
@@ -147,7 +147,7 @@
 
   function controlledPermissionExecutionAuthorizationDraftGate(config, decisionPacket, draft) {
     if (!founderDecisionPacketReady(decisionPacket, config)) {
-      return blocked("Blocked: founder decision packet must be the v3.7.5 draft-only, non-authorizing posture packet.", {
+      return blocked("Blocked: founder decision packet must be the v3.7.9 draft-only, non-authorizing posture packet.", {
         next_gate_required: "Controlled permission execution authorization draft gate re-entry"
       });
     }
@@ -159,7 +159,7 @@
     }
 
     if (!draftPreservesCarry(draft, decisionPacket, config)) {
-      return blocked("Blocked: draft must preserve the v3.7.5 source ids, review route, questions, and authority audit.", {
+      return blocked("Blocked: draft must preserve the v3.7.9 source ids, review route, questions, and authority audit.", {
         required_identity: sourceIdentityFields,
         required_handoff: handoffFields
       });
@@ -186,10 +186,10 @@
       return blocked("Blocked: non-execution draft clause must keep authority false.", {});
     }
 
-    if (!compact(draft.draft_scope).includes("v3.7.5") ||
-        !hasText(draft.draft_rationale, [["v3.7.5"], ["question handoff"], ["authority flag audit"], ["source ids"], ["draft review gate"], ["not a live authorization"]]) ||
+    if (!compact(draft.draft_scope).includes("v3.7.9") ||
+        !hasText(draft.draft_rationale, [["v3.7.9"], ["question handoff"], ["authority flag audit"], ["source ids"], ["draft review gate"], ["not a live authorization"]]) ||
         !compact(draft.draft_evidence_summary).includes("authority flag audit")) {
-      return blocked("Blocked: draft text must name the v3.7.5 handoff, source ids, draft review gate, and authority audit.", {});
+      return blocked("Blocked: draft text must name the v3.7.9 handoff, source ids, draft review gate, and authority audit.", {});
     }
 
     if (hasUnsafeAuthority(draft.production_boundary) || !compact(draft.production_boundary).includes("Production remains unavailable")) {
@@ -357,7 +357,7 @@
     setValue("draftHoldReason", draft.hold_reason);
     setValue("draftBlockReason", draft.block_reason);
     renderList("draftGateScope", [
-      { label: "Input", value: "v3.7.5 founder posture" },
+      { label: "Input", value: "v3.7.9 founder posture" },
       { label: "Output", value: "Review candidate" },
       { label: "Source identity", value: "Preserved" },
       { label: "Authority", value: "Closed" }
