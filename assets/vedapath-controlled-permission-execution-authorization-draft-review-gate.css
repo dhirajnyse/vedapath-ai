@@ -427,3 +427,51 @@ body.permission-execution-draft-review-page.vp-command-shell-ready .metric-grid 
     grid-template-columns: 1fr;
   }
 }
+
+
+/* VEDAPATH v3.7.7 CONTROLLED DRAFT REVIEW GATE RE-ENTRY */
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-gate {
+  gap: 15px;
+  border-color: rgba(20, 92, 74, 0.18);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 253, 0.985), rgba(255, 253, 248, 0.955)),
+    radial-gradient(circle at 92% 0%, rgba(224, 168, 59, 0.085), transparent 28%);
+}
+
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-gate h1 {
+  max-width: 660px;
+  font-size: clamp(22px, 1.26vw, 28px);
+  line-height: 1.12;
+}
+
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-head {
+  grid-template-columns: minmax(0, 1fr) 78px;
+  min-height: 78px;
+}
+
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-relay {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-step,
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-relay > div,
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-card,
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-result {
+  padding: 12px;
+}
+
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-relay > div strong {
+  font-size: 14px;
+}
+
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-form h2 {
+  font-size: 18px;
+}
+
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-form {
+  max-height: 600px;
+}
+
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-form textarea:first-of-type {
+  min-height: 132px;
+}
