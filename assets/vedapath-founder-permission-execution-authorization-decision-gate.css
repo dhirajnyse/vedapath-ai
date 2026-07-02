@@ -789,3 +789,44 @@ body.permission-execution-decision-page .founder-decision-output {
     grid-template-columns: 1fr;
   }
 }
+
+/* VEDAPATH v3.7.9 FOUNDER DECISION RE-ENTRY */
+body.vp-command-shell-ready.permission-execution-decision-page main.workspace {
+  grid-template-columns: minmax(206px, 0.52fr) minmax(0, 2.3fr) minmax(214px, 0.58fr);
+}
+
+body.permission-execution-decision-page .founder-decision {
+  gap: 14px;
+  border-color: rgba(20, 92, 74, 0.16);
+  background:
+    radial-gradient(circle at 94% 6%, rgba(20, 92, 74, 0.072), transparent 23%),
+    linear-gradient(135deg, rgba(255, 255, 252, 0.99), rgba(255, 250, 244, 0.94));
+}
+
+body.permission-execution-decision-page .founder-decision h1 {
+  max-width: 740px;
+  font-size: clamp(1.58rem, 1.34vw, 2.02rem);
+}
+
+body.permission-execution-decision-page .founder-decision-head .muted,
+body.permission-execution-decision-page .founder-decision p {
+  line-height: 1.55;
+}
+
+body.permission-execution-decision-page .founder-decision-choice,
+body.permission-execution-decision-page .founder-decision-meridian article,
+body.permission-execution-decision-page .founder-decision-card,
+body.permission-execution-decision-page .founder-decision-result,
+body.permission-execution-decision-page .handoff-quiet {
+  background: rgba(255, 255, 252, 0.78);
+  box-shadow: 0 10px 28px rgba(35, 43, 31, 0.042);
+}
+
+body.permission-execution-decision-page .founder-decision-choice[aria-pressed="true"] {
+  border-color: rgba(214, 90, 31, 0.52);
+  background: linear-gradient(180deg, rgba(255, 238, 228, 0.86), rgba(255, 253, 248, 0.9));
+}
+
+body.permission-execution-decision-page .founder-decision-form {
+  max-height: 620px;
+}

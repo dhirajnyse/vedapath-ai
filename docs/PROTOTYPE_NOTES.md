@@ -2,6 +2,13 @@
 
 The v0.7.4 release turns the VedaPath AI homepage into a trusted MVP prototype with calm, practice, source-library, source-seeds, retrieval, passage-review, evaluation, evaluation-dashboard, reviewer-queue, source-policy, trust-ledger, life-map, calm-circle, consent-gate, memory-gate, trust-model, calm-passport, backend-schema, schema-fixtures, evaluation-drill, learning-loop, sanskrit-lens, voice-boundary, scholar-review, launch-gate, production-bridge, source-storage, reviewer-access, public-feedback, launch-story, source-path, calm-compass, calm-card, source-bell, before-reply, samvada, sankalpa, seva, morning, evening, and rhythm surfaces.
 
+## v3.7.9 Founder Permission Execution Authorization Decision Gate Re-entry
+
+- Re-enters the founder decision gate from the v3.7.8 review-decision packet.
+- Records draft-only, hold, return, or reject while every grant remains false.
+- Adds calmer founder posture polish: current v3.7.8 incoming packet, shorter decision title rhythm, current command-shell badge, and one outgoing controlled draft candidate only.
+- Keeps permission, authorization approval, execution, storage writes, canonical writes, public release, and production false.
+
 ## v3.7.8 Controlled Permission Execution Authorization Review Decision Gate Re-entry
 
 - Re-enters the controlled review-decision gate from the v3.7.7 draft-review packet.
