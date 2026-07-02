@@ -1,10 +1,10 @@
 # Controlled Permission Execution Authorization Review Decision Gate Re-entry
 
-Controlled Permission Execution Authorization Review Decision Gate Re-entry receives the v3.7.7 controlled draft-review packet and turns it into a founder decision candidate route, hold, return, or block.
+Controlled Permission Execution Authorization Review Decision Gate Re-entry receives the v3.8.1 controlled draft-review packet and turns it into a founder decision candidate route, hold, return, or block.
 
-Version: v3.7.8
+Version: v3.8.2
 
-Input: v3.7.7 Controlled Permission Execution Authorization Draft Review Gate Re-entry output
+Input: v3.8.1 Controlled Permission Execution Authorization Draft Review Gate Re-entry output
 
 Next gate: Founder permission execution authorization decision gate re-entry.
 
@@ -33,9 +33,10 @@ Every accepted decision must preserve:
 
 Forward routing may mark review-decision readiness and founder decision candidate readiness only. It must not grant permission, approve authorization, execute, store, update canonical records, publish, or launch production.
 
-## v3.7.8 Re-entry Notes
+## v3.8.2 Re-entry Notes
 
-- Accept only the v3.7.7 controlled draft-review packet.
+- Accept only the v3.8.1 controlled draft-review packet.
 - Route only to founder decision, hold, return, or block.
 - Keep permission, authorization approval, execution, storage writes, canonical writes, public release, and production false.
-- Preserve the v3.7.7 route, source ids, source family, questions, founder posture id, and authority audit.
+- Preserve the v3.8.1 route, source ids, source family, questions, founder posture id, and authority audit.
+- Keep the room visually quiet: one incoming packet, four visible routes, one outgoing founder decision candidate, zero authority leakage.
