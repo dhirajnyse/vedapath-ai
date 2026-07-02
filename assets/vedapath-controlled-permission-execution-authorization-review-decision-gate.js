@@ -95,9 +95,9 @@
     return Boolean(
       packet &&
       packet.schema_version === "controlled-permission-execution-authorization-draft-review-gate-v5" &&
-      packet.release === "v3.7.3" &&
+      packet.release === "v3.7.7" &&
       packet.draft_review_status === "Draft review ready for founder decision; execution remains false." &&
-      packet.next_gate_required === "Controlled permission execution authorization review decision gate" &&
+      packet.next_gate_required === "Controlled permission execution authorization review decision gate re-entry" &&
       packet.preserves_source_identity === true &&
       matchesSourceIdentity(packet, config) &&
       matchesSourceHandoff(packet, config) &&
@@ -186,15 +186,15 @@
       preserves_founder_question: compact(decision.founder_question) === compact(config.source.founder_question),
       preserves_permission_question: compact(decision.permission_question) === compact(config.source.permission_question),
       preserves_authority_flag_audit: compact(decision.authority_flag_audit) === compact(config.source.authority_flag_audit),
-      next_gate_required: forwardReady ? "Founder permission execution authorization decision gate" : null,
+      next_gate_required: forwardReady ? "Founder permission execution authorization decision gate re-entry" : null,
       created_at: new Date().toISOString()
     };
   }
 
   function controlledPermissionExecutionAuthorizationReviewDecisionGate(config, reviewPacket, decision) {
     if (!draftReviewPacketReady(reviewPacket, config)) {
-      return blocked("Blocked: draft-review packet must be the v3.7.3 non-authorizing review packet.", {
-        next_gate_required: "Controlled permission execution authorization review decision gate"
+      return blocked("Blocked: draft-review packet must be the v3.7.7 non-authorizing review packet.", {
+        next_gate_required: "Controlled permission execution authorization review decision gate re-entry"
       });
     }
 
@@ -205,7 +205,7 @@
     }
 
     if (!decisionPreservesHandoff(decision, reviewPacket, config)) {
-      return blocked("Blocked: decision must preserve the v3.7.3 route, questions, founder posture id, source ids, and authority audit.", {
+      return blocked("Blocked: decision must preserve the v3.7.7 route, questions, founder posture id, source ids, and authority audit.", {
         required_identity: sourceIdentityFields,
         required_handoff: handoffFields
       });
@@ -233,12 +233,12 @@
       return blocked("Blocked: non-execution decision clause must keep authority false.", {});
     }
 
-    if (!compact(decision.decision_scope).includes("v3.7.3") ||
+    if (!compact(decision.decision_scope).includes("v3.7.7") ||
         !compact(decision.decision_rationale).includes("question handoff") ||
         !compact(decision.decision_rationale).includes("source identity") ||
         !compact(decision.decision_rationale).includes("founder posture id") ||
         !compact(decision.decision_evidence_summary).includes("authority flag audit")) {
-      return blocked("Blocked: decision text must name the v3.7.3 handoff, founder posture id, source identity, and authority audit.", {});
+      return blocked("Blocked: decision text must name the v3.7.7 handoff, founder posture id, source identity, and authority audit.", {});
     }
 
     if (hasUnsafeAuthority(decision.production_boundary) || !compact(decision.production_boundary).includes("Production remains unavailable")) {
@@ -366,7 +366,7 @@
     setValue("reviewDecisionBlockReason", decision.block_reason);
     selectChoice(decision.decision_state);
     renderList("reviewDecisionScope", [
-      { label: "Input", value: "v3.7.3 draft-review packet" },
+      { label: "Input", value: "v3.7.7 draft-review packet" },
       { label: "Output", value: "Founder decision candidate" },
       { label: "Founder posture", value: "Preserved" },
       { label: "Authority", value: "Closed" }

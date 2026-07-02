@@ -340,3 +340,60 @@ body.review-decision-page .review-decision-form textarea {
 body.review-decision-page .review-decision-form label:first-of-type textarea {
   min-height: 130px;
 }
+
+
+/* v3.7.8 review-decision re-entry polish */
+body.review-decision-page.vp-command-shell-ready main.workspace {
+  grid-template-columns: minmax(176px, 0.4fr) minmax(0, 2.85fr) minmax(184px, 0.44fr);
+}
+
+body.review-decision-page .review-decision {
+  background:
+    radial-gradient(circle at 96% 4%, rgba(224, 168, 59, 0.08), transparent 25%),
+    linear-gradient(135deg, rgba(255, 255, 252, 0.98), rgba(255, 249, 241, 0.94));
+}
+
+body.review-decision-page .review-decision-head {
+  min-height: 86px;
+}
+
+body.review-decision-page .review-decision h1 {
+  font-size: clamp(1.62rem, 1.34vw, 2rem);
+  line-height: 1.1;
+}
+
+body.review-decision-page .review-decision-head .muted {
+  max-width: 980px;
+  font-size: 0.9rem;
+}
+
+body.review-decision-page .review-decision-choice-grid {
+  gap: 10px;
+}
+
+body.review-decision-page .review-decision-choice {
+  min-height: 66px;
+  padding: 12px;
+}
+
+body.review-decision-page .review-decision-relay {
+  gap: 10px;
+}
+
+body.review-decision-page .review-decision-relay div {
+  min-height: 56px;
+  padding: 12px;
+}
+
+body.review-decision-page .review-decision-card,
+body.review-decision-page .review-decision-rule {
+  background: rgba(255, 253, 248, 0.86);
+}
+
+body.review-decision-page .review-decision-form {
+  max-height: 650px;
+}
+
+body.review-decision-page .review-decision-form textarea {
+  min-height: 62px;
+}
