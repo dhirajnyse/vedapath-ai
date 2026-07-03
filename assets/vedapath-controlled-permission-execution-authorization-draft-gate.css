@@ -925,3 +925,42 @@ body.permission-execution-draft-page .draft-gate-result .draft-gate-list {
     grid-template-columns: 1fr;
   }
 }
+
+/* VEDAPATH v3.8.8 CONTROLLED DRAFT GATE RE-ENTRY */
+body.permission-execution-draft-page .draft-gate {
+  background:
+    radial-gradient(circle at 94% 8%, rgba(224, 168, 59, 0.075), transparent 24%),
+    radial-gradient(circle at 0% 100%, rgba(20, 92, 74, 0.04), transparent 30%),
+    linear-gradient(135deg, rgba(255, 255, 253, 0.99), rgba(255, 251, 246, 0.96));
+}
+
+body.permission-execution-draft-page .draft-gate h1 {
+  font-size: clamp(1.55rem, 1.35vw, 2rem);
+  letter-spacing: 0;
+}
+
+body.permission-execution-draft-page .draft-gate-head {
+  align-items: center;
+}
+
+body.permission-execution-draft-page .draft-relay,
+body.permission-execution-draft-page .draft-step-grid {
+  gap: 12px;
+}
+
+body.permission-execution-draft-page .draft-relay div,
+body.permission-execution-draft-page .draft-step,
+body.permission-execution-draft-page .draft-gate-card,
+body.permission-execution-draft-page .draft-gate-form,
+body.permission-execution-draft-page .draft-gate-result {
+  border-color: rgba(86, 99, 80, 0.14);
+  box-shadow: 0 16px 34px rgba(33, 24, 16, 0.032);
+}
+
+body.permission-execution-draft-page .draft-gate-form textarea {
+  min-height: 66px;
+}
+
+body.permission-execution-draft-page .draft-gate-output {
+  min-height: 230px;
+}
