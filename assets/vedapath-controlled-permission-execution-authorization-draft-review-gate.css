@@ -543,3 +543,71 @@ body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review
 body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-step span {
   font-size: 11px;
 }
+
+/* VEDAPATH v3.8.5 CONTROLLED DRAFT REVIEW GATE RE-ENTRY */
+body.permission-execution-draft-review-page.vp-command-shell-ready main.workspace {
+  grid-template-columns: minmax(186px, 0.48fr) minmax(0, 2.74fr) minmax(206px, 0.5fr);
+  gap: 18px;
+}
+
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-gate {
+  padding: clamp(18px, 1.6vw, 28px);
+  gap: 14px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 253, 0.99), rgba(255, 253, 249, 0.965)),
+    radial-gradient(circle at 96% 2%, rgba(20, 92, 74, 0.06), transparent 26%);
+  box-shadow: 0 22px 54px rgba(45, 38, 28, 0.055);
+}
+
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-gate h1 {
+  max-width: 620px;
+  font-size: clamp(21px, 1.12vw, 26px);
+  line-height: 1.12;
+}
+
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-head {
+  grid-template-columns: minmax(0, 1fr) 72px;
+  min-height: 72px;
+}
+
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-mark {
+  padding: 8px;
+  box-shadow: 0 14px 30px rgba(91, 45, 24, 0.055);
+}
+
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-step-grid,
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-relay {
+  gap: 9px;
+}
+
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-step,
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-relay > div,
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-card,
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-result,
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-rule,
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-form {
+  border-color: rgba(86, 99, 80, 0.15);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 252, 0.985), rgba(255, 254, 250, 0.945)),
+    linear-gradient(90deg, rgba(20, 92, 74, 0.02), transparent);
+}
+
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-form {
+  max-height: 570px;
+}
+
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-form h2,
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-result h2 {
+  font-size: 17px;
+  line-height: 1.16;
+}
+
+body.permission-execution-draft-review-page.vp-command-shell-ready aside.panel > h2 {
+  font-size: clamp(17px, 0.98vw, 21px);
+}
+
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-relay p,
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-card span,
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-step span {
+  font-size: 11px;
+}
