@@ -1,31 +1,39 @@
-# Controlled Permission Execution Authorization Draft Review Gate Re-entry
+# Controlled Permission Execution Authorization Draft Review Gate
 
-Controlled Permission Execution Authorization Draft Review Gate Re-entry accepts the v3.8.4 controlled draft packet and turns it into controlled review-decision candidate language only.
+## v3.8.9 Re-entry
 
-## What This Release Does
+Controlled Permission Execution Authorization Draft Review Gate Re-entry receives the v3.8.8 controlled draft packet and turns it into one controlled review-decision candidate.
 
-- Requires schema `controlled-permission-execution-authorization-draft-gate-v6`.
-- Requires release `v3.8.4`.
-- Requires next gate `Controlled permission execution authorization draft review gate re-entry`.
-- Preserves founder posture id, review decision id, draft review id, draft gate id, founder decision id, authorization review id, preflight id, hold id, source answer id, source record id, source family, review route, founder question, permission question, and authority flag audit.
-- Emits `controlled_permission_execution_authorization_draft_review_ready`, `permission_execution_authorization_draft_review_recorded`, and `founder_permission_execution_authorization_review_decision_candidate_ready` as true only after all checks pass.
-- Keeps permission, authorization, execution, storage, canonical, public release, and production flags false.
+This is review readiness only. It is not permission grant, authorization approval, execution, storage, canonical write, public release, or production.
 
-## v3.8.5 Re-entry
+## Input
 
-- Receives the v3.8.4 controlled draft packet produced from the v3.8.3 founder posture.
-- Blocks older draft packets, unsafe review language, changed source ids, changed questions, changed authority audit, or any true authority flag.
-- Produces only a controlled review-decision candidate; it does not grant permission, approve authorization, or enable execution.
-- Keeps the draft-review room visually calmer: current incoming draft, verified identity, outgoing review-decision candidate, and smaller command-shell rhythm.
+- Schema: controlled-permission-execution-authorization-draft-gate-v6
+- Release: v3.8.8
+- Status: Controlled draft review candidate prepared; execution remains false.
+- Required handoff: founder posture id, review decision id, draft review id, draft gate id, source ids, route, founder question, permission question, and authority flag audit.
 
-## Previous Re-entry
+## Output
 
-The v3.7.7 re-entry accepted the v3.7.6 controlled draft packet. v3.8.5 advances the same gate pattern to the current v3.8.4 draft packet without opening authority.
+- controlled_permission_execution_authorization_draft_review_ready=true
+- permission_execution_authorization_draft_review_recorded=true
+- founder_permission_execution_authorization_review_decision_candidate_ready=true
+- permission_granted=false
+- authorization_permission_granted=false
+- permission_review_approved=false
+- founder_permission_granted=false
+- execution_packet_authorized=false
+- execution_authorized=false
+- execution_allowed=false
+- storage_write_enabled=false
+- canonical_write_allowed=false
+- production_ready=false
+- public_release_allowed=false
 
-## Boundary
+## Product Rule
 
-This is not permission grant, authorization approval, execution, storage write, canonical update, public release, or production launch.
+The review page should feel like a quiet desk: one draft, one identity check, one boundary, one next review-decision candidate. It must never look or sound like a launch console.
 
 ## Next Gate
 
-Controlled Permission Execution Authorization Review Decision Gate Re-entry.
+v3.9.0 Controlled Permission Execution Authorization Review Decision Gate Re-entry

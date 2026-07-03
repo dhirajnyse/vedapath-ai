@@ -5693,6 +5693,17 @@ It should:
 - move only to the controlled permission execution authorization draft review gate re-entry
 - make the draft gate feel like a quiet writing desk where founder posture becomes reviewable language without becoming authority
 
+### 362. Controlled Permission Execution Authorization Draft Review Gate Re-entry
+
+Controlled Permission Execution Authorization Draft Review Gate Re-entry should receive the v3.8.8 controlled draft packet and prepare only controlled review-decision candidate language while every authority flag remains false.
+
+- accept only the v3.8.8 controlled draft packet
+- preserve founder posture id, source ids, route, questions, and authority audit
+- output draft-review readiness and review-decision candidate readiness only
+- keep permission, authorization, execution, storage, canonical writes, public release, and production false
+- move only to the controlled review decision gate re-entry
+- present the page as a calm review desk with restrained type, clean cards, and no authority implication
+
 ## Strategic Difference
 
 Most religious AI products try to answer as a spiritual authority.

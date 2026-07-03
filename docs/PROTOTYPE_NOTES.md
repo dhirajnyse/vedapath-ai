@@ -2,6 +2,13 @@
 
 The v0.7.4 release turns the VedaPath AI homepage into a trusted MVP prototype with calm, practice, source-library, source-seeds, retrieval, passage-review, evaluation, evaluation-dashboard, reviewer-queue, source-policy, trust-ledger, life-map, calm-circle, consent-gate, memory-gate, trust-model, calm-passport, backend-schema, schema-fixtures, evaluation-drill, learning-loop, sanskrit-lens, voice-boundary, scholar-review, launch-gate, production-bridge, source-storage, reviewer-access, public-feedback, launch-story, source-path, calm-compass, calm-card, source-bell, before-reply, samvada, sankalpa, seva, morning, evening, and rhythm surfaces.
 
+## v3.8.9 Controlled Permission Execution Authorization Draft Review Gate Re-entry
+- Re-enters the controlled draft-review gate from the v3.8.8 controlled draft packet.
+- Preserves founder posture id, review decision id, draft review id, draft gate id, founder decision id, authorization review id, preflight id, hold id, source ids, route, questions, and authority audit.
+- Produces only controlled review-decision candidate language while permission grant, authorization approval, execution, storage writes, canonical writes, public release, and production remain false.
+- Softens the draft-review page into a quieter review desk with smaller headings, current v3.8.8 input language, warmer source cards, and the v3.8.9 review command-shell badge.
+- Updates the build tracker, product blueprint, prototype notes, README, and draft-review gate contract for the next v3.9.0 Controlled Permission Execution Authorization Review Decision Gate Re-entry.
+
 ## v3.8.8 Controlled Permission Execution Authorization Draft Gate Re-entry
 
 - Re-enters the controlled draft gate from the v3.8.7 founder posture packet.
