@@ -1,5 +1,19 @@
 # VedaPath AI
 
+## v3.8.3 Founder Permission Execution Authorization Decision Gate Re-entry
+
+- Re-enters the founder decision gate from the v3.8.2 review-decision packet.
+- Records draft-only, hold, return, or reject as founder posture only; permission, authorization, execution, storage, public release, and production remain false.
+- Refines the founder decision room into a quieter posture desk with smaller type, tighter route cards, and the v3.8.3 command-shell badge.
+
+
+## v3.8.3 Founder Permission Execution Authorization Decision Gate Re-entry
+
+- Re-enters the founder decision gate from the v3.8.2 review-decision packet.
+- Records draft-only, hold, return, or reject as founder posture only; permission, authorization, execution, storage, public release, and production remain false.
+- Refines the founder decision room into a quieter posture desk with smaller type, tighter route cards, and the v3.8.3 command-shell badge.
+
+
 VedaPath AI is a source-first learning companion for exploring Vedic and Hindu philosophical texts with clarity, humility, and citations.
 
 ![VedaPath AI 3D logo concept](assets/vedapath-3d-logo-concept.png)

@@ -830,3 +830,179 @@ body.permission-execution-decision-page .founder-decision-choice[aria-pressed="t
 body.permission-execution-decision-page .founder-decision-form {
   max-height: 620px;
 }
+
+
+/* VEDAPATH v3.8.3 FOUNDER DECISION RE-ENTRY */
+body.vp-command-shell-ready.permission-execution-decision-page main.workspace {
+  grid-template-columns: minmax(188px, 0.48fr) minmax(0, 2.36fr) minmax(206px, 0.54fr);
+  gap: 18px;
+}
+
+body.permission-execution-decision-page .founder-decision {
+  gap: 13px;
+  border-color: rgba(20, 92, 74, 0.15);
+  background:
+    radial-gradient(circle at 94% 6%, rgba(20, 92, 74, 0.068), transparent 23%),
+    linear-gradient(135deg, rgba(255, 255, 252, 0.992), rgba(255, 250, 245, 0.95));
+}
+
+body.permission-execution-decision-page .founder-decision-head {
+  grid-template-columns: minmax(0, 1fr) 82px;
+  min-height: 92px;
+}
+
+body.permission-execution-decision-page .founder-decision h1 {
+  max-width: 720px;
+  font-size: clamp(1.5rem, 1.22vw, 1.88rem);
+  line-height: 1.12;
+}
+
+body.permission-execution-decision-page .founder-decision-head .muted {
+  max-width: 920px;
+  font-size: 0.9rem;
+  line-height: 1.56;
+}
+
+body.permission-execution-decision-page .founder-decision-choice-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+body.permission-execution-decision-page .founder-decision-choice {
+  min-height: 72px;
+  padding: 11px;
+}
+
+body.permission-execution-decision-page .founder-decision-choice strong,
+body.permission-execution-decision-page .founder-decision-meridian strong,
+body.permission-execution-decision-page .founder-decision-card strong,
+body.permission-execution-decision-page .founder-decision-rule strong {
+  font-size: 0.94rem;
+}
+
+body.permission-execution-decision-page .founder-decision-choice p,
+body.permission-execution-decision-page .founder-decision-meridian p,
+body.permission-execution-decision-page .founder-decision-form input,
+body.permission-execution-decision-page .founder-decision-form select,
+body.permission-execution-decision-page .founder-decision-form textarea,
+body.permission-execution-decision-page .founder-decision-output {
+  font-size: 0.88rem;
+}
+
+body.permission-execution-decision-page .founder-decision-meridian article {
+  padding: 11px;
+}
+
+body.permission-execution-decision-page .founder-decision-form {
+  max-height: 585px;
+  background: rgba(255, 255, 252, 0.76);
+}
+
+body.permission-execution-decision-page .founder-decision-form textarea {
+  min-height: 62px;
+}
+
+body.permission-execution-decision-page .founder-decision-output {
+  min-height: 236px;
+}
+
+body.permission-execution-decision-page .handoff-quiet h2,
+body.permission-execution-decision-page .founder-decision-form h2,
+body.permission-execution-decision-page .founder-decision-grid h2,
+body.permission-execution-decision-page aside.panel h2 {
+  font-size: clamp(0.98rem, 0.92vw, 1.16rem);
+}
+
+@media (max-width: 1280px) {
+  body.permission-execution-decision-page .founder-decision-choice-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+/* VEDAPATH v3.8.3 FOUNDER DECISION RE-ENTRY */
+body.vp-command-shell-ready.permission-execution-decision-page main.workspace {
+  grid-template-columns: minmax(188px, 0.48fr) minmax(0, 2.36fr) minmax(206px, 0.54fr);
+  gap: 18px;
+}
+
+body.permission-execution-decision-page .founder-decision {
+  gap: 13px;
+  border-color: rgba(20, 92, 74, 0.15);
+  background:
+    radial-gradient(circle at 94% 6%, rgba(20, 92, 74, 0.068), transparent 23%),
+    linear-gradient(135deg, rgba(255, 255, 252, 0.992), rgba(255, 250, 245, 0.95));
+}
+
+body.permission-execution-decision-page .founder-decision-head {
+  grid-template-columns: minmax(0, 1fr) 82px;
+  min-height: 92px;
+}
+
+body.permission-execution-decision-page .founder-decision h1 {
+  max-width: 720px;
+  font-size: clamp(1.5rem, 1.22vw, 1.88rem);
+  line-height: 1.12;
+}
+
+body.permission-execution-decision-page .founder-decision-head .muted {
+  max-width: 920px;
+  font-size: 0.9rem;
+  line-height: 1.56;
+}
+
+body.permission-execution-decision-page .founder-decision-choice-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+body.permission-execution-decision-page .founder-decision-choice {
+  min-height: 72px;
+  padding: 11px;
+}
+
+body.permission-execution-decision-page .founder-decision-choice strong,
+body.permission-execution-decision-page .founder-decision-meridian strong,
+body.permission-execution-decision-page .founder-decision-card strong,
+body.permission-execution-decision-page .founder-decision-rule strong {
+  font-size: 0.94rem;
+}
+
+body.permission-execution-decision-page .founder-decision-choice p,
+body.permission-execution-decision-page .founder-decision-meridian p,
+body.permission-execution-decision-page .founder-decision-form input,
+body.permission-execution-decision-page .founder-decision-form select,
+body.permission-execution-decision-page .founder-decision-form textarea,
+body.permission-execution-decision-page .founder-decision-output {
+  font-size: 0.88rem;
+}
+
+body.permission-execution-decision-page .founder-decision-meridian article {
+  padding: 11px;
+}
+
+body.permission-execution-decision-page .founder-decision-form {
+  max-height: 585px;
+  background: rgba(255, 255, 252, 0.76);
+}
+
+body.permission-execution-decision-page .founder-decision-form textarea {
+  min-height: 62px;
+}
+
+body.permission-execution-decision-page .founder-decision-output {
+  min-height: 236px;
+}
+
+body.permission-execution-decision-page .handoff-quiet h2,
+body.permission-execution-decision-page .founder-decision-form h2,
+body.permission-execution-decision-page .founder-decision-grid h2,
+body.permission-execution-decision-page aside.panel h2 {
+  font-size: clamp(0.98rem, 0.92vw, 1.16rem);
+}
+
+@media (max-width: 1280px) {
+  body.permission-execution-decision-page .founder-decision-choice-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
