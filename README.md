@@ -1,18 +1,18 @@
 # VedaPath AI
 
+## v3.8.4 Controlled Permission Execution Authorization Draft Gate Re-entry
+
+- Re-enters the controlled draft gate from the v3.8.3 founder posture packet.
+- Preserves founder posture id, review decision id, draft review id, draft gate id, founder decision id, authorization review id, preflight id, hold id, source ids, route, questions, and authority audit.
+- Prepares one draft-review candidate only while permission grant, authorization approval, execution, storage writes, canonical writes, public release, and production remain false.
+- Refines the draft gate UI into a calmer writing desk with current v3.8.3 input language, smaller title rhythm, softer draft surfaces, and the v3.8.4 command-shell badge.
+- Updates [Controlled Permission Execution Authorization Draft Gate](controlledpermissionexecutionauthorizationdraftgate.html), [Controlled Permission Execution Authorization Draft Gate Data](data/vedapath-controlled-permission-execution-authorization-draft-gate.json), and [Controlled Permission Execution Authorization Draft Gate Notes](docs/CONTROLLED_PERMISSION_EXECUTION_AUTHORIZATION_DRAFT_GATE.md).
+
 ## v3.8.3 Founder Permission Execution Authorization Decision Gate Re-entry
 
 - Re-enters the founder decision gate from the v3.8.2 review-decision packet.
 - Records draft-only, hold, return, or reject as founder posture only; permission, authorization, execution, storage, public release, and production remain false.
 - Refines the founder decision room into a quieter posture desk with smaller type, tighter route cards, and the v3.8.3 command-shell badge.
-
-
-## v3.8.3 Founder Permission Execution Authorization Decision Gate Re-entry
-
-- Re-enters the founder decision gate from the v3.8.2 review-decision packet.
-- Records draft-only, hold, return, or reject as founder posture only; permission, authorization, execution, storage, public release, and production remain false.
-- Refines the founder decision room into a quieter posture desk with smaller type, tighter route cards, and the v3.8.3 command-shell badge.
-
 
 VedaPath AI is a source-first learning companion for exploring Vedic and Hindu philosophical texts with clarity, humility, and citations.
 
