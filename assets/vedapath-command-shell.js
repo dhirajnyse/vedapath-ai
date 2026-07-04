@@ -1,5 +1,5 @@
 (function () {
-  const releaseBadge = "v3.9.2 draft";
+  const releaseBadge = "v3.9.3 review";
   const prefKey = "vedapathCommandShellPrefs";
   const groups = [
     { title: "Start", labels: ["Home", "Build", "Brand", "Blueprint"] },

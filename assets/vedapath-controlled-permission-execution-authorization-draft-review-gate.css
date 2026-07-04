@@ -695,3 +695,107 @@ body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review
 body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-relay span {
   font-size: 10.5px;
 }
+
+/* VEDAPATH v3.9.3 CONTROLLED DRAFT REVIEW GATE RE-ENTRY */
+body.permission-execution-draft-review-page.vp-command-shell-ready main.workspace {
+  grid-template-columns: minmax(180px, 0.44fr) minmax(0, 2.92fr) minmax(196px, 0.46fr);
+  gap: 18px;
+}
+
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-gate {
+  padding: 22px;
+  gap: 13px;
+  border-color: rgba(20, 92, 74, 0.18);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 253, 0.992), rgba(255, 253, 249, 0.972)),
+    radial-gradient(circle at 100% 0%, rgba(224, 168, 59, 0.06), transparent 24%);
+  box-shadow: 0 18px 42px rgba(45, 38, 28, 0.045);
+}
+
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-gate h1 {
+  max-width: 680px;
+  font-size: 1.7rem;
+  line-height: 1.12;
+  letter-spacing: 0;
+}
+
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-head {
+  grid-template-columns: minmax(0, 1fr) 66px;
+  min-height: 68px;
+  align-items: start;
+}
+
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-head .muted {
+  max-width: 74ch;
+}
+
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-mark {
+  padding: 7px;
+  border-radius: 8px;
+  box-shadow: none;
+}
+
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-step-grid {
+  grid-template-columns: repeat(4, minmax(112px, 1fr));
+}
+
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-step,
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-relay > div,
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-card,
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-result,
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-rule,
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-form {
+  border-color: rgba(37, 66, 58, 0.14);
+  background: rgba(255, 255, 253, 0.96);
+  box-shadow: none;
+}
+
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-step,
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-relay > div,
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-card,
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-result,
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-rule,
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-form {
+  padding: 12px;
+}
+
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-form {
+  max-height: 540px;
+}
+
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-form h2,
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-result h2,
+body.permission-execution-draft-review-page.vp-command-shell-ready aside.panel > h2 {
+  font-size: 1.05rem;
+  line-height: 1.18;
+  letter-spacing: 0;
+}
+
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-card strong,
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-rule strong,
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-step strong,
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-relay strong {
+  font-size: 0.88rem;
+  line-height: 1.24;
+  letter-spacing: 0;
+}
+
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-card span,
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-rule span,
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-step span,
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-relay span {
+  font-size: 0.72rem;
+}
+
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-form textarea:first-of-type,
+body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-output {
+  min-height: 146px;
+}
+
+@media (max-width: 1180px) {
+  body.permission-execution-draft-review-page.vp-command-shell-ready main.workspace,
+  body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-grid,
+  body.permission-execution-draft-review-page.vp-command-shell-ready .draft-review-relay {
+    grid-template-columns: 1fr;
+  }
+}
