@@ -1,46 +1,32 @@
-# Founder Permission Execution Authorization Decision Gate Re-entry
+# Founder Permission Execution Authorization Decision Gate
 
-Version: v3.8.7
+Release: v3.9.1 Founder Permission Execution Authorization Decision Gate Re-entry
 
-Founder Permission Execution Authorization Decision Gate Re-entry receives the v3.8.6 controlled review-decision packet and records founder posture after review-decision readiness.
+Input: v3.9.0 Controlled Permission Execution Authorization Review Decision Gate Re-entry
 
-It can record four outcomes:
+## Purpose
 
-- Draft-only path
-- Hold for more evidence
-- Return to review decision
-- Reject packet path
+This gate receives the controlled review-decision packet and lets the founder record one posture:
 
-It may mark a controlled draft candidate only when the founder chooses the draft-only path. This is a posture record, not a permission grant or execution approval.
+- Draft-only
+- Hold
+- Return to review
+- Reject
 
-It must preserve:
+It does not grant permission, authorization, execution, storage, canonical writes, public release, deployment, production, or external publication.
 
-- Founder posture id
-- Review decision gate id
-- Controlled draft review gate id
-- Controlled draft gate id
-- Founder decision gate id
-- Authorization review gate id
-- Permission execution authorization preflight id
-- Controlled permission execution hold id
-- Source answer id
-- Source record id
-- Source family
-- Review route
-- Founder question
-- Permission question
-- Authority flag audit
+## Product Rule
 
-It must not grant permission, approve authorization, execute, store, update canonical records, publish, or launch production.
+The founder posture can prepare a later controlled draft candidate only. It is not a live authorization and it cannot execute any system action.
 
-If route, questions, source identity, founder posture id, or authority audit drift, the decision blocks.
+## Required Preserved Fields
 
-Next gate: Controlled permission execution authorization draft gate re-entry.
+- Question handoff from source to permission review.
+- Source identity fields.
+- Authority flag audit.
+- Review-ready flags.
+- Every false authority flag remains false.
 
-## v3.8.7 Re-entry Notes
+## Next Gate
 
-- Accept only the v3.8.6 controlled review-decision packet as input.
-- Record draft-only, hold, return, or reject as founder posture only.
-- Prepare one controlled draft candidate only from an explicit draft-only posture.
-- Keep permission, authorization approval, execution, storage writes, canonical writes, public release, and production false.
-- Preserve the v3.8.6 route, source ids, source family, questions, founder posture id, and authority audit.
+Controlled Permission Execution Authorization Draft Gate Re-entry

@@ -1,5 +1,14 @@
 # VedaPath AI
 
+## v3.9.1 Founder Permission Execution Authorization Decision Gate Re-entry
+
+VedaPath now re-enters the founder decision gate from the v3.9.0 review-decision packet. The founder can record a draft-only, hold, return, or reject posture while every permission, authorization, execution, storage, public release, and production flag remains false.
+
+Open:
+
+- [Founder decision gate](./founderpermissionexecutionauthorizationdecisiongate.html)
+- [Build status](./build-status.html)
+
 ## v3.9.0 Controlled Permission Execution Authorization Review Decision Gate Re-entry
 
 - Re-enters the controlled review-decision gate from the v3.8.9 draft-review packet.
