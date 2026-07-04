@@ -672,3 +672,104 @@ body.review-decision-page.vp-command-shell-ready .review-decision-form label {
 body.review-decision-page.vp-command-shell-ready .review-decision-form textarea {
   min-height: 52px;
 }
+
+/* VEDAPATH v3.9.4 CONTROLLED REVIEW DECISION GATE RE-ENTRY */
+body.review-decision-page.vp-command-shell-ready main.workspace {
+  grid-template-columns: minmax(172px, 0.34fr) minmax(0, 3.3fr) minmax(188px, 0.4fr);
+  align-items: start;
+  gap: 18px;
+}
+
+body.review-decision-page.vp-command-shell-ready .review-decision {
+  padding: clamp(18px, 1.25vw, 24px);
+  gap: 14px;
+  border-color: rgba(20, 92, 74, 0.14);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 252, 0.995), rgba(255, 254, 250, 0.985)),
+    radial-gradient(circle at 100% 0%, rgba(224, 168, 59, 0.08), transparent 34%);
+  box-shadow: none;
+}
+
+body.review-decision-page.vp-command-shell-ready .review-decision-head {
+  grid-template-columns: minmax(0, 1fr) 58px;
+  min-height: 56px;
+}
+
+body.review-decision-page.vp-command-shell-ready .review-decision-mark {
+  width: 52px;
+  height: 52px;
+  border-radius: 8px;
+}
+
+body.review-decision-page.vp-command-shell-ready .review-decision h1 {
+  max-width: 720px;
+  font-size: clamp(20px, 0.95vw, 24px);
+  line-height: 1.1;
+  letter-spacing: 0;
+}
+
+body.review-decision-page.vp-command-shell-ready .review-decision-head .muted,
+body.review-decision-page.vp-command-shell-ready .review-decision p,
+body.review-decision-page.vp-command-shell-ready aside.panel .muted {
+  max-width: 960px;
+  font-size: 0.85rem;
+  line-height: 1.55;
+}
+
+body.review-decision-page.vp-command-shell-ready .review-decision-choice-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+body.review-decision-page.vp-command-shell-ready .review-decision-choice,
+body.review-decision-page.vp-command-shell-ready .review-decision-card,
+body.review-decision-page.vp-command-shell-ready .review-decision-rule,
+body.review-decision-page.vp-command-shell-ready .review-decision-result,
+body.review-decision-page.vp-command-shell-ready .review-decision-form,
+body.review-decision-page.vp-command-shell-ready .review-decision-relay div {
+  border-color: rgba(74, 93, 75, 0.15);
+  background: rgba(255, 255, 252, 0.96);
+  box-shadow: none;
+}
+
+body.review-decision-page.vp-command-shell-ready .review-decision-choice {
+  min-height: 56px;
+  padding: 10px 12px;
+  border-left: 3px solid rgba(224, 168, 59, 0.34);
+}
+
+body.review-decision-page.vp-command-shell-ready .review-decision-choice strong,
+body.review-decision-page.vp-command-shell-ready .review-decision-card strong,
+body.review-decision-page.vp-command-shell-ready .review-decision-relay strong {
+  font-size: 0.9rem;
+}
+
+body.review-decision-page.vp-command-shell-ready .review-decision-choice[aria-pressed="true"] {
+  border-color: rgba(213, 92, 31, 0.32);
+  border-left-color: rgba(213, 92, 31, 0.9);
+  background: linear-gradient(180deg, rgba(255, 247, 239, 0.95), rgba(250, 255, 251, 0.94));
+}
+
+body.review-decision-page.vp-command-shell-ready .review-decision-relay {
+  grid-template-columns: 1.05fr 1fr 1.05fr;
+}
+
+body.review-decision-page.vp-command-shell-ready .review-decision-form {
+  max-height: 500px;
+}
+
+body.review-decision-page.vp-command-shell-ready .review-decision-form h2,
+body.review-decision-page.vp-command-shell-ready .review-decision-result h2,
+body.review-decision-page.vp-command-shell-ready aside.panel > h2 {
+  font-size: clamp(16px, 0.86vw, 19px);
+  line-height: 1.15;
+}
+
+body.review-decision-page.vp-command-shell-ready .review-decision-form label {
+  font-size: 11px;
+  gap: 5px;
+}
+
+body.review-decision-page.vp-command-shell-ready .review-decision-form textarea {
+  min-height: 52px;
+}

@@ -5704,6 +5704,18 @@ Controlled Permission Execution Authorization Draft Review Gate Re-entry should 
 - move only to the controlled review decision gate re-entry
 - present the page as a calm review desk with restrained type, clean cards, and no authority implication
 
+## v3.9.4 Controlled Review Decision Gate
+
+Controlled Permission Execution Authorization Review Decision Gate Re-entry should receive the v3.9.3 draft-review packet and route only to founder decision, hold, return, or block while every authority flag remains false.
+
+Release intent:
+
+- accept only the v3.9.3 controlled draft-review output
+- preserve founder posture id, review decision id, draft review id, draft gate id, founder decision id, authorization review id, preflight id, hold id, source ids, route, questions, and authority audit
+- output founder decision candidate readiness only when the route is forward
+- keep permission grant, authorization approval, execution, storage writes, canonical writes, public release, and production unavailable
+- make the review-decision room feel like a quiet routing desk: one incoming packet, four choices, one next gate, zero authority leakage
+
 ## v3.9.3 Controlled Draft Review Gate
 
 Controlled Permission Execution Authorization Draft Review Gate Re-entry should receive the v3.9.2 draft packet and prepare only one controlled review-decision candidate while every authority flag remains false.
