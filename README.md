@@ -1,5 +1,13 @@
 # VedaPath AI
 
+## v3.9.2 Controlled Permission Execution Authorization Draft Gate Re-entry
+
+- Re-enters the controlled draft gate from the v3.9.1 founder posture packet.
+- Preserves founder posture id, review decision id, draft review id, draft gate id, founder decision id, authorization review id, preflight id, hold id, source ids, route, questions, and authority audit.
+- Prepares one draft-review candidate only while permission grant, authorization approval, execution, storage writes, canonical writes, public release, and production remain false.
+- Polishes the draft page into a quieter writing desk: one posture, one draft, no authority, calmer cards, and the v3.9.2 draft command-shell badge.
+- Updates [Controlled Permission Execution Authorization Draft Gate](controlledpermissionexecutionauthorizationdraftgate.html), [Controlled Permission Execution Authorization Draft Gate Data](data/vedapath-controlled-permission-execution-authorization-draft-gate.json), and [Controlled Permission Execution Authorization Draft Gate Notes](docs/CONTROLLED_PERMISSION_EXECUTION_AUTHORIZATION_DRAFT_GATE.md).
+
 ## v3.9.1 Founder Permission Execution Authorization Decision Gate Re-entry
 
 VedaPath now re-enters the founder decision gate from the v3.9.0 review-decision packet. The founder can record a draft-only, hold, return, or reject posture while every permission, authorization, execution, storage, public release, and production flag remains false.
