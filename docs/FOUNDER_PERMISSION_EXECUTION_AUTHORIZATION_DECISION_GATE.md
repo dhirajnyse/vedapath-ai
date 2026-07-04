@@ -1,8 +1,8 @@
 # Founder Permission Execution Authorization Decision Gate
 
-Release: v3.9.1 Founder Permission Execution Authorization Decision Gate Re-entry
+Release: v3.9.5 Founder Permission Execution Authorization Decision Gate Re-entry
 
-Input: v3.9.0 Controlled Permission Execution Authorization Review Decision Gate Re-entry
+Input: v3.9.4 Controlled Permission Execution Authorization Review Decision Gate Re-entry
 
 ## Purpose
 

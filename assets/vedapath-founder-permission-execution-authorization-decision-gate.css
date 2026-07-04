@@ -1265,3 +1265,52 @@ body {
     height: 58px;
   }
 }
+
+
+/* VEDAPATH v3.9.5 FOUNDER POSTURE QUIET DESK */
+.founder-decision .founder-decision-head h1 {
+  max-width: 760px;
+  font-size: clamp(2rem, 4vw, 4.2rem);
+  line-height: 1.03;
+}
+
+.founder-decision .muted,
+.founder-decision-form label,
+.founder-decision-output p,
+.founder-decision-card span {
+  color: rgba(91, 70, 56, 0.84);
+}
+
+.founder-decision-choice-grid {
+  gap: 0.8rem;
+}
+
+.founder-decision-choice,
+.founder-decision-meridian article,
+.founder-decision-form,
+.founder-decision-output,
+.founder-decision-card {
+  background: rgba(255, 252, 246, 0.82);
+  border-color: rgba(168, 62, 18, 0.14);
+  box-shadow: 0 18px 50px rgba(80, 44, 22, 0.055);
+}
+
+.founder-decision-choice[aria-pressed="true"] {
+  background: linear-gradient(180deg, rgba(255, 241, 232, 0.95), rgba(255, 252, 246, 0.88));
+  border-color: rgba(214, 90, 31, 0.42);
+}
+
+.founder-decision-meridian {
+  align-items: stretch;
+}
+
+.founder-decision-meridian strong,
+.founder-decision-card strong {
+  font-size: clamp(0.96rem, 1vw, 1.08rem);
+  line-height: 1.25;
+}
+
+.founder-decision-mark {
+  border-radius: 0.85rem;
+  background: linear-gradient(145deg, rgba(255, 247, 234, 0.92), rgba(244, 230, 207, 0.44));
+}
