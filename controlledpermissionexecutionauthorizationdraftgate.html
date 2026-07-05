@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="assets/vedapath-polish.css">
     <link rel="stylesheet" href="assets/vedapath-focus.css">
     <link rel="stylesheet" href="assets/vedapath-controlled-permission-execution-authorization-draft-gate.css">
-      <link rel="stylesheet" href="assets/vedapath-command-shell.css">
+    <link rel="stylesheet" href="assets/vedapath-command-shell.css">
   </head>
   <body class="permission-execution-draft-page">
     <div class="shell" id="top">
@@ -33,25 +33,24 @@
           <a class="link" href="conversationcompanionlab.html">Talk</a>
           <a class="link" href="patterncompanionlab.html">Pattern</a>
           <a class="link" href="daily.html">Daily</a>
-          <span class="version">v4.0.0 draft</span>
+          <span class="version">v4.0.4 draft</span>
         </nav>
       </header>
 
       <main class="workspace" aria-label="VedaPath Controlled Permission Execution Authorization Draft Gate workspace">
-        <aside class="panel">
+        <aside class="panel draft-side-panel">
           <span class="eyebrow">Quiet draft boundary</span>
-          <h2>One posture. One draft. Nothing opens.</h2>
-          <p class="muted">This gate receives the v3.9.9 founder posture, keeps source identity and answer boundaries intact, and prepares one reviewable draft only.</p>
+          <h2>One founder posture becomes one reviewable draft.</h2>
+          <p class="muted">The gate receives the v4.0.3 founder posture, keeps source identity and answer/retrieval locks intact, and prepares draft language only.</p>
           <div class="sprint-list">
-            <div class="sprint-step active"><span class="step-index">1</span><div><strong>Receive</strong><p>v3.9.9 founder posture.</p></div></div>
-            <div class="sprint-step"><span class="step-index">2</span><div><strong>Preserve</strong><p>Source ids and audit.</p></div></div>
+            <div class="sprint-step active"><span class="step-index">1</span><div><strong>Receive</strong><p>v4.0.3 founder posture.</p></div></div>
+            <div class="sprint-step"><span class="step-index">2</span><div><strong>Preserve</strong><p>Source, route, questions, audit.</p></div></div>
             <div class="sprint-step"><span class="step-index">3</span><div><strong>Draft</strong><p>Review candidate only.</p></div></div>
             <div class="sprint-step"><span class="step-index">4</span><div><strong>Lock</strong><p>No authority opens.</p></div></div>
           </div>
-          <div class="button-row" style="margin-top: 16px;">
+          <div class="button-row">
             <a class="button primary" href="controlledpermissionexecutionauthorizationdraftreviewgate.html">Open Draft Review</a>
             <a class="button" href="founderpermissionexecutionauthorizationdecisiongate.html">Open Founder Decision</a>
-            <a class="button safe" href="controlledpermissionexecutionauthorizationreviewgate.html">Open Authorization Review</a>
           </div>
         </aside>
 
@@ -59,8 +58,8 @@
           <div class="draft-gate-head">
             <div>
               <span class="eyebrow">Controlled draft desk</span>
-              <h1>Draft carefully. Nothing opens.</h1>
-              <p class="muted">VedaPath carries the v3.9.9 founder posture into one reviewable draft, then stops before authority, answer changes, retrieval changes, execution, storage, public release, or production.</p>
+              <h1>Write the draft. Open nothing.</h1>
+              <p class="muted">VedaPath carries the v4.0.3 founder posture into one reviewable draft, then stops before authority, answer changes, retrieval changes, execution, storage, public release, or production.</p>
             </div>
             <div class="draft-gate-mark"><img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath controlled draft mark"></div>
           </div>
@@ -75,13 +74,13 @@
           <section class="draft-relay" aria-label="Controlled draft relay">
             <div>
               <span>Incoming</span>
-              <strong>v3.9.9 founder posture</strong>
+              <strong>v4.0.3 founder posture</strong>
               <p>Draft-only, source-locked, non-authorizing.</p>
             </div>
             <div>
               <span>Carried forward</span>
-              <strong>Source ids, route, questions, audit</strong>
-              <p>Exact handoff must remain intact.</p>
+              <strong>Source, route, questions, audit</strong>
+              <p>Answer and retrieval locks remain false.</p>
             </div>
             <div>
               <span>Outgoing</span>
@@ -95,8 +94,10 @@
               <h2>Draft Packet</h2>
               <label>Founder decision packet<textarea id="draftDecisionPacket"></textarea></label>
               <label>Draft state<select id="draftState"></select></label>
-              <label>Draft actor<input id="draftActor" type="text" placeholder="Controlled draft gate"></label>
-              <label>Drafter name<input id="draftName" type="text" placeholder="Draft reviewer sample"></label>
+              <div class="draft-form-pair">
+                <label>Draft actor<input id="draftActor" type="text" placeholder="Controlled draft gate"></label>
+                <label>Drafter name<input id="draftName" type="text" placeholder="Draft reviewer sample"></label>
+              </div>
               <label>Draft gate id<input id="draftGateId" type="text"></label>
               <label>Founder posture gate id<input id="draftFounderPostureId" type="text"></label>
               <label>Review decision gate id<input id="draftReviewDecisionId" type="text"></label>
@@ -107,11 +108,19 @@
               <label>Execution hold id<input id="draftHoldId" type="text"></label>
               <label>Source answer id<input id="draftSourceAnswer" type="text"></label>
               <label>Source record id<input id="draftSourceRecord" type="text"></label>
+              <label>Source passage id<input id="draftSourcePassage" type="text"></label>
+              <label>Source phrase id<input id="draftSourcePhrase" type="text"></label>
+              <label>Source question id<input id="draftSourceQuestion" type="text"></label>
+              <label>Source reference<input id="draftSourceReference" type="text"></label>
               <label>Source family<input id="draftSourceFamily" type="text"></label>
               <label>Review route<input id="draftReviewRoute" type="text"></label>
               <label>Founder question<textarea id="draftFounderQuestion"></textarea></label>
               <label>Permission question<textarea id="draftPermissionQuestion"></textarea></label>
               <label>Authority flag audit<textarea id="draftAuthorityAudit"></textarea></label>
+              <div class="draft-form-pair">
+                <label>Answer changed<input id="draftAnswerChanged" type="text"></label>
+                <label>Retrieval changed<input id="draftRetrievalChanged" type="text"></label>
+              </div>
               <label>Draft scope<textarea id="draftScopeText"></textarea></label>
               <label>Draft language<textarea id="draftLanguage"></textarea></label>
               <label>Draft rationale<textarea id="draftRationale"></textarea></label>
@@ -134,20 +143,20 @@
                 <button class="button" id="clearDraftGates" type="button">Clear Local</button>
               </div>
             </div>
-            <div>
+            <div class="draft-gate-review">
               <section class="draft-gate-result" id="draftGateResultCard" data-state="Blocked"></section>
-              <section style="margin-top: 10px;">
+              <section>
                 <h2>Draft Scope</h2>
                 <div class="draft-gate-list" id="draftGateScope"></div>
               </section>
-              <section style="margin-top: 10px;">
+              <section>
                 <h2>Draft Checks</h2>
                 <div class="draft-gate-rules" id="draftGateChecks"></div>
               </section>
             </div>
           </section>
 
-          <section class="draft-gate-grid">
+          <section class="draft-gate-grid draft-output-grid">
             <div>
               <div class="draft-gate-actions">
                 <button class="button safe" id="copyDraftGate" type="button">Copy Draft Packet</button>
@@ -162,18 +171,20 @@
           </section>
         </section>
 
-        <aside class="panel tight">
+        <aside class="panel tight draft-right-panel">
           <span class="badge green">Draft is not authority</span>
-          <h2 style="margin-top: 14px;">Draft Review Candidate</h2>
+          <h2>Draft Review Candidate</h2>
           <p class="muted">One prepared draft can move to review. Every real authority lock stays visible and closed.</p>
           <div class="progress" aria-label="Draft gate progress 100 percent"><div class="bar" style="--score:100%"></div></div>
           <div class="metric-grid">
-            <div class="metric"><span>Current</span><strong>v4.0.0</strong></div>
-            <div class="metric"><span>Input</span><strong>v3.9.9</strong></div>
+            <div class="metric"><span>Current</span><strong>v4.0.4</strong></div>
+            <div class="metric"><span>Input</span><strong>v4.0.3</strong></div>
+            <div class="metric"><span>Answer</span><strong>False</strong></div>
+            <div class="metric"><span>Retrieval</span><strong>False</strong></div>
             <div class="metric"><span>Execution</span><strong>False</strong></div>
             <div class="metric"><span>Next</span><strong>Review</strong></div>
           </div>
-          <section class="panel tight boundary" style="margin-top: 16px;">
+          <section class="panel tight boundary">
             <h2>Draft Boundary</h2>
             <p class="draft-gate-boundary">Draft signal only. Permission grant, authorization approval, answer changes, retrieval changes, execution, source promotion, storage writes, canonical writes, migrations, accounts, secrets, public release, and production launch remain false.</p>
             <p class="muted">This release prepares a controlled draft-review gate. It does not authorize, execute, store, publish, or launch.</p>
@@ -182,6 +193,6 @@
       </main>
     </div>
     <script src="assets/vedapath-controlled-permission-execution-authorization-draft-gate.js"></script>
-      <script src="assets/vedapath-command-shell.js" defer></script>
+    <script src="assets/vedapath-command-shell.js" defer></script>
   </body>
 </html>

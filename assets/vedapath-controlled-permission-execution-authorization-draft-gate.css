@@ -1210,3 +1210,157 @@ body.permission-execution-draft-page .draft-gate-output {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
+/* VEDAPATH v4.0.4 CONTROLLED DRAFT DESK RE-ENTRY */
+body.permission-execution-draft-page {
+  --draft-page-line: rgba(20, 92, 74, 0.16);
+  --draft-page-warm-line: rgba(214, 90, 31, 0.18);
+}
+
+body.permission-execution-draft-page .workspace {
+  grid-template-columns: minmax(190px, 0.42fr) minmax(0, 2.35fr) minmax(210px, 0.46fr);
+  gap: 14px;
+  align-items: start;
+}
+
+body.permission-execution-draft-page .panel,
+body.permission-execution-draft-page .draft-gate {
+  border-radius: 8px;
+  border-color: rgba(20, 92, 74, 0.12);
+  box-shadow: 0 18px 50px rgba(53, 34, 23, 0.05);
+}
+
+body.permission-execution-draft-page .draft-gate {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 253, 0.98), rgba(255, 252, 246, 0.96)),
+    repeating-linear-gradient(90deg, rgba(20, 92, 74, 0.035) 0, rgba(20, 92, 74, 0.035) 1px, transparent 1px, transparent 18px);
+}
+
+body.permission-execution-draft-page .draft-gate-head {
+  min-height: 88px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(20, 92, 74, 0.1);
+}
+
+body.permission-execution-draft-page .draft-gate h1 {
+  max-width: 760px;
+  font-size: clamp(1.62rem, 1.85vw, 2.05rem);
+  line-height: 1.08;
+  letter-spacing: 0;
+}
+
+body.permission-execution-draft-page .draft-gate-head .muted {
+  max-width: 880px;
+  font-size: 0.98rem;
+}
+
+body.permission-execution-draft-page .draft-gate-mark {
+  width: 58px;
+  height: 58px;
+  border-radius: 8px;
+  box-shadow: 0 14px 28px rgba(168, 62, 18, 0.08);
+}
+
+body.permission-execution-draft-page .draft-step-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+body.permission-execution-draft-page .draft-step,
+body.permission-execution-draft-page .draft-relay div,
+body.permission-execution-draft-page .draft-gate-card {
+  border-radius: 8px;
+  border-color: var(--draft-page-line);
+  background: rgba(255, 255, 252, 0.86);
+}
+
+body.permission-execution-draft-page .draft-step {
+  min-height: 110px;
+}
+
+body.permission-execution-draft-page .draft-step strong,
+body.permission-execution-draft-page .draft-relay strong,
+body.permission-execution-draft-page .draft-gate-card strong {
+  font-weight: 740;
+}
+
+body.permission-execution-draft-page .draft-gate-grid {
+  gap: 14px;
+}
+
+body.permission-execution-draft-page .draft-gate-form,
+body.permission-execution-draft-page .draft-gate-result,
+body.permission-execution-draft-page .draft-gate-rules div,
+body.permission-execution-draft-page .draft-right-panel .metric,
+body.permission-execution-draft-page .draft-side-panel .sprint-step {
+  border-radius: 8px;
+  border-color: rgba(214, 90, 31, 0.16);
+  background: rgba(255, 255, 252, 0.9);
+}
+
+body.permission-execution-draft-page .draft-gate-form {
+  max-height: 640px;
+  overflow: auto;
+}
+
+body.permission-execution-draft-page .draft-form-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+body.permission-execution-draft-page .draft-gate-form label {
+  font-size: 0.82rem;
+  color: rgba(73, 47, 36, 0.82);
+}
+
+body.permission-execution-draft-page .draft-gate-form input,
+body.permission-execution-draft-page .draft-gate-form select,
+body.permission-execution-draft-page .draft-gate-form textarea {
+  border-radius: 8px;
+  font-size: 0.86rem;
+}
+
+body.permission-execution-draft-page .draft-gate-form textarea {
+  min-height: 54px;
+}
+
+body.permission-execution-draft-page .draft-gate-form textarea#draftDecisionPacket,
+body.permission-execution-draft-page .draft-gate-output {
+  min-height: 190px;
+  font-size: 0.78rem;
+  line-height: 1.44;
+}
+
+body.permission-execution-draft-page .draft-gate-review {
+  display: grid;
+  gap: 12px;
+}
+
+body.permission-execution-draft-page .draft-output-grid {
+  border-top: 1px solid rgba(20, 92, 74, 0.1);
+  padding-top: 14px;
+}
+
+body.permission-execution-draft-page .draft-side-panel h2,
+body.permission-execution-draft-page .draft-right-panel h2 {
+  font-size: clamp(1.15rem, 1.2vw, 1.35rem);
+}
+
+@media (max-width: 1200px) {
+  body.permission-execution-draft-page .workspace {
+    grid-template-columns: 1fr;
+  }
+
+  body.permission-execution-draft-page .draft-step-grid,
+  body.permission-execution-draft-page .draft-form-pair {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  body.permission-execution-draft-page .draft-step-grid,
+  body.permission-execution-draft-page .draft-form-pair {
+    grid-template-columns: 1fr;
+  }
+}

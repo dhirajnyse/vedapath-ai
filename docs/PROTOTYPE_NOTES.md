@@ -1,3 +1,10 @@
+## v4.0.4 Controlled Permission Execution Authorization Draft Gate Re-entry
+
+- Re-enters the controlled draft gate from the v4.0.3 founder posture packet.
+- Prepares one controlled draft-review candidate while every authority, answer-change, retrieval-change, execution, storage, public release, and production flag remains false.
+- Simplifies the draft surface into a quiet writing desk: one posture, one reviewable draft, visible locks, and tighter type rhythm.
+- Sets the build tracker to Phase 365: controlled draft review gate re-entry.
+
 ## v4.0.3 Founder Permission Execution Authorization Decision Gate Re-entry
 
 - Re-enters the founder decision gate from the v4.0.2 controlled review-decision packet.
