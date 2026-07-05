@@ -1142,3 +1142,71 @@ body.permission-execution-draft-page .draft-gate-output {
     grid-template-columns: 1fr;
   }
 }
+
+/* VEDAPATH v4.0.0 CONTROLLED DRAFT DESK */
+body.permission-execution-draft-page .draft-gate {
+  border-color: rgba(20, 92, 74, 0.2);
+  background:
+    radial-gradient(circle at 92% 5%, rgba(20, 92, 74, 0.08), transparent 22%),
+    radial-gradient(circle at 4% 90%, rgba(224, 168, 59, 0.12), transparent 24%),
+    linear-gradient(180deg, rgba(255, 255, 252, 0.99), rgba(255, 251, 246, 0.96));
+}
+
+body.permission-execution-draft-page .draft-gate h1 {
+  max-width: 760px;
+  font-size: clamp(1.72rem, 2.25vw, 2.35rem);
+  line-height: 1.08;
+  letter-spacing: 0;
+}
+
+body.permission-execution-draft-page .draft-gate-head {
+  min-height: 110px;
+  align-items: center;
+}
+
+body.permission-execution-draft-page .draft-gate-mark {
+  width: 64px;
+  height: 64px;
+  border-radius: 14px;
+  box-shadow: 0 12px 28px rgba(168, 62, 18, 0.1);
+}
+
+body.permission-execution-draft-page .draft-step-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+body.permission-execution-draft-page .draft-step,
+body.permission-execution-draft-page .draft-relay div,
+body.permission-execution-draft-page .draft-gate-form,
+body.permission-execution-draft-page .draft-gate-result,
+body.permission-execution-draft-page .draft-gate-rules div,
+body.permission-execution-draft-page .draft-gate-list div {
+  border-color: rgba(20, 92, 74, 0.12);
+  background: rgba(255, 255, 253, 0.88);
+}
+
+body.permission-execution-draft-page .draft-step strong,
+body.permission-execution-draft-page .draft-relay strong,
+body.permission-execution-draft-page .draft-gate-card strong {
+  font-weight: 760;
+}
+
+body.permission-execution-draft-page .draft-gate-grid {
+  gap: 16px;
+}
+
+body.permission-execution-draft-page .draft-gate-form textarea {
+  min-height: 54px;
+}
+
+body.permission-execution-draft-page .draft-gate-form textarea#draftDecisionPacket,
+body.permission-execution-draft-page .draft-gate-output {
+  font-size: 0.79rem;
+  line-height: 1.45;
+}
+
+@media (max-width: 1120px) {
+  body.permission-execution-draft-page .draft-step-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
