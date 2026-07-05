@@ -1,0 +1,34 @@
+{
+  "schema_version": "answer-packet-pilot-v1",
+  "release": "v4.0.8",
+  "updated_at": "2026-07-06",
+  "name": "Answer Packet Pilot",
+  "purpose": "Turn a reviewed answer candidate into a calm, copyable, source-carded pilot surface without production authority.",
+  "source": {
+    "question": "How can I act calmly when results are uncertain?",
+    "source_ref": "Bhagavad Gita 2.48",
+    "source_family": "Bhagavad Gita | Smriti",
+    "pramana_level": "Direct passage candidate",
+    "confidence": "High | 86/100",
+    "boundary": "Reflection support, not therapy, ritual instruction, or production AI authority."
+  },
+  "packet": {
+    "title": "Begin with the next honest action, not the result you cannot control.",
+    "plain_meaning": "The source candidate supports steadiness in action and caution about turning outcomes into identity.",
+    "useful_action": "Choose one small duty, do it slowly and cleanly, then stop measuring your worth by the result.",
+    "no_go": "Do not imply guaranteed calm, diagnosis, treatment, spiritual authority, or a direct Vedic quote."
+  },
+  "review": {
+    "status": "Pilot-ready as draft-only answer packet.",
+    "reviewer_note": "Source, family, confidence, and boundary are visible before any copy action.",
+    "founder_posture": "Allowed as a static pilot surface. Production remains locked."
+  },
+  "authority_flags": {
+    "permission_granted": false,
+    "authority_to_execute": false,
+    "execution_allowed": false,
+    "storage_enabled": false,
+    "public_release_enabled": false,
+    "production_authorized": false
+  }
+}

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Answer Packet Pilot | VedaPath AI</title>
+  <link rel="icon" href="assets/vedapath-3d-logo-concept.png" />
+  <link rel="stylesheet" href="assets/vedapath-ui.css" />
+  <link rel="stylesheet" href="assets/vedapath-command-shell.css" />
+  <link rel="stylesheet" href="assets/vedapath-pilot-surfaces.css" />
+</head>
+<body class="answer-packet-pilot-page">
+  <main class="workspace">
+    <header class="topbar">
+      <a class="brand" href="index.html#top" aria-label="Go to VedaPath AI home">
+        <img src="assets/vedapath-3d-logo-concept.png" alt="" />
+        <span><strong>VedaPath AI</strong><small>Answer packet pilot</small></span>
+      </a>
+      <nav class="navlinks nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="build-status.html">Build</a>
+        <a href="brand/brand-board.html">Brand</a>
+        <a href="blueprint.html">Blueprint</a>
+        <a href="answerpacketpilot.html">Answer Packet</a>
+        <a href="launchreadinesshub.html">Launch</a>
+        <span class="version-pill">v4.0.9 launch</span>
+      </nav>
+    </header>
+    <section class="pilot-shell">
+      <div class="pilot-hero">
+        <article class="pilot-card">
+          <span class="eyebrow">v4.0.8 answer packet</span>
+          <h1>One calm answer. Source first.</h1>
+          <p class="pilot-copy">A pilot surface for the moment after review: show the source, state confidence, offer plain meaning, carry one action, and keep the boundary visible.</p>
+          <div class="pilot-actions">
+            <a class="button" href="index.html">Open Ask Surface</a>
+            <a class="button safe" href="launchreadinesshub.html">Open Launch Hub</a>
+          </div>
+        </article>
+        <article class="pilot-card">
+          <span class="eyebrow green">Packet anatomy</span>
+          <div class="pilot-grid two">
+            <div class="compact-field"><small>1</small><strong>Question</strong><p>Name the real ask.</p></div>
+            <div class="compact-field"><small>2</small><strong>Source</strong><p>Show citation and family.</p></div>
+            <div class="compact-field"><small>3</small><strong>Meaning</strong><p>Explain without overreach.</p></div>
+            <div class="compact-field"><small>4</small><strong>Action</strong><p>Leave one steady step.</p></div>
+          </div>
+        </article>
+      </div>
+
+      <div class="packet-stage">
+        <article class="pilot-card packet-answer">
+          <span class="eyebrow">Source-carded draft</span>
+          <h2 data-text="packet.title">Loading answer packet...</h2>
+          <p class="pilot-copy" data-text="packet.plain_meaning"></p>
+          <div class="pilot-grid">
+            <div class="compact-field"><small>Question</small><strong data-text="source.question"></strong></div>
+            <div class="compact-field"><small>Source</small><strong data-text="source.source_ref"></strong></div>
+            <div class="compact-field"><small>Family</small><strong data-text="source.source_family"></strong></div>
+            <div class="compact-field"><small>Confidence</small><strong data-text="source.confidence"></strong></div>
+          </div>
+        </article>
+        <article class="pilot-card">
+          <span class="eyebrow">Boundary</span>
+          <h2>Restraint stays visible.</h2>
+          <p class="pilot-copy" data-text="source.boundary"></p>
+          <div class="compact-field"><small>Do not overclaim</small><strong data-text="packet.no_go"></strong></div>
+        </article>
+      </div>
+
+      <article class="pilot-card">
+        <span class="eyebrow">Copyable handoff</span>
+        <textarea class="packet-output" data-packet-output aria-label="Answer packet text"></textarea>
+        <div class="pilot-actions">
+          <button class="button" type="button" data-copy-packet>Copy Packet</button>
+          <a class="button safe" href="controlledpermissionexecutionauthorizationdraftreviewgate.html">Review Gate</a>
+        </div>
+      </article>
+    </section>
+  </main>
+  <script src="assets/vedapath-command-shell.js"></script>
+  <script src="assets/vedapath-answer-packet-pilot.js"></script>
+</body>
+</html>

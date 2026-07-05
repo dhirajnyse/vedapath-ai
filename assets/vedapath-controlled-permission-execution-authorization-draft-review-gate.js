@@ -120,7 +120,7 @@
   function draftPacketReady(packet, config) {
     return Boolean(
       packet &&
-      packet.schema_version === "controlled-permission-execution-authorization-draft-gate-v8" &&
+      packet.schema_version === "controlled-permission-execution-authorization-draft-gate-v9" &&
       packet.release === "v4.0.0" &&
       packet.draft_status === "Controlled draft review candidate prepared; execution remains false." &&
       packet.next_gate_required === "Controlled permission execution authorization draft review gate re-entry" &&

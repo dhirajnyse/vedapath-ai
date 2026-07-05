@@ -2585,3 +2585,23 @@ body.vp-command-shell-ready main > section > .panel {
   }
 }
 /* VEDAPATH COMMAND SHELL FONT RHYTHM REFINEMENT END */
+
+/* VEDAPATH MOBILE RAIL FLOW PATCH START */
+@media (max-width: 860px) {
+  body.vp-command-shell-ready .vp-rail-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    overflow: visible !important;
+  }
+
+  body.vp-command-shell-ready .vp-rail-link {
+    min-width: 0 !important;
+  }
+
+  body.vp-command-shell-ready .vp-rail-link span:last-child {
+    min-width: 0 !important;
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+    white-space: nowrap !important;
+  }
+}
+/* VEDAPATH MOBILE RAIL FLOW PATCH END */

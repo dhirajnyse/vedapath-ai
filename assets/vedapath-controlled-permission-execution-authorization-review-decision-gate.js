@@ -101,7 +101,7 @@
   function draftReviewPacketReady(packet, config) {
     return Boolean(
       packet &&
-      packet.schema_version === "controlled-permission-execution-authorization-draft-review-gate-v8" &&
+      packet.schema_version === "controlled-permission-execution-authorization-draft-review-gate-v9" &&
       packet.release === "v4.0.1" &&
       packet.draft_review_status === "Draft review ready for founder decision; execution remains false." &&
       packet.next_gate_required === "Controlled permission execution authorization review decision gate re-entry" &&

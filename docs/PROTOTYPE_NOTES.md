@@ -1,3 +1,21 @@
+## v4.0.9 Launch Readiness Hub
+- New surface: `launchreadinesshub.html`.
+- The hub gathers ready work, locked risk, founder moves, and copyable launch notes.
+- Known boundary: static prototype only; no accounts, sync, storage, production answer system, or public launch is enabled.
+
+## v4.0.8 Answer Packet Pilot
+- New surface: `answerpacketpilot.html`.
+- The answer packet makes a reviewed source-carded answer readable without hiding confidence or boundary.
+
+## v4.0.7 Founder Decision Gate Re-entry
+- The founder gate now accepts the v4.0.6 review decision packet and records pilot posture only.
+
+## v4.0.6 Review Decision Gate Re-entry
+- The review decision gate now accepts the v4.0.5 draft review packet and separates return, hold, block, and founder routes.
+
+## v4.0.5 Draft Review Gate Re-entry
+- The draft review gate now accepts the v4.0.4 draft packet and keeps execution false through review.
+
 ## v4.0.4 Controlled Permission Execution Authorization Draft Gate Re-entry
 
 - Re-enters the controlled draft gate from the v4.0.3 founder posture packet.

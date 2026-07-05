@@ -1,3 +1,23 @@
+## v4.0.9 Launch Readiness Hub
+- Added a launch readiness hub that shows ready items, locked risks, founder next moves, and a copyable launch report.
+- Preserved the calm command-shell UI and kept all production authority flags false.
+
+## v4.0.8 Answer Packet Pilot
+- Added a source-carded answer packet pilot with question, citation, source family, confidence, plain meaning, action, and boundary.
+- Added copyable packet output for founder and reviewer handoff.
+
+## v4.0.7 Founder Permission Execution Authorization Decision Gate Re-entry
+- Re-entered the founder decision gate from the v4.0.6 review decision packet.
+- Recorded a pilot posture without granting permission, execution, storage, public release, or production authorization.
+
+## v4.0.6 Controlled Permission Execution Authorization Review Decision Gate Re-entry
+- Re-entered the review decision gate from the v4.0.5 draft review packet.
+- Added explicit return, hold, block, and founder-review routes while authority remains false.
+
+## v4.0.5 Controlled Permission Execution Authorization Draft Review Gate Re-entry
+- Re-entered the controlled draft review gate from the v4.0.4 draft packet.
+- Preserved source identity, confidence, boundary, and false authority flags before founder decision.
+
 ## v4.0.4 Controlled Permission Execution Authorization Draft Gate Re-entry
 
 - Re-enters the controlled draft gate from the v4.0.3 founder posture packet.

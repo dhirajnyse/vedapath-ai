@@ -1,0 +1,34 @@
+{
+  "schema_version": "launch-readiness-hub-v1",
+  "release": "v4.0.9",
+  "updated_at": "2026-07-06",
+  "name": "Launch Readiness Hub",
+  "purpose": "Collect product readiness, locked risks, and founder next moves into one calm launch control surface.",
+  "readiness_score": 84,
+  "ready": [
+    "Static command shell is navigable and visually coherent.",
+    "Answer packet pilot shows source, confidence, plain meaning, action, and boundary.",
+    "Authorization gates keep execution, storage, public release, and production false.",
+    "Local practice and pattern surfaces preserve privacy boundaries."
+  ],
+  "locked": [
+    "No API keys or production model calls are connected.",
+    "No user accounts, sync, server storage, or paid launch path is enabled.",
+    "No answer should be represented as final scholarship or ritual authority.",
+    "No public launch copy should promise medical, therapeutic, or spiritual outcomes."
+  ],
+  "founder_moves": [
+    "Review v4.0.8 answer packet format on desktop and mobile.",
+    "Choose whether the first production pilot is retrieval-only or reviewer-assisted.",
+    "Approve the first 25 verified source records before any live answer system.",
+    "Keep the main product promise simple: ask clearly, read the source, carry one step."
+  ],
+  "authority_flags": {
+    "permission_granted": false,
+    "authority_to_execute": false,
+    "execution_allowed": false,
+    "storage_enabled": false,
+    "public_release_enabled": false,
+    "production_authorized": false
+  }
+}

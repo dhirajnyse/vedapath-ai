@@ -1,3 +1,11 @@
+## v4.0.9 Launch Readiness Position
+
+VedaPath now has a complete static pilot chain: controlled draft review, controlled review decision, founder pilot posture, answer packet pilot, and launch readiness hub.
+
+The product should still feel simple: ask clearly, read the source, carry one step. The launch hub exists to prevent premature production claims while making the next founder decision obvious.
+
+Next release candidate: v4.1.0 Production Retrieval Pilot Gate.
+
 ## v4.0.4 Controlled Draft Gate
 
 Controlled Permission Execution Authorization Draft Gate Re-entry receives the v4.0.3 founder posture packet and prepares only controlled draft-review candidate language while every authority flag remains false.

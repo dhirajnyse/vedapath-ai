@@ -135,7 +135,7 @@
   function reviewDecisionPacketReady(packet) {
     return Boolean(
       packet &&
-      packet.schema_version === "controlled-permission-execution-authorization-review-decision-gate-v8" &&
+      packet.schema_version === "controlled-permission-execution-authorization-review-decision-gate-v9" &&
       packet.release === "v4.0.2" &&
       packet.decision_status === "Ready for founder decision; no authority granted." &&
       packet.next_gate_required === "Founder permission execution authorization decision gate re-entry" &&
