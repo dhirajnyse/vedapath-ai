@@ -1,8 +1,8 @@
 # Founder Permission Execution Authorization Decision Gate
 
-Release: v3.9.5 Founder Permission Execution Authorization Decision Gate Re-entry
+Release: v3.9.9 Founder Permission Execution Authorization Decision Gate Re-entry
 
-Input: v3.9.4 Controlled Permission Execution Authorization Review Decision Gate Re-entry
+Input: v3.9.8 Controlled Permission Execution Authorization Review Decision Gate Re-entry
 
 ## Purpose
 
@@ -29,4 +29,4 @@ The founder posture can prepare a later controlled draft candidate only. It is n
 
 ## Next Gate
 
-Controlled Permission Execution Authorization Draft Gate Re-entry
+v4.0.0 Controlled Permission Execution Authorization Draft Gate Re-entry
