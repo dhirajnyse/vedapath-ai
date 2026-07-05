@@ -83,7 +83,7 @@
     "hold_reason",
     "block_reason"
   ];
-  const blockedWords = /\b(permission granted|permission approved|review approved|authorization granted|authorization approved|approval granted|execution approved|execution authorized|authorize execution|execute now|run now|storage enabled|canonical update|canonical write allowed|migration run|secret use|account creation allowed|public release allowed|launch production now|launch production allowed|production launch allowed|permission_granted true|authorization_permission_granted true|permission_review_approved true|founder_permission_granted true|founder_instruction_granted true|execution_allowed true|execution_authorized true|execution_packet_authorized true|storage_write_enabled true|canonical_write_allowed true|production_ready true|public_release_allowed true)\b/i;
+  const blockedWords = /\b(permission granted|permission approved|review approved|authorization granted|authorization approved|approval granted|execution approved|execution authorized|authorize execution|execute now|run now|answer changed|answer change allowed|retrieval changed|retrieval config changed|retrieval change allowed|storage enabled|canonical update|canonical write allowed|migration run|secret use|account creation allowed|public release allowed|launch production now|launch production allowed|production launch allowed|permission_granted true|authorization_permission_granted true|permission_review_approved true|founder_permission_granted true|founder_instruction_granted true|execution_allowed true|execution_authorized true|execution_packet_authorized true|answer_changed true|retrieval_config_changed true|storage_write_enabled true|canonical_write_allowed true|production_ready true|public_release_allowed true)\b/i;
 
   function compact(value) {
     return String(value || "").trim();
@@ -135,8 +135,8 @@
   function reviewDecisionPacketReady(packet) {
     return Boolean(
       packet &&
-      packet.schema_version === "controlled-permission-execution-authorization-review-decision-gate-v7" &&
-      packet.release === "v3.9.8" &&
+      packet.schema_version === "controlled-permission-execution-authorization-review-decision-gate-v8" &&
+      packet.release === "v4.0.2" &&
       packet.decision_status === "Ready for founder decision; no authority granted." &&
       packet.next_gate_required === "Founder permission execution authorization decision gate re-entry" &&
       allFlagsTrue(packet, reviewReadyFlags) &&
@@ -171,6 +171,11 @@
     const mustMentionFalse = falseAuthorityFlags.map((flag) => flag + " remains false");
     return mustMentionTrue.every((phrase) => text.includes(phrase)) &&
       mustMentionFalse.every((phrase) => text.includes(phrase));
+  }
+
+  function decisionHasNoAuthorityFlags(decision) {
+    if (!decision) return false;
+    return falseAuthorityFlags.every((flag) => get(decision, flag) === undefined || get(decision, flag) === false);
   }
 
   function matchesReviewCarry(reviewPacket, decision) {
@@ -246,12 +251,15 @@
 
   function founderPermissionExecutionAuthorizationDecisionGate(config, reviewPacket, decision) {
     if (!reviewDecisionPacketReady(reviewPacket)) {
-      return blocked("Blocked: review decision packet must be the v3.9.8 non-authorizing decision packet.", {
+      return blocked("Blocked: review decision packet must be the v4.0.2 non-authorizing review-decision packet.", {
         next_gate_required: "Founder permission execution authorization decision gate re-entry"
       });
     }
 
     const state = compact(decision && decision.decision_state) || "Draft decision";
+    if (!decisionHasNoAuthorityFlags(decision || {})) {
+      return blocked("Blocked: founder decision input may not carry true authority, answer-change, retrieval-change, execution, storage, public release, or production flags.", {});
+    }
     const missing = requiredMissing(config, state, decision || {});
     if (missing.length) {
       return blocked("Blocked: missing required fields for " + state + ".", { missing });
@@ -262,15 +270,20 @@
       "founder_decision_language",
       "decision_rationale",
       "decision_evidence_summary",
+      "non_execution_decision_clause",
       "risk_acknowledgment",
       "rollback_condition",
       "monitoring_condition",
       "stop_condition",
-      "expiry_check"
+      "expiry_check",
+      "production_boundary",
+      "return_reason",
+      "hold_reason",
+      "block_reason"
     ];
     for (const field of textFields) {
       if (hasUnsafeAuthority(decision[field])) {
-        return blocked("Blocked: " + field + " must not grant permission, authorization, or execution.", { field });
+        return blocked("Blocked: " + field + " must not grant permission, authorization, answer changes, retrieval changes, execution, storage, public release, or production.", { field });
       }
     }
 
@@ -284,7 +297,7 @@
     }
 
     if (!matchesReviewCarry(reviewPacket, decision)) {
-      return blocked("Blocked: founder decision must preserve the v3.9.8 route, questions, source ids, founder posture id, and authority audit.", {
+      return blocked("Blocked: founder decision must preserve the v4.0.2 route, questions, source ids, founder posture id, answer state, retrieval state, and authority audit.", {
         source_identity: "must match",
         review_route: "must match",
         founder_question: "must match",
@@ -293,8 +306,8 @@
       });
     }
 
-    if (!hasText(decision.decision_rationale, [["v3.9.8"], ["question handoff"], ["authority flag audit"], ["source ids"], ["founder posture id"], ["draft gate"], ["not a live authorization"]])) {
-      return blocked("Blocked: decision rationale must explain the v3.9.8 handoff, founder posture id, source ids, authority audit, and non-authorization boundary.", {});
+    if (!hasText(decision.decision_rationale, [["v4.0.2"], ["question handoff"], ["authority flag audit"], ["source identity"], ["founder posture id"], ["answer_changed=false"], ["retrieval_config_changed=false"], ["draft gate"], ["not a live authorization"]])) {
+      return blocked("Blocked: decision rationale must explain the v4.0.2 handoff, founder posture id, source identity, answer_changed=false, retrieval_config_changed=false, authority audit, and non-authorization boundary.", {});
     }
 
     if (state === "Needs founder clarification") {
@@ -429,10 +442,10 @@
     setValue("founderDecisionBlockReason", decision.block_reason);
     selectChoice(decision.decision_state);
     renderList("founderDecisionScope", [
-      { label: "Input", value: "v3.9.8 review decision" },
+      { label: "Input", value: "v4.0.2 review decision" },
       { label: "Positive path", value: "Draft-only candidate" },
       { label: "Hold/reject path", value: "First-class stop" },
-      { label: "Authority", value: "All false" }
+      { label: "Locks", value: "Authority, answer, retrieval false" }
     ]);
     renderList("founderDecisionQuestionHandoff", [
       { label: "Review decision", value: decision.review_decision_gate_id },
@@ -551,6 +564,7 @@
     keepsAuthorityFlagAudit,
     keepsNonExecutionDecisionBoundary,
     matchesReviewCarry,
+    decisionHasNoAuthorityFlags,
     founderPermissionExecutionAuthorizationDecisionGate,
     decisionSnapshot
   };

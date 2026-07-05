@@ -1,3 +1,11 @@
+## v4.0.3 Founder Permission Execution Authorization Decision Gate Re-entry
+
+- Re-enters the founder decision gate from the v4.0.2 controlled review-decision packet.
+- Records founder posture only; draft-only, hold, return, and reject remain non-authorizing decisions.
+- Adds runtime guards for true authority flags, answer_changed=true, retrieval_config_changed=true, unsafe authority language, stale review-decision packets, and source/question/audit drift.
+- Updates the command shell badge, build tracker, founder gate data, founder gate UI, and founder gate documentation.
+- Sets the next release to v4.0.4 Controlled Permission Execution Authorization Draft Gate Re-entry.
+
 # v2.8.5 Prototype Notes
 
 The v0.7.4 release turns the VedaPath AI homepage into a trusted MVP prototype with calm, practice, source-library, source-seeds, retrieval, passage-review, evaluation, evaluation-dashboard, reviewer-queue, source-policy, trust-ledger, life-map, calm-circle, consent-gate, memory-gate, trust-model, calm-passport, backend-schema, schema-fixtures, evaluation-drill, learning-loop, sanskrit-lens, voice-boundary, scholar-review, launch-gate, production-bridge, source-storage, reviewer-access, public-feedback, launch-story, source-path, calm-compass, calm-card, source-bell, before-reply, samvada, sankalpa, seva, morning, evening, and rhythm surfaces.

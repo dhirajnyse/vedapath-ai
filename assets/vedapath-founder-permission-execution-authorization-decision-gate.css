@@ -1406,3 +1406,83 @@ body.permission-execution-decision-page .founder-decision-mark {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
+/* VEDAPATH v4.0.3 FOUNDER DECISION GATE RE-ENTRY */
+body.permission-execution-decision-page.vp-command-shell-ready main.workspace {
+  grid-template-columns: minmax(176px, 0.32fr) minmax(0, 3.3fr) minmax(188px, 0.38fr);
+  gap: 15px;
+}
+
+body.permission-execution-decision-page.vp-command-shell-ready .founder-decision {
+  padding: clamp(17px, 1.05vw, 22px);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 252, 0.995), rgba(252, 250, 244, 0.98)),
+    radial-gradient(circle at 100% 0%, rgba(20, 92, 74, 0.05), transparent 30%);
+}
+
+body.permission-execution-decision-page.vp-command-shell-ready .founder-decision .founder-decision-head {
+  align-items: start;
+  grid-template-columns: minmax(0, 1fr) 54px;
+}
+
+body.permission-execution-decision-page.vp-command-shell-ready .founder-decision .founder-decision-head h1 {
+  max-width: 760px;
+  font-size: clamp(1.5rem, 1.45vw, 1.95rem);
+  line-height: 1.08;
+}
+
+body.permission-execution-decision-page.vp-command-shell-ready .founder-decision-mark {
+  width: 54px;
+  height: 54px;
+  box-shadow: 0 10px 24px rgba(124, 55, 23, 0.1);
+}
+
+body.permission-execution-decision-page.vp-command-shell-ready .founder-decision-choice-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 9px;
+}
+
+body.permission-execution-decision-page.vp-command-shell-ready .founder-decision-choice {
+  min-height: 58px;
+  padding: 9px 10px;
+}
+
+body.permission-execution-decision-page.vp-command-shell-ready .founder-decision-choice p,
+body.permission-execution-decision-page.vp-command-shell-ready .founder-decision-meridian p,
+body.permission-execution-decision-page.vp-command-shell-ready .founder-decision-form textarea,
+body.permission-execution-decision-page.vp-command-shell-ready .founder-decision-form input,
+body.permission-execution-decision-page.vp-command-shell-ready .founder-decision-form select {
+  font-size: 0.85rem;
+}
+
+body.permission-execution-decision-page.vp-command-shell-ready .founder-decision-meridian {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+body.permission-execution-decision-page.vp-command-shell-ready .founder-decision-grid {
+  gap: 10px;
+}
+
+body.permission-execution-decision-page.vp-command-shell-ready .founder-decision-form {
+  max-height: 500px;
+}
+
+body.permission-execution-decision-page.vp-command-shell-ready .founder-decision-form textarea {
+  min-height: 50px;
+}
+
+body.permission-execution-decision-page.vp-command-shell-ready .founder-decision-result {
+  background: linear-gradient(180deg, rgba(255, 251, 245, 0.92), rgba(255, 255, 252, 0.9));
+}
+
+@media (max-width: 1180px) {
+  body.permission-execution-decision-page.vp-command-shell-ready main.workspace {
+    grid-template-columns: 1fr;
+  }
+
+  body.permission-execution-decision-page.vp-command-shell-ready .founder-decision-choice-grid,
+  body.permission-execution-decision-page.vp-command-shell-ready .founder-decision-meridian {
+    grid-template-columns: 1fr 1fr;
+  }
+}

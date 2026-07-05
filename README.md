@@ -1,3 +1,10 @@
+## v4.0.3 Founder Permission Execution Authorization Decision Gate Re-entry
+
+- Re-enters the founder gate from the v4.0.2 review-decision packet and records only founder posture: draft-only, hold, return, or reject.
+- Draft-only prepares only the next controlled draft candidate; permission, authorization, answer changes, retrieval changes, execution, storage, public release, and production remain false.
+- Refines the founder decision screen into a quieter decision table with smaller typography, clearer lock language, and the v4.0.3 founder command-shell badge.
+- Updates [Founder Permission Execution Authorization Decision Gate](founderpermissionexecutionauthorizationdecisiongate.html), [Founder Permission Execution Authorization Decision Gate Data](data/vedapath-founder-permission-execution-authorization-decision-gate.json), and [Founder Permission Execution Authorization Decision Gate Notes](docs/FOUNDER_PERMISSION_EXECUTION_AUTHORIZATION_DECISION_GATE.md).
+
 # VedaPath AI
 
 ## v4.0.2 Controlled Permission Execution Authorization Review Decision Gate Re-entry

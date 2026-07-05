@@ -1,3 +1,17 @@
+## v4.0.3 Founder Decision Gate
+
+Founder Permission Execution Authorization Decision Gate Re-entry should receive the v4.0.2 review-decision packet and record only founder posture while every authority, answer-change, retrieval-change, execution, storage, public release, and production flag remains false.
+
+### Product posture
+
+The founder can choose draft-only, hold, return, or reject. Draft-only means the next gate may prepare controlled draft language. It is still not permission, not authorization, not answer change, not retrieval change, not execution, not storage, not public release, and not production.
+
+### UX posture
+
+The page should feel like one calm decision table: input packet, posture choices, locks, result, and copyable handoff. Typography should stay compact and consistent with the command shell.
+
+Next release: v4.0.4 Controlled Permission Execution Authorization Draft Gate Re-entry.
+
 # VedaPath AI Product Blueprint
 
 ## Positioning
