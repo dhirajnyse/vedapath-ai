@@ -874,3 +874,84 @@ body.review-decision-page.vp-command-shell-ready .review-decision-form label {
 body.review-decision-page.vp-command-shell-ready .review-decision-form textarea {
   min-height: 52px;
 }
+
+/* VEDAPATH v4.0.2 CONTROLLED REVIEW DECISION GATE RE-ENTRY */
+body.review-decision-page.vp-command-shell-ready main.workspace {
+  grid-template-columns: minmax(180px, 0.34fr) minmax(0, 3.28fr) minmax(190px, 0.4fr);
+  gap: 15px;
+}
+
+body.review-decision-page.vp-command-shell-ready .review-decision {
+  padding: clamp(17px, 1.05vw, 22px);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 252, 0.995), rgba(252, 250, 244, 0.98)),
+    radial-gradient(circle at 100% 0%, rgba(20, 92, 74, 0.048), transparent 30%);
+}
+
+body.review-decision-page.vp-command-shell-ready .review-decision h1 {
+  max-width: 720px;
+  font-size: clamp(1.46rem, 1.4vw, 1.88rem);
+  line-height: 1.08;
+}
+
+body.review-decision-page.vp-command-shell-ready .review-decision-head {
+  align-items: start;
+}
+
+body.review-decision-page.vp-command-shell-ready .review-decision-mark {
+  width: 48px;
+  height: 48px;
+  box-shadow: 0 10px 24px rgba(124, 55, 23, 0.1);
+}
+
+body.review-decision-page.vp-command-shell-ready .review-decision-choice-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 9px;
+}
+
+body.review-decision-page.vp-command-shell-ready .review-decision-choice {
+  min-height: 50px;
+  padding: 9px 10px;
+}
+
+body.review-decision-page.vp-command-shell-ready .review-decision-choice span,
+body.review-decision-page.vp-command-shell-ready .review-decision-card span,
+body.review-decision-page.vp-command-shell-ready .review-decision-relay span {
+  color: rgba(69, 42, 29, 0.62);
+}
+
+body.review-decision-page.vp-command-shell-ready .review-decision-relay {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+body.review-decision-page.vp-command-shell-ready .review-decision-grid {
+  gap: 10px;
+}
+
+body.review-decision-page.vp-command-shell-ready .review-decision-form {
+  max-height: 492px;
+}
+
+body.review-decision-page.vp-command-shell-ready .review-decision-form textarea {
+  min-height: 50px;
+}
+
+body.review-decision-page.vp-command-shell-ready .review-decision-output {
+  min-height: 220px;
+}
+
+body.review-decision-page.vp-command-shell-ready aside.panel.tight {
+  background: linear-gradient(180deg, rgba(255, 255, 252, 0.98), rgba(252, 248, 240, 0.94));
+}
+
+@media (max-width: 1180px) {
+  body.review-decision-page.vp-command-shell-ready main.workspace {
+    grid-template-columns: 1fr;
+  }
+
+  body.review-decision-page.vp-command-shell-ready .review-decision-choice-grid,
+  body.review-decision-page.vp-command-shell-ready .review-decision-relay {
+    grid-template-columns: 1fr 1fr;
+  }
+}

@@ -48,7 +48,7 @@
     "permission_question",
     "authority_flag_audit"
   ];
-  const blockedWords = /\b(permission granted|permission approved|review approved|authorization granted|authorization approved|approval granted|execution approved|execution authorized|authorize execution|execute now|run now|storage enabled|canonical update|canonical write allowed|migration run|secret use|account creation allowed|public release allowed|launch production now|launch production allowed|production launch allowed|permission_granted true|authorization_permission_granted true|permission_review_approved true|founder_permission_granted true|founder_instruction_granted true|execution_allowed true|execution_authorized true|execution_packet_authorized true|storage_write_enabled true|canonical_write_allowed true|production_ready true|public_release_allowed true)\b/i;
+  const blockedWords = /\b(permission granted|permission approved|review approved|authorization granted|authorization approved|approval granted|execution approved|execution authorized|authorize execution|execute now|run now|answer changed|answer change allowed|retrieval changed|retrieval config changed|retrieval change allowed|storage enabled|canonical update|canonical write allowed|migration run|secret use|account creation allowed|public release allowed|launch production now|launch production allowed|production launch allowed|permission_granted true|authorization_permission_granted true|permission_review_approved true|founder_permission_granted true|founder_instruction_granted true|execution_allowed true|execution_authorized true|execution_packet_authorized true|answer_changed true|retrieval_config_changed true|storage_write_enabled true|canonical_write_allowed true|production_ready true|public_release_allowed true)\b/i;
 
   function compact(value) {
     return String(value || "").trim();
@@ -80,6 +80,11 @@
     return handoffFields.every((field) => compact(packet[field]) === compact(config.source[field]));
   }
 
+  function decisionHasNoAuthorityFlags(decision) {
+    if (!decision) return false;
+    return falseAuthorityFlags.every((flag) => get(decision, flag) === undefined || get(decision, flag) === false);
+  }
+
   function decisionPreservesHandoff(decision, reviewPacket, config) {
     if (!decision || !reviewPacket || !config || !config.source) return false;
     const sameIdentity = sourceIdentityFields.every((field) => {
@@ -96,8 +101,8 @@
   function draftReviewPacketReady(packet, config) {
     return Boolean(
       packet &&
-      packet.schema_version === "controlled-permission-execution-authorization-draft-review-gate-v7" &&
-      packet.release === "v3.9.7" &&
+      packet.schema_version === "controlled-permission-execution-authorization-draft-review-gate-v8" &&
+      packet.release === "v4.0.1" &&
       packet.draft_review_status === "Draft review ready for founder decision; execution remains false." &&
       packet.next_gate_required === "Controlled permission execution authorization review decision gate re-entry" &&
       packet.preserves_source_identity === true &&
@@ -195,19 +200,22 @@
 
   function controlledPermissionExecutionAuthorizationReviewDecisionGate(config, reviewPacket, decision) {
     if (!draftReviewPacketReady(reviewPacket, config)) {
-      return blocked("Blocked: draft-review packet must be the v3.9.7 non-authorizing review packet.", {
+      return blocked("Blocked: draft-review packet must be the v4.0.1 non-authorizing review packet.", {
         next_gate_required: "Controlled permission execution authorization review decision gate re-entry"
       });
     }
 
     const state = compact(decision && decision.decision_state) || "Draft decision";
+    if (!decisionHasNoAuthorityFlags(decision || {})) {
+      return blocked("Blocked: decision input may not carry true authority, answer-change, retrieval-change, execution, storage, public release, or production flags.", {});
+    }
     const missing = requiredMissing(config, state, decision || {});
     if (missing.length) {
       return blocked("Blocked: missing required fields for " + state + ".", { missing });
     }
 
     if (!decisionPreservesHandoff(decision, reviewPacket, config)) {
-      return blocked("Blocked: decision must preserve the v3.9.7 route, questions, founder posture id, source ids, and authority audit.", {
+      return blocked("Blocked: decision must preserve the v4.0.1 route, questions, founder posture id, source ids, and authority audit.", {
         required_identity: sourceIdentityFields,
         required_handoff: handoffFields
       });
@@ -218,15 +226,20 @@
       "decision_language",
       "decision_rationale",
       "decision_evidence_summary",
+      "non_execution_decision_clause",
       "risk_acknowledgment",
       "rollback_condition",
       "monitoring_condition",
       "stop_condition",
-      "expiry_check"
+      "expiry_check",
+      "production_boundary",
+      "return_reason",
+      "hold_reason",
+      "block_reason"
     ];
     for (const field of textFields) {
       if (hasUnsafeAuthority(decision[field])) {
-        return blocked("Blocked: " + field + " must not grant permission, authorization, or execution.", { field });
+        return blocked("Blocked: " + field + " must not grant permission, authorization, answer changes, retrieval changes, execution, storage, public release, or production.", { field });
       }
     }
 
@@ -235,12 +248,14 @@
       return blocked("Blocked: non-execution decision clause must keep authority false.", {});
     }
 
-    if (!compact(decision.decision_scope).includes("v3.9.7") ||
+    if (!compact(decision.decision_scope).includes("v4.0.1") ||
         !compact(decision.decision_rationale).includes("question handoff") ||
         !compact(decision.decision_rationale).includes("source identity") ||
         !compact(decision.decision_rationale).includes("founder posture id") ||
-        !compact(decision.decision_evidence_summary).includes("authority flag audit")) {
-      return blocked("Blocked: decision text must name the v3.9.7 handoff, founder posture id, source identity, and authority audit.", {});
+        !compact(decision.decision_evidence_summary).includes("authority flag audit") ||
+        !compact(decision.decision_evidence_summary).includes("answer_changed=false") ||
+        !compact(decision.decision_evidence_summary).includes("retrieval_config_changed=false")) {
+      return blocked("Blocked: decision text must name the v4.0.1 handoff, founder posture id, source identity, answer_changed=false, retrieval_config_changed=false, and authority audit.", {});
     }
 
     if (hasUnsafeAuthority(decision.production_boundary) || !compact(decision.production_boundary).includes("Production remains unavailable")) {
@@ -368,7 +383,7 @@
     setValue("reviewDecisionBlockReason", decision.block_reason);
     selectChoice(decision.decision_state);
     renderList("reviewDecisionScope", [
-      { label: "Input", value: "v3.9.7 draft-review packet" },
+      { label: "Input", value: "v4.0.1 draft-review packet" },
       { label: "Output", value: "Founder decision candidate" },
       { label: "Founder posture", value: "Preserved" },
       { label: "Authority", value: "Closed" }
@@ -476,6 +491,7 @@
     matchesSourceHandoff,
     matchesSourceIdentity,
     decisionPreservesHandoff,
+    decisionHasNoAuthorityFlags,
     hasUnsafeAuthority,
     keepsNonExecutionDecisionBoundary,
     controlledPermissionExecutionAuthorizationReviewDecisionGate,
