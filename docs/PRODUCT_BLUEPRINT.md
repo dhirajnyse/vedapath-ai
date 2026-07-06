@@ -1,3 +1,17 @@
+<!-- V410-V414 BLUEPRINT START -->
+## v4.1.4 Retrieval Pilot Position
+
+VedaPath has entered a source-recorded retrieval pilot lane. The product should continue to feel calm and simple, but the trust system now has five clearer layers:
+
+1. Production Retrieval Pilot Gate.
+2. Verified Source Record Schema.
+3. Retrieval Reviewer Desk.
+4. First 25 Source QA Pack.
+5. Learner Ask Flow.
+
+Next release candidate: v4.1.5 Citation Deep Link Layer.
+<!-- V410-V414 BLUEPRINT END -->
+
 ## v4.0.9 Launch Readiness Position
 
 VedaPath now has a complete static pilot chain: controlled draft review, controlled review decision, founder pilot posture, answer packet pilot, and launch readiness hub.

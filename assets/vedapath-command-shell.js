@@ -1,10 +1,11 @@
 (function () {
-  const releaseBadge = "v4.0.9 launch";
+  const releaseBadge = "v4.1.4 ask flow";
   const prefKey = "vedapathCommandShellPrefs";
   const groups = [
     { title: "Start", labels: ["Home", "Build", "Brand", "Blueprint"] },
     { title: "Source", labels: ["Answers", "Review", "Mantra"] },
-    { title: "Practice", labels: ["Life", "Talk", "Pattern", "Daily"] }
+    { title: "Practice", labels: ["Life", "Talk", "Pattern", "Daily"] },
+    { title: "Retrieval", labels: ["Pilot", "Records", "Desk", "QA Pack", "Ask Flow"] }
   ];
   const pageTitles = {
     Home: "VedaPath command center",
@@ -17,7 +18,14 @@
     Life: "Life companion",
     Talk: "Conversation companion",
     Pattern: "Pattern companion",
-    Daily: "Daily calm loop"
+    Daily: "Daily calm loop",
+    Packet: "Answer packet pilot",
+    Launch: "Launch readiness hub",
+    "Pilot": "Production Retrieval Pilot Gate",
+    "Records": "Verified Source Record Schema",
+    "Desk": "Retrieval Reviewer Desk",
+    "QA Pack": "First 25 Source QA Pack",
+    "Ask Flow": "Learner Ask Flow"
   };
   const bodyPageTitles = {
     "permission-execution-draft-page": "Controlled draft gate",
@@ -25,7 +33,12 @@
     "review-decision-page": "Controlled review decision gate",
     "permission-execution-decision-page": "Founder decision gate",
     "answer-packet-pilot-page": "Answer packet pilot",
-    "launch-readiness-hub-page": "Launch readiness hub"
+    "launch-readiness-hub-page": "Launch readiness hub",
+    "production-retrieval-pilot-page": "Production Retrieval Pilot Gate",
+    "verified-source-record-schema-page": "Verified Source Record Schema",
+    "retrieval-reviewer-desk-page": "Retrieval Reviewer Desk",
+    "source-qa-pack-page": "First 25 Source QA Pack",
+    "learner-ask-flow-page": "Learner Ask Flow"
   };
 
   function safeParse(value, fallback) {

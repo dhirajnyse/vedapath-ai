@@ -1,0 +1,604 @@
+{
+  "release": "v4.1.4",
+  "updated": "July 6, 2026",
+  "records": [
+    {
+      "id": "bg-2-47-action-outcome",
+      "family": "Bhagavad Gita | Smriti",
+      "title": "Action and outcomes",
+      "citation": "Bhagavad Gita 2.47",
+      "status": "ready",
+      "confidence": "high",
+      "allowedUse": "Use for steady action reflections and source-carded answer drafts.",
+      "boundary": "Do not turn this into guaranteed calm, fatalism, or passivity.",
+      "summary": "The passage is commonly read as directing attention toward action while keeping outcomes from becoming identity.",
+      "routes": [
+        "calm",
+        "daily",
+        "learner"
+      ],
+      "risks": [
+        "outcome-detachment overreach"
+      ],
+      "missingFields": [
+        "licensed translation",
+        "commentary comparison"
+      ]
+    },
+    {
+      "id": "bg-2-48-steadiness",
+      "family": "Bhagavad Gita | Smriti",
+      "title": "Steadiness in action",
+      "citation": "Bhagavad Gita 2.48",
+      "status": "ready",
+      "confidence": "high",
+      "allowedUse": "Use for calm path, practice, and learner action cards.",
+      "boundary": "Reflection support only, not therapy, diagnosis, or ritual instruction.",
+      "summary": "The source candidate supports steadiness while acting, with caution about clinging to results.",
+      "routes": [
+        "practice",
+        "calm",
+        "ask"
+      ],
+      "risks": [
+        "spiritual prescription"
+      ],
+      "missingFields": [
+        "licensed translation"
+      ]
+    },
+    {
+      "id": "bg-11-32-time",
+      "family": "Bhagavad Gita | Smriti",
+      "title": "Time and destruction",
+      "citation": "Bhagavad Gita 11.32",
+      "status": "ready",
+      "confidence": "high",
+      "allowedUse": "Use for Oppenheimer-source clarification and category correction.",
+      "boundary": "Do not call it a direct Vedic quote or a four-Veda passage.",
+      "summary": "This is the commonly cited source family behind the Oppenheimer line in popular culture.",
+      "routes": [
+        "claim-check",
+        "learner",
+        "answer"
+      ],
+      "risks": [
+        "Veda versus Gita confusion"
+      ],
+      "missingFields": [
+        "translation variant notes"
+      ]
+    },
+    {
+      "id": "bg-6-5-self-effort",
+      "family": "Bhagavad Gita | Smriti",
+      "title": "Self effort and self support",
+      "citation": "Bhagavad Gita 6.5",
+      "status": "ready",
+      "confidence": "medium",
+      "allowedUse": "Use for agency-first learning and calm practice prompts.",
+      "boundary": "Do not shame users who feel stuck or imply self-help alone is sufficient.",
+      "summary": "The passage is commonly read as a call toward self-uplift and inner responsibility.",
+      "routes": [
+        "practice",
+        "life",
+        "learner"
+      ],
+      "risks": [
+        "self-blame"
+      ],
+      "missingFields": [
+        "commentary comparison"
+      ]
+    },
+    {
+      "id": "bg-12-13-compassion",
+      "family": "Bhagavad Gita | Smriti",
+      "title": "Compassion and non-hostility",
+      "citation": "Bhagavad Gita 12.13",
+      "status": "ready",
+      "confidence": "medium",
+      "allowedUse": "Use for conversation tone and relational reflection.",
+      "boundary": "Do not flatten devotion into generic productivity advice.",
+      "summary": "The verse is often read as describing qualities of a steady, compassionate devotee.",
+      "routes": [
+        "talk",
+        "life",
+        "learner"
+      ],
+      "risks": [
+        "devotional flattening"
+      ],
+      "missingFields": [
+        "school-specific commentary"
+      ]
+    },
+    {
+      "id": "bg-17-15-speech",
+      "family": "Bhagavad Gita | Smriti",
+      "title": "Disciplined speech",
+      "citation": "Bhagavad Gita 17.15",
+      "status": "ready",
+      "confidence": "high",
+      "allowedUse": "Use for speech-before-reply drafts and conversation companion.",
+      "boundary": "Do not make the app an authority over personal relationships.",
+      "summary": "The passage supports truthful, gentle, beneficial speech as a practice discipline.",
+      "routes": [
+        "talk",
+        "pattern",
+        "learner"
+      ],
+      "risks": [
+        "relationship advice overreach"
+      ],
+      "missingFields": [
+        "licensed translation"
+      ]
+    },
+    {
+      "id": "bg-3-19-duty",
+      "family": "Bhagavad Gita | Smriti",
+      "title": "Duty without attachment",
+      "citation": "Bhagavad Gita 3.19",
+      "status": "ready",
+      "confidence": "medium",
+      "allowedUse": "Use for practical action cards and work-pressure reflection.",
+      "boundary": "Do not prescribe social duty or caste duty.",
+      "summary": "The passage supports doing the needed action without fastening identity to the result.",
+      "routes": [
+        "daily",
+        "work",
+        "learner"
+      ],
+      "risks": [
+        "duty overreach"
+      ],
+      "missingFields": [
+        "context notes"
+      ]
+    },
+    {
+      "id": "bg-4-39-learning",
+      "family": "Bhagavad Gita | Smriti",
+      "title": "Learning, attention, and trust",
+      "citation": "Bhagavad Gita 4.39",
+      "status": "review",
+      "confidence": "medium",
+      "allowedUse": "Use only as a learning-path source candidate until commentary is reviewed.",
+      "boundary": "Do not present faith language as a generic cognitive hack.",
+      "summary": "The source is relevant to learning posture, but needs careful devotional context.",
+      "routes": [
+        "learning",
+        "learner"
+      ],
+      "risks": [
+        "faith-language flattening"
+      ],
+      "missingFields": [
+        "reviewer note",
+        "commentary comparison"
+      ]
+    },
+    {
+      "id": "isa-1-stewardship",
+      "family": "Isha Upanishad | Upanishad",
+      "title": "Stewardship and restraint",
+      "citation": "Isha Upanishad 1",
+      "status": "ready",
+      "confidence": "medium",
+      "allowedUse": "Use for restraint, ownership, and simplicity reflections.",
+      "boundary": "Do not use it as a proof text for modern economic claims.",
+      "summary": "The opening passage is often read around restraint, belonging, and sacred presence.",
+      "routes": [
+        "life",
+        "source",
+        "learner"
+      ],
+      "risks": [
+        "modern economic overclaim"
+      ],
+      "missingFields": [
+        "translation comparison"
+      ]
+    },
+    {
+      "id": "katha-1-2-23-self",
+      "family": "Katha Upanishad | Upanishad",
+      "title": "Self knowledge boundary",
+      "citation": "Katha Upanishad 1.2.23",
+      "status": "review",
+      "confidence": "medium",
+      "allowedUse": "Use as a source candidate for humility around knowledge.",
+      "boundary": "Do not turn this into mystical certainty or guru authority.",
+      "summary": "The passage is commonly associated with limits of mere instruction or intellect in realizing the Self.",
+      "routes": [
+        "blueprint",
+        "learner"
+      ],
+      "risks": [
+        "mystical authority"
+      ],
+      "missingFields": [
+        "exact translation review",
+        "commentary comparison"
+      ]
+    },
+    {
+      "id": "chandogya-6-8-7-identity",
+      "family": "Chandogya Upanishad | Upanishad",
+      "title": "Tat tvam asi context",
+      "citation": "Chandogya Upanishad 6.8.7",
+      "status": "review",
+      "confidence": "medium",
+      "allowedUse": "Use only with explicit school/context boundaries.",
+      "boundary": "Do not pretend every school reads the phrase identically.",
+      "summary": "A famous teaching passage often discussed in Vedanta, needing interpretation labels.",
+      "routes": [
+        "samvada",
+        "learner"
+      ],
+      "risks": [
+        "school-flattening"
+      ],
+      "missingFields": [
+        "interpretation stack",
+        "teacher review"
+      ]
+    },
+    {
+      "id": "taittiriya-2-1-brahman",
+      "family": "Taittiriya Upanishad | Upanishad",
+      "title": "Brahman description",
+      "citation": "Taittiriya Upanishad 2.1",
+      "status": "review",
+      "confidence": "medium",
+      "allowedUse": "Use only for glossary and philosophical orientation.",
+      "boundary": "Do not reduce metaphysical language into motivational copy.",
+      "summary": "A major Upanishadic source for Brahman-language, needing careful translation and context.",
+      "routes": [
+        "glossary",
+        "learner"
+      ],
+      "risks": [
+        "metaphysical flattening"
+      ],
+      "missingFields": [
+        "glossary review",
+        "translation comparison"
+      ]
+    },
+    {
+      "id": "mundaka-1-1-4-knowledge",
+      "family": "Mundaka Upanishad | Upanishad",
+      "title": "Higher and lower knowledge",
+      "citation": "Mundaka Upanishad 1.1.4",
+      "status": "ready",
+      "confidence": "medium",
+      "allowedUse": "Use for explaining source layers and learning paths.",
+      "boundary": "Do not make anti-science claims from the distinction.",
+      "summary": "The passage is often cited for differentiating forms of knowledge.",
+      "routes": [
+        "learning",
+        "source",
+        "learner"
+      ],
+      "risks": [
+        "anti-science overclaim"
+      ],
+      "missingFields": [
+        "translation comparison"
+      ]
+    },
+    {
+      "id": "brihad-1-3-28-asato",
+      "family": "Brihadaranyaka Upanishad | Upanishad",
+      "title": "From untruth to truth",
+      "citation": "Brihadaranyaka Upanishad 1.3.28",
+      "status": "review",
+      "confidence": "medium",
+      "allowedUse": "Use as a reflection source candidate only after citation review.",
+      "boundary": "Do not use as ritual instruction or guaranteed transformation.",
+      "summary": "A famous prayer-like passage often used for truth, light, and mortality reflection.",
+      "routes": [
+        "calm",
+        "practice"
+      ],
+      "risks": [
+        "ritual instruction"
+      ],
+      "missingFields": [
+        "citation verification",
+        "licensed translation"
+      ]
+    },
+    {
+      "id": "mandukya-1-om",
+      "family": "Mandukya Upanishad | Upanishad",
+      "title": "Om and all experience",
+      "citation": "Mandukya Upanishad 1",
+      "status": "review",
+      "confidence": "medium",
+      "allowedUse": "Use for concept overview, not chant guidance.",
+      "boundary": "Do not turn into recitation authority.",
+      "summary": "The opening is a central source for Om-focused philosophical discussion.",
+      "routes": [
+        "mantra",
+        "learner"
+      ],
+      "risks": [
+        "chant authority"
+      ],
+      "missingFields": [
+        "recitation boundary",
+        "commentary comparison"
+      ]
+    },
+    {
+      "id": "rig-3-62-10-gayatri",
+      "family": "Rigveda | Veda",
+      "title": "Gayatri mantra source",
+      "citation": "Rigveda 3.62.10",
+      "status": "review",
+      "confidence": "high",
+      "allowedUse": "Use for source identification and respectful boundary notes.",
+      "boundary": "Do not provide ritual authority, initiation guidance, or overconfident practice instruction.",
+      "summary": "A central Vedic mantra source that needs special care around recitation, tradition, and context.",
+      "routes": [
+        "mantra",
+        "review",
+        "learner"
+      ],
+      "risks": [
+        "ritual overreach"
+      ],
+      "missingFields": [
+        "tradition review",
+        "recitation permissions"
+      ]
+    },
+    {
+      "id": "rig-10-129-nasadiya",
+      "family": "Rigveda | Veda",
+      "title": "Creation and uncertainty",
+      "citation": "Rigveda 10.129",
+      "status": "review",
+      "confidence": "medium",
+      "allowedUse": "Use for careful cosmology and philosophical wonder.",
+      "boundary": "Do not claim the verse proves modern physics.",
+      "summary": "A famous hymn often discussed for its speculative humility around origins.",
+      "routes": [
+        "claim-check",
+        "source",
+        "learner"
+      ],
+      "risks": [
+        "modern science overclaim"
+      ],
+      "missingFields": [
+        "translation comparison",
+        "scholarly note"
+      ]
+    },
+    {
+      "id": "rig-1-164-46-many-names",
+      "family": "Rigveda | Veda",
+      "title": "One reality, many names",
+      "citation": "Rigveda 1.164.46",
+      "status": "review",
+      "confidence": "medium",
+      "allowedUse": "Use only with source and interpretation caution.",
+      "boundary": "Do not make every tradition say the same thing.",
+      "summary": "A frequently cited hymn line often used in pluralistic discussions, needing careful framing.",
+      "routes": [
+        "samvada",
+        "learner"
+      ],
+      "risks": [
+        "false equivalence"
+      ],
+      "missingFields": [
+        "scholarly note",
+        "translation comparison"
+      ]
+    },
+    {
+      "id": "yoga-1-2-citta",
+      "family": "Yoga Sutra | Darshana",
+      "title": "Mind fluctuation definition",
+      "citation": "Yoga Sutra 1.2",
+      "status": "ready",
+      "confidence": "high",
+      "allowedUse": "Use for philosophical orientation around attention, not medical claims.",
+      "boundary": "Do not present as therapy or mental-health treatment.",
+      "summary": "The sutra defines yoga in relation to the settling or restraint of mental fluctuations.",
+      "routes": [
+        "practice",
+        "daily",
+        "learner"
+      ],
+      "risks": [
+        "therapy overclaim"
+      ],
+      "missingFields": [
+        "commentary comparison"
+      ]
+    },
+    {
+      "id": "yoga-1-33-attitudes",
+      "family": "Yoga Sutra | Darshana",
+      "title": "Helpful attitudes",
+      "citation": "Yoga Sutra 1.33",
+      "status": "ready",
+      "confidence": "medium",
+      "allowedUse": "Use for relational tone and conversation practice prompts.",
+      "boundary": "Do not prescribe one emotional response for every situation.",
+      "summary": "The sutra is commonly read as a practical orientation toward different kinds of people and situations.",
+      "routes": [
+        "talk",
+        "life",
+        "learner"
+      ],
+      "risks": [
+        "emotional prescription"
+      ],
+      "missingFields": [
+        "commentary comparison"
+      ]
+    },
+    {
+      "id": "mahabharata-12-calm-duty",
+      "family": "Mahabharata | Itihasa",
+      "title": "Duty and reflection context",
+      "citation": "Mahabharata, Shanti Parva candidate",
+      "status": "draft",
+      "confidence": "low",
+      "allowedUse": "Keep as a placeholder candidate until exact passage is verified.",
+      "boundary": "Do not answer from this record yet.",
+      "summary": "Potential Itihasa source lane for duty, grief, and decision making, pending exact citation.",
+      "routes": [
+        "future",
+        "review"
+      ],
+      "risks": [
+        "uncertain citation"
+      ],
+      "missingFields": [
+        "exact citation",
+        "translation",
+        "reviewer approval"
+      ]
+    },
+    {
+      "id": "bhagavata-1-2-6-devotion",
+      "family": "Bhagavata Purana | Purana",
+      "title": "Devotion and causeless practice",
+      "citation": "Bhagavata Purana 1.2.6",
+      "status": "review",
+      "confidence": "medium",
+      "allowedUse": "Use only with devotional source labels.",
+      "boundary": "Do not flatten bhakti into generic wellness language.",
+      "summary": "A devotional source candidate often discussed around bhakti and inner satisfaction.",
+      "routes": [
+        "devotion",
+        "learner"
+      ],
+      "risks": [
+        "bhakti flattening"
+      ],
+      "missingFields": [
+        "tradition review",
+        "translation comparison"
+      ]
+    },
+    {
+      "id": "vivekachudamani-discernment",
+      "family": "Vedanta commentary | Later text",
+      "title": "Discernment support",
+      "citation": "Vivekachudamani candidate",
+      "status": "draft",
+      "confidence": "low",
+      "allowedUse": "Use only as a future commentary lane placeholder.",
+      "boundary": "Do not cite as Shruti or primary Veda.",
+      "summary": "Potential later Vedanta commentary lane for discernment, pending source verification.",
+      "routes": [
+        "future",
+        "review"
+      ],
+      "risks": [
+        "category confusion"
+      ],
+      "missingFields": [
+        "exact verse",
+        "authorship/context note",
+        "reviewer approval"
+      ]
+    },
+    {
+      "id": "narada-bhakti-candidate",
+      "family": "Bhakti Sutra | Later text",
+      "title": "Devotional definition candidate",
+      "citation": "Narada Bhakti Sutra candidate",
+      "status": "draft",
+      "confidence": "low",
+      "allowedUse": "Use only as a future source placeholder.",
+      "boundary": "Do not use for final answers until exact sutra and tradition notes are reviewed.",
+      "summary": "Potential bhakti source lane for future devotional learning paths.",
+      "routes": [
+        "future",
+        "review"
+      ],
+      "risks": [
+        "devotional authority"
+      ],
+      "missingFields": [
+        "exact sutra",
+        "translation",
+        "reviewer approval"
+      ]
+    },
+    {
+      "id": "gita-mahatmya-candidate",
+      "family": "Commentarial tradition | Later text",
+      "title": "Gita reverence candidate",
+      "citation": "Gita Mahatmya candidate",
+      "status": "draft",
+      "confidence": "low",
+      "allowedUse": "Use only for future tradition-context experiments.",
+      "boundary": "Do not use as primary Gita source.",
+      "summary": "A placeholder for later tradition context, explicitly separated from canonical Gita verses.",
+      "routes": [
+        "future",
+        "review"
+      ],
+      "risks": [
+        "primary-source confusion"
+      ],
+      "missingFields": [
+        "source edition",
+        "reviewer approval"
+      ]
+    },
+    {
+      "id": "source-gap-modern-science",
+      "family": "Unsourced or uncertain",
+      "title": "Modern science claim gap",
+      "citation": "No verified source",
+      "status": "blocked",
+      "confidence": "none",
+      "allowedUse": "Use as a refusal and correction sample.",
+      "boundary": "Do not answer as if a scripture proves the claim.",
+      "summary": "A record for teaching VedaPath to say no when a modern overclaim lacks a source.",
+      "routes": [
+        "claim-check",
+        "eval"
+      ],
+      "risks": [
+        "hallucinated citation"
+      ],
+      "missingFields": [
+        "verified source absent"
+      ]
+    },
+    {
+      "id": "source-gap-personal-advice",
+      "family": "Unsourced or uncertain",
+      "title": "Personal crisis advice gap",
+      "citation": "No verified source",
+      "status": "blocked",
+      "confidence": "none",
+      "allowedUse": "Use for safety boundaries and support redirection.",
+      "boundary": "Do not provide emergency, medical, legal, or mental-health advice.",
+      "summary": "A safety record that keeps calm-product features from pretending to be emergency support.",
+      "routes": [
+        "safety",
+        "eval"
+      ],
+      "risks": [
+        "high-stakes advice"
+      ],
+      "missingFields": [
+        "support routing policy"
+      ]
+    }
+  ]
+}

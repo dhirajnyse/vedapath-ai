@@ -1,0 +1,91 @@
+{
+  "release": "v4.1.0",
+  "headline": "Open the pilot gate, not production authority.",
+  "position": "The next useful move is not a live AI answer engine. It is a controlled source retrieval pilot where every output is draft, visible, and reviewable.",
+  "copy": "VedaPath can now test retrieval behavior against curated records while keeping public answer authority, automatic storage, and live model execution disabled.",
+  "flow": [
+    {
+      "title": "Curate",
+      "copy": "Only reviewed source records enter the pilot lane."
+    },
+    {
+      "title": "Retrieve",
+      "copy": "Candidates show source, match reason, and missing fields."
+    },
+    {
+      "title": "Review",
+      "copy": "Reviewer decisions stay visible before answer drafting."
+    },
+    {
+      "title": "Pilot",
+      "copy": "Learner-facing answers remain prototype packets."
+    }
+  ],
+  "postures": [
+    {
+      "title": "Static curated pilot",
+      "decision": "Allowed",
+      "copy": "Use local JSON records and visible source cards."
+    },
+    {
+      "title": "Reviewer-assisted draft",
+      "decision": "Allowed",
+      "copy": "Reviewer can mark accept, hold, return, or block."
+    },
+    {
+      "title": "Live public answer authority",
+      "decision": "Blocked",
+      "copy": "No production AI authority until source rights, review identity, and safety gates exist."
+    }
+  ],
+  "decisions": [
+    {
+      "label": "Retrieval",
+      "value": "Prototype only",
+      "reason": "Local source records, no live corpus."
+    },
+    {
+      "label": "Answer",
+      "value": "Draft only",
+      "reason": "Every learner answer is visibly non-production."
+    },
+    {
+      "label": "Release",
+      "value": "Founder gate",
+      "reason": "Founder review before public pilot expansion."
+    }
+  ],
+  "metrics": [
+    {
+      "label": "Gate status",
+      "value": "Open"
+    },
+    {
+      "label": "Production authority",
+      "value": "Closed"
+    },
+    {
+      "label": "Records needed",
+      "value": "25"
+    },
+    {
+      "label": "Next room",
+      "value": "Schema"
+    }
+  ],
+  "locks": [
+    {
+      "title": "No hidden corpus",
+      "copy": "Every candidate must point to a visible source record."
+    },
+    {
+      "title": "No silent acceptance",
+      "copy": "Corrections and reviewer notes become records, not invisible edits."
+    },
+    {
+      "title": "No spiritual authority",
+      "copy": "The product explains source lanes and boundaries, not ritual or guru authority."
+    }
+  ],
+  "packet": "Production Retrieval Pilot Gate\\nAllowed: static curated retrieval, reviewer draft decisions, local QA.\\nBlocked: live public answer authority, production storage, automatic spiritual or therapeutic advice.\\nFounder decision: continue into verified source records before live retrieval."
+}

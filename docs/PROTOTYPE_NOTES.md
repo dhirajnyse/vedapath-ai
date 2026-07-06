@@ -1,3 +1,30 @@
+<!-- V410-V414 NOTES START -->
+## v4.1.4 Learner Ask Flow
+- Learner Ask Flow gives users one simple, source-carded question path over the curated demo source pack.
+- Primary files: `learneraskflow.html`, `data/vedapath-learner-ask-flow.json`, `assets/vedapath-retrieval-pilot.js`, `assets/vedapath-retrieval-pilot.css`.
+- Product note: this remains a static GitHub Pages prototype; no live AI retrieval or production source authority is granted.
+
+## v4.1.3 First 25 Source QA Pack
+- First 25 Source QA Pack creates a visible curated seed set with coverage, review status, and risks.
+- Primary files: `first25sourceqapack.html`, `data/vedapath-first-25-source-qa-pack.json`, `assets/vedapath-retrieval-pilot.js`, `assets/vedapath-retrieval-pilot.css`.
+- Product note: this remains a static GitHub Pages prototype; no live AI retrieval or production source authority is granted.
+
+## v4.1.2 Retrieval Reviewer Desk
+- Retrieval Reviewer Desk lets a reviewer inspect candidate matches, missing fields, and safe decisions.
+- Primary files: `retrievalreviewerdesk.html`, `data/vedapath-retrieval-reviewer-desk.json`, `assets/vedapath-retrieval-pilot.js`, `assets/vedapath-retrieval-pilot.css`.
+- Product note: this remains a static GitHub Pages prototype; no live AI retrieval or production source authority is granted.
+
+## v4.1.1 Verified Source Record Schema
+- Verified Source Record Schema defines the minimum source contract before retrieval can be trusted.
+- Primary files: `verifiedsourcerecordschema.html`, `data/vedapath-verified-source-record-schema.json`, `assets/vedapath-retrieval-pilot.js`, `assets/vedapath-retrieval-pilot.css`.
+- Product note: this remains a static GitHub Pages prototype; no live AI retrieval or production source authority is granted.
+
+## v4.1.0 Production Retrieval Pilot Gate
+- Production Retrieval Pilot Gate separates allowed static retrieval pilot work from blocked live-answer authority.
+- Primary files: `productionretrievalpilotgate.html`, `data/vedapath-production-retrieval-pilot-gate.json`, `assets/vedapath-retrieval-pilot.js`, `assets/vedapath-retrieval-pilot.css`.
+- Product note: this remains a static GitHub Pages prototype; no live AI retrieval or production source authority is granted.
+<!-- V410-V414 NOTES END -->
+
 ## v4.0.9 Launch Readiness Hub
 - New surface: `launchreadinesshub.html`.
 - The hub gathers ready work, locked risk, founder moves, and copyable launch notes.

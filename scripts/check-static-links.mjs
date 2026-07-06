@@ -8,7 +8,12 @@ const pages = [
   "launchreadinesshub.html",
   "controlledpermissionexecutionauthorizationdraftreviewgate.html",
   "controlledpermissionexecutionauthorizationreviewdecisiongate.html",
-  "founderpermissionexecutionauthorizationdecisiongate.html"
+  "founderpermissionexecutionauthorizationdecisiongate.html",
+  "productionretrievalpilotgate.html",
+  "verifiedsourcerecordschema.html",
+  "retrievalreviewerdesk.html",
+  "first25sourceqapack.html",
+  "learneraskflow.html"
 ];
 
 const missing = [];

@@ -1,0 +1,169 @@
+{
+  "release": "v4.1.2",
+  "headline": "Reviewer decisions should happen before answer confidence.",
+  "copy": "This desk turns retrieval matches into visible decisions. The candidate is not the answer; it is a review object.",
+  "metrics": [
+    {
+      "label": "Candidates",
+      "value": 4
+    },
+    {
+      "label": "Acceptable",
+      "value": 2
+    },
+    {
+      "label": "Needs review",
+      "value": 1
+    },
+    {
+      "label": "Blocked",
+      "value": 1
+    }
+  ],
+  "steps": [
+    {
+      "title": "Inspect",
+      "copy": "Read source family, citation, status, and missing fields."
+    },
+    {
+      "title": "Decide",
+      "copy": "Accept, hold, return, or block the match."
+    },
+    {
+      "title": "Explain",
+      "copy": "Leave one reason for the next reviewer."
+    },
+    {
+      "title": "Packet",
+      "copy": "Only accepted candidates feed answer packets."
+    }
+  ],
+  "candidates": [
+    {
+      "id": "cand-steadiness",
+      "title": "Steady action",
+      "citation": "Bhagavad Gita 2.48",
+      "score": "92",
+      "reason": "Question asks about calm action while results are uncertain.",
+      "decision": "Accept for prototype",
+      "record": {
+        "id": "bg-2-48-steadiness",
+        "family": "Bhagavad Gita | Smriti",
+        "title": "Steadiness in action",
+        "citation": "Bhagavad Gita 2.48",
+        "status": "ready",
+        "confidence": "high",
+        "allowedUse": "Use for calm path, practice, and learner action cards.",
+        "boundary": "Reflection support only, not therapy, diagnosis, or ritual instruction.",
+        "summary": "The source candidate supports steadiness while acting, with caution about clinging to results.",
+        "routes": [
+          "practice",
+          "calm",
+          "ask"
+        ],
+        "risks": [
+          "spiritual prescription"
+        ],
+        "missingFields": [
+          "licensed translation"
+        ]
+      },
+      "packet": "Decision: Accept for prototype\\nReason: Direct source candidate, clear use lane, visible boundary.\\nMissing: licensed translation before production."
+    },
+    {
+      "id": "cand-oppenheimer",
+      "title": "Oppenheimer source",
+      "citation": "Bhagavad Gita 11.32",
+      "score": "90",
+      "reason": "Question asks to identify the scripture behind a popular quote.",
+      "decision": "Accept with category caution",
+      "record": {
+        "id": "bg-11-32-time",
+        "family": "Bhagavad Gita | Smriti",
+        "title": "Time and destruction",
+        "citation": "Bhagavad Gita 11.32",
+        "status": "ready",
+        "confidence": "high",
+        "allowedUse": "Use for Oppenheimer-source clarification and category correction.",
+        "boundary": "Do not call it a direct Vedic quote or a four-Veda passage.",
+        "summary": "This is the commonly cited source family behind the Oppenheimer line in popular culture.",
+        "routes": [
+          "claim-check",
+          "learner",
+          "answer"
+        ],
+        "risks": [
+          "Veda versus Gita confusion"
+        ],
+        "missingFields": [
+          "translation variant notes"
+        ]
+      },
+      "packet": "Decision: Accept with category caution\\nReason: Corrects Gita versus four Vedas confusion.\\nBoundary: Do not call direct Vedic quote."
+    },
+    {
+      "id": "cand-gayatri",
+      "title": "Gayatri source",
+      "citation": "Rigveda 3.62.10",
+      "score": "84",
+      "reason": "Question asks about mantra identity and meaning.",
+      "decision": "Hold for tradition review",
+      "record": {
+        "id": "rig-3-62-10-gayatri",
+        "family": "Rigveda | Veda",
+        "title": "Gayatri mantra source",
+        "citation": "Rigveda 3.62.10",
+        "status": "review",
+        "confidence": "high",
+        "allowedUse": "Use for source identification and respectful boundary notes.",
+        "boundary": "Do not provide ritual authority, initiation guidance, or overconfident practice instruction.",
+        "summary": "A central Vedic mantra source that needs special care around recitation, tradition, and context.",
+        "routes": [
+          "mantra",
+          "review",
+          "learner"
+        ],
+        "risks": [
+          "ritual overreach"
+        ],
+        "missingFields": [
+          "tradition review",
+          "recitation permissions"
+        ]
+      },
+      "packet": "Decision: Hold for tradition review\\nReason: Source identity is strong, but practice and recitation boundaries need reviewer approval."
+    },
+    {
+      "id": "cand-science",
+      "title": "Modern science claim",
+      "citation": "No verified source",
+      "score": "22",
+      "reason": "Question attempts to prove a modern theory through scripture.",
+      "decision": "Block answer claim",
+      "record": {
+        "id": "narada-bhakti-candidate",
+        "family": "Bhakti Sutra | Later text",
+        "title": "Devotional definition candidate",
+        "citation": "Narada Bhakti Sutra candidate",
+        "status": "draft",
+        "confidence": "low",
+        "allowedUse": "Use only as a future source placeholder.",
+        "boundary": "Do not use for final answers until exact sutra and tradition notes are reviewed.",
+        "summary": "Potential bhakti source lane for future devotional learning paths.",
+        "routes": [
+          "future",
+          "review"
+        ],
+        "risks": [
+          "devotional authority"
+        ],
+        "missingFields": [
+          "exact sutra",
+          "translation",
+          "reviewer approval"
+        ]
+      },
+      "packet": "Decision: Block answer claim\\nReason: No verified source supports the claim. Return a claim-check response."
+    }
+  ]
+}
