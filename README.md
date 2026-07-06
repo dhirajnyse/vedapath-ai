@@ -1,3 +1,30 @@
+<!-- V420-V424 README START -->
+## v4.2.0 Source Edition Intake
+- Source Edition Intake captures edition, translator, language, rights posture, and missing source fields before pilot use.
+- Primary files: `sourceeditionintake.html`, `data/vedapath-source-edition-intake.json`, `assets/vedapath-pilot-readiness.js`, `assets/vedapath-pilot-readiness.css`.
+- Product note: this remains a static GitHub Pages prototype; no live AI retrieval, source rights approval, reviewer account authority, public launch, account storage, or production authority is granted.
+
+## v4.2.1 Rights Review Desk
+- Rights Review Desk separates allowed, review-needed, excerpt-only, and blocked source use before public pilot answers expand.
+- Primary files: `rightsreviewdesk.html`, `data/vedapath-rights-review-desk.json`, `assets/vedapath-pilot-readiness.js`, `assets/vedapath-pilot-readiness.css`.
+- Product note: this remains a static GitHub Pages prototype; no live AI retrieval, source rights approval, reviewer account authority, public launch, account storage, or production authority is granted.
+
+## v4.2.2 Reviewer Identity Lite
+- Reviewer Identity Lite makes source decisions carry role, scope, conflict, and authority boundaries without creating real accounts.
+- Primary files: `revieweridentitylite.html`, `data/vedapath-reviewer-identity-lite.json`, `assets/vedapath-pilot-readiness.js`, `assets/vedapath-pilot-readiness.css`.
+- Product note: this remains a static GitHub Pages prototype; no live AI retrieval, source rights approval, reviewer account authority, public launch, account storage, or production authority is granted.
+
+## v4.2.3 Answer Promotion Rules
+- Answer Promotion Rules stop a source candidate from becoming a public answer pattern until citation, rights, review, and boundary checks pass.
+- Primary files: `answerpromotionrules.html`, `data/vedapath-answer-promotion-rules.json`, `assets/vedapath-pilot-readiness.js`, `assets/vedapath-pilot-readiness.css`.
+- Product note: this remains a static GitHub Pages prototype; no live AI retrieval, source rights approval, reviewer account authority, public launch, account storage, or production authority is granted.
+
+## v4.2.4 Pilot Invite Packet
+- Pilot Invite Packet gives the founder a calm, bounded invitation builder for a small public pilot without account, payment, or production promises.
+- Primary files: `pilotinvitepacket.html`, `data/vedapath-pilot-invite-packet.json`, `assets/vedapath-pilot-readiness.js`, `assets/vedapath-pilot-readiness.css`.
+- Product note: this remains a static GitHub Pages prototype; no live AI retrieval, source rights approval, reviewer account authority, public launch, account storage, or production authority is granted.
+<!-- V420-V424 README END -->
+
 <!-- V415-V419 README START -->
 ## v4.1.9 Public Pilot Waitlist Gate
 - Public Pilot Waitlist Gate creates a privacy-light pilot entry path with local interest capture, eligibility boundaries, and no account or payment promises.

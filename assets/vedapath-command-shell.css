@@ -2605,3 +2605,58 @@ body.vp-command-shell-ready main > section > .panel {
   }
 }
 /* VEDAPATH MOBILE RAIL FLOW PATCH END */
+
+/* VEDAPATH MOBILE RAIL COMPOSURE PATCH START */
+@media (max-width: 860px) {
+  body.vp-command-shell-ready .vp-command-rail,
+  body.vp-command-shell-ready.vp-nav-right .vp-command-rail {
+    overflow-x: hidden !important;
+    padding: 12px 12px 10px !important;
+  }
+
+  body.vp-command-shell-ready .vp-rail-section {
+    margin-top: 8px !important;
+  }
+
+  body.vp-command-shell-ready .vp-rail-section-title {
+    margin-bottom: 5px !important;
+    font-size: 10px !important;
+    letter-spacing: .05em !important;
+  }
+
+  body.vp-command-shell-ready .vp-rail-list {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: 8px !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    padding: 1px 1px 4px !important;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  body.vp-command-shell-ready .vp-rail-list::-webkit-scrollbar {
+    display: none;
+  }
+
+  body.vp-command-shell-ready .vp-rail-link {
+    flex: 0 0 auto !important;
+    width: max-content !important;
+    min-width: 0 !important;
+    max-width: 142px !important;
+    grid-template-columns: 23px minmax(0, 1fr) !important;
+  }
+
+  body.vp-command-shell-ready .vp-rail-link span:last-child {
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+  }
+}
+
+@media (max-width: 480px) {
+  body.vp-command-shell-ready .vp-rail-link {
+    max-width: 128px !important;
+  }
+}
+/* VEDAPATH MOBILE RAIL COMPOSURE PATCH END */

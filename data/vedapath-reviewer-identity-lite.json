@@ -1,0 +1,51 @@
+{
+  "headline": "A review decision needs a visible reviewer posture.",
+  "copy": "Before production accounts exist, VedaPath can still model reviewer identity: role, scope, conflict note, decision lane, and what the reviewer is not authorizing.",
+  "boundary": "This remains a static GitHub Pages prototype. It grants no production source authority, no reviewer account authority, no public launch permission, and no storage outside visible browser-local preview state.",
+  "metrics": [
+    {
+      "label": "Reviewer roles",
+      "value": "4"
+    },
+    {
+      "label": "Authority",
+      "value": "None"
+    },
+    {
+      "label": "Conflicts",
+      "value": "Visible"
+    },
+    {
+      "label": "Storage",
+      "value": "Local preview"
+    }
+  ],
+  "roles": [
+    {
+      "id": "source-reviewer",
+      "title": "Source reviewer",
+      "scope": "Can flag citation, edition, and source family issues."
+    },
+    {
+      "id": "language-reviewer",
+      "title": "Language reviewer",
+      "scope": "Can flag Sanskrit/transliteration and translation concerns."
+    },
+    {
+      "id": "boundary-reviewer",
+      "title": "Boundary reviewer",
+      "scope": "Can flag overclaim, therapy, ritual, and authority risks."
+    },
+    {
+      "id": "founder-review",
+      "title": "Founder review",
+      "scope": "Can decide product posture, not scholarly truth."
+    }
+  ],
+  "rules": [
+    "A reviewer note is evidence, not final religious authority.",
+    "Every decision should include scope and conflict posture.",
+    "A public pilot answer needs at least one source and one boundary review.",
+    "Production identity still needs secure accounts and audit history."
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "headline": "Invite a few people into a calm pilot, not a loud launch.",
+  "copy": "The invite packet gives the founder a copyable message, eligibility gate, and local invite memory for a small public pilot while accounts, payments, and production remain closed.",
+  "boundary": "This remains a static GitHub Pages prototype. It grants no production source authority, no reviewer account authority, no public launch permission, and no storage outside visible browser-local preview state.",
+  "metrics": [
+    {
+      "label": "Invite lanes",
+      "value": "4"
+    },
+    {
+      "label": "Saved invites",
+      "value": "Local"
+    },
+    {
+      "label": "Accounts",
+      "value": "Off"
+    },
+    {
+      "label": "Payments",
+      "value": "Off"
+    }
+  ],
+  "segments": [
+    {
+      "id": "learner",
+      "title": "Curious learner",
+      "promise": "One source-first question, one calm next step."
+    },
+    {
+      "id": "teacher",
+      "title": "Teacher or guide",
+      "promise": "Clear source family, citation, and boundary language."
+    },
+    {
+      "id": "reviewer",
+      "title": "Reviewer",
+      "promise": "A visible path to flag citation, rights, and overclaim risks."
+    },
+    {
+      "id": "founder",
+      "title": "Founder friend",
+      "promise": "A tiny, honest product test before public scale."
+    }
+  ],
+  "gates": [
+    "Invitation says prototype, not production service.",
+    "No payment, account, or private data request.",
+    "Feedback route is visible.",
+    "Source and boundary remain the center of the experience."
+  ],
+  "defaultNote": "I am inviting you to try a very small VedaPath AI pilot. Ask one question, inspect the source card, and tell me what felt clear or confusing."
+}

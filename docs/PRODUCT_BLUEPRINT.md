@@ -1,3 +1,7 @@
+## v4.2.4 Pilot Readiness Batch
+
+VedaPath now has a public-pilot readiness layer: Source Edition Intake, Rights Review Desk, Reviewer Identity Lite, Answer Promotion Rules, and Pilot Invite Packet. The layer keeps the path calm and simple while making edition posture, rights lanes, reviewer scope, promotion gates, and invite boundaries visible before telemetry or public scale.
+
 ## v4.1.9 Trust Launch Position
 
 VedaPath now has a trust-launch runway on top of the retrieval pilot:

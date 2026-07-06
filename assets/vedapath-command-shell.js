@@ -1,11 +1,11 @@
 (function () {
-  const releaseBadge = "v4.1.9 waitlist";
+  const releaseBadge = "v4.2.4 invite";
   const prefKey = "vedapathCommandShellPrefs";
   const groups = [
     { title: "Start", labels: ["Home", "Build", "Brand", "Blueprint"] },
     { title: "Source", labels: ["Answers", "Review", "Mantra"] },
     { title: "Practice", labels: ["Life", "Talk", "Pattern", "Daily"] },
-    { title: "Retrieval", labels: ["Packet", "Launch", "Pilot", "Records", "Desk", "QA Pack", "Ask Flow", "Links", "Rights", "History", "Score", "Waitlist"] }
+    { title: "Retrieval", labels: ["Packet", "Launch", "Pilot", "Records", "Desk", "QA Pack", "Ask Flow", "Links", "Rights", "History", "Score", "Waitlist", "Edition", "Rights Desk", "Identity", "Promote", "Invite"] }
   ];
   const pageTitles = {
     Home: "VedaPath command center",
@@ -30,7 +30,12 @@
     "Rights": "Source Edition and Rights Matrix",
     "History": "Reviewer Decision History",
     "Score": "Retrieval Scoring Explanation",
-    "Waitlist": "Public Pilot Waitlist Gate"
+    "Waitlist": "Public Pilot Waitlist Gate",
+    "Edition": "Source Edition Intake",
+    "Rights Desk": "Rights Review Desk",
+    "Identity": "Reviewer Identity Lite",
+    "Promote": "Answer Promotion Rules",
+    "Invite": "Pilot Invite Packet"
   };
   const bodyPageTitles = {
     "permission-execution-draft-page": "Controlled draft gate",
@@ -48,7 +53,12 @@
     "source-edition-rights-matrix-page": "Source Edition and Rights Matrix",
     "reviewer-decision-history-page": "Reviewer Decision History",
     "retrieval-scoring-explanation-page": "Retrieval Scoring Explanation",
-    "public-pilot-waitlist-gate-page": "Public Pilot Waitlist Gate"
+    "public-pilot-waitlist-gate-page": "Public Pilot Waitlist Gate",
+    "source-edition-intake-page": "Source Edition Intake",
+    "rights-review-desk-page": "Rights Review Desk",
+    "reviewer-identity-lite-page": "Reviewer Identity Lite",
+    "answer-promotion-rules-page": "Answer Promotion Rules",
+    "pilot-invite-packet-page": "Pilot Invite Packet"
   };
 
   function safeParse(value, fallback) {

@@ -1,5 +1,37 @@
 # Changelog
 
+<!-- V420-V424 CHANGELOG START -->
+## v4.2.4 Pilot Invite Packet
+- Changes made: Pilot Invite Packet gives the founder a calm, bounded invitation builder for a small public pilot without account, payment, or production promises, plus a mobile rail composure fix for the expanded retrieval navigation with calmer scrollable room rows.
+- Files changed: `pilotinvitepacket.html`, `data/vedapath-pilot-invite-packet.json`, `docs/PILOT_INVITE_PACKET.md`, `assets/vedapath-pilot-readiness.js`, `assets/vedapath-pilot-readiness.css`, `assets/vedapath-command-shell.js`, `assets/vedapath-command-shell.css`, `index.html`, `build-status.html`, `README.md`, and `scripts/check-static-links.mjs`.
+- Checks run: Node syntax checks, JSON parse checks, `scripts/check-static-links.mjs`, interaction smoke, and visual QA in the browser for the batch.
+- Known risks: pilot-readiness data is still prototype seed data; production accounts, licensed source review, durable audit storage, public launch approval, and live AI retrieval remain unresolved.
+
+## v4.2.3 Answer Promotion Rules
+- Changes made: Answer Promotion Rules stop a source candidate from becoming a public answer pattern until citation, rights, review, and boundary checks pass.
+- Files changed: `answerpromotionrules.html`, `data/vedapath-answer-promotion-rules.json`, `docs/ANSWER_PROMOTION_RULES.md`, `assets/vedapath-pilot-readiness.js`, `assets/vedapath-pilot-readiness.css`, `assets/vedapath-command-shell.js`, `assets/vedapath-command-shell.css`, `index.html`, `build-status.html`, `README.md`, and `scripts/check-static-links.mjs`.
+- Checks run: Node syntax checks, JSON parse checks, `scripts/check-static-links.mjs`, interaction smoke, and visual QA in the browser for the batch.
+- Known risks: pilot-readiness data is still prototype seed data; production accounts, licensed source review, durable audit storage, public launch approval, and live AI retrieval remain unresolved.
+
+## v4.2.2 Reviewer Identity Lite
+- Changes made: Reviewer Identity Lite makes source decisions carry role, scope, conflict, and authority boundaries without creating real accounts.
+- Files changed: `revieweridentitylite.html`, `data/vedapath-reviewer-identity-lite.json`, `docs/REVIEWER_IDENTITY_LITE.md`, `assets/vedapath-pilot-readiness.js`, `assets/vedapath-pilot-readiness.css`, `assets/vedapath-command-shell.js`, `assets/vedapath-command-shell.css`, `index.html`, `build-status.html`, `README.md`, and `scripts/check-static-links.mjs`.
+- Checks run: Node syntax checks, JSON parse checks, `scripts/check-static-links.mjs`, interaction smoke, and visual QA in the browser for the batch.
+- Known risks: pilot-readiness data is still prototype seed data; production accounts, licensed source review, durable audit storage, public launch approval, and live AI retrieval remain unresolved.
+
+## v4.2.1 Rights Review Desk
+- Changes made: Rights Review Desk separates allowed, review-needed, excerpt-only, and blocked source use before public pilot answers expand.
+- Files changed: `rightsreviewdesk.html`, `data/vedapath-rights-review-desk.json`, `docs/RIGHTS_REVIEW_DESK.md`, `assets/vedapath-pilot-readiness.js`, `assets/vedapath-pilot-readiness.css`, `assets/vedapath-command-shell.js`, `assets/vedapath-command-shell.css`, `index.html`, `build-status.html`, `README.md`, and `scripts/check-static-links.mjs`.
+- Checks run: Node syntax checks, JSON parse checks, `scripts/check-static-links.mjs`, interaction smoke, and visual QA in the browser for the batch.
+- Known risks: pilot-readiness data is still prototype seed data; production accounts, licensed source review, durable audit storage, public launch approval, and live AI retrieval remain unresolved.
+
+## v4.2.0 Source Edition Intake
+- Changes made: Source Edition Intake captures edition, translator, language, rights posture, and missing source fields before pilot use.
+- Files changed: `sourceeditionintake.html`, `data/vedapath-source-edition-intake.json`, `docs/SOURCE_EDITION_INTAKE.md`, `assets/vedapath-pilot-readiness.js`, `assets/vedapath-pilot-readiness.css`, `assets/vedapath-command-shell.js`, `assets/vedapath-command-shell.css`, `index.html`, `build-status.html`, `README.md`, and `scripts/check-static-links.mjs`.
+- Checks run: Node syntax checks, JSON parse checks, `scripts/check-static-links.mjs`, interaction smoke, and visual QA in the browser for the batch.
+- Known risks: pilot-readiness data is still prototype seed data; production accounts, licensed source review, durable audit storage, public launch approval, and live AI retrieval remain unresolved.
+<!-- V420-V424 CHANGELOG END -->
+
 <!-- V415-V419 CHANGELOG START -->
 ## v4.1.9 Public Pilot Waitlist Gate
 - Changes made: Public Pilot Waitlist Gate creates a privacy-light pilot entry path with local interest capture, eligibility boundaries, and no account or payment promises.

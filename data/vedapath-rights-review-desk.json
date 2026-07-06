@@ -1,0 +1,137 @@
+{
+  "headline": "Let rights decide the lane before product excitement decides.",
+  "copy": "The rights desk turns each source into one clear use lane so the public pilot never confuses citation confidence with permission to reproduce or expand text.",
+  "boundary": "This remains a static GitHub Pages prototype. It grants no production source authority, no reviewer account authority, no public launch permission, and no storage outside visible browser-local preview state.",
+  "metrics": [
+    {
+      "label": "Lanes",
+      "value": "4"
+    },
+    {
+      "label": "Allowed",
+      "value": "0"
+    },
+    {
+      "label": "Excerpt",
+      "value": "2"
+    },
+    {
+      "label": "Blocked",
+      "value": "1"
+    }
+  ],
+  "lanes": [
+    {
+      "id": "allowed",
+      "title": "Allowed",
+      "copy": "Approved source and use scope are documented."
+    },
+    {
+      "id": "review-needed",
+      "title": "Review needed",
+      "copy": "Edition, translator, or use rights are not yet clear."
+    },
+    {
+      "id": "excerpt-only",
+      "title": "Excerpt only",
+      "copy": "Short cited reference is acceptable for demo, full text is not."
+    },
+    {
+      "id": "blocked",
+      "title": "Blocked",
+      "copy": "No learner-facing use until founder and reviewer clear it."
+    }
+  ],
+  "records": [
+    {
+      "id": "bg-2-48",
+      "citation": "Bhagavad Gita 2.48",
+      "family": "Bhagavad Gita | Smriti",
+      "title": "Steady action",
+      "edition": "Founder demo edition note",
+      "translator": "Needs licensed or public-domain decision",
+      "language": "Sanskrit source with English rendering",
+      "rights": "excerpt-only",
+      "status": "review",
+      "confidence": "High for citation, pending translation rights",
+      "allowedUse": "Use as a cited source candidate for calm action examples.",
+      "missingFields": [
+        "edition id",
+        "translation rights",
+        "reviewer signoff"
+      ],
+      "boundary": "Reflection support, not therapy, ritual instruction, or spiritual authority.",
+      "decision": "excerpt-only",
+      "next": "Attach edition and reviewer note."
+    },
+    {
+      "id": "bg-11-32",
+      "citation": "Bhagavad Gita 11.32",
+      "family": "Bhagavad Gita | Smriti",
+      "title": "Cosmic-form quote context",
+      "edition": "Founder demo edition note",
+      "translator": "Needs licensed or public-domain decision",
+      "language": "Sanskrit source with English rendering",
+      "rights": "excerpt-only",
+      "status": "review",
+      "confidence": "High for citation, careful with popular wording",
+      "allowedUse": "Use to correct the Oppenheimer quote category with restraint.",
+      "missingFields": [
+        "edition id",
+        "translation source",
+        "commentary boundary"
+      ],
+      "boundary": "Do not call it a direct Vedic quote.",
+      "decision": "excerpt-only",
+      "next": "Attach edition and reviewer note."
+    },
+    {
+      "id": "rigveda-3-62-10",
+      "citation": "Rigveda 3.62.10",
+      "family": "Veda | Shruti",
+      "title": "Gayatri mantra source candidate",
+      "edition": "Source needs edition path",
+      "translator": "Needs reviewer-approved rendering",
+      "language": "Vedic Sanskrit",
+      "rights": "review-needed",
+      "status": "hold",
+      "confidence": "Citation known, interpretation must be careful",
+      "allowedUse": "Use source label and boundary before any explanation expands.",
+      "missingFields": [
+        "edition id",
+        "recitation boundary",
+        "reviewer identity"
+      ],
+      "boundary": "Study support only, not recitation authority.",
+      "decision": "review-needed",
+      "next": "Attach edition and reviewer note."
+    },
+    {
+      "id": "katha-1-2-23",
+      "citation": "Katha Upanishad 1.2.23",
+      "family": "Upanishad | Shruti",
+      "title": "Self-knowledge caution",
+      "edition": "Source needs edition path",
+      "translator": "Needs public-domain or licensed rendering",
+      "language": "Sanskrit source with English rendering",
+      "rights": "review-needed",
+      "status": "hold",
+      "confidence": "Good source family, pending edition",
+      "allowedUse": "Use only as a candidate until source edition is approved.",
+      "missingFields": [
+        "edition id",
+        "translation rights",
+        "interpretation lane"
+      ],
+      "boundary": "Do not turn into deterministic self-help advice.",
+      "decision": "blocked",
+      "next": "Find an approved edition before public pilot."
+    }
+  ],
+  "checklist": [
+    "Never treat citation confidence as reuse permission.",
+    "Show missing fields beside every learner-facing source card.",
+    "Move serious gaps into review tickets before public use.",
+    "Keep public pilot copy short, cited, and bounded."
+  ]
+}

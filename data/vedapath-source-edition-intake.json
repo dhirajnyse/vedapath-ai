@@ -1,0 +1,107 @@
+{
+  "headline": "Name the exact source before the answer grows.",
+  "copy": "A pilot answer should not just say Bhagavad Gita or Rigveda. It should show the source family, edition posture, translation status, and what is still missing.",
+  "boundary": "This remains a static GitHub Pages prototype. It grants no production source authority, no reviewer account authority, no public launch permission, and no storage outside visible browser-local preview state.",
+  "metrics": [
+    {
+      "label": "Records",
+      "value": "4"
+    },
+    {
+      "label": "Edition-ready",
+      "value": "0"
+    },
+    {
+      "label": "Review holds",
+      "value": "2"
+    },
+    {
+      "label": "Storage",
+      "value": "Local preview"
+    }
+  ],
+  "records": [
+    {
+      "id": "bg-2-48",
+      "citation": "Bhagavad Gita 2.48",
+      "family": "Bhagavad Gita | Smriti",
+      "title": "Steady action",
+      "edition": "Founder demo edition note",
+      "translator": "Needs licensed or public-domain decision",
+      "language": "Sanskrit source with English rendering",
+      "rights": "excerpt-only",
+      "status": "review",
+      "confidence": "High for citation, pending translation rights",
+      "allowedUse": "Use as a cited source candidate for calm action examples.",
+      "missingFields": [
+        "edition id",
+        "translation rights",
+        "reviewer signoff"
+      ],
+      "boundary": "Reflection support, not therapy, ritual instruction, or spiritual authority."
+    },
+    {
+      "id": "bg-11-32",
+      "citation": "Bhagavad Gita 11.32",
+      "family": "Bhagavad Gita | Smriti",
+      "title": "Cosmic-form quote context",
+      "edition": "Founder demo edition note",
+      "translator": "Needs licensed or public-domain decision",
+      "language": "Sanskrit source with English rendering",
+      "rights": "excerpt-only",
+      "status": "review",
+      "confidence": "High for citation, careful with popular wording",
+      "allowedUse": "Use to correct the Oppenheimer quote category with restraint.",
+      "missingFields": [
+        "edition id",
+        "translation source",
+        "commentary boundary"
+      ],
+      "boundary": "Do not call it a direct Vedic quote."
+    },
+    {
+      "id": "rigveda-3-62-10",
+      "citation": "Rigveda 3.62.10",
+      "family": "Veda | Shruti",
+      "title": "Gayatri mantra source candidate",
+      "edition": "Source needs edition path",
+      "translator": "Needs reviewer-approved rendering",
+      "language": "Vedic Sanskrit",
+      "rights": "review-needed",
+      "status": "hold",
+      "confidence": "Citation known, interpretation must be careful",
+      "allowedUse": "Use source label and boundary before any explanation expands.",
+      "missingFields": [
+        "edition id",
+        "recitation boundary",
+        "reviewer identity"
+      ],
+      "boundary": "Study support only, not recitation authority."
+    },
+    {
+      "id": "katha-1-2-23",
+      "citation": "Katha Upanishad 1.2.23",
+      "family": "Upanishad | Shruti",
+      "title": "Self-knowledge caution",
+      "edition": "Source needs edition path",
+      "translator": "Needs public-domain or licensed rendering",
+      "language": "Sanskrit source with English rendering",
+      "rights": "review-needed",
+      "status": "hold",
+      "confidence": "Good source family, pending edition",
+      "allowedUse": "Use only as a candidate until source edition is approved.",
+      "missingFields": [
+        "edition id",
+        "translation rights",
+        "interpretation lane"
+      ],
+      "boundary": "Do not turn into deterministic self-help advice."
+    }
+  ],
+  "intakeQuestions": [
+    "Which edition or public-domain source is being used?",
+    "Who is responsible for translation rights?",
+    "What fields are missing before pilot answer use?",
+    "What boundary must appear with the learner-facing card?"
+  ]
+}

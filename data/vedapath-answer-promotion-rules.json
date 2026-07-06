@@ -1,0 +1,61 @@
+{
+  "headline": "Promote only what survives source, rights, review, and boundary checks.",
+  "copy": "The promotion rules make answer patterns harder to misuse. A candidate can stay in draft, move to review, or become pilot-ready only after every visible gate passes.",
+  "boundary": "This remains a static GitHub Pages prototype. It grants no production source authority, no reviewer account authority, no public launch permission, and no storage outside visible browser-local preview state.",
+  "metrics": [
+    {
+      "label": "Promotion gates",
+      "value": "6"
+    },
+    {
+      "label": "Pilot-ready",
+      "value": "0"
+    },
+    {
+      "label": "Draft candidates",
+      "value": "4"
+    },
+    {
+      "label": "Production",
+      "value": "Off"
+    }
+  ],
+  "candidates": [
+    {
+      "id": "steady-action",
+      "title": "Begin with one honest action",
+      "citation": "Bhagavad Gita 2.48",
+      "status": "draft",
+      "risk": "Translation rights incomplete."
+    },
+    {
+      "id": "oppenheimer-category",
+      "title": "Oppenheimer quote category correction",
+      "citation": "Bhagavad Gita 11.32",
+      "status": "review",
+      "risk": "Popular quote wording can overstate source category."
+    },
+    {
+      "id": "gayatri-care",
+      "title": "Gayatri mantra careful explanation",
+      "citation": "Rigveda 3.62.10",
+      "status": "hold",
+      "risk": "Recitation and ritual boundary must be explicit."
+    },
+    {
+      "id": "upanishad-caution",
+      "title": "Self-knowledge caution",
+      "citation": "Katha Upanishad 1.2.23",
+      "status": "hold",
+      "risk": "Needs edition and interpretation lane."
+    }
+  ],
+  "gates": [
+    "Citation is exact and source family is visible.",
+    "Edition or rights posture is recorded.",
+    "Reviewer role and scope are visible.",
+    "Plain meaning and deeper interpretation are separated.",
+    "Boundary language is learner-facing.",
+    "No live AI, account, or public launch authority is implied."
+  ]
+}

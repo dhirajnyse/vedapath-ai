@@ -1,3 +1,7 @@
+## v4.2.4 Pilot Readiness Batch
+
+VedaPath now has a public-pilot readiness layer: Source Edition Intake, Rights Review Desk, Reviewer Identity Lite, Answer Promotion Rules, and Pilot Invite Packet. The layer keeps the path calm and simple while making edition posture, rights lanes, reviewer scope, promotion gates, and invite boundaries visible before telemetry or public scale.
+
 <!-- V415-V419 README START -->
 ## v4.1.9 Public Pilot Waitlist Gate
 - Public Pilot Waitlist Gate creates a privacy-light pilot entry path with local interest capture, eligibility boundaries, and no account or payment promises.

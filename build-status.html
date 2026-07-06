@@ -357,6 +357,7 @@
           </div>
         </a>
         <nav class="navlinks nav" aria-label="Primary navigation">
+        
         <a class="link" href="index.html">Home</a>
         <a class="link active" href="build-status.html">Build</a>
         <a class="link" href="brand/brand-board.html">Brand</a>
@@ -380,7 +381,13 @@
         <a class="link" href="reviewerdecisionhistory.html">History</a>
         <a class="link" href="retrievalscoringexplanation.html">Score</a>
         <a class="link" href="publicpilotwaitlistgate.html">Waitlist</a>
-        <span class="version-pill">v4.1.9 waitlist</span>
+        <a class="link" href="sourceeditionintake.html">Edition</a>
+        <a class="link" href="rightsreviewdesk.html">Rights Desk</a>
+        <a class="link" href="revieweridentitylite.html">Identity</a>
+        <a class="link" href="answerpromotionrules.html">Promote</a>
+        <a class="link" href="pilotinvitepacket.html">Invite</a>
+        <span class="version-pill">v4.2.4 invite</span>
+      
       </nav>
       </header>
 
@@ -392,25 +399,25 @@
       <section class="summary" aria-label="Progress summary">
         <article class="tile">
           <span>Current version</span>
-          <strong>v4.1.9</strong>
-          <p>Public Pilot Waitlist Gate completes the trust-launch runway: citation links, rights posture, reviewer history, score explanation, and local pilot interest.</p>
+          <strong>v4.2.4</strong>
+          <p>Pilot Invite Packet completes the public-pilot readiness chain: edition intake, rights desk, reviewer identity, promotion rules, and a bounded invite packet.</p>
         </article>
         <article class="tile">
           <span>MVP progress</span>
           <strong>100%</strong>
           <div class="progress" aria-hidden="true"><div class="bar" style="width:100%"></div></div>
-          <p>The clickable MVP now has a trust-launch layer from citation link to public pilot waitlist gate.</p>
+          <p>The clickable MVP now has a pilot-readiness layer from source edition intake to invite packet.</p>
         </article>
         <article class="tile">
           <span>Full vision progress</span>
           <strong>99%</strong>
           <div class="progress" aria-hidden="true"><div class="bar" style="width:99%"></div></div>
-          <p>The source layer now has inspectable links, rights readiness, reviewer history, scoring explanation, and pilot entry boundaries.</p>
+          <p>The source layer now shows edition posture, rights lanes, reviewer scope, promotion gates, and invite boundaries before public pilot use.</p>
         </article>
         <article class="tile">
           <span>Next release</span>
-          <strong>v4.2.0 Pilot Telemetry Room</strong>
-          <p>Measure which public-pilot path users choose while keeping consent, privacy, and no-authority boundaries visible.</p>
+          <strong>v4.2.5 Pilot Telemetry Consent</strong>
+          <p>Measure public-pilot learning only after consent, privacy, and local storage boundaries are visible.</p>
         </article>
       </section>
 
@@ -3505,6 +3512,46 @@
               </div>
               <div class="percent">100%</div>
             </article>
+            <article class="phase">
+              <span class="badge done">Done</span>
+              <div>
+                <strong>Phase 380: Source Edition Intake</strong>
+                <p>Source Edition Intake captures edition, translator, language, rights posture, and missing source fields before pilot use.</p>
+              </div>
+              <div class="percent">100%</div>
+            </article>
+            <article class="phase">
+              <span class="badge done">Done</span>
+              <div>
+                <strong>Phase 381: Rights Review Desk</strong>
+                <p>Rights Review Desk separates allowed, review-needed, excerpt-only, and blocked source use before public pilot answers expand.</p>
+              </div>
+              <div class="percent">100%</div>
+            </article>
+            <article class="phase">
+              <span class="badge done">Done</span>
+              <div>
+                <strong>Phase 382: Reviewer Identity Lite</strong>
+                <p>Reviewer Identity Lite makes source decisions carry role, scope, conflict, and authority boundaries without creating real accounts.</p>
+              </div>
+              <div class="percent">100%</div>
+            </article>
+            <article class="phase">
+              <span class="badge done">Done</span>
+              <div>
+                <strong>Phase 383: Answer Promotion Rules</strong>
+                <p>Answer Promotion Rules stop a source candidate from becoming a public answer pattern until citation, rights, review, and boundary checks pass.</p>
+              </div>
+              <div class="percent">100%</div>
+            </article>
+            <article class="phase">
+              <span class="badge done">Done</span>
+              <div>
+                <strong>Phase 384: Pilot Invite Packet</strong>
+                <p>Pilot Invite Packet gives the founder a calm, bounded invitation builder for a small public pilot without account, payment, or production promises.</p>
+              </div>
+              <div class="percent">100%</div>
+            </article>
             <!-- V410-V414 PHASES END -->
 
 
@@ -3516,11 +3563,11 @@
 
         <aside class="panel version">
           <h2>Version Notes</h2>
-          <div class="version-row"><span>Release</span><strong>v4.1.9 Public Pilot Waitlist Gate</strong></div>
-          <div class="version-row"><span>Previous</span><strong>v4.1.8 Retrieval Scoring Explanation</strong></div>
+          <div class="version-row"><span>Release</span><strong>v4.2.4 Pilot Invite Packet</strong></div>
+          <div class="version-row"><span>Previous</span><strong>v4.2.3 Answer Promotion Rules</strong></div>
           <div class="version-row"><span>Commit</span><strong>See GitHub history</strong></div>
-          <div class="version-row"><span>Goal</span><strong>Turn retrieval pilot trust into a public-pilot entry path without granting production authority.</strong></div>
-          <div class="version-row"><span>Status</span><strong>Ready for pilot telemetry design</strong></div>
+          <div class="version-row"><span>Goal</span><strong>Make the public pilot invite clear, bounded, and source-first before telemetry begins.</strong></div>
+          <div class="version-row"><span>Status</span><strong>Ready for pilot telemetry consent design</strong></div>
           <div class="panel note">
             <h2>North Star</h2>
             <p>Make sacred and philosophical knowledge easier to approach without flattening its depth, confusing categories, or pretending the AI is an authority.</p>
@@ -3528,8 +3575,8 @@
           <h2>Next Build Checklist</h2>
           <ul class="checklist">
             <li><span class="dot"></span><span>Add consent-first pilot telemetry.</span></li>
-            <li><span class="dot"></span><span>Keep waitlist storage local until a real privacy and account model exists.</span></li>
-            <li><span class="dot"></span><span>Preserve citation, rights, review, and score visibility in every learner-facing path.</span></li>
+            <li><span class="dot"></span><span>Track invite path, source family, and feedback without hidden personal data.</span></li>
+            <li><span class="dot"></span><span>Preserve edition, rights, reviewer, promotion, and invite boundaries in every pilot measurement.</span></li>
           </ul>
         </aside>
       </section>

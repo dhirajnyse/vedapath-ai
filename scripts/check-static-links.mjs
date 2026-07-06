@@ -18,7 +18,12 @@ const pages = [
   "sourceeditionrightsmatrix.html",
   "reviewerdecisionhistory.html",
   "retrievalscoringexplanation.html",
-  "publicpilotwaitlistgate.html"
+  "publicpilotwaitlistgate.html",
+  "pilotinvitepacket.html",
+  "answerpromotionrules.html",
+  "revieweridentitylite.html",
+  "rightsreviewdesk.html",
+  "sourceeditionintake.html"
 ];
 
 const missing = [];
