@@ -1,11 +1,11 @@
 (function () {
-  const releaseBadge = "v4.1.4 ask flow";
+  const releaseBadge = "v4.1.9 waitlist";
   const prefKey = "vedapathCommandShellPrefs";
   const groups = [
     { title: "Start", labels: ["Home", "Build", "Brand", "Blueprint"] },
     { title: "Source", labels: ["Answers", "Review", "Mantra"] },
     { title: "Practice", labels: ["Life", "Talk", "Pattern", "Daily"] },
-    { title: "Retrieval", labels: ["Pilot", "Records", "Desk", "QA Pack", "Ask Flow"] }
+    { title: "Retrieval", labels: ["Packet", "Launch", "Pilot", "Records", "Desk", "QA Pack", "Ask Flow", "Links", "Rights", "History", "Score", "Waitlist"] }
   ];
   const pageTitles = {
     Home: "VedaPath command center",
@@ -25,7 +25,12 @@
     "Records": "Verified Source Record Schema",
     "Desk": "Retrieval Reviewer Desk",
     "QA Pack": "First 25 Source QA Pack",
-    "Ask Flow": "Learner Ask Flow"
+    "Ask Flow": "Learner Ask Flow",
+    "Links": "Citation Deep Link Layer",
+    "Rights": "Source Edition and Rights Matrix",
+    "History": "Reviewer Decision History",
+    "Score": "Retrieval Scoring Explanation",
+    "Waitlist": "Public Pilot Waitlist Gate"
   };
   const bodyPageTitles = {
     "permission-execution-draft-page": "Controlled draft gate",
@@ -38,7 +43,12 @@
     "verified-source-record-schema-page": "Verified Source Record Schema",
     "retrieval-reviewer-desk-page": "Retrieval Reviewer Desk",
     "source-qa-pack-page": "First 25 Source QA Pack",
-    "learner-ask-flow-page": "Learner Ask Flow"
+    "learner-ask-flow-page": "Learner Ask Flow",
+    "citation-deep-link-layer-page": "Citation Deep Link Layer",
+    "source-edition-rights-matrix-page": "Source Edition and Rights Matrix",
+    "reviewer-decision-history-page": "Reviewer Decision History",
+    "retrieval-scoring-explanation-page": "Retrieval Scoring Explanation",
+    "public-pilot-waitlist-gate-page": "Public Pilot Waitlist Gate"
   };
 
   function safeParse(value, fallback) {
@@ -112,7 +122,7 @@
     const brandHref = brand && brand.getAttribute("href") ? brand.getAttribute("href") : "index.html#top";
     const brandImg = brand && brand.querySelector("img") ? brand.querySelector("img").getAttribute("src") : "assets/vedapath-3d-logo-concept.png";
     const brandTitle = brand && brand.querySelector("strong") ? brand.querySelector("strong").textContent.trim() : "VedaPath AI";
-    const brandSub = brand && brand.querySelector("span") ? brand.querySelector("span").textContent.trim() : "Source-first learning companion";
+    const brandSub = brand && brand.querySelector("small") ? brand.querySelector("small").textContent.trim() : "Source-first learning companion";
     const sections = groupLinks(links).map((section) => {
       const body = section.items.map((link) => {
         const glyph = link.label.slice(0, 1).toUpperCase();

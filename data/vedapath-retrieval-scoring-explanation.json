@@ -1,0 +1,146 @@
+{
+  "headline": "Ranking should be explainable before it feels intelligent.",
+  "copy": "The scoring explanation decomposes a source candidate into match fit, citation completeness, rights readiness, boundary clarity, and reviewer status.",
+  "boundary": "Scores are transparent prototype heuristics. They are not truth, authority, or final scholarly judgment.",
+  "metrics": [
+    {
+      "label": "Candidates",
+      "value": "4"
+    },
+    {
+      "label": "Score factors",
+      "value": "5"
+    },
+    {
+      "label": "Top score",
+      "value": "89"
+    },
+    {
+      "label": "Blocked answers",
+      "value": "0"
+    }
+  ],
+  "query": "How can I act calmly when results are uncertain?",
+  "candidates": [
+    {
+      "id": "score-bg-2-48",
+      "title": "Steadiness in action",
+      "citation": "Bhagavad Gita 2.48",
+      "family": "Bhagavad Gita | Smriti",
+      "score": 89,
+      "decision": "Use as primary source card.",
+      "factors": [
+        {
+          "label": "Query fit",
+          "value": 94
+        },
+        {
+          "label": "Citation complete",
+          "value": 92
+        },
+        {
+          "label": "Rights readiness",
+          "value": 78
+        },
+        {
+          "label": "Boundary clarity",
+          "value": 91
+        },
+        {
+          "label": "Reviewer status",
+          "value": 90
+        }
+      ]
+    },
+    {
+      "id": "score-bg-3-19",
+      "title": "Duty without attachment",
+      "citation": "Bhagavad Gita 3.19",
+      "family": "Bhagavad Gita | Smriti",
+      "score": 82,
+      "decision": "Use as secondary support.",
+      "factors": [
+        {
+          "label": "Query fit",
+          "value": 84
+        },
+        {
+          "label": "Citation complete",
+          "value": 88
+        },
+        {
+          "label": "Rights readiness",
+          "value": 76
+        },
+        {
+          "label": "Boundary clarity",
+          "value": 82
+        },
+        {
+          "label": "Reviewer status",
+          "value": 80
+        }
+      ]
+    },
+    {
+      "id": "score-isha-1",
+      "title": "Stewardship and restraint",
+      "citation": "Isha Upanishad 1",
+      "family": "Isha Upanishad | Upanishad",
+      "score": 71,
+      "decision": "Hold as deeper layer until edition review.",
+      "factors": [
+        {
+          "label": "Query fit",
+          "value": 74
+        },
+        {
+          "label": "Citation complete",
+          "value": 78
+        },
+        {
+          "label": "Rights readiness",
+          "value": 48
+        },
+        {
+          "label": "Boundary clarity",
+          "value": 76
+        },
+        {
+          "label": "Reviewer status",
+          "value": 68
+        }
+      ]
+    },
+    {
+      "id": "score-bg-11-32",
+      "title": "Time and destruction",
+      "citation": "Bhagavad Gita 11.32",
+      "family": "Bhagavad Gita | Smriti",
+      "score": 42,
+      "decision": "Do not use for this calm-action query.",
+      "factors": [
+        {
+          "label": "Query fit",
+          "value": 28
+        },
+        {
+          "label": "Citation complete",
+          "value": 95
+        },
+        {
+          "label": "Rights readiness",
+          "value": 78
+        },
+        {
+          "label": "Boundary clarity",
+          "value": 92
+        },
+        {
+          "label": "Reviewer status",
+          "value": 86
+        }
+      ]
+    }
+  ]
+}

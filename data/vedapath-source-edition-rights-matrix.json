@@ -1,0 +1,140 @@
+{
+  "headline": "A source can be true and still not public-pilot ready.",
+  "copy": "The rights matrix separates public-domain references, excerpt-only use, licensed translation needs, and blocked use before the learner-facing answer expands.",
+  "boundary": "This is a product-rights readiness model, not legal advice. Final use needs source edition review.",
+  "metrics": [
+    {
+      "label": "Source lanes",
+      "value": "4"
+    },
+    {
+      "label": "Approved demo",
+      "value": "3"
+    },
+    {
+      "label": "Needs edition",
+      "value": "2"
+    },
+    {
+      "label": "Blocked",
+      "value": "0"
+    }
+  ],
+  "lanes": [
+    {
+      "lane": "Citation metadata",
+      "status": "Allowed",
+      "use": "Always show citation, source family, status, and boundary."
+    },
+    {
+      "lane": "Short excerpt",
+      "status": "Conditional",
+      "use": "Use only when edition/translation posture is clear."
+    },
+    {
+      "lane": "Full translation",
+      "status": "Blocked",
+      "use": "Do not publish until licensed or public-domain edition is chosen."
+    },
+    {
+      "lane": "Commentary summary",
+      "status": "Review",
+      "use": "Allow only reviewed summaries with school/context labels."
+    }
+  ],
+  "records": [
+    {
+      "id": "bg-2-48-steadiness",
+      "family": "Bhagavad Gita | Smriti",
+      "citation": "Bhagavad Gita 2.48",
+      "title": "Steadiness in action",
+      "status": "ready",
+      "confidence": "high",
+      "rights": "excerpt-only",
+      "linkId": "source:bg:2:48",
+      "passageAnchor": "bhagavad-gita-2-48",
+      "allowedUse": "Use for calm path, practice, and learner action cards.",
+      "boundary": "Reflection support only, not therapy, diagnosis, or ritual instruction.",
+      "summary": "The source candidate supports steadiness while acting, with caution about clinging to results.",
+      "missingFields": [
+        "licensed translation"
+      ]
+    },
+    {
+      "id": "bg-11-32-time",
+      "family": "Bhagavad Gita | Smriti",
+      "citation": "Bhagavad Gita 11.32",
+      "title": "Time and destruction",
+      "status": "ready",
+      "confidence": "high",
+      "rights": "excerpt-only",
+      "linkId": "source:bg:11:32",
+      "passageAnchor": "bhagavad-gita-11-32",
+      "allowedUse": "Use for Oppenheimer-source clarification and category correction.",
+      "boundary": "Do not call it a direct Vedic quote or a four-Veda passage.",
+      "summary": "This is the commonly cited source family behind the Oppenheimer line in popular culture.",
+      "missingFields": [
+        "translation variant notes"
+      ]
+    },
+    {
+      "id": "bg-17-15-speech",
+      "family": "Bhagavad Gita | Smriti",
+      "citation": "Bhagavad Gita 17.15",
+      "title": "Disciplined speech",
+      "status": "ready",
+      "confidence": "high",
+      "rights": "excerpt-only",
+      "linkId": "source:bg:17:15",
+      "passageAnchor": "bhagavad-gita-17-15",
+      "allowedUse": "Use for speech-before-reply drafts and conversation companion.",
+      "boundary": "Do not make the app an authority over personal relationships.",
+      "summary": "The passage supports truthful, gentle, beneficial speech as a practice discipline.",
+      "missingFields": [
+        "licensed translation"
+      ]
+    },
+    {
+      "id": "isha-1-stewardship",
+      "family": "Isha Upanishad | Upanishad",
+      "citation": "Isha Upanishad 1",
+      "title": "Stewardship and restraint",
+      "status": "review",
+      "confidence": "medium",
+      "rights": "edition-needed",
+      "linkId": "source:isha:1",
+      "passageAnchor": "isha-upanishad-1",
+      "allowedUse": "Use for restraint, ownership, and simplicity reflections after edition review.",
+      "boundary": "Do not use it as a proof text for modern economic claims.",
+      "summary": "The opening passage is often read around restraint, belonging, and sacred presence.",
+      "missingFields": [
+        "translation comparison",
+        "edition note"
+      ]
+    },
+    {
+      "id": "katha-1-2-23-self",
+      "family": "Katha Upanishad | Upanishad",
+      "citation": "Katha Upanishad 1.2.23",
+      "title": "Self knowledge boundary",
+      "status": "review",
+      "confidence": "medium",
+      "rights": "edition-needed",
+      "linkId": "source:katha:1:2:23",
+      "passageAnchor": "katha-upanishad-1-2-23",
+      "allowedUse": "Use as a source candidate for humility around knowledge after review.",
+      "boundary": "Do not turn this into mystical certainty or guru authority.",
+      "summary": "The passage is commonly associated with limits of mere instruction or intellect in realizing the Self.",
+      "missingFields": [
+        "exact translation review",
+        "commentary comparison"
+      ]
+    }
+  ],
+  "checklist": [
+    "Record edition name or source owner.",
+    "Keep source family visible before answer confidence.",
+    "Never hide missing rights fields behind a high confidence answer.",
+    "Route unknown rights to reviewer history, not to public pilot."
+  ]
+}

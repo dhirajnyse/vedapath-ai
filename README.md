@@ -1,3 +1,30 @@
+<!-- V415-V419 README START -->
+## v4.1.9 Public Pilot Waitlist Gate
+- Public Pilot Waitlist Gate creates a privacy-light pilot entry path with local interest capture, eligibility boundaries, and no account or payment promises.
+- Primary files: `publicpilotwaitlistgate.html`, `data/vedapath-public-pilot-waitlist-gate.json`, `assets/vedapath-trust-launch.js`, `assets/vedapath-trust-launch.css`.
+- Product note: this remains a static GitHub Pages prototype; no live AI retrieval, source rights approval, public launch, account storage, or production authority is granted.
+
+## v4.1.8 Retrieval Scoring Explanation
+- Retrieval Scoring Explanation shows why a source candidate ranks higher or lower through fit, citation quality, rights, and boundary scores.
+- Primary files: `retrievalscoringexplanation.html`, `data/vedapath-retrieval-scoring-explanation.json`, `assets/vedapath-trust-launch.js`, `assets/vedapath-trust-launch.css`.
+- Product note: this remains a static GitHub Pages prototype; no live AI retrieval, source rights approval, public launch, account storage, or production authority is granted.
+
+## v4.1.7 Reviewer Decision History
+- Reviewer Decision History turns source review outcomes into a visible local audit trail instead of silent knowledge rewrites.
+- Primary files: `reviewerdecisionhistory.html`, `data/vedapath-reviewer-decision-history.json`, `assets/vedapath-trust-launch.js`, `assets/vedapath-trust-launch.css`.
+- Product note: this remains a static GitHub Pages prototype; no live AI retrieval, source rights approval, public launch, account storage, or production authority is granted.
+
+## v4.1.6 Source Edition and Rights Matrix
+- Source Edition and Rights Matrix separates public-domain, licensed, excerpt-only, and blocked source use before any public pilot answer expands.
+- Primary files: `sourceeditionrightsmatrix.html`, `data/vedapath-source-edition-rights-matrix.json`, `assets/vedapath-trust-launch.js`, `assets/vedapath-trust-launch.css`.
+- Product note: this remains a static GitHub Pages prototype; no live AI retrieval, source rights approval, public launch, account storage, or production authority is granted.
+
+## v4.1.5 Citation Deep Link Layer
+- Citation Deep Link Layer gives each learner-visible source card a stable citation anchor, copyable reference packet, and passage navigation posture.
+- Primary files: `citationdeeplinklayer.html`, `data/vedapath-citation-deep-link-layer.json`, `assets/vedapath-trust-launch.js`, `assets/vedapath-trust-launch.css`.
+- Product note: this remains a static GitHub Pages prototype; no live AI retrieval, source rights approval, public launch, account storage, or production authority is granted.
+<!-- V415-V419 README END -->
+
 <!-- V410-V414 README START -->
 ## v4.1.4 Learner Ask Flow
 - Learner Ask Flow gives users one simple, source-carded question path over the curated demo source pack.

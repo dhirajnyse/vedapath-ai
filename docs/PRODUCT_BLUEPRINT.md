@@ -1,3 +1,15 @@
+## v4.1.9 Trust Launch Position
+
+VedaPath now has a trust-launch runway on top of the retrieval pilot:
+
+1. Citation Deep Link Layer.
+2. Source Edition and Rights Matrix.
+3. Reviewer Decision History.
+4. Retrieval Scoring Explanation.
+5. Public Pilot Waitlist Gate.
+
+The product direction remains simple: ask clearly, show source and boundary, explain why a source was chosen, and invite public users only through a privacy-light pilot path.
+
 <!-- V410-V414 BLUEPRINT START -->
 ## v4.1.4 Retrieval Pilot Position
 

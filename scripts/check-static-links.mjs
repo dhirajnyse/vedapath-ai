@@ -13,7 +13,12 @@ const pages = [
   "verifiedsourcerecordschema.html",
   "retrievalreviewerdesk.html",
   "first25sourceqapack.html",
-  "learneraskflow.html"
+  "learneraskflow.html",
+  "citationdeeplinklayer.html",
+  "sourceeditionrightsmatrix.html",
+  "reviewerdecisionhistory.html",
+  "retrievalscoringexplanation.html",
+  "publicpilotwaitlistgate.html"
 ];
 
 const missing = [];

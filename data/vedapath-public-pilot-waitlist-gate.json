@@ -1,0 +1,63 @@
+{
+  "headline": "Invite the public carefully, not loudly.",
+  "copy": "The waitlist gate lets VedaPath collect pilot interest locally while keeping the product boundary honest: no accounts, no payments, no promise of production access.",
+  "boundary": "This is browser-local interest capture only. Production waitlist needs consent, privacy notice, export controls, and account security.",
+  "metrics": [
+    {
+      "label": "Pilot lanes",
+      "value": "4"
+    },
+    {
+      "label": "Local entries",
+      "value": "Browser"
+    },
+    {
+      "label": "Accounts",
+      "value": "Off"
+    },
+    {
+      "label": "Payments",
+      "value": "Off"
+    }
+  ],
+  "segments": [
+    {
+      "id": "learner",
+      "label": "Curious learner",
+      "need": "Ask simple source-backed questions without feeling judged."
+    },
+    {
+      "id": "teacher",
+      "label": "Teacher or guide",
+      "need": "Show source category and boundaries clearly."
+    },
+    {
+      "id": "reviewer",
+      "label": "Reviewer or scholar",
+      "need": "Inspect citations, rights, and answer restraint."
+    },
+    {
+      "id": "founder",
+      "label": "Founder pilot",
+      "need": "Validate demand and trust posture before backend build."
+    }
+  ],
+  "gates": [
+    {
+      "title": "No live authority",
+      "copy": "Pilot copy must say prototype and source-backed, not guru or final answer."
+    },
+    {
+      "title": "No hidden storage",
+      "copy": "Local browser memory stays visible and clearable."
+    },
+    {
+      "title": "No payment pressure",
+      "copy": "Public pilot interest comes before monetization."
+    },
+    {
+      "title": "Reviewer route",
+      "copy": "Serious source issues become review tickets before public use."
+    }
+  ]
+}

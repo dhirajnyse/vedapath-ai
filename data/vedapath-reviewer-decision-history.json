@@ -1,0 +1,67 @@
+{
+  "headline": "Review decisions should leave a trail.",
+  "copy": "This page models local review memory: decisions are visible, filterable, and copyable before any production review service exists.",
+  "boundary": "Browser-local review history is a prototype. Production needs identity, immutable audit, and reviewer permissions.",
+  "metrics": [
+    {
+      "label": "Seed decisions",
+      "value": "4"
+    },
+    {
+      "label": "Local writes",
+      "value": "Browser"
+    },
+    {
+      "label": "Export",
+      "value": "Copy"
+    },
+    {
+      "label": "Production",
+      "value": "Closed"
+    }
+  ],
+  "decisions": [
+    {
+      "id": "review-bg-2-48",
+      "status": "accepted",
+      "owner": "Source reviewer",
+      "citation": "Bhagavad Gita 2.48",
+      "decision": "Ready for calm/practice source card.",
+      "risk": "Do not make therapy claims.",
+      "next": "Attach rights note."
+    },
+    {
+      "id": "review-bg-11-32",
+      "status": "accepted",
+      "owner": "Claim reviewer",
+      "citation": "Bhagavad Gita 11.32",
+      "decision": "Ready for Oppenheimer correction.",
+      "risk": "Do not call it direct Veda.",
+      "next": "Add variant note."
+    },
+    {
+      "id": "review-isha-1",
+      "status": "needs-edition",
+      "owner": "Rights reviewer",
+      "citation": "Isha Upanishad 1",
+      "decision": "Hold public excerpt until edition chosen.",
+      "risk": "Translation rights unclear.",
+      "next": "Select edition."
+    },
+    {
+      "id": "review-katha-1-2-23",
+      "status": "needs-commentary",
+      "owner": "Scholar reviewer",
+      "citation": "Katha Upanishad 1.2.23",
+      "decision": "Use only for humility boundary after commentary review.",
+      "risk": "Mystical authority overreach.",
+      "next": "Add school context."
+    }
+  ],
+  "filters": [
+    "all",
+    "accepted",
+    "needs-edition",
+    "needs-commentary"
+  ]
+}

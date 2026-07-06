@@ -1,5 +1,38 @@
 # Changelog
 
+<!-- V415-V419 CHANGELOG START -->
+## v4.1.9 Public Pilot Waitlist Gate
+- Changes made: Public Pilot Waitlist Gate creates a privacy-light pilot entry path with local interest capture, eligibility boundaries, and no account or payment promises.
+- Files changed: `publicpilotwaitlistgate.html`, `data/vedapath-public-pilot-waitlist-gate.json`, `docs/PUBLIC_PILOT_WAITLIST_GATE.md`, `assets/vedapath-trust-launch.js`, `assets/vedapath-trust-launch.css`, `assets/vedapath-command-shell.js`, `index.html`, `build-status.html`, docs, and static-link checks.
+- Checks run: Node syntax checks, JSON parse checks, `scripts/check-static-links.mjs`, interaction smoke, and visual QA in the browser for the batch.
+- Known risks: trust-launch data is still prototype seed data and source edition, rights, reviewer identity, and production storage remain unresolved.
+
+## v4.1.8 Retrieval Scoring Explanation
+- Changes made: Retrieval Scoring Explanation shows why a source candidate ranks higher or lower through fit, citation quality, rights, and boundary scores.
+- Files changed: `retrievalscoringexplanation.html`, `data/vedapath-retrieval-scoring-explanation.json`, `docs/RETRIEVAL_SCORING_EXPLANATION.md`, `assets/vedapath-trust-launch.js`, `assets/vedapath-trust-launch.css`, `assets/vedapath-command-shell.js`, `index.html`, `build-status.html`, docs, and static-link checks.
+- Checks run: Node syntax checks, JSON parse checks, `scripts/check-static-links.mjs`, interaction smoke, and visual QA in the browser for the batch.
+- Known risks: trust-launch data is still prototype seed data and source edition, rights, reviewer identity, and production storage remain unresolved.
+
+## v4.1.7 Reviewer Decision History
+- Changes made: Reviewer Decision History turns source review outcomes into a visible local audit trail instead of silent knowledge rewrites.
+- Files changed: `reviewerdecisionhistory.html`, `data/vedapath-reviewer-decision-history.json`, `docs/REVIEWER_DECISION_HISTORY.md`, `assets/vedapath-trust-launch.js`, `assets/vedapath-trust-launch.css`, `assets/vedapath-command-shell.js`, `index.html`, `build-status.html`, docs, and static-link checks.
+- Checks run: Node syntax checks, JSON parse checks, `scripts/check-static-links.mjs`, interaction smoke, and visual QA in the browser for the batch.
+- Known risks: trust-launch data is still prototype seed data and source edition, rights, reviewer identity, and production storage remain unresolved.
+
+## v4.1.6 Source Edition and Rights Matrix
+- Changes made: Source Edition and Rights Matrix separates public-domain, licensed, excerpt-only, and blocked source use before any public pilot answer expands.
+- Files changed: `sourceeditionrightsmatrix.html`, `data/vedapath-source-edition-rights-matrix.json`, `docs/SOURCE_EDITION_RIGHTS_MATRIX.md`, `assets/vedapath-trust-launch.js`, `assets/vedapath-trust-launch.css`, `assets/vedapath-command-shell.js`, `index.html`, `build-status.html`, docs, and static-link checks.
+- Checks run: Node syntax checks, JSON parse checks, `scripts/check-static-links.mjs`, interaction smoke, and visual QA in the browser for the batch.
+- Known risks: trust-launch data is still prototype seed data and source edition, rights, reviewer identity, and production storage remain unresolved.
+
+## v4.1.5 Citation Deep Link Layer
+- Changes made: Citation Deep Link Layer gives each learner-visible source card a stable citation anchor, copyable reference packet, and passage navigation posture.
+- Files changed: `citationdeeplinklayer.html`, `data/vedapath-citation-deep-link-layer.json`, `docs/CITATION_DEEP_LINK_LAYER.md`, `assets/vedapath-trust-launch.js`, `assets/vedapath-trust-launch.css`, `assets/vedapath-command-shell.js`, `index.html`, `build-status.html`, docs, and static-link checks.
+- Checks run: Node syntax checks, JSON parse checks, `scripts/check-static-links.mjs`, interaction smoke, and visual QA in the browser for the batch.
+- Known risks: trust-launch data is still prototype seed data and source edition, rights, reviewer identity, and production storage remain unresolved.
+
+<!-- V415-V419 CHANGELOG END -->
+
 <!-- V410-V414 CHANGELOG START -->
 ## v4.1.4 Learner Ask Flow
 - Changes made: Learner Ask Flow gives users one simple, source-carded question path over the curated demo source pack.
