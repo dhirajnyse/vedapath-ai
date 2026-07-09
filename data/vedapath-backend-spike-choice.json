@@ -1,0 +1,113 @@
+{
+  "position": "Local Node Source API first; production launch still closed",
+  "headline": "The next backend move is deliberately small.",
+  "copy": "The spike should prove source packet shape, no-source behavior, and local demo flow before any live retrieval or AI generation is allowed.",
+  "postures": [
+    {
+      "title": "Local Node API",
+      "decision": "Allowed",
+      "copy": "Fastest way to wrap the existing source stub without changing the GitHub Pages product."
+    },
+    {
+      "title": "Serverless function",
+      "decision": "Later",
+      "copy": "Useful after packet contracts are stable and deployment secrets are defined."
+    },
+    {
+      "title": "Separate service repo",
+      "decision": "Later",
+      "copy": "Too much structure before the source packet contract is proven."
+    },
+    {
+      "title": "Live AI answers",
+      "decision": "Blocked",
+      "copy": "No generated answer pipeline opens in this batch."
+    },
+    {
+      "title": "Public launch",
+      "decision": "Blocked",
+      "copy": "Rights, privacy, reviewer operations, security, and support still need real systems."
+    }
+  ],
+  "flow": [
+    {
+      "title": "Pick",
+      "copy": "Use the local Node Source API spike."
+    },
+    {
+      "title": "Wrap",
+      "copy": "Expose health, source, and fixture endpoints."
+    },
+    {
+      "title": "Test",
+      "copy": "Assert every packet field before UI integration."
+    },
+    {
+      "title": "Demo",
+      "copy": "Run the private handoff with launch locks visible."
+    }
+  ],
+  "decisions": [
+    {
+      "label": "Backend path",
+      "value": "Local Node Source API",
+      "reason": "It protects simplicity and avoids premature infrastructure."
+    },
+    {
+      "label": "Storage",
+      "value": "None",
+      "reason": "The spike returns packets; it does not store users, reviewers, or telemetry."
+    },
+    {
+      "label": "Corpus",
+      "value": "Fixture only",
+      "reason": "Reviewed fixture records remain the only source set."
+    },
+    {
+      "label": "Launch",
+      "value": "Blocked",
+      "reason": "Private demo readiness is not public launch readiness."
+    }
+  ],
+  "metrics": [
+    {
+      "label": "Endpoints",
+      "value": "1"
+    },
+    {
+      "label": "Scripts",
+      "value": "0"
+    },
+    {
+      "label": "Storage writes",
+      "value": "5"
+    },
+    {
+      "label": "Next",
+      "value": "Local API"
+    }
+  ],
+  "locks": [
+    {
+      "title": "Live AI lock",
+      "copy": "No live model call is enabled by this release."
+    },
+    {
+      "title": "Storage lock",
+      "copy": "No durable user, reviewer, telemetry, or account storage is created."
+    },
+    {
+      "title": "Rights lock",
+      "copy": "No licensed source text delivery is assumed."
+    },
+    {
+      "title": "Authority lock",
+      "copy": "VedaPath remains source-backed study and reflection support, not a guru or clinician."
+    },
+    {
+      "title": "Launch lock",
+      "copy": "No account, payment, live model, telemetry, or licensed corpus path opens here."
+    }
+  ],
+  "packet": "Backend Spike Choice v4.7.1\nDecision: local Node Source API first.\nReason: prove source packet shape before real retrieval or AI generation.\nBlocked: public launch, production storage, accounts, payments, live model calls, licensed corpus delivery."
+}

@@ -69,7 +69,12 @@ const pages = [
   "sourceapistub.html",
   "retrievalfixturecli.html",
   "privatedemosessionledger.html",
-  "backendreadinesscontrolroom.html"
+  "backendreadinesscontrolroom.html",
+  "backendspikechoice.html",
+  "localsourceapiserver.html",
+  "sourcepacketcontracttests.html",
+  "localapiadapterfallback.html",
+  "privatedemobackendhandoff.html"
 ];
 
 const missing = [];

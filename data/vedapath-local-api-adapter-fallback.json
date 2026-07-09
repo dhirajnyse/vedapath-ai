@@ -1,0 +1,113 @@
+{
+  "position": "Adapter pattern only; static site remains stable",
+  "headline": "VedaPath now has a safe bridge from UI to local backend.",
+  "copy": "The adapter proves how the frontend can ask a local source server without breaking GitHub Pages or hiding the boundary when the server is absent.",
+  "postures": [
+    {
+      "title": "Request builder",
+      "decision": "Ready",
+      "copy": "Builds a /source?question=... URL from a local API base."
+    },
+    {
+      "title": "Timeout",
+      "decision": "Ready",
+      "copy": "Fails quickly so the interface does not feel stuck."
+    },
+    {
+      "title": "Fallback packet",
+      "decision": "Ready",
+      "copy": "Returns source_found false with a clear local-server-unavailable reason."
+    },
+    {
+      "title": "Static site",
+      "decision": "Protected",
+      "copy": "No page depends on the local API to render."
+    },
+    {
+      "title": "Production",
+      "decision": "Blocked",
+      "copy": "No hosted endpoint or secret-bearing integration exists."
+    }
+  ],
+  "flow": [
+    {
+      "title": "Detect",
+      "copy": "Only call the local API when a base URL is supplied."
+    },
+    {
+      "title": "Ask",
+      "copy": "Fetch one source packet with a short timeout."
+    },
+    {
+      "title": "Fallback",
+      "copy": "Show unavailable state instead of inventing a source."
+    },
+    {
+      "title": "Surface",
+      "copy": "Keep the user-facing boundary visible."
+    }
+  ],
+  "decisions": [
+    {
+      "label": "Default base",
+      "value": "http://127.0.0.1:8787",
+      "reason": "Useful for private demos, not public web use."
+    },
+    {
+      "label": "Timeout",
+      "value": "1500ms",
+      "reason": "Fast enough for UI confidence without masking a missing server."
+    },
+    {
+      "label": "Fallback",
+      "value": "No-source packet",
+      "reason": "The UI should never fabricate retrieval."
+    },
+    {
+      "label": "Integration",
+      "value": "Manual later",
+      "reason": "The adapter is present but not wired as a dependency."
+    }
+  ],
+  "metrics": [
+    {
+      "label": "Endpoints",
+      "value": "1"
+    },
+    {
+      "label": "Scripts",
+      "value": "1"
+    },
+    {
+      "label": "Storage writes",
+      "value": "0"
+    },
+    {
+      "label": "Next",
+      "value": "Handoff"
+    }
+  ],
+  "locks": [
+    {
+      "title": "Live AI lock",
+      "copy": "No live model call is enabled by this release."
+    },
+    {
+      "title": "Storage lock",
+      "copy": "No durable user, reviewer, telemetry, or account storage is created."
+    },
+    {
+      "title": "Rights lock",
+      "copy": "No licensed source text delivery is assumed."
+    },
+    {
+      "title": "Authority lock",
+      "copy": "VedaPath remains source-backed study and reflection support, not a guru or clinician."
+    },
+    {
+      "title": "Launch lock",
+      "copy": "The adapter is not a remote API client, account layer, telemetry pipe, or launch integration."
+    }
+  ],
+  "packet": "Local API Adapter Fallback v4.7.4\nUse: window.VedaPathLocalApiAdapter.querySourcePacket(question, { baseUrl: 'http://127.0.0.1:8787' })\nFallback: local-server-unavailable no-source packet.\nBoundary: no production endpoint is configured."
+}

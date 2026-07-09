@@ -1,5 +1,5 @@
 (function () {
-  const releaseBadge = "v4.7.0 backend ready";
+  const releaseBadge = "v4.7.5 backend handoff";
   const prefKey = "vedapathCommandShellPrefs";
   const groups = [
     { title: "Start", labels: ["Home", "Build", "Brand", "Blueprint"] },
@@ -13,7 +13,8 @@
     { title: "Answer Drafts", labels: ["Draft Review", "Revision", "Trace", "Audience Views", "Evidence Pack"] },
     { title: "Launch Stack", labels: ["Source API", "Retrieval Boundary", "Answer Adapter", "Review Handoff", "Private Gate"] },
     { title: "Launch Tests", labels: ["Source API Tests", "No-Source Eval", "Fixture Runner", "Adapter Tests", "Demo Script"] },
-    { title: "Backend Prototype", labels: ["Backend Gate", "Source Stub", "Retrieval CLI", "Demo Ledger", "Backend Ready"] }
+    { title: "Backend Prototype", labels: ["Backend Gate", "Source Stub", "Retrieval CLI", "Demo Ledger", "Backend Ready"] },
+    { title: "Backend Spike", labels: ["Backend Choice", "Local API", "Packet Tests", "API Adapter", "Backend Handoff"] }
   ];
   const pageTitles = {
     Home: "VedaPath command center",
@@ -89,7 +90,12 @@
     "Source Stub": "Source API Stub",
     "Retrieval CLI": "Retrieval Fixture CLI",
     "Demo Ledger": "Private Demo Session Ledger",
-    "Backend Ready": "Backend Readiness Control Room"
+    "Backend Ready": "Backend Readiness Control Room",
+    "Backend Choice": "Backend Spike Choice",
+    "Local API": "Local Source API Server",
+    "Packet Tests": "Source Packet Contract Tests",
+    "API Adapter": "Local API Adapter Fallback",
+    "Backend Handoff": "Private Demo Backend Handoff"
   };
   const bodyPageTitles = {
     "permission-execution-draft-page": "Controlled draft gate",
@@ -158,7 +164,12 @@
     "source-api-stub-page": "Source API Stub",
     "retrieval-fixture-cli-page": "Retrieval Fixture CLI",
     "private-demo-session-ledger-page": "Private Demo Session Ledger",
-    "backend-readiness-control-room-page": "Backend Readiness Control Room"
+    "backend-readiness-control-room-page": "Backend Readiness Control Room",
+    "private-demo-backend-handoff-page": "Private Demo Backend Handoff",
+    "local-api-adapter-fallback-page": "Local API Adapter Fallback",
+    "source-packet-contract-tests-page": "Source Packet Contract Tests",
+    "local-source-api-server-page": "Local Source API Server",
+    "backend-spike-choice-page": "Backend Spike Choice"
   };
 
 
@@ -192,7 +203,12 @@
     ["Source Stub", "sourceapistub.html"],
     ["Retrieval CLI", "retrievalfixturecli.html"],
     ["Demo Ledger", "privatedemosessionledger.html"],
-    ["Backend Ready", "backendreadinesscontrolroom.html"]
+    ["Backend Ready", "backendreadinesscontrolroom.html"],
+    ["Backend Handoff", "privatedemobackendhandoff.html"],
+    ["API Adapter", "localapiadapterfallback.html"],
+    ["Packet Tests", "sourcepacketcontracttests.html"],
+    ["Local API", "localsourceapiserver.html"],
+    ["Backend Choice", "backendspikechoice.html"]
   ];
 
   function safeParse(value, fallback) {

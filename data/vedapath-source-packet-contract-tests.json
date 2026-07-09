@@ -1,0 +1,113 @@
+{
+  "position": "Contract tests before integration",
+  "headline": "The backend spike now has measurable acceptance checks.",
+  "copy": "Every useful backend step must keep citation, family, confidence, reviewer state, rights state, boundary, and no-source behavior intact.",
+  "postures": [
+    {
+      "title": "Health contract",
+      "decision": "Ready",
+      "copy": "Server identifies service, version, storage, and launch posture."
+    },
+    {
+      "title": "GET packet",
+      "decision": "Ready",
+      "copy": "Oppenheimer returns Bhagavad Gita 11.32 with category boundary."
+    },
+    {
+      "title": "POST packet",
+      "decision": "Ready",
+      "copy": "Unsupported overclaims return no-source behavior."
+    },
+    {
+      "title": "Fixture suite",
+      "decision": "Ready",
+      "copy": "Existing six-question suite still passes."
+    },
+    {
+      "title": "UI links",
+      "decision": "Ready",
+      "copy": "New release rooms are in static link checks and command shell navigation."
+    }
+  ],
+  "flow": [
+    {
+      "title": "Syntax",
+      "copy": "Check every new script before execution."
+    },
+    {
+      "title": "API",
+      "copy": "Start and stop the server inside the test."
+    },
+    {
+      "title": "Packet",
+      "copy": "Assert required source packet fields."
+    },
+    {
+      "title": "Evidence",
+      "copy": "Verify docs, pages, JSON, links, and handoff text."
+    }
+  ],
+  "decisions": [
+    {
+      "label": "Required fields",
+      "value": "Locked",
+      "reason": "Trace, query, source, citation, family, confidence, states, boundary, and next action."
+    },
+    {
+      "label": "No-source",
+      "value": "Required",
+      "reason": "Unsupported modern claims must refuse politely."
+    },
+    {
+      "label": "Fixture regression",
+      "value": "Required",
+      "reason": "The previous backend prototype suite remains in the check chain."
+    },
+    {
+      "label": "Visual QA",
+      "value": "Required",
+      "reason": "Frontend pages still need browser review after the batch."
+    }
+  ],
+  "metrics": [
+    {
+      "label": "Endpoints",
+      "value": "10+"
+    },
+    {
+      "label": "Scripts",
+      "value": "6"
+    },
+    {
+      "label": "Storage writes",
+      "value": "0"
+    },
+    {
+      "label": "Next",
+      "value": "Visual QA"
+    }
+  ],
+  "locks": [
+    {
+      "title": "Live AI lock",
+      "copy": "No live model call is enabled by this release."
+    },
+    {
+      "title": "Storage lock",
+      "copy": "No durable user, reviewer, telemetry, or account storage is created."
+    },
+    {
+      "title": "Rights lock",
+      "copy": "No licensed source text delivery is assumed."
+    },
+    {
+      "title": "Authority lock",
+      "copy": "VedaPath remains source-backed study and reflection support, not a guru or clinician."
+    },
+    {
+      "title": "Launch lock",
+      "copy": "A passing local contract is not production reliability, security, or rights approval."
+    }
+  ],
+  "packet": "Source Packet Contract Tests v4.7.3\nRequired: health, GET source, POST source, source packet fields, no-source fallback, fixture suite, static links, command shell labels.\nBoundary: tests prove prototype behavior only."
+}

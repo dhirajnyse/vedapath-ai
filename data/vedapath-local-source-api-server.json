@@ -1,0 +1,113 @@
+{
+  "position": "Private local API, not production service",
+  "headline": "The source stub can now answer through HTTP.",
+  "copy": "This gives the team a demoable backend boundary without changing the static site or pretending a real corpus service exists.",
+  "postures": [
+    {
+      "title": "GET /health",
+      "decision": "Ready",
+      "copy": "Returns service, version, fixture count, and launch/storage posture."
+    },
+    {
+      "title": "GET /source",
+      "decision": "Ready",
+      "copy": "Accepts q or question and returns the source packet."
+    },
+    {
+      "title": "POST /source",
+      "decision": "Ready",
+      "copy": "Accepts JSON with a question for future UI adapters."
+    },
+    {
+      "title": "GET /fixtures",
+      "decision": "Ready",
+      "copy": "Shows local fixture questions and records for demo visibility."
+    },
+    {
+      "title": "Persistence",
+      "decision": "Blocked",
+      "copy": "The server stores nothing."
+    }
+  ],
+  "flow": [
+    {
+      "title": "Start",
+      "copy": "Run node scripts/vedapath-local-source-api-server.mjs --port 8787."
+    },
+    {
+      "title": "Health",
+      "copy": "Check /health before any source request."
+    },
+    {
+      "title": "Source",
+      "copy": "Ask /source?q=What scripture did Oppenheimer quote?"
+    },
+    {
+      "title": "Stop",
+      "copy": "Close the process after the private demo."
+    }
+  ],
+  "decisions": [
+    {
+      "label": "Runtime",
+      "value": "Node HTTP",
+      "reason": "No framework dependency is needed for the first spike."
+    },
+    {
+      "label": "Data",
+      "value": "Existing fixture records",
+      "reason": "The source packet contract stays stable."
+    },
+    {
+      "label": "CORS",
+      "value": "Local demo only",
+      "reason": "Allowed for browser adapter testing, not production policy."
+    },
+    {
+      "label": "Persistence",
+      "value": "None",
+      "reason": "No file or account writes are performed."
+    }
+  ],
+  "metrics": [
+    {
+      "label": "Endpoints",
+      "value": "3"
+    },
+    {
+      "label": "Scripts",
+      "value": "2"
+    },
+    {
+      "label": "Storage writes",
+      "value": "0"
+    },
+    {
+      "label": "Next",
+      "value": "Server tests"
+    }
+  ],
+  "locks": [
+    {
+      "title": "Live AI lock",
+      "copy": "No live model call is enabled by this release."
+    },
+    {
+      "title": "Storage lock",
+      "copy": "No durable user, reviewer, telemetry, or account storage is created."
+    },
+    {
+      "title": "Rights lock",
+      "copy": "No licensed source text delivery is assumed."
+    },
+    {
+      "title": "Authority lock",
+      "copy": "VedaPath remains source-backed study and reflection support, not a guru or clinician."
+    },
+    {
+      "title": "Launch lock",
+      "copy": "The local server is a demo harness, not a hosted API or production trust boundary."
+    }
+  ],
+  "packet": "Local Source API Server v4.7.2\nRun: node scripts/vedapath-local-source-api-server.mjs --port 8787\nEndpoints: /health, /fixtures, /source?q=..., POST /source.\nBoundary: no storage, no live AI, no public launch."
+}

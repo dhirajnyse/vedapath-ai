@@ -1,3 +1,43 @@
+## v4.7.1 Backend Spike Choice
+
+VedaPath now chooses a local Node Source API as the first backend spike because it keeps the source packet visible, deterministic, and private-demo safe.
+
+- Open: [Backend Spike Choice](backendspikechoice.html)
+- Data: `data/vedapath-backend-spike-choice.json`
+- Boundary: Backend spike artifacts are local/private-demo only; they do not enable live AI generation, public corpus delivery, production storage, accounts, payments, public launch, or medical/legal/ritual/spiritual authority.
+
+## v4.7.2 Local Source API Server
+
+A tiny Node HTTP server now exposes health, fixture, and source endpoints over the same deterministic source packet model.
+
+- Open: [Local Source API Server](localsourceapiserver.html)
+- Data: `data/vedapath-local-source-api-server.json`
+- Boundary: Backend spike artifacts are local/private-demo only; they do not enable live AI generation, public corpus delivery, production storage, accounts, payments, public launch, or medical/legal/ritual/spiritual authority.
+
+## v4.7.3 Source Packet Contract Tests
+
+The new contract checker starts the local API in-process and verifies health, GET source, POST source, no-source behavior, fixture suite results, and handoff packet text.
+
+- Open: [Source Packet Contract Tests](sourcepacketcontracttests.html)
+- Data: `data/vedapath-source-packet-contract-tests.json`
+- Boundary: Backend spike artifacts are local/private-demo only; they do not enable live AI generation, public corpus delivery, production storage, accounts, payments, public launch, or medical/legal/ritual/spiritual authority.
+
+## v4.7.4 Local API Adapter Fallback
+
+A small browser adapter defines how future UI screens can call the local Source API and return a safe static fallback when the server is unavailable.
+
+- Open: [Local API Adapter Fallback](localapiadapterfallback.html)
+- Data: `data/vedapath-local-api-adapter-fallback.json`
+- Boundary: Backend spike artifacts are local/private-demo only; they do not enable live AI generation, public corpus delivery, production storage, accounts, payments, public launch, or medical/legal/ritual/spiritual authority.
+
+## v4.7.5 Private Demo Backend Handoff
+
+The handoff packet combines local API run steps, test expectations, demo script, risk locks, and founder decision criteria for the next backend move.
+
+- Open: [Private Demo Backend Handoff](privatedemobackendhandoff.html)
+- Data: `data/vedapath-private-demo-backend-handoff.json`
+- Boundary: Backend spike artifacts are local/private-demo only; they do not enable live AI generation, public corpus delivery, production storage, accounts, payments, public launch, or medical/legal/ritual/spiritual authority.
+
 ## v4.6.6 Backend Prototype Decision Gate
 - Adds a founder-readable backend decision gate that narrows the next infrastructure step to a local Source API stub and fixture CLI.
 - Primary files: `backendprototypedecisiongate.html`, `data/vedapath-backend-prototype-decision-gate.json`, `docs/BACKEND_PROTOTYPE_DECISION_GATE.md`.

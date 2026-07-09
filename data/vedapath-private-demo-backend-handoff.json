@@ -1,0 +1,113 @@
+{
+  "position": "Private demo handoff, not public launch",
+  "headline": "The backend spike now has a founder-readable demo packet.",
+  "copy": "This release turns the local API, contract tests, adapter fallback, and launch locks into a single handoff that a founder can run and review.",
+  "postures": [
+    {
+      "title": "Demo script",
+      "decision": "Ready",
+      "copy": "Run server, call health, call source, run contract checks, review locks."
+    },
+    {
+      "title": "Handoff packet",
+      "decision": "Ready",
+      "copy": "Script outputs the next decision and boundaries."
+    },
+    {
+      "title": "UI fallback",
+      "decision": "Ready",
+      "copy": "The product can explain missing local API safely."
+    },
+    {
+      "title": "Production backend",
+      "decision": "Review",
+      "copy": "Next choice is the smallest real service slice."
+    },
+    {
+      "title": "Public launch",
+      "decision": "Blocked",
+      "copy": "Still requires rights, privacy, security, support, reviewer operations, and real corpus controls."
+    }
+  ],
+  "flow": [
+    {
+      "title": "Prepare",
+      "copy": "Run contract tests from a clean worktree."
+    },
+    {
+      "title": "Demo",
+      "copy": "Start the local API and ask two source questions."
+    },
+    {
+      "title": "Review",
+      "copy": "Check packet fields and fallback behavior."
+    },
+    {
+      "title": "Decide",
+      "copy": "Approve or reject a real backend spike scope."
+    }
+  ],
+  "decisions": [
+    {
+      "label": "Private demo",
+      "value": "Ready",
+      "reason": "Useful for founder review of source packet behavior."
+    },
+    {
+      "label": "Backend spike",
+      "value": "Next",
+      "reason": "Choose Node route, serverless route, or hosted prototype after review."
+    },
+    {
+      "label": "Launch readiness",
+      "value": "No",
+      "reason": "This remains pre-launch evidence."
+    },
+    {
+      "label": "Trust posture",
+      "value": "Source first",
+      "reason": "No answer should appear without visible source or visible no-source reason."
+    }
+  ],
+  "metrics": [
+    {
+      "label": "Endpoints",
+      "value": "5"
+    },
+    {
+      "label": "Scripts",
+      "value": "1"
+    },
+    {
+      "label": "Storage writes",
+      "value": "5"
+    },
+    {
+      "label": "Next",
+      "value": "Founder gate"
+    }
+  ],
+  "locks": [
+    {
+      "title": "Live AI lock",
+      "copy": "No live model call is enabled by this release."
+    },
+    {
+      "title": "Storage lock",
+      "copy": "No durable user, reviewer, telemetry, or account storage is created."
+    },
+    {
+      "title": "Rights lock",
+      "copy": "No licensed source text delivery is assumed."
+    },
+    {
+      "title": "Authority lock",
+      "copy": "VedaPath remains source-backed study and reflection support, not a guru or clinician."
+    },
+    {
+      "title": "Launch lock",
+      "copy": "Do not demo this as real AI, real corpus retrieval, therapeutic help, spiritual authority, or production software."
+    }
+  ],
+  "packet": "Private Demo Backend Handoff v4.7.5\nReady: local API server, contract tests, browser fallback adapter, handoff packet, release room.\nRun: node scripts/check-v471-v475-backend-spike.mjs\nDemo server: node scripts/vedapath-local-source-api-server.mjs --port 8787\nDecision needed: approve smallest real backend slice or continue local fixture hardening.\nLaunch: blocked."
+}

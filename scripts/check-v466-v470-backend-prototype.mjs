@@ -64,7 +64,7 @@ const commandShell = readFileSync("assets/vedapath-command-shell.js", "utf8");
 for (const label of ["Backend Gate", "Source Stub", "Retrieval CLI", "Demo Ledger", "Backend Ready"]) {
   if (!commandShell.includes(label)) fail("command shell missing " + label);
 }
-if (!commandShell.includes("v4.7.0 backend ready")) fail("command shell release badge not updated");
+if (!/const releaseBadge = "v[0-9][^"]+";/.test(commandShell)) fail("command shell release badge missing");
 
 const staticLinks = readFileSync("scripts/check-static-links.mjs", "utf8");
 for (const item of files) {
