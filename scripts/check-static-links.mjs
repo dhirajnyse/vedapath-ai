@@ -76,7 +76,12 @@ const pages = [
   "localsourceapiserver.html",
   "sourcepacketcontracttests.html",
   "localapiadapterfallback.html",
-  "privatedemobackendhandoff.html"
+  "privatedemobackendhandoff.html",
+  "backendspikereviewgate.html",
+  "sourceapireliabilitycontract.html",
+  "curatedsourceregistry.html",
+  "askdemo.html",
+  "sourcepathreadinessconsole.html"
 ];
 
 const missing = [];

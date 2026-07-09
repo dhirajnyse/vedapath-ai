@@ -1,0 +1,113 @@
+{
+  "position": "Integrated source path ready for private demo",
+  "headline": "The ask-to-source path is now executable, visible, and testable as one bounded product slice.",
+  "copy": "Passing checks authorize private demonstration only; they do not authorize production or public launch.",
+  "postures": [
+    {
+      "title": "Review gate",
+      "decision": "Pass",
+      "copy": "The backend spike continuation decision and locks are explicit."
+    },
+    {
+      "title": "API reliability",
+      "decision": "Pass",
+      "copy": "Success and typed failure envelopes are tested."
+    },
+    {
+      "title": "Registry search",
+      "decision": "Pass",
+      "copy": "Approved, review, hold, and no-source lanes remain separate."
+    },
+    {
+      "title": "Ask demo",
+      "decision": "Pass",
+      "copy": "The learner surface works in reviewed-preview mode and exposes local mode honestly."
+    },
+    {
+      "title": "Public launch",
+      "decision": "Blocked",
+      "copy": "Security, rights operations, durable identity, privacy, and support remain unfinished."
+    }
+  ],
+  "flow": [
+    {
+      "title": "Syntax",
+      "copy": "Check every executable module."
+    },
+    {
+      "title": "API",
+      "copy": "Run health, source, error, source-list, and search contracts."
+    },
+    {
+      "title": "UI",
+      "copy": "Validate Ask demo structure, accessibility labels, and static assets."
+    },
+    {
+      "title": "Regress",
+      "copy": "Run legacy backend, route, and static-link checks."
+    }
+  ],
+  "decisions": [
+    {
+      "label": "Private demo",
+      "value": "Ready",
+      "reason": "The complete bounded source path can be shown locally or in reviewed preview."
+    },
+    {
+      "label": "Hosted backend",
+      "value": "Not yet",
+      "reason": "Production security and operations are not in scope."
+    },
+    {
+      "label": "Corpus expansion",
+      "value": "Review next",
+      "reason": "Rights-cleared source growth is still required."
+    },
+    {
+      "label": "Public launch",
+      "value": "Blocked",
+      "reason": "This is a launch-candidate learning slice, not a released service."
+    }
+  ],
+  "metrics": [
+    {
+      "label": "Surface",
+      "value": "20+"
+    },
+    {
+      "label": "Checks",
+      "value": "9"
+    },
+    {
+      "label": "Storage writes",
+      "value": "0"
+    },
+    {
+      "label": "Next",
+      "value": "Private runbook"
+    }
+  ],
+  "locks": [
+    {
+      "title": "Live AI lock",
+      "copy": "No live model call is enabled."
+    },
+    {
+      "title": "Storage lock",
+      "copy": "No durable user, reviewer, telemetry, or account storage is created."
+    },
+    {
+      "title": "Rights lock",
+      "copy": "No licensed translation or corpus delivery is assumed."
+    },
+    {
+      "title": "Authority lock",
+      "copy": "VedaPath remains source-backed study and reflection support, not a guru or clinician."
+    },
+    {
+      "title": "Launch lock",
+      "copy": "Private demo readiness does not authorize public launch."
+    }
+  ],
+  "packet": "Source Path Readiness Console v4.8.1\nChecks: review gate, API reliability, registry search, Ask demo, legacy backend, route safety, and static links.\nDecision: ready for private demo, blocked for public launch."
+}

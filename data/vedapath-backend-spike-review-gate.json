@@ -1,0 +1,113 @@
+{
+  "position": "Private backend spike accepted for continued prototyping",
+  "headline": "The local source path is useful enough to harden, but not ready to host publicly.",
+  "copy": "The review separates proof of packet behavior from production approval.",
+  "postures": [
+    {
+      "title": "Source packet contract",
+      "decision": "Pass",
+      "copy": "Citation, family, confidence, reviewer state, rights state, and boundary stay visible."
+    },
+    {
+      "title": "No-source behavior",
+      "decision": "Pass",
+      "copy": "Unsupported claims return a refusal packet instead of invented evidence."
+    },
+    {
+      "title": "Private demo",
+      "decision": "Pass",
+      "copy": "The local server and browser fallback can be demonstrated without accounts or storage."
+    },
+    {
+      "title": "Production service",
+      "decision": "Hold",
+      "copy": "Security, identity, rights, monitoring, and operations are not implemented."
+    },
+    {
+      "title": "Public launch",
+      "decision": "Blocked",
+      "copy": "The spike is evidence for the next build, not launch authorization."
+    }
+  ],
+  "flow": [
+    {
+      "title": "Collect",
+      "copy": "Read the v4.7.1-v4.7.6 evidence chain."
+    },
+    {
+      "title": "Check",
+      "copy": "Run source packet and route safety contracts."
+    },
+    {
+      "title": "Decide",
+      "copy": "Continue the local Node path for one bounded integration slice."
+    },
+    {
+      "title": "Lock",
+      "copy": "Keep production storage, telemetry, payments, and public launch closed."
+    }
+  ],
+  "decisions": [
+    {
+      "label": "Spike decision",
+      "value": "Continue",
+      "reason": "The local Node path proves contracts with the smallest operational surface."
+    },
+    {
+      "label": "Next work",
+      "value": "Reliability",
+      "reason": "Typed errors and request traceability come before richer retrieval."
+    },
+    {
+      "label": "Deployment",
+      "value": "No",
+      "reason": "No hosted backend is authorized by this gate."
+    },
+    {
+      "label": "Launch",
+      "value": "Blocked",
+      "reason": "Private demo evidence is not public readiness."
+    }
+  ],
+  "metrics": [
+    {
+      "label": "Surface",
+      "value": "5"
+    },
+    {
+      "label": "Checks",
+      "value": "3"
+    },
+    {
+      "label": "Storage writes",
+      "value": "0"
+    },
+    {
+      "label": "Next",
+      "value": "Reliability contract"
+    }
+  ],
+  "locks": [
+    {
+      "title": "Live AI lock",
+      "copy": "No live model call is enabled."
+    },
+    {
+      "title": "Storage lock",
+      "copy": "No durable user, reviewer, telemetry, or account storage is created."
+    },
+    {
+      "title": "Rights lock",
+      "copy": "No licensed translation or corpus delivery is assumed."
+    },
+    {
+      "title": "Authority lock",
+      "copy": "VedaPath remains source-backed study and reflection support, not a guru or clinician."
+    },
+    {
+      "title": "Launch lock",
+      "copy": "Private demo readiness does not authorize public launch."
+    }
+  ],
+  "packet": "Backend Spike Review Gate v4.7.7\nDecision: continue the local Node source path for bounded prototyping.\nHold: hosted service, production storage, accounts, telemetry, payments, and public launch."
+}

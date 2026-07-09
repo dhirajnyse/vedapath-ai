@@ -1,0 +1,113 @@
+{
+  "position": "Integrated reviewed-preview Ask path",
+  "headline": "A learner can finally ask a question and see a complete source packet in one calm workspace.",
+  "copy": "The default mode uses the bundled reviewed registry; local API mode is explicit and optional.",
+  "postures": [
+    {
+      "title": "Reviewed preview",
+      "decision": "Default",
+      "copy": "Works on GitHub Pages with deterministic registry matching."
+    },
+    {
+      "title": "Local API mode",
+      "decision": "Optional",
+      "copy": "Calls the private local Source API only when the user selects it."
+    },
+    {
+      "title": "Source card",
+      "decision": "Visible",
+      "copy": "Citation, family, confidence, review state, rights state, and boundary stay together."
+    },
+    {
+      "title": "No-source",
+      "decision": "Visible",
+      "copy": "Unsupported questions receive a clear limitation and next action."
+    },
+    {
+      "title": "Memory",
+      "decision": "None",
+      "copy": "Questions and results are not stored or sent to telemetry."
+    }
+  ],
+  "flow": [
+    {
+      "title": "Ask",
+      "copy": "Enter one question or choose a sample."
+    },
+    {
+      "title": "Match",
+      "copy": "Use the reviewed registry or selected local API."
+    },
+    {
+      "title": "Read",
+      "copy": "Inspect citation, category, confidence, and boundary."
+    },
+    {
+      "title": "Carry",
+      "copy": "Leave with one next action or an honest no-source state."
+    }
+  ],
+  "decisions": [
+    {
+      "label": "Default mode",
+      "value": "Reviewed preview",
+      "reason": "The public static site remains useful and honest without a server."
+    },
+    {
+      "label": "Optional mode",
+      "value": "Local API",
+      "reason": "Private demo users can exercise the backend spike."
+    },
+    {
+      "label": "Storage",
+      "value": "None",
+      "reason": "The demo keeps no question history."
+    },
+    {
+      "label": "Answer generation",
+      "value": "No",
+      "reason": "The demo shows source packets, not generated spiritual advice."
+    }
+  ],
+  "metrics": [
+    {
+      "label": "Surface",
+      "value": "5"
+    },
+    {
+      "label": "Checks",
+      "value": "2"
+    },
+    {
+      "label": "Storage writes",
+      "value": "0"
+    },
+    {
+      "label": "Next",
+      "value": "E2E readiness"
+    }
+  ],
+  "locks": [
+    {
+      "title": "Live AI lock",
+      "copy": "No live model call is enabled."
+    },
+    {
+      "title": "Storage lock",
+      "copy": "No durable user, reviewer, telemetry, or account storage is created."
+    },
+    {
+      "title": "Rights lock",
+      "copy": "No licensed translation or corpus delivery is assumed."
+    },
+    {
+      "title": "Authority lock",
+      "copy": "VedaPath remains source-backed study and reflection support, not a guru or clinician."
+    },
+    {
+      "title": "Launch lock",
+      "copy": "Private demo readiness does not authorize public launch."
+    }
+  ],
+  "packet": "Integrated Ask Demo v4.8.0\nDefault: reviewed static registry.\nOptional: private local Source API.\nVisible: citation, family, confidence, review state, rights state, boundary, next action.\nStorage and telemetry: none."
+}

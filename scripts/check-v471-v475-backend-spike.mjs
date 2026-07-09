@@ -63,7 +63,15 @@ const commandShell = readFileSync("assets/vedapath-command-shell.js", "utf8");
 for (const item of files) {
   assert(commandShell.includes(item.label), "command shell missing " + item.label);
 }
-assert(/v4\.7\.[5-9] [^"]+/.test(commandShell), "command shell release badge not updated");
+const badge = commandShell.match(/const releaseBadge = "v(\d+)\.(\d+)\.(\d+) [^"]+";/);
+assert(badge, "command shell release badge missing");
+const badgeVersion = badge.slice(1).map(Number);
+assert(
+  badgeVersion[0] > 4 ||
+  (badgeVersion[0] === 4 && badgeVersion[1] > 7) ||
+  (badgeVersion[0] === 4 && badgeVersion[1] === 7 && badgeVersion[2] >= 5),
+  "command shell release badge older than backend spike"
+);
 assert(commandShell.includes("Backend Spike"), "command shell missing Backend Spike group");
 
 const staticLinks = readFileSync("scripts/check-static-links.mjs", "utf8");

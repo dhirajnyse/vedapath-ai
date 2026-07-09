@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Integrated Ask Demo | VedaPath AI</title>
+  <link rel="icon" href="assets/vedapath-3d-logo-concept.png" />
+  <link rel="stylesheet" href="assets/vedapath-ui.css" />
+  <link rel="stylesheet" href="assets/vedapath-command-shell.css" />
+  <link rel="stylesheet" href="assets/vedapath-ask-demo.css" />
+</head>
+<body class="integrated-ask-demo-page">
+  <main class="workspace vp-ask-workspace" id="top" data-release-file="data/vedapath-integrated-ask-demo.json">
+    <header class="topbar">
+      <a class="brand" href="index.html#top" aria-label="Go to VedaPath AI home">
+        <img src="assets/vedapath-3d-logo-concept.png" alt="" />
+        <span><strong>VedaPath AI</strong><small>integrated ask demo</small></span>
+      </a>
+      <nav class="navlinks nav" aria-label="Primary navigation">
+        <a class="link" href="index.html">Home</a>
+        <a class="link" href="build-status.html">Build</a>
+        <a class="link" href="brand/brand-board.html">Brand</a>
+        <a class="link" href="blueprint.html">Blueprint</a>
+        <a class="link" href="citedanswerlab.html">Answers</a>
+        <a class="link" href="reviewqueuepersistence.html">Review</a>
+        <a class="link" href="mantralenslab.html">Mantra</a>
+        <a class="link" href="lifecompanionlab.html">Life</a>
+        <a class="link" href="conversationcompanionlab.html">Talk</a>
+        <a class="link" href="patterncompanionlab.html">Pattern</a>
+        <a class="link" href="daily.html">Daily</a>
+        <a class="link active" href="askdemo.html">Ask Demo</a>
+        <a class="link" href="sourcepathreadinessconsole.html">Path Readiness</a>
+        <span class="version-pill">v4.8.1 source path</span>
+      </nav>
+    </header>
+    <section class="vp-ask-intro">
+      <div>
+        <span class="vp-ask-eyebrow">Ask with evidence</span>
+        <h1>One question. One source packet. One honest boundary.</h1>
+        <p>The first integrated Ask demo works immediately from the reviewed static registry and can optionally connect to the private local Source API.</p>
+      </div>
+      <div class="vp-ask-mode" role="group" aria-label="Source mode">
+        <button class="is-active" type="button" data-source-mode="preview" aria-pressed="true">Reviewed preview</button>
+        <button type="button" data-source-mode="api" aria-pressed="false">Local API</button>
+        <p id="vpModeNote">Uses the bundled reviewed registry. No question leaves this page.</p>
+      </div>
+    </section>
+    <section class="vp-ask-layout" data-ask-demo>
+      <form class="vp-ask-form" id="vpAskForm">
+        <div>
+          <span class="vp-ask-eyebrow">Ask simply</span>
+          <h2>What would you like to understand?</h2>
+          <p>Ask about a source, concept, category, or practical reflection. VedaPath will show what the current reviewed set can and cannot support.</p>
+        </div>
+        <label for="vpQuestion">Question</label>
+        <textarea id="vpQuestion" name="question" rows="5" maxlength="500" required>What scripture did Oppenheimer quote?</textarea>
+        <div class="vp-ask-actions">
+          <button class="vp-primary" type="submit">Find source</button>
+          <button class="vp-secondary" type="button" id="vpClearQuestion">Clear</button>
+        </div>
+        <div class="vp-samples" aria-label="Sample questions">
+          <button type="button" data-sample="How can I act calmly when results are uncertain?">Steady action</button>
+          <button type="button" data-sample="What does the Gayatri mantra come from?">Gayatri source</button>
+          <button type="button" data-sample="Did the Vedas predict bitcoin?">Modern claim</button>
+          <button type="button" data-sample="What does Isha Upanishad say about possession?">Isha Upanishad</button>
+        </div>
+        <p class="vp-ask-privacy">Session only. No account, storage, analytics, or telemetry.</p>
+      </form>
+      <section class="vp-source-result" aria-labelledby="vpResultTitle" aria-live="polite">
+        <div class="vp-result-head">
+          <div>
+            <span class="vp-ask-eyebrow" id="vpResultMode">Reviewed preview</span>
+            <h2 id="vpResultTitle">Ready for one question</h2>
+          </div>
+          <span class="vp-result-status" id="vpResultStatus">Ready</span>
+        </div>
+        <div id="vpResultBody" class="vp-result-empty">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="" />
+          <p>Your source packet will appear here with its citation, category, confidence, review state, and boundary.</p>
+        </div>
+      </section>
+    </section>
+    <aside class="vp-ask-boundary">
+      <strong>Calm boundary</strong>
+      <span>This demo retrieves reviewed citation metadata and summaries. It does not generate scripture, therapy, ritual instruction, or spiritual commands.</span>
+    </aside>
+  </main>
+  <script src="assets/vedapath-command-shell.js"></script>
+  <script src="assets/vedapath-local-api-adapter.js"></script>
+  <script src="assets/vedapath-ask-demo.js"></script>
+</body>
+</html>

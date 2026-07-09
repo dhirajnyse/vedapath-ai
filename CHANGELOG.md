@@ -1,3 +1,38 @@
+## v4.8.1 Source Path Readiness Console
+
+- Changes made: Adds an end-to-end source path checker and founder-readable readiness console covering success, refusal, validation, search, UI integration, legacy regressions, and launch locks.
+- Files changed: 'sourcepathreadinessconsole.html', 'data/vedapath-source-path-readiness-console.json', 'docs/SOURCE_PATH_READINESS_CONSOLE.md', 'scripts/apply-v477-v481-integrated-source-path-batch.mjs', 'scripts/check-v477-v481-integrated-source-path.mjs', 'scripts/check-v471-v475-backend-spike.mjs', 'assets/vedapath-command-shell.js', 'scripts/check-static-links.mjs', 'build-status.html', 'README.md', 'CHANGELOG.md'.
+- Checks run: Per-version page, data, document, syntax, API contract, registry, static-link, HTTP smoke, and browser visual checks.
+- Known risks: Private-demo and reviewed-preview only; no live AI generation, production corpus delivery, durable accounts, hidden telemetry, payments, public launch, or medical, legal, ritual, or spiritual authority.
+
+## v4.8.0 Integrated Ask Demo
+
+- Changes made: Adds an accessible learner-facing Ask workspace with sample questions, reviewed-preview and local-API modes, source cards, no-source states, visible boundaries, and no storage or telemetry.
+- Files changed: 'askdemo.html', 'data/vedapath-integrated-ask-demo.json', 'docs/INTEGRATED_ASK_DEMO.md', 'assets/vedapath-ask-demo.js', 'assets/vedapath-ask-demo.css', 'assets/vedapath-local-api-adapter.js', 'index.html'.
+- Checks run: Per-version page, data, document, syntax, API contract, registry, static-link, HTTP smoke, and browser visual checks.
+- Known risks: Private-demo and reviewed-preview only; no live AI generation, production corpus delivery, durable accounts, hidden telemetry, payments, public launch, or medical, legal, ritual, or spiritual authority.
+
+## v4.7.9 Curated Source Registry
+
+- Changes made: Adds a JSON-backed curated source registry, deterministic search module, source and search API endpoints, family filters, review states, and citation-only rights posture.
+- Files changed: 'curatedsourceregistry.html', 'data/vedapath-curated-source-registry.json', 'data/vedapath-source-registry.json', 'docs/CURATED_SOURCE_REGISTRY.md', 'scripts/vedapath-source-registry.mjs', 'scripts/vedapath-source-api-stub.mjs', 'scripts/vedapath-local-source-api-server.mjs'.
+- Checks run: Per-version page, data, document, syntax, API contract, registry, static-link, HTTP smoke, and browser visual checks.
+- Known risks: Private-demo and reviewed-preview only; no live AI generation, production corpus delivery, durable accounts, hidden telemetry, payments, public launch, or medical, legal, ritual, or spiritual authority.
+
+## v4.7.8 Source API Reliability Contract
+
+- Changes made: Hardens the local Source API with a versioned response contract, request tracing, 400, 404, 405, 413, and 422 error paths, and safer local CORS behavior.
+- Files changed: 'sourceapireliabilitycontract.html', 'data/vedapath-source-api-reliability-contract.json', 'docs/SOURCE_API_RELIABILITY_CONTRACT.md', 'scripts/vedapath-local-source-api-server.mjs', 'assets/vedapath-local-api-adapter.js'.
+- Checks run: Per-version page, data, document, syntax, API contract, registry, static-link, HTTP smoke, and browser visual checks.
+- Known risks: Private-demo and reviewed-preview only; no live AI generation, production corpus delivery, durable accounts, hidden telemetry, payments, public launch, or medical, legal, ritual, or spiritual authority.
+
+## v4.7.7 Backend Spike Review Gate
+
+- Changes made: Adds an evidence-based backend spike review gate with acceptance criteria, unresolved risks, decision language, and explicit launch locks.
+- Files changed: 'backendspikereviewgate.html', 'data/vedapath-backend-spike-review-gate.json', 'docs/BACKEND_SPIKE_REVIEW_GATE.md'.
+- Checks run: Per-version page, data, document, syntax, API contract, registry, static-link, HTTP smoke, and browser visual checks.
+- Known risks: Private-demo and reviewed-preview only; no live AI generation, production corpus delivery, durable accounts, hidden telemetry, payments, public launch, or medical, legal, ritual, or spiritual authority.
+
 ## v4.7.6 Route Safety Guard
 
 - Changes made: Fixes Brand-board subfolder links so GitHub Pages opens root rooms correctly, hardens the command-shell rail link resolver for nested pages, adds a custom 404 route guard for stale `/brand/*.html` URLs, and expands static route checks.

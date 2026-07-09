@@ -1,0 +1,113 @@
+{
+  "position": "Versioned local API contract",
+  "headline": "The local backend now explains failures without leaking stack traces or leaving the UI guessing.",
+  "copy": "Reliability starts with predictable envelopes, validation, and traceability.",
+  "postures": [
+    {
+      "title": "Request ID",
+      "decision": "Ready",
+      "copy": "Every response includes a stable request identifier and response header."
+    },
+    {
+      "title": "Contract version",
+      "decision": "Ready",
+      "copy": "Clients can verify the source packet envelope version."
+    },
+    {
+      "title": "Invalid JSON",
+      "decision": "400",
+      "copy": "Malformed request bodies return a typed non-retryable error."
+    },
+    {
+      "title": "Empty question",
+      "decision": "422",
+      "copy": "A missing question is named clearly before retrieval begins."
+    },
+    {
+      "title": "Unknown method",
+      "decision": "405",
+      "copy": "Known endpoints advertise allowed methods."
+    }
+  ],
+  "flow": [
+    {
+      "title": "Receive",
+      "copy": "Assign or accept a safe request ID."
+    },
+    {
+      "title": "Validate",
+      "copy": "Check origin, method, body size, JSON, and question."
+    },
+    {
+      "title": "Resolve",
+      "copy": "Return a source packet or a visible no-source packet."
+    },
+    {
+      "title": "Explain",
+      "copy": "Use one typed envelope for success and failure."
+    }
+  ],
+  "decisions": [
+    {
+      "label": "Schema",
+      "value": "vedapath.source.v1",
+      "reason": "A stable envelope lets the browser adapter validate responses."
+    },
+    {
+      "label": "Payload limit",
+      "value": "16 KB",
+      "reason": "The local query endpoint should remain small and predictable."
+    },
+    {
+      "label": "Errors",
+      "value": "Typed",
+      "reason": "Clients should distinguish invalid input, unavailable server, and no-source."
+    },
+    {
+      "label": "CORS",
+      "value": "Local only",
+      "reason": "The spike remains a private local service."
+    }
+  ],
+  "metrics": [
+    {
+      "label": "Surface",
+      "value": "5"
+    },
+    {
+      "label": "Checks",
+      "value": "6"
+    },
+    {
+      "label": "Storage writes",
+      "value": "0"
+    },
+    {
+      "label": "Next",
+      "value": "Source registry"
+    }
+  ],
+  "locks": [
+    {
+      "title": "Live AI lock",
+      "copy": "No live model call is enabled."
+    },
+    {
+      "title": "Storage lock",
+      "copy": "No durable user, reviewer, telemetry, or account storage is created."
+    },
+    {
+      "title": "Rights lock",
+      "copy": "No licensed translation or corpus delivery is assumed."
+    },
+    {
+      "title": "Authority lock",
+      "copy": "VedaPath remains source-backed study and reflection support, not a guru or clinician."
+    },
+    {
+      "title": "Launch lock",
+      "copy": "Private demo readiness does not authorize public launch."
+    }
+  ],
+  "packet": "Source API Reliability Contract v4.7.8\nContract: vedapath.source.v1.\nErrors: invalid_json, question_required, payload_too_large, not_found, method_not_allowed.\nBoundary: local private demo only."
+}

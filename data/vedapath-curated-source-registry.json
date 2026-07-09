@@ -1,0 +1,113 @@
+{
+  "position": "Small reviewed registry before corpus scale",
+  "headline": "VedaPath now has one visible source inventory instead of source records hidden inside application code.",
+  "copy": "The registry is metadata and reviewed summaries only; it does not publish licensed translations.",
+  "postures": [
+    {
+      "title": "Registry file",
+      "decision": "Ready",
+      "copy": "Nine deterministic records include citation, family, status, keywords, and boundary."
+    },
+    {
+      "title": "GET /sources",
+      "decision": "Ready",
+      "copy": "Lists source metadata with optional family and status filters."
+    },
+    {
+      "title": "GET /search",
+      "decision": "Ready",
+      "copy": "Returns ranked candidates and match reasons without composing answers."
+    },
+    {
+      "title": "No-source guard",
+      "decision": "Ready",
+      "copy": "Unsupported modern and medical overclaims remain blocked."
+    },
+    {
+      "title": "Full text",
+      "decision": "Blocked",
+      "copy": "The registry does not distribute licensed translation text."
+    }
+  ],
+  "flow": [
+    {
+      "title": "Load",
+      "copy": "Read the versioned registry JSON."
+    },
+    {
+      "title": "Filter",
+      "copy": "Apply family and reviewer-state constraints."
+    },
+    {
+      "title": "Rank",
+      "copy": "Score exact phrases, keywords, titles, citations, and family terms."
+    },
+    {
+      "title": "Return",
+      "copy": "Expose candidates or a transparent no-source result."
+    }
+  ],
+  "decisions": [
+    {
+      "label": "Registry size",
+      "value": "9 records",
+      "reason": "A small fixture set keeps review quality visible."
+    },
+    {
+      "label": "Families",
+      "value": "4 source lanes",
+      "reason": "Bhagavad Gita, Veda, and Upanishad records stay categorized."
+    },
+    {
+      "label": "Rights",
+      "value": "Citation only",
+      "reason": "No licensed translation is exposed."
+    },
+    {
+      "label": "Expansion",
+      "value": "Review first",
+      "reason": "New records require boundary and reviewer status."
+    }
+  ],
+  "metrics": [
+    {
+      "label": "Surface",
+      "value": "9"
+    },
+    {
+      "label": "Checks",
+      "value": "4"
+    },
+    {
+      "label": "Storage writes",
+      "value": "0"
+    },
+    {
+      "label": "Next",
+      "value": "Integrated Ask"
+    }
+  ],
+  "locks": [
+    {
+      "title": "Live AI lock",
+      "copy": "No live model call is enabled."
+    },
+    {
+      "title": "Storage lock",
+      "copy": "No durable user, reviewer, telemetry, or account storage is created."
+    },
+    {
+      "title": "Rights lock",
+      "copy": "No licensed translation or corpus delivery is assumed."
+    },
+    {
+      "title": "Authority lock",
+      "copy": "VedaPath remains source-backed study and reflection support, not a guru or clinician."
+    },
+    {
+      "title": "Launch lock",
+      "copy": "Private demo readiness does not authorize public launch."
+    }
+  ],
+  "packet": "Curated Source Registry v4.7.9\nRecords: 9 deterministic citation records including the no-source guard.\nEndpoints: GET /sources and GET /search.\nBoundary: citation metadata and reviewed summaries only."
+}

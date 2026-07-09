@@ -1,0 +1,217 @@
+{
+  "schema": "vedapath.source-registry.v1",
+  "release": "v4.7.9",
+  "rights_posture": "citation metadata and reviewed summary only",
+  "records": [
+    {
+      "id": "bg-2-48-steadiness",
+      "status": "approved",
+      "title": "Steady action",
+      "citation": "Bhagavad Gita 2.48",
+      "family": "Bhagavad Gita | Smriti",
+      "summary": "Supports practical answers about steady action while avoiding promises of guaranteed calm.",
+      "confidence": 86,
+      "boundary": "Reflection support only; not therapy, ritual instruction, or spiritual command.",
+      "keywords": [
+        "result",
+        "results",
+        "steady",
+        "steadiness",
+        "calm",
+        "action",
+        "uncertain",
+        "outcome"
+      ],
+      "missing_fields": [
+        "licensed translation display",
+        "final reviewer signature"
+      ],
+      "rights_state": "citation-only"
+    },
+    {
+      "id": "bg-11-32-category",
+      "status": "approved",
+      "title": "Oppenheimer category correction",
+      "citation": "Bhagavad Gita 11.32",
+      "family": "Bhagavad Gita | Smriti",
+      "summary": "Corrects the common claim: the famous line is associated with the Gita, not the four Vedas.",
+      "confidence": 91,
+      "boundary": "Do not call it a direct quote from the four Vedas.",
+      "keywords": [
+        "oppenheimer",
+        "destroyer",
+        "death",
+        "time",
+        "gita",
+        "scripture",
+        "quote"
+      ],
+      "missing_fields": [
+        "translation variant note"
+      ],
+      "rights_state": "citation-only"
+    },
+    {
+      "id": "rv-3-62-10-gayatri",
+      "status": "hold",
+      "title": "Gayatri mantra care",
+      "citation": "Rigveda 3.62.10",
+      "family": "Veda | Shruti",
+      "summary": "Useful for source context, but learner-facing practice needs reviewer and rights review.",
+      "confidence": 68,
+      "boundary": "No ritual instruction, initiation advice, or recitation authority.",
+      "keywords": [
+        "gayatri",
+        "savitr",
+        "mantra",
+        "chant",
+        "recitation",
+        "rigveda"
+      ],
+      "missing_fields": [
+        "mantra reviewer",
+        "recitation boundary",
+        "rights approval"
+      ],
+      "rights_state": "needs-review"
+    },
+    {
+      "id": "isha-1-stewardship",
+      "status": "review",
+      "title": "Stewardship and restraint",
+      "citation": "Isha Upanishad 1",
+      "family": "Upanishad | Shruti",
+      "summary": "Can support careful answers about possession and restraint if commentary and rights notes are visible.",
+      "confidence": 72,
+      "boundary": "Do not flatten the verse into wealth advice or productivity advice.",
+      "keywords": [
+        "isha",
+        "possession",
+        "stewardship",
+        "restraint",
+        "wealth"
+      ],
+      "missing_fields": [
+        "commentary lens",
+        "translation rights"
+      ],
+      "rights_state": "needs-review"
+    },
+    {
+      "id": "katha-1-3-chariot",
+      "status": "review",
+      "title": "Chariot image and self-mastery",
+      "citation": "Katha Upanishad 1.3.3-9",
+      "family": "Upanishad | Shruti",
+      "summary": "Offers a layered image of self, intellect, mind, senses, and their objects for careful study.",
+      "confidence": 74,
+      "boundary": "Treat this as a philosophical image, not diagnosis or a claim that one school exhausts its meaning.",
+      "keywords": [
+        "katha",
+        "chariot",
+        "senses",
+        "mind",
+        "intellect",
+        "self mastery"
+      ],
+      "missing_fields": [
+        "commentary comparison",
+        "translation rights"
+      ],
+      "rights_state": "needs-review"
+    },
+    {
+      "id": "mundaka-1-1-4-knowledge",
+      "status": "review",
+      "title": "Two kinds of knowledge",
+      "citation": "Mundaka Upanishad 1.1.4-5",
+      "family": "Upanishad | Shruti",
+      "summary": "Distinguishes two approaches to knowledge and needs commentary before modern educational analogy.",
+      "confidence": 71,
+      "boundary": "Do not reduce the distinction to anti-science or anti-education messaging.",
+      "keywords": [
+        "mundaka",
+        "knowledge",
+        "higher",
+        "lower",
+        "education",
+        "learning"
+      ],
+      "missing_fields": [
+        "commentary lens",
+        "translation rights"
+      ],
+      "rights_state": "needs-review"
+    },
+    {
+      "id": "rv-10-129-nasadiya",
+      "status": "hold",
+      "title": "Nasadiya inquiry",
+      "citation": "Rigveda 10.129",
+      "family": "Veda | Shruti",
+      "summary": "Supports study of early cosmological inquiry and disciplined uncertainty.",
+      "confidence": 69,
+      "boundary": "Do not present the hymn as proof of a modern scientific theory.",
+      "keywords": [
+        "nasadiya",
+        "creation",
+        "cosmology",
+        "origin",
+        "uncertainty",
+        "rigveda"
+      ],
+      "missing_fields": [
+        "Vedic reviewer",
+        "translation rights",
+        "modern analogy boundary"
+      ],
+      "rights_state": "needs-review"
+    },
+    {
+      "id": "bg-6-5-self-lift",
+      "status": "review",
+      "title": "Self-support and self-discipline",
+      "citation": "Bhagavad Gita 6.5",
+      "family": "Bhagavad Gita | Smriti",
+      "summary": "Can support reflection on agency when read with context and without blaming people for suffering.",
+      "confidence": 73,
+      "boundary": "Do not use this verse to dismiss mental health care, social conditions, or other support.",
+      "keywords": [
+        "self",
+        "agency",
+        "discipline",
+        "support",
+        "lift",
+        "mind"
+      ],
+      "missing_fields": [
+        "context note",
+        "care boundary review"
+      ],
+      "rights_state": "needs-review"
+    },
+    {
+      "id": "no-source-overclaim",
+      "status": "no-source",
+      "title": "Unsupported modern overclaim",
+      "citation": "No direct source",
+      "family": "No-source behavior",
+      "summary": "Used to refuse inflated claims when no reviewed source can carry the answer.",
+      "confidence": 95,
+      "boundary": "Say no reliable reviewed source is present; do not invent validation.",
+      "keywords": [
+        "bitcoin",
+        "airplane",
+        "medical",
+        "cure",
+        "diagnosis",
+        "therapy",
+        "predict"
+      ],
+      "missing_fields": [
+        "none"
+      ],
+      "rights_state": "needs-review"
+    }
+  ]
+}

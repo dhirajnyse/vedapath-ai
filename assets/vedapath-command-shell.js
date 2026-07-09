@@ -1,9 +1,9 @@
 (function () {
-  const releaseBadge = "v4.7.6 route guard";
+  const releaseBadge = "v4.8.1 source path";
   const prefKey = "vedapathCommandShellPrefs";
   const groups = [
     { title: "Start", labels: ["Home", "Build", "Brand", "Blueprint"] },
-    { title: "Source", labels: ["Answers", "Review", "Mantra"] },
+    { title: "Source", labels: ["Ask Demo", "Answers", "Review", "Mantra"] },
     { title: "Practice", labels: ["Life", "Talk", "Pattern", "Daily"] },
     { title: "Retrieval", labels: ["Packet", "Launch", "Pilot", "Records", "Desk", "QA Pack", "Ask Flow", "Links", "Rights", "History", "Score", "Waitlist", "Edition", "Rights Desk", "Identity", "Promote", "Invite", "Telemetry"] },
     { title: "Pilot Launch", labels: ["Signals", "First Session", "Source Triage", "Answer Gate", "Launch Console"] },
@@ -14,7 +14,8 @@
     { title: "Launch Stack", labels: ["Source API", "Retrieval Boundary", "Answer Adapter", "Review Handoff", "Private Gate"] },
     { title: "Launch Tests", labels: ["Source API Tests", "No-Source Eval", "Fixture Runner", "Adapter Tests", "Demo Script"] },
     { title: "Backend Prototype", labels: ["Backend Gate", "Source Stub", "Retrieval CLI", "Demo Ledger", "Backend Ready"] },
-    { title: "Backend Spike", labels: ["Backend Choice", "Local API", "Packet Tests", "API Adapter", "Backend Handoff"] }
+    { title: "Backend Spike", labels: ["Backend Choice", "Local API", "Packet Tests", "API Adapter", "Backend Handoff"] },
+    { title: "Source Path", labels: ["Spike Review", "API Reliability", "Source Registry", "Path Readiness"] }
   ];
   const pageTitles = {
     Home: "VedaPath command center",
@@ -95,7 +96,12 @@
     "Local API": "Local Source API Server",
     "Packet Tests": "Source Packet Contract Tests",
     "API Adapter": "Local API Adapter Fallback",
-    "Backend Handoff": "Private Demo Backend Handoff"
+    "Backend Handoff": "Private Demo Backend Handoff",
+    "Spike Review": "Backend Spike Review Gate",
+    "API Reliability": "Source API Reliability Contract",
+    "Source Registry": "Curated Source Registry",
+    "Ask Demo": "Integrated Ask Demo",
+    "Path Readiness": "Source Path Readiness Console"
   };
   const bodyPageTitles = {
     "permission-execution-draft-page": "Controlled draft gate",
@@ -169,7 +175,12 @@
     "local-api-adapter-fallback-page": "Local API Adapter Fallback",
     "source-packet-contract-tests-page": "Source Packet Contract Tests",
     "local-source-api-server-page": "Local Source API Server",
-    "backend-spike-choice-page": "Backend Spike Choice"
+    "backend-spike-choice-page": "Backend Spike Choice",
+    "backend-spike-review-gate-page": "Backend Spike Review Gate",
+    "source-api-reliability-contract-page": "Source API Reliability Contract",
+    "curated-source-registry-page": "Curated Source Registry",
+    "integrated-ask-demo-page": "Integrated Ask Demo",
+    "source-path-readiness-console-page": "Source Path Readiness Console"
   };
 
 
@@ -208,7 +219,12 @@
     ["API Adapter", "localapiadapterfallback.html"],
     ["Packet Tests", "sourcepacketcontracttests.html"],
     ["Local API", "localsourceapiserver.html"],
-    ["Backend Choice", "backendspikechoice.html"]
+    ["Backend Choice", "backendspikechoice.html"],
+    ["Spike Review", "backendspikereviewgate.html"],
+    ["API Reliability", "sourceapireliabilitycontract.html"],
+    ["Source Registry", "curatedsourceregistry.html"],
+    ["Ask Demo", "askdemo.html"],
+    ["Path Readiness", "sourcepathreadinessconsole.html"]
   ];
 
   function safeParse(value, fallback) {
@@ -297,11 +313,8 @@
   function groupLinks(links) {
     const used = new Set();
     const sections = groups.map((group) => {
-      const items = links.filter((link) => {
-        const match = group.labels.includes(link.label);
-        if (match) used.add(link.label);
-        return match;
-      });
+      const items = group.labels.map((label) => links.find((link) => link.label === label)).filter(Boolean);
+      items.forEach((link) => used.add(link.label));
       return { title: group.title, items };
     }).filter((section) => section.items.length);
     const other = links.filter((link) => !used.has(link.label));

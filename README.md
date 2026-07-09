@@ -1,3 +1,43 @@
+## v4.8.1 Source Path Readiness Console
+
+One executable readiness console now checks the review gate, API errors, registry search, Ask demo contracts, legacy backend checks, routes, and static links.
+
+- Open: [Source Path Readiness Console](sourcepathreadinessconsole.html)
+- Data: data/vedapath-source-path-readiness-console.json
+- Boundary: Private-demo and reviewed-preview only; no live AI generation, production corpus delivery, durable accounts, hidden telemetry, payments, public launch, or medical, legal, ritual, or spiritual authority.
+
+## v4.8.0 Integrated Ask Demo
+
+The first integrated Ask demo works immediately from the reviewed static registry and can optionally connect to the private local Source API.
+
+- Open: [Integrated Ask Demo](askdemo.html)
+- Data: data/vedapath-integrated-ask-demo.json
+- Boundary: Private-demo and reviewed-preview only; no live AI generation, production corpus delivery, durable accounts, hidden telemetry, payments, public launch, or medical, legal, ritual, or spiritual authority.
+
+## v4.7.9 Curated Source Registry
+
+A versioned source registry now powers bounded search, family filters, source status, and deterministic matching across eight citation records plus a no-source guard.
+
+- Open: [Curated Source Registry](curatedsourceregistry.html)
+- Data: data/vedapath-curated-source-registry.json
+- Boundary: Private-demo and reviewed-preview only; no live AI generation, production corpus delivery, durable accounts, hidden telemetry, payments, public launch, or medical, legal, ritual, or spiritual authority.
+
+## v4.7.8 Source API Reliability Contract
+
+The local Source API now returns versioned envelopes, request IDs, typed errors, method rules, payload limits, and calm validation messages.
+
+- Open: [Source API Reliability Contract](sourceapireliabilitycontract.html)
+- Data: data/vedapath-source-api-reliability-contract.json
+- Boundary: Private-demo and reviewed-preview only; no live AI generation, production corpus delivery, durable accounts, hidden telemetry, payments, public launch, or medical, legal, ritual, or spiritual authority.
+
+## v4.7.7 Backend Spike Review Gate
+
+A review gate now turns the private backend demo into a clear go, hold, or revise decision while production and public launch remain locked.
+
+- Open: [Backend Spike Review Gate](backendspikereviewgate.html)
+- Data: data/vedapath-backend-spike-review-gate.json
+- Boundary: Private-demo and reviewed-preview only; no live AI generation, production corpus delivery, durable accounts, hidden telemetry, payments, public launch, or medical, legal, ritual, or spiritual authority.
+
 ## v4.7.6 Route Safety Guard
 
 Brand-board links now stay root-safe on GitHub Pages, and stale nested URLs recover instead of leaving users on a 404 page.
