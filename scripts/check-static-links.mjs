@@ -3,7 +3,9 @@ import path from "node:path";
 
 const pages = [
   "index.html",
+  "404.html",
   "build-status.html",
+  "brand/brand-board.html",
   "answerpacketpilot.html",
   "launchreadinesshub.html",
   "controlledpermissionexecutionauthorizationdraftreviewgate.html",

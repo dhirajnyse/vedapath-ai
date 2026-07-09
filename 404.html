@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VedaPath AI Route Guard</title>
+    <link rel="icon" href="assets/vedapath-3d-logo-concept.png">
+    <style>
+      :root {
+        --bhagwa: #d65a1f;
+        --deep-ochre: #a83e12;
+        --warm-ivory: #fff7ea;
+        --ink: #1f1a17;
+        --muted-brown: #5b4638;
+        --peacock-green: #145c4a;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        min-height: 100vh;
+        margin: 0;
+        display: grid;
+        place-items: center;
+        background:
+          linear-gradient(rgba(255, 247, 234, 0.96), rgba(255, 247, 234, 0.96)),
+          repeating-linear-gradient(90deg, rgba(20, 92, 74, 0.045) 0 1px, transparent 1px 24px),
+          repeating-linear-gradient(0deg, rgba(168, 62, 18, 0.04) 0 1px, transparent 1px 24px);
+        color: var(--ink);
+        font-family: Inter, "IBM Plex Sans", system-ui, sans-serif;
+        line-height: 1.5;
+      }
+
+      main {
+        width: min(560px, calc(100% - 32px));
+        border: 1px solid rgba(91, 70, 56, 0.16);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.72);
+        padding: 28px;
+        box-shadow: 0 24px 80px rgba(54, 35, 24, 0.08);
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 24px;
+      }
+
+      .brand img {
+        width: 48px;
+        height: 48px;
+        border-radius: 8px;
+        object-fit: cover;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        min-height: 28px;
+        align-items: center;
+        border: 1px solid rgba(214, 90, 31, 0.22);
+        border-radius: 999px;
+        padding: 4px 10px;
+        color: var(--deep-ochre);
+        font-size: 12px;
+        font-weight: 800;
+      }
+
+      h1 {
+        margin: 14px 0 10px;
+        font-size: clamp(32px, 7vw, 48px);
+        line-height: 1.02;
+        letter-spacing: 0;
+      }
+
+      p {
+        margin: 0;
+        color: var(--muted-brown);
+      }
+
+      a {
+        display: inline-flex;
+        min-height: 42px;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+        border: 1px solid rgba(20, 92, 74, 0.32);
+        border-radius: 8px;
+        padding: 9px 14px;
+        color: var(--peacock-green);
+        font-weight: 800;
+        text-decoration: none;
+      }
+
+      a:hover,
+      a:focus-visible {
+        border-color: var(--bhagwa);
+        color: var(--deep-ochre);
+        outline: none;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="brand">
+        <img id="routeLogo" src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
+        <div>
+          <strong>VedaPath AI</strong>
+          <p>Route guard</p>
+        </div>
+      </div>
+      <span class="eyebrow">Finding the calm path</span>
+      <h1>One moment. Redirecting to the right room.</h1>
+      <p id="routeMessage">If this page was opened from an old nested link, VedaPath will send it back to the correct root page.</p>
+      <a id="routeLink" href="index.html">Open VedaPath Home</a>
+    </main>
+    <script>
+      (function () {
+        const path = window.location.pathname;
+        const nestedBrand = path.match(/^(.*\/)brand\/([^/]+\.html)$/);
+        const root = nestedBrand ? nestedBrand[1] : path.replace(/[^/]*$/, "");
+        const target = nestedBrand ? root + nestedBrand[2] + window.location.search + window.location.hash : "";
+        const link = document.getElementById("routeLink");
+        const logo = document.getElementById("routeLogo");
+        const message = document.getElementById("routeMessage");
+
+        logo.src = root + "assets/vedapath-3d-logo-concept.png";
+        link.href = root + "index.html";
+
+        if (target) {
+          link.href = target;
+          link.textContent = "Open corrected page";
+          message.textContent = "This old /brand/ route points to a root VedaPath page. Redirecting now.";
+          window.setTimeout(function () {
+            window.location.replace(target);
+          }, 300);
+          return;
+        }
+
+        window.setTimeout(function () {
+          window.location.replace(link.href);
+        }, 1200);
+      }());
+    </script>
+  </body>
+</html>

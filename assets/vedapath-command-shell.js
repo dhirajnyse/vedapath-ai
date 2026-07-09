@@ -1,5 +1,5 @@
 (function () {
-  const releaseBadge = "v4.7.5 backend handoff";
+  const releaseBadge = "v4.7.6 route guard";
   const prefKey = "vedapathCommandShellPrefs";
   const groups = [
     { title: "Start", labels: ["Home", "Build", "Brand", "Blueprint"] },
@@ -248,6 +248,26 @@
     return anchor.pathname.replace(/\/index\.html$/, "/");
   }
 
+  function pagePrefix() {
+    const asset = document.querySelector('link[href*="assets/"], script[src*="assets/"], img[src*="assets/"]');
+    const value = asset && (asset.getAttribute("href") || asset.getAttribute("src") || "");
+    if (value && value.includes("assets/")) {
+      return value.slice(0, value.indexOf("assets/"));
+    }
+    return "";
+  }
+
+  function siteHref(href) {
+    const value = String(href || "#").trim();
+    if (!value || /^(https?:|mailto:|tel:|#|data:)/.test(value)) return value || "#";
+    if (value.startsWith("/")) return value;
+    if (value.startsWith("../")) return value;
+
+    const prefix = pagePrefix();
+    const clean = value.replace(/^\.\//, "");
+    return prefix ? prefix + clean : clean;
+  }
+
   function activeLink(links) {
     const current = normalizePath(location.href);
     return links.find((link) => link.active) ||
@@ -258,7 +278,7 @@
   function collectLinks(nav) {
     const links = Array.from(nav.querySelectorAll("a")).map((link) => ({
       label: link.textContent.trim(),
-      href: link.getAttribute("href") || "#",
+      href: siteHref(link.getAttribute("href") || "#"),
       active: link.classList.contains("active")
     })).filter((link) => link.label);
     const seen = new Set(links.map((link) => link.label));
@@ -266,8 +286,8 @@
       if (!seen.has(label)) {
         links.push({
           label,
-          href,
-          active: normalizePath(href) === normalizePath(location.href)
+          href: siteHref(href),
+          active: normalizePath(siteHref(href)) === normalizePath(location.href)
         });
       }
     });
@@ -290,7 +310,7 @@
   }
 
   function railHtml(brand, links) {
-    const brandHref = brand && brand.getAttribute("href") ? brand.getAttribute("href") : "index.html#top";
+    const brandHref = brand && brand.getAttribute("href") ? siteHref(brand.getAttribute("href")) : siteHref("index.html#top");
     const brandImg = brand && brand.querySelector("img") ? brand.querySelector("img").getAttribute("src") : "assets/vedapath-3d-logo-concept.png";
     const brandTitle = brand && brand.querySelector("strong") ? brand.querySelector("strong").textContent.trim() : "VedaPath AI";
     const brandSub = brand && brand.querySelector("small") ? brand.querySelector("small").textContent.trim() : "Source-first learning companion";

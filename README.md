@@ -1,3 +1,11 @@
+## v4.7.6 Route Safety Guard
+
+Brand-board links now stay root-safe on GitHub Pages, and stale nested URLs recover instead of leaving users on a 404 page.
+
+- Open: [Build Status](build-status.html)
+- Fixed: [Brand Board](brand/brand-board.html), [Product Blueprint](blueprint.html), [Daily Loop](daily.html)
+- Boundary: This is a route-safety release only; it does not enable live AI generation, public corpus delivery, production storage, accounts, payments, public launch, or medical/legal/ritual/spiritual authority.
+
 ## v4.7.1 Backend Spike Choice
 
 VedaPath now chooses a local Node Source API as the first backend spike because it keeps the source packet visible, deterministic, and private-demo safe.

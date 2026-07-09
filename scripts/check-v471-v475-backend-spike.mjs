@@ -63,7 +63,7 @@ const commandShell = readFileSync("assets/vedapath-command-shell.js", "utf8");
 for (const item of files) {
   assert(commandShell.includes(item.label), "command shell missing " + item.label);
 }
-assert(commandShell.includes("v4.7.5 backend handoff"), "command shell release badge not updated");
+assert(/v4\.7\.[5-9] [^"]+/.test(commandShell), "command shell release badge not updated");
 assert(commandShell.includes("Backend Spike"), "command shell missing Backend Spike group");
 
 const staticLinks = readFileSync("scripts/check-static-links.mjs", "utf8");

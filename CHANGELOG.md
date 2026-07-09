@@ -1,3 +1,10 @@
+## v4.7.6 Route Safety Guard
+
+- Changes made: Fixes Brand-board subfolder links so GitHub Pages opens root rooms correctly, hardens the command-shell rail link resolver for nested pages, adds a custom 404 route guard for stale `/brand/*.html` URLs, and expands static route checks.
+- Files changed: `brand/brand-board.html`, `assets/vedapath-command-shell.js`, `404.html`, `scripts/check-static-links.mjs`, `scripts/check-v476-route-safety.mjs`, `scripts/check-v471-v475-backend-spike.mjs`, `build-status.html`, `README.md`, `CHANGELOG.md`.
+- Checks run: `node --check assets/vedapath-command-shell.js`, `node --check scripts/check-v476-route-safety.mjs`, `node scripts/check-v476-route-safety.mjs`, `node scripts/check-static-links.mjs`, `node scripts/check-v471-v475-backend-spike.mjs`, and local HTTP smoke checks.
+- Known risks: GitHub Pages may take a minute to publish the fix; the custom 404 redirect only runs after GitHub serves the 404 page, and any future subfolder page still needs route-safe links.
+
 ## v4.7.1 Backend Spike Choice
 
 - Changes made: Selects the first backend spike path and keeps serverless, production corpus, accounts, telemetry, payments, and public launch explicitly closed.
