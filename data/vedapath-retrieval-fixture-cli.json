@@ -1,0 +1,133 @@
+{
+  "headline": "The retrieval loop can now be tested from the command line.",
+  "copy": "This room mirrors the CLI results so product, source, and engineering decisions stay connected.",
+  "metrics": [
+    {
+      "label": "Fixtures",
+      "value": "6"
+    },
+    {
+      "label": "Expected source",
+      "value": "3"
+    },
+    {
+      "label": "Expected no-source",
+      "value": "2"
+    },
+    {
+      "label": "Live service",
+      "value": "Off"
+    }
+  ],
+  "steps": [
+    {
+      "title": "Ask fixture",
+      "copy": "Read a known test question from the local set."
+    },
+    {
+      "title": "Query stub",
+      "copy": "Call querySource and capture the packet."
+    },
+    {
+      "title": "Assert posture",
+      "copy": "Check source_found, reviewer_state, citation, and boundary."
+    },
+    {
+      "title": "Print report",
+      "copy": "Show pass, fail, and safe no-source results."
+    }
+  ],
+  "candidates": [
+    {
+      "id": "cli-oppenheimer",
+      "title": "Oppenheimer source category",
+      "citation": "Bhagavad Gita 11.32",
+      "score": "Pass",
+      "reason": "Source found and category boundary returned.",
+      "decision": "Use as source-found fixture",
+      "record": {
+        "id": "bg-11-32-category",
+        "status": "approved",
+        "title": "Oppenheimer category correction",
+        "citation": "Bhagavad Gita 11.32",
+        "family": "Bhagavad Gita | Smriti",
+        "summary": "Corrects the common claim: the famous line is associated with the Gita, not the four Vedas.",
+        "confidence": "High | 91/100",
+        "boundary": "Do not call it a direct quote from the four Vedas.",
+        "missingFields": [
+          "translation variant note"
+        ]
+      },
+      "packet": "CLI fixture\nQuery: What scripture did Oppenheimer quote?\nExpected: Bhagavad Gita 11.32, approved.\nResult: pass."
+    },
+    {
+      "id": "cli-steady",
+      "title": "Steady action question",
+      "citation": "Bhagavad Gita 2.48",
+      "score": "Pass",
+      "reason": "Source found with reflection boundary.",
+      "decision": "Use as calm-action fixture",
+      "record": {
+        "id": "bg-2-48-steadiness",
+        "status": "approved",
+        "title": "Steady action",
+        "citation": "Bhagavad Gita 2.48",
+        "family": "Bhagavad Gita | Smriti",
+        "summary": "Supports practical answers about steady action while avoiding promises of guaranteed calm.",
+        "confidence": "High | 86/100",
+        "boundary": "Reflection support only; not therapy, ritual instruction, or spiritual command.",
+        "missingFields": [
+          "licensed translation display",
+          "final reviewer signature"
+        ]
+      },
+      "packet": "CLI fixture\nQuery: How can I act calmly when results are uncertain?\nExpected: Bhagavad Gita 2.48, approved.\nResult: pass."
+    },
+    {
+      "id": "cli-gayatri-hold",
+      "title": "Gayatri mantra reviewer hold",
+      "citation": "Rigveda 3.62.10",
+      "score": "Pass",
+      "reason": "Source found but reviewer_state hold blocks practice instruction.",
+      "decision": "Use as hold fixture",
+      "record": {
+        "id": "rv-3-62-10-gayatri",
+        "status": "hold",
+        "title": "Gayatri mantra care",
+        "citation": "Rigveda 3.62.10",
+        "family": "Veda | Shruti",
+        "summary": "Useful for source context, but learner-facing practice needs reviewer and rights review.",
+        "confidence": "Medium | 68/100",
+        "boundary": "No ritual instruction, initiation advice, or recitation authority.",
+        "missingFields": [
+          "mantra reviewer",
+          "recitation boundary",
+          "rights approval"
+        ]
+      },
+      "packet": "CLI fixture\nQuery: Teach me Gayatri mantra practice.\nExpected: hold and no ritual authority.\nResult: pass."
+    },
+    {
+      "id": "cli-bitcoin-no-source",
+      "title": "Bitcoin overclaim",
+      "citation": "No direct source",
+      "score": "Pass",
+      "reason": "No-source path returned instead of invented validation.",
+      "decision": "Use as refusal fixture",
+      "record": {
+        "id": "no-source-overclaim",
+        "status": "no-source",
+        "title": "Unsupported modern overclaim",
+        "citation": "No direct source",
+        "family": "No-source behavior",
+        "summary": "Used to refuse inflated claims when no reviewed source can carry the answer.",
+        "confidence": "High | 95/100",
+        "boundary": "Say no reliable reviewed source is present; do not invent validation.",
+        "missingFields": [
+          "none"
+        ]
+      },
+      "packet": "CLI fixture\nQuery: Did the Vedas predict bitcoin?\nExpected: source_found false.\nResult: pass."
+    }
+  ]
+}

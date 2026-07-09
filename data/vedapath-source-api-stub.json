@@ -1,0 +1,199 @@
+{
+  "headline": "A source API response should be boring, inspectable, and safe.",
+  "copy": "The stub gives the future backend a contract before we choose infrastructure or connect a model.",
+  "fields": [
+    {
+      "name": "trace_id",
+      "required": true,
+      "type": "string",
+      "note": "Every response must be debuggable."
+    },
+    {
+      "name": "query",
+      "required": true,
+      "type": "string",
+      "note": "Keep the original user question visible."
+    },
+    {
+      "name": "source_found",
+      "required": true,
+      "type": "boolean",
+      "note": "No-source is explicit."
+    },
+    {
+      "name": "primary_source_id",
+      "required": false,
+      "type": "string",
+      "note": "Required only when a source is found."
+    },
+    {
+      "name": "citation",
+      "required": true,
+      "type": "string",
+      "note": "Use No direct source for unsupported claims."
+    },
+    {
+      "name": "family",
+      "required": true,
+      "type": "string",
+      "note": "Separate Veda, Gita, Upanishad, and no-source behavior."
+    },
+    {
+      "name": "confidence",
+      "required": true,
+      "type": "number",
+      "note": "Numeric confidence travels with the source packet."
+    },
+    {
+      "name": "reviewer_state",
+      "required": true,
+      "type": "string",
+      "note": "approved, review, hold, or no-source."
+    },
+    {
+      "name": "rights_state",
+      "required": true,
+      "type": "string",
+      "note": "No licensed translation display unless allowed."
+    },
+    {
+      "name": "answer_boundary",
+      "required": true,
+      "type": "string",
+      "note": "The backend returns the boundary, not just content."
+    }
+  ],
+  "required": [
+    {
+      "title": "Trace visible",
+      "copy": "Every packet has a trace id that can enter an audit log later."
+    },
+    {
+      "title": "No-source visible",
+      "copy": "Unsupported claims return source_found false with a reason."
+    },
+    {
+      "title": "Reviewer visible",
+      "copy": "Hold and review states stay visible to the answer layer."
+    },
+    {
+      "title": "Rights visible",
+      "copy": "Translation display cannot be assumed."
+    }
+  ],
+  "records": [
+    {
+      "id": "bg-2-48-steadiness",
+      "status": "approved",
+      "title": "Steady action",
+      "citation": "Bhagavad Gita 2.48",
+      "family": "Bhagavad Gita | Smriti",
+      "summary": "Supports practical answers about steady action while avoiding promises of guaranteed calm.",
+      "confidence": "High | 86/100",
+      "boundary": "Reflection support only; not therapy, ritual instruction, or spiritual command.",
+      "missingFields": [
+        "licensed translation display",
+        "final reviewer signature"
+      ]
+    },
+    {
+      "id": "bg-11-32-category",
+      "status": "approved",
+      "title": "Oppenheimer category correction",
+      "citation": "Bhagavad Gita 11.32",
+      "family": "Bhagavad Gita | Smriti",
+      "summary": "Corrects the common claim: the famous line is associated with the Gita, not the four Vedas.",
+      "confidence": "High | 91/100",
+      "boundary": "Do not call it a direct quote from the four Vedas.",
+      "missingFields": [
+        "translation variant note"
+      ]
+    },
+    {
+      "id": "rv-3-62-10-gayatri",
+      "status": "hold",
+      "title": "Gayatri mantra care",
+      "citation": "Rigveda 3.62.10",
+      "family": "Veda | Shruti",
+      "summary": "Useful for source context, but learner-facing practice needs reviewer and rights review.",
+      "confidence": "Medium | 68/100",
+      "boundary": "No ritual instruction, initiation advice, or recitation authority.",
+      "missingFields": [
+        "mantra reviewer",
+        "recitation boundary",
+        "rights approval"
+      ]
+    },
+    {
+      "id": "isha-1-stewardship",
+      "status": "review",
+      "title": "Stewardship and restraint",
+      "citation": "Isha Upanishad 1",
+      "family": "Upanishad | Shruti",
+      "summary": "Can support careful answers about possession and restraint if commentary and rights notes are visible.",
+      "confidence": "Medium | 72/100",
+      "boundary": "Do not flatten the verse into wealth advice or productivity advice.",
+      "missingFields": [
+        "commentary lens",
+        "translation rights"
+      ]
+    },
+    {
+      "id": "no-source-overclaim",
+      "status": "no-source",
+      "title": "Unsupported modern overclaim",
+      "citation": "No direct source",
+      "family": "No-source behavior",
+      "summary": "Used to refuse inflated claims when no reviewed source can carry the answer.",
+      "confidence": "High | 95/100",
+      "boundary": "Say no reliable reviewed source is present; do not invent validation.",
+      "missingFields": [
+        "none"
+      ]
+    }
+  ],
+  "example": {
+    "query": "What scripture did Oppenheimer quote?",
+    "trace_id": "vp-local-bg-11-32",
+    "source_found": true,
+    "primary_source_id": "bg-11-32-category",
+    "citation": "Bhagavad Gita 11.32",
+    "family": "Bhagavad Gita | Smriti",
+    "confidence": 91,
+    "reviewer_state": "approved",
+    "rights_state": "citation-only",
+    "answer_boundary": "Do not call it a direct quote from the four Vedas."
+  },
+  "metrics": [
+    {
+      "label": "Fields",
+      "value": "10"
+    },
+    {
+      "label": "Records",
+      "value": "5"
+    },
+    {
+      "label": "No-source",
+      "value": "On"
+    },
+    {
+      "label": "Network",
+      "value": "Off"
+    }
+  ],
+  "rules": [
+    {
+      "title": "Packets first",
+      "copy": "The stub returns structured source packets, not final prose."
+    },
+    {
+      "title": "Rights cautious",
+      "copy": "The response can cite a source without displaying a licensed translation."
+    },
+    {
+      "title": "Hold means hold",
+      "copy": "A hold packet cannot become a practice instruction."
+    }
+  ]
+}

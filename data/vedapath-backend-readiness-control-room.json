@@ -1,0 +1,118 @@
+{
+  "position": "Ready for a small backend spike, not public launch",
+  "headline": "The backend prototype is ready for founder review.",
+  "copy": "The local source packet path, fixture CLI, and private demo ledger are complete enough to choose the first real backend spike.",
+  "postures": [
+    {
+      "title": "Source packet contract",
+      "decision": "Ready",
+      "copy": "Trace, citation, family, confidence, reviewer state, rights posture, and boundary are defined."
+    },
+    {
+      "title": "No-source behavior",
+      "decision": "Ready",
+      "copy": "Unsupported modern claims return explicit no-source packets."
+    },
+    {
+      "title": "Fixture runner",
+      "decision": "Ready",
+      "copy": "Oppenheimer, steady action, Gayatri hold, and no-source cases are testable locally."
+    },
+    {
+      "title": "Private demo ledger",
+      "decision": "Ready for review",
+      "copy": "Event names and storage boundaries are defined, but not production-approved."
+    },
+    {
+      "title": "Public launch",
+      "decision": "Blocked",
+      "copy": "Live service, privacy controls, security, rights, reviewer operations, and support remain open."
+    }
+  ],
+  "flow": [
+    {
+      "title": "Run stub",
+      "copy": "Use the local source API module for deterministic lookup."
+    },
+    {
+      "title": "Run fixtures",
+      "copy": "Verify source-found, hold, review, and no-source behavior."
+    },
+    {
+      "title": "Review ledger",
+      "copy": "Check that private demo learning avoids sensitive storage."
+    },
+    {
+      "title": "Choose spike",
+      "copy": "Decide whether the first backend is a Node API, serverless function, or separate service repo."
+    }
+  ],
+  "decisions": [
+    {
+      "label": "Private backend spike",
+      "value": "Allowed",
+      "reason": "A tiny endpoint can mirror the local Source API stub after founder review."
+    },
+    {
+      "label": "Real retrieval corpus",
+      "value": "Review",
+      "reason": "Needs rights, source edition, reviewer workflow, and storage model."
+    },
+    {
+      "label": "Demo telemetry",
+      "value": "Review",
+      "reason": "Needs consent, export/delete, retention, and privacy approval before pilot use."
+    },
+    {
+      "label": "Public launch",
+      "value": "Blocked",
+      "reason": "The product is not launch-ready until service, rights, review, privacy, security, and support are real."
+    },
+    {
+      "label": "Payment or accounts",
+      "value": "Blocked",
+      "reason": "No billing or identity until production trust controls exist."
+    }
+  ],
+  "metrics": [
+    {
+      "label": "Prototype rooms",
+      "value": "5"
+    },
+    {
+      "label": "Local scripts",
+      "value": "3"
+    },
+    {
+      "label": "Launch locks",
+      "value": "5"
+    },
+    {
+      "label": "Next",
+      "value": "Backend spike"
+    }
+  ],
+  "locks": [
+    {
+      "title": "Live AI lock",
+      "copy": "No generated answer pipeline is enabled by this batch."
+    },
+    {
+      "title": "Storage lock",
+      "copy": "No production user or reviewer data is stored."
+    },
+    {
+      "title": "Rights lock",
+      "copy": "No licensed text display is assumed."
+    },
+    {
+      "title": "Privacy lock",
+      "copy": "Telemetry remains a contract, not an active collection system."
+    },
+    {
+      "title": "Launch lock",
+      "copy": "Private demo readiness is not public launch readiness."
+    }
+  ],
+  "packet": "Backend Readiness Control Room v4.7.0\nReady: local Source API stub, retrieval fixture CLI, private demo ledger contract, backend readiness gate.\nBlocked: live AI answer generation, licensed corpus display, production accounts, durable storage, payments, public launch.\nFounder next decision: choose a tiny backend spike or continue fixture hardening."
+}

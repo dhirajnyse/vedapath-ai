@@ -1,3 +1,28 @@
+## v4.6.6 Backend Prototype Decision Gate
+- Adds a founder-readable backend decision gate that narrows the next infrastructure step to a local Source API stub and fixture CLI.
+- Primary files: `backendprototypedecisiongate.html`, `data/vedapath-backend-prototype-decision-gate.json`, `docs/BACKEND_PROTOTYPE_DECISION_GATE.md`.
+- Product note: Backend prototype is local/static only; it does not enable live AI generation, licensed corpus delivery, public launch, payment, production accounts, durable storage, or medical/legal/ritual/spiritual authority.
+
+## v4.6.7 Source API Stub
+- Adds an executable local Source API stub module plus a source-stub control room that documents required response fields.
+- Primary files: `sourceapistub.html`, `data/vedapath-source-api-stub.json`, `docs/SOURCE_API_STUB.md`.
+- Product note: Backend prototype is local/static only; it does not enable live AI generation, licensed corpus delivery, public launch, payment, production accounts, durable storage, or medical/legal/ritual/spiritual authority.
+
+## v4.6.8 Retrieval Fixture CLI
+- Adds a local retrieval fixture CLI that runs deterministic queries through the Source API stub and reports expected found, hold, review, and no-source behavior.
+- Primary files: `retrievalfixturecli.html`, `data/vedapath-retrieval-fixture-cli.json`, `docs/RETRIEVAL_FIXTURE_CLI.md`.
+- Product note: Backend prototype is local/static only; it does not enable live AI generation, licensed corpus delivery, public launch, payment, production accounts, durable storage, or medical/legal/ritual/spiritual authority.
+
+## v4.6.9 Private Demo Session Ledger
+- Adds a private demo session ledger contract so demo events, consent posture, local storage, and deletion/export boundaries are visible before telemetry begins.
+- Primary files: `privatedemosessionledger.html`, `data/vedapath-private-demo-session-ledger.json`, `docs/PRIVATE_DEMO_SESSION_LEDGER.md`.
+- Product note: Backend prototype is local/static only; it does not enable live AI generation, licensed corpus delivery, public launch, payment, production accounts, durable storage, or medical/legal/ritual/spiritual authority.
+
+## v4.7.0 Backend Readiness Control Room
+- Adds a backend readiness control room and validation script tying source packets, fixture CLI results, demo ledger boundaries, and launch locks into one backend-readiness evidence layer.
+- Primary files: `backendreadinesscontrolroom.html`, `data/vedapath-backend-readiness-control-room.json`, `docs/BACKEND_READINESS_CONTROL_ROOM.md`.
+- Product note: Backend prototype is local/static only; it does not enable live AI generation, licensed corpus delivery, public launch, payment, production accounts, durable storage, or medical/legal/ritual/spiritual authority.
+
 ## v4.6.1 Source API Test Harness
 - Adds executable-style source API fixtures and a validation script so contract readiness can be checked before live retrieval exists.
 - Primary files: `sourceapitestharness.html`, `data/vedapath-source-api-test-harness.json`, `docs/SOURCE_API_TEST_HARNESS.md`.

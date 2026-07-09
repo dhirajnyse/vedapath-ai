@@ -1,0 +1,109 @@
+{
+  "position": "Backend prototype, not product backend",
+  "headline": "The next backend step is a thin source packet service.",
+  "copy": "VedaPath should first prove source lookup, no-source behavior, and demo logging with local deterministic code before opening any real service.",
+  "postures": [
+    {
+      "title": "Source packet service",
+      "decision": "Allowed",
+      "copy": "Return reviewed source candidates, no-source results, confidence, and boundary fields from local fixtures."
+    },
+    {
+      "title": "Live answer generation",
+      "decision": "Blocked",
+      "copy": "No model-generated answer should run until source packets and no-source tests are stable."
+    },
+    {
+      "title": "Production storage",
+      "decision": "Blocked",
+      "copy": "No user reflections, demo data, or reviewer records leave the browser or local files in this batch."
+    },
+    {
+      "title": "Public launch",
+      "decision": "Blocked",
+      "copy": "Rights, reviewer operations, identity, privacy, support, and security remain unresolved."
+    }
+  ],
+  "flow": [
+    {
+      "title": "Decide slice",
+      "copy": "Build only Source API stub, retrieval fixture CLI, demo ledger contract, and readiness control."
+    },
+    {
+      "title": "Prove fixtures",
+      "copy": "Use deterministic questions to test source found, no-source, hold, and review paths."
+    },
+    {
+      "title": "Keep locks visible",
+      "copy": "Every page states what is not enabled."
+    },
+    {
+      "title": "Review next",
+      "copy": "Founder decides whether to create a real backend repo or keep improving fixtures."
+    }
+  ],
+  "decisions": [
+    {
+      "label": "Local Source API stub",
+      "value": "Allowed",
+      "reason": "Useful for validating response shape without private data or network dependency."
+    },
+    {
+      "label": "Retrieval fixture CLI",
+      "value": "Allowed",
+      "reason": "Lets us run repeatable tests before choosing infrastructure."
+    },
+    {
+      "label": "Private demo ledger schema",
+      "value": "Allowed",
+      "reason": "Defines events and consent posture without storing production user data."
+    },
+    {
+      "label": "Live AI answers",
+      "value": "Blocked",
+      "reason": "Evidence, rights, evaluation, and review gates must pass first."
+    },
+    {
+      "label": "Public launch",
+      "value": "Blocked",
+      "reason": "Launch remains closed until source, rights, reviewer, privacy, and support systems are real."
+    }
+  ],
+  "metrics": [
+    {
+      "label": "Backend scope",
+      "value": "Thin"
+    },
+    {
+      "label": "Live API",
+      "value": "Off"
+    },
+    {
+      "label": "Storage",
+      "value": "Local"
+    },
+    {
+      "label": "Launch",
+      "value": "Closed"
+    }
+  ],
+  "locks": [
+    {
+      "title": "Source lock",
+      "copy": "Backend responses must start as source packets, not eloquent answer text."
+    },
+    {
+      "title": "No-source lock",
+      "copy": "A refusal path is a successful result, not an error."
+    },
+    {
+      "title": "Privacy lock",
+      "copy": "Demo and practice memories remain browser-local until explicit consent and deletion exist."
+    },
+    {
+      "title": "Authority lock",
+      "copy": "The backend cannot present VedaPath as guru, therapist, clinician, or ritual authority."
+    }
+  ],
+  "packet": "Backend Prototype Decision Gate v4.6.6\nDecision: build a local Source API stub, retrieval fixture CLI, and private demo ledger shape.\nAllowed: deterministic source packet tests.\nBlocked: live AI answers, production storage, public launch, payments, sensitive intake.\nNext: implement Source API stub."
+}

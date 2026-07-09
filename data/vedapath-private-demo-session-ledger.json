@@ -1,0 +1,112 @@
+{
+  "headline": "The private demo can record learning posture without becoming surveillance.",
+  "copy": "The ledger keeps event names small and makes every record local, exportable, and deletable in the future product contract.",
+  "progress": 81,
+  "boundary": "Ledger rows are prototype records only; production requires explicit accounts, consent, export, delete, retention, and security review.",
+  "filters": [
+    {
+      "label": "All",
+      "value": "all"
+    },
+    {
+      "label": "allowed",
+      "value": "allowed"
+    },
+    {
+      "label": "blocked",
+      "value": "blocked"
+    },
+    {
+      "label": "review",
+      "value": "review"
+    }
+  ],
+  "records": [
+    {
+      "id": "demo-started",
+      "citation": "Consent notice visible",
+      "family": "Private demo event",
+      "status": "allowed",
+      "risks": [
+        "Allowed only after the demo boundary is shown."
+      ]
+    },
+    {
+      "id": "question-tested",
+      "citation": "Source API stub",
+      "family": "Private demo event",
+      "status": "allowed",
+      "risks": [
+        "Store only question label and source packet id, not sensitive personal story."
+      ]
+    },
+    {
+      "id": "no-source-observed",
+      "citation": "No direct source",
+      "family": "Private demo event",
+      "status": "allowed",
+      "risks": [
+        "No-source outcomes can be counted without storing private claim text."
+      ]
+    },
+    {
+      "id": "feedback-captured",
+      "citation": "Founder note",
+      "family": "Private demo event",
+      "status": "review",
+      "risks": [
+        "Feedback needs export/delete language before broader pilot."
+      ]
+    },
+    {
+      "id": "personal-reflection-stored",
+      "citation": "User reflection",
+      "family": "Private demo event",
+      "status": "blocked",
+      "risks": [
+        "No personal reflections should be stored in demo telemetry."
+      ]
+    },
+    {
+      "id": "production-sync",
+      "citation": "Account storage",
+      "family": "Private demo event",
+      "status": "blocked",
+      "risks": [
+        "No sync until identity, consent, export, delete, and retention exist."
+      ]
+    }
+  ],
+  "metrics": [
+    {
+      "label": "Events",
+      "value": "6"
+    },
+    {
+      "label": "Allowed",
+      "value": "3"
+    },
+    {
+      "label": "Blocked",
+      "value": "2"
+    },
+    {
+      "label": "Storage",
+      "value": "Local"
+    }
+  ],
+  "rules": [
+    {
+      "title": "Consent before event",
+      "copy": "The demo boundary must be visible before any event is recorded."
+    },
+    {
+      "title": "Minimal event names",
+      "copy": "Store posture, not private spiritual or emotional content."
+    },
+    {
+      "title": "Export and delete next",
+      "copy": "The next real pilot needs user-visible control over every record."
+    }
+  ]
+}

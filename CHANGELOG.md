@@ -1,3 +1,38 @@
+## v4.6.6 Backend Prototype Decision Gate
+
+- Changes made: Adds a founder-readable backend decision gate that narrows the next infrastructure step to a local Source API stub and fixture CLI.
+- Files changed: `backendprototypedecisiongate.html`, `data/vedapath-backend-prototype-decision-gate.json`, `docs/BACKEND_PROTOTYPE_DECISION_GATE.md`, `scripts/vedapath-source-api-stub.mjs`, `scripts/vedapath-retrieval-fixture-cli.mjs`, `scripts/check-v466-v470-backend-prototype.mjs`, `assets/vedapath-command-shell.js`, `scripts/check-static-links.mjs`, `index.html`, `build-status.html`, `README.md`, `CHANGELOG.md`.
+- Checks run: `node --check scripts/apply-v466-v470-backend-prototype-batch.mjs`, per-version JSON/page/doc validation, `node --check scripts/vedapath-source-api-stub.mjs`, `node --check scripts/vedapath-retrieval-fixture-cli.mjs`, `node --check scripts/check-v466-v470-backend-prototype.mjs`, `node scripts/check-v466-v470-backend-prototype.mjs`, `node scripts/check-v461-v465-launch-tests.mjs`, `node --check assets/vedapath-command-shell.js`, `node --check assets/vedapath-retrieval-pilot.js`, `node scripts/check-static-links.mjs`, HTTP smoke checks, and browser visual QA.
+- Known risks: Backend prototype is local/static only; it does not enable live AI generation, licensed corpus delivery, public launch, payment, production accounts, durable storage, or medical/legal/ritual/spiritual authority.
+
+## v4.6.7 Source API Stub
+
+- Changes made: Adds an executable local Source API stub module plus a source-stub control room that documents required response fields.
+- Files changed: `sourceapistub.html`, `data/vedapath-source-api-stub.json`, `docs/SOURCE_API_STUB.md`, `scripts/vedapath-source-api-stub.mjs`, `scripts/vedapath-retrieval-fixture-cli.mjs`, `scripts/check-v466-v470-backend-prototype.mjs`, `assets/vedapath-command-shell.js`, `scripts/check-static-links.mjs`, `index.html`, `build-status.html`, `README.md`, `CHANGELOG.md`.
+- Checks run: `node --check scripts/apply-v466-v470-backend-prototype-batch.mjs`, per-version JSON/page/doc validation, `node --check scripts/vedapath-source-api-stub.mjs`, `node --check scripts/vedapath-retrieval-fixture-cli.mjs`, `node --check scripts/check-v466-v470-backend-prototype.mjs`, `node scripts/check-v466-v470-backend-prototype.mjs`, `node scripts/check-v461-v465-launch-tests.mjs`, `node --check assets/vedapath-command-shell.js`, `node --check assets/vedapath-retrieval-pilot.js`, `node scripts/check-static-links.mjs`, HTTP smoke checks, and browser visual QA.
+- Known risks: Backend prototype is local/static only; it does not enable live AI generation, licensed corpus delivery, public launch, payment, production accounts, durable storage, or medical/legal/ritual/spiritual authority.
+
+## v4.6.8 Retrieval Fixture CLI
+
+- Changes made: Adds a local retrieval fixture CLI that runs deterministic queries through the Source API stub and reports expected found, hold, review, and no-source behavior.
+- Files changed: `retrievalfixturecli.html`, `data/vedapath-retrieval-fixture-cli.json`, `docs/RETRIEVAL_FIXTURE_CLI.md`, `scripts/vedapath-source-api-stub.mjs`, `scripts/vedapath-retrieval-fixture-cli.mjs`, `scripts/check-v466-v470-backend-prototype.mjs`, `assets/vedapath-command-shell.js`, `scripts/check-static-links.mjs`, `index.html`, `build-status.html`, `README.md`, `CHANGELOG.md`.
+- Checks run: `node --check scripts/apply-v466-v470-backend-prototype-batch.mjs`, per-version JSON/page/doc validation, `node --check scripts/vedapath-source-api-stub.mjs`, `node --check scripts/vedapath-retrieval-fixture-cli.mjs`, `node --check scripts/check-v466-v470-backend-prototype.mjs`, `node scripts/check-v466-v470-backend-prototype.mjs`, `node scripts/check-v461-v465-launch-tests.mjs`, `node --check assets/vedapath-command-shell.js`, `node --check assets/vedapath-retrieval-pilot.js`, `node scripts/check-static-links.mjs`, HTTP smoke checks, and browser visual QA.
+- Known risks: Backend prototype is local/static only; it does not enable live AI generation, licensed corpus delivery, public launch, payment, production accounts, durable storage, or medical/legal/ritual/spiritual authority.
+
+## v4.6.9 Private Demo Session Ledger
+
+- Changes made: Adds a private demo session ledger contract so demo events, consent posture, local storage, and deletion/export boundaries are visible before telemetry begins.
+- Files changed: `privatedemosessionledger.html`, `data/vedapath-private-demo-session-ledger.json`, `docs/PRIVATE_DEMO_SESSION_LEDGER.md`, `scripts/vedapath-source-api-stub.mjs`, `scripts/vedapath-retrieval-fixture-cli.mjs`, `scripts/check-v466-v470-backend-prototype.mjs`, `assets/vedapath-command-shell.js`, `scripts/check-static-links.mjs`, `index.html`, `build-status.html`, `README.md`, `CHANGELOG.md`.
+- Checks run: `node --check scripts/apply-v466-v470-backend-prototype-batch.mjs`, per-version JSON/page/doc validation, `node --check scripts/vedapath-source-api-stub.mjs`, `node --check scripts/vedapath-retrieval-fixture-cli.mjs`, `node --check scripts/check-v466-v470-backend-prototype.mjs`, `node scripts/check-v466-v470-backend-prototype.mjs`, `node scripts/check-v461-v465-launch-tests.mjs`, `node --check assets/vedapath-command-shell.js`, `node --check assets/vedapath-retrieval-pilot.js`, `node scripts/check-static-links.mjs`, HTTP smoke checks, and browser visual QA.
+- Known risks: Backend prototype is local/static only; it does not enable live AI generation, licensed corpus delivery, public launch, payment, production accounts, durable storage, or medical/legal/ritual/spiritual authority.
+
+## v4.7.0 Backend Readiness Control Room
+
+- Changes made: Adds a backend readiness control room and validation script tying source packets, fixture CLI results, demo ledger boundaries, and launch locks into one backend-readiness evidence layer.
+- Files changed: `backendreadinesscontrolroom.html`, `data/vedapath-backend-readiness-control-room.json`, `docs/BACKEND_READINESS_CONTROL_ROOM.md`, `scripts/vedapath-source-api-stub.mjs`, `scripts/vedapath-retrieval-fixture-cli.mjs`, `scripts/check-v466-v470-backend-prototype.mjs`, `assets/vedapath-command-shell.js`, `scripts/check-static-links.mjs`, `index.html`, `build-status.html`, `README.md`, `CHANGELOG.md`.
+- Checks run: `node --check scripts/apply-v466-v470-backend-prototype-batch.mjs`, per-version JSON/page/doc validation, `node --check scripts/vedapath-source-api-stub.mjs`, `node --check scripts/vedapath-retrieval-fixture-cli.mjs`, `node --check scripts/check-v466-v470-backend-prototype.mjs`, `node scripts/check-v466-v470-backend-prototype.mjs`, `node scripts/check-v461-v465-launch-tests.mjs`, `node --check assets/vedapath-command-shell.js`, `node --check assets/vedapath-retrieval-pilot.js`, `node scripts/check-static-links.mjs`, HTTP smoke checks, and browser visual QA.
+- Known risks: Backend prototype is local/static only; it does not enable live AI generation, licensed corpus delivery, public launch, payment, production accounts, durable storage, or medical/legal/ritual/spiritual authority.
+
 ## v4.6.1 Source API Test Harness
 
 - Changes made: Adds executable-style source API fixtures and a validation script so contract readiness can be checked before live retrieval exists.

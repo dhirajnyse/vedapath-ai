@@ -64,7 +64,12 @@ const pages = [
   "nosourceevaluationsuite.html",
   "sourcecandidatefixturerunner.html",
   "adaptercontracttests.html",
-  "privatedemoscript.html"
+  "privatedemoscript.html",
+  "backendprototypedecisiongate.html",
+  "sourceapistub.html",
+  "retrievalfixturecli.html",
+  "privatedemosessionledger.html",
+  "backendreadinesscontrolroom.html"
 ];
 
 const missing = [];

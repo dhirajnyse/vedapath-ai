@@ -1,5 +1,5 @@
 (function () {
-  const releaseBadge = "v4.6.5 demo script";
+  const releaseBadge = "v4.7.0 backend ready";
   const prefKey = "vedapathCommandShellPrefs";
   const groups = [
     { title: "Start", labels: ["Home", "Build", "Brand", "Blueprint"] },
@@ -12,7 +12,8 @@
     { title: "Source Expansion", labels: ["Coverage", "Family Map", "Dossier", "Approval Flow", "Answer Integration"] },
     { title: "Answer Drafts", labels: ["Draft Review", "Revision", "Trace", "Audience Views", "Evidence Pack"] },
     { title: "Launch Stack", labels: ["Source API", "Retrieval Boundary", "Answer Adapter", "Review Handoff", "Private Gate"] },
-    { title: "Launch Tests", labels: ["Source API Tests", "No-Source Eval", "Fixture Runner", "Adapter Tests", "Demo Script"] }
+    { title: "Launch Tests", labels: ["Source API Tests", "No-Source Eval", "Fixture Runner", "Adapter Tests", "Demo Script"] },
+    { title: "Backend Prototype", labels: ["Backend Gate", "Source Stub", "Retrieval CLI", "Demo Ledger", "Backend Ready"] }
   ];
   const pageTitles = {
     Home: "VedaPath command center",
@@ -83,7 +84,12 @@
     "No-Source Eval": "No-Source Evaluation Suite",
     "Fixture Runner": "Source Candidate Fixture Runner",
     "Adapter Tests": "Adapter Contract Tests",
-    "Demo Script": "Private Demo Script"
+    "Demo Script": "Private Demo Script",
+    "Backend Gate": "Backend Prototype Decision Gate",
+    "Source Stub": "Source API Stub",
+    "Retrieval CLI": "Retrieval Fixture CLI",
+    "Demo Ledger": "Private Demo Session Ledger",
+    "Backend Ready": "Backend Readiness Control Room"
   };
   const bodyPageTitles = {
     "permission-execution-draft-page": "Controlled draft gate",
@@ -147,7 +153,12 @@
     "no-source-evaluation-suite-page": "No-Source Evaluation Suite",
     "source-candidate-fixture-runner-page": "Source Candidate Fixture Runner",
     "adapter-contract-tests-page": "Adapter Contract Tests",
-    "private-demo-script-page": "Private Demo Script"
+    "private-demo-script-page": "Private Demo Script",
+    "backend-prototype-decision-gate-page": "Backend Prototype Decision Gate",
+    "source-api-stub-page": "Source API Stub",
+    "retrieval-fixture-cli-page": "Retrieval Fixture CLI",
+    "private-demo-session-ledger-page": "Private Demo Session Ledger",
+    "backend-readiness-control-room-page": "Backend Readiness Control Room"
   };
 
 
@@ -176,7 +187,12 @@
     ["No-Source Eval", "nosourceevaluationsuite.html"],
     ["Fixture Runner", "sourcecandidatefixturerunner.html"],
     ["Adapter Tests", "adaptercontracttests.html"],
-    ["Demo Script", "privatedemoscript.html"]
+    ["Demo Script", "privatedemoscript.html"],
+    ["Backend Gate", "backendprototypedecisiongate.html"],
+    ["Source Stub", "sourceapistub.html"],
+    ["Retrieval CLI", "retrievalfixturecli.html"],
+    ["Demo Ledger", "privatedemosessionledger.html"],
+    ["Backend Ready", "backendreadinesscontrolroom.html"]
   ];
 
   function safeParse(value, fallback) {
