@@ -1,0 +1,105 @@
+{
+  "position": "No-source is a product feature, not a failure. It keeps trust higher than false helpfulness.",
+  "headline": "When the source is not there, say so calmly.",
+  "copy": "This room defines what the user sees when a question has no reviewed source candidate or when the candidate is blocked.",
+  "postures": [
+    {
+      "decision": "Allowed",
+      "title": "Reviewed source exists",
+      "copy": "Return citation packet and boundary before answer text."
+    },
+    {
+      "decision": "Review",
+      "title": "Weak or incomplete source",
+      "copy": "Show candidate and invite review instead of final answer."
+    },
+    {
+      "decision": "Blocked",
+      "title": "No reviewed source",
+      "copy": "Say the current source set cannot support the claim."
+    }
+  ],
+  "flow": [
+    {
+      "title": "Acknowledge",
+      "copy": "Name that the question is valid but the source set is limited."
+    },
+    {
+      "title": "Boundary",
+      "copy": "Do not invent proof, authority, or certainty."
+    },
+    {
+      "title": "Route",
+      "copy": "Create a source-gap or review-needed ticket."
+    },
+    {
+      "title": "Offer next",
+      "copy": "Suggest a nearby safe source family only if known."
+    }
+  ],
+  "decisions": [
+    {
+      "label": "Airplane claim",
+      "value": "No-source",
+      "reason": "No reviewed source in the fixture set supports the modern technology claim."
+    },
+    {
+      "label": "Bitcoin claim",
+      "value": "No-source",
+      "reason": "Modern financial claims cannot be answered from starter sacred-text fixtures."
+    },
+    {
+      "label": "Medical cure",
+      "value": "Blocked",
+      "reason": "Medical claims must route to emergency or clinical boundaries, not scripture answers."
+    },
+    {
+      "label": "Ritual instruction",
+      "value": "Review",
+      "reason": "Needs tradition, teacher, and ritual context before any guidance."
+    },
+    {
+      "label": "Category confusion",
+      "value": "Answerable",
+      "reason": "If a source classification record exists, answer with source labels."
+    },
+    {
+      "label": "Calm reflection",
+      "value": "Answerable",
+      "reason": "If framed as reflection and source-backed, answer with boundary."
+    }
+  ],
+  "packet": "No-source answer v4.4.3\nI do not have a reviewed source in this VedaPath fixture set for that claim. I should not invent support. I can create a review ticket with the question, likely source family, missing evidence, and risk.",
+  "metrics": [
+    {
+      "label": "No-source cases",
+      "value": "4"
+    },
+    {
+      "label": "Overclaim",
+      "value": "blocked"
+    },
+    {
+      "label": "Ticket route",
+      "value": "visible"
+    },
+    {
+      "label": "Live answer",
+      "value": "off"
+    }
+  ],
+  "locks": [
+    {
+      "title": "No forced answer",
+      "copy": "The product must be allowed to pause."
+    },
+    {
+      "title": "No shame",
+      "copy": "The user should feel guided, not corrected harshly."
+    },
+    {
+      "title": "No hidden expansion",
+      "copy": "A no-source case can create a ticket, not silently widen the corpus."
+    }
+  ]
+}

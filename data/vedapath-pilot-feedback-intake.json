@@ -1,0 +1,97 @@
+{
+  "title": "Pilot Feedback Intake",
+  "headline": "Let feedback arrive as a review ticket.",
+  "copy": "This room turns private pilot comments into local, reviewable feedback packets. It separates UX confusion, source concern, answer restraint, privacy worry, and launch blocker without storing identity or spiritual state.",
+  "boundary": "Feedback records stay browser-local in this prototype. They are product review notes, not user profiles, therapy records, analytics, or accepted source truth.",
+  "readyLabel": "Ready for feedback review",
+  "storageKey": "vedapathPilotFeedbackIntakeV431",
+  "metrics": [
+    {
+      "label": "Lanes",
+      "value": "5"
+    },
+    {
+      "label": "Storage",
+      "value": "Local"
+    },
+    {
+      "label": "Identity",
+      "value": "Off"
+    },
+    {
+      "label": "Review",
+      "value": "Required"
+    }
+  ],
+  "lanes": [
+    {
+      "id": "ux",
+      "title": "UX confusion",
+      "summary": "A user could not find the next clear step or felt the screen asked too much.",
+      "decision": "Route to design",
+      "signals": [
+        "Navigation unclear",
+        "Too many rooms shown",
+        "Button label unclear"
+      ]
+    },
+    {
+      "id": "source",
+      "title": "Source concern",
+      "summary": "A citation, source family, or passage context needs review before trust increases.",
+      "decision": "Route to source review",
+      "signals": [
+        "Citation missing",
+        "Family label unclear",
+        "Translation posture unclear"
+      ]
+    },
+    {
+      "id": "answer",
+      "title": "Answer restraint",
+      "summary": "The answer feels overconfident, too broad, or not careful enough for pilot display.",
+      "decision": "Route to answer review",
+      "signals": [
+        "Boundary missing",
+        "Confidence not visible",
+        "Claim too strong"
+      ]
+    },
+    {
+      "id": "privacy",
+      "title": "Privacy worry",
+      "summary": "The user needs clearer control over what is saved, copied, exported, or deleted.",
+      "decision": "Route to privacy review",
+      "signals": [
+        "Memory unclear",
+        "Consent copy weak",
+        "Delete path hidden"
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Launch blocker",
+      "summary": "Something would prevent a calm private pilot session from starting safely.",
+      "decision": "Route to founder",
+      "signals": [
+        "First session stuck",
+        "Safety claim risk",
+        "Pilot promise unclear"
+      ]
+    }
+  ],
+  "checklist": [
+    "Feedback is about the product surface, not the person.",
+    "No sensitive personal detail is needed.",
+    "The lane has a clear owner.",
+    "The next action is visible.",
+    "The note can be deleted locally."
+  ],
+  "steps": [
+    "Pick the feedback lane.",
+    "Write one product note.",
+    "Keep identity out.",
+    "Copy or save for review."
+  ],
+  "defaultNote": "Pilot feedback: the user found the source card helpful but needs a clearer next action after reading it."
+}

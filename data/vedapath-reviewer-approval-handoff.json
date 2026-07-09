@@ -1,0 +1,133 @@
+{
+  "headline": "A reviewer decision should be readable after the moment passes.",
+  "copy": "Every approval handoff needs owner, source id, decision, risk, reason, and blocked fields so the product never silently upgrades itself.",
+  "metrics": [
+    {
+      "label": "Packets",
+      "value": "4"
+    },
+    {
+      "label": "Approved",
+      "value": "2"
+    },
+    {
+      "label": "Hold",
+      "value": "1"
+    },
+    {
+      "label": "No-source",
+      "value": "1"
+    }
+  ],
+  "steps": [
+    {
+      "title": "Assign",
+      "copy": "Name the reviewer lane and owner."
+    },
+    {
+      "title": "Decide",
+      "copy": "Approve, hold, revise, or refuse."
+    },
+    {
+      "title": "Receipt",
+      "copy": "Save a short decision receipt."
+    },
+    {
+      "title": "Gate",
+      "copy": "Keep production fields blocked until ready."
+    }
+  ],
+  "candidates": [
+    {
+      "id": "handoff-steady",
+      "title": "Approve steady action",
+      "citation": "Bhagavad Gita 2.48",
+      "score": "Approved",
+      "reason": "Suitable for beginner calm reflection with visible boundary.",
+      "decision": "Private demo allowed",
+      "record": {
+        "id": "bg-2-48-steadiness",
+        "status": "approved",
+        "title": "Steady action",
+        "citation": "Bhagavad Gita 2.48",
+        "family": "Bhagavad Gita | Smriti",
+        "summary": "Supports practical answers about steady action while avoiding promises of guaranteed calm.",
+        "confidence": "High | 86/100",
+        "boundary": "Reflection support only; not therapy, ritual instruction, or spiritual command.",
+        "missingFields": [
+          "licensed translation display",
+          "final reviewer signature"
+        ]
+      },
+      "packet": "Reviewer receipt\nOwner: source reviewer\nDecision: approved for private demo\nReason: source supports steady action language; boundary visible\nBlocked: public translation display, medical framing, ritual instruction\nNext: allow adapter draft in private demo"
+    },
+    {
+      "id": "handoff-oppenheimer",
+      "title": "Approve category correction",
+      "citation": "Bhagavad Gita 11.32",
+      "score": "Approved",
+      "reason": "Strong public-interest example with clear category correction.",
+      "decision": "Private demo allowed",
+      "record": {
+        "id": "bg-11-32-category",
+        "status": "approved",
+        "title": "Oppenheimer category correction",
+        "citation": "Bhagavad Gita 11.32",
+        "family": "Bhagavad Gita | Smriti",
+        "summary": "Supports correcting the common claim: the famous line is associated with the Gita, not the four Vedas.",
+        "confidence": "High | 91/100",
+        "boundary": "Do not call it a direct quote from the four Vedas.",
+        "missingFields": [
+          "translation variant note"
+        ]
+      },
+      "packet": "Reviewer receipt\nOwner: interpretation reviewer\nDecision: approved for private demo\nReason: answer corrects Gita vs four Vedas distinction\nBlocked: overclaim, exact translation certainty\nNext: show as product trust example"
+    },
+    {
+      "id": "handoff-gayatri",
+      "title": "Hold mantra practice",
+      "citation": "Rigveda 3.62.10",
+      "score": "Hold",
+      "reason": "Needs mantra reviewer, rights posture, and ritual boundary.",
+      "decision": "Do not release practice",
+      "record": {
+        "id": "rv-3-62-10-gayatri",
+        "status": "hold",
+        "title": "Gayatri mantra care",
+        "citation": "Rigveda 3.62.10",
+        "family": "Veda | Shruti",
+        "summary": "Useful for source context, but learner-facing practice needs reviewer and rights review.",
+        "confidence": "Medium | 68/100",
+        "boundary": "No ritual instruction, initiation advice, or recitation authority.",
+        "missingFields": [
+          "mantra reviewer",
+          "recitation boundary",
+          "rights approval"
+        ]
+      },
+      "packet": "Reviewer receipt\nOwner: mantra reviewer\nDecision: hold\nReason: source identification is fine, but practice instruction is not approved\nBlocked: recitation guidance, initiation claims, pronunciation authority\nNext: create reviewer-specific mantra policy"
+    },
+    {
+      "id": "handoff-no-source",
+      "title": "Refuse inflated claim",
+      "citation": "No direct source",
+      "score": "Refuse",
+      "reason": "No reviewed source can support the claim.",
+      "decision": "No-source answer only",
+      "record": {
+        "id": "no-source-modern-airplanes",
+        "status": "no-source",
+        "title": "Modern aircraft overclaim",
+        "citation": "No direct source",
+        "family": "No-source behavior",
+        "summary": "Used to refuse inflated claims when no reviewed source can carry the answer.",
+        "confidence": "High | 95/100",
+        "boundary": "Say no reliable source is present; do not invent validation.",
+        "missingFields": [
+          "none"
+        ]
+      },
+      "packet": "Reviewer receipt\nOwner: source intake\nDecision: refuse unsupported claim\nReason: no reviewed source exists\nBlocked: answer generation, promotion, public examples\nNext: invite source submission if founder wants"
+    }
+  ]
+}

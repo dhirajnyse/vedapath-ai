@@ -1,0 +1,134 @@
+{
+  "headline": "Build the dossier before the answer.",
+  "copy": "Dossiers keep the source record more important than the generated explanation.",
+  "metrics": [
+    {
+      "label": "Dossiers",
+      "value": "5"
+    },
+    {
+      "label": "Ready",
+      "value": "2"
+    },
+    {
+      "label": "Review",
+      "value": "3"
+    },
+    {
+      "label": "Final answers",
+      "value": "0"
+    }
+  ],
+  "candidates": [
+    {
+      "id": "dossier-bg-2-48",
+      "title": "Steady action dossier",
+      "citation": "Bhagavad Gita 2.48",
+      "score": "86",
+      "reason": "Strong calm-action fit, clear source family, and safe reflection boundary.",
+      "decision": "Ready for citation packet",
+      "packet": "Dossier: bg-2-48-steadiness\nMeaning capsule: steady action without identity collapse.\nAllowed use: calm reflection and carry action.\nBoundary: not therapy, command, ritual instruction, or guaranteed peace.",
+      "record": {
+        "id": "bg-2-48-steadiness",
+        "status": "pass",
+        "title": "Steady action",
+        "citation": "Bhagavad Gita 2.48",
+        "family": "Bhagavad Gita | Smriti",
+        "summary": "Supports a calm reflection on steady action while keeping outcomes and personal identity separate.",
+        "confidence": "High | 86/100",
+        "boundary": "Reflection support only; not therapy, medical advice, ritual instruction, or spiritual command.",
+        "missingFields": [
+          "licensed translation display",
+          "reviewer note"
+        ]
+      }
+    },
+    {
+      "id": "dossier-bg-11-32",
+      "title": "Oppenheimer correction dossier",
+      "citation": "Bhagavad Gita 11.32",
+      "score": "91",
+      "reason": "High-value public confusion case with precise source-category correction.",
+      "decision": "Ready for category correction",
+      "packet": "Dossier: bg-11-32-time\nMeaning capsule: source correction before cultural context.\nAllowed use: explain Gita vs Veda classification.\nBoundary: no sensational claim or direct-Veda label.",
+      "record": {
+        "id": "bg-11-32-time",
+        "status": "pass",
+        "title": "Oppenheimer source correction",
+        "citation": "Bhagavad Gita 11.32",
+        "family": "Bhagavad Gita | Smriti",
+        "summary": "Corrects the common category confusion: the famous line is associated with the Gita, not the four Vedas.",
+        "confidence": "High | 91/100",
+        "boundary": "Do not call it a direct quote from the four Vedas.",
+        "missingFields": [
+          "translation variant review"
+        ]
+      }
+    },
+    {
+      "id": "dossier-rv-gayatri",
+      "title": "Gayatri mantra dossier",
+      "citation": "Rigveda 3.62.10",
+      "score": "68",
+      "reason": "Important source candidate with mantra, recitation, and rights sensitivities.",
+      "decision": "Hold for mantra review",
+      "packet": "Dossier: rv-3-62-10-gayatri\nMeaning capsule: pending.\nAllowed use: source identification only.\nBoundary: no recitation authority, initiation advice, or ritual instruction.",
+      "record": {
+        "id": "rv-3-62-10-gayatri",
+        "status": "review",
+        "title": "Gayatri mantra review candidate",
+        "citation": "Rigveda 3.62.10",
+        "family": "Veda | Shruti",
+        "summary": "High-value source candidate that must stay in review until Sanskrit, recitation, and rights posture are stronger.",
+        "confidence": "Medium | 68/100",
+        "boundary": "No ritual instruction, initiation advice, or pronunciation authority.",
+        "missingFields": [
+          "recitation boundary",
+          "rights approval",
+          "mantra reviewer"
+        ]
+      }
+    },
+    {
+      "id": "dossier-isha",
+      "title": "Isha Upanishad dossier",
+      "citation": "Isha Upanishad 1",
+      "score": "72",
+      "reason": "Useful for possession, desire, and restraint questions but commentary-sensitive.",
+      "decision": "Hold for commentary lens",
+      "packet": "Dossier: isha-1-opening\nMeaning capsule: pending commentary review.\nAllowed use: source candidate only.\nBoundary: no productivity or wealth advice simplification.",
+      "record": {
+        "id": "isha-1-opening",
+        "status": "review",
+        "title": "Renunciation and stewardship candidate",
+        "citation": "Isha Upanishad 1",
+        "family": "Upanishad | Shruti",
+        "summary": "Useful for desire, possession, and restraint questions, but it needs commentary notes before learner-facing simplification.",
+        "confidence": "Medium | 72/100",
+        "boundary": "Do not flatten the verse into productivity advice or wealth advice.",
+        "missingFields": [
+          "commentary lens",
+          "translation rights"
+        ]
+      }
+    }
+  ],
+  "steps": [
+    {
+      "title": "Name source",
+      "copy": "Stable citation, family, and source id."
+    },
+    {
+      "title": "Meaning capsule",
+      "copy": "Plain-language summary with humility."
+    },
+    {
+      "title": "Allowed use",
+      "copy": "What learner question it may support."
+    },
+    {
+      "title": "Boundary",
+      "copy": "What the passage must not be used to claim."
+    }
+  ]
+}

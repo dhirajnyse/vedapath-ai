@@ -1,0 +1,78 @@
+{
+  "title": "First Real Retrieval Adapter Shell",
+  "headline": "Connect retrieval carefully before it speaks.",
+  "copy": "The adapter shell defines what retrieval may read, what it must return, and when it must refuse instead of composing an answer.",
+  "boundary": "Adapter shell only. No live model, network retrieval, vector database, production storage, or automatic answer generation is enabled.",
+  "readyLabel": "Adapter contract ready for fixture implementation",
+  "storageKey": "vedapathRetrievalAdapter",
+  "metrics": [
+    {
+      "label": "Input",
+      "value": "fixture"
+    },
+    {
+      "label": "Output",
+      "value": "source ids"
+    },
+    {
+      "label": "No answer",
+      "value": "first-class"
+    },
+    {
+      "label": "Live AI",
+      "value": "off"
+    }
+  ],
+  "lanes": [
+    {
+      "id": "fixture-input",
+      "title": "Fixture input",
+      "summary": "Read from curated JSON records only, with source family, citation, allowed use, review state, and rights posture.",
+      "decision": "Implement fixture adapter",
+      "signals": [
+        "Local JSON",
+        "Reviewed records",
+        "Allowed use",
+        "No network"
+      ]
+    },
+    {
+      "id": "citation-output",
+      "title": "Citation output",
+      "summary": "Return candidate source ids, citation strings, confidence, match reason, and boundary flags before answer composition.",
+      "decision": "Return evidence first",
+      "signals": [
+        "Source id",
+        "Citation",
+        "Reason",
+        "Boundary"
+      ]
+    },
+    {
+      "id": "no-answer",
+      "title": "No-answer path",
+      "summary": "If no reviewed source matches, the adapter must return a no-source result rather than making a confident answer.",
+      "decision": "Refuse gracefully",
+      "signals": [
+        "No source",
+        "Low confidence",
+        "Rights hold",
+        "Reviewer needed"
+      ]
+    }
+  ],
+  "checklist": [
+    "Adapter reads only fixture data.",
+    "Returned candidates include citation and source id.",
+    "No-source result is explicit and user-safe.",
+    "Rights and review state can block a candidate.",
+    "Answer composition remains disabled until founder approval."
+  ],
+  "steps": [
+    "Read source fixtures.",
+    "Rank evidence candidates.",
+    "Return citation packet.",
+    "Refuse when no source is safe."
+  ],
+  "defaultNote": "Start with fixture JSON and return source ids, citations, reasons, confidence, and boundary flags before any answer text."
+}

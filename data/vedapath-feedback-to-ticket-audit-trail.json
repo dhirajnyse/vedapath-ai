@@ -1,0 +1,77 @@
+{
+  "title": "Feedback-to-Ticket Audit Trail",
+  "headline": "Feedback should become a trace, not a silent change.",
+  "copy": "This audit trail makes each feedback item travel through ticket, owner, decision, source impact, and release note before it can affect the product.",
+  "boundary": "Audit prototype only. No server queue, reviewer account, immutable log, or production source update is created.",
+  "readyLabel": "Audit packet can enter review",
+  "storageKey": "vedapathFeedbackAudit",
+  "metrics": [
+    {
+      "label": "Trace",
+      "value": "visible"
+    },
+    {
+      "label": "Owner",
+      "value": "named"
+    },
+    {
+      "label": "Decision",
+      "value": "required"
+    },
+    {
+      "label": "Writes",
+      "value": "zero"
+    }
+  ],
+  "lanes": [
+    {
+      "id": "ticket-created",
+      "title": "Ticket created",
+      "summary": "Convert raw pilot feedback into a bounded ticket with question, page, source family, and risk.",
+      "decision": "Ticket ready",
+      "signals": [
+        "Question",
+        "Surface",
+        "Source family",
+        "Risk"
+      ]
+    },
+    {
+      "id": "review-decision",
+      "title": "Review decision",
+      "summary": "Accept, revise, hold, discard, or escalate feedback with a reason that can be shown later.",
+      "decision": "Decision needed",
+      "signals": [
+        "Reason",
+        "Owner",
+        "Reviewer role",
+        "Release note"
+      ]
+    },
+    {
+      "id": "change-control",
+      "title": "Change control",
+      "summary": "If feedback changes answers or sources, it must pass source rights, answer gate, and founder review.",
+      "decision": "No silent change",
+      "signals": [
+        "Rights board",
+        "Answer gate",
+        "Founder note"
+      ]
+    }
+  ],
+  "checklist": [
+    "Raw feedback has a bounded ticket.",
+    "Owner and reviewer role are visible.",
+    "Decision reason is recorded.",
+    "Source or answer changes require extra gates.",
+    "Release note explains what changed."
+  ],
+  "steps": [
+    "Create ticket.",
+    "Assign owner.",
+    "Record decision.",
+    "Hold changes until gated."
+  ],
+  "defaultNote": "Every accepted feedback item needs a reason and a source or UX lane."
+}

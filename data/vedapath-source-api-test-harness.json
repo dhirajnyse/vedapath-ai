@@ -1,0 +1,112 @@
+{
+  "headline": "Source API fixtures make the next backend measurable.",
+  "copy": "Each row is a required contract behavior. A real API must satisfy these before answer generation opens.",
+  "progress": 72,
+  "boundary": "Harness data is prototype evidence, not a live endpoint or production API test.",
+  "filters": [
+    {
+      "label": "All",
+      "value": "all"
+    },
+    {
+      "label": "Pass",
+      "value": "pass"
+    },
+    {
+      "label": "Review",
+      "value": "review"
+    },
+    {
+      "label": "No-source",
+      "value": "no-source"
+    }
+  ],
+  "records": [
+    {
+      "id": "trace-required",
+      "citation": "vp-trace-*",
+      "family": "API contract",
+      "status": "pass",
+      "risks": [
+        "Every response needs a trace id."
+      ]
+    },
+    {
+      "id": "source-id-required",
+      "citation": "bg-2-48-steadiness",
+      "family": "Source identity",
+      "status": "pass",
+      "risks": [
+        "Every source_found response needs primary_source_id."
+      ]
+    },
+    {
+      "id": "family-label-required",
+      "citation": "Bhagavad Gita | Smriti",
+      "family": "Source family",
+      "status": "pass",
+      "risks": [
+        "Family label must travel with the result."
+      ]
+    },
+    {
+      "id": "reviewer-state-required",
+      "citation": "approved | review | hold",
+      "family": "Reviewer state",
+      "status": "pass",
+      "risks": [
+        "Reviewer state cannot be hidden."
+      ]
+    },
+    {
+      "id": "rights-state-required",
+      "citation": "translation rights",
+      "family": "Rights posture",
+      "status": "review",
+      "risks": [
+        "Translation display needs explicit rights fields."
+      ]
+    },
+    {
+      "id": "no-source-explicit",
+      "citation": "No direct source",
+      "family": "No-source behavior",
+      "status": "no-source",
+      "risks": [
+        "Unsupported claims must return no_source=true."
+      ]
+    }
+  ],
+  "metrics": [
+    {
+      "label": "Fixtures",
+      "value": "6"
+    },
+    {
+      "label": "Required checks",
+      "value": "9"
+    },
+    {
+      "label": "Live endpoint",
+      "value": "Off"
+    },
+    {
+      "label": "Next",
+      "value": "No-source eval"
+    }
+  ],
+  "rules": [
+    {
+      "title": "Trace first",
+      "copy": "If a trace id is absent, the response cannot feed an answer."
+    },
+    {
+      "title": "Reviewer state first",
+      "copy": "Hold and review records must remain visible to the answer adapter."
+    },
+    {
+      "title": "No-source is a result",
+      "copy": "No-source is not failure; it is the safe outcome for unsupported claims."
+    }
+  ]
+}

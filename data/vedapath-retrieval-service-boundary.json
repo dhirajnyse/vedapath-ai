@@ -1,0 +1,95 @@
+{
+  "position": "A retrieval service is useful only when its boundary is narrow: return candidates, evidence, confidence, and refusal signals.",
+  "headline": "Retrieval should be a calm evidence finder.",
+  "copy": "This gate keeps the service small enough to test. It may fetch and rank reviewed records; it may not become a hidden oracle.",
+  "postures": [
+    {
+      "title": "Allowed",
+      "decision": "Allowed",
+      "copy": "Return source candidates, match reasons, trace id, confidence, and no-source status."
+    },
+    {
+      "title": "Blocked",
+      "decision": "Blocked",
+      "copy": "Do not create answer prose, store private user text, or make spiritual/ritual claims."
+    },
+    {
+      "title": "Review",
+      "decision": "Review",
+      "copy": "Route hold records, mantra records, and rights gaps to reviewer queues before display."
+    }
+  ],
+  "flow": [
+    {
+      "title": "Receive query",
+      "copy": "Normalize the learner question without changing its intent."
+    },
+    {
+      "title": "Rank candidates",
+      "copy": "Use reviewed source records and show why each candidate matched."
+    },
+    {
+      "title": "Return boundary",
+      "copy": "Send status, confidence, reviewer state, and no-source behavior to the adapter."
+    },
+    {
+      "title": "Stay quiet",
+      "copy": "Leave answer writing to the bounded answer adapter."
+    }
+  ],
+  "decisions": [
+    {
+      "label": "Source ranking",
+      "value": "Allowed",
+      "reason": "Ranking is visible and testable."
+    },
+    {
+      "label": "Answer prose",
+      "value": "Blocked",
+      "reason": "The adapter must compose with boundaries."
+    },
+    {
+      "label": "Reviewer override",
+      "value": "Blocked",
+      "reason": "Human review state cannot be silently changed."
+    },
+    {
+      "label": "Private storage",
+      "value": "Blocked",
+      "reason": "No account or consent system exists yet."
+    }
+  ],
+  "metrics": [
+    {
+      "label": "Service scope",
+      "value": "Narrow"
+    },
+    {
+      "label": "Writes",
+      "value": "0"
+    },
+    {
+      "label": "No-source path",
+      "value": "Visible"
+    },
+    {
+      "label": "Live network",
+      "value": "Off"
+    }
+  ],
+  "locks": [
+    {
+      "title": "No hidden generation",
+      "copy": "Retrieval cannot fill gaps with imagined scripture."
+    },
+    {
+      "title": "No private profile",
+      "copy": "The prototype does not persist personal learner text beyond local demos."
+    },
+    {
+      "title": "No launch authority",
+      "copy": "Service design does not imply public launch readiness."
+    }
+  ],
+  "packet": "VedaPath Retrieval Boundary v4.5.7\nAllowed: reviewed source ranking, match reasons, trace id, confidence, no-source flag\nBlocked: answer prose, reviewer override, private storage, ritual authority, public launch\nNext: answer adapter stub"
+}

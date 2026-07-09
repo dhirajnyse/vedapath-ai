@@ -1,0 +1,99 @@
+{
+  "title": "Private Pilot Launch Console",
+  "headline": "Launch only when the gates are visible.",
+  "copy": "This console brings the pilot readiness chain into one founder decision surface: first session, source triage, answer gate, consent, invite, and review queue.",
+  "boundary": "This is a private pilot planning console. It does not enable public launch, paid launch, hidden telemetry, production AI, or unreviewed source changes.",
+  "storageKey": "vedapathPrivatePilotLaunchConsoleV430",
+  "readyLabel": "Private pilot candidate",
+  "metrics": [
+    {
+      "label": "Launch lanes",
+      "value": "5"
+    },
+    {
+      "label": "MVP",
+      "value": "100%"
+    },
+    {
+      "label": "Production",
+      "value": "Off"
+    },
+    {
+      "label": "Founder gate",
+      "value": "Required"
+    }
+  ],
+  "lanes": [
+    {
+      "id": "experience",
+      "title": "Experience",
+      "summary": "First session is clear and navigation is calm.",
+      "decision": "Ready candidate",
+      "signals": [
+        "Home path",
+        "Daily loop",
+        "First session spine"
+      ]
+    },
+    {
+      "id": "source",
+      "title": "Source",
+      "summary": "Source records have readiness lanes and rights posture.",
+      "decision": "Gate visible",
+      "signals": [
+        "Source triage",
+        "Rights desk",
+        "Source edition intake"
+      ]
+    },
+    {
+      "id": "answer",
+      "title": "Answer",
+      "summary": "Pilot answer cards are bounded and reviewable.",
+      "decision": "Gate visible",
+      "signals": [
+        "Answer readiness",
+        "Promotion rules",
+        "Review queue"
+      ]
+    },
+    {
+      "id": "privacy",
+      "title": "Privacy",
+      "summary": "Consent and local memory boundaries are visible.",
+      "decision": "Gate visible",
+      "signals": [
+        "Telemetry consent",
+        "Clear local memory",
+        "No account required"
+      ]
+    },
+    {
+      "id": "invite",
+      "title": "Invite",
+      "summary": "Private pilot invite is honest, small, and source-first.",
+      "decision": "Founder review",
+      "signals": [
+        "Invite packet",
+        "Waitlist gate",
+        "No payment"
+      ]
+    }
+  ],
+  "checklist": [
+    "First session can be completed without guidance.",
+    "Every pilot answer has source, confidence, and boundary.",
+    "Source readiness lane is known.",
+    "Consent is visible before any learning signal.",
+    "Private pilot invite promises prototype learning, not production authority.",
+    "Founder decides go, hold, or revise."
+  ],
+  "steps": [
+    "Review experience.",
+    "Review source gates.",
+    "Review answer gates.",
+    "Review consent.",
+    "Choose go or hold."
+  ],
+  "defaultNote": "Private pilot candidate only. Keep production, payment, hidden telemetry, and public launch disabled."
+}

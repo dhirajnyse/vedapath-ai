@@ -1,0 +1,169 @@
+{
+  "headline": "A real answer starts with a source response, not prose.",
+  "copy": "This contract tells the future backend what the UI is allowed to trust: source id, citation, family, confidence, reviewer state, rights posture, and no-source decision.",
+  "fields": [
+    {
+      "name": "query",
+      "why": "Keeps the user's intent visible for trace and review."
+    },
+    {
+      "name": "trace_id",
+      "why": "Makes every answer path auditable."
+    },
+    {
+      "name": "primary_source_id",
+      "why": "Prevents uncited answers from looking complete."
+    },
+    {
+      "name": "reviewer_state",
+      "why": "Separates approved records from hold or review records."
+    },
+    {
+      "name": "boundary",
+      "why": "Keeps category, ritual, medical, and authority limits visible."
+    }
+  ],
+  "required": [
+    {
+      "key": "Endpoint",
+      "value": "GET /api/source-candidates"
+    },
+    {
+      "key": "Minimum response",
+      "value": "source id, citation, family, confidence, trace id"
+    },
+    {
+      "key": "No-source path",
+      "value": "explicit no_source=true response"
+    },
+    {
+      "key": "Storage",
+      "value": "none in prototype"
+    },
+    {
+      "key": "Launch posture",
+      "value": "contract only"
+    }
+  ],
+  "records": [
+    {
+      "id": "bg-2-48-steadiness",
+      "status": "approved",
+      "title": "Steady action",
+      "citation": "Bhagavad Gita 2.48",
+      "family": "Bhagavad Gita | Smriti",
+      "summary": "Supports practical answers about steady action while avoiding promises of guaranteed calm.",
+      "confidence": "High | 86/100",
+      "boundary": "Reflection support only; not therapy, ritual instruction, or spiritual command.",
+      "missingFields": [
+        "licensed translation display",
+        "final reviewer signature"
+      ]
+    },
+    {
+      "id": "bg-11-32-category",
+      "status": "approved",
+      "title": "Oppenheimer category correction",
+      "citation": "Bhagavad Gita 11.32",
+      "family": "Bhagavad Gita | Smriti",
+      "summary": "Supports correcting the common claim: the famous line is associated with the Gita, not the four Vedas.",
+      "confidence": "High | 91/100",
+      "boundary": "Do not call it a direct quote from the four Vedas.",
+      "missingFields": [
+        "translation variant note"
+      ]
+    },
+    {
+      "id": "rv-3-62-10-gayatri",
+      "status": "hold",
+      "title": "Gayatri mantra care",
+      "citation": "Rigveda 3.62.10",
+      "family": "Veda | Shruti",
+      "summary": "Useful for source context, but learner-facing practice needs reviewer and rights review.",
+      "confidence": "Medium | 68/100",
+      "boundary": "No ritual instruction, initiation advice, or recitation authority.",
+      "missingFields": [
+        "mantra reviewer",
+        "recitation boundary",
+        "rights approval"
+      ]
+    },
+    {
+      "id": "isha-1-opening",
+      "status": "review",
+      "title": "Stewardship and restraint",
+      "citation": "Isha Upanishad 1",
+      "family": "Upanishad | Shruti",
+      "summary": "Can support careful answers about possession and restraint if commentary and rights notes are visible.",
+      "confidence": "Medium | 72/100",
+      "boundary": "Do not flatten the verse into wealth advice or productivity advice.",
+      "missingFields": [
+        "commentary lens",
+        "translation rights"
+      ]
+    },
+    {
+      "id": "no-source-modern-airplanes",
+      "status": "no-source",
+      "title": "Modern aircraft overclaim",
+      "citation": "No direct source",
+      "family": "No-source behavior",
+      "summary": "Used to refuse inflated claims when no reviewed source can carry the answer.",
+      "confidence": "High | 95/100",
+      "boundary": "Say no reliable source is present; do not invent validation.",
+      "missingFields": [
+        "none"
+      ]
+    }
+  ],
+  "example": {
+    "request": {
+      "query": "What scripture did Oppenheimer quote?",
+      "audience": "beginner",
+      "require_source": true
+    },
+    "response": {
+      "trace_id": "vp-trace-00456-bg-11-32",
+      "status": "source_found",
+      "primary_source_id": "bg-11-32-category",
+      "citation": "Bhagavad Gita 11.32",
+      "family": "Bhagavad Gita | Smriti",
+      "confidence": 91,
+      "no_source": false,
+      "reviewer_state": "approved",
+      "boundary": "Do not call it a direct quote from the four Vedas."
+    }
+  },
+  "metrics": [
+    {
+      "label": "Required fields",
+      "value": "9"
+    },
+    {
+      "label": "Response paths",
+      "value": "3"
+    },
+    {
+      "label": "Live API",
+      "value": "Off"
+    },
+    {
+      "label": "Trace",
+      "value": "Required"
+    }
+  ],
+  "rules": [
+    {
+      "title": "No source, no answer",
+      "copy": "If no reviewed source is returned, the answer adapter must use no-source behavior."
+    },
+    {
+      "title": "Reviewer state travels",
+      "copy": "Approved, review, hold, and no-source states must stay visible in the answer layer."
+    },
+    {
+      "title": "Rights are data",
+      "copy": "Translation display and public reuse must remain disabled until rights fields are present."
+    }
+  ]
+}

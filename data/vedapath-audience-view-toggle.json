@@ -1,0 +1,107 @@
+{
+  "headline": "A calm product needs depth without forcing every learner into the same room.",
+  "copy": "Filter the draft variants and inspect risks by audience depth.",
+  "progress": 72,
+  "boundary": "Audience views are explanation layers only. They do not create new source authority, ritual instruction, or final scholar approval.",
+  "filters": [
+    {
+      "label": "All",
+      "value": "all"
+    },
+    {
+      "label": "Beginner",
+      "value": "Beginner"
+    },
+    {
+      "label": "Sanskrit",
+      "value": "Sanskrit"
+    },
+    {
+      "label": "Scholar",
+      "value": "Scholar"
+    },
+    {
+      "label": "Hold",
+      "value": "Hold"
+    }
+  ],
+  "metrics": [
+    {
+      "label": "View layers",
+      "value": "3"
+    },
+    {
+      "label": "Source fixed",
+      "value": "Yes"
+    },
+    {
+      "label": "Held",
+      "value": "1"
+    },
+    {
+      "label": "Final",
+      "value": "No"
+    }
+  ],
+  "records": [
+    {
+      "citation": "Bhagavad Gita 2.48",
+      "family": "Beginner",
+      "status": "Beginner",
+      "risks": [
+        "over-comfort",
+        "too motivational"
+      ]
+    },
+    {
+      "citation": "Bhagavad Gita 2.48",
+      "family": "Sanskrit",
+      "status": "Sanskrit",
+      "risks": [
+        "word-level simplification",
+        "needs transliteration review"
+      ]
+    },
+    {
+      "citation": "Bhagavad Gita 2.48",
+      "family": "Scholar",
+      "status": "Scholar",
+      "risks": [
+        "commentary differences",
+        "school specificity"
+      ]
+    },
+    {
+      "citation": "Rigveda 3.62.10",
+      "family": "Hold",
+      "status": "Hold",
+      "risks": [
+        "ritual overreach",
+        "recitation authority"
+      ]
+    },
+    {
+      "citation": "Bhagavad Gita 11.32",
+      "family": "Beginner",
+      "status": "Beginner",
+      "risks": [
+        "popular quote wording",
+        "category confusion"
+      ]
+    }
+  ],
+  "rules": [
+    {
+      "title": "Same source",
+      "copy": "Depth changes must not quietly change the citation."
+    },
+    {
+      "title": "Plain first",
+      "copy": "Beginner view should answer simply before opening layers."
+    },
+    {
+      "title": "Review deeper views",
+      "copy": "Sanskrit and scholar views need stricter review before launch."
+    }
+  ]
+}

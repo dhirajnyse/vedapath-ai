@@ -1,0 +1,85 @@
+{
+  "title": "Source Readiness Triage",
+  "headline": "Every source needs a visible readiness lane.",
+  "copy": "This room gives VedaPath a simple source gate before retrieval: ready, needs review, rights hold, or blocked. It prevents beautiful answers from standing on weak source records.",
+  "boundary": "Readiness triage is a product workflow. It does not certify scholarship, translation rights, or spiritual authority.",
+  "storageKey": "vedapathSourceReadinessTriageV428",
+  "metrics": [
+    {
+      "label": "Lanes",
+      "value": "4"
+    },
+    {
+      "label": "Ready",
+      "value": "3"
+    },
+    {
+      "label": "Review",
+      "value": "6"
+    },
+    {
+      "label": "Rights hold",
+      "value": "2"
+    }
+  ],
+  "lanes": [
+    {
+      "id": "ready",
+      "title": "Ready",
+      "summary": "Citation, family, edition, boundary, and allowed use are visible.",
+      "decision": "Use in pilot",
+      "signals": [
+        "Bhagavad Gita 2.48",
+        "Katha Upanishad inquiry excerpt",
+        "Rigveda source note"
+      ]
+    },
+    {
+      "id": "review",
+      "title": "Needs review",
+      "summary": "Useful source but missing context, interpretation, or reviewer notes.",
+      "decision": "Review",
+      "signals": [
+        "Gayatri explanation",
+        "Atman and Brahman comparison",
+        "Cosmology claim"
+      ]
+    },
+    {
+      "id": "rights",
+      "title": "Rights hold",
+      "summary": "Source may be useful but edition or translation use is not clear.",
+      "decision": "Hold",
+      "signals": [
+        "Modern translation excerpt",
+        "Commentary passage",
+        "Audio/chant material"
+      ]
+    },
+    {
+      "id": "blocked",
+      "title": "Blocked",
+      "summary": "Source should not feed answers until risk or claim type is corrected.",
+      "decision": "Do not use",
+      "signals": [
+        "Unsupported science claim",
+        "Miracle proof claim",
+        "Personal diagnosis prompt"
+      ]
+    }
+  ],
+  "checklist": [
+    "Citation is specific.",
+    "Source family is labeled.",
+    "Edition or translation posture is known.",
+    "Allowed use is visible.",
+    "Risk and boundary are recorded."
+  ],
+  "steps": [
+    "Classify source.",
+    "Check rights.",
+    "Check claim risk.",
+    "Route to answer or review."
+  ],
+  "defaultNote": "This source should not enter pilot answers until citation, rights posture, and boundary are all visible."
+}

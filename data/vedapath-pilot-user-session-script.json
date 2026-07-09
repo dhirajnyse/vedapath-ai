@@ -1,0 +1,98 @@
+{
+  "title": "Pilot User Session Script",
+  "headline": "Run one complete pilot session.",
+  "copy": "This script gives a founder or tester a simple live session path. It keeps the product centered on one user question, one source card, one practice action, and one visible feedback moment.",
+  "boundary": "This script guides product testing only. It is not teaching authority, ritual instruction, therapy, or spiritual certification.",
+  "readyLabel": "Ready for pilot session",
+  "storageKey": "vedapathPilotUserSessionScriptV433",
+  "metrics": [
+    {
+      "label": "Duration",
+      "value": "12 min"
+    },
+    {
+      "label": "Loops",
+      "value": "1"
+    },
+    {
+      "label": "Questions",
+      "value": "1"
+    },
+    {
+      "label": "Feedback",
+      "value": "1 note"
+    }
+  ],
+  "lanes": [
+    {
+      "id": "welcome",
+      "title": "Welcome",
+      "summary": "Set expectation: source-first, calm, prototype, no guru voice.",
+      "decision": "Start gently",
+      "signals": [
+        "No account needed",
+        "Local storage explained",
+        "Boundary visible"
+      ]
+    },
+    {
+      "id": "ask",
+      "title": "Ask",
+      "summary": "Let the user type or choose one question and notice whether it feels easy.",
+      "decision": "Observe",
+      "signals": [
+        "Question box clear",
+        "Sample prompts help",
+        "No pressure to be expert"
+      ]
+    },
+    {
+      "id": "source",
+      "title": "Read",
+      "summary": "Open the answer card and watch whether citation, family, and caution are understood.",
+      "decision": "Observe trust",
+      "signals": [
+        "Citation found",
+        "Source family understood",
+        "Boundary not skipped"
+      ]
+    },
+    {
+      "id": "carry",
+      "title": "Carry",
+      "summary": "Ask the user to choose one small action without turning the product into authority.",
+      "decision": "Observe agency",
+      "signals": [
+        "Action feels modest",
+        "No guaranteed outcome",
+        "User keeps choice"
+      ]
+    },
+    {
+      "id": "feedback",
+      "title": "Feedback",
+      "summary": "Ask one final question: what felt calming, confusing, or untrustworthy?",
+      "decision": "Save note",
+      "signals": [
+        "One honest note",
+        "No personal details required",
+        "Review lane chosen"
+      ]
+    }
+  ],
+  "checklist": [
+    "Session starts with product boundary.",
+    "User completes only one loop.",
+    "Source card is inspected before practice.",
+    "Feedback asks about product clarity.",
+    "No identity or sensitive personal data is requested."
+  ],
+  "steps": [
+    "Welcome.",
+    "Ask.",
+    "Read source.",
+    "Carry one action.",
+    "Collect one feedback note."
+  ],
+  "defaultNote": "Pilot observation: user understood the source label but needed a clearer reason to trust the confidence score."
+}

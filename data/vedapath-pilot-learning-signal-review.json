@@ -1,0 +1,85 @@
+{
+  "title": "Pilot Learning Signal Review",
+  "headline": "Let pilot learning pass through review.",
+  "copy": "This room turns consented pilot signals into reviewable learning packets. It separates useful product insight from private behavior, unsupported conclusions, or hidden analytics.",
+  "boundary": "Signals remain browser-local prototype records. They do not identify people, score spirituality, create profiles, or change source records without review.",
+  "storageKey": "vedapathPilotLearningSignalReviewV426",
+  "metrics": [
+    {
+      "label": "Signal lanes",
+      "value": "4"
+    },
+    {
+      "label": "Consent",
+      "value": "Required"
+    },
+    {
+      "label": "Reviewer",
+      "value": "Founder"
+    },
+    {
+      "label": "Auto learning",
+      "value": "Off"
+    }
+  ],
+  "lanes": [
+    {
+      "id": "consented",
+      "title": "Consented signal",
+      "summary": "User knowingly saved a local pilot signal.",
+      "decision": "Review candidate",
+      "signals": [
+        "Page and room visited",
+        "Source family opened",
+        "Boundary accepted"
+      ]
+    },
+    {
+      "id": "unclear",
+      "title": "Unclear signal",
+      "summary": "Signal exists but consent or meaning is incomplete.",
+      "decision": "Hold",
+      "signals": [
+        "Missing consent note",
+        "Unclear source context",
+        "No user-facing explanation"
+      ]
+    },
+    {
+      "id": "private",
+      "title": "Private note",
+      "summary": "User wrote something that should not become product telemetry.",
+      "decision": "Do not learn",
+      "signals": [
+        "Personal story",
+        "Health or family detail",
+        "Identifying text"
+      ]
+    },
+    {
+      "id": "product",
+      "title": "Product insight",
+      "summary": "A pattern that may improve UI, source labels, or launch copy.",
+      "decision": "Founder review",
+      "signals": [
+        "Repeated confusion",
+        "Boundary copy helped",
+        "Source lane needs clearer wording"
+      ]
+    }
+  ],
+  "checklist": [
+    "Consent is visible and revocable.",
+    "Signal does not identify a person.",
+    "Signal maps to a product decision.",
+    "Founder review happens before product memory.",
+    "Boundary language stays visible."
+  ],
+  "steps": [
+    "Collect only after consent.",
+    "Separate private notes.",
+    "Write a review packet.",
+    "Approve or discard manually."
+  ],
+  "defaultNote": "This signal is useful for product clarity, but it should not become accepted learning until founder review."
+}

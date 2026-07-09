@@ -1,3 +1,228 @@
+## v4.6.1 Source API Test Harness
+- Adds executable-style source API fixtures and a validation script so contract readiness can be checked before live retrieval exists.
+- Primary files: `sourceapitestharness.html`, `data/vedapath-source-api-test-harness.json`, `docs/SOURCE_API_TEST_HARNESS.md`.
+- Product note: Static launch-test prototype only; it does not enable live retrieval, live AI generation, licensed corpus delivery, production storage, public launch, medical/legal/ritual/spiritual authority, payment, or account sync.
+
+## v4.6.2 No-Source Evaluation Suite
+- Adds a no-source evaluation suite with refusal cases, expected boundaries, and public-launch blockers for unsupported claims.
+- Primary files: `nosourceevaluationsuite.html`, `data/vedapath-no-source-evaluation-suite.json`, `docs/NO_SOURCE_EVALUATION_SUITE.md`.
+- Product note: Static launch-test prototype only; it does not enable live retrieval, live AI generation, licensed corpus delivery, production storage, public launch, medical/legal/ritual/spiritual authority, payment, or account sync.
+
+## v4.6.3 Source Candidate Fixture Runner
+- Adds a source candidate fixture runner that models ranking output, match reasons, rejected alternatives, and reviewer decisions.
+- Primary files: `sourcecandidatefixturerunner.html`, `data/vedapath-source-candidate-fixture-runner.json`, `docs/SOURCE_CANDIDATE_FIXTURE_RUNNER.md`.
+- Product note: Static launch-test prototype only; it does not enable live retrieval, live AI generation, licensed corpus delivery, production storage, public launch, medical/legal/ritual/spiritual authority, payment, or account sync.
+
+## v4.6.4 Adapter Contract Tests
+- Adds adapter contract tests for evidence order, no-source refusal, reviewer hold handling, and boundary-preserving answer draft packets.
+- Primary files: `adaptercontracttests.html`, `data/vedapath-adapter-contract-tests.json`, `docs/ADAPTER_CONTRACT_TESTS.md`.
+- Product note: Static launch-test prototype only; it does not enable live retrieval, live AI generation, licensed corpus delivery, production storage, public launch, medical/legal/ritual/spiritual authority, payment, or account sync.
+
+## v4.6.5 Private Demo Script
+- Adds a private demo script with talk track, allowed claims, blocked claims, and founder-ready handoff packet.
+- Primary files: `privatedemoscript.html`, `data/vedapath-private-demo-script.json`, `docs/PRIVATE_DEMO_SCRIPT.md`.
+- Product note: Static launch-test prototype only; it does not enable live retrieval, live AI generation, licensed corpus delivery, production storage, public launch, medical/legal/ritual/spiritual authority, payment, or account sync.
+
+## v4.5.6 Real Source API Contract
+- Defines the first source lookup contract with required fields, response example, quality rules, and trace boundaries.
+- Primary files: `realsourceapicontract.html`, `data/vedapath-real-source-api-contract.json`, `docs/REAL_SOURCE_API_CONTRACT.md`.
+- Product note: Static launch/API prototype only; it does not enable live retrieval, live AI generation, licensed corpus delivery, production storage, public launch, medical/legal/ritual/spiritual authority, or payment.
+
+## v4.5.7 Retrieval Service Boundary
+- Separates the future retrieval service responsibilities from answer composition, reviewer decisions, storage, and public launch authority.
+- Primary files: `retrievalserviceboundary.html`, `data/vedapath-retrieval-service-boundary.json`, `docs/RETRIEVAL_SERVICE_BOUNDARY.md`.
+- Product note: Static launch/API prototype only; it does not enable live retrieval, live AI generation, licensed corpus delivery, production storage, public launch, medical/legal/ritual/spiritual authority, or payment.
+
+## v4.5.8 Mock Answer Generation Adapter
+- Adds a mock answer adapter specification with selected source packets, composition order, refusal path, and boundary-first draft packets.
+- Primary files: `mockanswergenerationadapter.html`, `data/vedapath-mock-answer-generation-adapter.json`, `docs/MOCK_ANSWER_GENERATION_ADAPTER.md`.
+- Product note: Static launch/API prototype only; it does not enable live retrieval, live AI generation, licensed corpus delivery, production storage, public launch, medical/legal/ritual/spiritual authority, or payment.
+
+## v4.5.9 Reviewer Approval Handoff
+- Adds a reviewer handoff room with approval packets, risks, owner lanes, receipt language, and blocked production fields.
+- Primary files: `reviewerapprovalhandoff.html`, `data/vedapath-reviewer-approval-handoff.json`, `docs/REVIEWER_APPROVAL_HANDOFF.md`.
+- Product note: Static launch/API prototype only; it does not enable live retrieval, live AI generation, licensed corpus delivery, production storage, public launch, medical/legal/ritual/spiritual authority, or payment.
+
+## v4.6.0 Private Launch Gate
+- Adds a private launch gate that distinguishes private demo readiness from public launch readiness with explicit locks, metrics, and founder packet.
+- Primary files: `privatelaunchgate.html`, `data/vedapath-private-launch-gate.json`, `docs/PRIVATE_LAUNCH_GATE.md`.
+- Product note: Static launch/API prototype only; it does not enable live retrieval, live AI generation, licensed corpus delivery, production storage, public launch, medical/legal/ritual/spiritual authority, or payment.
+
+## v4.5.1 Learner Answer Draft Review
+- Adds a learner answer draft review room with sample questions, cited draft packets, carry steps, and visible boundaries before live generation.
+- Primary files: `learneranswerdraftreview.html`, `data/vedapath-learner-answer-draft-review.json`, `docs/LEARNER_ANSWER_DRAFT_REVIEW.md`.
+- Product note: Static prototype only; answer draft review, revision, trace, audience views, and launch evidence do not provide live AI generation, production storage, licensed corpus coverage, scholar approval, public launch authority, or spiritual/medical/ritual authority.
+
+## v4.5.2 Answer Revision Workbench
+- Adds a revision workbench that turns risky answer drafts into clearer, shorter, boundary-first answer packets.
+- Primary files: `answerrevisionworkbench.html`, `data/vedapath-answer-revision-workbench.json`, `docs/ANSWER_REVISION_WORKBENCH.md`.
+- Product note: Static prototype only; answer draft review, revision, trace, audience views, and launch evidence do not provide live AI generation, production storage, licensed corpus coverage, scholar approval, public launch authority, or spiritual/medical/ritual authority.
+
+## v4.5.3 Source-to-Answer Trace View
+- Adds a source-to-answer trace view that maps answer sentences to source packet, confidence, boundary, and reviewer state.
+- Primary files: `sourcetoanswertraceview.html`, `data/vedapath-source-to-answer-trace-view.json`, `docs/SOURCE_TO_ANSWER_TRACE_VIEW.md`.
+- Product note: Static prototype only; answer draft review, revision, trace, audience views, and launch evidence do not provide live AI generation, production storage, licensed corpus coverage, scholar approval, public launch authority, or spiritual/medical/ritual authority.
+
+## v4.5.4 Audience View Toggle
+- Adds audience view toggles so a single source packet can be reviewed for beginner, Sanskrit, and scholar-reading depths without changing the source.
+- Primary files: `audienceviewtoggle.html`, `data/vedapath-audience-view-toggle.json`, `docs/AUDIENCE_VIEW_TOGGLE.md`.
+- Product note: Static prototype only; answer draft review, revision, trace, audience views, and launch evidence do not provide live AI generation, production storage, licensed corpus coverage, scholar approval, public launch authority, or spiritual/medical/ritual authority.
+
+## v4.5.5 Launch Readiness Evidence Pack
+- Adds a launch readiness evidence pack that summarizes source, answer, revision, trace, audience, and safety evidence before public release decisions.
+- Primary files: `launchreadinessevidencepack.html`, `data/vedapath-launch-readiness-evidence-pack.json`, `docs/LAUNCH_READINESS_EVIDENCE_PACK.md`.
+- Product note: Static prototype only; answer draft review, revision, trace, audience views, and launch evidence do not provide live AI generation, production storage, licensed corpus coverage, scholar approval, public launch authority, or spiritual/medical/ritual authority.
+
+## v4.4.6 Source Coverage Expansion
+- Adds a coverage expansion room that shows ready, review, and no-source lanes before the corpus grows.
+- Primary files: `sourcecoverageexpansion.html`, `data/vedapath-source-coverage-expansion.json`, `docs/SOURCE_COVERAGE_EXPANSION.md`.
+- Product note: Static prototype only; source coverage, passage dossiers, reviewer approvals, and answer gates do not provide live AI retrieval, licensed corpus coverage, production storage, scholar approval, public launch authority, or spiritual/medical/ritual authority.
+
+## v4.4.7 Source Family Coverage Map
+- Adds a family coverage map so Veda, Upanishad, Gita, Itihasa, Purana, commentary, and source-gap lanes remain separate.
+- Primary files: `sourcefamilycoveragemap.html`, `data/vedapath-source-family-coverage-map.json`, `docs/SOURCE_FAMILY_COVERAGE_MAP.md`.
+- Product note: Static prototype only; source coverage, passage dossiers, reviewer approvals, and answer gates do not provide live AI retrieval, licensed corpus coverage, production storage, scholar approval, public launch authority, or spiritual/medical/ritual authority.
+
+## v4.4.8 Passage Dossier Builder
+- Adds a passage dossier builder that turns each source candidate into meaning, use, boundary, missing fields, and reviewer notes.
+- Primary files: `passagedossierbuilder.html`, `data/vedapath-passage-dossier-builder.json`, `docs/PASSAGE_DOSSIER_BUILDER.md`.
+- Product note: Static prototype only; source coverage, passage dossiers, reviewer approvals, and answer gates do not provide live AI retrieval, licensed corpus coverage, production storage, scholar approval, public launch authority, or spiritual/medical/ritual authority.
+
+## v4.4.9 Reviewer Approval Workflow
+- Adds a reviewer approval workflow so source expansion requires role, scope, decision, audit, and boundary before answer promotion.
+- Primary files: `reviewerapprovalworkflow.html`, `data/vedapath-reviewer-approval-workflow.json`, `docs/REVIEWER_APPROVAL_WORKFLOW.md`.
+- Product note: Static prototype only; source coverage, passage dossiers, reviewer approvals, and answer gates do not provide live AI retrieval, licensed corpus coverage, production storage, scholar approval, public launch authority, or spiritual/medical/ritual authority.
+
+## v4.5.0 Retrieval-to-Answer Integration Gate
+- Adds the retrieval-to-answer integration gate that defines when a source packet may become a learner-facing answer draft.
+- Primary files: `retrievaltoanswerintegrationgate.html`, `data/vedapath-retrieval-to-answer-integration-gate.json`, `docs/RETRIEVAL_TO_ANSWER_INTEGRATION_GATE.md`.
+- Product note: Static prototype only; source coverage, passage dossiers, reviewer approvals, and answer gates do not provide live AI retrieval, licensed corpus coverage, production storage, scholar approval, public launch authority, or spiritual/medical/ritual authority.
+
+## v4.4.1 Retrieval Fixture Adapter
+- Adds a visible fixture adapter room that reads curated source candidates, exposes source ids, match reasons, confidence, and blocks answer composition until review.
+- Primary files: `retrievalfixtureadapter.html`, `data/vedapath-retrieval-fixture-adapter.json`, `docs/RETRIEVAL_FIXTURE_ADAPTER.md`.
+- Product note: Static prototype only; fixture retrieval, local copy packets, and QA cases do not provide live AI retrieval, production storage, licensed corpus coverage, scholar approval, public launch authority, or spiritual/medical/ritual authority.
+
+## v4.4.2 Source Candidate Ranking Contract
+- Adds a ranking contract room that names fit, citation, rights, review state, and boundary penalties before a source candidate can be top-ranked.
+- Primary files: `sourcecandidaterankingcontract.html`, `data/vedapath-source-candidate-ranking-contract.json`, `docs/SOURCE_CANDIDATE_RANKING_CONTRACT.md`.
+- Product note: Static prototype only; fixture retrieval, local copy packets, and QA cases do not provide live AI retrieval, production storage, licensed corpus coverage, scholar approval, public launch authority, or spiritual/medical/ritual authority.
+
+## v4.4.3 No-Source Answer Behavior
+- Adds a no-source behavior room so VedaPath has a graceful answer path when the fixture set cannot support a question.
+- Primary files: `nosourceanswerbehavior.html`, `data/vedapath-no-source-answer-behavior.json`, `docs/NO_SOURCE_ANSWER_BEHAVIOR.md`.
+- Product note: Static prototype only; fixture retrieval, local copy packets, and QA cases do not provide live AI retrieval, production storage, licensed corpus coverage, scholar approval, public launch authority, or spiritual/medical/ritual authority.
+
+## v4.4.4 Citation Packet Renderer
+- Adds a citation packet renderer that turns a selected source candidate into a structured answer packet with citation, confidence, boundary, and carry action.
+- Primary files: `citationpacketrenderer.html`, `data/vedapath-citation-packet-renderer.json`, `docs/CITATION_PACKET_RENDERER.md`.
+- Product note: Static prototype only; fixture retrieval, local copy packets, and QA cases do not provide live AI retrieval, production storage, licensed corpus coverage, scholar approval, public launch authority, or spiritual/medical/ritual authority.
+
+## v4.4.5 Retrieval QA Harness
+- Adds a retrieval QA harness with pass, review, and no-source cases so future retrieval changes can be checked before they affect answer cards.
+- Primary files: `retrievalqaharness.html`, `data/vedapath-retrieval-qa-harness.json`, `docs/RETRIEVAL_QA_HARNESS.md`.
+- Product note: Static prototype only; fixture retrieval, local copy packets, and QA cases do not provide live AI retrieval, production storage, licensed corpus coverage, scholar approval, public launch authority, or spiritual/medical/ritual authority.
+
+## v4.3.6 Pilot Invite Review
+- Adds a final invite review room so each private pilot invitation has purpose, boundary, consent posture, and hold reasons before a person is added.
+- Primary files: `pilotinvitereview.html`, `data/vedapath-pilot-invite-review.json`, `docs/PILOT_INVITE_REVIEW.md`.
+- Product note: Static prototype only; local storage and copy packets prove the pilot workflow shape but do not provide production identity, source licensing, durable audit storage, live AI retrieval, or public launch authority.
+
+## v4.3.7 Source Rights Approval Board
+- Adds a rights approval board that separates public-domain, cited-only, excerpt-only, review-needed, and blocked source use before pilot answers expand.
+- Primary files: `sourcerightsapprovalboard.html`, `data/vedapath-source-rights-approval-board.json`, `docs/SOURCE_RIGHTS_APPROVAL_BOARD.md`.
+- Product note: Static prototype only; local storage and copy packets prove the pilot workflow shape but do not provide production identity, source licensing, durable audit storage, live AI retrieval, or public launch authority.
+
+## v4.3.8 Pilot Session Export Packet
+- Adds a pilot session export packet so a completed session can become one copyable, reviewable artifact without hidden analytics.
+- Primary files: `pilotsessionexportpacket.html`, `data/vedapath-pilot-session-export-packet.json`, `docs/PILOT_SESSION_EXPORT_PACKET.md`.
+- Product note: Static prototype only; local storage and copy packets prove the pilot workflow shape but do not provide production identity, source licensing, durable audit storage, live AI retrieval, or public launch authority.
+
+## v4.3.9 Feedback-to-Ticket Audit Trail
+- Adds a feedback-to-ticket audit trail so pilot feedback can show source, owner, decision, and reason before it changes product behavior.
+- Primary files: `feedbacktoticketaudittrail.html`, `data/vedapath-feedback-to-ticket-audit-trail.json`, `docs/FEEDBACK_TO_TICKET_AUDIT_TRAIL.md`.
+- Product note: Static prototype only; local storage and copy packets prove the pilot workflow shape but do not provide production identity, source licensing, durable audit storage, live AI retrieval, or public launch authority.
+
+## v4.4.0 First Real Retrieval Adapter Shell
+- Adds the first real retrieval adapter shell: a bounded contract for fixture source input, citation output, no-answer behavior, and review gating before live AI retrieval.
+- Primary files: `retrievaladaptershell.html`, `data/vedapath-retrieval-adapter-shell.json`, `docs/RETRIEVAL_ADAPTER_SHELL.md`.
+- Product note: Static prototype only; local storage and copy packets prove the pilot workflow shape but do not provide production identity, source licensing, durable audit storage, live AI retrieval, or public launch authority.
+
+## v4.3.1 Pilot Feedback Intake
+
+- Changes made: Adds a private pilot feedback intake room so comments become bounded review tickets instead of hidden telemetry.
+- Files changed: `pilotfeedbackintake.html`, `data/vedapath-pilot-feedback-intake.json`, `docs/PILOT_FEEDBACK_INTAKE.md`, `assets/vedapath-command-shell.js`, `scripts/check-static-links.mjs`, `index.html`, and `build-status.html`.
+- Checks run: `node --check assets/vedapath-pilot-readiness.js`, `node --check assets/vedapath-command-shell.js`, `node --check scripts/apply-v431-v435-private-pilot-feedback-batch.mjs`, `node scripts/check-static-links.mjs`, and JSON parse for private pilot readiness data.
+- Known risks: Static prototype only; local storage and copy packets prove workflow shape but do not provide production identity, persistence, analytics, or reviewer permissions.
+
+## v4.3.2 Feedback Review Desk
+
+- Changes made: Adds a feedback review desk with explicit accept/revise/hold/discard/escalate decisions.
+- Files changed: `feedbackreviewdesk.html`, `data/vedapath-feedback-review-desk.json`, `docs/FEEDBACK_REVIEW_DESK.md`, `assets/vedapath-command-shell.js`, `scripts/check-static-links.mjs`, `index.html`, and `build-status.html`.
+- Checks run: `node --check assets/vedapath-pilot-readiness.js`, `node --check assets/vedapath-command-shell.js`, `node --check scripts/apply-v431-v435-private-pilot-feedback-batch.mjs`, `node scripts/check-static-links.mjs`, and JSON parse for private pilot readiness data.
+- Known risks: Static prototype only; local storage and copy packets prove workflow shape but do not provide production identity, persistence, analytics, or reviewer permissions.
+
+## v4.3.3 Pilot User Session Script
+
+- Changes made: Adds a guided pilot session script so the first private pilot test has one calm, repeatable path.
+- Files changed: `pilotusersessionscript.html`, `data/vedapath-pilot-user-session-script.json`, `docs/PILOT_USER_SESSION_SCRIPT.md`, `assets/vedapath-command-shell.js`, `scripts/check-static-links.mjs`, `index.html`, and `build-status.html`.
+- Checks run: `node --check assets/vedapath-pilot-readiness.js`, `node --check assets/vedapath-command-shell.js`, `node --check scripts/apply-v431-v435-private-pilot-feedback-batch.mjs`, `node scripts/check-static-links.mjs`, and JSON parse for private pilot readiness data.
+- Known risks: Static prototype only; local storage and copy packets prove workflow shape but do not provide production identity, persistence, analytics, or reviewer permissions.
+
+## v4.3.4 Launch Safety Checklist
+
+- Changes made: Adds a launch safety checklist that makes on/off controls visible before private pilot invites.
+- Files changed: `launchsafetychecklist.html`, `data/vedapath-launch-safety-checklist.json`, `docs/LAUNCH_SAFETY_CHECKLIST.md`, `assets/vedapath-command-shell.js`, `scripts/check-static-links.mjs`, `index.html`, and `build-status.html`.
+- Checks run: `node --check assets/vedapath-pilot-readiness.js`, `node --check assets/vedapath-command-shell.js`, `node --check scripts/apply-v431-v435-private-pilot-feedback-batch.mjs`, `node scripts/check-static-links.mjs`, and JSON parse for private pilot readiness data.
+- Known risks: Static prototype only; local storage and copy packets prove workflow shape but do not provide production identity, persistence, analytics, or reviewer permissions.
+
+## v4.3.5 Private Pilot Readiness Score
+
+- Changes made: Adds a private pilot readiness score that gathers the feedback, session, safety, source, and answer gates into one founder view.
+- Files changed: `privatepilotreadinessscore.html`, `data/vedapath-private-pilot-readiness-score.json`, `docs/PRIVATE_PILOT_READINESS_SCORE.md`, `assets/vedapath-command-shell.js`, `scripts/check-static-links.mjs`, `index.html`, and `build-status.html`.
+- Checks run: `node --check assets/vedapath-pilot-readiness.js`, `node --check assets/vedapath-command-shell.js`, `node --check scripts/apply-v431-v435-private-pilot-feedback-batch.mjs`, `node scripts/check-static-links.mjs`, and JSON parse for private pilot readiness data.
+- Known risks: Static prototype only; local storage and copy packets prove workflow shape but do not provide production identity, persistence, analytics, or reviewer permissions.
+
+## v4.2.6 Pilot Learning Signal Review
+
+- Changes made: Adds a review layer for consented pilot-learning signals so local prototype behavior cannot silently become product memory.
+- Files changed: `pilotlearningsignalreview.html`, `data/vedapath-pilot-learning-signal-review.json`, `docs/PILOT_LEARNING_SIGNAL_REVIEW.md`, `assets/vedapath-pilot-readiness.js`, `assets/vedapath-command-shell.js`, `assets/vedapath-pilot-readiness.css`, `scripts/check-static-links.mjs`, `index.html`, and `build-status.html`.
+- Checks run: `node --check assets/vedapath-pilot-readiness.js`, `node --check assets/vedapath-command-shell.js`, `node --check scripts/apply-v426-v430-launch-batch.mjs`, `node scripts/check-static-links.mjs`, and JSON parse for launch data.
+- Known risks: Static prototype only; local storage and copy packets prove workflow shape but do not provide production identity, persistence, analytics, or reviewer permissions.
+
+## v4.2.7 First Session Launch Spine
+
+- Changes made: Adds a first-session launch spine so new users enter through one guided loop instead of the full product map.
+- Files changed: `firstsessionlaunchspine.html`, `data/vedapath-first-session-launch-spine.json`, `docs/FIRST_SESSION_LAUNCH_SPINE.md`, `assets/vedapath-pilot-readiness.js`, `assets/vedapath-command-shell.js`, `assets/vedapath-pilot-readiness.css`, `scripts/check-static-links.mjs`, `index.html`, and `build-status.html`.
+- Checks run: `node --check assets/vedapath-pilot-readiness.js`, `node --check assets/vedapath-command-shell.js`, `node --check scripts/apply-v426-v430-launch-batch.mjs`, `node scripts/check-static-links.mjs`, and JSON parse for launch data.
+- Known risks: Static prototype only; local storage and copy packets prove workflow shape but do not provide production identity, persistence, analytics, or reviewer permissions.
+
+## v4.2.8 Source Readiness Triage
+
+- Changes made: Adds source readiness triage so retrieval can route source records before they become answer material.
+- Files changed: `sourcereadinesstriage.html`, `data/vedapath-source-readiness-triage.json`, `docs/SOURCE_READINESS_TRIAGE.md`, `assets/vedapath-pilot-readiness.js`, `assets/vedapath-command-shell.js`, `assets/vedapath-pilot-readiness.css`, `scripts/check-static-links.mjs`, `index.html`, and `build-status.html`.
+- Checks run: `node --check assets/vedapath-pilot-readiness.js`, `node --check assets/vedapath-command-shell.js`, `node --check scripts/apply-v426-v430-launch-batch.mjs`, `node scripts/check-static-links.mjs`, and JSON parse for launch data.
+- Known risks: Static prototype only; local storage and copy packets prove workflow shape but do not provide production identity, persistence, analytics, or reviewer permissions.
+
+## v4.2.9 Answer Readiness Gate
+
+- Changes made: Adds an answer readiness gate to keep pilot answers bounded, source-carded, and reviewable.
+- Files changed: `answerreadinessgate.html`, `data/vedapath-answer-readiness-gate.json`, `docs/ANSWER_READINESS_GATE.md`, `assets/vedapath-pilot-readiness.js`, `assets/vedapath-command-shell.js`, `assets/vedapath-pilot-readiness.css`, `scripts/check-static-links.mjs`, `index.html`, and `build-status.html`.
+- Checks run: `node --check assets/vedapath-pilot-readiness.js`, `node --check assets/vedapath-command-shell.js`, `node --check scripts/apply-v426-v430-launch-batch.mjs`, `node scripts/check-static-links.mjs`, and JSON parse for launch data.
+- Known risks: Static prototype only; local storage and copy packets prove workflow shape but do not provide production identity, persistence, analytics, or reviewer permissions.
+
+## v4.3.0 Private Pilot Launch Console
+
+- Changes made: Adds a private pilot launch console that gathers the readiness chain into one founder go/hold surface.
+- Files changed: `privatepilotlaunchconsole.html`, `data/vedapath-private-pilot-launch-console.json`, `docs/PRIVATE_PILOT_LAUNCH_CONSOLE.md`, `assets/vedapath-pilot-readiness.js`, `assets/vedapath-command-shell.js`, `assets/vedapath-pilot-readiness.css`, `scripts/check-static-links.mjs`, `index.html`, and `build-status.html`.
+- Checks run: `node --check assets/vedapath-pilot-readiness.js`, `node --check assets/vedapath-command-shell.js`, `node --check scripts/apply-v426-v430-launch-batch.mjs`, `node scripts/check-static-links.mjs`, and JSON parse for launch data.
+- Known risks: Static prototype only; local storage and copy packets prove workflow shape but do not provide production identity, persistence, analytics, or reviewer permissions.
+
+## v4.2.5 Pilot Telemetry Consent
+- Pilot Telemetry Consent asks for explicit local-only pilot learning consent before any signal is saved.
+- Primary files: `pilottelemetryconsent.html`, `data/vedapath-pilot-telemetry-consent.json`, `assets/vedapath-pilot-readiness.js`, `assets/vedapath-pilot-readiness.css`.
+- Product note: this remains a static GitHub Pages prototype; no hidden analytics, account storage, source rights approval, live AI retrieval, or production telemetry authority is granted.
+
 <!-- V420-V424 README START -->
 ## v4.2.0 Source Edition Intake
 - Source Edition Intake captures edition, translator, language, rights posture, and missing source fields before pilot use.

@@ -1,0 +1,133 @@
+{
+  "headline": "The adapter is not live AI. It is the rulebook for live AI later.",
+  "copy": "Use this room to test how source packets become answer drafts while every source, confidence, and boundary remains visible.",
+  "metrics": [
+    {
+      "label": "Draft shapes",
+      "value": "4"
+    },
+    {
+      "label": "No-source path",
+      "value": "1"
+    },
+    {
+      "label": "Live AI",
+      "value": "Off"
+    },
+    {
+      "label": "Order",
+      "value": "Fixed"
+    }
+  ],
+  "steps": [
+    {
+      "title": "Source",
+      "copy": "Read only the returned source packet."
+    },
+    {
+      "title": "Compose",
+      "copy": "Draft a short answer in the approved answer anatomy."
+    },
+    {
+      "title": "Refuse",
+      "copy": "Use no-source behavior when evidence is missing."
+    },
+    {
+      "title": "Carry",
+      "copy": "Offer one small, grounded next step."
+    }
+  ],
+  "candidates": [
+    {
+      "id": "adapter-steady",
+      "title": "Steady action answer",
+      "citation": "Bhagavad Gita 2.48",
+      "score": "Ready to draft",
+      "reason": "Approved source packet with clear learner use and calm boundary.",
+      "decision": "Compose bounded draft",
+      "record": {
+        "id": "bg-2-48-steadiness",
+        "status": "approved",
+        "title": "Steady action",
+        "citation": "Bhagavad Gita 2.48",
+        "family": "Bhagavad Gita | Smriti",
+        "summary": "Supports practical answers about steady action while avoiding promises of guaranteed calm.",
+        "confidence": "High | 86/100",
+        "boundary": "Reflection support only; not therapy, ritual instruction, or spiritual command.",
+        "missingFields": [
+          "licensed translation display",
+          "final reviewer signature"
+        ]
+      },
+      "packet": "Adapter draft\nDirect answer: Begin with one honest next action, not the result you cannot control.\nSource card: Bhagavad Gita 2.48 | Bhagavad Gita | Smriti | High confidence.\nPlain meaning: The source supports steadiness in action, not guaranteed peace.\nBoundary: Reflection support only.\nCarry: Choose one small duty and do it slowly."
+    },
+    {
+      "id": "adapter-oppenheimer",
+      "title": "Oppenheimer correction",
+      "citation": "Bhagavad Gita 11.32",
+      "score": "Ready to draft",
+      "reason": "Approved category correction with a clear overclaim boundary.",
+      "decision": "Compose corrective draft",
+      "record": {
+        "id": "bg-11-32-category",
+        "status": "approved",
+        "title": "Oppenheimer category correction",
+        "citation": "Bhagavad Gita 11.32",
+        "family": "Bhagavad Gita | Smriti",
+        "summary": "Supports correcting the common claim: the famous line is associated with the Gita, not the four Vedas.",
+        "confidence": "High | 91/100",
+        "boundary": "Do not call it a direct quote from the four Vedas.",
+        "missingFields": [
+          "translation variant note"
+        ]
+      },
+      "packet": "Adapter draft\nDirect answer: The famous line is associated with the Bhagavad Gita, not the four Vedas.\nSource card: Bhagavad Gita 11.32 | Smriti | High confidence.\nPlain meaning: Popular culture often calls it Vedic, but the direct source should be stated carefully.\nBoundary: Do not call it a direct Vedic quote."
+    },
+    {
+      "id": "adapter-gayatri",
+      "title": "Gayatri mantra hold",
+      "citation": "Rigveda 3.62.10",
+      "score": "Hold",
+      "reason": "High value source, but ritual and recitation boundaries need reviewer approval.",
+      "decision": "Do not draft practice instruction",
+      "record": {
+        "id": "rv-3-62-10-gayatri",
+        "status": "hold",
+        "title": "Gayatri mantra care",
+        "citation": "Rigveda 3.62.10",
+        "family": "Veda | Shruti",
+        "summary": "Useful for source context, but learner-facing practice needs reviewer and rights review.",
+        "confidence": "Medium | 68/100",
+        "boundary": "No ritual instruction, initiation advice, or recitation authority.",
+        "missingFields": [
+          "mantra reviewer",
+          "recitation boundary",
+          "rights approval"
+        ]
+      },
+      "packet": "Adapter hold\nDirect answer: VedaPath can identify the source family and explain why care is needed.\nSource card: Rigveda 3.62.10 | Veda | Shruti | Medium confidence.\nBoundary: No recitation, initiation, or ritual instruction.\nNext: route to mantra reviewer and rights desk."
+    },
+    {
+      "id": "adapter-no-source",
+      "title": "No-source refusal",
+      "citation": "No direct source",
+      "score": "Refuse",
+      "reason": "The claim has no reviewed source packet.",
+      "decision": "Use no-source behavior",
+      "record": {
+        "id": "no-source-modern-airplanes",
+        "status": "no-source",
+        "title": "Modern aircraft overclaim",
+        "citation": "No direct source",
+        "family": "No-source behavior",
+        "summary": "Used to refuse inflated claims when no reviewed source can carry the answer.",
+        "confidence": "High | 95/100",
+        "boundary": "Say no reliable source is present; do not invent validation.",
+        "missingFields": [
+          "none"
+        ]
+      },
+      "packet": "Adapter refusal\nDirect answer: I do not have a reviewed source that supports that claim.\nSource card: No direct source.\nBoundary: Do not invent validation.\nCarry: Offer to search related terms or compare source families."
+    }
+  ]
+}

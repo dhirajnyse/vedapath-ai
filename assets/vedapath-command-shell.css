@@ -224,6 +224,7 @@ body.vp-command-shell-ready header.topbar > .nav {
 }
 
 .vp-command-eyebrow,
+.vp-command-context,
 .vp-command-badge,
 .vp-command-memory {
   display: inline-flex;
@@ -237,8 +238,15 @@ body.vp-command-shell-ready header.topbar > .nav {
 }
 
 .vp-command-eyebrow {
-  color: var(--vp-command-green);
-  background: rgba(19, 92, 74, 0.1);
+  color: #0f473c;
+  border: 1px solid rgba(19, 92, 74, 0.22);
+  background: rgba(232, 242, 237, 0.96);
+}
+
+.vp-command-context {
+  color: #6c3a19;
+  border: 1px solid rgba(168, 62, 18, 0.16);
+  background: rgba(255, 250, 242, 0.82);
 }
 
 .vp-command-badge {
@@ -2660,3 +2668,69 @@ body.vp-command-shell-ready main > section > .panel {
   }
 }
 /* VEDAPATH MOBILE RAIL COMPOSURE PATCH END */
+
+/* VEDAPATH MOBILE COMMAND TRAY PATCH START */
+@media (max-width: 860px) {
+  body.vp-command-shell-ready .vp-command-rail,
+  body.vp-command-shell-ready.vp-nav-right .vp-command-rail {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 90 !important;
+    max-height: min(232px, 38vh) !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    overscroll-behavior: contain !important;
+    border-bottom: 1px solid rgba(255, 248, 235, 0.16) !important;
+    box-shadow: 0 16px 34px rgba(50, 24, 10, 0.14) !important;
+  }
+
+  body.vp-command-shell-ready .vp-command-brand {
+    grid-template-columns: 36px minmax(0, 1fr) !important;
+    min-height: 50px !important;
+    padding: 7px !important;
+  }
+
+  body.vp-command-shell-ready .vp-command-brand img {
+    width: 36px !important;
+    height: 36px !important;
+  }
+
+  body.vp-command-shell-ready .vp-command-brand strong {
+    font-size: 14px !important;
+  }
+
+  body.vp-command-shell-ready .vp-command-brand span {
+    display: none !important;
+  }
+
+  body.vp-command-shell-ready .vp-command-top {
+    gap: 10px !important;
+  }
+
+  body.vp-command-shell-ready .vp-command-controls {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+  }
+
+  body.vp-command-shell-ready .vp-control {
+    min-width: 0 !important;
+  }
+
+  body.vp-command-shell-ready .vp-control select,
+  body.vp-command-shell-ready .vp-control button {
+    min-height: 38px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  body.vp-command-shell-ready .vp-command-rail,
+  body.vp-command-shell-ready.vp-nav-right .vp-command-rail {
+    max-height: 196px !important;
+  }
+
+  body.vp-command-shell-ready .vp-command-controls {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+/* VEDAPATH MOBILE COMMAND TRAY PATCH END */

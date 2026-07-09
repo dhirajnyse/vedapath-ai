@@ -163,7 +163,7 @@
   }
 
   function renderAsk(data) {
-    const memoryKey = "vedapathLearnerAskFlowV414";
+    const memoryKey = data.memoryKey || "vedapathLearnerAskFlowV414";
     let selectedId = data.questions[0].id;
     function getSelected() {
       return data.questions.find(function (item) { return item.id === selectedId; }) || data.questions[0];

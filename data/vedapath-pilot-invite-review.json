@@ -1,0 +1,75 @@
+{
+  "title": "Pilot Invite Review",
+  "headline": "Review one invitation before one more tester enters.",
+  "copy": "This room keeps the pilot small and honest: who is invited, why now, what they are not promised, and what must be reviewed before the invite is sent.",
+  "boundary": "Invitation review only. No email sending, account creation, payment, analytics, or production access is enabled.",
+  "readyLabel": "Invite can be prepared for founder review",
+  "storageKey": "vedapathInviteReview",
+  "metrics": [
+    {
+      "label": "Pilot size",
+      "value": "small"
+    },
+    {
+      "label": "Consent",
+      "value": "explicit"
+    },
+    {
+      "label": "Promise",
+      "value": "bounded"
+    },
+    {
+      "label": "Access",
+      "value": "manual"
+    }
+  ],
+  "lanes": [
+    {
+      "id": "fit",
+      "title": "Learner fit",
+      "summary": "Confirm the person understands this is a source-first prototype, not a spiritual authority or therapy product.",
+      "decision": "Ready to invite",
+      "signals": [
+        "Curious learner",
+        "Accepts boundaries",
+        "Can give specific feedback"
+      ]
+    },
+    {
+      "id": "message",
+      "title": "Invite message",
+      "summary": "Use calm language that names the session length, the prototype nature, and the absence of account or payment promises.",
+      "decision": "Needs wording review",
+      "signals": [
+        "No hype",
+        "No launch claim",
+        "No hidden telemetry"
+      ]
+    },
+    {
+      "id": "hold",
+      "title": "Hold reason",
+      "summary": "Pause the invite when the user expects advice, authority, ritual instruction, or emergency support.",
+      "decision": "Hold if unclear",
+      "signals": [
+        "Medical need",
+        "Ritual authority expectation",
+        "Source rights unclear"
+      ]
+    }
+  ],
+  "checklist": [
+    "Invite says prototype clearly.",
+    "No therapy, ritual, guru, or emergency support claim appears.",
+    "Feedback route is visible before session begins.",
+    "Consent and local-memory boundary are named.",
+    "Founder can hold the invite without changing product data."
+  ],
+  "steps": [
+    "Choose one learner.",
+    "Read the invite boundary.",
+    "Confirm consent and feedback path.",
+    "Send only after founder review."
+  ],
+  "defaultNote": "Invite only one learner after source, consent, feedback, and safety posture are visible."
+}

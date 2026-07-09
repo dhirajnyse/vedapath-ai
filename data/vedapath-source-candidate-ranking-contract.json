@@ -1,0 +1,105 @@
+{
+  "position": "Ranking should reward direct evidence and penalize rights gaps, review gaps, and risky overclaiming.",
+  "headline": "Rank by trust, not by confidence alone.",
+  "copy": "A candidate may match the words in a question and still be unsafe for an answer if rights, review, or boundary signals are weak.",
+  "postures": [
+    {
+      "decision": "Allowed",
+      "title": "Direct reviewed source",
+      "copy": "Reviewed source id, citation, and answer boundary are all present."
+    },
+    {
+      "decision": "Review",
+      "title": "Useful but incomplete",
+      "copy": "Candidate exists, but rights, translation, or reviewer fields are incomplete."
+    },
+    {
+      "decision": "Blocked",
+      "title": "No reliable source",
+      "copy": "No reviewed source supports the claim or the claim asks for overreach."
+    }
+  ],
+  "flow": [
+    {
+      "title": "Fit",
+      "copy": "Question terms match the source record."
+    },
+    {
+      "title": "Citation",
+      "copy": "Citation and source id are stable."
+    },
+    {
+      "title": "Rights",
+      "copy": "Allowed use is visible."
+    },
+    {
+      "title": "Boundary",
+      "copy": "Overclaim risk is penalized."
+    }
+  ],
+  "decisions": [
+    {
+      "label": "Fit score",
+      "value": "+40",
+      "reason": "Strong semantic or curated alias match."
+    },
+    {
+      "label": "Citation quality",
+      "value": "+20",
+      "reason": "Stable source id, family, and citation."
+    },
+    {
+      "label": "Rights hold",
+      "value": "-30",
+      "reason": "Missing edition or display permission blocks answer rendering."
+    },
+    {
+      "label": "Review hold",
+      "value": "-25",
+      "reason": "Mantra, commentary, or claim-check records need human review."
+    },
+    {
+      "label": "Overclaim risk",
+      "value": "-40",
+      "reason": "Modern proof, miracle, medical, ritual, or authority claims must not rank into answers."
+    },
+    {
+      "label": "No-source floor",
+      "value": "<20",
+      "reason": "Below threshold, create a ticket instead of answering."
+    }
+  ],
+  "packet": "Ranking contract v4.4.2\nReturn: source_id, citation, family, fit_score, citation_score, rights_penalty, review_penalty, boundary_penalty, final_score, decision.\nNever rank a blocked source into answer-ready output.",
+  "metrics": [
+    {
+      "label": "Scoring lanes",
+      "value": "5"
+    },
+    {
+      "label": "Blocked penalty",
+      "value": "-40"
+    },
+    {
+      "label": "No-source floor",
+      "value": "<20"
+    },
+    {
+      "label": "Answer writes",
+      "value": "0"
+    }
+  ],
+  "locks": [
+    {
+      "title": "Rights before rank",
+      "copy": "Citation is not permission."
+    },
+    {
+      "title": "Review before confidence",
+      "copy": "A useful source can still need human review."
+    },
+    {
+      "title": "Refusal before overclaim",
+      "copy": "Low or risky matches should become no-source packets."
+    }
+  ]
+}

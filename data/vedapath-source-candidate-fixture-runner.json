@@ -1,0 +1,133 @@
+{
+  "headline": "Source candidates need reasons, not mystery ranking.",
+  "copy": "The future retrieval layer should return why a candidate matched, what was rejected, and what still blocks display.",
+  "metrics": [
+    {
+      "label": "Fixtures",
+      "value": "4"
+    },
+    {
+      "label": "Rank reasons",
+      "value": "4"
+    },
+    {
+      "label": "Rejected paths",
+      "value": "4"
+    },
+    {
+      "label": "Live ranking",
+      "value": "Off"
+    }
+  ],
+  "steps": [
+    {
+      "title": "Read query",
+      "copy": "Keep original user intent visible."
+    },
+    {
+      "title": "Score source",
+      "copy": "Rank source candidates with explicit reasons."
+    },
+    {
+      "title": "Reject overreach",
+      "copy": "Show rejected source paths when they are unsafe."
+    },
+    {
+      "title": "Return packet",
+      "copy": "Send only source packets to the adapter."
+    }
+  ],
+  "candidates": [
+    {
+      "id": "runner-steady",
+      "title": "Results feel uncertain",
+      "citation": "Bhagavad Gita 2.48",
+      "score": "86/100",
+      "reason": "Matches steady action, outcome attachment, and non-therapy boundary.",
+      "decision": "Return candidate",
+      "record": {
+        "id": "bg-2-48-steadiness",
+        "status": "approved",
+        "title": "Steady action",
+        "citation": "Bhagavad Gita 2.48",
+        "family": "Bhagavad Gita | Smriti",
+        "summary": "Supports practical answers about steady action while avoiding promises of guaranteed calm.",
+        "confidence": "High | 86/100",
+        "boundary": "Reflection support only; not therapy, ritual instruction, or spiritual command.",
+        "missingFields": [
+          "licensed translation display",
+          "final reviewer signature"
+        ]
+      },
+      "packet": "Fixture runner result\nQuery: How can I act calmly when results are uncertain?\nCandidate: Bhagavad Gita 2.48\nAccepted because: steady action and outcome boundary match.\nRejected: medical calming claim, guaranteed peace claim.\nReviewer state: approved"
+    },
+    {
+      "id": "runner-oppenheimer",
+      "title": "Oppenheimer quote source",
+      "citation": "Bhagavad Gita 11.32",
+      "score": "91/100",
+      "reason": "Matches quote-category correction and public trust example.",
+      "decision": "Return candidate",
+      "record": {
+        "id": "bg-11-32-category",
+        "status": "approved",
+        "title": "Oppenheimer category correction",
+        "citation": "Bhagavad Gita 11.32",
+        "family": "Bhagavad Gita | Smriti",
+        "summary": "Supports correcting the common claim: the famous line is associated with the Gita, not the four Vedas.",
+        "confidence": "High | 91/100",
+        "boundary": "Do not call it a direct quote from the four Vedas.",
+        "missingFields": [
+          "translation variant note"
+        ]
+      },
+      "packet": "Fixture runner result\nQuery: What scripture did Oppenheimer quote?\nCandidate: Bhagavad Gita 11.32\nAccepted because: source category correction is clear.\nRejected: four Vedas direct quote.\nReviewer state: approved"
+    },
+    {
+      "id": "runner-gayatri",
+      "title": "Gayatri mantra practice",
+      "citation": "Rigveda 3.62.10",
+      "score": "68/100",
+      "reason": "Source is relevant, but ritual and recitation boundaries block learner practice.",
+      "decision": "Return hold candidate",
+      "record": {
+        "id": "rv-3-62-10-gayatri",
+        "status": "hold",
+        "title": "Gayatri mantra care",
+        "citation": "Rigveda 3.62.10",
+        "family": "Veda | Shruti",
+        "summary": "Useful for source context, but learner-facing practice needs reviewer and rights review.",
+        "confidence": "Medium | 68/100",
+        "boundary": "No ritual instruction, initiation advice, or recitation authority.",
+        "missingFields": [
+          "mantra reviewer",
+          "recitation boundary",
+          "rights approval"
+        ]
+      },
+      "packet": "Fixture runner result\nQuery: Teach me Gayatri mantra practice.\nCandidate: Rigveda 3.62.10\nAccepted only for source identification.\nRejected: recitation authority and ritual instruction.\nReviewer state: hold"
+    },
+    {
+      "id": "runner-no-source",
+      "title": "Vedas predicted bitcoin",
+      "citation": "No direct source",
+      "score": "95/100 refusal",
+      "reason": "No reviewed source packet supports the modern finance claim.",
+      "decision": "Return no-source",
+      "record": {
+        "id": "no-source-modern-airplanes",
+        "status": "no-source",
+        "title": "Modern aircraft overclaim",
+        "citation": "No direct source",
+        "family": "No-source behavior",
+        "summary": "Used to refuse inflated claims when no reviewed source can carry the answer.",
+        "confidence": "High | 95/100",
+        "boundary": "Say no reliable source is present; do not invent validation.",
+        "missingFields": [
+          "none"
+        ]
+      },
+      "packet": "Fixture runner result\nQuery: Did the Vedas predict bitcoin?\nCandidate: none\nAccepted path: no-source refusal.\nRejected: invented validation.\nReviewer state: no-source"
+    }
+  ]
+}

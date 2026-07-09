@@ -1,0 +1,100 @@
+{
+  "position": "The demo can show source-first answer drafts, but production launch remains gated until evidence, consent, storage, licensing, and reviewer workflows are real.",
+  "headline": "Evidence before launch confidence.",
+  "copy": "This gate makes the next founder decision explicit: what is demo-ready, what stays private, and what must wait for real infrastructure.",
+  "postures": [
+    {
+      "decision": "Allowed",
+      "title": "Static demo",
+      "copy": "Show bounded answer draft rooms and source-first flow."
+    },
+    {
+      "decision": "Hold",
+      "title": "Live AI",
+      "copy": "No live generation until retrieval, logging, and review contracts exist."
+    },
+    {
+      "decision": "Hold",
+      "title": "Public source corpus",
+      "copy": "No broad corpus claims until rights and reviewer coverage are documented."
+    },
+    {
+      "decision": "Allowed",
+      "title": "Founder review",
+      "copy": "Use the evidence pack to decide the next build direction."
+    }
+  ],
+  "flow": [
+    {
+      "title": "Source",
+      "copy": "Coverage, family, dossier, and approval are visible."
+    },
+    {
+      "title": "Answer",
+      "copy": "Draft, revision, and trace are visible."
+    },
+    {
+      "title": "Audience",
+      "copy": "Beginner, Sanskrit, and scholar views stay separated."
+    },
+    {
+      "title": "Launch",
+      "copy": "Demo can expand only where risks stay labeled."
+    }
+  ],
+  "decisions": [
+    {
+      "label": "Demo surface",
+      "value": "Ready",
+      "reason": "Static pages and local memory are bounded."
+    },
+    {
+      "label": "Live answer generation",
+      "value": "Blocked",
+      "reason": "No production retrieval or reviewer storage yet."
+    },
+    {
+      "label": "Scholar approval",
+      "value": "Needed",
+      "reason": "Mantra, Sanskrit, and commentary lanes need human review."
+    },
+    {
+      "label": "Public launch",
+      "value": "Not yet",
+      "reason": "Need storage, consent, telemetry, corpus rights, and QA evidence."
+    }
+  ],
+  "metrics": [
+    {
+      "label": "Evidence rooms",
+      "value": "5"
+    },
+    {
+      "label": "Launch posture",
+      "value": "Private demo"
+    },
+    {
+      "label": "Live AI",
+      "value": "Off"
+    },
+    {
+      "label": "Next",
+      "value": "API contract"
+    }
+  ],
+  "locks": [
+    {
+      "title": "No hidden telemetry",
+      "copy": "Learning metrics must begin with consent and local boundaries."
+    },
+    {
+      "title": "No source inflation",
+      "copy": "No answer may claim more than the source packet supports."
+    },
+    {
+      "title": "No spiritual authority",
+      "copy": "VedaPath stays a learning companion, not a guru, ritual authority, or clinician."
+    }
+  ],
+  "packet": "VedaPath Launch Evidence Pack v4.5.5\nDemo-ready: static source-first answer draft rooms\nBlocked: live AI, public corpus, production storage, payment, public launch\nEvidence present: source coverage, family map, passage dossier, reviewer approval, answer integration, draft review, revision, trace, audience views\nFounder decision: proceed to real Source API Contract before external launch"
+}

@@ -1,0 +1,85 @@
+{
+  "title": "Answer Readiness Gate",
+  "headline": "Useful answers still need a readiness decision.",
+  "copy": "This room evaluates answer drafts before pilot display. It keeps the answer card standard clear: direct answer, source card, plain meaning, boundary, and next action.",
+  "boundary": "This gate approves prototype answer display only. It does not approve production AI, scholarship, ritual instruction, or medical/mental-health guidance.",
+  "storageKey": "vedapathAnswerReadinessGateV429",
+  "metrics": [
+    {
+      "label": "Gates",
+      "value": "5"
+    },
+    {
+      "label": "Pilot safe",
+      "value": "Conditional"
+    },
+    {
+      "label": "Confidence",
+      "value": "Visible"
+    },
+    {
+      "label": "Authority",
+      "value": "Off"
+    }
+  ],
+  "lanes": [
+    {
+      "id": "show",
+      "title": "Show with caution",
+      "summary": "Answer has source, confidence, boundary, and plain language.",
+      "decision": "Pilot display",
+      "signals": [
+        "Oppenheimer source correction",
+        "Steady action answer",
+        "Source family comparison"
+      ]
+    },
+    {
+      "id": "revise",
+      "title": "Revise",
+      "summary": "Answer is useful but too wordy, unclear, or overconfident.",
+      "decision": "Rewrite",
+      "signals": [
+        "Long Sanskrit explanation",
+        "Too many caveats",
+        "Missing direct answer"
+      ]
+    },
+    {
+      "id": "review",
+      "title": "Review",
+      "summary": "Answer needs scholar, reviewer, or rights review before display.",
+      "decision": "Reviewer gate",
+      "signals": [
+        "Commentary dispute",
+        "Translation-sensitive passage",
+        "School-specific claim"
+      ]
+    },
+    {
+      "id": "block",
+      "title": "Block",
+      "summary": "Answer risks overclaiming, diagnosis, certainty, or ritual authority.",
+      "decision": "Do not display",
+      "signals": [
+        "Vedas prove science",
+        "Personal crisis advice",
+        "Guaranteed calm promise"
+      ]
+    }
+  ],
+  "checklist": [
+    "Direct answer is short and useful.",
+    "Source card has citation and family.",
+    "Confidence and uncertainty are visible.",
+    "Boundary says what not to overclaim.",
+    "Next action is small and non-authoritative."
+  ],
+  "steps": [
+    "Read draft.",
+    "Check source card.",
+    "Check boundary.",
+    "Route display decision."
+  ],
+  "defaultNote": "This answer can be shown only if source, confidence, boundary, and next action remain visible."
+}

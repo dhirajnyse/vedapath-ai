@@ -1,0 +1,107 @@
+{
+  "headline": "Test retrieval before trusting it.",
+  "copy": "This QA harness turns the first retrieval behavior into visible cases that future implementation can run against.",
+  "progress": 92,
+  "boundary": "QA harness only. Passing these cases does not prove broad coverage, licensed text display, scholar approval, live AI safety, or production readiness.",
+  "metrics": [
+    {
+      "label": "Cases",
+      "value": "6"
+    },
+    {
+      "label": "Pass",
+      "value": "3"
+    },
+    {
+      "label": "Review",
+      "value": "1"
+    },
+    {
+      "label": "No-source",
+      "value": "2"
+    }
+  ],
+  "filters": [
+    {
+      "label": "All",
+      "value": "all"
+    },
+    {
+      "label": "Pass",
+      "value": "pass"
+    },
+    {
+      "label": "Review",
+      "value": "review"
+    },
+    {
+      "label": "No-source",
+      "value": "no-source"
+    }
+  ],
+  "records": [
+    {
+      "citation": "Bhagavad Gita 2.48",
+      "family": "Bhagavad Gita | Smriti",
+      "status": "pass",
+      "risks": [
+        "reflection boundary"
+      ]
+    },
+    {
+      "citation": "Bhagavad Gita 11.32",
+      "family": "Bhagavad Gita | Smriti",
+      "status": "pass",
+      "risks": [
+        "category confusion"
+      ]
+    },
+    {
+      "citation": "Mahabharata classification",
+      "family": "Bhagavad Gita | Smriti",
+      "status": "pass",
+      "risks": [
+        "Shruti/Smriti clarity"
+      ]
+    },
+    {
+      "citation": "Rigveda 3.62.10",
+      "family": "Veda | Shruti",
+      "status": "review",
+      "risks": [
+        "mantra review",
+        "rights approval"
+      ]
+    },
+    {
+      "citation": "No reviewed source",
+      "family": "Modern aircraft claim",
+      "status": "no-source",
+      "risks": [
+        "overclaim"
+      ]
+    },
+    {
+      "citation": "No reviewed source",
+      "family": "Bitcoin prediction claim",
+      "status": "no-source",
+      "risks": [
+        "modern proof claim"
+      ]
+    }
+  ],
+  "rules": [
+    {
+      "title": "Wrong citation fails",
+      "copy": "A Gita answer cannot cite the Vedas directly."
+    },
+    {
+      "title": "Review holds pass only as review",
+      "copy": "A useful mantra source should not become answer-ready without review."
+    },
+    {
+      "title": "No-source is success",
+      "copy": "Unsupported modern claims pass only when the product refuses to invent support."
+    }
+  ]
+}

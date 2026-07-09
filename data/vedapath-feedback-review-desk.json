@@ -1,0 +1,98 @@
+{
+  "title": "Feedback Review Desk",
+  "headline": "Review feedback before the product learns.",
+  "copy": "This desk gives VedaPath a founder-facing feedback review workflow. Each ticket gets a lane, decision, risk, and next action before it affects UI copy, source records, answer patterns, or launch readiness.",
+  "boundary": "This desk is a prototype review surface. It does not modify source data, user accounts, production analytics, or public release status.",
+  "readyLabel": "Ready for founder decision",
+  "storageKey": "vedapathFeedbackReviewDeskV432",
+  "metrics": [
+    {
+      "label": "Decisions",
+      "value": "5"
+    },
+    {
+      "label": "Open samples",
+      "value": "4"
+    },
+    {
+      "label": "Auto apply",
+      "value": "Off"
+    },
+    {
+      "label": "Owner",
+      "value": "Founder"
+    }
+  ],
+  "lanes": [
+    {
+      "id": "accept",
+      "title": "Accept",
+      "summary": "Feedback is specific, low risk, and improves clarity without changing source truth.",
+      "decision": "Add to backlog",
+      "signals": [
+        "Simpler button label",
+        "Clearer first-session copy",
+        "Better empty state"
+      ]
+    },
+    {
+      "id": "revise",
+      "title": "Revise",
+      "summary": "Feedback points to a real issue but needs cleaner wording or a smaller product move.",
+      "decision": "Rewrite",
+      "signals": [
+        "Too much feature request",
+        "Mixed source and UX concern",
+        "Needs smaller change"
+      ]
+    },
+    {
+      "id": "hold",
+      "title": "Hold",
+      "summary": "Feedback may be valid but needs more evidence, reviewer input, or rights clarity.",
+      "decision": "Wait",
+      "signals": [
+        "One-off confusion",
+        "Source interpretation concern",
+        "Rights not known"
+      ]
+    },
+    {
+      "id": "discard",
+      "title": "Discard",
+      "summary": "Feedback would make the product less truthful, less safe, or less source-first.",
+      "decision": "Do not apply",
+      "signals": [
+        "Remove boundary request",
+        "Make stronger claim",
+        "Hide source label"
+      ]
+    },
+    {
+      "id": "escalate",
+      "title": "Escalate",
+      "summary": "Feedback involves safety, privacy, identity, or a possible source-category error.",
+      "decision": "Founder review",
+      "signals": [
+        "Sensitive note",
+        "Potentially harmful advice",
+        "Category confusion"
+      ]
+    }
+  ],
+  "checklist": [
+    "Ticket has a feedback lane.",
+    "Risk and owner are visible.",
+    "Decision does not silently change source data.",
+    "Accepted work has a small next action.",
+    "Discarded work keeps the reason visible."
+  ],
+  "steps": [
+    "Open ticket.",
+    "Classify risk.",
+    "Choose decision.",
+    "Write next action.",
+    "Keep audit note."
+  ],
+  "defaultNote": "Review decision: revise the copy, keep the boundary visible, and do not change answer data until source review confirms it."
+}

@@ -1,0 +1,201 @@
+{
+  "headline": "Keep source families separate.",
+  "copy": "Every answer should know what family it is standing in before it explains anything.",
+  "fields": [
+    {
+      "name": "family",
+      "why": "Prevents calling every Hindu text Veda."
+    },
+    {
+      "name": "status",
+      "why": "Separates answer-ready, review-needed, and source-gap lanes."
+    },
+    {
+      "name": "reviewRole",
+      "why": "Names who should review the family before expansion."
+    },
+    {
+      "name": "boundary",
+      "why": "Keeps text, tradition, analogy, and modern claims distinct."
+    }
+  ],
+  "required": [
+    {
+      "key": "Veda | Shruti",
+      "value": "High reverence, high review"
+    },
+    {
+      "key": "Upanishad | Shruti",
+      "value": "Commentary-sensitive"
+    },
+    {
+      "key": "Bhagavad Gita | Smriti",
+      "value": "Beginner-ready with category label"
+    },
+    {
+      "key": "Itihasa | Smriti",
+      "value": "Context and narrative boundary"
+    },
+    {
+      "key": "Purana | Smriti",
+      "value": "Story and devotion boundary"
+    },
+    {
+      "key": "Commentary | Tradition",
+      "value": "School-specific, not base text"
+    }
+  ],
+  "records": [
+    {
+      "id": "bg-2-48-steadiness",
+      "status": "pass",
+      "title": "Steady action",
+      "citation": "Bhagavad Gita 2.48",
+      "family": "Bhagavad Gita | Smriti",
+      "summary": "Supports a calm reflection on steady action while keeping outcomes and personal identity separate.",
+      "confidence": "High | 86/100",
+      "boundary": "Reflection support only; not therapy, medical advice, ritual instruction, or spiritual command.",
+      "missingFields": [
+        "licensed translation display",
+        "reviewer note"
+      ]
+    },
+    {
+      "id": "bg-11-32-time",
+      "status": "pass",
+      "title": "Oppenheimer source correction",
+      "citation": "Bhagavad Gita 11.32",
+      "family": "Bhagavad Gita | Smriti",
+      "summary": "Corrects the common category confusion: the famous line is associated with the Gita, not the four Vedas.",
+      "confidence": "High | 91/100",
+      "boundary": "Do not call it a direct quote from the four Vedas.",
+      "missingFields": [
+        "translation variant review"
+      ]
+    },
+    {
+      "id": "rv-3-62-10-gayatri",
+      "status": "review",
+      "title": "Gayatri mantra review candidate",
+      "citation": "Rigveda 3.62.10",
+      "family": "Veda | Shruti",
+      "summary": "High-value source candidate that must stay in review until Sanskrit, recitation, and rights posture are stronger.",
+      "confidence": "Medium | 68/100",
+      "boundary": "No ritual instruction, initiation advice, or pronunciation authority.",
+      "missingFields": [
+        "recitation boundary",
+        "rights approval",
+        "mantra reviewer"
+      ]
+    },
+    {
+      "id": "isha-1-opening",
+      "status": "review",
+      "title": "Renunciation and stewardship candidate",
+      "citation": "Isha Upanishad 1",
+      "family": "Upanishad | Shruti",
+      "summary": "Useful for desire, possession, and restraint questions, but it needs commentary notes before learner-facing simplification.",
+      "confidence": "Medium | 72/100",
+      "boundary": "Do not flatten the verse into productivity advice or wealth advice.",
+      "missingFields": [
+        "commentary lens",
+        "translation rights"
+      ]
+    },
+    {
+      "id": "katha-1-2-23",
+      "status": "review",
+      "title": "Self-knowledge humility candidate",
+      "citation": "Katha Upanishad 1.2.23",
+      "family": "Upanishad | Shruti",
+      "summary": "Potentially useful for humility and self-knowledge boundaries, but requires tradition-aware commentary.",
+      "confidence": "Medium | 70/100",
+      "boundary": "Do not promise realization, status, or spiritual attainment.",
+      "missingFields": [
+        "commentary review",
+        "beginner phrasing"
+      ]
+    },
+    {
+      "id": "mbh-gita-category",
+      "status": "pass",
+      "title": "Gita classification",
+      "citation": "Mahabharata context",
+      "family": "Itihasa | Smriti",
+      "summary": "Helps explain that the Bhagavad Gita is part of the Mahabharata and is usually classified as Smriti.",
+      "confidence": "High | 84/100",
+      "boundary": "Use for classification only; do not overstate sectarian consensus.",
+      "missingFields": [
+        "school-specific notes"
+      ]
+    },
+    {
+      "id": "purana-devotion-gap",
+      "status": "review",
+      "title": "Devotion story candidate",
+      "citation": "Purana candidate",
+      "family": "Purana | Smriti",
+      "summary": "Can help with story-based devotion questions after source edition and interpretation boundaries are added.",
+      "confidence": "Low | 54/100",
+      "boundary": "Do not present story material as direct Vedic statement.",
+      "missingFields": [
+        "exact citation",
+        "edition",
+        "reviewer"
+      ]
+    },
+    {
+      "id": "commentary-shankara-gap",
+      "status": "review",
+      "title": "Commentary lens candidate",
+      "citation": "Vedanta commentary candidate",
+      "family": "Commentary | Tradition",
+      "summary": "Needed for interpretation differences, but must stay separate from source text and modern analogy.",
+      "confidence": "Low | 48/100",
+      "boundary": "Never collapse commentary into the base verse.",
+      "missingFields": [
+        "commentary citation",
+        "school label",
+        "rights posture"
+      ]
+    }
+  ],
+  "example": {
+    "family": "Bhagavad Gita | Smriti",
+    "allowedUse": "classification, direct citation packet, calm reflection",
+    "notAllowed": "calling it direct Veda, ritual authority, medical or spiritual prescription",
+    "reviewRole": "source reviewer"
+  },
+  "metrics": [
+    {
+      "label": "Families",
+      "value": "6"
+    },
+    {
+      "label": "Ready lanes",
+      "value": "2"
+    },
+    {
+      "label": "Review lanes",
+      "value": "4"
+    },
+    {
+      "label": "Merged labels",
+      "value": "0"
+    }
+  ],
+  "rules": [
+    {
+      "title": "Do not merge families",
+      "copy": "A Gita answer must not become a Veda answer for convenience."
+    },
+    {
+      "title": "Commentary is a layer",
+      "copy": "Commentary may explain the source but should not replace it."
+    },
+    {
+      "title": "Uncertain is allowed",
+      "copy": "A thin source family can be marked uncertain without shame."
+    }
+  ]
+}

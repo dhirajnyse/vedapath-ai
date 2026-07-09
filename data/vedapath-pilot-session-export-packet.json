@@ -1,0 +1,77 @@
+{
+  "title": "Pilot Session Export Packet",
+  "headline": "Turn one session into one review packet.",
+  "copy": "The export packet captures what happened, what source was used, what the learner felt, and what should become a review ticket.",
+  "boundary": "Manual export only. No automatic tracking, identity storage, analytics, sync, or production session archive is enabled.",
+  "readyLabel": "Session packet ready for review queue",
+  "storageKey": "vedapathSessionExport",
+  "metrics": [
+    {
+      "label": "Identity",
+      "value": "none"
+    },
+    {
+      "label": "Export",
+      "value": "manual"
+    },
+    {
+      "label": "Consent",
+      "value": "visible"
+    },
+    {
+      "label": "Queue",
+      "value": "review"
+    }
+  ],
+  "lanes": [
+    {
+      "id": "session-summary",
+      "title": "Session summary",
+      "summary": "Capture the ask, source card, answer boundary, calm action, and visible friction in one compact packet.",
+      "decision": "Export candidate",
+      "signals": [
+        "Question",
+        "Source",
+        "Boundary",
+        "Carry action"
+      ]
+    },
+    {
+      "id": "consent-trim",
+      "title": "Consent trim",
+      "summary": "Remove names, private details, and anything outside the participant's consent before review.",
+      "decision": "Trim before share",
+      "signals": [
+        "No private identity",
+        "No hidden telemetry",
+        "No sensitive life detail"
+      ]
+    },
+    {
+      "id": "ticket-route",
+      "title": "Ticket route",
+      "summary": "Route useful observations into source gap, UX friction, answer boundary, or calm-path improvement queues.",
+      "decision": "Create review ticket",
+      "signals": [
+        "Source gap",
+        "Confusing wording",
+        "Boundary issue",
+        "Helpful calm action"
+      ]
+    }
+  ],
+  "checklist": [
+    "Participant consent is named before export.",
+    "Private identity and sensitive details are removed.",
+    "Question and source card are included.",
+    "Boundary and no-authority language are preserved.",
+    "Packet has a clear review queue destination."
+  ],
+  "steps": [
+    "Summarize the session.",
+    "Trim private details.",
+    "Choose the review route.",
+    "Copy the packet."
+  ],
+  "defaultNote": "Export only what the pilot participant agreed to share."
+}

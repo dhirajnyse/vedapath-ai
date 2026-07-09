@@ -1,0 +1,85 @@
+{
+  "title": "First Session Launch Spine",
+  "headline": "A first session should finish one clean loop.",
+  "copy": "This room defines the private-pilot first-session path: ask clearly, read one source card, choose a calm practice action, and decide whether to save a visible local signal.",
+  "boundary": "This is onboarding design, not spiritual instruction or therapy. It keeps the first session small and source-backed.",
+  "storageKey": "vedapathFirstSessionLaunchSpineV427",
+  "metrics": [
+    {
+      "label": "Steps",
+      "value": "4"
+    },
+    {
+      "label": "First action",
+      "value": "Ask"
+    },
+    {
+      "label": "Memory",
+      "value": "Optional"
+    },
+    {
+      "label": "Scope",
+      "value": "Pilot"
+    }
+  ],
+  "lanes": [
+    {
+      "id": "ask",
+      "title": "Ask",
+      "summary": "Begin with one real question or claim.",
+      "decision": "Start",
+      "signals": [
+        "Question is plain",
+        "No category overclaim",
+        "User sees source-first promise"
+      ]
+    },
+    {
+      "id": "source",
+      "title": "Source",
+      "summary": "Show citation, family, confidence, and boundary.",
+      "decision": "Read",
+      "signals": [
+        "Citation visible",
+        "Source family labeled",
+        "Boundary included"
+      ]
+    },
+    {
+      "id": "practice",
+      "title": "Practice",
+      "summary": "Turn insight into one small action.",
+      "decision": "Carry",
+      "signals": [
+        "Action is modest",
+        "No guaranteed calm claim",
+        "User keeps agency"
+      ]
+    },
+    {
+      "id": "remember",
+      "title": "Remember",
+      "summary": "Save only what the user knowingly wants to keep.",
+      "decision": "Optional",
+      "signals": [
+        "Local-only memory",
+        "Clear button visible",
+        "No account required"
+      ]
+    }
+  ],
+  "checklist": [
+    "The first screen has one main promise.",
+    "The first answer shows source category and caution.",
+    "The user can choose study, calm, or daily loop without confusion.",
+    "Any saved memory is optional and local.",
+    "The page does not ask for login, payment, or production claims."
+  ],
+  "steps": [
+    "Ask one question.",
+    "Read one source.",
+    "Carry one action.",
+    "Remember only with consent."
+  ],
+  "defaultNote": "The first session is ready when a new user can complete one source-backed loop without needing the whole map."
+}

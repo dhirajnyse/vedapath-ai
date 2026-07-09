@@ -1,0 +1,89 @@
+{
+  "title": "Launch Safety Checklist",
+  "headline": "Know what is open before launch.",
+  "copy": "This checklist makes the private-pilot safety posture explicit. It protects the calm product promise by keeping production, payment, hidden telemetry, medical advice, ritual authority, and source mutation closed.",
+  "boundary": "Safety readiness is a pre-launch control surface. It does not grant production authorization, legal clearance, medical safety approval, or public release.",
+  "readyLabel": "Safety posture visible",
+  "storageKey": "vedapathLaunchSafetyChecklistV434",
+  "metrics": [
+    {
+      "label": "Controls",
+      "value": "8"
+    },
+    {
+      "label": "Public launch",
+      "value": "Off"
+    },
+    {
+      "label": "Payment",
+      "value": "Off"
+    },
+    {
+      "label": "Review",
+      "value": "On"
+    }
+  ],
+  "lanes": [
+    {
+      "id": "on",
+      "title": "Allowed on",
+      "summary": "Static prototype pages, source cards, local practice memory, and visible copy packets.",
+      "decision": "Pilot allowed",
+      "signals": [
+        "GitHub Pages prototype",
+        "Local save/clear",
+        "Copy packets"
+      ]
+    },
+    {
+      "id": "off",
+      "title": "Must stay off",
+      "summary": "Production AI writes, hidden telemetry, accounts, payment, and public claims.",
+      "decision": "Keep closed",
+      "signals": [
+        "No API key",
+        "No payment",
+        "No profile"
+      ]
+    },
+    {
+      "id": "review",
+      "title": "Review required",
+      "summary": "Source corrections, answer promotion, feedback acceptance, and readiness decisions.",
+      "decision": "Founder review",
+      "signals": [
+        "Feedback desk",
+        "Answer gate",
+        "Source triage"
+      ]
+    },
+    {
+      "id": "blocked",
+      "title": "Blocked content",
+      "summary": "Medical, emergency, ritual authority, guaranteed calm, or modern-science proof claims.",
+      "decision": "Block",
+      "signals": [
+        "Diagnosis request",
+        "Guaranteed outcome",
+        "Inflated claim"
+      ]
+    }
+  ],
+  "checklist": [
+    "Prototype boundary is visible.",
+    "Hidden telemetry is off.",
+    "Account and payment paths are off.",
+    "Source records do not mutate automatically.",
+    "Feedback requires review before learning.",
+    "Medical, emergency, and ritual authority boundaries are visible.",
+    "Local data can be cleared.",
+    "Founder go or hold decision is explicit."
+  ],
+  "steps": [
+    "Review what is on.",
+    "Confirm what is off.",
+    "Check boundaries.",
+    "Choose go or hold."
+  ],
+  "defaultNote": "Safety note: private pilot may continue only if hidden telemetry, payment, production AI, and source mutation remain disabled."
+}

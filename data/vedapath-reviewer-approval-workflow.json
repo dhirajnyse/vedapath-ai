@@ -1,0 +1,105 @@
+{
+  "position": "A source candidate can enter the learner path only after its reviewer, scope, decision, and boundary are visible.",
+  "headline": "Review before the corpus speaks.",
+  "copy": "This workflow keeps source expansion calm by making approval steps explicit before answer promotion.",
+  "postures": [
+    {
+      "decision": "Allowed",
+      "title": "Approved for citation packet",
+      "copy": "Reviewer scope, source citation, rights posture, and boundary are complete."
+    },
+    {
+      "decision": "Review",
+      "title": "Needs specialist review",
+      "copy": "Mantra, commentary, ritual, medical, or category-sensitive cases need a named review lane."
+    },
+    {
+      "decision": "Blocked",
+      "title": "No answer promotion",
+      "copy": "No-source, rights-blocked, or high-overclaim records stay out of learner answers."
+    }
+  ],
+  "flow": [
+    {
+      "title": "Assign role",
+      "copy": "Source, mantra, commentary, or safety reviewer."
+    },
+    {
+      "title": "Review source",
+      "copy": "Check family, citation, rights, and meaning capsule."
+    },
+    {
+      "title": "Decide",
+      "copy": "Approve, hold, revise, block, or route to no-source."
+    },
+    {
+      "title": "Audit",
+      "copy": "Preserve decision notes before answer promotion."
+    }
+  ],
+  "decisions": [
+    {
+      "label": "Reviewer role",
+      "value": "required",
+      "reason": "Approval without role is not review."
+    },
+    {
+      "label": "Decision note",
+      "value": "required",
+      "reason": "Future users need to know why the source moved."
+    },
+    {
+      "label": "Rights posture",
+      "value": "required",
+      "reason": "Citation is not display permission."
+    },
+    {
+      "label": "Boundary text",
+      "value": "required",
+      "reason": "Answer cards must know what not to claim."
+    },
+    {
+      "label": "Audit id",
+      "value": "required",
+      "reason": "No silent source expansion."
+    },
+    {
+      "label": "Production write",
+      "value": "off",
+      "reason": "This prototype stores no production approval."
+    }
+  ],
+  "packet": "Reviewer approval packet v4.4.9\nsource_id:\nreviewer_role:\ndecision: approve | hold | revise | block | no-source\nscope:\nrights_posture:\nboundary:\naudit_note:\nanswer_promotion: disabled in prototype",
+  "metrics": [
+    {
+      "label": "Review lanes",
+      "value": "4"
+    },
+    {
+      "label": "Approval fields",
+      "value": "6"
+    },
+    {
+      "label": "Silent changes",
+      "value": "0"
+    },
+    {
+      "label": "Production writes",
+      "value": "0"
+    }
+  ],
+  "locks": [
+    {
+      "title": "Role before decision",
+      "copy": "Different source families need different reviewers."
+    },
+    {
+      "title": "Audit before promotion",
+      "copy": "A source should not become answer-ready without a visible decision trail."
+    },
+    {
+      "title": "Hold is success",
+      "copy": "The workflow should make restraint feel normal."
+    }
+  ]
+}

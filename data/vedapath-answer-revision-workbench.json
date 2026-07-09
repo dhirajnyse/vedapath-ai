@@ -1,0 +1,111 @@
+{
+  "headline": "Answer drafts need a revision lane before learner trust.",
+  "copy": "Use this workbench to compare a draft problem, the source card, the repair decision, and the revised packet.",
+  "metrics": [
+    {
+      "label": "Drafts",
+      "value": "4"
+    },
+    {
+      "label": "Needs revision",
+      "value": "3"
+    },
+    {
+      "label": "Safe to demo",
+      "value": "1"
+    },
+    {
+      "label": "Live AI",
+      "value": "Off"
+    }
+  ],
+  "steps": [
+    {
+      "title": "Read",
+      "copy": "Read the draft and the source card together."
+    },
+    {
+      "title": "Cut",
+      "copy": "Remove certainty, promise, or category confusion."
+    },
+    {
+      "title": "Repair",
+      "copy": "Rewrite in one direct answer plus one boundary."
+    },
+    {
+      "title": "Record",
+      "copy": "Save the reason for the revision."
+    }
+  ],
+  "candidates": [
+    {
+      "id": "revise-steady-action",
+      "title": "Steady action draft",
+      "citation": "Bhagavad Gita 2.48",
+      "score": "Needs polish",
+      "reason": "The answer is useful but too confident about emotional outcome.",
+      "decision": "Revise for humility",
+      "record": {
+        "id": "bg-2-48-steadiness",
+        "status": "approved",
+        "title": "Steady action",
+        "citation": "Bhagavad Gita 2.48",
+        "family": "Bhagavad Gita | Smriti",
+        "summary": "Supports a practical answer about acting steadily while not turning outcomes into identity.",
+        "confidence": "High | 86/100",
+        "boundary": "Reflection support only; not therapy, medical advice, ritual instruction, or spiritual command.",
+        "missingFields": [
+          "licensed translation display",
+          "final reviewer signature"
+        ]
+      },
+      "packet": "Problem: promises calm too strongly.\nRevision: say the source supports steady action, not guaranteed peace.\nApproved draft: Begin with one honest next action. The source points toward steadiness in action, while the result remains uncertain.\nBoundary: reflection support only."
+    },
+    {
+      "id": "revise-category",
+      "title": "Oppenheimer source draft",
+      "citation": "Bhagavad Gita 11.32",
+      "score": "Strong",
+      "reason": "The answer corrects category confusion and keeps the tone respectful.",
+      "decision": "Demo-ready",
+      "record": {
+        "id": "bg-11-32-category",
+        "status": "approved",
+        "title": "Oppenheimer category correction",
+        "citation": "Bhagavad Gita 11.32",
+        "family": "Bhagavad Gita | Smriti",
+        "summary": "Supports correcting the common claim: the famous line is associated with the Gita, not the four Vedas.",
+        "confidence": "High | 91/100",
+        "boundary": "Do not call it a direct quote from the four Vedas.",
+        "missingFields": [
+          "translation variant note"
+        ]
+      },
+      "packet": "Problem: popular wording can imply direct Vedic quotation.\nRevision: say Bhagavad Gita and source family explicitly.\nApproved draft: The famous line is associated with Bhagavad Gita 11.32, a section of the Mahabharata usually classified as Smriti.\nBoundary: do not call it a direct four-Veda quote."
+    },
+    {
+      "id": "revise-gayatri",
+      "title": "Gayatri mantra draft",
+      "citation": "Rigveda 3.62.10",
+      "score": "Hold",
+      "reason": "Needs mantra reviewer and recitation boundary before learner-facing depth.",
+      "decision": "Hold for review",
+      "record": {
+        "id": "rv-3-62-10-gayatri",
+        "status": "hold",
+        "title": "Gayatri mantra care",
+        "citation": "Rigveda 3.62.10",
+        "family": "Veda | Shruti",
+        "summary": "Useful for source context, but learner-facing draft must avoid ritual instruction, pronunciation authority, or initiation claims.",
+        "confidence": "Medium | 68/100",
+        "boundary": "No ritual instruction, initiation advice, or recitation authority.",
+        "missingFields": [
+          "mantra reviewer",
+          "recitation boundary",
+          "rights approval"
+        ]
+      },
+      "packet": "Problem: draft drifts toward instruction.\nRevision: route to source context only.\nApproved draft: VedaPath can identify the source family and explain why the passage needs careful review before guidance.\nBoundary: no ritual, initiation, or pronunciation authority."
+    }
+  ]
+}

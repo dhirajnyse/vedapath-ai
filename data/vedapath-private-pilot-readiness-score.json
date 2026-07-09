@@ -1,0 +1,99 @@
+{
+  "title": "Private Pilot Readiness Score",
+  "headline": "Readiness is a gate, not a celebration.",
+  "copy": "This score gathers the private-pilot readiness chain into one calm founder view. It shows which areas are ready, which are still review candidates, and which must remain closed before launch.",
+  "boundary": "This score is a prototype readiness view. It does not certify production readiness, legal compliance, medical safety, scholarship, or public release.",
+  "readyLabel": "Founder review ready",
+  "storageKey": "vedapathPrivatePilotReadinessScoreV435",
+  "metrics": [
+    {
+      "label": "Readiness",
+      "value": "82/100"
+    },
+    {
+      "label": "Ready gates",
+      "value": "6"
+    },
+    {
+      "label": "Review gates",
+      "value": "2"
+    },
+    {
+      "label": "Closed paths",
+      "value": "6"
+    }
+  ],
+  "lanes": [
+    {
+      "id": "source",
+      "title": "Source readiness",
+      "summary": "Core passages have source family, citation, boundary, and review posture.",
+      "decision": "Mostly ready",
+      "signals": [
+        "Source triage exists",
+        "Rights posture visible",
+        "Source QA continues"
+      ]
+    },
+    {
+      "id": "answer",
+      "title": "Answer readiness",
+      "summary": "Answer cards show citation, confidence, plain meaning, and no-overclaim boundary.",
+      "decision": "Ready with caution",
+      "signals": [
+        "Answer gate exists",
+        "Pramana meter visible",
+        "Boundary retained"
+      ]
+    },
+    {
+      "id": "feedback",
+      "title": "Feedback readiness",
+      "summary": "Pilot comments can be captured, reviewed, and rejected without hidden learning.",
+      "decision": "Review ready",
+      "signals": [
+        "Feedback intake",
+        "Feedback desk",
+        "Audit note"
+      ]
+    },
+    {
+      "id": "session",
+      "title": "Session readiness",
+      "summary": "Founder can guide one complete first session without exposing the whole product map.",
+      "decision": "Ready to test",
+      "signals": [
+        "Session script",
+        "One guided loop",
+        "Local feedback note"
+      ]
+    },
+    {
+      "id": "safety",
+      "title": "Safety readiness",
+      "summary": "Closed paths remain closed and pilot boundaries are visible.",
+      "decision": "Hold if changed",
+      "signals": [
+        "Production off",
+        "Payment off",
+        "Hidden telemetry off"
+      ]
+    }
+  ],
+  "checklist": [
+    "Source, answer, feedback, session, and safety rooms are visible.",
+    "Private pilot can run one guided loop.",
+    "Feedback has a review path.",
+    "Closed production paths are still closed.",
+    "Founder go or hold remains explicit."
+  ],
+  "steps": [
+    "Review source readiness.",
+    "Review answer readiness.",
+    "Review feedback path.",
+    "Review session script.",
+    "Review safety posture.",
+    "Choose go or hold."
+  ],
+  "defaultNote": "Readiness score: private pilot is review-ready, but production, payment, hidden telemetry, and public launch stay closed."
+}

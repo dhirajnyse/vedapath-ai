@@ -1,11 +1,18 @@
 (function () {
-  const releaseBadge = "v4.2.4 invite";
+  const releaseBadge = "v4.6.5 demo script";
   const prefKey = "vedapathCommandShellPrefs";
   const groups = [
     { title: "Start", labels: ["Home", "Build", "Brand", "Blueprint"] },
     { title: "Source", labels: ["Answers", "Review", "Mantra"] },
     { title: "Practice", labels: ["Life", "Talk", "Pattern", "Daily"] },
-    { title: "Retrieval", labels: ["Packet", "Launch", "Pilot", "Records", "Desk", "QA Pack", "Ask Flow", "Links", "Rights", "History", "Score", "Waitlist", "Edition", "Rights Desk", "Identity", "Promote", "Invite"] }
+    { title: "Retrieval", labels: ["Packet", "Launch", "Pilot", "Records", "Desk", "QA Pack", "Ask Flow", "Links", "Rights", "History", "Score", "Waitlist", "Edition", "Rights Desk", "Identity", "Promote", "Invite", "Telemetry"] },
+    { title: "Pilot Launch", labels: ["Signals", "First Session", "Source Triage", "Answer Gate", "Launch Console"] },
+    { title: "Pilot Review", labels: ["Feedback", "Feedback Desk", "Session Script", "Safety", "Readiness Score", "Invite Review", "Rights Board", "Session Export", "Feedback Audit", "Retrieval Adapter"] },
+    { title: "Retrieval Quality", labels: ["Fixture Adapter", "Ranking Contract", "No-Source", "Citation Packet", "QA Harness"] },
+    { title: "Source Expansion", labels: ["Coverage", "Family Map", "Dossier", "Approval Flow", "Answer Integration"] },
+    { title: "Answer Drafts", labels: ["Draft Review", "Revision", "Trace", "Audience Views", "Evidence Pack"] },
+    { title: "Launch Stack", labels: ["Source API", "Retrieval Boundary", "Answer Adapter", "Review Handoff", "Private Gate"] },
+    { title: "Launch Tests", labels: ["Source API Tests", "No-Source Eval", "Fixture Runner", "Adapter Tests", "Demo Script"] }
   ];
   const pageTitles = {
     Home: "VedaPath command center",
@@ -35,7 +42,48 @@
     "Rights Desk": "Rights Review Desk",
     "Identity": "Reviewer Identity Lite",
     "Promote": "Answer Promotion Rules",
-    "Invite": "Pilot Invite Packet"
+    "Invite": "Pilot Invite Packet",
+    "Telemetry": "Pilot Telemetry Consent",
+    "Signals": "Pilot Learning Signal Review",
+    "First Session": "First Session Launch Spine",
+    "Source Triage": "Source Readiness Triage",
+    "Answer Gate": "Answer Readiness Gate",
+    "Launch Console": "Private Pilot Launch Console",
+    "Feedback": "Pilot Feedback Intake",
+    "Feedback Desk": "Feedback Review Desk",
+    "Session Script": "Pilot User Session Script",
+    "Safety": "Launch Safety Checklist",
+    "Readiness Score": "Private Pilot Readiness Score",
+    "Invite Review": "Pilot Invite Review",
+    "Rights Board": "Source Rights Approval Board",
+    "Session Export": "Pilot Session Export Packet",
+    "Feedback Audit": "Feedback-to-Ticket Audit Trail",
+    "Retrieval Adapter": "First Real Retrieval Adapter Shell",
+    "Fixture Adapter": "Retrieval Fixture Adapter",
+    "Ranking Contract": "Source Candidate Ranking Contract",
+    "No-Source": "No-Source Answer Behavior",
+    "Citation Packet": "Citation Packet Renderer",
+    "QA Harness": "Retrieval QA Harness",
+    Coverage: "Source Coverage Expansion",
+    "Family Map": "Source Family Coverage Map",
+    Dossier: "Passage Dossier Builder",
+    "Approval Flow": "Reviewer Approval Workflow",
+    "Answer Integration": "Retrieval-to-Answer Integration Gate",
+    "Draft Review": "Learner Answer Draft Review",
+    Revision: "Answer Revision Workbench",
+    Trace: "Source-to-Answer Trace View",
+    "Audience Views": "Audience View Toggle",
+    "Evidence Pack": "Launch Readiness Evidence Pack",
+    "Source API": "Real Source API Contract",
+    "Retrieval Boundary": "Retrieval Service Boundary",
+    "Answer Adapter": "Mock Answer Generation Adapter",
+    "Review Handoff": "Reviewer Approval Handoff",
+    "Private Gate": "Private Launch Gate",
+    "Source API Tests": "Source API Test Harness",
+    "No-Source Eval": "No-Source Evaluation Suite",
+    "Fixture Runner": "Source Candidate Fixture Runner",
+    "Adapter Tests": "Adapter Contract Tests",
+    "Demo Script": "Private Demo Script"
   };
   const bodyPageTitles = {
     "permission-execution-draft-page": "Controlled draft gate",
@@ -58,8 +106,78 @@
     "rights-review-desk-page": "Rights Review Desk",
     "reviewer-identity-lite-page": "Reviewer Identity Lite",
     "answer-promotion-rules-page": "Answer Promotion Rules",
-    "pilot-invite-packet-page": "Pilot Invite Packet"
+    "pilot-invite-packet-page": "Pilot Invite Packet",
+    "pilot-telemetry-consent-page": "Pilot Telemetry Consent",
+    "pilot-learning-signal-review-page": "Pilot Learning Signal Review",
+    "first-session-launch-spine-page": "First Session Launch Spine",
+    "source-readiness-triage-page": "Source Readiness Triage",
+    "answer-readiness-gate-page": "Answer Readiness Gate",
+    "private-pilot-launch-console-page": "Private Pilot Launch Console",
+    "pilot-feedback-intake-page": "Pilot Feedback Intake",
+    "feedback-review-desk-page": "Feedback Review Desk",
+    "pilot-user-session-script-page": "Pilot User Session Script",
+    "launch-safety-checklist-page": "Launch Safety Checklist",
+    "private-pilot-readiness-score-page": "Private Pilot Readiness Score",
+    "pilot-invite-review-page": "Pilot Invite Review",
+    "source-rights-approval-board-page": "Source Rights Approval Board",
+    "pilot-session-export-packet-page": "Pilot Session Export Packet",
+    "feedback-to-ticket-audit-trail-page": "Feedback-to-Ticket Audit Trail",
+    "retrieval-adapter-shell-page": "First Real Retrieval Adapter Shell",
+    "retrieval-fixture-adapter-page": "Retrieval Fixture Adapter",
+    "source-candidate-ranking-contract-page": "Source Candidate Ranking Contract",
+    "no-source-answer-behavior-page": "No-Source Answer Behavior",
+    "citation-packet-renderer-page": "Citation Packet Renderer",
+    "retrieval-qa-harness-page": "Retrieval QA Harness",
+    "source-coverage-expansion-page": "Source Coverage Expansion",
+    "source-family-coverage-map-page": "Source Family Coverage Map",
+    "passage-dossier-builder-page": "Passage Dossier Builder",
+    "reviewer-approval-workflow-page": "Reviewer Approval Workflow",
+    "retrieval-to-answer-integration-gate-page": "Retrieval-to-Answer Integration Gate",
+    "learner-answer-draft-review-page": "Learner Answer Draft Review",
+    "answer-revision-workbench-page": "Answer Revision Workbench",
+    "source-to-answer-trace-view-page": "Source-to-Answer Trace View",
+    "audience-view-toggle-page": "Audience View Toggle",
+    "launch-readiness-evidence-pack-page": "Launch Readiness Evidence Pack",
+    "real-source-api-contract-page": "Real Source API Contract",
+    "retrieval-service-boundary-page": "Retrieval Service Boundary",
+    "mock-answer-generation-adapter-page": "Mock Answer Generation Adapter",
+    "reviewer-approval-handoff-page": "Reviewer Approval Handoff",
+    "private-launch-gate-page": "Private Launch Gate",
+    "source-api-test-harness-page": "Source API Test Harness",
+    "no-source-evaluation-suite-page": "No-Source Evaluation Suite",
+    "source-candidate-fixture-runner-page": "Source Candidate Fixture Runner",
+    "adapter-contract-tests-page": "Adapter Contract Tests",
+    "private-demo-script-page": "Private Demo Script"
   };
+
+
+  const extraLinks = [
+    ["Fixture Adapter", "retrievalfixtureadapter.html"],
+    ["Ranking Contract", "sourcecandidaterankingcontract.html"],
+    ["No-Source", "nosourceanswerbehavior.html"],
+    ["Citation Packet", "citationpacketrenderer.html"],
+    ["QA Harness", "retrievalqaharness.html"],
+    ["Coverage", "sourcecoverageexpansion.html"],
+    ["Family Map", "sourcefamilycoveragemap.html"],
+    ["Dossier", "passagedossierbuilder.html"],
+    ["Approval Flow", "reviewerapprovalworkflow.html"],
+    ["Answer Integration", "retrievaltoanswerintegrationgate.html"],
+    ["Draft Review", "learneranswerdraftreview.html"],
+    ["Revision", "answerrevisionworkbench.html"],
+    ["Trace", "sourcetoanswertraceview.html"],
+    ["Audience Views", "audienceviewtoggle.html"],
+    ["Evidence Pack", "launchreadinessevidencepack.html"],
+    ["Source API", "realsourceapicontract.html"],
+    ["Retrieval Boundary", "retrievalserviceboundary.html"],
+    ["Answer Adapter", "mockanswergenerationadapter.html"],
+    ["Review Handoff", "reviewerapprovalhandoff.html"],
+    ["Private Gate", "privatelaunchgate.html"],
+    ["Source API Tests", "sourceapitestharness.html"],
+    ["No-Source Eval", "nosourceevaluationsuite.html"],
+    ["Fixture Runner", "sourcecandidatefixturerunner.html"],
+    ["Adapter Tests", "adaptercontracttests.html"],
+    ["Demo Script", "privatedemoscript.html"]
+  ];
 
   function safeParse(value, fallback) {
     try {
@@ -106,11 +224,22 @@
   }
 
   function collectLinks(nav) {
-    return Array.from(nav.querySelectorAll("a")).map((link) => ({
+    const links = Array.from(nav.querySelectorAll("a")).map((link) => ({
       label: link.textContent.trim(),
       href: link.getAttribute("href") || "#",
       active: link.classList.contains("active")
     })).filter((link) => link.label);
+    const seen = new Set(links.map((link) => link.label));
+    extraLinks.forEach(([label, href]) => {
+      if (!seen.has(label)) {
+        links.push({
+          label,
+          href,
+          active: normalizePath(href) === normalizePath(location.href)
+        });
+      }
+    });
+    return links;
   }
 
   function groupLinks(links) {
@@ -149,7 +278,7 @@
       '<div><strong>' + escapeHtml(brandTitle) + '</strong><span>' + escapeHtml(brandSub) + '</span></div>' +
       '</a>' +
       sections +
-      '<div class="vp-rail-note"><span>Local command shell</span><strong>Source first. Calm path.</strong></div>';
+      '<div class="vp-rail-note"><span>VedaPath command shell</span><strong>Source first. Calm path.</strong></div>';
   }
 
   function topHtml(active, settings) {
@@ -157,7 +286,8 @@
     const title = bodyPageTitles[bodyTitle] || pageTitles[active.label] || document.title.replace(/^VedaPath\s*/i, "").trim() || "VedaPath room";
     return '<div class="vp-command-title">' +
       '<div class="vp-command-meta">' +
-        '<span class="vp-command-eyebrow">Source-first companion</span>' +
+        '<span class="vp-command-eyebrow">VedaPath AI</span>' +
+        '<span class="vp-command-context">Source-first companion</span>' +
         '<span class="vp-command-badge">' + releaseBadge + '</span>' +
         '<span class="vp-command-memory">Local preferences ready</span>' +
       '</div>' +

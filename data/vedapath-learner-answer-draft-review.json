@@ -1,0 +1,110 @@
+{
+  "memoryKey": "vedapathLearnerAnswerDraftReviewV451",
+  "boundary": "Draft review only. The answer is a prototype pattern, not final AI output or spiritual, ritual, medical, legal, or therapeutic authority.",
+  "records": [
+    {
+      "id": "bg-2-48-steadiness",
+      "status": "approved",
+      "title": "Steady action",
+      "citation": "Bhagavad Gita 2.48",
+      "family": "Bhagavad Gita | Smriti",
+      "summary": "Supports a practical answer about acting steadily while not turning outcomes into identity.",
+      "confidence": "High | 86/100",
+      "boundary": "Reflection support only; not therapy, medical advice, ritual instruction, or spiritual command.",
+      "missingFields": [
+        "licensed translation display",
+        "final reviewer signature"
+      ]
+    },
+    {
+      "id": "bg-11-32-category",
+      "status": "approved",
+      "title": "Oppenheimer category correction",
+      "citation": "Bhagavad Gita 11.32",
+      "family": "Bhagavad Gita | Smriti",
+      "summary": "Supports correcting the common claim: the famous line is associated with the Gita, not the four Vedas.",
+      "confidence": "High | 91/100",
+      "boundary": "Do not call it a direct quote from the four Vedas.",
+      "missingFields": [
+        "translation variant note"
+      ]
+    },
+    {
+      "id": "rv-3-62-10-gayatri",
+      "status": "hold",
+      "title": "Gayatri mantra care",
+      "citation": "Rigveda 3.62.10",
+      "family": "Veda | Shruti",
+      "summary": "Useful for source context, but learner-facing draft must avoid ritual instruction, pronunciation authority, or initiation claims.",
+      "confidence": "Medium | 68/100",
+      "boundary": "No ritual instruction, initiation advice, or recitation authority.",
+      "missingFields": [
+        "mantra reviewer",
+        "recitation boundary",
+        "rights approval"
+      ]
+    },
+    {
+      "id": "isha-1-opening",
+      "status": "review",
+      "title": "Stewardship and restraint",
+      "citation": "Isha Upanishad 1",
+      "family": "Upanishad | Shruti",
+      "summary": "Can support a careful answer about possession and restraint if commentary and rights notes are visible.",
+      "confidence": "Medium | 72/100",
+      "boundary": "Do not flatten the verse into wealth advice or productivity advice.",
+      "missingFields": [
+        "commentary lens",
+        "translation rights"
+      ]
+    },
+    {
+      "id": "no-source-modern-airplanes",
+      "status": "no-source",
+      "title": "Modern aircraft overclaim",
+      "citation": "No direct source",
+      "family": "No-source behavior",
+      "summary": "Used to practice refusing inflated claims when no source can carry the answer.",
+      "confidence": "High | 95/100",
+      "boundary": "Say no reliable source is present; do not invent validation.",
+      "missingFields": [
+        "none"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "steady-action",
+      "label": "Steady action",
+      "question": "How can I act calmly when results are uncertain?",
+      "answerTitle": "Begin with the next honest action, not the result you cannot control.",
+      "plainMeaning": "The source candidate supports steadiness in action. A useful answer should name one doable action and avoid promising instant peace.",
+      "recordIds": [
+        "bg-2-48-steadiness"
+      ],
+      "carry": "Choose one small duty. Do it slowly, clearly, and without checking for praise."
+    },
+    {
+      "id": "oppenheimer-category",
+      "label": "Oppenheimer quote",
+      "question": "What scripture did Oppenheimer quote?",
+      "answerTitle": "The famous line is associated with the Bhagavad Gita, not the four Vedas.",
+      "plainMeaning": "The draft should gently correct the category, show the cited source, and avoid shaming the learner.",
+      "recordIds": [
+        "bg-11-32-category"
+      ],
+      "carry": "State the source family plainly before explaining the wider cultural connection."
+    },
+    {
+      "id": "gayatri-care",
+      "label": "Gayatri mantra",
+      "question": "Can VedaPath explain Gayatri mantra?",
+      "answerTitle": "VedaPath may give source context, but should hold ritual or recitation guidance for review.",
+      "plainMeaning": "The record is high value but not ready for open learner guidance without reviewer and rights checks.",
+      "recordIds": [
+        "rv-3-62-10-gayatri"
+      ],
+      "carry": "Offer source family and boundary first; route deeper practice to a qualified tradition or teacher."
+    }
+  ]
+}

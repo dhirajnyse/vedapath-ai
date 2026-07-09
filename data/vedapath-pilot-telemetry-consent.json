@@ -1,0 +1,56 @@
+{
+  "headline": "Measure only what people knowingly allow.",
+  "copy": "Pilot Telemetry Consent makes VedaPath ask for explicit learning permission before any public-pilot signal is counted. It separates helpful product learning from hidden tracking, private data, accounts, or production storage.",
+  "boundary": "This remains a static GitHub Pages prototype. Consent records stay in this browser only, do not create accounts, do not identify people, do not enable hidden analytics, and do not grant production measurement authority.",
+  "metrics": [
+    {
+      "label": "Signal groups",
+      "value": "4"
+    },
+    {
+      "label": "Storage",
+      "value": "Local"
+    },
+    {
+      "label": "Identity",
+      "value": "Off"
+    },
+    {
+      "label": "Hidden analytics",
+      "value": "Off"
+    }
+  ],
+  "consentModes": [
+    {
+      "id": "no-measurement",
+      "title": "No measurement",
+      "promise": "Use the pilot without saving product-learning signals.",
+      "allowed": "No local telemetry entry is saved."
+    },
+    {
+      "id": "local-learning",
+      "title": "Local learning only",
+      "promise": "Save a visible browser-local signal to prove the consent loop.",
+      "allowed": "Page, source family, path lane, and one optional feedback note."
+    },
+    {
+      "id": "founder-review",
+      "title": "Founder review packet",
+      "promise": "Create a copyable pilot-learning summary the founder can review.",
+      "allowed": "An editable packet only after the user presses copy or save."
+    }
+  ],
+  "signals": [
+    "Room visited",
+    "Source family inspected",
+    "Boundary understood",
+    "Feedback note offered"
+  ],
+  "gates": [
+    "Consent choice is visible before any learning signal.",
+    "No personal identity, private profile, payment, or account is collected.",
+    "User can clear local preview memory.",
+    "Telemetry is product learning, not spiritual, medical, or personal scoring."
+  ],
+  "defaultNote": "I consent to local-only pilot learning for this VedaPath prototype. Do not use this as account storage, hidden analytics, or production telemetry."
+}

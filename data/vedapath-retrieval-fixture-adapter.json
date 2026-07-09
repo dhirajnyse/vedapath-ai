@@ -1,0 +1,111 @@
+{
+  "headline": "Read fixtures before any answer exists.",
+  "copy": "This room is the first visible adapter over local curated records. It returns candidate evidence, not generated answers.",
+  "metrics": [
+    {
+      "label": "Fixture records",
+      "value": "4"
+    },
+    {
+      "label": "Answer writes",
+      "value": "0"
+    },
+    {
+      "label": "Network calls",
+      "value": "0"
+    },
+    {
+      "label": "Live AI",
+      "value": "off"
+    }
+  ],
+  "candidates": [
+    {
+      "id": "calm-action",
+      "title": "Calm action question",
+      "citation": "Bhagavad Gita 2.48",
+      "score": "86",
+      "reason": "Matches calm, action, result, and Gita 2.48 terms with a reviewed-preview record.",
+      "decision": "Return citation packet only",
+      "packet": "Adapter result: bg-2-48-steadiness | Bhagavad Gita 2.48 | confidence 86 | return evidence first | do not compose a final answer.",
+      "record": {
+        "id": "bg-2-48-steadiness",
+        "status": "ready",
+        "title": "Steady action",
+        "citation": "Bhagavad Gita 2.48",
+        "family": "Bhagavad Gita | Smriti",
+        "summary": "Supports a careful reflection on steady action without promising emotional control or perfect results.",
+        "confidence": "High | 86/100",
+        "boundary": "Reflection support only; not therapy, medical advice, ritual instruction, or spiritual command.",
+        "missingFields": [
+          "licensed translation display",
+          "reviewer note"
+        ]
+      }
+    },
+    {
+      "id": "oppenheimer-source",
+      "title": "Oppenheimer source correction",
+      "citation": "Bhagavad Gita 11.32",
+      "score": "91",
+      "reason": "Exact alias and citation match: Oppenheimer, death quote, Gita 11.32.",
+      "decision": "Return source correction",
+      "packet": "Adapter result: bg-11-32-time | Bhagavad Gita 11.32 | confidence 91 | source correction allowed with boundary.",
+      "record": {
+        "id": "bg-11-32-time",
+        "status": "ready",
+        "title": "Oppenheimer source correction",
+        "citation": "Bhagavad Gita 11.32",
+        "family": "Bhagavad Gita | Smriti",
+        "summary": "Corrects the common category confusion: the famous line is associated with the Gita, not the four Vedas.",
+        "confidence": "High | 91/100",
+        "boundary": "Do not call it a direct quote from the four Vedas.",
+        "missingFields": [
+          "translation variant review"
+        ]
+      }
+    },
+    {
+      "id": "gayatri-review",
+      "title": "Gayatri mantra review",
+      "citation": "Rigveda 3.62.10",
+      "score": "68",
+      "reason": "Known source candidate, but recitation and rights boundaries keep it review-needed.",
+      "decision": "Return review-needed packet",
+      "packet": "Adapter result: rigveda-3-62-10-gayatri | Rigveda 3.62.10 | confidence 68 | hold answer expansion until mantra review.",
+      "record": {
+        "id": "rigveda-3-62-10-gayatri",
+        "status": "review",
+        "title": "Gayatri mantra review candidate",
+        "citation": "Rigveda 3.62.10",
+        "family": "Veda | Shruti",
+        "summary": "A high-value source candidate that must stay in review until Sanskrit, recitation, and rights posture are stronger.",
+        "confidence": "Medium | 68/100",
+        "boundary": "No ritual instruction, initiation advice, or pronunciation authority.",
+        "missingFields": [
+          "recitation boundary",
+          "rights approval",
+          "mantra reviewer"
+        ]
+      }
+    }
+  ],
+  "steps": [
+    {
+      "title": "Load fixtures",
+      "copy": "Read only local curated JSON."
+    },
+    {
+      "title": "Match record",
+      "copy": "Return source id, citation, and reason."
+    },
+    {
+      "title": "Block unsafe use",
+      "copy": "Hold records with rights or review gaps."
+    },
+    {
+      "title": "No answer yet",
+      "copy": "Answer composition stays disabled."
+    }
+  ]
+}

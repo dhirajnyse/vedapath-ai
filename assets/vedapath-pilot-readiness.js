@@ -238,12 +238,126 @@
     paint();
   }
 
+
+  function renderTelemetryConsent(data) {
+    const key = "vedapathPilotTelemetryConsentV425";
+    let selectedId = data.consentModes[1].id;
+    function mode() {
+      return data.consentModes.find(function (item) { return item.id === selectedId; }) || data.consentModes[0];
+    }
+    function packet(active, note) {
+      return ["VedaPath Pilot Telemetry Consent", "Mode: " + active.title, "Allowed: " + active.allowed, "Note: " + note, "Boundary: " + data.boundary].join("\n");
+    }
+    function paint() {
+      const saved = safeRead(key);
+      const active = mode();
+      const left = '<span class="pr-eyebrow">Consent mode</span><h2>Choose measurement</h2><div class="pr-list">' + data.consentModes.map(function (item) {
+        return '<button class="pr-button' + (item.id === selectedId ? " is-active" : "") + '" data-consent-mode="' + escapeHtml(item.id) + '" type="button">' + escapeHtml(item.title) + '</button>';
+      }).join("") + '</div><article class="pr-card"><h3>Project context</h3><p>Signals belong to VedaPath AI only. They do not transfer to another product, profile, or account.</p></article>';
+      const signals = data.signals.map(function (item, index) {
+        return '<label class="pr-check"><input type="checkbox" data-signal-check ' + (index < 2 ? "checked" : "") + '><span>' + escapeHtml(item) + '</span></label>';
+      }).join("");
+      const main = '<article class="pr-card"><span class="pr-eyebrow green">Telemetry consent</span><h2>' + escapeHtml(data.headline) + '</h2><p>' + escapeHtml(data.copy) + '</p>' + metricGrid(data.metrics) + '</article><article class="pr-card pr-status ready">' + chip(active.id) + '<h2>' + escapeHtml(active.title) + '</h2><p>' + escapeHtml(active.promise) + '</p><p><strong>Allowed:</strong> ' + escapeHtml(active.allowed) + '</p><div class="pr-form">' + signals + '</div><label><span class="pr-muted">Visible consent note</span><textarea class="pr-textarea" data-consent-note>' + escapeHtml(data.defaultNote) + '</textarea></label><div class="pr-actions"><button class="pr-button primary" data-save-consent type="button">Save Local Consent</button><button class="pr-button green" data-copy-consent type="button">Copy Consent Packet</button><button class="pr-button" data-clear-consent type="button">Clear Local Consent</button></div></article>';
+      const side = '<span class="pr-eyebrow green">Privacy gate</span><h2>Before learning</h2><div class="pr-stack">' + data.gates.map(function (item, index) {
+        return '<article class="pr-step"><span class="pr-number">' + (index + 1) + '</span><p>' + escapeHtml(item) + '</p></article>';
+      }).join("") + '</div><article class="pr-card pr-saved"><h3>Local consent</h3><p>' + saved.length + ' consent preview record' + (saved.length === 1 ? "" : "s") + ' saved in this browser.</p></article><article class="pr-card"><h3>Boundary</h3><p>' + escapeHtml(data.boundary) + '</p></article>';
+      renderShell(left, main, side);
+      app.querySelectorAll("[data-consent-mode]").forEach(function (button) {
+        button.addEventListener("click", function () {
+          selectedId = button.getAttribute("data-consent-mode");
+          paint();
+        });
+      });
+      app.querySelector("[data-save-consent]")?.addEventListener("click", function () {
+        if (selectedId !== "no-measurement") {
+          saveLocal(key, { mode: active.title, note: app.querySelector("[data-consent-note]")?.value || "", date: new Date().toISOString() }, 8);
+        }
+        paint();
+      });
+      app.querySelector("[data-copy-consent]")?.addEventListener("click", function () {
+        copyText(packet(active, app.querySelector("[data-consent-note]")?.value || ""));
+      });
+      app.querySelector("[data-clear-consent]")?.addEventListener("click", function () {
+        localStorage.removeItem(key);
+        paint();
+      });
+    }
+    paint();
+  }
+
+
+  function renderLaunchRoom(data) {
+    const key = data.storageKey || "vedapathLaunchRoom";
+    let selectedId = data.lanes[0].id;
+    function selected() {
+      return data.lanes.find(function (item) { return item.id === selectedId; }) || data.lanes[0];
+    }
+    function decisionText() {
+      const checked = app.querySelectorAll("[data-launch-check]:checked").length;
+      if (checked === data.checklist.length) return data.readyLabel || "Ready for founder review";
+      if (checked >= Math.ceil(data.checklist.length / 2)) return "Review candidate";
+      return "Keep preparing";
+    }
+    function packet(active, note) {
+      return [
+        "VedaPath Launch Review",
+        "Room: " + data.title,
+        "Lane: " + active.title,
+        "Decision: " + decisionText(),
+        "Note: " + note,
+        "Boundary: " + data.boundary
+      ].join("\n");
+    }
+    function paint() {
+      const saved = safeRead(key);
+      const active = selected();
+      const left = '<span class="pr-eyebrow">Launch lane</span><h2>Choose focus</h2><div class="pr-list">' + data.lanes.map(function (item) {
+        return '<button class="pr-button' + (item.id === selectedId ? " is-active" : "") + '" data-launch-lane="' + escapeHtml(item.id) + '" type="button"><strong>' + escapeHtml(item.title) + '</strong> <span>' + escapeHtml(item.decision) + '</span></button>';
+      }).join("") + '</div><article class="pr-card"><h3>Room boundary</h3><p>' + escapeHtml(data.boundary) + '</p></article>';
+      const checks = data.checklist.map(function (item, index) {
+        return '<label class="pr-check"><input type="checkbox" data-launch-check ' + (index < Math.max(2, Math.floor(data.checklist.length / 2)) ? "checked" : "") + '><span>' + escapeHtml(item) + '</span></label>';
+      }).join("");
+      const signals = '<div class="pr-signal-list">' + (active.signals || []).map(function (item) {
+        return '<span>' + escapeHtml(item) + '</span>';
+      }).join("") + '</div>';
+      const main = '<article class="pr-card pr-room-intro"><span class="pr-eyebrow green">' + escapeHtml(data.title) + '</span><h2>' + escapeHtml(data.headline) + '</h2><p>' + escapeHtml(data.copy) + '</p>' + metricGrid(data.metrics) + '</article><article class="pr-card pr-status ready">' + chip(active.id) + '<h2>' + escapeHtml(active.title) + '</h2><p>' + escapeHtml(active.summary) + '</p><div class="pr-fields"><div class="pr-field"><span>Decision lane</span><strong>' + escapeHtml(active.decision) + '</strong></div><div class="pr-field"><span>Current posture</span><strong data-launch-decision>' + escapeHtml(data.readyLabel || "Review candidate") + '</strong></div></div>' + signals + '</article><article class="pr-card"><h2>Founder checks</h2><div class="pr-form">' + checks + '</div><label><span class="pr-muted">Launch note</span><textarea class="pr-textarea" data-launch-note>' + escapeHtml(data.defaultNote || "") + '</textarea></label><div class="pr-actions"><button class="pr-button primary" data-evaluate-launch type="button">Evaluate Gate</button><button class="pr-button green" data-save-launch type="button">Save Review</button><button class="pr-button" data-copy-launch type="button">Copy Packet</button><button class="pr-button" data-clear-launch type="button">Clear Local</button></div></article>';
+      const side = '<span class="pr-eyebrow green">Pilot path</span><h2>Decision sequence</h2><div class="pr-stack">' + data.steps.map(function (item, index) {
+        return '<article class="pr-step"><span class="pr-number">' + (index + 1) + '</span><p>' + escapeHtml(item) + '</p></article>';
+      }).join("") + '</div><article class="pr-card pr-saved"><h3>Local reviews</h3><p>' + saved.length + ' saved review packet' + (saved.length === 1 ? "" : "s") + ' in this browser.</p></article><article class="pr-card"><h3>Boundary</h3><p>' + escapeHtml(data.boundary) + '</p></article>';
+      renderShell(left, main, side);
+      app.querySelectorAll("[data-launch-lane]").forEach(function (button) {
+        button.addEventListener("click", function () {
+          selectedId = button.getAttribute("data-launch-lane");
+          paint();
+        });
+      });
+      app.querySelector("[data-evaluate-launch]")?.addEventListener("click", function () {
+        const target = app.querySelector("[data-launch-decision]");
+        if (target) target.textContent = decisionText();
+      });
+      app.querySelector("[data-save-launch]")?.addEventListener("click", function () {
+        saveLocal(key, { room: data.title, lane: active.title, decision: decisionText(), note: app.querySelector("[data-launch-note]")?.value || "", date: new Date().toISOString() }, 8);
+        paint();
+      });
+      app.querySelector("[data-copy-launch]")?.addEventListener("click", function () {
+        copyText(packet(active, app.querySelector("[data-launch-note]")?.value || ""));
+      });
+      app.querySelector("[data-clear-launch]")?.addEventListener("click", function () {
+        localStorage.removeItem(key);
+        paint();
+      });
+    }
+    paint();
+  }
+
   const renderers = {
     edition: renderEdition,
     rightsDesk: renderRightsDesk,
     identity: renderIdentity,
     promotion: renderPromotion,
-    invite: renderInvite
+    invite: renderInvite,
+    telemetryConsent: renderTelemetryConsent,
+    launchRoom: renderLaunchRoom
   };
 
   fetch(app.getAttribute("data-data-file"))

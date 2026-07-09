@@ -1,0 +1,75 @@
+{
+  "title": "Source Rights Approval Board",
+  "headline": "Approve source use before answers grow.",
+  "copy": "This board turns source rights into a visible go or hold decision so the product does not treat citation as permission.",
+  "boundary": "Rights review support only. It does not provide legal advice, licensing, permission grants, or production source approval.",
+  "readyLabel": "Rights posture can enter founder review",
+  "storageKey": "vedapathRightsBoard",
+  "metrics": [
+    {
+      "label": "Use lanes",
+      "value": "5"
+    },
+    {
+      "label": "Blocked",
+      "value": "visible"
+    },
+    {
+      "label": "Review",
+      "value": "required"
+    },
+    {
+      "label": "Grant",
+      "value": "none"
+    }
+  ],
+  "lanes": [
+    {
+      "id": "public-domain",
+      "title": "Public-domain lane",
+      "summary": "Source metadata appears usable, but edition and translation still need citation and provenance.",
+      "decision": "Review source record",
+      "signals": [
+        "Edition named",
+        "Translator clear",
+        "Source family present"
+      ]
+    },
+    {
+      "id": "excerpt-only",
+      "title": "Excerpt-only lane",
+      "summary": "Use short cited passages and keep full translations, commentary, and derivative text out of public answers.",
+      "decision": "Limit answer surface",
+      "signals": [
+        "Short passage",
+        "Citation visible",
+        "No wholesale reproduction"
+      ]
+    },
+    {
+      "id": "blocked",
+      "title": "Blocked lane",
+      "summary": "If rights, edition, or provenance are missing, the source can inform a review ticket but not a learner-facing answer.",
+      "decision": "Do not publish",
+      "signals": [
+        "Unknown rights",
+        "Missing edition",
+        "No reviewer"
+      ]
+    }
+  ],
+  "checklist": [
+    "Every source has family, edition, translator, and citation fields.",
+    "Allowed use is separate from scholarly usefulness.",
+    "Blocked sources cannot appear in answer cards.",
+    "Excerpt-only limits are visible to reviewers.",
+    "Founder review is required before any public pilot expansion."
+  ],
+  "steps": [
+    "Name the source family.",
+    "Check edition and rights posture.",
+    "Choose allowed use lane.",
+    "Hold uncertain records."
+  ],
+  "defaultNote": "Use short cited excerpts only until edition, translator, and rights posture are reviewed."
+}

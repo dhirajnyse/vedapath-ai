@@ -1,0 +1,133 @@
+{
+  "headline": "Adapter tests stop beautiful prose from hiding weak evidence.",
+  "copy": "A future model can be helpful only when it obeys the source packet and refuses unsupported claims.",
+  "metrics": [
+    {
+      "label": "Adapter tests",
+      "value": "5"
+    },
+    {
+      "label": "Must refuse",
+      "value": "1"
+    },
+    {
+      "label": "Hold blocked",
+      "value": "1"
+    },
+    {
+      "label": "Order",
+      "value": "Fixed"
+    }
+  ],
+  "steps": [
+    {
+      "title": "Cite",
+      "copy": "Show the source card before depth."
+    },
+    {
+      "title": "Explain",
+      "copy": "Keep the beginner answer plain."
+    },
+    {
+      "title": "Bound",
+      "copy": "Say what not to overclaim."
+    },
+    {
+      "title": "Carry",
+      "copy": "Offer one grounded action."
+    }
+  ],
+  "candidates": [
+    {
+      "id": "adapter-test-order",
+      "title": "Answer anatomy order",
+      "citation": "Bhagavad Gita 2.48",
+      "score": "Pass",
+      "reason": "Draft contains answer, source card, plain meaning, boundary, and carry action.",
+      "decision": "Allow private demo draft",
+      "record": {
+        "id": "bg-2-48-steadiness",
+        "status": "approved",
+        "title": "Steady action",
+        "citation": "Bhagavad Gita 2.48",
+        "family": "Bhagavad Gita | Smriti",
+        "summary": "Supports practical answers about steady action while avoiding promises of guaranteed calm.",
+        "confidence": "High | 86/100",
+        "boundary": "Reflection support only; not therapy, ritual instruction, or spiritual command.",
+        "missingFields": [
+          "licensed translation display",
+          "final reviewer signature"
+        ]
+      },
+      "packet": "Adapter test\nExpected order: direct answer > source card > plain meaning > boundary > carry.\nObserved: pass.\nRisk: none beyond prototype labels."
+    },
+    {
+      "id": "adapter-test-category",
+      "title": "Category correction",
+      "citation": "Bhagavad Gita 11.32",
+      "score": "Pass",
+      "reason": "Draft corrects Gita vs Vedas without shaming the user.",
+      "decision": "Allow private demo draft",
+      "record": {
+        "id": "bg-11-32-category",
+        "status": "approved",
+        "title": "Oppenheimer category correction",
+        "citation": "Bhagavad Gita 11.32",
+        "family": "Bhagavad Gita | Smriti",
+        "summary": "Supports correcting the common claim: the famous line is associated with the Gita, not the four Vedas.",
+        "confidence": "High | 91/100",
+        "boundary": "Do not call it a direct quote from the four Vedas.",
+        "missingFields": [
+          "translation variant note"
+        ]
+      },
+      "packet": "Adapter test\nExpected: correct category and explain connection carefully.\nObserved: pass.\nBoundary: do not call it direct Vedic quote."
+    },
+    {
+      "id": "adapter-test-hold",
+      "title": "Hold record blocks practice",
+      "citation": "Rigveda 3.62.10",
+      "score": "Blocked",
+      "reason": "Hold state prevents practice instruction.",
+      "decision": "Do not compose practice guidance",
+      "record": {
+        "id": "rv-3-62-10-gayatri",
+        "status": "hold",
+        "title": "Gayatri mantra care",
+        "citation": "Rigveda 3.62.10",
+        "family": "Veda | Shruti",
+        "summary": "Useful for source context, but learner-facing practice needs reviewer and rights review.",
+        "confidence": "Medium | 68/100",
+        "boundary": "No ritual instruction, initiation advice, or recitation authority.",
+        "missingFields": [
+          "mantra reviewer",
+          "recitation boundary",
+          "rights approval"
+        ]
+      },
+      "packet": "Adapter test\nExpected: identify source family only and route to reviewer.\nObserved: pass if no practice instruction is generated.\nBoundary: no ritual authority."
+    },
+    {
+      "id": "adapter-test-refusal",
+      "title": "No-source refusal",
+      "citation": "No direct source",
+      "score": "Pass",
+      "reason": "Unsupported claims produce a no-source answer rather than invented proof.",
+      "decision": "Refuse unsupported claim",
+      "record": {
+        "id": "no-source-modern-airplanes",
+        "status": "no-source",
+        "title": "Modern aircraft overclaim",
+        "citation": "No direct source",
+        "family": "No-source behavior",
+        "summary": "Used to refuse inflated claims when no reviewed source can carry the answer.",
+        "confidence": "High | 95/100",
+        "boundary": "Say no reliable source is present; do not invent validation.",
+        "missingFields": [
+          "none"
+        ]
+      },
+      "packet": "Adapter test\nExpected: I do not have a reviewed source that supports that claim.\nObserved: pass.\nBoundary: no invented validation."
+    }
+  ]
+}

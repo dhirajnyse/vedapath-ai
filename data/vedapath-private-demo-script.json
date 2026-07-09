@@ -1,0 +1,108 @@
+{
+  "position": "VedaPath can be shown privately as a source-first prototype, not as a public AI product or spiritual authority.",
+  "headline": "The private demo should feel calm, honest, and bounded.",
+  "copy": "Walk through one question, one source packet, one answer boundary, and one reviewer receipt. Then stop and collect feedback.",
+  "postures": [
+    {
+      "title": "Say",
+      "decision": "Allowed",
+      "copy": "This is a prototype of a source-first learning companion."
+    },
+    {
+      "title": "Say",
+      "decision": "Allowed",
+      "copy": "Public launch waits for rights, reviewer operations, privacy, and live retrieval tests."
+    },
+    {
+      "title": "Do not say",
+      "decision": "Blocked",
+      "copy": "Do not claim live AI, final scholarship, spiritual authority, therapy, or public launch readiness."
+    },
+    {
+      "title": "Do not collect",
+      "decision": "Blocked",
+      "copy": "Do not collect sensitive personal reflections outside the local prototype boundary."
+    }
+  ],
+  "flow": [
+    {
+      "title": "Open simply",
+      "copy": "State the prototype boundary in one sentence."
+    },
+    {
+      "title": "Ask",
+      "copy": "Use the Oppenheimer question or steady-action question."
+    },
+    {
+      "title": "Show source",
+      "copy": "Point to citation, source family, confidence, and boundary."
+    },
+    {
+      "title": "Show review",
+      "copy": "Explain reviewer receipts and blocked fields."
+    },
+    {
+      "title": "Close",
+      "copy": "Ask what felt trustworthy, confusing, or too much."
+    }
+  ],
+  "decisions": [
+    {
+      "label": "Private founder demo",
+      "value": "Allowed",
+      "reason": "Script keeps source-first posture and launch locks visible."
+    },
+    {
+      "label": "Public claims",
+      "value": "Blocked",
+      "reason": "Real API, rights, privacy, and reviewer ops are not complete."
+    },
+    {
+      "label": "Sensitive intake",
+      "value": "Blocked",
+      "reason": "No production consent, export, delete, or support flow exists."
+    },
+    {
+      "label": "Live model",
+      "value": "Blocked",
+      "reason": "Adapter and no-source tests must pass in real service first."
+    }
+  ],
+  "metrics": [
+    {
+      "label": "Demo length",
+      "value": "7 min"
+    },
+    {
+      "label": "Questions",
+      "value": "2"
+    },
+    {
+      "label": "Launch locks",
+      "value": "4"
+    },
+    {
+      "label": "Public launch",
+      "value": "Closed"
+    }
+  ],
+  "locks": [
+    {
+      "title": "Prototype lock",
+      "copy": "Every demo begins by saying this is not a launched product."
+    },
+    {
+      "title": "Rights lock",
+      "copy": "Do not display unapproved translations as public product content."
+    },
+    {
+      "title": "Privacy lock",
+      "copy": "Do not collect sensitive user stories or promise account memory."
+    },
+    {
+      "title": "Authority lock",
+      "copy": "Do not position VedaPath as guru, therapist, ritual authority, or final scholar."
+    }
+  ],
+  "packet": "VedaPath Private Demo Script v4.6.5\nOpening: This is a source-first learning prototype, not a launched AI authority.\nDemo path: Ask > Source packet > Bounded answer > Reviewer receipt > Feedback.\nAllowed: private founder-led walkthrough with static data.\nBlocked: public launch, live AI claims, payments, production storage, sensitive intake.\nClose: What felt trustworthy? What felt confusing? What should become simpler?"
+}

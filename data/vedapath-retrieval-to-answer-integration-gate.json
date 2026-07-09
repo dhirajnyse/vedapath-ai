@@ -1,0 +1,83 @@
+{
+  "memoryKey": "vedapathRetrievalToAnswerGateV450",
+  "boundary": "Answer integration draft only. Live model calls, production storage, public release, and authority claims remain disabled.",
+  "questions": [
+    {
+      "id": "steady-action",
+      "label": "Steady action",
+      "question": "How can I act calmly when results are uncertain?",
+      "recordIds": [
+        "bg-2-48-steadiness"
+      ],
+      "answerTitle": "Answer-ready draft: begin with the next honest action.",
+      "plainMeaning": "This question may receive a learner-facing draft because citation, family, boundary, and carry action are present.",
+      "carry": "Do one small duty slowly and clearly before checking the result."
+    },
+    {
+      "id": "oppenheimer",
+      "label": "Oppenheimer source",
+      "question": "What scripture did Oppenheimer quote?",
+      "recordIds": [
+        "bg-11-32-time"
+      ],
+      "answerTitle": "Answer-ready draft: the source is the Bhagavad Gita.",
+      "plainMeaning": "The answer should correct category confusion and show that the Gita is usually classified as Smriti.",
+      "carry": "Name the source family before widening the explanation."
+    },
+    {
+      "id": "gayatri",
+      "label": "Gayatri boundary",
+      "question": "Can you explain the Gayatri mantra?",
+      "recordIds": [
+        "rv-3-62-10-gayatri"
+      ],
+      "answerTitle": "Review-needed draft: source identification only.",
+      "plainMeaning": "The gate blocks full explanation until mantra, recitation, and rights review are complete.",
+      "carry": "Respect the review hold and avoid ritual or pronunciation authority."
+    }
+  ],
+  "records": [
+    {
+      "id": "bg-2-48-steadiness",
+      "status": "pass",
+      "title": "Steady action",
+      "citation": "Bhagavad Gita 2.48",
+      "family": "Bhagavad Gita | Smriti",
+      "summary": "Supports a calm reflection on steady action while keeping outcomes and personal identity separate.",
+      "confidence": "High | 86/100",
+      "boundary": "Reflection support only; not therapy, medical advice, ritual instruction, or spiritual command.",
+      "missingFields": [
+        "licensed translation display",
+        "reviewer note"
+      ]
+    },
+    {
+      "id": "bg-11-32-time",
+      "status": "pass",
+      "title": "Oppenheimer source correction",
+      "citation": "Bhagavad Gita 11.32",
+      "family": "Bhagavad Gita | Smriti",
+      "summary": "Corrects the common category confusion: the famous line is associated with the Gita, not the four Vedas.",
+      "confidence": "High | 91/100",
+      "boundary": "Do not call it a direct quote from the four Vedas.",
+      "missingFields": [
+        "translation variant review"
+      ]
+    },
+    {
+      "id": "rv-3-62-10-gayatri",
+      "status": "review",
+      "title": "Gayatri mantra review candidate",
+      "citation": "Rigveda 3.62.10",
+      "family": "Veda | Shruti",
+      "summary": "High-value source candidate that must stay in review until Sanskrit, recitation, and rights posture are stronger.",
+      "confidence": "Medium | 68/100",
+      "boundary": "No ritual instruction, initiation advice, or pronunciation authority.",
+      "missingFields": [
+        "recitation boundary",
+        "rights approval",
+        "mantra reviewer"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "position": "VedaPath is close to a real private launch rehearsal, but public launch should wait for live retrieval tests, rights, reviewer accounts, and safety review.",
+  "headline": "Open the private room, keep the public door closed.",
+  "copy": "This gate gives the founder a clear go/no-go posture: demo the source-first workflow privately, collect feedback carefully, and keep all production promises off.",
+  "postures": [
+    {
+      "title": "Private demo",
+      "decision": "Allowed",
+      "copy": "Founder-led demo with static sources, clear prototype labels, and no account promises."
+    },
+    {
+      "title": "Public launch",
+      "decision": "Blocked",
+      "copy": "Requires live retrieval, reviewer operations, rights posture, privacy terms, and safety review."
+    },
+    {
+      "title": "Production storage",
+      "decision": "Blocked",
+      "copy": "No server persistence until account, consent, export, deletion, and audit rules exist."
+    },
+    {
+      "title": "Live AI",
+      "decision": "Review",
+      "copy": "Can be prototyped only behind source API contract and no-source refusal tests."
+    }
+  ],
+  "flow": [
+    {
+      "title": "Show source-first ask",
+      "copy": "Start with one real question and the source packet."
+    },
+    {
+      "title": "Show adapter boundary",
+      "copy": "Explain how source packets become bounded answer drafts."
+    },
+    {
+      "title": "Show reviewer receipt",
+      "copy": "Keep human approval and blocked fields visible."
+    },
+    {
+      "title": "Collect private feedback",
+      "copy": "Use review tickets, not silent knowledge changes."
+    }
+  ],
+  "decisions": [
+    {
+      "label": "Private founder demo",
+      "value": "Allowed",
+      "reason": "Static source-first path is coherent enough to show carefully."
+    },
+    {
+      "label": "Public beta",
+      "value": "Blocked",
+      "reason": "Needs real API, rights, reviewer workflow, privacy, and safety checks."
+    },
+    {
+      "label": "Live AI",
+      "value": "Blocked",
+      "reason": "Needs no-source evals and adapter tests first."
+    },
+    {
+      "label": "Payment",
+      "value": "Blocked",
+      "reason": "No pricing, terms, support, or production SLA exists."
+    }
+  ],
+  "metrics": [
+    {
+      "label": "Private demo",
+      "value": "Ready"
+    },
+    {
+      "label": "Public launch",
+      "value": "Closed"
+    },
+    {
+      "label": "Live AI",
+      "value": "Off"
+    },
+    {
+      "label": "Next",
+      "value": "API tests"
+    }
+  ],
+  "locks": [
+    {
+      "title": "Rights lock",
+      "copy": "Do not display licensed translations publicly without permission."
+    },
+    {
+      "title": "Reviewer lock",
+      "copy": "Do not promote hold records without reviewer receipts."
+    },
+    {
+      "title": "Privacy lock",
+      "copy": "Do not store personal reflections on a server without consent and export/delete controls."
+    },
+    {
+      "title": "Authority lock",
+      "copy": "Do not present VedaPath as a guru, therapist, ritual authority, or replacement for tradition."
+    }
+  ],
+  "packet": "VedaPath Private Launch Gate v4.6.0\nPrivate demo: allowed with static source-first prototype labels\nPublic launch: blocked\nLive AI: blocked until source API tests and no-source evals pass\nProduction storage: blocked until consent, export, deletion, audit, and reviewer accounts exist\nFounder next: decide whether to build real Source API test harness or private demo script"
+}

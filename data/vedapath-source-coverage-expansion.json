@@ -1,0 +1,141 @@
+{
+  "headline": "Grow coverage without losing trust.",
+  "copy": "This coverage board shows which source candidates may support answers, which need review, and which remain no-source gaps.",
+  "progress": 76,
+  "boundary": "Coverage expansion is a planning surface. It does not grant rights, scholar approval, live retrieval, or production answer authority.",
+  "metrics": [
+    {
+      "label": "Tracked sources",
+      "value": "9"
+    },
+    {
+      "label": "Answer-ready",
+      "value": "3"
+    },
+    {
+      "label": "Review-needed",
+      "value": "5"
+    },
+    {
+      "label": "No-source",
+      "value": "1"
+    }
+  ],
+  "filters": [
+    {
+      "label": "All",
+      "value": "all"
+    },
+    {
+      "label": "Ready",
+      "value": "pass"
+    },
+    {
+      "label": "Review",
+      "value": "review"
+    },
+    {
+      "label": "No-source",
+      "value": "no-source"
+    }
+  ],
+  "records": [
+    {
+      "citation": "Bhagavad Gita 2.48",
+      "family": "Bhagavad Gita | Smriti",
+      "status": "pass",
+      "risks": [
+        "licensed translation display",
+        "reviewer note"
+      ]
+    },
+    {
+      "citation": "Bhagavad Gita 11.32",
+      "family": "Bhagavad Gita | Smriti",
+      "status": "pass",
+      "risks": [
+        "translation variant review"
+      ]
+    },
+    {
+      "citation": "Rigveda 3.62.10",
+      "family": "Veda | Shruti",
+      "status": "review",
+      "risks": [
+        "recitation boundary",
+        "rights approval",
+        "mantra reviewer"
+      ]
+    },
+    {
+      "citation": "Isha Upanishad 1",
+      "family": "Upanishad | Shruti",
+      "status": "review",
+      "risks": [
+        "commentary lens",
+        "translation rights"
+      ]
+    },
+    {
+      "citation": "Katha Upanishad 1.2.23",
+      "family": "Upanishad | Shruti",
+      "status": "review",
+      "risks": [
+        "commentary review",
+        "beginner phrasing"
+      ]
+    },
+    {
+      "citation": "Mahabharata context",
+      "family": "Itihasa | Smriti",
+      "status": "pass",
+      "risks": [
+        "school-specific notes"
+      ]
+    },
+    {
+      "citation": "Purana candidate",
+      "family": "Purana | Smriti",
+      "status": "review",
+      "risks": [
+        "exact citation",
+        "edition",
+        "reviewer"
+      ]
+    },
+    {
+      "citation": "Vedanta commentary candidate",
+      "family": "Commentary | Tradition",
+      "status": "review",
+      "risks": [
+        "commentary citation",
+        "school label",
+        "rights posture"
+      ]
+    },
+    {
+      "citation": "No reviewed source candidate",
+      "family": "Source gap",
+      "status": "no-source",
+      "risks": [
+        "reviewed source",
+        "claim evidence",
+        "scholar note"
+      ]
+    }
+  ],
+  "rules": [
+    {
+      "title": "Coverage is not authority",
+      "copy": "A source family can be present without being answer-ready."
+    },
+    {
+      "title": "Review holds are healthy",
+      "copy": "The product should show thin areas before users depend on them."
+    },
+    {
+      "title": "Gaps stay visible",
+      "copy": "Unsupported modern claims remain explicit no-source cases."
+    }
+  ]
+}
