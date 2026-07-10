@@ -1,0 +1,135 @@
+{
+  "position": "Controlled pilot foundation is implementation-ready, not activated",
+  "headline": "The smallest external learning loop now has an honest technical and operational boundary.",
+  "copy": "A provider endpoint, identity service, durable rights queue, production monitoring, incident response, licensed source operations, and explicit founder activation are still required before anyone is invited.",
+  "postures": [
+    {
+      "title": "Hosted adapter",
+      "decision": "Ready",
+      "copy": "The read-only Web contract is executable and provider-neutral."
+    },
+    {
+      "title": "Request guard",
+      "decision": "Preview ready",
+      "copy": "Rate and privacy behavior is deterministic but not distributed."
+    },
+    {
+      "title": "Reviewer roles",
+      "decision": "Preview ready",
+      "copy": "Capabilities are explicit while authentication remains absent."
+    },
+    {
+      "title": "Rights queue",
+      "decision": "Preview ready",
+      "copy": "Transitions are visible while durable operations remain absent."
+    },
+    {
+      "title": "Pilot activation",
+      "decision": "Closed",
+      "copy": "No endpoint, invite, or external session is active."
+    }
+  ],
+  "flow": [
+    {
+      "title": "Review",
+      "copy": "Inspect the five release evidence packets and automated checks."
+    },
+    {
+      "title": "Choose",
+      "copy": "Select provider, region, budget, identity, storage, and operations owners."
+    },
+    {
+      "title": "Implement",
+      "copy": "Build the smallest production-grade read-only slice behind private access."
+    },
+    {
+      "title": "Activate",
+      "copy": "Require a separate founder decision after security and rights sign-off."
+    }
+  ],
+  "decisions": [
+    {
+      "label": "Foundation",
+      "value": "Ready",
+      "reason": "The contract and operating boundaries are coherent."
+    },
+    {
+      "label": "Deployment",
+      "value": "Not activated",
+      "reason": "No credentials or provider resources were used."
+    },
+    {
+      "label": "External pilot",
+      "value": "Not active",
+      "reason": "No participant can access a hosted endpoint."
+    },
+    {
+      "label": "Public launch",
+      "value": "Blocked",
+      "reason": "A controlled pilot remains several gates before public release."
+    }
+  ],
+  "metrics": [
+    {
+      "label": "Evidence areas",
+      "value": "5"
+    },
+    {
+      "label": "Open write routes",
+      "value": "0"
+    },
+    {
+      "label": "Activated pilots",
+      "value": "0"
+    },
+    {
+      "label": "Next",
+      "value": "Provider preview"
+    }
+  ],
+  "locks": [
+    {
+      "title": "Deployment lock",
+      "decision": "Closed",
+      "copy": "No provider endpoint, domain, secret, or production runtime is activated."
+    },
+    {
+      "title": "Write lock",
+      "decision": "Closed",
+      "copy": "No source, rights, reviewer, or learner write route exists."
+    },
+    {
+      "title": "Identity lock",
+      "decision": "Closed",
+      "copy": "Role simulations do not authenticate a person or grant production access."
+    },
+    {
+      "title": "Rights lock",
+      "decision": "Closed",
+      "copy": "Evidence-ready candidates remain blocked from publication and registry merge."
+    },
+    {
+      "title": "Launch lock",
+      "decision": "Closed",
+      "copy": "Pilot readiness evidence cannot activate an invitation or public service."
+    }
+  ],
+  "packet": "Controlled External Pilot Gate v4.9.1\nDecision: implementation-ready-not-activated.\nDeployment: none.\nExternal participants: none.\nNext: choose and privately preview one provider-backed read-only deployment after explicit approval.",
+  "schema": "vedapath.controlled-external-pilot-gate.v1",
+  "release": "v4.9.1",
+  "decision": "implementation-ready-not-activated",
+  "evidence": [
+    "hosted-readonly-adapter",
+    "privacy-safe-request-guard",
+    "reviewer-role-policy",
+    "rights-operations-preview",
+    "source-path-regressions"
+  ],
+  "activated": false,
+  "external_participants": 0,
+  "provider": "unselected",
+  "deployment": "none",
+  "write_routes": [],
+  "public_launch": "blocked",
+  "next_release": "v4.9.2 Provider Deployment Preview"
+}

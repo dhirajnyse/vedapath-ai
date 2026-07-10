@@ -86,7 +86,12 @@ const pages = [
   "reviewerobservations.html",
   "rightsclearedsourceintake.html",
   "securityprivacyreview.html",
-  "hostedbackenddecisiongate.html"
+  "hostedbackenddecisiongate.html",
+  "hostedreadonlyapiadapter.html",
+  "ratelimitprivacymonitoring.html",
+  "revieweridentityroles.html",
+  "rightsoperationsqueue.html",
+  "controlledexternalpilotgate.html"
 ];
 
 const missing = [];

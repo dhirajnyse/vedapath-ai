@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Reviewer Identity & Role Prototype | VedaPath AI</title>
+  <link rel="icon" href="assets/vedapath-3d-logo-concept.png" />
+  <link rel="stylesheet" href="assets/vedapath-ui.css" />
+  <link rel="stylesheet" href="assets/vedapath-command-shell.css" />
+  <link rel="stylesheet" href="assets/vedapath-demo-operations.css" />
+</head>
+<body class="reviewer-identity-role-prototype-page">
+  <main class="workspace vp-ops-workspace" id="top" data-config="data/vedapath-reviewer-identity-roles.json">
+    <header class="topbar">
+      <a class="brand" href="index.html#top" aria-label="Go to VedaPath AI home">
+        <img src="assets/vedapath-3d-logo-concept.png" alt="" />
+        <span><strong>VedaPath AI</strong><small>reviewer role prototype</small></span>
+      </a>
+      <nav class="navlinks nav" aria-label="Primary navigation">
+        <a class="link" href="index.html">Home</a>
+        <a class="link" href="build-status.html">Build</a>
+        <a class="link" href="brand/brand-board.html">Brand</a>
+        <a class="link" href="blueprint.html">Blueprint</a>
+        <a class="link" href="citedanswerlab.html">Answers</a>
+        <a class="link" href="reviewqueuepersistence.html">Review</a>
+        <a class="link" href="mantralenslab.html">Mantra</a>
+        <a class="link" href="lifecompanionlab.html">Life</a>
+        <a class="link" href="conversationcompanionlab.html">Talk</a>
+        <a class="link" href="patterncompanionlab.html">Pattern</a>
+        <a class="link" href="daily.html">Daily</a>
+        <a class="link" href="askdemo.html">Ask Demo</a>
+        <a class="link" href="sourcepathreadinessconsole.html">Path Readiness</a>
+        <a class="link" href="privatedemorunbook.html">Demo Runbook</a>
+        <a class="link" href="reviewerobservations.html">Observations</a>
+        <a class="link" href="rightsclearedsourceintake.html">Rights Intake</a>
+        <a class="link" href="securityprivacyreview.html">Security Review</a>
+        <a class="link" href="hostedbackenddecisiongate.html">Hosted Gate</a>
+        <a class="link" href="hostedreadonlyapiadapter.html">Hosted API</a>
+        <a class="link" href="ratelimitprivacymonitoring.html">Request Guard</a>
+        <a class="link active" href="revieweridentityroles.html">Reviewer Roles</a>
+        <a class="link" href="rightsoperationsqueue.html">Rights Queue</a>
+        <a class="link" href="controlledexternalpilotgate.html">Pilot Gate</a>
+        <span class="version-pill">v4.9.1 controlled pilot</span>
+      </nav>
+    </header>
+    <section class="vp-ops-opening">
+      <div><span class="vp-ops-eyebrow">Permission before identity infrastructure</span><h1>Define who may preview a decision before claiming anyone is authenticated.</h1><p>A role simulator now separates observer, source, rights, and release-review capabilities while globally denying publish, deploy, registry merge, pilot activation, and public launch.</p></div>
+      <aside><strong>Identity boundary</strong><span>This page does not sign anyone in. Every result keeps identity verified and production allowed set to false.</span></aside>
+    </section>
+    <section class="vp-ops-columns">
+      <form class="vp-ops-form" id="vpRoleForm"><div class="vp-ops-section-head"><div><span class="vp-ops-eyebrow">Capability check</span><h2>Test one role decision</h2></div><span>Policy preview</span></div><label for="vpReviewerRole">Prototype role</label><select id="vpReviewerRole" required></select><label for="vpReviewerOperation">Requested operation</label><select id="vpReviewerOperation" required></select><button class="vp-ops-primary" type="submit">Evaluate capability</button><pre id="vpRoleResult" class="vp-ops-packet" hidden></pre><p class="vp-ops-status" id="vpRoleStatus" aria-live="polite">Loading the role contract.</p></form>
+      <section class="vp-ops-output"><div class="vp-ops-section-head"><div><span class="vp-ops-eyebrow">Visible scope</span><h2>Role capabilities</h2></div><span>Preview only</span></div><ul class="vp-role-capabilities" id="vpRoleCapabilities"></ul><div class="vp-ops-empty"><strong>Global lock</strong><p>No prototype role can publish a source, merge the registry, deploy a service, activate a pilot, or launch publicly.</p></div></section>
+    </section>
+  </main>
+  <script src="assets/vedapath-command-shell.js"></script>
+  <script src="assets/vedapath-reviewer-role-simulator.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rights Operations Queue | VedaPath AI</title>
+  <link rel="icon" href="assets/vedapath-3d-logo-concept.png" />
+  <link rel="stylesheet" href="assets/vedapath-ui.css" />
+  <link rel="stylesheet" href="assets/vedapath-command-shell.css" />
+  <link rel="stylesheet" href="assets/vedapath-demo-operations.css" />
+</head>
+<body class="rights-operations-queue-page">
+  <main class="workspace vp-ops-workspace" id="top" data-config="data/vedapath-rights-operations-queue.json">
+    <header class="topbar">
+      <a class="brand" href="index.html#top" aria-label="Go to VedaPath AI home">
+        <img src="assets/vedapath-3d-logo-concept.png" alt="" />
+        <span><strong>VedaPath AI</strong><small>rights operations queue</small></span>
+      </a>
+      <nav class="navlinks nav" aria-label="Primary navigation">
+        <a class="link" href="index.html">Home</a>
+        <a class="link" href="build-status.html">Build</a>
+        <a class="link" href="brand/brand-board.html">Brand</a>
+        <a class="link" href="blueprint.html">Blueprint</a>
+        <a class="link" href="citedanswerlab.html">Answers</a>
+        <a class="link" href="reviewqueuepersistence.html">Review</a>
+        <a class="link" href="mantralenslab.html">Mantra</a>
+        <a class="link" href="lifecompanionlab.html">Life</a>
+        <a class="link" href="conversationcompanionlab.html">Talk</a>
+        <a class="link" href="patterncompanionlab.html">Pattern</a>
+        <a class="link" href="daily.html">Daily</a>
+        <a class="link" href="askdemo.html">Ask Demo</a>
+        <a class="link" href="sourcepathreadinessconsole.html">Path Readiness</a>
+        <a class="link" href="privatedemorunbook.html">Demo Runbook</a>
+        <a class="link" href="reviewerobservations.html">Observations</a>
+        <a class="link" href="rightsclearedsourceintake.html">Rights Intake</a>
+        <a class="link" href="securityprivacyreview.html">Security Review</a>
+        <a class="link" href="hostedbackenddecisiongate.html">Hosted Gate</a>
+        <a class="link" href="hostedreadonlyapiadapter.html">Hosted API</a>
+        <a class="link" href="ratelimitprivacymonitoring.html">Request Guard</a>
+        <a class="link" href="revieweridentityroles.html">Reviewer Roles</a>
+        <a class="link active" href="rightsoperationsqueue.html">Rights Queue</a>
+        <a class="link" href="controlledexternalpilotgate.html">Pilot Gate</a>
+        <span class="version-pill">v4.9.1 controlled pilot</span>
+      </nav>
+    </header>
+    <section class="vp-ops-opening">
+      <div><span class="vp-ops-eyebrow">Visible rights work</span><h1>Route evidence through a queue without turning a preview into approval.</h1><p>A session-only queue now lets bounded prototype roles claim, route, hold, and mark evidence ready while preserving immutable publication and registry locks.</p></div>
+      <aside><strong>Queue boundary</strong><span>Session memory only. Evidence-ready is not approved. Publication remains blocked and registry merge remains manual.</span></aside>
+    </section>
+    <section class="vp-ops-columns">
+      <section class="vp-ops-form"><div class="vp-ops-section-head"><div><span class="vp-ops-eyebrow">Rights candidates</span><h2>Queue <span id="vpQueueCount">0</span></h2></div><span>Session only</span></div><div class="vp-ops-field-grid"><label>Prototype role<select id="vpQueueRole"></select></label><label>Status filter<select id="vpQueueFilter"><option value="all">All states</option><option value="new">New</option><option value="source-review">Source review</option><option value="rights-review">Rights review</option><option value="hold">Hold</option><option value="evidence-ready">Evidence ready</option></select></label></div><div class="vp-queue-list" id="vpRightsQueueList"></div></section>
+      <section class="vp-ops-output"><div class="vp-ops-section-head"><div><span class="vp-ops-eyebrow">Visible audit</span><h2>Session decisions</h2></div><span>Identity unverified</span></div><div id="vpRightsQueueAudit" class="vp-ops-empty"><p>No queue decisions in this session.</p></div><div class="vp-ops-actions"><button class="vp-ops-secondary" type="button" id="vpCopyQueuePacket">Copy queue packet</button><button class="vp-ops-quiet" type="button" id="vpResetQueue">Reset session</button></div><p class="vp-ops-status" id="vpQueueStatus" aria-live="polite">Loading queue contract.</p></section>
+    </section>
+  </main>
+  <script src="assets/vedapath-command-shell.js"></script>
+  <script src="assets/vedapath-rights-operations-queue.js"></script>
+</body>
+</html>

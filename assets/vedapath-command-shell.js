@@ -1,5 +1,5 @@
 (function () {
-  const releaseBadge = "v4.8.6 hosted gate";
+  const releaseBadge = "v4.9.1 controlled pilot";
   const prefKey = "vedapathCommandShellPrefs";
   const groups = [
     { title: "Start", labels: ["Home", "Build", "Brand", "Blueprint"] },
@@ -17,8 +17,7 @@
     { title: "Backend Spike", labels: ["Backend Choice", "Local API", "Packet Tests", "API Adapter", "Backend Handoff"] },
     { title: "Source Path", labels: ["Spike Review", "API Reliability", "Source Registry", "Path Readiness"] },
     { title: "Private Demo", labels: ["Demo Runbook", "Observations", "Rights Intake", "Security Review", "Hosted Gate"] },
-    { title: "Private Demo", labels: ["Demo Runbook", "Observations", "Rights Intake", "Security Review", "Hosted Gate"] },
-    { title: "Private Demo", labels: ["Demo Runbook", "Observations", "Rights Intake", "Security Review", "Hosted Gate"] }
+    { title: "Hosted Pilot", labels: ["Hosted API", "Request Guard", "Reviewer Roles", "Rights Queue", "Pilot Gate"] },
   ];
   const pageTitles = {
     Home: "VedaPath command center",
@@ -109,7 +108,12 @@
     "Observations": "Reviewer Observation Capture",
     "Rights Intake": "Rights-Cleared Source Intake",
     "Security Review": "Security & Privacy Review",
-    "Hosted Gate": "Hosted Backend Decision Gate"
+    "Hosted Gate": "Hosted Backend Decision Gate",
+    "Hosted API": "Read-only Hosted API Adapter",
+    "Request Guard": "Rate Limit & Privacy-Safe Monitoring",
+    "Reviewer Roles": "Reviewer Identity & Role Prototype",
+    "Rights Queue": "Rights Operations Queue",
+    "Pilot Gate": "Controlled External Pilot Gate"
   };
   const bodyPageTitles = {
     "permission-execution-draft-page": "Controlled draft gate",
@@ -193,7 +197,12 @@
     "reviewer-observation-capture-page": "Reviewer Observation Capture",
     "rights-cleared-source-intake-page": "Rights-Cleared Source Intake",
     "security-privacy-review-page": "Security & Privacy Review",
-    "hosted-backend-decision-gate-page": "Hosted Backend Decision Gate"
+    "hosted-backend-decision-gate-page": "Hosted Backend Decision Gate",
+    "hosted-readonly-api-adapter-page": "Read-only Hosted API Adapter",
+    "rate-limit-monitoring-contract-page": "Rate Limit & Privacy-Safe Monitoring",
+    "reviewer-identity-role-prototype-page": "Reviewer Identity & Role Prototype",
+    "rights-operations-queue-page": "Rights Operations Queue",
+    "controlled-external-pilot-gate-page": "Controlled External Pilot Gate"
   };
 
 
@@ -242,7 +251,12 @@
     ["Observations", "reviewerobservations.html"],
     ["Rights Intake", "rightsclearedsourceintake.html"],
     ["Security Review", "securityprivacyreview.html"],
-    ["Hosted Gate", "hostedbackenddecisiongate.html"]
+    ["Hosted Gate", "hostedbackenddecisiongate.html"],
+    ["Hosted API", "hostedreadonlyapiadapter.html"],
+    ["Request Guard", "ratelimitprivacymonitoring.html"],
+    ["Reviewer Roles", "revieweridentityroles.html"],
+    ["Rights Queue", "rightsoperationsqueue.html"],
+    ["Pilot Gate", "controlledexternalpilotgate.html"]
   ];
 
   function safeParse(value, fallback) {

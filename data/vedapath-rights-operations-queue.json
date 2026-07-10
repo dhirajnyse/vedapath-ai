@@ -1,0 +1,262 @@
+{
+  "position": "Rights work has a visible, reversible preview flow",
+  "headline": "Candidates can move between review lanes without ever becoming published sources.",
+  "copy": "The queue begins from metadata-only fixtures, records role-labelled session events, and disappears on refresh unless a reviewer explicitly copies a packet.",
+  "postures": [
+    {
+      "title": "Queue state",
+      "decision": "Session only",
+      "copy": "Refresh returns to fixture state."
+    },
+    {
+      "title": "Role checks",
+      "decision": "Required",
+      "copy": "Every transition evaluates a bounded capability."
+    },
+    {
+      "title": "Audit",
+      "decision": "Visible",
+      "copy": "The page shows every session transition."
+    },
+    {
+      "title": "Publication",
+      "decision": "Blocked",
+      "copy": "Evidence-ready is not approved or published."
+    },
+    {
+      "title": "Registry merge",
+      "decision": "Manual only",
+      "copy": "No queue action edits the source registry."
+    }
+  ],
+  "flow": [
+    {
+      "title": "Filter",
+      "copy": "Choose a queue state and inspect evidence metadata."
+    },
+    {
+      "title": "Assume role",
+      "copy": "Select a prototype source or rights reviewer."
+    },
+    {
+      "title": "Route",
+      "copy": "Claim, route, hold, or mark evidence ready if allowed."
+    },
+    {
+      "title": "Export",
+      "copy": "Copy the visible packet deliberately or reset the session."
+    }
+  ],
+  "decisions": [
+    {
+      "label": "Persistence",
+      "value": "None",
+      "reason": "The queue is a workflow prototype, not operations storage."
+    },
+    {
+      "label": "Approval",
+      "value": "Unavailable",
+      "reason": "No approve or publish transition exists."
+    },
+    {
+      "label": "Identity",
+      "value": "Unverified",
+      "reason": "Audit events record role, not a verified person."
+    },
+    {
+      "label": "Production queue",
+      "value": "Deferred",
+      "reason": "Needs database, auth, concurrency, retention, and audit guarantees."
+    }
+  ],
+  "metrics": [
+    {
+      "label": "Candidates",
+      "value": "4"
+    },
+    {
+      "label": "Actions",
+      "value": "7"
+    },
+    {
+      "label": "Approve actions",
+      "value": "0"
+    },
+    {
+      "label": "Next",
+      "value": "Pilot gate"
+    }
+  ],
+  "locks": [
+    {
+      "title": "Deployment lock",
+      "decision": "Closed",
+      "copy": "No provider endpoint, domain, secret, or production runtime is activated."
+    },
+    {
+      "title": "Write lock",
+      "decision": "Closed",
+      "copy": "No source, rights, reviewer, or learner write route exists."
+    },
+    {
+      "title": "Identity lock",
+      "decision": "Closed",
+      "copy": "Role simulations do not authenticate a person or grant production access."
+    },
+    {
+      "title": "Rights lock",
+      "decision": "Closed",
+      "copy": "Evidence-ready candidates remain blocked from publication and registry merge."
+    },
+    {
+      "title": "Launch lock",
+      "decision": "Closed",
+      "copy": "Pilot readiness evidence cannot activate an invitation or public service."
+    }
+  ],
+  "packet": "Rights Operations Queue v4.9.0\nPersistence: page session only.\nIdentity: unverified role label.\nPublication: blocked.\nRegistry merge: manual only.",
+  "schema": "vedapath.rights-operations-queue.v1",
+  "release": "v4.9.0",
+  "roles": [
+    {
+      "id": "observer",
+      "label": "Observer",
+      "capabilities": [
+        "view-source",
+        "view-rights",
+        "copy-preview"
+      ]
+    },
+    {
+      "id": "source-reviewer",
+      "label": "Source reviewer",
+      "capabilities": [
+        "view-source",
+        "view-rights",
+        "copy-preview",
+        "claim-source-work",
+        "route-source",
+        "hold-candidate",
+        "mark-source-evidence-ready"
+      ]
+    },
+    {
+      "id": "rights-reviewer",
+      "label": "Rights reviewer",
+      "capabilities": [
+        "view-source",
+        "view-rights",
+        "copy-preview",
+        "claim-rights-work",
+        "route-rights",
+        "hold-candidate",
+        "mark-rights-evidence-ready"
+      ]
+    },
+    {
+      "id": "release-reviewer",
+      "label": "Release reviewer",
+      "capabilities": [
+        "view-source",
+        "view-rights",
+        "copy-preview",
+        "view-pilot-evidence",
+        "hold-candidate",
+        "recommend-pilot-decision"
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "id": "claim-source",
+      "label": "Claim source",
+      "capability": "claim-source-work",
+      "status": "source-review"
+    },
+    {
+      "id": "claim-rights",
+      "label": "Claim rights",
+      "capability": "claim-rights-work",
+      "status": "rights-review"
+    },
+    {
+      "id": "route-source",
+      "label": "Route source",
+      "capability": "route-source",
+      "status": "source-review"
+    },
+    {
+      "id": "route-rights",
+      "label": "Route rights",
+      "capability": "route-rights",
+      "status": "rights-review"
+    },
+    {
+      "id": "hold",
+      "label": "Hold",
+      "capability": "hold-candidate",
+      "status": "hold"
+    },
+    {
+      "id": "source-evidence-ready",
+      "label": "Source evidence ready",
+      "capability": "mark-source-evidence-ready",
+      "status": "evidence-ready"
+    },
+    {
+      "id": "rights-evidence-ready",
+      "label": "Rights evidence ready",
+      "capability": "mark-rights-evidence-ready",
+      "status": "evidence-ready"
+    }
+  ],
+  "candidates": [
+    {
+      "id": "candidate-isha-1",
+      "citation": "Isha Upanishad 1",
+      "family": "Upanishad | Shruti",
+      "rights_state": "citation-only",
+      "source_state": "review",
+      "status": "new",
+      "review_lane": "Upanishad reviewer",
+      "publication_state": "blocked",
+      "registry_merge": "manual-only"
+    },
+    {
+      "id": "candidate-rigveda-36210",
+      "citation": "Rigveda 3.62.10",
+      "family": "Veda | Shruti",
+      "rights_state": "needs-review",
+      "source_state": "hold",
+      "status": "rights-review",
+      "review_lane": "Rights reviewer",
+      "publication_state": "blocked",
+      "registry_merge": "manual-only"
+    },
+    {
+      "id": "candidate-katha-123",
+      "citation": "Katha Upanishad 1.2.3",
+      "family": "Upanishad | Shruti",
+      "rights_state": "citation-only",
+      "source_state": "draft",
+      "status": "source-review",
+      "review_lane": "Source reviewer",
+      "publication_state": "blocked",
+      "registry_merge": "manual-only"
+    },
+    {
+      "id": "candidate-gita-648",
+      "citation": "Bhagavad Gita 6.48",
+      "family": "Bhagavad Gita | Smriti",
+      "rights_state": "blocked",
+      "source_state": "draft",
+      "status": "hold",
+      "review_lane": "Rights reviewer",
+      "publication_state": "blocked",
+      "registry_merge": "manual-only"
+    }
+  ],
+  "persistence": "none",
+  "approval": "unavailable",
+  "publication": "blocked"
+}

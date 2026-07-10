@@ -1,3 +1,38 @@
+## v4.9.1 Controlled External Pilot Gate
+
+- Changes made: Adds a controlled external-pilot evidence gate, dependency and lock matrix, launch decision language, shared navigation cleanup, build status update, and one batch regression that proves every new contract while keeping deployment and public launch closed.
+- Files changed: `controlledexternalpilotgate.html`, `data/vedapath-controlled-external-pilot-gate.json`, `docs/CONTROLLED_EXTERNAL_PILOT_GATE.md`, `scripts/check-v487-v491-hosted-pilot-foundation.mjs`, `assets/vedapath-command-shell.js`, `scripts/check-static-links.mjs`, `build-status.html`, `README.md`, `CHANGELOG.md`.
+- Checks run: batch checker through v4.9.1; all prior backend/source-path/private-demo regression suites; static-link check; local HTTP smoke; desktop and mobile visual QA; role and queue interaction QA; GitHub Pages live verification.
+- Known risks: Controlled-pilot foundation only; no provider deployment, real authentication, durable queue, production monitoring, licensed corpus delivery, live AI generation, payments, public launch, or medical, legal, ritual, or spiritual authority.
+
+## v4.9.0 Rights Operations Queue
+
+- Changes made: Adds a pure queue transition contract, role-aware session workflow, status filters, visible audit events, explicit copy and reset controls, and invariants that keep publication blocked and registry merge manual.
+- Files changed: `rightsoperationsqueue.html`, `data/vedapath-rights-operations-queue.json`, `docs/RIGHTS_OPERATIONS_QUEUE.md`, `scripts/vedapath-rights-operations-queue.mjs`, `assets/vedapath-rights-operations-queue.js`, `assets/vedapath-demo-operations.css`.
+- Checks run: node --check scripts/vedapath-rights-operations-queue.mjs; node --check assets/vedapath-rights-operations-queue.js; authorized and denied transition tests; invariant and immutability assertions; batch checker through v4.9.0; browser interaction QA.
+- Known risks: Controlled-pilot foundation only; no provider deployment, real authentication, durable queue, production monitoring, licensed corpus delivery, live AI generation, payments, public launch, or medical, legal, ritual, or spiritual authority.
+
+## v4.8.9 Reviewer Identity & Role Prototype
+
+- Changes made: Adds a pure role-capability evaluator, four bounded reviewer roles, globally forbidden operations, an accessible in-browser simulator, and explicit identity-unverified and production-denied outputs.
+- Files changed: `revieweridentityroles.html`, `data/vedapath-reviewer-identity-roles.json`, `docs/REVIEWER_IDENTITY_ROLE_PROTOTYPE.md`, `scripts/vedapath-reviewer-authorization.mjs`, `assets/vedapath-reviewer-role-simulator.js`, `assets/vedapath-demo-operations.css`.
+- Checks run: node --check scripts/vedapath-reviewer-authorization.mjs; node --check assets/vedapath-reviewer-role-simulator.js; role allow/deny matrix and global lock assertions; batch checker through v4.8.9; keyboard browser QA.
+- Known risks: Controlled-pilot foundation only; no provider deployment, real authentication, durable queue, production monitoring, licensed corpus delivery, live AI generation, payments, public launch, or medical, legal, ritual, or spiritual authority.
+
+## v4.8.8 Rate Limit & Privacy-Safe Monitoring
+
+- Changes made: Adds a testable fixed-window request guard, privacy-safe aggregate event envelope, 429 and Retry-After behavior, bounded in-memory retention, and explicit exclusions for raw questions, IPs, referrers, and user agents.
+- Files changed: `ratelimitprivacymonitoring.html`, `data/vedapath-rate-limit-privacy-monitor.json`, `docs/RATE_LIMIT_PRIVACY_MONITORING.md`, `scripts/vedapath-private-request-guard.mjs`, `scripts/vedapath-hosted-source-adapter.mjs`.
+- Checks run: node --check scripts/vedapath-private-request-guard.mjs; deterministic allowance and 429 tests; safe-event field scan; no raw token or question assertions; batch checker through v4.8.8.
+- Known risks: Controlled-pilot foundation only; no provider deployment, real authentication, durable queue, production monitoring, licensed corpus delivery, live AI generation, payments, public launch, or medical, legal, ritual, or spiritual authority.
+
+## v4.8.7 Read-only Hosted API Adapter
+
+- Changes made: Adds an executable Web Request/Response adapter over the reviewed source handler, strict origin and payload controls, CORS preflight behavior, typed errors, security headers, and explicit zero-write deployment posture.
+- Files changed: `hostedreadonlyapiadapter.html`, `data/vedapath-hosted-readonly-api-adapter.json`, `docs/HOSTED_READONLY_API_ADAPTER.md`, `scripts/vedapath-hosted-source-adapter.mjs`.
+- Checks run: node --check scripts/vedapath-hosted-source-adapter.mjs; adapter health, source, search, POST, CORS, malformed JSON, oversized payload, origin, method, and route assertions; batch checker through v4.8.7.
+- Known risks: Controlled-pilot foundation only; no provider deployment, real authentication, durable queue, production monitoring, licensed corpus delivery, live AI generation, payments, public launch, or medical, legal, ritual, or spiritual authority.
+
 ## v4.8.6 Hosted Backend Decision Gate
 
 - Changes made: Adds a deployment-neutral read-only source handler, parity tests, architecture decision record, explicit service boundaries, and a hosted-backend decision gate without deploying infrastructure.

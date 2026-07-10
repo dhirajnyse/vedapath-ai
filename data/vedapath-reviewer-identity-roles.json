@@ -1,0 +1,225 @@
+{
+  "position": "Reviewer roles are explicit, identity is still unverified",
+  "headline": "The product can discuss capabilities honestly before selecting an authentication provider.",
+  "copy": "Every simulator result says identity_verified false and production_allowed false, even when a bounded preview action is available.",
+  "postures": [
+    {
+      "title": "Observer",
+      "decision": "Read only",
+      "copy": "Can inspect source and rights evidence."
+    },
+    {
+      "title": "Source reviewer",
+      "decision": "Source preview",
+      "copy": "Can route and mark source evidence ready."
+    },
+    {
+      "title": "Rights reviewer",
+      "decision": "Rights preview",
+      "copy": "Can route and mark rights evidence ready."
+    },
+    {
+      "title": "Release reviewer",
+      "decision": "Evidence preview",
+      "copy": "Can recommend a pilot decision."
+    },
+    {
+      "title": "Production permission",
+      "decision": "None",
+      "copy": "No role can publish, deploy, or launch."
+    }
+  ],
+  "flow": [
+    {
+      "title": "Choose",
+      "copy": "Select a prototype role."
+    },
+    {
+      "title": "Request",
+      "copy": "Choose one bounded or forbidden operation."
+    },
+    {
+      "title": "Evaluate",
+      "copy": "See the exact preview decision and denial reason."
+    },
+    {
+      "title": "Defer",
+      "copy": "Add real identity proof, sessions, revocation, and audit before production."
+    }
+  ],
+  "decisions": [
+    {
+      "label": "Authentication",
+      "value": "Absent",
+      "reason": "The role label is not a verified person."
+    },
+    {
+      "label": "Preview policy",
+      "value": "Executable",
+      "reason": "Capability rules are deterministic and tested."
+    },
+    {
+      "label": "Production access",
+      "value": "Denied",
+      "reason": "Every result keeps production_allowed false."
+    },
+    {
+      "label": "Next",
+      "value": "Rights queue",
+      "reason": "Use the policy only in a session-local operations preview."
+    }
+  ],
+  "metrics": [
+    {
+      "label": "Roles",
+      "value": "4"
+    },
+    {
+      "label": "Global locks",
+      "value": "6"
+    },
+    {
+      "label": "Verified identities",
+      "value": "0"
+    },
+    {
+      "label": "Next",
+      "value": "Rights queue"
+    }
+  ],
+  "locks": [
+    {
+      "title": "Deployment lock",
+      "decision": "Closed",
+      "copy": "No provider endpoint, domain, secret, or production runtime is activated."
+    },
+    {
+      "title": "Write lock",
+      "decision": "Closed",
+      "copy": "No source, rights, reviewer, or learner write route exists."
+    },
+    {
+      "title": "Identity lock",
+      "decision": "Closed",
+      "copy": "Role simulations do not authenticate a person or grant production access."
+    },
+    {
+      "title": "Rights lock",
+      "decision": "Closed",
+      "copy": "Evidence-ready candidates remain blocked from publication and registry merge."
+    },
+    {
+      "title": "Launch lock",
+      "decision": "Closed",
+      "copy": "Pilot readiness evidence cannot activate an invitation or public service."
+    }
+  ],
+  "packet": "Reviewer Identity & Role Prototype v4.8.9\nAuthentication: absent.\nIdentity verified: false.\nProduction permissions: none.\nPurpose: preview a capability contract before choosing identity infrastructure.",
+  "schema": "vedapath.reviewer-role-config.v1",
+  "release": "v4.8.9",
+  "roles": [
+    {
+      "id": "observer",
+      "label": "Observer",
+      "capabilities": [
+        "view-source",
+        "view-rights",
+        "copy-preview"
+      ]
+    },
+    {
+      "id": "source-reviewer",
+      "label": "Source reviewer",
+      "capabilities": [
+        "view-source",
+        "view-rights",
+        "copy-preview",
+        "claim-source-work",
+        "route-source",
+        "hold-candidate",
+        "mark-source-evidence-ready"
+      ]
+    },
+    {
+      "id": "rights-reviewer",
+      "label": "Rights reviewer",
+      "capabilities": [
+        "view-source",
+        "view-rights",
+        "copy-preview",
+        "claim-rights-work",
+        "route-rights",
+        "hold-candidate",
+        "mark-rights-evidence-ready"
+      ]
+    },
+    {
+      "id": "release-reviewer",
+      "label": "Release reviewer",
+      "capabilities": [
+        "view-source",
+        "view-rights",
+        "copy-preview",
+        "view-pilot-evidence",
+        "hold-candidate",
+        "recommend-pilot-decision"
+      ]
+    }
+  ],
+  "operations": [
+    {
+      "id": "view-source",
+      "label": "View source evidence"
+    },
+    {
+      "id": "route-source",
+      "label": "Route to source review"
+    },
+    {
+      "id": "route-rights",
+      "label": "Route to rights review"
+    },
+    {
+      "id": "mark-source-evidence-ready",
+      "label": "Mark source evidence ready"
+    },
+    {
+      "id": "mark-rights-evidence-ready",
+      "label": "Mark rights evidence ready"
+    },
+    {
+      "id": "recommend-pilot-decision",
+      "label": "Recommend a pilot decision"
+    },
+    {
+      "id": "publish-source",
+      "label": "Publish a source"
+    },
+    {
+      "id": "merge-registry",
+      "label": "Merge into registry"
+    },
+    {
+      "id": "deploy-service",
+      "label": "Deploy a service"
+    },
+    {
+      "id": "activate-pilot",
+      "label": "Activate a pilot"
+    },
+    {
+      "id": "launch-public",
+      "label": "Launch publicly"
+    }
+  ],
+  "forbidden_operations": [
+    "publish-source",
+    "merge-registry",
+    "deploy-service",
+    "activate-pilot",
+    "launch-public",
+    "grant-production-access"
+  ],
+  "identity_verified": false,
+  "production_permissions": []
+}

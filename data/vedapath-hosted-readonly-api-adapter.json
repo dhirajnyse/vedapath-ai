@@ -1,0 +1,130 @@
+{
+  "position": "Hosted shape is executable, deployment is not",
+  "headline": "One adapter can run at an edge or serverless boundary without changing the source contract.",
+  "copy": "The adapter accepts standard Web Requests and returns standard Web Responses, which keeps the first hosted slice portable and testable.",
+  "postures": [
+    {
+      "title": "Read routes",
+      "decision": "4",
+      "copy": "Health, sources, search, and source matching are the only routes."
+    },
+    {
+      "title": "Write routes",
+      "decision": "0",
+      "copy": "No mutation, upload, account, review, or telemetry endpoint is present."
+    },
+    {
+      "title": "Origins",
+      "decision": "Allowlisted",
+      "copy": "GitHub Pages and private local preview origins are accepted; null and unknown origins fail closed."
+    },
+    {
+      "title": "Payload",
+      "decision": "16 KB",
+      "copy": "JSON requests are bounded before source matching."
+    },
+    {
+      "title": "Runtime",
+      "decision": "Portable",
+      "copy": "The adapter uses Web Request and Response primitives, not provider APIs."
+    }
+  ],
+  "flow": [
+    {
+      "title": "Receive",
+      "copy": "Validate origin, request ID, method, media type, and payload size."
+    },
+    {
+      "title": "Translate",
+      "copy": "Map the Web Request into the existing read-only source handler."
+    },
+    {
+      "title": "Respond",
+      "copy": "Return typed JSON and security headers with no-store caching."
+    },
+    {
+      "title": "Stop",
+      "copy": "Leave deployment, secrets, domains, and writes unconfigured."
+    }
+  ],
+  "decisions": [
+    {
+      "label": "Provider",
+      "value": "Unselected",
+      "reason": "Portability is proven before infrastructure commitment."
+    },
+    {
+      "label": "Storage",
+      "value": "None",
+      "reason": "The adapter does not add persistence."
+    },
+    {
+      "label": "Contract",
+      "value": "vedapath.source.v1",
+      "reason": "Browser, local API, and hosted adapter keep one envelope."
+    },
+    {
+      "label": "Launch",
+      "value": "Blocked",
+      "reason": "An executable adapter is not a live service."
+    }
+  ],
+  "metrics": [
+    {
+      "label": "Routes",
+      "value": "4"
+    },
+    {
+      "label": "Writes",
+      "value": "0"
+    },
+    {
+      "label": "Body limit",
+      "value": "16 KB"
+    },
+    {
+      "label": "Next",
+      "value": "Request guard"
+    }
+  ],
+  "locks": [
+    {
+      "title": "Deployment lock",
+      "decision": "Closed",
+      "copy": "No provider endpoint, domain, secret, or production runtime is activated."
+    },
+    {
+      "title": "Write lock",
+      "decision": "Closed",
+      "copy": "No source, rights, reviewer, or learner write route exists."
+    },
+    {
+      "title": "Identity lock",
+      "decision": "Closed",
+      "copy": "Role simulations do not authenticate a person or grant production access."
+    },
+    {
+      "title": "Rights lock",
+      "decision": "Closed",
+      "copy": "Evidence-ready candidates remain blocked from publication and registry merge."
+    },
+    {
+      "title": "Launch lock",
+      "decision": "Closed",
+      "copy": "Pilot readiness evidence cannot activate an invitation or public service."
+    }
+  ],
+  "packet": "Read-only Hosted API Adapter v4.8.7\nRuntime: Web Request -> Response.\nProvider: unselected.\nDeployment: not activated.\nWrites: none.",
+  "schema": "vedapath.hosted-readonly-adapter.v1",
+  "release": "v4.8.7",
+  "contract": "vedapath.source.v1",
+  "routes": [
+    "GET /health",
+    "GET /sources",
+    "GET /search",
+    "GET|POST /source"
+  ],
+  "write_routes": [],
+  "provider": "unselected",
+  "deployment": "not-activated"
+}

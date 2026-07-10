@@ -1,0 +1,140 @@
+{
+  "position": "Abuse protection is visible and data-minimal",
+  "headline": "The preview can slow repeated requests without retaining what a learner asked.",
+  "copy": "This is instance-local prototype protection. Production needs a distributed limiter, alerting, retention policy, on-call ownership, and incident response.",
+  "postures": [
+    {
+      "title": "Rate window",
+      "decision": "Visible",
+      "copy": "The default private-preview limit is explicit and testable."
+    },
+    {
+      "title": "Raw questions",
+      "decision": "Excluded",
+      "copy": "Question text never enters monitoring events."
+    },
+    {
+      "title": "Raw IP",
+      "decision": "Excluded",
+      "copy": "The guard accepts a private client token and stores only a short one-way bucket."
+    },
+    {
+      "title": "Retention",
+      "decision": "100 events",
+      "copy": "Only bounded instance memory is retained."
+    },
+    {
+      "title": "Production ops",
+      "decision": "Missing",
+      "copy": "Distributed state, alerting, and incident response remain unbuilt."
+    }
+  ],
+  "flow": [
+    {
+      "title": "Bucket",
+      "copy": "Create a short pseudonymous client and time bucket."
+    },
+    {
+      "title": "Limit",
+      "copy": "Allow a bounded number of requests in the current window."
+    },
+    {
+      "title": "Record",
+      "copy": "Store route, outcome, and status class only."
+    },
+    {
+      "title": "Discard",
+      "copy": "Lose all monitor state when the instance stops."
+    }
+  ],
+  "decisions": [
+    {
+      "label": "Telemetry consent",
+      "value": "Not required",
+      "reason": "The prototype does not create learner analytics."
+    },
+    {
+      "label": "Operational event",
+      "value": "Minimal",
+      "reason": "Only service health fields are represented."
+    },
+    {
+      "label": "Durability",
+      "value": "None",
+      "reason": "Events remain process-local."
+    },
+    {
+      "label": "Public service",
+      "value": "Blocked",
+      "reason": "A local limiter is not production abuse prevention."
+    }
+  ],
+  "metrics": [
+    {
+      "label": "Raw questions",
+      "value": "0"
+    },
+    {
+      "label": "Raw IPs",
+      "value": "0"
+    },
+    {
+      "label": "Max events",
+      "value": "100"
+    },
+    {
+      "label": "Next",
+      "value": "Reviewer roles"
+    }
+  ],
+  "locks": [
+    {
+      "title": "Deployment lock",
+      "decision": "Closed",
+      "copy": "No provider endpoint, domain, secret, or production runtime is activated."
+    },
+    {
+      "title": "Write lock",
+      "decision": "Closed",
+      "copy": "No source, rights, reviewer, or learner write route exists."
+    },
+    {
+      "title": "Identity lock",
+      "decision": "Closed",
+      "copy": "Role simulations do not authenticate a person or grant production access."
+    },
+    {
+      "title": "Rights lock",
+      "decision": "Closed",
+      "copy": "Evidence-ready candidates remain blocked from publication and registry merge."
+    },
+    {
+      "title": "Launch lock",
+      "decision": "Closed",
+      "copy": "Pilot readiness evidence cannot activate an invitation or public service."
+    }
+  ],
+  "packet": "Rate Limit & Privacy-Safe Monitoring v4.8.8\nDefault: 12 requests per minute per pseudonymous bucket.\nStored: route, status class, outcome, time bucket.\nNot stored: question, IP, referrer, user agent.",
+  "schema": "vedapath.request-guard.v1",
+  "release": "v4.8.8",
+  "limit": 12,
+  "window_seconds": 60,
+  "max_events": 100,
+  "persistence": "instance-memory-only",
+  "allowed_event_fields": [
+    "time_bucket",
+    "client_bucket",
+    "method",
+    "path",
+    "status_group",
+    "outcome"
+  ],
+  "prohibited_fields": [
+    "question",
+    "raw_ip",
+    "user_agent",
+    "referrer",
+    "email",
+    "name"
+  ]
+}

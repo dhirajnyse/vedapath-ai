@@ -1,3 +1,43 @@
+## v4.9.1 Controlled External Pilot Gate
+
+The final gate assembles hosted adapter, request protection, reviewer roles, rights operations, source quality, and privacy evidence into one conditional decision: implementation-ready, not activated.
+
+- Open: [Controlled External Pilot Gate](controlledexternalpilotgate.html)
+- Data: `data/vedapath-controlled-external-pilot-gate.json`
+- Boundary: Controlled-pilot foundation only; no provider deployment, real authentication, durable queue, production monitoring, licensed corpus delivery, live AI generation, payments, public launch, or medical, legal, ritual, or spiritual authority.
+
+## v4.9.0 Rights Operations Queue
+
+A session-only queue now lets bounded prototype roles claim, route, hold, and mark evidence ready while preserving immutable publication and registry locks.
+
+- Open: [Rights Operations Queue](rightsoperationsqueue.html)
+- Data: `data/vedapath-rights-operations-queue.json`
+- Boundary: Controlled-pilot foundation only; no provider deployment, real authentication, durable queue, production monitoring, licensed corpus delivery, live AI generation, payments, public launch, or medical, legal, ritual, or spiritual authority.
+
+## v4.8.9 Reviewer Identity & Role Prototype
+
+A role simulator now separates observer, source, rights, and release-review capabilities while globally denying publish, deploy, registry merge, pilot activation, and public launch.
+
+- Open: [Reviewer Identity & Role Prototype](revieweridentityroles.html)
+- Data: `data/vedapath-reviewer-identity-roles.json`
+- Boundary: Controlled-pilot foundation only; no provider deployment, real authentication, durable queue, production monitoring, licensed corpus delivery, live AI generation, payments, public launch, or medical, legal, ritual, or spiritual authority.
+
+## v4.8.8 Rate Limit & Privacy-Safe Monitoring
+
+A deterministic request guard now limits short bursts and records only time buckets, pseudonymous client buckets, route, status class, and outcome in instance memory.
+
+- Open: [Rate Limit & Privacy-Safe Monitoring](ratelimitprivacymonitoring.html)
+- Data: `data/vedapath-rate-limit-privacy-monitor.json`
+- Boundary: Controlled-pilot foundation only; no provider deployment, real authentication, durable queue, production monitoring, licensed corpus delivery, live AI generation, payments, public launch, or medical, legal, ritual, or spiritual authority.
+
+## v4.8.7 Read-only Hosted API Adapter
+
+A standards-based Request-to-Response adapter now enforces approved origins, JSON shape, 16 KB payloads, security headers, typed errors, and read-only routes without choosing or deploying a provider.
+
+- Open: [Read-only Hosted API Adapter](hostedreadonlyapiadapter.html)
+- Data: `data/vedapath-hosted-readonly-api-adapter.json`
+- Boundary: Controlled-pilot foundation only; no provider deployment, real authentication, durable queue, production monitoring, licensed corpus delivery, live AI generation, payments, public launch, or medical, legal, ritual, or spiritual authority.
+
 ## v4.8.6 Hosted Backend Decision Gate
 
 The decision gate selects a deployment-neutral read-only handler over the reviewed registry, proves contract parity locally, and leaves deployment and every write path unauthorized.
