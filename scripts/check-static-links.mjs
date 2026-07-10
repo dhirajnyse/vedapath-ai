@@ -81,7 +81,12 @@ const pages = [
   "sourceapireliabilitycontract.html",
   "curatedsourceregistry.html",
   "askdemo.html",
-  "sourcepathreadinessconsole.html"
+  "sourcepathreadinessconsole.html",
+  "privatedemorunbook.html",
+  "reviewerobservations.html",
+  "rightsclearedsourceintake.html",
+  "securityprivacyreview.html",
+  "hostedbackenddecisiongate.html"
 ];
 
 const missing = [];

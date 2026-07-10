@@ -329,6 +329,19 @@ body.integrated-ask-demo-page {
   color: var(--vp-ask-ochre);
 }
 
+.vp-boundary-link {
+  margin-left: auto;
+  color: #0b5d49;
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.vp-boundary-link:hover {
+  color: #943713;
+}
+
 @media (max-width: 980px) {
   .vp-ask-intro,
   .vp-ask-layout {
@@ -371,6 +384,10 @@ body.integrated-ask-demo-page {
   .vp-ask-boundary {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .vp-boundary-link {
+    margin-left: 0;
   }
 
   .vp-result-grid {

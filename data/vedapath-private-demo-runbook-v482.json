@@ -1,0 +1,187 @@
+{
+  "position": "Private source-path demo is repeatable",
+  "headline": "Five scenarios now prove what VedaPath can answer, hold, refuse, and recover from.",
+  "copy": "The runner uses the same registry and local API contract as the learner Ask room, so demo evidence cannot drift into a separate product story.",
+  "postures": [
+    {
+      "title": "Approved source",
+      "decision": "Pass",
+      "copy": "Oppenheimer resolves to Bhagavad Gita 11.32 with a category correction."
+    },
+    {
+      "title": "Review source",
+      "decision": "Pass",
+      "copy": "Isha Upanishad remains visibly in review rather than silently promoted."
+    },
+    {
+      "title": "Hold source",
+      "decision": "Pass",
+      "copy": "Gayatri context remains held for rights and reviewer work."
+    },
+    {
+      "title": "No source",
+      "decision": "Pass",
+      "copy": "Bitcoin overclaim returns a transparent refusal packet."
+    },
+    {
+      "title": "Offline API",
+      "decision": "Pass",
+      "copy": "The browser names the reviewed fallback instead of pretending the API responded."
+    }
+  ],
+  "flow": [
+    {
+      "title": "Prepare",
+      "copy": "Open the Ask demo in reviewed-preview mode."
+    },
+    {
+      "title": "Prove",
+      "copy": "Run approved, review, hold, and no-source questions."
+    },
+    {
+      "title": "Recover",
+      "copy": "Switch to local mode with the API offline and observe the named fallback."
+    },
+    {
+      "title": "Close",
+      "copy": "State the storage, rights, authority, and launch locks before discussion."
+    }
+  ],
+  "decisions": [
+    {
+      "label": "Demo posture",
+      "value": "Private",
+      "reason": "The scenario set is suitable for founder and reviewer learning only."
+    },
+    {
+      "label": "Evidence",
+      "value": "Executable",
+      "reason": "Registry and local API results are checked from one runner."
+    },
+    {
+      "label": "Observation",
+      "value": "Next",
+      "reason": "Reviewer notes need an explicit session-only surface."
+    },
+    {
+      "label": "Public launch",
+      "value": "Blocked",
+      "reason": "A repeatable demo is not production authorization."
+    }
+  ],
+  "metrics": [
+    {
+      "label": "Scenarios",
+      "value": "5"
+    },
+    {
+      "label": "Hidden writes",
+      "value": "0"
+    },
+    {
+      "label": "Failure states",
+      "value": "2"
+    },
+    {
+      "label": "Next",
+      "value": "Observation capture"
+    }
+  ],
+  "locks": [
+    {
+      "title": "Live AI lock",
+      "decision": "Closed",
+      "copy": "No model call or generated scripture is enabled."
+    },
+    {
+      "title": "Storage lock",
+      "decision": "Closed",
+      "copy": "No durable learner, reviewer, observation, or telemetry storage is created."
+    },
+    {
+      "title": "Rights lock",
+      "decision": "Closed",
+      "copy": "No translation text is published without recorded rights evidence."
+    },
+    {
+      "title": "Authority lock",
+      "decision": "Closed",
+      "copy": "The product remains study and reflection support, not a guru, clinician, or ritual authority."
+    },
+    {
+      "title": "Launch lock",
+      "decision": "Closed",
+      "copy": "Private-demo evidence does not authorize a public service."
+    }
+  ],
+  "packet": "Private Demo Runbook v4.8.2\nRun: node scripts/run-v482-private-demo.mjs\nExpected: 5/5 scenarios pass.\nBoundary: private demo only; stop if citation, review state, rights state, boundary, or fallback label is missing.",
+  "labels": {
+    "posture": "Demo evidence",
+    "posture_question": "What must pass?",
+    "main": "Private demo runbook",
+    "decision": "Scenario decisions",
+    "packet": "Demo packet",
+    "pulse": "Scenario pulse",
+    "copy": "Copy demo packet"
+  },
+  "primary_action": {
+    "href": "askdemo.html",
+    "label": "Open Ask Demo"
+  },
+  "schema": "vedapath.private-demo-runbook.v1",
+  "release": "v4.8.2",
+  "scenarios": [
+    {
+      "id": "approved-category",
+      "question": "What scripture did Oppenheimer quote?",
+      "expected": {
+        "citation": "Bhagavad Gita 11.32",
+        "reviewer_state": "approved",
+        "source_found": true
+      }
+    },
+    {
+      "id": "review-context",
+      "question": "What does Isha Upanishad say about possession?",
+      "expected": {
+        "citation": "Isha Upanishad 1",
+        "reviewer_state": "review",
+        "source_found": true
+      }
+    },
+    {
+      "id": "hold-practice",
+      "question": "What does the Gayatri mantra come from?",
+      "expected": {
+        "citation": "Rigveda 3.62.10",
+        "reviewer_state": "hold",
+        "source_found": true
+      }
+    },
+    {
+      "id": "no-source-overclaim",
+      "question": "Did the Vedas predict bitcoin?",
+      "expected": {
+        "citation": "No direct source",
+        "reviewer_state": "no-source",
+        "source_found": false
+      }
+    },
+    {
+      "id": "offline-fallback",
+      "question": "How can I act calmly when results are uncertain?",
+      "expected": {
+        "fallback_label": "Reviewed fallback",
+        "storage": "none"
+      }
+    }
+  ],
+  "stop_conditions": [
+    "citation missing",
+    "source family missing",
+    "review state hidden",
+    "rights state hidden",
+    "boundary missing",
+    "fallback unnamed"
+  ]
+}

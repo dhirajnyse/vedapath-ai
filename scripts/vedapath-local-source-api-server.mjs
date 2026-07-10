@@ -10,7 +10,7 @@ import {
   sourceRecords
 } from "./vedapath-source-api-stub.mjs";
 
-const serviceVersion = "v4.7.9";
+const serviceVersion = "v4.8.5";
 const contractVersion = "vedapath.source.v1";
 const maxBodyBytes = 16 * 1024;
 let requestSequence = 0;
@@ -34,7 +34,8 @@ function configuredOrigins() {
 }
 
 function originAllowed(origin) {
-  if (!origin || origin === "null") return true;
+  if (!origin) return true;
+  if (origin === "null") return false;
   return configuredOrigins().some(function (allowed) {
     if (origin === allowed) return true;
     return (allowed === "http://127.0.0.1" || allowed === "http://localhost") && origin.startsWith(allowed + ":");
@@ -45,7 +46,12 @@ function responseHeaders(req, requestId, extra = {}) {
   const origin = String(req.headers.origin || "");
   const headers = {
     "cache-control": "no-store",
+    "content-security-policy": "default-src 'none'; frame-ancestors 'none'; base-uri 'none'",
+    "cross-origin-resource-policy": "cross-origin",
+    "permissions-policy": "camera=(), microphone=(), geolocation=()",
+    "referrer-policy": "no-referrer",
     "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY",
     "x-vedapath-contract": contractVersion,
     "x-vedapath-request-id": requestId,
     "vary": "origin",

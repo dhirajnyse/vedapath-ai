@@ -1,3 +1,38 @@
+## v4.8.6 Hosted Backend Decision Gate
+
+- Changes made: Adds a deployment-neutral read-only source handler, parity tests, architecture decision record, explicit service boundaries, and a hosted-backend decision gate without deploying infrastructure.
+- Files changed: `hostedbackenddecisiongate.html`, `data/vedapath-hosted-backend-decision-gate.json`, `docs/HOSTED_BACKEND_DECISION_GATE.md`, `scripts/vedapath-readonly-source-handler.mjs`, `scripts/check-v482-v486-private-demo-hardening.mjs`, `scripts/apply-v482-v486-private-demo-hardening-batch.mjs`, `scripts/check-v477-v481-integrated-source-path.mjs`, `assets/vedapath-command-shell.js`, `scripts/check-static-links.mjs`, `build-status.html`, `README.md`, `CHANGELOG.md`.
+- Checks run: node --check scripts/vedapath-readonly-source-handler.mjs; handler and local API parity fixtures; full batch checker; legacy source-path, backend, route, and static-link regressions; desktop and mobile browser QA.
+- Known risks: Private-demo tooling only; no live AI generation, production corpus delivery, durable accounts, hidden telemetry, payments, public launch, or medical, legal, ritual, or spiritual authority.
+
+## v4.8.5 Security & Privacy Review
+
+- Changes made: Hardens local API response headers and null-origin handling, adds a machine-readable threat model, and verifies the active Ask, observation, and intake surfaces for privacy regressions.
+- Files changed: `securityprivacyreview.html`, `data/vedapath-security-privacy-review.json`, `docs/SECURITY_PRIVACY_REVIEW.md`, `scripts/vedapath-local-source-api-server.mjs`, `scripts/check-v482-v486-private-demo-hardening.mjs`.
+- Checks run: API security-header assertions; disallowed and null-origin tests; no-storage and no-telemetry scans; rights-field scan; batch checker through v4.8.5.
+- Known risks: Private-demo tooling only; no live AI generation, production corpus delivery, durable accounts, hidden telemetry, payments, public launch, or medical, legal, ritual, or spiritual authority.
+
+## v4.8.4 Rights-Cleared Source Intake
+
+- Changes made: Adds a machine-readable intake contract, pure validator, browser intake desk, guarded rights lanes, sample fixtures, and a publication lock that client input cannot override.
+- Files changed: `rightsclearedsourceintake.html`, `data/vedapath-rights-cleared-source-intake.json`, `docs/RIGHTS_CLEARED_SOURCE_INTAKE.md`, `scripts/vedapath-source-intake-validator.mjs`, `assets/vedapath-source-intake.js`, `assets/vedapath-demo-operations.css`.
+- Checks run: node --check scripts/vedapath-source-intake-validator.mjs; node --check assets/vedapath-source-intake.js; valid and invalid intake fixtures; batch checker through v4.8.4; browser form QA.
+- Known risks: Private-demo tooling only; no live AI generation, production corpus delivery, durable accounts, hidden telemetry, payments, public launch, or medical, legal, ritual, or spiritual authority.
+
+## v4.8.3 Reviewer Observation Capture
+
+- Changes made: Adds an accessible session-only reviewer observation desk, explicit criteria, copyable review packets, clear controls, and zero automatic persistence or telemetry.
+- Files changed: `reviewerobservations.html`, `data/vedapath-reviewer-observation-capture.json`, `docs/REVIEWER_OBSERVATION_CAPTURE.md`, `assets/vedapath-demo-operations.css`, `assets/vedapath-reviewer-observations.js`, `assets/vedapath-ask-demo.css`, `askdemo.html`.
+- Checks run: node --check assets/vedapath-reviewer-observations.js; batch checker through v4.8.3; static-link smoke; keyboard and browser visual QA.
+- Known risks: Private-demo tooling only; no live AI generation, production corpus delivery, durable accounts, hidden telemetry, payments, public launch, or medical, legal, ritual, or spiritual authority.
+
+## v4.8.2 Private Demo Runbook
+
+- Changes made: Adds a canonical private-demo scenario contract, an executable API and registry runner, a human runbook, context-aware evidence labels, expected evidence, and explicit stop conditions.
+- Files changed: `privatedemorunbook.html`, `data/vedapath-private-demo-runbook-v482.json`, `docs/PRIVATE_DEMO_RUNBOOK_V482.md`, `scripts/run-v482-private-demo.mjs`, `assets/vedapath-retrieval-pilot.js`.
+- Checks run: node --check scripts/run-v482-private-demo.mjs; node scripts/run-v482-private-demo.mjs; batch checker through v4.8.2; static-link smoke.
+- Known risks: Private-demo tooling only; no live AI generation, production corpus delivery, durable accounts, hidden telemetry, payments, public launch, or medical, legal, ritual, or spiritual authority.
+
 ## v4.8.1 Source Path Readiness Console
 
 - Changes made: Adds an end-to-end source path checker and founder-readable readiness console covering success, refusal, validation, search, UI integration, legacy regressions, and launch locks.

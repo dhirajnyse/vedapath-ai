@@ -1,0 +1,176 @@
+{
+  "position": "Source intake is rights-first and publication-blocked",
+  "headline": "A candidate cannot become a reviewed source record by filling out a form.",
+  "copy": "The intake packet records evidence and routing, then stops at draft status until real rights and reviewer operations exist.",
+  "postures": [
+    {
+      "title": "Citation",
+      "decision": "Required",
+      "copy": "Every candidate names a precise source location."
+    },
+    {
+      "title": "Rights lane",
+      "decision": "Required",
+      "copy": "Citation-only, public-domain, permission-recorded, needs-review, and blocked remain distinct."
+    },
+    {
+      "title": "Evidence",
+      "decision": "Required",
+      "copy": "Any usable rights lane needs a human-readable evidence note."
+    },
+    {
+      "title": "Reviewer route",
+      "decision": "Required",
+      "copy": "A named review lane must receive the candidate."
+    },
+    {
+      "title": "Publication",
+      "decision": "Blocked",
+      "copy": "The validator always emits publication_state blocked."
+    }
+  ],
+  "flow": [
+    {
+      "title": "Identify",
+      "copy": "Record citation, source family, and edition note."
+    },
+    {
+      "title": "Bound",
+      "copy": "Write the summary and answer boundary without copied translation text."
+    },
+    {
+      "title": "Evidence",
+      "copy": "Choose a rights lane and record its evidence."
+    },
+    {
+      "title": "Route",
+      "copy": "Create a draft packet for human review, never publication."
+    }
+  ],
+  "decisions": [
+    {
+      "label": "Full text",
+      "value": "Excluded",
+      "reason": "This intake stores metadata and summaries, not translation text."
+    },
+    {
+      "label": "Approval",
+      "value": "Human gate",
+      "reason": "A form submission cannot approve itself."
+    },
+    {
+      "label": "Storage",
+      "value": "None",
+      "reason": "The browser creates a copyable draft but does not save it."
+    },
+    {
+      "label": "Registry merge",
+      "value": "Manual",
+      "reason": "No candidate enters the reviewed registry automatically."
+    }
+  ],
+  "metrics": [
+    {
+      "label": "Required fields",
+      "value": "8"
+    },
+    {
+      "label": "Rights lanes",
+      "value": "5"
+    },
+    {
+      "label": "Auto-publish",
+      "value": "0"
+    },
+    {
+      "label": "Next",
+      "value": "Security review"
+    }
+  ],
+  "locks": [
+    {
+      "title": "Live AI lock",
+      "decision": "Closed",
+      "copy": "No model call or generated scripture is enabled."
+    },
+    {
+      "title": "Storage lock",
+      "decision": "Closed",
+      "copy": "No durable learner, reviewer, observation, or telemetry storage is created."
+    },
+    {
+      "title": "Rights lock",
+      "decision": "Closed",
+      "copy": "No translation text is published without recorded rights evidence."
+    },
+    {
+      "title": "Authority lock",
+      "decision": "Closed",
+      "copy": "The product remains study and reflection support, not a guru, clinician, or ritual authority."
+    },
+    {
+      "title": "Launch lock",
+      "decision": "Closed",
+      "copy": "Private-demo evidence does not authorize a public service."
+    }
+  ],
+  "packet": "Rights-Cleared Source Intake v4.8.4\nOutput: vedapath.source-intake.v1 draft packet.\nInvariant: publication_state is always blocked.\nBoundary: metadata and reviewed summary only; no translation text.",
+  "schema": "vedapath.source-intake-config.v1",
+  "release": "v4.8.4",
+  "required_fields": [
+    "candidate_id",
+    "citation",
+    "family",
+    "edition_note",
+    "summary",
+    "boundary",
+    "rights_state",
+    "rights_evidence",
+    "review_lane"
+  ],
+  "rights_lanes": [
+    {
+      "id": "citation-only",
+      "label": "Citation only",
+      "usable": true
+    },
+    {
+      "id": "public-domain",
+      "label": "Public domain evidence",
+      "usable": true
+    },
+    {
+      "id": "permission-recorded",
+      "label": "Permission recorded",
+      "usable": true
+    },
+    {
+      "id": "needs-review",
+      "label": "Needs rights review",
+      "usable": false
+    },
+    {
+      "id": "blocked",
+      "label": "Blocked",
+      "usable": false
+    }
+  ],
+  "invariants": [
+    "publication_state is blocked",
+    "reviewer_state is draft",
+    "no translation_text field",
+    "rights evidence required",
+    "manual registry merge only"
+  ],
+  "sample": {
+    "candidate_id": "candidate-isha-1",
+    "citation": "Isha Upanishad 1",
+    "family": "Upanishad | Shruti",
+    "edition_note": "Citation metadata only; translation selection pending.",
+    "summary": "Candidate for a careful discussion of stewardship and restraint.",
+    "boundary": "Do not flatten the verse into financial or productivity advice.",
+    "rights_state": "citation-only",
+    "rights_evidence": "Only citation metadata and an original short summary are included.",
+    "review_lane": "Upanishad reviewer"
+  }
+}

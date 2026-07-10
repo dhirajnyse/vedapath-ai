@@ -1,0 +1,156 @@
+{
+  "position": "Read-only hosted adapter selected; deployment not authorized",
+  "headline": "The next backend slice is one portable source contract, not a premature platform.",
+  "copy": "A pure handler can serve health, source, sources, and search responses from the reviewed registry without accounts, writes, secrets, model calls, or framework lock-in.",
+  "postures": [
+    {
+      "title": "Service shape",
+      "decision": "Selected",
+      "copy": "Deployment-neutral read-only request handler."
+    },
+    {
+      "title": "Data source",
+      "decision": "Selected",
+      "copy": "Versioned reviewed registry bundled at build time."
+    },
+    {
+      "title": "Write paths",
+      "decision": "Blocked",
+      "copy": "No learner, review, telemetry, or registry mutation endpoint."
+    },
+    {
+      "title": "Live model",
+      "decision": "Blocked",
+      "copy": "No generation or model credential belongs in this slice."
+    },
+    {
+      "title": "Deployment",
+      "decision": "Not authorized",
+      "copy": "Provider, region, budget, and operations remain a founder decision."
+    }
+  ],
+  "flow": [
+    {
+      "title": "Adapt",
+      "copy": "Map a platform request into the pure handler contract."
+    },
+    {
+      "title": "Resolve",
+      "copy": "Use the same reviewed registry and no-source behavior as the local API."
+    },
+    {
+      "title": "Return",
+      "copy": "Emit the versioned source envelope with no-store and request trace metadata."
+    },
+    {
+      "title": "Observe",
+      "copy": "Add production logging and abuse controls only after explicit privacy design."
+    }
+  ],
+  "decisions": [
+    {
+      "label": "Architecture",
+      "value": "Read-only adapter",
+      "reason": "It preserves the proven contract with the smallest blast radius."
+    },
+    {
+      "label": "Provider",
+      "value": "Deferred",
+      "reason": "No cloud vendor is required to validate the service boundary."
+    },
+    {
+      "label": "Database",
+      "value": "No",
+      "reason": "The first hosted slice reads a reviewed build artifact."
+    },
+    {
+      "label": "Next build",
+      "value": "Adapter prototype",
+      "reason": "A provider-specific preview can follow only with credentials and deployment approval."
+    }
+  ],
+  "metrics": [
+    {
+      "label": "Read routes",
+      "value": "4"
+    },
+    {
+      "label": "Write routes",
+      "value": "0"
+    },
+    {
+      "label": "Model calls",
+      "value": "0"
+    },
+    {
+      "label": "Deployment",
+      "value": "Blocked"
+    }
+  ],
+  "locks": [
+    {
+      "title": "Live AI lock",
+      "decision": "Closed",
+      "copy": "No model call or generated scripture is enabled."
+    },
+    {
+      "title": "Storage lock",
+      "decision": "Closed",
+      "copy": "No durable learner, reviewer, observation, or telemetry storage is created."
+    },
+    {
+      "title": "Rights lock",
+      "decision": "Closed",
+      "copy": "No translation text is published without recorded rights evidence."
+    },
+    {
+      "title": "Authority lock",
+      "decision": "Closed",
+      "copy": "The product remains study and reflection support, not a guru, clinician, or ritual authority."
+    },
+    {
+      "title": "Launch lock",
+      "decision": "Closed",
+      "copy": "Private-demo evidence does not authorize a public service."
+    }
+  ],
+  "packet": "Hosted Backend Decision Gate v4.8.6\nDecision: deployment-neutral read-only source handler.\nData: reviewed build-time registry.\nExcluded: database, accounts, writes, telemetry, payments, model calls, and public launch.\nNext candidate: v4.8.7 Read-only Hosted API Adapter.",
+  "labels": {
+    "posture": "Decision posture",
+    "posture_question": "What may proceed?",
+    "main": "Architecture gate",
+    "decision": "Architecture decisions",
+    "packet": "Decision record",
+    "pulse": "Decision pulse",
+    "copy": "Copy decision record"
+  },
+  "primary_action": {
+    "href": "curatedsourceregistry.html",
+    "label": "Open Source Registry"
+  },
+  "schema": "vedapath.hosted-backend-decision.v1",
+  "release": "v4.8.6",
+  "decision": "deployment-neutral-read-only-handler",
+  "routes": [
+    "GET /health",
+    "GET /sources",
+    "GET /search",
+    "GET|POST /source"
+  ],
+  "writes": [],
+  "dependencies": [
+    "versioned source registry",
+    "vedapath.source.v1 contract"
+  ],
+  "deferred": [
+    "provider",
+    "region",
+    "budget",
+    "domain",
+    "TLS operations",
+    "rate limiting",
+    "monitoring",
+    "incident response"
+  ],
+  "launch": "blocked"
+}

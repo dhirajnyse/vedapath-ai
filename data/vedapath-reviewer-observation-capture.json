@@ -1,0 +1,191 @@
+{
+  "position": "Reviewer observations are explicit and session only",
+  "headline": "Human judgment now has a visible place without becoming hidden analytics.",
+  "copy": "Nothing is saved automatically. The reviewer chooses what to record, copy, and clear, and the packet labels its limits.",
+  "postures": [
+    {
+      "title": "Source fit",
+      "decision": "Visible",
+      "copy": "Reviewers assess whether the citation actually carries the response."
+    },
+    {
+      "title": "Boundary quality",
+      "decision": "Visible",
+      "copy": "Reviewers assess whether overclaim and authority limits are clear."
+    },
+    {
+      "title": "Usefulness",
+      "decision": "Visible",
+      "copy": "A simple rating captures whether the response helps the learner."
+    },
+    {
+      "title": "Persistence",
+      "decision": "None",
+      "copy": "Refreshing the page clears the review session."
+    },
+    {
+      "title": "Telemetry",
+      "decision": "None",
+      "copy": "No observation leaves the browser automatically."
+    }
+  ],
+  "flow": [
+    {
+      "title": "Choose",
+      "copy": "Select the runbook scenario being reviewed."
+    },
+    {
+      "title": "Assess",
+      "copy": "Set source fit, boundary quality, and usefulness."
+    },
+    {
+      "title": "Note",
+      "copy": "Add a concise human observation without learner identifiers."
+    },
+    {
+      "title": "Control",
+      "copy": "Copy the packet deliberately or clear the session."
+    }
+  ],
+  "decisions": [
+    {
+      "label": "Default",
+      "value": "No save",
+      "reason": "Observation capture starts empty on every page load."
+    },
+    {
+      "label": "Identity",
+      "value": "Optional label",
+      "reason": "The prototype does not claim authenticated reviewer identity."
+    },
+    {
+      "label": "Export",
+      "value": "Copy only",
+      "reason": "Review packets move only through an explicit reviewer action."
+    },
+    {
+      "label": "Production",
+      "value": "Blocked",
+      "reason": "Real review operations need accounts, permissions, retention, and audit policy."
+    }
+  ],
+  "metrics": [
+    {
+      "label": "Criteria",
+      "value": "4"
+    },
+    {
+      "label": "Auto-saves",
+      "value": "0"
+    },
+    {
+      "label": "Network writes",
+      "value": "0"
+    },
+    {
+      "label": "Next",
+      "value": "Rights intake"
+    }
+  ],
+  "locks": [
+    {
+      "title": "Live AI lock",
+      "decision": "Closed",
+      "copy": "No model call or generated scripture is enabled."
+    },
+    {
+      "title": "Storage lock",
+      "decision": "Closed",
+      "copy": "No durable learner, reviewer, observation, or telemetry storage is created."
+    },
+    {
+      "title": "Rights lock",
+      "decision": "Closed",
+      "copy": "No translation text is published without recorded rights evidence."
+    },
+    {
+      "title": "Authority lock",
+      "decision": "Closed",
+      "copy": "The product remains study and reflection support, not a guru, clinician, or ritual authority."
+    },
+    {
+      "title": "Launch lock",
+      "decision": "Closed",
+      "copy": "Private-demo evidence does not authorize a public service."
+    }
+  ],
+  "packet": "Reviewer Observation Capture v4.8.3\nStorage: memory only.\nExport: explicit copy action.\nProhibited: learner identifiers, hidden telemetry, automatic upload, and implied reviewer approval.",
+  "schema": "vedapath.reviewer-observation-config.v1",
+  "release": "v4.8.3",
+  "criteria": [
+    {
+      "id": "source_fit",
+      "label": "Source fit",
+      "options": [
+        "Strong",
+        "Partial",
+        "Weak"
+      ]
+    },
+    {
+      "id": "boundary_quality",
+      "label": "Boundary quality",
+      "options": [
+        "Clear",
+        "Needs revision",
+        "Missing"
+      ]
+    },
+    {
+      "id": "usefulness",
+      "label": "Usefulness",
+      "options": [
+        "Helpful",
+        "Mixed",
+        "Not helpful"
+      ]
+    },
+    {
+      "id": "next_action",
+      "label": "Next action",
+      "options": [
+        "Keep",
+        "Revise",
+        "Hold"
+      ]
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "approved-category",
+      "label": "Oppenheimer category correction",
+      "citation": "Bhagavad Gita 11.32"
+    },
+    {
+      "id": "review-context",
+      "label": "Isha Upanishad context",
+      "citation": "Isha Upanishad 1"
+    },
+    {
+      "id": "hold-practice",
+      "label": "Gayatri source hold",
+      "citation": "Rigveda 3.62.10"
+    },
+    {
+      "id": "no-source-overclaim",
+      "label": "Bitcoin no-source refusal",
+      "citation": "No direct source"
+    }
+  ],
+  "privacy": {
+    "persistence": "none",
+    "telemetry": "none",
+    "automatic_network_write": false,
+    "prohibited_fields": [
+      "learner name",
+      "email",
+      "phone",
+      "medical information"
+    ]
+  }
+}

@@ -1,5 +1,5 @@
 (function () {
-  const releaseBadge = "v4.8.1 source path";
+  const releaseBadge = "v4.8.6 hosted gate";
   const prefKey = "vedapathCommandShellPrefs";
   const groups = [
     { title: "Start", labels: ["Home", "Build", "Brand", "Blueprint"] },
@@ -15,7 +15,10 @@
     { title: "Launch Tests", labels: ["Source API Tests", "No-Source Eval", "Fixture Runner", "Adapter Tests", "Demo Script"] },
     { title: "Backend Prototype", labels: ["Backend Gate", "Source Stub", "Retrieval CLI", "Demo Ledger", "Backend Ready"] },
     { title: "Backend Spike", labels: ["Backend Choice", "Local API", "Packet Tests", "API Adapter", "Backend Handoff"] },
-    { title: "Source Path", labels: ["Spike Review", "API Reliability", "Source Registry", "Path Readiness"] }
+    { title: "Source Path", labels: ["Spike Review", "API Reliability", "Source Registry", "Path Readiness"] },
+    { title: "Private Demo", labels: ["Demo Runbook", "Observations", "Rights Intake", "Security Review", "Hosted Gate"] },
+    { title: "Private Demo", labels: ["Demo Runbook", "Observations", "Rights Intake", "Security Review", "Hosted Gate"] },
+    { title: "Private Demo", labels: ["Demo Runbook", "Observations", "Rights Intake", "Security Review", "Hosted Gate"] }
   ];
   const pageTitles = {
     Home: "VedaPath command center",
@@ -101,7 +104,12 @@
     "API Reliability": "Source API Reliability Contract",
     "Source Registry": "Curated Source Registry",
     "Ask Demo": "Integrated Ask Demo",
-    "Path Readiness": "Source Path Readiness Console"
+    "Path Readiness": "Source Path Readiness Console",
+    "Demo Runbook": "Private Demo Runbook",
+    "Observations": "Reviewer Observation Capture",
+    "Rights Intake": "Rights-Cleared Source Intake",
+    "Security Review": "Security & Privacy Review",
+    "Hosted Gate": "Hosted Backend Decision Gate"
   };
   const bodyPageTitles = {
     "permission-execution-draft-page": "Controlled draft gate",
@@ -180,7 +188,12 @@
     "source-api-reliability-contract-page": "Source API Reliability Contract",
     "curated-source-registry-page": "Curated Source Registry",
     "integrated-ask-demo-page": "Integrated Ask Demo",
-    "source-path-readiness-console-page": "Source Path Readiness Console"
+    "source-path-readiness-console-page": "Source Path Readiness Console",
+    "private-demo-runbook-page": "Private Demo Runbook",
+    "reviewer-observation-capture-page": "Reviewer Observation Capture",
+    "rights-cleared-source-intake-page": "Rights-Cleared Source Intake",
+    "security-privacy-review-page": "Security & Privacy Review",
+    "hosted-backend-decision-gate-page": "Hosted Backend Decision Gate"
   };
 
 
@@ -224,7 +237,12 @@
     ["API Reliability", "sourceapireliabilitycontract.html"],
     ["Source Registry", "curatedsourceregistry.html"],
     ["Ask Demo", "askdemo.html"],
-    ["Path Readiness", "sourcepathreadinessconsole.html"]
+    ["Path Readiness", "sourcepathreadinessconsole.html"],
+    ["Demo Runbook", "privatedemorunbook.html"],
+    ["Observations", "reviewerobservations.html"],
+    ["Rights Intake", "rightsclearedsourceintake.html"],
+    ["Security Review", "securityprivacyreview.html"],
+    ["Hosted Gate", "hostedbackenddecisiongate.html"]
   ];
 
   function safeParse(value, fallback) {

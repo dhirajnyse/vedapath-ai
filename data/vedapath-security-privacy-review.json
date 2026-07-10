@@ -1,0 +1,185 @@
+{
+  "position": "Private demo security baseline verified",
+  "headline": "The active path now fails closed on origins, payloads, hidden persistence, and rights leakage.",
+  "copy": "These controls reduce prototype risk, but they are not a substitute for production identity, secrets, monitoring, abuse prevention, or incident response.",
+  "postures": [
+    {
+      "title": "Origin policy",
+      "decision": "Pass",
+      "copy": "Only approved local and GitHub Pages origins receive browser access."
+    },
+    {
+      "title": "Null origin",
+      "decision": "Blocked",
+      "copy": "File-origin browser calls no longer receive local API access."
+    },
+    {
+      "title": "Security headers",
+      "decision": "Pass",
+      "copy": "No-store, nosniff, frame, referrer, permission, and CSP headers are present."
+    },
+    {
+      "title": "User content storage",
+      "decision": "Pass",
+      "copy": "Ask, observations, and intake do not persist user-entered content."
+    },
+    {
+      "title": "Translation leakage",
+      "decision": "Pass",
+      "copy": "The registry and intake contract contain no translation_text field."
+    }
+  ],
+  "flow": [
+    {
+      "title": "Minimize",
+      "copy": "Collect only the question or explicit reviewer draft needed for the task."
+    },
+    {
+      "title": "Validate",
+      "copy": "Reject unsafe origins, oversized bodies, malformed JSON, and empty questions."
+    },
+    {
+      "title": "Contain",
+      "copy": "Return source metadata and short summaries with no-store headers."
+    },
+    {
+      "title": "Review",
+      "copy": "Keep public launch closed until production security operations exist."
+    }
+  ],
+  "decisions": [
+    {
+      "label": "Prototype risk",
+      "value": "Reduced",
+      "reason": "The most likely local-demo failures now have verified controls."
+    },
+    {
+      "label": "Production security",
+      "value": "Not ready",
+      "reason": "Authentication, authorization, secrets, monitoring, rate limits, and incident response are absent."
+    },
+    {
+      "label": "Sensitive data",
+      "value": "Prohibited",
+      "reason": "The active flow should not collect medical, financial, or identifying information."
+    },
+    {
+      "label": "Public launch",
+      "value": "Blocked",
+      "reason": "Security review authorizes the next prototype decision only."
+    }
+  ],
+  "metrics": [
+    {
+      "label": "Threats",
+      "value": "8"
+    },
+    {
+      "label": "Required headers",
+      "value": "7"
+    },
+    {
+      "label": "Hidden writes",
+      "value": "0"
+    },
+    {
+      "label": "Next",
+      "value": "Hosted gate"
+    }
+  ],
+  "locks": [
+    {
+      "title": "Live AI lock",
+      "decision": "Closed",
+      "copy": "No model call or generated scripture is enabled."
+    },
+    {
+      "title": "Storage lock",
+      "decision": "Closed",
+      "copy": "No durable learner, reviewer, observation, or telemetry storage is created."
+    },
+    {
+      "title": "Rights lock",
+      "decision": "Closed",
+      "copy": "No translation text is published without recorded rights evidence."
+    },
+    {
+      "title": "Authority lock",
+      "decision": "Closed",
+      "copy": "The product remains study and reflection support, not a guru, clinician, or ritual authority."
+    },
+    {
+      "title": "Launch lock",
+      "decision": "Closed",
+      "copy": "Private-demo evidence does not authorize a public service."
+    }
+  ],
+  "packet": "Security & Privacy Review v4.8.5\nScope: active private Ask path.\nVerified: origin, headers, payload, storage, telemetry, rights, and authority boundaries.\nResidual: production identity, secrets, rate limiting, monitoring, retention, support, and incident response.",
+  "labels": {
+    "posture": "Control posture",
+    "posture_question": "What is protected?",
+    "main": "Security review",
+    "decision": "Residual decisions",
+    "packet": "Security packet",
+    "pulse": "Control pulse",
+    "copy": "Copy security packet"
+  },
+  "primary_action": {
+    "href": "sourcepathreadinessconsole.html",
+    "label": "Open Path Readiness"
+  },
+  "schema": "vedapath.security-review.v1",
+  "release": "v4.8.5",
+  "threats": [
+    {
+      "id": "unapproved-origin",
+      "control": "origin allowlist",
+      "status": "verified"
+    },
+    {
+      "id": "file-origin-call",
+      "control": "null origin blocked",
+      "status": "verified"
+    },
+    {
+      "id": "oversized-payload",
+      "control": "16 KB body limit",
+      "status": "verified"
+    },
+    {
+      "id": "malformed-input",
+      "control": "typed validation errors",
+      "status": "verified"
+    },
+    {
+      "id": "hidden-persistence",
+      "control": "active input surfaces have no storage calls",
+      "status": "verified"
+    },
+    {
+      "id": "hidden-telemetry",
+      "control": "active input surfaces have no analytics calls",
+      "status": "verified"
+    },
+    {
+      "id": "rights-leak",
+      "control": "metadata-only registry and intake",
+      "status": "verified"
+    },
+    {
+      "id": "authority-overreach",
+      "control": "visible answer and intake boundaries",
+      "status": "verified"
+    }
+  ],
+  "residual_risks": [
+    "authentication",
+    "authorization",
+    "secret management",
+    "rate limiting",
+    "monitoring",
+    "incident response",
+    "retention policy",
+    "abuse support"
+  ]
+}

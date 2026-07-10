@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rights-Cleared Source Intake | VedaPath AI</title>
+  <link rel="icon" href="assets/vedapath-3d-logo-concept.png" />
+  <link rel="stylesheet" href="assets/vedapath-ui.css" />
+  <link rel="stylesheet" href="assets/vedapath-command-shell.css" />
+  <link rel="stylesheet" href="assets/vedapath-demo-operations.css" />
+</head>
+<body class="rights-cleared-source-intake-page">
+  <main class="workspace vp-ops-workspace" id="top" data-config="data/vedapath-rights-cleared-source-intake.json">
+    <header class="topbar">
+      <a class="brand" href="index.html#top" aria-label="Go to VedaPath AI home">
+        <img src="assets/vedapath-3d-logo-concept.png" alt="" />
+        <span><strong>VedaPath AI</strong><small>rights-cleared intake</small></span>
+      </a>
+      <nav class="navlinks nav" aria-label="Primary navigation">
+        <a class="link" href="index.html">Home</a>
+        <a class="link" href="build-status.html">Build</a>
+        <a class="link" href="brand/brand-board.html">Brand</a>
+        <a class="link" href="blueprint.html">Blueprint</a>
+        <a class="link" href="citedanswerlab.html">Answers</a>
+        <a class="link" href="reviewqueuepersistence.html">Review</a>
+        <a class="link" href="mantralenslab.html">Mantra</a>
+        <a class="link" href="lifecompanionlab.html">Life</a>
+        <a class="link" href="conversationcompanionlab.html">Talk</a>
+        <a class="link" href="patterncompanionlab.html">Pattern</a>
+        <a class="link" href="daily.html">Daily</a>
+        <a class="link" href="askdemo.html">Ask Demo</a>
+        <a class="link" href="sourcepathreadinessconsole.html">Path Readiness</a>
+        <a class="link" href="privatedemorunbook.html">Demo Runbook</a>
+        <a class="link" href="reviewerobservations.html">Observations</a>
+        <a class="link active" href="rightsclearedsourceintake.html">Rights Intake</a>
+        <a class="link" href="securityprivacyreview.html">Security Review</a>
+        <a class="link" href="hostedbackenddecisiongate.html">Hosted Gate</a>
+        <span class="version-pill">v4.8.6 hosted gate</span>
+      </nav>
+    </header>
+    <section class="vp-ops-opening">
+      <div><span class="vp-ops-eyebrow">Guarded source growth</span><h1>A source candidate should prove its rights posture before it approaches review.</h1><p>The new intake contract validates citation, family, summary, boundary, rights lane, evidence, and reviewer routing while keeping every candidate blocked from publication.</p></div>
+      <aside><strong>Publication lock</strong><span>Every output remains a draft. This form cannot approve, merge, or publish a source.</span></aside>
+    </section>
+    <section class="vp-ops-columns">
+      <form class="vp-ops-form" id="vpSourceIntakeForm">
+        <div class="vp-ops-section-head"><div><span class="vp-ops-eyebrow">Candidate metadata</span><h2>Prepare a rights-aware draft</h2></div><button class="vp-ops-quiet" id="vpLoadIntakeSample" type="button">Load sample</button></div>
+        <div class="vp-ops-field-grid"><label>Candidate ID<input id="vpCandidateId" required maxlength="80" placeholder="candidate-unique-id" /></label><label>Citation<input id="vpCitation" required maxlength="120" placeholder="Text and passage" /></label><label>Source family<input id="vpFamily" required maxlength="120" placeholder="Upanishad | Shruti" /></label><label>Edition note<input id="vpEditionNote" required maxlength="240" placeholder="Edition or metadata posture" /></label></div>
+        <label for="vpCandidateSummary">Original short summary</label><textarea id="vpCandidateSummary" required rows="3" maxlength="500"></textarea>
+        <label for="vpCandidateBoundary">Answer boundary</label><textarea id="vpCandidateBoundary" required rows="3" maxlength="500"></textarea>
+        <div class="vp-ops-field-grid"><label>Rights lane<select id="vpRightsState" required></select></label><label>Review lane<input id="vpReviewLane" required maxlength="100" placeholder="Upanishad reviewer" /></label></div>
+        <label for="vpRightsEvidence">Rights evidence note</label><textarea id="vpRightsEvidence" required rows="3" maxlength="600" placeholder="Describe why this metadata and summary can be reviewed."></textarea>
+        <button class="vp-ops-primary" type="submit">Validate draft</button>
+      </form>
+      <section class="vp-ops-output" aria-labelledby="vpIntakeOutputTitle">
+        <div class="vp-ops-section-head"><div><span class="vp-ops-eyebrow">Guarded output</span><h2 id="vpIntakeOutputTitle">Draft packet</h2></div><span id="vpIntakeState">Blocked</span></div>
+        <div id="vpIntakeMessages" class="vp-ops-empty"><p>Complete the form to validate a source candidate. No data is stored.</p></div>
+        <pre id="vpIntakePacket" class="vp-ops-packet" hidden></pre>
+        <div class="vp-ops-actions"><button class="vp-ops-secondary" type="button" id="vpCopyIntake" disabled>Copy draft packet</button><button class="vp-ops-quiet" type="button" id="vpResetIntake">Reset</button></div>
+        <p class="vp-ops-status" id="vpIntakeStatus" aria-live="polite">Publication remains blocked.</p>
+      </section>
+    </section>
+  </main>
+  <script src="assets/vedapath-command-shell.js"></script>
+  <script src="assets/vedapath-source-intake.js"></script>
+</body>
+</html>

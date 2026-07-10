@@ -55,20 +55,31 @@
   }
 
   function renderGate(data) {
-    const left = '<span class="rp-eyebrow">Gate posture</span><h2>What may open?</h2><p>' + escapeHtml(data.position) + '</p>' +
+    const labels = {
+      posture: "Gate posture",
+      posture_question: "What may open?",
+      main: "Production gate",
+      decision: "Decision matrix",
+      packet: "Founder packet",
+      pulse: "Pilot pulse",
+      copy: "Copy Gate Packet",
+      ...(data.labels || {})
+    };
+    const action = data.primary_action || { href: "verifiedsourcerecordschema.html", label: "Open Records" };
+    const left = '<span class="rp-eyebrow">' + escapeHtml(labels.posture) + '</span><h2>' + escapeHtml(labels.posture_question) + '</h2><p>' + escapeHtml(data.position) + '</p>' +
       '<div class="rp-rail-list">' + data.postures.map(function (item) {
         return '<article class="rp-rail-card">' + chip(item.decision, item.decision === "Allowed" ? "allowed" : "") + '<h3>' + escapeHtml(item.title) + '</h3><p>' + escapeHtml(item.copy) + '</p></article>';
       }).join("") + '</div>';
 
-    const main = '<article class="rp-card"><span class="rp-eyebrow">Production gate</span><h2>' + escapeHtml(data.headline) + '</h2><p>' + escapeHtml(data.copy) + '</p>' +
+    const main = '<article class="rp-card"><span class="rp-eyebrow">' + escapeHtml(labels.main) + '</span><h2>' + escapeHtml(data.headline) + '</h2><p>' + escapeHtml(data.copy) + '</p>' +
       flowSteps(data.flow) + '</article>' +
-      '<article class="rp-card"><span class="rp-eyebrow green">Decision matrix</span><div class="rp-decision-grid">' +
+      '<article class="rp-card"><span class="rp-eyebrow green">' + escapeHtml(labels.decision) + '</span><div class="rp-decision-grid">' +
       data.decisions.map(function (item) {
         return '<div class="rp-field"><span>' + escapeHtml(item.label) + '</span><strong>' + escapeHtml(item.value) + '</strong><p>' + escapeHtml(item.reason) + '</p></div>';
       }).join("") + '</div></article>' +
-      '<article class="rp-card"><span class="rp-eyebrow">Founder packet</span><textarea class="rp-textarea" readonly>' + escapeHtml(data.packet) + '</textarea><div class="rp-actions"><button class="rp-button primary" data-copy-packet type="button">Copy Gate Packet</button><a class="rp-button green" href="verifiedsourcerecordschema.html">Open Records</a></div></article>';
+      '<article class="rp-card"><span class="rp-eyebrow">' + escapeHtml(labels.packet) + '</span><textarea class="rp-textarea" readonly>' + escapeHtml(data.packet) + '</textarea><div class="rp-actions"><button class="rp-button primary" data-copy-packet type="button">' + escapeHtml(labels.copy) + '</button><a class="rp-button green" href="' + escapeHtml(action.href) + '">' + escapeHtml(action.label) + '</a></div></article>';
 
-    const side = '<span class="rp-eyebrow green">Readiness</span><h2>Pilot pulse</h2>' + metricGrid(data.metrics) + '<div class="rp-stack">' +
+    const side = '<span class="rp-eyebrow green">Readiness</span><h2>' + escapeHtml(labels.pulse) + '</h2>' + metricGrid(data.metrics) + '<div class="rp-stack">' +
       data.locks.map(function (item) {
         return '<article class="rp-rail-card"><h3>' + escapeHtml(item.title) + '</h3><p>' + escapeHtml(item.copy) + '</p></article>';
       }).join("") + '</div>';

@@ -1,3 +1,43 @@
+## v4.8.6 Hosted Backend Decision Gate
+
+The decision gate selects a deployment-neutral read-only handler over the reviewed registry, proves contract parity locally, and leaves deployment and every write path unauthorized.
+
+- Open: [Hosted Backend Decision Gate](hostedbackenddecisiongate.html)
+- Data: `data/vedapath-hosted-backend-decision-gate.json`
+- Boundary: Private-demo tooling only; no live AI generation, production corpus delivery, durable accounts, hidden telemetry, payments, public launch, or medical, legal, ritual, or spiritual authority.
+
+## v4.8.5 Security & Privacy Review
+
+The active Ask path now has explicit origin, payload, storage, telemetry, framing, caching, rights, and authority controls with automated verification.
+
+- Open: [Security & Privacy Review](securityprivacyreview.html)
+- Data: `data/vedapath-security-privacy-review.json`
+- Boundary: Private-demo tooling only; no live AI generation, production corpus delivery, durable accounts, hidden telemetry, payments, public launch, or medical, legal, ritual, or spiritual authority.
+
+## v4.8.4 Rights-Cleared Source Intake
+
+The new intake contract validates citation, family, summary, boundary, rights lane, evidence, and reviewer routing while keeping every candidate blocked from publication.
+
+- Open: [Rights-Cleared Source Intake](rightsclearedsourceintake.html)
+- Data: `data/vedapath-rights-cleared-source-intake.json`
+- Boundary: Private-demo tooling only; no live AI generation, production corpus delivery, durable accounts, hidden telemetry, payments, public launch, or medical, legal, ritual, or spiritual authority.
+
+## v4.8.3 Reviewer Observation Capture
+
+A session-only observation desk records source fit, boundary quality, usefulness, and notes, then creates a transparent copyable packet on demand.
+
+- Open: [Reviewer Observation Capture](reviewerobservations.html)
+- Data: `data/vedapath-reviewer-observation-capture.json`
+- Boundary: Private-demo tooling only; no live AI generation, production corpus delivery, durable accounts, hidden telemetry, payments, public launch, or medical, legal, ritual, or spiritual authority.
+
+## v4.8.2 Private Demo Runbook
+
+A canonical scenario set and executable runner now cover approved, review, hold, no-source, and offline-fallback behavior without creating user data.
+
+- Open: [Private Demo Runbook](privatedemorunbook.html)
+- Data: `data/vedapath-private-demo-runbook-v482.json`
+- Boundary: Private-demo tooling only; no live AI generation, production corpus delivery, durable accounts, hidden telemetry, payments, public launch, or medical, legal, ritual, or spiritual authority.
+
 ## v4.8.1 Source Path Readiness Console
 
 One executable readiness console now checks the review gate, API errors, registry search, Ask demo contracts, legacy backend checks, routes, and static links.

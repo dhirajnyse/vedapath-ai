@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Reviewer Observation Capture | VedaPath AI</title>
+  <link rel="icon" href="assets/vedapath-3d-logo-concept.png" />
+  <link rel="stylesheet" href="assets/vedapath-ui.css" />
+  <link rel="stylesheet" href="assets/vedapath-command-shell.css" />
+  <link rel="stylesheet" href="assets/vedapath-demo-operations.css" />
+</head>
+<body class="reviewer-observation-capture-page">
+  <main class="workspace vp-ops-workspace" id="top" data-config="data/vedapath-reviewer-observation-capture.json">
+    <header class="topbar">
+      <a class="brand" href="index.html#top" aria-label="Go to VedaPath AI home">
+        <img src="assets/vedapath-3d-logo-concept.png" alt="" />
+        <span><strong>VedaPath AI</strong><small>reviewer observations</small></span>
+      </a>
+      <nav class="navlinks nav" aria-label="Primary navigation">
+        <a class="link" href="index.html">Home</a>
+        <a class="link" href="build-status.html">Build</a>
+        <a class="link" href="brand/brand-board.html">Brand</a>
+        <a class="link" href="blueprint.html">Blueprint</a>
+        <a class="link" href="citedanswerlab.html">Answers</a>
+        <a class="link" href="reviewqueuepersistence.html">Review</a>
+        <a class="link" href="mantralenslab.html">Mantra</a>
+        <a class="link" href="lifecompanionlab.html">Life</a>
+        <a class="link" href="conversationcompanionlab.html">Talk</a>
+        <a class="link" href="patterncompanionlab.html">Pattern</a>
+        <a class="link" href="daily.html">Daily</a>
+        <a class="link" href="askdemo.html">Ask Demo</a>
+        <a class="link" href="sourcepathreadinessconsole.html">Path Readiness</a>
+        <a class="link" href="privatedemorunbook.html">Demo Runbook</a>
+        <a class="link active" href="reviewerobservations.html">Observations</a>
+        <a class="link" href="rightsclearedsourceintake.html">Rights Intake</a>
+        <a class="link" href="securityprivacyreview.html">Security Review</a>
+        <a class="link" href="hostedbackenddecisiongate.html">Hosted Gate</a>
+        <span class="version-pill">v4.8.6 hosted gate</span>
+      </nav>
+    </header>
+    <section class="vp-ops-opening">
+      <div><span class="vp-ops-eyebrow">Visible human learning</span><h1>Capture what a reviewer noticed, without quietly tracking the learner.</h1><p>A session-only observation desk records source fit, boundary quality, usefulness, and notes, then creates a transparent copyable packet on demand.</p></div>
+      <aside><strong>Session boundary</strong><span>No account. No automatic save. No analytics. Copy only when you choose.</span></aside>
+    </section>
+    <section class="vp-ops-columns">
+      <form class="vp-ops-form" id="vpObservationForm">
+        <div class="vp-ops-section-head"><div><span class="vp-ops-eyebrow">Review one scenario</span><h2>What did the human notice?</h2></div><span>Required fields are marked</span></div>
+        <label for="vpObservationScenario">Scenario</label><select id="vpObservationScenario" required></select>
+        <div class="vp-ops-field-grid">
+          <label>Source fit<select id="vpSourceFit" required><option>Strong</option><option>Partial</option><option>Weak</option></select></label>
+          <label>Boundary quality<select id="vpBoundaryQuality" required><option>Clear</option><option>Needs revision</option><option>Missing</option></select></label>
+          <label>Usefulness<select id="vpUsefulness" required><option>Helpful</option><option>Mixed</option><option>Not helpful</option></select></label>
+          <label>Next action<select id="vpObservationAction" required><option>Keep</option><option>Revise</option><option>Hold</option></select></label>
+        </div>
+        <label for="vpReviewerLabel">Reviewer label <span>(optional, no personal data)</span></label><input id="vpReviewerLabel" maxlength="60" placeholder="Example: source reviewer" />
+        <label for="vpObservationNotes">Observation</label><textarea id="vpObservationNotes" rows="5" maxlength="800" required placeholder="What helped, what was unclear, and what should change?"></textarea>
+        <button class="vp-ops-primary" type="submit">Add observation</button>
+      </form>
+      <section class="vp-ops-output" aria-labelledby="vpObservationQueueTitle">
+        <div class="vp-ops-section-head"><div><span class="vp-ops-eyebrow">Session packet</span><h2 id="vpObservationQueueTitle">Observations <span id="vpObservationCount">0</span></h2></div><span>Memory only</span></div>
+        <div id="vpObservationList" class="vp-ops-empty"><p>No observations yet. Review one scenario to begin.</p></div>
+        <div class="vp-ops-actions"><button class="vp-ops-secondary" type="button" id="vpCopyObservations" disabled>Copy session packet</button><button class="vp-ops-quiet" type="button" id="vpClearObservations" disabled>Clear session</button></div>
+        <p class="vp-ops-status" id="vpObservationStatus" aria-live="polite">Nothing has been stored or sent.</p>
+      </section>
+    </section>
+  </main>
+  <script src="assets/vedapath-command-shell.js"></script>
+  <script src="assets/vedapath-reviewer-observations.js"></script>
+</body>
+</html>
