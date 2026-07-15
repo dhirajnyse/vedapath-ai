@@ -1,0 +1,129 @@
+{
+  "release": "v5.0.9",
+  "position": "A session rehearsal is not a participant session and must remain local, read-only, and identity-free",
+  "headline": "Four ordered events prove the session shape while accounts, networks, persistence, and real participation stay absent.",
+  "copy": "The sandbox accepts only arrival, source open, local reflection, and exit events. It hashes the transcript, then reports that no invitation, participant, network request, durable write, or live session occurred.",
+  "postures": [
+    {
+      "title": "Session evaluator",
+      "decision": "Ready",
+      "copy": "Safe and unsafe transcript fixtures are covered."
+    },
+    {
+      "title": "Duration",
+      "decision": "30 minutes max",
+      "copy": "Longer sessions are rejected."
+    },
+    {
+      "title": "Data mode",
+      "decision": "Local and read-only",
+      "copy": "Network, persistence, and write routes are disabled."
+    },
+    {
+      "title": "Real participant",
+      "decision": "None",
+      "copy": "The transcript is a rehearsal only."
+    }
+  ],
+  "flow": [
+    {
+      "title": "Arrive",
+      "copy": "Use a pseudonymous identifier and recorded sandbox consent."
+    },
+    {
+      "title": "Read",
+      "copy": "Open one allowlisted source in read-only mode."
+    },
+    {
+      "title": "Reflect",
+      "copy": "Record only a local reflection length, never the text."
+    },
+    {
+      "title": "Exit",
+      "copy": "Close within thirty minutes and hash the transcript."
+    }
+  ],
+  "decisions": [
+    {
+      "label": "Transcript contract",
+      "value": "Deterministic",
+      "reason": "Four events and their order are enforced."
+    },
+    {
+      "label": "Maximum duration",
+      "value": "30 minutes",
+      "reason": "The rehearsal cannot become an open session."
+    },
+    {
+      "label": "Network requests",
+      "value": "0",
+      "reason": "The sandbox is local-only."
+    },
+    {
+      "label": "Real sessions",
+      "value": "0",
+      "reason": "No participant account or invitation exists."
+    }
+  ],
+  "metrics": [
+    {
+      "label": "Allowed events",
+      "value": "4"
+    },
+    {
+      "label": "Maximum minutes",
+      "value": "30"
+    },
+    {
+      "label": "Network requests",
+      "value": "0"
+    },
+    {
+      "label": "Participants",
+      "value": "0"
+    }
+  ],
+  "locks": [
+    {
+      "title": "Identity lock",
+      "decision": "Closed",
+      "copy": "Only pseudonymous identifiers are accepted; direct identity is rejected."
+    },
+    {
+      "title": "Invitation lock",
+      "decision": "Closed",
+      "copy": "No token, email, delivery, or live invitation is created."
+    },
+    {
+      "title": "Participant lock",
+      "decision": "Closed",
+      "copy": "No participant account or real session exists."
+    },
+    {
+      "title": "Provider lock",
+      "decision": "Closed",
+      "copy": "No external provider, notification, or durable participant write is touched."
+    },
+    {
+      "title": "Public launch lock",
+      "decision": "Closed",
+      "copy": "Private validation cannot open public access."
+    }
+  ],
+  "packet": "VedaPath First Participant Session Sandbox\nPseudonymous participant: required\nSandbox consent: recorded\nMaximum duration: 30 minutes\nMode: read-only and local-only\nAllowed events: 4\nLive model: disabled\nNetwork requests: 0\nDurable writes: 0\nParticipant created: false\nInvitation issued: false\nReal session started: false\nPublic launch: blocked",
+  "primary_action": {
+    "href": "pilotincidentdrill.html",
+    "label": "Open Incident Drill"
+  },
+  "schema": "vedapath.first-participant-session-sandbox.v1",
+  "evaluator": "scripts/vedapath-first-participant-session-sandbox.mjs",
+  "allowed_events": 4,
+  "maximum_minutes": 30,
+  "network_requests": 0,
+  "durable_writes": 0,
+  "participant_created": false,
+  "session_started": false,
+  "external_participants": 0,
+  "public_launch": "blocked",
+  "next_release": "v5.1.0 Pilot Incident Drill"
+}

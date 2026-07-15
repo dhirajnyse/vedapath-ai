@@ -1,0 +1,130 @@
+{
+  "release": "v5.1.0",
+  "position": "Private-pilot readiness requires a tested stop path before it requires a start path",
+  "headline": "The sandbox incident is detected, contained, shut down, and recovered within explicit clocks and with zero external effect.",
+  "copy": "Privacy, consent, rights, and session-boundary drill classes are allowlisted. A valid result needs two named owners and an ordered response timeline, then creates only a deterministic evidence digest.",
+  "postures": [
+    {
+      "title": "Incident evaluator",
+      "decision": "Ready",
+      "copy": "Safe and unsafe timeline fixtures are covered."
+    },
+    {
+      "title": "Containment",
+      "decision": "15 minutes max",
+      "copy": "Slow containment fails the drill."
+    },
+    {
+      "title": "Shutdown",
+      "decision": "30 minutes max",
+      "copy": "The simulated surface must close quickly."
+    },
+    {
+      "title": "Recovery",
+      "decision": "60 minutes max",
+      "copy": "Recovery proof cannot mutate a live provider."
+    }
+  ],
+  "flow": [
+    {
+      "title": "Detect",
+      "copy": "Identify one sandbox-only incident class."
+    },
+    {
+      "title": "Contain",
+      "copy": "Record containment within fifteen minutes."
+    },
+    {
+      "title": "Shut down",
+      "copy": "Close the simulated session within thirty minutes."
+    },
+    {
+      "title": "Recover",
+      "copy": "Complete evidence within sixty minutes without external effects."
+    }
+  ],
+  "decisions": [
+    {
+      "label": "Incident runbook",
+      "value": "Deterministic",
+      "reason": "Timeline and owner rules are deterministic."
+    },
+    {
+      "label": "Incident classes",
+      "value": "4",
+      "reason": "Consent, privacy, rights, and session boundaries are covered."
+    },
+    {
+      "label": "External notifications",
+      "value": "0",
+      "reason": "No live party is contacted."
+    },
+    {
+      "label": "Provider mutations",
+      "value": "0",
+      "reason": "The drill remains repository-local."
+    }
+  ],
+  "metrics": [
+    {
+      "label": "Containment SLA",
+      "value": "15 min"
+    },
+    {
+      "label": "Shutdown SLA",
+      "value": "30 min"
+    },
+    {
+      "label": "Recovery SLA",
+      "value": "60 min"
+    },
+    {
+      "label": "Live incidents",
+      "value": "0"
+    }
+  ],
+  "locks": [
+    {
+      "title": "Identity lock",
+      "decision": "Closed",
+      "copy": "Only pseudonymous identifiers are accepted; direct identity is rejected."
+    },
+    {
+      "title": "Invitation lock",
+      "decision": "Closed",
+      "copy": "No token, email, delivery, or live invitation is created."
+    },
+    {
+      "title": "Participant lock",
+      "decision": "Closed",
+      "copy": "No participant account or real session exists."
+    },
+    {
+      "title": "Provider lock",
+      "decision": "Closed",
+      "copy": "No external provider, notification, or durable participant write is touched."
+    },
+    {
+      "title": "Public launch lock",
+      "decision": "Closed",
+      "copy": "Private validation cannot open public access."
+    }
+  ],
+  "packet": "VedaPath Pilot Incident Drill\nSandbox evidence: required\nIncident class: allowlisted\nIncident owner: required\nPrivacy owner: required\nContainment: within 15 minutes\nShutdown: within 30 minutes\nRecovery: within 60 minutes\nLive incident: false\nExternal notifications: 0\nProvider mutations: 0\nDurable writes: 0\nExternal participants: 0\nPublic launch: blocked",
+  "primary_action": {
+    "href": "founderprivatepilotdecision.html",
+    "label": "Open Founder Decision"
+  },
+  "schema": "vedapath.pilot-incident-drill.v1",
+  "evaluator": "scripts/vedapath-pilot-incident-drill.mjs",
+  "incident_classes": 4,
+  "containment_sla_minutes": 15,
+  "shutdown_sla_minutes": 30,
+  "recovery_sla_minutes": 60,
+  "live_incidents": 0,
+  "external_notifications": 0,
+  "provider_mutations": 0,
+  "external_participants": 0,
+  "public_launch": "blocked",
+  "next_release": "v5.1.1 Founder Private Pilot Go/No-Go"
+}

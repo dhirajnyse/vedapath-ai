@@ -1,3 +1,38 @@
+## v5.1.1 Founder Private Pilot Go/No-Go
+
+- Changes made: Adds a founder private-pilot go/no-go evaluator that aggregates five exact evidence states, named pilot and shutdown owners, one-participant and one-session ceilings, seventy-two-hour authorization expiry, approve, reject, and blocked outcomes, write-route restriction, and permanent zero-invitation, zero-session, zero-participant, zero-credential, and public-launch locks.
+- Files changed: `founderprivatepilotdecision.html`, `data/vedapath-founder-private-pilot-decision.json`, `docs/FOUNDER_PRIVATE_PILOT_GO_NO_GO.md`, `scripts/vedapath-founder-private-pilot-decision.mjs`, `scripts/apply-v507-v511-private-pilot-validation-batch.mjs`, `scripts/check-v507-v511-private-pilot-validation.mjs`, `assets/vedapath-command-shell.js`, `scripts/check-static-links.mjs`, `build-status.html`, `README.md`, `CHANGELOG.md`.
+- Checks run: node --check scripts/vedapath-founder-private-pilot-decision.mjs; incomplete, complete, rejected, owner, participant limit, session limit, expiry, invitation, session, participant, public-access, and write-route assertions; batch checker through v5.1.1; historical regression; all script syntax; all JSON parse; static links; accessibility assertions; desktop and mobile visual QA.
+- Known risks: Private-pilot validation evidence only; no credentials, direct identity, token, account, email, delivery, live invitation, real participant, external notification, provider mutation, durable participant write, public launch, licensed corpus delivery, live AI generation, payments, or medical, legal, ritual, or spiritual authority.
+
+## v5.1.0 Pilot Incident Drill
+
+- Changes made: Adds a deterministic pilot-incident drill with four allowlisted incident classes, named incident and privacy owners, ordered detection, containment, shutdown, and recovery timeline, response-time ceilings, evidence digest, and permanent no-live-incident, no-notification, no-provider-mutation, no-write, and no-participant outputs.
+- Files changed: `pilotincidentdrill.html`, `data/vedapath-pilot-incident-drill.json`, `docs/PILOT_INCIDENT_DRILL.md`, `scripts/vedapath-pilot-incident-drill.mjs`, `scripts/apply-v507-v511-private-pilot-validation-batch.mjs`, `scripts/check-v507-v511-private-pilot-validation.mjs`, `assets/vedapath-command-shell.js`, `scripts/check-static-links.mjs`, `build-status.html`, `README.md`, `CHANGELOG.md`.
+- Checks run: node --check scripts/vedapath-pilot-incident-drill.mjs; valid, incident type, severity, owner, timeline, containment, shutdown, recovery, live-incident, notification, provider-mutation, durable-write, participant, and public-access assertions; batch checker through v5.1.0; static links.
+- Known risks: Private-pilot validation evidence only; no credentials, direct identity, token, account, email, delivery, live invitation, real participant, external notification, provider mutation, durable participant write, public launch, licensed corpus delivery, live AI generation, payments, or medical, legal, ritual, or spiritual authority.
+
+## v5.0.9 First Participant Session Sandbox
+
+- Changes made: Adds a deterministic first-session sandbox with pseudonymous participant and consent checks, thirty-minute duration limit, four-event order and field allowlist, read-only and local-only requirements, direct-identity rejection, transcript hashing, and permanent zero-network, zero-durable-write, zero-participant, and zero-real-session outputs.
+- Files changed: `firstparticipantsessionsandbox.html`, `data/vedapath-first-participant-session-sandbox.json`, `docs/FIRST_PARTICIPANT_SESSION_SANDBOX.md`, `scripts/vedapath-first-participant-session-sandbox.mjs`, `scripts/apply-v507-v511-private-pilot-validation-batch.mjs`, `scripts/check-v507-v511-private-pilot-validation.mjs`, `assets/vedapath-command-shell.js`, `scripts/check-static-links.mjs`, `build-status.html`, `README.md`, `CHANGELOG.md`.
+- Checks run: node --check scripts/vedapath-first-participant-session-sandbox.mjs; valid, consent, identity, duration, event order, event field, read-only, local-only, network, persistence, live-model, write-route, participant, and public-access assertions; batch checker through v5.0.9; static links.
+- Known risks: Private-pilot validation evidence only; no credentials, direct identity, token, account, email, delivery, live invitation, real participant, external notification, provider mutation, durable participant write, public launch, licensed corpus delivery, live AI generation, payments, or medical, legal, ritual, or spiritual authority.
+
+## v5.0.8 Invitation Revocation Receipt Contract
+
+- Changes made: Adds a deterministic invitation-revocation receipt evaluator tied to the dry-run digest, allowlisted cancellation reasons, named owner and ordered timeline checks, receipt hashing, and explicit rejection of issued, tokenized, in-use, public, or participant-bearing states.
+- Files changed: `invitationrevocationreceipt.html`, `data/vedapath-invitation-revocation-receipt.json`, `docs/INVITATION_REVOCATION_RECEIPT_CONTRACT.md`, `scripts/vedapath-invitation-revocation-receipt.mjs`, `scripts/apply-v507-v511-private-pilot-validation-batch.mjs`, `scripts/check-v507-v511-private-pilot-validation.mjs`, `assets/vedapath-command-shell.js`, `scripts/check-static-links.mjs`, `build-status.html`, `README.md`, `CHANGELOG.md`.
+- Checks run: node --check scripts/vedapath-invitation-revocation-receipt.mjs; valid, digest, reason, owner, timeline, issued, token, in-use, participant, and public-access assertions; batch checker through v5.0.8; static links.
+- Known risks: Private-pilot validation evidence only; no credentials, direct identity, token, account, email, delivery, live invitation, real participant, external notification, provider mutation, durable participant write, public launch, licensed corpus delivery, live AI generation, payments, or medical, legal, ritual, or spiritual authority.
+
+## v5.0.7 Private Invitation Issuance Dry Run
+
+- Changes made: Adds a pure private-invitation dry-run evaluator with pseudonymous identifiers, direct-identity rejection, seventy-two-hour expiry, bounded role and purpose, consent and founder ownership checks, deterministic request digest, and permanent zero-token, zero-account, zero-email, zero-delivery, and zero-invitation outputs.
+- Files changed: `privateinvitationdryrun.html`, `data/vedapath-private-invitation-dry-run.json`, `docs/PRIVATE_INVITATION_ISSUANCE_DRY_RUN.md`, `scripts/vedapath-private-invitation-dry-run.mjs`, `scripts/apply-v507-v511-private-pilot-validation-batch.mjs`, `scripts/check-v507-v511-private-pilot-validation.mjs`, `assets/vedapath-command-shell.js`, `scripts/check-static-links.mjs`, `build-status.html`, `README.md`, `CHANGELOG.md`, `historical compatibility checkers`.
+- Checks run: node --check scripts/vedapath-private-invitation-dry-run.mjs; valid, incomplete, direct-identity, token, email, delivery, expiry, public-access, existing-invitation, and participant assertions; batch checker through v5.0.7; static links.
+- Known risks: Private-pilot validation evidence only; no credentials, direct identity, token, account, email, delivery, live invitation, real participant, external notification, provider mutation, durable participant write, public launch, licensed corpus delivery, live AI generation, payments, or medical, legal, ritual, or spiritual authority.
+
 ## v5.0.6 Invitation Activation Decision Gate
 
 - Changes made: Adds a twelve-evidence invitation activation evaluator, explicit one-invitation maximum, live-stack security, privacy, rights, recovery, shutdown, and telemetry consent checks, public-access, existing-invitation, participant, and write-route blockers, and a permanent no-issuance output.

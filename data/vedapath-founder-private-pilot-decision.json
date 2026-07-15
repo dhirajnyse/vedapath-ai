@@ -1,0 +1,131 @@
+{
+  "release": "v5.1.1",
+  "position": "Founder authorization is a bounded decision record, not an invitation, participant, session, credential, or launch",
+  "headline": "Five exact proofs can authorize one private session while every execution switch remains off.",
+  "copy": "The current repository demonstrates the decision contract only. A real go decision would still require live-stack evidence and a separate audited invitation step outside this release.",
+  "postures": [
+    {
+      "title": "Founder evaluator",
+      "decision": "Ready",
+      "copy": "Approve, reject, blocked, and unsafe states are covered."
+    },
+    {
+      "title": "Evidence chain",
+      "decision": "5 proofs",
+      "copy": "Activation, dry run, revocation, sandbox, and incident evidence remain separate."
+    },
+    {
+      "title": "Maximum scope",
+      "decision": "1 person / 1 session",
+      "copy": "No cohort expansion is possible."
+    },
+    {
+      "title": "Execution",
+      "decision": "Off",
+      "copy": "No invitation, credential, participant, or session is created."
+    }
+  ],
+  "flow": [
+    {
+      "title": "Gather",
+      "copy": "Verify all five exact evidence states."
+    },
+    {
+      "title": "Bound",
+      "copy": "Name owners, cap one participant and one session, and expire within seventy-two hours."
+    },
+    {
+      "title": "Decide",
+      "copy": "Authorize one bounded session, reject, or remain blocked."
+    },
+    {
+      "title": "Hold",
+      "copy": "Keep invitation issuance, session start, credentials, and public access off."
+    }
+  ],
+  "decisions": [
+    {
+      "label": "Decision contract",
+      "value": "Deterministic",
+      "reason": "Safe and unsafe founder decisions are deterministic."
+    },
+    {
+      "label": "Current execution",
+      "value": "None",
+      "reason": "The interface contains no live activation control."
+    },
+    {
+      "label": "Maximum authorization",
+      "value": "1 session",
+      "reason": "Scope cannot silently widen."
+    },
+    {
+      "label": "Public launch",
+      "value": "Blocked",
+      "reason": "Private validation never implies public availability."
+    }
+  ],
+  "metrics": [
+    {
+      "label": "Required proofs",
+      "value": "5"
+    },
+    {
+      "label": "Maximum participants",
+      "value": "1"
+    },
+    {
+      "label": "Maximum sessions",
+      "value": "1"
+    },
+    {
+      "label": "Real sessions started",
+      "value": "0"
+    }
+  ],
+  "locks": [
+    {
+      "title": "Identity lock",
+      "decision": "Closed",
+      "copy": "Only pseudonymous identifiers are accepted; direct identity is rejected."
+    },
+    {
+      "title": "Invitation lock",
+      "decision": "Closed",
+      "copy": "No token, email, delivery, or live invitation is created."
+    },
+    {
+      "title": "Participant lock",
+      "decision": "Closed",
+      "copy": "No participant account or real session exists."
+    },
+    {
+      "title": "Provider lock",
+      "decision": "Closed",
+      "copy": "No external provider, notification, or durable participant write is touched."
+    },
+    {
+      "title": "Public launch lock",
+      "decision": "Closed",
+      "copy": "Private validation cannot open public access."
+    }
+  ],
+  "packet": "VedaPath Founder Private Pilot Go/No-Go\nRequired evidence: 5 exact states\nPilot owner: required\nShutdown owner: required\nMaximum participants: 1\nMaximum sessions: 1\nAuthorization expiry: 72 hours maximum\nInvitation issued: false\nSession started: false\nParticipant created: false\nCredentials issued: false\nExternal participants: 0\nPublic launch: blocked",
+  "primary_action": {
+    "href": "build-status.html",
+    "label": "Open Build Status"
+  },
+  "schema": "vedapath.founder-private-pilot-decision.v1",
+  "evaluator": "scripts/vedapath-founder-private-pilot-decision.mjs",
+  "required_evidence": 5,
+  "maximum_participants": 1,
+  "maximum_sessions": 1,
+  "authorization_expiry_hours": 72,
+  "invitation_issued": false,
+  "session_started": false,
+  "participant_created": false,
+  "credentials_issued": false,
+  "external_participants": 0,
+  "public_launch": "blocked",
+  "next_release": "v5.1.2 Real Private Pilot Operations Decision Gate"
+}

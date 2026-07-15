@@ -401,7 +401,7 @@
         <a class="link" href="pilotsessionexportpacket.html">Session Export</a>
         <a class="link" href="feedbacktoticketaudittrail.html">Feedback Audit</a>
         <a class="link" href="retrievaladaptershell.html">Retrieval Adapter</a>
-        <span class="version-pill">v5.0.6 invitation decision</span>
+        <span class="version-pill">v5.1.1 pilot decision</span>
       </nav>
       </header>
 
@@ -413,8 +413,8 @@
       <section class="summary" aria-label="Progress summary">
         <article class="tile">
           <span>Current version</span>
-          <strong>v5.0.6</strong>
-          <p>A final decision evaluator now keeps implementation, provider binding, reviewer accounts, durable queue, private health, security, privacy, rights, recovery, shutdown, telemetry consent, and founder activation evidence separate and visible.</p>
+          <strong>v5.1.1</strong>
+          <p>A final founder evaluator now requires the invitation decision, issuance dry run, revocation receipt, first-session sandbox, incident drill, named pilot and shutdown owners, one-participant and one-session limits, and seventy-two-hour expiry before a bounded no-execution decision can pass.</p>
         </article>
         <article class="tile">
           <span>MVP progress</span>
@@ -429,8 +429,8 @@
         </article>
         <article class="tile">
           <span>Next release</span>
-          <strong>v5.0.7 Private Invitation Issuance Dry Run</strong>
-          <p>Design the auditable issuance receipt and revocation path without creating a token or inviting a participant.</p>
+          <strong>v5.1.2 Real Private Pilot Operations Decision Gate</strong>
+          <p>Review the validation packet against a real private stack before any invitation can be issued.</p>
         </article>
       </section>
 
@@ -3933,6 +3933,18 @@
               </div>
               <div class="percent">100%</div>
             </article>
+            <!-- V502-V511 PRIVATE PILOT PHASES START -->
+            <article class="phase"><span class="badge done">Done</span><div><strong>Phase 431: Private Infrastructure Implementation Decision</strong><p>Records a bounded founder implementation decision while deployment stays closed.</p></div><div class="percent">100%</div></article>
+            <article class="phase"><span class="badge done">Done</span><div><strong>Phase 432: Managed Secret Binding Plan</strong><p>Defines three redacted managed-secret bindings without serializing a value.</p></div><div class="percent">100%</div></article>
+            <article class="phase"><span class="badge done">Done</span><div><strong>Phase 433: Reviewer Account Provisioning Runbook</strong><p>Plans time-bounded reviewer identities without creating accounts or credentials.</p></div><div class="percent">100%</div></article>
+            <article class="phase"><span class="badge done">Done</span><div><strong>Phase 434: Durable Queue Cutover Drill</strong><p>Proves deterministic migration and rollback evidence without touching a provider.</p></div><div class="percent">100%</div></article>
+            <article class="phase"><span class="badge done">Done</span><div><strong>Phase 435: Invitation Activation Decision Gate</strong><p>Requires twelve live-stack proofs before one private invitation can be authorized but not issued.</p></div><div class="percent">100%</div></article>
+            <article class="phase"><span class="badge done">Done</span><div><strong>Phase 436: Private Invitation Issuance Dry Run</strong><p>Creates a deterministic, pseudonymous invitation request digest while issuing nothing.</p></div><div class="percent">100%</div></article>
+            <article class="phase"><span class="badge done">Done</span><div><strong>Phase 437: Invitation Revocation Receipt Contract</strong><p>Proves a dry-run request can be cancelled with a traceable receipt before use.</p></div><div class="percent">100%</div></article>
+            <article class="phase"><span class="badge done">Done</span><div><strong>Phase 438: First Participant Session Sandbox</strong><p>Simulates one consented, pseudonymous, read-only session with no real participant.</p></div><div class="percent">100%</div></article>
+            <article class="phase"><span class="badge done">Done</span><div><strong>Phase 439: Pilot Incident Drill</strong><p>Rehearses detection, containment, shutdown, and recovery against a sandbox-only incident.</p></div><div class="percent">100%</div></article>
+            <article class="phase"><span class="badge active">Active</span><div><strong>Phase 440: Founder Private Pilot Go/No-Go</strong><p>Combines invitation, revocation, session, and incident evidence into one bounded founder decision.</p></div><div class="percent">100%</div></article>
+            <!-- V502-V511 PRIVATE PILOT PHASES END -->
 <!-- V410-V414 PHASES END -->
 
 
@@ -3944,21 +3956,21 @@
 
         <aside class="panel version">
           <h2>Version Notes</h2>
-          <div class="version-row"><span>Release</span><strong>v5.0.6 Invitation Activation Decision Gate</strong></div>
-          <div class="version-row"><span>Previous</span><strong>v5.0.5 Durable Queue Cutover Drill</strong></div>
+          <div class="version-row"><span>Release</span><strong>v5.1.1 Founder Private Pilot Go/No-Go</strong></div>
+          <div class="version-row"><span>Previous</span><strong>v5.1.0 Pilot Incident Drill</strong></div>
           <div class="version-row"><span>Commit</span><strong>See GitHub history</strong></div>
-          <div class="version-row"><span>Goal</span><strong>Turn a reviewed private implementation decision into testable operational evidence while preserving every deployment, identity, invitation, and public-launch boundary.</strong></div>
-          <div class="version-row"><span>Status</span><strong>Private implementation evidence complete; provider deployment, invitations, and public launch remain blocked</strong></div>
+          <div class="version-row"><span>Goal</span><strong>Prove the smallest private-pilot invitation, cancellation, session, incident, and founder-decision contracts without creating a participant or opening launch.</strong></div>
+          <div class="version-row"><span>Status</span><strong>Private-pilot validation complete; real invitation issuance, participant access, provider operations, and public launch remain blocked</strong></div>
           <div class="panel note">
             <h2>North Star</h2>
             <p>Make sacred and philosophical knowledge easier to approach without flattening its depth, confusing categories, or pretending the AI is an authority.</p>
           </div>
           <h2>Next Build Checklist</h2>
           <ul class="checklist">
-            <li><span class="dot"></span><span>Review the five private-implementation contracts as one founder evidence packet.</span></li>
-            <li><span class="dot"></span><span>Select a provider, region, owner, and budget only through a separate real-world decision.</span></li>
-            <li><span class="dot"></span><span>Run the secret, identity, queue, security, privacy, rights, recovery, and shutdown checks against the live private stack.</span></li>
-            <li><span class="dot"></span><span>Design a separate invitation issuance dry run; keep tokens, participants, and public access at zero.</span></li>
+            <li><span class="dot"></span><span>Review the complete validation packet against a real private stack and named operating owners.</span></li>
+            <li><span class="dot"></span><span>Keep tokens, direct identity, delivery, participant access, and public launch disabled until a separate audited decision.</span></li>
+            <li><span class="dot"></span><span>Choose the smallest production-grade identity, rights, queue, privacy, and incident-response slice.</span></li>
+            <li><span class="dot"></span><span>Require fresh security, privacy, rights, recovery, shutdown, and consent evidence before any real session.</span></li>
           </ul>
         </aside>
       </section>

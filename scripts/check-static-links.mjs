@@ -107,6 +107,11 @@ const pages = [
   "revieweraccountprovisioningrunbook.html",
   "durablequeuecutoverdrill.html",
   "invitationactivationdecisiongate.html",
+  "privateinvitationdryrun.html",
+  "invitationrevocationreceipt.html",
+  "firstparticipantsessionsandbox.html",
+  "pilotincidentdrill.html",
+  "founderprivatepilotdecision.html",
 ];
 
 const missing = [];

@@ -1,3 +1,43 @@
+## v5.1.1 Founder Private Pilot Go/No-Go
+
+A final founder evaluator now requires the invitation decision, issuance dry run, revocation receipt, first-session sandbox, incident drill, named pilot and shutdown owners, one-participant and one-session limits, and seventy-two-hour expiry before a bounded no-execution decision can pass.
+
+- Open: [Founder Private Pilot Go/No-Go](founderprivatepilotdecision.html)
+- Data: `data/vedapath-founder-private-pilot-decision.json`
+- Boundary: Private-pilot validation evidence only; no credentials, direct identity, token, account, email, delivery, live invitation, real participant, external notification, provider mutation, durable participant write, public launch, licensed corpus delivery, live AI generation, payments, or medical, legal, ritual, or spiritual authority.
+
+## v5.1.0 Pilot Incident Drill
+
+A four-stage incident drill now enforces named incident and privacy owners, ordered timestamps, fifteen-minute containment, thirty-minute shutdown, sixty-minute recovery, and zero live notifications, mutations, writes, participants, or incidents.
+
+- Open: [Pilot Incident Drill](pilotincidentdrill.html)
+- Data: `data/vedapath-pilot-incident-drill.json`
+- Boundary: Private-pilot validation evidence only; no credentials, direct identity, token, account, email, delivery, live invitation, real participant, external notification, provider mutation, durable participant write, public launch, licensed corpus delivery, live AI generation, payments, or medical, legal, ritual, or spiritual authority.
+
+## v5.0.9 First Participant Session Sandbox
+
+A thirty-minute maximum sandbox now rehearses arrival, source reading, local reflection, and exit with pseudonymous consent, strict event fields, read-only mode, no live model, no persistence, and no external participant.
+
+- Open: [First Participant Session Sandbox](firstparticipantsessionsandbox.html)
+- Data: `data/vedapath-first-participant-session-sandbox.json`
+- Boundary: Private-pilot validation evidence only; no credentials, direct identity, token, account, email, delivery, live invitation, real participant, external notification, provider mutation, durable participant write, public launch, licensed corpus delivery, live AI generation, payments, or medical, legal, ritual, or spiritual authority.
+
+## v5.0.8 Invitation Revocation Receipt Contract
+
+A deterministic receipt now links one dry-run request to an allowlisted reason, named owner, ordered timeline, and immutable digest without mutating a provider or notifying a participant.
+
+- Open: [Invitation Revocation Receipt Contract](invitationrevocationreceipt.html)
+- Data: `data/vedapath-invitation-revocation-receipt.json`
+- Boundary: Private-pilot validation evidence only; no credentials, direct identity, token, account, email, delivery, live invitation, real participant, external notification, provider mutation, durable participant write, public launch, licensed corpus delivery, live AI generation, payments, or medical, legal, ritual, or spiritual authority.
+
+## v5.0.7 Private Invitation Issuance Dry Run
+
+A deterministic dry-run contract now proves the exact participant role, purpose, consent, expiry, founder owner, and zero-delivery boundary before any real invitation system is considered.
+
+- Open: [Private Invitation Issuance Dry Run](privateinvitationdryrun.html)
+- Data: `data/vedapath-private-invitation-dry-run.json`
+- Boundary: Private-pilot validation evidence only; no credentials, direct identity, token, account, email, delivery, live invitation, real participant, external notification, provider mutation, durable participant write, public launch, licensed corpus delivery, live AI generation, payments, or medical, legal, ritual, or spiritual authority.
+
 ## v5.0.6 Invitation Activation Decision Gate
 
 A final decision evaluator now keeps implementation, provider binding, reviewer accounts, durable queue, private health, security, privacy, rights, recovery, shutdown, telemetry consent, and founder activation evidence separate and visible.

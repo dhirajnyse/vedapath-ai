@@ -1,5 +1,5 @@
 (function () {
-  const releaseBadge = "v5.0.6 invitation decision";
+  const releaseBadge = "v5.1.1 pilot decision";
   const prefKey = "vedapathCommandShellPrefs";
   const groups = [
     { title: "Start", labels: ["Home", "Build", "Brand", "Blueprint"] },
@@ -21,6 +21,7 @@
     { title: "Pilot Implementation", labels: ["Provider Packet", "Environment", "Reviewer Session", "Queue Contract", "Activation Gate"] },
     { title: "Pilot Authorization", labels: ["Authorization", "Manifest", "Identity Contract", "Queue Migration", "Readiness Control"] },
     { title: "Private Implementation", labels: ["Implementation", "Secret Bindings", "Reviewer Accounts", "Queue Cutover", "Invitation Decision"] },
+    { title: "Private Pilot Validation", labels: ["Invite Dry Run", "Revocation", "Session Sandbox", "Incident Drill", "Pilot Decision"] },
   ];
   const pageTitles = {
     Home: "VedaPath command center",
@@ -132,6 +133,11 @@
     "Reviewer Accounts": "Reviewer Account Provisioning Runbook",
     "Queue Cutover": "Durable Queue Cutover Drill",
     "Invitation Decision": "Invitation Activation Decision Gate",
+    "Invite Dry Run": "Private Invitation Issuance Dry Run",
+    "Revocation": "Invitation Revocation Receipt Contract",
+    "Session Sandbox": "First Participant Session Sandbox",
+    "Incident Drill": "Pilot Incident Drill",
+    "Pilot Decision": "Founder Private Pilot Go/No-Go",
   };
   const bodyPageTitles = {
     "permission-execution-draft-page": "Controlled draft gate",
@@ -236,6 +242,11 @@
     "reviewer-account-provisioning-runbook-page": "Reviewer Account Provisioning Runbook",
     "durable-queue-cutover-drill-page": "Durable Queue Cutover Drill",
     "invitation-activation-decision-gate-page": "Invitation Activation Decision Gate",
+    "private-invitation-dry-run-page": "Private Invitation Issuance Dry Run",
+    "invitation-revocation-receipt-page": "Invitation Revocation Receipt Contract",
+    "first-participant-session-sandbox-page": "First Participant Session Sandbox",
+    "pilot-incident-drill-page": "Pilot Incident Drill",
+    "founder-private-pilot-decision-page": "Founder Private Pilot Go/No-Go",
   };
 
 
@@ -305,6 +316,11 @@
     ["Reviewer Accounts", "revieweraccountprovisioningrunbook.html"],
     ["Queue Cutover", "durablequeuecutoverdrill.html"],
     ["Invitation Decision", "invitationactivationdecisiongate.html"],
+    ["Invite Dry Run", "privateinvitationdryrun.html"],
+    ["Revocation", "invitationrevocationreceipt.html"],
+    ["Session Sandbox", "firstparticipantsessionsandbox.html"],
+    ["Incident Drill", "pilotincidentdrill.html"],
+    ["Pilot Decision", "founderprivatepilotdecision.html"],
   ];
 
   function safeParse(value, fallback) {

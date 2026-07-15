@@ -1,0 +1,129 @@
+{
+  "release": "v5.0.7",
+  "position": "An authorization decision is not an invitation, and a dry run must have no delivery side effect",
+  "headline": "The request can be validated and hashed while identity, credentials, delivery, and participant access remain absent.",
+  "copy": "Only a pseudonymous participant, private learner role, bounded source-first purpose, recorded consent, named founder owner, no delivery channel, and a maximum seventy-two-hour window are accepted.",
+  "postures": [
+    {
+      "title": "Dry-run evaluator",
+      "decision": "Ready",
+      "copy": "Safe and unsafe request shapes are deterministic."
+    },
+    {
+      "title": "Current invitation",
+      "decision": "None",
+      "copy": "The repository holds no live invitation."
+    },
+    {
+      "title": "Direct identity",
+      "decision": "Forbidden",
+      "copy": "Email, name, and phone fields are rejected."
+    },
+    {
+      "title": "Delivery",
+      "decision": "Disabled",
+      "copy": "No channel, token, account, or message is created."
+    }
+  ],
+  "flow": [
+    {
+      "title": "Authorize",
+      "copy": "Start from the bounded v5.0.6 decision."
+    },
+    {
+      "title": "Describe",
+      "copy": "Use pseudonymous identity, purpose, consent, owner, and expiry."
+    },
+    {
+      "title": "Digest",
+      "copy": "Create a deterministic founder-reviewable request hash."
+    },
+    {
+      "title": "Hold",
+      "copy": "Issue nothing and contact nobody."
+    }
+  ],
+  "decisions": [
+    {
+      "label": "Request contract",
+      "value": "Deterministic",
+      "reason": "The dry-run evaluator is covered by safe and unsafe fixtures."
+    },
+    {
+      "label": "Maximum scope",
+      "value": "1",
+      "reason": "Only one bounded invitation request is modeled."
+    },
+    {
+      "label": "Delivery attempts",
+      "value": "0",
+      "reason": "The contract has no delivery path."
+    },
+    {
+      "label": "Invitation issued",
+      "value": "No",
+      "reason": "Issuance remains a separate real-world decision."
+    }
+  ],
+  "metrics": [
+    {
+      "label": "Maximum requests",
+      "value": "1"
+    },
+    {
+      "label": "Direct identity fields",
+      "value": "0"
+    },
+    {
+      "label": "Tokens",
+      "value": "0"
+    },
+    {
+      "label": "Invitations",
+      "value": "0"
+    }
+  ],
+  "locks": [
+    {
+      "title": "Identity lock",
+      "decision": "Closed",
+      "copy": "Only pseudonymous identifiers are accepted; direct identity is rejected."
+    },
+    {
+      "title": "Invitation lock",
+      "decision": "Closed",
+      "copy": "No token, email, delivery, or live invitation is created."
+    },
+    {
+      "title": "Participant lock",
+      "decision": "Closed",
+      "copy": "No participant account or real session exists."
+    },
+    {
+      "title": "Provider lock",
+      "decision": "Closed",
+      "copy": "No external provider, notification, or durable participant write is touched."
+    },
+    {
+      "title": "Public launch lock",
+      "decision": "Closed",
+      "copy": "Private validation cannot open public access."
+    }
+  ],
+  "packet": "VedaPath Private Invitation Issuance Dry Run\nActivation decision: required\nPseudonymous participant: required\nRole: private learner\nPurpose: source-first private pilot\nConsent: recorded\nMaximum expiry: 72 hours\nDelivery channel: none\nToken created: false\nAccount created: false\nEmail sent: false\nInvitation issued: false\nExternal participants: 0\nPublic launch: blocked",
+  "primary_action": {
+    "href": "invitationrevocationreceipt.html",
+    "label": "Open Revocation Receipt"
+  },
+  "schema": "vedapath.private-invitation-dry-run.v1",
+  "evaluator": "scripts/vedapath-private-invitation-dry-run.mjs",
+  "maximum_invitations": 1,
+  "direct_identity_fields": 0,
+  "token_created": false,
+  "account_created": false,
+  "email_sent": false,
+  "invitation_issued": false,
+  "external_participants": 0,
+  "public_launch": "blocked",
+  "next_release": "v5.0.8 Invitation Revocation Receipt Contract"
+}
