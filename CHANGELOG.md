@@ -1,3 +1,38 @@
+## v5.0.1 Private Pilot Readiness Control Room
+
+- Changes made: Adds a private-pilot readiness assessor, eight named evidence checks, stable blocker reporting, a founder-readable packet, one consolidated command-center surface, final navigation and build status, and regression coverage across the entire five-release authorization chain.
+- Files changed: `privatepilotreadinesscontrolroom.html`, `data/vedapath-private-pilot-readiness-control-room.json`, `docs/PRIVATE_PILOT_READINESS_CONTROL_ROOM.md`, `scripts/vedapath-private-pilot-readiness.mjs`, `scripts/check-v497-v501-pilot-authorization.mjs`, `assets/vedapath-command-shell.js`, `scripts/check-static-links.mjs`, `build-status.html`, `README.md`, `CHANGELOG.md`.
+- Checks run: node --check scripts/vedapath-private-pilot-readiness.mjs; complete and incomplete readiness assertions; permanent activation, deployment, invitation, participant, and public-launch locks; full v4.9.7-v5.0.1 checker; prior regression suites; static links; local HTTP smoke; desktop and mobile visual QA.
+- Known risks: Private-pilot implementation evidence only; no provider account, credentials, endpoint, live identity provider, durable database, licensed corpus delivery, live AI generation, payments, external invitations, public launch, or medical, legal, ritual, or spiritual authority.
+
+## v5.0.0 Durable Queue Migration Pack
+
+- Changes made: Adds a canonical SHA-256 event ledger, genesis and previous-hash chaining, optimistic concurrency, idempotent receipts, bounded queue actions and reviewer roles, replay verification, tamper detection, and permanent publication and registry locks.
+- Files changed: `durablequeuemigrationpack.html`, `data/vedapath-durable-queue-migration-pack.json`, `docs/DURABLE_QUEUE_MIGRATION_PACK.md`, `scripts/vedapath-durable-queue-ledger.mjs`.
+- Checks run: node --check scripts/vedapath-durable-queue-ledger.mjs; append, idempotent replay, stale version, denied action, denied role, lane mismatch, hash-chain verification, tamper detection, deterministic replay, publication, and registry-lock assertions; batch checker through v5.0.0.
+- Known risks: Private-pilot implementation evidence only; no provider account, credentials, endpoint, live identity provider, durable database, licensed corpus delivery, live AI generation, payments, external invitations, public launch, or medical, legal, ritual, or spiritual authority.
+
+## v4.9.9 Reviewer Identity Provider Contract
+
+- Changes made: Adds a pure reviewer claim validator, deterministic role-to-capability mapping, issuer and audience enforcement, AAL2 and lifetime checks, pseudonymous subjects, revocation handling, direct identity rejection, and permanent denial of publication, registry merge, invitations, activation, and public launch.
+- Files changed: `revieweridentityprovidercontract.html`, `data/vedapath-reviewer-identity-provider-contract.json`, `docs/REVIEWER_IDENTITY_PROVIDER_CONTRACT.md`, `scripts/vedapath-reviewer-identity-contract.mjs`.
+- Checks run: node --check scripts/vedapath-reviewer-identity-contract.mjs; valid, wrong issuer, wrong audience, expired, overlong, revoked, direct-identity, missing-AAL2, unsupported-role, allowed-capability, denied-capability, and permanent-lock assertions; batch checker through v4.9.9.
+- Known risks: Private-pilot implementation evidence only; no provider account, credentials, endpoint, live identity provider, durable database, licensed corpus delivery, live AI generation, payments, external invitations, public launch, or medical, legal, ritual, or spiritual authority.
+
+## v4.9.8 Deployment Manifest Contract
+
+- Changes made: Adds an allowlisted deployment manifest validator, safe path and region checks, required secret references, mandatory log redactions, request, timeout, and rate limits, rollback ownership, safe summaries, and hard activation and write-route rejections.
+- Files changed: `deploymentmanifestcontract.html`, `data/vedapath-deployment-manifest-contract.json`, `docs/DEPLOYMENT_MANIFEST_CONTRACT.md`, `scripts/vedapath-deployment-manifest.mjs`.
+- Checks run: node --check scripts/vedapath-deployment-manifest.mjs; valid dry-run manifest plus unknown-key, literal-reference, activation, public-access, unsafe-limit, missing-redaction, write-route, and rollback rejection assertions; batch checker through v4.9.8.
+- Known risks: Private-pilot implementation evidence only; no provider account, credentials, endpoint, live identity provider, durable database, licensed corpus delivery, live AI generation, payments, external invitations, public launch, or medical, legal, ritual, or spiritual authority.
+
+## v4.9.7 Pilot Infrastructure Authorization Record
+
+- Changes made: Adds a pure infrastructure authorization evaluator, bounded budget and owner checks, thirteen evidence requirements, explicit reject and pending states, redacted summaries, and permanent zero-deployment and zero-invitation outputs.
+- Files changed: `pilotinfrastructureauthorization.html`, `data/vedapath-pilot-infrastructure-authorization.json`, `docs/PILOT_INFRASTRUCTURE_AUTHORIZATION_RECORD.md`, `scripts/vedapath-infrastructure-authorization.mjs`.
+- Checks run: node --check scripts/vedapath-infrastructure-authorization.mjs; complete, incomplete, rejected, over-budget, public-access, invitation, and write-route assertions; batch checker through v4.9.7.
+- Known risks: Private-pilot implementation evidence only; no provider account, credentials, endpoint, live identity provider, durable database, licensed corpus delivery, live AI generation, payments, external invitations, public launch, or medical, legal, ritual, or spiritual authority.
+
 ## v4.9.6 Invitation-Only Pilot Activation Gate
 
 - Changes made: Adds the pilot implementation evidence gate, dependency matrix, explicit activation prerequisites, shared navigation group, final build status, and one regression suite proving all five releases while every launch path remains closed.

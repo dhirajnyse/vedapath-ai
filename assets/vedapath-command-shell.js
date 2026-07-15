@@ -1,5 +1,5 @@
 (function () {
-  const releaseBadge = "v4.9.6 pilot implementation gate";
+  const releaseBadge = "v5.0.1 pilot readiness control";
   const prefKey = "vedapathCommandShellPrefs";
   const groups = [
     { title: "Start", labels: ["Home", "Build", "Brand", "Blueprint"] },
@@ -19,6 +19,7 @@
     { title: "Private Demo", labels: ["Demo Runbook", "Observations", "Rights Intake", "Security Review", "Hosted Gate"] },
     { title: "Hosted Pilot", labels: ["Hosted API", "Request Guard", "Reviewer Roles", "Rights Queue", "Pilot Gate"] },
     { title: "Pilot Implementation", labels: ["Provider Packet", "Environment", "Reviewer Session", "Queue Contract", "Activation Gate"] },
+    { title: "Pilot Authorization", labels: ["Authorization", "Manifest", "Identity Contract", "Queue Migration", "Readiness Control"] },
   ];
   const pageTitles = {
     Home: "VedaPath command center",
@@ -119,7 +120,12 @@
     "Environment": "Environment & Secret Contract",
     "Reviewer Session": "Reviewer Session Security Spike",
     "Queue Contract": "Rights Queue Persistence Contract",
-    "Activation Gate": "Invitation-Only Pilot Activation Gate"
+    "Activation Gate": "Invitation-Only Pilot Activation Gate",
+    "Authorization": "Pilot Infrastructure Authorization Record",
+    "Manifest": "Deployment Manifest Contract",
+    "Identity Contract": "Reviewer Identity Provider Contract",
+    "Queue Migration": "Durable Queue Migration Pack",
+    "Readiness Control": "Private Pilot Readiness Control Room",
   };
   const bodyPageTitles = {
     "permission-execution-draft-page": "Controlled draft gate",
@@ -213,7 +219,12 @@
     "environment-secret-contract-page": "Environment & Secret Contract",
     "reviewer-session-security-spike-page": "Reviewer Session Security Spike",
     "rights-queue-persistence-contract-page": "Rights Queue Persistence Contract",
-    "invitation-only-pilot-activation-gate-page": "Invitation-Only Pilot Activation Gate"
+    "invitation-only-pilot-activation-gate-page": "Invitation-Only Pilot Activation Gate",
+    "pilot-infrastructure-authorization-page": "Pilot Infrastructure Authorization Record",
+    "deployment-manifest-contract-page": "Deployment Manifest Contract",
+    "reviewer-identity-provider-contract-page": "Reviewer Identity Provider Contract",
+    "durable-queue-migration-pack-page": "Durable Queue Migration Pack",
+    "private-pilot-readiness-control-room-page": "Private Pilot Readiness Control Room",
   };
 
 
@@ -272,7 +283,12 @@
     ["Environment", "environmentsecretcontract.html"],
     ["Reviewer Session", "reviewersessionspike.html"],
     ["Queue Contract", "rightsqueuepersistencecontract.html"],
-    ["Activation Gate", "invitationonlypilotgate.html"]
+    ["Activation Gate", "invitationonlypilotgate.html"],
+    ["Authorization", "pilotinfrastructureauthorization.html"],
+    ["Manifest", "deploymentmanifestcontract.html"],
+    ["Identity Contract", "revieweridentityprovidercontract.html"],
+    ["Queue Migration", "durablequeuemigrationpack.html"],
+    ["Readiness Control", "privatepilotreadinesscontrolroom.html"],
   ];
 
   function safeParse(value, fallback) {

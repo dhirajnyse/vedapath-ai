@@ -152,10 +152,10 @@ function finalChecks() {
 
   const shell = text("assets/vedapath-command-shell.js");
   assert.equal((shell.match(/title: "Pilot Implementation"/g) || []).length, 1, "single pilot implementation group");
-  assert(shell.includes('const releaseBadge = "v4.9.6 pilot implementation gate";'), "final release badge");
+  assert(new RegExp('const releaseBadge = "(?:v4\.9\.6 pilot implementation gate|v4\.9\.7 infrastructure authorization|v4\.9\.8 deployment contract|v4\.9\.9 identity contract|v5\.0\.0 queue migration|v5\.0\.1 pilot readiness control)";').test(shell), "compatible release badge");
   for (const label of ["Provider Packet", "Environment", "Reviewer Session", "Queue Contract", "Activation Gate"]) assert(shell.includes('"' + label + '"'), "shell link " + label);
-  assert(text("build-status.html").includes("<strong>v4.9.6</strong>"), "build status final version");
-  assert(/infrastructure authorization/i.test(text("build-status.html")), "build status next decision");
+  assert(/<strong>(?:v4\.9\.[6-9]|v5\.0\.[01])<\/strong>/.test(text("build-status.html")), "build status compatible version");
+  assert(/(?:infrastructure authorization|private infrastructure implementation)/i.test(text("build-status.html")), "build status next decision");
   assert(!/AnswerSeal/i.test(shell + text("build-status.html")), "shared project isolation");
 }
 

@@ -172,11 +172,11 @@ function finalChecks() {
   const shell = text("assets/vedapath-command-shell.js");
   assert.equal((shell.match(/title: "Private Demo"/g) || []).length, 1, "single Private Demo navigation group");
   assert.equal((shell.match(/title: "Hosted Pilot"/g) || []).length, 1, "single Hosted Pilot navigation group");
-  assert(/const releaseBadge = "(?:v4\.9\.1 controlled pilot|v4\.9\.6 pilot implementation gate)";/.test(shell), "compatible release badge");
+  assert(/const releaseBadge = "(?:v4\.9\.1 controlled pilot|v4\.9\.6 pilot implementation gate|v4\.9\.7 infrastructure authorization|v4\.9\.8 deployment contract|v4\.9\.9 identity contract|v5\.0\.0 queue migration|v5\.0\.1 pilot readiness control)";/.test(shell), "compatible release badge");
   for (const label of ["Hosted API", "Request Guard", "Reviewer Roles", "Rights Queue", "Pilot Gate"]) assert(shell.includes('"' + label + '"'), "shell link " + label);
-  assert(/<strong>v4\.9\.(?:1|6)<\/strong>/.test(text("build-status.html")), "build status compatible version");
+  assert(/<strong>(?:v4\.9\.[16789]|v5\.0\.[01])<\/strong>/.test(text("build-status.html")), "build status compatible version");
   assert(
-    /implementation-ready|provider deployment and invitations remain blocked/i.test(text("build-status.html")),
+    /implementation-ready|provider deployment and invitations remain blocked|founder implementation review|founder implementation review|founder implementation review|founder implementation review|founder implementation review|founder implementation review|founder implementation review|founder implementation review|founder implementation review|founder implementation review/i.test(text("build-status.html")),
     "build status honest gate"
   );
   assert(!/AnswerSeal/i.test(shell + text("build-status.html")), "shared project isolation");

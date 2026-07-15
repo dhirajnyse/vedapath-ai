@@ -1,0 +1,159 @@
+{
+  "release": "v4.9.8",
+  "position": "One portable manifest, no credentials and no endpoint",
+  "headline": "The dry-run manifest is complete enough to review and too constrained to launch.",
+  "copy": "The contract validates only names, boundaries, limits, and rollback posture. It never serializes a secret value or activates an endpoint.",
+  "postures": [
+    {
+      "title": "Runtime",
+      "decision": "Ready",
+      "copy": "The Web-standard request and response boundary is portable."
+    },
+    {
+      "title": "Private access",
+      "decision": "Required",
+      "copy": "Only invitation-only access is accepted."
+    },
+    {
+      "title": "Operational limits",
+      "decision": "Ready",
+      "copy": "Request size, timeout, rate, redaction, and rollback are bounded."
+    },
+    {
+      "title": "Provider deployment",
+      "decision": "Blocked",
+      "copy": "The reference manifest is dry-run only."
+    }
+  ],
+  "flow": [
+    {
+      "title": "Describe",
+      "copy": "Name environment, runtime, region, routes, and access."
+    },
+    {
+      "title": "Reference",
+      "copy": "Carry managed secret names without values."
+    },
+    {
+      "title": "Constrain",
+      "copy": "Set privacy-safe logs, request limits, and zero writes."
+    },
+    {
+      "title": "Validate",
+      "copy": "Return a redacted summary and no deployment side effect."
+    }
+  ],
+  "decisions": [
+    {
+      "label": "Manifest",
+      "value": "Valid reference",
+      "reason": "The sample satisfies every dry-run safety rule."
+    },
+    {
+      "label": "Secret values",
+      "value": "0",
+      "reason": "Only managed names are accepted."
+    },
+    {
+      "label": "Write routes",
+      "value": "0",
+      "reason": "The first hosted slice remains read-only."
+    },
+    {
+      "label": "Endpoint",
+      "value": "Not created",
+      "reason": "Validation has no provider side effect."
+    }
+  ],
+  "metrics": [
+    {
+      "label": "Allowlisted keys",
+      "value": "16"
+    },
+    {
+      "label": "Required redactions",
+      "value": "5"
+    },
+    {
+      "label": "Write routes",
+      "value": "0"
+    },
+    {
+      "label": "Deployments",
+      "value": "0"
+    }
+  ],
+  "locks": [
+    {
+      "title": "Deployment lock",
+      "decision": "Closed",
+      "copy": "No provider endpoint, domain, runtime, or credential is active."
+    },
+    {
+      "title": "Identity lock",
+      "decision": "Closed",
+      "copy": "The claim contract does not authenticate a real reviewer."
+    },
+    {
+      "title": "Storage lock",
+      "decision": "Closed",
+      "copy": "Ledger semantics are verified without a connected durable provider."
+    },
+    {
+      "title": "Invitation lock",
+      "decision": "Closed",
+      "copy": "No invitation token, participant, or external session exists."
+    },
+    {
+      "title": "Public launch lock",
+      "decision": "Closed",
+      "copy": "Implementation readiness cannot activate a public service."
+    }
+  ],
+  "packet": "VedaPath Deployment Manifest Contract\nEnvironment: pilot\nRuntime: web-standard\nAccess: private-invite-only\nTelemetry: aggregate-redacted\nSecret values: 0\nWrite routes: 0\nRollback: disable endpoint within 15 minutes\nDeployment mode: dry-run\nEndpoint created: false\nPublic launch: blocked",
+  "primary_action": {
+    "href": "revieweridentityprovidercontract.html",
+    "label": "Open Identity Contract"
+  },
+  "schema": "vedapath.deployment-manifest-contract.v1",
+  "validator": "scripts/vedapath-deployment-manifest.mjs",
+  "reference_manifest": {
+    "schema": "vedapath.private-preview-manifest.v1",
+    "environment": "pilot",
+    "runtime": "web-standard",
+    "region": "founder-selection-required",
+    "access": "private-invite-only",
+    "apiPath": "/api/source",
+    "healthPath": "/healthz",
+    "secretRefs": [
+      "VEDAPATH_SESSION_SIGNING_SECRET",
+      "VEDAPATH_REVIEWER_STORE_KEY"
+    ],
+    "telemetry": "aggregate-redacted",
+    "redactedLogFields": [
+      "question",
+      "authorization",
+      "cookie",
+      "ip",
+      "user-agent"
+    ],
+    "limits": {
+      "requestBytes": 4096,
+      "timeoutMs": 3000,
+      "requestsPerMinute": 20
+    },
+    "writeRoutes": [],
+    "rollback": {
+      "strategy": "disable-endpoint",
+      "owner": "founder-selection-required",
+      "targetMinutes": 10
+    },
+    "deploymentMode": "dry-run",
+    "activated": false
+  },
+  "credentials_serialized": false,
+  "endpoint_created": false,
+  "deployment_activated": false,
+  "public_launch": "blocked",
+  "next_release": "v4.9.9 Reviewer Identity Provider Contract"
+}

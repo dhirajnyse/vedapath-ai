@@ -1,0 +1,138 @@
+{
+  "release": "v5.0.1",
+  "position": "The contracts are implementation-ready; every real connection and activation decision is still visible as missing",
+  "headline": "Four implementation contracts are proven. Real infrastructure and activation remain separate decisions.",
+  "copy": "The control room prevents a mature prototype from being mistaken for a live service. It shows the exact evidence still needed before private implementation, then requires another founder decision before any invitation.",
+  "postures": [
+    {
+      "title": "Authorization evaluator",
+      "decision": "Ready",
+      "copy": "The private implementation decision is deterministic and bounded."
+    },
+    {
+      "title": "Manifest and identity",
+      "decision": "Ready",
+      "copy": "Configuration and claim contracts reject unsafe inputs."
+    },
+    {
+      "title": "Queue migration",
+      "decision": "Ready",
+      "copy": "The event ledger detects tampering and replays state."
+    },
+    {
+      "title": "Real infrastructure",
+      "decision": "Blocked",
+      "copy": "Provider, secrets, IdP, database, and audits are unconnected."
+    }
+  ],
+  "flow": [
+    {
+      "title": "Review",
+      "copy": "Read the authorization, manifest, identity, and queue evidence."
+    },
+    {
+      "title": "Connect",
+      "copy": "Implement the smallest approved stack in a private environment."
+    },
+    {
+      "title": "Repeat",
+      "copy": "Run security, privacy, rights, recovery, and failure-mode reviews."
+    },
+    {
+      "title": "Decide",
+      "copy": "Require a separate founder activation record before one invitation."
+    }
+  ],
+  "decisions": [
+    {
+      "label": "Implementation contracts",
+      "value": "5/5",
+      "reason": "The complete authorization chain is executable and linked."
+    },
+    {
+      "label": "Real connections",
+      "value": "0/4",
+      "reason": "Provider, secrets, identity, and database are absent."
+    },
+    {
+      "label": "Pilot activation",
+      "value": "Not authorized",
+      "reason": "Readiness cannot issue an invitation."
+    },
+    {
+      "label": "External participants",
+      "value": "0",
+      "reason": "No outside user has access."
+    }
+  ],
+  "metrics": [
+    {
+      "label": "Contracts",
+      "value": "5/5"
+    },
+    {
+      "label": "Real connections",
+      "value": "0/4"
+    },
+    {
+      "label": "Invitations",
+      "value": "0"
+    },
+    {
+      "label": "Public launch",
+      "value": "Blocked"
+    }
+  ],
+  "locks": [
+    {
+      "title": "Deployment lock",
+      "decision": "Closed",
+      "copy": "No provider endpoint, domain, runtime, or credential is active."
+    },
+    {
+      "title": "Identity lock",
+      "decision": "Closed",
+      "copy": "The claim contract does not authenticate a real reviewer."
+    },
+    {
+      "title": "Storage lock",
+      "decision": "Closed",
+      "copy": "Ledger semantics are verified without a connected durable provider."
+    },
+    {
+      "title": "Invitation lock",
+      "decision": "Closed",
+      "copy": "No invitation token, participant, or external session exists."
+    },
+    {
+      "title": "Public launch lock",
+      "decision": "Closed",
+      "copy": "Implementation readiness cannot activate a public service."
+    }
+  ],
+  "packet": "VedaPath Private Pilot Readiness Control Room\nAuthorization evaluator: ready\nDeployment manifest validator: ready\nReviewer identity contract: ready\nDurable queue ledger: ready\nReadiness assessor: ready\nProvider, secrets, live IdP, durable database: not connected\nSecurity, privacy, rights, recovery reviews against real stack: pending\nActivation authorized: false\nDeployment activated: false\nInvitations issued: 0\nExternal participants: 0\nPublic launch: blocked",
+  "primary_action": {
+    "href": "build-status.html",
+    "label": "Open Build Status"
+  },
+  "schema": "vedapath.private-pilot-readiness-control-room.v1",
+  "assessor": "scripts/vedapath-private-pilot-readiness.mjs",
+  "implementation_contracts_complete": 5,
+  "real_connections_complete": 0,
+  "required_real_connections": [
+    "provider",
+    "managed-secrets",
+    "identity-provider",
+    "durable-database"
+  ],
+  "security_review_against_real_stack": false,
+  "privacy_review_against_real_stack": false,
+  "rights_review_against_real_stack": false,
+  "recovery_drill_against_real_stack": false,
+  "activation_authorized": false,
+  "deployment_activated": false,
+  "invitations_issued": 0,
+  "external_participants": 0,
+  "public_launch": "blocked",
+  "next_release": "v5.0.2 Private Infrastructure Implementation Decision"
+}

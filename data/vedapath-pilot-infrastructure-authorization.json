@@ -1,0 +1,131 @@
+{
+  "release": "v4.9.7",
+  "position": "Authorization is a recorded decision, never an implication from completed prototypes",
+  "headline": "The evaluator can authorize private implementation only after every named prerequisite passes.",
+  "copy": "The default project packet stays pending because no provider, region, owner, budget, identity provider, durable store, or real review evidence has been supplied.",
+  "postures": [
+    {
+      "title": "Decision contract",
+      "decision": "Ready",
+      "copy": "The evaluator and required evidence are explicit and testable."
+    },
+    {
+      "title": "Founder decision",
+      "decision": "Pending",
+      "copy": "No private infrastructure implementation has been authorized."
+    },
+    {
+      "title": "Provider and region",
+      "decision": "Unselected",
+      "copy": "No vendor account, region, or endpoint is attached."
+    },
+    {
+      "title": "Activation",
+      "decision": "Blocked",
+      "copy": "Authorization for implementation would still not issue invitations."
+    }
+  ],
+  "flow": [
+    {
+      "title": "Name",
+      "copy": "Record provider, region, owners, and a budget cap."
+    },
+    {
+      "title": "Prove",
+      "copy": "Attach security, privacy, rights, identity, storage, and recovery evidence."
+    },
+    {
+      "title": "Decide",
+      "copy": "Approve private implementation, reject, or remain pending."
+    },
+    {
+      "title": "Hold",
+      "copy": "Keep deployment and invitations closed after the decision."
+    }
+  ],
+  "decisions": [
+    {
+      "label": "Evaluator",
+      "value": "Executable",
+      "reason": "Unsafe and incomplete inputs are rejected deterministically."
+    },
+    {
+      "label": "Current authorization",
+      "value": "Pending",
+      "reason": "Required real-world inputs remain absent."
+    },
+    {
+      "label": "Deployment",
+      "value": "None",
+      "reason": "This record cannot create infrastructure."
+    },
+    {
+      "label": "External participants",
+      "value": "0",
+      "reason": "Invitation issuance is forbidden."
+    }
+  ],
+  "metrics": [
+    {
+      "label": "Evidence rules",
+      "value": "13"
+    },
+    {
+      "label": "Providers selected",
+      "value": "0"
+    },
+    {
+      "label": "Deployments",
+      "value": "0"
+    },
+    {
+      "label": "Invitations",
+      "value": "0"
+    }
+  ],
+  "locks": [
+    {
+      "title": "Deployment lock",
+      "decision": "Closed",
+      "copy": "No provider endpoint, domain, runtime, or credential is active."
+    },
+    {
+      "title": "Identity lock",
+      "decision": "Closed",
+      "copy": "The claim contract does not authenticate a real reviewer."
+    },
+    {
+      "title": "Storage lock",
+      "decision": "Closed",
+      "copy": "Ledger semantics are verified without a connected durable provider."
+    },
+    {
+      "title": "Invitation lock",
+      "decision": "Closed",
+      "copy": "No invitation token, participant, or external session exists."
+    },
+    {
+      "title": "Public launch lock",
+      "decision": "Closed",
+      "copy": "Implementation readiness cannot activate a public service."
+    }
+  ],
+  "packet": "VedaPath Pilot Infrastructure Authorization Record\nEvaluator: executable\nProvider: unselected\nRegion: unselected\nBudget cap: pending\nShutdown owner: unassigned\nIncident owner: unassigned\nSecurity, privacy, rights, identity, storage, recovery: pending real-stack evidence\nAuthorization: pending\nDeployment: none\nInvitations: 0\nPublic launch: blocked",
+  "primary_action": {
+    "href": "deploymentmanifestcontract.html",
+    "label": "Open Deployment Contract"
+  },
+  "schema": "vedapath.pilot-infrastructure-authorization-record.v1",
+  "decision": "pending-real-inputs",
+  "evaluator": "scripts/vedapath-infrastructure-authorization.mjs",
+  "required_evidence_count": 13,
+  "provider_selected": false,
+  "region_selected": false,
+  "privately_authorized": false,
+  "deployment_activated": false,
+  "invitations_issued": 0,
+  "external_participants": 0,
+  "write_routes": [],
+  "public_launch": "blocked",
+  "next_release": "v4.9.8 Deployment Manifest Contract"
+}

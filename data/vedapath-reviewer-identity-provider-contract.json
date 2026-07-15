@@ -1,0 +1,141 @@
+{
+  "release": "v4.9.9",
+  "position": "Verify a provider contract without pretending an identity provider is connected",
+  "headline": "Only short-lived pseudonymous AAL2 sessions can reach a bounded reviewer capability.",
+  "copy": "The contract defines the claims and capability policy a future identity provider must satisfy. It does not authenticate a real person or create an account.",
+  "postures": [
+    {
+      "title": "Issuer and audience",
+      "decision": "Required",
+      "copy": "Claims must be bound to one reviewed provider and VedaPath audience."
+    },
+    {
+      "title": "Assurance",
+      "decision": "AAL2",
+      "copy": "One-hour maximum sessions and revocation are mandatory."
+    },
+    {
+      "title": "Reviewer roles",
+      "decision": "Bounded",
+      "copy": "Four roles map only to review capabilities."
+    },
+    {
+      "title": "Identity provider",
+      "decision": "Unconnected",
+      "copy": "The validator is a contract, not live authentication."
+    }
+  ],
+  "flow": [
+    {
+      "title": "Verify",
+      "copy": "Check issuer, audience, subject, time, assurance, and revocation."
+    },
+    {
+      "title": "Map",
+      "copy": "Translate accepted roles into narrow capabilities."
+    },
+    {
+      "title": "Authorize",
+      "copy": "Allow only an explicitly mapped review operation."
+    },
+    {
+      "title": "Deny",
+      "copy": "Keep publication, invitation, activation, and launch locked."
+    }
+  ],
+  "decisions": [
+    {
+      "label": "Claims contract",
+      "value": "Executable",
+      "reason": "Unsafe and identifying claims are rejected."
+    },
+    {
+      "label": "Session lifetime",
+      "value": "60 minutes maximum",
+      "reason": "Long-lived reviewer access is refused."
+    },
+    {
+      "label": "Production authentication",
+      "value": "Absent",
+      "reason": "No live issuer or account is connected."
+    },
+    {
+      "label": "Launch capabilities",
+      "value": "Always denied",
+      "reason": "Roles cannot cross the pilot boundary."
+    }
+  ],
+  "metrics": [
+    {
+      "label": "Reviewer roles",
+      "value": "4"
+    },
+    {
+      "label": "Permanent locks",
+      "value": "5"
+    },
+    {
+      "label": "Live accounts",
+      "value": "0"
+    },
+    {
+      "label": "Invitations",
+      "value": "0"
+    }
+  ],
+  "locks": [
+    {
+      "title": "Deployment lock",
+      "decision": "Closed",
+      "copy": "No provider endpoint, domain, runtime, or credential is active."
+    },
+    {
+      "title": "Identity lock",
+      "decision": "Closed",
+      "copy": "The claim contract does not authenticate a real reviewer."
+    },
+    {
+      "title": "Storage lock",
+      "decision": "Closed",
+      "copy": "Ledger semantics are verified without a connected durable provider."
+    },
+    {
+      "title": "Invitation lock",
+      "decision": "Closed",
+      "copy": "No invitation token, participant, or external session exists."
+    },
+    {
+      "title": "Public launch lock",
+      "decision": "Closed",
+      "copy": "Implementation readiness cannot activate a public service."
+    }
+  ],
+  "packet": "VedaPath Reviewer Identity Provider Contract\nProtocol shape: OIDC-style claims\nSubject: pseudonymous reviewer id\nAssurance: AAL2 required\nLifetime: 60 minutes maximum\nRevocation: required\nDirect identity claims: rejected\nRoles: observer, source reviewer, rights reviewer, release reviewer\nPublish, merge, invite, activate, public launch: always denied\nIdentity provider connected: false",
+  "primary_action": {
+    "href": "durablequeuemigrationpack.html",
+    "label": "Open Queue Migration"
+  },
+  "schema": "vedapath.reviewer-identity-provider-contract.v1",
+  "validator": "scripts/vedapath-reviewer-identity-contract.mjs",
+  "assurance": "aal2",
+  "maximum_lifetime_seconds": 3600,
+  "direct_identity_claims_allowed": false,
+  "roles": [
+    "observer",
+    "source-reviewer",
+    "rights-reviewer",
+    "release-reviewer"
+  ],
+  "permanently_denied": [
+    "publish-source",
+    "merge-registry",
+    "issue-invite",
+    "activate-pilot",
+    "public-launch"
+  ],
+  "identity_provider_connected": false,
+  "live_accounts": 0,
+  "production_allowed": false,
+  "public_launch": "blocked",
+  "next_release": "v5.0.0 Durable Queue Migration Pack"
+}

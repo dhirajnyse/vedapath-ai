@@ -1,3 +1,43 @@
+## v5.0.1 Private Pilot Readiness Control Room
+
+A single readiness control now assembles authorization, deployment-manifest, reviewer-identity, durable-queue, security, privacy, rights, and recovery evidence into one deterministic decision without converting readiness into activation.
+
+- Open: [Private Pilot Readiness Control Room](privatepilotreadinesscontrolroom.html)
+- Data: `data/vedapath-private-pilot-readiness-control-room.json`
+- Boundary: Private-pilot implementation evidence only; no provider account, credentials, endpoint, live identity provider, durable database, licensed corpus delivery, live AI generation, payments, external invitations, public launch, or medical, legal, ritual, or spiritual authority.
+
+## v5.0.0 Durable Queue Migration Pack
+
+A hash-chained append-only ledger now verifies event order, expected record versions, retry idempotency, role-bounded transitions, replay recovery, immutable publication locks, and tamper detection before a database provider is connected.
+
+- Open: [Durable Queue Migration Pack](durablequeuemigrationpack.html)
+- Data: `data/vedapath-durable-queue-migration-pack.json`
+- Boundary: Private-pilot implementation evidence only; no provider account, credentials, endpoint, live identity provider, durable database, licensed corpus delivery, live AI generation, payments, external invitations, public launch, or medical, legal, ritual, or spiritual authority.
+
+## v4.9.9 Reviewer Identity Provider Contract
+
+An OIDC-style claim validator now checks issuer, audience, pseudonymous subject, one-hour expiry, AAL2 assurance, bounded roles, revocation, and direct-identity exclusion before any reviewer capability is returned.
+
+- Open: [Reviewer Identity Provider Contract](revieweridentityprovidercontract.html)
+- Data: `data/vedapath-reviewer-identity-provider-contract.json`
+- Boundary: Private-pilot implementation evidence only; no provider account, credentials, endpoint, live identity provider, durable database, licensed corpus delivery, live AI generation, payments, external invitations, public launch, or medical, legal, ritual, or spiritual authority.
+
+## v4.9.8 Deployment Manifest Contract
+
+A provider-neutral manifest now enforces a Web-standard runtime, private invitation-only access, aggregate redacted telemetry, named secret references, strict request limits, zero writes, a shutdown owner, and dry-run-only posture.
+
+- Open: [Deployment Manifest Contract](deploymentmanifestcontract.html)
+- Data: `data/vedapath-deployment-manifest-contract.json`
+- Boundary: Private-pilot implementation evidence only; no provider account, credentials, endpoint, live identity provider, durable database, licensed corpus delivery, live AI generation, payments, external invitations, public launch, or medical, legal, ritual, or spiritual authority.
+
+## v4.9.7 Pilot Infrastructure Authorization Record
+
+A deterministic evaluator now requires a provider, region, budget cap, owners, private access, managed secrets, reviewer identity, durable queue, privacy, rights, and recovery evidence before a founder decision can authorize implementation work.
+
+- Open: [Pilot Infrastructure Authorization Record](pilotinfrastructureauthorization.html)
+- Data: `data/vedapath-pilot-infrastructure-authorization.json`
+- Boundary: Private-pilot implementation evidence only; no provider account, credentials, endpoint, live identity provider, durable database, licensed corpus delivery, live AI generation, payments, external invitations, public launch, or medical, legal, ritual, or spiritual authority.
+
 ## v4.9.6 Invitation-Only Pilot Activation Gate
 
 One final gate now assembles provider criteria, safe configuration, reviewer sessions, queue persistence semantics, source controls, and launch locks into an honest invitation-only decision without creating credentials, participants, or public access.

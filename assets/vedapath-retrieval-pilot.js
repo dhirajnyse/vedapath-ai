@@ -34,6 +34,44 @@
     }).join("") + '</div>';
   }
 
+  async function copyText(text) {
+    if (navigator.clipboard && window.isSecureContext) {
+      try {
+        await navigator.clipboard.writeText(text);
+        return true;
+      } catch (_) {
+        // Fall through so local HTTP demos still have a copy path.
+      }
+    }
+
+    const textarea = document.createElement("textarea");
+    textarea.value = text;
+    textarea.setAttribute("readonly", "");
+    textarea.style.position = "fixed";
+    textarea.style.inset = "0 auto auto -9999px";
+    document.body.appendChild(textarea);
+    textarea.select();
+
+    let copied = false;
+    try {
+      copied = document.execCommand("copy");
+    } finally {
+      textarea.remove();
+    }
+    return copied;
+  }
+
+  function showCopyResult(button, copied) {
+    const originalLabel = button.getAttribute("data-label") || button.textContent;
+    button.setAttribute("data-label", originalLabel);
+    button.textContent = copied ? "Copied" : "Press Ctrl+C";
+    button.setAttribute("aria-label", copied ? "Gate packet copied" : "Gate packet selected; press Control C to copy");
+    window.setTimeout(function () {
+      button.textContent = originalLabel;
+      button.setAttribute("aria-label", originalLabel);
+    }, 1800);
+  }
+
   function recordCard(record) {
     return '<article class="rp-record" data-record-id="' + escapeHtml(record.id) + '">' +
       '<div class="rp-record-meta">' +
@@ -261,10 +299,16 @@
     })
     .then(function (data) {
       renderers[app.getAttribute("data-kind")](data);
-      app.addEventListener("click", function (event) {
-        if (!event.target.matches("[data-copy-packet]")) return;
-        const text = app.querySelector("textarea")?.value || "";
-        navigator.clipboard?.writeText(text);
+      const button = app.querySelector("[data-copy-packet]");
+      button?.addEventListener("click", async function () {
+        const packet = app.querySelector("textarea");
+        const text = packet?.value || "";
+        const copied = text ? await copyText(text) : false;
+        if (!copied && packet) {
+          packet.focus();
+          packet.select();
+        }
+        showCopyResult(button, copied);
       });
     })
     .catch(function (error) {

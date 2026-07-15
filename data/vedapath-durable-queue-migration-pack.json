@@ -1,0 +1,131 @@
+{
+  "release": "v5.0.0",
+  "position": "Migration semantics are executable; the durable provider is still a future connection",
+  "headline": "Every accepted queue event is ordered, hashed, replayable, and still unable to publish.",
+  "copy": "The ledger makes concurrency, retries, audit continuity, recovery, and tamper evidence testable without claiming that browser or process memory is production storage.",
+  "postures": [
+    {
+      "title": "Event chain",
+      "decision": "Verified",
+      "copy": "Every event carries its sequence, previous hash, and canonical hash."
+    },
+    {
+      "title": "Retry safety",
+      "decision": "Verified",
+      "copy": "Idempotency keys return the first accepted receipt."
+    },
+    {
+      "title": "Recovery replay",
+      "decision": "Verified",
+      "copy": "A valid chain reconstructs the queue state deterministically."
+    },
+    {
+      "title": "Durable provider",
+      "decision": "Unconnected",
+      "copy": "No production database or migration has run."
+    }
+  ],
+  "flow": [
+    {
+      "title": "Seed",
+      "copy": "Start from versioned, publication-blocked records."
+    },
+    {
+      "title": "Append",
+      "copy": "Check role, action, version, and idempotency before hashing."
+    },
+    {
+      "title": "Verify",
+      "copy": "Detect sequence, previous-hash, content, or head tampering."
+    },
+    {
+      "title": "Replay",
+      "copy": "Rebuild state only from a valid append-only chain."
+    }
+  ],
+  "decisions": [
+    {
+      "label": "Ledger",
+      "value": "Executable",
+      "reason": "Hash-chain and replay semantics are testable."
+    },
+    {
+      "label": "Concurrency",
+      "value": "Optimistic",
+      "reason": "Every command names the expected record version."
+    },
+    {
+      "label": "Durable provider",
+      "value": "Not connected",
+      "reason": "No database choice is implied."
+    },
+    {
+      "label": "Publication",
+      "value": "Blocked",
+      "reason": "Every resulting record preserves the lock."
+    }
+  ],
+  "metrics": [
+    {
+      "label": "Allowed actions",
+      "value": "5"
+    },
+    {
+      "label": "Reviewer roles",
+      "value": "3"
+    },
+    {
+      "label": "Hash",
+      "value": "SHA-256"
+    },
+    {
+      "label": "Durable stores",
+      "value": "0"
+    }
+  ],
+  "locks": [
+    {
+      "title": "Deployment lock",
+      "decision": "Closed",
+      "copy": "No provider endpoint, domain, runtime, or credential is active."
+    },
+    {
+      "title": "Identity lock",
+      "decision": "Closed",
+      "copy": "The claim contract does not authenticate a real reviewer."
+    },
+    {
+      "title": "Storage lock",
+      "decision": "Closed",
+      "copy": "Ledger semantics are verified without a connected durable provider."
+    },
+    {
+      "title": "Invitation lock",
+      "decision": "Closed",
+      "copy": "No invitation token, participant, or external session exists."
+    },
+    {
+      "title": "Public launch lock",
+      "decision": "Closed",
+      "copy": "Implementation readiness cannot activate a public service."
+    }
+  ],
+  "packet": "VedaPath Durable Queue Migration Pack\nEvent model: append-only\nHash chain: SHA-256 canonical event content\nConcurrency: expected record version\nRetry safety: idempotency key\nRecovery: verified deterministic replay\nPublication: blocked\nRegistry merge: manual only\nDurable provider: not connected\nProduction migration run: false",
+  "primary_action": {
+    "href": "privatepilotreadinesscontrolroom.html",
+    "label": "Open Readiness Control"
+  },
+  "schema": "vedapath.durable-queue-migration-pack.v1",
+  "ledger": "scripts/vedapath-durable-queue-ledger.mjs",
+  "hash": "sha256",
+  "append_only": true,
+  "optimistic_concurrency": true,
+  "idempotent_events": true,
+  "replay_verified": true,
+  "durable_provider_connected": false,
+  "production_migration_run": false,
+  "publication": "blocked",
+  "registry_merge": "manual-only",
+  "public_launch": "blocked",
+  "next_release": "v5.0.1 Private Pilot Readiness Control Room"
+}
