@@ -214,12 +214,12 @@ function finalChecks() {
   for (const label of ["Spike Review", "API Reliability", "Source Registry", "Ask Demo", "Path Readiness"]) {
     assert(shell.includes(label), "command shell missing " + label);
   }
-  assert(/const releaseBadge = "(?:v4\.8\.6 hosted gate|v4\.9\.1 controlled pilot)";/.test(shell), "command shell compatible badge");
+  assert(/const releaseBadge = "(?:v4\.8\.6 hosted gate|v4\.9\.1 controlled pilot|v4\.9\.6 pilot implementation gate)";/.test(shell), "command shell compatible badge");
   const staticLinks = text("scripts/check-static-links.mjs");
   for (const files of Object.values(releaseFiles)) {
     assert(staticLinks.includes(files.page), "static links missing " + files.page);
   }
-  assert(/<strong>v4\.(?:8\.6|9\.1)<\/strong>/.test(text("build-status.html")), "build status compatible current version");
+  assert(/<strong>v4\.(?:8\.6|9\.(?:1|6))<\/strong>/.test(text("build-status.html")), "build status compatible current version");
   assert(text("README.md").includes("## v4.8.1 Source Path Readiness Console"), "README final release");
   assert(text("CHANGELOG.md").includes("## v4.8.1 Source Path Readiness Console"), "changelog final release");
 }

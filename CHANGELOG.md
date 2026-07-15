@@ -1,3 +1,37 @@
+## v4.9.6 Invitation-Only Pilot Activation Gate
+
+- Changes made: Adds the pilot implementation evidence gate, dependency matrix, explicit activation prerequisites, shared navigation group, final build status, and one regression suite proving all five releases while every launch path remains closed.
+- Files changed: `invitationonlypilotgate.html`, `data/vedapath-invitation-only-pilot-gate.json`, `docs/INVITATION_ONLY_PILOT_ACTIVATION_GATE.md`, `scripts/check-v492-v496-pilot-implementation-foundation.mjs`, `assets/vedapath-command-shell.js`, `scripts/check-static-links.mjs`, `build-status.html`, `README.md`, `CHANGELOG.md`.
+- Checks run: batch checker through v4.9.6; all prior backend, source-path, private-demo, and hosted-pilot regressions; static links; local HTTP smoke; desktop and mobile visual QA; session and queue interaction QA; GitHub Pages verification.
+- Known risks: Pilot implementation reference only; no provider deployment, real identity provider, production secrets, durable database, licensed corpus delivery, live AI generation, payments, external invitations, public launch, or medical, legal, ritual, or spiritual authority.
+
+## v4.9.5 Rights Queue Persistence Contract
+
+- Changes made: Adds a provider-neutral queue repository, expected-version conflicts, idempotency keys, append-only audit events, immutable publication and registry locks, a functional browser simulator, and explicit no-database posture.
+- Files changed: `rightsqueuepersistencecontract.html`, `data/vedapath-rights-queue-persistence-contract.json`, `docs/RIGHTS_QUEUE_PERSISTENCE_CONTRACT.md`, `scripts/vedapath-rights-queue-repository.mjs`, `assets/vedapath-queue-persistence-simulator.js`, `assets/vedapath-demo-operations.css`.
+- Checks run: node --check scripts/vedapath-rights-queue-repository.mjs; node --check assets/vedapath-queue-persistence-simulator.js; successful transition, idempotent replay, stale conflict, denied role, immutable input, audit, publication, and registry-lock assertions; batch checker through v4.9.5; browser interaction QA.
+- Known risks: Pilot implementation reference only; no provider deployment, real identity provider, production secrets, durable database, licensed corpus delivery, live AI generation, payments, external invitations, public launch, or medical, legal, ritual, or spiritual authority.
+
+## v4.9.4 Reviewer Session Security Spike
+
+- Changes made: Adds signed expiring reviewer sessions, pseudonymous subjects, one-hour maximum lifetime, signature verification, clock checks, caller-supplied revocation, role-bound authorization, and an accessible browser-state preview.
+- Files changed: `reviewersessionspike.html`, `data/vedapath-reviewer-session-spike.json`, `docs/REVIEWER_SESSION_SECURITY_SPIKE.md`, `scripts/vedapath-reviewer-session-spike.mjs`, `assets/vedapath-reviewer-session-simulator.js`, `assets/vedapath-demo-operations.css`.
+- Checks run: node --check scripts/vedapath-reviewer-session-spike.mjs; node --check assets/vedapath-reviewer-session-simulator.js; valid, expired, revoked, tampered, role-allowed, role-denied, lifetime, and production-lock assertions; batch checker through v4.9.4; browser interaction QA.
+- Known risks: Pilot implementation reference only; no provider deployment, real identity provider, production secrets, durable database, licensed corpus delivery, live AI generation, payments, external invitations, public launch, or medical, legal, ritual, or spiritual authority.
+
+## v4.9.3 Environment & Secret Contract
+
+- Changes made: Adds a pure environment validator, allowlisted configuration keys, reference-only secret handling, required pilot references, safe summaries, origin checks, and explicit deployment and write-route locks.
+- Files changed: `environmentsecretcontract.html`, `data/vedapath-environment-secret-contract.json`, `docs/ENVIRONMENT_SECRET_CONTRACT.md`, `scripts/vedapath-environment-secret-contract.mjs`.
+- Checks run: node --check scripts/vedapath-environment-secret-contract.mjs; valid pilot config; missing reference, literal secret, unknown key, HTTP origin, telemetry, write-route, and activation rejection assertions; no-secret serialization scan; batch checker through v4.9.3.
+- Known risks: Pilot implementation reference only; no provider deployment, real identity provider, production secrets, durable database, licensed corpus delivery, live AI generation, payments, external invitations, public launch, or medical, legal, ritual, or spiritual authority.
+
+## v4.9.2 Provider & Region Decision Packet
+
+- Changes made: Adds an executable provider-readiness evaluator, eight acceptance criteria, region and logging posture, budget and owner gates, a founder decision packet, and an explicit zero-deployment result.
+- Files changed: `providerregiondecision.html`, `data/vedapath-provider-region-decision.json`, `docs/PROVIDER_REGION_DECISION_PACKET.md`, `scripts/vedapath-provider-region-decision.mjs`.
+- Checks run: node --check scripts/vedapath-provider-region-decision.mjs; complete and incomplete provider candidate assertions; label sanitization; deployment and write-lock assertions; batch checker through v4.9.2.
+- Known risks: Pilot implementation reference only; no provider deployment, real identity provider, production secrets, durable database, licensed corpus delivery, live AI generation, payments, external invitations, public launch, or medical, legal, ritual, or spiritual authority.
 ## v4.9.1 Controlled External Pilot Gate
 
 - Changes made: Adds a controlled external-pilot evidence gate, dependency and lock matrix, launch decision language, shared navigation cleanup, build status update, and one batch regression that proves every new contract while keeping deployment and public launch closed.

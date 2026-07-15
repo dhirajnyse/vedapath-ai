@@ -168,10 +168,10 @@ async function v486Checks() {
   for (const label of ["Demo Runbook", "Observations", "Rights Intake", "Security Review", "Hosted Gate"]) {
     assert(shell.includes(label), "command shell missing " + label);
   }
-  assert(/const releaseBadge = "(?:v4\.8\.6 hosted gate|v4\.9\.1 controlled pilot)";/.test(shell), "compatible release badge");
+  assert(/const releaseBadge = "(?:v4\.8\.6 hosted gate|v4\.9\.1 controlled pilot|v4\.9\.6 pilot implementation gate)";/.test(shell), "compatible release badge");
   const links = text("scripts/check-static-links.mjs");
   for (const files of Object.values(releaseFiles)) assert(links.includes(files[0]), "static links missing " + files[0]);
-  assert(/<strong>v4\.(?:8\.6|9\.1)<\/strong>/.test(text("build-status.html")), "build status current version");
+  assert(/<strong>v4\.(?:8\.6|9\.(?:1|6))<\/strong>/.test(text("build-status.html")), "build status current version");
   assert(text("CHANGELOG.md").includes("## v4.8.6 Hosted Backend Decision Gate"), "changelog final version");
   assert(text("README.md").includes("## v4.8.6 Hosted Backend Decision Gate"), "README final version");
 

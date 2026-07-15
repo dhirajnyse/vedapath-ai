@@ -1,5 +1,5 @@
 (function () {
-  const releaseBadge = "v4.9.1 controlled pilot";
+  const releaseBadge = "v4.9.6 pilot implementation gate";
   const prefKey = "vedapathCommandShellPrefs";
   const groups = [
     { title: "Start", labels: ["Home", "Build", "Brand", "Blueprint"] },
@@ -18,6 +18,7 @@
     { title: "Source Path", labels: ["Spike Review", "API Reliability", "Source Registry", "Path Readiness"] },
     { title: "Private Demo", labels: ["Demo Runbook", "Observations", "Rights Intake", "Security Review", "Hosted Gate"] },
     { title: "Hosted Pilot", labels: ["Hosted API", "Request Guard", "Reviewer Roles", "Rights Queue", "Pilot Gate"] },
+    { title: "Pilot Implementation", labels: ["Provider Packet", "Environment", "Reviewer Session", "Queue Contract", "Activation Gate"] },
   ];
   const pageTitles = {
     Home: "VedaPath command center",
@@ -113,7 +114,12 @@
     "Request Guard": "Rate Limit & Privacy-Safe Monitoring",
     "Reviewer Roles": "Reviewer Identity & Role Prototype",
     "Rights Queue": "Rights Operations Queue",
-    "Pilot Gate": "Controlled External Pilot Gate"
+    "Pilot Gate": "Controlled External Pilot Gate",
+    "Provider Packet": "Provider & Region Decision Packet",
+    "Environment": "Environment & Secret Contract",
+    "Reviewer Session": "Reviewer Session Security Spike",
+    "Queue Contract": "Rights Queue Persistence Contract",
+    "Activation Gate": "Invitation-Only Pilot Activation Gate"
   };
   const bodyPageTitles = {
     "permission-execution-draft-page": "Controlled draft gate",
@@ -202,7 +208,12 @@
     "rate-limit-monitoring-contract-page": "Rate Limit & Privacy-Safe Monitoring",
     "reviewer-identity-role-prototype-page": "Reviewer Identity & Role Prototype",
     "rights-operations-queue-page": "Rights Operations Queue",
-    "controlled-external-pilot-gate-page": "Controlled External Pilot Gate"
+    "controlled-external-pilot-gate-page": "Controlled External Pilot Gate",
+    "provider-region-decision-page": "Provider & Region Decision Packet",
+    "environment-secret-contract-page": "Environment & Secret Contract",
+    "reviewer-session-security-spike-page": "Reviewer Session Security Spike",
+    "rights-queue-persistence-contract-page": "Rights Queue Persistence Contract",
+    "invitation-only-pilot-activation-gate-page": "Invitation-Only Pilot Activation Gate"
   };
 
 
@@ -256,7 +267,12 @@
     ["Request Guard", "ratelimitprivacymonitoring.html"],
     ["Reviewer Roles", "revieweridentityroles.html"],
     ["Rights Queue", "rightsoperationsqueue.html"],
-    ["Pilot Gate", "controlledexternalpilotgate.html"]
+    ["Pilot Gate", "controlledexternalpilotgate.html"],
+    ["Provider Packet", "providerregiondecision.html"],
+    ["Environment", "environmentsecretcontract.html"],
+    ["Reviewer Session", "reviewersessionspike.html"],
+    ["Queue Contract", "rightsqueuepersistencecontract.html"],
+    ["Activation Gate", "invitationonlypilotgate.html"]
   ];
 
   function safeParse(value, fallback) {

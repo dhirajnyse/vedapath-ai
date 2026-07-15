@@ -1,0 +1,136 @@
+{
+  "release": "v4.9.2",
+  "position": "Decide the operational shape, not a marketing preference",
+  "headline": "A provider candidate must pass every safety and operating criterion before credentials exist.",
+  "copy": "The smallest first slice is a standards-based, read-only Web runtime in one documented region with private access, redacted logging, a spend cap, and one shutdown owner.",
+  "postures": [
+    {
+      "title": "Runtime",
+      "decision": "Review",
+      "copy": "Confirm compatibility with the existing Web Request/Response adapter."
+    },
+    {
+      "title": "Region",
+      "decision": "Review",
+      "copy": "Document request, log, and temporary runtime data location."
+    },
+    {
+      "title": "Operations",
+      "decision": "Review",
+      "copy": "Name the incident owner, shutdown route, and budget ceiling."
+    },
+    {
+      "title": "Deployment",
+      "decision": "Blocked",
+      "copy": "No endpoint can be activated by this packet."
+    }
+  ],
+  "flow": [
+    {
+      "title": "Shape",
+      "copy": "Require a portable read-only Web runtime."
+    },
+    {
+      "title": "Locate",
+      "copy": "Document one region and its data boundary."
+    },
+    {
+      "title": "Guard",
+      "copy": "Require private access, redaction, and spend controls."
+    },
+    {
+      "title": "Decide",
+      "copy": "Send a complete candidate to founder review only."
+    }
+  ],
+  "decisions": [
+    {
+      "label": "Runtime",
+      "value": "Edge or serverless Web",
+      "reason": "Matches the adapter without a provider-specific rewrite."
+    },
+    {
+      "label": "Write routes",
+      "value": "0",
+      "reason": "The first provider slice remains read-only."
+    },
+    {
+      "label": "Provider",
+      "value": "Unselected",
+      "reason": "No vendor is approved by this release."
+    },
+    {
+      "label": "Deployment",
+      "value": "Not activated",
+      "reason": "Credentials and endpoints remain absent."
+    }
+  ],
+  "metrics": [
+    {
+      "label": "Criteria",
+      "value": "8"
+    },
+    {
+      "label": "Required",
+      "value": "8/8"
+    },
+    {
+      "label": "Credentials",
+      "value": "0"
+    },
+    {
+      "label": "Deployments",
+      "value": "0"
+    }
+  ],
+  "locks": [
+    {
+      "title": "Deployment lock",
+      "decision": "Closed",
+      "copy": "No provider endpoint, domain, runtime, or credential has been activated."
+    },
+    {
+      "title": "Identity lock",
+      "decision": "Closed",
+      "copy": "Signed test sessions do not authenticate a real reviewer."
+    },
+    {
+      "title": "Storage lock",
+      "decision": "Closed",
+      "copy": "The queue repository is a reference implementation, not a connected durable store."
+    },
+    {
+      "title": "Rights lock",
+      "decision": "Closed",
+      "copy": "Evidence-ready candidates remain blocked from publication and registry merge."
+    },
+    {
+      "title": "Launch lock",
+      "decision": "Closed",
+      "copy": "Readiness evidence cannot activate invitations or a public service."
+    }
+  ],
+  "packet": "VedaPath Provider & Region Decision Packet\nRuntime: standards-based Web Request/Response\nAccess: private preview required\nRegion: documented before implementation\nLogging: questions, tokens, IPs, referrers, and user agents excluded\nBudget: explicit cap and owner alert required\nWrite routes: 0\nDeployment: not activated\nDecision: complete the scorecard, then request founder review.",
+  "primary_action": {
+    "href": "environmentsecretcontract.html",
+    "label": "Open Environment Contract"
+  },
+  "schema": "vedapath.provider-region-decision.v1",
+  "decision": "criteria-defined-provider-unselected",
+  "criteria": [
+    "request_response_compatible",
+    "private_access_available",
+    "region_controls_documented",
+    "secret_management_available",
+    "logging_redaction_confirmed",
+    "spend_cap_set",
+    "owner_named",
+    "zero_write_routes"
+  ],
+  "provider_selected": false,
+  "region_selected": false,
+  "credentials_attached": false,
+  "deployment_activated": false,
+  "write_routes": [],
+  "public_launch": "blocked"
+}

@@ -1,0 +1,134 @@
+{
+  "release": "v4.9.6",
+  "position": "Ready to authorize infrastructure work, not ready to invite users",
+  "headline": "Five implementation contracts now agree on the same locked pilot boundary.",
+  "copy": "The provider packet, environment validator, test session envelope, and queue repository define the smallest implementation path. Real provider credentials, identity, durable storage, security review, rights approval, and founder authorization are still required.",
+  "postures": [
+    {
+      "title": "Provider contract",
+      "decision": "Ready",
+      "copy": "Criteria and region questions are explicit; provider remains unselected."
+    },
+    {
+      "title": "Environment contract",
+      "decision": "Ready",
+      "copy": "Only safe references and zero-write configuration are accepted."
+    },
+    {
+      "title": "Reviewer and queue",
+      "decision": "Prototype",
+      "copy": "Security and persistence semantics are testable but not connected."
+    },
+    {
+      "title": "Activation",
+      "decision": "Blocked",
+      "copy": "No invitation, endpoint, or public launch exists."
+    }
+  ],
+  "flow": [
+    {
+      "title": "Authorize",
+      "copy": "Founder approves the smallest infrastructure slice."
+    },
+    {
+      "title": "Implement",
+      "copy": "Connect provider, identity, secrets, and durable storage privately."
+    },
+    {
+      "title": "Audit",
+      "copy": "Repeat security, rights, privacy, and failure-mode checks."
+    },
+    {
+      "title": "Invite",
+      "copy": "Open a named invitation only after every prerequisite passes."
+    }
+  ],
+  "decisions": [
+    {
+      "label": "Implementation packet",
+      "value": "Ready",
+      "reason": "Five contracts now define the same boundaries."
+    },
+    {
+      "label": "Provider credentials",
+      "value": "Absent",
+      "reason": "No provider account or secret has been connected."
+    },
+    {
+      "label": "External participants",
+      "value": "0",
+      "reason": "No invitation has been generated."
+    },
+    {
+      "label": "Pilot activation",
+      "value": "Blocked",
+      "reason": "Founder authorization and production controls are absent."
+    }
+  ],
+  "metrics": [
+    {
+      "label": "Contracts",
+      "value": "5/5"
+    },
+    {
+      "label": "Deployments",
+      "value": "0"
+    },
+    {
+      "label": "Participants",
+      "value": "0"
+    },
+    {
+      "label": "Write routes",
+      "value": "0"
+    }
+  ],
+  "locks": [
+    {
+      "title": "Deployment lock",
+      "decision": "Closed",
+      "copy": "No provider endpoint, domain, runtime, or credential has been activated."
+    },
+    {
+      "title": "Identity lock",
+      "decision": "Closed",
+      "copy": "Signed test sessions do not authenticate a real reviewer."
+    },
+    {
+      "title": "Storage lock",
+      "decision": "Closed",
+      "copy": "The queue repository is a reference implementation, not a connected durable store."
+    },
+    {
+      "title": "Rights lock",
+      "decision": "Closed",
+      "copy": "Evidence-ready candidates remain blocked from publication and registry merge."
+    },
+    {
+      "title": "Launch lock",
+      "decision": "Closed",
+      "copy": "Readiness evidence cannot activate invitations or a public service."
+    }
+  ],
+  "packet": "VedaPath Invitation-Only Pilot Activation Gate\nProvider criteria: defined, provider unselected\nEnvironment contract: validated, secrets absent\nReviewer session: cryptographic spike only, IdP unconnected\nQueue persistence: semantics proven, durable store unconnected\nRights publication: blocked\nExternal participants: 0\nPilot activated: false\nPublic launch: blocked\nDecision: ready for founder authorization of a private infrastructure implementation, not a user launch.",
+  "primary_action": {
+    "href": "build-status.html",
+    "label": "Open Build Status"
+  },
+  "schema": "vedapath.invitation-only-pilot-gate.v1",
+  "decision": "ready-for-infrastructure-authorization-not-activated",
+  "provider_selected": false,
+  "credentials_attached": false,
+  "identity_provider_connected": false,
+  "durable_store_connected": false,
+  "security_review_complete": false,
+  "rights_approval_complete": false,
+  "founder_activation_authorized": false,
+  "activated": false,
+  "invitations_issued": 0,
+  "external_participants": 0,
+  "deployment": "none",
+  "write_routes": [],
+  "public_launch": "blocked",
+  "next_release": "v4.9.7 Pilot Infrastructure Authorization"
+}

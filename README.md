@@ -1,3 +1,42 @@
+## v4.9.6 Invitation-Only Pilot Activation Gate
+
+One final gate now assembles provider criteria, safe configuration, reviewer sessions, queue persistence semantics, source controls, and launch locks into an honest invitation-only decision without creating credentials, participants, or public access.
+
+- Open: [Invitation-Only Pilot Activation Gate](invitationonlypilotgate.html)
+- Data: `data/vedapath-invitation-only-pilot-gate.json`
+- Boundary: Pilot implementation reference only; no provider deployment, real identity provider, production secrets, durable database, licensed corpus delivery, live AI generation, payments, external invitations, public launch, or medical, legal, ritual, or spiritual authority.
+
+## v4.9.5 Rights Queue Persistence Contract
+
+A reference repository now proves optimistic concurrency, idempotent event replay, role-aware transitions, append-only audit history, and immutable publication locks without pretending page memory is durable storage.
+
+- Open: [Rights Queue Persistence Contract](rightsqueuepersistencecontract.html)
+- Data: `data/vedapath-rights-queue-persistence-contract.json`
+- Boundary: Pilot implementation reference only; no provider deployment, real identity provider, production secrets, durable database, licensed corpus delivery, live AI generation, payments, external invitations, public launch, or medical, legal, ritual, or spiritual authority.
+
+## v4.9.4 Reviewer Session Security Spike
+
+A server-side HMAC test envelope now binds pseudonymous reviewer subjects to short-lived roles, rejects tampering, expiry, and revocation, and still reports identity-provider verified and production allowed as false.
+
+- Open: [Reviewer Session Security Spike](reviewersessionspike.html)
+- Data: `data/vedapath-reviewer-session-spike.json`
+- Boundary: Pilot implementation reference only; no provider deployment, real identity provider, production secrets, durable database, licensed corpus delivery, live AI generation, payments, external invitations, public launch, or medical, legal, ritual, or spiritual authority.
+
+## v4.9.3 Environment & Secret Contract
+
+A strict local, preview, and pilot configuration contract now validates HTTPS origins, secret references, privacy-safe telemetry, zero write routes, and inactive deployment while refusing unknown or value-bearing keys.
+
+- Open: [Environment & Secret Contract](environmentsecretcontract.html)
+- Data: `data/vedapath-environment-secret-contract.json`
+- Boundary: Pilot implementation reference only; no provider deployment, real identity provider, production secrets, durable database, licensed corpus delivery, live AI generation, payments, external invitations, public launch, or medical, legal, ritual, or spiritual authority.
+
+## v4.9.2 Provider & Region Decision Packet
+
+A scored provider and region packet now makes runtime compatibility, private access, data location, redacted logging, spend limits, ownership, and zero-write posture visible without activating infrastructure.
+
+- Open: [Provider & Region Decision Packet](providerregiondecision.html)
+- Data: `data/vedapath-provider-region-decision.json`
+- Boundary: Pilot implementation reference only; no provider deployment, real identity provider, production secrets, durable database, licensed corpus delivery, live AI generation, payments, external invitations, public launch, or medical, legal, ritual, or spiritual authority.
 ## v4.9.1 Controlled External Pilot Gate
 
 The final gate assembles hosted adapter, request protection, reviewer roles, rights operations, source quality, and privacy evidence into one conditional decision: implementation-ready, not activated.

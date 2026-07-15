@@ -91,7 +91,12 @@ const pages = [
   "ratelimitprivacymonitoring.html",
   "revieweridentityroles.html",
   "rightsoperationsqueue.html",
-  "controlledexternalpilotgate.html"
+  "controlledexternalpilotgate.html",
+  "providerregiondecision.html",
+  "environmentsecretcontract.html",
+  "reviewersessionspike.html",
+  "rightsqueuepersistencecontract.html",
+  "invitationonlypilotgate.html"
 ];
 
 const missing = [];

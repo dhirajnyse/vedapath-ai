@@ -1,0 +1,97 @@
+{
+  "release": "v4.9.4",
+  "schema": "vedapath.reviewer-session-spike.v1",
+  "identity_provider": "not-connected",
+  "signing": "server-side-HMAC-test-only",
+  "maximum_lifetime_seconds": 3600,
+  "production_allowed": false,
+  "public_launch": "blocked",
+  "session_preview": {
+    "roles": [
+      {
+        "id": "observer",
+        "label": "Observer",
+        "capabilities": [
+          "view-source",
+          "view-rights",
+          "copy-preview"
+        ]
+      },
+      {
+        "id": "source-reviewer",
+        "label": "Source reviewer",
+        "capabilities": [
+          "view-source",
+          "claim-source-work",
+          "route-source",
+          "hold-candidate",
+          "mark-source-evidence-ready"
+        ]
+      },
+      {
+        "id": "rights-reviewer",
+        "label": "Rights reviewer",
+        "capabilities": [
+          "view-rights",
+          "claim-rights-work",
+          "route-rights",
+          "hold-candidate",
+          "mark-rights-evidence-ready"
+        ]
+      },
+      {
+        "id": "release-reviewer",
+        "label": "Release reviewer",
+        "capabilities": [
+          "view-pilot-evidence",
+          "hold-candidate",
+          "recommend-pilot-decision"
+        ]
+      }
+    ],
+    "operations": [
+      {
+        "id": "view-source",
+        "label": "View source"
+      },
+      {
+        "id": "claim-source-work",
+        "label": "Claim source work"
+      },
+      {
+        "id": "claim-rights-work",
+        "label": "Claim rights work"
+      },
+      {
+        "id": "mark-rights-evidence-ready",
+        "label": "Mark rights evidence ready"
+      },
+      {
+        "id": "recommend-pilot-decision",
+        "label": "Recommend pilot decision"
+      },
+      {
+        "id": "publish-source",
+        "label": "Publish source (always locked)"
+      }
+    ],
+    "states": [
+      {
+        "id": "valid",
+        "label": "Valid test session",
+        "reason": "The session is inside its test lifetime."
+      },
+      {
+        "id": "expired",
+        "label": "Expired session",
+        "reason": "Expired sessions cannot carry a preview capability."
+      },
+      {
+        "id": "revoked",
+        "label": "Revoked session",
+        "reason": "Revoked sessions cannot carry a preview capability."
+      }
+    ]
+  },
+  "packet": "Reviewer Session Security Spike\nSigned envelope: HMAC test only\nSubject: pseudonymous reviewer-* id\nLifetime: 60 to 3600 seconds\nRevocation: checked before authorization\nRole: evaluated against bounded capability policy\nIdentity provider verified: false\nProduction allowed: false\nNext: replace the spike with a real identity provider only after security review."
+}

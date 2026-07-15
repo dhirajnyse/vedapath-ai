@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Reviewer Session Security Spike | VedaPath AI</title>
+  <link rel="icon" href="assets/vedapath-3d-logo-concept.png" />
+  <link rel="stylesheet" href="assets/vedapath-ui.css" />
+  <link rel="stylesheet" href="assets/vedapath-command-shell.css" />
+  <link rel="stylesheet" href="assets/vedapath-demo-operations.css" />
+</head>
+<body class="reviewer-session-security-spike-page">
+  <main class="workspace vp-ops-workspace" id="top" data-session-config="data/vedapath-reviewer-session-spike.json">
+    <header class="topbar">
+      <a class="brand" href="index.html#top" aria-label="Go to VedaPath AI home">
+        <img src="assets/vedapath-3d-logo-concept.png" alt="" />
+        <span><strong>VedaPath AI</strong><small>reviewer session security spike</small></span>
+      </a>
+      <nav class="navlinks nav" aria-label="Primary navigation">
+        <a class="link" href="index.html">Home</a>
+        <a class="link" href="build-status.html">Build</a>
+        <a class="link" href="brand/brand-board.html">Brand</a>
+        <a class="link" href="blueprint.html">Blueprint</a>
+        <a class="link" href="citedanswerlab.html">Answers</a>
+        <a class="link" href="reviewqueuepersistence.html">Review</a>
+        <a class="link" href="mantralenslab.html">Mantra</a>
+        <a class="link" href="lifecompanionlab.html">Life</a>
+        <a class="link" href="conversationcompanionlab.html">Talk</a>
+        <a class="link" href="patterncompanionlab.html">Pattern</a>
+        <a class="link" href="daily.html">Daily</a>
+        <a class="link" href="providerregiondecision.html">Provider Packet</a>
+        <a class="link" href="environmentsecretcontract.html">Environment</a>
+        <a class="link active" href="reviewersessionspike.html">Reviewer Session</a>
+        <a class="link" href="rightsqueuepersistencecontract.html">Queue Contract</a>
+        <a class="link" href="invitationonlypilotgate.html">Activation Gate</a>
+        <span class="version-pill">v4.9.6 pilot implementation gate</span>
+      </nav>
+    </header>
+    <section class="vp-ops-opening">
+      <div><span class="vp-ops-eyebrow">Expiring role-bound test sessions</span><h1>Prove expiry, revocation, signature, and role checks before choosing an identity provider.</h1><p>A server-side HMAC test envelope now binds pseudonymous reviewer subjects to short-lived roles, rejects tampering, expiry, and revocation, and still reports identity-provider verified and production allowed as false.</p></div>
+      <aside><strong>Cryptographic boundary</strong><span>The Node contract signs and verifies test envelopes. This browser view shows states only and never handles a signing secret.</span></aside>
+    </section>
+    <section class="vp-contract-grid" aria-label="Session contract summary"><article class="vp-contract-stat"><span>Maximum lifetime</span><strong>60 minutes</strong></article><article class="vp-contract-stat"><span>Subject</span><strong>Pseudonymous</strong></article><article class="vp-contract-stat"><span>Identity provider</span><strong>Not connected</strong></article><article class="vp-contract-stat"><span>Production access</span><strong>Always false</strong></article></section>
+    <section class="vp-ops-columns">
+      <form class="vp-ops-form" id="vpSessionForm"><div class="vp-ops-section-head"><div><span class="vp-ops-eyebrow">Session state preview</span><h2>Evaluate one bounded operation</h2></div><span>No token in browser</span></div><label for="vpSessionRole">Reviewer role</label><select id="vpSessionRole" required></select><label for="vpSessionOperation">Requested operation</label><select id="vpSessionOperation" required></select><label for="vpSessionState">Session state</label><select id="vpSessionState" required></select><div class="vp-ops-actions"><button class="vp-ops-primary" type="submit">Evaluate session</button><button class="vp-ops-quiet" type="button" id="vpResetSession">Reset</button></div><pre id="vpSessionResult" class="vp-ops-packet" hidden></pre><p class="vp-ops-status" id="vpSessionStatus" aria-live="polite">Loading session contract.</p></form>
+      <section class="vp-ops-output"><div class="vp-ops-section-head"><div><span class="vp-ops-eyebrow">Server-side checks</span><h2>What the executable spike proves</h2></div><span>Test only</span></div><ul class="vp-role-capabilities"><li>HMAC signature checked with timing-safe comparison.</li><li>Expiry and future issue times rejected.</li><li>Revoked session ids denied before authorization.</li><li>Role capabilities evaluated after session verification.</li><li>Identity-provider verified and production allowed stay false.</li></ul><div class="vp-ops-empty"><div><strong>Not an authentication system</strong><p>A real identity provider, secure cookies, CSRF controls, account lifecycle, MFA, recovery, and immutable audit are still required.</p></div></div></section>
+    </section>
+  </main>
+  <script src="assets/vedapath-command-shell.js"></script>
+  <script src="assets/vedapath-reviewer-session-simulator.js"></script>
+</body>
+</html>

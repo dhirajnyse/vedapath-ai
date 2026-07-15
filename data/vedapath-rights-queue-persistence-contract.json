@@ -1,0 +1,27 @@
+{
+  "release": "v4.9.5",
+  "schema": "vedapath.rights-queue-persistence-contract.v1",
+  "implementation": "provider-neutral-in-memory-reference",
+  "durable_provider": "not-connected",
+  "identity_provider": "not-connected",
+  "optimistic_concurrency": true,
+  "idempotent_events": true,
+  "publication": "blocked",
+  "registry_merge": "manual-only",
+  "public_launch": "blocked",
+  "persistence_preview": {
+    "seed_record": {
+      "id": "candidate-isha-01",
+      "citation": "Isha Upanishad 1",
+      "family": "Upanishad | Shruti",
+      "status": "new",
+      "rights_state": "citation-only",
+      "source_state": "draft",
+      "review_lane": "Source reviewer",
+      "version": 1,
+      "publication_state": "blocked",
+      "registry_merge": "manual-only"
+    }
+  },
+  "packet": "Rights Queue Persistence Contract\nConcurrency: expected record version\nRetry safety: idempotent event id\nAudit: append one event per accepted transition\nAuthorization: bounded reviewer role\nPublication: blocked\nRegistry merge: manual only\nDurable provider: not connected\nIdentity provider: not connected."
+}

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rights Queue Persistence Contract | VedaPath AI</title>
+  <link rel="icon" href="assets/vedapath-3d-logo-concept.png" />
+  <link rel="stylesheet" href="assets/vedapath-ui.css" />
+  <link rel="stylesheet" href="assets/vedapath-command-shell.css" />
+  <link rel="stylesheet" href="assets/vedapath-demo-operations.css" />
+</head>
+<body class="rights-queue-persistence-contract-page">
+  <main class="workspace vp-ops-workspace" id="top" data-queue-config="data/vedapath-rights-queue-persistence-contract.json">
+    <header class="topbar">
+      <a class="brand" href="index.html#top" aria-label="Go to VedaPath AI home">
+        <img src="assets/vedapath-3d-logo-concept.png" alt="" />
+        <span><strong>VedaPath AI</strong><small>rights queue persistence contract</small></span>
+      </a>
+      <nav class="navlinks nav" aria-label="Primary navigation">
+        <a class="link" href="index.html">Home</a>
+        <a class="link" href="build-status.html">Build</a>
+        <a class="link" href="brand/brand-board.html">Brand</a>
+        <a class="link" href="blueprint.html">Blueprint</a>
+        <a class="link" href="citedanswerlab.html">Answers</a>
+        <a class="link" href="reviewqueuepersistence.html">Review</a>
+        <a class="link" href="mantralenslab.html">Mantra</a>
+        <a class="link" href="lifecompanionlab.html">Life</a>
+        <a class="link" href="conversationcompanionlab.html">Talk</a>
+        <a class="link" href="patterncompanionlab.html">Pattern</a>
+        <a class="link" href="daily.html">Daily</a>
+        <a class="link" href="providerregiondecision.html">Provider Packet</a>
+        <a class="link" href="environmentsecretcontract.html">Environment</a>
+        <a class="link" href="reviewersessionspike.html">Reviewer Session</a>
+        <a class="link active" href="rightsqueuepersistencecontract.html">Queue Contract</a>
+        <a class="link" href="invitationonlypilotgate.html">Activation Gate</a>
+        <span class="version-pill">v4.9.6 pilot implementation gate</span>
+      </nav>
+    </header>
+    <section class="vp-ops-opening">
+      <div><span class="vp-ops-eyebrow">Provider-neutral durable semantics</span><h1>Define concurrency and audit behavior before connecting a database.</h1><p>A reference repository now proves optimistic concurrency, idempotent event replay, role-aware transitions, append-only audit history, and immutable publication locks without pretending page memory is durable storage.</p></div>
+      <aside><strong>Persistence boundary</strong><span>The executable repository is provider-neutral and in memory. The browser simulator resets with the page. No database is connected.</span></aside>
+    </section>
+    <section class="vp-contract-grid" aria-label="Queue contract summary"><article class="vp-contract-stat"><span>Concurrency</span><strong>Expected version</strong></article><article class="vp-contract-stat"><span>Retry safety</span><strong>Idempotent event id</strong></article><article class="vp-contract-stat"><span>Audit</span><strong>Append only</strong></article><article class="vp-contract-stat"><span>Publication</span><strong>Blocked</strong></article></section>
+    <section class="vp-ops-columns">
+      <section class="vp-ops-form"><div class="vp-ops-section-head"><div><span class="vp-ops-eyebrow">Reference repository</span><h2>Test one queue record</h2></div><span>Page memory</span></div><div class="vp-ops-field-grid"><label>Reviewer role<select id="vpPersistenceRole"><option value="source-reviewer">Source reviewer</option><option value="rights-reviewer">Rights reviewer</option><option value="release-reviewer">Release reviewer</option><option value="observer">Observer</option></select></label><label>Transition<select id="vpPersistenceAction"><option value="claim-source">Claim source</option><option value="claim-rights">Claim rights</option><option value="hold">Hold</option><option value="source-evidence-ready">Source evidence ready</option><option value="rights-evidence-ready">Rights evidence ready</option></select></label></div><pre id="vpPersistenceRecord" class="vp-ops-packet"></pre><div class="vp-ops-actions"><button class="vp-ops-primary" type="button" id="vpApplyTransition">Apply transition</button><button class="vp-ops-secondary" type="button" id="vpReplayTransition">Replay event</button><button class="vp-ops-secondary" type="button" id="vpStaleTransition">Test stale version</button><button class="vp-ops-quiet" type="button" id="vpResetPersistence">Reset</button></div><p class="vp-ops-status" id="vpPersistenceStatus" aria-live="polite">Loading persistence contract.</p></section>
+      <section class="vp-ops-output"><div class="vp-ops-section-head"><div><span class="vp-ops-eyebrow">Visible audit</span><h2>Session events</h2></div><span>No durable write</span></div><div id="vpPersistenceAudit" class="vp-persistence-audit vp-ops-empty"><p>No persistence events in this page session.</p></div><div class="vp-ops-empty"><div><strong>Immutable boundary</strong><p>Every accepted state change keeps publication blocked and registry merge manual-only.</p></div></div></section>
+    </section>
+  </main>
+  <script src="assets/vedapath-command-shell.js"></script>
+  <script src="assets/vedapath-queue-persistence-simulator.js"></script>
+</body>
+</html>
