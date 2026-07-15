@@ -1,0 +1,130 @@
+{
+  "release": "v5.0.5",
+  "position": "A passing replay proves the cutover method, not a provider migration",
+  "headline": "The drill can prove record parity and checkpoint integrity while durable production storage remains disconnected.",
+  "copy": "One mismatch forces rollback. A passing result still reports no migration, no provider connection, no queue writes, and no publication.",
+  "postures": [
+    {
+      "title": "Source ledger",
+      "decision": "Verified",
+      "copy": "Hash-chain integrity is checked before snapshotting."
+    },
+    {
+      "title": "Snapshot",
+      "decision": "Deterministic",
+      "copy": "Canonical record ordering produces stable SHA-256 digests."
+    },
+    {
+      "title": "Parity",
+      "decision": "Fail closed",
+      "copy": "Any record or checkpoint mismatch requires rollback."
+    },
+    {
+      "title": "Production migration",
+      "decision": "Not run",
+      "copy": "The drill performs no durable write."
+    }
+  ],
+  "flow": [
+    {
+      "title": "Verify",
+      "copy": "Reject a tampered source event ledger."
+    },
+    {
+      "title": "Snapshot",
+      "copy": "Canonicalize records and hash the checkpoint."
+    },
+    {
+      "title": "Compare",
+      "copy": "Match target records and expected head hash."
+    },
+    {
+      "title": "Rollback",
+      "copy": "Stop the drill on any divergence."
+    }
+  ],
+  "decisions": [
+    {
+      "label": "Snapshot contract",
+      "value": "Executable",
+      "reason": "Record and snapshot digests are deterministic."
+    },
+    {
+      "label": "Divergence handling",
+      "value": "Rollback",
+      "reason": "The first mismatch fails the drill."
+    },
+    {
+      "label": "Durable provider",
+      "value": "Disconnected",
+      "reason": "No production service is attached."
+    },
+    {
+      "label": "Queue writes",
+      "value": "0",
+      "reason": "The drill cannot mutate production state."
+    }
+  ],
+  "metrics": [
+    {
+      "label": "Digest algorithm",
+      "value": "SHA-256"
+    },
+    {
+      "label": "Mismatch tolerance",
+      "value": "0"
+    },
+    {
+      "label": "Migrations",
+      "value": "0"
+    },
+    {
+      "label": "Writes",
+      "value": "0"
+    }
+  ],
+  "locks": [
+    {
+      "title": "Credential lock",
+      "decision": "Closed",
+      "copy": "No secret value or reviewer credential is generated."
+    },
+    {
+      "title": "Provider lock",
+      "decision": "Closed",
+      "copy": "No external account, runtime, endpoint, or domain is created."
+    },
+    {
+      "title": "Invitation lock",
+      "decision": "Closed",
+      "copy": "The decision surfaces cannot issue an invitation."
+    },
+    {
+      "title": "Participant lock",
+      "decision": "Closed",
+      "copy": "No external participant or public session exists."
+    },
+    {
+      "title": "Public launch lock",
+      "decision": "Closed",
+      "copy": "Private implementation evidence cannot open public launch."
+    }
+  ],
+  "packet": "VedaPath Durable Queue Cutover Drill\nSource ledger verification: executable\nCanonical snapshot: executable\nRecord digest: SHA-256\nCheckpoint comparison: required\nTarget divergence tolerance: 0\nRollback on mismatch: required\nDurable provider connected: false\nProduction migration run: false\nQueue writes enabled: false\nPublication: blocked\nPublic launch: blocked",
+  "primary_action": {
+    "href": "invitationactivationdecisiongate.html",
+    "label": "Open Invitation Decision"
+  },
+  "schema": "vedapath.durable-queue-cutover-drill.v1",
+  "drill": "scripts/vedapath-queue-cutover-drill.mjs",
+  "digest_algorithm": "sha256",
+  "divergence_tolerance": 0,
+  "rollback_on_mismatch": true,
+  "durable_provider_connected": false,
+  "production_migration_run": false,
+  "queue_writes_enabled": false,
+  "publication": "blocked",
+  "invitations_issued": 0,
+  "public_launch": "blocked",
+  "next_release": "v5.0.6 Invitation Activation Decision Gate"
+}

@@ -1,3 +1,43 @@
+## v5.0.6 Invitation Activation Decision Gate
+
+A final decision evaluator now keeps implementation, provider binding, reviewer accounts, durable queue, private health, security, privacy, rights, recovery, shutdown, telemetry consent, and founder activation evidence separate and visible.
+
+- Open: [Invitation Activation Decision Gate](invitationactivationdecisiongate.html)
+- Data: `data/vedapath-invitation-activation-decision-gate.json`
+- Boundary: Private implementation evidence only; no credentials, secret values, reviewer accounts, provider endpoint, durable production migration, external invitation, public launch, licensed corpus delivery, live AI generation, payments, or medical, legal, ritual, or spiritual authority.
+
+## v5.0.5 Durable Queue Cutover Drill
+
+A cutover drill now turns the tamper-evident queue ledger into a canonical snapshot, compares source and target digests, checks the expected head hash, and fails closed before any provider write.
+
+- Open: [Durable Queue Cutover Drill](durablequeuecutoverdrill.html)
+- Data: `data/vedapath-durable-queue-cutover-drill.json`
+- Boundary: Private implementation evidence only; no credentials, secret values, reviewer accounts, provider endpoint, durable production migration, external invitation, public launch, licensed corpus delivery, live AI generation, payments, or medical, legal, ritual, or spiritual authority.
+
+## v5.0.4 Reviewer Account Provisioning Runbook
+
+A provisioning planner now validates pseudonymous reviewer IDs, four bounded roles, named sponsors, AAL2 assurance, recorded privacy consent, fourteen-day expiry, and a six-reviewer private-pilot ceiling.
+
+- Open: [Reviewer Account Provisioning Runbook](revieweraccountprovisioningrunbook.html)
+- Data: `data/vedapath-reviewer-account-provisioning-runbook.json`
+- Boundary: Private implementation evidence only; no credentials, secret values, reviewer accounts, provider endpoint, durable production migration, external invitation, public launch, licensed corpus delivery, live AI generation, payments, or medical, legal, ritual, or spiritual authority.
+
+## v5.0.3 Managed Secret Binding Plan
+
+A strict validator now allowlists the session, reviewer-store, and queue-integrity bindings with owners, scopes, rotation windows, pilot-only environment, and mandatory redaction.
+
+- Open: [Managed Secret Binding Plan](managedsecretbindingplan.html)
+- Data: `data/vedapath-managed-secret-binding-plan.json`
+- Boundary: Private implementation evidence only; no credentials, secret values, reviewer accounts, provider endpoint, durable production migration, external invitation, public launch, licensed corpus delivery, live AI generation, payments, or medical, legal, ritual, or spiritual authority.
+
+## v5.0.2 Private Infrastructure Implementation Decision
+
+A pure evaluator now separates permission to prepare one bounded infrastructure slice from deployment, credentials, write routes, invitations, and launch.
+
+- Open: [Private Infrastructure Implementation Decision](privateimplementationdecision.html)
+- Data: `data/vedapath-private-implementation-decision.json`
+- Boundary: Private implementation evidence only; no credentials, secret values, reviewer accounts, provider endpoint, durable production migration, external invitation, public launch, licensed corpus delivery, live AI generation, payments, or medical, legal, ritual, or spiritual authority.
+
 ## v5.0.1 Private Pilot Readiness Control Room
 
 A single readiness control now assembles authorization, deployment-manifest, reviewer-identity, durable-queue, security, privacy, rights, and recovery evidence into one deterministic decision without converting readiness into activation.

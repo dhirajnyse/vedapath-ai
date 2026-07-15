@@ -1,0 +1,130 @@
+{
+  "release": "v5.0.2",
+  "position": "Implementation permission is narrower than deployment and never implies activation",
+  "headline": "One bounded decision can be reviewed without creating an account, endpoint, credential, or invitation.",
+  "copy": "The current record keeps the decision pending until a provider candidate, region, budget, owners, dry-run manifest, private mode, readiness status, and founder authorization are all explicit.",
+  "postures": [
+    {
+      "title": "Decision evaluator",
+      "decision": "Ready",
+      "copy": "Nine prerequisites and three unsafe-state checks are deterministic."
+    },
+    {
+      "title": "Founder implementation decision",
+      "decision": "Pending",
+      "copy": "No real provider or budget decision has been recorded."
+    },
+    {
+      "title": "Deployment",
+      "decision": "Closed",
+      "copy": "Even complete evidence returns a no-deployment result."
+    },
+    {
+      "title": "External access",
+      "decision": "Closed",
+      "copy": "Invitations and participants must remain zero."
+    }
+  ],
+  "flow": [
+    {
+      "title": "Name",
+      "copy": "Record provider candidate, region, budget, and owners."
+    },
+    {
+      "title": "Verify",
+      "copy": "Confirm readiness, dry-run manifest, and private mode."
+    },
+    {
+      "title": "Decide",
+      "copy": "Authorize bounded implementation, reject, or remain pending."
+    },
+    {
+      "title": "Hold",
+      "copy": "Keep deployment, writes, credentials, and invitations closed."
+    }
+  ],
+  "decisions": [
+    {
+      "label": "Evaluator",
+      "value": "Executable",
+      "reason": "Complete and unsafe states are covered by tests."
+    },
+    {
+      "label": "Current decision",
+      "value": "Pending",
+      "reason": "Real provider inputs are intentionally absent."
+    },
+    {
+      "label": "Maximum monthly cap",
+      "value": "USD 500",
+      "reason": "Higher budgets are rejected."
+    },
+    {
+      "label": "Side effects",
+      "value": "0",
+      "reason": "Evaluation does not create infrastructure."
+    }
+  ],
+  "metrics": [
+    {
+      "label": "Required checks",
+      "value": "9"
+    },
+    {
+      "label": "Budget cap",
+      "value": "$500"
+    },
+    {
+      "label": "Deployments",
+      "value": "0"
+    },
+    {
+      "label": "Invitations",
+      "value": "0"
+    }
+  ],
+  "locks": [
+    {
+      "title": "Credential lock",
+      "decision": "Closed",
+      "copy": "No secret value or reviewer credential is generated."
+    },
+    {
+      "title": "Provider lock",
+      "decision": "Closed",
+      "copy": "No external account, runtime, endpoint, or domain is created."
+    },
+    {
+      "title": "Invitation lock",
+      "decision": "Closed",
+      "copy": "The decision surfaces cannot issue an invitation."
+    },
+    {
+      "title": "Participant lock",
+      "decision": "Closed",
+      "copy": "No external participant or public session exists."
+    },
+    {
+      "title": "Public launch lock",
+      "decision": "Closed",
+      "copy": "Private implementation evidence cannot open public launch."
+    }
+  ],
+  "packet": "VedaPath Private Infrastructure Implementation Decision\nDecision evaluator: executable\nProvider candidate: pending\nRegion: pending\nBudget cap: USD 500 maximum\nShutdown owner: required\nIncident owner: required\nImplementation authorization: pending\nDeployment activated: false\nCredentials provisioned: false\nWrite routes enabled: false\nInvitations issued: 0\nPublic launch: blocked",
+  "primary_action": {
+    "href": "managedsecretbindingplan.html",
+    "label": "Open Secret Binding Plan"
+  },
+  "schema": "vedapath.private-implementation-decision.v1",
+  "evaluator": "scripts/vedapath-private-implementation-decision.mjs",
+  "required_checks": 9,
+  "monthly_budget_cap_usd": 500,
+  "implementation_authorized": false,
+  "deployment_activated": false,
+  "credentials_provisioned": false,
+  "write_routes_enabled": false,
+  "invitations_issued": 0,
+  "external_participants": 0,
+  "public_launch": "blocked",
+  "next_release": "v5.0.3 Managed Secret Binding Plan"
+}

@@ -1,5 +1,5 @@
 (function () {
-  const releaseBadge = "v5.0.1 pilot readiness control";
+  const releaseBadge = "v5.0.6 invitation decision";
   const prefKey = "vedapathCommandShellPrefs";
   const groups = [
     { title: "Start", labels: ["Home", "Build", "Brand", "Blueprint"] },
@@ -20,6 +20,7 @@
     { title: "Hosted Pilot", labels: ["Hosted API", "Request Guard", "Reviewer Roles", "Rights Queue", "Pilot Gate"] },
     { title: "Pilot Implementation", labels: ["Provider Packet", "Environment", "Reviewer Session", "Queue Contract", "Activation Gate"] },
     { title: "Pilot Authorization", labels: ["Authorization", "Manifest", "Identity Contract", "Queue Migration", "Readiness Control"] },
+    { title: "Private Implementation", labels: ["Implementation", "Secret Bindings", "Reviewer Accounts", "Queue Cutover", "Invitation Decision"] },
   ];
   const pageTitles = {
     Home: "VedaPath command center",
@@ -126,6 +127,11 @@
     "Identity Contract": "Reviewer Identity Provider Contract",
     "Queue Migration": "Durable Queue Migration Pack",
     "Readiness Control": "Private Pilot Readiness Control Room",
+    "Implementation": "Private Infrastructure Implementation Decision",
+    "Secret Bindings": "Managed Secret Binding Plan",
+    "Reviewer Accounts": "Reviewer Account Provisioning Runbook",
+    "Queue Cutover": "Durable Queue Cutover Drill",
+    "Invitation Decision": "Invitation Activation Decision Gate",
   };
   const bodyPageTitles = {
     "permission-execution-draft-page": "Controlled draft gate",
@@ -225,6 +231,11 @@
     "reviewer-identity-provider-contract-page": "Reviewer Identity Provider Contract",
     "durable-queue-migration-pack-page": "Durable Queue Migration Pack",
     "private-pilot-readiness-control-room-page": "Private Pilot Readiness Control Room",
+    "private-infrastructure-implementation-decision-page": "Private Infrastructure Implementation Decision",
+    "managed-secret-binding-plan-page": "Managed Secret Binding Plan",
+    "reviewer-account-provisioning-runbook-page": "Reviewer Account Provisioning Runbook",
+    "durable-queue-cutover-drill-page": "Durable Queue Cutover Drill",
+    "invitation-activation-decision-gate-page": "Invitation Activation Decision Gate",
   };
 
 
@@ -289,6 +300,11 @@
     ["Identity Contract", "revieweridentityprovidercontract.html"],
     ["Queue Migration", "durablequeuemigrationpack.html"],
     ["Readiness Control", "privatepilotreadinesscontrolroom.html"],
+    ["Implementation", "privateimplementationdecision.html"],
+    ["Secret Bindings", "managedsecretbindingplan.html"],
+    ["Reviewer Accounts", "revieweraccountprovisioningrunbook.html"],
+    ["Queue Cutover", "durablequeuecutoverdrill.html"],
+    ["Invitation Decision", "invitationactivationdecisiongate.html"],
   ];
 
   function safeParse(value, fallback) {
@@ -395,7 +411,8 @@
       const body = section.items.map((link) => {
         const glyph = link.label.slice(0, 1).toUpperCase();
         const active = link.active ? " is-active" : "";
-        return '<a class="vp-rail-link' + active + '" href="' + escapeHtml(link.href) + '">' +
+        const current = link.active ? ' aria-current="page"' : "";
+        return '<a class="vp-rail-link' + active + '"' + current + ' href="' + escapeHtml(link.href) + '">' +
           '<span class="vp-rail-glyph">' + escapeHtml(glyph) + '</span>' +
           '<span>' + escapeHtml(link.label) + '</span>' +
         '</a>';

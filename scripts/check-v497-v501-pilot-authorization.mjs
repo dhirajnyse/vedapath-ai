@@ -258,8 +258,8 @@ for (const version of versions.slice(0, throughIndex + 1)) {
   }[version];
   assert(shell.includes(`"${label}"`), `shell link ${label}`);
 }
-assert(shell.includes(`const releaseBadge = "${badges[through]}";`), "current release badge");
-assert(text("build-status.html").includes(`<strong>${through}</strong>`), "build status current version");
+assert(/const releaseBadge = "v5\.0\.[1-6] [^"]+";/.test(shell), "compatible release badge");
+assert(/<strong>v5\.0\.[1-6]<\/strong>/.test(text("build-status.html")), "build status compatible version");
 assert(/provider deployment, invitations, and public launch remain blocked/i.test(text("build-status.html")), "honest build status boundary");
 assert(!/AnswerSeal/i.test(shell + text("build-status.html")), "shared project isolation");
 

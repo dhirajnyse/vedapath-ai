@@ -1,0 +1,130 @@
+{
+  "release": "v5.0.4",
+  "position": "A reviewer plan is not an account, credential, identity-provider session, or invitation",
+  "headline": "The runbook defines who may review, for how long, and under whose sponsorship before identity is connected.",
+  "copy": "Every planned reviewer stays pseudonymous, time-bounded, privately sponsored, consented, and unable to publish, invite, or activate the product.",
+  "postures": [
+    {
+      "title": "Provisioning planner",
+      "decision": "Ready",
+      "copy": "Role, assurance, consent, expiry, and identity rules are executable."
+    },
+    {
+      "title": "Direct identity",
+      "decision": "Forbidden",
+      "copy": "Email, name, phone, address, password, and token fields are rejected."
+    },
+    {
+      "title": "Pilot scale",
+      "decision": "Six maximum",
+      "copy": "The runbook cannot silently expand the reviewer cohort."
+    },
+    {
+      "title": "Accounts",
+      "decision": "Not created",
+      "copy": "The planner returns no credential or live identity."
+    }
+  ],
+  "flow": [
+    {
+      "title": "Pseudonymize",
+      "copy": "Assign a non-identifying reviewer ID."
+    },
+    {
+      "title": "Sponsor",
+      "copy": "Name one accountable private-pilot owner."
+    },
+    {
+      "title": "Constrain",
+      "copy": "Choose a bounded role, AAL2, consent, and expiry."
+    },
+    {
+      "title": "Provision later",
+      "copy": "Create nothing until a reviewed identity provider exists."
+    }
+  ],
+  "decisions": [
+    {
+      "label": "Roles",
+      "value": "4 bounded",
+      "reason": "Observer, source, rights, and release review remain separate."
+    },
+    {
+      "label": "Session assurance",
+      "value": "AAL2 required",
+      "reason": "Lower assurance is rejected."
+    },
+    {
+      "label": "Maximum lifetime",
+      "value": "14 days",
+      "reason": "Long-lived reviewer plans are refused."
+    },
+    {
+      "label": "Created accounts",
+      "value": "0",
+      "reason": "This release is a runbook and validator only."
+    }
+  ],
+  "metrics": [
+    {
+      "label": "Role types",
+      "value": "4"
+    },
+    {
+      "label": "Reviewer ceiling",
+      "value": "6"
+    },
+    {
+      "label": "Accounts created",
+      "value": "0"
+    },
+    {
+      "label": "Invitations",
+      "value": "0"
+    }
+  ],
+  "locks": [
+    {
+      "title": "Credential lock",
+      "decision": "Closed",
+      "copy": "No secret value or reviewer credential is generated."
+    },
+    {
+      "title": "Provider lock",
+      "decision": "Closed",
+      "copy": "No external account, runtime, endpoint, or domain is created."
+    },
+    {
+      "title": "Invitation lock",
+      "decision": "Closed",
+      "copy": "The decision surfaces cannot issue an invitation."
+    },
+    {
+      "title": "Participant lock",
+      "decision": "Closed",
+      "copy": "No external participant or public session exists."
+    },
+    {
+      "title": "Public launch lock",
+      "decision": "Closed",
+      "copy": "Private implementation evidence cannot open public launch."
+    }
+  ],
+  "packet": "VedaPath Reviewer Account Provisioning Runbook\nReviewer identifiers: pseudonymous only\nRole types: 4\nPrivate-pilot reviewer ceiling: 6\nSponsor: required\nAAL2: required\nPrivacy consent: recorded before provisioning\nMaximum lifetime: 14 days\nDirect identity stored: false\nAccounts created: 0\nCredentials issued: 0\nInvitations issued: 0\nPublic launch: blocked",
+  "primary_action": {
+    "href": "durablequeuecutoverdrill.html",
+    "label": "Open Queue Cutover Drill"
+  },
+  "schema": "vedapath.reviewer-account-provisioning-runbook.v1",
+  "planner": "scripts/vedapath-reviewer-account-plan.mjs",
+  "role_types": 4,
+  "private_reviewer_limit": 6,
+  "maximum_lifetime_days": 14,
+  "direct_identity_stored": false,
+  "accounts_created": 0,
+  "credentials_issued": 0,
+  "invitations_issued": 0,
+  "identity_provider_connected": false,
+  "public_launch": "blocked",
+  "next_release": "v5.0.5 Durable Queue Cutover Drill"
+}

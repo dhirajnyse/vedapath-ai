@@ -1,0 +1,129 @@
+{
+  "release": "v5.0.6",
+  "position": "Implementation readiness, live-stack evidence, authorization, and invitation issuance remain four separate events",
+  "headline": "The current gate is blocked because no live provider stack exists. Even complete evidence would authorize one invitation without issuing it.",
+  "copy": "This is the strongest boundary in the private-pilot chain: twelve real-stack proofs, zero existing invitations, zero participants, private access, and one approved review-event route are required before a separate issuance step could begin.",
+  "postures": [
+    {
+      "title": "Evidence evaluator",
+      "decision": "Ready",
+      "copy": "Twelve required live-stack states are deterministic."
+    },
+    {
+      "title": "Current evidence",
+      "decision": "0/12",
+      "copy": "No provider, live accounts, endpoint, or audits are connected."
+    },
+    {
+      "title": "Maximum authorization",
+      "decision": "One invitation",
+      "copy": "The evaluator cannot authorize a wider cohort."
+    },
+    {
+      "title": "Invitation issuance",
+      "decision": "Not performed",
+      "copy": "Authorization never creates a token or participant."
+    }
+  ],
+  "flow": [
+    {
+      "title": "Connect",
+      "copy": "Implement the approved private stack under named owners."
+    },
+    {
+      "title": "Prove",
+      "copy": "Complete security, privacy, rights, recovery, shutdown, and consent evidence."
+    },
+    {
+      "title": "Decide",
+      "copy": "Record a founder decision for one invitation only."
+    },
+    {
+      "title": "Issue later",
+      "copy": "Use a separate audited step if every proof still holds."
+    }
+  ],
+  "decisions": [
+    {
+      "label": "Current activation",
+      "value": "Blocked",
+      "reason": "All twelve live-stack checks remain incomplete."
+    },
+    {
+      "label": "Hypothetical maximum",
+      "value": "1",
+      "reason": "Complete evidence can authorize only one invitation."
+    },
+    {
+      "label": "Invitations issued",
+      "value": "0",
+      "reason": "This evaluator has no issuance side effect."
+    },
+    {
+      "label": "Public launch",
+      "value": "Blocked",
+      "reason": "A private invitation cannot open public access."
+    }
+  ],
+  "metrics": [
+    {
+      "label": "Live proofs required",
+      "value": "12"
+    },
+    {
+      "label": "Current proofs",
+      "value": "0"
+    },
+    {
+      "label": "Invitations issued",
+      "value": "0"
+    },
+    {
+      "label": "Public access",
+      "value": "Closed"
+    }
+  ],
+  "locks": [
+    {
+      "title": "Credential lock",
+      "decision": "Closed",
+      "copy": "No secret value or reviewer credential is generated."
+    },
+    {
+      "title": "Provider lock",
+      "decision": "Closed",
+      "copy": "No external account, runtime, endpoint, or domain is created."
+    },
+    {
+      "title": "Invitation lock",
+      "decision": "Closed",
+      "copy": "The decision surfaces cannot issue an invitation."
+    },
+    {
+      "title": "Participant lock",
+      "decision": "Closed",
+      "copy": "No external participant or public session exists."
+    },
+    {
+      "title": "Public launch lock",
+      "decision": "Closed",
+      "copy": "Private implementation evidence cannot open public launch."
+    }
+  ],
+  "packet": "VedaPath Invitation Activation Decision Gate\nImplementation decision: pending real execution\nManaged secret bindings: not live\nReviewer accounts: not live\nDurable queue cutover: not live\nPrivate endpoint: absent\nSecurity, privacy, rights reviews: pending live stack\nRecovery and shutdown drills: pending live stack\nTelemetry consent: pending\nFounder activation decision: pending\nCurrent evidence: 0/12\nSingle invitation authorized: false\nInvitation issued: false\nExternal participants: 0\nPublic launch: blocked",
+  "primary_action": {
+    "href": "build-status.html",
+    "label": "Open Build Status"
+  },
+  "schema": "vedapath.invitation-activation-decision-gate.v1",
+  "evaluator": "scripts/vedapath-invitation-activation-gate.mjs",
+  "required_live_evidence": 12,
+  "completed_live_evidence": 0,
+  "single_invitation_authorized": false,
+  "maximum_invitations": 1,
+  "invitation_issued": false,
+  "external_participants": 0,
+  "public_access": false,
+  "public_launch": "blocked",
+  "next_release": "v5.0.7 Private Invitation Issuance Dry Run"
+}

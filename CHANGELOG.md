@@ -1,3 +1,38 @@
+## v5.0.6 Invitation Activation Decision Gate
+
+- Changes made: Adds a twelve-evidence invitation activation evaluator, explicit one-invitation maximum, live-stack security, privacy, rights, recovery, shutdown, and telemetry consent checks, public-access, existing-invitation, participant, and write-route blockers, and a permanent no-issuance output.
+- Files changed: `invitationactivationdecisiongate.html`, `data/vedapath-invitation-activation-decision-gate.json`, `docs/INVITATION_ACTIVATION_DECISION_GATE.md`, `scripts/vedapath-invitation-activation-gate.mjs`, `scripts/apply-v502-v506-private-implementation-batch.mjs`, `scripts/check-v502-v506-private-implementation.mjs`, the five prior-batch compatibility checkers, `assets/vedapath-command-shell.js`, `scripts/check-static-links.mjs`, `build-status.html`, `README.md`, `CHANGELOG.md`, and shared command-shell release badges across prior governance pages.
+- Checks run: node --check scripts/vedapath-invitation-activation-gate.mjs; incomplete and complete hypothetical evidence, public-access, existing-invitation, participant, and unapproved-write assertions; permanent no-issuance and public-launch locks; full batch checker; prior regressions; static links; desktop and mobile visual QA.
+- Known risks: Private implementation evidence only; no credentials, secret values, reviewer accounts, provider endpoint, durable production migration, external invitation, public launch, licensed corpus delivery, live AI generation, payments, or medical, legal, ritual, or spiritual authority.
+
+## v5.0.5 Durable Queue Cutover Drill
+
+- Changes made: Adds deterministic queue snapshot creation, canonical SHA-256 record and snapshot digests, target divergence detection, checkpoint mismatch detection, tampered-source rejection, rollback signaling, and permanent no-provider, no-production-migration, and no-write outputs.
+- Files changed: `durablequeuecutoverdrill.html`, `data/vedapath-durable-queue-cutover-drill.json`, `docs/DURABLE_QUEUE_CUTOVER_DRILL.md`, `scripts/vedapath-queue-cutover-drill.mjs`.
+- Checks run: node --check scripts/vedapath-queue-cutover-drill.mjs; passing drill, deterministic snapshot, target divergence, checkpoint mismatch, and tampered-source assertions; production-migration and write locks; batch checker through v5.0.5; static links.
+- Known risks: Private implementation evidence only; no credentials, secret values, reviewer accounts, provider endpoint, durable production migration, external invitation, public launch, licensed corpus delivery, live AI generation, payments, or medical, legal, ritual, or spiritual authority.
+
+## v5.0.4 Reviewer Account Provisioning Runbook
+
+- Changes made: Adds a reviewer-account planning module with pseudonymous identifiers, direct-identity rejection, four role capability sets, sponsor and AAL2 requirements, recorded consent, fourteen-day expiry, duplicate checks, a six-reviewer ceiling, and permanent zero-account, zero-credential, and zero-invitation outputs.
+- Files changed: `revieweraccountprovisioningrunbook.html`, `data/vedapath-reviewer-account-provisioning-runbook.json`, `docs/REVIEWER_ACCOUNT_PROVISIONING_RUNBOOK.md`, `scripts/vedapath-reviewer-account-plan.mjs`.
+- Checks run: node --check scripts/vedapath-reviewer-account-plan.mjs; valid plan plus direct-identity, unsupported-role, missing-AAL2, missing-consent, expiry, duplicate, and reviewer-limit assertions; batch checker through v5.0.4; static links.
+- Known risks: Private implementation evidence only; no credentials, secret values, reviewer accounts, provider endpoint, durable production migration, external invitation, public launch, licensed corpus delivery, live AI generation, payments, or medical, legal, ritual, or spiritual authority.
+
+## v5.0.3 Managed Secret Binding Plan
+
+- Changes made: Adds a managed-secret binding validator for exactly three required names, secret-reference format checks, duplicate detection, scoped owners, ninety-day rotation ceilings, pilot-only environment rules, redacted safe summaries, and permanent no-apply and no-provider side effects.
+- Files changed: `managedsecretbindingplan.html`, `data/vedapath-managed-secret-binding-plan.json`, `docs/MANAGED_SECRET_BINDING_PLAN.md`, `scripts/vedapath-managed-secret-binding.mjs`.
+- Checks run: node --check scripts/vedapath-managed-secret-binding.mjs; valid, missing, unknown, value-bearing, duplicate, rotation, environment, and redaction assertions; safe-output inspection; batch checker through v5.0.3; static links.
+- Known risks: Private implementation evidence only; no credentials, secret values, reviewer accounts, provider endpoint, durable production migration, external invitation, public launch, licensed corpus delivery, live AI generation, payments, or medical, legal, ritual, or spiritual authority.
+
+## v5.0.2 Private Infrastructure Implementation Decision
+
+- Changes made: Adds an executable implementation-decision evaluator with nine named checks, a USD 500 monthly cap, named shutdown and incident owners, explicit approve, reject, and pending states, and permanent zero-deployment, zero-credential, zero-write, and zero-invitation outputs.
+- Files changed: `privateimplementationdecision.html`, `data/vedapath-private-implementation-decision.json`, `docs/PRIVATE_INFRASTRUCTURE_IMPLEMENTATION_DECISION.md`, `scripts/vedapath-private-implementation-decision.mjs`.
+- Checks run: node --check scripts/vedapath-private-implementation-decision.mjs; incomplete, complete, rejected, over-budget, public-access, invitation, and write-route assertions; batch checker through v5.0.2; static links.
+- Known risks: Private implementation evidence only; no credentials, secret values, reviewer accounts, provider endpoint, durable production migration, external invitation, public launch, licensed corpus delivery, live AI generation, payments, or medical, legal, ritual, or spiritual authority.
+
 ## v5.0.1 Private Pilot Readiness Control Room
 
 - Changes made: Adds a private-pilot readiness assessor, eight named evidence checks, stable blocker reporting, a founder-readable packet, one consolidated command-center surface, final navigation and build status, and regression coverage across the entire five-release authorization chain.
