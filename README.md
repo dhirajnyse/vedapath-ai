@@ -1,3 +1,43 @@
+## v5.1.6 Founder Pilot Evidence Review
+
+A twenty-four-hour founder review now requires the original authorization, stack readiness, invitation adapter, consent handshake, session observability, three named owners, five explicit risk acknowledgements, and one-person, one-session limits.
+
+- Open: [Founder Pilot Evidence Review](founderpilotevidencereview.html)
+- Data: `data/vedapath-founder-pilot-evidence-review.json`
+- Boundary: Private-pilot operations contract evidence only; candidate stack, invitation adapter, consent, observability, and founder review remain deterministic fixtures. No credentials, direct identity, token, account, email, delivery, provider connection, deployment activation, real invitation, participant, live session, exported telemetry, durable participant write, public launch, licensed corpus delivery, live AI generation, payments, or medical, legal, ritual, or spiritual authority.
+
+## v5.1.5 First-Session Observability and Rollback
+
+A thirty-minute fixture now accepts only opened, source-viewed, boundary-acknowledged, and closed events with status and latency metadata, a checkpoint digest, named rollback owner, no raw content, no export, no network, and no live session.
+
+- Open: [First-Session Observability and Rollback](firstsessionobservability.html)
+- Data: `data/vedapath-first-session-observability.json`
+- Boundary: Private-pilot operations contract evidence only; candidate stack, invitation adapter, consent, observability, and founder review remain deterministic fixtures. No credentials, direct identity, token, account, email, delivery, provider connection, deployment activation, real invitation, participant, live session, exported telemetry, durable participant write, public launch, licensed corpus delivery, live AI generation, payments, or medical, legal, ritual, or spiritual authority.
+
+## v5.1.4 Participant Consent Handshake Contract
+
+A fixture-only consent handshake now requires an adult-volunteer attestation, source-first scope, bounded safety-and-quality data use, zero telemetry, pre-session withdrawal, pseudonymous identity, and seventy-two-hour expiry.
+
+- Open: [Participant Consent Handshake Contract](participantconsenthandshake.html)
+- Data: `data/vedapath-participant-consent-handshake.json`
+- Boundary: Private-pilot operations contract evidence only; candidate stack, invitation adapter, consent, observability, and founder review remain deterministic fixtures. No credentials, direct identity, token, account, email, delivery, provider connection, deployment activation, real invitation, participant, live session, exported telemetry, durable participant write, public launch, licensed corpus delivery, live AI generation, payments, or medical, legal, ritual, or spiritual authority.
+
+## v5.1.3 One-Invitation Adapter Contract
+
+A fixture-only adapter now binds readiness, pseudonymous identity, role, purpose, idempotency, pending consent, and seventy-two-hour expiry into one deterministic digest with no transport or provider path.
+
+- Open: [One-Invitation Adapter Contract](oneinvitationadapter.html)
+- Data: `data/vedapath-one-invitation-adapter.json`
+- Boundary: Private-pilot operations contract evidence only; candidate stack, invitation adapter, consent, observability, and founder review remain deterministic fixtures. No credentials, direct identity, token, account, email, delivery, provider connection, deployment activation, real invitation, participant, live session, exported telemetry, durable participant write, public launch, licensed corpus delivery, live AI generation, payments, or medical, legal, ritual, or spiritual authority.
+
+## v5.1.2 Private Stack Readiness Gate
+
+A twenty-four-hour readiness gate now requires pseudonymous identity, reviewed-source rights, review-event-only writes, local-first privacy, tested incident response, manual rollback, three named owners, and one-person, one-session limits.
+
+- Open: [Private Stack Readiness Gate](privatestackreadiness.html)
+- Data: `data/vedapath-private-stack-readiness.json`
+- Boundary: Private-pilot operations contract evidence only; candidate stack, invitation adapter, consent, observability, and founder review remain deterministic fixtures. No credentials, direct identity, token, account, email, delivery, provider connection, deployment activation, real invitation, participant, live session, exported telemetry, durable participant write, public launch, licensed corpus delivery, live AI generation, payments, or medical, legal, ritual, or spiritual authority.
+
 ## v5.1.1 Founder Private Pilot Go/No-Go
 
 A final founder evaluator now requires the invitation decision, issuance dry run, revocation receipt, first-session sandbox, incident drill, named pilot and shutdown owners, one-participant and one-session limits, and seventy-two-hour expiry before a bounded no-execution decision can pass.

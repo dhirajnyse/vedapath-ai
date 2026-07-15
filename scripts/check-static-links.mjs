@@ -112,6 +112,11 @@ const pages = [
   "firstparticipantsessionsandbox.html",
   "pilotincidentdrill.html",
   "founderprivatepilotdecision.html",
+  "privatestackreadiness.html",
+  "oneinvitationadapter.html",
+  "participantconsenthandshake.html",
+  "firstsessionobservability.html",
+  "founderpilotevidencereview.html",
 ];
 
 const missing = [];

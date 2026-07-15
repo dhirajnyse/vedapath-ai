@@ -1,0 +1,129 @@
+{
+  "release": "v5.1.4",
+  "position": "Consent must be versioned, scoped, time-bounded, and withdrawable before any participant or session can exist",
+  "headline": "A deterministic consent receipt can be reviewed while the person, account, token, telemetry, and session remain absent.",
+  "copy": "This release tests the consent language contract only. It does not collect real consent or establish a participant relationship.",
+  "postures": [
+    {
+      "title": "Consent mode",
+      "decision": "Fixture only",
+      "copy": "No real person is enrolled."
+    },
+    {
+      "title": "Scope",
+      "decision": "Source-first reflection",
+      "copy": "Therapy, diagnosis, and spiritual authority are excluded."
+    },
+    {
+      "title": "Telemetry",
+      "decision": "None",
+      "copy": "No behavior or content is exported."
+    },
+    {
+      "title": "Withdrawal",
+      "decision": "Before session",
+      "copy": "The stop path precedes any session decision."
+    }
+  ],
+  "flow": [
+    {
+      "title": "Version",
+      "copy": "Bind consent and privacy notice versions."
+    },
+    {
+      "title": "Acknowledge",
+      "copy": "Record adult-volunteer and source-first scope fixtures."
+    },
+    {
+      "title": "Bound",
+      "copy": "Limit data use and keep telemetry off."
+    },
+    {
+      "title": "Withdraw",
+      "copy": "Preserve a pre-session withdrawal path."
+    }
+  ],
+  "decisions": [
+    {
+      "label": "Consent mode",
+      "value": "Fixture",
+      "reason": "No real consent is collected."
+    },
+    {
+      "label": "Identity mode",
+      "value": "Pseudonymous",
+      "reason": "Direct identity fields are forbidden."
+    },
+    {
+      "label": "Telemetry",
+      "value": "0",
+      "reason": "The fixture exports no behavioral data."
+    },
+    {
+      "label": "Participant created",
+      "value": "No",
+      "reason": "A receipt is not an account."
+    }
+  ],
+  "metrics": [
+    {
+      "label": "Consent versions",
+      "value": "2"
+    },
+    {
+      "label": "Maximum life",
+      "value": "72h"
+    },
+    {
+      "label": "Telemetry events",
+      "value": "0"
+    },
+    {
+      "label": "Participants",
+      "value": "0"
+    }
+  ],
+  "locks": [
+    {
+      "title": "Identity lock",
+      "decision": "Pseudonymous",
+      "copy": "Direct identity fields are rejected by every contract."
+    },
+    {
+      "title": "Execution lock",
+      "decision": "Closed",
+      "copy": "No invitation, account, credential, participant, or live session is created."
+    },
+    {
+      "title": "Provider lock",
+      "decision": "Disconnected",
+      "copy": "No provider mutation, delivery channel, or exported telemetry exists."
+    },
+    {
+      "title": "Evidence lock",
+      "decision": "Deterministic",
+      "copy": "Only fixture evidence and canonical digests are produced."
+    },
+    {
+      "title": "Public launch lock",
+      "decision": "Closed",
+      "copy": "Private evidence review cannot open public access."
+    }
+  ],
+  "packet": "VedaPath Participant Consent Handshake Contract\nAdapter status: required\nConsent mode: fixture only\nConsent version: required\nPrivacy notice version: required\nAdult volunteer attestation: required\nScope: source-first reflection only\nData use: session safety and quality only\nTelemetry: none\nWithdrawal: available before session\nExpiry: 72 hours maximum\nAccount created: false\nParticipant created: false\nSession started: false\nPublic launch: blocked",
+  "primary_action": {
+    "href": "firstsessionobservability.html",
+    "label": "Open Session Observability"
+  },
+  "schema": "vedapath.participant-consent-handshake.v1",
+  "evaluator": "scripts/vedapath-participant-consent-handshake.mjs",
+  "consent_mode": "fixture-only",
+  "expiry_hours": 72,
+  "telemetry_enabled": false,
+  "account_created": false,
+  "token_created": false,
+  "participant_created": false,
+  "session_started": false,
+  "public_launch": "blocked",
+  "next_release": "v5.1.5 First-Session Observability and Rollback"
+}

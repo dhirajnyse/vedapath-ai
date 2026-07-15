@@ -258,10 +258,10 @@ for (const version of versions.slice(0, throughIndex + 1)) {
   }[version];
   assert(shell.includes(`"${label}"`), `shell link ${label}`);
 }
-assert(/const releaseBadge = "v5\.(?:0\.[1-9]|1\.[01]) [^"]+";/.test(shell), "compatible release badge");
-assert(/<strong>v5\.(?:0\.[1-9]|1\.[01])<\/strong>/.test(text("build-status.html")), "build status compatible version");
+assert(/const releaseBadge = "v5\.(?:0\.[1-9]|1\.[0-6]) [^"]+";/.test(shell), "compatible release badge");
+assert(/<strong>v5\.(?:0\.[1-9]|1\.[0-6])<\/strong>/.test(text("build-status.html")), "build status compatible version");
 assert(
-  /provider deployment, invitations, and public launch remain blocked|private-pilot validation complete; real invitation issuance, participant access, provider operations, and public launch remain blocked/i.test(text("build-status.html")),
+  /provider deployment, invitations, and public launch remain blocked|private-pilot validation complete; real invitation issuance, participant access, provider operations, and public launch remain blocked|private-pilot operations evidence complete; real credentials, identity, provider connection, invitation, participant, live session, telemetry export, and public launch remain blocked/i.test(text("build-status.html")),
   "honest build status boundary"
 );
 assert(!/AnswerSeal/i.test(shell + text("build-status.html")), "shared project isolation");

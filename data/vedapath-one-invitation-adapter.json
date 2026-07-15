@@ -1,0 +1,130 @@
+{
+  "release": "v5.1.3",
+  "position": "An adapter contract should prove request shape and idempotency before it gains transport or provider authority",
+  "headline": "One pseudonymous request becomes reviewable while token creation, delivery, provider mutation, and invitation issuance stay false.",
+  "copy": "The adapter is deliberately fixture-only. It cannot receive an email address, create an account, connect to a provider, or send anything.",
+  "postures": [
+    {
+      "title": "Readiness",
+      "decision": "Required",
+      "copy": "The candidate stack gate must pass first."
+    },
+    {
+      "title": "Idempotency",
+      "decision": "Required",
+      "copy": "Repeated preparation resolves to one request shape."
+    },
+    {
+      "title": "Consent",
+      "decision": "Pending",
+      "copy": "Preparation cannot pretend consent has happened."
+    },
+    {
+      "title": "Transport",
+      "decision": "None",
+      "copy": "No message or token leaves the repository."
+    }
+  ],
+  "flow": [
+    {
+      "title": "Inherit",
+      "copy": "Require the private stack readiness status."
+    },
+    {
+      "title": "Describe",
+      "copy": "Use pseudonymous participant, role, purpose, and pending consent."
+    },
+    {
+      "title": "Hash",
+      "copy": "Create one canonical idempotent request digest."
+    },
+    {
+      "title": "Hold",
+      "copy": "Keep transport, delivery, provider, token, and issuance off."
+    }
+  ],
+  "decisions": [
+    {
+      "label": "Maximum requests",
+      "value": "1",
+      "reason": "No cohort or bulk path exists."
+    },
+    {
+      "label": "Consent state",
+      "value": "Pending",
+      "reason": "Consent remains a separate contract."
+    },
+    {
+      "label": "Delivery attempts",
+      "value": "0",
+      "reason": "The adapter has no transport."
+    },
+    {
+      "label": "Provider mutations",
+      "value": "0",
+      "reason": "The adapter is a local fixture."
+    }
+  ],
+  "metrics": [
+    {
+      "label": "Maximum invitations",
+      "value": "1"
+    },
+    {
+      "label": "Digest",
+      "value": "SHA-256"
+    },
+    {
+      "label": "Delivery attempts",
+      "value": "0"
+    },
+    {
+      "label": "Invitations issued",
+      "value": "0"
+    }
+  ],
+  "locks": [
+    {
+      "title": "Identity lock",
+      "decision": "Pseudonymous",
+      "copy": "Direct identity fields are rejected by every contract."
+    },
+    {
+      "title": "Execution lock",
+      "decision": "Closed",
+      "copy": "No invitation, account, credential, participant, or live session is created."
+    },
+    {
+      "title": "Provider lock",
+      "decision": "Disconnected",
+      "copy": "No provider mutation, delivery channel, or exported telemetry exists."
+    },
+    {
+      "title": "Evidence lock",
+      "decision": "Deterministic",
+      "copy": "Only fixture evidence and canonical digests are produced."
+    },
+    {
+      "title": "Public launch lock",
+      "decision": "Closed",
+      "copy": "Private evidence review cannot open public access."
+    }
+  ],
+  "packet": "VedaPath One-Invitation Adapter Contract\nStack readiness: required\nPseudonymous participant: required\nRole and purpose: bounded\nConsent: pending\nIdempotency key: required\nExpiry: 72 hours maximum\nDelivery mode: fixture only\nTransport: none\nToken created: false\nAccount created: false\nEmail sent: false\nProvider mutation: false\nInvitation issued: false\nPublic launch: blocked",
+  "primary_action": {
+    "href": "participantconsenthandshake.html",
+    "label": "Open Consent Handshake"
+  },
+  "schema": "vedapath.one-invitation-adapter.v1",
+  "evaluator": "scripts/vedapath-one-invitation-adapter.mjs",
+  "maximum_invitations": 1,
+  "expiry_hours": 72,
+  "token_created": false,
+  "account_created": false,
+  "email_sent": false,
+  "delivery_attempted": false,
+  "provider_mutation": false,
+  "invitation_issued": false,
+  "public_launch": "blocked",
+  "next_release": "v5.1.4 Participant Consent Handshake Contract"
+}

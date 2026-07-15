@@ -1,0 +1,131 @@
+{
+  "release": "v5.1.2",
+  "position": "A repository decision becomes operational evidence only after the candidate stack passes explicit, short-lived posture checks",
+  "headline": "Six exact postures can pass while credentials, provider connection, deployment, invitation, and session remain absent.",
+  "copy": "This is a candidate configuration review, not proof that a live stack exists. Every check expires within twenty-four hours and still needs a later audited execution decision.",
+  "postures": [
+    {
+      "title": "Identity",
+      "decision": "Pseudonymous only",
+      "copy": "No direct identity or participant account."
+    },
+    {
+      "title": "Rights",
+      "decision": "Reviewed source only",
+      "copy": "Only reviewed source material is in scope."
+    },
+    {
+      "title": "Writes",
+      "decision": "Review events only",
+      "copy": "No participant or publication write route."
+    },
+    {
+      "title": "Rollback",
+      "decision": "Named manual owner",
+      "copy": "A human stop path remains mandatory."
+    }
+  ],
+  "flow": [
+    {
+      "title": "Authorize",
+      "copy": "Start from the bounded v5.1.1 founder decision."
+    },
+    {
+      "title": "Inspect",
+      "copy": "Check identity, rights, queue, privacy, incident, and rollback posture."
+    },
+    {
+      "title": "Expire",
+      "copy": "Time-box the evidence to twenty-four hours."
+    },
+    {
+      "title": "Hold",
+      "copy": "Activate no deployment, provider, invitation, or session."
+    }
+  ],
+  "decisions": [
+    {
+      "label": "Required postures",
+      "value": "6",
+      "reason": "Every posture must match exactly."
+    },
+    {
+      "label": "Named owners",
+      "value": "3",
+      "reason": "Operations, privacy, and security stay accountable."
+    },
+    {
+      "label": "Allowed write routes",
+      "value": "1",
+      "reason": "Only review-event evidence is modeled."
+    },
+    {
+      "label": "Execution",
+      "value": "Off",
+      "reason": "Readiness is not activation."
+    }
+  ],
+  "metrics": [
+    {
+      "label": "Posture checks",
+      "value": "6"
+    },
+    {
+      "label": "Evidence life",
+      "value": "24h max"
+    },
+    {
+      "label": "Participants",
+      "value": "0"
+    },
+    {
+      "label": "Live sessions",
+      "value": "0"
+    }
+  ],
+  "locks": [
+    {
+      "title": "Identity lock",
+      "decision": "Pseudonymous",
+      "copy": "Direct identity fields are rejected by every contract."
+    },
+    {
+      "title": "Execution lock",
+      "decision": "Closed",
+      "copy": "No invitation, account, credential, participant, or live session is created."
+    },
+    {
+      "title": "Provider lock",
+      "decision": "Disconnected",
+      "copy": "No provider mutation, delivery channel, or exported telemetry exists."
+    },
+    {
+      "title": "Evidence lock",
+      "decision": "Deterministic",
+      "copy": "Only fixture evidence and canonical digests are produced."
+    },
+    {
+      "title": "Public launch lock",
+      "decision": "Closed",
+      "copy": "Private evidence review cannot open public access."
+    }
+  ],
+  "packet": "VedaPath Private Stack Readiness Gate\nFounder authorization: required\nCandidate stack: required\nPosture checks: 6 exact states\nNamed owners: 3\nMaximum participants: 1\nMaximum sessions: 1\nEvidence expiry: 24 hours maximum\nCredentials present: false\nProvider connected: false\nDeployment active: false\nInvitation issued: false\nSession started: false\nPublic launch: blocked",
+  "primary_action": {
+    "href": "oneinvitationadapter.html",
+    "label": "Open Invite Adapter"
+  },
+  "schema": "vedapath.private-stack-readiness.v1",
+  "evaluator": "scripts/vedapath-private-stack-readiness.mjs",
+  "required_postures": 6,
+  "evidence_expiry_hours": 24,
+  "maximum_participants": 1,
+  "maximum_sessions": 1,
+  "credentials_present": false,
+  "provider_connected": false,
+  "deployment_active": false,
+  "invitation_issued": false,
+  "session_started": false,
+  "public_launch": "blocked",
+  "next_release": "v5.1.3 One-Invitation Adapter Contract"
+}

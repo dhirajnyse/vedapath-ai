@@ -1,5 +1,5 @@
 (function () {
-  const releaseBadge = "v5.1.1 pilot decision";
+  const releaseBadge = "v5.1.6 evidence review";
   const prefKey = "vedapathCommandShellPrefs";
   const groups = [
     { title: "Start", labels: ["Home", "Build", "Brand", "Blueprint"] },
@@ -22,6 +22,7 @@
     { title: "Pilot Authorization", labels: ["Authorization", "Manifest", "Identity Contract", "Queue Migration", "Readiness Control"] },
     { title: "Private Implementation", labels: ["Implementation", "Secret Bindings", "Reviewer Accounts", "Queue Cutover", "Invitation Decision"] },
     { title: "Private Pilot Validation", labels: ["Invite Dry Run", "Revocation", "Session Sandbox", "Incident Drill", "Pilot Decision"] },
+    { title: "Private Pilot Operations", labels: ["Stack Readiness", "Invite Adapter", "Consent Handshake", "Observability", "Evidence Review"] },
   ];
   const pageTitles = {
     Home: "VedaPath command center",
@@ -138,6 +139,11 @@
     "Session Sandbox": "First Participant Session Sandbox",
     "Incident Drill": "Pilot Incident Drill",
     "Pilot Decision": "Founder Private Pilot Go/No-Go",
+    "Stack Readiness": "Private Stack Readiness Gate",
+    "Invite Adapter": "One-Invitation Adapter Contract",
+    "Consent Handshake": "Participant Consent Handshake Contract",
+    "Observability": "First-Session Observability and Rollback",
+    "Evidence Review": "Founder Pilot Evidence Review",
   };
   const bodyPageTitles = {
     "permission-execution-draft-page": "Controlled draft gate",
@@ -247,6 +253,11 @@
     "first-participant-session-sandbox-page": "First Participant Session Sandbox",
     "pilot-incident-drill-page": "Pilot Incident Drill",
     "founder-private-pilot-decision-page": "Founder Private Pilot Go/No-Go",
+    "private-stack-readiness-page": "Private Stack Readiness Gate",
+    "one-invitation-adapter-page": "One-Invitation Adapter Contract",
+    "participant-consent-handshake-page": "Participant Consent Handshake Contract",
+    "first-session-observability-page": "First-Session Observability and Rollback",
+    "founder-pilot-evidence-review-page": "Founder Pilot Evidence Review",
   };
 
 
@@ -321,6 +332,11 @@
     ["Session Sandbox", "firstparticipantsessionsandbox.html"],
     ["Incident Drill", "pilotincidentdrill.html"],
     ["Pilot Decision", "founderprivatepilotdecision.html"],
+    ["Stack Readiness", "privatestackreadiness.html"],
+    ["Invite Adapter", "oneinvitationadapter.html"],
+    ["Consent Handshake", "participantconsenthandshake.html"],
+    ["Observability", "firstsessionobservability.html"],
+    ["Evidence Review", "founderpilotevidencereview.html"],
   ];
 
   function safeParse(value, fallback) {

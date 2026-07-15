@@ -241,7 +241,7 @@ for (let index = 0; index <= throughIndex; index += 1) {
 }
 
 const shell = text("assets/vedapath-command-shell.js");
-assert(/const releaseBadge = "v5\.(?:0\.[2-9]|1\.[01]) [^"]+";/.test(shell), "current compatible release badge");
+assert(/const releaseBadge = "v5\.(?:0\.[2-9]|1\.[0-6]) [^"]+";/.test(shell), "current compatible release badge");
 assert(shell.includes('{ title: "Private Implementation"'), "private implementation navigation group");
 const currentData = json([
   "data/vedapath-private-implementation-decision.json",
@@ -251,7 +251,7 @@ const currentData = json([
   "data/vedapath-invitation-activation-decision-gate.json"
 ][throughIndex]);
 assert(currentData.release === through, "current release data matches through");
-assert(/<strong>v5\.(?:0\.[2-9]|1\.[01])<\/strong>/.test(text("build-status.html")), "build status current version");
+assert(/<strong>v5\.(?:0\.[2-9]|1\.[0-6])<\/strong>/.test(text("build-status.html")), "build status current version");
 assert(text("CHANGELOG.md").includes(`## ${through} `), "changelog current version");
 assert(text("README.md").includes(`## ${through} `), "readme current version");
 assert(!existsSync("answerseal.html") && !existsSync("answerseal"), "AnswerSeal isolation");

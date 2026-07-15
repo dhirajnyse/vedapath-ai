@@ -284,10 +284,19 @@ for (let index = 0; index <= throughIndex; index += 1) {
 }
 
 const shell = text("assets/vedapath-command-shell.js");
-assert(shell.includes(`const releaseBadge = "${through} `), "current release badge");
+const badge = shell.match(/const releaseBadge = "v(\d+)\.(\d+)\.(\d+) [^"]+";/);
+assert(badge, "current release badge");
+const badgeVersion = badge.slice(1).map(Number);
+const throughVersion = through.slice(1).split(".").map(Number);
+assert(
+  badgeVersion[0] > throughVersion[0] ||
+  (badgeVersion[0] === throughVersion[0] && badgeVersion[1] > throughVersion[1]) ||
+  (badgeVersion[0] === throughVersion[0] && badgeVersion[1] === throughVersion[1] && badgeVersion[2] >= throughVersion[2]),
+  "release badge older than private pilot validation"
+);
 assert(shell.includes('{ title: "Private Pilot Validation"'), "private pilot validation navigation group");
 assert(shell.includes('aria-current="page"'), "active command rail link exposes aria-current");
-assert(text("build-status.html").includes(`<strong>${through}</strong>`), "build status current version");
+assert(text("build-status.html").includes("Phase 440: Founder Private Pilot Go/No-Go"), "build status private pilot phase");
 assert(text("CHANGELOG.md").includes(`## ${through} `), "changelog current version");
 assert(text("README.md").includes(`## ${through} `), "readme current version");
 for (let index = 0; index <= throughIndex; index += 1) {
