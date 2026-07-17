@@ -1,0 +1,104 @@
+{
+  "id": "founder-private-pilot-retrospective",
+  "release": "v5.2.1",
+  "title": "Founder Private-Pilot Retrospective",
+  "type": "private-pilot-execution-readiness",
+  "updated": "2026-07-17",
+  "position": "Give the founder one calm go/hold/rework packet after the execution-readiness chain.",
+  "headline": "Review the pilot before inviting anyone.",
+  "copy": "The retrospective keeps the next decision calm: evidence first, risks visible, and no accidental drift from private pilot readiness into public launch.",
+  "text_family": "Private pilot governance | Fixture",
+  "pramana_level": "Deterministic fixture contract",
+  "confidence": "High for prototype boundaries",
+  "boundary": "Private-pilot execution readiness evidence only; all records are deterministic fixtures. No credentials, direct identity, token value, account, email delivery, provider connection, deployment activation, live invitation, participant creation, live session, telemetry export, durable participant write, public launch, licensed corpus delivery, live AI generation, payments, or medical, legal, ritual, or spiritual authority.",
+  "primary_action": "Open retrospective",
+  "postures": [
+    "One private participant maximum",
+    "One private session maximum",
+    "Execution-readiness review only",
+    "Public launch remains blocked"
+  ],
+  "flow": [
+    {
+      "step": 1,
+      "label": "Gate",
+      "detail": "Required before the next step."
+    },
+    {
+      "step": 2,
+      "label": "Token",
+      "detail": "Required before the next step."
+    },
+    {
+      "step": 3,
+      "label": "Access",
+      "detail": "Required before the next step."
+    },
+    {
+      "step": 4,
+      "label": "Sandbox",
+      "detail": "Required before the next step."
+    },
+    {
+      "step": 5,
+      "label": "Founder decision",
+      "detail": "Founder-readable evidence packet."
+    }
+  ],
+  "decisions": [
+    {
+      "step": 1,
+      "label": "Go to private-pilot planning",
+      "result": "Allowed as fixture evidence only."
+    },
+    {
+      "step": 2,
+      "label": "Hold for security review",
+      "result": "Keeps execution closed until resolved."
+    },
+    {
+      "step": 3,
+      "label": "Rework token or access envelope",
+      "result": "Keeps execution closed until resolved."
+    }
+  ],
+  "metrics": [
+    {
+      "label": "Artifacts",
+      "value": "4"
+    },
+    {
+      "label": "Choices",
+      "value": "3"
+    },
+    {
+      "label": "Public launch",
+      "value": "Blocked"
+    },
+    {
+      "label": "Next",
+      "value": "Gap map"
+    }
+  ],
+  "locks": [
+    "No credential, token value, or direct participant identity may be generated.",
+    "No provider, email, account, session, or telemetry endpoint may be activated.",
+    "No production write, public launch, payment, licensed corpus delivery, or live AI generation is permitted."
+  ],
+  "packet": [
+    "Gate: design-only approved",
+    "Token: redacted fixture valid",
+    "Access: ephemeral envelope valid",
+    "Sandbox: local trace valid"
+  ],
+  "launch_state": {
+    "credentialsIssued": false,
+    "tokenValueIssued": false,
+    "participantCreated": false,
+    "sessionStarted": false,
+    "providerConnected": false,
+    "telemetryExported": false,
+    "publicLaunch": false
+  },
+  "next_release": "v5.2.2 Pilot-to-Production Gap Map"
+}

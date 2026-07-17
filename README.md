@@ -1,3 +1,43 @@
+## v5.2.1 Founder Private-Pilot Retrospective
+
+A founder retrospective now aggregates the execution gate, token contract, access envelope, and sandbox trace into one review packet with explicit go, hold, and rework options while public launch stays blocked.
+
+- Open: [Founder Private-Pilot Retrospective](founderprivatepilotretrospective.html)
+- Data: `data/vedapath-founder-private-pilot-retrospective.json`
+- Boundary: Private-pilot execution readiness evidence only; all records are deterministic fixtures. No credentials, direct identity, token value, account, email delivery, provider connection, deployment activation, live invitation, participant creation, live session, telemetry export, durable participant write, public launch, licensed corpus delivery, live AI generation, payments, or medical, legal, ritual, or spiritual authority.
+
+## v5.2.0 Audited Session Execution Sandbox
+
+A local execution sandbox now simulates the one-session timeline with ordered events, source-card visibility, boundary acknowledgement, rollback ownership, and zero network, identity, telemetry export, or provider mutation.
+
+- Open: [Audited Session Execution Sandbox](auditedsessionexecutionsandbox.html)
+- Data: `data/vedapath-audited-session-execution-sandbox.json`
+- Boundary: Private-pilot execution readiness evidence only; all records are deterministic fixtures. No credentials, direct identity, token value, account, email delivery, provider connection, deployment activation, live invitation, participant creation, live session, telemetry export, durable participant write, public launch, licensed corpus delivery, live AI generation, payments, or medical, legal, ritual, or spiritual authority.
+
+## v5.1.9 Ephemeral Participant Access Envelope
+
+A least-permission access envelope now binds the redacted session token to one pseudonymous participant role, one consent receipt, one session window, and one revocation path without creating identity or storage.
+
+- Open: [Ephemeral Participant Access Envelope](ephemeralparticipantaccessenvelope.html)
+- Data: `data/vedapath-ephemeral-participant-access-envelope.json`
+- Boundary: Private-pilot execution readiness evidence only; all records are deterministic fixtures. No credentials, direct identity, token value, account, email delivery, provider connection, deployment activation, live invitation, participant creation, live session, telemetry export, durable participant write, public launch, licensed corpus delivery, live AI generation, payments, or medical, legal, ritual, or spiritual authority.
+
+## v5.1.8 Single-Session Token Contract
+
+A redacted token-request contract now defines one short-lived, one-session, pseudonymous access shape without issuing a token value, account, email, or provider mutation.
+
+- Open: [Single-Session Token Contract](singlesessiontokencontract.html)
+- Data: `data/vedapath-single-session-token-contract.json`
+- Boundary: Private-pilot execution readiness evidence only; all records are deterministic fixtures. No credentials, direct identity, token value, account, email delivery, provider connection, deployment activation, live invitation, participant creation, live session, telemetry export, durable participant write, public launch, licensed corpus delivery, live AI generation, payments, or medical, legal, ritual, or spiritual authority.
+
+## v5.1.7 Audited Pilot Execution Decision Gate
+
+A founder-safe decision gate now checks whether the private-pilot evidence chain is complete enough to design one audited execution path while every real execution capability remains disabled.
+
+- Open: [Audited Pilot Execution Decision Gate](auditedpilotexecutiondecisiongate.html)
+- Data: `data/vedapath-audited-pilot-execution-decision-gate.json`
+- Boundary: Private-pilot execution readiness evidence only; all records are deterministic fixtures. No credentials, direct identity, token value, account, email delivery, provider connection, deployment activation, live invitation, participant creation, live session, telemetry export, durable participant write, public launch, licensed corpus delivery, live AI generation, payments, or medical, legal, ritual, or spiritual authority.
+
 ## v5.1.6 Founder Pilot Evidence Review
 
 A twenty-four-hour founder review now requires the original authorization, stack readiness, invitation adapter, consent handshake, session observability, three named owners, five explicit risk acknowledgements, and one-person, one-session limits.

@@ -1,5 +1,5 @@
 (function () {
-  const releaseBadge = "v5.1.6 evidence review";
+  const releaseBadge = "v5.2.1 retrospective";
   const prefKey = "vedapathCommandShellPrefs";
   const groups = [
     { title: "Start", labels: ["Home", "Build", "Brand", "Blueprint"] },
@@ -23,6 +23,7 @@
     { title: "Private Implementation", labels: ["Implementation", "Secret Bindings", "Reviewer Accounts", "Queue Cutover", "Invitation Decision"] },
     { title: "Private Pilot Validation", labels: ["Invite Dry Run", "Revocation", "Session Sandbox", "Incident Drill", "Pilot Decision"] },
     { title: "Private Pilot Operations", labels: ["Stack Readiness", "Invite Adapter", "Consent Handshake", "Observability", "Evidence Review"] },
+    { title: "Private Pilot Execution", labels: ["Execution Gate", "Session Token", "Access Envelope", "Execution Sandbox", "Pilot Retrospective"] },
   ];
   const pageTitles = {
     Home: "VedaPath command center",
@@ -144,6 +145,11 @@
     "Consent Handshake": "Participant Consent Handshake Contract",
     "Observability": "First-Session Observability and Rollback",
     "Evidence Review": "Founder Pilot Evidence Review",
+    "Pilot Retrospective": "Founder Private-Pilot Retrospective",
+    "Execution Sandbox": "Audited Session Execution Sandbox",
+    "Access Envelope": "Ephemeral Participant Access Envelope",
+    "Session Token": "Single-Session Token Contract",
+    "Execution Gate": "Audited Pilot Execution Decision Gate",
   };
   const bodyPageTitles = {
     "permission-execution-draft-page": "Controlled draft gate",
@@ -258,6 +264,11 @@
     "participant-consent-handshake-page": "Participant Consent Handshake Contract",
     "first-session-observability-page": "First-Session Observability and Rollback",
     "founder-pilot-evidence-review-page": "Founder Pilot Evidence Review",
+    "founder-private-pilot-retrospective-page": "Founder Private-Pilot Retrospective",
+    "audited-session-execution-sandbox-page": "Audited Session Execution Sandbox",
+    "ephemeral-participant-access-envelope-page": "Ephemeral Participant Access Envelope",
+    "single-session-token-contract-page": "Single-Session Token Contract",
+    "audited-pilot-execution-decision-gate-page": "Audited Pilot Execution Decision Gate",
   };
 
 
@@ -337,6 +348,11 @@
     ["Consent Handshake", "participantconsenthandshake.html"],
     ["Observability", "firstsessionobservability.html"],
     ["Evidence Review", "founderpilotevidencereview.html"],
+    ["Pilot Retrospective", "founderprivatepilotretrospective.html"],
+    ["Execution Sandbox", "auditedsessionexecutionsandbox.html"],
+    ["Access Envelope", "ephemeralparticipantaccessenvelope.html"],
+    ["Session Token", "singlesessiontokencontract.html"],
+    ["Execution Gate", "auditedpilotexecutiondecisiongate.html"],
   ];
 
   function safeParse(value, fallback) {

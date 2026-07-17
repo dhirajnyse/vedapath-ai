@@ -1,3 +1,128 @@
+## v5.2.1 Founder Private-Pilot Retrospective
+
+### Changes made
+- A founder retrospective now aggregates the execution gate, token contract, access envelope, and sandbox trace into one review packet with explicit go, hold, and rework options while public launch stays blocked.
+- Added the Pilot Retrospective command-shell page, data contract, documentation, and deterministic checker coverage.
+- Kept the private-pilot boundary explicit: no credentials, token values, identities, participants, live sessions, telemetry export, provider writes, or public launch.
+
+### Files changed
+- `founderprivatepilotretrospective.html`
+- `data/vedapath-founder-private-pilot-retrospective.json`
+- `docs/FOUNDER_PRIVATE_PILOT_RETROSPECTIVE.md`
+- `scripts/vedapath-private-pilot-execution-contracts.mjs`
+- `scripts/check-v517-v521-private-pilot-execution.mjs`
+- shared navigation/build docs where applicable
+
+### Checks run
+- `node scripts/apply-v517-v521-private-pilot-execution-batch.mjs --through=v5.2.1`
+- `node --check scripts/vedapath-private-pilot-execution-contracts.mjs`
+- `node --check scripts/check-v517-v521-private-pilot-execution.mjs`
+- `node scripts/check-v517-v521-private-pilot-execution.mjs --through=v5.2.1`
+- `node scripts/check-static-links.mjs`
+
+### Known risks
+- Fixture evidence only; production credentials, provider access, durable storage, live AI, real participants, and public launch remain intentionally blocked.
+
+## v5.2.0 Audited Session Execution Sandbox
+
+### Changes made
+- A local execution sandbox now simulates the one-session timeline with ordered events, source-card visibility, boundary acknowledgement, rollback ownership, and zero network, identity, telemetry export, or provider mutation.
+- Added the Execution Sandbox command-shell page, data contract, documentation, and deterministic checker coverage.
+- Kept the private-pilot boundary explicit: no credentials, token values, identities, participants, live sessions, telemetry export, provider writes, or public launch.
+
+### Files changed
+- `auditedsessionexecutionsandbox.html`
+- `data/vedapath-audited-session-execution-sandbox.json`
+- `docs/AUDITED_SESSION_EXECUTION_SANDBOX.md`
+- `scripts/vedapath-private-pilot-execution-contracts.mjs`
+- `scripts/check-v517-v521-private-pilot-execution.mjs`
+- shared navigation/build docs where applicable
+
+### Checks run
+- `node scripts/apply-v517-v521-private-pilot-execution-batch.mjs --through=v5.2.0`
+- `node --check scripts/vedapath-private-pilot-execution-contracts.mjs`
+- `node --check scripts/check-v517-v521-private-pilot-execution.mjs`
+- `node scripts/check-v517-v521-private-pilot-execution.mjs --through=v5.2.0`
+- `node scripts/check-static-links.mjs`
+
+### Known risks
+- Fixture evidence only; production credentials, provider access, durable storage, live AI, real participants, and public launch remain intentionally blocked.
+
+## v5.1.9 Ephemeral Participant Access Envelope
+
+### Changes made
+- A least-permission access envelope now binds the redacted session token to one pseudonymous participant role, one consent receipt, one session window, and one revocation path without creating identity or storage.
+- Added the Access Envelope command-shell page, data contract, documentation, and deterministic checker coverage.
+- Kept the private-pilot boundary explicit: no credentials, token values, identities, participants, live sessions, telemetry export, provider writes, or public launch.
+
+### Files changed
+- `ephemeralparticipantaccessenvelope.html`
+- `data/vedapath-ephemeral-participant-access-envelope.json`
+- `docs/EPHEMERAL_PARTICIPANT_ACCESS_ENVELOPE.md`
+- `scripts/vedapath-private-pilot-execution-contracts.mjs`
+- `scripts/check-v517-v521-private-pilot-execution.mjs`
+- shared navigation/build docs where applicable
+
+### Checks run
+- `node scripts/apply-v517-v521-private-pilot-execution-batch.mjs --through=v5.1.9`
+- `node --check scripts/vedapath-private-pilot-execution-contracts.mjs`
+- `node --check scripts/check-v517-v521-private-pilot-execution.mjs`
+- `node scripts/check-v517-v521-private-pilot-execution.mjs --through=v5.1.9`
+- `node scripts/check-static-links.mjs`
+
+### Known risks
+- Fixture evidence only; production credentials, provider access, durable storage, live AI, real participants, and public launch remain intentionally blocked.
+
+## v5.1.8 Single-Session Token Contract
+
+### Changes made
+- A redacted token-request contract now defines one short-lived, one-session, pseudonymous access shape without issuing a token value, account, email, or provider mutation.
+- Added the Session Token command-shell page, data contract, documentation, and deterministic checker coverage.
+- Kept the private-pilot boundary explicit: no credentials, token values, identities, participants, live sessions, telemetry export, provider writes, or public launch.
+
+### Files changed
+- `singlesessiontokencontract.html`
+- `data/vedapath-single-session-token-contract.json`
+- `docs/SINGLE_SESSION_TOKEN_CONTRACT.md`
+- `scripts/vedapath-private-pilot-execution-contracts.mjs`
+- `scripts/check-v517-v521-private-pilot-execution.mjs`
+- shared navigation/build docs where applicable
+
+### Checks run
+- `node scripts/apply-v517-v521-private-pilot-execution-batch.mjs --through=v5.1.8`
+- `node --check scripts/vedapath-private-pilot-execution-contracts.mjs`
+- `node --check scripts/check-v517-v521-private-pilot-execution.mjs`
+- `node scripts/check-v517-v521-private-pilot-execution.mjs --through=v5.1.8`
+- `node scripts/check-static-links.mjs`
+
+### Known risks
+- Fixture evidence only; production credentials, provider access, durable storage, live AI, real participants, and public launch remain intentionally blocked.
+
+## v5.1.7 Audited Pilot Execution Decision Gate
+
+### Changes made
+- A founder-safe decision gate now checks whether the private-pilot evidence chain is complete enough to design one audited execution path while every real execution capability remains disabled.
+- Added the Execution Gate command-shell page, data contract, documentation, and deterministic checker coverage.
+- Kept the private-pilot boundary explicit: no credentials, token values, identities, participants, live sessions, telemetry export, provider writes, or public launch.
+
+### Files changed
+- `auditedpilotexecutiondecisiongate.html`
+- `data/vedapath-audited-pilot-execution-decision-gate.json`
+- `docs/AUDITED_PILOT_EXECUTION_DECISION_GATE.md`
+- `scripts/vedapath-private-pilot-execution-contracts.mjs`
+- `scripts/check-v517-v521-private-pilot-execution.mjs`
+- shared navigation/build docs where applicable
+
+### Checks run
+- `node scripts/apply-v517-v521-private-pilot-execution-batch.mjs --through=v5.1.7`
+- `node --check scripts/vedapath-private-pilot-execution-contracts.mjs`
+- `node --check scripts/check-v517-v521-private-pilot-execution.mjs`
+- `node scripts/check-v517-v521-private-pilot-execution.mjs --through=v5.1.7`
+- `node scripts/check-static-links.mjs`
+
+### Known risks
+- Fixture evidence only; production credentials, provider access, durable storage, live AI, real participants, and public launch remain intentionally blocked.
+
 ## v5.1.6 Founder Pilot Evidence Review
 
 - Changes made: Adds a founder pilot evidence-review evaluator with five exact evidence dependencies, five allowlisted risk acknowledgements, named founder, privacy, and security owners, twenty-four-hour expiry, one-participant and one-session ceilings, approve, reject, and blocked outcomes, and permanent no-credential, no-invitation, no-session, no-participant, no-provider, and public-launch locks.

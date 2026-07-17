@@ -117,6 +117,11 @@ const pages = [
   "participantconsenthandshake.html",
   "firstsessionobservability.html",
   "founderpilotevidencereview.html",
+  "founderprivatepilotretrospective.html",
+  "auditedsessionexecutionsandbox.html",
+  "ephemeralparticipantaccessenvelope.html",
+  "singlesessiontokencontract.html",
+  "auditedpilotexecutiondecisiongate.html",
 ];
 
 const missing = [];

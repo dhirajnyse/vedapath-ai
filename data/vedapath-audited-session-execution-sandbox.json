@@ -1,0 +1,104 @@
+{
+  "id": "audited-session-execution-sandbox",
+  "release": "v5.2.0",
+  "title": "Audited Session Execution Sandbox",
+  "type": "private-pilot-execution-readiness",
+  "updated": "2026-07-17",
+  "position": "Prove the session sequence locally before live execution.",
+  "headline": "Rehearse the session before it is real.",
+  "copy": "The sandbox turns the private-pilot path into a deterministic timeline that can be inspected, reset, and rejected before any participant arrives.",
+  "text_family": "Private pilot governance | Fixture",
+  "pramana_level": "Deterministic fixture contract",
+  "confidence": "High for prototype boundaries",
+  "boundary": "Private-pilot execution readiness evidence only; all records are deterministic fixtures. No credentials, direct identity, token value, account, email delivery, provider connection, deployment activation, live invitation, participant creation, live session, telemetry export, durable participant write, public launch, licensed corpus delivery, live AI generation, payments, or medical, legal, ritual, or spiritual authority.",
+  "primary_action": "Open execution sandbox",
+  "postures": [
+    "One private participant maximum",
+    "One private session maximum",
+    "Execution-readiness review only",
+    "Public launch remains blocked"
+  ],
+  "flow": [
+    {
+      "step": 1,
+      "label": "Open",
+      "detail": "Required before the next step."
+    },
+    {
+      "step": 2,
+      "label": "Show source",
+      "detail": "Required before the next step."
+    },
+    {
+      "step": 3,
+      "label": "Acknowledge boundary",
+      "detail": "Required before the next step."
+    },
+    {
+      "step": 4,
+      "label": "Capture local event",
+      "detail": "Required before the next step."
+    },
+    {
+      "step": 5,
+      "label": "Close",
+      "detail": "Founder-readable evidence packet."
+    }
+  ],
+  "decisions": [
+    {
+      "step": 1,
+      "label": "Accept sandbox trace",
+      "result": "Allowed as fixture evidence only."
+    },
+    {
+      "step": 2,
+      "label": "Replay fixture",
+      "result": "Keeps execution closed until resolved."
+    },
+    {
+      "step": 3,
+      "label": "Block live path",
+      "result": "Keeps execution closed until resolved."
+    }
+  ],
+  "metrics": [
+    {
+      "label": "Events",
+      "value": "5"
+    },
+    {
+      "label": "Rollback owner",
+      "value": "1"
+    },
+    {
+      "label": "Network",
+      "value": "Off"
+    },
+    {
+      "label": "Live session",
+      "value": "No"
+    }
+  ],
+  "locks": [
+    "No credential, token value, or direct participant identity may be generated.",
+    "No provider, email, account, session, or telemetry endpoint may be activated.",
+    "No production write, public launch, payment, licensed corpus delivery, or live AI generation is permitted."
+  ],
+  "packet": [
+    "Trace: local-execution-sandbox-001",
+    "Event count: 5",
+    "Raw content stored: false",
+    "Rollback owner: owner:pilot-shutdown"
+  ],
+  "launch_state": {
+    "credentialsIssued": false,
+    "tokenValueIssued": false,
+    "participantCreated": false,
+    "sessionStarted": false,
+    "providerConnected": false,
+    "telemetryExported": false,
+    "publicLaunch": false
+  },
+  "next_release": "Founder Private-Pilot Retrospective"
+}

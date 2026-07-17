@@ -1,0 +1,99 @@
+{
+  "id": "single-session-token-contract",
+  "release": "v5.1.8",
+  "title": "Single-Session Token Contract",
+  "type": "private-pilot-execution-readiness",
+  "updated": "2026-07-17",
+  "position": "Make private session access reviewable before any token exists.",
+  "headline": "Shape a token without issuing one.",
+  "copy": "The contract gives engineering a precise request envelope: one subject, one purpose, one scope, short TTL, idempotency, and no serialized secret.",
+  "text_family": "Private pilot governance | Fixture",
+  "pramana_level": "Deterministic fixture contract",
+  "confidence": "High for prototype boundaries",
+  "boundary": "Private-pilot execution readiness evidence only; all records are deterministic fixtures. No credentials, direct identity, token value, account, email delivery, provider connection, deployment activation, live invitation, participant creation, live session, telemetry export, durable participant write, public launch, licensed corpus delivery, live AI generation, payments, or medical, legal, ritual, or spiritual authority.",
+  "primary_action": "Open token contract",
+  "postures": [
+    "One private participant maximum",
+    "One private session maximum",
+    "Execution-readiness review only",
+    "Public launch remains blocked"
+  ],
+  "flow": [
+    {
+      "step": 1,
+      "label": "Subject",
+      "detail": "Required before the next step."
+    },
+    {
+      "step": 2,
+      "label": "Scope",
+      "detail": "Required before the next step."
+    },
+    {
+      "step": 3,
+      "label": "TTL",
+      "detail": "Required before the next step."
+    },
+    {
+      "step": 4,
+      "label": "Digest",
+      "detail": "Founder-readable evidence packet."
+    }
+  ],
+  "decisions": [
+    {
+      "step": 1,
+      "label": "Accept redacted token envelope",
+      "result": "Allowed as fixture evidence only."
+    },
+    {
+      "step": 2,
+      "label": "Reduce scope",
+      "result": "Keeps execution closed until resolved."
+    },
+    {
+      "step": 3,
+      "label": "Reject until replay protection is clearer",
+      "result": "Keeps execution closed until resolved."
+    }
+  ],
+  "metrics": [
+    {
+      "label": "TTL minutes",
+      "value": "30"
+    },
+    {
+      "label": "Scopes",
+      "value": "3"
+    },
+    {
+      "label": "Token value",
+      "value": "None"
+    },
+    {
+      "label": "Provider",
+      "value": "Off"
+    }
+  ],
+  "locks": [
+    "No credential, token value, or direct participant identity may be generated.",
+    "No provider, email, account, session, or telemetry endpoint may be activated.",
+    "No production write, public launch, payment, licensed corpus delivery, or live AI generation is permitted."
+  ],
+  "packet": [
+    "Subject: pilot-subject-001",
+    "TTL: 30 minutes",
+    "Token value: redacted-none",
+    "Issuer: fixture-only"
+  ],
+  "launch_state": {
+    "credentialsIssued": false,
+    "tokenValueIssued": false,
+    "participantCreated": false,
+    "sessionStarted": false,
+    "providerConnected": false,
+    "telemetryExported": false,
+    "publicLaunch": false
+  },
+  "next_release": "Ephemeral Participant Access Envelope"
+}
