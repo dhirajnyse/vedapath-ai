@@ -1,3 +1,168 @@
+## v5.5.1 External Reviewer Identity & Activation Gate
+
+### Changes made
+- Adds signed, issuer-and-audience-bound, expiring reviewer claim verification with revocation, then aggregates six evidence packets into one reviewer-only decision: implementation candidate ready, hosted activation blocked.
+- Added a focused Identity Gate command-center room, structured data packet, documentation, and deterministic hosted-activation contract coverage.
+- Preserved the closed boundary: no provider activation, credential value, production data, real identity, participant telemetry, live AI, deployment, or public launch.
+
+### Files changed
+- `externalrevieweridentityactivationgate.html`
+- `data/vedapath-external-reviewer-identity-activation-gate.json`
+- `docs/EXTERNAL_REVIEWER_IDENTITY_ACTIVATION_GATE.md`
+- `assets/vedapath-hosted-activation.js`
+- `scripts/vedapath-hosted-activation-contracts.mjs`
+- `scripts/check-v547-v551-hosted-activation.mjs`
+- `scripts/apply-v547-v551-hosted-activation-batch.mjs`
+- `scripts/serve-vedapath-hosted-activation.mjs`
+- `scripts/smoke-v551-hosted-activation-http.mjs`
+- `assets/vedapath-command-shell.js`
+- `scripts/check-static-links.mjs`
+- `build-status.html`
+- `README.md`
+- `CHANGELOG.md`
+
+### Checks run
+- `node scripts/apply-v547-v551-hosted-activation-batch.mjs --through=v5.5.1`
+- `node --check scripts/vedapath-hosted-activation-contracts.mjs`
+- `node --check scripts/check-v547-v551-hosted-activation.mjs`
+- `node --check assets/vedapath-hosted-activation.js`
+- `node scripts/check-v547-v551-hosted-activation.mjs --through=v5.5.1`
+- `node scripts/check-static-links.mjs`
+- `node --check scripts/serve-vedapath-hosted-activation.mjs`
+- `node --check scripts/smoke-v551-hosted-activation-http.mjs`
+- `node scripts/smoke-v551-hosted-activation-http.mjs`
+
+### Known risks
+- The signature key, claims, accounts, adapters, and evidence are local fixtures; a real IdP, provider, secret store, database, reviewer operations, security program, legal review, and support model are still required.
+
+## v5.5.0 Durable Database Adapter Candidate
+
+### Changes made
+- Adds a provider-neutral transactional repository candidate with schema versioning, idempotent receipts, optimistic concurrency, atomic rollback, checksummed checkpoints, restore, and synthetic-data enforcement.
+- Added a focused Database Adapter command-center room, structured data packet, documentation, and deterministic hosted-activation contract coverage.
+- Preserved the closed boundary: no provider activation, credential value, production data, real identity, participant telemetry, live AI, deployment, or public launch.
+
+### Files changed
+- `durabledatabaseadaptercandidate.html`
+- `data/vedapath-durable-database-adapter-candidate.json`
+- `docs/DURABLE_DATABASE_ADAPTER_CANDIDATE.md`
+- `assets/vedapath-hosted-activation.js`
+- `scripts/vedapath-hosted-activation-contracts.mjs`
+- `scripts/check-v547-v551-hosted-activation.mjs`
+- `scripts/apply-v547-v551-hosted-activation-batch.mjs`
+- `assets/vedapath-command-shell.js`
+- `scripts/check-static-links.mjs`
+- `build-status.html`
+- `README.md`
+- `CHANGELOG.md`
+
+### Checks run
+- `node scripts/apply-v547-v551-hosted-activation-batch.mjs --through=v5.5.0`
+- `node --check scripts/vedapath-hosted-activation-contracts.mjs`
+- `node --check scripts/check-v547-v551-hosted-activation.mjs`
+- `node --check assets/vedapath-hosted-activation.js`
+- `node scripts/check-v547-v551-hosted-activation.mjs --through=v5.5.0`
+- `node scripts/check-static-links.mjs`
+
+### Known risks
+- All records remain synthetic and memory-backed; real migrations, encryption, backups, residency, query performance, retention, and disaster recovery remain unproven.
+
+## v5.4.9 Managed Secret Store Adapter
+
+### Changes made
+- Adds a reference-only secret-store adapter candidate with registration, independent rotation approval, revocation, non-exportable handles, ordered audit evidence, and strict rejection of submitted secret values.
+- Added a focused Secret Adapter command-center room, structured data packet, documentation, and deterministic hosted-activation contract coverage.
+- Preserved the closed boundary: no provider activation, credential value, production data, real identity, participant telemetry, live AI, deployment, or public launch.
+
+### Files changed
+- `managedsecretstoreadapter.html`
+- `data/vedapath-managed-secret-store-adapter.json`
+- `docs/MANAGED_SECRET_STORE_ADAPTER.md`
+- `assets/vedapath-hosted-activation.js`
+- `scripts/vedapath-hosted-activation-contracts.mjs`
+- `scripts/check-v547-v551-hosted-activation.mjs`
+- `scripts/apply-v547-v551-hosted-activation-batch.mjs`
+- `assets/vedapath-command-shell.js`
+- `scripts/check-static-links.mjs`
+- `build-status.html`
+- `README.md`
+- `CHANGELOG.md`
+
+### Checks run
+- `node scripts/apply-v547-v551-hosted-activation-batch.mjs --through=v5.4.9`
+- `node --check scripts/vedapath-hosted-activation-contracts.mjs`
+- `node --check scripts/check-v547-v551-hosted-activation.mjs`
+- `node --check assets/vedapath-hosted-activation.js`
+- `node scripts/check-v547-v551-hosted-activation.mjs --through=v5.4.9`
+- `node scripts/check-static-links.mjs`
+
+### Known risks
+- The adapter is memory-backed and reference-only; real vault IAM, value custody, encryption, rotation jobs, break-glass operations, and audit export remain unfinished.
+
+## v5.4.8 Provider Manifest Dry Run
+
+### Changes made
+- Compiles founder-authorized preparation into a provider-neutral, checksummed manifest dry run that validates four binding references, explicit routes, security headers, and rollback steps without applying anything.
+- Added a focused Manifest Dry Run command-center room, structured data packet, documentation, and deterministic hosted-activation contract coverage.
+- Preserved the closed boundary: no provider activation, credential value, production data, real identity, participant telemetry, live AI, deployment, or public launch.
+
+### Files changed
+- `providermanifestdryrun.html`
+- `data/vedapath-provider-manifest-dry-run.json`
+- `docs/PROVIDER_MANIFEST_DRY_RUN.md`
+- `assets/vedapath-hosted-activation.js`
+- `scripts/vedapath-hosted-activation-contracts.mjs`
+- `scripts/check-v547-v551-hosted-activation.mjs`
+- `scripts/apply-v547-v551-hosted-activation-batch.mjs`
+- `assets/vedapath-command-shell.js`
+- `scripts/check-static-links.mjs`
+- `build-status.html`
+- `README.md`
+- `CHANGELOG.md`
+
+### Checks run
+- `node scripts/apply-v547-v551-hosted-activation-batch.mjs --through=v5.4.8`
+- `node --check scripts/vedapath-hosted-activation-contracts.mjs`
+- `node --check scripts/check-v547-v551-hosted-activation.mjs`
+- `node --check assets/vedapath-hosted-activation.js`
+- `node scripts/check-v547-v551-hosted-activation.mjs --through=v5.4.8`
+- `node scripts/check-static-links.mjs`
+
+### Known risks
+- The manifest is provider-neutral and unapplied; provider-specific configuration, billing, network policy, DNS, support, and real rollback behavior remain untested.
+
+## v5.4.7 Founder Hosted-Pilot Activation Decision
+
+### Changes made
+- Turns the private-demo readiness packet into a checksummed maker-checker founder decision that may authorize implementation preparation while provider activation, deployment, and public launch stay false.
+- Added a focused Founder Activation command-center room, structured data packet, documentation, and deterministic hosted-activation contract coverage.
+- Preserved the closed boundary: no provider activation, credential value, production data, real identity, participant telemetry, live AI, deployment, or public launch.
+
+### Files changed
+- `founderhostedpilotactivationdecision.html`
+- `data/vedapath-founder-hosted-pilot-activation-decision.json`
+- `docs/FOUNDER_HOSTED_PILOT_ACTIVATION_DECISION.md`
+- `assets/vedapath-hosted-activation.js`
+- `scripts/vedapath-hosted-activation-contracts.mjs`
+- `scripts/check-v547-v551-hosted-activation.mjs`
+- `scripts/apply-v547-v551-hosted-activation-batch.mjs`
+- `assets/vedapath-command-shell.js`
+- `scripts/check-static-links.mjs`
+- `build-status.html`
+- `README.md`
+- `CHANGELOG.md`
+
+### Checks run
+- `node scripts/apply-v547-v551-hosted-activation-batch.mjs --through=v5.4.7`
+- `node --check scripts/vedapath-hosted-activation-contracts.mjs`
+- `node --check scripts/check-v547-v551-hosted-activation.mjs`
+- `node --check assets/vedapath-hosted-activation.js`
+- `node scripts/check-v547-v551-hosted-activation.mjs --through=v5.4.7`
+- `node scripts/check-static-links.mjs`
+
+### Known risks
+- This founder packet authorizes only implementation preparation; it is not a vendor contract, legal approval, security sign-off, deployment grant, or launch decision.
+
 ## v5.4.6 Private Pilot Deployment Readiness Gate
 
 ### Changes made

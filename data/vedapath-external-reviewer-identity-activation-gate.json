@@ -1,0 +1,62 @@
+{
+  "version": "v5.5.1",
+  "title": "External Reviewer Identity & Activation Gate",
+  "releaseIndex": 5,
+  "summary": "Adds signed, issuer-and-audience-bound, expiring reviewer claim verification with revocation, then aggregates six evidence packets into one reviewer-only decision: implementation candidate ready, hosted activation blocked.",
+  "goal": "Close the implementation-evidence loop with fail-closed identity and one honest activation decision while real infrastructure remains absent.",
+  "status": "Ready for founder production-slice decision; activation remains blocked",
+  "boundary": "Hosted-pilot implementation evidence only; provider activation, managed production credentials, durable production data, real external identities, participant telemetry, live AI, deployment, and public launch remain closed.",
+  "hero": "Implementation candidate ready. Activation still blocked.",
+  "subhero": "Signed fixture claims prove issuer, audience, role, expiry, tamper refusal, and revocation. Six approved packets then meet in one gate that names every remaining real-world dependency and denies activation attempts.",
+  "metrics": {
+    "Evidence": "6/6",
+    "Identity": "Fail-closed",
+    "Private demo": "Ready",
+    "Activation": "Blocked"
+  },
+  "flow": [
+    "Verify one short-lived reviewer claim.",
+    "Reject tampered, expired, and revoked sessions.",
+    "Aggregate six independent implementation packets.",
+    "Deny hosted activation and list the production blockers."
+  ],
+  "checks": [
+    [
+      "Claims",
+      "Issuer + audience"
+    ],
+    [
+      "Sessions",
+      "Expiring + revocable"
+    ],
+    [
+      "Access",
+      "Reviewer only"
+    ],
+    [
+      "Attempt",
+      "403 fail-closed"
+    ]
+  ],
+  "packet": [
+    "identity:signed-fixture",
+    "evidence:6/6",
+    "implementation-ready:true",
+    "hosted-activation:false",
+    "public-launch:false"
+  ],
+  "control": "gate",
+  "initialInstruction": "Verify identity, evaluate complete and incomplete evidence, and confirm hosted activation is denied.",
+  "providerBound": false,
+  "managedSecretStoreBound": false,
+  "durableDatabaseBound": false,
+  "externalIdentityBound": false,
+  "productionCredentials": false,
+  "productionData": false,
+  "telemetryEnabled": false,
+  "liveAi": false,
+  "hostedPilotActivatable": false,
+  "deploymentAuthorized": false,
+  "publicLaunch": false,
+  "updated": "2026-07-19"
+}

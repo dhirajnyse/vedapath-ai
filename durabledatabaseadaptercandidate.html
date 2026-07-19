@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Adds a provider-neutral transactional repository candidate with schema versioning, idempotent receipts, optimistic concurrency, atomic rollback, checksummed checkpoints, restore, and synthetic-data enforcement.">
+    <title>VedaPath Durable Database Adapter Candidate</title>
+    <link rel="stylesheet" href="assets/vedapath-ui.css">
+    <link rel="stylesheet" href="assets/vedapath-command-shell.css">
+    <link rel="stylesheet" href="assets/vedapath-pilot-platform.css">
+  </head>
+  <body class="durable-database-adapter-candidate-page">
+    <main class="page pilot-platform-page hosted-activation-page" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top"><img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI"><span><strong>VedaPath AI</strong><small>Durable Database Adapter Candidate</small></span></a>
+        <nav class="navlinks nav" aria-label="Primary navigation"><a class="link" href="index.html">Home</a><a class="link" href="build-status.html">Build</a></nav>
+      </header>
+      <section class="platform-hero">
+        <article class="platform-panel platform-intro">
+          <span class="platform-kicker">Durability by contract</span>
+          <h1>Transact once. Detect conflict. Restore cleanly.</h1>
+          <p>A memory-backed adapter now behaves like the future durable repository: revisions prevent lost updates, transaction IDs prevent duplicates, failed writes roll back fully, and checkpoints restore a verified snapshot.</p>
+          <div class="platform-metrics"><article class="platform-metric"><span>Schema</span><strong>v1</strong></article>
+              <article class="platform-metric"><span>Writes</span><strong>Transactional</strong></article>
+              <article class="platform-metric"><span>Replay</span><strong>Idempotent</strong></article>
+              <article class="platform-metric"><span>Provider</span><strong>Unbound</strong></article></div>
+        </article>
+        <aside class="platform-panel" aria-label="Release flow">
+          <span class="platform-kicker">One controlled path</span>
+          <h2>Durable Database Adapter Candidate</h2>
+          <div class="platform-steps"><article class="platform-step"><span>1</span><div><strong>Commit one synthetic source transaction</strong><p>Commit one synthetic source transaction.</p></div></article>
+              <article class="platform-step"><span>2</span><div><strong>Replay safely and reject a stale revision</strong><p>Replay safely and reject a stale revision.</p></div></article>
+              <article class="platform-step"><span>3</span><div><strong>Roll back an unsafe personal-data write</strong><p>Roll back an unsafe personal-data write.</p></div></article>
+              <article class="platform-step"><span>4</span><div><strong>Checkpoint, advance, and restore the prior snapshot</strong><p>Checkpoint, advance, and restore the prior snapshot.</p></div></article></div>
+        </aside>
+      </section>
+      <section class="platform-workspace">
+        <article class="platform-panel">
+          <span class="platform-kicker">Executable proof</span>
+          <h2>Durable Database Adapter Candidate console</h2>
+          <p>Adds a provider-neutral transactional repository candidate with schema versioning, idempotent receipts, optimistic concurrency, atomic rollback, checksummed checkpoints, restore, and synthetic-data enforcement.</p>
+          <div class="platform-controls"><div class="platform-actions"><button class="platform-primary" type="button" data-activation-action="transact">Commit transaction</button><button type="button" data-activation-action="replay">Replay</button><button type="button" data-activation-action="conflict">Try stale revision</button><button type="button" data-activation-action="checkpoint">Checkpoint</button><button type="button" data-activation-action="unsafe">Try personal row</button></div></div>
+          <pre class="platform-output" data-activation-output aria-live="polite">Loading bounded release data.</pre>
+        </article>
+        <aside class="platform-panel">
+          <span class="platform-kicker">Evidence and boundary</span>
+          <h2>What this release proves</h2>
+          <div class="platform-checks"><article class="platform-check"><div><strong>Concurrency</strong><span>Revision guarded</span></div></article>
+              <article class="platform-check"><div><strong>Failure</strong><span>Atomic rollback</span></div></article>
+              <article class="platform-check"><div><strong>Restore</strong><span>Checksummed</span></div></article>
+              <article class="platform-check"><div><strong>Data</strong><span>Synthetic only</span></div></article></div>
+          <div class="platform-packet"><span class="platform-tag">schema:1</span><span class="platform-tag">transactions:atomic</span><span class="platform-tag">idempotency:true</span><span class="platform-tag">checkpoints:true</span><span class="platform-tag">durable-provider:null</span></div>
+          <p class="platform-warning"><strong>Still closed:</strong> Hosted-pilot implementation evidence only; provider activation, managed production credentials, durable production data, real external identities, participant telemetry, live AI, deployment, and public launch remain closed.</p>
+        </aside>
+      </section>
+    </main>
+    <script id="hostedActivationData" type="application/json">{"version":"v5.5.0","title":"Durable Database Adapter Candidate","releaseIndex":4,"summary":"Adds a provider-neutral transactional repository candidate with schema versioning, idempotent receipts, optimistic concurrency, atomic rollback, checksummed checkpoints, restore, and synthetic-data enforcement.","goal":"Prove durable repository behavior before choosing or binding a production database.","status":"Ready for external reviewer identity and integrated activation gate","boundary":"Hosted-pilot implementation evidence only; provider activation, managed production credentials, durable production data, real external identities, participant telemetry, live AI, deployment, and public launch remain closed.","hero":"Transact once. Detect conflict. Restore cleanly.","subhero":"A memory-backed adapter now behaves like the future durable repository: revisions prevent lost updates, transaction IDs prevent duplicates, failed writes roll back fully, and checkpoints restore a verified snapshot.","metrics":{"Schema":"v1","Writes":"Transactional","Replay":"Idempotent","Provider":"Unbound"},"flow":["Commit one synthetic source transaction.","Replay safely and reject a stale revision.","Roll back an unsafe personal-data write.","Checkpoint, advance, and restore the prior snapshot."],"checks":[["Concurrency","Revision guarded"],["Failure","Atomic rollback"],["Restore","Checksummed"],["Data","Synthetic only"]],"packet":["schema:1","transactions:atomic","idempotency:true","checkpoints:true","durable-provider:null"],"control":"database","initialInstruction":"Commit, replay, conflict, checkpoint, and reject unsafe data without touching a durable provider.","providerBound":false,"managedSecretStoreBound":false,"durableDatabaseBound":false,"externalIdentityBound":false,"productionCredentials":false,"productionData":false,"telemetryEnabled":false,"liveAi":false,"hostedPilotActivatable":false,"deploymentAuthorized":false,"publicLaunch":false,"updated":"2026-07-19"}</script>
+    <script src="assets/vedapath-command-shell.js"></script>
+    <script src="assets/vedapath-hosted-activation.js"></script>
+  </body>
+</html>

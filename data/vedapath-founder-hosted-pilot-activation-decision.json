@@ -1,0 +1,62 @@
+{
+  "version": "v5.4.7",
+  "title": "Founder Hosted-Pilot Activation Decision",
+  "releaseIndex": 1,
+  "summary": "Turns the private-demo readiness packet into a checksummed maker-checker founder decision that may authorize implementation preparation while provider activation, deployment, and public launch stay false.",
+  "goal": "Create one explicit founder decision between evidence-complete private demo work and any hosted implementation preparation.",
+  "status": "Ready for provider manifest dry run",
+  "boundary": "Hosted-pilot implementation evidence only; provider activation, managed production credentials, durable production data, real external identities, participant telemetry, live AI, deployment, and public launch remain closed.",
+  "hero": "Authorize preparation. Keep activation closed.",
+  "subhero": "The founder and an independent reviewer accept the boundary, owners, blockers, rollback posture, and no-launch rule in one deterministic packet. It permits planning, not infrastructure activation.",
+  "metrics": {
+    "Evidence": "5/5",
+    "Attestations": "4/4",
+    "Review": "Maker-checker",
+    "Activation": "Closed"
+  },
+  "flow": [
+    "Read the complete deployment-readiness packet.",
+    "Assign scope, rollback, security, and budget owners.",
+    "Require founder and independent reviewer signatures.",
+    "Authorize preparation while activation remains denied."
+  ],
+  "checks": [
+    [
+      "Readiness",
+      "Private demo approved"
+    ],
+    [
+      "Owners",
+      "Four named roles"
+    ],
+    [
+      "Decision",
+      "Checksummed"
+    ],
+    [
+      "Authority",
+      "Preparation only"
+    ]
+  ],
+  "packet": [
+    "evidence:5/5",
+    "attestations:4/4",
+    "implementation-preparation:true",
+    "hosted-activation:false",
+    "deployment:false"
+  ],
+  "control": "founder",
+  "initialInstruction": "Compare a complete maker-checker decision with incomplete evidence; neither result activates hosting.",
+  "providerBound": false,
+  "managedSecretStoreBound": false,
+  "durableDatabaseBound": false,
+  "externalIdentityBound": false,
+  "productionCredentials": false,
+  "productionData": false,
+  "telemetryEnabled": false,
+  "liveAi": false,
+  "hostedPilotActivatable": false,
+  "deploymentAuthorized": false,
+  "publicLaunch": false,
+  "updated": "2026-07-19"
+}

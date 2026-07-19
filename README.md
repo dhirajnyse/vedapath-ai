@@ -1,3 +1,44 @@
+## v5.5.1 External Reviewer Identity & Activation Gate
+
+Adds signed, issuer-and-audience-bound, expiring reviewer claim verification with revocation, then aggregates six evidence packets into one reviewer-only decision: implementation candidate ready, hosted activation blocked.
+
+- Open: [External Reviewer Identity & Activation Gate](externalrevieweridentityactivationgate.html)
+- Data: `data/vedapath-external-reviewer-identity-activation-gate.json`
+- Local HTTP proof: `node scripts/smoke-v551-hosted-activation-http.mjs`
+- Boundary: Hosted-pilot implementation evidence only; provider activation, managed production credentials, durable production data, real external identities, participant telemetry, live AI, deployment, and public launch remain closed.
+
+## v5.5.0 Durable Database Adapter Candidate
+
+Adds a provider-neutral transactional repository candidate with schema versioning, idempotent receipts, optimistic concurrency, atomic rollback, checksummed checkpoints, restore, and synthetic-data enforcement.
+
+- Open: [Durable Database Adapter Candidate](durabledatabaseadaptercandidate.html)
+- Data: `data/vedapath-durable-database-adapter-candidate.json`
+- Boundary: Hosted-pilot implementation evidence only; provider activation, managed production credentials, durable production data, real external identities, participant telemetry, live AI, deployment, and public launch remain closed.
+
+## v5.4.9 Managed Secret Store Adapter
+
+Adds a reference-only secret-store adapter candidate with registration, independent rotation approval, revocation, non-exportable handles, ordered audit evidence, and strict rejection of submitted secret values.
+
+- Open: [Managed Secret Store Adapter](managedsecretstoreadapter.html)
+- Data: `data/vedapath-managed-secret-store-adapter.json`
+- Boundary: Hosted-pilot implementation evidence only; provider activation, managed production credentials, durable production data, real external identities, participant telemetry, live AI, deployment, and public launch remain closed.
+
+## v5.4.8 Provider Manifest Dry Run
+
+Compiles founder-authorized preparation into a provider-neutral, checksummed manifest dry run that validates four binding references, explicit routes, security headers, and rollback steps without applying anything.
+
+- Open: [Provider Manifest Dry Run](providermanifestdryrun.html)
+- Data: `data/vedapath-provider-manifest-dry-run.json`
+- Boundary: Hosted-pilot implementation evidence only; provider activation, managed production credentials, durable production data, real external identities, participant telemetry, live AI, deployment, and public launch remain closed.
+
+## v5.4.7 Founder Hosted-Pilot Activation Decision
+
+Turns the private-demo readiness packet into a checksummed maker-checker founder decision that may authorize implementation preparation while provider activation, deployment, and public launch stay false.
+
+- Open: [Founder Hosted-Pilot Activation Decision](founderhostedpilotactivationdecision.html)
+- Data: `data/vedapath-founder-hosted-pilot-activation-decision.json`
+- Boundary: Hosted-pilot implementation evidence only; provider activation, managed production credentials, durable production data, real external identities, participant telemetry, live AI, deployment, and public launch remain closed.
+
 ## v5.4.6 Private Pilot Deployment Readiness Gate
 
 Aggregates binding, secret, cutover, reviewer provisioning, operations, private-demo, rollback, and founder-review evidence into one reviewer-only decision: private demo ready, hosted deployment blocked, public launch closed.

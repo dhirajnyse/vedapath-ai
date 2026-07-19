@@ -1,5 +1,5 @@
 (function () {
-  const releaseBadge = "v5.4.6 deployment readiness";
+  const releaseBadge = "v5.5.1 hosted activation";
   const prefKey = "vedapathCommandShellPrefs";
   const groups = [
     { title: "Start", labels: ["Home", "Build", "Brand", "Blueprint"] },
@@ -29,6 +29,7 @@
     { title: "Hosted Candidate", labels: ["Implementation Auth", "Env Bootstrap", "Hosted Source", "Identity Queue", "Consent Service"] },
     { title: "Pilot Platform", labels: ["Selection Gate", "Deployment Adapter", "Storage Migration", "Signed Identity", "Pilot Operations"] },
     { title: "Deployment Readiness", labels: ["Binding Decision", "Secrets Contract", "Cutover Rehearsal", "Reviewer Provisioning", "Deployment Gate"] },
+    { title: "Hosted Activation", labels: ["Founder Activation", "Manifest Dry Run", "Secret Adapter", "Database Adapter", "Identity Gate"] },
   ];
   const pageTitles = {
     Home: "VedaPath command center",
@@ -164,6 +165,11 @@
     "Implementation Auth": "Hosted Pilot Implementation Authorization",
     "Pilot Operations": "Private Pilot Operations & Observability Gate",
     "Deployment Gate": "Private Pilot Deployment Readiness Gate",
+    "Identity Gate": "External Reviewer Identity & Activation Gate",
+    "Database Adapter": "Durable Database Adapter Candidate",
+    "Secret Adapter": "Managed Secret Store Adapter",
+    "Manifest Dry Run": "Provider Manifest Dry Run",
+    "Founder Activation": "Founder Hosted-Pilot Activation Decision",
     "Reviewer Provisioning": "Reviewer Identity Provisioning Rehearsal",
     "Cutover Rehearsal": "Durable Database Cutover Rehearsal",
     "Secrets Contract": "Managed Secrets & Environment Contract",
@@ -308,6 +314,11 @@
     "hosted-pilot-implementation-authorization-page": "Hosted Pilot Implementation Authorization",
     "private-pilot-operations-observability-gate-page": "Private Pilot Operations & Observability Gate",
     "private-pilot-deployment-readiness-gate-page": "Private Pilot Deployment Readiness Gate",
+    "external-reviewer-identity-activation-gate-page": "External Reviewer Identity & Activation Gate",
+    "durable-database-adapter-candidate-page": "Durable Database Adapter Candidate",
+    "managed-secret-store-adapter-page": "Managed Secret Store Adapter",
+    "provider-manifest-dry-run-page": "Provider Manifest Dry Run",
+    "founder-hosted-pilot-activation-decision-page": "Founder Hosted-Pilot Activation Decision",
     "reviewer-identity-provisioning-rehearsal-page": "Reviewer Identity Provisioning Rehearsal",
     "durable-database-cutover-rehearsal-page": "Durable Database Cutover Rehearsal",
     "managed-secrets-environment-contract-page": "Managed Secrets & Environment Contract",
@@ -417,6 +428,11 @@
     ["Implementation Auth", "hostedpilotimplementationauthorization.html"],
     ["Pilot Operations", "privatepilotoperationsobservabilitygate.html"],
     ["Deployment Gate", "privatepilotdeploymentreadinessgate.html"],
+    ["Identity Gate", "externalrevieweridentityactivationgate.html"],
+    ["Database Adapter", "durabledatabaseadaptercandidate.html"],
+    ["Secret Adapter", "managedsecretstoreadapter.html"],
+    ["Manifest Dry Run", "providermanifestdryrun.html"],
+    ["Founder Activation", "founderhostedpilotactivationdecision.html"],
     ["Reviewer Provisioning", "revieweridentityprovisioningrehearsal.html"],
     ["Cutover Rehearsal", "durabledatabasecutoverrehearsal.html"],
     ["Secrets Contract", "managedsecretsenvironmentcontract.html"],
