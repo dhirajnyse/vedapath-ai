@@ -401,7 +401,7 @@
         <a class="link" href="pilotsessionexportpacket.html">Session Export</a>
         <a class="link" href="feedbacktoticketaudittrail.html">Feedback Audit</a>
         <a class="link" href="retrievaladaptershell.html">Retrieval Adapter</a>
-        <span class="version-pill">v5.4.1 pilot platform</span>
+        <span class="version-pill">v5.4.6 deployment readiness</span>
       </nav>
       </header>
 
@@ -413,23 +413,23 @@
       <section class="summary" aria-label="Progress summary">
         <article class="tile">
           <span>Current version</span>
-          <strong>v5.4.1</strong>
-          <p>Adds reviewer-only technical readiness, redacted request events, bounded incident lifecycle, and rollback evidence while excluding participant content and behavioral telemetry.</p>
+          <strong>v5.4.6</strong>
+          <p>Aggregates binding, secret, cutover, reviewer provisioning, operations, private-demo, rollback, and founder-review evidence into one reviewer-only decision: private demo ready, hosted deployment blocked, public launch closed.</p>
         </article>
         <article class="tile">
           <span>MVP progress</span>
           <strong>100%</strong>
-          <p>The clickable MVP now has a provider-neutral platform seam, checked migration path, signed candidate identity, and redacted private-pilot operations evidence.</p>
+          <p>The clickable MVP now has reviewable provider, secret, database cutover, reviewer provisioning, and deployment-readiness evidence without opening hosted activation.</p>
         </article>
         <article class="tile">
           <span>Full vision progress</span>
           <strong>99%</strong>
-          <p>The private candidate is testable end to end, while vendor binding, real durable storage, external identity, production security operations, live AI, and public launch remain closed.</p>
+          <p>The private demo path is evidence-complete, while real hosted accounts, managed credentials, durable storage, external identity, production operations, live AI, and public launch remain closed.</p>
         </article>
               <article class="tile">
           <span>Next release</span>
-          <strong>v5.4.2 Hosted Provider Binding Decision</strong>
-          <p>Review the platform evidence before any hosted provider binding, real account provisioning, durable data cutover, or deployment authorization.</p>
+          <strong>v5.4.7 Hosted Pilot Activation Decision</strong>
+          <p>Founder review comes before any real provider activation, credential binding, database cutover, account provisioning, or deployment authorization.</p>
         </article>
       </section>
 
@@ -3984,8 +3984,15 @@
             <article class="phase"><span class="badge done">Done</span><div><strong>Phase 5.3.8: Hosted Deployment Adapter Candidate</strong><p>Introduces one fetch-compatible provider-neutral adapter with binding-reference validation, redacted diagnostics, no-store responses, and fail-closed request handling.</p></div><div class="percent">100%</div></article>
             <article class="phase"><span class="badge done">Done</span><div><strong>Phase 5.3.9: Durable Storage Migration Candidate</strong><p>Adds a versioned four-table migration plan with checksum verification, transactional commit, rollback on failure, referential integrity, and idempotent replay in a memory-backed candidate store.</p></div><div class="percent">100%</div></article>
             <article class="phase"><span class="badge done">Done</span><div><strong>Phase 5.4.0: Production Identity Integration Candidate</strong><p>Replaces fixture session headers in the candidate path with signed, expiring issuer-and-audience-bound claims and strict reviewer/participant role enforcement.</p></div><div class="percent">100%</div></article>
-            <article class="phase"><span class="badge active">Active</span><div><strong>Phase 5.4.1: Private Pilot Operations & Observability Gate</strong><p>Adds reviewer-only technical readiness, redacted request events, bounded incident lifecycle, and rollback evidence while excluding participant content and behavioral telemetry.</p></div><div class="percent">100%</div></article>
+            <article class="phase"><span class="badge done">Done</span><div><strong>Phase 5.4.1: Private Pilot Operations & Observability Gate</strong><p>Adds reviewer-only technical readiness, redacted request events, bounded incident lifecycle, and rollback evidence while excluding participant content and behavioral telemetry.</p></div><div class="percent">100%</div></article>
             <!-- V537-V541 PILOT PLATFORM END -->
+            <!-- V542-V546 DEPLOYMENT READINESS START -->
+            <article class="phase"><span class="badge done">Done</span><div><strong>Phase 5.4.2: Hosted Provider Binding Decision</strong><p>Adds a checksummed, maker-checker-reviewed hosted binding manifest with eight required evidence gates and reference-only runtime, storage, identity, and secret bindings while operational activation remains false.</p></div><div class="percent">100%</div></article>
+            <article class="phase"><span class="badge done">Done</span><div><strong>Phase 5.4.3: Managed Secrets & Environment Contract</strong><p>Introduces a private-pilot environment contract that accepts only named secret references, rejects inline values and secret-like public configuration, and returns non-exportable redacted fixture handles.</p></div><div class="percent">100%</div></article>
+            <article class="phase"><span class="badge done">Done</span><div><strong>Phase 5.4.4: Durable Database Cutover Rehearsal</strong><p>Adds a blue-green memory-backed cutover rehearsal with checksummed plans, referential integrity, count and checksum parity, idempotent replay, simulated failure rollback, and explicit return to the blue slot.</p></div><div class="percent">100%</div></article>
+            <article class="phase"><span class="badge done">Done</span><div><strong>Phase 5.4.5: Reviewer Identity Provisioning Rehearsal</strong><p>Adds a synthetic reviewer lifecycle with request, independent approval, least-privilege activation, immediate session revocation, and an ordered redacted audit history while real accounts and external identity remain absent.</p></div><div class="percent">100%</div></article>
+            <article class="phase"><span class="badge active">Active</span><div><strong>Phase 5.4.6: Private Pilot Deployment Readiness Gate</strong><p>Aggregates binding, secret, cutover, reviewer provisioning, operations, private-demo, rollback, and founder-review evidence into one reviewer-only decision: private demo ready, hosted deployment blocked, public launch closed.</p></div><div class="percent">100%</div></article>
+            <!-- V542-V546 DEPLOYMENT READINESS END -->
 
 <!-- V410-V414 PHASES END -->
 
@@ -3998,11 +4005,11 @@
 
         <aside class="panel version">
           <h2>Version Notes</h2>
-          <div class="version-row"><span>Release</span><strong>v5.4.1 Private Pilot Operations & Observability Gate</strong></div>
-          <div class="version-row"><span>Previous</span><strong>v5.4.0 Production Identity Integration Candidate</strong></div>
+          <div class="version-row"><span>Release</span><strong>v5.4.6 Private Pilot Deployment Readiness Gate</strong></div>
+          <div class="version-row"><span>Previous</span><strong>v5.4.5 Reviewer Identity Provisioning Rehearsal</strong></div>
           <div class="version-row"><span>Commit</span><strong>See GitHub history</strong></div>
-          <div class="version-row"><span>Goal</span><strong>Make a private candidate operable and diagnosable without turning participant reflection into telemetry or opening public launch.</strong></div>
-          <div class="version-row"><span>Status</span><strong>Ready for hosted provider binding decision; Private-pilot platform candidate only; provider and region binding, production credentials, real participant data, behavioral telemetry, live AI, public launch, and production authorization remain closed.</strong></div>
+          <div class="version-row"><span>Goal</span><strong>Give the founder one honest deployment-readiness decision without confusing local proof with production authorization.</strong></div>
+          <div class="version-row"><span>Status</span><strong>Ready for founder hosted-pilot activation decision; Private-pilot deployment readiness only; provider and region activation, managed production credentials, real participant data, behavioral telemetry, live AI, public launch, and production authorization remain closed.</strong></div>
           <div class="panel note">
             <h2>North Star</h2>
             <p>Make sacred and philosophical knowledge easier to approach without flattening its depth, confusing categories, or pretending the AI is an authority.</p>

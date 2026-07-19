@@ -1,3 +1,168 @@
+## v5.4.6 Private Pilot Deployment Readiness Gate
+
+### Changes made
+- Aggregates binding, secret, cutover, reviewer provisioning, operations, private-demo, rollback, and founder-review evidence into one reviewer-only decision: private demo ready, hosted deployment blocked, public launch closed.
+- Added an interactive Deployment Gate room, structured data packet, documentation, and deterministic deployment-readiness contract coverage.
+- Preserved the closed boundary: no provider activation, real credentials or participant data, behavioral telemetry, live AI, deployment authorization, or public launch.
+
+### Files changed
+- `privatepilotdeploymentreadinessgate.html`
+- `data/vedapath-private-pilot-deployment-readiness-gate.json`
+- `docs/PRIVATE_PILOT_DEPLOYMENT_READINESS_GATE.md`
+- `assets/vedapath-deployment-readiness.js`
+- `scripts/vedapath-deployment-readiness-contracts.mjs`
+- `scripts/check-v542-v546-deployment-readiness.mjs`
+- `scripts/apply-v542-v546-deployment-readiness-batch.mjs`
+- `scripts/serve-vedapath-deployment-readiness.mjs`
+- `scripts/smoke-v546-deployment-readiness-http.mjs`
+- `assets/vedapath-command-shell.js`
+- `scripts/check-static-links.mjs`
+- `build-status.html`
+- `README.md`
+- `CHANGELOG.md`
+
+### Checks run
+- `node scripts/apply-v542-v546-deployment-readiness-batch.mjs --through=v5.4.6`
+- `node --check scripts/vedapath-deployment-readiness-contracts.mjs`
+- `node --check scripts/check-v542-v546-deployment-readiness.mjs`
+- `node --check assets/vedapath-deployment-readiness.js`
+- `node scripts/check-v542-v546-deployment-readiness.mjs --through=v5.4.6`
+- `node scripts/check-static-links.mjs`
+- `node --check scripts/serve-vedapath-deployment-readiness.mjs`
+- `node --check scripts/smoke-v546-deployment-readiness-http.mjs`
+- `node scripts/smoke-v546-deployment-readiness-http.mjs`
+
+### Known risks
+- This is a local private-demo readiness gate, not deployment approval; hosted accounts, managed secrets, durable storage, external identity, security operations, legal review, and real pilot consent remain unfinished.
+
+## v5.4.5 Reviewer Identity Provisioning Rehearsal
+
+### Changes made
+- Adds a synthetic reviewer lifecycle with request, independent approval, least-privilege activation, immediate session revocation, and an ordered redacted audit history while real accounts and external identity remain absent.
+- Added an interactive Reviewer Provisioning room, structured data packet, documentation, and deterministic deployment-readiness contract coverage.
+- Preserved the closed boundary: no provider activation, real credentials or participant data, behavioral telemetry, live AI, deployment authorization, or public launch.
+
+### Files changed
+- `revieweridentityprovisioningrehearsal.html`
+- `data/vedapath-reviewer-identity-provisioning-rehearsal.json`
+- `docs/REVIEWER_IDENTITY_PROVISIONING_REHEARSAL.md`
+- `assets/vedapath-deployment-readiness.js`
+- `scripts/vedapath-deployment-readiness-contracts.mjs`
+- `scripts/check-v542-v546-deployment-readiness.mjs`
+- `scripts/apply-v542-v546-deployment-readiness-batch.mjs`
+- `assets/vedapath-command-shell.js`
+- `scripts/check-static-links.mjs`
+- `build-status.html`
+- `README.md`
+- `CHANGELOG.md`
+
+### Checks run
+- `node scripts/apply-v542-v546-deployment-readiness-batch.mjs --through=v5.4.5`
+- `node --check scripts/vedapath-deployment-readiness-contracts.mjs`
+- `node --check scripts/check-v542-v546-deployment-readiness.mjs`
+- `node --check assets/vedapath-deployment-readiness.js`
+- `node scripts/check-v542-v546-deployment-readiness.mjs --through=v5.4.5`
+- `node scripts/check-static-links.mjs`
+
+### Known risks
+- The lifecycle is synthetic; external identity integration, MFA, recovery, joiner-mover-leaver operations, device trust, and real account support remain unfinished.
+
+## v5.4.4 Durable Database Cutover Rehearsal
+
+### Changes made
+- Adds a blue-green memory-backed cutover rehearsal with checksummed plans, referential integrity, count and checksum parity, idempotent replay, simulated failure rollback, and explicit return to the blue slot.
+- Added an interactive Cutover Rehearsal room, structured data packet, documentation, and deterministic deployment-readiness contract coverage.
+- Preserved the closed boundary: no provider activation, real credentials or participant data, behavioral telemetry, live AI, deployment authorization, or public launch.
+
+### Files changed
+- `durabledatabasecutoverrehearsal.html`
+- `data/vedapath-durable-database-cutover-rehearsal.json`
+- `docs/DURABLE_DATABASE_CUTOVER_REHEARSAL.md`
+- `assets/vedapath-deployment-readiness.js`
+- `scripts/vedapath-deployment-readiness-contracts.mjs`
+- `scripts/check-v542-v546-deployment-readiness.mjs`
+- `scripts/apply-v542-v546-deployment-readiness-batch.mjs`
+- `assets/vedapath-command-shell.js`
+- `scripts/check-static-links.mjs`
+- `build-status.html`
+- `README.md`
+- `CHANGELOG.md`
+
+### Checks run
+- `node scripts/apply-v542-v546-deployment-readiness-batch.mjs --through=v5.4.4`
+- `node --check scripts/vedapath-deployment-readiness-contracts.mjs`
+- `node --check scripts/check-v542-v546-deployment-readiness.mjs`
+- `node --check assets/vedapath-deployment-readiness.js`
+- `node scripts/check-v542-v546-deployment-readiness.mjs --through=v5.4.4`
+- `node scripts/check-static-links.mjs`
+
+### Known risks
+- All rehearsal state is memory-backed; real database schemas, backups, encryption, residency, throughput, retention, and disaster recovery remain unproven.
+
+## v5.4.3 Managed Secrets & Environment Contract
+
+### Changes made
+- Introduces a private-pilot environment contract that accepts only named secret references, rejects inline values and secret-like public configuration, and returns non-exportable redacted fixture handles.
+- Added an interactive Secrets Contract room, structured data packet, documentation, and deterministic deployment-readiness contract coverage.
+- Preserved the closed boundary: no provider activation, real credentials or participant data, behavioral telemetry, live AI, deployment authorization, or public launch.
+
+### Files changed
+- `managedsecretsenvironmentcontract.html`
+- `data/vedapath-managed-secrets-environment-contract.json`
+- `docs/MANAGED_SECRETS_ENVIRONMENT_CONTRACT.md`
+- `assets/vedapath-deployment-readiness.js`
+- `scripts/vedapath-deployment-readiness-contracts.mjs`
+- `scripts/check-v542-v546-deployment-readiness.mjs`
+- `scripts/apply-v542-v546-deployment-readiness-batch.mjs`
+- `assets/vedapath-command-shell.js`
+- `scripts/check-static-links.mjs`
+- `build-status.html`
+- `README.md`
+- `CHANGELOG.md`
+
+### Checks run
+- `node scripts/apply-v542-v546-deployment-readiness-batch.mjs --through=v5.4.3`
+- `node --check scripts/vedapath-deployment-readiness-contracts.mjs`
+- `node --check scripts/check-v542-v546-deployment-readiness.mjs`
+- `node --check assets/vedapath-deployment-readiness.js`
+- `node scripts/check-v542-v546-deployment-readiness.mjs --through=v5.4.3`
+- `node scripts/check-static-links.mjs`
+
+### Known risks
+- The resolver is a local fixture; managed vault permissions, rotation, break-glass access, audit export, and production credential custody remain unfinished.
+
+## v5.4.2 Hosted Provider Binding Decision
+
+### Changes made
+- Adds a checksummed, maker-checker-reviewed hosted binding manifest with eight required evidence gates and reference-only runtime, storage, identity, and secret bindings while operational activation remains false.
+- Added an interactive Binding Decision room, structured data packet, documentation, and deterministic deployment-readiness contract coverage.
+- Preserved the closed boundary: no provider activation, real credentials or participant data, behavioral telemetry, live AI, deployment authorization, or public launch.
+
+### Files changed
+- `hostedproviderbindingdecision.html`
+- `data/vedapath-hosted-provider-binding-decision.json`
+- `docs/HOSTED_PROVIDER_BINDING_DECISION.md`
+- `assets/vedapath-deployment-readiness.js`
+- `scripts/vedapath-deployment-readiness-contracts.mjs`
+- `scripts/check-v542-v546-deployment-readiness.mjs`
+- `scripts/apply-v542-v546-deployment-readiness-batch.mjs`
+- `assets/vedapath-command-shell.js`
+- `scripts/check-static-links.mjs`
+- `build-status.html`
+- `README.md`
+- `CHANGELOG.md`
+
+### Checks run
+- `node scripts/apply-v542-v546-deployment-readiness-batch.mjs --through=v5.4.2`
+- `node --check scripts/vedapath-deployment-readiness-contracts.mjs`
+- `node --check scripts/check-v542-v546-deployment-readiness.mjs`
+- `node --check assets/vedapath-deployment-readiness.js`
+- `node scripts/check-v542-v546-deployment-readiness.mjs --through=v5.4.2`
+- `node scripts/check-static-links.mjs`
+
+### Known risks
+- The packet approves only controlled implementation planning; no provider account, legal contract, region, support plan, or deployment credential is actually bound.
+
 ## v5.4.1 Private Pilot Operations & Observability Gate
 
 ### Changes made

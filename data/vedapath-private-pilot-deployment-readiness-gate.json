@@ -1,0 +1,59 @@
+{
+  "version": "v5.4.6",
+  "title": "Private Pilot Deployment Readiness Gate",
+  "releaseIndex": 5,
+  "summary": "Aggregates binding, secret, cutover, reviewer provisioning, operations, private-demo, rollback, and founder-review evidence into one reviewer-only decision: private demo ready, hosted deployment blocked, public launch closed.",
+  "goal": "Give the founder one honest deployment-readiness decision without confusing local proof with production authorization.",
+  "status": "Ready for founder hosted-pilot activation decision",
+  "boundary": "Private-pilot deployment readiness only; provider and region activation, managed production credentials, real participant data, behavioral telemetry, live AI, public launch, and production authorization remain closed.",
+  "hero": "Private demo ready. Hosted deployment still blocked.",
+  "subhero": "Five approved evidence packets and three review checks now meet in one gate. The gate names every remaining production dependency and denies deployment attempts until real infrastructure and operational authority exist.",
+  "metrics": {
+    "Evidence": "5/5",
+    "Private demo": "Ready",
+    "Hosted deploy": "Blocked",
+    "Public launch": "Closed"
+  },
+  "flow": [
+    "Aggregate five checksummed evidence packets.",
+    "Verify private demo, rollback, and founder review.",
+    "List every unresolved production dependency.",
+    "Deny deployment and keep public launch closed."
+  ],
+  "checks": [
+    [
+      "Evidence",
+      "Five approved packets"
+    ],
+    [
+      "Access",
+      "Reviewer only"
+    ],
+    [
+      "Attempt",
+      "403 fail-closed"
+    ],
+    [
+      "Launch",
+      "No authorization granted"
+    ]
+  ],
+  "packet": [
+    "evidence:5/5",
+    "private-demo:true",
+    "hosted-deploy:false",
+    "deployment-authorized:false",
+    "public-launch:false"
+  ],
+  "control": "gate",
+  "initialInstruction": "Compare complete and incomplete readiness evidence, then confirm a deployment attempt is denied.",
+  "providerBound": false,
+  "regionBound": false,
+  "deploymentAuthorized": false,
+  "productionCredentials": false,
+  "productionData": false,
+  "telemetryEnabled": false,
+  "liveAi": false,
+  "publicLaunch": false,
+  "updated": "2026-07-19"
+}

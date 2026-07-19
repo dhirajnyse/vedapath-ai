@@ -1,0 +1,59 @@
+{
+  "version": "v5.4.2",
+  "title": "Hosted Provider Binding Decision",
+  "releaseIndex": 1,
+  "summary": "Adds a checksummed, maker-checker-reviewed hosted binding manifest with eight required evidence gates and reference-only runtime, storage, identity, and secret bindings while operational activation remains false.",
+  "goal": "Turn the provider recommendation into a reviewable implementation decision without silently binding infrastructure or granting deployment authority.",
+  "status": "Ready for managed secrets and environment contract",
+  "boundary": "Private-pilot deployment readiness only; provider and region activation, managed production credentials, real participant data, behavioral telemetry, live AI, public launch, and production authorization remain closed.",
+  "hero": "Approve the manifest. Keep the switch off.",
+  "subhero": "One reviewed packet names the candidate host, region, runtime profile, evidence, and binding references. Its checksum can be compared; it still cannot activate an account, region, or deployment.",
+  "metrics": {
+    "Evidence": "8/8",
+    "Review": "Maker-checker",
+    "Manifest": "Checksummed",
+    "Binding": "Off"
+  },
+  "flow": [
+    "Name the candidate host and residency region.",
+    "Review eight independent evidence gates.",
+    "Checksum one reference-only binding manifest.",
+    "Keep operational activation and deployment false."
+  ],
+  "checks": [
+    [
+      "Residency",
+      "Explicit evidence"
+    ],
+    [
+      "Review",
+      "Different maker and checker"
+    ],
+    [
+      "Bindings",
+      "References only"
+    ],
+    [
+      "Activation",
+      "Still blocked"
+    ]
+  ],
+  "packet": [
+    "evidence:8/8",
+    "review:maker-checker",
+    "manifest:checksummed",
+    "operational-binding:false",
+    "deployment:false"
+  ],
+  "control": "binding",
+  "initialInstruction": "Compare a complete packet with missing evidence; neither path activates infrastructure.",
+  "providerBound": false,
+  "regionBound": false,
+  "deploymentAuthorized": false,
+  "productionCredentials": false,
+  "productionData": false,
+  "telemetryEnabled": false,
+  "liveAi": false,
+  "publicLaunch": false,
+  "updated": "2026-07-19"
+}

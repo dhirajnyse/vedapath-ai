@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Adds a synthetic reviewer lifecycle with request, independent approval, least-privilege activation, immediate session revocation, and an ordered redacted audit history while real accounts and external identity remain absent.">
+    <title>VedaPath Reviewer Identity Provisioning Rehearsal</title>
+    <link rel="stylesheet" href="assets/vedapath-ui.css">
+    <link rel="stylesheet" href="assets/vedapath-command-shell.css">
+    <link rel="stylesheet" href="assets/vedapath-pilot-platform.css">
+  </head>
+  <body class="reviewer-identity-provisioning-rehearsal-page">
+    <main class="page pilot-platform-page deployment-readiness-page" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top"><img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI"><span><strong>VedaPath AI</strong><small>Reviewer Identity Provisioning Rehearsal</small></span></a>
+        <nav class="navlinks nav" aria-label="Primary navigation"><a class="link" href="index.html">Home</a><a class="link" href="build-status.html">Build</a></nav>
+      </header>
+      <section class="platform-hero">
+        <article class="platform-panel platform-intro">
+          <span class="platform-kicker">Provision with separation</span>
+          <h1>Request. Approve. Activate. Revoke.</h1>
+          <p>A synthetic reviewer cannot approve their own request. Activation grants only the reviewer role, revocation invalidates the session immediately, and each lifecycle event remains visible in order.</p>
+          <div class="platform-metrics"><article class="platform-metric"><span>Role</span><strong>Reviewer only</strong></article>
+              <article class="platform-metric"><span>Approval</span><strong>Maker-checker</strong></article>
+              <article class="platform-metric"><span>Revocation</span><strong>Immediate</strong></article>
+              <article class="platform-metric"><span>Accounts</span><strong>Synthetic</strong></article></div>
+        </article>
+        <aside class="platform-panel" aria-label="Release flow">
+          <span class="platform-kicker">One controlled path</span>
+          <h2>Reviewer Identity Provisioning Rehearsal</h2>
+          <div class="platform-steps"><article class="platform-step"><span>1</span><div><strong>Request one synthetic reviewer identity</strong><p>Request one synthetic reviewer identity.</p></div></article>
+              <article class="platform-step"><span>2</span><div><strong>Require approval from a different actor</strong><p>Require approval from a different actor.</p></div></article>
+              <article class="platform-step"><span>3</span><div><strong>Activate one least-privilege reviewer session</strong><p>Activate one least-privilege reviewer session.</p></div></article>
+              <article class="platform-step"><span>4</span><div><strong>Revoke it and preserve the audit sequence</strong><p>Revoke it and preserve the audit sequence.</p></div></article></div>
+        </aside>
+      </section>
+      <section class="platform-workspace">
+        <article class="platform-panel">
+          <span class="platform-kicker">Executable proof</span>
+          <h2>Reviewer Identity Provisioning Rehearsal console</h2>
+          <p>Adds a synthetic reviewer lifecycle with request, independent approval, least-privilege activation, immediate session revocation, and an ordered redacted audit history while real accounts and external identity remain absent.</p>
+          <div class="platform-controls"><div class="platform-actions"><button class="platform-primary" type="button" data-readiness-action="request">Request</button><button type="button" data-readiness-action="approve">Approve</button><button type="button" data-readiness-action="activate">Activate</button><button type="button" data-readiness-action="revoke">Revoke</button></div></div>
+          <pre class="platform-output" data-readiness-output aria-live="polite">Loading bounded release data.</pre>
+        </article>
+        <aside class="platform-panel">
+          <span class="platform-kicker">Evidence and boundary</span>
+          <h2>What this release proves</h2>
+          <div class="platform-checks"><article class="platform-check"><div><strong>Self-approval</strong><span>Rejected</span></div></article>
+              <article class="platform-check"><div><strong>Privilege</strong><span>Reviewer only</span></div></article>
+              <article class="platform-check"><div><strong>Session</strong><span>Invalid after revoke</span></div></article>
+              <article class="platform-check"><div><strong>External IdP</strong><span>Still unbound</span></div></article></div>
+          <div class="platform-packet"><span class="platform-tag">identity:synthetic</span><span class="platform-tag">approval:maker-checker</span><span class="platform-tag">role:reviewer</span><span class="platform-tag">revocation:immediate</span><span class="platform-tag">external-idp:null</span></div>
+          <p class="platform-warning"><strong>Still closed:</strong> Private-pilot deployment readiness only; provider and region activation, managed production credentials, real participant data, behavioral telemetry, live AI, public launch, and production authorization remain closed.</p>
+        </aside>
+      </section>
+    </main>
+    <script id="deploymentReadinessData" type="application/json">{"version":"v5.4.5","title":"Reviewer Identity Provisioning Rehearsal","releaseIndex":4,"summary":"Adds a synthetic reviewer lifecycle with request, independent approval, least-privilege activation, immediate session revocation, and an ordered redacted audit history while real accounts and external identity remain absent.","goal":"Prove reviewer account operations and separation of duties before provisioning any real identity.","status":"Ready for private pilot deployment readiness gate","boundary":"Private-pilot deployment readiness only; provider and region activation, managed production credentials, real participant data, behavioral telemetry, live AI, public launch, and production authorization remain closed.","hero":"Request. Approve. Activate. Revoke.","subhero":"A synthetic reviewer cannot approve their own request. Activation grants only the reviewer role, revocation invalidates the session immediately, and each lifecycle event remains visible in order.","metrics":{"Role":"Reviewer only","Approval":"Maker-checker","Revocation":"Immediate","Accounts":"Synthetic"},"flow":["Request one synthetic reviewer identity.","Require approval from a different actor.","Activate one least-privilege reviewer session.","Revoke it and preserve the audit sequence."],"checks":[["Self-approval","Rejected"],["Privilege","Reviewer only"],["Session","Invalid after revoke"],["External IdP","Still unbound"]],"packet":["identity:synthetic","approval:maker-checker","role:reviewer","revocation:immediate","external-idp:null"],"control":"provisioning","initialInstruction":"Walk the synthetic reviewer through request, approval, activation, and revocation.","providerBound":false,"regionBound":false,"deploymentAuthorized":false,"productionCredentials":false,"productionData":false,"telemetryEnabled":false,"liveAi":false,"publicLaunch":false,"updated":"2026-07-19"}</script>
+    <script src="assets/vedapath-command-shell.js"></script>
+    <script src="assets/vedapath-deployment-readiness.js"></script>
+  </body>
+</html>

@@ -1,3 +1,44 @@
+## v5.4.6 Private Pilot Deployment Readiness Gate
+
+Aggregates binding, secret, cutover, reviewer provisioning, operations, private-demo, rollback, and founder-review evidence into one reviewer-only decision: private demo ready, hosted deployment blocked, public launch closed.
+
+- Open: [Private Pilot Deployment Readiness Gate](privatepilotdeploymentreadinessgate.html)
+- Data: `data/vedapath-private-pilot-deployment-readiness-gate.json`
+- Local HTTP proof: `node scripts/smoke-v546-deployment-readiness-http.mjs`
+- Boundary: Private-pilot deployment readiness only; provider and region activation, managed production credentials, real participant data, behavioral telemetry, live AI, public launch, and production authorization remain closed.
+
+## v5.4.5 Reviewer Identity Provisioning Rehearsal
+
+Adds a synthetic reviewer lifecycle with request, independent approval, least-privilege activation, immediate session revocation, and an ordered redacted audit history while real accounts and external identity remain absent.
+
+- Open: [Reviewer Identity Provisioning Rehearsal](revieweridentityprovisioningrehearsal.html)
+- Data: `data/vedapath-reviewer-identity-provisioning-rehearsal.json`
+- Boundary: Private-pilot deployment readiness only; provider and region activation, managed production credentials, real participant data, behavioral telemetry, live AI, public launch, and production authorization remain closed.
+
+## v5.4.4 Durable Database Cutover Rehearsal
+
+Adds a blue-green memory-backed cutover rehearsal with checksummed plans, referential integrity, count and checksum parity, idempotent replay, simulated failure rollback, and explicit return to the blue slot.
+
+- Open: [Durable Database Cutover Rehearsal](durabledatabasecutoverrehearsal.html)
+- Data: `data/vedapath-durable-database-cutover-rehearsal.json`
+- Boundary: Private-pilot deployment readiness only; provider and region activation, managed production credentials, real participant data, behavioral telemetry, live AI, public launch, and production authorization remain closed.
+
+## v5.4.3 Managed Secrets & Environment Contract
+
+Introduces a private-pilot environment contract that accepts only named secret references, rejects inline values and secret-like public configuration, and returns non-exportable redacted fixture handles.
+
+- Open: [Managed Secrets & Environment Contract](managedsecretsenvironmentcontract.html)
+- Data: `data/vedapath-managed-secrets-environment-contract.json`
+- Boundary: Private-pilot deployment readiness only; provider and region activation, managed production credentials, real participant data, behavioral telemetry, live AI, public launch, and production authorization remain closed.
+
+## v5.4.2 Hosted Provider Binding Decision
+
+Adds a checksummed, maker-checker-reviewed hosted binding manifest with eight required evidence gates and reference-only runtime, storage, identity, and secret bindings while operational activation remains false.
+
+- Open: [Hosted Provider Binding Decision](hostedproviderbindingdecision.html)
+- Data: `data/vedapath-hosted-provider-binding-decision.json`
+- Boundary: Private-pilot deployment readiness only; provider and region activation, managed production credentials, real participant data, behavioral telemetry, live AI, public launch, and production authorization remain closed.
+
 ## v5.4.1 Private Pilot Operations & Observability Gate
 
 Adds reviewer-only technical readiness, redacted request events, bounded incident lifecycle, and rollback evidence while excluding participant content and behavioral telemetry.

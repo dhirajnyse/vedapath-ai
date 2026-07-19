@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Adds a blue-green memory-backed cutover rehearsal with checksummed plans, referential integrity, count and checksum parity, idempotent replay, simulated failure rollback, and explicit return to the blue slot.">
+    <title>VedaPath Durable Database Cutover Rehearsal</title>
+    <link rel="stylesheet" href="assets/vedapath-ui.css">
+    <link rel="stylesheet" href="assets/vedapath-command-shell.css">
+    <link rel="stylesheet" href="assets/vedapath-pilot-platform.css">
+  </head>
+  <body class="durable-database-cutover-rehearsal-page">
+    <main class="page pilot-platform-page deployment-readiness-page" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top"><img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI"><span><strong>VedaPath AI</strong><small>Durable Database Cutover Rehearsal</small></span></a>
+        <nav class="navlinks nav" aria-label="Primary navigation"><a class="link" href="index.html">Home</a><a class="link" href="build-status.html">Build</a></nav>
+      </header>
+      <section class="platform-hero">
+        <article class="platform-panel platform-intro">
+          <span class="platform-kicker">Rehearse every move</span>
+          <h1>Copy. Compare. Switch. Roll back.</h1>
+          <p>The blue dataset is copied into a green candidate only when every table validates and count plus checksum parity agree. Failure restores the whole prior state; replay cannot duplicate the run.</p>
+          <div class="platform-metrics"><article class="platform-metric"><span>Pattern</span><strong>Blue-green</strong></article>
+              <article class="platform-metric"><span>Parity</span><strong>Count + checksum</strong></article>
+              <article class="platform-metric"><span>Replay</span><strong>Idempotent</strong></article>
+              <article class="platform-metric"><span>Provider</span><strong>Unbound</strong></article></div>
+        </article>
+        <aside class="platform-panel" aria-label="Release flow">
+          <span class="platform-kicker">One controlled path</span>
+          <h2>Durable Database Cutover Rehearsal</h2>
+          <div class="platform-steps"><article class="platform-step"><span>1</span><div><strong>Snapshot a checked source dataset</strong><p>Snapshot a checked source dataset.</p></div></article>
+              <article class="platform-step"><span>2</span><div><strong>Copy every related table to green</strong><p>Copy every related table to green.</p></div></article>
+              <article class="platform-step"><span>3</span><div><strong>Compare counts, checksum, and references</strong><p>Compare counts, checksum, and references.</p></div></article>
+              <article class="platform-step"><span>4</span><div><strong>Switch or restore blue as one bounded operation</strong><p>Switch or restore blue as one bounded operation.</p></div></article></div>
+        </aside>
+      </section>
+      <section class="platform-workspace">
+        <article class="platform-panel">
+          <span class="platform-kicker">Executable proof</span>
+          <h2>Durable Database Cutover Rehearsal console</h2>
+          <p>Adds a blue-green memory-backed cutover rehearsal with checksummed plans, referential integrity, count and checksum parity, idempotent replay, simulated failure rollback, and explicit return to the blue slot.</p>
+          <div class="platform-controls"><div class="platform-actions"><button class="platform-primary" type="button" data-readiness-action="rehearse">Run rehearsal</button><button type="button" data-readiness-action="rehearse">Replay</button><button type="button" data-readiness-action="fail">Simulate failure</button><button type="button" data-readiness-action="rollback">Roll back</button></div></div>
+          <pre class="platform-output" data-readiness-output aria-live="polite">Loading bounded release data.</pre>
+        </article>
+        <aside class="platform-panel">
+          <span class="platform-kicker">Evidence and boundary</span>
+          <h2>What this release proves</h2>
+          <div class="platform-checks"><article class="platform-check"><div><strong>References</strong><span>Validated before switch</span></div></article>
+              <article class="platform-check"><div><strong>Parity</strong><span>Counts and checksum</span></div></article>
+              <article class="platform-check"><div><strong>Failure</strong><span>Full state rollback</span></div></article>
+              <article class="platform-check"><div><strong>Retry</strong><span>One completed run</span></div></article></div>
+          <div class="platform-packet"><span class="platform-tag">strategy:blue-green</span><span class="platform-tag">parity:verified</span><span class="platform-tag">idempotent:true</span><span class="platform-tag">rollback:true</span><span class="platform-tag">durable-provider:null</span></div>
+          <p class="platform-warning"><strong>Still closed:</strong> Private-pilot deployment readiness only; provider and region activation, managed production credentials, real participant data, behavioral telemetry, live AI, public launch, and production authorization remain closed.</p>
+        </aside>
+      </section>
+    </main>
+    <script id="deploymentReadinessData" type="application/json">{"version":"v5.4.4","title":"Durable Database Cutover Rehearsal","releaseIndex":3,"summary":"Adds a blue-green memory-backed cutover rehearsal with checksummed plans, referential integrity, count and checksum parity, idempotent replay, simulated failure rollback, and explicit return to the blue slot.","goal":"Prove the cutover and rollback sequence before selecting or writing to a real durable database.","status":"Ready for reviewer identity provisioning rehearsal","boundary":"Private-pilot deployment readiness only; provider and region activation, managed production credentials, real participant data, behavioral telemetry, live AI, public launch, and production authorization remain closed.","hero":"Copy. Compare. Switch. Roll back.","subhero":"The blue dataset is copied into a green candidate only when every table validates and count plus checksum parity agree. Failure restores the whole prior state; replay cannot duplicate the run.","metrics":{"Pattern":"Blue-green","Parity":"Count + checksum","Replay":"Idempotent","Provider":"Unbound"},"flow":["Snapshot a checked source dataset.","Copy every related table to green.","Compare counts, checksum, and references.","Switch or restore blue as one bounded operation."],"checks":[["References","Validated before switch"],["Parity","Counts and checksum"],["Failure","Full state rollback"],["Retry","One completed run"]],"packet":["strategy:blue-green","parity:verified","idempotent:true","rollback:true","durable-provider:null"],"control":"cutover","initialInstruction":"Run, replay, fail, and roll back the database rehearsal without touching a real store.","providerBound":false,"regionBound":false,"deploymentAuthorized":false,"productionCredentials":false,"productionData":false,"telemetryEnabled":false,"liveAi":false,"publicLaunch":false,"updated":"2026-07-19"}</script>
+    <script src="assets/vedapath-command-shell.js"></script>
+    <script src="assets/vedapath-deployment-readiness.js"></script>
+  </body>
+</html>

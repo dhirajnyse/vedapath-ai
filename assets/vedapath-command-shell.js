@@ -1,5 +1,5 @@
 (function () {
-  const releaseBadge = "v5.4.1 pilot platform";
+  const releaseBadge = "v5.4.6 deployment readiness";
   const prefKey = "vedapathCommandShellPrefs";
   const groups = [
     { title: "Start", labels: ["Home", "Build", "Brand", "Blueprint"] },
@@ -28,6 +28,7 @@
     { title: "Minimal Backend", labels: ["Hosted Review", "Backend Provider", "Source Endpoint", "Review Queue", "Consent Backend"] },
     { title: "Hosted Candidate", labels: ["Implementation Auth", "Env Bootstrap", "Hosted Source", "Identity Queue", "Consent Service"] },
     { title: "Pilot Platform", labels: ["Selection Gate", "Deployment Adapter", "Storage Migration", "Signed Identity", "Pilot Operations"] },
+    { title: "Deployment Readiness", labels: ["Binding Decision", "Secrets Contract", "Cutover Rehearsal", "Reviewer Provisioning", "Deployment Gate"] },
   ];
   const pageTitles = {
     Home: "VedaPath command center",
@@ -162,6 +163,11 @@
     "Env Bootstrap": "Environment & Secret Bootstrap",
     "Implementation Auth": "Hosted Pilot Implementation Authorization",
     "Pilot Operations": "Private Pilot Operations & Observability Gate",
+    "Deployment Gate": "Private Pilot Deployment Readiness Gate",
+    "Reviewer Provisioning": "Reviewer Identity Provisioning Rehearsal",
+    "Cutover Rehearsal": "Durable Database Cutover Rehearsal",
+    "Secrets Contract": "Managed Secrets & Environment Contract",
+    "Binding Decision": "Hosted Provider Binding Decision",
     "Signed Identity": "Production Identity Integration Candidate",
     "Storage Migration": "Durable Storage Migration Candidate",
     "Deployment Adapter": "Hosted Deployment Adapter Candidate",
@@ -301,6 +307,11 @@
     "environment-secret-bootstrap-page": "Environment & Secret Bootstrap",
     "hosted-pilot-implementation-authorization-page": "Hosted Pilot Implementation Authorization",
     "private-pilot-operations-observability-gate-page": "Private Pilot Operations & Observability Gate",
+    "private-pilot-deployment-readiness-gate-page": "Private Pilot Deployment Readiness Gate",
+    "reviewer-identity-provisioning-rehearsal-page": "Reviewer Identity Provisioning Rehearsal",
+    "durable-database-cutover-rehearsal-page": "Durable Database Cutover Rehearsal",
+    "managed-secrets-environment-contract-page": "Managed Secrets & Environment Contract",
+    "hosted-provider-binding-decision-page": "Hosted Provider Binding Decision",
     "production-identity-integration-candidate-page": "Production Identity Integration Candidate",
     "durable-storage-migration-candidate-page": "Durable Storage Migration Candidate",
     "hosted-deployment-adapter-candidate-page": "Hosted Deployment Adapter Candidate",
@@ -405,6 +416,11 @@
     ["Env Bootstrap", "environmentsecretbootstrap.html"],
     ["Implementation Auth", "hostedpilotimplementationauthorization.html"],
     ["Pilot Operations", "privatepilotoperationsobservabilitygate.html"],
+    ["Deployment Gate", "privatepilotdeploymentreadinessgate.html"],
+    ["Reviewer Provisioning", "revieweridentityprovisioningrehearsal.html"],
+    ["Cutover Rehearsal", "durabledatabasecutoverrehearsal.html"],
+    ["Secrets Contract", "managedsecretsenvironmentcontract.html"],
+    ["Binding Decision", "hostedproviderbindingdecision.html"],
     ["Signed Identity", "productionidentityintegrationcandidate.html"],
     ["Storage Migration", "durablestoragemigrationcandidate.html"],
     ["Deployment Adapter", "hosteddeploymentadaptercandidate.html"],

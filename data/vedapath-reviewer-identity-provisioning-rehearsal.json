@@ -1,0 +1,59 @@
+{
+  "version": "v5.4.5",
+  "title": "Reviewer Identity Provisioning Rehearsal",
+  "releaseIndex": 4,
+  "summary": "Adds a synthetic reviewer lifecycle with request, independent approval, least-privilege activation, immediate session revocation, and an ordered redacted audit history while real accounts and external identity remain absent.",
+  "goal": "Prove reviewer account operations and separation of duties before provisioning any real identity.",
+  "status": "Ready for private pilot deployment readiness gate",
+  "boundary": "Private-pilot deployment readiness only; provider and region activation, managed production credentials, real participant data, behavioral telemetry, live AI, public launch, and production authorization remain closed.",
+  "hero": "Request. Approve. Activate. Revoke.",
+  "subhero": "A synthetic reviewer cannot approve their own request. Activation grants only the reviewer role, revocation invalidates the session immediately, and each lifecycle event remains visible in order.",
+  "metrics": {
+    "Role": "Reviewer only",
+    "Approval": "Maker-checker",
+    "Revocation": "Immediate",
+    "Accounts": "Synthetic"
+  },
+  "flow": [
+    "Request one synthetic reviewer identity.",
+    "Require approval from a different actor.",
+    "Activate one least-privilege reviewer session.",
+    "Revoke it and preserve the audit sequence."
+  ],
+  "checks": [
+    [
+      "Self-approval",
+      "Rejected"
+    ],
+    [
+      "Privilege",
+      "Reviewer only"
+    ],
+    [
+      "Session",
+      "Invalid after revoke"
+    ],
+    [
+      "External IdP",
+      "Still unbound"
+    ]
+  ],
+  "packet": [
+    "identity:synthetic",
+    "approval:maker-checker",
+    "role:reviewer",
+    "revocation:immediate",
+    "external-idp:null"
+  ],
+  "control": "provisioning",
+  "initialInstruction": "Walk the synthetic reviewer through request, approval, activation, and revocation.",
+  "providerBound": false,
+  "regionBound": false,
+  "deploymentAuthorized": false,
+  "productionCredentials": false,
+  "productionData": false,
+  "telemetryEnabled": false,
+  "liveAi": false,
+  "publicLaunch": false,
+  "updated": "2026-07-19"
+}
