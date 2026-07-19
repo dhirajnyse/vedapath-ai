@@ -1,3 +1,138 @@
+## v5.3.1 Consent Ledger Minimal Backend
+
+### Changes made
+- Adds an append-only consent ledger adapter for grant, withdrawal, export request, and deletion request events, plus an integrated backend-readiness gate.
+- Added a functional Consent Backend browser prototype, structured data packet, documentation, and deterministic minimal-backend contract coverage.
+- Preserved the release boundary: no credentials, production secrets, live AI, public telemetry, payment, broad accounts, public launch, or production authorization.
+
+### Files changed
+- `consentledgerminimalbackend.html`
+- `data/vedapath-consent-ledger-minimal-backend.json`
+- `docs/CONSENT_LEDGER_MINIMAL_BACKEND.md`
+- `assets/vedapath-minimal-backend.css`
+- `assets/vedapath-minimal-backend.js`
+- `scripts/vedapath-minimal-backend-contracts.mjs`
+- `scripts/check-v527-v531-minimal-backend.mjs`
+- shared navigation/build docs where applicable
+
+### Checks run
+- `node scripts/apply-v527-v531-minimal-backend-batch.mjs --through=v5.3.1`
+- `node --check scripts/vedapath-minimal-backend-contracts.mjs`
+- `node --check scripts/check-v527-v531-minimal-backend.mjs`
+- `node scripts/check-v527-v531-minimal-backend.mjs --through=v5.3.1`
+- `node scripts/check-static-links.mjs`
+
+### Known risks
+- Local and fixture-backed only; real provider binding, hosted security, production identity, persistent reviewer operations, consent storage, source-rights operations, and public launch remain unfinished and intentionally blocked.
+
+## v5.3.0 Reviewer Queue Minimal Backend
+
+### Changes made
+- Adds a deterministic reviewer queue adapter for submit, claim, request-changes, approve, release, and append-only audit events.
+- Added a functional Review Queue browser prototype, structured data packet, documentation, and deterministic minimal-backend contract coverage.
+- Preserved the release boundary: no credentials, production secrets, live AI, public telemetry, payment, broad accounts, public launch, or production authorization.
+
+### Files changed
+- `reviewerqueueminimalbackend.html`
+- `data/vedapath-reviewer-queue-minimal-backend.json`
+- `docs/REVIEWER_QUEUE_MINIMAL_BACKEND.md`
+- `assets/vedapath-minimal-backend.css`
+- `assets/vedapath-minimal-backend.js`
+- `scripts/vedapath-minimal-backend-contracts.mjs`
+- `scripts/check-v527-v531-minimal-backend.mjs`
+- shared navigation/build docs where applicable
+
+### Checks run
+- `node scripts/apply-v527-v531-minimal-backend-batch.mjs --through=v5.3.0`
+- `node --check scripts/vedapath-minimal-backend-contracts.mjs`
+- `node --check scripts/check-v527-v531-minimal-backend.mjs`
+- `node scripts/check-v527-v531-minimal-backend.mjs --through=v5.3.0`
+- `node scripts/check-static-links.mjs`
+
+### Known risks
+- Local and fixture-backed only; real provider binding, hosted security, production identity, persistent reviewer operations, consent storage, source-rights operations, and public launch remain unfinished and intentionally blocked.
+
+## v5.2.9 Source API Minimal Endpoint
+
+### Changes made
+- Implements a deterministic read-only source endpoint contract with citation fields, rights posture, safe no-source behavior, and local HTTP smoke coverage.
+- Added a functional Source Endpoint browser prototype, structured data packet, documentation, and deterministic minimal-backend contract coverage.
+- Preserved the release boundary: no credentials, production secrets, live AI, public telemetry, payment, broad accounts, public launch, or production authorization.
+
+### Files changed
+- `sourceapiminimalendpoint.html`
+- `data/vedapath-source-api-minimal-endpoint.json`
+- `docs/SOURCE_API_MINIMAL_ENDPOINT.md`
+- `assets/vedapath-minimal-backend.css`
+- `assets/vedapath-minimal-backend.js`
+- `scripts/vedapath-minimal-backend-contracts.mjs`
+- `scripts/check-v527-v531-minimal-backend.mjs`
+- shared navigation/build docs where applicable
+
+### Checks run
+- `node scripts/apply-v527-v531-minimal-backend-batch.mjs --through=v5.2.9`
+- `node --check scripts/vedapath-minimal-backend-contracts.mjs`
+- `node --check scripts/check-v527-v531-minimal-backend.mjs`
+- `node scripts/check-v527-v531-minimal-backend.mjs --through=v5.2.9`
+- `node scripts/check-static-links.mjs`
+
+### Known risks
+- Local and fixture-backed only; real provider binding, hosted security, production identity, persistent reviewer operations, consent storage, source-rights operations, and public launch remain unfinished and intentionally blocked.
+
+## v5.2.8 Backend Provider Decision
+
+### Changes made
+- Compares three backend patterns and selects an edge-worker plus relational-storage pattern for the smallest private pilot slice.
+- Added a functional Backend Provider browser prototype, structured data packet, documentation, and deterministic minimal-backend contract coverage.
+- Preserved the release boundary: no credentials, production secrets, live AI, public telemetry, payment, broad accounts, public launch, or production authorization.
+
+### Files changed
+- `backendproviderdecision.html`
+- `data/vedapath-backend-provider-decision.json`
+- `docs/BACKEND_PROVIDER_DECISION.md`
+- `assets/vedapath-minimal-backend.css`
+- `assets/vedapath-minimal-backend.js`
+- `scripts/vedapath-minimal-backend-contracts.mjs`
+- `scripts/check-v527-v531-minimal-backend.mjs`
+- shared navigation/build docs where applicable
+
+### Checks run
+- `node scripts/apply-v527-v531-minimal-backend-batch.mjs --through=v5.2.8`
+- `node --check scripts/vedapath-minimal-backend-contracts.mjs`
+- `node --check scripts/check-v527-v531-minimal-backend.mjs`
+- `node scripts/check-v527-v531-minimal-backend.mjs --through=v5.2.8`
+- `node scripts/check-static-links.mjs`
+
+### Known risks
+- Local and fixture-backed only; real provider binding, hosted security, production identity, persistent reviewer operations, consent storage, source-rights operations, and public launch remain unfinished and intentionally blocked.
+
+## v5.2.7 Founder Hosted-Pilot Review Gate
+
+### Changes made
+- Turns the hosted-pilot architecture into a founder decision packet with evidence, unresolved conditions, and an explicit spike-only authorization lane.
+- Added a functional Hosted Review browser prototype, structured data packet, documentation, and deterministic minimal-backend contract coverage.
+- Preserved the release boundary: no credentials, production secrets, live AI, public telemetry, payment, broad accounts, public launch, or production authorization.
+
+### Files changed
+- `founderhostedpilotreviewgate.html`
+- `data/vedapath-founder-hosted-pilot-review-gate.json`
+- `docs/FOUNDER_HOSTED_PILOT_REVIEW_GATE.md`
+- `assets/vedapath-minimal-backend.css`
+- `assets/vedapath-minimal-backend.js`
+- `scripts/vedapath-minimal-backend-contracts.mjs`
+- `scripts/check-v527-v531-minimal-backend.mjs`
+- shared navigation/build docs where applicable
+
+### Checks run
+- `node scripts/apply-v527-v531-minimal-backend-batch.mjs --through=v5.2.7`
+- `node --check scripts/vedapath-minimal-backend-contracts.mjs`
+- `node --check scripts/check-v527-v531-minimal-backend.mjs`
+- `node scripts/check-v527-v531-minimal-backend.mjs --through=v5.2.7`
+- `node scripts/check-static-links.mjs`
+
+### Known risks
+- Local and fixture-backed only; real provider binding, hosted security, production identity, persistent reviewer operations, consent storage, source-rights operations, and public launch remain unfinished and intentionally blocked.
+
 ## v5.2.6 Minimal Hosted Pilot Architecture Decision
 
 ### Changes made

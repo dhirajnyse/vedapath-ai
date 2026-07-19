@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Compares three backend patterns and selects an edge-worker plus relational-storage pattern for the smallest private pilot slice.">
+    <title>VedaPath Backend Provider Decision</title>
+    <link rel="stylesheet" href="assets/vedapath-ui.css">
+    <link rel="stylesheet" href="assets/vedapath-command-shell.css">
+    <link rel="stylesheet" href="assets/vedapath-minimal-backend.css">
+  </head>
+  <body class="backend-provider-decision-page">
+    <main class="page backend-page" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top"><img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI"><span><strong>VedaPath AI</strong><small>Backend Provider Decision</small></span></a>
+        <nav class="navlinks nav" aria-label="Primary navigation">
+          <a class="link" href="index.html">Home</a>
+          <a class="link" href="build-status.html">Build</a>
+        </nav>
+      </header>
+      <section class="backend-hero">
+        <article class="backend-panel backend-intro">
+          <span class="backend-kicker">Architecture choice</span>
+          <h1>Choose a small, reversible backend.</h1>
+          <p>The selected pattern supports one read-only source endpoint, one reviewer queue, and one consent ledger while preserving the GitHub Pages learning shell.</p>
+          <div class="backend-metrics"><article class="backend-metric"><span>Patterns</span><strong>3</strong></article>
+              <article class="backend-metric"><span>Choice</span><strong>Edge + SQL</strong></article>
+              <article class="backend-metric"><span>Region</span><strong>Review</strong></article>
+              <article class="backend-metric"><span>Launch</span><strong>Closed</strong></article></div>
+        </article>
+        <aside class="backend-panel backend-path" aria-label="Release flow">
+          <span class="backend-kicker">One bounded path</span>
+          <h2>Backend Provider Decision</h2>
+          <div class="backend-steps"><article class="backend-step"><span>1</span><div><strong>Compare privacy and data residency</strong><p>Compare privacy and data residency.</p></div></article>
+              <article class="backend-step"><span>2</span><div><strong>Compare operational burden and rollback</strong><p>Compare operational burden and rollback.</p></div></article>
+              <article class="backend-step"><span>3</span><div><strong>Select only the minimum provider pattern</strong><p>Select only the minimum provider pattern.</p></div></article>
+              <article class="backend-step"><span>4</span><div><strong>Defer vendor binding until credentials are approved</strong><p>Defer vendor binding until credentials are approved.</p></div></article></div>
+        </aside>
+      </section>
+      <section class="backend-workspace">
+        <article class="backend-panel backend-console">
+          <span class="backend-kicker">Interactive local proof</span>
+          <h2>Backend Provider Decision console</h2>
+          <p>Compares three backend patterns and selects an edge-worker plus relational-storage pattern for the smallest private pilot slice.</p>
+          <div class="backend-controls"><div class="backend-choice-grid" data-backend-provider-options></div><button class="backend-primary" type="button" data-backend-run>Evaluate pattern</button></div>
+          <pre class="backend-output" data-backend-output aria-live="polite">Select an action to inspect the bounded result.</pre>
+        </article>
+        <aside class="backend-panel backend-boundary">
+          <span class="backend-kicker">Decision boundary</span>
+          <h2>What this release decides</h2>
+          <ul><li>Use an edge worker with relational storage as the implementation pattern.</li>
+                <li>Keep the static interface independently deployable.</li>
+                <li>Require explicit region, secret, backup, and deletion choices before hosting.</li></ul>
+          <div class="backend-packet"><span>pattern:edge-worker-relational</span><span>frontend:static-pages</span><span>region:founder-reviewed</span><span>secrets:binding-only</span><span>rollback:required</span></div>
+          <p class="backend-warning"><strong>Still closed:</strong> Minimal-backend prototype only; no credentials, production secrets, live AI, public telemetry, payment, broad accounts, public launch, or production authorization.</p>
+        </aside>
+      </section>
+    </main>
+    <script id="backendArtifactData" type="application/json">{"version":"v5.2.8","title":"Backend Provider Decision","releaseIndex":2,"summary":"Compares three backend patterns and selects an edge-worker plus relational-storage pattern for the smallest private pilot slice.","goal":"Choose a backend shape by privacy, operational simplicity, reversibility, and bounded cost rather than feature volume.","status":"Ready for minimal source API endpoint","boundary":"Minimal-backend prototype only; no credentials, production secrets, live AI, public telemetry, payment, broad accounts, public launch, or production authorization.","hero":"Choose a small, reversible backend.","subhero":"The selected pattern supports one read-only source endpoint, one reviewer queue, and one consent ledger while preserving the GitHub Pages learning shell.","metrics":{"Patterns":"3","Choice":"Edge + SQL","Region":"Review","Launch":"Closed"},"flow":["Compare privacy and data residency.","Compare operational burden and rollback.","Select only the minimum provider pattern.","Defer vendor binding until credentials are approved."],"decisions":["Use an edge worker with relational storage as the implementation pattern.","Keep the static interface independently deployable.","Require explicit region, secret, backup, and deletion choices before hosting."],"packet":["pattern:edge-worker-relational","frontend:static-pages","region:founder-reviewed","secrets:binding-only","rollback:required"],"control":"provider","deploymentAuthorized":false,"productionStorage":false,"liveAi":false,"telemetryEnabled":false,"publicLaunch":false,"updated":"2026-07-19","patterns":[{"id":"edge-worker-relational","label":"Edge worker + relational store","privacy":"Strong","operations":"Low","rollback":"Strong","selected":true},{"id":"serverless-functions-document","label":"Functions + document store","privacy":"Review","operations":"Medium","rollback":"Medium","selected":false},{"id":"managed-app-platform","label":"Managed app platform","privacy":"Review","operations":"Medium","rollback":"Strong","selected":false}]}</script>
+    <script src="assets/vedapath-command-shell.js"></script>
+    <script src="assets/vedapath-minimal-backend.js"></script>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+{
+  "version": "v5.3.1",
+  "title": "Consent Ledger Minimal Backend",
+  "releaseIndex": 5,
+  "summary": "Adds an append-only consent ledger adapter for grant, withdrawal, export request, and deletion request events, plus an integrated backend-readiness gate.",
+  "goal": "Prove that pilot memory and learning signals remain consent-bound before hosted storage is authorized.",
+  "status": "Ready for founder minimal-backend review",
+  "boundary": "Minimal-backend prototype only; no credentials, production secrets, live AI, public telemetry, payment, broad accounts, public launch, or production authorization.",
+  "hero": "Consent remains visible and reversible.",
+  "subhero": "The minimal ledger records why data may be used, what scope was granted, when consent changed, and which export or deletion action is pending.",
+  "metrics": {
+    "Events": "4",
+    "Identity": "Pseudonymous",
+    "Telemetry": "Off",
+    "Launch": "Closed"
+  },
+  "flow": [
+    "Record explicit purpose and scope.",
+    "Append grant or withdrawal events.",
+    "Record export and deletion requests.",
+    "Keep telemetry and hosted writes disabled by default."
+  ],
+  "decisions": [
+    "Use append-only consent events rather than mutable flags.",
+    "Separate withdrawal from deletion so both remain auditable.",
+    "Require founder review before selecting real identity, database, or hosting services."
+  ],
+  "packet": [
+    "ledger:append-only",
+    "identity:pseudonymous",
+    "consent:explicit",
+    "withdrawal:supported",
+    "telemetry:disabled"
+  ],
+  "control": "consent",
+  "deploymentAuthorized": false,
+  "productionStorage": false,
+  "liveAi": false,
+  "telemetryEnabled": false,
+  "publicLaunch": false,
+  "updated": "2026-07-19",
+  "eventTypes": [
+    "consent.granted",
+    "consent.withdrawn",
+    "export.requested",
+    "deletion.requested"
+  ],
+  "defaultScope": [
+    "pilot-session",
+    "source-feedback"
+  ]
+}

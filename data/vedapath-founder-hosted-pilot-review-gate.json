@@ -1,0 +1,54 @@
+{
+  "version": "v5.2.7",
+  "title": "Founder Hosted-Pilot Review Gate",
+  "releaseIndex": 1,
+  "summary": "Turns the hosted-pilot architecture into a founder decision packet with evidence, unresolved conditions, and an explicit spike-only authorization lane.",
+  "goal": "Make the hosted-pilot decision reviewable without accidentally authorizing deployment or launch.",
+  "status": "Ready for backend provider decision",
+  "boundary": "Minimal-backend prototype only; no credentials, production secrets, live AI, public telemetry, payment, broad accounts, public launch, or production authorization.",
+  "hero": "Review the smallest real step.",
+  "subhero": "Evidence from security, privacy, rights, and architecture now converges into one calm decision: hold, rework, or authorize only a bounded implementation spike.",
+  "metrics": {
+    "Evidence": "5/5",
+    "Conditions": "4",
+    "Decision": "Review",
+    "Launch": "Closed"
+  },
+  "flow": [
+    "Confirm the readiness evidence.",
+    "Name every unresolved condition.",
+    "Choose hold, rework, or spike-only review.",
+    "Keep deployment and public launch closed."
+  ],
+  "decisions": [
+    "Authorize only a local or private implementation spike.",
+    "Do not treat document completeness as production readiness.",
+    "Carry all four launch blockers into the provider decision."
+  ],
+  "packet": [
+    "evidence:gap-map",
+    "evidence:threat-model",
+    "evidence:privacy-ledger",
+    "evidence:rights-pack",
+    "decision:review"
+  ],
+  "control": "decision",
+  "deploymentAuthorized": false,
+  "productionStorage": false,
+  "liveAi": false,
+  "telemetryEnabled": false,
+  "publicLaunch": false,
+  "updated": "2026-07-19",
+  "evidence": [
+    "Gap map reviewed",
+    "Threat model reviewed",
+    "Privacy ledger reviewed",
+    "Rights pack reviewed",
+    "Hosted architecture reviewed"
+  ],
+  "allowedDecisions": [
+    "hold",
+    "rework",
+    "authorize-spike"
+  ]
+}

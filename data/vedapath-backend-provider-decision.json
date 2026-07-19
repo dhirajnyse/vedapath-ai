@@ -1,0 +1,68 @@
+{
+  "version": "v5.2.8",
+  "title": "Backend Provider Decision",
+  "releaseIndex": 2,
+  "summary": "Compares three backend patterns and selects an edge-worker plus relational-storage pattern for the smallest private pilot slice.",
+  "goal": "Choose a backend shape by privacy, operational simplicity, reversibility, and bounded cost rather than feature volume.",
+  "status": "Ready for minimal source API endpoint",
+  "boundary": "Minimal-backend prototype only; no credentials, production secrets, live AI, public telemetry, payment, broad accounts, public launch, or production authorization.",
+  "hero": "Choose a small, reversible backend.",
+  "subhero": "The selected pattern supports one read-only source endpoint, one reviewer queue, and one consent ledger while preserving the GitHub Pages learning shell.",
+  "metrics": {
+    "Patterns": "3",
+    "Choice": "Edge + SQL",
+    "Region": "Review",
+    "Launch": "Closed"
+  },
+  "flow": [
+    "Compare privacy and data residency.",
+    "Compare operational burden and rollback.",
+    "Select only the minimum provider pattern.",
+    "Defer vendor binding until credentials are approved."
+  ],
+  "decisions": [
+    "Use an edge worker with relational storage as the implementation pattern.",
+    "Keep the static interface independently deployable.",
+    "Require explicit region, secret, backup, and deletion choices before hosting."
+  ],
+  "packet": [
+    "pattern:edge-worker-relational",
+    "frontend:static-pages",
+    "region:founder-reviewed",
+    "secrets:binding-only",
+    "rollback:required"
+  ],
+  "control": "provider",
+  "deploymentAuthorized": false,
+  "productionStorage": false,
+  "liveAi": false,
+  "telemetryEnabled": false,
+  "publicLaunch": false,
+  "updated": "2026-07-19",
+  "patterns": [
+    {
+      "id": "edge-worker-relational",
+      "label": "Edge worker + relational store",
+      "privacy": "Strong",
+      "operations": "Low",
+      "rollback": "Strong",
+      "selected": true
+    },
+    {
+      "id": "serverless-functions-document",
+      "label": "Functions + document store",
+      "privacy": "Review",
+      "operations": "Medium",
+      "rollback": "Medium",
+      "selected": false
+    },
+    {
+      "id": "managed-app-platform",
+      "label": "Managed app platform",
+      "privacy": "Review",
+      "operations": "Medium",
+      "rollback": "Strong",
+      "selected": false
+    }
+  ]
+}

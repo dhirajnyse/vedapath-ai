@@ -401,7 +401,7 @@
         <a class="link" href="pilotsessionexportpacket.html">Session Export</a>
         <a class="link" href="feedbacktoticketaudittrail.html">Feedback Audit</a>
         <a class="link" href="retrievaladaptershell.html">Retrieval Adapter</a>
-        <span class="version-pill">v5.2.6 production</span>
+        <span class="version-pill">v5.3.1 backend</span>
       </nav>
       </header>
 
@@ -413,23 +413,23 @@
       <section class="summary" aria-label="Progress summary">
         <article class="tile">
           <span>Current version</span>
-          <strong>v5.2.6</strong>
-          <p>Chooses the smallest hosted-pilot architecture posture: one bounded source API, reviewer queue, consent ledger, and read-only demo shell.</p>
+          <strong>v5.3.1</strong>
+          <p>Adds an append-only consent ledger adapter for grant, withdrawal, export request, and deletion request events, plus an integrated backend-readiness gate.</p>
         </article>
         <article class="tile">
           <span>MVP progress</span>
           <strong>100%</strong>
-          <p>The clickable MVP now has production-readiness controls for gap mapping, security, privacy, rights, and minimal hosted-pilot decisions.</p>
+          <p>The clickable MVP now has a deterministic minimal-backend path for source reads, reviewer decisions, consent events, and founder gates.</p>
         </article>
         <article class="tile">
           <span>Full vision progress</span>
           <strong>99%</strong>
-          <p>The product remains launch-blocked by design, but the path from private pilot to production is now explicit and reviewable.</p>
+          <p>Backend contracts are testable locally, while hosting, real identity, production storage, rights operations, security operations, and launch remain intentionally closed.</p>
         </article>
               <article class="tile">
           <span>Next release</span>
-          <strong>v5.2.7 Founder Hosted-Pilot Review Gate</strong>
-          <p>Founder review should decide whether the minimal hosted pilot architecture is ready for a real implementation spike.</p>
+          <strong>v5.3.2 Hosted Pilot Implementation Authorization</strong>
+          <p>The founder reviews the integrated minimal-backend evidence before any hosted implementation begins.</p>
         </article>
       </section>
 
@@ -3965,6 +3965,13 @@
             <article class="phase"><span class="badge done">Done</span><div><strong>Phase 5.2.5: Source Rights and License Pack</strong><p>Creates a source-rights packet for edition provenance, allowed use, citation display, missing permissions, and corpus-delivery boundaries.</p></div><div class="percent">100%</div></article>
             <article class="phase"><span class="badge active">Active</span><div><strong>Phase 5.2.6: Minimal Hosted Pilot Architecture Decision</strong><p>Chooses the smallest hosted-pilot architecture posture: one bounded source API, reviewer queue, consent ledger, and read-only demo shell.</p></div><div class="percent">100%</div></article>
             <!-- V522-V526 PRODUCTION READINESS END -->
+            <!-- V527-V531 MINIMAL BACKEND START -->
+            <article class="phase"><span class="badge done">Done</span><div><strong>Phase 5.2.7: Founder Hosted-Pilot Review Gate</strong><p>Turns the hosted-pilot architecture into a founder decision packet with evidence, unresolved conditions, and an explicit spike-only authorization lane.</p></div><div class="percent">100%</div></article>
+            <article class="phase"><span class="badge done">Done</span><div><strong>Phase 5.2.8: Backend Provider Decision</strong><p>Compares three backend patterns and selects an edge-worker plus relational-storage pattern for the smallest private pilot slice.</p></div><div class="percent">100%</div></article>
+            <article class="phase"><span class="badge done">Done</span><div><strong>Phase 5.2.9: Source API Minimal Endpoint</strong><p>Implements a deterministic read-only source endpoint contract with citation fields, rights posture, safe no-source behavior, and local HTTP smoke coverage.</p></div><div class="percent">100%</div></article>
+            <article class="phase"><span class="badge done">Done</span><div><strong>Phase 5.3.0: Reviewer Queue Minimal Backend</strong><p>Adds a deterministic reviewer queue adapter for submit, claim, request-changes, approve, release, and append-only audit events.</p></div><div class="percent">100%</div></article>
+            <article class="phase"><span class="badge active">Active</span><div><strong>Phase 5.3.1: Consent Ledger Minimal Backend</strong><p>Adds an append-only consent ledger adapter for grant, withdrawal, export request, and deletion request events, plus an integrated backend-readiness gate.</p></div><div class="percent">100%</div></article>
+            <!-- V527-V531 MINIMAL BACKEND END -->
 
 <!-- V410-V414 PHASES END -->
 
@@ -3977,11 +3984,11 @@
 
         <aside class="panel version">
           <h2>Version Notes</h2>
-          <div class="version-row"><span>Release</span><strong>v5.2.6 Minimal Hosted Pilot Architecture Decision</strong></div>
-          <div class="version-row"><span>Previous</span><strong>v5.2.5 Source Rights and License Pack</strong></div>
+          <div class="version-row"><span>Release</span><strong>v5.3.1 Consent Ledger Minimal Backend</strong></div>
+          <div class="version-row"><span>Previous</span><strong>v5.3.0 Reviewer Queue Minimal Backend</strong></div>
           <div class="version-row"><span>Commit</span><strong>See GitHub history</strong></div>
-          <div class="version-row"><span>Goal</span><strong>Choose the smallest real backend slice without authorizing production launch.</strong></div>
-          <div class="version-row"><span>Status</span><strong>Ready for founder hosted-pilot review gate; Readiness artifact only; no credentials, secrets, production storage, live AI, public telemetry, corpus delivery, public pilot, or launch authorization.</strong></div>
+          <div class="version-row"><span>Goal</span><strong>Prove that pilot memory and learning signals remain consent-bound before hosted storage is authorized.</strong></div>
+          <div class="version-row"><span>Status</span><strong>Ready for founder minimal-backend review; Minimal-backend prototype only; no credentials, production secrets, live AI, public telemetry, payment, broad accounts, public launch, or production authorization.</strong></div>
           <div class="panel note">
             <h2>North Star</h2>
             <p>Make sacred and philosophical knowledge easier to approach without flattening its depth, confusing categories, or pretending the AI is an authority.</p>

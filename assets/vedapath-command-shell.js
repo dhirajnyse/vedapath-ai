@@ -1,5 +1,5 @@
 (function () {
-  const releaseBadge = "v5.2.6 production";
+  const releaseBadge = "v5.3.1 backend";
   const prefKey = "vedapathCommandShellPrefs";
   const groups = [
     { title: "Start", labels: ["Home", "Build", "Brand", "Blueprint"] },
@@ -25,6 +25,7 @@
     { title: "Private Pilot Operations", labels: ["Stack Readiness", "Invite Adapter", "Consent Handshake", "Observability", "Evidence Review"] },
     { title: "Private Pilot Execution", labels: ["Execution Gate", "Session Token", "Access Envelope", "Execution Sandbox", "Pilot Retrospective"] },
     { title: "Production Readiness", labels: ["Gap Map", "Threat Model", "Privacy Ledger", "Rights Pack", "Hosted Decision"] },
+    { title: "Minimal Backend", labels: ["Hosted Review", "Backend Provider", "Source Endpoint", "Review Queue", "Consent Backend"] },
   ];
   const pageTitles = {
     Home: "VedaPath command center",
@@ -148,6 +149,11 @@
     "Evidence Review": "Founder Pilot Evidence Review",
     "Pilot Retrospective": "Founder Private-Pilot Retrospective",
     "Hosted Decision": "Minimal Hosted Pilot Architecture Decision",
+    "Consent Backend": "Consent Ledger Minimal Backend",
+    "Review Queue": "Reviewer Queue Minimal Backend",
+    "Source Endpoint": "Source API Minimal Endpoint",
+    "Backend Provider": "Backend Provider Decision",
+    "Hosted Review": "Founder Hosted-Pilot Review Gate",
     "Rights Pack": "Source Rights and License Pack",
     "Privacy Ledger": "Consent and Privacy Ledger Contract",
     "Threat Model": "Security Threat Model",
@@ -272,6 +278,11 @@
     "founder-pilot-evidence-review-page": "Founder Pilot Evidence Review",
     "founder-private-pilot-retrospective-page": "Founder Private-Pilot Retrospective",
     "minimal-hosted-pilot-architecture-decision-page": "Minimal Hosted Pilot Architecture Decision",
+    "consent-ledger-minimal-backend-page": "Consent Ledger Minimal Backend",
+    "reviewer-queue-minimal-backend-page": "Reviewer Queue Minimal Backend",
+    "source-api-minimal-endpoint-page": "Source API Minimal Endpoint",
+    "backend-provider-decision-page": "Backend Provider Decision",
+    "founder-hosted-pilot-review-gate-page": "Founder Hosted-Pilot Review Gate",
     "source-rights-license-pack-page": "Source Rights and License Pack",
     "consent-privacy-ledger-contract-page": "Consent and Privacy Ledger Contract",
     "security-threat-model-page": "Security Threat Model",
@@ -361,6 +372,11 @@
     ["Evidence Review", "founderpilotevidencereview.html"],
     ["Pilot Retrospective", "founderprivatepilotretrospective.html"],
     ["Hosted Decision", "minimalhostedpilotarchitecturedecision.html"],
+    ["Consent Backend", "consentledgerminimalbackend.html"],
+    ["Review Queue", "reviewerqueueminimalbackend.html"],
+    ["Source Endpoint", "sourceapiminimalendpoint.html"],
+    ["Backend Provider", "backendproviderdecision.html"],
+    ["Hosted Review", "founderhostedpilotreviewgate.html"],
     ["Rights Pack", "sourcerightslicensepack.html"],
     ["Privacy Ledger", "consentprivacyledgercontract.html"],
     ["Threat Model", "securitythreatmodel.html"],

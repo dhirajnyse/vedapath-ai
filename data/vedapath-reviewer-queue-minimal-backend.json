@@ -1,0 +1,73 @@
+{
+  "version": "v5.3.0",
+  "title": "Reviewer Queue Minimal Backend",
+  "releaseIndex": 4,
+  "summary": "Adds a deterministic reviewer queue adapter for submit, claim, request-changes, approve, release, and append-only audit events.",
+  "goal": "Prove that source review decisions can be owned, stateful, and auditable before production identity or storage exists.",
+  "status": "Ready for minimal consent ledger backend",
+  "boundary": "Minimal-backend prototype only; no credentials, production secrets, live AI, public telemetry, payment, broad accounts, public launch, or production authorization.",
+  "hero": "Every decision keeps its history.",
+  "subhero": "A minimal queue makes ownership, allowed transitions, decision notes, and audit events visible without pretending browser-local storage is production infrastructure.",
+  "metrics": {
+    "Tickets": "3",
+    "Transitions": "6",
+    "Audit": "Append-only",
+    "Identity": "Fixture"
+  },
+  "flow": [
+    "Submit a bounded review ticket.",
+    "Claim it with a reviewer role.",
+    "Approve or request changes with a note.",
+    "Append every event without rewriting history."
+  ],
+  "decisions": [
+    "Reject invalid state transitions.",
+    "Require owner and decision notes for terminal outcomes.",
+    "Keep reviewer identity fixture-only until real authentication is approved."
+  ],
+  "packet": [
+    "queue:reviewer",
+    "states:open-claimed-decided",
+    "audit:append-only",
+    "identity:fixture",
+    "storage:memory"
+  ],
+  "control": "queue",
+  "deploymentAuthorized": false,
+  "productionStorage": false,
+  "liveAi": false,
+  "telemetryEnabled": false,
+  "publicLaunch": false,
+  "updated": "2026-07-19",
+  "tickets": [
+    {
+      "id": "review-bg-2-48",
+      "sourceId": "bg-2-48-steadiness",
+      "status": "open",
+      "owner": null,
+      "note": "Verify translation and allowed display."
+    },
+    {
+      "id": "review-bg-11-32",
+      "sourceId": "bg-11-32-time",
+      "status": "open",
+      "owner": null,
+      "note": "Verify category and quote boundary."
+    },
+    {
+      "id": "review-gayatri-gap",
+      "sourceId": "rv-3-62-10",
+      "status": "open",
+      "owner": null,
+      "note": "Source edition remains missing."
+    }
+  ],
+  "allowedTransitions": [
+    "open->claimed",
+    "claimed->approved",
+    "claimed->changes-requested",
+    "claimed->open",
+    "changes-requested->claimed",
+    "approved->open"
+  ]
+}

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Adds a deterministic reviewer queue adapter for submit, claim, request-changes, approve, release, and append-only audit events.">
+    <title>VedaPath Reviewer Queue Minimal Backend</title>
+    <link rel="stylesheet" href="assets/vedapath-ui.css">
+    <link rel="stylesheet" href="assets/vedapath-command-shell.css">
+    <link rel="stylesheet" href="assets/vedapath-minimal-backend.css">
+  </head>
+  <body class="reviewer-queue-minimal-backend-page">
+    <main class="page backend-page" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top"><img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI"><span><strong>VedaPath AI</strong><small>Reviewer Queue Minimal Backend</small></span></a>
+        <nav class="navlinks nav" aria-label="Primary navigation">
+          <a class="link" href="index.html">Home</a>
+          <a class="link" href="build-status.html">Build</a>
+        </nav>
+      </header>
+      <section class="backend-hero">
+        <article class="backend-panel backend-intro">
+          <span class="backend-kicker">Reviewer operations</span>
+          <h1>Every decision keeps its history.</h1>
+          <p>A minimal queue makes ownership, allowed transitions, decision notes, and audit events visible without pretending browser-local storage is production infrastructure.</p>
+          <div class="backend-metrics"><article class="backend-metric"><span>Tickets</span><strong>3</strong></article>
+              <article class="backend-metric"><span>Transitions</span><strong>6</strong></article>
+              <article class="backend-metric"><span>Audit</span><strong>Append-only</strong></article>
+              <article class="backend-metric"><span>Identity</span><strong>Fixture</strong></article></div>
+        </article>
+        <aside class="backend-panel backend-path" aria-label="Release flow">
+          <span class="backend-kicker">One bounded path</span>
+          <h2>Reviewer Queue Minimal Backend</h2>
+          <div class="backend-steps"><article class="backend-step"><span>1</span><div><strong>Submit a bounded review ticket</strong><p>Submit a bounded review ticket.</p></div></article>
+              <article class="backend-step"><span>2</span><div><strong>Claim it with a reviewer role</strong><p>Claim it with a reviewer role.</p></div></article>
+              <article class="backend-step"><span>3</span><div><strong>Approve or request changes with a note</strong><p>Approve or request changes with a note.</p></div></article>
+              <article class="backend-step"><span>4</span><div><strong>Append every event without rewriting history</strong><p>Append every event without rewriting history.</p></div></article></div>
+        </aside>
+      </section>
+      <section class="backend-workspace">
+        <article class="backend-panel backend-console">
+          <span class="backend-kicker">Interactive local proof</span>
+          <h2>Reviewer Queue Minimal Backend console</h2>
+          <p>Adds a deterministic reviewer queue adapter for submit, claim, request-changes, approve, release, and append-only audit events.</p>
+          <div class="backend-controls"><label class="backend-field"><span>Review ticket</span><select data-backend-queue-options></select></label><label class="backend-field"><span>Decision note</span><input data-backend-note value="Reviewed in the minimal backend spike."></label><div class="backend-actions"><button class="backend-primary" type="button" data-queue-action="claim">Claim</button><button type="button" data-queue-action="approve">Approve</button><button type="button" data-queue-action="changes-requested">Request changes</button></div></div>
+          <pre class="backend-output" data-backend-output aria-live="polite">Select an action to inspect the bounded result.</pre>
+        </article>
+        <aside class="backend-panel backend-boundary">
+          <span class="backend-kicker">Decision boundary</span>
+          <h2>What this release decides</h2>
+          <ul><li>Reject invalid state transitions.</li>
+                <li>Require owner and decision notes for terminal outcomes.</li>
+                <li>Keep reviewer identity fixture-only until real authentication is approved.</li></ul>
+          <div class="backend-packet"><span>queue:reviewer</span><span>states:open-claimed-decided</span><span>audit:append-only</span><span>identity:fixture</span><span>storage:memory</span></div>
+          <p class="backend-warning"><strong>Still closed:</strong> Minimal-backend prototype only; no credentials, production secrets, live AI, public telemetry, payment, broad accounts, public launch, or production authorization.</p>
+        </aside>
+      </section>
+    </main>
+    <script id="backendArtifactData" type="application/json">{"version":"v5.3.0","title":"Reviewer Queue Minimal Backend","releaseIndex":4,"summary":"Adds a deterministic reviewer queue adapter for submit, claim, request-changes, approve, release, and append-only audit events.","goal":"Prove that source review decisions can be owned, stateful, and auditable before production identity or storage exists.","status":"Ready for minimal consent ledger backend","boundary":"Minimal-backend prototype only; no credentials, production secrets, live AI, public telemetry, payment, broad accounts, public launch, or production authorization.","hero":"Every decision keeps its history.","subhero":"A minimal queue makes ownership, allowed transitions, decision notes, and audit events visible without pretending browser-local storage is production infrastructure.","metrics":{"Tickets":"3","Transitions":"6","Audit":"Append-only","Identity":"Fixture"},"flow":["Submit a bounded review ticket.","Claim it with a reviewer role.","Approve or request changes with a note.","Append every event without rewriting history."],"decisions":["Reject invalid state transitions.","Require owner and decision notes for terminal outcomes.","Keep reviewer identity fixture-only until real authentication is approved."],"packet":["queue:reviewer","states:open-claimed-decided","audit:append-only","identity:fixture","storage:memory"],"control":"queue","deploymentAuthorized":false,"productionStorage":false,"liveAi":false,"telemetryEnabled":false,"publicLaunch":false,"updated":"2026-07-19","tickets":[{"id":"review-bg-2-48","sourceId":"bg-2-48-steadiness","status":"open","owner":null,"note":"Verify translation and allowed display."},{"id":"review-bg-11-32","sourceId":"bg-11-32-time","status":"open","owner":null,"note":"Verify category and quote boundary."},{"id":"review-gayatri-gap","sourceId":"rv-3-62-10","status":"open","owner":null,"note":"Source edition remains missing."}],"allowedTransitions":["open->claimed","claimed->approved","claimed->changes-requested","claimed->open","changes-requested->claimed","approved->open"]}</script>
+    <script src="assets/vedapath-command-shell.js"></script>
+    <script src="assets/vedapath-minimal-backend.js"></script>
+  </body>
+</html>

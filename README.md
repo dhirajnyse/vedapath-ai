@@ -1,3 +1,43 @@
+## v5.3.1 Consent Ledger Minimal Backend
+
+Adds an append-only consent ledger adapter for grant, withdrawal, export request, and deletion request events, plus an integrated backend-readiness gate.
+
+- Open: [Consent Ledger Minimal Backend](consentledgerminimalbackend.html)
+- Data: `data/vedapath-consent-ledger-minimal-backend.json`
+- Boundary: Minimal-backend prototype only; no credentials, production secrets, live AI, public telemetry, payment, broad accounts, public launch, or production authorization.
+
+## v5.3.0 Reviewer Queue Minimal Backend
+
+Adds a deterministic reviewer queue adapter for submit, claim, request-changes, approve, release, and append-only audit events.
+
+- Open: [Reviewer Queue Minimal Backend](reviewerqueueminimalbackend.html)
+- Data: `data/vedapath-reviewer-queue-minimal-backend.json`
+- Boundary: Minimal-backend prototype only; no credentials, production secrets, live AI, public telemetry, payment, broad accounts, public launch, or production authorization.
+
+## v5.2.9 Source API Minimal Endpoint
+
+Implements a deterministic read-only source endpoint contract with citation fields, rights posture, safe no-source behavior, and local HTTP smoke coverage.
+
+- Open: [Source API Minimal Endpoint](sourceapiminimalendpoint.html)
+- Data: `data/vedapath-source-api-minimal-endpoint.json`
+- Boundary: Minimal-backend prototype only; no credentials, production secrets, live AI, public telemetry, payment, broad accounts, public launch, or production authorization.
+
+## v5.2.8 Backend Provider Decision
+
+Compares three backend patterns and selects an edge-worker plus relational-storage pattern for the smallest private pilot slice.
+
+- Open: [Backend Provider Decision](backendproviderdecision.html)
+- Data: `data/vedapath-backend-provider-decision.json`
+- Boundary: Minimal-backend prototype only; no credentials, production secrets, live AI, public telemetry, payment, broad accounts, public launch, or production authorization.
+
+## v5.2.7 Founder Hosted-Pilot Review Gate
+
+Turns the hosted-pilot architecture into a founder decision packet with evidence, unresolved conditions, and an explicit spike-only authorization lane.
+
+- Open: [Founder Hosted-Pilot Review Gate](founderhostedpilotreviewgate.html)
+- Data: `data/vedapath-founder-hosted-pilot-review-gate.json`
+- Boundary: Minimal-backend prototype only; no credentials, production secrets, live AI, public telemetry, payment, broad accounts, public launch, or production authorization.
+
 ## v5.2.6 Minimal Hosted Pilot Architecture Decision
 
 Chooses the smallest hosted-pilot architecture posture: one bounded source API, reviewer queue, consent ledger, and read-only demo shell.
