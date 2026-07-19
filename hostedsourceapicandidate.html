@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Implements a fetch-compatible read-only Source API candidate with explicit no-source behavior, CORS refusal, request IDs, no-store responses, body limits, and ephemeral rate limiting.">
+    <title>VedaPath Hosted Source API Candidate</title>
+    <link rel="stylesheet" href="assets/vedapath-ui.css">
+    <link rel="stylesheet" href="assets/vedapath-command-shell.css">
+    <link rel="stylesheet" href="assets/vedapath-hosted-candidate.css">
+  </head>
+  <body class="hosted-source-api-candidate-page">
+    <main class="page hosted-candidate-page" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top"><img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI"><span><strong>VedaPath AI</strong><small>Hosted Source API Candidate</small></span></a>
+        <nav class="navlinks nav" aria-label="Primary navigation"><a class="link" href="index.html">Home</a><a class="link" href="build-status.html">Build</a></nav>
+      </header>
+      <section class="candidate-hero">
+        <article class="candidate-panel candidate-intro">
+          <span class="candidate-kicker">Read-only hosted route</span>
+          <h1>Return a reviewed source, or no source.</h1>
+          <p>The candidate exposes health, readiness, and one source lookup route. Unknown records remain ordinary 404 responses, while mutation and generated answers stay unavailable.</p>
+          <div class="candidate-metrics"><article class="candidate-metric"><span>Routes</span><strong>3</strong></article>
+              <article class="candidate-metric"><span>Source writes</span><strong>0</strong></article>
+              <article class="candidate-metric"><span>Answer AI</span><strong>Off</strong></article>
+              <article class="candidate-metric"><span>Rate limit</span><strong>Ephemeral</strong></article></div>
+        </article>
+        <aside class="candidate-panel" aria-label="Release flow">
+          <span class="candidate-kicker">One bounded path</span>
+          <h2>Hosted Source API Candidate</h2>
+          <div class="candidate-steps"><article class="candidate-step"><span>1</span><div><strong>Accept one bounded source ID</strong><p>Accept one bounded source ID.</p></div></article>
+              <article class="candidate-step"><span>2</span><div><strong>Apply origin and rate boundaries</strong><p>Apply origin and rate boundaries.</p></div></article>
+              <article class="candidate-step"><span>3</span><div><strong>Return reviewed fixture fields</strong><p>Return reviewed fixture fields.</p></div></article>
+              <article class="candidate-step"><span>4</span><div><strong>Return explicit no-source without guessing</strong><p>Return explicit no-source without guessing.</p></div></article></div>
+        </aside>
+      </section>
+      <section class="candidate-workspace">
+        <article class="candidate-panel">
+          <span class="candidate-kicker">Interactive contract proof</span>
+          <h2>Hosted Source API Candidate console</h2>
+          <p>Implements a fetch-compatible read-only Source API candidate with explicit no-source behavior, CORS refusal, request IDs, no-store responses, body limits, and ephemeral rate limiting.</p>
+          <div class="candidate-controls"><label class="candidate-field"><span>Source record</span><select data-candidate-source></select></label><div class="candidate-actions"><button class="candidate-primary" type="button" data-candidate-run>GET source packet</button></div></div>
+          <pre class="candidate-output" data-candidate-output aria-live="polite">Loading bounded release data.</pre>
+        </article>
+        <aside class="candidate-panel candidate-boundary">
+          <span class="candidate-kicker">Evidence and boundary</span>
+          <h2>What this candidate proves</h2>
+          <div class="candidate-checks"><article class="candidate-check"><div><strong>CORS</strong><span>Allowlist only</span></div></article>
+              <article class="candidate-check"><div><strong>Cache</strong><span>No store</span></div></article>
+              <article class="candidate-check"><div><strong>Mutation</strong><span>Method rejected</span></div></article>
+              <article class="candidate-check"><div><strong>Generated answer</strong><span>Always null</span></div></article></div>
+          <div class="candidate-packet"><span class="candidate-tag">GET:/v1/health</span><span class="candidate-tag">GET:/v1/readiness</span><span class="candidate-tag">GET:/v1/sources/:id</span><span class="candidate-tag">answer-generation:false</span><span class="candidate-tag">mutation-routes:0</span></div>
+          <p class="candidate-warning"><strong>Still closed:</strong> Hosted-pilot candidate only; vendor and region remain unbound, secrets are references only, persistence is ephemeral, telemetry and live AI are off, and public launch and production authorization remain closed.</p>
+        </aside>
+      </section>
+    </main>
+    <script id="hostedCandidateData" type="application/json">{"version":"v5.3.4","title":"Hosted Source API Candidate","releaseIndex":3,"summary":"Implements a fetch-compatible read-only Source API candidate with explicit no-source behavior, CORS refusal, request IDs, no-store responses, body limits, and ephemeral rate limiting.","goal":"Join the source contract to a deployable runtime shape without enabling answer generation or source mutation.","status":"Ready for reviewer identity and queue candidate","boundary":"Hosted-pilot candidate only; vendor and region remain unbound, secrets are references only, persistence is ephemeral, telemetry and live AI are off, and public launch and production authorization remain closed.","hero":"Return a reviewed source, or no source.","subhero":"The candidate exposes health, readiness, and one source lookup route. Unknown records remain ordinary 404 responses, while mutation and generated answers stay unavailable.","metrics":{"Routes":"3","Source writes":"0","Answer AI":"Off","Rate limit":"Ephemeral"},"flow":["Accept one bounded source ID.","Apply origin and rate boundaries.","Return reviewed fixture fields.","Return explicit no-source without guessing."],"checks":[["CORS","Allowlist only"],["Cache","No store"],["Mutation","Method rejected"],["Generated answer","Always null"]],"packet":["GET:/v1/health","GET:/v1/readiness","GET:/v1/sources/:id","answer-generation:false","mutation-routes:0"],"control":"source","initialInstruction":"Request a reviewed fixture or choose the unknown record to inspect the no-source contract.","vendor":"not-selected","region":"review-required","persistence":"ephemeral","deploymentAuthorized":false,"productionStorage":false,"telemetryEnabled":false,"liveAi":false,"publicLaunch":false,"updated":"2026-07-19","records":[{"id":"bg-2-48-steadiness","family":"Bhagavad Gita | Smriti","citation":"Bhagavad Gita 2.48","title":"Steadiness in action","rightsStatus":"reviewed-fixture","excerpt":"Steadiness in action without clinging to results."},{"id":"bg-11-32-time","family":"Bhagavad Gita | Smriti","citation":"Bhagavad Gita 11.32","title":"Time in the cosmic form","rightsStatus":"reviewed-fixture","excerpt":"The cosmic form is identified with world-transforming Time."}]}</script>
+    <script src="assets/vedapath-command-shell.js"></script>
+    <script src="assets/vedapath-hosted-candidate.js"></script>
+  </body>
+</html>

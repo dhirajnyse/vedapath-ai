@@ -1,0 +1,60 @@
+{
+  "version": "v5.3.2",
+  "title": "Hosted Pilot Implementation Authorization",
+  "releaseIndex": 1,
+  "summary": "Records one founder-reviewed authorization to build and test a provider-neutral hosted candidate while deployment, durable storage, telemetry, live AI, and public launch remain closed.",
+  "goal": "Turn the minimal-backend evidence into a precise candidate-only implementation authorization.",
+  "status": "Ready for environment and secret bootstrap",
+  "boundary": "Hosted-pilot candidate only; vendor and region remain unbound, secrets are references only, persistence is ephemeral, telemetry and live AI are off, and public launch and production authorization remain closed.",
+  "hero": "Authorize one bounded candidate.",
+  "subhero": "The decision permits implementation and private testing of one provider-neutral service contract. It does not permit deployment, production data, telemetry, live AI, or public access.",
+  "metrics": {
+    "Scope": "Candidate",
+    "Provider": "Unbound",
+    "Storage": "Ephemeral",
+    "Launch": "Closed"
+  },
+  "flow": [
+    "Review the minimal-backend evidence.",
+    "Authorize only the hosted-candidate scope.",
+    "Keep provider and region unbound.",
+    "Preserve every production prohibition."
+  ],
+  "checks": [
+    [
+      "Scope",
+      "Hosted candidate only"
+    ],
+    [
+      "Rollback",
+      "Required before any provider step"
+    ],
+    [
+      "Secrets",
+      "References only"
+    ],
+    [
+      "Public launch",
+      "Explicitly false"
+    ]
+  ],
+  "packet": [
+    "scope:hosted-candidate-only",
+    "pattern:edge-worker-relational",
+    "frontend:static-pages",
+    "secrets:references-only",
+    "storage:ephemeral-adapter",
+    "rollback:required"
+  ],
+  "control": "authorization",
+  "initialInstruction": "Choose a founder decision and inspect exactly what capability it authorizes.",
+  "vendor": "not-selected",
+  "region": "review-required",
+  "persistence": "ephemeral",
+  "deploymentAuthorized": false,
+  "productionStorage": false,
+  "telemetryEnabled": false,
+  "liveAi": false,
+  "publicLaunch": false,
+  "updated": "2026-07-19"
+}

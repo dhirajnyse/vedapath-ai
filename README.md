@@ -1,3 +1,43 @@
+## v5.3.6 Consent Ledger Service Candidate
+
+Completes the hosted-candidate runtime with participant role checks, append-only consent events, idempotent retries, effective-consent projection, and explicit export and deletion requests.
+
+- Open: [Consent Ledger Service Candidate](consentledgerservicecandidate.html)
+- Data: `data/vedapath-consent-ledger-service-candidate.json`
+- Boundary: Hosted-pilot candidate only; vendor and region remain unbound, secrets are references only, persistence is ephemeral, telemetry and live AI are off, and public launch and production authorization remain closed.
+
+## v5.3.5 Reviewer Identity & Queue Candidate
+
+Adds fixture session verification, reviewer role enforcement, owner-aware queue transitions, idempotency keys, required decision notes, and an append-only audit stream.
+
+- Open: [Reviewer Identity & Queue Candidate](revieweridentityqueuecandidate.html)
+- Data: `data/vedapath-reviewer-identity-queue-candidate.json`
+- Boundary: Hosted-pilot candidate only; vendor and region remain unbound, secrets are references only, persistence is ephemeral, telemetry and live AI are off, and public launch and production authorization remain closed.
+
+## v5.3.4 Hosted Source API Candidate
+
+Implements a fetch-compatible read-only Source API candidate with explicit no-source behavior, CORS refusal, request IDs, no-store responses, body limits, and ephemeral rate limiting.
+
+- Open: [Hosted Source API Candidate](hostedsourceapicandidate.html)
+- Data: `data/vedapath-hosted-source-api-candidate.json`
+- Boundary: Hosted-pilot candidate only; vendor and region remain unbound, secrets are references only, persistence is ephemeral, telemetry and live AI are off, and public launch and production authorization remain closed.
+
+## v5.3.3 Environment & Secret Bootstrap
+
+Adds a strict environment schema with HTTPS and CORS boundaries, binding-only secret references, redacted diagnostics, and explicit launch-closed defaults.
+
+- Open: [Environment & Secret Bootstrap](environmentsecretbootstrap.html)
+- Data: `data/vedapath-environment-secret-bootstrap.json`
+- Boundary: Hosted-pilot candidate only; vendor and region remain unbound, secrets are references only, persistence is ephemeral, telemetry and live AI are off, and public launch and production authorization remain closed.
+
+## v5.3.2 Hosted Pilot Implementation Authorization
+
+Records one founder-reviewed authorization to build and test a provider-neutral hosted candidate while deployment, durable storage, telemetry, live AI, and public launch remain closed.
+
+- Open: [Hosted Pilot Implementation Authorization](hostedpilotimplementationauthorization.html)
+- Data: `data/vedapath-hosted-pilot-implementation-authorization.json`
+- Boundary: Hosted-pilot candidate only; vendor and region remain unbound, secrets are references only, persistence is ephemeral, telemetry and live AI are off, and public launch and production authorization remain closed.
+
 ## v5.3.1 Consent Ledger Minimal Backend
 
 Adds an append-only consent ledger adapter for grant, withdrawal, export request, and deletion request events, plus an integrated backend-readiness gate.

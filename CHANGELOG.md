@@ -1,3 +1,138 @@
+## v5.3.6 Consent Ledger Service Candidate
+
+### Changes made
+- Completes the hosted-candidate runtime with participant role checks, append-only consent events, idempotent retries, effective-consent projection, and explicit export and deletion requests.
+- Added a functional Consent Service browser room, structured packet, documentation, and deterministic hosted-candidate behavior coverage.
+- Preserved the candidate boundary: no provider binding, production secrets, durable storage, live AI, telemetry, public launch, or production authorization.
+
+### Files changed
+- `consentledgerservicecandidate.html`
+- `data/vedapath-consent-ledger-service-candidate.json`
+- `docs/CONSENT_LEDGER_SERVICE_CANDIDATE.md`
+- `assets/vedapath-hosted-candidate.css`
+- `assets/vedapath-hosted-candidate.js`
+- `scripts/vedapath-hosted-candidate-contracts.mjs`
+- `scripts/check-v532-v536-hosted-candidate.mjs`
+- shared navigation, build status, README, and static-link manifest
+
+### Checks run
+- `node scripts/apply-v532-v536-hosted-candidate-batch.mjs --through=v5.3.6`
+- `node --check scripts/vedapath-hosted-candidate-contracts.mjs`
+- `node --check scripts/check-v532-v536-hosted-candidate.mjs`
+- `node scripts/check-v532-v536-hosted-candidate.mjs --through=v5.3.6`
+- `node scripts/check-static-links.mjs`
+
+### Known risks
+- Provider-neutral and ephemeral only; provider and region selection, hosted secret bindings, durable databases, real identity, rights operations, production security and operations, and public launch remain unfinished and intentionally blocked.
+
+## v5.3.5 Reviewer Identity & Queue Candidate
+
+### Changes made
+- Adds fixture session verification, reviewer role enforcement, owner-aware queue transitions, idempotency keys, required decision notes, and an append-only audit stream.
+- Added a functional Identity Queue browser room, structured packet, documentation, and deterministic hosted-candidate behavior coverage.
+- Preserved the candidate boundary: no provider binding, production secrets, durable storage, live AI, telemetry, public launch, or production authorization.
+
+### Files changed
+- `revieweridentityqueuecandidate.html`
+- `data/vedapath-reviewer-identity-queue-candidate.json`
+- `docs/REVIEWER_IDENTITY_QUEUE_CANDIDATE.md`
+- `assets/vedapath-hosted-candidate.css`
+- `assets/vedapath-hosted-candidate.js`
+- `scripts/vedapath-hosted-candidate-contracts.mjs`
+- `scripts/check-v532-v536-hosted-candidate.mjs`
+- shared navigation, build status, README, and static-link manifest
+
+### Checks run
+- `node scripts/apply-v532-v536-hosted-candidate-batch.mjs --through=v5.3.5`
+- `node --check scripts/vedapath-hosted-candidate-contracts.mjs`
+- `node --check scripts/check-v532-v536-hosted-candidate.mjs`
+- `node scripts/check-v532-v536-hosted-candidate.mjs --through=v5.3.5`
+- `node scripts/check-static-links.mjs`
+
+### Known risks
+- Provider-neutral and ephemeral only; provider and region selection, hosted secret bindings, durable databases, real identity, rights operations, production security and operations, and public launch remain unfinished and intentionally blocked.
+
+## v5.3.4 Hosted Source API Candidate
+
+### Changes made
+- Implements a fetch-compatible read-only Source API candidate with explicit no-source behavior, CORS refusal, request IDs, no-store responses, body limits, and ephemeral rate limiting.
+- Added a functional Hosted Source browser room, structured packet, documentation, and deterministic hosted-candidate behavior coverage.
+- Preserved the candidate boundary: no provider binding, production secrets, durable storage, live AI, telemetry, public launch, or production authorization.
+
+### Files changed
+- `hostedsourceapicandidate.html`
+- `data/vedapath-hosted-source-api-candidate.json`
+- `docs/HOSTED_SOURCE_API_CANDIDATE.md`
+- `assets/vedapath-hosted-candidate.css`
+- `assets/vedapath-hosted-candidate.js`
+- `scripts/vedapath-hosted-candidate-contracts.mjs`
+- `scripts/check-v532-v536-hosted-candidate.mjs`
+- shared navigation, build status, README, and static-link manifest
+
+### Checks run
+- `node scripts/apply-v532-v536-hosted-candidate-batch.mjs --through=v5.3.4`
+- `node --check scripts/vedapath-hosted-candidate-contracts.mjs`
+- `node --check scripts/check-v532-v536-hosted-candidate.mjs`
+- `node scripts/check-v532-v536-hosted-candidate.mjs --through=v5.3.4`
+- `node scripts/check-static-links.mjs`
+
+### Known risks
+- Provider-neutral and ephemeral only; provider and region selection, hosted secret bindings, durable databases, real identity, rights operations, production security and operations, and public launch remain unfinished and intentionally blocked.
+
+## v5.3.3 Environment & Secret Bootstrap
+
+### Changes made
+- Adds a strict environment schema with HTTPS and CORS boundaries, binding-only secret references, redacted diagnostics, and explicit launch-closed defaults.
+- Added a functional Env Bootstrap browser room, structured packet, documentation, and deterministic hosted-candidate behavior coverage.
+- Preserved the candidate boundary: no provider binding, production secrets, durable storage, live AI, telemetry, public launch, or production authorization.
+
+### Files changed
+- `environmentsecretbootstrap.html`
+- `data/vedapath-environment-secret-bootstrap.json`
+- `docs/ENVIRONMENT_SECRET_BOOTSTRAP.md`
+- `assets/vedapath-hosted-candidate.css`
+- `assets/vedapath-hosted-candidate.js`
+- `scripts/vedapath-hosted-candidate-contracts.mjs`
+- `scripts/check-v532-v536-hosted-candidate.mjs`
+- shared navigation, build status, README, and static-link manifest
+
+### Checks run
+- `node scripts/apply-v532-v536-hosted-candidate-batch.mjs --through=v5.3.3`
+- `node --check scripts/vedapath-hosted-candidate-contracts.mjs`
+- `node --check scripts/check-v532-v536-hosted-candidate.mjs`
+- `node scripts/check-v532-v536-hosted-candidate.mjs --through=v5.3.3`
+- `node scripts/check-static-links.mjs`
+
+### Known risks
+- Provider-neutral and ephemeral only; provider and region selection, hosted secret bindings, durable databases, real identity, rights operations, production security and operations, and public launch remain unfinished and intentionally blocked.
+
+## v5.3.2 Hosted Pilot Implementation Authorization
+
+### Changes made
+- Records one founder-reviewed authorization to build and test a provider-neutral hosted candidate while deployment, durable storage, telemetry, live AI, and public launch remain closed.
+- Added a functional Implementation Auth browser room, structured packet, documentation, and deterministic hosted-candidate behavior coverage.
+- Preserved the candidate boundary: no provider binding, production secrets, durable storage, live AI, telemetry, public launch, or production authorization.
+
+### Files changed
+- `hostedpilotimplementationauthorization.html`
+- `data/vedapath-hosted-pilot-implementation-authorization.json`
+- `docs/HOSTED_PILOT_IMPLEMENTATION_AUTHORIZATION.md`
+- `assets/vedapath-hosted-candidate.css`
+- `assets/vedapath-hosted-candidate.js`
+- `scripts/vedapath-hosted-candidate-contracts.mjs`
+- `scripts/check-v532-v536-hosted-candidate.mjs`
+- shared navigation, build status, README, and static-link manifest
+
+### Checks run
+- `node scripts/apply-v532-v536-hosted-candidate-batch.mjs --through=v5.3.2`
+- `node --check scripts/vedapath-hosted-candidate-contracts.mjs`
+- `node --check scripts/check-v532-v536-hosted-candidate.mjs`
+- `node scripts/check-v532-v536-hosted-candidate.mjs --through=v5.3.2`
+- `node scripts/check-static-links.mjs`
+
+### Known risks
+- Provider-neutral and ephemeral only; provider and region selection, hosted secret bindings, durable databases, real identity, rights operations, production security and operations, and public launch remain unfinished and intentionally blocked.
+
 ## v5.3.1 Consent Ledger Minimal Backend
 
 ### Changes made

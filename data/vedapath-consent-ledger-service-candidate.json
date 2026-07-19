@@ -1,0 +1,69 @@
+{
+  "version": "v5.3.6",
+  "title": "Consent Ledger Service Candidate",
+  "releaseIndex": 5,
+  "summary": "Completes the hosted-candidate runtime with participant role checks, append-only consent events, idempotent retries, effective-consent projection, and explicit export and deletion requests.",
+  "goal": "Make every candidate learning or memory action consent-bound before telemetry or durable storage can exist.",
+  "status": "Ready for provider and region selection gate",
+  "boundary": "Hosted-pilot candidate only; vendor and region remain unbound, secrets are references only, persistence is ephemeral, telemetry and live AI are off, and public launch and production authorization remain closed.",
+  "hero": "Consent stays visible and reversible.",
+  "subhero": "The service records grant, withdrawal, export, and deletion events under a pseudonymous participant session, then derives the current state without mutating history.",
+  "metrics": {
+    "Events": "4",
+    "Projection": "Effective",
+    "Telemetry": "Off",
+    "Persistence": "Ephemeral"
+  },
+  "flow": [
+    "Verify a participant session.",
+    "Append purpose and scope.",
+    "Derive effective consent.",
+    "Keep export and deletion requests visible."
+  ],
+  "checks": [
+    [
+      "Identity",
+      "Pseudonymous fixture"
+    ],
+    [
+      "Withdrawal",
+      "Immediate projection"
+    ],
+    [
+      "Export/deletion",
+      "Explicit events"
+    ],
+    [
+      "Launch",
+      "Still closed"
+    ]
+  ],
+  "packet": [
+    "consent:append-only",
+    "projection:effective",
+    "idempotency:required",
+    "telemetry:off",
+    "public-launch:false"
+  ],
+  "control": "consent",
+  "initialInstruction": "Append consent events and watch the effective state change without rewriting history.",
+  "vendor": "not-selected",
+  "region": "review-required",
+  "persistence": "ephemeral",
+  "deploymentAuthorized": false,
+  "productionStorage": false,
+  "telemetryEnabled": false,
+  "liveAi": false,
+  "publicLaunch": false,
+  "updated": "2026-07-19",
+  "eventTypes": [
+    "consent.granted",
+    "consent.withdrawn",
+    "export.requested",
+    "deletion.requested"
+  ],
+  "defaultScope": [
+    "pilot-session",
+    "source-feedback"
+  ]
+}

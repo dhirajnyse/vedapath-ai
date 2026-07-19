@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Completes the hosted-candidate runtime with participant role checks, append-only consent events, idempotent retries, effective-consent projection, and explicit export and deletion requests.">
+    <title>VedaPath Consent Ledger Service Candidate</title>
+    <link rel="stylesheet" href="assets/vedapath-ui.css">
+    <link rel="stylesheet" href="assets/vedapath-command-shell.css">
+    <link rel="stylesheet" href="assets/vedapath-hosted-candidate.css">
+  </head>
+  <body class="consent-ledger-service-candidate-page">
+    <main class="page hosted-candidate-page" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top"><img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI"><span><strong>VedaPath AI</strong><small>Consent Ledger Service Candidate</small></span></a>
+        <nav class="navlinks nav" aria-label="Primary navigation"><a class="link" href="index.html">Home</a><a class="link" href="build-status.html">Build</a></nav>
+      </header>
+      <section class="candidate-hero">
+        <article class="candidate-panel candidate-intro">
+          <span class="candidate-kicker">Consent service boundary</span>
+          <h1>Consent stays visible and reversible.</h1>
+          <p>The service records grant, withdrawal, export, and deletion events under a pseudonymous participant session, then derives the current state without mutating history.</p>
+          <div class="candidate-metrics"><article class="candidate-metric"><span>Events</span><strong>4</strong></article>
+              <article class="candidate-metric"><span>Projection</span><strong>Effective</strong></article>
+              <article class="candidate-metric"><span>Telemetry</span><strong>Off</strong></article>
+              <article class="candidate-metric"><span>Persistence</span><strong>Ephemeral</strong></article></div>
+        </article>
+        <aside class="candidate-panel" aria-label="Release flow">
+          <span class="candidate-kicker">One bounded path</span>
+          <h2>Consent Ledger Service Candidate</h2>
+          <div class="candidate-steps"><article class="candidate-step"><span>1</span><div><strong>Verify a participant session</strong><p>Verify a participant session.</p></div></article>
+              <article class="candidate-step"><span>2</span><div><strong>Append purpose and scope</strong><p>Append purpose and scope.</p></div></article>
+              <article class="candidate-step"><span>3</span><div><strong>Derive effective consent</strong><p>Derive effective consent.</p></div></article>
+              <article class="candidate-step"><span>4</span><div><strong>Keep export and deletion requests visible</strong><p>Keep export and deletion requests visible.</p></div></article></div>
+        </aside>
+      </section>
+      <section class="candidate-workspace">
+        <article class="candidate-panel">
+          <span class="candidate-kicker">Interactive contract proof</span>
+          <h2>Consent Ledger Service Candidate console</h2>
+          <p>Completes the hosted-candidate runtime with participant role checks, append-only consent events, idempotent retries, effective-consent projection, and explicit export and deletion requests.</p>
+          <div class="candidate-controls"><div class="candidate-actions"><button class="candidate-primary" type="button" data-consent-event="consent.granted">Grant</button><button type="button" data-consent-event="consent.withdrawn">Withdraw</button><button type="button" data-consent-event="export.requested">Request export</button><button type="button" data-consent-event="deletion.requested">Request deletion</button><button type="button" data-candidate-reset>Reset demo</button></div></div>
+          <pre class="candidate-output" data-candidate-output aria-live="polite">Loading bounded release data.</pre>
+        </article>
+        <aside class="candidate-panel candidate-boundary">
+          <span class="candidate-kicker">Evidence and boundary</span>
+          <h2>What this candidate proves</h2>
+          <div class="candidate-checks"><article class="candidate-check"><div><strong>Identity</strong><span>Pseudonymous fixture</span></div></article>
+              <article class="candidate-check"><div><strong>Withdrawal</strong><span>Immediate projection</span></div></article>
+              <article class="candidate-check"><div><strong>Export/deletion</strong><span>Explicit events</span></div></article>
+              <article class="candidate-check"><div><strong>Launch</strong><span>Still closed</span></div></article></div>
+          <div class="candidate-packet"><span class="candidate-tag">consent:append-only</span><span class="candidate-tag">projection:effective</span><span class="candidate-tag">idempotency:required</span><span class="candidate-tag">telemetry:off</span><span class="candidate-tag">public-launch:false</span></div>
+          <p class="candidate-warning"><strong>Still closed:</strong> Hosted-pilot candidate only; vendor and region remain unbound, secrets are references only, persistence is ephemeral, telemetry and live AI are off, and public launch and production authorization remain closed.</p>
+        </aside>
+      </section>
+    </main>
+    <script id="hostedCandidateData" type="application/json">{"version":"v5.3.6","title":"Consent Ledger Service Candidate","releaseIndex":5,"summary":"Completes the hosted-candidate runtime with participant role checks, append-only consent events, idempotent retries, effective-consent projection, and explicit export and deletion requests.","goal":"Make every candidate learning or memory action consent-bound before telemetry or durable storage can exist.","status":"Ready for provider and region selection gate","boundary":"Hosted-pilot candidate only; vendor and region remain unbound, secrets are references only, persistence is ephemeral, telemetry and live AI are off, and public launch and production authorization remain closed.","hero":"Consent stays visible and reversible.","subhero":"The service records grant, withdrawal, export, and deletion events under a pseudonymous participant session, then derives the current state without mutating history.","metrics":{"Events":"4","Projection":"Effective","Telemetry":"Off","Persistence":"Ephemeral"},"flow":["Verify a participant session.","Append purpose and scope.","Derive effective consent.","Keep export and deletion requests visible."],"checks":[["Identity","Pseudonymous fixture"],["Withdrawal","Immediate projection"],["Export/deletion","Explicit events"],["Launch","Still closed"]],"packet":["consent:append-only","projection:effective","idempotency:required","telemetry:off","public-launch:false"],"control":"consent","initialInstruction":"Append consent events and watch the effective state change without rewriting history.","vendor":"not-selected","region":"review-required","persistence":"ephemeral","deploymentAuthorized":false,"productionStorage":false,"telemetryEnabled":false,"liveAi":false,"publicLaunch":false,"updated":"2026-07-19","eventTypes":["consent.granted","consent.withdrawn","export.requested","deletion.requested"],"defaultScope":["pilot-session","source-feedback"]}</script>
+    <script src="assets/vedapath-command-shell.js"></script>
+    <script src="assets/vedapath-hosted-candidate.js"></script>
+  </body>
+</html>

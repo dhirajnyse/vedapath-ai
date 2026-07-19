@@ -1,5 +1,5 @@
 (function () {
-  const releaseBadge = "v5.3.1 backend";
+  const releaseBadge = "v5.3.6 hosted candidate";
   const prefKey = "vedapathCommandShellPrefs";
   const groups = [
     { title: "Start", labels: ["Home", "Build", "Brand", "Blueprint"] },
@@ -26,6 +26,7 @@
     { title: "Private Pilot Execution", labels: ["Execution Gate", "Session Token", "Access Envelope", "Execution Sandbox", "Pilot Retrospective"] },
     { title: "Production Readiness", labels: ["Gap Map", "Threat Model", "Privacy Ledger", "Rights Pack", "Hosted Decision"] },
     { title: "Minimal Backend", labels: ["Hosted Review", "Backend Provider", "Source Endpoint", "Review Queue", "Consent Backend"] },
+    { title: "Hosted Candidate", labels: ["Implementation Auth", "Env Bootstrap", "Hosted Source", "Identity Queue", "Consent Service"] },
   ];
   const pageTitles = {
     Home: "VedaPath command center",
@@ -154,6 +155,11 @@
     "Source Endpoint": "Source API Minimal Endpoint",
     "Backend Provider": "Backend Provider Decision",
     "Hosted Review": "Founder Hosted-Pilot Review Gate",
+    "Consent Service": "Consent Ledger Service Candidate",
+    "Identity Queue": "Reviewer Identity & Queue Candidate",
+    "Hosted Source": "Hosted Source API Candidate",
+    "Env Bootstrap": "Environment & Secret Bootstrap",
+    "Implementation Auth": "Hosted Pilot Implementation Authorization",
     "Rights Pack": "Source Rights and License Pack",
     "Privacy Ledger": "Consent and Privacy Ledger Contract",
     "Threat Model": "Security Threat Model",
@@ -283,6 +289,11 @@
     "source-api-minimal-endpoint-page": "Source API Minimal Endpoint",
     "backend-provider-decision-page": "Backend Provider Decision",
     "founder-hosted-pilot-review-gate-page": "Founder Hosted-Pilot Review Gate",
+    "consent-ledger-service-candidate-page": "Consent Ledger Service Candidate",
+    "reviewer-identity-queue-candidate-page": "Reviewer Identity & Queue Candidate",
+    "hosted-source-api-candidate-page": "Hosted Source API Candidate",
+    "environment-secret-bootstrap-page": "Environment & Secret Bootstrap",
+    "hosted-pilot-implementation-authorization-page": "Hosted Pilot Implementation Authorization",
     "source-rights-license-pack-page": "Source Rights and License Pack",
     "consent-privacy-ledger-contract-page": "Consent and Privacy Ledger Contract",
     "security-threat-model-page": "Security Threat Model",
@@ -377,6 +388,11 @@
     ["Source Endpoint", "sourceapiminimalendpoint.html"],
     ["Backend Provider", "backendproviderdecision.html"],
     ["Hosted Review", "founderhostedpilotreviewgate.html"],
+    ["Consent Service", "consentledgerservicecandidate.html"],
+    ["Identity Queue", "revieweridentityqueuecandidate.html"],
+    ["Hosted Source", "hostedsourceapicandidate.html"],
+    ["Env Bootstrap", "environmentsecretbootstrap.html"],
+    ["Implementation Auth", "hostedpilotimplementationauthorization.html"],
     ["Rights Pack", "sourcerightslicensepack.html"],
     ["Privacy Ledger", "consentprivacyledgercontract.html"],
     ["Threat Model", "securitythreatmodel.html"],

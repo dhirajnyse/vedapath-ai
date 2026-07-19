@@ -1,0 +1,73 @@
+{
+  "version": "v5.3.5",
+  "title": "Reviewer Identity & Queue Candidate",
+  "releaseIndex": 4,
+  "summary": "Adds fixture session verification, reviewer role enforcement, owner-aware queue transitions, idempotency keys, required decision notes, and an append-only audit stream.",
+  "goal": "Prove the reviewer service boundary before selecting a real identity provider or durable queue store.",
+  "status": "Ready for consent ledger service candidate",
+  "boundary": "Hosted-pilot candidate only; vendor and region remain unbound, secrets are references only, persistence is ephemeral, telemetry and live AI are off, and public launch and production authorization remain closed.",
+  "hero": "A decision keeps its owner and history.",
+  "subhero": "Only a reviewer fixture session can read or change the queue. Claims establish ownership, decisions require notes, retries replay safely, and audit events are never rewritten.",
+  "metrics": {
+    "Role": "Reviewer",
+    "Sessions": "Fixture",
+    "Audit": "Append-only",
+    "Store": "Ephemeral"
+  },
+  "flow": [
+    "Verify a reviewer session.",
+    "Claim one open ticket.",
+    "Record a noted decision.",
+    "Replay retries without duplicate events."
+  ],
+  "checks": [
+    [
+      "Missing session",
+      "401"
+    ],
+    [
+      "Wrong role",
+      "403"
+    ],
+    [
+      "Decision note",
+      "Required"
+    ],
+    [
+      "Idempotency",
+      "Replay safe"
+    ]
+  ],
+  "packet": [
+    "identity:fixture-session-verifier",
+    "role:reviewer",
+    "owner:required",
+    "audit:append-only",
+    "idempotency:required"
+  ],
+  "control": "queue",
+  "initialInstruction": "Claim a ticket, record a reviewed decision, or reset the in-memory demonstration.",
+  "vendor": "not-selected",
+  "region": "review-required",
+  "persistence": "ephemeral",
+  "deploymentAuthorized": false,
+  "productionStorage": false,
+  "telemetryEnabled": false,
+  "liveAi": false,
+  "publicLaunch": false,
+  "updated": "2026-07-19",
+  "tickets": [
+    {
+      "id": "review-bg-2-48",
+      "sourceId": "bg-2-48-steadiness",
+      "status": "open",
+      "owner": null
+    },
+    {
+      "id": "review-bg-11-32",
+      "sourceId": "bg-11-32-time",
+      "status": "open",
+      "owner": null
+    }
+  ]
+}

@@ -401,7 +401,7 @@
         <a class="link" href="pilotsessionexportpacket.html">Session Export</a>
         <a class="link" href="feedbacktoticketaudittrail.html">Feedback Audit</a>
         <a class="link" href="retrievaladaptershell.html">Retrieval Adapter</a>
-        <span class="version-pill">v5.3.1 backend</span>
+        <span class="version-pill">v5.3.6 hosted candidate</span>
       </nav>
       </header>
 
@@ -413,23 +413,23 @@
       <section class="summary" aria-label="Progress summary">
         <article class="tile">
           <span>Current version</span>
-          <strong>v5.3.1</strong>
-          <p>Adds an append-only consent ledger adapter for grant, withdrawal, export request, and deletion request events, plus an integrated backend-readiness gate.</p>
+          <strong>v5.3.6</strong>
+          <p>Completes the hosted-candidate runtime with participant role checks, append-only consent events, idempotent retries, effective-consent projection, and explicit export and deletion requests.</p>
         </article>
         <article class="tile">
           <span>MVP progress</span>
           <strong>100%</strong>
-          <p>The clickable MVP now has a deterministic minimal-backend path for source reads, reviewer decisions, consent events, and founder gates.</p>
+          <p>The clickable MVP now has a fetch-compatible candidate for source reads, reviewer decisions, consent events, and launch-closed readiness.</p>
         </article>
         <article class="tile">
           <span>Full vision progress</span>
           <strong>99%</strong>
-          <p>Backend contracts are testable locally, while hosting, real identity, production storage, rights operations, security operations, and launch remain intentionally closed.</p>
+          <p>The candidate runtime is integrated and testable, while provider binding, region selection, production security, durable storage, real identity, rights operations, and launch remain closed.</p>
         </article>
               <article class="tile">
           <span>Next release</span>
-          <strong>v5.3.2 Hosted Pilot Implementation Authorization</strong>
-          <p>The founder reviews the integrated minimal-backend evidence before any hosted implementation begins.</p>
+          <strong>v5.3.7 Provider and Region Selection Gate</strong>
+          <p>The founder reviews the provider-neutral candidate before selecting a provider, region, or production-grade service boundary.</p>
         </article>
       </section>
 
@@ -3972,6 +3972,13 @@
             <article class="phase"><span class="badge done">Done</span><div><strong>Phase 5.3.0: Reviewer Queue Minimal Backend</strong><p>Adds a deterministic reviewer queue adapter for submit, claim, request-changes, approve, release, and append-only audit events.</p></div><div class="percent">100%</div></article>
             <article class="phase"><span class="badge active">Active</span><div><strong>Phase 5.3.1: Consent Ledger Minimal Backend</strong><p>Adds an append-only consent ledger adapter for grant, withdrawal, export request, and deletion request events, plus an integrated backend-readiness gate.</p></div><div class="percent">100%</div></article>
             <!-- V527-V531 MINIMAL BACKEND END -->
+            <!-- V532-V536 HOSTED CANDIDATE START -->
+            <article class="phase"><span class="badge done">Done</span><div><strong>Phase 5.3.2: Hosted Pilot Implementation Authorization</strong><p>Records one founder-reviewed authorization to build and test a provider-neutral hosted candidate while deployment, durable storage, telemetry, live AI, and public launch remain closed.</p></div><div class="percent">100%</div></article>
+            <article class="phase"><span class="badge done">Done</span><div><strong>Phase 5.3.3: Environment & Secret Bootstrap</strong><p>Adds a strict environment schema with HTTPS and CORS boundaries, binding-only secret references, redacted diagnostics, and explicit launch-closed defaults.</p></div><div class="percent">100%</div></article>
+            <article class="phase"><span class="badge done">Done</span><div><strong>Phase 5.3.4: Hosted Source API Candidate</strong><p>Implements a fetch-compatible read-only Source API candidate with explicit no-source behavior, CORS refusal, request IDs, no-store responses, body limits, and ephemeral rate limiting.</p></div><div class="percent">100%</div></article>
+            <article class="phase"><span class="badge done">Done</span><div><strong>Phase 5.3.5: Reviewer Identity & Queue Candidate</strong><p>Adds fixture session verification, reviewer role enforcement, owner-aware queue transitions, idempotency keys, required decision notes, and an append-only audit stream.</p></div><div class="percent">100%</div></article>
+            <article class="phase"><span class="badge active">Active</span><div><strong>Phase 5.3.6: Consent Ledger Service Candidate</strong><p>Completes the hosted-candidate runtime with participant role checks, append-only consent events, idempotent retries, effective-consent projection, and explicit export and deletion requests.</p></div><div class="percent">100%</div></article>
+            <!-- V532-V536 HOSTED CANDIDATE END -->
 
 <!-- V410-V414 PHASES END -->
 
@@ -3984,11 +3991,11 @@
 
         <aside class="panel version">
           <h2>Version Notes</h2>
-          <div class="version-row"><span>Release</span><strong>v5.3.1 Consent Ledger Minimal Backend</strong></div>
-          <div class="version-row"><span>Previous</span><strong>v5.3.0 Reviewer Queue Minimal Backend</strong></div>
+          <div class="version-row"><span>Release</span><strong>v5.3.6 Consent Ledger Service Candidate</strong></div>
+          <div class="version-row"><span>Previous</span><strong>v5.3.5 Reviewer Identity & Queue Candidate</strong></div>
           <div class="version-row"><span>Commit</span><strong>See GitHub history</strong></div>
-          <div class="version-row"><span>Goal</span><strong>Prove that pilot memory and learning signals remain consent-bound before hosted storage is authorized.</strong></div>
-          <div class="version-row"><span>Status</span><strong>Ready for founder minimal-backend review; Minimal-backend prototype only; no credentials, production secrets, live AI, public telemetry, payment, broad accounts, public launch, or production authorization.</strong></div>
+          <div class="version-row"><span>Goal</span><strong>Make every candidate learning or memory action consent-bound before telemetry or durable storage can exist.</strong></div>
+          <div class="version-row"><span>Status</span><strong>Ready for provider and region selection gate; Hosted-pilot candidate only; vendor and region remain unbound, secrets are references only, persistence is ephemeral, telemetry and live AI are off, and public launch and production authorization remain closed.</strong></div>
           <div class="panel note">
             <h2>North Star</h2>
             <p>Make sacred and philosophical knowledge easier to approach without flattening its depth, confusing categories, or pretending the AI is an authority.</p>

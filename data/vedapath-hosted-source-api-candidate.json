@@ -1,0 +1,77 @@
+{
+  "version": "v5.3.4",
+  "title": "Hosted Source API Candidate",
+  "releaseIndex": 3,
+  "summary": "Implements a fetch-compatible read-only Source API candidate with explicit no-source behavior, CORS refusal, request IDs, no-store responses, body limits, and ephemeral rate limiting.",
+  "goal": "Join the source contract to a deployable runtime shape without enabling answer generation or source mutation.",
+  "status": "Ready for reviewer identity and queue candidate",
+  "boundary": "Hosted-pilot candidate only; vendor and region remain unbound, secrets are references only, persistence is ephemeral, telemetry and live AI are off, and public launch and production authorization remain closed.",
+  "hero": "Return a reviewed source, or no source.",
+  "subhero": "The candidate exposes health, readiness, and one source lookup route. Unknown records remain ordinary 404 responses, while mutation and generated answers stay unavailable.",
+  "metrics": {
+    "Routes": "3",
+    "Source writes": "0",
+    "Answer AI": "Off",
+    "Rate limit": "Ephemeral"
+  },
+  "flow": [
+    "Accept one bounded source ID.",
+    "Apply origin and rate boundaries.",
+    "Return reviewed fixture fields.",
+    "Return explicit no-source without guessing."
+  ],
+  "checks": [
+    [
+      "CORS",
+      "Allowlist only"
+    ],
+    [
+      "Cache",
+      "No store"
+    ],
+    [
+      "Mutation",
+      "Method rejected"
+    ],
+    [
+      "Generated answer",
+      "Always null"
+    ]
+  ],
+  "packet": [
+    "GET:/v1/health",
+    "GET:/v1/readiness",
+    "GET:/v1/sources/:id",
+    "answer-generation:false",
+    "mutation-routes:0"
+  ],
+  "control": "source",
+  "initialInstruction": "Request a reviewed fixture or choose the unknown record to inspect the no-source contract.",
+  "vendor": "not-selected",
+  "region": "review-required",
+  "persistence": "ephemeral",
+  "deploymentAuthorized": false,
+  "productionStorage": false,
+  "telemetryEnabled": false,
+  "liveAi": false,
+  "publicLaunch": false,
+  "updated": "2026-07-19",
+  "records": [
+    {
+      "id": "bg-2-48-steadiness",
+      "family": "Bhagavad Gita | Smriti",
+      "citation": "Bhagavad Gita 2.48",
+      "title": "Steadiness in action",
+      "rightsStatus": "reviewed-fixture",
+      "excerpt": "Steadiness in action without clinging to results."
+    },
+    {
+      "id": "bg-11-32-time",
+      "family": "Bhagavad Gita | Smriti",
+      "citation": "Bhagavad Gita 11.32",
+      "title": "Time in the cosmic form",
+      "rightsStatus": "reviewed-fixture",
+      "excerpt": "The cosmic form is identified with world-transforming Time."
+    }
+  ]
+}

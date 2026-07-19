@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Adds fixture session verification, reviewer role enforcement, owner-aware queue transitions, idempotency keys, required decision notes, and an append-only audit stream.">
+    <title>VedaPath Reviewer Identity &amp; Queue Candidate</title>
+    <link rel="stylesheet" href="assets/vedapath-ui.css">
+    <link rel="stylesheet" href="assets/vedapath-command-shell.css">
+    <link rel="stylesheet" href="assets/vedapath-hosted-candidate.css">
+  </head>
+  <body class="reviewer-identity-queue-candidate-page">
+    <main class="page hosted-candidate-page" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top"><img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI"><span><strong>VedaPath AI</strong><small>Reviewer Identity &amp; Queue Candidate</small></span></a>
+        <nav class="navlinks nav" aria-label="Primary navigation"><a class="link" href="index.html">Home</a><a class="link" href="build-status.html">Build</a></nav>
+      </header>
+      <section class="candidate-hero">
+        <article class="candidate-panel candidate-intro">
+          <span class="candidate-kicker">Reviewer service boundary</span>
+          <h1>A decision keeps its owner and history.</h1>
+          <p>Only a reviewer fixture session can read or change the queue. Claims establish ownership, decisions require notes, retries replay safely, and audit events are never rewritten.</p>
+          <div class="candidate-metrics"><article class="candidate-metric"><span>Role</span><strong>Reviewer</strong></article>
+              <article class="candidate-metric"><span>Sessions</span><strong>Fixture</strong></article>
+              <article class="candidate-metric"><span>Audit</span><strong>Append-only</strong></article>
+              <article class="candidate-metric"><span>Store</span><strong>Ephemeral</strong></article></div>
+        </article>
+        <aside class="candidate-panel" aria-label="Release flow">
+          <span class="candidate-kicker">One bounded path</span>
+          <h2>Reviewer Identity &amp; Queue Candidate</h2>
+          <div class="candidate-steps"><article class="candidate-step"><span>1</span><div><strong>Verify a reviewer session</strong><p>Verify a reviewer session.</p></div></article>
+              <article class="candidate-step"><span>2</span><div><strong>Claim one open ticket</strong><p>Claim one open ticket.</p></div></article>
+              <article class="candidate-step"><span>3</span><div><strong>Record a noted decision</strong><p>Record a noted decision.</p></div></article>
+              <article class="candidate-step"><span>4</span><div><strong>Replay retries without duplicate events</strong><p>Replay retries without duplicate events.</p></div></article></div>
+        </aside>
+      </section>
+      <section class="candidate-workspace">
+        <article class="candidate-panel">
+          <span class="candidate-kicker">Interactive contract proof</span>
+          <h2>Reviewer Identity &amp; Queue Candidate console</h2>
+          <p>Adds fixture session verification, reviewer role enforcement, owner-aware queue transitions, idempotency keys, required decision notes, and an append-only audit stream.</p>
+          <div class="candidate-controls"><label class="candidate-field"><span>Review ticket</span><select data-candidate-ticket></select></label><label class="candidate-field"><span>Decision note</span><input data-candidate-note value="Citation and boundary reviewed."></label><div class="candidate-actions"><button class="candidate-primary" type="button" data-queue-transition="claimed">Claim</button><button type="button" data-queue-transition="approved">Approve</button><button type="button" data-queue-transition="changes-requested">Request changes</button><button type="button" data-candidate-reset>Reset demo</button></div></div>
+          <pre class="candidate-output" data-candidate-output aria-live="polite">Loading bounded release data.</pre>
+        </article>
+        <aside class="candidate-panel candidate-boundary">
+          <span class="candidate-kicker">Evidence and boundary</span>
+          <h2>What this candidate proves</h2>
+          <div class="candidate-checks"><article class="candidate-check"><div><strong>Missing session</strong><span>401</span></div></article>
+              <article class="candidate-check"><div><strong>Wrong role</strong><span>403</span></div></article>
+              <article class="candidate-check"><div><strong>Decision note</strong><span>Required</span></div></article>
+              <article class="candidate-check"><div><strong>Idempotency</strong><span>Replay safe</span></div></article></div>
+          <div class="candidate-packet"><span class="candidate-tag">identity:fixture-session-verifier</span><span class="candidate-tag">role:reviewer</span><span class="candidate-tag">owner:required</span><span class="candidate-tag">audit:append-only</span><span class="candidate-tag">idempotency:required</span></div>
+          <p class="candidate-warning"><strong>Still closed:</strong> Hosted-pilot candidate only; vendor and region remain unbound, secrets are references only, persistence is ephemeral, telemetry and live AI are off, and public launch and production authorization remain closed.</p>
+        </aside>
+      </section>
+    </main>
+    <script id="hostedCandidateData" type="application/json">{"version":"v5.3.5","title":"Reviewer Identity & Queue Candidate","releaseIndex":4,"summary":"Adds fixture session verification, reviewer role enforcement, owner-aware queue transitions, idempotency keys, required decision notes, and an append-only audit stream.","goal":"Prove the reviewer service boundary before selecting a real identity provider or durable queue store.","status":"Ready for consent ledger service candidate","boundary":"Hosted-pilot candidate only; vendor and region remain unbound, secrets are references only, persistence is ephemeral, telemetry and live AI are off, and public launch and production authorization remain closed.","hero":"A decision keeps its owner and history.","subhero":"Only a reviewer fixture session can read or change the queue. Claims establish ownership, decisions require notes, retries replay safely, and audit events are never rewritten.","metrics":{"Role":"Reviewer","Sessions":"Fixture","Audit":"Append-only","Store":"Ephemeral"},"flow":["Verify a reviewer session.","Claim one open ticket.","Record a noted decision.","Replay retries without duplicate events."],"checks":[["Missing session","401"],["Wrong role","403"],["Decision note","Required"],["Idempotency","Replay safe"]],"packet":["identity:fixture-session-verifier","role:reviewer","owner:required","audit:append-only","idempotency:required"],"control":"queue","initialInstruction":"Claim a ticket, record a reviewed decision, or reset the in-memory demonstration.","vendor":"not-selected","region":"review-required","persistence":"ephemeral","deploymentAuthorized":false,"productionStorage":false,"telemetryEnabled":false,"liveAi":false,"publicLaunch":false,"updated":"2026-07-19","tickets":[{"id":"review-bg-2-48","sourceId":"bg-2-48-steadiness","status":"open","owner":null},{"id":"review-bg-11-32","sourceId":"bg-11-32-time","status":"open","owner":null}]}</script>
+    <script src="assets/vedapath-command-shell.js"></script>
+    <script src="assets/vedapath-hosted-candidate.js"></script>
+  </body>
+</html>
