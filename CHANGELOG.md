@@ -1,3 +1,143 @@
+## v5.4.1 Private Pilot Operations & Observability Gate
+
+### Changes made
+- Adds reviewer-only technical readiness, redacted request events, bounded incident lifecycle, and rollback evidence while excluding participant content and behavioral telemetry.
+- Added an interactive Pilot Operations room, structured data packet, documentation, and deterministic platform-contract coverage.
+- Preserved the launch boundary: provider/region binding, production credentials and data, behavioral telemetry, live AI, public launch, and production authorization remain false.
+
+### Files changed
+- `privatepilotoperationsobservabilitygate.html`
+- `data/vedapath-private-pilot-operations-observability-gate.json`
+- `docs/PRIVATE_PILOT_OPERATIONS_OBSERVABILITY_GATE.md`
+- `assets/vedapath-pilot-platform.css`
+- `assets/vedapath-pilot-platform.js`
+- `scripts/vedapath-pilot-platform-contracts.mjs`
+- `scripts/check-v537-v541-pilot-platform.mjs`
+- `scripts/serve-vedapath-pilot-platform.mjs`
+- `scripts/smoke-v541-pilot-platform-http.mjs`
+- shared navigation, build status, README, and static-link manifest
+
+### Checks run
+- `node scripts/apply-v537-v541-pilot-platform-batch.mjs --through=v5.4.1`
+- `node --check scripts/vedapath-pilot-platform-contracts.mjs`
+- `node --check scripts/check-v537-v541-pilot-platform.mjs`
+- `node scripts/check-v537-v541-pilot-platform.mjs --through=v5.4.1`
+- `node scripts/check-static-links.mjs`
+- `node --check scripts/serve-vedapath-pilot-platform.mjs`
+- `node --check scripts/smoke-v541-pilot-platform-http.mjs`
+- `node scripts/smoke-v541-pilot-platform-http.mjs`
+
+### Known risks
+- Operations evidence is local and technical only; hosted alert delivery, retention policy, on-call ownership, real rollback automation, and public launch remain unfinished.
+
+## v5.4.0 Production Identity Integration Candidate
+
+### Changes made
+- Replaces fixture session headers in the candidate path with signed, expiring issuer-and-audience-bound claims and strict reviewer/participant role enforcement.
+- Added an interactive Signed Identity room, structured data packet, documentation, and deterministic platform-contract coverage.
+- Preserved the launch boundary: provider/region binding, production credentials and data, behavioral telemetry, live AI, public launch, and production authorization remain false.
+
+### Files changed
+- `productionidentityintegrationcandidate.html`
+- `data/vedapath-production-identity-integration-candidate.json`
+- `docs/PRODUCTION_IDENTITY_INTEGRATION_CANDIDATE.md`
+- `assets/vedapath-pilot-platform.css`
+- `assets/vedapath-pilot-platform.js`
+- `scripts/vedapath-pilot-platform-contracts.mjs`
+- `scripts/check-v537-v541-pilot-platform.mjs`
+- shared navigation, build status, README, and static-link manifest
+
+### Checks run
+- `node scripts/apply-v537-v541-pilot-platform-batch.mjs --through=v5.4.0`
+- `node --check scripts/vedapath-pilot-platform-contracts.mjs`
+- `node --check scripts/check-v537-v541-pilot-platform.mjs`
+- `node scripts/check-v537-v541-pilot-platform.mjs --through=v5.4.0`
+- `node scripts/check-static-links.mjs`
+
+### Known risks
+- Tokens are signed fixtures, not external-provider identities; provisioning, revocation service, MFA, recovery, and account operations remain unfinished.
+
+## v5.3.9 Durable Storage Migration Candidate
+
+### Changes made
+- Adds a versioned four-table migration plan with checksum verification, transactional commit, rollback on failure, referential integrity, and idempotent replay in a memory-backed candidate store.
+- Added an interactive Storage Migration room, structured data packet, documentation, and deterministic platform-contract coverage.
+- Preserved the launch boundary: provider/region binding, production credentials and data, behavioral telemetry, live AI, public launch, and production authorization remain false.
+
+### Files changed
+- `durablestoragemigrationcandidate.html`
+- `data/vedapath-durable-storage-migration-candidate.json`
+- `docs/DURABLE_STORAGE_MIGRATION_CANDIDATE.md`
+- `assets/vedapath-pilot-platform.css`
+- `assets/vedapath-pilot-platform.js`
+- `scripts/vedapath-pilot-platform-contracts.mjs`
+- `scripts/check-v537-v541-pilot-platform.mjs`
+- shared navigation, build status, README, and static-link manifest
+
+### Checks run
+- `node scripts/apply-v537-v541-pilot-platform-batch.mjs --through=v5.3.9`
+- `node --check scripts/vedapath-pilot-platform-contracts.mjs`
+- `node --check scripts/check-v537-v541-pilot-platform.mjs`
+- `node scripts/check-v537-v541-pilot-platform.mjs --through=v5.3.9`
+- `node scripts/check-static-links.mjs`
+
+### Known risks
+- Migration runs against a transactional memory candidate; no real database, backup service, residency control, or cutover has been selected.
+
+## v5.3.8 Hosted Deployment Adapter Candidate
+
+### Changes made
+- Introduces one fetch-compatible provider-neutral adapter with binding-reference validation, redacted diagnostics, no-store responses, and fail-closed request handling.
+- Added an interactive Deployment Adapter room, structured data packet, documentation, and deterministic platform-contract coverage.
+- Preserved the launch boundary: provider/region binding, production credentials and data, behavioral telemetry, live AI, public launch, and production authorization remain false.
+
+### Files changed
+- `hosteddeploymentadaptercandidate.html`
+- `data/vedapath-hosted-deployment-adapter-candidate.json`
+- `docs/HOSTED_DEPLOYMENT_ADAPTER_CANDIDATE.md`
+- `assets/vedapath-pilot-platform.css`
+- `assets/vedapath-pilot-platform.js`
+- `scripts/vedapath-pilot-platform-contracts.mjs`
+- `scripts/check-v537-v541-pilot-platform.mjs`
+- shared navigation, build status, README, and static-link manifest
+
+### Checks run
+- `node scripts/apply-v537-v541-pilot-platform-batch.mjs --through=v5.3.8`
+- `node --check scripts/vedapath-pilot-platform-contracts.mjs`
+- `node --check scripts/check-v537-v541-pilot-platform.mjs`
+- `node scripts/check-v537-v541-pilot-platform.mjs --through=v5.3.8`
+- `node scripts/check-static-links.mjs`
+
+### Known risks
+- The adapter is exercised locally and has no provider account, deployment manifest, managed secret, or hosted rollback target.
+
+## v5.3.7 Provider & Region Selection Gate
+
+### Changes made
+- Adds an evidence-complete provider and region comparison gate with residency, rights, privacy, security, rollback, exit, and cost requirements while operational binding remains deferred.
+- Added an interactive Selection Gate room, structured data packet, documentation, and deterministic platform-contract coverage.
+- Preserved the launch boundary: provider/region binding, production credentials and data, behavioral telemetry, live AI, public launch, and production authorization remain false.
+
+### Files changed
+- `providerregionselectiongate.html`
+- `data/vedapath-provider-region-selection-gate.json`
+- `docs/PROVIDER_REGION_SELECTION_GATE.md`
+- `assets/vedapath-pilot-platform.css`
+- `assets/vedapath-pilot-platform.js`
+- `scripts/vedapath-pilot-platform-contracts.mjs`
+- `scripts/check-v537-v541-pilot-platform.mjs`
+- shared navigation, build status, README, and static-link manifest
+
+### Checks run
+- `node scripts/apply-v537-v541-pilot-platform-batch.mjs --through=v5.3.7`
+- `node --check scripts/vedapath-pilot-platform-contracts.mjs`
+- `node --check scripts/check-v537-v541-pilot-platform.mjs`
+- `node scripts/check-v537-v541-pilot-platform.mjs --through=v5.3.7`
+- `node scripts/check-static-links.mjs`
+
+### Known risks
+- The comparison packet recommends only a candidate; provider, region, contract, account, and deployment authority are still unresolved.
+
 ## v5.3.6 Consent Ledger Service Candidate
 
 ### Changes made

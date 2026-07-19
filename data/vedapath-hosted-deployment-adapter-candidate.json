@@ -1,0 +1,59 @@
+{
+  "version": "v5.3.8",
+  "title": "Hosted Deployment Adapter Candidate",
+  "releaseIndex": 2,
+  "summary": "Introduces one fetch-compatible provider-neutral adapter with binding-reference validation, redacted diagnostics, no-store responses, and fail-closed request handling.",
+  "goal": "Prove the hosted service can sit behind a platform adapter without coupling product logic to a vendor or permitting deployment.",
+  "status": "Ready for durable storage migration candidate",
+  "boundary": "Private-pilot platform candidate only; provider and region binding, production credentials, real participant data, behavioral telemetry, live AI, public launch, and production authorization remain closed.",
+  "hero": "Adapt the request, not the product.",
+  "subhero": "The hosted API now passes through one small fetch adapter. Platform bindings remain references, diagnostics remain redacted, and an invalid request fails before product logic runs.",
+  "metrics": {
+    "Interface": "Fetch",
+    "Targets": "Neutral",
+    "Cache": "No-store",
+    "Deploy": "Blocked"
+  },
+  "flow": [
+    "Accept a standard Request.",
+    "Resolve reference-only bindings.",
+    "Forward to the hosted contract.",
+    "Return a no-store bounded response."
+  ],
+  "checks": [
+    [
+      "Input",
+      "Request required"
+    ],
+    [
+      "Bindings",
+      "Names only; values redacted"
+    ],
+    [
+      "Product logic",
+      "Unchanged behind adapter"
+    ],
+    [
+      "Deployment",
+      "Still unauthorized"
+    ]
+  ],
+  "packet": [
+    "interface:fetch",
+    "target:provider-neutral",
+    "bindings:references-only",
+    "response:no-store",
+    "deployment:false"
+  ],
+  "control": "adapter",
+  "initialInstruction": "Inspect health and source responses, then confirm that a deployment attempt remains blocked.",
+  "providerBound": false,
+  "regionBound": false,
+  "deploymentAuthorized": false,
+  "productionCredentials": false,
+  "productionData": false,
+  "telemetryEnabled": false,
+  "liveAi": false,
+  "publicLaunch": false,
+  "updated": "2026-07-19"
+}

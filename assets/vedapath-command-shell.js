@@ -1,5 +1,5 @@
 (function () {
-  const releaseBadge = "v5.3.6 hosted candidate";
+  const releaseBadge = "v5.4.1 pilot platform";
   const prefKey = "vedapathCommandShellPrefs";
   const groups = [
     { title: "Start", labels: ["Home", "Build", "Brand", "Blueprint"] },
@@ -27,6 +27,7 @@
     { title: "Production Readiness", labels: ["Gap Map", "Threat Model", "Privacy Ledger", "Rights Pack", "Hosted Decision"] },
     { title: "Minimal Backend", labels: ["Hosted Review", "Backend Provider", "Source Endpoint", "Review Queue", "Consent Backend"] },
     { title: "Hosted Candidate", labels: ["Implementation Auth", "Env Bootstrap", "Hosted Source", "Identity Queue", "Consent Service"] },
+    { title: "Pilot Platform", labels: ["Selection Gate", "Deployment Adapter", "Storage Migration", "Signed Identity", "Pilot Operations"] },
   ];
   const pageTitles = {
     Home: "VedaPath command center",
@@ -160,6 +161,11 @@
     "Hosted Source": "Hosted Source API Candidate",
     "Env Bootstrap": "Environment & Secret Bootstrap",
     "Implementation Auth": "Hosted Pilot Implementation Authorization",
+    "Pilot Operations": "Private Pilot Operations & Observability Gate",
+    "Signed Identity": "Production Identity Integration Candidate",
+    "Storage Migration": "Durable Storage Migration Candidate",
+    "Deployment Adapter": "Hosted Deployment Adapter Candidate",
+    "Selection Gate": "Provider & Region Selection Gate",
     "Rights Pack": "Source Rights and License Pack",
     "Privacy Ledger": "Consent and Privacy Ledger Contract",
     "Threat Model": "Security Threat Model",
@@ -294,6 +300,11 @@
     "hosted-source-api-candidate-page": "Hosted Source API Candidate",
     "environment-secret-bootstrap-page": "Environment & Secret Bootstrap",
     "hosted-pilot-implementation-authorization-page": "Hosted Pilot Implementation Authorization",
+    "private-pilot-operations-observability-gate-page": "Private Pilot Operations & Observability Gate",
+    "production-identity-integration-candidate-page": "Production Identity Integration Candidate",
+    "durable-storage-migration-candidate-page": "Durable Storage Migration Candidate",
+    "hosted-deployment-adapter-candidate-page": "Hosted Deployment Adapter Candidate",
+    "provider-region-selection-gate-page": "Provider & Region Selection Gate",
     "source-rights-license-pack-page": "Source Rights and License Pack",
     "consent-privacy-ledger-contract-page": "Consent and Privacy Ledger Contract",
     "security-threat-model-page": "Security Threat Model",
@@ -393,6 +404,11 @@
     ["Hosted Source", "hostedsourceapicandidate.html"],
     ["Env Bootstrap", "environmentsecretbootstrap.html"],
     ["Implementation Auth", "hostedpilotimplementationauthorization.html"],
+    ["Pilot Operations", "privatepilotoperationsobservabilitygate.html"],
+    ["Signed Identity", "productionidentityintegrationcandidate.html"],
+    ["Storage Migration", "durablestoragemigrationcandidate.html"],
+    ["Deployment Adapter", "hosteddeploymentadaptercandidate.html"],
+    ["Selection Gate", "providerregionselectiongate.html"],
     ["Rights Pack", "sourcerightslicensepack.html"],
     ["Privacy Ledger", "consentprivacyledgercontract.html"],
     ["Threat Model", "securitythreatmodel.html"],

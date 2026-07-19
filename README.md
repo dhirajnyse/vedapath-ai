@@ -1,3 +1,44 @@
+## v5.4.1 Private Pilot Operations & Observability Gate
+
+Adds reviewer-only technical readiness, redacted request events, bounded incident lifecycle, and rollback evidence while excluding participant content and behavioral telemetry.
+
+- Open: [Private Pilot Operations & Observability Gate](privatepilotoperationsobservabilitygate.html)
+- Data: `data/vedapath-private-pilot-operations-observability-gate.json`
+- Local HTTP proof: `node scripts/smoke-v541-pilot-platform-http.mjs`
+- Boundary: Private-pilot platform candidate only; provider and region binding, production credentials, real participant data, behavioral telemetry, live AI, public launch, and production authorization remain closed.
+
+## v5.4.0 Production Identity Integration Candidate
+
+Replaces fixture session headers in the candidate path with signed, expiring issuer-and-audience-bound claims and strict reviewer/participant role enforcement.
+
+- Open: [Production Identity Integration Candidate](productionidentityintegrationcandidate.html)
+- Data: `data/vedapath-production-identity-integration-candidate.json`
+- Boundary: Private-pilot platform candidate only; provider and region binding, production credentials, real participant data, behavioral telemetry, live AI, public launch, and production authorization remain closed.
+
+## v5.3.9 Durable Storage Migration Candidate
+
+Adds a versioned four-table migration plan with checksum verification, transactional commit, rollback on failure, referential integrity, and idempotent replay in a memory-backed candidate store.
+
+- Open: [Durable Storage Migration Candidate](durablestoragemigrationcandidate.html)
+- Data: `data/vedapath-durable-storage-migration-candidate.json`
+- Boundary: Private-pilot platform candidate only; provider and region binding, production credentials, real participant data, behavioral telemetry, live AI, public launch, and production authorization remain closed.
+
+## v5.3.8 Hosted Deployment Adapter Candidate
+
+Introduces one fetch-compatible provider-neutral adapter with binding-reference validation, redacted diagnostics, no-store responses, and fail-closed request handling.
+
+- Open: [Hosted Deployment Adapter Candidate](hosteddeploymentadaptercandidate.html)
+- Data: `data/vedapath-hosted-deployment-adapter-candidate.json`
+- Boundary: Private-pilot platform candidate only; provider and region binding, production credentials, real participant data, behavioral telemetry, live AI, public launch, and production authorization remain closed.
+
+## v5.3.7 Provider & Region Selection Gate
+
+Adds an evidence-complete provider and region comparison gate with residency, rights, privacy, security, rollback, exit, and cost requirements while operational binding remains deferred.
+
+- Open: [Provider & Region Selection Gate](providerregionselectiongate.html)
+- Data: `data/vedapath-provider-region-selection-gate.json`
+- Boundary: Private-pilot platform candidate only; provider and region binding, production credentials, real participant data, behavioral telemetry, live AI, public launch, and production authorization remain closed.
+
 ## v5.3.6 Consent Ledger Service Candidate
 
 Completes the hosted-candidate runtime with participant role checks, append-only consent events, idempotent retries, effective-consent projection, and explicit export and deletion requests.

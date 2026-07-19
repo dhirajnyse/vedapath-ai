@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Adds reviewer-only technical readiness, redacted request events, bounded incident lifecycle, and rollback evidence while excluding participant content and behavioral telemetry.">
+    <title>VedaPath Private Pilot Operations &amp; Observability Gate</title>
+    <link rel="stylesheet" href="assets/vedapath-ui.css">
+    <link rel="stylesheet" href="assets/vedapath-command-shell.css">
+    <link rel="stylesheet" href="assets/vedapath-pilot-platform.css">
+  </head>
+  <body class="private-pilot-operations-observability-gate-page">
+    <main class="page pilot-platform-page" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top"><img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI"><span><strong>VedaPath AI</strong><small>Private Pilot Operations &amp; Observability Gate</small></span></a>
+        <nav class="navlinks nav" aria-label="Primary navigation"><a class="link" href="index.html">Home</a><a class="link" href="build-status.html">Build</a></nav>
+      </header>
+      <section class="platform-hero">
+        <article class="platform-panel platform-intro">
+          <span class="platform-kicker">Observe the service, not the person</span>
+          <h1>See technical health. Leave private meaning private.</h1>
+          <p>Operations evidence records route shape, status, latency bucket, request ID, and incidents. Questions, answers, reflections, identity tokens, and behavioral profiles never enter the recorder.</p>
+          <div class="platform-metrics"><article class="platform-metric"><span>Access</span><strong>Reviewer</strong></article>
+              <article class="platform-metric"><span>Content</span><strong>Excluded</strong></article>
+              <article class="platform-metric"><span>Incidents</span><strong>Lifecycle</strong></article>
+              <article class="platform-metric"><span>Public</span><strong>Closed</strong></article></div>
+        </article>
+        <aside class="platform-panel" aria-label="Release flow">
+          <span class="platform-kicker">One bounded path</span>
+          <h2>Private Pilot Operations &amp; Observability Gate</h2>
+          <div class="platform-steps"><article class="platform-step"><span>1</span><div><strong>Record redacted technical events</strong><p>Record redacted technical events.</p></div></article>
+              <article class="platform-step"><span>2</span><div><strong>Expose detailed health to reviewers only</strong><p>Expose detailed health to reviewers only.</p></div></article>
+              <article class="platform-step"><span>3</span><div><strong>Open and close bounded incidents</strong><p>Open and close bounded incidents.</p></div></article>
+              <article class="platform-step"><span>4</span><div><strong>Keep rollback and launch boundaries visible</strong><p>Keep rollback and launch boundaries visible.</p></div></article></div>
+        </aside>
+      </section>
+      <section class="platform-workspace">
+        <article class="platform-panel">
+          <span class="platform-kicker">Executable proof</span>
+          <h2>Private Pilot Operations &amp; Observability Gate console</h2>
+          <p>Adds reviewer-only technical readiness, redacted request events, bounded incident lifecycle, and rollback evidence while excluding participant content and behavioral telemetry.</p>
+          <div class="platform-controls"><div class="platform-actions"><button class="platform-primary" type="button" data-platform-action="healthy">Read technical health</button><button type="button" data-platform-action="incident">Open incident</button><button type="button" data-platform-action="close">Close incident</button></div></div>
+          <pre class="platform-output" data-platform-output aria-live="polite">Loading bounded release data.</pre>
+        </article>
+        <aside class="platform-panel">
+          <span class="platform-kicker">Evidence and boundary</span>
+          <h2>What this release proves</h2>
+          <div class="platform-checks"><article class="platform-check"><div><strong>Participant content</strong><span>Never recorded</span></div></article>
+              <article class="platform-check"><div><strong>Authorization</strong><span>Never recorded</span></div></article>
+              <article class="platform-check"><div><strong>Ops detail</strong><span>Reviewer only</span></div></article>
+              <article class="platform-check"><div><strong>Behavioral telemetry</strong><span>Off</span></div></article></div>
+          <div class="platform-packet"><span class="platform-tag">operations:redacted</span><span class="platform-tag">health:reviewer-only</span><span class="platform-tag">incident:lifecycle</span><span class="platform-tag">content:false</span><span class="platform-tag">public-launch:false</span></div>
+          <p class="platform-warning"><strong>Still closed:</strong> Private-pilot platform candidate only; provider and region binding, production credentials, real participant data, behavioral telemetry, live AI, public launch, and production authorization remain closed.</p>
+        </aside>
+      </section>
+    </main>
+    <script id="pilotPlatformData" type="application/json">{"version":"v5.4.1","title":"Private Pilot Operations & Observability Gate","releaseIndex":5,"summary":"Adds reviewer-only technical readiness, redacted request events, bounded incident lifecycle, and rollback evidence while excluding participant content and behavioral telemetry.","goal":"Make a private candidate operable and diagnosable without turning participant reflection into telemetry or opening public launch.","status":"Ready for hosted provider binding decision","boundary":"Private-pilot platform candidate only; provider and region binding, production credentials, real participant data, behavioral telemetry, live AI, public launch, and production authorization remain closed.","hero":"See technical health. Leave private meaning private.","subhero":"Operations evidence records route shape, status, latency bucket, request ID, and incidents. Questions, answers, reflections, identity tokens, and behavioral profiles never enter the recorder.","metrics":{"Access":"Reviewer","Content":"Excluded","Incidents":"Lifecycle","Public":"Closed"},"flow":["Record redacted technical events.","Expose detailed health to reviewers only.","Open and close bounded incidents.","Keep rollback and launch boundaries visible."],"checks":[["Participant content","Never recorded"],["Authorization","Never recorded"],["Ops detail","Reviewer only"],["Behavioral telemetry","Off"]],"packet":["operations:redacted","health:reviewer-only","incident:lifecycle","content:false","public-launch:false"],"control":"operations","initialInstruction":"Inspect healthy operations, open an incident, then close it; no participant content enters the report.","providerBound":false,"regionBound":false,"deploymentAuthorized":false,"productionCredentials":false,"productionData":false,"telemetryEnabled":false,"liveAi":false,"publicLaunch":false,"updated":"2026-07-19"}</script>
+    <script src="assets/vedapath-command-shell.js"></script>
+    <script src="assets/vedapath-pilot-platform.js"></script>
+  </body>
+</html>

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Introduces one fetch-compatible provider-neutral adapter with binding-reference validation, redacted diagnostics, no-store responses, and fail-closed request handling.">
+    <title>VedaPath Hosted Deployment Adapter Candidate</title>
+    <link rel="stylesheet" href="assets/vedapath-ui.css">
+    <link rel="stylesheet" href="assets/vedapath-command-shell.css">
+    <link rel="stylesheet" href="assets/vedapath-pilot-platform.css">
+  </head>
+  <body class="hosted-deployment-adapter-candidate-page">
+    <main class="page pilot-platform-page" id="top">
+      <header class="topbar">
+        <a class="brand" href="index.html#top"><img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI"><span><strong>VedaPath AI</strong><small>Hosted Deployment Adapter Candidate</small></span></a>
+        <nav class="navlinks nav" aria-label="Primary navigation"><a class="link" href="index.html">Home</a><a class="link" href="build-status.html">Build</a></nav>
+      </header>
+      <section class="platform-hero">
+        <article class="platform-panel platform-intro">
+          <span class="platform-kicker">One runtime seam</span>
+          <h1>Adapt the request, not the product.</h1>
+          <p>The hosted API now passes through one small fetch adapter. Platform bindings remain references, diagnostics remain redacted, and an invalid request fails before product logic runs.</p>
+          <div class="platform-metrics"><article class="platform-metric"><span>Interface</span><strong>Fetch</strong></article>
+              <article class="platform-metric"><span>Targets</span><strong>Neutral</strong></article>
+              <article class="platform-metric"><span>Cache</span><strong>No-store</strong></article>
+              <article class="platform-metric"><span>Deploy</span><strong>Blocked</strong></article></div>
+        </article>
+        <aside class="platform-panel" aria-label="Release flow">
+          <span class="platform-kicker">One bounded path</span>
+          <h2>Hosted Deployment Adapter Candidate</h2>
+          <div class="platform-steps"><article class="platform-step"><span>1</span><div><strong>Accept a standard Request</strong><p>Accept a standard Request.</p></div></article>
+              <article class="platform-step"><span>2</span><div><strong>Resolve reference-only bindings</strong><p>Resolve reference-only bindings.</p></div></article>
+              <article class="platform-step"><span>3</span><div><strong>Forward to the hosted contract</strong><p>Forward to the hosted contract.</p></div></article>
+              <article class="platform-step"><span>4</span><div><strong>Return a no-store bounded response</strong><p>Return a no-store bounded response.</p></div></article></div>
+        </aside>
+      </section>
+      <section class="platform-workspace">
+        <article class="platform-panel">
+          <span class="platform-kicker">Executable proof</span>
+          <h2>Hosted Deployment Adapter Candidate console</h2>
+          <p>Introduces one fetch-compatible provider-neutral adapter with binding-reference validation, redacted diagnostics, no-store responses, and fail-closed request handling.</p>
+          <div class="platform-controls"><div class="platform-actions"><button class="platform-primary" type="button" data-platform-action="health">GET health</button><button type="button" data-platform-action="source">GET reviewed source</button><button type="button" data-platform-action="deploy">Attempt deploy</button></div></div>
+          <pre class="platform-output" data-platform-output aria-live="polite">Loading bounded release data.</pre>
+        </article>
+        <aside class="platform-panel">
+          <span class="platform-kicker">Evidence and boundary</span>
+          <h2>What this release proves</h2>
+          <div class="platform-checks"><article class="platform-check"><div><strong>Input</strong><span>Request required</span></div></article>
+              <article class="platform-check"><div><strong>Bindings</strong><span>Names only; values redacted</span></div></article>
+              <article class="platform-check"><div><strong>Product logic</strong><span>Unchanged behind adapter</span></div></article>
+              <article class="platform-check"><div><strong>Deployment</strong><span>Still unauthorized</span></div></article></div>
+          <div class="platform-packet"><span class="platform-tag">interface:fetch</span><span class="platform-tag">target:provider-neutral</span><span class="platform-tag">bindings:references-only</span><span class="platform-tag">response:no-store</span><span class="platform-tag">deployment:false</span></div>
+          <p class="platform-warning"><strong>Still closed:</strong> Private-pilot platform candidate only; provider and region binding, production credentials, real participant data, behavioral telemetry, live AI, public launch, and production authorization remain closed.</p>
+        </aside>
+      </section>
+    </main>
+    <script id="pilotPlatformData" type="application/json">{"version":"v5.3.8","title":"Hosted Deployment Adapter Candidate","releaseIndex":2,"summary":"Introduces one fetch-compatible provider-neutral adapter with binding-reference validation, redacted diagnostics, no-store responses, and fail-closed request handling.","goal":"Prove the hosted service can sit behind a platform adapter without coupling product logic to a vendor or permitting deployment.","status":"Ready for durable storage migration candidate","boundary":"Private-pilot platform candidate only; provider and region binding, production credentials, real participant data, behavioral telemetry, live AI, public launch, and production authorization remain closed.","hero":"Adapt the request, not the product.","subhero":"The hosted API now passes through one small fetch adapter. Platform bindings remain references, diagnostics remain redacted, and an invalid request fails before product logic runs.","metrics":{"Interface":"Fetch","Targets":"Neutral","Cache":"No-store","Deploy":"Blocked"},"flow":["Accept a standard Request.","Resolve reference-only bindings.","Forward to the hosted contract.","Return a no-store bounded response."],"checks":[["Input","Request required"],["Bindings","Names only; values redacted"],["Product logic","Unchanged behind adapter"],["Deployment","Still unauthorized"]],"packet":["interface:fetch","target:provider-neutral","bindings:references-only","response:no-store","deployment:false"],"control":"adapter","initialInstruction":"Inspect health and source responses, then confirm that a deployment attempt remains blocked.","providerBound":false,"regionBound":false,"deploymentAuthorized":false,"productionCredentials":false,"productionData":false,"telemetryEnabled":false,"liveAi":false,"publicLaunch":false,"updated":"2026-07-19"}</script>
+    <script src="assets/vedapath-command-shell.js"></script>
+    <script src="assets/vedapath-pilot-platform.js"></script>
+  </body>
+</html>

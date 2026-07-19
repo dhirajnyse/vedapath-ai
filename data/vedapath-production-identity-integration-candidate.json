@@ -1,0 +1,59 @@
+{
+  "version": "v5.4.0",
+  "title": "Production Identity Integration Candidate",
+  "releaseIndex": 4,
+  "summary": "Replaces fixture session headers in the candidate path with signed, expiring issuer-and-audience-bound claims and strict reviewer/participant role enforcement.",
+  "goal": "Prove the identity verification boundary before selecting an external identity provider or provisioning real accounts.",
+  "status": "Ready for private pilot operations and observability gate",
+  "boundary": "Private-pilot platform candidate only; provider and region binding, production credentials, real participant data, behavioral telemetry, live AI, public launch, and production authorization remain closed.",
+  "hero": "Trust a verified claim, not a convenient header.",
+  "subhero": "A short-lived signed fixture token carries issuer, audience, subject, role, expiry, and token ID. Tampering, expiry, and role mismatch all fail closed.",
+  "metrics": {
+    "Signature": "HS256 fixture",
+    "Expiry": "Required",
+    "Roles": "2",
+    "IdP": "Unbound"
+  },
+  "flow": [
+    "Verify signature and token type.",
+    "Check issuer, audience, and expiry.",
+    "Resolve reviewer or participant role.",
+    "Reject tampering and role mismatch."
+  ],
+  "checks": [
+    [
+      "Tamper",
+      "Rejected"
+    ],
+    [
+      "Expiry",
+      "Rejected"
+    ],
+    [
+      "Audience",
+      "Exact match"
+    ],
+    [
+      "External IdP",
+      "Not selected"
+    ]
+  ],
+  "packet": [
+    "claims:signed",
+    "expiry:enforced",
+    "issuer-audience:enforced",
+    "roles:strict",
+    "external-idp:null"
+  ],
+  "control": "identity",
+  "initialInstruction": "Compare a valid reviewer claim with expired and tampered token outcomes.",
+  "providerBound": false,
+  "regionBound": false,
+  "deploymentAuthorized": false,
+  "productionCredentials": false,
+  "productionData": false,
+  "telemetryEnabled": false,
+  "liveAi": false,
+  "publicLaunch": false,
+  "updated": "2026-07-19"
+}

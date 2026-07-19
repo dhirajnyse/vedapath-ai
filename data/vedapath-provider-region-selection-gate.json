@@ -1,0 +1,59 @@
+{
+  "version": "v5.3.7",
+  "title": "Provider & Region Selection Gate",
+  "releaseIndex": 1,
+  "summary": "Adds an evidence-complete provider and region comparison gate with residency, rights, privacy, security, rollback, exit, and cost requirements while operational binding remains deferred.",
+  "goal": "Make provider and region comparison reviewable without silently converting a recommendation into deployment authority.",
+  "status": "Ready for hosted deployment adapter candidate",
+  "boundary": "Private-pilot platform candidate only; provider and region binding, production credentials, real participant data, behavioral telemetry, live AI, public launch, and production authorization remain closed.",
+  "hero": "Compare the host. Keep authority separate.",
+  "subhero": "One proposal can be recommended only after residency, rights, privacy, security, rollback, exit, and cost evidence is complete. A recommendation still cannot bind infrastructure.",
+  "metrics": {
+    "Evidence gates": "6",
+    "Cost cap": "Required",
+    "Binding": "Deferred",
+    "Launch": "Closed"
+  },
+  "flow": [
+    "Name one candidate provider and region.",
+    "Review six independent evidence gates.",
+    "Record a bounded recommendation.",
+    "Keep operational binding at false."
+  ],
+  "checks": [
+    [
+      "Residency",
+      "Evidence required"
+    ],
+    [
+      "Exit plan",
+      "Required before recommendation"
+    ],
+    [
+      "Cost",
+      "Explicit monthly cap"
+    ],
+    [
+      "Authority",
+      "Recommendation is not binding"
+    ]
+  ],
+  "packet": [
+    "decision:recommend-candidate",
+    "evidence:6-gates",
+    "cost-cap:required",
+    "provider-bound:false",
+    "region-bound:false"
+  ],
+  "control": "selection",
+  "initialInstruction": "Compare complete and incomplete evidence packets; neither path binds a provider or region.",
+  "providerBound": false,
+  "regionBound": false,
+  "deploymentAuthorized": false,
+  "productionCredentials": false,
+  "productionData": false,
+  "telemetryEnabled": false,
+  "liveAi": false,
+  "publicLaunch": false,
+  "updated": "2026-07-19"
+}
