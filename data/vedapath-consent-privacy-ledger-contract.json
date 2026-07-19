@@ -1,0 +1,41 @@
+{
+  "version": "v5.2.4",
+  "title": "Consent and Privacy Ledger Contract",
+  "releaseIndex": 3,
+  "summary": "Defines a consent ledger contract for pilot participation, local memory, telemetry boundaries, retention, withdrawal, export, and deletion.",
+  "goal": "Make privacy consent explicit before any pilot learning or telemetry can exist.",
+  "status": "Ready for source-rights packaging",
+  "boundary": "Readiness artifact only; no credentials, secrets, production storage, live AI, public telemetry, corpus delivery, public pilot, or launch authorization.",
+  "hero": "Consent first. Memory second.",
+  "subhero": "VedaPath should remember only when a person knows what is remembered, why, where, for how long, and how to remove it.",
+  "metrics": {
+    "Consent": "Explicit",
+    "Retention": "Defined",
+    "Telemetry": "Off",
+    "Launch": "No"
+  },
+  "flow": [
+    "State the data purpose.",
+    "Record consent, withdrawal, export, and deletion paths.",
+    "Keep telemetry off by default.",
+    "Separate local prototype memory from production accounts."
+  ],
+  "decisions": [
+    "No silent analytics in private pilot.",
+    "No raw identity in fixtures.",
+    "No memory sync before account consent and deletion controls exist."
+  ],
+  "packet": [
+    "consent: explicit",
+    "retention: 30-days-or-less",
+    "withdrawal: required",
+    "telemetry: disabled",
+    "owner:privacy"
+  ],
+  "launchAuthorization": false,
+  "productionStorage": false,
+  "liveAi": false,
+  "telemetryEnabled": false,
+  "publicPilot": false,
+  "updated": "2026-07-19"
+}

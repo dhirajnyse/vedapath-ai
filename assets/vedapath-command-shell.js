@@ -1,5 +1,5 @@
 (function () {
-  const releaseBadge = "v5.2.1 retrospective";
+  const releaseBadge = "v5.2.6 production";
   const prefKey = "vedapathCommandShellPrefs";
   const groups = [
     { title: "Start", labels: ["Home", "Build", "Brand", "Blueprint"] },
@@ -24,6 +24,7 @@
     { title: "Private Pilot Validation", labels: ["Invite Dry Run", "Revocation", "Session Sandbox", "Incident Drill", "Pilot Decision"] },
     { title: "Private Pilot Operations", labels: ["Stack Readiness", "Invite Adapter", "Consent Handshake", "Observability", "Evidence Review"] },
     { title: "Private Pilot Execution", labels: ["Execution Gate", "Session Token", "Access Envelope", "Execution Sandbox", "Pilot Retrospective"] },
+    { title: "Production Readiness", labels: ["Gap Map", "Threat Model", "Privacy Ledger", "Rights Pack", "Hosted Decision"] },
   ];
   const pageTitles = {
     Home: "VedaPath command center",
@@ -146,6 +147,11 @@
     "Observability": "First-Session Observability and Rollback",
     "Evidence Review": "Founder Pilot Evidence Review",
     "Pilot Retrospective": "Founder Private-Pilot Retrospective",
+    "Hosted Decision": "Minimal Hosted Pilot Architecture Decision",
+    "Rights Pack": "Source Rights and License Pack",
+    "Privacy Ledger": "Consent and Privacy Ledger Contract",
+    "Threat Model": "Security Threat Model",
+    "Gap Map": "Pilot-to-Production Gap Map",
     "Execution Sandbox": "Audited Session Execution Sandbox",
     "Access Envelope": "Ephemeral Participant Access Envelope",
     "Session Token": "Single-Session Token Contract",
@@ -265,6 +271,11 @@
     "first-session-observability-page": "First-Session Observability and Rollback",
     "founder-pilot-evidence-review-page": "Founder Pilot Evidence Review",
     "founder-private-pilot-retrospective-page": "Founder Private-Pilot Retrospective",
+    "minimal-hosted-pilot-architecture-decision-page": "Minimal Hosted Pilot Architecture Decision",
+    "source-rights-license-pack-page": "Source Rights and License Pack",
+    "consent-privacy-ledger-contract-page": "Consent and Privacy Ledger Contract",
+    "security-threat-model-page": "Security Threat Model",
+    "pilot-to-production-gap-map-page": "Pilot-to-Production Gap Map",
     "audited-session-execution-sandbox-page": "Audited Session Execution Sandbox",
     "ephemeral-participant-access-envelope-page": "Ephemeral Participant Access Envelope",
     "single-session-token-contract-page": "Single-Session Token Contract",
@@ -349,6 +360,11 @@
     ["Observability", "firstsessionobservability.html"],
     ["Evidence Review", "founderpilotevidencereview.html"],
     ["Pilot Retrospective", "founderprivatepilotretrospective.html"],
+    ["Hosted Decision", "minimalhostedpilotarchitecturedecision.html"],
+    ["Rights Pack", "sourcerightslicensepack.html"],
+    ["Privacy Ledger", "consentprivacyledgercontract.html"],
+    ["Threat Model", "securitythreatmodel.html"],
+    ["Gap Map", "pilottoproductiongapmap.html"],
     ["Execution Sandbox", "auditedsessionexecutionsandbox.html"],
     ["Access Envelope", "ephemeralparticipantaccessenvelope.html"],
     ["Session Token", "singlesessiontokencontract.html"],

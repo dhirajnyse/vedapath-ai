@@ -1,3 +1,43 @@
+## v5.2.6 Minimal Hosted Pilot Architecture Decision
+
+Chooses the smallest hosted-pilot architecture posture: one bounded source API, reviewer queue, consent ledger, and read-only demo shell.
+
+- Open: [Minimal Hosted Pilot Architecture Decision](minimalhostedpilotarchitecturedecision.html)
+- Data: `data/vedapath-minimal-hosted-pilot-architecture-decision.json`
+- Boundary: Readiness artifact only; no credentials, secrets, production storage, live AI, public telemetry, corpus delivery, public pilot, or launch authorization.
+
+## v5.2.5 Source Rights and License Pack
+
+Creates a source-rights packet for edition provenance, allowed use, citation display, missing permissions, and corpus-delivery boundaries.
+
+- Open: [Source Rights and License Pack](sourcerightslicensepack.html)
+- Data: `data/vedapath-source-rights-license-pack.json`
+- Boundary: Readiness artifact only; no credentials, secrets, production storage, live AI, public telemetry, corpus delivery, public pilot, or launch authorization.
+
+## v5.2.4 Consent and Privacy Ledger Contract
+
+Defines a consent ledger contract for pilot participation, local memory, telemetry boundaries, retention, withdrawal, export, and deletion.
+
+- Open: [Consent and Privacy Ledger Contract](consentprivacyledgercontract.html)
+- Data: `data/vedapath-consent-privacy-ledger-contract.json`
+- Boundary: Readiness artifact only; no credentials, secrets, production storage, live AI, public telemetry, corpus delivery, public pilot, or launch authorization.
+
+## v5.2.3 Security Threat Model
+
+Adds a founder-readable threat model for identity, source data, review queues, telemetry, prompt injection, and abuse boundaries.
+
+- Open: [Security Threat Model](securitythreatmodel.html)
+- Data: `data/vedapath-security-threat-model.json`
+- Boundary: Readiness artifact only; no credentials, secrets, production storage, live AI, public telemetry, corpus delivery, public pilot, or launch authorization.
+
+## v5.2.2 Pilot-to-Production Gap Map
+
+Maps the exact blockers between private-pilot proof and production launch, while fixing release-status drift in Build Status.
+
+- Open: [Pilot-to-Production Gap Map](pilottoproductiongapmap.html)
+- Data: `data/vedapath-pilot-to-production-gap-map.json`
+- Boundary: Readiness artifact only; no credentials, secrets, production storage, live AI, public telemetry, corpus delivery, public pilot, or launch authorization.
+
 ## v5.2.1 Founder Private-Pilot Retrospective
 
 A founder retrospective now aggregates the execution gate, token contract, access envelope, and sandbox trace into one review packet with explicit go, hold, and rework options while public launch stays blocked.

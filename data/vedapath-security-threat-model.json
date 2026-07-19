@@ -1,0 +1,41 @@
+{
+  "version": "v5.2.3",
+  "title": "Security Threat Model",
+  "releaseIndex": 2,
+  "summary": "Adds a founder-readable threat model for identity, source data, review queues, telemetry, prompt injection, and abuse boundaries.",
+  "goal": "Turn launch anxiety into named risks, mitigations, owners, and explicit non-capabilities.",
+  "status": "Ready for consent and privacy ledger design",
+  "boundary": "Readiness artifact only; no credentials, secrets, production storage, live AI, public telemetry, corpus delivery, public pilot, or launch authorization.",
+  "hero": "Secure the calm before scaling it.",
+  "subhero": "The product can feel peaceful only if secrets, reviewers, learners, sources, and generated answers are protected by design.",
+  "metrics": {
+    "Threats": "9",
+    "Mitigations": "9",
+    "Secrets": "0",
+    "Launch": "No"
+  },
+  "flow": [
+    "List threats by asset.",
+    "Pair each threat with mitigation and owner.",
+    "Block secret collection in fixtures.",
+    "Keep live identity and storage disabled."
+  ],
+  "decisions": [
+    "Use least-privilege reviewer roles.",
+    "Treat prompt injection and source poisoning as first-class risks.",
+    "Require incident notes before public pilot decisions."
+  ],
+  "packet": [
+    "asset: identity",
+    "asset: source-records",
+    "threat: prompt-injection",
+    "mitigation: reviewer-gate",
+    "owner:security"
+  ],
+  "launchAuthorization": false,
+  "productionStorage": false,
+  "liveAi": false,
+  "telemetryEnabled": false,
+  "publicPilot": false,
+  "updated": "2026-07-19"
+}

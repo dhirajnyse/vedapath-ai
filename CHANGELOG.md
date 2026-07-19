@@ -1,3 +1,128 @@
+## v5.2.6 Minimal Hosted Pilot Architecture Decision
+
+### Changes made
+- Chooses the smallest hosted-pilot architecture posture: one bounded source API, reviewer queue, consent ledger, and read-only demo shell.
+- Added the Hosted Decision production-readiness page, data packet, documentation, and deterministic contract coverage.
+- Kept the launch boundary explicit: no credentials, secrets, production storage, live AI, public telemetry, corpus delivery, public pilot, or launch authorization.
+
+### Files changed
+- `minimalhostedpilotarchitecturedecision.html`
+- `data/vedapath-minimal-hosted-pilot-architecture-decision.json`
+- `docs/MINIMAL_HOSTED_PILOT_ARCHITECTURE_DECISION.md`
+- `scripts/vedapath-production-readiness-contracts.mjs`
+- `scripts/check-v522-v526-production-readiness.mjs`
+- shared navigation/build docs where applicable
+
+### Checks run
+- `node scripts/apply-v522-v526-production-readiness-batch.mjs --through=v5.2.6`
+- `node --check scripts/vedapath-production-readiness-contracts.mjs`
+- `node --check scripts/check-v522-v526-production-readiness.mjs`
+- `node scripts/check-v522-v526-production-readiness.mjs --through=v5.2.6`
+- `node scripts/check-static-links.mjs`
+
+### Known risks
+- Fixture-only readiness layer; real backend, production security controls, consent storage, source-rights review, telemetry controls, hosted pilot access, and public launch remain unfinished and intentionally blocked.
+
+## v5.2.5 Source Rights and License Pack
+
+### Changes made
+- Creates a source-rights packet for edition provenance, allowed use, citation display, missing permissions, and corpus-delivery boundaries.
+- Added the Rights Pack production-readiness page, data packet, documentation, and deterministic contract coverage.
+- Kept the launch boundary explicit: no credentials, secrets, production storage, live AI, public telemetry, corpus delivery, public pilot, or launch authorization.
+
+### Files changed
+- `sourcerightslicensepack.html`
+- `data/vedapath-source-rights-license-pack.json`
+- `docs/SOURCE_RIGHTS_LICENSE_PACK.md`
+- `scripts/vedapath-production-readiness-contracts.mjs`
+- `scripts/check-v522-v526-production-readiness.mjs`
+- shared navigation/build docs where applicable
+
+### Checks run
+- `node scripts/apply-v522-v526-production-readiness-batch.mjs --through=v5.2.5`
+- `node --check scripts/vedapath-production-readiness-contracts.mjs`
+- `node --check scripts/check-v522-v526-production-readiness.mjs`
+- `node scripts/check-v522-v526-production-readiness.mjs --through=v5.2.5`
+- `node scripts/check-static-links.mjs`
+
+### Known risks
+- Fixture-only readiness layer; real backend, production security controls, consent storage, source-rights review, telemetry controls, hosted pilot access, and public launch remain unfinished and intentionally blocked.
+
+## v5.2.4 Consent and Privacy Ledger Contract
+
+### Changes made
+- Defines a consent ledger contract for pilot participation, local memory, telemetry boundaries, retention, withdrawal, export, and deletion.
+- Added the Privacy Ledger production-readiness page, data packet, documentation, and deterministic contract coverage.
+- Kept the launch boundary explicit: no credentials, secrets, production storage, live AI, public telemetry, corpus delivery, public pilot, or launch authorization.
+
+### Files changed
+- `consentprivacyledgercontract.html`
+- `data/vedapath-consent-privacy-ledger-contract.json`
+- `docs/CONSENT_PRIVACY_LEDGER_CONTRACT.md`
+- `scripts/vedapath-production-readiness-contracts.mjs`
+- `scripts/check-v522-v526-production-readiness.mjs`
+- shared navigation/build docs where applicable
+
+### Checks run
+- `node scripts/apply-v522-v526-production-readiness-batch.mjs --through=v5.2.4`
+- `node --check scripts/vedapath-production-readiness-contracts.mjs`
+- `node --check scripts/check-v522-v526-production-readiness.mjs`
+- `node scripts/check-v522-v526-production-readiness.mjs --through=v5.2.4`
+- `node scripts/check-static-links.mjs`
+
+### Known risks
+- Fixture-only readiness layer; real backend, production security controls, consent storage, source-rights review, telemetry controls, hosted pilot access, and public launch remain unfinished and intentionally blocked.
+
+## v5.2.3 Security Threat Model
+
+### Changes made
+- Adds a founder-readable threat model for identity, source data, review queues, telemetry, prompt injection, and abuse boundaries.
+- Added the Threat Model production-readiness page, data packet, documentation, and deterministic contract coverage.
+- Kept the launch boundary explicit: no credentials, secrets, production storage, live AI, public telemetry, corpus delivery, public pilot, or launch authorization.
+
+### Files changed
+- `securitythreatmodel.html`
+- `data/vedapath-security-threat-model.json`
+- `docs/SECURITY_THREAT_MODEL.md`
+- `scripts/vedapath-production-readiness-contracts.mjs`
+- `scripts/check-v522-v526-production-readiness.mjs`
+- shared navigation/build docs where applicable
+
+### Checks run
+- `node scripts/apply-v522-v526-production-readiness-batch.mjs --through=v5.2.3`
+- `node --check scripts/vedapath-production-readiness-contracts.mjs`
+- `node --check scripts/check-v522-v526-production-readiness.mjs`
+- `node scripts/check-v522-v526-production-readiness.mjs --through=v5.2.3`
+- `node scripts/check-static-links.mjs`
+
+### Known risks
+- Fixture-only readiness layer; real backend, production security controls, consent storage, source-rights review, telemetry controls, hosted pilot access, and public launch remain unfinished and intentionally blocked.
+
+## v5.2.2 Pilot-to-Production Gap Map
+
+### Changes made
+- Maps the exact blockers between private-pilot proof and production launch, while fixing release-status drift in Build Status.
+- Added the Gap Map production-readiness page, data packet, documentation, and deterministic contract coverage.
+- Kept the launch boundary explicit: no credentials, secrets, production storage, live AI, public telemetry, corpus delivery, public pilot, or launch authorization.
+
+### Files changed
+- `pilottoproductiongapmap.html`
+- `data/vedapath-pilot-to-production-gap-map.json`
+- `docs/PILOT_TO_PRODUCTION_GAP_MAP.md`
+- `scripts/vedapath-production-readiness-contracts.mjs`
+- `scripts/check-v522-v526-production-readiness.mjs`
+- shared navigation/build docs where applicable
+
+### Checks run
+- `node scripts/apply-v522-v526-production-readiness-batch.mjs --through=v5.2.2`
+- `node --check scripts/vedapath-production-readiness-contracts.mjs`
+- `node --check scripts/check-v522-v526-production-readiness.mjs`
+- `node scripts/check-v522-v526-production-readiness.mjs --through=v5.2.2`
+- `node scripts/check-static-links.mjs`
+
+### Known risks
+- Fixture-only readiness layer; real backend, production security controls, consent storage, source-rights review, telemetry controls, hosted pilot access, and public launch remain unfinished and intentionally blocked.
+
 ## v5.2.1 Founder Private-Pilot Retrospective
 
 ### Changes made

@@ -1,0 +1,41 @@
+{
+  "version": "v5.2.5",
+  "title": "Source Rights and License Pack",
+  "releaseIndex": 4,
+  "summary": "Creates a source-rights packet for edition provenance, allowed use, citation display, missing permissions, and corpus-delivery boundaries.",
+  "goal": "Protect sources, translators, reviewers, and users before expanding the corpus.",
+  "status": "Ready for hosted pilot architecture decision",
+  "boundary": "Readiness artifact only; no credentials, secrets, production storage, live AI, public telemetry, corpus delivery, public pilot, or launch authorization.",
+  "hero": "Honor the source before using it.",
+  "subhero": "The source layer must show what can be cited, what can be stored, what can be displayed, and what remains permission-blocked.",
+  "metrics": {
+    "Sources": "12",
+    "Rights": "Tracked",
+    "Delivery": "Blocked",
+    "Launch": "No"
+  },
+  "flow": [
+    "Identify edition and source family.",
+    "Classify allowed use and citation display.",
+    "Flag missing permission before ingestion.",
+    "Block bulk corpus delivery."
+  ],
+  "decisions": [
+    "Use source packets before adding more texts.",
+    "Never hide uncertain rights behind polished UX.",
+    "Keep reviewer notes separate from accepted source truth."
+  ],
+  "packet": [
+    "edition: named",
+    "license: review-required",
+    "allowed-use: citation-card",
+    "corpus-delivery: blocked",
+    "owner:rights"
+  ],
+  "launchAuthorization": false,
+  "productionStorage": false,
+  "liveAi": false,
+  "telemetryEnabled": false,
+  "publicPilot": false,
+  "updated": "2026-07-19"
+}

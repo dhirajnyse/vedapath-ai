@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VedaPath Pilot-to-Production Gap Map</title>
+    <link rel="stylesheet" href="assets/vedapath-ui.css">
+    <link rel="stylesheet" href="assets/vedapath-command-shell.css">
+    <link rel="stylesheet" href="assets/vedapath-retrieval-pilot.css">
+    <style>
+      .readiness-page { max-width: 1480px; margin: 0 auto; padding: 28px 24px 64px; }
+      .readiness-hero { display: grid; grid-template-columns: minmax(0, 1.2fr) 320px; gap: 24px; align-items: stretch; }
+      .readiness-card { border: 1px solid rgba(92, 64, 45, .16); border-radius: 8px; background: rgba(255, 254, 250, .9); box-shadow: 0 18px 50px rgba(46, 35, 25, .07); padding: 24px; }
+      .readiness-card h1 { margin: 12px 0; max-width: 900px; font-size: clamp(2.1rem, 4vw, 4.1rem); line-height: .98; }
+      .readiness-card p { color: #634633; font-size: 1.05rem; line-height: 1.55; max-width: 780px; }
+      .release-strip { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin-top: 22px; }
+      .metric, .step { border: 1px solid rgba(92, 64, 45, .14); border-radius: 8px; background: rgba(255, 255, 252, .82); padding: 16px; }
+      .metric span, .step p { color: #6e5543; font-size: .9rem; }
+      .metric strong { display: block; font-size: 1.8rem; margin-top: 8px; }
+      .step span { display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: #e7f3ef; color: #06604d; font-weight: 800; }
+      .step strong { display: block; margin: 12px 0 6px; }
+      .readiness-logo { display: grid; place-items: center; min-height: 100%; }
+      .readiness-logo img { width: min(220px, 68%); border-radius: 8px; background: #fff6e9; box-shadow: 0 16px 42px rgba(169, 63, 18, .16); }
+      .readiness-grid { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: 24px; margin-top: 24px; }
+      .step-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+      .decision-list { margin: 0; padding-left: 20px; color: #4f392b; line-height: 1.7; }
+      .packet { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+      .packet span { border: 1px solid #efbca8; border-radius: 999px; padding: 7px 10px; color: #a83f12; background: #fff6f0; font-weight: 800; font-size: .82rem; }
+      @media (max-width: 920px) { .readiness-hero, .readiness-grid { grid-template-columns: 1fr; } .release-strip { grid-template-columns: repeat(2, 1fr); } }
+      @media (max-width: 560px) { .readiness-page { padding: 18px 14px 42px; } .release-strip, .step-grid { grid-template-columns: 1fr; } .readiness-card h1 { font-size: 2rem; } }
+    </style>
+  </head>
+  <body class="pilot-to-production-gap-map-page">
+    <div id="top"></div>
+    <header class="topbar">
+      <a class="brand" href="index.html#top" aria-label="VedaPath AI home">
+        <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
+        <span><strong>VedaPath AI</strong><small>Pilot-to-Production Gap Map</small></span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html#top">Home</a>
+        <a href="build-status.html">Build</a>
+        <a href="brand/brand-board.html">Brand</a>
+        <a href="blueprint.html">Blueprint</a>
+        <a class="active" href="pilottoproductiongapmap.html">Gap Map</a>
+        <span class="version-pill">v5.2.2</span>
+      </nav>
+    </header>
+    <main class="readiness-page">
+      <section class="readiness-hero">
+        <article class="readiness-card">
+          <p class="eyebrow">v5.2.2 production readiness</p>
+          <h1>Know the gap before crossing it.</h1>
+          <p>A calm production-readiness map separates what is proven, what is missing, who owns it, and what must stay closed.</p>
+          <div class="release-strip">
+            <article class="metric"><span>Gaps</span><strong>8</strong></article>
+              <article class="metric"><span>Owners</span><strong>8</strong></article>
+              <article class="metric"><span>Blocked</span><strong>5</strong></article>
+              <article class="metric"><span>Launch</span><strong>No</strong></article>
+          </div>
+        </article>
+        <aside class="readiness-card readiness-logo" aria-label="VedaPath symbol">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
+        </aside>
+      </section>
+      <section class="readiness-grid">
+        <article class="readiness-card">
+          <p class="eyebrow">Required flow</p>
+          <h2>One calm gate</h2>
+          <div class="step-grid">
+            <article class="step"><span>1</span><strong>Name each launch blocker</strong><p>Name each launch blocker.</p></article>
+              <article class="step"><span>2</span><strong>Attach an owner and evidence type</strong><p>Attach an owner and evidence type.</p></article>
+              <article class="step"><span>3</span><strong>Separate private-pilot proof from production proof</strong><p>Separate private-pilot proof from production proof.</p></article>
+              <article class="step"><span>4</span><strong>Keep every live capability closed</strong><p>Keep every live capability closed.</p></article>
+          </div>
+        </article>
+        <article class="readiness-card">
+          <p class="eyebrow">Decision packet</p>
+          <h2>Pilot-to-Production Gap Map</h2>
+          <p>Maps the exact blockers between private-pilot proof and production launch, while fixing release-status drift in Build Status.</p>
+          <ul class="decision-list">
+            <li>Hold public launch until all red gaps have evidence.</li>
+            <li>Review security, privacy, rights, and reviewer operations as separate gates.</li>
+            <li>Use Build Status as the canonical release-tracking surface.</li>
+          </ul>
+          <div class="packet"><span>gap: security</span><span>gap: privacy-consent</span><span>gap: source-rights</span><span>gap: hosted-architecture</span><span>owner:founder</span></div>
+          <p><strong>Boundary:</strong> Readiness artifact only; no credentials, secrets, production storage, live AI, public telemetry, corpus delivery, public pilot, or launch authorization.</p>
+        </article>
+      </section>
+    </main>
+    <script src="assets/vedapath-command-shell.js"></script>
+  </body>
+</html>

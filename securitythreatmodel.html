@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VedaPath Security Threat Model</title>
+    <link rel="stylesheet" href="assets/vedapath-ui.css">
+    <link rel="stylesheet" href="assets/vedapath-command-shell.css">
+    <link rel="stylesheet" href="assets/vedapath-retrieval-pilot.css">
+    <style>
+      .readiness-page { max-width: 1480px; margin: 0 auto; padding: 28px 24px 64px; }
+      .readiness-hero { display: grid; grid-template-columns: minmax(0, 1.2fr) 320px; gap: 24px; align-items: stretch; }
+      .readiness-card { border: 1px solid rgba(92, 64, 45, .16); border-radius: 8px; background: rgba(255, 254, 250, .9); box-shadow: 0 18px 50px rgba(46, 35, 25, .07); padding: 24px; }
+      .readiness-card h1 { margin: 12px 0; max-width: 900px; font-size: clamp(2.1rem, 4vw, 4.1rem); line-height: .98; }
+      .readiness-card p { color: #634633; font-size: 1.05rem; line-height: 1.55; max-width: 780px; }
+      .release-strip { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin-top: 22px; }
+      .metric, .step { border: 1px solid rgba(92, 64, 45, .14); border-radius: 8px; background: rgba(255, 255, 252, .82); padding: 16px; }
+      .metric span, .step p { color: #6e5543; font-size: .9rem; }
+      .metric strong { display: block; font-size: 1.8rem; margin-top: 8px; }
+      .step span { display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: #e7f3ef; color: #06604d; font-weight: 800; }
+      .step strong { display: block; margin: 12px 0 6px; }
+      .readiness-logo { display: grid; place-items: center; min-height: 100%; }
+      .readiness-logo img { width: min(220px, 68%); border-radius: 8px; background: #fff6e9; box-shadow: 0 16px 42px rgba(169, 63, 18, .16); }
+      .readiness-grid { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: 24px; margin-top: 24px; }
+      .step-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+      .decision-list { margin: 0; padding-left: 20px; color: #4f392b; line-height: 1.7; }
+      .packet { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+      .packet span { border: 1px solid #efbca8; border-radius: 999px; padding: 7px 10px; color: #a83f12; background: #fff6f0; font-weight: 800; font-size: .82rem; }
+      @media (max-width: 920px) { .readiness-hero, .readiness-grid { grid-template-columns: 1fr; } .release-strip { grid-template-columns: repeat(2, 1fr); } }
+      @media (max-width: 560px) { .readiness-page { padding: 18px 14px 42px; } .release-strip, .step-grid { grid-template-columns: 1fr; } .readiness-card h1 { font-size: 2rem; } }
+    </style>
+  </head>
+  <body class="security-threat-model-page">
+    <div id="top"></div>
+    <header class="topbar">
+      <a class="brand" href="index.html#top" aria-label="VedaPath AI home">
+        <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
+        <span><strong>VedaPath AI</strong><small>Security Threat Model</small></span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html#top">Home</a>
+        <a href="build-status.html">Build</a>
+        <a href="brand/brand-board.html">Brand</a>
+        <a href="blueprint.html">Blueprint</a>
+        <a class="active" href="securitythreatmodel.html">Threat Model</a>
+        <span class="version-pill">v5.2.3</span>
+      </nav>
+    </header>
+    <main class="readiness-page">
+      <section class="readiness-hero">
+        <article class="readiness-card">
+          <p class="eyebrow">v5.2.3 production readiness</p>
+          <h1>Secure the calm before scaling it.</h1>
+          <p>The product can feel peaceful only if secrets, reviewers, learners, sources, and generated answers are protected by design.</p>
+          <div class="release-strip">
+            <article class="metric"><span>Threats</span><strong>9</strong></article>
+              <article class="metric"><span>Mitigations</span><strong>9</strong></article>
+              <article class="metric"><span>Secrets</span><strong>0</strong></article>
+              <article class="metric"><span>Launch</span><strong>No</strong></article>
+          </div>
+        </article>
+        <aside class="readiness-card readiness-logo" aria-label="VedaPath symbol">
+          <img src="assets/vedapath-3d-logo-concept.png" alt="VedaPath AI logo concept">
+        </aside>
+      </section>
+      <section class="readiness-grid">
+        <article class="readiness-card">
+          <p class="eyebrow">Required flow</p>
+          <h2>One calm gate</h2>
+          <div class="step-grid">
+            <article class="step"><span>1</span><strong>List threats by asset</strong><p>List threats by asset.</p></article>
+              <article class="step"><span>2</span><strong>Pair each threat with mitigation and owner</strong><p>Pair each threat with mitigation and owner.</p></article>
+              <article class="step"><span>3</span><strong>Block secret collection in fixtures</strong><p>Block secret collection in fixtures.</p></article>
+              <article class="step"><span>4</span><strong>Keep live identity and storage disabled</strong><p>Keep live identity and storage disabled.</p></article>
+          </div>
+        </article>
+        <article class="readiness-card">
+          <p class="eyebrow">Decision packet</p>
+          <h2>Security Threat Model</h2>
+          <p>Adds a founder-readable threat model for identity, source data, review queues, telemetry, prompt injection, and abuse boundaries.</p>
+          <ul class="decision-list">
+            <li>Use least-privilege reviewer roles.</li>
+            <li>Treat prompt injection and source poisoning as first-class risks.</li>
+            <li>Require incident notes before public pilot decisions.</li>
+          </ul>
+          <div class="packet"><span>asset: identity</span><span>asset: source-records</span><span>threat: prompt-injection</span><span>mitigation: reviewer-gate</span><span>owner:security</span></div>
+          <p><strong>Boundary:</strong> Readiness artifact only; no credentials, secrets, production storage, live AI, public telemetry, corpus delivery, public pilot, or launch authorization.</p>
+        </article>
+      </section>
+    </main>
+    <script src="assets/vedapath-command-shell.js"></script>
+  </body>
+</html>

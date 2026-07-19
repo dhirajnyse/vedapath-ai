@@ -1,0 +1,41 @@
+{
+  "version": "v5.2.6",
+  "title": "Minimal Hosted Pilot Architecture Decision",
+  "releaseIndex": 5,
+  "summary": "Chooses the smallest hosted-pilot architecture posture: one bounded source API, reviewer queue, consent ledger, and read-only demo shell.",
+  "goal": "Choose the smallest real backend slice without authorizing production launch.",
+  "status": "Ready for founder hosted-pilot review gate",
+  "boundary": "Readiness artifact only; no credentials, secrets, production storage, live AI, public telemetry, corpus delivery, public pilot, or launch authorization.",
+  "hero": "Choose the smallest real system.",
+  "subhero": "A hosted pilot should prove one source-first answer loop, not pretend the whole product is production-ready.",
+  "metrics": {
+    "Backend": "Minimal",
+    "Storage": "Bounded",
+    "Access": "Invite-only",
+    "Launch": "No"
+  },
+  "flow": [
+    "Select only the minimum hosted slice.",
+    "Keep source API, review queue, consent, and logs separate.",
+    "Require founder review before any deployment.",
+    "Keep public launch closed."
+  ],
+  "decisions": [
+    "Prototype on a bounded backend path only.",
+    "Do not connect payment, broad accounts, or public AI access.",
+    "Use this packet as the next founder review input."
+  ],
+  "packet": [
+    "architecture: minimal-hosted-pilot",
+    "source-api: bounded",
+    "review-queue: required",
+    "consent-ledger: required",
+    "owner:founder"
+  ],
+  "launchAuthorization": false,
+  "productionStorage": false,
+  "liveAi": false,
+  "telemetryEnabled": false,
+  "publicPilot": false,
+  "updated": "2026-07-19"
+}

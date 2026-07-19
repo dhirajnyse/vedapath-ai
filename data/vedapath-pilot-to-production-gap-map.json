@@ -1,0 +1,41 @@
+{
+  "version": "v5.2.2",
+  "title": "Pilot-to-Production Gap Map",
+  "releaseIndex": 1,
+  "summary": "Maps the exact blockers between private-pilot proof and production launch, while fixing release-status drift in Build Status.",
+  "goal": "Make the remaining launch gap visible, owned, and impossible to confuse with readiness.",
+  "status": "Ready for security threat-modeling",
+  "boundary": "Readiness artifact only; no credentials, secrets, production storage, live AI, public telemetry, corpus delivery, public pilot, or launch authorization.",
+  "hero": "Know the gap before crossing it.",
+  "subhero": "A calm production-readiness map separates what is proven, what is missing, who owns it, and what must stay closed.",
+  "metrics": {
+    "Gaps": "8",
+    "Owners": "8",
+    "Blocked": "5",
+    "Launch": "No"
+  },
+  "flow": [
+    "Name each launch blocker.",
+    "Attach an owner and evidence type.",
+    "Separate private-pilot proof from production proof.",
+    "Keep every live capability closed."
+  ],
+  "decisions": [
+    "Hold public launch until all red gaps have evidence.",
+    "Review security, privacy, rights, and reviewer operations as separate gates.",
+    "Use Build Status as the canonical release-tracking surface."
+  ],
+  "packet": [
+    "gap: security",
+    "gap: privacy-consent",
+    "gap: source-rights",
+    "gap: hosted-architecture",
+    "owner:founder"
+  ],
+  "launchAuthorization": false,
+  "productionStorage": false,
+  "liveAi": false,
+  "telemetryEnabled": false,
+  "publicPilot": false,
+  "updated": "2026-07-19"
+}
